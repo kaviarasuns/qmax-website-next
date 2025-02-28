@@ -1,0 +1,246 @@
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+
+export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <nav className="relative flex flex-wrap items-center justify-between p-4 bg-white">
+      {/* Logo */}
+      <div className="w-24 h-auto sm:w-32 md:w-40 lg:w-48 transition-all duration-300">
+        <Link
+          href="https://qmaxsys.com/index.html"
+          title="Back to Home"
+          className="block"
+        >
+          <Image
+            src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
+            className="w-full h-auto object-contain"
+            width={500}
+            height={500}
+            alt="Qmax PCB Design Logo"
+            priority
+          />
+        </Link>
+      </div>
+
+      {/* Hamburger Button */}
+      <button
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="lg:hidden p-2 rounded-lg hover:bg-gray-100"
+      >
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          {isMenuOpen ? (
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          ) : (
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          )}
+        </svg>
+      </button>
+
+      {/* Navigation Menu */}
+
+      <ul
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } w-full lg:flex lg:w-auto lg:space-x-8  lg:items-center mt-4 lg:mt-0 lg:flex-1 lg:justify-center`}
+      >
+        <li className="py-2 lg:py-0">
+          <a
+            href="http://qmaxsys.com/index.html"
+            className="block hover:text-orange-500 text-xl"
+          >
+            HOME
+          </a>
+        </li>
+
+        {/* Services Dropdown */}
+        <li className="group relative py-2 lg:py-0">
+          <button className="flex items-center hover:text-orange-500 text-xl">
+            SERVICES
+            <svg
+              className="w-4 h-4 ml-1"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+          <ul className="lg:absolute lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
+            <li>
+              <a
+                href="http://qmaxsys.com/embedded-design-services.html"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                EMBEDDED SYSTEMS
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://qmaxsys.com/pcb-design.html"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                PCB DESIGN
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        {/* Case Studies Dropdown */}
+        <li className="group relative py-2 lg:py-0">
+          <button className="flex items-center hover:text-orange-500 text-xl">
+            CASE STUDIES
+            <svg
+              className="w-4 h-4 ml-1"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+          <ul className="lg:absolute lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
+            <li>
+              <a
+                href="http://qmaxsys.com/Embedded-Case-study.html"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                EMBEDDED SYSTEMS
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://qmaxsys.com/PCB-Design-Case-study.html"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                PCB DESIGN
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        {/* Resources Dropdown */}
+        <li className="group relative py-2 lg:py-0">
+          <button className="flex items-center hover:text-orange-500 text-xl">
+            RESOURCES
+            <svg
+              className="w-4 h-4 ml-1"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+          <ul className="lg:absolute lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
+            <li>
+              <a
+                href="http://qmaxsys.com/PCB-design-resources.html"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                PCB DESIGN RESOURCES
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://qmaxsys.com/embedded-system-glossary.html"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                EMBEDDED SYSTEMS GLOSSARY
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://qmaxsys.com/pcb-design-glossary.html"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
+                PCB DESIGN GLOSSARY
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li className="py-2 lg:py-0">
+          <a
+            href="http://qmaxsys.com/printed-circuit-board-faqs.html"
+            className="block hover:text-orange-500 text-xl"
+          >
+            FAQs
+          </a>
+        </li>
+
+        <li className="py-2 lg:py-0">
+          <a
+            href="http://qmaxsys.com/careers.html"
+            className="block hover:text-orange-500 text-xl"
+          >
+            CAREERS
+          </a>
+        </li>
+
+        <li className="py-2 lg:py-0">
+          <a
+            href="http://blog.qmaxsys.com/"
+            target="_blank"
+            className="block hover:text-orange-500 text-xl"
+          >
+            BLOG
+          </a>
+        </li>
+
+        <li className="py-2 lg:py-0">
+          <a
+            href="http://qmaxsys.com/contact.html"
+            className="block hover:text-orange-500 text-xl"
+          >
+            CONTACT
+          </a>
+        </li>
+      </ul>
+
+      {/* Contact Information */}
+      <div className="hidden lg:block text-[#ec6a01] ml-auto">
+        <p className="mb-1 text-lg">
+          <i className="fa fa-phone mr-2" aria-hidden="true"></i>
+          +1 412 265 2314
+        </p>
+        <p className="text-lg">
+          <i className="fa fa-envelope mr-2" aria-hidden="true"></i>
+          <a
+            href="mailto:info@qmaxsys.com"
+            className="text-[#ec6a01] underline"
+          >
+            info@qmaxsys.com
+          </a>
+        </p>
+      </div>
+    </nav>
+  );
+}
