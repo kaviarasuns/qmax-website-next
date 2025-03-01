@@ -63,10 +63,7 @@ export default function Navbar() {
         } w-full lg:flex lg:w-auto lg:space-x-8  lg:items-center mt-4 lg:mt-0 lg:flex-1 lg:justify-center`}
       >
         <li className="py-2 lg:py-0">
-          <a
-            href="http://qmaxsys.com/index.html"
-            className="block hover:text-orange-500 text-xl"
-          >
+          <a href="" className="block hover:text-orange-500 text-xl">
             HOME
           </a>
         </li>
@@ -90,7 +87,7 @@ export default function Navbar() {
           <ul className="lg:absolute lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
             <li>
               <a
-                href="http://qmaxsys.com/embedded-design-services.html"
+                href="/embedded-design-services"
                 className="block px-4 py-2 hover:bg-gray-100"
               >
                 EMBEDDED SYSTEMS
@@ -98,7 +95,7 @@ export default function Navbar() {
             </li>
             <li>
               <a
-                href="http://qmaxsys.com/pcb-design.html"
+                href="/pcb-design"
                 className="block px-4 py-2 hover:bg-gray-100"
               >
                 PCB DESIGN
@@ -126,7 +123,7 @@ export default function Navbar() {
           <ul className="lg:absolute lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
             <li>
               <a
-                href="http://qmaxsys.com/Embedded-Case-study.html"
+                href="/Embedded-Case-study"
                 className="block px-4 py-2 hover:bg-gray-100"
               >
                 EMBEDDED SYSTEMS
@@ -134,7 +131,7 @@ export default function Navbar() {
             </li>
             <li>
               <a
-                href="http://qmaxsys.com/PCB-Design-Case-study.html"
+                href="/PCB-Design-Case-study"
                 className="block px-4 py-2 hover:bg-gray-100"
               >
                 PCB DESIGN
