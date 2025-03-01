@@ -80,6 +80,9 @@
   height: 65%;
 }
 .embla__dots {
+  align-items: center;
+  justify-content: center;
+  color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
