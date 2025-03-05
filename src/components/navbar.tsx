@@ -1,9 +1,18 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
+  const router = useRouter();
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault(); // Prevent default link behavior
+    router.push("/"); // Programmatically navigate to home
+  };
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -11,9 +20,10 @@ export default function Navbar() {
       {/* Logo */}
       <div className="w-24 h-auto sm:w-32 md:w-40 lg:w-48 transition-all duration-300">
         <Link
-          href="https://qmaxsys.com/index.html"
+          href="/"
           title="Back to Home"
           className="block"
+          onClick={handleHomeClick}
         >
           <Image
             src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
@@ -63,9 +73,13 @@ export default function Navbar() {
         } w-full lg:flex lg:w-auto lg:space-x-8  lg:items-center mt-4 lg:mt-0 lg:flex-1 lg:justify-center`}
       >
         <li className="py-2 lg:py-0">
-          <a href="" className="block hover:text-orange-500 text-xl">
+          <Link
+            href="/"
+            className="block hover:text-orange-500 text-xl"
+            onClick={handleHomeClick}
+          >
             HOME
-          </a>
+          </Link>
         </li>
 
         {/* Services Dropdown */}
@@ -159,7 +173,7 @@ export default function Navbar() {
           <ul className="lg:absolute lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
             <li>
               <a
-                href="http://qmaxsys.com/PCB-design-resources.html"
+                href="/PCB-design-resources"
                 className="block px-4 py-2 hover:bg-gray-100"
               >
                 PCB DESIGN RESOURCES
@@ -167,7 +181,7 @@ export default function Navbar() {
             </li>
             <li>
               <a
-                href="http://qmaxsys.com/embedded-system-glossary.html"
+                href="/embedded-system-glossary"
                 className="block px-4 py-2 hover:bg-gray-100"
               >
                 EMBEDDED SYSTEMS GLOSSARY
@@ -175,7 +189,7 @@ export default function Navbar() {
             </li>
             <li>
               <a
-                href="http://qmaxsys.com/pcb-design-glossary.html"
+                href="/pcb-design-glossary"
                 className="block px-4 py-2 hover:bg-gray-100"
               >
                 PCB DESIGN GLOSSARY
@@ -186,7 +200,7 @@ export default function Navbar() {
 
         <li className="py-2 lg:py-0">
           <a
-            href="http://qmaxsys.com/printed-circuit-board-faqs.html"
+            href="/printed-circuit-board-faqs"
             className="block hover:text-orange-500 text-xl"
           >
             FAQs
@@ -194,10 +208,7 @@ export default function Navbar() {
         </li>
 
         <li className="py-2 lg:py-0">
-          <a
-            href="http://qmaxsys.com/careers.html"
-            className="block hover:text-orange-500 text-xl"
-          >
+          <a href="/careers" className="block hover:text-orange-500 text-xl">
             CAREERS
           </a>
         </li>
@@ -213,10 +224,7 @@ export default function Navbar() {
         </li>
 
         <li className="py-2 lg:py-0">
-          <a
-            href="http://qmaxsys.com/contact.html"
-            className="block hover:text-orange-500 text-xl"
-          >
+          <a href="/contact" className="block hover:text-orange-500 text-xl">
             CONTACT
           </a>
         </li>
