@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const EmbeddedSection = () => {
@@ -6,10 +7,12 @@ const EmbeddedSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
           <div className="wow fadeInLeft">
-            <img
+            <Image
               src="https://d1yetprhniwywz.cloudfront.net/img/services/Embedded-Systems.jpg"
               alt="Embedded Hardware"
               className="w-full rounded-lg shadow-lg"
+              height={500}
+              width={500}
             />
           </div>
 

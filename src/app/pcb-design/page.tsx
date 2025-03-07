@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const PCBDesignSection = () => {
@@ -38,10 +39,12 @@ const PCBDesignSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Image Section */}
           <div className="wow fadeInLeft animated">
-            <img
+            <Image
               src="https://d1yetprhniwywz.cloudfront.net/img/services/PCB-Design.png"
               alt="PCB Design Services"
               className="w-full h-auto rounded-lg shadow-lg"
+              height={500}
+              width={500}
             />
           </div>
 
@@ -52,11 +55,12 @@ const PCBDesignSection = () => {
                 Qmax Systems has over 25 years of experience in designing PCBs.
                 We have worked across different domains for Top OEMs. With our
                 in-depth understanding of the materials and manufacturing
-                process, we can provide you with "First Time Right" Designs
-                significantly reducing the time to market. Our engineers, who
-                are experts in DFx, ensure that the design is successful, and
-                you have a high quality PCB.
+                process, we can provide you with &quot;First Time Right&quot;
+                Designs significantly reducing the time to market. Our
+                engineers, who are experts in DFx, ensure that the design is
+                successful, and you have a high-quality PCB.
               </p>
+
               <p className="text-gray-700">
                 We provide schematic entry and PCB layout services or just
                 layout design from the schematics you already have. Qmax has

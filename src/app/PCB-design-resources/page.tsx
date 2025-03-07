@@ -26,10 +26,10 @@ export default function PCBDesingnResources() {
               ageing of wires and required intensive labour. PCBs on the other
               hand offer a sturdy base for the components to be mounted and the
               interconnections are made through immovable lines of copper called
-              as "Traces". They are the go-to option for mass production and
-              they've allowed electronic devices to be smaller & more compact.
-              PCBs are used in most of the electronic devices manufactured
-              today.
+              as &quot;Traces&quot;. They are the go-to option for mass
+              production and they&apos;ve allowed electronic devices to be
+              smaller &amp; more compact. PCBs are used in most of the
+              electronic devices manufactured today.
             </p>
           </div>
 
@@ -42,20 +42,21 @@ export default function PCBDesingnResources() {
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                   In its most basic form, the Printed Circuit Board or PCB, is
                   made up of an insulating and non-conductive layer called the
-                  "Substrate" which is coated with a conductive layer of Copper.
-                  Copper is used as the conductive material in most cases given
-                  its high conductivity. The substrate may be coated with copper
-                  on either one or both sides. The solder mask, coated on top of
-                  the copper layer, prevents the formation of solder bridges
-                  between closely spaced solder pads. The solder mask is usually
-                  green in colour, though other colours like red, blue, black,
-                  etc., are also available. To identify components, test points
-                  and symbols on the board during assembly, a legend called the
-                  "Silkscreen" is printed on top of the solder mask. The silk
-                  screen is usually white in colour though black colour is used
-                  in case the Solder mask is of a lighter colour. This layer
-                  makes it easy for component placement through Surface-mounting
-                  Technology or Through-hole Technology.
+                  &quot;Substrate&quot; which is coated with a conductive layer
+                  of Copper. Copper is used as the conductive material in most
+                  cases given its high conductivity. The substrate may be coated
+                  with copper on either one or both sides. The solder mask,
+                  coated on top of the copper layer, prevents the formation of
+                  solder bridges between closely spaced solder pads. The solder
+                  mask is usually green in colour, though other colours like
+                  red, blue, black, etc., are also available. To identify
+                  components, test points and symbols on the board during
+                  assembly, a legend called the &quot;Silkscreen&quot; is
+                  printed on top of the solder mask. The silk screen is usually
+                  white in colour though black colour is used in case the Solder
+                  mask is of a lighter colour. This layer makes it easy for
+                  component placement through Surface-mounting Technology or
+                  Through-hole Technology.
                 </p>
               </div>
               <div className="flex justify-center">
@@ -176,11 +177,11 @@ export default function PCBDesingnResources() {
               <div className="space-y-4">
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                   The multi-layer PCB can have 3 to multiple layers of
-                  conducting material (copper sheets) with insulating "prepreg"
-                  layers in between. Prepregs keep the inner core material
-                  attached to the copper, so they can be bonded into a single
-                  structure using heat and pressure. A typical 4 layer PCB will
-                  be stacked like this:
+                  conducting material (copper sheets) with insulating
+                  &quot;prepreg&quot; layers in between. Prepregs keep the inner
+                  core material attached to the copper, so they can be bonded
+                  into a single structure using heat and pressure. A typical 4
+                  layer PCB will be stacked like this:
                 </p>
                 <p className="font-semibold text-gray-800">
                   Bottom copper foil - Prepreg sheets - Inner core layer -
@@ -211,9 +212,9 @@ export default function PCBDesingnResources() {
             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
               An HDI PCB has a higher wiring density per unit area compared to a
               typical PCB. They contain blind, buried vias and micro vias up to
-              .006" or less in diameter. The high wiring density of the board
-              helps to increase the number of electrical connections and reduce
-              the size and weight of a device.
+              .006&quot; or less in diameter. The high wiring density of the
+              board helps to increase the number of electrical connections and
+              reduce the size and weight of a device.
             </p>
           </div>
 
@@ -249,8 +250,8 @@ export default function PCBDesingnResources() {
             </h2>
             <p className="text-gray-700 text-base md:text-lg">
               There are two main technologies used for mounting components on
-              PCBs. One is "Through-hole technology" and the other is
-              "Surface-mount technology".
+              PCBs. One is &quot;Through-hole technology&quot; and the other is
+              &quot;Surface-mount technology&quot;.
             </p>
           </div>
 

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const ServiceSection = () => {
   const services = [
     {
@@ -30,7 +32,9 @@ const ServiceSection = () => {
             >
               <div className="bg-white rounded-lg shadow-lg p-8 transition duration-300 hover:shadow-xl">
                 <div className="flex justify-center mb-6">
-                  <img
+                  <Image
+                    height={500}
+                    width={500}
                     src={service.icon}
                     alt={service.iconAlt}
                     className="w-16 cursor-pointer"

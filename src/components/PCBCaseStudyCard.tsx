@@ -1,7 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { CaseStudyCardProps } from "./CaseStudyCard";
 
-const PCBCaseStudyCard = ({ title, image, link, category }: any) => {
+const PCBCaseStudyCard: React.FC<CaseStudyCardProps> = ({
+  title,
+  image,
+  link,
+  category,
+}) => {
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
@@ -13,7 +20,9 @@ const PCBCaseStudyCard = ({ title, image, link, category }: any) => {
         className="block overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
       >
         <div className="relative aspect-w-16 aspect-h-9">
-          <img
+          <Image
+            height={500}
+            width={500}
             src={image}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"

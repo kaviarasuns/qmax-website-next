@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // ConceptToManufacturingMobile.jsx
 const ConceptToManufacturingMobile = () => {
   return (
@@ -18,7 +20,9 @@ const ConceptToManufacturingMobile = () => {
 
             <div className="flex justify-center">
               <div className="w-full">
-                <img
+                <Image
+                  height={500}
+                  width={500}
                   src="https://d1yetprhniwywz.cloudfront.net/images/Concept-to-Manufacturing.png"
                   alt="Concept to Manufacturing Process"
                   className="w-full rounded-lg shadow-lg"

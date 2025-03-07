@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const Careers = () => {
-  const [openAccordion, setOpenAccordion] = useState(null);
+  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
 
   const jobs = [
     {
@@ -212,7 +212,7 @@ const Careers = () => {
     },
   ];
 
-  const toggleAccordion = (index: any) => {
+  const toggleAccordion = (index: number) => {
     setOpenAccordion(openAccordion === index ? null : index);
   };
 

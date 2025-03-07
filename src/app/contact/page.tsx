@@ -1,6 +1,8 @@
 "use client";
+import Image from "next/image";
+import { ChangeEvent, FormEvent, useState } from "react";
 
-import React, { useState } from "react";
+import React from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,13 +12,15 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Add form submission logic here
     console.log(formData);
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -92,10 +96,12 @@ const Contact = () => {
                 Call us at +1-412-265-2314.
               </p>
               <div className="bg-gray-100 w-full aspect-video">
-                <img
+                <Image
                   src="https://d1yetprhniwywz.cloudfront.net/img/grid/contact.jpg"
                   alt="contact qmax"
                   className="w-full h-full object-cover"
+                  width={500}
+                  height={500}
                 />
               </div>
             </div>
