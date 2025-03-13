@@ -16,7 +16,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="relative flex flex-wrap items-center justify-between p-4 bg-white">
+    <nav className="fixed top-0 left-0 w-full z-50 flex flex-wrap items-center justify-between p-4 bg-white shadow-md">
       {/* Logo */}
       <div className="w-24 h-auto sm:w-32 md:w-40 lg:w-48 transition-all duration-300">
         <Link
@@ -98,7 +98,7 @@ export default function Navbar() {
               />
             </svg>
           </button>
-          <ul className="lg:absolute lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
+          <ul className="lg:absolute lg:left-0 lg:mt-0 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
             <li>
               <a
                 href="/embedded-design-services"
@@ -134,7 +134,7 @@ export default function Navbar() {
               />
             </svg>
           </button>
-          <ul className="lg:absolute lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
+          <ul className="lg:absolute lg:left-0 lg:mt-0 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
             <li>
               <a
                 href="/Embedded-Case-study"
@@ -170,7 +170,7 @@ export default function Navbar() {
               />
             </svg>
           </button>
-          <ul className="lg:absolute lg:left-0 lg:mt-2 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
+          <ul className="lg:absolute lg:left-0 lg:mt-0 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-0 pl-4 lg:pl-0">
             <li>
               <a
                 href="/PCB-design-resources"
