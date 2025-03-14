@@ -75,7 +75,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   return (
     <section className="w-full">
-      <div ref={emblaRef} className="overflow-hidden">
+      <div ref={emblaRef} className="overflow-hidden relative">
         <div className="flex touch-pan-y">
           {slides.map((slide, index) => (
             <div className="flex-none min-w-0 w-full relative" key={index}>
@@ -104,28 +104,26 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="grid grid-cols-[auto_1fr] justify-between gap-5 mt-7">
-        <div className="grid grid-cols-2 gap-2 items-center">
-          <PrevButton 
-            onClick={onPrevButtonClick} 
-            disabled={prevBtnDisabled}
-            className="text-white absolute z-10 top-1/2 -translate-y-1/2 left-4 border-0 w-10 h-10 flex items-center justify-center cursor-pointer p-0 bg-transparent opacity-70 hover:opacity-100 transition-opacity" 
-          />
-          <NextButton 
-            onClick={onNextButtonClick} 
-            disabled={nextBtnDisabled}
-            className="text-white absolute z-10 top-1/2 -translate-y-1/2 right-4 border-0 w-10 h-10 flex items-center justify-center cursor-pointer p-0 bg-transparent opacity-70 hover:opacity-100 transition-opacity" 
-          />
-        </div>
-
-        <div className="flex flex-wrap justify-end items-center text-white">
+        
+        {/* Navigation buttons */}
+        <PrevButton 
+          onClick={onPrevButtonClick} 
+          disabled={prevBtnDisabled}
+          className="text-white absolute z-10 top-1/2 -translate-y-1/2 left-2 sm:left-3 md:left-4 border-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center cursor-pointer p-0 bg-transparent opacity-70 hover:opacity-100 transition-opacity" 
+        />
+        <NextButton 
+          onClick={onNextButtonClick} 
+          disabled={nextBtnDisabled}
+          className="text-white absolute z-10 top-1/2 -translate-y-1/2 right-2 sm:right-3 md:right-4 border-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center cursor-pointer p-0 bg-transparent opacity-70 hover:opacity-100 transition-opacity" 
+        />
+        
+        {/* Dot navigation - moved inside carousel container */}
+        <div className="absolute bottom-4 right-0 left-0 flex justify-center items-center z-10">
           {scrollSnaps.map((_, index) => (
             <DotButton
               key={index}
               onClick={() => onDotButtonClick(index)}
-              className={`bg-transparent cursor-pointer border-0 p-0 m-0 w-10 h-10 flex items-center justify-center rounded-full ${
+              className={`bg-transparent cursor-pointer border-0 p-0 mx-1 w-10 h-10 flex items-center justify-center rounded-full ${
                 index === selectedIndex ? "dot-selected" : "dot-default"
               }`}
             />
@@ -133,7 +131,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      {/* Add these styles for the dots that were previously handled by pseudo-elements */}
+      {/* Style for dots */}
       <style jsx>{`
         .dot-default::after {
           content: "";
