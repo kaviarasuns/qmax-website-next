@@ -71,11 +71,7 @@ const ConceptToManufacturing = () => {
     <div className="relative">
       <ConceptToManufacturingMobile />
       <section
-        className="hidden xl:block container mx-auto bg-[#f5f5f5] bg-opacity-80 bg-no-repeat px-10 py-4 h-[504px] text-center"
-        style={{
-          backgroundImage:
-            "url('https://d1yetprhniwywz.cloudfront.net/img/simple1.jpg')",
-        }}
+        className="hidden xl:block container mx-auto  bg-opacity-80 bg-no-repeat px-10 py-4 text-center"
       >
         <div className="py-4">
           <div className="container mx-auto animate-fadeIn">
@@ -87,7 +83,14 @@ const ConceptToManufacturing = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-1 mt-14 mr-12">
+        <div className="static">
+
+        <div className="flex flex-wrap justify-center gap-1 mt-14 mr-12 relative">
+          <div className="absolute -bottom-12 left-16 w-[100%] flex items-center">
+            <div className="h-32 bg-[#bfbfbf] flex-grow"></div>
+            <div className="w-0 h-0 border-t-[100px] border-t-transparent border-b-[100px] border-b-transparent border-l-[120px] border-l-[#bfbfbf]"></div>
+          </div>
+      
           {steps.map((step, index) => (
             <div key={index} className="relative group">
               <button
@@ -102,14 +105,17 @@ const ConceptToManufacturing = () => {
                     <li
                       key={i}
                       className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-left"
-                    >
+                      >
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-          ))}
+          ))}      
+        </div>
+
+     
         </div>
       </section>
     </div>

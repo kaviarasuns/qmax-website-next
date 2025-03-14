@@ -30,7 +30,7 @@ const ServiceSection = () => {
               href={service.link}
               className="block group hover:no-underline"
             >
-              <div className="bg-white rounded-lg shadow-lg p-8 transition duration-300 hover:shadow-xl">
+              <div className="p-8 transition duration-300 hover:shadow-xl">
                 <div className="flex justify-center mb-6">
                   <Image
                     height={500}
@@ -44,7 +44,7 @@ const ServiceSection = () => {
                   <h2 className="text-2xl font-semibold text-gray-800 mb-4">
                     {service.title}
                   </h2>
-                  <p className="text-lg leading-relaxed text-gray-600 mb-6">
+                  <p className="text-lg leading-relaxed text-gray-600 mb-6 max-w-md mx-auto">
                     {service.description}
                   </p>
                   <span className="inline-block font-bold text-[#ec6a01] text-base hover:text-[#d95f01]">

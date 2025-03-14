@@ -1,3 +1,5 @@
+import { IoMdTrophy } from "react-icons/io";
+
 const QmaxEdge = () => {
   const features = [
     [
@@ -50,12 +52,12 @@ const QmaxEdge = () => {
                 {column.map((feature, featureIndex) => (
                   <div
                     key={featureIndex}
-                    className="bg-white rounded-lg p-6 transition-transform hover:scale-105"
+                    className="flex flex-row bg-white rounded-lg p-6 transition-transform hover:scale-105"
                   >
-                    <div className="flex flex-col items-center">
-                      <i
-                        className={`fa ${feature.icon} text-primary text-3xl mb-4`}
-                      ></i>
+                    <div className="flex flex-row gap-6 items-center">
+                      <div className="w-16 h-16 bg-orange-500 flex items-center justify-center rounded-lg">
+                      <IoMdTrophy className="text-white text-3xl"/>
+                      </div>
                       <h3 className="text-xl font-semibold text-gray-800">
                         {feature.title}
                       </h3>
