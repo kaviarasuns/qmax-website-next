@@ -29,6 +29,7 @@ export default function Home() {
       <EmblaCarousel slides={SLIDES} options={OPTIONS} />
       <WhatWeDo />
       <ServiceSection />
+      
       <ConceptToManufacturing />
 
       <section className="bg-white py-16">

@@ -17,9 +17,9 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 flex flex-wrap items-center justify-between p-4 bg-white shadow-md">
+      <nav className="fixed top-0 left-0 w-full z-50 flex flex-wrap items-center justify-between p-3 bg-white shadow-md">
         {/* Logo */}
-        <div className="w-24 h-auto sm:w-32 md:w-40 lg:w-48 transition-all duration-300">
+        <div className="w-40 h-auto sm:w-44 md:w-48 lg:w-56 transition-all duration-300">
           <Link
             href="/"
             title="Back to Home"
@@ -28,9 +28,9 @@ export default function Navbar() {
           >
             <Image
               src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
-              className="w-full h-auto object-contain"
-              width={500}
-              height={500}
+              className="pl-3 w-full h-auto object-contain"
+              width={800}
+              height={800}
               alt="Qmax PCB Design Logo"
               priority
             />
@@ -232,7 +232,7 @@ export default function Navbar() {
         </ul>
 
         {/* Contact Information */}
-        <div className="hidden lg:block text-[#ec6a01] ml-auto">
+        <div className="hidden lg:block text-[#FE0000] hover:bg-[#FF1111] ml-auto">
           <p className="mb-1 text-lg">
             <i className="fa fa-phone mr-2" aria-hidden="true"></i>
             +1 412 265 2314
@@ -241,7 +241,7 @@ export default function Navbar() {
             <i className="fa fa-envelope mr-2" aria-hidden="true"></i>
             <a
               href="mailto:info@qmaxsys.com"
-              className="text-[#ec6a01] underline"
+              className="text-[#FE0000] underline"
             >
               info@qmaxsys.com
             </a>
@@ -249,7 +249,7 @@ export default function Navbar() {
         </div>
       </nav>
       {/* Navbar spacer - pushes content below the navbar */}
-      <div className="h-20 sm:h-28 md:h-32 lg:h-24"></div>
+      <div className="h-20 sm:h-28 md:h-32 lg:h-20"></div>
     </>
   );
 }

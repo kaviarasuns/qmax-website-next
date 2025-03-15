@@ -55,7 +55,9 @@
 
     --chart-5: 27 87% 67%;
 
-    --radius: 0.5rem
+    --radius: 0.5rem;
+
+    --font-tt-supermolot: 'TT Supermolot Neue Trl Exp', sans-serif;
   }
   .dark {
 
@@ -105,11 +107,17 @@
 
     --chart-4: 280 65% 60%;
 
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
 
+html {
+  font-family: var(--font-tt-supermolot);
+}
 
+body {
+  font-family: var(--font-tt-supermolot);
+}
 
 @layer base {
   * {

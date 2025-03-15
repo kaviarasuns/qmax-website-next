@@ -11,10 +11,10 @@ import {
   Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 
-type CountryKey = "United States" | "Belgium" | "Canada" | "India";
-
+type CountryKey = "United States" | "India";
+//  | "Belgium" | "Canada" | 
+ 
 type AddressData = {
   name: string;
   address: string[];
@@ -23,9 +23,6 @@ type AddressData = {
 };
 
 export default function Footer() {
-  const [activeCountry, setActiveCountry] =
-    useState<CountryKey>("United States");
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -39,22 +36,6 @@ export default function Footer() {
         "United States",
       ],
       phone: "+1 412 265 2314",
-      email: "info@qmaxsys.com",
-    },
-    Belgium: {
-      name: "QMAX Systems Europe BV",
-      address: ["Loystraat 1B 2.1 - 9220", "Hamme", "Belgium"],
-      phone: "+1-412-265-2314",
-      email: "info-eu@qmaxsys.com",
-    },
-    Canada: {
-      name: "Qmax Systems Inc",
-      address: [
-        "33, Kenborough Court",
-        "Markham, ON. L3S3P3",
-        "Toronto, Canada",
-      ],
-      phone: "+1-412-265-2314",
       email: "info@qmaxsys.com",
     },
     India: {
@@ -117,7 +98,7 @@ export default function Footer() {
             </div>
 
             {/* Quick Links Section */}
-            <div className="pl-">
+            <div className="flex flex-col items-center">
               <h2 className="text-xl font-semibold mb-4">QUICK LINKS</h2>
               <nav className="flex flex-col space-y-2">
                 {navItems.map((item) => (
@@ -125,9 +106,9 @@ export default function Footer() {
                     key={item.name}
                     href={item.href}
                     target="_blank"
-                    className="text-gray-300 hover:text-orange-500 transition-colors flex items-center gap-2"
+                    className="text-gray-300 hover:text-[#FF1111] transition-colors flex items-center gap-2"
                   >
-                    <Check className="w-4 h-4 text-orange-500" />
+                    <Check className="w-4 h-4 text-[#FE0000]" />
                     {item.name}
                   </Link>
                 ))}
@@ -147,7 +128,7 @@ export default function Footer() {
               >
                 <Button
                   variant="default"
-                  className="bg-orange-500 hover:bg-orange-600 text-white"
+                  className="bg-[#FE0000] hover:bg-[#FF1111] text-white"
                 >
                   <Download className="mr-2 h-4 w-4" /> Download
                 </Button>
@@ -194,45 +175,26 @@ export default function Footer() {
             {/* Contact Section */}
             <div>
               <h2 className="text-xl font-semibold mb-4">CONTACT US</h2>
-              <div className="space-y-2">
+              <div className="space-y-4">
                 {(Object.keys(addresses) as CountryKey[]).map((country) => (
-                  <div key={country}>
-                    <button
-                      onClick={() =>
-                        setActiveCountry(
-                          activeCountry === country ? country : country
-                        )
-                      }
-                      className={`w-full font-bold text-left p-2 text-sm transition-colors ${
-                        activeCountry === country
-                          ? "bg-orange-500 text-white"
-                          : "bg-zinc-700 text-gray-200 hover:bg-zinc-600"
-                      }`}
-                    >
+                  <div key={country} className="mb-4">
+                    <div className="w-full font-bold text-left p-2 text-sm bg-[#FE0000] text-white">
                       {country}
-                    </button>
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        activeCountry === country
-                          ? "max-h-48 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
-                    >
-                      <div className="p-3 text-sm text-gray-300 bg-zinc-800">
-                        <p className="font-semibold">
-                          {addresses[country].name}
-                        </p>
-                        {addresses[country].address.map((line, index) => (
-                          <p key={index}>{line}</p>
-                        ))}
-                        <p className="mt-2">{addresses[country].phone}</p>
-                        <Link
-                          href={`mailto:${addresses[country].email}`}
-                          className="text-orange-500 hover:underline"
-                        >
-                          {addresses[country].email}
-                        </Link>
-                      </div>
+                    </div>
+                    <div className="p-3 text-sm text-gray-300 bg-zinc-800">
+                      <p className="font-semibold">
+                        {addresses[country].name}
+                      </p>
+                      {addresses[country].address.map((line, index) => (
+                        <p key={index}>{line}</p>
+                      ))}
+                      <p className="mt-2">{addresses[country].phone}</p>
+                      <Link
+                        href={`mailto:${addresses[country].email}`}
+                        className="text-[#FE0000] hover:text-[#FF1111]"
+                      >
+                        {addresses[country].email}
+                      </Link>
                     </div>
                   </div>
                 ))}

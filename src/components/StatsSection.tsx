@@ -51,12 +51,15 @@ const StatsSection = () => {
                 key={index}
                 className="text-center flex flex-col items-center"
               >
-                <FontAwesomeIcon icon={stat.icon} className="w-10 mb-2" />
-                <h2 className="text-3xl font-bold mb-2 text-orange-500">
+                <div className="flex items-center justify-center h-16 mb-2">
+                  <FontAwesomeIcon icon={stat.icon} className="h-10 w-10" />
+                </div>
+                <h2 className="text-3xl font-bold mb-3 text-[#FE0000] hover:text-[#FF1111]">
                   {stat.count}
                   <span className="text-primary">{stat.suffix}</span>
                 </h2>
-                <h5 className="text-sm font-medium tracking-wider">
+                <div className="h-0.5 w-full m-3 bg-white mb-3"></div>
+                <h5 className="text-sm font-medium tracking-wider py-2">
                   {stat.label}
                 </h5>
               </div>

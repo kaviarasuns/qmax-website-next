@@ -55,7 +55,7 @@ const QmaxEdge = () => {
                     className="flex flex-row bg-white rounded-lg p-6 transition-transform hover:scale-105"
                   >
                     <div className="flex flex-row gap-6 items-center">
-                      <div className="w-16 h-16 bg-orange-500 flex items-center justify-center rounded-lg">
+                      <div className="w-16 h-16 bg-[#FE0000] hover:bg-[#FF1111] flex items-center justify-center rounded-lg">
                       <IoMdTrophy className="text-white text-3xl"/>
                       </div>
                       <h3 className="text-xl font-semibold text-gray-800">
