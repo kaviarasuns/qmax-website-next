@@ -98,7 +98,7 @@ export default function Footer() {
             </div>
 
             {/* Quick Links Section */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col md:items-start lg:items-center">
               <h2 className="text-xl font-semibold mb-4">QUICK LINKS</h2>
               <nav className="flex flex-col space-y-2">
                 {navItems.map((item) => (

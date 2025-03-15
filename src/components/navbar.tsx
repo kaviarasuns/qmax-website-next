@@ -76,7 +76,7 @@ export default function Navbar() {
           <li className="py-2 lg:py-0">
             <Link
               href="/"
-              className="block hover:text-orange-500 text-xl"
+              className="block hover:text-[#FE0000] text-xl"
               onClick={handleHomeClick}
             >
               HOME
@@ -85,7 +85,7 @@ export default function Navbar() {
 
           {/* Services Dropdown */}
           <li className="group relative py-2 lg:py-0">
-            <button className="flex items-center hover:text-orange-500 text-xl">
+            <button className="flex items-center hover:text-[#FE0000] text-xl">
               SERVICES
               <svg
                 className="w-4 h-4 ml-1"
@@ -121,7 +121,7 @@ export default function Navbar() {
 
           {/* Case Studies Dropdown */}
           <li className="group relative py-2 lg:py-0">
-            <button className="flex items-center hover:text-orange-500 text-xl">
+            <button className="flex items-center hover:text-[#FE0000] text-xl">
               CASE STUDIES
               <svg
                 className="w-4 h-4 ml-1"
@@ -157,7 +157,7 @@ export default function Navbar() {
 
           {/* Resources Dropdown */}
           <li className="group relative py-2 lg:py-0">
-            <button className="flex items-center hover:text-orange-500 text-xl">
+            <button className="flex items-center hover:text-[#FE0000] text-xl">
               RESOURCES
               <svg
                 className="w-4 h-4 ml-1"
@@ -202,14 +202,14 @@ export default function Navbar() {
           <li className="py-2 lg:py-0">
             <a
               href="/printed-circuit-board-faqs"
-              className="block hover:text-orange-500 text-xl"
+              className="block hover:text-[#FE0000] text-xl"
             >
               FAQs
             </a>
           </li>
 
           <li className="py-2 lg:py-0">
-            <a href="/careers" className="block hover:text-orange-500 text-xl">
+            <a href="/careers" className="block hover:text-[#FE0000] text-xl">
               CAREERS
             </a>
           </li>
@@ -218,14 +218,14 @@ export default function Navbar() {
             <a
               href="http://blog.qmaxsys.com/"
               target="_blank"
-              className="block hover:text-orange-500 text-xl"
+              className="block hover:text-[#FE0000] text-xl"
             >
               BLOG
             </a>
           </li>
 
           <li className="py-2 lg:py-0">
-            <a href="/contact" className="block hover:text-orange-500 text-xl">
+            <a href="/contact" className="block hover:text-[#FE0000] text-xl">
               CONTACT
             </a>
           </li>
