@@ -24,7 +24,9 @@ type PropType = {
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { slides, options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    Autoplay({ delay: 7000, stopOnInteraction: false })
+  ]);
 
   // Track current slide index
   const [currentSlide, setCurrentSlide] = React.useState(0);

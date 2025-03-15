@@ -76,7 +76,7 @@ export default function Navbar() {
           <li className="py-2 lg:py-0">
             <Link
               href="/"
-              className="block hover:text-[#FE0000] text-xl"
+              className="block hover:text-brand-red text-xl"
               onClick={handleHomeClick}
             >
               HOME
@@ -85,7 +85,7 @@ export default function Navbar() {
 
           {/* Services Dropdown */}
           <li className="group relative py-2 lg:py-0">
-            <button className="flex items-center hover:text-[#FE0000] text-xl">
+            <button className="flex items-center hover:text-brand-red text-xl">
               SERVICES
               <svg
                 className="w-4 h-4 ml-1"
@@ -121,7 +121,7 @@ export default function Navbar() {
 
           {/* Case Studies Dropdown */}
           <li className="group relative py-2 lg:py-0">
-            <button className="flex items-center hover:text-[#FE0000] text-xl">
+            <button className="flex items-center hover:text-brand-red text-xl">
               CASE STUDIES
               <svg
                 className="w-4 h-4 ml-1"
@@ -157,7 +157,7 @@ export default function Navbar() {
 
           {/* Resources Dropdown */}
           <li className="group relative py-2 lg:py-0">
-            <button className="flex items-center hover:text-[#FE0000] text-xl">
+            <button className="flex items-center hover:text-brand-red text-xl">
               RESOURCES
               <svg
                 className="w-4 h-4 ml-1"
@@ -202,14 +202,14 @@ export default function Navbar() {
           <li className="py-2 lg:py-0">
             <a
               href="/printed-circuit-board-faqs"
-              className="block hover:text-[#FE0000] text-xl"
+              className="block hover:text-brand-red text-xl"
             >
               FAQs
             </a>
           </li>
 
           <li className="py-2 lg:py-0">
-            <a href="/careers" className="block hover:text-[#FE0000] text-xl">
+            <a href="/careers" className="block hover:text-brand-red text-xl">
               CAREERS
             </a>
           </li>
@@ -218,21 +218,21 @@ export default function Navbar() {
             <a
               href="http://blog.qmaxsys.com/"
               target="_blank"
-              className="block hover:text-[#FE0000] text-xl"
+              className="block hover:text-brand-red text-xl"
             >
               BLOG
             </a>
           </li>
 
           <li className="py-2 lg:py-0">
-            <a href="/contact" className="block hover:text-[#FE0000] text-xl">
+            <a href="/contact" className="block hover:text-brand-red text-xl">
               CONTACT
             </a>
           </li>
         </ul>
 
         {/* Contact Information */}
-        <div className="hidden lg:block text-[#FE0000] hover:bg-[#FF1111] ml-auto">
+        <div className="hidden lg:block text-brand-red ml-auto">
           <p className="mb-1 text-lg">
             <i className="fa fa-phone mr-2" aria-hidden="true"></i>
             +1 412 265 2314
@@ -241,7 +241,7 @@ export default function Navbar() {
             <i className="fa fa-envelope mr-2" aria-hidden="true"></i>
             <a
               href="mailto:info@qmaxsys.com"
-              className="text-[#FE0000] underline"
+              className="text-brand-red underline"
             >
               info@qmaxsys.com
             </a>

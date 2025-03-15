@@ -71,7 +71,7 @@ const ConceptToManufacturing = () => {
     <div className="relative">
       <ConceptToManufacturingMobile />
       <section
-        className="hidden xl:block container mx-auto  bg-opacity-80 bg-no-repeat px-10 py-4 text-center"
+        className="h-[450px] hidden xl:block container mx-auto bg-opacity-80 bg-no-repeat px-10 py-4 text-center"
       >
         <div className="py-4">
           <div className="container mx-auto animate-fadeIn">

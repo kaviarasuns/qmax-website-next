@@ -128,12 +128,12 @@ export default function Footer() {
               >
                 <Button
                   variant="default"
-                  className="bg-[#FE0000] hover:bg-[#FF1111] text-white"
+                  className="bg-brand-red hover:bg-[#FF1111] text-white"
                 >
                   <Download className="mr-2 h-4 w-4" /> Download
                 </Button>
               </Link>
-
+              
               <div className="mt-8">
                 <h2 className="text-xl font-semibold mb-4">FOLLOW US</h2>
                 <div className="flex space-x-3">
@@ -178,7 +178,7 @@ export default function Footer() {
               <div className="space-y-4">
                 {(Object.keys(addresses) as CountryKey[]).map((country) => (
                   <div key={country} className="mb-4">
-                    <div className="w-full font-bold text-left p-2 text-sm bg-[#FE0000] text-white">
+                    <div className="w-full font-bold text-left p-2 text-sm bg-brand-red text-white">
                       {country}
                     </div>
                     <div className="p-3 text-sm text-gray-300 bg-zinc-800">
@@ -191,7 +191,7 @@ export default function Footer() {
                       <p className="mt-2">{addresses[country].phone}</p>
                       <Link
                         href={`mailto:${addresses[country].email}`}
-                        className="text-[#FE0000] hover:text-[#FF1111]"
+                        className="text-brand-red hover:text-[#FF1111]"
                       >
                         {addresses[country].email}
                       </Link>

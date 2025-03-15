@@ -4,7 +4,7 @@ const WhatWeDo = () => {
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-6">
-            What <span className="text-[#FE0000] hover:text-[#FF1111]">We</span> Do
+            What <span className="text-brand-red hover:text-brand-red/90">We</span> Do
           </h1>
           <p className="text-lg font-medium leading-relaxed text-gray-600 max-w-3xl mx-auto">
             Qmax systems provides High Quality Hardware Engineering and PCB

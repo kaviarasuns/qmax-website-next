@@ -47,7 +47,7 @@ const ServiceSection = () => {
                   <p className="text-lg leading-relaxed text-gray-600 mb-6 max-w-md mx-auto">
                     {service.description}
                   </p>
-                  <span className="inline-block font-bold text-[#FE0000] hover:text-[#FF1111] text-base">
+                  <span className="inline-block font-bold text-brand-red hover:text-[#FF1111] text-base">
                     Know more
                   </span>
                 </div>

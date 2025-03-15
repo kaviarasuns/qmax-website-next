@@ -42,7 +42,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="bg-gray-900 text-white py-16">
+    <section className="bg-[#191919] text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="animate-fadeInLeft">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pt-4">
@@ -54,7 +54,7 @@ const StatsSection = () => {
                 <div className="flex items-center justify-center h-16 mb-2">
                   <FontAwesomeIcon icon={stat.icon} className="h-10 w-10" />
                 </div>
-                <h2 className="text-3xl font-bold mb-3 text-[#FE0000] hover:text-[#FF1111]">
+                <h2 className="text-3xl font-bold mb-3 text-brand-red hover:text-[#FF1111]">
                   {stat.count}
                   <span className="text-primary">{stat.suffix}</span>
                 </h2>
