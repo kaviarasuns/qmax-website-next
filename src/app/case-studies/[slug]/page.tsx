@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import { CaseStudy } from "../../../../types/case-study";
 import { CaseStudyCard } from "@/components/case-study-card";
 
@@ -149,9 +148,10 @@ const caseStudiesData: CaseStudy[] = [
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const caseStudy = caseStudiesData.find((cs) => cs.id === params.slug);
+  const { slug } = await params;
+  const caseStudy = caseStudiesData.find((cs) => cs.id === slug);
   if (!caseStudy) {
     return {
       title: "Case Study Not Found",
@@ -162,17 +162,16 @@ export async function generateMetadata({
   };
 }
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function CaseStudyPage({ params }: PageProps) {
-  const caseStudy = caseStudiesData.find((cs) => cs.id === params.slug);
+export default async function CaseStudyPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const caseStudy = caseStudiesData.find((cs) => cs.id === slug);
 
   if (!caseStudy) {
-    notFound();
+    return <div>Case Study Not Found</div>;
   }
 
   return (
@@ -182,7 +181,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
   );
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return caseStudiesData.map((caseStudy) => ({
     slug: caseStudy.id,
   }));
