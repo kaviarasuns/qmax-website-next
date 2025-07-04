@@ -16,7 +16,9 @@ export default function CaseStudies() {
       <ul>
         {caseStudies.map((study) => (
           <li key={study.slug}>
-            <Link href={`/case-studies/${study.slug}`}>{study.title}</Link>
+            <Link href={`/Embedded-Case-study/${study.slug}`}>
+              {study.title}
+            </Link>
           </li>
         ))}
       </ul>

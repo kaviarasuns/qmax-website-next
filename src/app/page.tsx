@@ -17,11 +17,13 @@ export default function Home() {
       src: "https://d1yetprhniwywz.cloudfront.net/img/slide/slides/1.jpg",
       alt: "First slide - Beautiful landscape",
       type: "Electronics Engineering Services",
+      videoId: "TfWomXqgMAE",
     },
     {
       src: "https://d1yetprhniwywz.cloudfront.net/img/slide/slides/Slide2.jpg",
       alt: "Second slide - Modern architecture",
       type: "PCB Design Services",
+      videoId: "NA0QPJZCgzI",
     },
   ];
   return (
@@ -29,7 +31,7 @@ export default function Home() {
       <EmblaCarousel slides={SLIDES} options={OPTIONS} />
       <WhatWeDo />
       <ServiceSection />
-      
+
       <ConceptToManufacturing />
 
       <section className="bg-white py-16">

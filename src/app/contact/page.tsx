@@ -11,11 +11,29 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  // Real API call to JSONPlaceholder
+  const submitContactForm = async (data: typeof formData) => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    return response.json();
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add form submission logic here
-    console.log(formData);
+    setLoading(true);
+    setShowThankYou(false);
+    // Simulate API call
+    await submitContactForm(formData);
+    setLoading(false);
+    setShowThankYou(true);
   };
 
   const handleChange = (
@@ -82,9 +100,15 @@ const Contact = () => {
                 <button
                   type="submit"
                   className="bg-[#fe7100] text-white px-6 py-3 rounded hover:bg-[#e66600] transition-colors"
+                  disabled={loading}
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
+                {showThankYou && (
+                  <div className="mt-4 p-4 bg-green-100 text-green-800 rounded border border-green-300 text-center font-semibold">
+                    Thank you for your Message.
+                  </div>
+                )}
               </form>
             </div>
 

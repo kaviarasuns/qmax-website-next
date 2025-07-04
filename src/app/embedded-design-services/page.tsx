@@ -49,23 +49,23 @@ const EmbeddedSection = () => {
 
           <div className="p-6">
             <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <table className="min-w-full table-fixed divide-y divide-gray-200">
+                <tbody>
+                  {/* Section 1 Header */}
+                  <tr className="bg-gray-100">
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">
                       Services Provided
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">
                       Domain Expertise
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">
                       Hardware Expertise
                     </th>
                   </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
+                  {/* Section 1 Content */}
                   <tr>
-                    <td className="px-6 py-4">
+                    <td className="px-6 py-4 align-top">
                       <ul className="list-disc list-inside space-y-2">
                         <li>Hardware Design</li>
                         <li>Design Verification</li>
@@ -79,7 +79,7 @@ const EmbeddedSection = () => {
                         <li>Prototype Building and Testing</li>
                       </ul>
                     </td>
-                    <td className="px-6 py-4">
+                    <td className="px-6 py-4 align-top">
                       <ul className="list-disc list-inside space-y-2">
                         <li>Automotive</li>
                         <li>Medical</li>
@@ -91,7 +91,7 @@ const EmbeddedSection = () => {
                         <li>Renewable Energy</li>
                       </ul>
                     </td>
-                    <td className="px-6 py-4">
+                    <td className="px-6 py-4 align-top">
                       <ul className="list-disc list-inside space-y-2">
                         <li>High speed Digital</li>
                         <li>BLE 5.0, Zigbee, WiFi chipsets</li>
@@ -107,42 +107,71 @@ const EmbeddedSection = () => {
                       </ul>
                     </td>
                   </tr>
-                </tbody>
-              </table>
 
-              {/* Additional tables for Microprocessors, Software, etc. */}
-              <table className="min-w-full divide-y divide-gray-200 mt-8">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  {/* Section 2 Header */}
+                  <tr className="bg-gray-100">
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">
                       Microprocessors
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">
                       Software Expertise
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">
                       Embedded Operating Systems
                     </th>
                   </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
+                  {/* Section 2 Content */}
                   <tr>
-                    <td className="px-6 py-4">
+                    <td className="px-6 py-4 align-top">
                       <ul className="list-disc list-inside space-y-2">
                         <li>x86</li>
                         <li>Freescale</li>
                         <li>ARM</li>
                       </ul>
                     </td>
-                    <td className="px-6 py-4">
+                    <td className="px-6 py-4 align-top">
                       <ul className="list-disc list-inside space-y-2">
                         <li>Real Time Operating Systems (RTOS)</li>
                         <li>Proprietary</li>
                       </ul>
                     </td>
-                    <td className="px-6 py-4">
+                    <td className="px-6 py-4 align-top">
                       <ul className="list-disc list-inside space-y-2">
                         <li>Linux</li>
+                      </ul>
+                    </td>
+                  </tr>
+
+                  {/* Section 3 Header */}
+                  <tr className="bg-gray-100">
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">
+                      Custom BSP and Driver Development
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">
+                      Custom Driver Development
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">
+                      Application & Kernel Development
+                    </th>
+                  </tr>
+                  {/* Section 3 Content */}
+                  <tr>
+                    <td className="px-6 py-4 align-top">
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>Embedded Linux</li>
+                      </ul>
+                    </td>
+                    <td className="px-6 py-4 align-top">
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>Network & Communications</li>
+                        <li>Storage Drivers</li>
+                        <li>Host Bus Drivers </li>
+                        <li>Device Drivers</li>
+                      </ul>
+                    </td>
+                    <td className="px-6 py-4 align-top">
+                      <ul className="list-disc list-inside space-y-2">
+                        <li>Embedded Linux</li>
                       </ul>
                     </td>
                   </tr>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 const Careers = () => {
@@ -217,8 +218,29 @@ const Careers = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <div className="text-center mb-12">
+    <>
+      <nav className="w-full h-20 bg-gray-200 text-white px-4 flex flex-col md:flex-row items-center justify-between mb-8 shadow">
+        <span className="font-bold text-4xl text-black  md:text-xl">
+          <span className="text-orange-500">Work</span> with Us
+        </span>
+        <span className="text-sm md:text-base mt-2 md:mt-0 text-black">
+          Send your resume to{" "}
+          <a
+            href="mailto:careers@qmaxsys.com"
+            className="underline text-orange-500"
+          >
+            careers@qmaxsys.com
+          </a>
+        </span>
+      </nav>
+      <div className="w-full text-center mb-12 bg-gray-50 rounded-lg">
+        <Image
+          width={1000}
+          height={400}
+          src="https://d1yetprhniwywz.cloudfront.net/img/Careers.jpg"
+          alt="Careers at Qmax"
+          className="mx-auto mb-6"
+        />
         <h2 className="text-4xl font-bold mb-4">
           Current <span className="text-orange-500">Openings</span>
         </h2>
@@ -233,94 +255,95 @@ const Careers = () => {
           </a>
         </div>
       </div>
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="space-y-4">
+          {jobs.map((job, index) => (
+            <div key={index} className="border rounded-lg overflow-hidden">
+              <button
+                className={`w-full text-left px-6 py-4 text-xl font-semibold bg-gray-100 hover:bg-gray-200 transition-colors ${
+                  openAccordion === index ? "bg-gray-200" : ""
+                }`}
+                onClick={() => toggleAccordion(index)}
+              >
+                {job.title}
+              </button>
 
-      <div className="space-y-4">
-        {jobs.map((job, index) => (
-          <div key={index} className="border rounded-lg overflow-hidden">
-            <button
-              className={`w-full text-left px-6 py-4 text-xl font-semibold bg-gray-100 hover:bg-gray-200 transition-colors ${
-                openAccordion === index ? "bg-gray-200" : ""
-              }`}
-              onClick={() => toggleAccordion(index)}
-            >
-              {job.title}
-            </button>
+              {openAccordion === index && (
+                <div className="p-6">
+                  <p className="mb-6">{job.description}</p>
 
-            {openAccordion === index && (
-              <div className="p-6">
-                <p className="mb-6">{job.description}</p>
+                  <h5 className="text-xl font-semibold text-gray-800 mb-4">
+                    Job Description:
+                  </h5>
+                  <ul className="list-disc pl-6 mb-6">
+                    {job.responsibilities.map((item, i) => (
+                      <li key={i} className="mb-2">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
 
-                <h5 className="text-xl font-semibold text-gray-800 mb-4">
-                  Job Description:
-                </h5>
-                <ul className="list-disc pl-6 mb-6">
-                  {job.responsibilities.map((item, i) => (
-                    <li key={i} className="mb-2">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                  <h5 className="text-xl font-semibold text-gray-800 mb-4">
+                    Required skills:
+                  </h5>
+                  <ul className="list-disc pl-6 mb-6">
+                    {job.requirements.map((item, i) => (
+                      <li key={i} className="mb-2">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
 
-                <h5 className="text-xl font-semibold text-gray-800 mb-4">
-                  Required skills:
-                </h5>
-                <ul className="list-disc pl-6 mb-6">
-                  {job.requirements.map((item, i) => (
-                    <li key={i} className="mb-2">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="space-y-4">
-                  <div>
-                    <h5 className="text-xl font-semibold text-gray-800">
-                      Qualification:
-                    </h5>
-                    <p>{job.qualification}</p>
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="text-xl font-semibold text-gray-800">
+                        Qualification:
+                      </h5>
+                      <p>{job.qualification}</p>
+                    </div>
+                    <div>
+                      <h5 className="text-xl font-semibold text-gray-800">
+                        Job Type:
+                      </h5>
+                      <p>{job.jobType}</p>
+                    </div>
+                    <div>
+                      <h5 className="text-xl font-semibold text-gray-800">
+                        Experience:
+                      </h5>
+                      <p>{job.experience}</p>
+                    </div>
+                    <div>
+                      <h5 className="text-xl font-semibold text-gray-800">
+                        Location:
+                      </h5>
+                      <p>{job.location}</p>
+                    </div>
+                    <div>
+                      <h5 className="text-xl font-semibold text-gray-800">
+                        Salary:
+                      </h5>
+                      <p>{job.salary}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h5 className="text-xl font-semibold text-gray-800">
-                      Job Type:
-                    </h5>
-                    <p>{job.jobType}</p>
-                  </div>
-                  <div>
-                    <h5 className="text-xl font-semibold text-gray-800">
-                      Experience:
-                    </h5>
-                    <p>{job.experience}</p>
-                  </div>
-                  <div>
-                    <h5 className="text-xl font-semibold text-gray-800">
-                      Location:
-                    </h5>
-                    <p>{job.location}</p>
-                  </div>
-                  <div>
-                    <h5 className="text-xl font-semibold text-gray-800">
-                      Salary:
-                    </h5>
-                    <p>{job.salary}</p>
+
+                  <div className="mt-6 flex justify-end">
+                    <a
+                      href="http://careers.qmaxsys.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors"
+                    >
+                      Apply now
+                    </a>
                   </div>
                 </div>
-
-                <div className="mt-6 flex justify-end">
-                  <a
-                    href="http://careers.qmaxsys.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors"
-                  >
-                    Apply now
-                  </a>
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
