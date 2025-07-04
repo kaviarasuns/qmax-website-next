@@ -219,7 +219,7 @@ const Careers = () => {
 
   return (
     <>
-      <nav className="w-full h-20 bg-gray-200 text-white px-4 flex flex-col md:flex-row items-center justify-between mb-8 shadow">
+      <nav className="w-full h-20 bg-gray-200 text-white px-4 flex flex-col md:flex-row items-center justify-between mb-1 shadow">
         <span className="font-bold text-4xl text-black  md:text-xl">
           <span className="text-orange-500">Work</span> with Us
         </span>
@@ -249,7 +249,7 @@ const Careers = () => {
             href="http://careers.qmaxsys.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors"
+            className="bg-orange-500 mb-5 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors"
           >
             Apply now
           </a>
@@ -260,12 +260,15 @@ const Careers = () => {
           {jobs.map((job, index) => (
             <div key={index} className="border rounded-lg overflow-hidden">
               <button
-                className={`w-full text-left px-6 py-4 text-xl font-semibold bg-gray-100 hover:bg-gray-200 transition-colors ${
+                className={`w-full text-left px-6 py-4 text-xl font-semibold bg-gray-100 hover:bg-gray-200 transition-colors flex items-center justify-between ${
                   openAccordion === index ? "bg-gray-200" : ""
                 }`}
                 onClick={() => toggleAccordion(index)}
               >
-                {job.title}
+                <span>{job.title}</span>
+                <span className="text-2xl">
+                  {openAccordion === index ? "−" : "+"}
+                </span>
               </button>
 
               {openAccordion === index && (
