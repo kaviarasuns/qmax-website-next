@@ -272,9 +272,10 @@ export default function PCBDesingnResources() {
                 A double-sided flex circuit has two conductive layers, one on
                 each side of the substrate. In these boards, the traces are
                 accessible from both the top and bottom, and the layers are
-                connected through 'plated through-holes' (PTH). Double-sided
-                flex PCBs can be used in ground & power plane applications,
-                shielding applications or dense surface-mount assembly.
+                connected through &lsquo;plated through-holes&rsquo; (PTH).
+                Double-sided flex PCBs can be used in ground & power plane
+                applications, shielding applications or dense surface-mount
+                assembly.
               </p>
               {/* Multi-layer Flex PCB */}
               <h4 className="text-lg md:text-xl font-semibold text-gray-800 mt-4">
@@ -282,13 +283,13 @@ export default function PCBDesingnResources() {
               </h4>
               <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                 In multi-layer flexible circuits, there are three or more
-                conductive layers interconnected with 'plated-through holes'
-                (PTH). Each layer consists of a flexible polyimide film for the
-                substrate, a copper sheet to etch the circuit pattern, a bonding
-                adhesive. These layers are stacked in sequence, with a polyimide
-                coverlay for insulation in between them, to create a multi-layer
-                flexible PCB. Multi-layer flex circuits can have up to 8
-                conductive layers.
+                conductive layers interconnected with &lsquo;plated-through
+                holes&rsquo; (PTH). Each layer consists of a flexible polyimide
+                film for the substrate, a copper sheet to etch the circuit
+                pattern, a bonding adhesive. These layers are stacked in
+                sequence, with a polyimide coverlay for insulation in between
+                them, to create a multi-layer flexible PCB. Multi-layer flex
+                circuits can have up to 8 conductive layers.
               </p>
               {/* Semi-Flex PCBs */}
               <h4 className="text-lg md:text-xl font-semibold text-gray-800 mt-4">
@@ -297,8 +298,8 @@ export default function PCBDesingnResources() {
               <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                 Semi-flexible circuits are different from flexible circuits.
                 They are made from a portion of rigid FR-4 PCBs, where they
-                undergo 'thinning' to make the board bendable. Since they are
-                made from FR-4 material, semi-flex PCBs are a cheaper
+                undergo &lsquo;thinning&rsquo; to make the board bendable. Since
+                they are made from FR-4 material, semi-flex PCBs are a cheaper
                 alternative to Rigid-Flex circuits. The flexibility feature of
                 this rigid PCB simplifies handling during assembly and
                 installation.
@@ -382,11 +383,11 @@ export default function PCBDesingnResources() {
               <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                 Vias are the copper-plated holes that allow the layers of the
                 board to connect to each other. A blind via is a hole that
-                connects the outer layer to the inner layers. The hole isn't
-                drilled completely through the board, but up to a certain layer
-                inside the board making the outer layer and inner layer
-                interconnected. A buried via is a hole drilled to connect one or
-                more inner layers, they are not visible from the outside.
+                connects the outer layer to the inner layers. The hole
+                isn&rsquo;t drilled completely through the board, but up to a
+                certain layer inside the board making the outer layer and inner
+                layer interconnected. A buried via is a hole drilled to connect
+                one or more inner layers, they are not visible from the outside.
               </p>
               <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
                 Microvia
@@ -403,9 +404,9 @@ export default function PCBDesingnResources() {
               </h3>
               <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                 When the via is placed in a copper pad, it is called a
-                'Via-in-pad'. Via-in-pad allows the use of smaller components,
-                reducing the size of the PCB. The via can be filled with
-                conductive or non-conductive filling for soldering.
+                &lsquo;Via-in-pad&rsquo;. Via-in-pad allows the use of smaller
+                components, reducing the size of the PCB. The via can be filled
+                with conductive or non-conductive filling for soldering.
               </p>
 
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-8">
@@ -574,7 +575,7 @@ export default function PCBDesingnResources() {
                 intended to create links between a module and a board or between
                 two boards. There are different designs for castellated mounting
                 holes such as half holes, holes with smaller half holes, and
-                holes tangent to the board's edge.
+                holes tangent to the board&rsquo;s edge.
               </p>
             </div>
           </div>
