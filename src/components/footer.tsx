@@ -13,8 +13,8 @@ import {
 import { Button } from "@/components/ui/button";
 
 type CountryKey = "United States" | "India";
-//  | "Belgium" | "Canada" | 
- 
+//  | "Belgium" | "Canada" |
+
 type AddressData = {
   name: string;
   address: string[];
@@ -133,7 +133,7 @@ export default function Footer() {
                   <Download className="mr-2 h-4 w-4" /> Download
                 </Button>
               </Link>
-              
+
               <div className="mt-8">
                 <h2 className="text-xl font-semibold mb-4">FOLLOW US</h2>
                 <div className="flex space-x-3">
@@ -182,19 +182,35 @@ export default function Footer() {
                       {country}
                     </div>
                     <div className="p-3 text-sm text-gray-300 bg-zinc-800">
-                      <p className="font-semibold">
-                        {addresses[country].name}
-                      </p>
+                      <p className="font-semibold">{addresses[country].name}</p>
                       {addresses[country].address.map((line, index) => (
                         <p key={index}>{line}</p>
                       ))}
                       <p className="mt-2">{addresses[country].phone}</p>
-                      <Link
-                        href={`mailto:${addresses[country].email}`}
-                        className="text-brand-red hover:text-[#FF1111]"
+                      <button
+                        onClick={() => {
+                          const timestamp = Date.now();
+                          const email = addresses[country].email;
+                          const subject = encodeURIComponent(
+                            "Inquiry from Qmax Systems Website"
+                          );
+                          const body = encodeURIComponent(
+                            "Hello,\n\nI would like to get in touch with Qmax Systems.\n\nBest regards,"
+                          );
+                          const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
+
+                          // Try to open the mailto link
+                          window.location.href = mailtoUrl;
+
+                          // Fallback: if the above doesn't work, try opening in a new window
+                          setTimeout(() => {
+                            window.open(mailtoUrl, "_blank");
+                          }, 100);
+                        }}
+                        className="text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left"
                       >
                         {addresses[country].email}
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 ))}
