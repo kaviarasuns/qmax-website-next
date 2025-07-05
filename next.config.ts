@@ -27,6 +27,23 @@ const nextConfig: NextConfig = {
         destination: "/pcb-design",
         permanent: true,
       },
+      // Specific redirects for case study pages
+      {
+        source: "/Embedded-Case-study.html",
+        destination: "/Embedded-Case-study",
+        permanent: true,
+      },
+      {
+        source: "/PCB-Design-Case-study.html",
+        destination: "/PCB-Design-Case-study",
+        permanent: true,
+      },
+      // General pattern to handle all .html extensions
+      {
+        source: "/:path(.+).html",
+        destination: "/:path",
+        permanent: true,
+      },
       // ...other redirects if any...
     ];
   },
