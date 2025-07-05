@@ -30,7 +30,7 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full max-w-2xl mx-auto">
       <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100">
         <Image
           src={images[currentIndex] || "/placeholder.svg"}
