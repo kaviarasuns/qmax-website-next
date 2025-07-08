@@ -51,25 +51,13 @@ export default function Footer() {
   };
 
   const navItems = [
-    { name: "Home", href: "https://qmaxsys.com/index.html" },
-    {
-      name: "Services",
-      href: "https://qmaxsys.com/hardware-product-development-services.html",
-    },
-    {
-      name: "Case Studies",
-      href: "https://qmaxsys.com/pcbandembedded-products.html",
-    },
-    {
-      name: "Resources",
-      href: "https://qmaxsys.com/PCB-Embedded-Resources.html",
-    },
-    {
-      name: "FAQ's",
-      href: "https://qmaxsys.com/printed-circuit-board-faqs.html",
-    },
-    { name: "Careers", href: "https://qmaxsys.com/careers.html" },
-    { name: "Contact", href: "https://qmaxsys.com/contact.html" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/embedded-design-services" },
+    { name: "Case Studies", href: "/Embedded-Case-study" },
+    { name: "Resources", href: "/PCB-design-resources" },
+    { name: "FAQ's", href: "/printed-circuit-board-faqs" },
+    { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const downloadUrl =
@@ -101,17 +89,29 @@ export default function Footer() {
             <div className="flex flex-col md:items-start lg:items-center">
               <h2 className="text-xl font-semibold mb-4">QUICK LINKS</h2>
               <nav className="flex flex-col space-y-2">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    className="text-gray-300 hover:text-[#FF1111] transition-colors flex items-center gap-2"
-                  >
-                    <Check className="w-4 h-4 text-[#FE0000]" />
-                    {item.name}
-                  </Link>
-                ))}
+                {navItems.map((item) =>
+                  item.href.startsWith("/") ? (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="text-gray-300 hover:text-[#FF1111] transition-colors flex items-center gap-2"
+                    >
+                      <Check className="w-4 h-4 text-[#FE0000]" />
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="text-gray-300 hover:text-[#FF1111] transition-colors flex items-center gap-2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Check className="w-4 h-4 text-[#FE0000]" />
+                      {item.name}
+                    </a>
+                  )
+                )}
               </nav>
             </div>
 
