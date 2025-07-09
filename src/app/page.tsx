@@ -7,20 +7,21 @@ import StatsSection from "@/components/StatsSection";
 import WhatWeDo from "@/components/WhatWeDo";
 
 export default function Home() {
-  const SLIDES = [
-    {
-      src: "https://d1yetprhniwywz.cloudfront.net/img/slide/slides/1.jpg",
-      alt: "First slide - Beautiful landscape",
-      type: "Electronics Engineering Services",
-      videoId: "TfWomXqgMAE",
-    },
-    {
-      src: "https://d1yetprhniwywz.cloudfront.net/img/slide/slides/Slide2.jpg",
-      alt: "Second slide - Modern architecture",
-      type: "PCB Design Services",
-      videoId: "NA0QPJZCgzI",
-    },
-  ];
+  // const SLIDES = [
+  //   {
+  //     src: "https://d1yetprhniwywz.cloudfront.net/img/slide/slides/1.jpg",
+  //     alt: "First slide - Beautiful landscape",
+  //     type: "Electronics Engineering Services",
+  //     videoId: "TfWomXqgMAE",
+  //   },
+  //   {
+  //     src: "https://d1yetprhniwywz.cloudfront.net/img/slide/slides/Slide2.jpg",
+  //     alt: "Second slide - Modern architecture",
+  //     type: "PCB Design Services",
+  //     videoId: "NA0QPJZCgzI",
+  //   },
+  // ];
+
   return (
     <>
       {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
