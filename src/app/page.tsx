@@ -27,7 +27,7 @@ export default function Home() {
       {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
       <div className="w-full h-screen flex items-center justify-center bg-black">
         <video
-          src="/qmax_promo.mp4"
+          src="https://d1yetprhniwywz.cloudfront.net/v2/bI5j7L3hwM91DqHlKw3woZrrbEk.mp4"
           autoPlay
           loop
           muted
