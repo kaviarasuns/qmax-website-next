@@ -1,17 +1,12 @@
-import EmblaCarousel from "@/components/Carousel";
+"use client";
+
 import ConceptToManufacturing from "@/components/ConceptToManufacturing";
 import QmaxEdge from "@/components/QMaxEdge";
 import ServiceSection from "@/components/ServiceSection";
 import StatsSection from "@/components/StatsSection";
 import WhatWeDo from "@/components/WhatWeDo";
-import { EmblaOptionsType } from "embla-carousel";
 
 export default function Home() {
-  const OPTIONS: EmblaOptionsType = {
-    loop: true,
-    duration: 10,
-  };
-
   const SLIDES = [
     {
       src: "https://d1yetprhniwywz.cloudfront.net/img/slide/slides/1.jpg",
@@ -28,7 +23,19 @@ export default function Home() {
   ];
   return (
     <>
-      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+      {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
+      <div className="w-full h-screen flex items-center justify-center bg-black">
+        <video
+          src="/qmax_promo.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls={false}
+          className="w-full h-full object-cover rounded-lg shadow-lg"
+        />
+      </div>
+
       <WhatWeDo />
       <ServiceSection />
 

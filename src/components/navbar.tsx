@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 flex flex-wrap items-center justify-between p-3 bg-white shadow-md">
+      <nav className="fixed top-0 left-0 w-full z-50 flex flex-wrap items-center justify-between p-3 bg-transparent shadow-md">
         {/* Logo */}
         <div className="w-40 h-auto sm:w-44 md:w-48 lg:w-56 transition-all duration-300">
           <Link
@@ -249,7 +249,7 @@ export default function Navbar() {
         </div>
       </nav>
       {/* Navbar spacer - pushes content below the navbar */}
-      <div className="h-20 sm:h-28 md:h-32 lg:h-20"></div>
+      {/* <div className="h-20 sm:h-28 md:h-32 lg:h-20"></div> */}
     </>
   );
 }
