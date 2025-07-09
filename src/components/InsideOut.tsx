@@ -23,7 +23,8 @@ export default function InsideOut() {
     const loadedImages: HTMLImageElement[] = [];
     for (let i = 1; i <= frameCount; i++) {
       const img = new window.Image();
-      img.src = `/inside_out/${i}.webp`;
+      // img.src = `/inside_out/${i}.webp`;
+      img.src = `https://d1yetprhniwywz.cloudfront.net/v2/inside_out/${i}.webp`;
       loadedImages.push(img);
     }
     setImages(loadedImages);
