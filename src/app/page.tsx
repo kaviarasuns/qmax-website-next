@@ -1,6 +1,7 @@
 "use client";
 
 import ConceptToManufacturing from "@/components/ConceptToManufacturing";
+import InsideOut from "@/components/InsideOut";
 import QmaxEdge from "@/components/QMaxEdge";
 import ServiceSection from "@/components/ServiceSection";
 import StatsSection from "@/components/StatsSection";
@@ -37,10 +38,12 @@ export default function Home() {
         />
       </div>
 
+      <InsideOut />
+
       <WhatWeDo />
       <ServiceSection />
 
-      <ConceptToManufacturing />
+      {/* <ConceptToManufacturing /> */}
 
       <section className="bg-white py-16">
         <div className=" mx-auto px-4 sm:px-6 lg:px-8">
