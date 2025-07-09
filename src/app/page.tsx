@@ -1,6 +1,5 @@
 "use client";
 
-import ConceptToManufacturing from "@/components/ConceptToManufacturing";
 import InsideOut from "@/components/InsideOut";
 import QmaxEdge from "@/components/QMaxEdge";
 import ServiceSection from "@/components/ServiceSection";
