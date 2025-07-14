@@ -2,6 +2,7 @@
 
 import InsideOut from "@/components/InsideOut";
 import QmaxEdge from "@/components/QMaxEdge";
+import ServicesV2 from "@/components/Services-V2";
 import ServiceSection from "@/components/ServiceSection";
 import StatsSection from "@/components/StatsSection";
 import WhatWeDo from "@/components/WhatWeDo";
@@ -36,15 +37,15 @@ export default function Home() {
           className="w-full h-full object-cover rounded-lg shadow-lg"
         />
       </div>
-
+      <ServicesV2 />
       <InsideOut />
 
-      <WhatWeDo />
-      <ServiceSection />
+      {/* <WhatWeDo />
+      <ServiceSection /> */}
 
       {/* <ConceptToManufacturing /> */}
 
-      <section className="bg-white py-16">
+      {/* <section className="bg-white py-16">
         <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fadeIn">
             <div className="mb-12">
@@ -66,9 +67,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <StatsSection />
+      {/* <StatsSection /> */}
       <QmaxEdge />
     </>
   );

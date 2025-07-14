@@ -5,6 +5,7 @@ export default function InsideOut() {
   const ref = useRef<HTMLCanvasElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
 
   // The scroll section height determines how much scroll is needed for the animation
   const sectionHeight = 3000; // px
@@ -13,7 +14,7 @@ export default function InsideOut() {
   // Use framer-motion's useScroll to get scroll progress within the sticky section
   const { scrollYProgress } = useScroll({
     target: stickyRef,
-    offset: ["start end", "end start"],
+    offset: ["center center", "end start"],
   });
 
   // Map scroll progress (0-1) to frame index (1-336)
@@ -30,6 +31,13 @@ export default function InsideOut() {
     setImages(loadedImages);
   }, []);
 
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 900);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const render = useCallback(
     (index: number) => {
       const canvas = ref.current;
@@ -37,11 +45,12 @@ export default function InsideOut() {
         const ctx = canvas.getContext("2d");
         if (ctx) {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          ctx.drawImage(images[index - 1], 0, 0);
+          const leftPadding = isMobile ? 110 : 0; // 40px padding on mobile, 0 otherwise
+          ctx.drawImage(images[index - 1], leftPadding, 0);
         }
       }
     },
-    [images]
+    [images, isMobile]
   );
 
   useMotionValueEvent(currentIndex, "change", (latest) => {
@@ -69,27 +78,14 @@ export default function InsideOut() {
           background: "white",
         }}
       >
-        <div
-          style={{
-            position: "sticky",
-            top: 0,
-            height: "100vh",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "3rem",
-            background: "white",
-            zIndex: 1,
-          }}
-        >
+        <div className="flex flex-row flex-wrap justify-center items-center gap-12 bg-white z-[1] sticky top-0 h-screen max-[900px]:flex-col max-[900px]:items-center max-[900px]:gap-8">
           <canvas
-            style={{ border: "1px solid white" }}
+            className="border border-white max-[900px]:w-[90vw] max-[900px]:h-auto max-[900px]:max-w-full"
             width={700}
             height={800}
             ref={ref}
           ></canvas>
-          <div style={{ maxWidth: 400, marginLeft: "2rem" }}>
+          <div className="insideout-text-content p-6 max-w-md">
             <h2
               style={{
                 fontSize: "2rem",
