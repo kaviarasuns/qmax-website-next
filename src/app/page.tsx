@@ -3,9 +3,6 @@
 import InsideOut from "@/components/InsideOut";
 import QmaxEdge from "@/components/QMaxEdge";
 import ServicesV2 from "@/components/Services-V2";
-import ServiceSection from "@/components/ServiceSection";
-import StatsSection from "@/components/StatsSection";
-import WhatWeDo from "@/components/WhatWeDo";
 
 export default function Home() {
   // const SLIDES = [
