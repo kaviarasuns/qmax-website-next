@@ -8,7 +8,7 @@ export default function InsideOut() {
   const [isMobile, setIsMobile] = useState(false);
 
   // The scroll section height determines how much scroll is needed for the animation
-  const sectionHeight = 3000; // px
+  const sectionHeight = 6000; // px (double the original)
   const frameCount = 336;
 
   // Use framer-motion's useScroll to get scroll progress within the sticky section
@@ -17,8 +17,16 @@ export default function InsideOut() {
     offset: ["center center", "end start"],
   });
 
-  // Map scroll progress (0-1) to frame index (1-336)
-  const currentIndex = useTransform(scrollYProgress, [0, 1], [1, frameCount]);
+  // Map scroll progress (0-1) to frame index (1-336 forward, then 336-1 reverse)
+  const currentIndex = useTransform(scrollYProgress, (progress) => {
+    if (progress < 0.5) {
+      // Forward: 0 -> 0.5 maps to 1 -> 336
+      return 1 + (progress / 0.5) * (frameCount - 1);
+    } else {
+      // Reverse: 0.5 -> 1 maps to 336 -> 1
+      return frameCount - ((progress - 0.5) / 0.5) * (frameCount - 1);
+    }
+  });
 
   useEffect(() => {
     const loadedImages: HTMLImageElement[] = [];
