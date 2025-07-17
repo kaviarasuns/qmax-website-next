@@ -47,7 +47,7 @@ const nextConfig: NextConfig = {
       {
         source: "/Qmax_Systems_Electronics_Engineering_Services_Std.pdf",
         destination:
-          "https://d1yetprhniwywz.cloudfront.net/brochure/qmaxsystems_electronic_engineering_services_29_jan_2024.pdf",
+          "https://d1yetprhniwywz.cloudfront.net/brochure/Qmax%20Systems_Electronics%20Engineering%20Services_Std.pdf",
         permanent: true, // 308 redirect
       },
       // ...other redirects if any...
