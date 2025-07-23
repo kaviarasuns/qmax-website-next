@@ -1,13 +1,13 @@
-import Link from "next/link"
-import { ChevronRight } from "lucide-react"
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 interface BreadcrumbItem {
-  label: string
-  href?: string
+  label: string;
+  href?: string;
 }
 
 interface BreadcrumbsProps {
-  items: BreadcrumbItem[]
+  items: BreadcrumbItem[];
 }
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
@@ -17,7 +17,10 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
         <div key={index} className="flex items-center">
           {index > 0 && <ChevronRight className="h-4 w-4 mx-2 text-gray-400" />}
           {item.href ? (
-            <Link href={item.href} className="hover:text-orange-500 transition-colors">
+            <Link
+              href={item.href}
+              className="hover:text-brand-red transition-colors"
+            >
               {item.label}
             </Link>
           ) : (
@@ -26,5 +29,5 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
         </div>
       ))}
     </nav>
-  )
+  );
 }

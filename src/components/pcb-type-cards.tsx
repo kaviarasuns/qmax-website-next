@@ -20,7 +20,7 @@ interface CategoryCardProps {
 const CategoryCard = ({ title, icon, links }: CategoryCardProps) => {
   return (
     <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden h-full">
-      <div className="bg-blue-700 text-white p-4">
+      <div className="bg-gray-800 text-white p-4">
         <h3 className="text-lg font-semibold flex items-center gap-2">
           {icon}
           {title}
@@ -30,10 +30,10 @@ const CategoryCard = ({ title, icon, links }: CategoryCardProps) => {
         <ul className="space-y-2">
           {links.map((link, index) => (
             <li key={index} className="flex items-start">
-              <span className="text-blue-600 mr-2">■</span>
+              <span className="text-gray-800 mr-2">■</span>
               <Link
                 href={link.href}
-                className="text-blue-600 hover:text-blue-800 hover:underline"
+                className="text-gray-800 hover:text-blue-800 hover:underline"
               >
                 {link.label}
               </Link>

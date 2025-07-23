@@ -221,13 +221,13 @@ const Careers = () => {
     <>
       <nav className="w-full h-20 bg-gray-200 text-white px-4 flex flex-col md:flex-row items-center justify-between mb-1 shadow">
         <span className="font-bold text-4xl text-black  md:text-xl">
-          <span className="text-orange-500">Work</span> with Us
+          <span className="text-brand-red">Work</span> with Us
         </span>
         <span className="text-sm md:text-base mt-2 md:mt-0 text-black">
           Send your resume to{" "}
           <a
             href="mailto:careers@qmaxsys.com"
-            className="underline text-orange-500"
+            className="underline text-brand-red hover:text-brand-red/80 transition-colors"
           >
             careers@qmaxsys.com
           </a>
@@ -242,14 +242,14 @@ const Careers = () => {
           className="mx-auto mb-6"
         />
         <h2 className="text-4xl font-bold mb-4">
-          Current <span className="text-orange-500">Openings</span>
+          Current <span className="text-brand-red">Openings</span>
         </h2>
         <div className="flex justify-center mb-8">
           <a
             href="http://careers.qmaxsys.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-orange-500 mb-5 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors"
+            className="bg-brand-red mb-5 text-white px-6 py-3 rounded-lg hover:bg-brand-red/80 transition-colors"
           >
             Apply now
           </a>
@@ -335,7 +335,7 @@ const Careers = () => {
                       href="http://careers.qmaxsys.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors"
+                      className="bg-brand-red text-white px-6 py-3 rounded-lg hover:bg-brand-red/80 transition-colors"
                     >
                       Apply now
                     </a>

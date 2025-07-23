@@ -7,7 +7,7 @@ const GlossaryList = () => {
       <div className="max-w-4xl mx-auto">
         {pcbDesingTerms.map((item, index) => (
           <div key={index} className="mb-8">
-            <h3 className="text-xl font-bold text-orange-500 mb-2">
+            <h3 className="text-xl font-bold text-brand-red mb-2">
               {item.term}
             </h3>
             <p className="text-gray-700 text-justify leading-relaxed">

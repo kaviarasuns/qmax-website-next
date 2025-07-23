@@ -7,6 +7,9 @@ const EmbeddedSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
           <div className="wow fadeInLeft">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 md:hidden">
+              Embedded Systems Design & Development
+            </h2>
             <Image
               src="https://d1yetprhniwywz.cloudfront.net/img/services/Embedded-Systems.jpg"
               alt="Embedded Hardware"
@@ -18,6 +21,9 @@ const EmbeddedSection = () => {
 
           <div className="wow fadeInRight">
             <div className="prose max-w-none">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 hidden md:block">
+                Embedded Systems Design & Development
+              </h2>
               <p className="text-gray-700 mb-6">
                 Qmax systems provides high quality embedded systems design and
                 development services. For over 25 years, Qmax has helped

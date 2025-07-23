@@ -11,7 +11,9 @@ export default function PCBDesingnResources() {
       {/* Custom Navbar for PCB Design Resources */}
       <nav className="w-full bg-gray-200 py-4 px-4 flex items-center justify-start">
         <h1 className="text-2xl md:text-3xl h-10 font-bold lg:ml-64">
-          <span className="text-orange-500">PCB Design</span>{" "}
+          <span className="text-brand-red hover:text-brand-red/90 transition-colors">
+            PCB Design
+          </span>{" "}
           <span className="text-black">Resources</span>
         </h1>
       </nav>
