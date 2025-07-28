@@ -39,6 +39,9 @@ const PCBDesignSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Image Section */}
           <div className="wow fadeInLeft animated">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 md:hidden">
+              PCB Design Services
+            </h2>
             <Image
               src="https://d1yetprhniwywz.cloudfront.net/img/services/PCB-Design.png"
               alt="PCB Design Services"
@@ -51,6 +54,9 @@ const PCBDesignSection = () => {
           {/* Content Section */}
           <div className="wow fadeInRight animated">
             <div className="prose max-w-none">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 hidden md:block">
+                PCB Design Services
+              </h2>
               <p className="text-gray-700 mb-6">
                 Qmax Systems has over 25 years of experience in designing PCBs.
                 We have worked across different domains for Top OEMs. With our

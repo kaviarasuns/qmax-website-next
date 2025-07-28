@@ -127,7 +127,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   {index === currentSlide && (
                     <div className="flex flex-row gap-4 mb-6">
                       <button
-                        className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 text-sm md:text-lg rounded-md shadow transition-colors duration-200 min-w-[112px] flex items-center gap-2 w-28 h-10 md:py-3 md:px-8 md:w-auto md:h-auto"
+                        className="bg-brand-red hover:bg-brand-red/80 text-white font-semibold py-2 px-4 text-sm md:text-lg rounded-md shadow transition-colors duration-200 min-w-[112px] flex items-center gap-2 w-28 h-10 md:py-3 md:px-8 md:w-auto md:h-auto"
                         type="button"
                         onClick={() => setIsModalOpen(true)}
                       >
@@ -150,7 +150,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                       </button>
                       <div className="hidden sm:block">
                         <button
-                          className="ml-10 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 text-lg md:text-xl rounded-md shadow transition-colors duration-200 min-w-[160px] flex items-center gap-2"
+                          className="ml-10 bg-brand-red hover:bg-brand-red/80 text-white font-semibold py-3 px-8 text-lg md:text-xl rounded-md shadow transition-colors duration-200 min-w-[160px] flex items-center gap-2"
                           type="button"
                           onClick={() => router.push("/contact")}
                         >

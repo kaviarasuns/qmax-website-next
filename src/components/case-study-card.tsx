@@ -15,7 +15,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
       <div className="bg-gray-200 py-8">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold">
-            <span className="text-orange-500">Case</span>
+            <span className="text-brand-red">Case</span>
             <span className="text-black"> Studies</span>
           </h1>
         </div>
@@ -54,7 +54,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
             <ul className="space-y-3">
               {caseStudy.features.map((feature, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span className="w-2 h-2 bg-brand-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
                   <span className="text-gray-700">{feature}</span>
                 </li>
               ))}
@@ -90,7 +90,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
               <ul className="space-y-2">
                 {caseStudy.importantParts.map((part, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-brand-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span className="text-gray-700">{part}</span>
                   </li>
                 ))}
@@ -111,7 +111,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
               <ul className="space-y-2">
                 {caseStudy.salientFeatures.map((feature, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-brand-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span className="text-gray-700">{feature}</span>
                   </li>
                 ))}
@@ -132,7 +132,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
               <ul className="space-y-2">
                 {caseStudy.scopeOfWork.map((work, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="w-2 h-2 bg-brand-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
                     <span className="text-gray-700">{work}</span>
                   </li>
                 ))}

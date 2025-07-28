@@ -129,7 +129,9 @@ const FAQSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
           <h1 className="text-4xl font-bold">
-            <span className="text-[#ec6a01]">Frequently Asked</span>
+            <span className="text-brand-red hover:text-brand-red/90 transition-colors">
+              Frequently Asked
+            </span>
             <span className="text-black"> Questions</span>
           </h1>
         </div>
@@ -137,7 +139,7 @@ const FAQSection = () => {
         <div className="mt-12 space-y-8">
           {faqs.map((faq, index) => (
             <div key={index} className="border-b border-gray-200 pb-8">
-              <h3 className="text-xl font-semibold text-[#ec6a01] mb-4">
+              <h3 className="text-xl font-semibold text-brand-red hover:text-brand-red/90 transition-colors mb-4">
                 {faq.question}
               </h3>
               <div className="text-gray-600">

@@ -51,7 +51,7 @@ const Contact = () => {
       <section className="bg-gray-200 py-8">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold">
-            <span className="text-[#fe7100]">Contact </span>
+            <span className="text-brand-red">Contact </span>
             <span className="text-black">Us</span>
           </h1>
         </div>
@@ -99,7 +99,7 @@ const Contact = () => {
                 />
                 <button
                   type="submit"
-                  className="bg-[#fe7100] text-white px-6 py-3 rounded hover:bg-[#e66600] transition-colors"
+                  className="bg-brand-red text-white px-6 py-3 rounded hover:bg-[#e66600] transition-colors"
                   disabled={loading}
                 >
                   {loading ? "Sending..." : "Send Message"}

@@ -66,7 +66,7 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
           <button
             key={index}
             className={`w-3 h-3 rounded-full transition-colors ${
-              index === currentIndex ? "bg-orange-500" : "bg-gray-300"
+              index === currentIndex ? "bg-brand-red" : "bg-gray-300"
             }`}
             onClick={() => goToSlide(index)}
           />

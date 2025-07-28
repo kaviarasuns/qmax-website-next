@@ -60,8 +60,7 @@ export default function Footer() {
     { name: "Contact", href: "/contact" },
   ];
 
-  const downloadUrl =
-    "https://d1yetprhniwywz.cloudfront.net/brochure/qmaxsystems_electronic_engineering_services_29_jan_2024.pdf";
+  const downloadUrl = "/Qmax_Systems_Electronics_Engineering_Services_Std.pdf";
 
   return (
     <>
