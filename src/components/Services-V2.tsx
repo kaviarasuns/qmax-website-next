@@ -47,8 +47,8 @@ const services = [
 
 const ServicesV2 = () => {
   return (
-    <section className="w-full py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
           Our Services
         </h2>

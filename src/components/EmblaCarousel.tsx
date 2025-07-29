@@ -110,8 +110,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   }, [emblaApi, tweenParallax]);
 
   return (
-    <div className="embla">
-      <h1 className="text-4xl font-bold text-center mb-8">Case Studies</h1>
+    <div className="embla" style={{ maxWidth: "100%", width: "100%" }}>
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((index) => (
@@ -126,11 +125,15 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     height={600}
                   />
                   <div className="embla__slide__overlay">
-                    <h2 className="embla__slide__title">Product Name</h2>
-                    <p className="embla__slide__description">
+                    <h2 className="embla__slide__title text-sm sm:text-base md:text-lg lg:text-xl">
+                      Product Name
+                    </h2>
+                    <p className="embla__slide__description text-xs sm:text-sm md:text-base lg:text-lg">
                       Product Case Study Description
                     </p>
-                    <button className="embla__slide__button">Read More</button>
+                    <button className="embla__slide__button text-xs sm:text-sm md:text-base lg:text-lg px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2">
+                      Read More
+                    </button>
                   </div>
                 </div>
               </div>
