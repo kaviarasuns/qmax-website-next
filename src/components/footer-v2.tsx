@@ -5,16 +5,6 @@ import { Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-type CountryKey = "United States" | "India";
-//  | "Belgium" | "Canada" |
-
-type AddressData = {
-  name: string;
-  address: string[];
-  phone: string;
-  email: string;
-};
-
 export default function FooterV2() {
   return (
     <>

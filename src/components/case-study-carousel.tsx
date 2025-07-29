@@ -11,19 +11,28 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export function CaseStudyCarousel() {
+interface CaseStudyCarouselProps {
+  images: string[];
+  title: string;
+}
+
+export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
   return (
     <Carousel className="w-full max-w-6xl mx-auto bg-red-50">
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
+        {images.map((image, index) => (
           <CarouselItem
             key={index}
-            className="basis-1/2 md:basis-1/3" // Shows 2 items on small, 3 on medium+
+            className="basis-1/1" // Show one image at a time
           >
             <div className="p-1">
               <Card>
                 <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
+                  <img
+                    src={image}
+                    alt={`${title} - image ${index + 1}`}
+                    className="object-contain w-full h-full"
+                  />
                 </CardContent>
               </Card>
             </div>
