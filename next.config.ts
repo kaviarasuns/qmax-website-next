@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ["d1yetprhniwywz.cloudfront.net"],
+    domains: ["d1yetprhniwywz.cloudfront.net", "framerusercontent.com"],
   },
   async redirects() {
     return [

@@ -1,8 +1,10 @@
 "use client";
-
 import InsideOut from "@/components/InsideOut";
-import QmaxEdge from "@/components/QMaxEdge";
 import ServicesV2 from "@/components/Services-V2";
+
+import EmblaCarousel from "@/components/EmblaCarousel";
+import { EmblaOptionsType } from "embla-carousel";
+import EmblaAutoCarousel from "@/components/EmblaAutoScroll";
 
 export default function Home() {
   // const SLIDES = [
@@ -20,6 +22,62 @@ export default function Home() {
   //   },
   // ];
 
+  // const slides = [
+  //   {
+  //     id: 1,
+  //     title: "Product Name",
+  //     content: "Product case study description",
+  //     image:
+  //       "https://framerusercontent.com/images/oWKm1fgxvXDXTvn5uLUtB2ULGw.jpg",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Product Name",
+  //     content: "Product case study description",
+  //     image:
+  //       "https://framerusercontent.com/images/oWKm1fgxvXDXTvn5uLUtB2ULGw.jpg",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Product Name",
+  //     content: "Product case study description",
+  //     image:
+  //       "https://framerusercontent.com/images/oWKm1fgxvXDXTvn5uLUtB2ULGw.jpg",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Product Name",
+  //     content: "Product case study description",
+  //     image:
+  //       "https://framerusercontent.com/images/oWKm1fgxvXDXTvn5uLUtB2ULGw.jpg",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Product Name",
+  //     content: "Product case study description",
+  //     image:
+  //       "https://framerusercontent.com/images/oWKm1fgxvXDXTvn5uLUtB2ULGw.jpg",
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Product Name",
+  //     content: "Product case study description",
+  //     image:
+  //       "https://framerusercontent.com/images/oWKm1fgxvXDXTvn5uLUtB2ULGw.jpg",
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "Product Name",
+  //     content: "Product case study description",
+  //     image:
+  //       "https://framerusercontent.com/images/oWKm1fgxvXDXTvn5uLUtB2ULGw.jpg",
+  //   },
+  // ];
+
+  const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true };
+  const SLIDE_COUNT = 5;
+  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
+
   return (
     <>
       {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
@@ -34,8 +92,14 @@ export default function Home() {
           className="w-full h-full object-cover rounded-lg shadow-lg"
         />
       </div>
+      <div className="pt-16"></div>
+      <EmblaAutoCarousel options={OPTIONS} />
+      <div className="pt-16"></div>
       <ServicesV2 />
       <InsideOut />
+      {/* <InfiniteCarousel slides={slides} /> */}
+      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+      <div className="pt-16"></div>
 
       {/* <WhatWeDo />
       <ServiceSection /> */}
@@ -67,7 +131,7 @@ export default function Home() {
       </section> */}
 
       {/* <StatsSection /> */}
-      <QmaxEdge />
+      {/* <QmaxEdge /> */}
     </>
   );
 }
