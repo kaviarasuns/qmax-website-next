@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 import HamburgerNavigation from "./hamburgur-navigation";
 
@@ -14,7 +13,7 @@ export default function NavbarV2() {
     router.push("/"); // Programmatically navigate to home
   };
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="bg-transparent fixed top-0 left-0 w-full z-50">
