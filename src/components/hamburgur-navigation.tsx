@@ -163,7 +163,9 @@ export default function HamburgerNavigation() {
               className="fixed top-4 left-4 z-50 flex items-center bg-transparent p-2 shadow-none hover:bg-transparent lg:shadow-none"
             >
               <Menu className="h-6 w-6" />
-              <span className="ml-2 font-semibold text-lg">Menu</span>
+              <span className="ml-2 font-semibold text-lg hidden md:inline">
+                Menu
+              </span>
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
