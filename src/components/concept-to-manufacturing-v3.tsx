@@ -106,7 +106,8 @@ export default function ScrollCardsAnimation() {
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (latest) => {
       // Calculate the current card index based on scroll progress with increased sensitivity
-      const cardIndex = Math.floor(latest * cards.length * 1.5); // Increased sensitivity by 1.5x
+      const sensitivity = isMobile ? 1.5 : 6; // Higher sensitivity on desktop (fewer scrolls per card)
+      const cardIndex = Math.floor(latest * cards.length * sensitivity); // Adjusted sensitivity
       const clampedIndex = Math.min(Math.max(cardIndex, 0), cards.length - 1);
 
       // Update active card
@@ -125,7 +126,7 @@ export default function ScrollCardsAnimation() {
     });
 
     return () => unsubscribe();
-  }, [scrollYProgress, isHorizontalScrollComplete]);
+  }, [scrollYProgress, isHorizontalScrollComplete, isMobile]);
 
   const arrowX = useTransform(
     scrollYProgress,
@@ -249,7 +250,10 @@ export default function ScrollCardsAnimation() {
               <div className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500">
                 <motion.div
                   animate={{ x: [-5, 5, -5] }}
-                  transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
+                  transition={{
+                    repeat: Number.POSITIVE_INFINITY,
+                    duration: 2,
+                  }}
                   className="text-lg"
                 >
                   ←
