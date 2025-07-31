@@ -95,7 +95,7 @@ export default function Home() {
           From Concept to Production
           <div className="text-lg font-medium mt-2">We make ideas soar!</div>
           <button className="mt-4 px-2 py-1 border border-white text-white bg-transparent rounded">
-            Let's Build
+            Let&apos;s Build
           </button>
         </div>
       </div>
