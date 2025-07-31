@@ -25,14 +25,15 @@ export default function NavbarV2() {
           <Link
             href="/"
             title="Back to Home"
-            className="block w-40 sm:w-48 md:w-56 lg:w-64 transition-all duration-300"
+            className="block w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 transition-all duration-300"
             onClick={handleHomeClick}
           >
             <Image
-              src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
+              // src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
+              src="/qmax-logo.svg"
               className="w-full h-auto object-contain"
-              width={256}
-              height={40}
+              width={320}
+              height={60}
               alt="Qmax PCB Design Logo"
               priority
             />
