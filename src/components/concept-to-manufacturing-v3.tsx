@@ -86,6 +86,7 @@ export default function ScrollCardsAnimation() {
   const [isHorizontalScrollComplete, setIsHorizontalScrollComplete] =
     useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isBelow1500, setIsBelow1500] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -159,15 +160,31 @@ export default function ScrollCardsAnimation() {
     }
   };
 
+  useEffect(() => {
+    const checkSizes = () => {
+      const w = window.innerWidth;
+      setIsMobile(w < 768);
+      setIsBelow1500(w < 1500);
+    };
+    checkSizes();
+    window.addEventListener("resize", checkSizes);
+    return () => window.removeEventListener("resize", checkSizes);
+  }, []);
+
   return (
     <div className=" min-h-screen">
       {/* Horizontal Cards Section */}
-      <div ref={containerRef} className={isMobile ? "h-[400vh]" : "h-[800vh]"}>
+      <div
+        ref={containerRef}
+        style={{ height: isMobile ? "400vh" : `${cards.length * 70}vh` }}
+      >
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-          {/* Red Arrow - Hidden on mobile for cleaner look */}
+          {/* Red Arrow - hidden on mobile */}
           {!isMobile && (
             <motion.div
-              className="absolute bottom-[300px] z-20"
+              className={`absolute z-20 ${
+                isBelow1500 ? "bottom-[200px]" : "bottom-[300px]"
+              }`}
               animate={{
                 left: `calc(50% - ${(cards.length - 1 - activeCard) * 20}px)`,
               }}
