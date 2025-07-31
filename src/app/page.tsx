@@ -91,10 +91,12 @@ export default function Home() {
           controls={false}
           className="w-full h-full object-cover rounded-lg shadow-lg"
         />
-        <div className="absolute bottom-16 left-16 text-white text-2xl font-bold">
+        <div className="absolute bottom-4 left-4 sm:bottom-16 sm:left-16 text-white text-xl sm:text-2xl font-bold">
           From Concept to Production
-          <div className="text-lg font-medium mt-2">We make ideas soar!</div>
-          <button className="mt-4 px-2 py-1 border border-white text-white bg-transparent rounded">
+          <div className="text-base sm:text-lg font-medium mt-2">
+            We make ideas soar!
+          </div>
+          <button className="mt-4 px-3 py-2 sm:px-4 sm:py-1 border border-white text-white bg-transparent rounded">
             Let&apos;s Build
           </button>
         </div>
