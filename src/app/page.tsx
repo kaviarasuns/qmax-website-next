@@ -81,7 +81,7 @@ export default function Home() {
   return (
     <>
       {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
-      <div className="w-full h-screen flex items-center justify-center bg-black">
+      <div className="relative w-full h-screen flex items-center justify-center bg-black">
         <video
           src="https://d1yetprhniwywz.cloudfront.net/v2/bI5j7L3hwM91DqHlKw3woZrrbEk.mp4"
           autoPlay
@@ -91,6 +91,13 @@ export default function Home() {
           controls={false}
           className="w-full h-full object-cover rounded-lg shadow-lg"
         />
+        <div className="absolute bottom-16 left-16 text-white text-2xl font-bold">
+          From Concept to Production
+          <div className="text-lg font-medium mt-2">We make ideas soar!</div>
+          <button className="mt-4 px-2 py-1 border border-white text-white bg-transparent rounded">
+            Let's Build
+          </button>
+        </div>
       </div>
       <div className="pt-16"></div>
       {/* <ScrollCardsAnimation /> */}
