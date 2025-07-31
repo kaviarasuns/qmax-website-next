@@ -5,6 +5,7 @@ import ServicesV2 from "@/components/Services-V2";
 import EmblaCarousel from "@/components/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
 import ScrollCardsAnimation from "@/components/concept-to-manufacturing";
+import ScrollCardsAnimationV3 from "@/components/concept-to-manufacturing-v3";
 
 export default function Home() {
   // const SLIDES = [
@@ -93,7 +94,8 @@ export default function Home() {
         />
       </div>
       <div className="pt-16"></div>
-      <ScrollCardsAnimation />
+      {/* <ScrollCardsAnimation /> */}
+      <ScrollCardsAnimationV3 />
       <div className="pt-16"></div>
       <ServicesV2 />
       <InsideOut />
