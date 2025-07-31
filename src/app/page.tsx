@@ -4,7 +4,6 @@ import ServicesV2 from "@/components/Services-V2";
 
 import EmblaCarousel from "@/components/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
-import ScrollCardsAnimation from "@/components/concept-to-manufacturing";
 import ScrollCardsAnimationV3 from "@/components/concept-to-manufacturing-v3";
 
 export default function Home() {

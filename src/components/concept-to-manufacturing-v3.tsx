@@ -134,7 +134,7 @@ export default function ScrollCardsAnimation() {
   );
 
   // Handle swipe gestures on mobile with sliding animation
-  const handlePanEnd = (event: any, info: PanInfo) => {
+  const handlePanEnd = (event: PointerEvent, info: PanInfo) => {
     if (!isMobile) return;
 
     const swipeThreshold = 50;
