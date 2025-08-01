@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   title: "QMax Systems",
   description:
     "Electronics Engineering Services | Embedded Systems | PCB Design",
+  // Force favicon reload by adding cache-busting query param
+  icons: {
+    icon: "/favicon.ico?v=2",
+    shortcut: "/favicon.ico?v=2",
+    apple: "/favicon.ico?v=2",
+  },
 };
 
 export default function RootLayout({
