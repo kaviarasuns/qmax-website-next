@@ -1,12 +1,19 @@
 "use client";
 import InsideOut from "@/components/InsideOut";
 import ServicesV2 from "@/components/Services-V2";
+import Link from "next/link";
+import Image from "next/image";
 
 import EmblaCarousel from "@/components/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
 import ScrollCardsAnimationV3 from "@/components/concept-to-manufacturing-v3";
 
 export default function Home() {
+  const handleHomeClick = () => {
+    // Handle home click if needed (currently just using Next.js Link navigation)
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   // const SLIDES = [
   //   {
   //     src: "https://d1yetprhniwywz.cloudfront.net/img/slide/slides/1.jpg",
@@ -81,7 +88,29 @@ export default function Home() {
   return (
     <>
       {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
-      <div className="relative w-full h-screen flex items-center justify-center bg-black">
+      <div className="relative w-full h-screen flex flex-col items-center justify-center bg-black">
+        {/* Logo positioned at the top center of the video */}
+        <div className="absolute top-8 z-10 flex justify-center w-full">
+          <Link
+            href="/"
+            title="Back to Home"
+            className="block w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 transition-all duration-300"
+            onClick={handleHomeClick}
+          >
+            <Image
+              src="/qmax-logo.svg"
+              className="w-full h-auto object-contain"
+              width={320}
+              height={60}
+              alt="Qmax PCB Design Logo"
+              priority
+            />
+          </Link>
+        </div>
+        {/* Top gradient overlay */}
+        <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/70 to-transparent z-[1]"></div>
+        {/* Bottom gradient overlay */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/70 to-transparent z-[1]"></div>
         <video
           src="https://d1yetprhniwywz.cloudfront.net/v2/bI5j7L3hwM91DqHlKw3woZrrbEk.mp4"
           autoPlay
@@ -91,7 +120,7 @@ export default function Home() {
           controls={false}
           className="w-full h-full object-cover rounded-lg shadow-lg"
         />
-        <div className="absolute bottom-4 left-4 sm:bottom-16 sm:left-16 text-white text-xl sm:text-2xl font-bold">
+        <div className="absolute bottom-4 left-4 sm:bottom-16 sm:left-16 text-white text-xl sm:text-2xl font-bold z-10">
           From Concept to Production
           <div className="text-base sm:text-lg font-medium mt-2">
             We make ideas soar!
@@ -108,7 +137,7 @@ export default function Home() {
       <ServicesV2 />
       <InsideOut />
       {/* <InfiniteCarousel slides={slides} /> */}
-      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+      <EmblaCarousel options={OPTIONS} />
       <div className="pt-16"></div>
 
       {/* <WhatWeDo />

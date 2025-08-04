@@ -531,7 +531,7 @@ export default function ScrollCardsAnimation() {
           )}
 
           {/* Progress Indicator */}
-          <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2">
+          {/* <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2">
             <div className="flex space-x-1.5 md:space-x-2">
               {cards.map((_, index) => (
                 <button
@@ -557,7 +557,7 @@ export default function ScrollCardsAnimation() {
                 Swipe or tap dots to navigate
               </p>
             )}
-          </div>
+          </div> */}
 
           {/* Mobile Navigation Hints */}
           {isMobile && (

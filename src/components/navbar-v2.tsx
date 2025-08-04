@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import HamburgerNavigation from "./hamburgur-navigation";
 
 export default function NavbarV2() {
   const router = useRouter();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   const handleHomeClick = (e: React.MouseEvent) => {
     e.preventDefault(); // Prevent default link behavior
@@ -16,31 +18,37 @@ export default function NavbarV2() {
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-transparent fixed top-0 left-0 w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-20 flex justify-center items-center">
-        <div className="absolute left-4 sm:left-6 lg:left-8">
-          <HamburgerNavigation />
+    <>
+      <header className="bg-transparent fixed top-0 left-0 w-full z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-20 flex justify-center items-center">
+          <div className="absolute left-4 sm:left-6 lg:left-8">
+            <HamburgerNavigation />
+          </div>
+          {!isHomePage && (
+            <div>
+              <Link
+                href="/"
+                title="Back to Home"
+                className="block w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 transition-all duration-300"
+                onClick={handleHomeClick}
+              >
+                <Image
+                  // src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
+                  src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
+                  className="w-full h-auto object-contain"
+                  width={320}
+                  height={60}
+                  alt="Qmax PCB Design Logo"
+                  priority
+                />
+              </Link>
+            </div>
+          )}
         </div>
-        <div>
-          <Link
-            href="/"
-            title="Back to Home"
-            className="block w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 transition-all duration-300"
-            onClick={handleHomeClick}
-          >
-            <Image
-              // src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
-              src="/qmax-logo.svg"
-              className="w-full h-auto object-contain"
-              width={320}
-              height={60}
-              alt="Qmax PCB Design Logo"
-              priority
-            />
-          </Link>
-        </div>
-      </div>
-    </header>
+      </header>
+      {/* Navbar spacer - pushes content below the navbar */}
+      {!isHomePage && <div className="h-20"></div>}
+    </>
     // <>
     //   <nav className="fixed top-0 left-0 w-full z-50 flex items-center p-3 lg:p-5 bg-transparent shadow-md">
     //     {/* Left Section - Hamburger */}
