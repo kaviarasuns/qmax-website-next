@@ -81,7 +81,7 @@ export default function FooterV2() {
           <div className="border-t border-zinc-800 pt-8 mt-8">
             <div className="flex flex-col items-center gap-6">
               <Image
-                src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
+                src="/qmax-logo.svg"
                 alt="Qmax Systems Logo"
                 className="h-12"
                 height={400}

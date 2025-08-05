@@ -7,8 +7,17 @@ import Image from "next/image";
 import EmblaCarousel from "@/components/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
 import ScrollCardsAnimationV3 from "@/components/concept-to-manufacturing-v3";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Home() {
+  const { scrollY } = useScroll();
+
+  // Transform values for the video container as user scrolls
+  // Adding a 200px threshold before scaling starts with reduced shrink (92%)
+  const scale = useTransform(scrollY, [200, 600], [1, 0.92]);
+  const borderRadius = useTransform(scrollY, [200, 600], [0, 30]);
+  const opacity = useTransform(scrollY, [200, 600], [1, 0.8]);
+
   const handleHomeClick = () => {
     // Handle home click if needed (currently just using Next.js Link navigation)
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -87,7 +96,14 @@ export default function Home() {
   return (
     <>
       {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
-      <div className="relative w-full h-screen flex flex-col items-center justify-center bg-black">
+      <motion.div
+        className="relative w-full h-screen flex flex-col items-center justify-center bg-black overflow-hidden rounded-2xl"
+        style={{
+          scale,
+          opacity,
+          borderRadius: useTransform(scrollY, [0, 500], [0, 30]),
+        }}
+      >
         {/* Logo positioned at the top center of the video */}
         <div className="absolute top-8 z-10 flex justify-center w-full">
           <Link
@@ -110,14 +126,15 @@ export default function Home() {
         <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/70 to-transparent z-[1]"></div>
         {/* Bottom gradient overlay */}
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/70 to-transparent z-[1]"></div>
-        <video
+        <motion.video
           src="https://d1yetprhniwywz.cloudfront.net/v2/bI5j7L3hwM91DqHlKw3woZrrbEk.mp4"
           autoPlay
           loop
           muted
           playsInline
           controls={false}
-          className="w-full h-full object-cover rounded-lg shadow-lg"
+          className="w-full h-full object-cover shadow-lg"
+          style={{ borderRadius }}
         />
         <div className="absolute bottom-4 left-4 sm:bottom-16 sm:left-16 text-white text-xl sm:text-2xl font-bold z-10">
           From Concept to Production
@@ -128,7 +145,7 @@ export default function Home() {
             Let&apos;s Build
           </button>
         </div>
-      </div>
+      </motion.div>
       <div className="pt-16"></div>
       {/* <ScrollCardsAnimation /> */}
       <ScrollCardsAnimationV3 />

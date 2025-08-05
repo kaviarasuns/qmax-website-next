@@ -15,7 +15,7 @@ export default function InsideOut() {
   // Use framer-motion's useScroll to get scroll progress within the sticky section
   const { scrollYProgress } = useScroll({
     target: stickyRef,
-    offset: ["center center", "end start"],
+    offset: ["center center", "end end"],
   });
 
   // Map scroll progress (0-1) to frame index (1-336 forward, then 336-1 reverse)

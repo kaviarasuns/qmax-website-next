@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
+import { motion, useScroll } from "framer-motion";
 
 const services = [
   {
@@ -46,45 +47,159 @@ const services = [
 ];
 
 const ServicesV2 = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeCard, setActiveCard] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    // Adjust offset to better control the scrolling effect
+    // This makes the scroll effect start when the section enters the viewport
+    // and end when the section is about to leave the viewport
+    offset: ["start start", "end end"],
+  });
+
+  // Update active card based on scroll position
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on("change", (latest) => {
+      // Use a more controlled approach to ensure all cards get highlighted
+      // Map the scroll progress to card indices more evenly
+      // Adjust the scroll range to use only 10%-90% of the scroll for card transitions
+      const scrollStart = 0.1; // Start highlighting cards at 10% of scroll
+      const scrollEnd = 0.9; // Finish highlighting all cards by 90% of scroll
+
+      // Normalize progress within our desired range
+      const normalizedProgress = Math.max(
+        0,
+        Math.min(1, (latest - scrollStart) / (scrollEnd - scrollStart))
+      );
+
+      // Calculate card index based on normalized progress
+      const cardIndex = Math.floor(normalizedProgress * services.length);
+      const clampedIndex = Math.min(
+        Math.max(cardIndex, 0),
+        services.length - 1
+      );
+
+      // Update active card
+      setActiveCard(clampedIndex);
+    });
+
+    return () => unsubscribe();
+  }, [scrollYProgress, isMobile, services.length]);
+
   return (
-    <section className="w-full py-8">
-      <div className="mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
+    <section
+      ref={containerRef}
+      className="w-full py-8"
+      style={{ minHeight: isMobile ? "300vh" : "250vh" }}
+    >
+      <div className=" mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 sticky top-0 pt-20 pb-32">
+        <h2 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
           Our Services
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {services.map((service, idx) => (
-            <Card
+            <motion.div
               key={idx}
-              className="relative flex flex-col h-[340px] sm:h-[320px] md:h-[340px] lg:h-[360px] overflow-hidden group shadow-lg border-0"
+              animate={{
+                scale: idx === activeCard ? 1.05 : 0.95,
+                opacity: idx === activeCard ? 1 : 0.7,
+                y: idx === activeCard ? -10 : 0,
+              }}
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                stiffness: 80,
+                damping: 20,
+              }}
             >
-              {/* Background image */}
-              <div
-                className="absolute inset-0 w-full h-full bg-center bg-cover z-0"
-                style={{ backgroundImage: `url(${service.image})` }}
-                aria-hidden="true"
-              />
-              {/* Gradient overlay for readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-10" />
-              {/* Card content overlays */}
-              <div className="relative z-20 flex flex-col h-full justify-between p-6">
-                <CardHeader className="p-0 mb-2 bg-transparent">
-                  <CardTitle className="text-lg sm:text-xl text-white text-center drop-shadow font-bold">
-                    {service.topic}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-0 mt-auto flex flex-col items-center">
-                  <p className="text-sm text-white text-center mb-4 drop-shadow">
-                    {service.description}
-                  </p>
-                  <Button variant="secondary" className="w-full max-w-[160px]">
-                    Know More
-                  </Button>
-                </CardContent>
-              </div>
-            </Card>
+              <Card
+                className={`relative flex flex-col h-[340px] sm:h-[320px] md:h-[340px] lg:h-[360px] overflow-hidden group shadow-lg 
+                ${idx === activeCard ? "border-2 border-red-500" : "border-0"}`}
+              >
+                {/* Background image */}
+                <div
+                  className="absolute inset-0 w-full h-full bg-center bg-cover z-0"
+                  style={{ backgroundImage: `url(${service.image})` }}
+                  aria-hidden="true"
+                />
+                {/* Gradient overlay for readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-10" />
+
+                {/* Glow effect for active card */}
+                {idx === activeCard && (
+                  <motion.div
+                    className="absolute inset-0 bg-red-500/20 rounded-xl blur-xl z-5"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  />
+                )}
+
+                {/* Card content overlays */}
+                <div className="relative z-20 flex flex-col h-full justify-between p-6">
+                  <CardHeader className="p-0 mb-2 bg-transparent">
+                    <motion.div
+                      animate={{
+                        scale: idx === activeCard ? 1.05 : 1,
+                      }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      <CardTitle
+                        className={`text-lg sm:text-xl text-white text-center drop-shadow font-bold 
+                        ${idx === activeCard ? "text-red-100" : "text-white"}`}
+                      >
+                        {service.topic}
+                      </CardTitle>
+                    </motion.div>
+                  </CardHeader>
+                  <CardContent className="p-0 mt-auto flex flex-col items-center">
+                    <motion.p
+                      className="text-sm text-white text-center mb-4 drop-shadow"
+                      animate={{
+                        opacity: idx === activeCard ? 1 : 0.8,
+                      }}
+                    >
+                      {service.description}
+                    </motion.p>
+                    <Button
+                      variant={idx === activeCard ? "destructive" : "secondary"}
+                      className="w-full max-w-[160px]"
+                    >
+                      Know More
+                    </Button>
+                  </CardContent>
+                </div>
+              </Card>
+            </motion.div>
           ))}
         </div>
+
+        {/* Scroll indicator */}
+        {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="flex space-x-2">
+            {services.map((_, index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                  index === activeCard ? "bg-red-500 scale-125" : "bg-gray-600"
+                }`}
+              />
+            ))}
+          </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform, type PanInfo } from "framer-motion";
+import { motion, useScroll, type PanInfo } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
 const cards = [
@@ -88,9 +88,11 @@ export default function ScrollCardsAnimation() {
   const [isMobile, setIsMobile] = useState(false);
   const [isBelow1500, setIsBelow1500] = useState(false);
 
+  console.log(isBelow1500);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"],
+    offset: ["start start", "end end"],
   });
 
   // Detect mobile device
@@ -106,34 +108,26 @@ export default function ScrollCardsAnimation() {
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (latest) => {
-      // Calculate the current card index based on scroll progress with increased sensitivity
-      const sensitivity = isMobile ? 1.5 : 6; // Higher sensitivity on desktop (fewer scrolls per card)
-      const cardIndex = Math.floor(latest * cards.length * sensitivity); // Adjusted sensitivity
+      // Calculate the current card index based on scroll progress with adjusted sensitivity
+      const sensitivity = isMobile ? 1.2 : 1.4; // Reduced sensitivity for smoother transitions
+      // Normalize the scroll progress to match the number of cards
+      const normalizedProgress = Math.min(latest * sensitivity, 1);
+      const cardIndex = Math.floor(normalizedProgress * (cards.length - 1));
       const clampedIndex = Math.min(Math.max(cardIndex, 0), cards.length - 1);
 
       // Update active card
       setActiveCard(clampedIndex);
 
-      // Handle completion state - set to true when near the end
-      if (latest >= 0.85) {
-        // Adjusted threshold
+      // Handle completion state when reaching the last card
+      if (cardIndex >= cards.length - 1) {
         setIsHorizontalScrollComplete(true);
-      }
-      // Reset completion state when scrolling backward significantly
-      else if (latest < 0.7 && isHorizontalScrollComplete) {
-        // Adjusted threshold
+      } else if (cardIndex < cards.length - 1) {
         setIsHorizontalScrollComplete(false);
       }
     });
 
     return () => unsubscribe();
   }, [scrollYProgress, isHorizontalScrollComplete, isMobile]);
-
-  const arrowX = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, isMobile ? 200 : 400]
-  );
 
   // Handle swipe gestures on mobile with sliding animation
   const handlePanEnd = (event: PointerEvent, info: PanInfo) => {
@@ -180,24 +174,18 @@ export default function ScrollCardsAnimation() {
       >
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
           {/* Red Arrow - hidden on mobile */}
-          {!isMobile && (
-            <motion.div
+          {/* {!isMobile && (
+            <div
               className={`absolute z-20 ${
                 isBelow1500 ? "bottom-[200px]" : "bottom-[300px]"
               }`}
-              animate={{
-                left: `calc(50% - ${(cards.length - 1 - activeCard) * 20}px)`,
-              }}
-              transition={{ duration: 0.6 }}
             >
-              <motion.div style={{ x: arrowX }}>
-                <div className="flex items-center">
-                  <div className="w-16 h-1 bg-red-500"></div>
-                  <div className="w-0 h-0 border-l-[12px] border-l-red-500 border-y-[6px] border-y-transparent"></div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
+              <div className="flex items-center">
+                <div className="w-24 h-2 bg-red-500"></div>
+                <div className="w-0 h-0 border-l-[20px] border-l-red-500 border-y-[10px] border-y-transparent"></div>
+              </div>
+            </div>
+          )} */}
 
           {/* Mobile: Sliding Card Animation */}
           {isMobile ? (
@@ -504,6 +492,45 @@ export default function ScrollCardsAnimation() {
                 ))}
               </div>
 
+              <div className="mt-20 relative h-full flex items-center">
+                <div className="flex-1 h-16 bg-gradient-to-r from-brand-red to-brand-red mx-4 rounded-l-lg shadow-inner">
+                  {/* Industrial dots pattern */}
+                  <div className="flex items-center justify-center h-full space-x-32 opacity-30">
+                    {Array.from({ length: 8 }).map((_, i) => (
+                      <div key={i} className="w-2 h-2 bg-white rounded-full" />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Arrow head */}
+                <div className="relative">
+                  <svg
+                    width="120"
+                    height="128"
+                    viewBox="0 0 120 128"
+                    className="drop-shadow-lg"
+                  >
+                    <path
+                      d="M0 32 L0 96 L80 96 L80 112 L120 64 L80 16 L80 32 Z"
+                      fill="url(#arrowGradient)"
+                      className="drop-shadow-md"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="arrowGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="0%"
+                      >
+                        <stop offset="0%" stopColor="#brand-red" />
+                        <stop offset="100%" stopColor="#brand-red" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+
               {/* Enhanced visual elements */}
               <div className="absolute inset-0 pointer-events-none">
                 {/* Animated background particles */}
@@ -571,9 +598,9 @@ export default function ScrollCardsAnimation() {
           )}
 
           {!isMobile && (
-            <div className="absolute top-[calc(25%-100px)] left-1/2 transform -translate-x-1/2">
+            <div className="absolute top-[calc(25%-200px)] left-1/2 transform -translate-x-1/2">
               <div className="flex items-center space-x-2 text-3xl whitespace-nowrap">
-                <h1 className="font-bold">Concept To Manufacturing</h1>
+                <h1 className="font-bold text-4xl">Concept To Manufacturing</h1>
               </div>
             </div>
           )}
