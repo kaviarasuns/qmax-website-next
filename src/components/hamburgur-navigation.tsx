@@ -36,32 +36,18 @@ const menuData: MenuItem[] = [
     title: "Services",
     subItems: [
       {
-        title: "Hardware Design",
-        href: "/services/hardware-design",
+        title: "Embedded Systems",
+        href: "/embedded-design-services",
         image:
-          "https://images.pexels.com/photos/4491461/pexels-photo-4491461.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Custom hardware solutions and circuit design",
-      },
-      {
-        title: "Firmware Development",
-        href: "/services/firmware-development",
-        image:
-          "https://images.pexels.com/photos/5083490/pexels-photo-5083490.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Embedded software and firmware programming",
+          "https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=300",
+        description: "",
       },
       {
         title: "PCB Design",
-        href: "/services/pcb-design",
+        href: "/pcb-design",
         image:
-          "https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Professional PCB layout and design services",
-      },
-      {
-        title: "Industrial Design and Mechanical",
-        href: "/services/industrial-design",
-        image:
-          "https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Product design and mechanical engineering",
+          "https://images.pexels.com/photos/163125/pcb-design-electronics-computer-technology-163125.jpeg?auto=compress&cs=tinysrgb&w=300",
+        description: "",
       },
     ],
   },
@@ -69,25 +55,18 @@ const menuData: MenuItem[] = [
     title: "Case Studies",
     subItems: [
       {
-        title: "IoT Solutions",
-        href: "/case-studies/iot-solutions",
+        title: "Embedded Systems",
+        href: "/Embedded-Case-study",
         image:
-          "https://images.pexels.com/photos/3912944/pexels-photo-3912944.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Connected device implementations",
+          "https://images.pexels.com/photos/4792728/pexels-photo-4792728.jpeg?auto=compress&cs=tinysrgb&w=300",
+        description: "",
       },
       {
-        title: "Medical Devices",
-        href: "/case-studies/medical-devices",
+        title: "PCB Design",
+        href: "/PCB-Design-Case-study",
         image:
-          "https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Healthcare technology solutions",
-      },
-      {
-        title: "Automotive Systems",
-        href: "/case-studies/automotive",
-        image:
-          "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Vehicle electronic systems",
+          "https://images.pexels.com/photos/5991226/pexels-photo-5991226.jpeg?auto=compress&cs=tinysrgb&w=300",
+        description: "",
       },
     ],
   },
@@ -95,31 +74,31 @@ const menuData: MenuItem[] = [
     title: "Resources",
     subItems: [
       {
-        title: "Technical Documentation",
-        href: "/resources/documentation",
+        title: "PCB Design Resources",
+        href: "/PCB-design-resources",
         image:
           "https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Comprehensive technical guides",
+        description: "",
       },
       {
-        title: "Design Tools",
-        href: "/resources/tools",
+        title: "Embedded Systems Glossary",
+        href: "/embedded-systems-glossary",
         image:
           "https://images.pexels.com/photos/326518/pexels-photo-326518.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Professional design software and tools",
+        description: "",
       },
       {
-        title: "White Papers",
-        href: "/resources/whitepapers",
+        title: "PCB Design Glossary",
+        href: "/pcb-design-glossary",
         image:
           "https://images.pexels.com/photos/760710/pexels-photo-760710.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Industry insights and research",
+        description: "",
       },
     ],
   },
   {
     title: "FAQs",
-    href: "/faqs",
+    href: "/printed-circuit-board-faqs",
   },
   {
     title: "Careers",
@@ -127,7 +106,7 @@ const menuData: MenuItem[] = [
   },
   {
     title: "Blog",
-    href: "/blog",
+    href: "http://blog.qmaxsys.com/",
   },
   {
     title: "Contact",
