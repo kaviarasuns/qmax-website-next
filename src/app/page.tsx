@@ -14,7 +14,7 @@ export default function Home() {
 
   // Transform values for the video container as user scrolls
   // Adding a 200px threshold before scaling starts with reduced shrink (92%)
-  const scale = useTransform(scrollY, [200, 600], [1, 0.92]);
+  const scale = useTransform(scrollY, [200, 600], [1, 0.9]);
   const borderRadius = useTransform(scrollY, [200, 600], [0, 30]);
   const opacity = useTransform(scrollY, [200, 600], [1, 0.8]);
 

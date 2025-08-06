@@ -15,17 +15,22 @@ export default function InsideOut() {
   // Use framer-motion's useScroll to get scroll progress within the sticky section
   const { scrollYProgress } = useScroll({
     target: stickyRef,
-    offset: ["center center", "end end"],
+    offset: ["start start", "end start"],
   });
 
   // Map scroll progress (0-1) to frame index (1-336 forward, then 336-1 reverse)
+  // Animation completes before vertical scroll continues
   const currentIndex = useTransform(scrollYProgress, (progress) => {
-    if (progress < 0.5) {
+    // Use only the first 90% of scroll progress for the animation
+    // This ensures the animation completes and returns to frame 1 before scroll continues
+    const animationProgress = Math.min(progress / 0.9, 1);
+
+    if (animationProgress < 0.5) {
       // Forward: 0 -> 0.5 maps to 1 -> 336
-      return 1 + (progress / 0.5) * (frameCount - 1);
+      return 1 + (animationProgress / 0.5) * (frameCount - 1);
     } else {
       // Reverse: 0.5 -> 1 maps to 336 -> 1
-      return frameCount - ((progress - 0.5) / 0.5) * (frameCount - 1);
+      return frameCount - ((animationProgress - 0.5) / 0.5) * (frameCount - 1);
     }
   });
 
@@ -89,7 +94,7 @@ export default function InsideOut() {
   return (
     <div>
       {/* Spacer before animation */}
-      {/* <div style={{ height: "0px" }} /> */}
+      <div style={{ height: "40vh" }} />
       {/* Sticky animation section */}
       {!loading && (
         <div
@@ -134,7 +139,7 @@ export default function InsideOut() {
         </div>
       )}
       {/* Spacer after animation */}
-      <div style={{ height: "20vh" }} />
+      <div style={{ height: "40vh" }} />
     </div>
   );
 }

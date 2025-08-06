@@ -281,7 +281,7 @@ export default function ScrollCardsAnimation() {
           ) : (
             /* Desktop: 7 Cards Visible with Enhanced Visual Appeal */
             <div className="w-full px-8 lg:px-12 xl:px-16">
-              <div className="flex items-center justify-center space-x-3 lg:space-x-4 xl:space-x-6">
+              <div className="flex items-center justify-center space-x-2 lg:space-x-3 xl:space-x-5">
                 {cards.slice(0, 7).map((card, index) => (
                   <motion.div
                     key={card.id}
