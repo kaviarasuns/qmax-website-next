@@ -44,6 +44,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const [isHorizontalScrollComplete, setIsHorizontalScrollComplete] =
     useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  console.log(isHorizontalScrollComplete);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
