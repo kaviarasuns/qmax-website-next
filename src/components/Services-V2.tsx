@@ -102,14 +102,14 @@ const ServicesV2 = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full py-8"
-      style={{ minHeight: isMobile ? "300vh" : "250vh" }}
+      className="w-full py-6"
+      style={{ minHeight: isMobile ? "250vh" : "200vh" }}
     >
-      <div className=" mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-28 sticky top-0 pt-20 pb-32">
-        <h2 className="text-2xl sm:text-4xl font-bold mb-8 text-center">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 sticky top-0 pt-16 pb-24">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
           Our Services
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-5">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -126,7 +126,7 @@ const ServicesV2 = () => {
               }}
             >
               <Card
-                className={`relative flex flex-col h-[340px] sm:h-[320px] md:h-[340px] lg:h-[360px] overflow-hidden group shadow-lg 
+                className={`relative flex flex-col h-[280px] sm:h-[300px] md:h-[320px] lg:h-[340px] overflow-hidden group shadow-lg 
                 ${idx === activeCard ? "border-2 border-red-500" : "border-0"}`}
               >
                 {/* Background image */}
@@ -149,7 +149,7 @@ const ServicesV2 = () => {
                 )}
 
                 {/* Card content overlays */}
-                <div className="relative z-20 flex flex-col h-full justify-between p-6">
+                <div className="relative z-20 flex flex-col h-full justify-between p-4 sm:p-5">
                   <CardHeader className="p-0 mb-2 bg-transparent">
                     <motion.div
                       animate={{
@@ -158,7 +158,7 @@ const ServicesV2 = () => {
                       transition={{ duration: 0.4 }}
                     >
                       <CardTitle
-                        className={`text-lg sm:text-xl text-white text-center drop-shadow font-bold 
+                        className={`text-base sm:text-lg text-white text-center drop-shadow font-bold 
                         ${idx === activeCard ? "text-red-100" : "text-white"}`}
                       >
                         {service.topic}
@@ -167,7 +167,7 @@ const ServicesV2 = () => {
                   </CardHeader>
                   <CardContent className="p-0 mt-auto flex flex-col items-center">
                     <motion.p
-                      className="text-sm text-white text-center mb-4 drop-shadow"
+                      className="text-xs sm:text-sm text-white text-center mb-3 drop-shadow"
                       animate={{
                         opacity: idx === activeCard ? 1 : 0.8,
                       }}
@@ -176,7 +176,7 @@ const ServicesV2 = () => {
                     </motion.p>
                     <Button
                       variant={idx === activeCard ? "destructive" : "secondary"}
-                      className="w-full max-w-[160px]"
+                      className="w-full max-w-[140px] text-xs sm:text-sm py-2"
                     >
                       Know More
                     </Button>
