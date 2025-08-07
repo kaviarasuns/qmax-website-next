@@ -1,15 +1,15 @@
 .embla {
-  max-width: 80rem;
+  max-width: 60rem;
   margin: auto;
   --slide-height: 26rem;
   --slide-spacing: 1rem;
-  --slide-size: 80%;
+  --slide-size: 70%;
 }
 
 /* Increase card height for desktop screens */
 @media (min-width: 768px) {
   .embla {
-    --slide-height: 36rem;
+    --slide-height: 28rem;
   }
 }
 .embla__viewport {

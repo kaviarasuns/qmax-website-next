@@ -46,7 +46,7 @@ const menuData: MenuItem[] = [
         title: "PCB Design",
         href: "/pcb-design",
         image:
-          "https://images.pexels.com/photos/163125/pcb-design-electronics-computer-technology-163125.jpeg?auto=compress&cs=tinysrgb&w=300",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPOKKQF88ooMa1cZCmXjiXNKAi5nFRq6FU8w&s",
         description: "",
       },
     ],
@@ -65,7 +65,7 @@ const menuData: MenuItem[] = [
         title: "PCB Design",
         href: "/PCB-Design-Case-study",
         image:
-          "https://images.pexels.com/photos/5991226/pexels-photo-5991226.jpeg?auto=compress&cs=tinysrgb&w=300",
+          "https://www.cirexx.com/wp-content/uploads/PCB-Layout-Board-1024x455.jpg",
         description: "",
       },
     ],

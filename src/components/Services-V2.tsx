@@ -73,20 +73,25 @@ const ServicesV2 = () => {
   // Update active card based on scroll position
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (latest) => {
-      // Use a more controlled approach to ensure all cards get highlighted
-      // Map the scroll progress to card indices more evenly
-      // Adjust the scroll range to use only 10%-90% of the scroll for card transitions
-      const scrollStart = 0.1; // Start highlighting cards at 10% of scroll
-      const scrollEnd = 0.9; // Finish highlighting all cards by 90% of scroll
+      // Use a more controlled approach with wider scroll range for slower transitions
+      const scrollStart = 0.1; // Start at 10% of scroll
+      const scrollEnd = 0.9; // End at 90% of scroll
 
-      // Normalize progress within our desired range
+      // Add padding between card transitions
+      const transitionPadding = 0.2; // 20% padding between transitions
+
+      // Calculate adjusted progress to account for padding
+      const rawProgress = (latest - scrollStart) / (scrollEnd - scrollStart);
       const normalizedProgress = Math.max(
         0,
-        Math.min(1, (latest - scrollStart) / (scrollEnd - scrollStart))
+        Math.min(1, rawProgress * (1 + transitionPadding))
       );
 
-      // Calculate card index based on normalized progress
-      const cardIndex = Math.floor(normalizedProgress * services.length);
+      // Calculate card index with a smoother transition
+      const exactIndex = normalizedProgress * (services.length - 1);
+      const cardIndex = Math.floor(exactIndex);
+
+      // Clamp the index to valid range
       const clampedIndex = Math.min(
         Math.max(cardIndex, 0),
         services.length - 1
@@ -103,13 +108,14 @@ const ServicesV2 = () => {
     <section
       ref={containerRef}
       className="w-full py-6"
-      style={{ minHeight: isMobile ? "250vh" : "200vh" }}
+      style={{ minHeight: isMobile ? "400vh" : "300vh" }}
     >
-      <div className=" mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 sticky top-0 pt-16 pb-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 sticky top-0 pt-16 pb-24 flex flex-col items-center">
         <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
           Our Services
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-5">
+        <div className="pb-4 md:pb-12"></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-5 w-full max-w-6xl mx-auto">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -126,7 +132,7 @@ const ServicesV2 = () => {
               }}
             >
               <Card
-                className={`relative flex flex-col h-[280px] sm:h-[300px] md:h-[320px] lg:h-[340px] overflow-hidden group shadow-lg 
+                className={`relative flex flex-col h-[260px] sm:h-[280px] md:h-[300px] lg:h-[320px] overflow-hidden group shadow-lg 
                 ${idx === activeCard ? "border-2 border-red-500" : "border-0"}`}
               >
                 {/* Background image */}

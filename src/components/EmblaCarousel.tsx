@@ -256,7 +256,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       <div
         ref={containerRef}
         style={{
-          height: isMobile ? "400vh" : `${carouselItems.length * 70}vh`,
+          height: isMobile ? "400vh" : `${carouselItems.length * 50}vh`,
         }}
       >
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
@@ -471,31 +471,49 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
           {/* Mobile Navigation Hints */}
           {isMobile && (
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
-              <div className="flex items-center space-x-2 text-gray-400 text-xs">
-                <span>←</span>
-                <span>Swipe to navigate</span>
-                <span>→</span>
+            <>
+              <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
+                <div className="flex items-center space-x-2 text-gray-400 text-xs">
+                  <h1 className="py-12 text-center text-3xl font-bold text-gray-800">
+                    Case Studies
+                  </h1>
+                </div>
               </div>
-            </div>
+              <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
+                <div className="flex items-center space-x-2 text-gray-400 text-xs">
+                  <span>←</span>
+                  <span>Swipe to navigate</span>
+                  <span>→</span>
+                </div>
+              </div>
+            </>
           )}
 
           {/* Desktop scroll hint */}
           {!isMobile && (
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-              <motion.div
-                className="flex items-center space-x-2 text-gray-400 text-sm"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                }}
-              >
-                <span>↓</span>
-                <span>Scroll to navigate cards</span>
-                <span>↓</span>
-              </motion.div>
-            </div>
+            <>
+              <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
+                <div className="flex items-center space-x-2 text-gray-400 text-xs">
+                  <h1 className="py-12 text-center text-5xl font-bold text-gray-800">
+                    Case Studies
+                  </h1>
+                </div>
+              </div>
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+                <motion.div
+                  className="flex items-center space-x-2 text-gray-400 text-sm"
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                  }}
+                >
+                  <span>↓</span>
+                  <span>Scroll to navigate cards</span>
+                  <span>↓</span>
+                </motion.div>
+              </div>
+            </>
           )}
         </div>
       </div>
