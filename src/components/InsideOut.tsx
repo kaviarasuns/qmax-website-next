@@ -7,6 +7,7 @@ export default function InsideOut() {
   const [isMobile, setIsMobile] = useState(false);
   const [loading, setLoading] = useState(true);
   const [isPinned, setIsPinned] = useState(false);
+  console.log("Is pinned:", isPinned);
   // Use dynamic section height so all frames render smoothly across scroll
   const [sectionHeight, setSectionHeight] = useState<number>(9000);
   const frameCount = 672;
