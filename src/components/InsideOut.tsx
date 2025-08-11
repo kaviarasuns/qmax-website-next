@@ -15,18 +15,33 @@ export default function InsideOut() {
   // Use framer-motion's useScroll to get scroll progress within the sticky section
   const { scrollYProgress } = useScroll({
     target: stickyRef,
-    offset: ["center center", "end end"],
+    // Progress 0 when section top hits viewport top, 1 when section bottom hits viewport bottom (covers full pin duration)
+    offset: ["start start", "end end"],
   });
 
-  // Map scroll progress (0-1) to frame index (1-336 forward, then 336-1 reverse)
+  // Map scroll progress (0-1) to frame index with start/end holds
+  // Start hold avoids loading at a late frame; end hold ensures we reach 1 before unpin
   const currentIndex = useTransform(scrollYProgress, (progress) => {
-    if (progress < 0.5) {
-      // Forward: 0 -> 0.5 maps to 1 -> 336
-      return 1 + (progress / 0.5) * (frameCount - 1);
-    } else {
-      // Reverse: 0.5 -> 1 maps to 336 -> 1
-      return frameCount - ((progress - 0.5) / 0.5) * (frameCount - 1);
+    const START_HOLD_END = 0.04; // 0% -> 4%: hold at frame 1
+    const FORWARD_END = 0.48; // end forward a bit earlier
+    const END_HOLD_START = 0.96; // hold last 4%
+
+    if (progress <= START_HOLD_END) {
+      return 1;
     }
+
+    if (progress <= FORWARD_END) {
+      const tF = (progress - START_HOLD_END) / (FORWARD_END - START_HOLD_END); // 0..1
+      return 1 + tF * (frameCount - 1);
+    }
+
+    if (progress >= END_HOLD_START) {
+      return 1;
+    }
+
+    // Reverse between FORWARD_END and END_HOLD_START
+    const tR = (progress - FORWARD_END) / (END_HOLD_START - FORWARD_END); // 0..1
+    return frameCount - tR * (frameCount - 1);
   });
 
   useEffect(() => {

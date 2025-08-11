@@ -21,7 +21,7 @@
   margin-left: calc(var(--slide-spacing) * -1);
 }
 .embla__slide {
-  transform: translate3d(0, 0, 0);
+  /* transform: translate3d(0, 0, 0); */
   flex: 0 0 var(--slide-size);
   min-width: 0;
   padding-left: var(--slide-spacing);
@@ -126,8 +126,8 @@
   justify-content: center;
 }
 .embla__parallax__img {
-  max-width: none;
-  flex: 0 0 calc(115% + (var(--slide-spacing) * 2));
+  max-width: 100%;
+  flex: 0 0 100%;
   object-fit: cover;
 }
 

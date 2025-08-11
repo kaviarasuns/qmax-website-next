@@ -1,9 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import {
-  EmblaCarouselType,
-  EmblaEventType,
-  EmblaOptionsType,
-} from "embla-carousel";
+import React, { useEffect, useRef, useState } from "react";
+import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import {
@@ -16,14 +12,13 @@ import "../components/css/sanbox.css";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, type PanInfo } from "framer-motion";
+import { Button } from "./ui/button";
 // import {
 //   NextButton,
 //   PrevButton,
 //   usePrevNextButtons
 // } from './EmblaCarouselArrowButtons'
 // import { DotButton, useDotButton } from './EmblaCarouselDotButton'
-
-const TWEEN_FACTOR_BASE = 0.2;
 
 type PropType = {
   options?: EmblaOptionsType;
@@ -38,8 +33,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   };
   const [emblaRef, emblaApi] = useEmblaCarousel(defaultOptions);
   const containerRef = useRef<HTMLDivElement>(null);
-  const tweenFactor = useRef(0);
-  const tweenNodes = useRef<HTMLElement[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHorizontalScrollComplete, setIsHorizontalScrollComplete] =
     useState(false);
@@ -163,83 +156,14 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
-    tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
-      return slideNode.querySelector(".embla__parallax__layer") as HTMLElement;
-    });
-  }, []);
-
-  const setTweenFactor = useCallback((emblaApi: EmblaCarouselType) => {
-    tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
-  }, []);
-
-  const tweenParallax = useCallback(
-    (emblaApi: EmblaCarouselType, eventName?: EmblaEventType) => {
-      const engine = emblaApi.internalEngine();
-      const currentProgress = emblaApi.scrollProgress();
-      const slidesInView = emblaApi.slidesInView();
-      const isScrollEvent = eventName === "scroll";
-
-      emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
-        let diffToTarget = scrollSnap - currentProgress;
-        const slidesInSnap = engine.slideRegistry[snapIndex];
-
-        slidesInSnap.forEach((slideIndex) => {
-          if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
-
-          if (engine.options.loop) {
-            engine.slideLooper.loopPoints.forEach((loopItem) => {
-              const target = loopItem.target();
-
-              if (slideIndex === loopItem.index && target !== 0) {
-                const sign = Math.sign(target);
-
-                if (sign === -1) {
-                  diffToTarget = scrollSnap - (1 + currentProgress);
-                }
-                if (sign === 1) {
-                  diffToTarget = scrollSnap + (1 - currentProgress);
-                }
-              }
-            });
-          }
-
-          const translate = diffToTarget * (-1 * tweenFactor.current) * 100;
-          const scale = 1 - Math.abs(diffToTarget) * 0.15;
-          const opacity = 1 - Math.abs(diffToTarget) * 0.5;
-          const rotateY = diffToTarget * 15;
-
-          const tweenNode = tweenNodes.current[slideIndex];
-          if (tweenNode) {
-            tweenNode.style.transform = `translateX(${translate}%) scale(${scale}) rotateY(${rotateY}deg)`;
-            tweenNode.style.opacity = opacity.toString();
-            tweenNode.style.transition =
-              "transform 0.3s ease, opacity 0.3s ease";
-          }
-        });
-      });
-    },
-    []
-  );
-
   useEffect(() => {
     if (!emblaApi) return;
-
-    setTweenNodes(emblaApi);
-    setTweenFactor(emblaApi);
-    tweenParallax(emblaApi);
 
     const onSelect = () => {
       setActiveIndex(emblaApi.selectedScrollSnap());
     };
 
-    emblaApi
-      .on("reInit", setTweenNodes)
-      .on("reInit", setTweenFactor)
-      .on("reInit", tweenParallax)
-      .on("scroll", tweenParallax)
-      .on("slideFocus", tweenParallax)
-      .on("select", onSelect);
+    emblaApi.on("select", onSelect);
 
     // Remove auto-scroll functionality for scroll-locked behavior
 
@@ -248,7 +172,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     return () => {
       emblaApi.off("select", onSelect);
     };
-  }, [emblaApi, tweenParallax]);
+  }, [emblaApi]);
 
   return (
     <div className="min-h-screen">
@@ -275,7 +199,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     <div className="embla__parallax">
                       <motion.div
                         className="embla__parallax__layer"
-                        initial={{ scale: 0.85, opacity: 0.5, rotateY: 15 }}
+                        // initial={{ scale: 0.85, opacity: 0.5, rotateY: 15 }}
                         animate={{
                           scale:
                             index === activeIndex
@@ -297,16 +221,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                               ? 0
                               : 20,
                         }}
-                        transition={{
-                          duration: 0.8,
-                          ease: [0.25, 0.46, 0.45, 0.94],
-                          type: "spring",
-                          stiffness: 100,
-                          damping: 15,
-                        }}
-                        style={{
-                          transformStyle: "preserve-3d",
-                        }}
                       >
                         {/* Glow effect for active card */}
                         {index === activeIndex && (
@@ -319,53 +233,26 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                         )}
 
                         <Image
-                          className="embla__slide__img embla__parallax__img"
+                          className="embla__slide__img"
                           src={item.image}
                           alt={item.title}
                           width={800}
                           height={600}
                           priority={index === 0}
                         />
-                        <motion.div
-                          className="embla__slide__overlay"
-                          initial={{ y: 20, opacity: 0 }}
-                          animate={{
-                            y: index === activeIndex ? 0 : 10,
-                            opacity: index === activeIndex ? 1 : 0.7,
-                          }}
-                          transition={{ duration: 0.3, delay: 0.1 }}
-                        >
-                          <motion.h2
-                            className="embla__slide__title text-sm sm:text-base md:text-lg lg:text-xl"
-                            animate={{
-                              scale: index === activeIndex ? 1.05 : 1,
-                            }}
-                            transition={{ duration: 0.3 }}
-                          >
+                        <div className="embla__slide__overlay">
+                          <h2 className="embla__slide__title text-sm sm:text-base md:text-lg lg:text-xl">
                             {item.title}
-                          </motion.h2>
-                          <motion.p
-                            className="embla__slide__description text-xs sm:text-sm md:text-base lg:text-lg"
-                            animate={{
-                              opacity: index === activeIndex ? 1 : 0.8,
-                            }}
-                            transition={{ duration: 0.3 }}
-                          >
+                          </h2>
+                          <p className="embla__slide__description text-xs sm:text-sm md:text-base lg:text-lg">
                             {item.description}
-                          </motion.p>
+                          </p>
                           <Link href={item.url}>
-                            <motion.button
-                              className="embla__slide__button text-xs sm:text-sm md:text-base lg:text-lg px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2"
-                              whileHover={{
-                                scale: 1.05,
-                                backgroundColor: "#ef4444",
-                              }}
-                              whileTap={{ scale: 0.95 }}
-                            >
+                            <Button className="embla__slide__button text-xs sm:text-sm md:text-base lg:text-lg px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2">
                               Read More
-                            </motion.button>
+                            </Button>
                           </Link>
-                        </motion.div>
+                        </div>
                       </motion.div>
                     </div>
                   </div>
