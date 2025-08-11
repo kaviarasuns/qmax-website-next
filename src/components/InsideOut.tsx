@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useScroll, useMotionValueEvent, useTransform } from "framer-motion";
 
 export default function InsideOut() {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -7,42 +6,12 @@ export default function InsideOut() {
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [isMobile, setIsMobile] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [isPinned, setIsPinned] = useState(false);
+  // Use dynamic section height so all frames render smoothly across scroll
+  const [sectionHeight, setSectionHeight] = useState<number>(9000);
+  const frameCount = 672;
 
-  // The scroll section height determines how much scroll is needed for the animation
-  const sectionHeight = 6000; // px (double the original)
-  const frameCount = 336;
-
-  // Use framer-motion's useScroll to get scroll progress within the sticky section
-  const { scrollYProgress } = useScroll({
-    target: stickyRef,
-    // Progress 0 when section top hits viewport top, 1 when section bottom hits viewport bottom (covers full pin duration)
-    offset: ["start start", "end end"],
-  });
-
-  // Map scroll progress (0-1) to frame index with start/end holds
-  // Start hold avoids loading at a late frame; end hold ensures we reach 1 before unpin
-  const currentIndex = useTransform(scrollYProgress, (progress) => {
-    const START_HOLD_END = 0.04; // 0% -> 4%: hold at frame 1
-    const FORWARD_END = 0.48; // end forward a bit earlier
-    const END_HOLD_START = 0.96; // hold last 4%
-
-    if (progress <= START_HOLD_END) {
-      return 1;
-    }
-
-    if (progress <= FORWARD_END) {
-      const tF = (progress - START_HOLD_END) / (FORWARD_END - START_HOLD_END); // 0..1
-      return 1 + tF * (frameCount - 1);
-    }
-
-    if (progress >= END_HOLD_START) {
-      return 1;
-    }
-
-    // Reverse between FORWARD_END and END_HOLD_START
-    const tR = (progress - FORWARD_END) / (END_HOLD_START - FORWARD_END); // 0..1
-    return frameCount - tR * (frameCount - 1);
-  });
+  // Animation is driven by manual scroll handler tied to the pinned interval
 
   useEffect(() => {
     const imagePromises: Promise<HTMLImageElement>[] = [];
@@ -75,6 +44,7 @@ export default function InsideOut() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Define render before using it in effects
   const render = useCallback(
     (index: number) => {
       const canvas = ref.current;
@@ -90,9 +60,71 @@ export default function InsideOut() {
     [images, isMobile]
   );
 
-  useMotionValueEvent(currentIndex, "change", (latest) => {
-    render(Math.round(latest));
-  });
+  // Track pin state and drive frame rendering during the pinned interval
+  const lastFrameRef = useRef<number>(-1);
+  useEffect(() => {
+    const onScroll = () => {
+      const el = stickyRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const pinnedNow = rect.top <= 0 && rect.bottom >= window.innerHeight;
+      setIsPinned(pinnedNow);
+
+      if (loading || images.length === 0) return;
+
+      // Before pinned: hold first frame
+      if (rect.top > 0) {
+        if (lastFrameRef.current !== 1) {
+          render(1);
+          lastFrameRef.current = 1;
+        }
+        return;
+      }
+
+      // Pinned: map scroll within pinned distance to frames 1..672
+      if (pinnedNow) {
+        const pinnedDistance = rect.height - window.innerHeight; // total scroll while sticky is pinned
+        const scrolledWhilePinned = Math.min(
+          pinnedDistance,
+          Math.max(0, -rect.top)
+        );
+        const progress =
+          pinnedDistance > 0 ? scrolledWhilePinned / pinnedDistance : 0;
+        const frame = 1 + Math.round(progress * (frameCount - 1));
+        if (frame !== lastFrameRef.current) {
+          render(frame);
+          lastFrameRef.current = frame;
+        }
+        return;
+      }
+
+      // After unpinned: lock on last frame
+      if (lastFrameRef.current !== frameCount) {
+        render(frameCount);
+        lastFrameRef.current = frameCount;
+      }
+    };
+
+    // Initialize and listen
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [images, loading, frameCount, render]);
+
+  // Compute a generous section height based on device to ensure smooth progression through all frames
+  useEffect(() => {
+    const computeHeight = () => {
+      const perFrame = isMobile ? 10 : 14; // px per frame
+      const buffer = Math.round(window.innerHeight * 0.5);
+      setSectionHeight(frameCount * perFrame + buffer);
+    };
+    computeHeight();
+    window.addEventListener("resize", computeHeight);
+    return () => window.removeEventListener("resize", computeHeight);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMobile]);
+
+  // Initial draw of first frame occurs when images finish loading
 
   // Render the first frame when images are loaded
   useEffect(() => {
@@ -104,7 +136,7 @@ export default function InsideOut() {
   return (
     <div>
       {/* Spacer before animation */}
-      {/* <div style={{ height: "0px" }} /> */}
+      <div style={{ height: "50vh" }} />
       {/* Sticky animation section */}
       {!loading && (
         <div
@@ -149,7 +181,7 @@ export default function InsideOut() {
         </div>
       )}
       {/* Spacer after animation */}
-      <div style={{ height: "20vh" }} />
+      <div style={{ height: "50vh" }} />
     </div>
   );
 }
