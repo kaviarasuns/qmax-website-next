@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "QMax Systems",
+  title: "Qmax Systems",
   description:
     "Electronics Engineering Services | Embedded Systems | PCB Design",
 };
