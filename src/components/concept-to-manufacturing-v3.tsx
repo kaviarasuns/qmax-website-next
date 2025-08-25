@@ -492,41 +492,6 @@ export default function ScrollCardsAnimation() {
                 ))}
               </div>
 
-              <div className=" pt-32 relative h-full flex items-center justify-center pr-20">
-                <div className="relative w-[70%]">
-                  <div className="h-16 bg-gradient-to-r from-brand-red to-brand-red rounded-l-lg shadow-inner flex items-center justify-center">
-                    <div className="flex items-center justify-center h-full space-x-32 opacity-30"></div>
-                  </div>
-                  {/* Arrow head positioned 10px after the right edge of the red bar */}
-                  <div className="absolute top-1/2 -translate-y-1/2 left-full ml-2.5">
-                    <svg
-                      width="120"
-                      height="128"
-                      viewBox="0 0 120 128"
-                      className="drop-shadow-lg"
-                    >
-                      <path
-                        d="M0 32 L0 96 L80 96 L80 112 L120 64 L80 16 L80 32 Z"
-                        fill="url(#arrowGradient)"
-                        className="drop-shadow-md"
-                      />
-                      <defs>
-                        <linearGradient
-                          id="arrowGradient"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="0%"
-                        >
-                          <stop offset="0%" stopColor="#brand-red" />
-                          <stop offset="100%" stopColor="#brand-red" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
               {/* Enhanced visual elements */}
               <div className="absolute inset-0 pointer-events-none">
                 {/* Animated background particles */}
@@ -614,3 +579,38 @@ export default function ScrollCardsAnimation() {
     </div>
   );
 }
+
+//  <div className=" pt-32 relative h-full flex items-center justify-center pr-20">
+//     <div className="relative w-[70%]">
+//       <div className="h-16 bg-gradient-to-r from-brand-red to-brand-red rounded-l-lg shadow-inner flex items-center justify-center">
+//         <div className="flex items-center justify-center h-full space-x-32 opacity-30"></div>
+//       </div>
+//       {/* Arrow head positioned 10px after the right edge of the red bar */}
+//       <div className="absolute top-1/2 -translate-y-1/2 left-full ml-2.5">
+//         <svg
+//           width="120"
+//           height="128"
+//           viewBox="0 0 120 128"
+//           className="drop-shadow-lg"
+//         >
+//           <path
+//             d="M0 32 L0 96 L80 96 L80 112 L120 64 L80 16 L80 32 Z"
+//             fill="url(#arrowGradient)"
+//             className="drop-shadow-md"
+//           />
+//           <defs>
+//             <linearGradient
+//               id="arrowGradient"
+//               x1="0%"
+//               y1="0%"
+//               x2="100%"
+//               y2="0%"
+//             >
+//               <stop offset="0%" stopColor="#brand-red" />
+//               <stop offset="100%" stopColor="#brand-red" />
+//             </linearGradient>
+//           </defs>
+//         </svg>
+//       </div>
+//     </div>
+//   </div>
