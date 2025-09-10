@@ -24,26 +24,26 @@ export default function NavbarV2() {
           <div className="absolute left-4 sm:left-6 lg:left-8">
             <HamburgerNavigation />
           </div>
-          {!isHomePage && (
-            <div>
-              <Link
-                href="/"
-                title="Back to Home"
-                className="block w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 transition-all duration-300"
-                onClick={handleHomeClick}
-              >
-                <Image
-                  // src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
-                  src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
-                  className="w-full h-auto object-contain"
-                  width={320}
-                  height={60}
-                  alt="Qmax PCB Design Logo"
-                  priority
-                />
-              </Link>
-            </div>
-          )}
+          {/* {!isHomePage && ( */}
+          <div>
+            <Link
+              href="/"
+              title="Back to Home"
+              className="block w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 transition-all duration-300"
+              onClick={handleHomeClick}
+            >
+              <Image
+                // src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
+                src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
+                className="w-full h-auto object-contain"
+                width={320}
+                height={60}
+                alt="Qmax PCB Design Logo"
+                priority
+              />
+            </Link>
+          </div>
+          {/* )} */}
         </div>
       </header>
       {/* Navbar spacer - pushes content below the navbar */}

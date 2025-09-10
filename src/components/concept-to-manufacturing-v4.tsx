@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, type PanInfo } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, type PanInfo } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
 const cards = [
@@ -80,20 +80,80 @@ const cards = [
   },
 ];
 
-export default function ScrollCardsAnimation() {
-  const containerRef = useRef<HTMLDivElement>(null);
+interface ScrollCardsAnimationV4Props {
+  onComplete?: () => void;
+}
+
+export default function ScrollCardsAnimationV4({
+  onComplete,
+}: ScrollCardsAnimationV4Props = {}) {
   const [activeCard, setActiveCard] = useState(0);
-  const [isHorizontalScrollComplete, setIsHorizontalScrollComplete] =
-    useState(false);
+  const [lastHoveredCard, setLastHoveredCard] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isBelow1500, setIsBelow1500] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
+  const [isFullyVisible, setIsFullyVisible] = useState(false);
+  const [showHoverHints, setShowHoverHints] = useState(false);
+  const [isAutoHighlighting, setIsAutoHighlighting] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   console.log(isBelow1500);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+  // Intersection Observer to detect when component becomes fully visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+            setIsFullyVisible(true);
+            // Start auto-highlight sequence immediately when visible
+            if (!isMobile && !hasInteracted) {
+              setIsAutoHighlighting(true);
+              // Cycle through all cards quickly
+              const highlightSequence = async () => {
+                for (let i = 0; i < cards.length; i++) {
+                  setActiveCard(i);
+                  await new Promise((resolve) => setTimeout(resolve, 150)); // 150ms per card
+                }
+                // Reset to first card after sequence
+                setActiveCard(0);
+                setLastHoveredCard(0);
+                setIsAutoHighlighting(false);
+                // Show hover hints after auto-highlight completes
+                setTimeout(() => {
+                  setShowHoverHints(true);
+                }, 500);
+              };
+              highlightSequence();
+            } else {
+              // Show hover hints immediately if mobile or already interacted
+              setTimeout(() => {
+                setShowHoverHints(true);
+              }, 1000);
+            }
+          } else {
+            setIsFullyVisible(false);
+            setShowHoverHints(false);
+            setIsAutoHighlighting(false);
+          }
+        });
+      },
+      {
+        threshold: 0.8, // Trigger when 80% of component is visible
+        rootMargin: "0px",
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, [isMobile, hasInteracted]);
 
   // Detect mobile device
   useEffect(() => {
@@ -106,28 +166,14 @@ export default function ScrollCardsAnimation() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (latest) => {
-      // Calculate the current card index based on scroll progress with adjusted sensitivity
-      const sensitivity = isMobile ? 1.2 : 1.4; // Reduced sensitivity for smoother transitions
-      // Normalize the scroll progress to match the number of cards
-      const normalizedProgress = Math.min(latest * sensitivity, 1);
-      const cardIndex = Math.floor(normalizedProgress * (cards.length - 1));
-      const clampedIndex = Math.min(Math.max(cardIndex, 0), cards.length - 1);
-
-      // Update active card
-      setActiveCard(clampedIndex);
-
-      // Handle completion state when reaching the last card
-      if (cardIndex >= cards.length - 1) {
-        setIsHorizontalScrollComplete(true);
-      } else if (cardIndex < cards.length - 1) {
-        setIsHorizontalScrollComplete(false);
-      }
-    });
-
-    return () => unsubscribe();
-  }, [scrollYProgress, isHorizontalScrollComplete, isMobile]);
+  // Track user interaction and trigger completion
+  const handleUserInteraction = (newIndex: number) => {
+    setActiveCard(newIndex);
+    if (!hasInteracted && newIndex > 0) {
+      setHasInteracted(true);
+      onComplete?.();
+    }
+  };
 
   // Handle swipe gestures on mobile with sliding animation
   const handlePanEnd = (event: PointerEvent, info: PanInfo) => {
@@ -136,21 +182,13 @@ export default function ScrollCardsAnimation() {
     const swipeThreshold = 50;
     if (info.offset.x > swipeThreshold && activeCard > 0) {
       const newIndex = Math.max(0, activeCard - 1);
-      setActiveCard(newIndex);
-      // Reset completion state if going backward
-      if (newIndex < cards.length - 1) {
-        setIsHorizontalScrollComplete(false);
-      }
+      handleUserInteraction(newIndex);
     } else if (
       info.offset.x < -swipeThreshold &&
       activeCard < cards.length - 1
     ) {
       const newIndex = Math.min(cards.length - 1, activeCard + 1);
-      setActiveCard(newIndex);
-      // Set completion state if reaching the end
-      if (newIndex === cards.length - 1) {
-        setIsHorizontalScrollComplete(true);
-      }
+      handleUserInteraction(newIndex);
     }
   };
 
@@ -166,13 +204,10 @@ export default function ScrollCardsAnimation() {
   }, []);
 
   return (
-    <div className=" min-h-screen">
+    <div ref={containerRef} className="min-h-screen">
       {/* Horizontal Cards Section */}
-      <div
-        ref={containerRef}
-        style={{ height: isMobile ? "400vh" : `${cards.length * 70}vh` }}
-      >
-        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+      <div className="h-screen">
+        <div className="h-screen flex items-center justify-center overflow-hidden">
           {/* Red Arrow - hidden on mobile */}
           {/* {!isMobile && (
             <div
@@ -286,33 +321,13 @@ export default function ScrollCardsAnimation() {
                   <motion.div
                     key={card.id}
                     className="relative flex-shrink-0"
-                    initial={{ scale: 0.7, opacity: 0.2, y: 50 }}
+                    initial={{ scale: 0.85, opacity: 0.3 }}
                     animate={{
-                      scale:
-                        index === activeCard
-                          ? 1.15
-                          : index <= activeCard
-                          ? 1
-                          : 0.85,
-                      opacity: index <= activeCard ? 1 : 0.3,
-                      y:
-                        index === activeCard
-                          ? -20
-                          : index <= activeCard
-                          ? 0
-                          : 20,
-                      rotateY:
-                        index === activeCard
-                          ? 0
-                          : index < activeCard
-                          ? -12
-                          : 12,
-                      z:
-                        index === activeCard
-                          ? 20
-                          : index <= activeCard
-                          ? 10
-                          : 0,
+                      scale: index === activeCard ? 1.15 : 0.85,
+                      opacity: index === activeCard ? 1 : 0.3,
+                      y: index === activeCard ? -20 : 0,
+                      rotateY: 0,
+                      z: index === activeCard ? 20 : 0,
                     }}
                     transition={{
                       duration: 0.8,
@@ -324,7 +339,43 @@ export default function ScrollCardsAnimation() {
                     style={{
                       transformStyle: "preserve-3d",
                     }}
+                    onHoverStart={() => {
+                      if (!isMobile && !isAutoHighlighting) {
+                        handleUserInteraction(index);
+                        setLastHoveredCard(index);
+                        setHasInteracted(true);
+                      }
+                    }}
+                    onHoverEnd={() => {
+                      if (!isMobile && !isAutoHighlighting) {
+                        setActiveCard(lastHoveredCard);
+                      }
+                    }}
                   >
+                    {/* Subtle border glow hint for hoverable cards */}
+                    {isFullyVisible &&
+                      showHoverHints &&
+                      !isMobile &&
+                      !isAutoHighlighting &&
+                      index !== activeCard && (
+                        <motion.div
+                          className="absolute inset-0 rounded-xl border border-red-500/20 pointer-events-none"
+                          animate={{
+                            opacity: [0.3, 0.7, 0.3],
+                            borderColor: [
+                              "rgba(239, 68, 68, 0.2)",
+                              "rgba(239, 68, 68, 0.5)",
+                              "rgba(239, 68, 68, 0.2)",
+                            ],
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Number.POSITIVE_INFINITY,
+                            delay: index * 0.2,
+                            ease: "easeInOut",
+                          }}
+                        />
+                      )}
                     {/* Glow effect for active card */}
                     {index === activeCard && (
                       <motion.div
@@ -336,11 +387,9 @@ export default function ScrollCardsAnimation() {
                     )}
 
                     <Card
-                      className={`w-40 h-56 lg:w-44 lg:h-64 xl:w-48 xl:h-72 bg-gradient-to-br transition-all duration-700 border-2 relative overflow-hidden ${
+                      className={`w-40 h-56 lg:w-44 lg:h-64 xl:w-48 xl:h-72 bg-gradient-to-br transition-all duration-700 border-2 relative overflow-hidden cursor-pointer ${
                         index === activeCard
                           ? "from-gray-800 to-gray-700 border-red-500 shadow-2xl shadow-red-500/30"
-                          : index <= activeCard
-                          ? "from-gray-800 to-gray-900 border-gray-500 shadow-lg shadow-gray-900/50"
                           : "from-gray-900 to-black border-gray-700 shadow-md"
                       }`}
                     >
@@ -408,7 +457,7 @@ export default function ScrollCardsAnimation() {
                         {/* Card Content */}
                         <motion.div
                           className="space-y-1 lg:space-y-1.5"
-                          initial={{ opacity: 0, y: 20 }}
+                          initial={{ opacity: 0.5, y: 10 }}
                           animate={{
                             opacity: index === activeCard ? 1 : 0.5,
                             y: index === activeCard ? 0 : 10,
@@ -421,7 +470,7 @@ export default function ScrollCardsAnimation() {
                               <motion.div
                                 key={itemIndex}
                                 className="flex items-center text-gray-300 text-xs lg:text-sm"
-                                initial={{ opacity: 0, x: -20 }}
+                                initial={{ opacity: 0.6, x: -5 }}
                                 animate={{
                                   opacity: index === activeCard ? 1 : 0.6,
                                   x: index === activeCard ? 0 : -5,
@@ -559,11 +608,49 @@ export default function ScrollCardsAnimation() {
           )}
 
           {!isMobile && (
-            <div className="absolute top-[calc(25%-100px)] left-1/2 transform -translate-x-1/2">
-              <div className="flex items-center space-x-2 text-3xl whitespace-nowrap">
-                <h1 className="font-bold text-4xl">Concept To Manufacturing</h1>
+            <>
+              <div className="absolute top-[calc(25%--900px)] left-1/2 transform -translate-x-1/2">
+                <div className="flex items-center space-x-2 text-3xl whitespace-nowrap">
+                  <h1 className="font-bold text-4xl">
+                    Concept To Manufacturing
+                  </h1>
+                </div>
               </div>
-            </div>
+
+              {/* Hover instruction hint */}
+              {isFullyVisible && showHoverHints && (
+                <motion.div
+                  className="absolute top-[calc(25%--800px)] left-1/2 transform -translate-x-1/2"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.5 }}
+                ></motion.div>
+              )}
+
+              {/* Auto-highlighting indicator */}
+              {/* {isAutoHighlighting && (
+                <motion.div
+                  className="absolute top-[calc(25%--800px)] left-1/2 transform -translate-x-1/2"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="flex items-center space-x-2 text-red-400 text-sm font-medium">
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{
+                        duration: 1,
+                        repeat: Number.POSITIVE_INFINITY,
+                        ease: "linear",
+                      }}
+                      className="w-4 h-4 border-2 border-red-400 border-t-transparent rounded-full"
+                    />
+                    <span>Showcasing interactive cards...</span>
+                  </div>
+                </motion.div>
+              )} */}
+            </>
           )}
 
           {/* Heading */}
@@ -579,38 +666,3 @@ export default function ScrollCardsAnimation() {
     </div>
   );
 }
-
-//  <div className=" pt-32 relative h-full flex items-center justify-center pr-20">
-//     <div className="relative w-[70%]">
-//       <div className="h-16 bg-gradient-to-r from-brand-red to-brand-red rounded-l-lg shadow-inner flex items-center justify-center">
-//         <div className="flex items-center justify-center h-full space-x-32 opacity-30"></div>
-//       </div>
-//       {/* Arrow head positioned 10px after the right edge of the red bar */}
-//       <div className="absolute top-1/2 -translate-y-1/2 left-full ml-2.5">
-//         <svg
-//           width="120"
-//           height="128"
-//           viewBox="0 0 120 128"
-//           className="drop-shadow-lg"
-//         >
-//           <path
-//             d="M0 32 L0 96 L80 96 L80 112 L120 64 L80 16 L80 32 Z"
-//             fill="url(#arrowGradient)"
-//             className="drop-shadow-md"
-//           />
-//           <defs>
-//             <linearGradient
-//               id="arrowGradient"
-//               x1="0%"
-//               y1="0%"
-//               x2="100%"
-//               y2="0%"
-//             >
-//               <stop offset="0%" stopColor="#brand-red" />
-//               <stop offset="100%" stopColor="#brand-red" />
-//             </linearGradient>
-//           </defs>
-//         </svg>
-//       </div>
-//     </div>
-//   </div>

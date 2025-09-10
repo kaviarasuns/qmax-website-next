@@ -1,13 +1,11 @@
 "use client";
 import InsideOut from "@/components/InsideOut";
 import ServicesV2 from "@/components/Services-V2";
-import Link from "next/link";
-import Image from "next/image";
 
 import EmblaCarousel from "@/components/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
-import ScrollCardsAnimationV3 from "@/components/concept-to-manufacturing-v3";
 import { motion, useScroll, useTransform } from "framer-motion";
+import ScrollCardsAnimationV4 from "@/components/concept-to-manufacturing-v4";
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -18,10 +16,10 @@ export default function Home() {
   const borderRadius = useTransform(scrollY, [200, 600], [0, 30]);
   const opacity = useTransform(scrollY, [200, 600], [1, 0.8]);
 
-  const handleHomeClick = () => {
-    // Handle home click if needed (currently just using Next.js Link navigation)
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  // const handleHomeClick = () => {
+  //   // Handle home click if needed (currently just using Next.js Link navigation)
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // };
 
   // const SLIDES = [
   //   {
@@ -105,7 +103,7 @@ export default function Home() {
         }}
       >
         {/* Logo positioned at the top center of the video */}
-        <div className="absolute top-8 z-10 flex justify-center w-full">
+        {/* <div className="absolute top-8 z-10 flex justify-center w-full">
           <Link
             href="/"
             title="Back to Home"
@@ -121,7 +119,7 @@ export default function Home() {
               priority
             />
           </Link>
-        </div>
+        </div> */}
         {/* Top gradient overlay */}
         <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/70 to-transparent z-[1]"></div>
         {/* Bottom gradient overlay */}
@@ -148,7 +146,7 @@ export default function Home() {
       </motion.div>
       <div className="pt-16"></div>
       {/* <ScrollCardsAnimation /> */}
-      <ScrollCardsAnimationV3 />
+      <ScrollCardsAnimationV4 />
       <div className="pt-16"></div>
       <ServicesV2 />
       <InsideOut />

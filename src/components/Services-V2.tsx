@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -48,8 +48,10 @@ const services = [
 
 const ServicesV2 = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [activeCard, setActiveCard] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
 
   // Detect mobile device
   useEffect(() => {
@@ -62,55 +64,65 @@ const ServicesV2 = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    // Adjust offset to better control the scrolling effect
-    // This makes the scroll effect start when the section enters the viewport
-    // and end when the section is about to leave the viewport
-    offset: ["start start", "end end"],
-  });
+  // Clear auto-play interval
+  const clearAutoPlay = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
 
-  // Update active card based on scroll position
+  // Start auto-play interval
+  const startAutoPlay = () => {
+    clearAutoPlay(); // Prevent multiple intervals
+    if (!isUserInteracting) {
+      intervalRef.current = setInterval(() => {
+        setActiveCard((prev) => (prev + 1) % services.length);
+      }, 2000);
+    }
+  };
+
+  // Auto-play effect
   useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (latest) => {
-      // Use a more controlled approach with wider scroll range for slower transitions
-      const scrollStart = 0.1; // Start at 10% of scroll
-      const scrollEnd = 0.9; // End at 90% of scroll
+    startAutoPlay();
+    return () => clearAutoPlay();
+  }, [isUserInteracting]);
 
-      // Add padding between card transitions
-      const transitionPadding = 0.2; // 20% padding between transitions
+  // Component cleanup
+  useEffect(() => {
+    return () => clearAutoPlay();
+  }, []);
 
-      // Calculate adjusted progress to account for padding
-      const rawProgress = (latest - scrollStart) / (scrollEnd - scrollStart);
-      const normalizedProgress = Math.max(
-        0,
-        Math.min(1, rawProgress * (1 + transitionPadding))
-      );
+  // Handle card hover for desktop interaction
+  const handleCardHover = (index: number) => {
+    if (!isMobile) {
+      clearAutoPlay(); // Immediately stop auto-play
+      setIsUserInteracting(true);
+      setActiveCard(index);
+    }
+  };
 
-      // Calculate card index with a smoother transition
-      const exactIndex = normalizedProgress * (services.length - 1);
-      const cardIndex = Math.floor(exactIndex);
+  // Handle mouse enter on card
+  const handleCardMouseEnter = (index: number) => {
+    clearAutoPlay(); // Immediately stop auto-play
+    setIsUserInteracting(true);
+    handleCardHover(index);
+  };
 
-      // Clamp the index to valid range
-      const clampedIndex = Math.min(
-        Math.max(cardIndex, 0),
-        services.length - 1
-      );
-
-      // Update active card
-      setActiveCard(clampedIndex);
-    });
-
-    return () => unsubscribe();
-  }, [scrollYProgress, isMobile, services.length]);
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      setIsUserInteracting(false);
+      // Auto-play will restart due to useEffect dependency
+    }
+  };
 
   return (
     <section
       ref={containerRef}
-      className="w-full py-6"
-      style={{ minHeight: isMobile ? "400vh" : "300vh" }}
+      className="w-full py-16 min-h-screen flex items-center"
+      onMouseLeave={handleMouseLeave}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 sticky top-0 pt-16 pb-24 flex flex-col items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex flex-col items-center">
         <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
           Our Services
         </h2>
@@ -120,9 +132,9 @@ const ServicesV2 = () => {
             <motion.div
               key={idx}
               animate={{
-                scale: idx === activeCard ? 1.05 : 0.95,
-                opacity: idx === activeCard ? 1 : 0.7,
-                y: idx === activeCard ? -10 : 0,
+                scale: isMobile ? 1 : idx === activeCard ? 1.05 : 0.95,
+                opacity: isMobile ? 1 : idx === activeCard ? 1 : 0.7,
+                y: isMobile ? 0 : idx === activeCard ? -10 : 0,
               }}
               transition={{
                 duration: 0.8,
@@ -130,10 +142,17 @@ const ServicesV2 = () => {
                 stiffness: 80,
                 damping: 20,
               }}
+              onMouseEnter={() => handleCardMouseEnter(idx)}
             >
               <Card
                 className={`relative flex flex-col h-[260px] sm:h-[280px] md:h-[300px] lg:h-[320px] overflow-hidden group shadow-lg 
-                ${idx === activeCard ? "border-2 border-red-500" : "border-0"}`}
+                ${
+                  isMobile
+                    ? "border-2 border-red-500"
+                    : idx === activeCard
+                    ? "border-2 border-red-500"
+                    : "border-0"
+                }`}
               >
                 {/* Background image */}
                 <div
@@ -145,7 +164,7 @@ const ServicesV2 = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-10" />
 
                 {/* Glow effect for active card */}
-                {idx === activeCard && (
+                {(isMobile || idx === activeCard) && (
                   <motion.div
                     className="absolute inset-0 bg-red-500/20 rounded-xl blur-xl z-5"
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -159,13 +178,19 @@ const ServicesV2 = () => {
                   <CardHeader className="p-0 mb-2 bg-transparent">
                     <motion.div
                       animate={{
-                        scale: idx === activeCard ? 1.05 : 1,
+                        scale: isMobile ? 1.05 : idx === activeCard ? 1.05 : 1,
                       }}
                       transition={{ duration: 0.4 }}
                     >
                       <CardTitle
                         className={`text-base sm:text-lg text-white text-center drop-shadow font-bold 
-                        ${idx === activeCard ? "text-red-100" : "text-white"}`}
+                        ${
+                          isMobile
+                            ? "text-red-100"
+                            : idx === activeCard
+                            ? "text-red-100"
+                            : "text-white"
+                        }`}
                       >
                         {service.topic}
                       </CardTitle>
@@ -175,13 +200,19 @@ const ServicesV2 = () => {
                     <motion.p
                       className="text-xs sm:text-sm text-white text-center mb-3 drop-shadow"
                       animate={{
-                        opacity: idx === activeCard ? 1 : 0.8,
+                        opacity: isMobile ? 1 : idx === activeCard ? 1 : 0.8,
                       }}
                     >
                       {service.description}
                     </motion.p>
                     <Button
-                      variant={idx === activeCard ? "destructive" : "secondary"}
+                      variant={
+                        isMobile
+                          ? "destructive"
+                          : idx === activeCard
+                          ? "destructive"
+                          : "secondary"
+                      }
                       className="w-full max-w-[140px] text-xs sm:text-sm py-2"
                     >
                       Know More
@@ -193,19 +224,21 @@ const ServicesV2 = () => {
           ))}
         </div>
 
-        {/* Scroll indicator */}
-        {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="flex space-x-2">
-            {services.map((_, index) => (
-              <div
-                key={index}
-                className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
-                  index === activeCard ? "bg-red-500 scale-125" : "bg-gray-600"
-                }`}
-              />
-            ))}
-          </div>
-        </div> */}
+        {/* Card indicators */}
+        <div className="flex space-x-2 mt-8">
+          {services.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveCard(index)}
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                index === activeCard
+                  ? "bg-red-500 scale-125"
+                  : "bg-gray-400 hover:bg-gray-600"
+              }`}
+              aria-label={`Select service ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
