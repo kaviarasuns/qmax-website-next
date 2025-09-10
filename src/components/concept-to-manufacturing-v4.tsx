@@ -315,8 +315,8 @@ export default function ScrollCardsAnimationV4({
             </div>
           ) : (
             /* Desktop: 7 Cards Visible with Enhanced Visual Appeal */
-            <div className="w-full px-8 lg:px-12 xl:px-16">
-              <div className="flex items-center justify-center space-x-2 lg:space-x-3 xl:space-x-5">
+            <div className="w-full px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-40">
+              <div className="flex items-center justify-center space-x-1 sm:space-x-2 lg:space-x-3 xl:space-x-4 2xl:space-x-5">
                 {cards.slice(0, 7).map((card, index) => (
                   <motion.div
                     key={card.id}
@@ -326,6 +326,7 @@ export default function ScrollCardsAnimationV4({
                       scale: index === activeCard ? 1.15 : 0.85,
                       opacity: index === activeCard ? 1 : 0.3,
                       y: index === activeCard ? -20 : 0,
+                      height: index === activeCard ? "auto" : undefined,
                       rotateY: 0,
                       z: index === activeCard ? 20 : 0,
                     }}
@@ -387,7 +388,11 @@ export default function ScrollCardsAnimationV4({
                     )}
 
                     <Card
-                      className={`w-40 h-56 lg:w-44 lg:h-64 xl:w-48 xl:h-72 bg-gradient-to-br transition-all duration-700 border-2 relative overflow-hidden cursor-pointer ${
+                      className={`${
+                        index === activeCard
+                          ? "w-28 h-56 sm:w-32 sm:h-60 md:w-36 md:h-64 lg:w-40 lg:h-72 xl:w-44 xl:h-80"
+                          : "w-28 h-40 sm:w-32 sm:h-44 md:w-36 md:h-48 lg:w-40 lg:h-56 xl:w-44 xl:h-64"
+                      } bg-gradient-to-br transition-all duration-700 border-2 relative overflow-hidden cursor-pointer ${
                         index === activeCard
                           ? "from-gray-800 to-gray-700 border-red-500 shadow-2xl shadow-red-500/30"
                           : "from-gray-900 to-black border-gray-700 shadow-md"
@@ -411,13 +416,13 @@ export default function ScrollCardsAnimationV4({
                         />
                       </div>
 
-                      <CardContent className="p-3 lg:p-4 xl:p-5 h-full flex flex-col relative z-10">
+                      <CardContent className="p-2 sm:p-3 lg:p-4 xl:p-5 h-full flex flex-col relative z-10">
                         {/* Card Number Badge */}
 
                         {/* Card Title */}
-                        <div className="text-center mb-2 lg:mb-3 mt-2">
+                        <div className="text-center mb-1 sm:mb-2 lg:mb-3 mt-1 sm:mt-2">
                           <motion.h3
-                            className={`font-bold text-xs lg:text-sm xl:text-base tracking-wide leading-tight transition-colors duration-500 ${
+                            className={`font-bold text-[10px] sm:text-xs lg:text-sm xl:text-base tracking-wide leading-tight transition-colors duration-500 ${
                               index === activeCard
                                 ? "text-white"
                                 : "text-gray-300"
@@ -432,7 +437,7 @@ export default function ScrollCardsAnimationV4({
                         </div>
 
                         {/* Card Image */}
-                        <div className="flex-1 mb-2 lg:mb-3 overflow-hidden rounded-lg relative">
+                        <div className="flex-1 mb-1 sm:mb-2 lg:mb-3 overflow-hidden rounded-lg relative">
                           <motion.img
                             src={card.image}
                             alt={card.title}
@@ -456,7 +461,7 @@ export default function ScrollCardsAnimationV4({
 
                         {/* Card Content */}
                         <motion.div
-                          className="space-y-1 lg:space-y-1.5"
+                          className="space-y-0.5 sm:space-y-1 lg:space-y-1.5"
                           initial={{ opacity: 0.5, y: 10 }}
                           animate={{
                             opacity: index === activeCard ? 1 : 0.5,
@@ -465,11 +470,11 @@ export default function ScrollCardsAnimationV4({
                           transition={{ duration: 0.5, delay: 0.2 }}
                         >
                           {card.content
-                            .slice(0, index === activeCard ? 4 : 2)
+                            .slice(0, index === activeCard ? 3 : 2)
                             .map((item, itemIndex) => (
                               <motion.div
                                 key={itemIndex}
-                                className="flex items-center text-gray-300 text-xs lg:text-sm"
+                                className="flex items-center text-gray-300 text-[10px] sm:text-xs lg:text-sm"
                                 initial={{ opacity: 0.6, x: -5 }}
                                 animate={{
                                   opacity: index === activeCard ? 1 : 0.6,
@@ -484,10 +489,10 @@ export default function ScrollCardsAnimationV4({
                                 }}
                               >
                                 <motion.div
-                                  className={`rounded-full mr-2 flex-shrink-0 ${
+                                  className={`rounded-full mr-1 sm:mr-2 flex-shrink-0 ${
                                     index === activeCard
-                                      ? "w-2 h-2 bg-red-500"
-                                      : "w-1.5 h-1.5 bg-gray-500"
+                                      ? "w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500"
+                                      : "w-1 h-1 sm:w-1.5 sm:h-1.5 bg-gray-500"
                                   }`}
                                   animate={{
                                     scale:
@@ -513,14 +518,14 @@ export default function ScrollCardsAnimationV4({
                             ))}
 
                           {/* Show more indicator for active card */}
-                          {index === activeCard && card.content.length > 4 && (
+                          {index === activeCard && card.content.length > 3 && (
                             <motion.div
-                              className="text-red-400 text-xs text-center mt-2 font-medium"
+                              className="text-red-400 text-[10px] sm:text-xs text-center mt-1 sm:mt-2 font-medium"
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
                               transition={{ delay: 0.8 }}
                             >
-                              +{card.content.length - 4} more features
+                              +{card.content.length - 3} more features
                             </motion.div>
                           )}
                         </motion.div>
@@ -609,9 +614,9 @@ export default function ScrollCardsAnimationV4({
 
           {!isMobile && (
             <>
-              <div className="absolute top-[calc(25%--900px)] left-1/2 transform -translate-x-1/2">
-                <div className="flex items-center space-x-2 text-3xl whitespace-nowrap">
-                  <h1 className="font-bold text-4xl">
+              <div className="absolute top-[calc(25%-60px)] sm:top-[calc(25%-50px)] left-1/2 transform -translate-x-1/2">
+                <div className="flex items-center space-x-2 text-xl sm:text-2xl md:text-3xl whitespace-nowrap">
+                  <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl">
                     Concept To Manufacturing
                   </h1>
                 </div>
@@ -620,7 +625,7 @@ export default function ScrollCardsAnimationV4({
               {/* Hover instruction hint */}
               {isFullyVisible && showHoverHints && (
                 <motion.div
-                  className="absolute top-[calc(25%--800px)] left-1/2 transform -translate-x-1/2"
+                  className="absolute top-[calc(25%-20px)] sm:top-[calc(25%-10px)] left-1/2 transform -translate-x-1/2"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1.5 }}
