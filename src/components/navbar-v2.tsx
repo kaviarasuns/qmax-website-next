@@ -3,23 +3,58 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import HamburgerNavigation from "./hamburgur-navigation";
 
 export default function NavbarV2() {
   const router = useRouter();
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const [scrollY, setScrollY] = useState(0);
 
   const handleHomeClick = (e: React.MouseEvent) => {
     e.preventDefault(); // Prevent default link behavior
     router.push("/"); // Programmatically navigate to home
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window !== "undefined") {
+        setScrollY(window.scrollY);
+      }
+    };
+
+    // Only add scroll listener on homepage
+    if (isHomePage && typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      return () => window.removeEventListener("scroll", handleScroll);
+    }
+  }, [isHomePage]);
+
+  // Calculate background opacity based on scroll position
+  // Assuming video height is around 100vh, we'll complete transition by 80vh
+  const getBackgroundOpacity = () => {
+    if (!isHomePage) return 1; // Full white on non-home pages
+    if (typeof window === "undefined") return 0;
+
+    const maxScroll = window.innerHeight * 0.8; // 80% of viewport height
+    const opacity = Math.min(scrollY / maxScroll, 1);
+    return opacity;
+  };
+
+  const backgroundOpacity = getBackgroundOpacity();
+
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
-      <header className="bg-transparent fixed top-0 left-0 w-full z-50">
+      <header
+        className="fixed top-0 left-0 w-full z-50 transition-all duration-300"
+        style={{
+          backgroundColor: `rgba(255, 255, 255, ${backgroundOpacity})`,
+          backdropFilter: backgroundOpacity > 0.1 ? "blur(8px)" : "none",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-20 flex justify-center items-center">
           <div className="absolute left-4 sm:left-6 lg:left-8">
             <HamburgerNavigation />

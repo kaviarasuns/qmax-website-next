@@ -3,17 +3,16 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Supermolot'; /* Name you’ll use to reference the font */
-  src: url('/fonts/OTF/TT Supermolot Regular.otf') format('truetype'), /* Path to TTF */
-       url('/fonts/TTF/TT Supermolot Regular.ttf') format('opentype'); /* Path to OTF (optional) */
+  font-family: "Supermolot"; /* Name you’ll use to reference the font */
+  src: url("/fonts/OTF/TT Supermolot Regular.otf") format("truetype"),
+    /* Path to TTF */ url("/fonts/TTF/TT Supermolot Regular.ttf")
+      format("opentype"); /* Path to OTF (optional) */
   font-weight: normal; /* Adjust weight if needed (e.g., 400, 700) */
   font-style: normal; /* Adjust style if needed (e.g., italic) */
 }
 
-
 @layer base {
   :root {
-
     --background: 0 0% 100%;
 
     --foreground: 240 10% 3.9%;
@@ -64,10 +63,9 @@
 
     --radius: 0.5rem;
 
-    --font-tt-supermolot: 'TT Supermolot Neue Trl Exp', sans-serif;
+    --font-tt-supermolot: "TT Supermolot Neue Trl Exp", sans-serif;
   }
   .dark {
-
     --background: 240 10% 3.9%;
 
     --foreground: 0 0% 98%;
@@ -127,11 +125,11 @@ body {
 }
 
 html {
-  font-family: 'Supermolot', sans-serif;;
+  font-family: "Supermolot", sans-serif;
 }
 
 body {
-  font-family: 'Supermolot', sans-serif; /* Fallback font */
+  font-family: "Supermolot", sans-serif; /* Fallback font */
 }
 
 @layer base {
@@ -141,4 +139,30 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Dashing Effect Animation */
+@keyframes dash-sweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+.animate-dash-sweep {
+  animation: dash-sweep 2s ease-in-out forwards;
+  background: linear-gradient(90deg, transparent, #f33117, transparent);
 }
