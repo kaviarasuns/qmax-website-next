@@ -59,7 +59,7 @@ export default function NavbarV2() {
             !isHomePage || backgroundOpacity > 0.1 ? "blur(8px)" : "none",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-20 flex justify-center items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-20 sm:h-22 lg:h-24 flex justify-center items-center">
           <div className="absolute left-4 sm:left-6 lg:left-8">
             <HamburgerNavigation />
           </div>
@@ -68,15 +68,15 @@ export default function NavbarV2() {
             <Link
               href="/"
               title="Back to Home"
-              className="block w-56 sm:w-64 md:w-72 lg:w-80 xl:w-96 transition-all duration-300"
+              className="block w-64 sm:w-72 md:w-80 lg:w-96 xl:w-[28rem] transition-all duration-300"
               onClick={handleHomeClick}
             >
               <Image
                 // src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
                 src="./qmax-logo.svg"
                 className="w-full h-auto object-contain"
-                width={320}
-                height={60}
+                width={480}
+                height={90}
                 alt="Qmax PCB Design Logo"
                 priority
               />
@@ -86,7 +86,7 @@ export default function NavbarV2() {
         </div>
       </header>
       {/* Navbar spacer - pushes content below the navbar */}
-      {!isHomePage && <div className="h-20"></div>}
+      {!isHomePage && <div className="h-20 sm:h-22 lg:h-24"></div>}
     </>
     // <>
     //   <nav className="fixed top-0 left-0 w-full z-50 flex items-center p-3 lg:p-5 bg-transparent shadow-md">

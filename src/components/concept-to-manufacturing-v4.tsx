@@ -155,16 +155,21 @@ export default function ScrollCardsAnimationV4({
     };
   }, [isMobile, hasInteracted]);
 
-  // Detect mobile device
+  // Detect mobile device and initialize activeCard
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      const isMobileDevice = window.innerWidth < 768;
+      setIsMobile(isMobileDevice);
+      // Initialize with first card on mobile if no card is selected
+      if (isMobileDevice && activeCard === -1) {
+        setActiveCard(0);
+      }
     };
 
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  }, [activeCard]);
 
   // Track user interaction and trigger completion
   const handleUserInteraction = (newIndex: number) => {
@@ -192,11 +197,10 @@ export default function ScrollCardsAnimationV4({
     }
   };
 
+  // Handle screen size changes for below1500 state
   useEffect(() => {
     const checkSizes = () => {
-      const w = window.innerWidth;
-      setIsMobile(w < 768);
-      setIsBelow1500(w < 1500);
+      setIsBelow1500(window.innerWidth < 1500);
     };
     checkSizes();
     window.addEventListener("resize", checkSizes);
@@ -232,95 +236,107 @@ export default function ScrollCardsAnimationV4({
                 </h1>
               </div>
 
-              <div className="relative overflow-hidden">
-                <motion.div
-                  key={activeCard}
-                  initial={{ x: 300, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: -300, opacity: 0 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 30,
-                    duration: 0.5,
-                  }}
-                  className="w-full max-w-sm"
-                  onPanEnd={handlePanEnd}
-                  drag="x"
-                  dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={0.2}
-                >
-                  <Card className="bg-gray-800 border-2 border-red-500 shadow-2xl shadow-red-500/20">
-                    <CardContent className="p-4">
-                      {/* Card Title */}
-                      <div className="text-center mb-3">
-                        <h3 className="text-white font-bold text-sm tracking-wide leading-tight">
-                          {cards[activeCard].title}
-                        </h3>
-                      </div>
-
-                      {/* Card Image */}
-                      <div className="mb-3 overflow-hidden rounded-lg h-32">
-                        <motion.img
-                          key={`${activeCard}-image`}
-                          src={cards[activeCard].image || "/placeholder.svg"}
-                          alt={cards[activeCard].title}
-                          className="w-full h-full object-cover"
-                          initial={{ scale: 1.1, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          transition={{ duration: 0.4, delay: 0.2 }}
-                        />
-                      </div>
-
-                      {/* Card Content */}
-                      <div className="space-y-2">
-                        {cards[activeCard].content.map((item, itemIndex) => (
-                          <motion.div
-                            key={`${activeCard}-${itemIndex}`}
-                            className="flex items-center text-gray-300 text-xs"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{
-                              duration: 0.3,
-                              delay: 0.3 + itemIndex * 0.1,
-                            }}
-                          >
-                            <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2 flex-shrink-0"></div>
-                            <span>{item}</span>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-
-                {/* Mobile slide direction indicators */}
-                <div className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500">
+              {activeCard >= 0 && activeCard < cards.length ? (
+                <div className="relative overflow-hidden">
                   <motion.div
-                    animate={{ x: [-5, 5, -5] }}
+                    key={activeCard}
+                    initial={{ x: 300, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -300, opacity: 0 }}
                     transition={{
-                      repeat: Number.POSITIVE_INFINITY,
-                      duration: 2,
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30,
+                      duration: 0.5,
                     }}
-                    className="text-lg"
+                    className="w-full max-w-sm"
+                    onPanEnd={handlePanEnd}
+                    drag="x"
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.2}
                   >
-                    ←
+                    <Card className="bg-gray-800 border-2 border-red-500 shadow-2xl shadow-red-500/20">
+                      <CardContent className="p-4">
+                        {/* Card Title */}
+                        <div className="text-center mb-3">
+                          <h3 className="text-white font-bold text-sm tracking-wide leading-tight">
+                            {cards[activeCard].title}
+                          </h3>
+                        </div>
+
+                        {/* Card Image */}
+                        <div className="mb-3 overflow-hidden rounded-lg h-32">
+                          <motion.img
+                            key={`${activeCard}-image`}
+                            src={cards[activeCard].image || "/placeholder.svg"}
+                            alt={cards[activeCard].title}
+                            className="w-full h-full object-cover"
+                            initial={{ scale: 1.1, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 0.4, delay: 0.2 }}
+                          />
+                        </div>
+
+                        {/* Card Content */}
+                        <div className="space-y-2">
+                          {cards[activeCard].content.map((item, itemIndex) => (
+                            <motion.div
+                              key={`${activeCard}-${itemIndex}`}
+                              className="flex items-center text-gray-300 text-xs"
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{
+                                duration: 0.3,
+                                delay: 0.3 + itemIndex * 0.1,
+                              }}
+                            >
+                              <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2 flex-shrink-0"></div>
+                              <span>{item}</span>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
                   </motion.div>
+
+                  {/* Mobile slide direction indicators */}
+                  <div className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500">
+                    <motion.div
+                      animate={{ x: [-5, 5, -5] }}
+                      transition={{
+                        repeat: Number.POSITIVE_INFINITY,
+                        duration: 2,
+                      }}
+                      className="text-lg"
+                    >
+                      ←
+                    </motion.div>
+                  </div>
+                  <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500">
+                    <motion.div
+                      animate={{ x: [-5, 5, -5] }}
+                      transition={{
+                        repeat: Number.POSITIVE_INFINITY,
+                        duration: 2,
+                        delay: 1,
+                      }}
+                      className="text-lg"
+                    >
+                      →
+                    </motion.div>
+                  </div>
                 </div>
-                <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500">
-                  <motion.div
-                    animate={{ x: [-5, 5, -5] }}
-                    transition={{
-                      repeat: Number.POSITIVE_INFINITY,
-                      duration: 2,
-                      delay: 1,
-                    }}
-                    className="text-lg"
+              ) : (
+                <div className="text-center text-gray-500">
+                  <p>Tap to start exploring our process</p>
+                  <button
+                    onClick={() => setActiveCard(0)}
+                    className="mt-4 px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
                   >
-                    →
-                  </motion.div>
+                    Start
+                  </button>
                 </div>
-              </div>
+              )}
             </div>
           ) : (
             /* Desktop: 7 Cards Visible with Enhanced Visual Appeal */
