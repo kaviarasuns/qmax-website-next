@@ -132,8 +132,8 @@ const ServicesV2 = () => {
             <motion.div
               key={idx}
               animate={{
-                scale: isMobile ? 1 : idx === activeCard ? 1.05 : 0.95,
-                opacity: isMobile ? 1 : idx === activeCard ? 1 : 0.7,
+                scale: isMobile ? 1 : idx === activeCard ? 1.05 : 1,
+                opacity: 1,
                 y: isMobile ? 0 : idx === activeCard ? -10 : 0,
               }}
               transition={{
@@ -147,9 +147,7 @@ const ServicesV2 = () => {
               <Card
                 className={`relative flex flex-col h-[260px] sm:h-[280px] md:h-[300px] lg:h-[320px] overflow-hidden group shadow-lg 
                 ${
-                  isMobile
-                    ? "border-2 border-red-500"
-                    : idx === activeCard
+                  !isMobile && idx === activeCard
                     ? "border-2 border-red-500"
                     : "border-0"
                 }`}
@@ -164,7 +162,7 @@ const ServicesV2 = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-10" />
 
                 {/* Glow effect for active card */}
-                {(isMobile || idx === activeCard) && (
+                {!isMobile && idx === activeCard && (
                   <motion.div
                     className="absolute inset-0 bg-red-500/20 rounded-xl blur-xl z-5"
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -185,9 +183,7 @@ const ServicesV2 = () => {
                       <CardTitle
                         className={`text-base sm:text-lg text-white text-center drop-shadow font-bold 
                         ${
-                          isMobile
-                            ? "text-red-100"
-                            : idx === activeCard
+                          !isMobile && idx === activeCard
                             ? "text-red-100"
                             : "text-white"
                         }`}
@@ -207,9 +203,7 @@ const ServicesV2 = () => {
                     </motion.p>
                     <Button
                       variant={
-                        isMobile
-                          ? "destructive"
-                          : idx === activeCard
+                        !isMobile && idx === activeCard
                           ? "destructive"
                           : "secondary"
                       }
