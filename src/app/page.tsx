@@ -124,7 +124,7 @@ export default function Home() {
 
     // Trigger downward auto-scroll when reaching 30% progress (scrolling down)
     if (
-      latest >= 0.3 &&
+      latest >= 0.2 &&
       !hasAutoScrolled &&
       !isUserScrolling &&
       scrollDirection === "down"

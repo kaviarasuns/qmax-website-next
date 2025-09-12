@@ -51,8 +51,12 @@ export default function NavbarV2() {
       <header
         className="fixed top-0 left-0 w-full z-50 transition-all duration-300"
         style={{
-          backgroundColor: `rgba(255, 255, 255, ${backgroundOpacity})`,
-          backdropFilter: backgroundOpacity > 0.1 ? "blur(8px)" : "none",
+          background:
+            !isHomePage || backgroundOpacity > 0.1
+              ? `linear-gradient(180deg, rgba(64, 64, 64, 0.9) 0%, rgba(255, 255, 255, ${backgroundOpacity}) 100%)`
+              : "transparent",
+          backdropFilter:
+            !isHomePage || backgroundOpacity > 0.1 ? "blur(8px)" : "none",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-20 flex justify-center items-center">
@@ -69,7 +73,7 @@ export default function NavbarV2() {
             >
               <Image
                 // src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
-                src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
+                src="./qmax-logo.svg"
                 className="w-full h-auto object-contain"
                 width={320}
                 height={60}

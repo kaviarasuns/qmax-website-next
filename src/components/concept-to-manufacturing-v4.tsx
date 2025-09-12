@@ -87,8 +87,8 @@ interface ScrollCardsAnimationV4Props {
 export default function ScrollCardsAnimationV4({
   onComplete,
 }: ScrollCardsAnimationV4Props = {}) {
-  const [activeCard, setActiveCard] = useState(0);
-  const [lastHoveredCard, setLastHoveredCard] = useState(0);
+  const [activeCard, setActiveCard] = useState(-1);
+  const [lastHoveredCard, setLastHoveredCard] = useState(-1);
   const [isMobile, setIsMobile] = useState(false);
   const [isBelow1500, setIsBelow1500] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
@@ -115,9 +115,9 @@ export default function ScrollCardsAnimationV4({
                   setActiveCard(i);
                   await new Promise((resolve) => setTimeout(resolve, 150)); // 150ms per card
                 }
-                // Reset to first card after sequence
-                setActiveCard(0);
-                setLastHoveredCard(0);
+                // Reset to no active card after sequence
+                setActiveCard(-1);
+                setLastHoveredCard(-1);
                 setIsAutoHighlighting(false);
                 // Show hover hints after auto-highlight completes
                 setTimeout(() => {
@@ -324,229 +324,224 @@ export default function ScrollCardsAnimationV4({
             </div>
           ) : (
             /* Desktop: 7 Cards Visible with Enhanced Visual Appeal */
-            <div className="w-full px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-40 flex flex-col items-center justify-center">
-              {/* Heading */}
-              <div className="mb-8 md:mb-12 relative -top-2 md:-top-3">
+            <div className="w-full px-4 flex flex-col items-center justify-center">
+              <div className="relative top-8">
                 <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-center text-black">
                   Concept To Manufacturing
                 </h1>
               </div>
-              <div className="flex items-center justify-center space-x-1 sm:space-x-2 lg:space-x-3 xl:space-x-4 2xl:space-x-5">
-                {cards.slice(0, 7).map((card, index) => (
-                  <motion.div
-                    key={card.id}
-                    className="relative flex-shrink-0"
-                    initial={{ scale: 0.85, opacity: 0.3 }}
-                    animate={{
-                      scale: index === activeCard ? 1.15 : 0.85,
-                      opacity: index === activeCard ? 1 : 0.3,
-                      y: index === activeCard ? -20 : 0,
-                      height: index === activeCard ? "auto" : undefined,
-                      rotateY: 0,
-                      z: index === activeCard ? 20 : 0,
-                    }}
-                    transition={{
-                      duration: 0.8,
-                      ease: [0.25, 0.46, 0.45, 0.94],
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 15,
-                    }}
-                    style={{
-                      transformStyle: "preserve-3d",
-                    }}
-                    onHoverStart={() => {
-                      if (!isMobile && !isAutoHighlighting) {
-                        handleUserInteraction(index);
-                        setLastHoveredCard(index);
-                        setHasInteracted(true);
-                      }
-                    }}
-                    onHoverEnd={() => {
-                      if (!isMobile && !isAutoHighlighting) {
-                        setActiveCard(lastHoveredCard);
-                      }
-                    }}
-                  >
-                    {/* Subtle border glow hint for hoverable cards */}
-                    {isFullyVisible &&
-                      showHoverHints &&
-                      !isMobile &&
-                      !isAutoHighlighting &&
-                      index !== activeCard && (
+              <div className="w-full px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-40 flex flex-col items-center justify-center h-96 sm:h-[32rem] md:h-[36rem] lg:h-[40rem] xl:h-[44rem]">
+                <div className="flex items-center justify-center space-x-1 sm:space-x-2 lg:space-x-3 xl:space-x-4 2xl:space-x-5">
+                  {cards.slice(0, 7).map((card, index) => (
+                    <motion.div
+                      key={card.id}
+                      className="relative flex-shrink-0"
+                      initial={{ scale: 0.85, opacity: 1 }}
+                      animate={{
+                        scale:
+                          index === activeCard && activeCard !== -1
+                            ? 1.15
+                            : 0.85,
+                        opacity: 1,
+                        y: index === activeCard && activeCard !== -1 ? -20 : 0,
+                        height:
+                          index === activeCard && activeCard !== -1
+                            ? "auto"
+                            : undefined,
+                        rotateY: 0,
+                        z: index === activeCard && activeCard !== -1 ? 20 : 0,
+                      }}
+                      transition={{
+                        duration: 0.8,
+                        ease: [0.25, 0.46, 0.45, 0.94],
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 15,
+                      }}
+                      style={{
+                        transformStyle: "preserve-3d",
+                      }}
+                      onHoverStart={() => {
+                        if (!isMobile && !isAutoHighlighting) {
+                          handleUserInteraction(index);
+                          setLastHoveredCard(index);
+                          setHasInteracted(true);
+                        }
+                      }}
+                      onHoverEnd={() => {
+                        if (!isMobile && !isAutoHighlighting) {
+                          setActiveCard(lastHoveredCard);
+                        }
+                      }}
+                    >
+                      {/* Subtle border glow hint for hoverable cards */}
+                      {isFullyVisible &&
+                        showHoverHints &&
+                        !isMobile &&
+                        !isAutoHighlighting &&
+                        (activeCard === -1 || index !== activeCard) && (
+                          <motion.div
+                            className="absolute inset-0 rounded-xl border border-red-500/20 pointer-events-none"
+                            animate={{
+                              opacity: [0.3, 0.7, 0.3],
+                              borderColor: [
+                                "rgba(239, 68, 68, 0.2)",
+                                "rgba(239, 68, 68, 0.5)",
+                                "rgba(239, 68, 68, 0.2)",
+                              ],
+                            }}
+                            transition={{
+                              duration: 3,
+                              repeat: Number.POSITIVE_INFINITY,
+                              delay: index * 0.2,
+                              ease: "easeInOut",
+                            }}
+                          />
+                        )}
+                      {/* Glow effect for active card */}
+                      {index === activeCard && activeCard !== -1 && (
                         <motion.div
-                          className="absolute inset-0 rounded-xl border border-red-500/20 pointer-events-none"
-                          animate={{
-                            opacity: [0.3, 0.7, 0.3],
-                            borderColor: [
-                              "rgba(239, 68, 68, 0.2)",
-                              "rgba(239, 68, 68, 0.5)",
-                              "rgba(239, 68, 68, 0.2)",
-                            ],
-                          }}
-                          transition={{
-                            duration: 3,
-                            repeat: Number.POSITIVE_INFINITY,
-                            delay: index * 0.2,
-                            ease: "easeInOut",
-                          }}
+                          className="absolute inset-0 bg-red-500/20 rounded-xl blur-xl"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1.2 }}
+                          transition={{ duration: 0.6 }}
                         />
                       )}
-                    {/* Glow effect for active card */}
-                    {index === activeCard && (
-                      <motion.div
-                        className="absolute inset-0 bg-red-500/20 rounded-xl blur-xl"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1.2 }}
-                        transition={{ duration: 0.6 }}
-                      />
-                    )}
 
-                    <Card
-                      className={`${
-                        index === activeCard
-                          ? "w-28 h-56 sm:w-32 sm:h-60 md:w-36 md:h-64 lg:w-40 lg:h-72 xl:w-44 xl:h-80"
-                          : "w-28 h-40 sm:w-32 sm:h-44 md:w-36 md:h-48 lg:w-40 lg:h-56 xl:w-44 xl:h-64"
-                      } bg-gradient-to-br transition-all duration-700 border-2 relative overflow-hidden cursor-pointer ${
-                        index === activeCard
-                          ? "from-gray-800 to-gray-700 border-red-500 shadow-2xl shadow-red-500/30"
-                          : "from-gray-900 to-black border-gray-700 shadow-md"
-                      }`}
-                    >
-                      {/* Animated background pattern */}
-                      <div className="absolute inset-0 opacity-10">
-                        <motion.div
-                          className="w-full h-full bg-gradient-to-br from-red-500/20 to-transparent"
-                          animate={{
-                            rotate: index === activeCard ? 360 : 0,
-                          }}
-                          transition={{
-                            duration: 20,
-                            repeat:
-                              index === activeCard
-                                ? Number.POSITIVE_INFINITY
-                                : 0,
-                            ease: "linear",
-                          }}
-                        />
-                      </div>
-
-                      <CardContent className="p-2 sm:p-3 lg:p-4 xl:p-5 h-full flex flex-col relative z-10">
-                        {/* Card Number Badge */}
-
-                        {/* Card Title */}
-                        <div className="text-center mb-1 sm:mb-2 lg:mb-3 mt-1 sm:mt-2">
-                          <motion.h3
-                            className={`font-bold text-[10px] sm:text-xs lg:text-sm xl:text-base tracking-wide leading-tight transition-colors duration-500 ${
-                              index === activeCard
-                                ? "text-white"
-                                : "text-gray-300"
-                            }`}
+                      <Card
+                        className={`${
+                          index === activeCard
+                            ? "w-28 h-56 sm:w-32 sm:h-60 md:w-36 md:h-64 lg:w-40 lg:h-72 xl:w-44 xl:h-80"
+                            : "w-28 h-40 sm:w-32 sm:h-44 md:w-36 md:h-48 lg:w-40 lg:h-56 xl:w-44 xl:h-64"
+                        } bg-gradient-to-br transition-all duration-700 border-2 relative overflow-hidden cursor-pointer ${
+                          index === activeCard && activeCard !== -1
+                            ? "from-gray-800 to-gray-700 border-red-500 shadow-2xl shadow-red-500/30"
+                            : "from-gray-900 to-black border-gray-700 shadow-md"
+                        }`}
+                      >
+                        {/* Animated background pattern */}
+                        <div className="absolute inset-0 opacity-10">
+                          <motion.div
+                            className="w-full h-full bg-gradient-to-br from-red-500/20 to-transparent"
                             animate={{
-                              scale: index === activeCard ? 1.05 : 1,
+                              rotate:
+                                index === activeCard && activeCard !== -1
+                                  ? 360
+                                  : 0,
                             }}
-                            transition={{ duration: 0.4 }}
-                          >
-                            {card.title}
-                          </motion.h3>
-                        </div>
-
-                        {/* Card Image */}
-                        <div className="flex-1 mb-1 sm:mb-2 lg:mb-3 overflow-hidden rounded-lg relative">
-                          <motion.img
-                            src={card.image}
-                            alt={card.title}
-                            className="w-full h-full object-cover"
-                            animate={{
-                              scale: index === activeCard ? 1 : 1.1,
-                              opacity: index === activeCard ? 1 : 0.6,
-                              filter:
-                                index === activeCard
-                                  ? "brightness(1.1) contrast(1.1)"
-                                  : "brightness(0.8) contrast(0.9)",
+                            transition={{
+                              duration: 20,
+                              repeat:
+                                index === activeCard && activeCard !== -1
+                                  ? Number.POSITIVE_INFINITY
+                                  : 0,
+                              ease: "linear",
                             }}
-                            transition={{ duration: 0.6 }}
                           />
-
-                          {/* Image overlay for inactive cards */}
-                          {index !== activeCard && (
-                            <div className="absolute inset-0 bg-gray-900/40" />
-                          )}
                         </div>
 
-                        {/* Card Content */}
-                        <motion.div
-                          className="space-y-0.5 sm:space-y-1 lg:space-y-1.5"
-                          initial={{ opacity: 0.5, y: 10 }}
-                          animate={{
-                            opacity: index === activeCard ? 1 : 0.5,
-                            y: index === activeCard ? 0 : 10,
-                          }}
-                          transition={{ duration: 0.5, delay: 0.2 }}
-                        >
-                          {card.content
-                            .slice(0, index === activeCard ? 3 : 2)
-                            .map((item, itemIndex) => (
-                              <motion.div
-                                key={itemIndex}
-                                className="flex items-center text-gray-300 text-[10px] sm:text-xs lg:text-sm"
-                                initial={{ opacity: 0.6, x: -5 }}
-                                animate={{
-                                  opacity: index === activeCard ? 1 : 0.6,
-                                  x: index === activeCard ? 0 : -5,
-                                }}
-                                transition={{
-                                  duration: 0.4,
-                                  delay:
-                                    index === activeCard
-                                      ? 0.3 + itemIndex * 0.1
-                                      : 0,
-                                }}
-                              >
+                        <CardContent className="p-2 sm:p-3 lg:p-4 xl:p-5 h-full flex flex-col relative z-10">
+                          {/* Card Number Badge */}
+
+                          {/* Card Title - Fixed height container */}
+                          <div className="text-center mb-1 sm:mb-2 lg:mb-3 mt-1 sm:mt-2 h-8 sm:h-10 lg:h-12 xl:h-14 flex items-center justify-center">
+                            <motion.h3
+                              className={`font-bold text-[10px] sm:text-xs lg:text-sm xl:text-base tracking-wide leading-tight transition-colors duration-500 text-center ${
+                                index === activeCard && activeCard !== -1
+                                  ? "text-white"
+                                  : "text-gray-300"
+                              }`}
+                              animate={{
+                                scale:
+                                  index === activeCard && activeCard !== -1
+                                    ? 1.05
+                                    : 1,
+                              }}
+                              transition={{ duration: 0.4 }}
+                            >
+                              {card.title}
+                            </motion.h3>
+                          </div>
+
+                          {/* Card Image - Fixed height container */}
+                          <div className="mb-1 sm:mb-2 lg:mb-3 overflow-hidden rounded-lg relative h-16 sm:h-20 md:h-24 lg:h-32 xl:h-40">
+                            <motion.img
+                              src={card.image}
+                              alt={card.title}
+                              className="w-full h-full object-cover"
+                              animate={{
+                                scale:
+                                  index === activeCard && activeCard !== -1
+                                    ? 1
+                                    : 1.1,
+                                opacity: 1,
+                                filter:
+                                  index === activeCard && activeCard !== -1
+                                    ? "brightness(1.1) contrast(1.1)"
+                                    : "brightness(1) contrast(1)",
+                              }}
+                              transition={{ duration: 0.6 }}
+                            />
+
+                            {/* Image overlay for inactive cards - removed for full visibility */}
+                          </div>
+
+                          {/* Card Content - Only visible for active card */}
+                          {index === activeCard && activeCard !== -1 && (
+                            <motion.div
+                              className="space-y-0.5 sm:space-y-1 lg:space-y-1.5"
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{
+                                opacity: 1,
+                                y: 0,
+                              }}
+                              transition={{ duration: 0.5, delay: 0.2 }}
+                            >
+                              {card.content.map((item, itemIndex) => (
                                 <motion.div
-                                  className={`rounded-full mr-1 sm:mr-2 flex-shrink-0 ${
-                                    index === activeCard
-                                      ? "w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500"
-                                      : "w-1 h-1 sm:w-1.5 sm:h-1.5 bg-gray-500"
-                                  }`}
+                                  key={itemIndex}
+                                  className="flex items-center text-gray-300 text-[10px] sm:text-xs lg:text-sm"
+                                  initial={{ opacity: 0, x: -5 }}
                                   animate={{
-                                    scale:
-                                      index === activeCard ? [1, 1.3, 1] : 1,
+                                    opacity: 1,
+                                    x: 0,
                                   }}
                                   transition={{
-                                    duration: 2,
-                                    repeat:
-                                      index === activeCard
-                                        ? Number.POSITIVE_INFINITY
-                                        : 0,
-                                    delay: itemIndex * 0.2,
+                                    duration: 0.4,
+                                    delay: 0.3 + itemIndex * 0.1,
                                   }}
-                                />
-                                <span
-                                  className={
-                                    index === activeCard ? "font-medium" : ""
-                                  }
                                 >
-                                  {item}
-                                </span>
-                              </motion.div>
-                            ))}
+                                  <motion.div
+                                    className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full mr-1 sm:mr-2 flex-shrink-0"
+                                    animate={{
+                                      scale: [1, 1.3, 1],
+                                    }}
+                                    transition={{
+                                      duration: 2,
+                                      repeat: Number.POSITIVE_INFINITY,
+                                      delay: itemIndex * 0.2,
+                                    }}
+                                  />
+                                  <span className="font-medium">{item}</span>
+                                </motion.div>
+                              ))}
 
-                          {/* Show more indicator for active card */}
-                          {index === activeCard && card.content.length > 3 && (
-                            <motion.div
-                              className="text-red-400 text-[10px] sm:text-xs text-center mt-1 sm:mt-2 font-medium"
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              transition={{ delay: 0.8 }}
-                            >
-                              +{card.content.length - 3} more features
+                              {/* Show more indicator for active card */}
+                              {card.content.length > 3 && (
+                                <motion.div
+                                  className="text-red-400 text-[10px] sm:text-xs text-center mt-1 sm:mt-2 font-medium"
+                                  initial={{ opacity: 0 }}
+                                  animate={{ opacity: 1 }}
+                                  transition={{ delay: 0.8 }}
+                                >
+                                  +{card.content.length - 3} more features
+                                </motion.div>
+                              )}
                             </motion.div>
                           )}
-                        </motion.div>
 
-                        {/* Progress bar for active card */}
-                        {/* {index === activeCard && (
+                          {/* Progress bar for active card */}
+                          {/* {index === activeCard && (
                           <motion.div
                             className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-600"
                             initial={{ scaleX: 0 }}
@@ -555,34 +550,35 @@ export default function ScrollCardsAnimationV4({
                             style={{ transformOrigin: "left" }}
                           />
                         )} */}
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
 
-              {/* Enhanced visual elements */}
-              <div className="absolute inset-0 pointer-events-none">
-                {/* Animated background particles */}
-                {[...Array(20)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute w-1 h-1 bg-red-500/20 rounded-full"
-                    style={{
-                      left: `${(i * 37) % 100}%`,
-                      top: `${(i * 73) % 100}%`,
-                    }}
-                    animate={{
-                      y: [-20, 20, -20],
-                      opacity: [0.2, 0.8, 0.2],
-                    }}
-                    transition={{
-                      duration: 3 + Math.random() * 2,
-                      repeat: Number.POSITIVE_INFINITY,
-                      delay: Math.random() * 2,
-                    }}
-                  />
-                ))}
+                {/* Enhanced visual elements */}
+                <div className="absolute inset-0 pointer-events-none">
+                  {/* Animated background particles */}
+                  {[...Array(20)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute w-1 h-1 bg-red-500/20 rounded-full"
+                      style={{
+                        left: `${(i * 37) % 100}%`,
+                        top: `${(i * 73) % 100}%`,
+                      }}
+                      animate={{
+                        y: [-20, 20, -20],
+                        opacity: [0.2, 0.8, 0.2],
+                      }}
+                      transition={{
+                        duration: 3 + Math.random() * 2,
+                        repeat: Number.POSITIVE_INFINITY,
+                        delay: Math.random() * 2,
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           )}
