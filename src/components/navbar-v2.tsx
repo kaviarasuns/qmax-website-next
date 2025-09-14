@@ -53,7 +53,10 @@ export default function NavbarV2() {
         style={{
           background:
             !isHomePage || backgroundOpacity > 0.1
-              ? `linear-gradient(180deg, rgba(64, 64, 64, 0.9) 0%, rgba(255, 255, 255, ${backgroundOpacity}) 100%)`
+              ? `linear-gradient(180deg, rgba(0, 0, 0, ${Math.min(
+                  backgroundOpacity * 0.8 + 0.2,
+                  0.85
+                )}) 0%, rgba(255, 255, 255, ${backgroundOpacity}) 100%)`
               : "transparent",
           backdropFilter:
             !isHomePage || backgroundOpacity > 0.1 ? "blur(8px)" : "none",
@@ -75,7 +78,7 @@ export default function NavbarV2() {
                 // src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
                 src="./qmax-logo.svg"
                 className="w-full h-auto object-contain"
-                width={480}
+                width={400}
                 height={90}
                 alt="Qmax PCB Design Logo"
                 priority

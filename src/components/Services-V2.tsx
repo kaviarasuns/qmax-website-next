@@ -119,15 +119,15 @@ const ServicesV2 = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full py-16 min-h-screen flex items-center"
+      className="w-full py-12 lg:py-16 min-h-screen flex items-center"
       onMouseLeave={handleMouseLeave}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 flex flex-col items-center">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4 lg:mb-6 text-center">
           Our Services
         </h2>
-        <div className="pb-4 md:pb-12"></div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-5 w-full max-w-6xl mx-auto">
+        <div className="pb-2 md:pb-6 lg:pb-8 xl:pb-12"></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4 xl:gap-5 w-full max-w-7xl mx-auto">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -145,7 +145,7 @@ const ServicesV2 = () => {
               onMouseEnter={() => handleCardMouseEnter(idx)}
             >
               <Card
-                className={`relative flex flex-col h-[260px] sm:h-[280px] md:h-[300px] lg:h-[320px] overflow-hidden group shadow-lg 
+                className={`relative flex flex-col h-[260px] sm:h-[280px] md:h-[240px] lg:h-[260px] xl:h-[280px] overflow-hidden group shadow-lg 
                 ${
                   !isMobile && idx === activeCard
                     ? "border-2 border-red-500"
@@ -172,7 +172,7 @@ const ServicesV2 = () => {
                 )}
 
                 {/* Card content overlays */}
-                <div className="relative z-20 flex flex-col h-full justify-between p-4 sm:p-5">
+                <div className="relative z-20 flex flex-col h-full justify-between p-3 sm:p-4 lg:p-4 xl:p-5">
                   <CardHeader className="p-0 mb-2 bg-transparent">
                     <motion.div
                       animate={{
@@ -181,7 +181,7 @@ const ServicesV2 = () => {
                       transition={{ duration: 0.4 }}
                     >
                       <CardTitle
-                        className={`text-base sm:text-lg text-white text-center drop-shadow font-bold 
+                        className={`text-sm sm:text-base md:text-sm lg:text-base xl:text-lg text-white text-center drop-shadow font-bold tracking-wide 
                         ${
                           !isMobile && idx === activeCard
                             ? "text-red-100"
@@ -194,7 +194,7 @@ const ServicesV2 = () => {
                   </CardHeader>
                   <CardContent className="p-0 mt-auto flex flex-col items-center">
                     <motion.p
-                      className="text-xs sm:text-sm text-white text-center mb-3 drop-shadow"
+                      className="text-xs sm:text-sm md:text-xs lg:text-sm text-white text-center mb-2 lg:mb-3 drop-shadow"
                       animate={{
                         opacity: isMobile ? 1 : idx === activeCard ? 1 : 0.8,
                       }}
@@ -207,7 +207,7 @@ const ServicesV2 = () => {
                           ? "destructive"
                           : "secondary"
                       }
-                      className="w-full max-w-[140px] text-xs sm:text-sm py-2"
+                      className="w-full max-w-[120px] lg:max-w-[140px] text-xs sm:text-sm md:text-xs lg:text-sm py-1.5 lg:py-2"
                     >
                       Know More
                     </Button>
@@ -219,7 +219,7 @@ const ServicesV2 = () => {
         </div>
 
         {/* Card indicators */}
-        <div className="flex space-x-2 mt-8">
+        <div className="flex space-x-2 mt-6 lg:mt-8">
           {services.map((_, index) => (
             <button
               key={index}

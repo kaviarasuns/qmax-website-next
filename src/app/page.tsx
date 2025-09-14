@@ -17,8 +17,13 @@ import React from "react";
 export default function Home() {
   const videoContainerRef = useRef<HTMLDivElement>(null);
   const cardsContainerRef = useRef<HTMLDivElement>(null);
+  const servicesContainerRef = useRef<HTMLDivElement>(null);
   const [hasAutoScrolled, setHasAutoScrolled] = useState(false);
   const [hasAutoScrolledUp, setHasAutoScrolledUp] = useState(false);
+  const [hasAutoScrolledToServices, setHasAutoScrolledToServices] =
+    useState(false);
+  const [hasAutoScrolledBackToCards, setHasAutoScrolledBackToCards] =
+    useState(false);
   const [isUserScrolling, setIsUserScrolling] = useState(false);
   const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(
     null
@@ -36,6 +41,18 @@ export default function Home() {
   const { scrollY } = useScroll();
   const { scrollYProgress } = useScroll({
     target: videoContainerRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Scroll progress for cards section to trigger auto-scroll to services
+  const { scrollYProgress: cardsScrollProgress } = useScroll({
+    target: cardsContainerRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Scroll progress for services section to trigger auto-scroll back to cards
+  const { scrollYProgress: servicesScrollProgress } = useScroll({
+    target: servicesContainerRef,
     offset: ["start start", "end start"],
   });
 
@@ -114,6 +131,82 @@ export default function Home() {
     }, 1500); // Extended timing for smooth completion
   }, [isClient, hasAutoScrolledUp, isUserScrolling, autoScrollCooldown]);
 
+  // Auto-scroll function to navigate to services section
+  const autoScrollToServices = useCallback(() => {
+    if (
+      !isClient ||
+      hasAutoScrolledToServices ||
+      isUserScrolling ||
+      autoScrollCooldown ||
+      !servicesContainerRef.current ||
+      typeof window === "undefined"
+    )
+      return;
+
+    setHasAutoScrolledToServices(true);
+    setIsUserScrolling(true);
+    setAutoScrollCooldown(true);
+
+    // Calculate the target scroll position
+    const servicesElement = servicesContainerRef.current;
+    const targetPosition = servicesElement.offsetTop - 200; // 100px offset for better positioning
+
+    // Perform smooth scroll
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+
+    // Reset flags after animation completes
+    setTimeout(() => {
+      setIsUserScrolling(false);
+      setAutoScrollCooldown(false);
+    }, 1500); // Extended timing for smooth completion
+  }, [
+    isClient,
+    hasAutoScrolledToServices,
+    isUserScrolling,
+    autoScrollCooldown,
+  ]);
+
+  // Auto-scroll function to navigate back to cards section (upward)
+  const autoScrollBackToCards = useCallback(() => {
+    if (
+      !isClient ||
+      hasAutoScrolledBackToCards ||
+      isUserScrolling ||
+      autoScrollCooldown ||
+      !cardsContainerRef.current ||
+      typeof window === "undefined"
+    )
+      return;
+
+    setHasAutoScrolledBackToCards(true);
+    setIsUserScrolling(true);
+    setAutoScrollCooldown(true);
+
+    // Calculate the target scroll position with increased offset to keep heading visible
+    const cardsElement = cardsContainerRef.current;
+    const targetPosition = cardsElement.offsetTop - 100; // Increased offset to 200px to keep heading in view
+
+    // Perform smooth scroll
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+
+    // Reset flags after animation completes
+    setTimeout(() => {
+      setIsUserScrolling(false);
+      setAutoScrollCooldown(false);
+    }, 1500); // Extended timing for smooth completion
+  }, [
+    isClient,
+    hasAutoScrolledBackToCards,
+    isUserScrolling,
+    autoScrollCooldown,
+  ]);
+
   // Monitor video scroll progress and trigger bidirectional auto-scroll
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     // Reset auto-scroll states based on position
@@ -141,6 +234,55 @@ export default function Home() {
       scrollDirection === "up"
     ) {
       autoScrollToTop();
+    }
+  });
+
+  // Monitor cards scroll progress and trigger auto-scroll to services
+  useMotionValueEvent(cardsScrollProgress, "change", (latest) => {
+    // Reset auto-scroll to services state based on position
+    if (latest <= 0.3) {
+      if (hasAutoScrolledToServices) setHasAutoScrolledToServices(false);
+      if (hasAutoScrolledBackToCards) setHasAutoScrolledBackToCards(false);
+    }
+
+    // Trigger auto-scroll to services when reaching 70% progress (scrolling down)
+    if (
+      latest >= 0.7 &&
+      !hasAutoScrolledToServices &&
+      !isUserScrolling &&
+      scrollDirection === "down"
+    ) {
+      autoScrollToServices();
+    }
+
+    // Trigger upward auto-scroll back to cards when reaching 40% visibility (scrolling up)
+    if (
+      latest >= 0.2 &&
+      latest <= 0.8 &&
+      !hasAutoScrolledBackToCards &&
+      !isUserScrolling &&
+      scrollDirection === "up"
+    ) {
+      autoScrollBackToCards();
+    }
+  });
+
+  // Monitor services scroll progress and trigger auto-scroll back to cards
+  useMotionValueEvent(servicesScrollProgress, "change", (latest) => {
+    // Reset auto-scroll back to cards state based on position
+    if (latest <= 0.3) {
+      if (hasAutoScrolledBackToCards) setHasAutoScrolledBackToCards(false);
+    }
+
+    // Trigger upward auto-scroll back to cards when reaching 40% visibility (scrolling up)
+    if (
+      latest >= 0.2 &&
+      latest <= 0.8 &&
+      !hasAutoScrolledBackToCards &&
+      !isUserScrolling &&
+      scrollDirection === "up"
+    ) {
+      autoScrollBackToCards();
     }
   });
 
@@ -275,11 +417,11 @@ export default function Home() {
       <motion.div
         ref={videoContainerRef}
         className="relative w-full h-screen flex flex-col items-center justify-center bg-black overflow-hidden rounded-2xl"
-        style={{
-          scale,
-          opacity,
-          borderRadius: useTransform(scrollY, [0, 500], [0, 30]),
-        }}
+        // style={{
+        //   scale,
+        //   opacity,
+        //   borderRadius: useTransform(scrollY, [0, 500], [0, 30]),
+        // }}
       >
         {/* Logo positioned at the top center of the video */}
         {/* <div className="absolute top-8 z-10 flex justify-center w-full">
@@ -329,7 +471,9 @@ export default function Home() {
         <ScrollCardsAnimationV4 />
       </div>
       <div className="pt-16"></div>
-      <ServicesV2 />
+      <div ref={servicesContainerRef}>
+        <ServicesV2 />
+      </div>
       <InsideOut />
       {/* <InfiniteCarousel slides={slides} /> */}
       <EmblaCarousel options={OPTIONS} />
