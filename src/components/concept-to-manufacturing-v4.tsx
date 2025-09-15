@@ -96,6 +96,7 @@ export default function ScrollCardsAnimationV4({
   const [showHoverHints, setShowHoverHints] = useState(false);
   const [isAutoHighlighting, setIsAutoHighlighting] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  console.log("logging lastHoverCard for NoReason", lastHoveredCard);
 
   console.log(isBelow1500);
 
@@ -113,7 +114,7 @@ export default function ScrollCardsAnimationV4({
               const highlightSequence = async () => {
                 for (let i = 0; i < cards.length; i++) {
                   setActiveCard(i);
-                  await new Promise((resolve) => setTimeout(resolve, 150)); // 150ms per card
+                  await new Promise((resolve) => setTimeout(resolve, 300)); // 500ms per card
                 }
                 // Reset to no active card after sequence
                 setActiveCard(-1);
@@ -212,21 +213,6 @@ export default function ScrollCardsAnimationV4({
       {/* Horizontal Cards Section */}
       <div className="h-screen">
         <div className="h-screen flex items-center justify-center overflow-hidden">
-          {/* Red Arrow - hidden on mobile */}
-          {/* {!isMobile && (
-            <div
-              className={`absolute z-20 ${
-                isBelow1500 ? "bottom-[200px]" : "bottom-[300px]"
-              }`}
-            >
-              <div className="flex items-center">
-                <div className="w-24 h-2 bg-red-500"></div>
-                <div className="w-0 h-0 border-l-[20px] border-l-red-500 border-y-[10px] border-y-transparent"></div>
-              </div>
-            </div>
-          )} */}
-
-          {/* Mobile: Sliding Card Animation */}
           {isMobile ? (
             <div className="w-full px-4 flex flex-col items-center justify-center">
               {/* Heading */}
@@ -386,43 +372,12 @@ export default function ScrollCardsAnimationV4({
                       }}
                       onHoverEnd={() => {
                         if (!isMobile && !isAutoHighlighting) {
-                          setActiveCard(lastHoveredCard);
+                          setActiveCard(-1);
                         }
                       }}
                     >
-                      {/* Subtle border glow hint for hoverable cards */}
-                      {isFullyVisible &&
-                        showHoverHints &&
-                        !isMobile &&
-                        !isAutoHighlighting &&
-                        (activeCard === -1 || index !== activeCard) && (
-                          <motion.div
-                            className="absolute inset-0 rounded-xl border border-red-500/20 pointer-events-none"
-                            animate={{
-                              opacity: [0.3, 0.7, 0.3],
-                              borderColor: [
-                                "rgba(239, 68, 68, 0.2)",
-                                "rgba(239, 68, 68, 0.5)",
-                                "rgba(239, 68, 68, 0.2)",
-                              ],
-                            }}
-                            transition={{
-                              duration: 3,
-                              repeat: Number.POSITIVE_INFINITY,
-                              delay: index * 0.2,
-                              ease: "easeInOut",
-                            }}
-                          />
-                        )}
-                      {/* Glow effect for active card */}
-                      {index === activeCard && activeCard !== -1 && (
-                        <motion.div
-                          className="absolute inset-0 bg-red-500/20 rounded-xl blur-xl"
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1.2 }}
-                          transition={{ duration: 0.6 }}
-                        />
-                      )}
+                      {/* Removed subtle border glow hint for hoverable cards */}
+                      {/* Removed glow effect for active card */}
 
                       <Card
                         className={`${
@@ -431,8 +386,8 @@ export default function ScrollCardsAnimationV4({
                             : "w-28 h-40 sm:w-32 sm:h-44 md:w-36 md:h-48 lg:w-40 lg:h-56 xl:w-44 xl:h-64"
                         } bg-gradient-to-br transition-all duration-700 border-2 relative overflow-hidden cursor-pointer ${
                           index === activeCard && activeCard !== -1
-                            ? "from-gray-800 to-gray-700 border-red-500 shadow-2xl shadow-red-500/30"
-                            : "from-gray-900 to-black border-gray-700 shadow-md"
+                            ? "from-gray-800 to-gray-700 border-red-500"
+                            : "from-gray-900 to-black border-gray-700"
                         }`}
                       >
                         {/* Animated background pattern */}
@@ -555,17 +510,6 @@ export default function ScrollCardsAnimationV4({
                               )}
                             </motion.div>
                           )}
-
-                          {/* Progress bar for active card */}
-                          {/* {index === activeCard && (
-                          <motion.div
-                            className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-600"
-                            initial={{ scaleX: 0 }}
-                            animate={{ scaleX: 1 }}
-                            transition={{ duration: 1, delay: 0.5 }}
-                            style={{ transformOrigin: "left" }}
-                          />
-                        )} */}
                         </CardContent>
                       </Card>
                     </motion.div>
@@ -599,36 +543,7 @@ export default function ScrollCardsAnimationV4({
             </div>
           )}
 
-          {/* Progress Indicator */}
-          {/* <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2">
-            <div className="flex space-x-1.5 md:space-x-2">
-              {cards.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => {
-                    if (isMobile) {
-                      setActiveCard(index);
-                      if (index === cards.length - 1) {
-                        setIsHorizontalScrollComplete(true);
-                      } else if (index < cards.length - 1) {
-                        setIsHorizontalScrollComplete(false);
-                      }
-                    }
-                  }}
-                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
-                    index <= activeCard ? "bg-red-500" : "bg-gray-600"
-                  } ${isMobile ? "cursor-pointer hover:scale-110" : ""}`}
-                />
-              ))}
-            </div>
-            {isMobile && (
-              <p className="text-gray-400 text-xs text-center mt-2">
-                Swipe or tap dots to navigate
-              </p>
-            )}
-          </div> */}
-
-          {/* Mobile Navigation Hints */}
+         
           {isMobile && (
             <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
               <div className="flex items-center space-x-2 text-gray-400 text-xs">
@@ -650,30 +565,6 @@ export default function ScrollCardsAnimationV4({
                   transition={{ duration: 0.8, delay: 1.5 }}
                 ></motion.div>
               )}
-
-              {/* Auto-highlighting indicator */}
-              {/* {isAutoHighlighting && (
-                <motion.div
-                  className="absolute top-[calc(25%--800px)] left-1/2 transform -translate-x-1/2"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <div className="flex items-center space-x-2 text-red-400 text-sm font-medium">
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{
-                        duration: 1,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "linear",
-                      }}
-                      className="w-4 h-4 border-2 border-red-400 border-t-transparent rounded-full"
-                    />
-                    <span>Showcasing interactive cards...</span>
-                  </div>
-                </motion.div>
-              )} */}
             </>
           )}
         </div>

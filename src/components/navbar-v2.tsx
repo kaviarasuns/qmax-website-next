@@ -26,6 +26,9 @@ export default function NavbarV2() {
 
     // Only add scroll listener on homepage
     if (isHomePage && typeof window !== "undefined") {
+      // Initialize scroll position on mount
+      setScrollY(window.scrollY);
+      
       window.addEventListener("scroll", handleScroll, { passive: true });
       return () => window.removeEventListener("scroll", handleScroll);
     }

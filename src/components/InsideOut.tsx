@@ -115,8 +115,8 @@ export default function InsideOut() {
   // Compute a generous section height based on device to ensure smooth progression through all frames
   useEffect(() => {
     const computeHeight = () => {
-      const perFrame = isMobile ? 10 : 14; // px per frame
-      const buffer = Math.round(window.innerHeight * 0.5);
+      const perFrame = isMobile ? 5 : 8; // px per frame - reduced for faster rendering
+      const buffer = Math.round(window.innerHeight * 0.3); // reduced buffer
       setSectionHeight(frameCount * perFrame + buffer);
     };
     computeHeight();
