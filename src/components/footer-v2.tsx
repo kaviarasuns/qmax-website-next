@@ -8,9 +8,9 @@ import Image from "next/image";
 export default function FooterV2() {
   return (
     <>
-      <footer className="bg-zinc-900 text-white pt-20 pb-8 [&>*]:tracking-wider">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between gap-12 mb-16">
+      <footer className="bg-zinc-900 text-white min-h-screen flex flex-col justify-between [&>*]:tracking-wider">
+        <div className="container mx-auto px-4 flex flex-col flex-1 justify-center py-8">
+          <div className="flex flex-col md:flex-row justify-between gap-12 mb-16 flex-1 items-center">
             {/* Newsletter Section */}
             <div className="flex-1">
               <h3 className="text-xl font-semibold mb-4">Newsletter</h3>
@@ -78,7 +78,7 @@ export default function FooterV2() {
           </div>
 
           {/* Logo and Copyright Section */}
-          <div className="border-t border-zinc-800 pt-8 mt-8">
+          <div className="border-t border-zinc-800 pt-8 mt-auto">
             <div className="flex flex-col items-center gap-6">
               <Image
                 src="/qmax-logo.svg"

@@ -88,8 +88,6 @@ export default function ScrollCardsAnimation() {
   const [isMobile, setIsMobile] = useState(false);
   const [isBelow1500, setIsBelow1500] = useState(false);
 
-  console.log(isBelow1500);
-
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],

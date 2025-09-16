@@ -78,19 +78,19 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const { selectedIndex, onDotButtonClick } = useDotButton(emblaApi);
 
   return (
-    <div className=" bg-gray-50">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 pt-8">
+      <div className="text-center flex-shrink-0 pt-24 md:pt-28">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
           Case Studies & Services
         </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto px-4">
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto px-4 mb-8">
           Explore our comprehensive solutions and successful project implementations
         </p>
       </div>
 
       {/* Carousel Container */}
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 flex-1 flex flex-col justify-center">
         <div className={isMobile ? "embla-mobile" : "embla-compact"} ref={emblaRef}>
           <div className={isMobile ? "embla__container-mobile" : "embla__container-compact"}>
             {carouselItems.map((item, index) => (
@@ -141,7 +141,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
         {/* Mobile Navigation Dots */}
         {isMobile && (
-          <div className="flex justify-center mt-6 gap-2">
+          <div className="flex justify-center mt-6 gap-2 pb-8">
             {carouselItems.map((_, index) => (
               <DotButton
                 key={index}

@@ -99,9 +99,6 @@ export default function ScrollCardsAnimationV4({
   const [isAutoHighlighting, setIsAutoHighlighting] = useState(false);
   const [hasAutoHighlighted, setHasAutoHighlighted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  console.log("logging lastHoverCard for NoReason", lastHoveredCard);
-
-  console.log(isBelow1500);
 
   // Intersection Observer to detect when component becomes fully visible
   useEffect(() => {
@@ -222,13 +219,6 @@ export default function ScrollCardsAnimationV4({
         <div className="h-screen flex items-center justify-center overflow-hidden">
           {isMobile ? (
             <div className="w-full px-4 flex flex-col items-center justify-center">
-              {/* Heading */}
-              <div className="mb-24">
-                <h1 className="font-bold text-2xl text-center text-black">
-                  Concept To Manufacturing
-                </h1>
-              </div>
-
               {activeCard >= 0 && activeCard < cards.length ? (
                 <div className="relative overflow-hidden">
                   <motion.div
@@ -345,12 +335,9 @@ export default function ScrollCardsAnimationV4({
                     <motion.div
                       key={card.id}
                       className="relative flex-shrink-0"
-                      initial={{ scale: 0.85, opacity: 1 }}
+                      initial={{ scale: 1, opacity: 1 }}
                       animate={{
-                        scale:
-                          index === activeCard && activeCard !== -1
-                            ? 1.15
-                            : 0.85,
+                        scale: index === activeCard && activeCard !== -1 ? 1.15 : 1,
                         opacity: 1,
                         y: index === activeCard && activeCard !== -1 ? -20 : 0,
                         height:
@@ -390,11 +377,11 @@ export default function ScrollCardsAnimationV4({
                         className={`${
                           index === activeCard
                             ? "w-28 h-56 sm:w-32 sm:h-60 md:w-36 md:h-64 lg:w-40 lg:h-72 xl:w-44 xl:h-80"
-                            : "w-28 h-40 sm:w-32 sm:h-44 md:w-36 md:h-48 lg:w-40 lg:h-56 xl:w-44 xl:h-64"
+                            : "w-28 h-56 sm:w-32 sm:h-60 md:w-36 md:h-64 lg:w-40 lg:h-72 xl:w-44 xl:h-80"
                         } bg-gradient-to-br transition-all duration-700 border-2 relative overflow-hidden cursor-pointer ${
                           index === activeCard && activeCard !== -1
                             ? "from-gray-800 to-gray-700 border-red-500"
-                            : "from-gray-900 to-black border-gray-700"
+                            : "from-gray-800 to-gray-700 border-red-500"
                         }`}
                       >
                         {/* Animated background pattern */}
@@ -427,7 +414,7 @@ export default function ScrollCardsAnimationV4({
                               className={`font-bold text-[10px] sm:text-xs lg:text-sm xl:text-base tracking-wide leading-tight transition-colors duration-500 text-center ${
                                 index === activeCard && activeCard !== -1
                                   ? "text-white"
-                                  : "text-gray-300"
+                                  : "text-white"
                               }`}
                               animate={{
                                 scale:
@@ -451,12 +438,12 @@ export default function ScrollCardsAnimationV4({
                                 scale:
                                   index === activeCard && activeCard !== -1
                                     ? 1
-                                    : 1.1,
+                                    : 1,
                                 opacity: 1,
                                 filter:
                                   index === activeCard && activeCard !== -1
                                     ? "brightness(1.1) contrast(1.1)"
-                                    : "brightness(1) contrast(1)",
+                                    : "brightness(1.1) contrast(1.1)",
                               }}
                               transition={{ duration: 0.6 }}
                             />
@@ -464,59 +451,57 @@ export default function ScrollCardsAnimationV4({
                             {/* Image overlay for inactive cards - removed for full visibility */}
                           </div>
 
-                          {/* Card Content - Only visible for active card */}
-                          {index === activeCard && activeCard !== -1 && (
-                            <motion.div
-                              className="space-y-0.5 sm:space-y-1 lg:space-y-1.5"
-                              initial={{ opacity: 0, y: 10 }}
-                              animate={{
-                                opacity: 1,
-                                y: 0,
-                              }}
-                              transition={{ duration: 0.5, delay: 0.2 }}
-                            >
-                              {card.content.map((item, itemIndex) => (
+                          {/* Card Content - Now visible for all cards */}
+                          <motion.div
+                            className="space-y-0.5 sm:space-y-1 lg:space-y-1.5"
+                            initial={{ opacity: 1, y: 0 }}
+                            animate={{
+                              opacity: 1,
+                              y: 0,
+                            }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                          >
+                            {card.content.map((item, itemIndex) => (
+                              <motion.div
+                                key={itemIndex}
+                                className="flex items-center text-gray-300 text-[10px] sm:text-xs lg:text-sm"
+                                initial={{ opacity: 1, x: 0 }}
+                                animate={{
+                                  opacity: 1,
+                                  x: 0,
+                                }}
+                                transition={{
+                                  duration: 0.4,
+                                  delay: 0.3 + itemIndex * 0.1,
+                                }}
+                              >
                                 <motion.div
-                                  key={itemIndex}
-                                  className="flex items-center text-gray-300 text-[10px] sm:text-xs lg:text-sm"
-                                  initial={{ opacity: 0, x: -5 }}
+                                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full mr-1 sm:mr-2 flex-shrink-0"
                                   animate={{
-                                    opacity: 1,
-                                    x: 0,
+                                    scale: [1, 1.3, 1],
                                   }}
                                   transition={{
-                                    duration: 0.4,
-                                    delay: 0.3 + itemIndex * 0.1,
+                                    duration: 2,
+                                    repeat: Number.POSITIVE_INFINITY,
+                                    delay: itemIndex * 0.2,
                                   }}
-                                >
-                                  <motion.div
-                                    className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full mr-1 sm:mr-2 flex-shrink-0"
-                                    animate={{
-                                      scale: [1, 1.3, 1],
-                                    }}
-                                    transition={{
-                                      duration: 2,
-                                      repeat: Number.POSITIVE_INFINITY,
-                                      delay: itemIndex * 0.2,
-                                    }}
-                                  />
-                                  <span className="font-medium">{item}</span>
-                                </motion.div>
-                              ))}
+                                />
+                                <span className="font-medium">{item}</span>
+                              </motion.div>
+                            ))}
 
-                              {/* Show more indicator for active card */}
-                              {card.content.length > 3 && (
-                                <motion.div
-                                  className="text-red-400 text-[10px] sm:text-xs text-center mt-1 sm:mt-2 font-medium"
-                                  initial={{ opacity: 0 }}
-                                  animate={{ opacity: 1 }}
-                                  transition={{ delay: 0.8 }}
-                                >
-                                  +{card.content.length - 3} more features
-                                </motion.div>
-                              )}
-                            </motion.div>
-                          )}
+                            {/* Show more indicator for cards with more than 3 items */}
+                            {card.content.length > 3 && (
+                              <motion.div
+                                className="text-red-400 text-[10px] sm:text-xs text-center mt-1 sm:mt-2 font-medium"
+                                initial={{ opacity: 1 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.8 }}
+                              >
+                                +{card.content.length - 3} more features
+                              </motion.div>
+                            )}
+                          </motion.div>
                         </CardContent>
                       </Card>
                     </motion.div>

@@ -88,7 +88,7 @@ export default function Home() {
       
       targetRef.current.scrollIntoView({
         behavior: 'smooth',
-        block: 'center'  // Options: 'start', 'center', 'end', 'nearest'
+        block: 'center'  // Options: 'start', 'center', 'end', 'nearest'\r
       });
       
       // Re-enable intersection observer after scroll animation completes
