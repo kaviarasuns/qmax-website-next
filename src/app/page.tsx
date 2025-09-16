@@ -17,6 +17,7 @@ export default function Home() {
   const [isClient, setIsClient] = useState(false);
   const [currentSection, setCurrentSection] = useState(0);
   const [isAutoHighlighting, setIsAutoHighlighting] = useState(false);
+  const [isProgrammaticScroll, setIsProgrammaticScroll] = useState(false);
   
   // Refs for each section
   const heroRef = useRef<HTMLDivElement>(null);
@@ -33,17 +34,67 @@ export default function Home() {
   useEffect(() => {
     setIsClient(true);
   }, []);
+  
+  // Intersection Observer to track current section during manual scroll
+  useEffect(() => {
+    if (!isClient) return;
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '-40% 0px -40% 0px', // Only trigger when section is in middle 20% of viewport
+      threshold: 0
+    };
+    
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      // Skip observer updates during programmatic scrolling
+      if (isProgrammaticScroll) return;
+      
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionIndex = sectionRefs.findIndex(ref => ref.current === entry.target);
+          if (sectionIndex !== -1 && sectionIndex !== currentSection) {
+            setCurrentSection(sectionIndex);
+          }
+        }
+      });
+    };
+    
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+    // Observe all sections
+    sectionRefs.forEach(ref => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+    
+    return () => {
+      sectionRefs.forEach(ref => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+      observer.disconnect();
+    };
+  }, [isClient, sectionRefs, currentSection, isProgrammaticScroll]);
   console.log("logging isClient for noReason", isClient)
   
   // Function to scroll to specific section
   const scrollToSection = (sectionIndex: number) => {
     const targetRef = sectionRefs[sectionIndex];
     if (targetRef.current) {
+      setIsProgrammaticScroll(true);
+      setCurrentSection(sectionIndex);
+      
       targetRef.current.scrollIntoView({
         behavior: 'smooth',
         block: 'center'  // Options: 'start', 'center', 'end', 'nearest'
       });
-      setCurrentSection(sectionIndex);
+      
+      // Re-enable intersection observer after scroll animation completes
+      setTimeout(() => {
+        setIsProgrammaticScroll(false);
+      }, 1000); // Adjust timing based on scroll animation duration
     }
   };
   
