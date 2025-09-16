@@ -95,6 +95,7 @@ export default function ScrollCardsAnimationV4({
   const [isFullyVisible, setIsFullyVisible] = useState(false);
   const [showHoverHints, setShowHoverHints] = useState(false);
   const [isAutoHighlighting, setIsAutoHighlighting] = useState(false);
+  const [hasAutoHighlighted, setHasAutoHighlighted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   console.log("logging lastHoverCard for NoReason", lastHoveredCard);
 
@@ -107,9 +108,10 @@ export default function ScrollCardsAnimationV4({
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
             setIsFullyVisible(true);
-            // Start auto-highlight sequence immediately when visible
-            if (!isMobile && !hasInteracted) {
+            // Start auto-highlight sequence only once when visible
+            if (!isMobile && !hasInteracted && !hasAutoHighlighted) {
               setIsAutoHighlighting(true);
+              setHasAutoHighlighted(true); // Mark as triggered
               // Cycle through all cards quickly
               const highlightSequence = async () => {
                 for (let i = 0; i < cards.length; i++) {
@@ -127,7 +129,7 @@ export default function ScrollCardsAnimationV4({
               };
               highlightSequence();
             } else {
-              // Show hover hints immediately if mobile or already interacted
+              // Show hover hints immediately if mobile, already interacted, or already auto-highlighted
               setTimeout(() => {
                 setShowHoverHints(true);
               }, 1000);
@@ -154,7 +156,7 @@ export default function ScrollCardsAnimationV4({
         observer.unobserve(containerRef.current);
       }
     };
-  }, [isMobile, hasInteracted]);
+  }, [isMobile, hasInteracted, hasAutoHighlighted]);
 
   // Detect mobile device and initialize activeCard
   useEffect(() => {

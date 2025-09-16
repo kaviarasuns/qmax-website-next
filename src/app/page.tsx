@@ -62,14 +62,9 @@ export default function Home() {
           </button>
         </div>
       </motion.div>
-      <div className="pt-16"></div>
-      <div>
         <ScrollCardsAnimationV4 />
-      </div>
       <div className="pt-16"></div>
-      <div>
-        <ServicesV2 />
-      </div>
+      <ServicesV2 />
       <InsideOut />
       <EmblaCarousel options={OPTIONS} />
       <div className="pt-16"></div>

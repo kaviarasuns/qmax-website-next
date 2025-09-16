@@ -166,3 +166,26 @@ body {
   animation: dash-sweep 2s ease-in-out forwards;
   background: linear-gradient(90deg, transparent, #f33117, transparent);
 }
+
+
+
+html.lenis
+html.lenis body { 
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] { 
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe { 
+  pointer-events: none;
+}

@@ -139,7 +139,7 @@ export default function HamburgerNavigation() {
           <SheetTrigger asChild>
             <Button
               variant="ghost"
-              className="fixed top-8 left-16 z-50 flex items-center bg-transparent p-2 shadow-none hover:bg-transparent lg:shadow-none"
+              className="fixed lg:top-8 lg:left-16 z-50 flex items-center bg-transparent p-2 shadow-none hover:bg-transparent lg:shadow-none"
             >
               <Menu className="w-12 h-12 text-white" />
               <span className="ml-2 font-semibold text-lg hidden md:inline text-white">

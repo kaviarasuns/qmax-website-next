@@ -4,6 +4,7 @@ import "./globals.css";
 import FooterV2 from "@/components/footer-v2";
 import NavbarV2 from "@/components/navbar-v2";
 import ContactUsButton from "@/components/ContactUsButton";
+import { ReactLenis } from "@/utils/lenis";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <ReactLenis root >
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -42,6 +44,7 @@ export default function RootLayout({
         <FooterV2 />
         <ContactUsButton />
       </body>
+      </ReactLenis>
     </html>
   );
 }
