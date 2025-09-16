@@ -10,16 +10,54 @@ import {
   useTransform,
 } from "framer-motion";
 import ScrollCardsAnimationV4 from "@/components/concept-to-manufacturing-v4";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
+  const [currentSection, setCurrentSection] = useState(0);
+  const [isAutoHighlighting, setIsAutoHighlighting] = useState(false);
+  
+  // Refs for each section
+  const heroRef = useRef<HTMLDivElement>(null);
+  const scrollCardsRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const insideOutRef = useRef<HTMLDivElement>(null);
+  const emblaRef = useRef<HTMLDivElement>(null);
+  
+  // Array of refs for easy navigation
+  const sectionRefs = [heroRef, scrollCardsRef, servicesRef, insideOutRef, emblaRef];
+  const sectionNames = ['Hero', 'Concept to Manufacturing', 'Services', 'Inside Out', 'Carousel'];
+  
   // Ensure this only runs on client side
   useEffect(() => {
     setIsClient(true);
   }, []);
   console.log("logging isClient for noReason", isClient)
+  
+  // Function to scroll to specific section
+  const scrollToSection = (sectionIndex: number) => {
+    const targetRef = sectionRefs[sectionIndex];
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'  // Options: 'start', 'center', 'end', 'nearest'
+      });
+      setCurrentSection(sectionIndex);
+    }
+  };
+  
+  // Function to navigate to next section
+  const goToNextSection = () => {
+    const nextSection = (currentSection + 1) % sectionRefs.length;
+    scrollToSection(nextSection);
+  };
+  
+  // Function to navigate to previous section
+  const goToPreviousSection = () => {
+    const prevSection = currentSection === 0 ? sectionRefs.length - 1 : currentSection - 1;
+    scrollToSection(prevSection);
+  };
 
   const { scrollY } = useScroll();
 
@@ -30,6 +68,7 @@ export default function Home() {
   return (
     <>
       <motion.div
+        ref={heroRef}
         className="relative w-full h-screen flex flex-col items-center justify-center bg-black overflow-hidden"
         style={{
           scale,
@@ -37,7 +76,7 @@ export default function Home() {
           borderRadius: useTransform(scrollY, [0, 500], [0, 30]),
         }}
       >
-
+     
         {/* Top gradient overlay */}
         <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/70 to-transparent z-[1]"></div>
         {/* Bottom gradient overlay */}
@@ -62,13 +101,75 @@ export default function Home() {
           </button>
         </div>
       </motion.div>
-        <ScrollCardsAnimationV4 />
-      <div className="pt-16"></div>
-      <ServicesV2 />
-      <InsideOut />
-      <EmblaCarousel options={OPTIONS} />
-      <div className="pt-16"></div>
+        <div ref={scrollCardsRef}>
+          <ScrollCardsAnimationV4 onAutoHighlightChange={setIsAutoHighlighting} />
+        </div>
+      <div ref={servicesRef}>
+        <ServicesV2 />
+      </div>
+      <div ref={insideOutRef}>
+        <InsideOut />
+      </div>
+      <div ref={emblaRef}>
+        <EmblaCarousel options={OPTIONS} />
+      </div>
 
+      
+      {/* Navigation Button - Fixed on middle right edge */}
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 flex flex-col items-center space-y-2">
+        {/* Previous Section Button */}
+        <button
+          onClick={goToPreviousSection}
+          disabled={isAutoHighlighting}
+          className={`w-12 h-12 backdrop-blur-sm border border-gray-700/50 rounded-full flex items-center justify-center text-white transition-all duration-200 shadow-xl ${
+            isAutoHighlighting 
+              ? 'bg-gray-600/60 cursor-not-allowed opacity-50' 
+              : 'bg-gray-900/80 hover:bg-gray-800/90'
+          }`}
+          title="Previous Section"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+          </svg>
+        </button>
+        
+        {/* Section Indicator */}
+        <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-lg px-3 py-2 text-white text-xs font-medium shadow-xl">
+          {currentSection + 1}/{sectionRefs.length}
+        </div>
+        
+        {/* Next Section Button */}
+        <button
+          onClick={goToNextSection}
+          disabled={isAutoHighlighting}
+          className={`w-12 h-12 backdrop-blur-sm border border-gray-700/50 rounded-full flex items-center justify-center text-white transition-all duration-200 shadow-xl ${
+            isAutoHighlighting 
+              ? 'bg-gray-600/60 cursor-not-allowed opacity-50' 
+              : 'bg-gray-900/80 hover:bg-gray-800/90'
+          }`}
+          title="Next Section"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+          </button>
+        
+        {/* Section Quick Access Buttons */}
+        <div className="mt-4 flex flex-col space-y-1">
+          {sectionNames.map((name, index) => (
+            <button
+              key={index}
+              onClick={() => scrollToSection(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-200 shadow-lg ${
+                currentSection === index
+                  ? 'bg-white border border-gray-700'
+                  : 'bg-gray-600/80 hover:bg-gray-500/90 border border-gray-700/50'
+              }`}
+              title={name}
+            />
+          ))}
+        </div>
+      </div>
     </>
   );
 }

@@ -82,10 +82,12 @@ const cards = [
 
 interface ScrollCardsAnimationV4Props {
   onComplete?: () => void;
+  onAutoHighlightChange?: (isAutoHighlighting: boolean) => void;
 }
 
 export default function ScrollCardsAnimationV4({
   onComplete,
+  onAutoHighlightChange,
 }: ScrollCardsAnimationV4Props = {}) {
   const [activeCard, setActiveCard] = useState(-1);
   const [lastHoveredCard, setLastHoveredCard] = useState(-1);
@@ -111,6 +113,7 @@ export default function ScrollCardsAnimationV4({
             // Start auto-highlight sequence only once when visible
             if (!isMobile && !hasInteracted && !hasAutoHighlighted) {
               setIsAutoHighlighting(true);
+              onAutoHighlightChange?.(true); // Notify parent component
               setHasAutoHighlighted(true); // Mark as triggered
               // Cycle through all cards quickly
               const highlightSequence = async () => {
@@ -122,6 +125,7 @@ export default function ScrollCardsAnimationV4({
                 setActiveCard(-1);
                 setLastHoveredCard(-1);
                 setIsAutoHighlighting(false);
+                onAutoHighlightChange?.(false); // Notify parent component
                 // Show hover hints after auto-highlight completes
                 setTimeout(() => {
                   setShowHoverHints(true);
@@ -138,6 +142,7 @@ export default function ScrollCardsAnimationV4({
             setIsFullyVisible(false);
             setShowHoverHints(false);
             setIsAutoHighlighting(false);
+            onAutoHighlightChange?.(false); // Notify parent component when not visible
           }
         });
       },
@@ -156,7 +161,7 @@ export default function ScrollCardsAnimationV4({
         observer.unobserve(containerRef.current);
       }
     };
-  }, [isMobile, hasInteracted, hasAutoHighlighted]);
+  }, [isMobile, hasInteracted, hasAutoHighlighted, onAutoHighlightChange]);
 
   // Detect mobile device and initialize activeCard
   useEffect(() => {
@@ -329,7 +334,7 @@ export default function ScrollCardsAnimationV4({
           ) : (
             /* Desktop: 7 Cards Visible with Enhanced Visual Appeal */
             <div className="w-full px-4 flex flex-col items-center justify-center">
-              <div className="relative top-8">
+              <div className="relative top-20">
                 <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-center text-black">
                   Concept To Manufacturing
                 </h1>
