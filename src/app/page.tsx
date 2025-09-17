@@ -98,22 +98,35 @@ export default function Home() {
         if (ref.current) {
           const sectionTop = ref.current.offsetTop;
           const sectionHeight = ref.current.offsetHeight;
-          const sectionMiddle = sectionTop + sectionHeight / 2;
-          const distance = Math.abs(scrollPosition - sectionMiddle);
+          const sectionBottom = sectionTop + sectionHeight;
           
-          if (distance < closestDistance) {
-            closestDistance = distance;
+          // Early detection: trigger when section is 30% visible in viewport
+          const earlyDetectionPoint = sectionTop + (sectionHeight * 0.3);
+          const distance = Math.abs(scrollPosition - earlyDetectionPoint);
+          
+          // Bonus for sections that are entering the viewport from top
+          let adjustedDistance = distance;
+          if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+            // Section is in viewport, reduce distance to prioritize it
+            adjustedDistance = distance * 0.7;
+          }
+          
+          if (adjustedDistance < closestDistance) {
+            closestDistance = adjustedDistance;
             closestSectionIndex = index;
           }
         }
       });
+
       
       if (closestSectionIndex !== currentSection) {
+        
         setCurrentSection(closestSectionIndex);
         // Smooth scroll to the section using Lenis when it becomes the current section
         const targetRef = sectionRefs[closestSectionIndex];
         if (targetRef.current && lenis) {
           console.log("calling lenis");
+          console.log("Section changed", closestSectionIndex, currentSection);
           lenis.scrollTo(targetRef.current, {
             offset: -window.innerHeight / 2 + targetRef.current.offsetHeight / 2,
             duration: 1.5,
