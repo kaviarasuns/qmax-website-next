@@ -41,6 +41,45 @@ export default function Home() {
     setIsClient(true);
   }, []);
   
+  // Hide scroll bar only on home page
+  useEffect(() => {
+    if (!isClient) return;
+    
+    // Store original styles
+    const htmlElement = document.documentElement;
+    const originalHtmlStyle = {
+      scrollbarWidth: htmlElement.style.scrollbarWidth,
+      msOverflowStyle: (htmlElement.style as CSSStyleDeclaration & { msOverflowStyle?: string }).msOverflowStyle,
+    };
+    
+    // Apply scroll bar hiding styles
+    htmlElement.style.scrollbarWidth = 'none'; // Firefox
+    (htmlElement.style as CSSStyleDeclaration & { msOverflowStyle?: string }).msOverflowStyle = 'none'; // Internet Explorer 10+
+    
+    // Add webkit scrollbar hiding
+    const style = document.createElement('style');
+    style.id = 'home-page-scrollbar-hide';
+    style.textContent = `
+      html::-webkit-scrollbar {
+        display: none;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Cleanup function to restore original styles
+    return () => {
+      // Restore original styles
+      htmlElement.style.scrollbarWidth = originalHtmlStyle.scrollbarWidth || '';
+      (htmlElement.style as CSSStyleDeclaration & { msOverflowStyle?: string }).msOverflowStyle = originalHtmlStyle.msOverflowStyle || '';
+      
+      // Remove webkit scrollbar hiding
+      const styleElement = document.getElementById('home-page-scrollbar-hide');
+      if (styleElement) {
+        styleElement.remove();
+      }
+    };
+  }, [isClient]);
+  
   // Intersection Observer to track current section during manual scroll
   useEffect(() => {
     if (!isClient) return;
@@ -118,7 +157,7 @@ export default function Home() {
         offset: -window.innerHeight / 2 + targetRef.current.offsetHeight / 2,
         duration: 1.5,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
-        lock: true, // Lock user scrolling during animation
+        // lock: true, // Lock user scrolling during animation
         onComplete: () => {
           // Re-enable intersection observer after scroll animation completes
           setTimeout(() => {
@@ -149,15 +188,15 @@ export default function Home() {
 
   return (
     <>
+    <div ref={heroRef}>
       <motion.div
-        ref={heroRef}
         className="relative w-full h-screen flex flex-col items-center justify-center bg-black overflow-hidden"
         style={{
           scale,
           opacity,
           borderRadius: useTransform(scrollY, [0, 500], [0, 30]),
         }}
-      >
+        >
      
         {/* Top gradient overlay */}
         <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/70 to-transparent z-[1]"></div>
@@ -182,7 +221,8 @@ export default function Home() {
             Let&apos;s Build
           </button>
         </div>
-      </motion.div>
+        </motion.div>
+      </div>
         <div ref={scrollCardsRef}>
           <ScrollCardsAnimationV4 onAutoHighlightChange={setIsAutoHighlighting} />
         </div>
