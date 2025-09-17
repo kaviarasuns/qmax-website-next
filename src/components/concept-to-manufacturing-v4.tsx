@@ -209,7 +209,7 @@ export default function ScrollCardsAnimationV4({
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen">
+    <div ref={containerRef} className="min-h-screen pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40">
       {/* Horizontal Cards Section */}
       <div className="h-screen">
         <div className="h-screen flex items-center justify-center overflow-hidden">

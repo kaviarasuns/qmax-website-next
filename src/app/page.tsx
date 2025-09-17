@@ -216,9 +216,9 @@ export default function Home() {
         </button> */}
         
         {/* Section Indicator */}
-        <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-lg px-3 py-2 text-white text-xs font-medium shadow-xl">
+        {/* <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-lg px-3 py-2 text-white text-xs font-medium shadow-xl">
           {currentSection + 1}/{sectionRefs.length}
-        </div>
+        </div> */}
         
         {/* Next Section Button */}
         {/* <button

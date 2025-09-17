@@ -132,9 +132,9 @@ export default function InsideOut() {
   }, [loading, images, render]);
 
   return (
-    <div>
+    <div className="pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40">
       {/* Spacer before animation */}
-      <div style={{ height: "50vh" }} />
+      {/* <div style={{ height: "50vh" }} /> */}
       {/* Sticky animation section */}
       {!loading && (
         <div
