@@ -6,7 +6,6 @@ export default function InsideOut() {
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [isMobile, setIsMobile] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [isPinned, setIsPinned] = useState(false);
   // Use dynamic section height so all frames render smoothly across scroll
   const [sectionHeight, setSectionHeight] = useState<number>(9000);
   const frameCount = 672;
@@ -68,7 +67,6 @@ export default function InsideOut() {
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const pinnedNow = rect.top <= 0 && rect.bottom >= window.innerHeight;
-      setIsPinned(pinnedNow);
 
       if (loading || images.length === 0) return;
 

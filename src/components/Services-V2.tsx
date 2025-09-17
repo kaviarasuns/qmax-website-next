@@ -86,7 +86,7 @@ const ServicesV2 = () => {
   useEffect(() => {
     startAutoPlay();
     return () => clearAutoPlay();
-  }, [isUserInteracting]);
+  }, [isUserInteracting, startAutoPlay]);
 
   // Component cleanup
   useEffect(() => {

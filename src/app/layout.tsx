@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <ReactLenis root >
+      <ReactLenis root>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

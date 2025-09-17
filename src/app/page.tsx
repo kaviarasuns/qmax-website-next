@@ -12,12 +12,15 @@ import {
 import ScrollCardsAnimationV4 from "@/components/concept-to-manufacturing-v4";
 import { useState, useEffect, useRef } from "react";
 import React from "react";
+import { useLenis } from "@/utils/lenis";
+
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
   const [currentSection, setCurrentSection] = useState(0);
   const [isAutoHighlighting, setIsAutoHighlighting] = useState(false);
   const [isProgrammaticScroll, setIsProgrammaticScroll] = useState(false);
+  console.log("this is isAutoHighlighting", isAutoHighlighting);
   
   // Refs for each section
   const heroRef = useRef<HTMLDivElement>(null);
@@ -30,6 +33,9 @@ export default function Home() {
   const sectionRefs = [heroRef, scrollCardsRef, servicesRef, insideOutRef, emblaRef];
   const sectionNames = ['Hero', 'Concept to Manufacturing', 'Services', 'Inside Out', 'Carousel'];
   
+  // Get Lenis instance
+  const lenis = useLenis();
+  
   // Ensure this only runs on client side
   useEffect(() => {
     setIsClient(true);
@@ -39,76 +45,99 @@ export default function Home() {
   useEffect(() => {
     if (!isClient) return;
     
-    const observerOptions = {
-      root: null,
-      rootMargin: '-40% 0px -40% 0px', // Only trigger when section is in middle 20% of viewport
-      threshold: 0
-    };
-    
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      // Skip observer updates during programmatic scrolling
+    // Use a simpler approach with scroll listener instead of Intersection Observer
+    const handleScroll = () => {
       if (isProgrammaticScroll) return;
       
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const sectionIndex = sectionRefs.findIndex(ref => ref.current === entry.target);
-          if (sectionIndex !== -1 && sectionIndex !== currentSection) {
-            setCurrentSection(sectionIndex);
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      
+      // Find the section that is currently in the middle of the viewport
+      let closestSectionIndex = 0;
+      let closestDistance = Infinity;
+      
+      sectionRefs.forEach((ref, index) => {
+        if (ref.current) {
+          const sectionTop = ref.current.offsetTop;
+          const sectionHeight = ref.current.offsetHeight;
+          const sectionMiddle = sectionTop + sectionHeight / 2;
+          const distance = Math.abs(scrollPosition - sectionMiddle);
+          
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestSectionIndex = index;
           }
         }
       });
+      
+      if (closestSectionIndex !== currentSection) {
+        setCurrentSection(closestSectionIndex);
+        // Smooth scroll to the section using Lenis when it becomes the current section
+        const targetRef = sectionRefs[closestSectionIndex];
+        if (targetRef.current && lenis) {
+          console.log("calling lenis");
+          lenis.scrollTo(targetRef.current, {
+            offset: -window.innerHeight / 2 + targetRef.current.offsetHeight / 2,
+            duration: 1.5,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) // easeOutExpo
+          });
+        }
+      }
     };
     
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
-    // Observe all sections
-    sectionRefs.forEach(ref => {
-      if (ref.current) {
-        observer.observe(ref.current);
+    // Throttle the scroll handler
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
       }
-    });
+    };
+    
+    window.addEventListener('scroll', onScroll);
+    
+    // Initial check
+    handleScroll();
     
     return () => {
-      sectionRefs.forEach(ref => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
-        }
-      });
-      observer.disconnect();
+      window.removeEventListener('scroll', onScroll);
     };
-  }, [isClient, sectionRefs, currentSection, isProgrammaticScroll]);
-  console.log("logging isClient for noReason", isClient)
+  }, [isClient, sectionRefs, currentSection, isProgrammaticScroll, lenis]);
   
   // Function to scroll to specific section
   const scrollToSection = (sectionIndex: number) => {
     const targetRef = sectionRefs[sectionIndex];
-    if (targetRef.current) {
+    if (targetRef.current && lenis) {
       setIsProgrammaticScroll(true);
       setCurrentSection(sectionIndex);
       
-      targetRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'  // Options: 'start', 'center', 'end', 'nearest'\r
+      lenis.scrollTo(targetRef.current, {
+        offset: -window.innerHeight / 2 + targetRef.current.offsetHeight / 2,
+        duration: 1.5,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+        onComplete: () => {
+          // Re-enable intersection observer after scroll animation completes
+          setTimeout(() => {
+            setIsProgrammaticScroll(false);
+          }, 100);
+        }
       });
-      
-      // Re-enable intersection observer after scroll animation completes
-      setTimeout(() => {
-        setIsProgrammaticScroll(false);
-      }, 1000); // Adjust timing based on scroll animation duration
     }
   };
   
   // Function to navigate to next section
-  const goToNextSection = () => {
-    const nextSection = (currentSection + 1) % sectionRefs.length;
-    scrollToSection(nextSection);
-  };
+  // const goToNextSection = () => {
+  //   const nextSection = (currentSection + 1) % sectionRefs.length;
+  //   scrollToSection(nextSection);
+  // };
   
   // Function to navigate to previous section
-  const goToPreviousSection = () => {
-    const prevSection = currentSection === 0 ? sectionRefs.length - 1 : currentSection - 1;
-    scrollToSection(prevSection);
-  };
+  // const goToPreviousSection = () => {
+  //   const prevSection = currentSection === 0 ? sectionRefs.length - 1 : currentSection - 1;
+  //   scrollToSection(prevSection);
+  // };
 
   const { scrollY } = useScroll();
 
@@ -169,7 +198,7 @@ export default function Home() {
       {/* Navigation Button - Fixed on middle right edge */}
       <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 flex flex-col items-center space-y-2">
         {/* Previous Section Button */}
-        <button
+        {/* <button
           onClick={goToPreviousSection}
           disabled={isAutoHighlighting}
           className={`w-12 h-12 backdrop-blur-sm border border-gray-700/50 rounded-full flex items-center justify-center text-white transition-all duration-200 shadow-xl ${
@@ -182,7 +211,7 @@ export default function Home() {
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
           </svg>
-        </button>
+        </button> */}
         
         {/* Section Indicator */}
         <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700/50 rounded-lg px-3 py-2 text-white text-xs font-medium shadow-xl">
@@ -190,7 +219,7 @@ export default function Home() {
         </div>
         
         {/* Next Section Button */}
-        <button
+        {/* <button
           onClick={goToNextSection}
           disabled={isAutoHighlighting}
           className={`w-12 h-12 backdrop-blur-sm border border-gray-700/50 rounded-full flex items-center justify-center text-white transition-all duration-200 shadow-xl ${
@@ -203,7 +232,7 @@ export default function Home() {
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
-          </button>
+          </button> */}
         
         {/* Section Quick Access Buttons */}
         <div className="mt-4 flex flex-col space-y-1">

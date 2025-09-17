@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 interface ScrollDebugInfo {
   scrollY: number;
@@ -282,15 +282,15 @@ const ScrollDebugPanel: React.FC<ScrollDebugPanelProps> = ({
 };
 
 // Throttle utility function
-function throttle<T extends (...args: any[]) => any>(func: T, limit: number): T {
+function throttle<T extends (...args: unknown[]) => unknown>(func: T, limit: number): T {
   let inThrottle: boolean;
-  return ((...args: any[]) => {
+  return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
     if (!inThrottle) {
-      func(...args);
+      func.apply(this, args);
       inThrottle = true;
       setTimeout(() => inThrottle = false, limit);
     }
-  }) as T;
+  } as T;
 }
 
 export default ScrollDebugPanel;

@@ -29,6 +29,18 @@ interface DeviceInfo {
   touchSupport: boolean;
 }
 
+// Memory info interface for performance.memory
+interface MemoryInfo {
+  usedJSHeapSize?: number;
+  totalJSHeapSize?: number;
+  jsHeapSizeLimit?: number;
+}
+
+// Extend window.performance with memory property
+interface PerformanceWithMemory extends Performance {
+  memory?: MemoryInfo;
+}
+
 const UIDebugOverlay: React.FC<UIDebugOverlayProps> = ({ 
   isVisible = true, 
   onToggle 
@@ -145,9 +157,10 @@ const UIDebugOverlay: React.FC<UIDebugOverlayProps> = ({
       
       // Performance metrics (if available)
       if ('memory' in window.performance) {
+        const performanceWithMemory = window.performance as PerformanceWithMemory;
         setPerformanceData(prev => ({
           ...prev,
-          memory: Math.round(((window.performance as any).memory?.usedJSHeapSize || 0) / 1024 / 1024),
+          memory: Math.round((performanceWithMemory.memory?.usedJSHeapSize || 0) / 1024 / 1024),
         }));
       }
       

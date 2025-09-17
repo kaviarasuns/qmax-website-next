@@ -90,9 +90,7 @@ export default function ScrollCardsAnimationV4({
   onAutoHighlightChange,
 }: ScrollCardsAnimationV4Props = {}) {
   const [activeCard, setActiveCard] = useState(-1);
-  const [lastHoveredCard, setLastHoveredCard] = useState(-1);
   const [isMobile, setIsMobile] = useState(false);
-  const [isBelow1500, setIsBelow1500] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
   const [isFullyVisible, setIsFullyVisible] = useState(false);
   const [showHoverHints, setShowHoverHints] = useState(false);
@@ -120,7 +118,6 @@ export default function ScrollCardsAnimationV4({
                 }
                 // Reset to no active card after sequence
                 setActiveCard(-1);
-                setLastHoveredCard(-1);
                 setIsAutoHighlighting(false);
                 onAutoHighlightChange?.(false); // Notify parent component
                 // Show hover hints after auto-highlight completes
@@ -205,7 +202,6 @@ export default function ScrollCardsAnimationV4({
   // Handle screen size changes for below1500 state
   useEffect(() => {
     const checkSizes = () => {
-      setIsBelow1500(window.innerWidth < 1500);
     };
     checkSizes();
     window.addEventListener("resize", checkSizes);
@@ -360,7 +356,6 @@ export default function ScrollCardsAnimationV4({
                       onHoverStart={() => {
                         if (!isMobile && !isAutoHighlighting) {
                           handleUserInteraction(index);
-                          setLastHoveredCard(index);
                           setHasInteracted(true);
                         }
                       }}

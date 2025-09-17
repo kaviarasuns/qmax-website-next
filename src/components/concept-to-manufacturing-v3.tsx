@@ -86,7 +86,6 @@ export default function ScrollCardsAnimation() {
   const [isHorizontalScrollComplete, setIsHorizontalScrollComplete] =
     useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isBelow1500, setIsBelow1500] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -156,7 +155,6 @@ export default function ScrollCardsAnimation() {
     const checkSizes = () => {
       const w = window.innerWidth;
       setIsMobile(w < 768);
-      setIsBelow1500(w < 1500);
     };
     checkSizes();
     window.addEventListener("resize", checkSizes);
