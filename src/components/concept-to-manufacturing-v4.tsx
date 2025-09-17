@@ -80,6 +80,9 @@ const cards = [
   },
 ];
 
+// Controls the speed of the auto-highlight sequence (ms per card)
+const AUTO_HIGHLIGHT_DELAY = 800;
+
 interface ScrollCardsAnimationV4Props {
   onComplete?: () => void;
   onAutoHighlightChange?: (isAutoHighlighting: boolean) => void;
@@ -114,7 +117,7 @@ export default function ScrollCardsAnimationV4({
               const highlightSequence = async () => {
                 for (let i = 0; i < cards.length; i++) {
                   setActiveCard(i);
-                  await new Promise((resolve) => setTimeout(resolve, 300)); // 500ms per card
+                  await new Promise((resolve) => setTimeout(resolve, AUTO_HIGHLIGHT_DELAY));
                 }
                 // Reset to no active card after sequence
                 setActiveCard(-1);
@@ -209,7 +212,7 @@ export default function ScrollCardsAnimationV4({
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40">
+    <div ref={containerRef} className="min-h-screen pt-12 sm:pt-16 md:pt-20 lg:pt-24 xl:pt-28">
       {/* Horizontal Cards Section */}
       <div className="h-screen">
         <div className="h-screen flex items-center justify-center overflow-hidden">
@@ -269,7 +272,7 @@ export default function ScrollCardsAnimationV4({
                                 delay: 0.3 + itemIndex * 0.1,
                               }}
                             >
-                              <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-2 flex-shrink-0"></div>
+                              <div className="w-3 h-1.5 bg-red-500 mr-2 flex-shrink-0" style={{clipPath: 'polygon(0 0, 100% 0, 80% 100%, 0 100%)'}}></div>
                               <span>{item}</span>
                             </motion.div>
                           ))}
@@ -470,16 +473,9 @@ export default function ScrollCardsAnimationV4({
                                   delay: 0.3 + itemIndex * 0.1,
                                 }}
                               >
-                                <motion.div
-                                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full mr-1 sm:mr-2 flex-shrink-0"
-                                  animate={{
-                                    scale: [1, 1.3, 1],
-                                  }}
-                                  transition={{
-                                    duration: 2,
-                                    repeat: Number.POSITIVE_INFINITY,
-                                    delay: itemIndex * 0.2,
-                                  }}
+                                <div
+                                  className="w-3 h-1.5 sm:w-4 sm:h-2 bg-red-500 mr-1 sm:mr-2 flex-shrink-0"
+                                  style={{clipPath: 'polygon(0 0, 100% 0, 80% 100%, 0 100%)'}}
                                 />
                                 <span className="font-medium">{item}</span>
                               </motion.div>

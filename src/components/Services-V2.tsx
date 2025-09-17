@@ -119,7 +119,7 @@ const ServicesV2 = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full h-full pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 py-8 lg:py-12 flex items-center "
+      className="w-full h-full pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 py-8 lg:py-12 flex items-center "
       onMouseLeave={handleMouseLeave}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 flex flex-col items-center">
@@ -219,7 +219,7 @@ const ServicesV2 = () => {
         </div>
 
         {/* Card indicators */}
-        <div className="flex space-x-1.5 mt-4 lg:mt-6">
+        {/* <div className="flex space-x-1.5 mt-4 lg:mt-6">
           {services.map((_, index) => (
             <button
               key={index}
@@ -232,7 +232,7 @@ const ServicesV2 = () => {
               aria-label={`Select service ${index + 1}`}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
