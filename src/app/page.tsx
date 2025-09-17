@@ -101,7 +101,7 @@ export default function Home() {
           const sectionBottom = sectionTop + sectionHeight;
           
           // Early detection: trigger when section is 30% visible in viewport
-          const earlyDetectionPoint = sectionTop + (sectionHeight * 0.3);
+          const earlyDetectionPoint = sectionTop + (sectionHeight * 0.2);
           const distance = Math.abs(scrollPosition - earlyDetectionPoint);
           
           // Bonus for sections that are entering the viewport from top
@@ -122,6 +122,12 @@ export default function Home() {
       if (closestSectionIndex !== currentSection) {
         
         setCurrentSection(closestSectionIndex);
+
+        if(closestSectionIndex === 3){
+          return;
+        }
+        
+
         // Smooth scroll to the section using Lenis when it becomes the current section
         const targetRef = sectionRefs[closestSectionIndex];
         if (targetRef.current && lenis) {
