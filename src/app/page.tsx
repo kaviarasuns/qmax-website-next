@@ -78,7 +78,8 @@ export default function Home() {
           lenis.scrollTo(targetRef.current, {
             offset: -window.innerHeight / 2 + targetRef.current.offsetHeight / 2,
             duration: 1.5,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) // easeOutExpo
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+            lock: true // Lock user scrolling during animation
           });
         }
       }
@@ -117,6 +118,7 @@ export default function Home() {
         offset: -window.innerHeight / 2 + targetRef.current.offsetHeight / 2,
         duration: 1.5,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+        lock: true, // Lock user scrolling during animation
         onComplete: () => {
           // Re-enable intersection observer after scroll animation completes
           setTimeout(() => {

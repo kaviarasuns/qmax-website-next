@@ -19,13 +19,13 @@ const services = [
       "Program low-level code to bring up boards, handle protocols, and control hardware.",
   },
   {
-    topic: "PCB Desing",
+    topic: "PCB Design",
     image:
       "https://framerusercontent.com/images/7CnP7xCaEUuDiSvOyIyHs36cw4I.png",
     description: "Design and layout production-ready printed circuit boards.",
   },
   {
-    topic: "Industrial Desing And Mechanical",
+    topic: "Industrial Design And Mechanical",
     image:
       "https://framerusercontent.com/images/kTPtpORfLevVY4rDMRwjeXD72sc.png",
     description:
