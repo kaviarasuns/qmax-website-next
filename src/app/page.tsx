@@ -27,6 +27,7 @@ export default function Home() {
   const firstTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const secondTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const fadeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  console.log("isAutoHighlighting", isAutoHighlighting)
   // Handle typewriter timing and video control
   useEffect(() => {
     // Start the second line after the first line would be complete
