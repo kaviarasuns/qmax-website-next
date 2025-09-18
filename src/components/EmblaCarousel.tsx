@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
-import "../components/css/embla.css";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -91,11 +90,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
       {/* Carousel Container */}
       <div className="max-w-7xl mx-auto px-4 flex-1 flex flex-col justify-center">
-        <div className={isMobile ? "embla-mobile" : "embla-compact"} ref={emblaRef}>
-          <div className={isMobile ? "embla__container-mobile" : "embla__container-compact"}>
+        <div className={isMobile ? "overflow-hidden w-full pb-8" : "overflow-hidden w-full pb-8"} ref={emblaRef}>
+          <div className={isMobile ? "flex touch-pan-y touch-pinch-zoom -ml-4" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 px-4 lg:px-8 max-w-6xl mx-auto"}>
             {carouselItems.map((item, index) => (
               <motion.div 
-                className={isMobile ? "embla__slide-mobile" : "embla__slide-compact"} 
+                className={`${isMobile ? "flex-none w-72 pl-4 flex flex-col h-full" : "flex flex-col h-full min-h-96 lg:h-auto"} shadow-lg hover:shadow-lg transition-shadow duration-300 rounded-2xl`} 
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
