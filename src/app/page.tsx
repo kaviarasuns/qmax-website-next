@@ -13,6 +13,7 @@ import ScrollCardsAnimationV4 from "@/components/concept-to-manufacturing-v4";
 import { useState, useEffect, useRef } from "react";
 import React from "react";
 import { useLenis } from "@/utils/lenis";
+import Typewriter from "typewriter-effect";
 
 
 export default function Home() {
@@ -20,7 +21,37 @@ export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
   const [isAutoHighlighting, setIsAutoHighlighting] = useState(false);
   const [isProgrammaticScroll, setIsProgrammaticScroll] = useState(false);
-  console.log("this is isAutoHighlighting", isAutoHighlighting);
+  const [showSecondLine, setShowSecondLine] = useState(false);
+  const [showBottomText, setShowBottomText] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const firstTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const secondTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const fadeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  // Handle typewriter timing and video control
+  useEffect(() => {
+    // Start the second line after the first line would be complete
+    // "Electronics Engineering Services" has 33 characters
+    // At 45ms delay per character: 33 * 45 = 1485ms
+    firstTimeoutRef.current = setTimeout(() => {
+      setShowSecondLine(true);
+    }, 1500);
+
+    // Start video and show bottom text after both lines are complete
+    // Second line "From Concept to Production" has 26 characters
+    // Total time: 1500ms + (26 * 45) + 1000ms buffer = 3670ms
+    fadeTimeoutRef.current = setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.play();
+      }
+      setShowBottomText(true);
+    }, 3700);
+
+    return () => {
+      if (firstTimeoutRef.current) clearTimeout(firstTimeoutRef.current);
+      if (secondTimeoutRef.current) clearTimeout(secondTimeoutRef.current);
+      if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current);
+    };
+  }, []);
   
   // Refs for each section
   const heroRef = useRef<HTMLDivElement>(null);
@@ -29,9 +60,9 @@ export default function Home() {
   const insideOutRef = useRef<HTMLDivElement>(null);
   const emblaRef = useRef<HTMLDivElement>(null);
   
-  // Array of refs for easy navigation
+  // Array of refs for easy navigation (footer will be handled separately via querySelector)
   const sectionRefs = [heroRef, scrollCardsRef, servicesRef, insideOutRef, emblaRef];
-  const sectionNames = ['Hero', 'Concept to Manufacturing', 'Services', 'Inside Out', 'Carousel'];
+  const sectionNames = ['Hero', 'Concept to Manufacturing', 'Services', 'Inside Out', 'Carousel', 'Footer'];
   
   // Get Lenis instance
   const lenis = useLenis();
@@ -90,18 +121,27 @@ export default function Home() {
       
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       
+      // Get footer element from DOM since it's in layout
+      const footerElement = document.querySelector('footer');
+      
+      // Create an extended sections array that includes footer
+      const allSections: Array<{ current: HTMLElement | null }> = [...sectionRefs];
+      if (footerElement) {
+        allSections.push({ current: footerElement as HTMLElement });
+      }
+      
       // Find the section that is currently in the middle of the viewport
       let closestSectionIndex = 0;
       let closestDistance = Infinity;
       
-      sectionRefs.forEach((ref, index) => {
+      allSections.forEach((ref, index) => {
         if (ref.current) {
           const sectionTop = ref.current.offsetTop;
           const sectionHeight = ref.current.offsetHeight;
           const sectionBottom = sectionTop + sectionHeight;
           
           // Early detection: trigger when section is 30% visible in viewport
-          const earlyDetectionPoint = sectionTop + (sectionHeight * 0.2);
+          const earlyDetectionPoint = sectionTop + (sectionHeight * 0.1);
           const distance = Math.abs(scrollPosition - earlyDetectionPoint);
           
           // Bonus for sections that are entering the viewport from top
@@ -122,21 +162,51 @@ export default function Home() {
       if (closestSectionIndex !== currentSection) {
         
         setCurrentSection(closestSectionIndex);
+        
+        const targetRef = sectionRefs[closestSectionIndex];
 
         if(closestSectionIndex === 3){
+          // For section 3, scroll to the start of the target ref instead of middle
+          if (targetRef.current && lenis) {
+            console.log("calling lenis for section 3 - scroll to start");
+            console.log("Section changed", closestSectionIndex, currentSection);
+            lenis.scrollTo(targetRef.current, {
+              offset: window.innerWidth <= 768 ? 50 : window.innerWidth <= 1024 ? 80 : 110, // Responsive offset: mobile (50px), tablet (80px), desktop (110px)
+              duration: 1.5,
+              easing: (t) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2, // Slow start, fast middle, smooth stop
+              lock: true // Lock user scrolling during animation
+            });
+          }
+          return;
+        }
+        
+        // Handle footer case (index 5)
+        if (closestSectionIndex === 5) {
+          const footerElement = document.querySelector('footer');
+          if (footerElement && lenis) {
+            console.log("calling lenis for footer");
+            console.log("Section changed", closestSectionIndex, currentSection);
+            lenis.scrollTo(footerElement, {
+              offset: 0, // Scroll to start of footer
+              duration: 1.5,
+              easing: (t) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2,
+              lock: true
+            });
+          }
           return;
         }
         
 
         // Smooth scroll to the section using Lenis when it becomes the current section
-        const targetRef = sectionRefs[closestSectionIndex];
+       
         if (targetRef.current && lenis) {
           console.log("calling lenis");
           console.log("Section changed", closestSectionIndex, currentSection);
           lenis.scrollTo(targetRef.current, {
             offset: -window.innerHeight / 2 + targetRef.current.offsetHeight / 2,
             duration: 1.5,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+            // easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+            easing: (t) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2, // Slow start, fast middle, smooth stop
             lock: true // Lock user scrolling during animation
           });
         }
@@ -167,6 +237,28 @@ export default function Home() {
   
   // Function to scroll to specific section
   const scrollToSection = (sectionIndex: number) => {
+    if (sectionIndex === 5) {
+      // Handle footer case
+      const footerElement = document.querySelector('footer');
+      if (footerElement && lenis) {
+        setIsProgrammaticScroll(true);
+        setCurrentSection(sectionIndex);
+        
+        lenis.scrollTo(footerElement, {
+          offset: 0, // Scroll to start of footer
+          duration: 1.5,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+          onComplete: () => {
+            // Re-enable intersection observer after scroll animation completes
+            setTimeout(() => {
+              setIsProgrammaticScroll(false);
+            }, 100);
+          }
+        });
+      }
+      return;
+    }
+    
     const targetRef = sectionRefs[sectionIndex];
     if (targetRef.current && lenis) {
       setIsProgrammaticScroll(true);
@@ -222,8 +314,9 @@ export default function Home() {
         {/* Bottom gradient overlay */}
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/70 to-transparent z-[1]"></div>
         <motion.video
+          ref={videoRef}
           src="https://d1yetprhniwywz.cloudfront.net/v2/bI5j7L3hwM91DqHlKw3woZrrbEk.mp4"
-          autoPlay
+          autoPlay={false}
           loop
           muted
           playsInline
@@ -231,15 +324,45 @@ export default function Home() {
           className="w-full h-full object-cover shadow-lg"
           // style={{ borderRadius }}
         />
-        <div className="absolute bottom-4 left-4 sm:bottom-16 sm:left-16 text-white text-xl sm:text-2xl font-bold z-10">
-          From Concept to Production
-          <div className="text-base sm:text-lg font-medium mt-2">
-            We make ideas soar!
+        
+        {/* Typewriter Effect Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center z-[2]">
+          <div className="text-center">
+            <div className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              <Typewriter
+                options={{
+                  strings: ["Electronics Engineering Services"],
+                  autoStart: true,
+                  cursor: "",
+                  delay: 45,
+                }}
+              />
+            </div>
+            {showSecondLine && (
+              <div className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium">
+                <Typewriter
+                  options={{
+                    strings: ["From Concept to Production"],
+                    autoStart: true,
+                    cursor: "",
+                    delay: 45,
+                  }}
+                />
+              </div>
+            )}
           </div>
-          <button className="mt-4 px-3 py-2 sm:px-4 sm:py-1 border border-white text-white bg-transparent rounded">
-            Let&apos;s Build
-          </button>
         </div>
+        {showBottomText && (
+          <div className="absolute bottom-4 left-4 sm:bottom-16 sm:left-16 text-white text-xl sm:text-2xl font-bold z-10 animate-fade-in">
+            Electronics Engineering Services
+            <div className="text-base sm:text-lg font-medium mt-2">
+              From Concept to Production
+            </div>
+            <button className="mt-4 px-3 py-2 sm:px-4 sm:py-1 border border-white text-white bg-transparent rounded">
+              Let&apos;s Build
+            </button>
+          </div>
+        )}
         </motion.div>
       </div>
         <div ref={scrollCardsRef}>
