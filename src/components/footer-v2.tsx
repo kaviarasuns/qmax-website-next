@@ -78,25 +78,29 @@ export default function FooterV2() {
               <p className="mb-4">Get in touch with us on social media.</p>
               <div className="flex gap-6">
                 <Link
-                  href="#"
+                  href="https://www.facebook.com/QMAXSystems/"
+                  target="_blank"
                   className="p-2 border border-white rounded hover:text-zinc-400 hover:border-zinc-400 transition-colors"
                 >
                   <Facebook size={24} />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://x.com/QmaxSystems"
+                  target="_blank"
                   className="p-2 border border-white rounded hover:text-zinc-400 hover:border-zinc-400 transition-colors"
                 >
                   <Twitter size={24} />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/company/qmax-systems-inc/about/"
+                  target="_blank"
                   className="p-2 border border-white rounded hover:text-zinc-400 hover:border-zinc-400 transition-colors"
                 >
                   <Linkedin size={24} />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.youtube.com/watch?v=Ls5EVCXfQI8"
+                  target="_blank"
                   className="p-2 border border-white rounded hover:text-zinc-400 hover:border-zinc-400 transition-colors"
                 >
                   <Youtube size={24} />
