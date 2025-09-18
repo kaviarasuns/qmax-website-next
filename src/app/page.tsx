@@ -370,12 +370,12 @@ export default function Home() {
           </div>
         </div>
         {showBottomText && (
-          <div className="absolute bottom-4 left-4 sm:bottom-16 sm:left-16 text-white text-xl sm:text-2xl font-bold z-10 animate-fade-in">
+          <div className="absolute bottom-4 left-4 sm:bottom-16 sm:left-16 text-white text-xl sm:text-3xl md:text-4xl font-bold z-10 animate-fade-in">
             Electronics Engineering Services
-            <div className="text-base sm:text-lg font-medium mt-2">
+            <div className="text-base sm:text-xl md:text-2xl font-medium mt-2">
               From Concept to Production
             </div>
-            <button className="mt-4 px-3 py-2 sm:px-4 sm:py-1 border border-white text-white bg-transparent rounded">
+            <button className="mt-5 px-4 py-2.5 sm:px-5 sm:py-2.5 text-sm sm:text-base border border-white text-white bg-transparent rounded-md transition hover:bg-white/10">
               Let&apos;s Build
             </button>
           </div>
