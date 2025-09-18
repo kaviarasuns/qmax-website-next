@@ -180,6 +180,21 @@ export default function Home() {
           }
           return;
         }
+
+        // if(closestSectionIndex === 4){
+        //   // For section 4, use much slower easing at the start
+        //   if (targetRef.current && lenis) {
+        //     console.log("calling lenis for section 4 - much slower start");
+        //     console.log("Section changed", closestSectionIndex, currentSection);
+        //     lenis.scrollTo(targetRef.current, {
+        //       offset: window.innerWidth <= 768 ? 50 : window.innerWidth <= 1024 ? 80 : 110, // Responsive offset: mobile (50px), tablet (80px), desktop (110px)
+        //       duration: 1.5,
+        //       easing: (t) => t < 0.3 ? 0.5 * t * t * t : t < 0.7 ? 1 - Math.pow(-2 * (t - 0.3) + 1, 3) / 2 : 1 - Math.pow(-2 * t + 2, 4) / 2,  // Custom easing with extra slow deceleration at the end
+        //       lock: true // Lock user scrolling during animation
+        //     });
+        //   }
+        //   return;
+        // }
         
         // Handle footer case (index 5)
         if (closestSectionIndex === 5) {

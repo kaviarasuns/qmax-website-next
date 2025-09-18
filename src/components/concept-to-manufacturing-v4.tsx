@@ -338,7 +338,7 @@ export default function ScrollCardsAnimationV4({
                       animate={{
                         scale: index === activeCard && activeCard !== -1 ? 1.15 : 1,
                         opacity: 1,
-                        y: index === activeCard && activeCard !== -1 ? -20 : 0,
+                        y: index === activeCard && activeCard !== -1 ? '-1.25rem' : '-1rem',
                         height:
                           index === activeCard && activeCard !== -1
                             ? "auto"
