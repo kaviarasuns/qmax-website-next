@@ -102,16 +102,16 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden p-4">
                     <Image
                       src={item.image}
                       alt={item.title}
                       width={400}
                       height={250}
-                      className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-300 rounded-lg"
                       priority={index === 0}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-4 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
                   </div>
                   
                   <div className="p-6 flex-1 flex flex-col">

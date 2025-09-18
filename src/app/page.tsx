@@ -237,6 +237,7 @@ export default function Home() {
   
   // Function to scroll to specific section
   const scrollToSection = (sectionIndex: number) => {
+    
     if (sectionIndex === 5) {
       // Handle footer case
       const footerElement = document.querySelector('footer');
@@ -260,6 +261,21 @@ export default function Home() {
     }
     
     const targetRef = sectionRefs[sectionIndex];
+
+      if(sectionIndex === 3){
+          // For section 3, scroll to the start of the target ref instead of middle
+          if (targetRef.current && lenis) {
+            lenis.scrollTo(targetRef.current, {
+              offset: window.innerWidth <= 768 ? 50 : window.innerWidth <= 1024 ? 80 : 110, // Responsive offset: mobile (50px), tablet (80px), desktop (110px)
+              duration: 1.5,
+              easing: (t) => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2, // Slow start, fast middle, smooth stop
+              lock: true // Lock user scrolling during animation
+            });
+          }
+          return;
+        }
+
+    
     if (targetRef.current && lenis) {
       setIsProgrammaticScroll(true);
       setCurrentSection(sectionIndex);
