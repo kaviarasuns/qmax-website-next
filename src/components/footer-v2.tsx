@@ -39,14 +39,15 @@ export default function FooterV2() {
   const downloadUrl = "/qmax-presentation.pdf";
   return (
     <>
-      <footer className="bg-zinc-900 text-white min-h-screen flex flex-col justify-between [&>*]:tracking-wider">
-        <div className="mx-auto px-4 flex flex-col flex-1 justify-center py-8">
+      {" "}
+      <footer className="bg-zinc-900 text-white h-screen flex flex-col justify-between [&>*]:tracking-wider">
+        <div className="mx-auto flex flex-col flex-1 justify-center pb-6">
           <div className="container flex flex-col md:flex-row justify-around gap-12 flex-1 items-center">
             {/* About Us Section */}
             <div className="flex-1">
               <h2 className="text-xl font-semibold mb-4">ABOUT US</h2>
               <p className="text-white text-sm leading-relaxed">
-                Qmax Systems is an Electronics Engineering and R&amp;D Services
+                Qmax Systems is an Electronics Engineering and R&D Services
                 company based in San Jose, California and having development
                 center in India. Established in 1997, Qmax provides Embedded
                 Systems Design and PCB Design Services.
@@ -65,10 +66,14 @@ export default function FooterV2() {
               <p className="text-gray-300 mb-4">
                 Click here to download our company presentation.
               </p>
-              <Link href={downloadUrl} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={downloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="default"
-                  className="bg-brand-red hover:bg-[#FF1111] text-white"
+                  className="bg-gray-500 hover:bg-gray-600 text-white"
                 >
                   <Download className="mr-2 h-4 w-4" /> Download
                 </Button>
@@ -109,7 +114,7 @@ export default function FooterV2() {
             </div>
 
             {/* Contact Us Section (replacing Social Media) */}
-            <div className="flex-1 w-full">
+            <div className="flex-1 w-full mt-16 md:pt-0">
               <h2 className="text-xl font-semibold mb-4">CONTACT US</h2>
               <div className="space-y-4 w-full">
                 {(Object.keys(addresses) as CountryKey[]).map((country) => (
@@ -117,7 +122,7 @@ export default function FooterV2() {
                     key={country}
                     className="mb-4 rounded-lg overflow-hidden border border-zinc-700"
                   >
-                    <div className="w-full font-bold text-left p-2 text-sm bg-brand-red text-white">
+                    <div className="w-full font-bold text-left p-2 text-sm bg-gray-500 text-white">
                       {country}
                     </div>
                     <div className="p-3 text-sm text-gray-300 bg-zinc-800">
@@ -144,7 +149,7 @@ export default function FooterV2() {
                             window.open(mailtoUrl, "_blank");
                           }, 100);
                         }}
-                        className="text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left"
+                        className="text-gray-500 hover:text-gray-300 cursor-pointer bg-transparent border-none p-0 text-left"
                       >
                         {addresses[country].email}
                       </button>
@@ -156,7 +161,7 @@ export default function FooterV2() {
           </div>
 
           {/* Logo and Copyright Section */}
-          <div className="border-t border-zinc-800 pt-8 mt-auto">
+          <div className="mt-auto">
             <div className="flex flex-col items-center gap-6">
               {/* <Image
                 src="/qmax-logo.svg"

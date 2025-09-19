@@ -179,7 +179,7 @@ export default function InsideOut() {
         </div>
       )}
       {/* Spacer after animation */}
-      <div style={{ height: "50vh" }} />
+      <div style={{ height: "20vh" }} />
     </div>
   );
 }
