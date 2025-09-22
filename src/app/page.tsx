@@ -199,7 +199,7 @@ export default function Home() {
                   ? 50
                   : window.innerWidth <= 1024
                   ? 80
-                  : 110, // Responsive offset: mobile (50px), tablet (80px), desktop (110px)
+                  : 160, // Responsive offset: mobile (50px), tablet (80px), desktop (110px)
               duration: 1.5,
               easing: (t) =>
                 t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2, // Slow start, fast middle, smooth stop
@@ -316,7 +316,7 @@ export default function Home() {
               ? 50
               : window.innerWidth <= 1024
               ? 80
-              : 110, // Responsive offset: mobile (50px), tablet (80px), desktop (110px)
+              : 160, // Responsive offset: mobile (50px), tablet (80px), desktop (110px)
           duration: 1.5,
           easing: (t) =>
             t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2, // Slow start, fast middle, smooth stop
