@@ -40,11 +40,11 @@ export default function FooterV2() {
   return (
     <>
       {" "}
-      <footer className="bg-zinc-900 text-white h-screen flex flex-col justify-between [&>*]:tracking-wider">
-        <div className="mx-auto flex flex-col flex-1 justify-center pb-6">
+      <footer className="bg-zinc-900 text-white h-full flex flex-col justify-between [&>*]:tracking-wider">
+        <div className="mx-auto flex flex-col flex-1 justify-center pb-6 px-4 md:px-0">
           <div className="container flex flex-col md:flex-row justify-around gap-12 flex-1 items-center">
             {/* About Us Section */}
-            <div className="flex-1">
+            <div className="flex-1 pt-4">
               <h2 className="text-xl font-semibold mb-4">ABOUT US</h2>
               <p className="text-white text-sm leading-relaxed">
                 Qmax Systems is an Electronics Engineering and R&D Services
@@ -161,7 +161,7 @@ export default function FooterV2() {
           </div>
 
           {/* Logo and Copyright Section */}
-          <div className="mt-auto">
+          <div className="mt-auto pt-6">
             <div className="flex flex-col items-center gap-6">
               {/* <Image
                 src="/qmax-logo.svg"

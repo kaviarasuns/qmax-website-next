@@ -14,15 +14,15 @@ type PropType = {
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { options } = props;
   const [isMobile, setIsMobile] = useState(false);
-  
+
   const defaultOptions: EmblaOptionsType = {
     loop: false,
-    align: 'start',
-    containScroll: 'trimSnaps',
+    align: "start",
+    containScroll: "trimSnaps",
     slidesToScroll: 1,
     dragFree: isMobile,
     skipSnaps: false,
-    axis: 'x',
+    axis: "x",
     ...options,
   };
   const [emblaRef, emblaApi] = useEmblaCarousel(defaultOptions);
@@ -79,82 +79,100 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   return (
     <div className="min-h-[100vh] max-h-screen bg-gray-50 flex flex-col overflow-hidden">
       {/* Header */}
-      <div className="text-center flex-shrink-0 pt-16 md:pt-20 lg:pt-24">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 md:mb-4">
-          Case Studies & Services
-        </h1>
-        <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4 mb-4 md:mb-6">
-          Explore our comprehensive solutions and successful project implementations
-        </p>
-      </div>
 
       {/* Carousel Container */}
-      <div className="max-w-7xl mx-auto px-4 flex-1 flex flex-col justify-center min-h-0">
-        <div className={isMobile ? "overflow-hidden w-full pb-4 md:pb-6" : "overflow-hidden w-full pb-4 md:pb-6"} ref={emblaRef}>
-          <div className={isMobile ? "flex touch-pan-y touch-pinch-zoom -ml-4" : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 px-4 lg:px-8 max-w-6xl mx-auto"}>
-            {carouselItems.map((item, index) => (
-              <motion.div 
-                className={`${isMobile ? "flex-none w-72 pl-4 flex flex-col h-full" : "flex flex-col h-full max-h-[420px] lg:max-h-[450px]"} shadow-lg hover:shadow-lg transition-shadow duration-300 rounded-2xl`} 
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
-                  <div className="relative overflow-hidden p-3 md:p-4">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      width={400}
-                      height={250}
-                      className="w-full h-40 md:h-44 lg:h-48 object-cover group-hover:scale-105 transition-transform duration-300 rounded-lg"
-                      priority={index === 0}
-                    />
-                    <div className="absolute inset-3 md:inset-4 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
-                  </div>
-                  
-                  <div className="p-4 md:p-5 lg:p-6 flex-1 flex flex-col">
-                    <div className="mb-2 md:mb-3">
-                      <span className="inline-block px-2 md:px-3 py-1 text-xs font-semibold text-red-600 bg-red-100 rounded-full">
-                        {item.title}
-                      </span>
+      <div className="w-full pb-4 md:pb-6 flex-1 flex flex-col items-center justify-center">
+        <div className="text-center flex-shrink-0">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 md:mb-4">
+            Case Studies
+          </h1>
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4 mb-4 md:mb-6">
+            Explore our comprehensive solutions and successful project
+            implementations
+          </p>
+        </div>
+        <div className="w-full">
+          <div
+            className="overflow-hidden w-full h-[420px] md:h-auto pb-4"
+            ref={emblaRef}
+          >
+            <div
+              className={
+                isMobile
+                  ? "flex h-full touch-pan-y touch-pinch-zoom -ml-4"
+                  : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 px-4 lg:px-8 max-w-6xl mx-auto lg:pb-12"
+              }
+            >
+              {carouselItems.map((item, index) => (
+                <motion.div
+                  className={`${
+                    isMobile
+                      ? "flex-none w-72 pl-4 flex flex-col h-[420px] pb-4"
+                      : "flex flex-col h-full max-h-[420px] lg:max-h-[450px] pb-4"
+                  }`}
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
+                    <div className="relative overflow-hidden p-3 md:p-4">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        width={400}
+                        height={250}
+                        className="w-full h-40 md:h-44 lg:h-48 object-cover group-hover:scale-105 transition-transform duration-300 rounded-lg"
+                        priority={index === 0}
+                      />
+                      <div className="absolute inset-3 md:inset-4 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
                     </div>
-                    
-                    <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3 group-hover:text-red-600 transition-colors duration-300 flex-1 line-clamp-2">
-                      {item.description}
-                    </h3>
-                    
-                    <div className="mt-auto">
-                      <Link href={item.url}>
-                        <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 md:py-2.5 px-3 md:px-4 text-sm md:text-base rounded-lg transition-colors duration-300">
-                          Learn More
-                        </Button>
-                      </Link>
+
+                    <div className="p-4 md:p-5 lg:p-6 flex-1 flex flex-col min-h-0">
+                      <div className="mb-2 md:mb-3">
+                        <span className="inline-block px-2 md:px-3 py-1 text-xs font-semibold text-red-600 bg-red-100 rounded-full">
+                          {item.title}
+                        </span>
+                      </div>
+
+                      <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-2 md:mb-3 group-hover:text-red-600 transition-colors duration-300 flex-1 line-clamp-2">
+                        {item.description}
+                      </h3>
+
+                      <div className="mt-auto">
+                        <Link href={item.url}>
+                          <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 md:py-2.5 px-3 md:px-4 text-sm md:text-base rounded-lg transition-colors duration-300">
+                            Learn More
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* Mobile Navigation Dots */}
-        {isMobile && (
-          <div className="flex justify-center mt-4 md:mt-6 gap-2 pb-4 md:pb-6 flex-shrink-0">
-            {carouselItems.map((_, index) => (
-              <DotButton
-                key={index}
-                onClick={() => onDotButtonClick(index)}
-                className={`w-2 h-2 rounded-full transition-colors duration-200 ${
-                  index === selectedIndex ? 'bg-red-600' : 'bg-gray-300'
-                }`}
-              />
-            ))}
-          </div>
-        )}
       </div>
+
+      {/* Mobile Navigation Dots */}
+      {isMobile && (
+        <div className="flex justify-center mt-4 md:mt-6 gap-2 pb-4 md:pb-6 flex-shrink-0">
+          {carouselItems.map((_, index) => (
+            <DotButton
+              key={index}
+              onClick={() => onDotButtonClick(index)}
+              className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                index === selectedIndex ? "bg-red-600" : "bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
 export default EmblaCarousel;
+
+//  <div className="max-w-7xl mx-auto px-4 flex-1 flex flex-col justify-center min-h-0"></div>

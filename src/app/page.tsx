@@ -137,6 +137,8 @@ export default function Home() {
   // Intersection Observer to track current section during manual scroll
   useEffect(() => {
     if (!isClient) return;
+    // Skip this scroll snapping behavior on mobile screens
+    if (typeof window !== "undefined" && window.innerWidth <= 768) return;
 
     // Use a simpler approach with scroll listener instead of Intersection Observer
     const handleScroll = () => {
@@ -503,8 +505,8 @@ export default function Home() {
           </svg>
           </button> */}
 
-        {/* Section Quick Access Buttons */}
-        <div className="mt-4 flex flex-col space-y-1">
+        {/* Section Quick Access Buttons (hidden on mobile) */}
+        <div className="mt-4 hidden sm:flex flex-col space-y-1">
           {sectionNames.map((name, index) => (
             <button
               key={index}
