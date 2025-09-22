@@ -40,7 +40,7 @@ export default function FooterV2() {
   return (
     <>
       {" "}
-      <footer className="bg-zinc-900 text-white h-full flex flex-col justify-between [&>*]:tracking-wider">
+      <footer className="bg-zinc-900 text-white min-h-screen flex flex-col justify-between [&>*]:tracking-wider">
         <div className="mx-auto flex flex-col flex-1 justify-center pb-6 px-4 md:px-0">
           <div className="container flex flex-col md:flex-row justify-around gap-12 flex-1 items-center">
             {/* About Us Section */}
