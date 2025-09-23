@@ -77,12 +77,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const { selectedIndex, onDotButtonClick } = useDotButton(emblaApi);
 
   return (
-    <div className="min-h-[100vh] max-h-screen bg-gray-50 flex flex-col overflow-hidden">
-      {/* Header */}
-
+    <div className="h-screen bg-gray-50 flex flex-col overflow-hidden">
       {/* Carousel Container */}
-      <div className="w-full pb-4 md:pb-6 flex-1 flex flex-col items-center justify-center">
-        <div className="text-center flex-shrink-0">
+      <div className="w-full flex-1 flex flex-col items-center justify-center">
+        {/* Header */}
+        <div className="text-center flex-shrink-0 mt-16">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 md:mb-4">
             Case Studies
           </h1>
@@ -91,16 +90,17 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             implementations
           </p>
         </div>
+
         <div className="w-full">
           <div
-            className="overflow-hidden w-full h-[420px] md:h-auto pb-4"
+            className="overflow-hidden w-full h-[420px] md:h-auto"
             ref={emblaRef}
           >
             <div
               className={
                 isMobile
                   ? "flex h-full touch-pan-y touch-pinch-zoom -ml-4"
-                  : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 px-4 lg:px-8 max-w-6xl mx-auto lg:pb-12"
+                  : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 px-4 lg:px-8 max-w-6xl mx-auto"
               }
             >
               {carouselItems.map((item, index) => (
