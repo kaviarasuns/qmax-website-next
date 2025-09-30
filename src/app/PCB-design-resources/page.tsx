@@ -9,7 +9,7 @@ export default function PCBDesingnResources() {
   return (
     <>
       {/* Custom Navbar for PCB Design Resources */}
-      <nav className="w-full bg-gray-200 py-4 px-4 flex items-center justify-start">
+      <nav className="w-full bg-gray-200 py-4 px-4 flex items-center justify-start mt-24">
         <h1 className="text-2xl md:text-3xl h-10 font-bold lg:ml-64">
           <span className="text-brand-red hover:text-brand-red/90 transition-colors">
             PCB Design
@@ -19,7 +19,7 @@ export default function PCBDesingnResources() {
       </nav>
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
+        <section className="lg:py-20 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">

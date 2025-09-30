@@ -219,7 +219,7 @@ const Careers = () => {
 
   return (
     <>
-      <nav className="w-full h-20 bg-gray-200 text-white px-4 flex flex-col md:flex-row items-center justify-between mb-1 shadow">
+      <nav className="mt-24 w-full h-20 bg-gray-200 text-white px-4 flex flex-col md:flex-row items-center justify-between mb-1 shadow">
         <span className="font-bold text-4xl text-black  md:text-xl">
           <span className="text-brand-red">Work</span> with Us
         </span>

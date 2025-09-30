@@ -10,7 +10,7 @@ interface CaseStudyCardProps {
 
 export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 py-24">
       {/* Header */}
       <div className="bg-gray-200 py-8">
         <div className="container mx-auto px-4">

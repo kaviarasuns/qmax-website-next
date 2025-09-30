@@ -48,7 +48,7 @@ const Contact = () => {
   return (
     <main>
       {/* Hero Section */}
-      <section className="bg-gray-200 py-8">
+      <section className="bg-gray-200 py-8 mt-24">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold">
             <span className="text-brand-red">Contact </span>

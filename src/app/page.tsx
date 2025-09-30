@@ -10,7 +10,6 @@ import { useState, useEffect, useRef } from "react";
 import React from "react";
 import { useLenis } from "@/utils/lenis";
 import Typewriter from "typewriter-effect";
-import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -432,7 +431,8 @@ export default function Home() {
               Electronics Engineering Services
               <div className="text-base sm:text-xl md:text-2xl font-medium mt-2">
                 {/* From Concept to Production */}
-                <TypeAnimation
+                <p>From Concept to Production</p>
+                {/* <TypeAnimation
                   sequence={[
                     "We deliver electronics from concept",
                     1000,
@@ -444,7 +444,7 @@ export default function Home() {
                   speed={50}
                   style={{ fontSize: "1em" }}
                   repeat={Infinity}
-                />
+                /> */}
               </div>
               <button className="mt-5 px-4 py-2.5 sm:px-5 sm:py-2.5 text-sm sm:text-base border border-white text-white bg-transparent rounded-md transition hover:bg-white/10">
                 Let&apos;s Build

@@ -459,7 +459,9 @@ export default function ScrollCardsAnimationV4({
 
                       {/* Card Content - Now visible for all cards */}
                       <motion.div
-                        className="space-y-0.5 sm:space-y-1 lg:space-y-1.5"
+                        className="space-y-0.5 sm:space-y-1 lg:space-y-1.5 
+                        "
+                        // h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 overflow-y-auto
                         initial={{ opacity: 1, y: 0 }}
                         animate={{
                           opacity: 1,
