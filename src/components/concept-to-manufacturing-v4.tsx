@@ -337,7 +337,7 @@ export default function ScrollCardsAnimationV4({
               Concept To Manufacturing
             </h1>
           </div>
-          <div className="w-full px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-40 flex flex-col items-center justify-center h-96 sm:h-[32rem] md:h-[36rem] lg:h-[40rem] xl:h-[44rem]">
+          <div className="w-full px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-40 flex flex-col items-center justify-center h-104 sm:h-[36rem] md:h-[40rem] lg:h-[44rem] xl:h-[48rem]">
             <div className="flex items-center justify-center space-x-1 sm:space-x-2 lg:space-x-3 xl:space-x-4 2xl:space-x-5">
               {cards.slice(0, 7).map((card, index) => (
                 <motion.div
@@ -386,8 +386,8 @@ export default function ScrollCardsAnimationV4({
                   <Card
                     className={`${
                       index === activeCard
-                        ? "w-28 h-56 sm:w-32 sm:h-60 md:w-36 md:h-64 lg:w-40 lg:h-72 xl:w-44 xl:h-80"
-                        : "w-28 h-56 sm:w-32 sm:h-60 md:w-36 md:h-64 lg:w-40 lg:h-72 xl:w-44 xl:h-80"
+                        ? "w-28 h-64 sm:w-36 sm:h-72 md:w-40 md:h-80 lg:w-48 lg:h-96 xl:w-52 xl:h-[26rem]"
+                        : "w-28 h-60 sm:w-32 sm:h-64 md:w-36 md:h-72 lg:w-40 lg:h-80 xl:w-44 xl:h-96"
                     } bg-gradient-to-br transition-all duration-700 border-2 relative overflow-hidden cursor-pointer ${
                       index === activeCard && activeCard !== -1
                         ? "from-gray-800 to-gray-700 border-red-500"
@@ -419,7 +419,7 @@ export default function ScrollCardsAnimationV4({
                       {/* Card Title - Fixed height container */}
                       <div className="text-center mb-1 sm:mb-2 lg:mb-3 mt-1 sm:mt-2 h-8 sm:h-10 lg:h-12 xl:h-14 flex items-center justify-center">
                         <motion.h3
-                          className={`font-bold text-[10px] sm:text-xs lg:text-sm xl:text-base tracking-wide leading-tight transition-colors duration-500 text-center ${
+                          className={`font-bold text-[10px] sm:text-xs lg:text-sm xl:text-base tracking-wide leading-tight transition-colors duration-500 text-center line-clamp-2 ${
                             index === activeCard && activeCard !== -1
                               ? "text-white"
                               : "text-white"
@@ -453,15 +453,11 @@ export default function ScrollCardsAnimationV4({
                           }}
                           transition={{ duration: 0.6 }}
                         />
-
-                        {/* Image overlay for inactive cards - removed for full visibility */}
                       </div>
 
-                      {/* Card Content - Now visible for all cards */}
+                      {/* Card Content - Fixed height container */}
                       <motion.div
-                        className="space-y-0.5 sm:space-y-1 lg:space-y-1.5 
-                        "
-                        // h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 overflow-y-auto
+                        className="space-y-0.5 sm:space-y-1 lg:space-y-1.5 h-24 sm:h-28 md:h-32 lg:h-36 xl:h-40 overflow-y-auto"
                         initial={{ opacity: 1, y: 0 }}
                         animate={{
                           opacity: 1,

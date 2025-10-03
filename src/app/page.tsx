@@ -1,6 +1,5 @@
 "use client";
 import InsideOut from "@/components/InsideOut";
-import ServicesV2 from "@/components/Services-V2";
 
 import EmblaCarousel from "@/components/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
@@ -10,6 +9,7 @@ import { useState, useEffect, useRef } from "react";
 import React from "react";
 import { useLenis } from "@/utils/lenis";
 import Typewriter from "typewriter-effect";
+import ServicesV3 from "@/components/Services-V3";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -457,7 +457,7 @@ export default function Home() {
         <ScrollCardsAnimationV4 onAutoHighlightChange={setIsAutoHighlighting} />
       </div>
       <div ref={servicesRef}>
-        <ServicesV2 />
+        <ServicesV3 />
       </div>
       <div ref={insideOutRef}>
         <InsideOut />
