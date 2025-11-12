@@ -26,8 +26,11 @@ type PropType = {
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { slides, options } = props;
+  const autoplayPlugin = useRef(
+    Autoplay({ delay: 7000, stopOnInteraction: false })
+  );
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    Autoplay({ delay: 7000, stopOnInteraction: false }),
+    autoplayPlugin.current,
   ]);
 
   // Track current slide index
@@ -35,6 +38,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const typewriterKey = useRef(0);
   const router = useRouter();
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [modalVideoId, setModalVideoId] = React.useState<string>("");
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -81,6 +85,28 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   const currentVideoId = slides[currentSlide]?.videoId;
 
+  // Handle modal open/close to pause/resume autoplay
+  const handleOpenModal = () => {
+    setModalVideoId(currentVideoId);
+    setIsModalOpen(true);
+    if (emblaApi) {
+      const autoplay = emblaApi.plugins()?.autoplay;
+      if (autoplay) {
+        autoplay.stop();
+      }
+    }
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    if (emblaApi) {
+      const autoplay = emblaApi.plugins()?.autoplay;
+      if (autoplay) {
+        autoplay.play();
+      }
+    }
+  };
+
   return (
     <section className="w-full">
       {/* Video Modal */}
@@ -89,7 +115,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           <div className="relative bg-transparent rounded-lg shadow-lg max-w-3xl w-full mx-4">
             <button
               className="absolute top-2 right-2 text-white text-3xl font-bold bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80 transition"
-              onClick={() => setIsModalOpen(false)}
+              onClick={handleCloseModal}
               aria-label="Close video"
             >
               &times;
@@ -98,7 +124,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               <iframe
                 width="100%"
                 height="400"
-                src={`https://www.youtube.com/embed/${currentVideoId}?autoplay=1`}
+                src={`https://www.youtube.com/embed/${modalVideoId}?autoplay=1`}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -129,7 +155,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                       <button
                         className="bg-brand-red hover:bg-brand-red/80 text-white font-semibold py-2 px-4 text-sm md:text-lg rounded-md shadow transition-colors duration-200 min-w-[112px] flex items-center gap-2 w-28 h-10 md:py-3 md:px-8 md:w-auto md:h-auto"
                         type="button"
-                        onClick={() => setIsModalOpen(true)}
+                        onClick={handleOpenModal}
                       >
                         {/* Video Camera Icon (black) */}
                         <svg
