@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     domains: ["d1yetprhniwywz.cloudfront.net"],
   },
-
 };
 
 export default nextConfig;
