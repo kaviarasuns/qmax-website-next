@@ -37,7 +37,6 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
           alt={`${title} - Image ${currentIndex + 1}`}
           fill
           className="object-cover"
-          crossOrigin="anonymous"
         />
 
         {/* Navigation Arrows */}

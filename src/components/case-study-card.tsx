@@ -9,6 +9,29 @@ interface CaseStudyCardProps {
 }
 
 export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
+  const pcbCaseStudyIds = [
+    "Industrial-Controller",
+    "Aerospace-PCB",
+    "Automotive-OBD",
+    "Security-Controller",
+    "Automotive-HID-PCB",
+    "Networking-Device",
+    "Networking-Switch",
+    "Blade-NIC-Server",
+    "ATE-PCB",
+    "IOT-Gateway",
+    "Automotive-Control",
+    "Automotive-Keypad-Interface",
+    "Medical-Electronics",
+    "Video-Processor",
+    "Set-Top-Box",
+    "Wi-Fi-AP",
+  ];
+
+  const parentPath = pcbCaseStudyIds.includes(caseStudy.id)
+    ? "/PCB-Design-Case-study"
+    : "/Embedded-Case-study";
+
   return (
     <div className="space-y-8">
       {/* Header */}
@@ -26,8 +49,8 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
         <Breadcrumbs
           items={[
             { label: "Home", href: "/" },
-            { label: "Case Studies", href: "/Embedded-Case-study" },
-            { label: caseStudy.category, href: "/Embedded-Case-study" },
+            { label: "Case Studies", href: parentPath },
+            { label: caseStudy.category, href: parentPath },
             { label: caseStudy.title },
           ]}
         />

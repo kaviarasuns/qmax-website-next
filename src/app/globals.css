@@ -4,8 +4,8 @@
 
 @font-face {
   font-family: 'Supermolot'; /* Name you’ll use to reference the font */
-  src: url('/fonts/OTF/TT Supermolot Regular.otf') format('truetype'), /* Path to TTF */
-       url('/fonts/TTF/TT Supermolot Regular.ttf') format('opentype'); /* Path to OTF (optional) */
+  src: url('/fonts/OTF/TT Supermolot Regular.otf') format('opentype'), /* Path to OTF */
+       url('/fonts/TTF/TT Supermolot Regular.ttf') format('truetype'); /* Path to TTF */
   font-weight: normal; /* Adjust weight if needed (e.g., 400, 700) */
   font-style: normal; /* Adjust style if needed (e.g., italic) */
 }
