@@ -167,12 +167,11 @@ export default function InsideOut() {
               <p
                 style={{ fontSize: "1.15rem", color: "#444", lineHeight: 1.6 }}
               >
-                Every element is considered.
+                Every Element crafted with intent
                 <br />
-                Every connection, deliberate.
+                Every Connection made with purpose
                 <br />
-                This is design at its most honest—where the inside is as
-                beautiful as the outside.
+                This is design at its most authentic—where inner precision meets outer elegance
               </p>
             </div>
           </div>

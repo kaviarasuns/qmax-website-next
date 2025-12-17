@@ -1,0 +1,1 @@
+aws s3 sync out s3://qmax-website-v2 --delete
