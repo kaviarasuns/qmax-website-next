@@ -457,7 +457,7 @@ export default function ScrollCardsAnimationV4({
 
                       {/* Card Content - Fixed height container */}
                       <motion.div
-                        className="space-y-0.5 sm:space-y-1 lg:space-y-1.5 h-24 sm:h-28 md:h-32 lg:h-36 xl:h-40 overflow-y-auto px-2"
+                        className="space-y-0.5 sm:space-y-1 lg:space-y-1.5 h-24 sm:h-28 md:h-32 lg:h-36 xl:h-40 overflow-hidden px-2"
                         initial={{ opacity: 1, y: 0 }}
                         animate={{
                           opacity: 1,
