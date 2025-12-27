@@ -386,9 +386,9 @@ export default function ScrollCardsAnimationV4({
                   <Card
                     className={`${
                       index === activeCard
-                        ? "w-28 h-64 sm:w-36 sm:h-72 md:w-40 md:h-80 lg:w-48 lg:h-96 xl:w-52 xl:h-[26rem]"
-                        : "w-28 h-60 sm:w-32 sm:h-64 md:w-36 md:h-72 lg:w-40 lg:h-80 xl:w-44 xl:h-96"
-                    } bg-gradient-to-br transition-all duration-700 border-2 relative overflow-hidden cursor-pointer ${
+                        ? "w-28 min-h-64 sm:w-36 sm:min-h-72 md:w-40 md:min-h-80 lg:w-48 lg:min-h-96 xl:w-52 xl:min-h-[26rem]"
+                        : "w-28 min-h-60 sm:w-32 sm:min-h-64 md:w-36 md:min-h-72 lg:w-40 lg:min-h-80 xl:w-44 xl:min-h-96"
+                    } bg-gradient-to-br transition-all duration-700 border-2 relative cursor-pointer ${
                       index === activeCard && activeCard !== -1
                         ? "from-gray-800 to-gray-700 border-red-500"
                         : "from-gray-800 to-gray-700 border-red-500"
@@ -455,9 +455,9 @@ export default function ScrollCardsAnimationV4({
                         />
                       </div>
 
-                      {/* Card Content - Fixed height container */}
+                      {/* Card Content - Flexible height container */}
                       <motion.div
-                        className="space-y-0.5 sm:space-y-1 lg:space-y-1.5 h-24 sm:h-28 md:h-32 lg:h-36 xl:h-40 overflow-hidden px-2"
+                        className="space-y-0.5 sm:space-y-1 lg:space-y-1.5 min-h-24 sm:min-h-28 md:min-h-32 lg:min-h-36 xl:min-h-40 flex-1 px-2"
                         initial={{ opacity: 1, y: 0 }}
                         animate={{
                           opacity: 1,
