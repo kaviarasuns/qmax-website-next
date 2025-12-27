@@ -334,7 +334,7 @@ export default function ScrollCardsAnimationV4({
         <div className="w-full px-4 flex flex-col items-center justify-center">
           <div className="relative top-20">
             <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-center text-black">
-              Concept To Manufacturing
+              Design To Manufacturing
             </h1>
           </div>
           <div className="w-full px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-40 flex flex-col items-center justify-center h-104 sm:h-[36rem] md:h-[40rem] lg:h-[44rem] xl:h-[48rem]">
@@ -413,11 +413,11 @@ export default function ScrollCardsAnimationV4({
                       />
                     </div>
 
-                    <CardContent className="p-2 sm:p-3 lg:p-4 xl:p-5 h-full flex flex-col relative z-10">
+                    <CardContent className="pt-0 px-0 pb-2 sm:pb-3 lg:pb-4 xl:pb-5 h-full flex flex-col relative z-10">
                       {/* Card Number Badge */}
 
                       {/* Card Title - Fixed height container */}
-                      <div className="text-center mb-1 sm:mb-2 lg:mb-3 mt-1 sm:mt-2 h-8 sm:h-10 lg:h-12 xl:h-14 flex items-center justify-center">
+                      <div className="text-center mb-1 sm:mb-2 lg:mb-3 mt-3 sm:mt-4 h-8 sm:h-10 lg:h-12 xl:h-14 flex items-center justify-center px-2">
                         <motion.h3
                           className={`font-bold text-[10px] sm:text-xs lg:text-sm xl:text-base tracking-wide leading-tight transition-colors duration-500 text-center line-clamp-2 ${
                             index === activeCard && activeCard !== -1
@@ -437,7 +437,7 @@ export default function ScrollCardsAnimationV4({
                       </div>
 
                       {/* Card Image - Fixed height container */}
-                      <div className="mb-1 sm:mb-2 lg:mb-3 overflow-hidden rounded-lg relative h-16 sm:h-20 md:h-24 lg:h-32 xl:h-40">
+                      <div className="mb-1 sm:mb-2 lg:mb-3 overflow-hidden relative h-16 sm:h-20 md:h-24 lg:h-32 xl:h-40">
                         <motion.img
                           src={card.image}
                           alt={card.title}
@@ -457,7 +457,7 @@ export default function ScrollCardsAnimationV4({
 
                       {/* Card Content - Fixed height container */}
                       <motion.div
-                        className="space-y-0.5 sm:space-y-1 lg:space-y-1.5 h-24 sm:h-28 md:h-32 lg:h-36 xl:h-40 overflow-y-auto"
+                        className="space-y-0.5 sm:space-y-1 lg:space-y-1.5 h-24 sm:h-28 md:h-32 lg:h-36 xl:h-40 overflow-y-auto px-2"
                         initial={{ opacity: 1, y: 0 }}
                         animate={{
                           opacity: 1,
