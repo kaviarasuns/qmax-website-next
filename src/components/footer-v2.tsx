@@ -36,7 +36,7 @@ export default function FooterV2() {
       email: "info@qmaxsys.com",
     },
   };
-  const downloadUrl = "/qmax-presentation.pdf";
+  const downloadUrl = "/Qmax_Systems_Electronics_Engineering_Services_Std.pdf";
   return (
     <>
       {" "}
