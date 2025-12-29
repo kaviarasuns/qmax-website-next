@@ -107,7 +107,9 @@ export default function ScrollCardsAnimationV4({
     const checkDisplayScale = () => {
       const scale = window.devicePixelRatio;
       setDisplayScale(scale);
-      console.log(`Display Scale: ${scale * 100}% (devicePixelRatio: ${scale})`);
+      console.log(
+        `Display Scale: ${scale * 100}% (devicePixelRatio: ${scale})`
+      );
     };
 
     checkDisplayScale();
@@ -273,11 +275,11 @@ export default function ScrollCardsAnimationV4({
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}
               >
-                <Card className="bg-gray-800 border-2 border-red-500 shadow-2xl shadow-red-500/20">
+                <Card className="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-red-500 shadow-2xl shadow-red-500/20">
                   <CardContent className="p-4">
                     {/* Card Title */}
                     <div className="text-center mb-3">
-                      <h3 className="text-white font-bold text-sm tracking-wide leading-tight">
+                      <h3 className="text-black font-bold text-sm tracking-wide leading-tight">
                         {cards[activeCard].title}
                       </h3>
                     </div>
@@ -300,7 +302,7 @@ export default function ScrollCardsAnimationV4({
                       {cards[activeCard].content.map((item, itemIndex) => (
                         <motion.div
                           key={`${activeCard}-${itemIndex}`}
-                          className="flex items-center text-gray-300 text-xs"
+                          className="flex items-center text-black text-xs"
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{
@@ -435,13 +437,9 @@ export default function ScrollCardsAnimationV4({
                           ? "w-26 min-h-52 sm:w-32 sm:min-h-60 md:w-36 md:min-h-68 lg:w-44 lg:min-h-80 xl:w-48 xl:min-h-[21rem]"
                           : "w-28 min-h-64 sm:w-36 sm:min-h-72 md:w-40 md:min-h-80 lg:w-48 lg:min-h-96 xl:w-52 xl:min-h-[26rem]"
                         : displayScale >= 1.25
-                          ? "w-26 min-h-48 sm:w-28 sm:min-h-52 md:w-32 md:min-h-60 lg:w-36 lg:min-h-68 xl:w-40 xl:min-h-80"
-                          : "w-28 min-h-60 sm:w-32 sm:min-h-64 md:w-36 md:min-h-72 lg:w-40 lg:min-h-80 xl:w-44 xl:min-h-96"
-                    } bg-gradient-to-br transition-all duration-700 border-2 relative cursor-pointer ${
-                      index === activeCard && activeCard !== -1
-                        ? "from-gray-800 to-gray-700 border-red-500"
-                        : "from-gray-800 to-gray-700 border-red-500"
-                    }`}
+                        ? "w-26 min-h-48 sm:w-28 sm:min-h-52 md:w-32 md:min-h-60 lg:w-36 lg:min-h-68 xl:w-40 xl:min-h-80"
+                        : "w-28 min-h-60 sm:w-32 sm:min-h-64 md:w-36 md:min-h-72 lg:w-40 lg:min-h-80 xl:w-44 xl:min-h-96"
+                    } bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-700 border-2 relative cursor-pointer border-red-500`}
                   >
                     {/* Animated background pattern */}
                     <div className="absolute inset-0 opacity-10">
@@ -472,11 +470,7 @@ export default function ScrollCardsAnimationV4({
                             displayScale >= 1.25
                               ? "text-[8px] sm:text-[10px] lg:text-xs xl:text-sm"
                               : "text-[10px] sm:text-xs lg:text-sm xl:text-base"
-                          } ${
-                            index === activeCard && activeCard !== -1
-                              ? "text-white"
-                              : "text-white"
-                          }`}
+                          } text-black`}
                           animate={{
                             scale:
                               index === activeCard && activeCard !== -1
@@ -521,7 +515,7 @@ export default function ScrollCardsAnimationV4({
                         {card.content.map((item, itemIndex) => (
                           <motion.div
                             key={itemIndex}
-                            className={`flex items-center text-gray-300 ${
+                            className={`flex items-center text-black ${
                               displayScale >= 1.25
                                 ? "text-[8px] sm:text-[9px] lg:text-xs"
                                 : "text-[10px] sm:text-xs lg:text-sm"
