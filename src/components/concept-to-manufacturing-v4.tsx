@@ -99,7 +99,40 @@ export default function ScrollCardsAnimationV4({
   const [showHoverHints, setShowHoverHints] = useState(false);
   const [isAutoHighlighting, setIsAutoHighlighting] = useState(false);
   const [hasAutoHighlighted, setHasAutoHighlighted] = useState(false);
+  const [displayScale, setDisplayScale] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Detect display scale (DPI scaling / zoom level)
+  useEffect(() => {
+    const checkDisplayScale = () => {
+      const scale = window.devicePixelRatio;
+      setDisplayScale(scale);
+      console.log(`Display Scale: ${scale * 100}% (devicePixelRatio: ${scale})`);
+    };
+
+    checkDisplayScale();
+
+    // Listen for scale changes (zoom changes or monitor switches)
+    const handleResize = () => {
+      checkDisplayScale();
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Also use matchMedia for more accurate scale change detection
+    const mediaQueryList = window.matchMedia(
+      `(resolution: ${window.devicePixelRatio}dppx)`
+    );
+    const handleMediaChange = () => {
+      checkDisplayScale();
+    };
+    mediaQueryList.addEventListener("change", handleMediaChange);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      mediaQueryList.removeEventListener("change", handleMediaChange);
+    };
+  }, []);
 
   // Intersection Observer to detect when component becomes fully visible
   useEffect(() => {
@@ -337,8 +370,20 @@ export default function ScrollCardsAnimationV4({
               Design To Manufacturing
             </h1>
           </div>
-          <div className="w-full px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-40 flex flex-col items-center justify-center h-104 sm:h-[36rem] md:h-[40rem] lg:h-[44rem] xl:h-[48rem]">
-            <div className="flex items-center justify-center space-x-1 sm:space-x-2 lg:space-x-3 xl:space-x-4 2xl:space-x-5">
+          <div
+            className={`w-full flex flex-col items-center justify-center h-104 sm:h-[36rem] md:h-[40rem] lg:h-[44rem] xl:h-[48rem] ${
+              displayScale >= 1.25
+                ? "px-20 md:px-28 lg:px-36 xl:px-48 2xl:px-56"
+                : "px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-40"
+            }`}
+          >
+            <div
+              className={`flex items-center justify-center ${
+                displayScale >= 1.25
+                  ? "space-x-3 sm:space-x-4 lg:space-x-5 xl:space-x-6 2xl:space-x-8"
+                  : "space-x-1 sm:space-x-2 lg:space-x-3 xl:space-x-4 2xl:space-x-5"
+              }`}
+            >
               {cards.slice(0, 7).map((card, index) => (
                 <motion.div
                   key={card.id}
@@ -386,8 +431,12 @@ export default function ScrollCardsAnimationV4({
                   <Card
                     className={`${
                       index === activeCard
-                        ? "w-28 min-h-64 sm:w-36 sm:min-h-72 md:w-40 md:min-h-80 lg:w-48 lg:min-h-96 xl:w-52 xl:min-h-[26rem]"
-                        : "w-28 min-h-60 sm:w-32 sm:min-h-64 md:w-36 md:min-h-72 lg:w-40 lg:min-h-80 xl:w-44 xl:min-h-96"
+                        ? displayScale >= 1.25
+                          ? "w-26 min-h-52 sm:w-32 sm:min-h-60 md:w-36 md:min-h-68 lg:w-44 lg:min-h-80 xl:w-48 xl:min-h-[21rem]"
+                          : "w-28 min-h-64 sm:w-36 sm:min-h-72 md:w-40 md:min-h-80 lg:w-48 lg:min-h-96 xl:w-52 xl:min-h-[26rem]"
+                        : displayScale >= 1.25
+                          ? "w-26 min-h-48 sm:w-28 sm:min-h-52 md:w-32 md:min-h-60 lg:w-36 lg:min-h-68 xl:w-40 xl:min-h-80"
+                          : "w-28 min-h-60 sm:w-32 sm:min-h-64 md:w-36 md:min-h-72 lg:w-40 lg:min-h-80 xl:w-44 xl:min-h-96"
                     } bg-gradient-to-br transition-all duration-700 border-2 relative cursor-pointer ${
                       index === activeCard && activeCard !== -1
                         ? "from-gray-800 to-gray-700 border-red-500"
@@ -419,7 +468,11 @@ export default function ScrollCardsAnimationV4({
                       {/* Card Title - Fixed height container */}
                       <div className="text-center mb-1 sm:mb-2 lg:mb-3 mt-3 sm:mt-4 h-8 sm:h-10 lg:h-12 xl:h-14 flex items-center justify-center px-2">
                         <motion.h3
-                          className={`font-bold text-[10px] sm:text-xs lg:text-sm xl:text-base tracking-wide leading-tight transition-colors duration-500 text-center line-clamp-2 ${
+                          className={`font-bold tracking-wide leading-tight transition-colors duration-500 text-center line-clamp-2 ${
+                            displayScale >= 1.25
+                              ? "text-[8px] sm:text-[10px] lg:text-xs xl:text-sm"
+                              : "text-[10px] sm:text-xs lg:text-sm xl:text-base"
+                          } ${
                             index === activeCard && activeCard !== -1
                               ? "text-white"
                               : "text-white"
@@ -468,7 +521,11 @@ export default function ScrollCardsAnimationV4({
                         {card.content.map((item, itemIndex) => (
                           <motion.div
                             key={itemIndex}
-                            className="flex items-center text-gray-300 text-[10px] sm:text-xs lg:text-sm"
+                            className={`flex items-center text-gray-300 ${
+                              displayScale >= 1.25
+                                ? "text-[8px] sm:text-[9px] lg:text-xs"
+                                : "text-[10px] sm:text-xs lg:text-sm"
+                            }`}
                             initial={{ opacity: 1, x: 0 }}
                             animate={{
                               opacity: 1,
@@ -493,7 +550,11 @@ export default function ScrollCardsAnimationV4({
                         {/* Show more indicator for cards with more than 3 items */}
                         {card.content.length > 3 && (
                           <motion.div
-                            className="text-red-400 text-[10px] sm:text-xs text-center mt-1 sm:mt-2 font-medium"
+                            className={`text-red-400 text-center mt-1 sm:mt-2 font-medium ${
+                              displayScale >= 1.25
+                                ? "text-[8px] sm:text-[9px]"
+                                : "text-[10px] sm:text-xs"
+                            }`}
                             initial={{ opacity: 1 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.8 }}
