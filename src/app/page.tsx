@@ -10,6 +10,7 @@ import React from "react";
 import { useLenis } from "@/utils/lenis";
 import Typewriter from "typewriter-effect";
 import ServicesV3 from "@/components/Services-V3";
+import { ServicesSection } from "@/components/services-section";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -463,7 +464,7 @@ export default function Home() {
         <InsideOut />
       </div>
       <div ref={emblaRef}>
-        <EmblaCarousel options={OPTIONS} />
+      <ServicesSection/>
       </div>
 
       {/* Navigation Button - Fixed on middle right edge */}
