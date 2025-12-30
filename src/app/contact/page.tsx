@@ -141,8 +141,8 @@ const Contact = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="w-full h-[230px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.493792035772!2d-121.91690639500557!3d37.378153027539724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcbefbd6e20ef%3A0x5f22f941d5c7e7ee!2s2085+Zanker+Rd%2C+San+Jose%2C+CA+95131%2C+USA!5e0!3m2!1sen!2sin!4v1459229302669"
-                  className="w-full h-full border-0"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.0686396845626!2d-97.7954428240553!3d30.490807874701883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865b2d4e291550c1%3A0xee9f813c2cf8bced!2s14105%20Willow%20Tank%20Dr%2C%20Austin%2C%20TX%2078717%2C%20USA!5e0!3m2!1sen!2sin!4v1767094405947!5m2!1sen!2sin"
+                  className="w-full h-full border-0 rounded-lg"
                   loading="lazy"
                 ></iframe>
               </div>
@@ -169,7 +169,7 @@ const Contact = () => {
               <div className="w-full h-[230px]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d971.6955679018807!2d80.08919102921392!3d13.0495264994253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52668f4cf2efc1%3A0x005ba71a15070958!2sQmax+Systems+India+Pvt+Ltd!5e0!3m2!1sen!2sin!4v1466154371130"
-                  className="w-full h-full border-0"
+                  className="w-full h-full border-0 rounded-lg"
                   loading="lazy"
                 ></iframe>
               </div>

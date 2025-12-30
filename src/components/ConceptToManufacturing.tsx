@@ -82,8 +82,8 @@ const ConceptToManufacturing = () => {
         </div>
 
         <div className="static">
-          <div className="flex flex-wrap justify-center gap-1 mt-14 mr-12 relative 2xl:w-[80%]">
-            <div className="absolute -bottom-12 left-16 w-[100%] flex items-center">
+          <div className="flex flex-wrap justify-center gap-1 mt-14 mr-12 pl-8 relative 2xl:w-[80%]">
+            <div className="absolute -bottom-12 left-20 w-[100%] flex items-center">
               <div className="h-32 bg-[#bfbfbf] flex-grow"></div>
               <div className="w-0 h-0 border-t-[100px] border-t-transparent border-b-[100px] border-b-transparent border-l-[120px] border-l-[#bfbfbf]"></div>
             </div>
