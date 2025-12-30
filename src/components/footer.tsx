@@ -22,6 +22,9 @@ type AddressData = {
   email: string;
 };
 
+
+type JobKey = "Careers" | "Suppliers / Vendors";
+
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -50,6 +53,29 @@ export default function Footer() {
     },
   };
 
+  const jobs: Record<JobKey, AddressData> = {
+    Careers: {
+      name: "Qmax Systems India Pvt Ltd",
+      address: [
+        "310/2A, Rukmani Nagar, 4th street,",
+        "Poonamallee, Chennai 600056,",
+        "Tamil Nadu, India",
+      ],
+      phone: "+91 73054 50580",
+      email: "careers@qmaxsys.com",
+    },
+    "Suppliers / Vendors": {
+      name: "Qmax Systems India Pvt Ltd",
+      address: [
+        "310/2A, Rukmani Nagar, 4th street,",
+        "Poonamallee, Chennai 600056,",
+        "Tamil Nadu, India",
+      ],
+      phone: "+91 73054 50580",
+      email: "purchase@qmaxsys.com",
+    },
+  };
+
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/embedded-design-services" },
@@ -66,7 +92,7 @@ export default function Footer() {
     <>
       <footer className="bg-zinc-900 text-white pt-12 pb-4 [&>*]:tracking-wider">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {/* About Us Section */}
             <div>
               <h2 className="text-xl font-semibold mb-4">ABOUT US</h2>
@@ -176,7 +202,7 @@ export default function Footer() {
               <h2 className="text-xl font-semibold mb-4">CONTACT US</h2>
               <div className="space-y-4">
                 {(Object.keys(addresses) as CountryKey[]).map((country) => (
-                  <div key={country} className="mb-4">
+                  <div key={country} className="mb-4 rounded-lg overflow-hidden">
                     <div className="w-full font-bold text-left p-2 text-sm bg-brand-red text-white">
                       {country}
                     </div>
@@ -209,6 +235,51 @@ export default function Footer() {
                         className="text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left"
                       >
                         {addresses[country].email}
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Jobs Section */}
+            <div>
+              <h2 className="text-xl font-semibold mb-4">JOBS</h2>
+              <div className="space-y-4">
+                {(Object.keys(jobs) as JobKey[]).map((key) => (
+                  <div key={key} className="mb-4 rounded-lg overflow-hidden">
+                    <div className="w-full font-bold text-left p-2 text-sm bg-brand-red text-white">
+                      {key}
+                    </div>
+                    <div className="p-3 text-sm text-gray-300 bg-zinc-800">
+                      <p className="font-semibold">{jobs[key].name}</p>
+                      {jobs[key].address.map((line, index) => (
+                        <p key={index}>{line}</p>
+                      ))}
+                      <p className="mt-2">{jobs[key].phone}</p>
+                      <button
+                        onClick={() => {
+                          const timestamp = Date.now();
+                          const email = jobs[key].email;
+                          const subject = encodeURIComponent(
+                            `Inquiry for ${key} - Qmax Systems`
+                          );
+                          const body = encodeURIComponent(
+                            "Hello,\n\nI would like to get in touch regarding " +
+                              key +
+                              ".\n\nBest regards,"
+                          );
+                          const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
+
+                          window.location.href = mailtoUrl;
+
+                          setTimeout(() => {
+                            window.open(mailtoUrl, "_blank");
+                          }, 100);
+                        }}
+                        className="text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left"
+                      >
+                        {jobs[key].email}
                       </button>
                     </div>
                   </div>
