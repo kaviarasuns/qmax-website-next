@@ -1,8 +1,6 @@
 "use client";
 import InsideOut from "@/components/InsideOut";
 
-import EmblaCarousel from "@/components/EmblaCarousel";
-import { EmblaOptionsType } from "embla-carousel";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollCardsAnimationV4 from "@/components/concept-to-manufacturing-v4";
 import { useState, useEffect, useRef } from "react";
@@ -361,7 +359,6 @@ export default function Home() {
 
   const { scrollY } = useScroll();
 
-  const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true };
   const scale = useTransform(scrollY, [200, 600], [1, 0.9]);
   const opacity = useTransform(scrollY, [200, 600], [1, 0.8]);
 
