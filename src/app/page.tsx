@@ -374,9 +374,9 @@ export default function Home() {
           }}
         >
           {/* Top gradient overlay */}
-          <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/70 to-transparent z-[1]"></div>
+          <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-white/60 via-white/30 to-transparent z-[1]"></div>
           {/* Bottom gradient overlay */}
-          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/70 to-transparent z-[1]"></div>
+          {/* <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/70 to-transparent z-[1]"></div> */}
           <motion.video
             ref={videoRef}
             src="https://d1yetprhniwywz.cloudfront.net/v2/bI5j7L3hwM91DqHlKw3woZrrbEk.mp4"
