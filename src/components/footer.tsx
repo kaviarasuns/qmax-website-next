@@ -197,93 +197,93 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Contact Section */}
-            <div>
+            {/* Contact Section - Combined with Jobs */}
+            <div className="lg:col-span-2">
               <h2 className="text-xl font-semibold mb-4">CONTACT US</h2>
-              <div className="space-y-4">
-                {(Object.keys(addresses) as CountryKey[]).map((country) => (
-                  <div key={country} className="mb-4 rounded-lg overflow-hidden">
-                    <div className="w-full font-bold text-left p-2 text-sm bg-brand-red text-white">
-                      {country}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Address Cards */}
+                <div className="space-y-4">
+                  {(Object.keys(addresses) as CountryKey[]).map((country) => (
+                    <div key={country} className="rounded-lg overflow-hidden">
+                      <div className="w-full font-bold text-left p-2 text-sm bg-brand-red text-white">
+                        {country}
+                      </div>
+                      <div className="p-3 text-sm text-gray-300 bg-zinc-800">
+                        <p className="font-semibold">{addresses[country].name}</p>
+                        {addresses[country].address.map((line, index) => (
+                          <p key={index}>{line}</p>
+                        ))}
+                        <p className="mt-2">{addresses[country].phone}</p>
+                        <button
+                          onClick={() => {
+                            const timestamp = Date.now();
+                            const email = addresses[country].email;
+                            const subject = encodeURIComponent(
+                              "Inquiry from Qmax Systems Website"
+                            );
+                            const body = encodeURIComponent(
+                              "Hello,\n\nI would like to get in touch with Qmax Systems.\n\nBest regards,"
+                            );
+                            const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
+
+                            // Try to open the mailto link
+                            window.location.href = mailtoUrl;
+
+                            // Fallback: if the above doesn't work, try opening in a new window
+                            setTimeout(() => {
+                              window.open(mailtoUrl, "_blank");
+                            }, 100);
+                          }}
+                          className="text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left"
+                        >
+                          {addresses[country].email}
+                        </button>
+                      </div>
                     </div>
-                    <div className="p-3 text-sm text-gray-300 bg-zinc-800">
-                      <p className="font-semibold">{addresses[country].name}</p>
-                      {addresses[country].address.map((line, index) => (
-                        <p key={index}>{line}</p>
-                      ))}
-                      <p className="mt-2">{addresses[country].phone}</p>
-                      <button
-                        onClick={() => {
-                          const timestamp = Date.now();
-                          const email = addresses[country].email;
-                          const subject = encodeURIComponent(
-                            "Inquiry from Qmax Systems Website"
-                          );
-                          const body = encodeURIComponent(
-                            "Hello,\n\nI would like to get in touch with Qmax Systems.\n\nBest regards,"
-                          );
-                          const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
+                  ))}
+                </div>
 
-                          // Try to open the mailto link
-                          window.location.href = mailtoUrl;
+                {/* Jobs Cards */}
+                <div className="space-y-4">
+                  {(Object.keys(jobs) as JobKey[]).map((key) => (
+                    <div key={key} className="rounded-lg overflow-hidden">
+                      <div className="w-full font-bold text-left p-2 text-sm bg-brand-red text-white">
+                        {key}
+                      </div>
+                      <div className="p-3 text-sm text-gray-300 bg-zinc-800">
+                        <p className="font-semibold">{jobs[key].name}</p>
+                        {jobs[key].address.map((line, index) => (
+                          <p key={index}>{line}</p>
+                        ))}
+                        <p className="mt-2">{jobs[key].phone}</p>
+                        <button
+                          onClick={() => {
+                            const timestamp = Date.now();
+                            const email = jobs[key].email;
+                            const subject = encodeURIComponent(
+                              `Inquiry for ${key} - Qmax Systems`
+                            );
+                            const body = encodeURIComponent(
+                              "Hello,\n\nI would like to get in touch regarding " +
+                                key +
+                                ".\n\nBest regards,"
+                            );
+                            const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
 
-                          // Fallback: if the above doesn't work, try opening in a new window
-                          setTimeout(() => {
-                            window.open(mailtoUrl, "_blank");
-                          }, 100);
-                        }}
-                        className="text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left"
-                      >
-                        {addresses[country].email}
-                      </button>
+                            window.location.href = mailtoUrl;
+
+                            setTimeout(() => {
+                              window.open(mailtoUrl, "_blank");
+                            }, 100);
+                          }}
+                          className="text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left"
+                        >
+                          {jobs[key].email}
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Jobs Section */}
-            <div>
-              <h2 className="text-xl font-semibold mb-4">JOBS</h2>
-              <div className="space-y-4">
-                {(Object.keys(jobs) as JobKey[]).map((key) => (
-                  <div key={key} className="mb-4 rounded-lg overflow-hidden">
-                    <div className="w-full font-bold text-left p-2 text-sm bg-brand-red text-white">
-                      {key}
-                    </div>
-                    <div className="p-3 text-sm text-gray-300 bg-zinc-800">
-                      <p className="font-semibold">{jobs[key].name}</p>
-                      {jobs[key].address.map((line, index) => (
-                        <p key={index}>{line}</p>
-                      ))}
-                      <p className="mt-2">{jobs[key].phone}</p>
-                      <button
-                        onClick={() => {
-                          const timestamp = Date.now();
-                          const email = jobs[key].email;
-                          const subject = encodeURIComponent(
-                            `Inquiry for ${key} - Qmax Systems`
-                          );
-                          const body = encodeURIComponent(
-                            "Hello,\n\nI would like to get in touch regarding " +
-                              key +
-                              ".\n\nBest regards,"
-                          );
-                          const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
-
-                          window.location.href = mailtoUrl;
-
-                          setTimeout(() => {
-                            window.open(mailtoUrl, "_blank");
-                          }, 100);
-                        }}
-                        className="text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left"
-                      >
-                        {jobs[key].email}
-                      </button>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -299,7 +299,7 @@ export default function Footer() {
         </div>
       </footer>
       {/* Copyright */}
-      <div className="py-4 text-center">Copyright © 2025 Qmax Systems.</div>
+      <div className="py-4 text-center">Copyright © 2026 Qmax Systems.</div>
     </>
   );
 }
