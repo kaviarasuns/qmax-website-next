@@ -132,6 +132,7 @@ export default function Home() {
     };
   }, [isClient]);
 
+  // below two Scroll to saved position on load
   // Save exact scroll position to sessionStorage (throttled)
   useEffect(() => {
     if (!isClient) return;
@@ -155,7 +156,7 @@ export default function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [isClient]);
 
-  // Handle initial scroll restoration or default to emblaRef (section 4)
+  // Handle initial scroll restoration or default to heroRef (section 0)
   const hasRestoredScroll = useRef(false);
   useEffect(() => {
     if (!isClient || hasRestoredScroll.current) return;
@@ -181,14 +182,14 @@ export default function Home() {
         const clampedScrollY = Math.min(scrollY, maxScrollY);
         
         // If the saved position would put us in the footer area (last 10% of page),
-        // and we weren't intentionally on the footer, fall back to section 4
+        // and we weren't intentionally on the footer, fall back to section 0
         const footerThreshold = maxScrollY * 0.9;
         if (clampedScrollY > footerThreshold && scrollY > maxScrollY) {
           // Saved position was beyond current page height - use section fallback
-          const targetRef = sectionRefs[4];
+          const targetRef = sectionRefs[0];
           if (targetRef?.current) {
-            targetRef.current.scrollIntoView({ behavior: "instant", block: "center" });
-            setCurrentSection(4);
+            targetRef.current.scrollIntoView({ behavior: "instant", block: "start" });
+            setCurrentSection(0);
           }
         } else {
           window.scrollTo({ top: clampedScrollY, behavior: "instant" });
@@ -200,13 +201,13 @@ export default function Home() {
         }, 500);
       }, 100);
     } else {
-      // First visit: default to section 4 (embla)
-      const targetRef = sectionRefs[4];
+      // First visit: default to section 0 (hero)
+      const targetRef = sectionRefs[0];
       if (targetRef?.current) {
         // Delay to allow layout to stabilize
         setTimeout(() => {
-          targetRef.current?.scrollIntoView({ behavior: "instant", block: "center" });
-          setCurrentSection(4);
+          targetRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
+          setCurrentSection(0);
           // Re-enable scroll handler after restoration completes
           setTimeout(() => {
             setIsProgrammaticScroll(false);
