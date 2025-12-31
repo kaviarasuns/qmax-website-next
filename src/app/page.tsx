@@ -132,6 +132,93 @@ export default function Home() {
     };
   }, [isClient]);
 
+  // Save exact scroll position to sessionStorage (throttled)
+  useEffect(() => {
+    if (!isClient) return;
+
+    let ticking = false;
+    const saveScrollPosition = () => {
+      sessionStorage.setItem("homePageScrollY", window.scrollY.toString());
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          saveScrollPosition();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isClient]);
+
+  // Handle initial scroll restoration or default to emblaRef (section 4)
+  const hasRestoredScroll = useRef(false);
+  useEffect(() => {
+    if (!isClient || hasRestoredScroll.current) return;
+    hasRestoredScroll.current = true;
+
+    // Disable browser's default scroll restoration
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    // Prevent scroll handler from interfering during restoration
+    setIsProgrammaticScroll(true);
+
+    // Check for saved scroll position
+    const savedScrollY = sessionStorage.getItem("homePageScrollY");
+    
+    if (savedScrollY !== null) {
+      const scrollY = parseInt(savedScrollY, 10);
+      // Delay to allow InsideOut section to calculate its dynamic height
+      setTimeout(() => {
+        // Cap scrollY to the maximum scrollable position to avoid overshooting
+        const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+        const clampedScrollY = Math.min(scrollY, maxScrollY);
+        
+        // If the saved position would put us in the footer area (last 10% of page),
+        // and we weren't intentionally on the footer, fall back to section 4
+        const footerThreshold = maxScrollY * 0.9;
+        if (clampedScrollY > footerThreshold && scrollY > maxScrollY) {
+          // Saved position was beyond current page height - use section fallback
+          const targetRef = sectionRefs[4];
+          if (targetRef?.current) {
+            targetRef.current.scrollIntoView({ behavior: "instant", block: "center" });
+            setCurrentSection(4);
+          }
+        } else {
+          window.scrollTo({ top: clampedScrollY, behavior: "instant" });
+        }
+        
+        // Re-enable scroll handler after restoration completes
+        setTimeout(() => {
+          setIsProgrammaticScroll(false);
+        }, 500);
+      }, 100);
+    } else {
+      // First visit: default to section 4 (embla)
+      const targetRef = sectionRefs[4];
+      if (targetRef?.current) {
+        // Delay to allow layout to stabilize
+        setTimeout(() => {
+          targetRef.current?.scrollIntoView({ behavior: "instant", block: "center" });
+          setCurrentSection(4);
+          // Re-enable scroll handler after restoration completes
+          setTimeout(() => {
+            setIsProgrammaticScroll(false);
+          }, 500);
+        }, 100);
+      } else {
+        // No ref available, re-enable scroll handler
+        setIsProgrammaticScroll(false);
+      }
+    }
+  }, [isClient, sectionRefs]);
+
   // Intersection Observer to track current section during manual scroll
   useEffect(() => {
     if (!isClient) return;
@@ -282,7 +369,8 @@ export default function Home() {
   }, [isClient, sectionRefs, currentSection, isProgrammaticScroll, lenis]);
 
   // Function to scroll to specific section
-  const scrollToSection = (sectionIndex: number) => {
+  const scrollToSection = (sectionIndex: number, immediate = false) => {
+    console.log("scrolling to section", sectionIndex);
     if (sectionIndex === 5) {
       // Handle footer case
       const footerElement = document.querySelector("footer");
@@ -332,8 +420,9 @@ export default function Home() {
 
       lenis.scrollTo(targetRef.current, {
         offset: -window.innerHeight / 2 + targetRef.current.offsetHeight / 2,
-        duration: 1.5,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+        duration: immediate ? 0 : 1.5,
+        immediate,
+        easing: immediate ? undefined : (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
         // lock: true, // Lock user scrolling during animation
         onComplete: () => {
           // Re-enable intersection observer after scroll animation completes

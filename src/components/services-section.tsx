@@ -43,7 +43,7 @@ const carouselItems = [
     image: "/services/industrial-design.png",
     title: "Industrial Design",
     description: "Industrial Design & Mechanical Engineering",
-    url: "/industrial-design",
+    url: "/case-studies/BLE-tag-with-Wireless-Charging",
   },
 ]
 
