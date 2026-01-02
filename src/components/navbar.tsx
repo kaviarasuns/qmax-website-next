@@ -28,7 +28,7 @@ export default function Navbar() {
           >
             <Image
               src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
-              className="pl-3 w-full h-auto object-contain"
+              className="pl-3 w-full h-auto object-contain transform scale-[1.3] origin-left"
               width={800}
               height={800}
               alt="Qmax PCB Design Logo"
@@ -249,7 +249,7 @@ export default function Navbar() {
         </div>
       </nav>
       {/* Navbar spacer - pushes content below the navbar */}
-      <div className="h-20 sm:h-28 md:h-32 lg:h-20"></div>
+      <div className="h-14 sm:h-20 md:h-24 lg:h-20"></div>
     </>
   );
 }
