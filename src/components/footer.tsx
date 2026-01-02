@@ -23,7 +23,7 @@ type AddressData = {
 };
 
 
-type JobKey = "Careers" | "Suppliers / Vendors";
+type JobKey = "Careers  ( Jobs / Intern )" | "Suppliers / Vendors";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -54,7 +54,7 @@ export default function Footer() {
   };
 
   const jobs: Record<JobKey, AddressData> = {
-    Careers: {
+    "Careers  ( Jobs / Intern )": {
       name: "Qmax Systems India Pvt Ltd",
       address: [
         "310/2A, Rukmani Nagar, 4th street,",
