@@ -111,7 +111,7 @@ const Contact = () => {
   // API call to contact email endpoint
   const submitContactForm = async (data: typeof formData) => {
     console.log(data);
-    const response = await fetch("http://localhost:8080/api/email/contact", {
+    const response = await fetch("http://54.215.160.105:8080/api/email/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
