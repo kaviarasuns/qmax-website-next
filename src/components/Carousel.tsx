@@ -139,25 +139,62 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="flex touch-pan-y">
           {slides.map((slide, index) => (
             <div className="flex-none min-w-0 w-full relative" key={index}>
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                width={1920}
-                height={1080}
-                priority={index === 0}
-                className="max-w-full h-full object-cover"
-              />
+              {/* Mobile Image - visible on screens smaller than md */}
+              <div className="block md:hidden h-[60vh] relative">
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  priority={index === 0}
+                  className="object-cover"
+                />
+              </div>
+              
+              {/* Desktop Image - visible on md screens and larger */}
+              <div className="hidden md:block">
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  width={1920}
+                  height={1080}
+                  priority={index === 0}
+                  className="max-w-full h-full object-cover"
+                />
+              </div>
               <div className="absolute inset-0 flex items-end justify-start">
-                <div className="w-full max-w-4xl p-6 md:p-8 lg:p-10 ml-[20px] mt-[20px]">
+                <div className="w-full max-w-4xl p-6 md:p-8 lg:p-10 ml-2 md:ml-[20px] mt-[20px]">
                   {/* Orange buttons above typewriter */}
                   {index === currentSlide && (
                     <div className="flex flex-row gap-4 mb-6">
+                      {/* Mobile Watch Video Button */}
                       <button
-                        className="bg-brand-red hover:bg-brand-red/80 text-white font-semibold py-2 px-4 text-sm md:text-lg rounded-md shadow transition-colors duration-200 min-w-[112px] flex items-center gap-2 w-28 h-10 md:py-3 md:px-8 md:w-auto md:h-auto"
+                        className="md:hidden bg-brand-red hover:bg-brand-red/80 text-white font-semibold py-2 px-4 text-sm rounded-md shadow transition-colors duration-200 flex items-center gap-2"
                         type="button"
                         onClick={handleOpenModal}
                       >
-                        {/* Video Camera Icon (black) */}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={2}
+                          stroke="black"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 7h7a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"
+                          />
+                        </svg>
+                        Watch Video
+                      </button>
+
+                      {/* Desktop Watch Video Button */}
+                      <button
+                        className="hidden md:flex bg-brand-red hover:bg-brand-red/80 text-white font-semibold py-3 px-8 text-lg rounded-md shadow transition-colors duration-200 items-center gap-2"
+                        type="button"
+                        onClick={handleOpenModal}
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -223,12 +260,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <PrevButton
           onClick={onPrevButtonClick}
           disabled={prevBtnDisabled}
-          className="text-white absolute z-10 top-1/2 -translate-y-1/2 left-2 sm:left-3 md:left-4 border-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center cursor-pointer p-0 bg-transparent opacity-70 hover:opacity-100 transition-opacity"
+          className="text-white absolute z-10 top-1/2 -translate-y-1/2 left-2 sm:left-3 md:left-4 border-0 w-6 h-6 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center cursor-pointer p-0 bg-transparent opacity-70 hover:opacity-100 transition-opacity"
         />
         <NextButton
           onClick={onNextButtonClick}
           disabled={nextBtnDisabled}
-          className="text-white absolute z-10 top-1/2 -translate-y-1/2 right-2 sm:right-3 md:right-4 border-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center cursor-pointer p-0 bg-transparent opacity-70 hover:opacity-100 transition-opacity"
+          className="text-white absolute z-10 top-1/2 -translate-y-1/2 right-2 sm:right-3 md:right-4 border-0 w-6 h-6 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center cursor-pointer p-0 bg-transparent opacity-70 hover:opacity-100 transition-opacity"
         />
 
         {/* Dot navigation - moved inside carousel container */}

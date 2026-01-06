@@ -247,7 +247,7 @@ const Contact = () => {
           <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-gradient-to-br from-brand-red/5 to-transparent rounded-full blur-3xl" />
         </div>
 
-        <div className="relative container mx-auto px-6 pt-20 pb-8 md:pt-24 md:pb-8 lg:pt-28 lg:pb-8">
+        <div className="relative container mx-auto px-6 pt-8 pb-8 md:pt-12 md:pb-8 lg:pt-16 lg:pb-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             
