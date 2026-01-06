@@ -108,10 +108,13 @@ const Contact = () => {
   const [error, setError] = useState<string | null>(null);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
+  const baseUrl = "https://pmdash.v2.qmaxsys.com";
+  // const baseUrl = "http://localhost:8080"
+
   // API call to contact email endpoint
   const submitContactForm = async (data: typeof formData) => {
     console.log(data);
-    const response = await fetch("http://54.215.160.105:8080/api/email/contact", {
+    const response = await fetch(`${baseUrl}/api/email/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -553,15 +556,12 @@ const Contact = () => {
         {/* Section header */}
         <div className="container mx-auto px-6 mb-16">
           <div className="text-center max-w-2xl mx-auto">
-            <p className="text-brand-red font-medium tracking-widest text-sm uppercase mb-4">
+            {/* <p className="text-brand-red font-medium tracking-widest text-sm uppercase mb-4">
               Our Locations
-            </p>
+            </p> */}
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Global Presence
+              Our Locations
             </h2>
-            <p className="text-xl text-gray-600">
-              With offices across continents, we&apos;re always close to you.
-            </p>
           </div>
         </div>
 
