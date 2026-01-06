@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FooterV2 from "@/components/footer-v2";
-import ContactUsButton from "@/components/ContactUsButton";
+import ContactUsButtonWrapper from "@/components/ContactUsButtonWrapper";
 import { ReactLenis } from "@/utils/lenis";
 import { Navigation } from "@/components/navigation";
 
@@ -42,7 +42,7 @@ export default function RootLayout({
           <Navigation />
           {children}
           <FooterV2 />
-          <ContactUsButton />
+          <ContactUsButtonWrapper />
         </body>
       </ReactLenis>
     </html>

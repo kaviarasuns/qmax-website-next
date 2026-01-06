@@ -2,6 +2,100 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { MapPin, Phone, Mail, Send, CheckCircle, ArrowRight } from "lucide-react";
 
+type CountryKey = "United States" | "India";
+type JobKey = "Careers  ( Jobs / Intern )" | "Suppliers / Vendors";
+
+interface AddressData {
+  name: string;
+  address: string[];
+  phone: string;
+  email: string;
+}
+
+interface InputFieldProps {
+  name: string;
+  type?: string;
+  label: string;
+  required?: boolean;
+  pattern?: string;
+  isTextarea?: boolean;
+  value: string;
+  isFocused: boolean;
+  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  onFocus: () => void;
+  onBlur: () => void;
+}
+
+const InputField = ({
+  name,
+  type = "text",
+  label,
+  required = true,
+  pattern,
+  isTextarea = false,
+  value,
+  isFocused,
+  onChange,
+  onFocus,
+  onBlur,
+}: InputFieldProps) => {
+  const hasValue = value.length > 0;
+  const isActive = isFocused || hasValue;
+
+  const baseClasses = `
+    w-full px-0 py-4 bg-transparent border-0 border-b-2 
+    transition-all duration-300 ease-out
+    text-gray-900 text-lg
+    focus:outline-none focus:ring-0
+    placeholder-transparent
+    ${isFocused ? "border-brand-red" : "border-gray-200 hover:border-gray-400"}
+  `;
+
+  const labelClasses = `
+    absolute left-0 transition-all duration-300 ease-out pointer-events-none
+    ${isActive ? "top-0 text-xs font-medium" : "top-4 text-lg"}
+    ${isFocused ? "text-brand-red" : "text-gray-500"}
+  `;
+
+  if (isTextarea) {
+    return (
+      <div className="relative mt-6">
+        <textarea
+          name={name}
+          required={required}
+          className={`${baseClasses} resize-none min-h-[100px]`}
+          onChange={onChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          value={value}
+        />
+        <label htmlFor={name} className={labelClasses}>
+          {label}
+        </label>
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative mt-6">
+      <input
+        type={type}
+        name={name}
+        required={required}
+        pattern={pattern}
+        className={baseClasses}
+        onChange={onChange}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        value={value}
+      />
+      <label htmlFor={name} className={labelClasses}>
+        {label}
+      </label>
+    </div>
+  );
+};
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -13,9 +107,10 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
-  // Real API call to JSONPlaceholder
+  // API call to contact email endpoint
   const submitContactForm = async (data: typeof formData) => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+    console.log(data);
+    const response = await fetch("http://localhost:8080/api/email/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -68,78 +163,53 @@ const Contact = () => {
     },
   ];
 
-  const InputField = ({
-    name,
-    type = "text",
-    label,
-    required = true,
-    pattern,
-    isTextarea = false,
-  }: {
-    name: string;
-    type?: string;
-    label: string;
-    required?: boolean;
-    pattern?: string;
-    isTextarea?: boolean;
-  }) => {
-    const isFocused = focusedField === name;
-    const hasValue = formData[name as keyof typeof formData].length > 0;
-    const isActive = isFocused || hasValue;
-
-    const baseClasses = `
-      w-full px-0 py-4 bg-transparent border-0 border-b-2 
-      transition-all duration-300 ease-out
-      text-gray-900 text-lg
-      focus:outline-none focus:ring-0
-      placeholder-transparent
-      ${isFocused ? "border-brand-red" : "border-gray-200 hover:border-gray-400"}
-    `;
-
-    const labelClasses = `
-      absolute left-0 transition-all duration-300 ease-out pointer-events-none
-      ${isActive ? "top-0 text-xs font-medium" : "top-4 text-lg"}
-      ${isFocused ? "text-brand-red" : "text-gray-500"}
-    `;
-
-    if (isTextarea) {
-      return (
-        <div className="relative mt-8">
-          <textarea
-            name={name}
-            required={required}
-            className={`${baseClasses} resize-none min-h-[120px]`}
-            onChange={handleChange}
-            onFocus={() => setFocusedField(name)}
-            onBlur={() => setFocusedField(null)}
-            value={formData[name as keyof typeof formData]}
-          />
-          <label htmlFor={name} className={labelClasses}>
-            {label}
-          </label>
-        </div>
-      );
-    }
-
-    return (
-      <div className="relative mt-8">
-        <input
-          type={type}
-          name={name}
-          required={required}
-          pattern={pattern}
-          className={baseClasses}
-          onChange={handleChange}
-          onFocus={() => setFocusedField(name)}
-          onBlur={() => setFocusedField(null)}
-          value={formData[name as keyof typeof formData]}
-        />
-        <label htmlFor={name} className={labelClasses}>
-          {label}
-        </label>
-      </div>
-    );
+  const addresses: Record<CountryKey, AddressData> = {
+    "United States": {
+      name: "Qmax Systems LLC",
+      address: [
+        "14105, Willow Tank Drive",
+        "Austin, TX 78717",
+        "United States",
+      ],
+      phone: "+1 412 265 2314",
+      email: "info@qmaxsys.com",
+    },
+    India: {
+      name: "Qmax Systems India Pvt Ltd",
+      address: [
+        "310/2A, Rukmani Nagar, 4th street,",
+        "Poonamallee, Chennai 600056,",
+        "Tamil Nadu, India",
+      ],
+      phone: "+91 98402 30903",
+      email: "info@qmaxsys.com",
+    },
   };
+
+  const jobs: Record<JobKey, AddressData> = {
+    "Careers  ( Jobs / Intern )": {
+      name: "Qmax Systems India Pvt Ltd",
+      address: [
+        "310/2A, Rukmani Nagar, 4th street,",
+        "Poonamallee, Chennai 600056,",
+        "Tamil Nadu, India",
+      ],
+      phone: "+91 73054 50580",
+      email: "careers@qmaxsys.com",
+    },
+    "Suppliers / Vendors": {
+      name: "Qmax Systems India Pvt Ltd",
+      address: [
+        "310/2A, Rukmani Nagar, 4th street,",
+        "Poonamallee, Chennai 600056,",
+        "Tamil Nadu, India",
+      ],
+      phone: "+91 73054 50580",
+      email: "purchase@qmaxsys.com",
+    },
+  };
+
+
 
   return (
     <main className="bg-white">
@@ -163,118 +233,25 @@ const Contact = () => {
         </div>
 
         <div className="relative container mx-auto px-6 pt-20 pb-8 md:pt-24 md:pb-8 lg:pt-28 lg:pb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             
-            {/* Left Column - Hero Content + Quick Contact */}
-            <div className="lg:sticky lg:top-32">
-              {/* Eyebrow text */}
+            
+            {/* Left Column - Contact Form */}
+            <div>
               <p className="text-brand-red font-medium tracking-widest text-sm uppercase mb-4">
                 Get in Touch
               </p>
-              
-              {/* Main heading */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] tracking-tight mb-6">
-                Let&apos;s Build<br />
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-[1.1] tracking-tight mb-4">
+                Let&apos;s Build{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-600">
                   Something Great
                 </span>
               </h1>
-              
-              {/* Subheading */}
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10">
+              <p className="text-lg text-gray-600 leading-relaxed mb-8">
                 Discuss your project with us today. We&apos;re here to transform your ideas into exceptional solutions.
               </p>
-
-              {/* Quick Contact Card */}
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 lg:p-8 text-white shadow-xl relative overflow-hidden">
-                <h3 className="text-lg font-semibold mb-5">Quick Contact</h3>
-                
-                <div className="space-y-4">
-                  <a 
-                    href="tel:+14122652314" 
-                    className="flex items-center gap-4 group hover:opacity-80 transition-opacity"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-brand-red transition-colors">
-                      <Phone className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <p className="text-gray-400 text-xs">Call us</p>
-                      <p className="font-medium">+1-412-265-2314</p>
-                    </div>
-                  </a>
-
-                  <a 
-                    href="mailto:info@qmaxsys.com"
-                    className="flex items-center gap-4 group hover:opacity-80 transition-opacity"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-brand-red transition-colors">
-                      <Mail className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <p className="text-gray-400 text-xs">Email us</p>
-                      <p className="font-medium">info@qmaxsys.com</p>
-                    </div>
-                  </a>
-                </div>
-
-                {/* Decorative gradient */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-red/20 to-transparent rounded-2xl blur-2xl" />
-              </div>
-
-              {/* Why Work With Us - Stats Card */}
-              <div className="mt-6 bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Why Work With Us</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-brand-red/10 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <span className="text-lg font-bold text-gray-900">25+</span>
-                      <p className="text-xs text-gray-500">Years</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-brand-red/10 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <span className="text-lg font-bold text-gray-900">500+</span>
-                      <p className="text-xs text-gray-500">Projects</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-brand-red/10 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <span className="text-lg font-bold text-gray-900">24hr</span>
-                      <p className="text-xs text-gray-500">Response</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-brand-red/10 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <span className="text-lg font-bold text-gray-900">2</span>
-                      <p className="text-xs text-gray-500">Offices</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column - Contact Form */}
-            <div>
+              
               <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-gray-100">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                   Send us a message
@@ -312,17 +289,48 @@ const Contact = () => {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-2">
-                    <InputField name="name" label="Your Name" />
-                    <InputField name="email" type="email" label="Email Address" />
+                    <InputField
+                      name="name"
+                      label="Your Name"
+                      value={formData.name}
+                      isFocused={focusedField === "name"}
+                      onChange={handleChange}
+                      onFocus={() => setFocusedField("name")}
+                      onBlur={() => setFocusedField(null)}
+                    />
+                    <InputField
+                      name="email"
+                      type="email"
+                      label="Email Address"
+                      value={formData.email}
+                      isFocused={focusedField === "email"}
+                      onChange={handleChange}
+                      onFocus={() => setFocusedField("email")}
+                      onBlur={() => setFocusedField(null)}
+                    />
                     <InputField
                       name="phone"
                       type="tel"
                       label="Phone Number"
                       pattern="^([0|\+[0-9]{1,5})?([1-9][0-9]{9})$"
+                      value={formData.phone}
+                      isFocused={focusedField === "phone"}
+                      onChange={handleChange}
+                      onFocus={() => setFocusedField("phone")}
+                      onBlur={() => setFocusedField(null)}
                     />
-                    <InputField name="message" label="Your Message" isTextarea />
+                    <InputField
+                      name="message"
+                      label="Your Message"
+                      isTextarea
+                      value={formData.message}
+                      isFocused={focusedField === "message"}
+                      onChange={handleChange}
+                      onFocus={() => setFocusedField("message")}
+                      onBlur={() => setFocusedField(null)}
+                    />
 
-                    <div className="pt-8">
+                    <div className="pt-6">
                       <button
                         type="submit"
                         disabled={loading}
@@ -370,6 +378,115 @@ const Contact = () => {
                     </div>
                   </form>
                 )}
+              </div>
+            </div>
+
+            {/* Right Column - Contact Us Section */}
+            <div className="lg:sticky lg:top-32">
+       
+              <h2 className="text-xl font-semibold mb-6 text-gray-900">CONTACT US</h2>
+              
+              {/* Contact Cards Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                {/* Address Cards */}
+                {(Object.keys(addresses) as CountryKey[]).map((country) => (
+                  <div 
+                    key={country} 
+                    className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+                  >
+                    <div className="w-full font-bold text-left px-4 py-3 text-sm bg-brand-red text-white flex items-center gap-2">
+                      <MapPin className="w-4 h-4" />
+                      {country}
+                    </div>
+                    <div className="p-4 text-sm bg-zinc-800 h-full">
+                      <p className="font-semibold text-white mb-2">{addresses[country].name}</p>
+                      <div className="text-gray-400 space-y-0.5 mb-3">
+                        {addresses[country].address.map((line, index) => (
+                          <p key={index}>{line}</p>
+                        ))}
+                      </div>
+                      <a 
+                        href={`tel:${addresses[country].phone.replace(/\s/g, "")}`}
+                        className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-2"
+                      >
+                        <Phone className="w-3.5 h-3.5 text-brand-red" />
+                        {addresses[country].phone}
+                      </a>
+                      <button
+                        onClick={() => {
+                          const timestamp = Date.now();
+                          const email = addresses[country].email;
+                          const subject = encodeURIComponent(
+                            "Inquiry from Qmax Systems Website"
+                          );
+                          const body = encodeURIComponent(
+                            "Hello,\n\nI would like to get in touch with Qmax Systems.\n\nBest regards,"
+                          );
+                          const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
+                          window.location.href = mailtoUrl;
+                          setTimeout(() => {
+                            window.open(mailtoUrl, "_blank");
+                          }, 100);
+                        }}
+                        className="flex items-center gap-2 text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left transition-colors"
+                      >
+                        <Mail className="w-3.5 h-3.5" />
+                        {addresses[country].email}
+                      </button>
+                    </div>
+                  </div>
+                ))}
+
+                {/* Jobs Cards */}
+                {(Object.keys(jobs) as JobKey[]).map((key) => (
+                  <div 
+                    key={key} 
+                    className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+                  >
+                    <div className="w-full font-bold text-left px-4 py-3 text-sm bg-brand-red text-white flex items-center gap-2">
+                      <ArrowRight className="w-4 h-4" />
+                      {key}
+                    </div>
+                    <div className="p-4 text-sm bg-zinc-800 h-full">
+                      <p className="font-semibold text-white mb-2">{jobs[key].name}</p>
+                      <div className="text-gray-400 space-y-0.5 mb-3">
+                        {jobs[key].address.map((line, index) => (
+                          <p key={index}>{line}</p>
+                        ))}
+                      </div>
+                      <a 
+                        href={`tel:${jobs[key].phone.replace(/\s/g, "")}`}
+                        className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-2"
+                      >
+                        <Phone className="w-3.5 h-3.5 text-brand-red" />
+                        {jobs[key].phone}
+                      </a>
+                      <button
+                        onClick={() => {
+                          const timestamp = Date.now();
+                          const email = jobs[key].email;
+                          const subject = encodeURIComponent(
+                            `Inquiry for ${key} - Qmax Systems`
+                          );
+                          const body = encodeURIComponent(
+                            "Hello,\n\nI would like to get in touch regarding " +
+                              key +
+                              ".\n\nBest regards,"
+                          );
+                          const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
+                          window.location.href = mailtoUrl;
+                          setTimeout(() => {
+                            window.open(mailtoUrl, "_blank");
+                          }, 100);
+                        }}
+                        className="flex items-center gap-2 text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left transition-colors"
+                      >
+                        <Mail className="w-3.5 h-3.5" />
+                        {jobs[key].email}
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
