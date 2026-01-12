@@ -20,6 +20,7 @@ type PropType = {
     alt: string;
     type: string;
     videoId: string;
+    mobileObjectPosition?: string;
   }[];
   options?: EmblaOptionsType;
 };
@@ -146,7 +147,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   alt={slide.alt}
                   fill
                   priority={index === 0}
-                  className="object-cover"
+                  className={`object-cover ${slide.mobileObjectPosition || ""}`}
                 />
               </div>
               

@@ -24,6 +24,7 @@ export default function Home() {
       alt: "Second slide - Modern architecture",
       type: "PCB Design Services",
       videoId: "NA0QPJZCgzI",
+      mobileObjectPosition: "object-[65%_10%]",
     },
   ];
   return (
