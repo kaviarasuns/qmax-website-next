@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { ArrowRight, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
 
 export function CTA() {
   return (
@@ -19,7 +19,7 @@ export function CTA() {
             </h2>
 
             <p className="mb-8 text-lg text-foreground/70">
-              Whether you're an experienced engineer or just starting your career, we have opportunities for you. Let's build the future of technology together.
+              Whether you&apos;re an experienced engineer or just starting your career, we have opportunities for you. Let&apos;s build the future of technology together.
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row justify-center">

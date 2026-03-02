@@ -1,6 +1,7 @@
 import { Card } from '@/components/ui/card'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CheckCircle2 } from 'lucide-react'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs'
 
 export function JobDetails() {
   return (

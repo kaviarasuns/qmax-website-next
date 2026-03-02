@@ -1,11 +1,10 @@
 import { Card } from '@/components/ui/card'
-import { 
-  Rocket, 
-  Users, 
-  Lightbulb, 
-  Zap,
+import {
+  Rocket,
+  Users,
+  Lightbulb,
   Target,
-  BookOpen 
+  BookOpen
 } from 'lucide-react'
 
 const benefits = [
@@ -48,7 +47,7 @@ export function WhyJoinQmax() {
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">Why Join Qmax?</h2>
           <p className="mx-auto max-w-2xl text-lg text-foreground/70">
-            We're building a culture of innovation where your contribution matters and your growth is our priority.
+            We&apos;re building a culture of innovation where your contribution matters and your growth is our priority.
           </p>
         </div>
 

@@ -55,8 +55,6 @@ export function OpeningsList() {
     },
   ]
 
-  const totalRoles = categories.reduce((sum, category) => sum + category.roles.length, 0)
-
   return (
     <section className="relative overflow-hidden bg-white py-14 md:py-20">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(161,98,7,0.06),_transparent_38%),radial-gradient(circle_at_bottom_right,_rgba(24,24,27,0.06),_transparent_36%)]" />
