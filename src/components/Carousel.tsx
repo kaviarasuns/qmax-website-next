@@ -40,6 +40,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const router = useRouter();
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [modalVideoId, setModalVideoId] = React.useState<string>("");
+  const [isOverlayClosed, setIsOverlayClosed] = React.useState(false);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -166,59 +167,57 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 <div className="w-full max-w-4xl p-6 md:p-8 lg:p-10 ml-2 md:ml-[20px] mt-[20px]">
                   {/* Orange buttons above typewriter */}
                   {index === currentSlide && (
-                    <div className="flex flex-row gap-4 mb-6">
-                      {/* Mobile Watch Video Button */}
-                      <button
-                        className="md:hidden bg-brand-red hover:bg-brand-red/80 text-white font-semibold py-2 px-4 text-sm rounded-md shadow transition-colors duration-200 flex items-center gap-2"
-                        type="button"
-                        onClick={handleOpenModal}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={2}
-                          stroke="black"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 7h7a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"
+                    <>
+                      {index === 0 && !isOverlayClosed && (
+                        <div className="absolute top-8 left-[40%] -translate-x-1/2 md:static md:top-auto md:left-auto md:translate-x-0 md:mb-20 w-fit">
+                          <button
+                            type="button"
+                            onClick={() => setIsOverlayClosed(true)}
+                            className="absolute -top-2 -right-2 z-10 h-7 w-7 md:h-8 md:w-8 rounded-full bg-black/70 text-white text-lg md:text-xl leading-none flex items-center justify-center"
+                            aria-label="Close promo banner"
+                          >
+                            &times;
+                          </button>
+                          <Image
+                            src="/Embedded_World_Expo_website.jpg"
+                            alt="Embedded World Expo"
+                            width={320}
+                            height={120}
+                            sizes="(max-width: 640px) 66vw, (max-width: 1024px) 36vw, 28vw"
+                            className="pointer-events-none h-auto w-[66vw] min-w-[280px] max-w-[560px] sm:w-[58vw]"
                           />
-                        </svg>
-                        Watch Video
-                      </button>
-
-                      {/* Desktop Watch Video Button */}
-                      <button
-                        className="hidden md:flex bg-brand-red hover:bg-brand-red/80 text-white font-semibold py-3 px-8 text-lg rounded-md shadow transition-colors duration-200 items-center gap-2"
-                        type="button"
-                        onClick={handleOpenModal}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={2}
-                          stroke="black"
-                          className="w-6 h-6 mr-2"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 7h7a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"
-                          />
-                        </svg>
-                        Watch Video
-                      </button>
-                      <div className="hidden sm:block">
+                        </div>
+                      )}
+                      <div className="flex flex-row gap-4 mb-6">
+                        {/* Mobile Watch Video Button */}
                         <button
-                          className="ml-10 bg-brand-red hover:bg-brand-red/80 text-white font-semibold py-3 px-8 text-lg md:text-xl rounded-md shadow transition-colors duration-200 min-w-[160px] flex items-center gap-2"
+                          className="md:hidden bg-brand-red hover:bg-brand-red/80 text-white font-semibold py-2 px-4 text-sm rounded-md shadow transition-colors duration-200 flex items-center gap-2"
                           type="button"
-                          onClick={() => router.push("/contact")}
+                          onClick={handleOpenModal}
                         >
-                          {/* Mail Icon (black) */}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={2}
+                            stroke="black"
+                            className="w-5 h-5"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 7h7a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"
+                            />
+                          </svg>
+                          Watch Video
+                        </button>
+
+                        {/* Desktop Watch Video Button */}
+                        <button
+                          className="hidden md:flex bg-brand-red hover:bg-brand-red/80 text-white font-semibold py-3 px-8 text-lg rounded-md shadow transition-colors duration-200 items-center gap-2"
+                          type="button"
+                          onClick={handleOpenModal}
+                        >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -230,13 +229,37 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                             <path
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                              d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 7h7a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"
                             />
                           </svg>
-                          Contact Us
+                          Watch Video
                         </button>
+                        <div className="hidden sm:block">
+                          <button
+                            className="ml-10 bg-brand-red hover:bg-brand-red/80 text-white font-semibold py-3 px-8 text-lg md:text-xl rounded-md shadow transition-colors duration-200 min-w-[160px] flex items-center gap-2"
+                            type="button"
+                            onClick={() => router.push("/contact")}
+                          >
+                            {/* Mail Icon (black) */}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth={2}
+                              stroke="black"
+                              className="w-6 h-6 mr-2"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                              />
+                            </svg>
+                            Contact Us
+                          </button>
+                        </div>
                       </div>
-                    </div>
+                    </>
                   )}
                   <div className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-left">
                     {index === currentSlide && (

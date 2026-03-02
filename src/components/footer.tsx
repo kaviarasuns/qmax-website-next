@@ -34,8 +34,8 @@ export default function Footer() {
     "United States": {
       name: "Qmax Systems LLC",
       address: [
-        "14105, Willow Tank Drive",
-        "Austin, TX 78717",
+        "539 W Commerce St # 7953",
+        "Dallas, TX 75208 - 1953",
         "United States",
       ],
       phone: "+1 412 265 2314",
@@ -265,8 +265,8 @@ export default function Footer() {
                             );
                             const body = encodeURIComponent(
                               "Hello,\n\nI would like to get in touch regarding " +
-                                key +
-                                ".\n\nBest regards,"
+                              key +
+                              ".\n\nBest regards,"
                             );
                             const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
 
