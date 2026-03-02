@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Mail } from 'lucide-react'
+
 
 export function CTA() {
   return (
@@ -23,10 +23,9 @@ export function CTA() {
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row justify-center">
-              <a href="mailto:careers@qmaxsys.com">
+              <a href="https://careers.qmaxsys.com/" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" variant="outline" className="border-primary/30">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Apply Us
+                  Apply Now
                 </Button>
               </a>
             </div>

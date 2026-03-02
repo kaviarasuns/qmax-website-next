@@ -21,28 +21,35 @@ const positions = [
     level: 'Mid-Senior',
     location: 'San Jose, CA',
     type: 'Full-time',
-    description: 'Design and develop hardware solutions for cutting-edge embedded systems and IoT devices.',
+    description: 'Design and develop electronic hardware for embedded, industrial, automotive, RF, and IoT products from concept to production',
     responsibilities: [
-      'Design schematic diagrams and PCB layouts for custom hardware',
-      'Conduct design reviews and ensure compliance with industry standards',
-      'Collaborate with firmware and mechanical engineering teams',
-      'Perform hardware testing and troubleshooting',
-      'Document design specifications and technical documentation'
+      'System architecture definition and block diagram creation',
+      'Analog, digital, power, and mixed-signal schematic design',
+      'Component selection considering cost, availability, lifecycle',
+      'Design for EMI/EMC, ESD, safety, and reliability',
+      'Support PCB layout, bring-up, debugging, and validation',
+      'Prepare schematics, BoM, test reports, and design notes'
     ],
     requirements: [
-      '5+ years of experience in hardware design',
-      'Expertise in circuit design and PCB layout tools (Altium, Eagle, etc.)',
-      'Strong knowledge of embedded systems and microcontrollers',
-      'Understanding of signal integrity and power distribution',
-      'Experience with hardware-firmware co-design'
+      'Strong fundamentals in analog & digital electronics',
+      'Power supply design: LDOs, buck/boost, isolated supplies',
+      'MCU/SoC interfacing (SPI, I2C, UART, Ethernet, USB)',
+      'Hands-on debugging using DSO, logic analyzer, DMM',
+      'EMI/ESD awareness and grounding concepts',
+      'Familiarity with Altium / OrCAD / KiCad',
+      'Ability to read datasheets and application notes critically'
     ],
-    skills: [
-      { category: 'Design Tools', items: ['Altium Designer', 'Eagle CAD', 'LTspice', 'Cadence'] },
-      { category: 'Technologies', items: ['Embedded Systems', 'Circuit Design', 'PCB Layout', 'Power Electronics'] },
-      { category: 'Communication', items: ['Technical Documentation', 'Cross-team Collaboration'] }
+    // skills: [
+    //   { category: 'Design Tools', items: ['Altium Designer', 'Eagle CAD', 'LTspice', 'Cadence'] },
+    //   { category: 'Technologies', items: ['Embedded Systems', 'Circuit Design', 'PCB Layout', 'Power Electronics'] },
+    //   { category: 'Communication', items: ['Technical Documentation', 'Cross-team Collaboration'] }
+    // ],
+    qualifications: [
+      'BE / BTech in Electronics & Communication, Electrical, or Instrumentation Engineering',
+      'ME / MTech is a plus, not mandatory',
+      'Interns: Final-year students or recent graduates with strong fundamentals'
     ],
-    qualifications: ['B.S. in Electrical Engineering or related field', 'Master\'s degree preferred'],
-    imageUrl: '/careers/image1.jpg'
+    imageUrl: '/careers/image2.png'
   },
   {
     id: 2,
@@ -51,28 +58,35 @@ const positions = [
     level: 'Mid-Senior',
     location: 'San Jose, CA',
     type: 'Full-time',
-    description: 'Develop robust and efficient firmware for embedded systems and IoT devices.',
+    description: 'Develop reliable, maintainable firmware for MCU/MPU-based embedded systems.',
     responsibilities: [
-      'Write clean, maintainable firmware code in C/C++',
-      'Implement device drivers and communication protocols',
-      'Optimize code for performance and memory constraints',
-      'Conduct unit testing and integration testing',
-      'Collaborate with hardware engineers on hardware-software integration'
+      'Firmware architecture and module-level design',
+      'Bare-metal or RTOS-based firmware development',
+      'Peripheral driver development',
+      'Hardware bring-up and board-level debugging',
+      'Code optimization, testing, and documentation',
+      'Version control and release management'
     ],
     requirements: [
-      '4+ years of embedded systems firmware development',
-      'Proficiency in C/C++ programming',
-      'Experience with real-time operating systems (RTOS)',
-      'Knowledge of communication protocols (UART, SPI, I2C, CAN)',
-      'Understanding of embedded Linux or similar environments'
+      'Strong C programming (mandatory)',
+      'Good understanding of MCU architecture',
+      'RTOS concepts: tasks, queues, semaphores, ISRs',
+      'Peripheral drivers: GPIO, UART, SPI, I2C, ADC, PWM',
+      'Debugging using JTAG/SWD',
+      'Basic understanding of linker scripts and memory maps',
+      'Git-based workflow'
     ],
-    skills: [
-      { category: 'Programming', items: ['C', 'C++', 'Assembly', 'Python'] },
-      { category: 'Protocols', items: ['UART', 'SPI', 'I2C', 'CAN', 'Ethernet'] },
-      { category: 'Tools', items: ['Git', 'JIRA', 'Debuggers', 'IDEs'] }
+    // skills: [
+    //   { category: 'Programming', items: ['C', 'C++', 'Assembly', 'Python'] },
+    //   { category: 'Protocols', items: ['UART', 'SPI', 'I2C', 'CAN', 'Ethernet'] },
+    //   { category: 'Tools', items: ['Git', 'JIRA', 'Debuggers', 'IDEs'] }
+    // ],
+    qualifications: [
+      'BE / BTech in ECE, CSE, Embedded Systems, or Electrical Engineering',
+      'Diploma holders with strong embedded C experience may be considered',
+      'Interns: Final-year students with hands-on embedded projects'
     ],
-    qualifications: ['B.S. in Computer Engineering, Electrical Engineering, or related field'],
-    imageUrl: '/careers/image2.png'
+    imageUrl: '/careers/image3.png'
   },
   {
     id: 3,
@@ -81,28 +95,28 @@ const positions = [
     level: 'Entry',
     location: 'San Jose, CA',
     type: 'Full-time',
-    description: 'Develop and execute test plans for embedded systems and IoT products.',
+    description: 'Test and validate embedded hardware and firmware using structured test methods.',
     responsibilities: [
-      'Create comprehensive test plans and test cases',
-      'Execute functional and integration testing',
-      'Identify and document defects with detailed reproduction steps',
-      'Perform regression testing',
-      'Collaborate with development team to resolve issues'
+      'Create test plans, test cases, and test procedures',
+      'Functional, stress, regression, and integration testing',
+      'Hardware bring-up assistance and failure analysis',
+      'Interface testing (UART, CAN, Ethernet, USB)',
+      'Maintain test logs, defect reports, and summaries'
     ],
     requirements: [
-      '1-2 years of test engineering experience',
-      'Knowledge of embedded systems testing methodologies',
-      'Familiarity with test automation tools',
-      'Basic understanding of hardware and firmware',
-      'Strong attention to detail'
+      'Ability to read schematics and block diagrams',
+      'Strong lab discipline and documentation skills',
+      'Hands-on use of DSO, DMM, power supplies',
+      'Understanding of embedded interfaces',
+      'Basic scripting (Python preferred)',
+      'Methodical troubleshooting mindset'
     ],
-    skills: [
-      { category: 'Testing', items: ['Test Planning', 'Test Automation', 'Manual Testing', 'Debugging'] },
-      { category: 'Tools', items: ['JIRA', 'Git', 'CAN Analyzer', 'Logic Analyzers'] },
-      { category: 'Languages', items: ['Python', 'C', 'Shell Scripting'] }
+    // skills: [],
+    qualifications: [
+      'Diploma / BE / BTech in Electronics, Electrical, or Instrumentation Engineering',
+      'Fresh graduates with lab exposure are acceptable'
     ],
-    qualifications: ['B.S. in Computer Science, Engineering, or related field'],
-    imageUrl: '/careers/image3.png'
+    imageUrl: '/careers/image5.png'
   },
   {
     id: 4,
@@ -111,27 +125,27 @@ const positions = [
     level: 'Mid-Senior',
     location: 'San Jose, CA',
     type: 'Full-time',
-    description: 'Design and optimize RF and wireless communication systems for IoT devices.',
+    description: 'Design RF circuits, antennas, and microwave subsystems for wireless products.',
     responsibilities: [
-      'Design RF circuits and antenna systems',
-      'Perform electromagnetic simulations and analysis',
-      'Conduct RF testing and measurements',
-      'Optimize wireless performance and range',
-      'Ensure regulatory compliance (FCC, CE, etc.)'
+      'RF circuit design (LNA, PA, filters, matching networks)',
+      'Antenna design, tuning, and optimization',
+      'RF simulation and validation',
+      'RF PCB layout review and guidance',
+      'RF testing and characterization'
     ],
     requirements: [
-      '5+ years of RF/wireless design experience',
-      'Strong knowledge of RF theory and electromagnetic principles',
-      'Experience with RF simulation tools (HFSS, ADS, Sonnet)',
-      'Familiarity with antenna design and optimization',
-      'Understanding of wireless protocols and standards'
+      'RF fundamentals: S-parameters, Smith chart, VSWR',
+      'Matching network design and tuning',
+      'Experience with GHz-range designs',
+      'Familiarity with RF PCB materials (FR4, Rogers)',
+      'Use of VNA, spectrum analyzer, signal generator',
+      'Simulation tools: ADS / HFSS / CST'
     ],
-    skills: [
-      { category: 'RF Tools', items: ['HFSS', 'ADS', 'Sonnet', 'CST Microwave Studio'] },
-      { category: 'Protocols', items: ['Bluetooth', 'WiFi', 'LoRaWAN', 'Cellular'] },
-      { category: 'Measurements', items: ['Network Analyzer', 'Spectrum Analyzer', 'Antenna Measurement'] }
+    // skills: [],
+    qualifications: [
+      'BE / BTech in Electronics & Communication Engineering',
+      'ME / MTech in RF / Microwave preferred'
     ],
-    qualifications: ['B.S. in Electrical Engineering with RF specialization'],
     imageUrl: '/careers/image4.png'
   },
   {
@@ -141,28 +155,27 @@ const positions = [
     level: 'Mid-Senior',
     location: 'San Jose, CA',
     type: 'Full-time',
-    description: 'Ensure signal integrity and power integrity for high-speed designs.',
+    description: 'Ensure signal integrity for high-speed digital interfaces in complex systems.',
     responsibilities: [
-      'Perform SI/PI simulations and analysis',
-      'Design power distribution networks',
-      'Optimize high-speed signal routing',
-      'Conduct pre- and post-layout analysis',
-      'Provide design recommendations to hardware team'
+      'SI analysis for DDR, PCIe, USB, Ethernet',
+      'Stack-up planning and impedance calculation',
+      'PCB layout review for high-speed routing',
+      'Simulation and eye-diagram analysis',
+      'Collaboration with PCB and hardware teams'
     ],
     requirements: [
-      '5+ years of SI/PI analysis experience',
-      'Expertise in SI/PI simulation tools',
-      'Knowledge of transmission line theory',
-      'Experience with high-speed design',
-      'Understanding of PCB manufacturing constraints'
+      'Transmission line theory',
+      'Differential pair routing concepts',
+      'Return path and reference plane understanding',
+      'High-speed connector and via modeling',
+      'SI tools: HyperLynx, SIwave, or equivalent'
     ],
-    skills: [
-      { category: 'SI/PI Tools', items: ['HyperLynx', 'AltiumSI', 'Keysight ADS', 'ANSYS'] },
-      { category: 'Analysis', items: ['EMI/EMC', 'Crosstalk Analysis', 'Impedance Control'] },
-      { category: 'Design', items: ['DDR Design', 'High-Speed Interfaces', 'Power Delivery'] }
+    // skills: [],
+    qualifications: [
+      'BE / BTech in ECE or Electrical Engineering',
+      'ME / MTech preferred for advanced roles'
     ],
-    qualifications: ['B.S. in Electrical Engineering'],
-    imageUrl: '/careers/image5.png'
+    imageUrl: '/careers/image7.png'
   },
   {
     id: 6,
@@ -171,27 +184,26 @@ const positions = [
     level: 'Entry-Mid',
     location: 'San Jose, CA',
     type: 'Full-time',
-    description: 'Create PCB layouts for embedded systems and IoT devices.',
+    description: 'Create production-ready PCB layouts for electronic products.',
     responsibilities: [
-      'Convert schematic designs to PCB layouts',
-      'Route signals while maintaining design rules',
-      'Manage component placement and thermal considerations',
-      'Generate manufacturing documentation',
-      'Support design reviews and manufacturing processes'
+      'Multi-layer PCB layout (analog, digital, RF, power)',
+      'Controlled impedance routing',
+      'High-speed interface routing',
+      'DFM/DFA compliance',
+      'Fabrication and assembly file generation'
     ],
     requirements: [
-      '2-4 years of PCB design experience',
-      'Proficiency in PCB design tools (Altium, Eagle, KiCAD)',
-      'Understanding of design rules and manufacturing constraints',
-      'Knowledge of signal integrity basics',
-      'Experience with multi-layer PCB designs'
+      'Strong Altium Designer skills',
+      'Knowledge of PCB manufacturing constraints',
+      'EMI-aware routing practices',
+      'Stack-up and impedance coordination',
+      'Ability to work closely with hardware engineers'
     ],
-    skills: [
-      { category: 'CAD Tools', items: ['Altium Designer', 'Eagle CAD', 'KiCAD', 'Cadence'] },
-      { category: 'Design', items: ['Layout Design', 'Routing', 'Component Placement', 'DFM'] },
-      { category: 'Standards', items: ['IPC Standards', 'Design Rules', 'Manufacturing'] }
+    // skills: [],
+    qualifications: [
+      'Diploma / BE / BTech in Electronics Engineering',
+      'Skill matters more than degree'
     ],
-    qualifications: ['B.S. in Electrical Engineering or equivalent experience'],
     imageUrl: '/careers/image6.png'
   },
   {
@@ -201,28 +213,24 @@ const positions = [
     level: 'Entry-Mid',
     location: 'San Jose, CA',
     type: 'Full-time',
-    description: 'Maintain and develop PCB component libraries and design assets.',
+    description: 'Maintain high-quality schematic symbols and PCB footprints.',
     responsibilities: [
-      'Create and maintain component symbols and footprints',
-      'Validate library accuracy and completeness',
-      'Organize and manage design asset repositories',
-      'Support PCB designers with library queries',
-      'Stay updated with component vendor changes'
+      'Create and validate symbols and footprints',
+      'Maintain version-controlled libraries',
+      'Enforce naming conventions and standards',
+      'Support designers during layout'
     ],
     requirements: [
-      '2-3 years of PCB library management experience',
-      'Proficiency in PCB design software',
-      'Attention to detail and organizational skills',
-      'Knowledge of component standards and datasheets',
-      'Understanding of PCB design requirements'
+      'Excellent attention to detail',
+      'Strong understanding of packages and land patterns',
+      'Altium library management',
+      'Datasheet interpretation skills'
     ],
-    skills: [
-      { category: 'CAD Tools', items: ['Altium Designer', 'Eagle CAD', 'KiCAD', 'Symbol Editor'] },
-      { category: 'Organization', items: ['Database Management', 'Version Control', 'Documentation'] },
-      { category: 'Knowledge', items: ['IPC Standards', 'Component Selection', 'Datasheets'] }
+    // skills: [],
+    qualifications: [
+      'Diploma / BE / BTech in Electronics Engineering'
     ],
-    qualifications: ['B.S. in Electrical Engineering or related field'],
-    imageUrl: '/careers/image7.png'
+    imageUrl: '/careers/image9.png'
   },
   {
     id: 8,
@@ -231,28 +239,24 @@ const positions = [
     level: 'Mid-Senior',
     location: 'San Jose, CA',
     type: 'Full-time',
-    description: 'Design mechanical structures and enclosures for embedded products.',
+    description: 'Design mechanical enclosures and structures for electronic products.',
     responsibilities: [
-      'Create detailed mechanical designs and 3D models',
-      'Perform structural and thermal analysis',
-      'Ensure manufacturability and cost-effectiveness',
-      'Collaborate with electrical and industrial design teams',
-      'Support prototyping and manufacturing processes'
+      'Enclosure and product design',
+      'Thermal and mechanical analysis considerations',
+      'Manufacturing drawings and BOMs',
+      'Coordination with electronics teams'
     ],
     requirements: [
-      '5+ years of mechanical design experience',
-      'Proficiency in CAD software (SolidWorks, CATIA)',
-      'Knowledge of FEA and thermal analysis',
-      'Understanding of manufacturing processes',
-      'Experience with product design from concept to production'
+      'SolidWorks / Creo / Fusion 360',
+      'Sheet metal and plastic part design',
+      'Manufacturing process understanding',
+      'Practical tolerance knowledge'
     ],
-    skills: [
-      { category: 'CAD/CAM', items: ['SolidWorks', 'CATIA', 'AutoCAD', 'Fusion 360'] },
-      { category: 'Analysis', items: ['FEA', 'Thermal Analysis', 'Motion Analysis', 'Assembly Design'] },
-      { category: 'Manufacturing', items: ['DFM', 'GD&T', 'Prototyping', 'Material Selection'] }
+    // skills: [],
+    qualifications: [
+      'Diploma / BE / BTech in Mechanical Engineering'
     ],
-    qualifications: ['B.S. in Mechanical Engineering'],
-    imageUrl: '/careers/image8.png'
+    imageUrl: '/careers/image10.png'
   },
   {
     id: 9,
@@ -261,28 +265,25 @@ const positions = [
     level: 'Mid-Senior',
     location: 'San Jose, CA',
     type: 'Full-time',
-    description: 'Create user-centric product designs that balance functionality and aesthetics.',
+    description: 'Define product aesthetics, ergonomics, and usability.',
     responsibilities: [
-      'Develop product design concepts and prototypes',
-      'Conduct user research and usability testing',
-      'Collaborate with engineering teams',
-      'Create design specifications and documentation',
-      'Ensure adherence to design standards and brand guidelines'
+      'Product styling and form development',
+      'Ergonomic studies',
+      'Concept sketches and renders',
+      'Collaboration with mechanical engineers'
     ],
     requirements: [
-      '5+ years of industrial design experience',
-      'Strong portfolio demonstrating design process',
-      'Proficiency in design tools (Figma, Adobe XD, Sketch)',
-      'Understanding of user experience and ergonomics',
-      'Knowledge of manufacturing constraints and materials'
+      'Strong visual and aesthetic sense',
+      'Tools: Rhino, KeyShot, Adobe Suite',
+      'Understanding of manufacturing limitations',
+      'Strong design portfolio (mandatory)'
     ],
-    skills: [
-      { category: 'Design Tools', items: ['Figma', 'Adobe XD', 'Sketch', 'Protopie'] },
-      { category: 'Skills', items: ['UI/UX Design', 'Prototyping', 'User Research', 'Wireframing'] },
-      { category: 'Knowledge', items: ['Design Systems', 'Accessibility', 'User Testing'] }
+    // skills: [],
+    qualifications: [
+      "Bachelor's degree in Industrial / Product Design",
+      'Mechanical engineers with strong portfolio considered'
     ],
-    qualifications: ['B.S. in Industrial Design or related field'],
-    imageUrl: '/careers/image9.png'
+    imageUrl: '/careers/image11.png'
   },
   {
     id: 10,
@@ -291,28 +292,26 @@ const positions = [
     level: 'Entry-Mid',
     location: 'San Jose, CA',
     type: 'Full-time',
-    description: 'Build web applications and tools for internal and external use.',
+    description: 'Develop and maintain web applications for internal and customer-facing platforms.',
     responsibilities: [
-      'Develop frontend and backend components',
-      'Design and implement APIs and databases',
-      'Ensure code quality and security',
-      'Collaborate with product and design teams',
-      'Deploy and maintain web applications'
+      'Frontend and backend development',
+      'REST API implementation',
+      'Database integration',
+      'Deployment and maintenance'
     ],
     requirements: [
-      '2-3 years of web development experience',
-      'Proficiency in modern JavaScript frameworks (React, Vue, Angular)',
-      'Backend development experience (Node.js, Python, Java)',
-      'Understanding of SQL and databases',
-      'Familiarity with cloud platforms (AWS, GCP, Azure)'
+      'HTML, CSS, JavaScript',
+      'React or equivalent frontend framework',
+      'Backend: Node.js / Python / PHP',
+      'SQL databases',
+      'Git and basic DevOps exposure'
     ],
-    skills: [
-      { category: 'Frontend', items: ['React', 'Vue.js', 'TypeScript', 'Tailwind CSS'] },
-      { category: 'Backend', items: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB'] },
-      { category: 'DevOps', items: ['Git', 'Docker', 'AWS', 'CI/CD'] }
+    // skills: [],
+    qualifications: [
+      'BE / BTech in Computer Science / IT',
+      'MCA / BSc (CS) with strong portfolio acceptable'
     ],
-    qualifications: ['B.S. in Computer Science or equivalent experience'],
-    imageUrl: '/careers/image10.png'
+    imageUrl: '/careers/image8.png'
   },
   {
     id: 11,
@@ -321,28 +320,25 @@ const positions = [
     level: 'Entry',
     location: 'San Jose, CA',
     type: 'Full-time',
-    description: 'Identify and develop business opportunities for strategic partnerships and market expansion.',
+    description: 'Generate and qualify leads for engineering services.',
     responsibilities: [
-      'Research market opportunities and competitive landscape',
-      'Identify and approach potential partners and customers',
-      'Negotiate contracts and partnership agreements',
-      'Support sales and marketing initiatives',
-      'Track and report on business development metrics'
+      'Lead generation and qualification',
+      'Client communication and follow-ups',
+      'Proposal coordination with engineering teams',
+      'CRM maintenance'
     ],
     requirements: [
-      '1-3 years of business development or sales experience',
-      'Strong communication and negotiation skills',
-      'Knowledge of IoT and embedded systems industry (preferred)',
-      'Ability to manage multiple projects simultaneously',
-      'Self-motivated with strong work ethic'
+      'Clear written and verbal communication',
+      'Ability to understand technical discussions',
+      'Discipline in follow-ups and tracking',
+      'Professional email and proposal handling'
     ],
-    skills: [
-      { category: 'Business', items: ['Market Research', 'Negotiation', 'Contract Management', 'CRM Tools'] },
-      { category: 'Sales', items: ['Lead Generation', 'Sales Pipeline Management', 'Customer Relations'] },
-      { category: 'Tools', items: ['Salesforce', 'Excel', 'PowerPoint', 'LinkedIn'] }
+    // skills: [],
+    qualifications: [
+      "Any Bachelor's degree",
+      'Engineering background preferred'
     ],
-    qualifications: ['B.A. in Business, Marketing, or related field'],
-    imageUrl: '/careers/image11.png'
+    imageUrl: '/careers/image12.png'
   },
   {
     id: 12,
@@ -684,7 +680,7 @@ function JobCard({ position, isExpanded, onToggle }: { position: Position; isExp
               <div className="rounded-lg border border-zinc-200 bg-white p-4 sm:col-span-2">
                 <h4 className="mb-3 font-semibold text-zinc-900">Required Skills</h4>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  {position.skills.map((skillGroup, idx) => (
+                  {position.skills?.map((skillGroup, idx) => (
                     <div key={idx}>
                       <p className="mb-2 text-sm font-medium text-zinc-700">{skillGroup.category}</p>
                       <div className="flex flex-wrap gap-2">
