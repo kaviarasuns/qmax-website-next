@@ -612,43 +612,10 @@ function JobCard({ position, isExpanded, onToggle }: { position: Position; isExp
       {isExpanded && (
         <div id={detailsId} className="border-t border-zinc-200 bg-zinc-50 px-6 py-6">
           {/* Desktop: two-column layout. Mobile: single column */}
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
 
-            {/* Left sidebar: Image + Qualifications + CTA */}
-            <div className="flex flex-col gap-5">
-              <div className="relative h-48 w-full overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100 lg:h-56">
-                <img
-                  src={position.imageUrl || '/careers/image1.jpg'}
-                  alt={position.title}
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-
-              {/* Qualifications */}
-              <div>
-                <h4 className="mb-3 font-semibold text-zinc-900">Qualifications</h4>
-                <ul className="space-y-2">
-                  {position.qualifications.map((qual, idx) => (
-                    <li key={idx} className="flex gap-3 text-sm text-zinc-700">
-                      <span className="font-semibold text-zinc-500">•</span>
-                      <span>{qual}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* CTA */}
-              <div className="mt-auto border-t border-zinc-200 pt-4">
-                <a href="https://careers.qmaxsys.com/" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full sm:w-auto bg-zinc-900 text-white hover:bg-zinc-800">
-                    Apply Now
-                  </Button>
-                </a>
-              </div>
-            </div>
-
-            {/* Right content: 2-column sub-grid for details */}
-            <div className="lg:col-span-2 grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {/* Left content: single-column stack for details */}
+            <div className="grid grid-cols-1 gap-6">
 
               {/* Responsibilities */}
               <div className="rounded-lg border border-zinc-200 bg-white p-4">
@@ -676,26 +643,41 @@ function JobCard({ position, isExpanded, onToggle }: { position: Position; isExp
                 </ul>
               </div>
 
-              {/* Skills */}
-              <div className="rounded-lg border border-zinc-200 bg-white p-4 sm:col-span-2">
-                <h4 className="mb-3 font-semibold text-zinc-900">Required Skills</h4>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  {position.skills?.map((skillGroup, idx) => (
-                    <div key={idx}>
-                      <p className="mb-2 text-sm font-medium text-zinc-700">{skillGroup.category}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {skillGroup.items.map((skill, sidx) => (
-                          <Badge key={sidx} variant="outline" className="border-zinc-300 text-xs text-zinc-700">
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+            </div>
+
+            {/* Right sidebar: Image + Qualifications + CTA */}
+            <div className="flex flex-col gap-5 h-full">
+              <div className="relative w-full flex-[3] min-h-[16rem] overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100">
+                <img
+                  src={position.imageUrl || '/careers/image1.jpg'}
+                  alt={position.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
               </div>
 
+              {/* Qualifications */}
+              <div>
+                <h4 className="mb-3 font-semibold text-zinc-900">Qualifications</h4>
+                <ul className="space-y-2">
+                  {position.qualifications.map((qual, idx) => (
+                    <li key={idx} className="flex gap-3 text-sm text-zinc-700">
+                      <span className="font-semibold text-zinc-500">•</span>
+                      <span>{qual}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* CTA */}
+              <div className="mt-auto border-t border-zinc-200 pt-4">
+                <a href="https://careers.qmaxsys.com/" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full sm:w-auto bg-zinc-900 text-white hover:bg-zinc-800">
+                    Apply Now
+                  </Button>
+                </a>
+              </div>
             </div>
+
           </div>
         </div>
       )}
@@ -711,7 +693,7 @@ export function CurrentOpenings({ hideHeader = false }: { hideHeader?: boolean }
   const [categoryFilter, setCategoryFilter] = useState('all')
   const [expandedCards, setExpandedCards] = useState<Record<number, boolean>>(() => {
     const initial: Record<number, boolean> = {}
-    positions.forEach(p => (initial[p.id] = false))
+    positions.forEach(p => (initial[p.id] = true))
     return initial
   })
 
@@ -775,7 +757,7 @@ export function CurrentOpenings({ hideHeader = false }: { hideHeader?: boolean }
         )}
 
         {/* Role Filter */}
-        <div className="mb-6 rounded-xl border border-zinc-200 bg-zinc-50 p-4">
+        <div className="mb-6 rounded-xl">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap gap-3">
               <Button
@@ -795,16 +777,16 @@ export function CurrentOpenings({ hideHeader = false }: { hideHeader?: boolean }
             </div>
 
             <div className="flex items-center gap-2">
-              <Badge variant="outline" className="border-zinc-300 bg-white text-zinc-700">
+              {/* <Badge variant="outline" className="border-zinc-300 bg-white text-zinc-700">
                 {filteredPositions.length} role{filteredPositions.length === 1 ? '' : 's'}
-              </Badge>
+              </Badge> */}
               <Button variant="ghost" onClick={toggleExpandAll} className="text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900">
                 {isAllExpanded ? 'Collapse All' : 'Expand All'}
               </Button>
             </div>
           </div>
 
-          <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-4">
+          {/* <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-4">
             <div className="relative md:col-span-2">
               <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400" />
               <Input
@@ -849,7 +831,7 @@ export function CurrentOpenings({ hideHeader = false }: { hideHeader?: boolean }
                 Clear Filters
               </Button>
             </div>
-          )}
+          )} */}
         </div>
 
         {/* Positions Grid */}

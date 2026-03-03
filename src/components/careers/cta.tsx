@@ -24,7 +24,7 @@ export function CTA() {
 
             <div className="flex flex-col gap-4 sm:flex-row justify-center">
               <a href="https://careers.qmaxsys.com/" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="border-primary/30">
+                <Button size="lg" className="w-full sm:w-auto bg-zinc-900 text-white hover:bg-zinc-800">
                   Apply Now
                 </Button>
               </a>

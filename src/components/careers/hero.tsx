@@ -7,7 +7,7 @@ export function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="max-w-3xl">
             <div className="mb-6 inline-block rounded-md border border-zinc-300 bg-zinc-100 px-4 py-2">
-              <span className="text-sm font-semibold text-zinc-700">We&apos;re Hiring</span>
+              <span className="text-lg font-semibold text-zinc-700">We&apos;re Hiring</span>
             </div>
 
             <h1 className="mb-6 text-4xl font-bold tracking-tight text-zinc-900 md:text-6xl">
@@ -15,11 +15,11 @@ export function Hero() {
               <span className="text-zinc-700">Cutting-Edge Products</span>
             </h1>
 
-            <p className="mb-8 text-lg text-zinc-700">
+            <p className="mb-8 text-lg text-zinc-700 text-justify">
               We are looking for engineering enthusiasts ready to dive into cutting-edge technology. From Hardware and AI to Industrial Design, you will gain hands-on experience in full-cycle product development. Enjoy a friendly culture that prioritizes your career growth, giving you the opportunity to work with experienced engineers and solve complex challenges every day.
             </p>
 
-            <div className="mt-10 grid grid-cols-3 gap-6 border-t border-zinc-200 pt-6">
+            {/* <div className="mt-10 grid grid-cols-3 gap-6 border-t border-zinc-200 pt-6">
               <div>
                 <div className="text-3xl font-bold text-zinc-900">11</div>
                 <p className="text-sm text-zinc-600">Full-time Roles</p>
@@ -28,7 +28,7 @@ export function Hero() {
                 <div className="text-3xl font-bold text-zinc-900">8</div>
                 <p className="text-sm text-zinc-600">Internship Domains</p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="relative aspect-square overflow-hidden rounded-3xl border border-zinc-200 lg:aspect-[4/3]">
