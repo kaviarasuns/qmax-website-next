@@ -4,8 +4,7 @@ import { useState } from 'react'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { ChevronDown, Search } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 
 const slugify = (str: string) =>
   str
@@ -702,8 +701,8 @@ export function CurrentOpenings({ hideHeader = false }: { hideHeader?: boolean }
       ? positions.filter(p => p.type.toLowerCase().includes('intern'))
       : positions.filter(p => !p.type.toLowerCase().includes('intern'))
 
-  const locations = ['all', ...Array.from(new Set(basePositions.map(p => p.location))).sort()]
-  const categories = ['all', ...Array.from(new Set(basePositions.map(p => p.category))).sort()]
+  // const locations = ['all', ...Array.from(new Set(basePositions.map(p => p.location))).sort()]
+  // const categories = ['all', ...Array.from(new Set(basePositions.map(p => p.category))).sort()]
 
   const normalizedSearch = searchTerm.trim().toLowerCase()
 
@@ -719,7 +718,7 @@ export function CurrentOpenings({ hideHeader = false }: { hideHeader?: boolean }
     return matchesSearch && matchesLocation && matchesCategory
   })
 
-  const hasActiveFilters = normalizedSearch.length > 0 || locationFilter !== 'all' || categoryFilter !== 'all'
+  // const hasActiveFilters = normalizedSearch.length > 0 || locationFilter !== 'all' || categoryFilter !== 'all'
   const isAllExpanded = filteredPositions.length > 0 && filteredPositions.every(p => expandedCards[p.id])
 
   const toggleExpandAll = () => {
