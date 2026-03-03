@@ -16,18 +16,32 @@ export const menuData: MenuItem[] = [
     title: "Services",
     subItems: [
       {
-        title: "Embedded Systems",
+        title: "Hardware Development Services",
+        href: "/hardware-development-services",
+        image:
+          "https://images.pexels.com/photos/326518/pexels-photo-326518.jpeg?auto=compress&cs=tinysrgb&w=300",
+        description: "Comprehensive hardware design and development",
+      },
+      {
+        title: "PCB Design Services",
+        href: "/pcb-design",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPOKKQF88ooMa1cZCmXjiXNKAi5nFRq6FU8w&s",
+        description: "Professional PCB layout and design services",
+      },
+      {
+        title: "Embedded System Development Services",
         href: "/embedded-design-services",
         image:
           "https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=300",
         description: "Custom embedded system design and development solutions",
       },
       {
-        title: "PCB Design",
-        href: "/pcb-design",
+        title: "Mechanical Industrial Design Services",
+        href: "/mechanical-industrial-design-services",
         image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPOKKQF88ooMa1cZCmXjiXNKAi5nFRq6FU8w&s",
-        description: "Professional PCB layout and design services",
+          "https://images.pexels.com/photos/760710/pexels-photo-760710.jpeg?auto=compress&cs=tinysrgb&w=300",
+        description: "Industrial, mechanical and enclosure design services",
       },
     ],
   },
