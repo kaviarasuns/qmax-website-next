@@ -350,7 +350,8 @@ export default function AnalogDesignPage() {
           <p className="mt-4 max-w-5xl text-sm leading-7 text-slate-700 md:text-base">
             Qmax Systems combines theoretical depth with manufacturing reality.
             Unlike pure-play design firms, we understand how parasitic elements
-            in physical PCBs affect theoretical models. Our "First Time Right"
+            in physical PCBs affect theoretical models. Our &quot;First Time
+            Right&quot;
             philosophy is backed by a track record of solving the most
             difficult noise and interference challenges in the industry.
           </p>
