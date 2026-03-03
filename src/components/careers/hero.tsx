@@ -4,9 +4,9 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(161,98,7,0.05),_transparent_40%),radial-gradient(circle_at_bottom_right,_rgba(24,24,27,0.06),_transparent_35%)]" />
 
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="max-w-3xl">
-            <div className="mb-6 inline-block rounded-md border border-zinc-300 bg-zinc-100 px-4 py-2">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch">
+          <div className="max-w-3xl flex flex-col justify-center">
+            <div className="mb-6 w-fit rounded-md border border-zinc-300 bg-zinc-100 px-4 py-2">
               <span className="text-lg font-semibold text-zinc-700">We&apos;re Hiring</span>
             </div>
 
@@ -31,11 +31,11 @@ export function Hero() {
             </div> */}
           </div>
 
-          <div className="relative aspect-square overflow-hidden rounded-3xl border border-zinc-200 lg:aspect-[4/3]">
+          <div className="relative aspect-video w-full overflow-hidden rounded-3xl border border-zinc-200 lg:aspect-auto lg:h-full">
             <img
               src="/careers/image1.jpg"
               alt="Design and Engineering Team at Work"
-              className="h-full w-full object-cover rounded-3xl"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
         </div>
