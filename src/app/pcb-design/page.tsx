@@ -386,38 +386,34 @@ export default function PCBDesignPage() {
       className={`text-justify ${isDark ? "bg-slate-950 text-slate-100" : "bg-slate-100 text-slate-900"}`}
     >
       <section
-        className={`relative overflow-hidden border-b ${
-          isDark ? "border-slate-800" : "border-slate-200"
-        }`}
+        className={`relative overflow-hidden border-b ${isDark ? "border-slate-800" : "border-slate-200"
+          }`}
       >
         <div
-          className={`absolute inset-0 ${
-            isDark
+          className={`absolute inset-0 ${isDark
               ? "bg-[radial-gradient(circle_at_15%_20%,rgba(148,163,184,0.07),transparent_48%),radial-gradient(circle_at_85%_10%,rgba(45,212,191,0.04),transparent_42%)]"
               : "bg-[radial-gradient(circle_at_15%_20%,rgba(148,163,184,0.08),transparent_54%),radial-gradient(circle_at_85%_10%,rgba(20,184,166,0.03),transparent_48%)]"
-          }`}
+            }`}
         />
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch lg:px-8">
           <div>
             <div className="mb-6 flex items-center justify-between gap-4">
               <p
-                className={`inline-flex rounded-full border px-4 py-1 text-xs uppercase tracking-[0.16em] ${
-                  isDark
+                className={`inline-flex rounded-full border px-4 py-1 text-xs uppercase tracking-[0.16em] ${isDark
                     ? "border-slate-500/40 bg-slate-400/10 text-slate-100"
                     : "border-slate-200 bg-white/90 text-slate-600"
-                }`}
+                  }`}
               >
                 PCB Design Services
               </p>
               <button
                 type="button"
                 onClick={toggleTheme}
-                className={`rounded-lg border px-3 py-2 text-xs font-semibold transition ${
-                  isDark
+                className={`rounded-lg border px-3 py-2 text-xs font-semibold transition ${isDark
                     ? "border-slate-700 bg-slate-900 text-slate-100 hover:bg-slate-800"
                     : "border-slate-300 bg-white text-slate-800 hover:bg-slate-100"
-                }`}
+                  }`}
                 aria-label="Toggle dark and light mode"
               >
                 {isDark ? "Light Mode" : "Dark Mode"}
@@ -425,17 +421,15 @@ export default function PCBDesignPage() {
             </div>
 
             <h1
-              className={`text-4xl font-semibold leading-tight md:text-5xl ${
-                isDark ? "text-white" : "text-slate-900"
-              }`}
+              className={`text-4xl font-semibold leading-tight md:text-5xl ${isDark ? "text-white" : "text-slate-900"
+                }`}
             >
               PCB Design: A Multi-Physics Engineering Discipline
             </h1>
 
             <div
-              className={`mt-6 space-y-4 text-justify text-sm leading-7 md:text-base ${
-                isDark ? "text-slate-300" : "text-slate-700"
-              }`}
+              className={`mt-6 space-y-4 text-justify text-sm leading-7 md:text-base ${isDark ? "text-slate-300" : "text-slate-700"
+                }`}
             >
               <p>
                 At Qmax Systems, we view PCB Design Services not merely as an interconnect task, but as a complex multi-physics engineering challenge. In modern electronics, the physical layout is a critical component of the circuit itself.
@@ -450,9 +444,8 @@ export default function PCBDesignPage() {
           </div>
 
           <div
-            className={`relative h-full min-h-[300px] overflow-hidden rounded-2xl border md:min-h-[420px] ${
-              isDark ? "border-slate-800 bg-slate-900" : "border-slate-200 bg-white"
-            }`}
+            className={`relative h-full min-h-[300px] overflow-hidden rounded-2xl border md:min-h-[420px] ${isDark ? "border-slate-800 bg-slate-900" : "border-slate-200 bg-white"
+              }`}
           >
             <Image
               src="/pcb-design/images/image1.jpg"
@@ -470,9 +463,8 @@ export default function PCBDesignPage() {
           Complete PCB Engineering Lifecycle
         </h2>
         <p
-          className={`mt-4 max-w-4xl text-sm leading-7 md:text-base ${
-            isDark ? "text-slate-300" : "text-slate-700"
-          }`}
+          className={`mt-4 max-w-4xl text-sm leading-7 md:text-base ${isDark ? "text-slate-300" : "text-slate-700"
+            }`}
         >
           Our structured workflow allows us to catch potential issues early, keeping your project on schedule and budget. We provide full lifecycle ownership across architecture, layout, validation, and production handover.
         </p>
@@ -481,11 +473,10 @@ export default function PCBDesignPage() {
           {lifecycleItems.map((item, index) => (
             <article
               key={item.title}
-              className={`rounded-xl border p-5 ${
-                isDark
+              className={`rounded-xl border p-5 ${isDark
                   ? "border-slate-800 bg-slate-900/60"
                   : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-              }`}
+                }`}
             >
               <p className={`text-xs uppercase tracking-[0.12em] ${isDark ? "text-sky-300" : "text-sky-700"}`}>
                 Step {index + 1}
@@ -502,9 +493,8 @@ export default function PCBDesignPage() {
       </section>
 
       <section
-        className={`border-y ${
-          isDark ? "border-slate-800 bg-slate-900/30" : "border-slate-200 bg-slate-50/80"
-        }`}
+        className={`border-y ${isDark ? "border-slate-800 bg-slate-900/30" : "border-slate-200 bg-slate-50/80"
+          }`}
       >
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
           <h2 className={`text-3xl font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -514,11 +504,10 @@ export default function PCBDesignPage() {
             {coreCapabilities.map((capability) => (
               <article
                 key={capability.title}
-                className={`rounded-xl border p-5 ${
-                  isDark
+                className={`rounded-xl border p-5 ${isDark
                     ? "border-slate-800 bg-slate-950/70"
                     : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-                }`}
+                  }`}
               >
                 <p className={`text-xs uppercase tracking-[0.12em] ${isDark ? "text-sky-300" : "text-sky-700"}`}>
                   {capability.label}
@@ -534,11 +523,10 @@ export default function PCBDesignPage() {
                     {capability.points.map((point) => (
                       <li
                         key={point}
-                        className={`rounded-md border px-3 py-2 text-sm ${
-                          isDark
+                        className={`rounded-md border px-3 py-2 text-sm ${isDark
                             ? "border-slate-800 bg-slate-900/80 text-slate-300"
                             : "border-slate-200 bg-slate-50 text-slate-700"
-                        }`}
+                          }`}
                       >
                         {point}
                       </li>
@@ -549,11 +537,10 @@ export default function PCBDesignPage() {
                   <div className="mt-4">
                     <Link
                       href={capability.href}
-                      className={`inline-flex items-center rounded-md px-3 py-2 text-sm font-semibold transition ${
-                        isDark
+                      className={`inline-flex items-center rounded-md px-3 py-2 text-sm font-semibold transition ${isDark
                           ? "bg-sky-500 text-slate-950 hover:bg-sky-400"
                           : "bg-slate-900 text-white hover:bg-slate-800"
-                      }`}
+                        }`}
                     >
                       Learn more
                     </Link>
@@ -572,27 +559,24 @@ export default function PCBDesignPage() {
 
         <div className="mt-8 overflow-x-auto rounded-xl">
           <table
-            className={`min-w-full border ${
-              isDark ? "border-slate-800" : "border-slate-200"
-            }`}
+            className={`min-w-full border ${isDark ? "border-slate-800" : "border-slate-200"
+              }`}
           >
             <thead>
               <tr className={isDark ? "bg-slate-900" : "bg-slate-100"}>
                 <th
-                  className={`w-1/3 border-b px-4 py-3 text-left text-sm font-semibold ${
-                    isDark
+                  className={`w-1/3 border-b px-4 py-3 text-left text-sm font-semibold ${isDark
                       ? "border-slate-800 text-slate-100"
                       : "border-slate-200 text-slate-900"
-                  }`}
+                    }`}
                 >
                   Feature
                 </th>
                 <th
-                  className={`border-b px-4 py-3 text-left text-sm font-semibold ${
-                    isDark
+                  className={`border-b px-4 py-3 text-left text-sm font-semibold ${isDark
                       ? "border-slate-800 text-slate-100"
                       : "border-slate-200 text-slate-900"
-                  }`}
+                    }`}
                 >
                   Qmax Advantage
                 </th>
@@ -613,20 +597,18 @@ export default function PCBDesignPage() {
                   }
                 >
                   <td
-                    className={`border-b px-4 py-3 text-sm font-medium ${
-                      isDark
+                    className={`border-b px-4 py-3 text-sm font-medium ${isDark
                         ? "border-slate-800 text-slate-100"
                         : "border-slate-200 text-slate-900"
-                    }`}
+                      }`}
                   >
                     {row.feature}
                   </td>
                   <td
-                    className={`border-b px-4 py-3 text-sm ${
-                      isDark
+                    className={`border-b px-4 py-3 text-sm ${isDark
                         ? "border-slate-800 text-slate-300"
                         : "border-slate-200 text-slate-700"
-                    }`}
+                      }`}
                   >
                     {row.advantage}
                   </td>
@@ -638,9 +620,8 @@ export default function PCBDesignPage() {
       </section>
 
       <section
-        className={`border-y ${
-          isDark ? "border-slate-800 bg-slate-900/30" : "border-slate-200 bg-slate-50/80"
-        }`}
+        className={`border-y ${isDark ? "border-slate-800 bg-slate-900/30" : "border-slate-200 bg-slate-50/80"
+          }`}
       >
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
           <h2 className={`text-3xl font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -652,11 +633,10 @@ export default function PCBDesignPage() {
 
           <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
             <article
-              className={`rounded-xl border p-6 ${
-                isDark
+              className={`rounded-xl border p-6 ${isDark
                   ? "border-slate-800 bg-slate-950/70"
                   : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-              }`}
+                }`}
             >
               <h3 className={`text-lg font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
                 Standards Adherence
@@ -671,11 +651,10 @@ export default function PCBDesignPage() {
                 ].map((standard) => (
                   <li
                     key={standard}
-                    className={`rounded-md border px-3 py-2 text-sm ${
-                      isDark
+                    className={`rounded-md border px-3 py-2 text-sm ${isDark
                         ? "border-slate-800 bg-slate-900/80 text-slate-300"
                         : "border-slate-200 bg-slate-50 text-slate-700"
-                    }`}
+                      }`}
                   >
                     {standard}
                   </li>
@@ -684,11 +663,10 @@ export default function PCBDesignPage() {
             </article>
 
             <article
-              className={`rounded-xl border p-6 ${
-                isDark
+              className={`rounded-xl border p-6 ${isDark
                   ? "border-slate-800 bg-slate-950/70"
                   : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-              }`}
+                }`}
             >
               <h3 className={`text-lg font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
                 Design Practices
@@ -710,11 +688,10 @@ export default function PCBDesignPage() {
           {detailedProcessSteps.map((step, index) => (
             <article
               key={step.title}
-              className={`rounded-xl border p-5 ${
-                isDark
+              className={`rounded-xl border p-5 ${isDark
                   ? "border-slate-800 bg-slate-900/60"
                   : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-              }`}
+                }`}
             >
               <p className={`text-xs uppercase tracking-[0.12em] ${isDark ? "text-sky-300" : "text-sky-700"}`}>
                 Step {index + 1}
@@ -731,23 +708,21 @@ export default function PCBDesignPage() {
       </section>
 
       <section
-        className={`border-y ${
-          isDark ? "border-slate-800 bg-slate-900/30" : "border-slate-200 bg-slate-50/80"
-        }`}
+        className={`border-y ${isDark ? "border-slate-800 bg-slate-900/30" : "border-slate-200 bg-slate-50/80"
+          }`}
       >
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
           <h2 className={`text-3xl font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
-            Representative Project Experience
+            Case Studies
           </h2>
           <ul className="mt-8 grid gap-4 md:grid-cols-2">
             {projectExperience.map((item) => (
               <li
                 key={item}
-                className={`rounded-xl border p-4 text-sm leading-6 ${
-                  isDark
+                className={`rounded-xl border p-4 text-sm leading-6 ${isDark
                     ? "border-slate-800 bg-slate-950/70 text-slate-300"
                     : "border-slate-200 bg-white text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-                }`}
+                  }`}
               >
                 {item}
               </li>
@@ -767,11 +742,10 @@ export default function PCBDesignPage() {
           {complianceStrategies.map((item) => (
             <article
               key={item}
-              className={`rounded-xl border p-5 ${
-                isDark
+              className={`rounded-xl border p-5 ${isDark
                   ? "border-slate-800 bg-slate-900/60"
                   : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-              }`}
+                }`}
             >
               <p className={`text-sm leading-6 ${isDark ? "text-slate-300" : "text-slate-700"}`}>{item}</p>
             </article>
@@ -780,9 +754,8 @@ export default function PCBDesignPage() {
       </section>
 
       <section
-        className={`border-y ${
-          isDark ? "border-slate-800 bg-slate-900/30" : "border-slate-200 bg-slate-50/80"
-        }`}
+        className={`border-y ${isDark ? "border-slate-800 bg-slate-900/30" : "border-slate-200 bg-slate-50/80"
+          }`}
       >
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
           <h2 className={`text-3xl font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -796,11 +769,10 @@ export default function PCBDesignPage() {
             {customerDeliverables.map((item) => (
               <article
                 key={item}
-                className={`rounded-xl border p-5 ${
-                  isDark
+                className={`rounded-xl border p-5 ${isDark
                     ? "border-slate-800 bg-slate-950/70"
                     : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-                }`}
+                  }`}
               >
                 <p className={`text-sm leading-6 ${isDark ? "text-slate-300" : "text-slate-700"}`}>{item}</p>
               </article>
@@ -811,11 +783,10 @@ export default function PCBDesignPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div
-          className={`rounded-2xl border p-8 md:p-10 ${
-            isDark
+          className={`rounded-2xl border p-8 md:p-10 ${isDark
               ? "border-slate-800 bg-gradient-to-r from-slate-900 to-slate-950"
               : "border-slate-200 bg-gradient-to-r from-sky-50 to-emerald-50"
-          }`}
+            }`}
         >
           <h2 className={`text-3xl font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
             Complimentary Technical Consultation
@@ -827,11 +798,10 @@ export default function PCBDesignPage() {
             {consultationTopics.map((topic) => (
               <li
                 key={topic}
-                className={`rounded-lg border px-4 py-3 text-sm ${
-                  isDark
+                className={`rounded-lg border px-4 py-3 text-sm ${isDark
                     ? "border-slate-700 bg-slate-900/70 text-slate-200"
                     : "border-slate-200 bg-white/80 text-slate-700"
-                }`}
+                  }`}
               >
                 {topic}
               </li>
@@ -840,11 +810,10 @@ export default function PCBDesignPage() {
           <div className="mt-8">
             <Link
               href="/contact"
-              className={`inline-flex items-center rounded-lg px-5 py-3 text-sm font-semibold transition ${
-                isDark
+              className={`inline-flex items-center rounded-lg px-5 py-3 text-sm font-semibold transition ${isDark
                   ? "bg-sky-500 text-slate-950 hover:bg-sky-400"
                   : "bg-slate-900 text-white hover:bg-slate-800"
-              }`}
+                }`}
             >
               Schedule Your Technical Consultation
             </Link>
@@ -853,9 +822,8 @@ export default function PCBDesignPage() {
       </section>
 
       <section
-        className={`border-t ${
-          isDark ? "border-slate-800 bg-slate-950/40" : "border-slate-200 bg-slate-100/60"
-        }`}
+        className={`border-t ${isDark ? "border-slate-800 bg-slate-950/40" : "border-slate-200 bg-slate-100/60"
+          }`}
       >
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
           <h2 className={`text-3xl font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -869,11 +837,10 @@ export default function PCBDesignPage() {
             {technicalFaq.map((group) => (
               <article
                 key={group.title}
-                className={`rounded-xl border p-5 ${
-                  isDark
+                className={`rounded-xl border p-5 ${isDark
                     ? "border-slate-800 bg-slate-900/60"
                     : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-                }`}
+                  }`}
               >
                 <h3 className={`text-lg font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
                   {group.title}
@@ -882,23 +849,20 @@ export default function PCBDesignPage() {
                   {group.items.map((item) => (
                     <details
                       key={item.q}
-                      className={`rounded-lg border px-4 py-3 ${
-                        isDark
+                      className={`rounded-lg border px-4 py-3 ${isDark
                           ? "border-slate-800 bg-slate-950/70"
                           : "border-slate-200 bg-slate-50"
-                      }`}
+                        }`}
                     >
                       <summary
-                        className={`cursor-pointer list-none pr-6 text-sm font-medium leading-6 ${
-                          isDark ? "text-slate-100" : "text-slate-900"
-                        }`}
+                        className={`cursor-pointer list-none pr-6 text-sm font-medium leading-6 ${isDark ? "text-slate-100" : "text-slate-900"
+                          }`}
                       >
                         {item.q}
                       </summary>
                       <p
-                        className={`mt-3 text-sm leading-6 ${
-                          isDark ? "text-slate-300" : "text-slate-700"
-                        }`}
+                        className={`mt-3 text-sm leading-6 ${isDark ? "text-slate-300" : "text-slate-700"
+                          }`}
                       >
                         {item.a}
                       </p>

@@ -9,6 +9,7 @@ import { useLenis } from "@/utils/lenis";
 import Typewriter from "typewriter-effect";
 import ServicesV3 from "@/components/Services-V3";
 import { ServicesSection } from "@/components/services-section";
+import InsideOutV2 from "@/components/InsideOut-V2";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -172,7 +173,7 @@ export default function Home() {
 
     // Check for saved scroll position
     const savedScrollY = sessionStorage.getItem("homePageScrollY");
-    
+
     if (savedScrollY !== null) {
       const scrollY = parseInt(savedScrollY, 10);
       // Delay to allow InsideOut section to calculate its dynamic height
@@ -180,7 +181,7 @@ export default function Home() {
         // Cap scrollY to the maximum scrollable position to avoid overshooting
         const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
         const clampedScrollY = Math.min(scrollY, maxScrollY);
-        
+
         // If the saved position would put us in the footer area (last 10% of page),
         // and we weren't intentionally on the footer, fall back to section 0
         const footerThreshold = maxScrollY * 0.9;
@@ -194,7 +195,7 @@ export default function Home() {
         } else {
           window.scrollTo({ top: clampedScrollY, behavior: "instant" });
         }
-        
+
         // Re-enable scroll handler after restoration completes
         setTimeout(() => {
           setIsProgrammaticScroll(false);
@@ -286,8 +287,8 @@ export default function Home() {
                 window.innerWidth <= 768
                   ? 50
                   : window.innerWidth <= 1024
-                  ? 80
-                  : 160, // Responsive offset: mobile (50px), tablet (80px), desktop (110px)
+                    ? 80
+                    : 160, // Responsive offset: mobile (50px), tablet (80px), desktop (110px)
               duration: 1.5,
               easing: (t) =>
                 t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2, // Slow start, fast middle, smooth stop
@@ -404,8 +405,8 @@ export default function Home() {
             window.innerWidth <= 768
               ? 50
               : window.innerWidth <= 1024
-              ? 80
-              : 160, // Responsive offset: mobile (50px), tablet (80px), desktop (110px)
+                ? 80
+                : 160, // Responsive offset: mobile (50px), tablet (80px), desktop (110px)
           duration: 1.5,
           easing: (t) =>
             t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2, // Slow start, fast middle, smooth stop
@@ -476,16 +477,15 @@ export default function Home() {
             playsInline
             controls={false}
             className="w-full h-full object-cover shadow-lg"
-            // style={{ borderRadius }}
+          // style={{ borderRadius }}
           />
 
           {/* Typewriter Effect Overlay */}
           <div className="absolute inset-0 flex items-center justify-center z-[2]">
             <div className="text-center">
               <div
-                className={`text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 transition-opacity duration-1000 ${
-                  fadeOutLines ? "opacity-0" : "opacity-100"
-                }`}
+                className={`text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 transition-opacity duration-1000 ${fadeOutLines ? "opacity-0" : "opacity-100"
+                  }`}
               >
                 <Typewriter
                   options={{
@@ -498,9 +498,8 @@ export default function Home() {
               </div>
               {showSecondLine && (
                 <div
-                  className={`text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium transition-opacity duration-1000 ${
-                    fadeOutLines ? "opacity-0" : "opacity-100"
-                  }`}
+                  className={`text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium transition-opacity duration-1000 ${fadeOutLines ? "opacity-0" : "opacity-100"
+                    }`}
                 >
                   <Typewriter
                     options={{
@@ -548,10 +547,10 @@ export default function Home() {
         <ServicesV3 />
       </div>
       <div ref={insideOutRef}>
-        <InsideOut />
+        <InsideOutV2 />
       </div>
       <div ref={emblaRef}>
-      <ServicesSection/>
+        <ServicesSection />
       </div>
 
       {/* Navigation Button - Fixed on middle right edge */}
@@ -599,11 +598,10 @@ export default function Home() {
             <button
               key={index}
               onClick={() => scrollToSection(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-200 shadow-lg ${
-                currentSection === index
+              className={`w-3 h-3 rounded-full transition-all duration-200 shadow-lg ${currentSection === index
                   ? "bg-white border border-gray-700"
                   : "bg-gray-600/80 hover:bg-gray-500/90 border border-gray-700/50"
-              }`}
+                }`}
               title={name}
             />
           ))}

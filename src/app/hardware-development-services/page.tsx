@@ -104,7 +104,7 @@ export default function HardwareDevelopmentServicesPage() {
                   src="/hw-main/image1.png"
                   alt="Hardware product lifecycle planning and development"
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   priority
                 />
               </div>
