@@ -77,20 +77,20 @@ export const metadata: Metadata = {
 
 export default function HardwareDevelopmentServicesPage() {
   return (
-    <main className="bg-slate-100 text-slate-900">
+    <main className="bg-slate-100 text-justify text-slate-900">
       <section className="relative overflow-hidden border-b border-slate-200">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(2,132,199,0.16),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(16,185,129,0.14),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(148,163,184,0.08),transparent_54%),radial-gradient(circle_at_85%_10%,rgba(20,184,166,0.03),transparent_48%)]" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-20 lg:px-8">
           <div>
-            <p className="inline-flex rounded-full border border-sky-300 bg-sky-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-sky-700">
+            <p className="inline-flex rounded-full border border-slate-200 bg-white/90 px-4 py-1 text-xs uppercase tracking-[0.16em] text-slate-600">
               Hardware Development Services
             </p>
             <h1 className="mt-6 text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
               The Complete Hardware Product Lifecycle
             </h1>
 
-            <div className="mt-6 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
+            <div className="mt-10 space-y-8 text-sm leading-7 text-slate-700 md:text-base">
               <p>
                 We provide full hardware lifecycle ownership, taking your
                 product from early requirement analysis to production handover.
@@ -98,6 +98,17 @@ export default function HardwareDevelopmentServicesPage() {
                 development cycles, and ensures compliance readiness from day
                 one.
               </p>
+
+              <div className="relative h-[300px] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white md:h-[420px]">
+                <Image
+                  src="/hw-main/image1.png"
+                  alt="Hardware product lifecycle planning and development"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+
               <p>
                 <span className="font-semibold text-slate-900">
                   The Qmax Advantage:
@@ -110,25 +121,6 @@ export default function HardwareDevelopmentServicesPage() {
                 allows us to catch potential issues early, keeping your project
                 on schedule and budget while eliminating the chaos often
                 associated with hardware R&amp;D.
-              </p>
-            </div>
-          </div>
-
-          <div className="relative h-[300px] overflow-hidden rounded-2xl border border-slate-200 bg-white md:h-[420px]">
-            <Image
-              src="/hw-main/image1.png"
-              alt="Hardware product lifecycle planning and development"
-              fill
-              className="object-contain"
-              priority
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white/95 to-transparent p-5">
-              <p className="text-sm font-medium text-slate-900">
-                Lifecycle Ownership from Concept to Production
-              </p>
-              <p className="mt-1 text-xs text-slate-700">
-                Requirements, architecture, risk control, and handover in one
-                structured workflow.
               </p>
             </div>
           </div>
@@ -539,54 +531,31 @@ export default function HardwareDevelopmentServicesPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
-          Frequently Asked Questions: High-Performance Digital Systems
-        </h2>
+      <section className="border-t border-slate-200 bg-slate-100/60">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+          <h2 className="text-3xl font-semibold text-slate-900">Technical FAQ</h2>
+          <p className="mt-4 text-sm text-slate-700 md:text-base">
+            Common engineering, validation, and production questions answered by
+            our hardware team.
+          </p>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="relative h-[250px] overflow-hidden rounded-2xl border border-slate-200 bg-white md:h-[320px]">
-            <Image
-              src="/hw-main/image2.png"
-              alt="High-speed digital systems engineering lab setup"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="relative h-[250px] overflow-hidden rounded-2xl border border-slate-200 bg-white md:h-[320px]">
-            <Image
-              src="/hw-main/image4.png"
-              alt="Digital hardware architecture and performance testing"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-
-        <div className="mt-8 space-y-4">
-          {faqs.map((faq, index) => (
-            <details
-              key={faq.question}
-              className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-            >
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.12em] text-sky-700">
-                    FAQ {index + 1}
-                  </p>
-                  <h3 className="mt-2 text-base font-semibold text-slate-900 md:text-lg">
+          <div className="mt-8 rounded-xl border border-slate-200 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
+            <div className="space-y-3">
+              {faqs.map((faq) => (
+                <details
+                  key={faq.question}
+                  className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3"
+                >
+                  <summary className="cursor-pointer list-none pr-6 text-sm font-medium leading-6 text-slate-900">
                     {faq.question}
-                  </h3>
-                </div>
-                <span className="mt-1 text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-                {faq.answer}
-              </p>
-            </details>
-          ))}
+                  </summary>
+                  <p className="mt-3 text-sm leading-6 text-slate-700">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </main>

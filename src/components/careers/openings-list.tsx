@@ -55,6 +55,45 @@ export function OpeningsList() {
     },
   ]
 
+  const renderCategoryCard = (category: (typeof categories)[number], extraClassName = '') => {
+    const Icon = category.icon
+
+    return (
+      <Card
+        key={category.title}
+        className={`group relative overflow-hidden rounded-2xl border-zinc-200/90 bg-white/90 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${extraClassName}`}
+      >
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-zinc-100/40 via-white to-zinc-100/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+        <div className="mb-5 flex items-start justify-between gap-3 border-b border-zinc-200 pb-4">
+          <div className="inline-flex items-center gap-3">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900/5 text-zinc-800">
+              <Icon className="h-5 w-5" />
+            </span>
+            <h3 className="text-lg font-semibold text-zinc-900">{category.title}</h3>
+          </div>
+          <Badge variant="secondary" className="rounded-full">
+            {category.roles.length}
+          </Badge>
+        </div>
+
+        <ul className="space-y-3">
+          {category.roles.map((role) => (
+            <li key={role}>
+              <button
+                onClick={() => scrollToOpening(role)}
+                className="group/item flex w-full items-start gap-2.5 rounded-lg px-2 py-1.5 text-left text-sm text-zinc-700 transition-all duration-150 hover:bg-zinc-100 hover:text-zinc-900 md:text-base"
+              >
+                <ChevronRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-zinc-400 transition-transform duration-150 group-hover/item:translate-x-0.5 group-hover/item:text-zinc-700" />
+                <span className="font-medium leading-relaxed">{role}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </Card>
+    )
+  }
+
   return (
     <section className="relative overflow-hidden bg-white py-14 md:py-20">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(161,98,7,0.06),_transparent_38%),radial-gradient(circle_at_bottom_right,_rgba(24,24,27,0.06),_transparent_36%)]" />
@@ -72,45 +111,16 @@ export function OpeningsList() {
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {categories.map((category) => {
-            const Icon = category.icon
-
-            return (
-              <Card
-                key={category.title}
-                className="group relative overflow-hidden rounded-2xl border-zinc-200/90 bg-white/90 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-zinc-100/40 via-white to-zinc-100/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                <div className="mb-5 flex items-start justify-between gap-3 border-b border-zinc-200 pb-4">
-                  <div className="inline-flex items-center gap-3">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900/5 text-zinc-800">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                    <h3 className="text-lg font-semibold text-zinc-900">{category.title}</h3>
-                  </div>
-                  <Badge variant="secondary" className="rounded-full">
-                    {category.roles.length}
-                  </Badge>
-                </div>
-
-                <ul className="space-y-3">
-                  {category.roles.map((role) => (
-                    <li key={role}>
-                      <button
-                        onClick={() => scrollToOpening(role)}
-                        className="group/item flex w-full items-start gap-2.5 rounded-lg px-2 py-1.5 text-left text-sm text-zinc-700 transition-all duration-150 hover:bg-zinc-100 hover:text-zinc-900 md:text-base"
-                      >
-                        <ChevronRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-zinc-400 transition-transform duration-150 group-hover/item:translate-x-0.5 group-hover/item:text-zinc-700" />
-                        <span className="font-medium leading-relaxed">{role}</span>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            )
-          })}
+        <div className="w-full lg:w-1/2">
+          <div className="grid gap-6 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              {renderCategoryCard(categories[0], 'h-full')}
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
+              {renderCategoryCard(categories[1])}
+              {renderCategoryCard(categories[2])}
+            </div>
+          </div>
         </div>
       </div>
     </section>

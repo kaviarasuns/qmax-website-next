@@ -48,6 +48,7 @@ const coreCapabilities = [
     title: "High-Speed Digital PCB Design",
     description:
       "Expertise in routing ultra-high-speed interfaces requiring controlled impedance and meticulous skew management. We handle high-speed digital PCBs featuring DDR4/5, LPDDR, PCIe Gen 5, SerDes up to 112Gbps, and USB4.",
+    href: "/pcb-design/high-speed-digital-pcb-design",
   },
   {
     label: "B",
@@ -381,7 +382,9 @@ export default function PCBDesignPage() {
   };
 
   return (
-    <main className={isDark ? "bg-slate-950 text-slate-100" : "bg-slate-100 text-slate-900"}>
+    <main
+      className={`text-justify ${isDark ? "bg-slate-950 text-slate-100" : "bg-slate-100 text-slate-900"}`}
+    >
       <section
         className={`relative overflow-hidden border-b ${
           isDark ? "border-slate-800" : "border-slate-200"
@@ -390,19 +393,19 @@ export default function PCBDesignPage() {
         <div
           className={`absolute inset-0 ${
             isDark
-              ? "bg-[radial-gradient(circle_at_15%_20%,rgba(14,165,233,0.18),transparent_40%),radial-gradient(circle_at_85%_10%,rgba(34,197,94,0.14),transparent_35%)]"
-              : "bg-[radial-gradient(circle_at_15%_20%,rgba(2,132,199,0.16),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(16,185,129,0.14),transparent_40%)]"
+              ? "bg-[radial-gradient(circle_at_15%_20%,rgba(148,163,184,0.07),transparent_48%),radial-gradient(circle_at_85%_10%,rgba(45,212,191,0.04),transparent_42%)]"
+              : "bg-[radial-gradient(circle_at_15%_20%,rgba(148,163,184,0.08),transparent_54%),radial-gradient(circle_at_85%_10%,rgba(20,184,166,0.03),transparent_48%)]"
           }`}
         />
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch lg:px-8">
           <div>
             <div className="mb-6 flex items-center justify-between gap-4">
               <p
                 className={`inline-flex rounded-full border px-4 py-1 text-xs uppercase tracking-[0.16em] ${
                   isDark
-                    ? "border-sky-400/40 bg-sky-400/10 text-sky-200"
-                    : "border-sky-300 bg-sky-100 text-sky-700"
+                    ? "border-slate-500/40 bg-slate-400/10 text-slate-100"
+                    : "border-slate-200 bg-white/90 text-slate-600"
                 }`}
               >
                 PCB Design Services
@@ -430,7 +433,7 @@ export default function PCBDesignPage() {
             </h1>
 
             <div
-              className={`mt-6 space-y-4 text-sm leading-7 md:text-base ${
+              className={`mt-6 space-y-4 text-justify text-sm leading-7 md:text-base ${
                 isDark ? "text-slate-300" : "text-slate-700"
               }`}
             >
@@ -447,7 +450,7 @@ export default function PCBDesignPage() {
           </div>
 
           <div
-            className={`relative h-[300px] overflow-hidden rounded-2xl border md:h-[420px] ${
+            className={`relative h-full min-h-[300px] overflow-hidden rounded-2xl border md:min-h-[420px] ${
               isDark ? "border-slate-800 bg-slate-900" : "border-slate-200 bg-white"
             }`}
           >
@@ -458,18 +461,6 @@ export default function PCBDesignPage() {
               className="object-cover"
               priority
             />
-            <div
-              className={`absolute inset-x-0 bottom-0 bg-gradient-to-t to-transparent p-5 ${
-                isDark ? "from-slate-950/90" : "from-white/95"
-              }`}
-            >
-              <p className={`text-sm font-medium ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                First-Time-Right Design Focus
-              </p>
-              <p className={`mt-1 text-xs ${isDark ? "text-slate-300" : "text-slate-700"}`}>
-                SI, PI, EMI, and thermal constraints integrated from the start.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -553,6 +544,20 @@ export default function PCBDesignPage() {
                       </li>
                     ))}
                   </ul>
+                )}
+                {capability.href && (
+                  <div className="mt-4">
+                    <Link
+                      href={capability.href}
+                      className={`inline-flex items-center rounded-md px-3 py-2 text-sm font-semibold transition ${
+                        isDark
+                          ? "bg-sky-500 text-slate-950 hover:bg-sky-400"
+                          : "bg-slate-900 text-white hover:bg-slate-800"
+                      }`}
+                    >
+                      Learn more
+                    </Link>
+                  </div>
                 )}
               </article>
             ))}
