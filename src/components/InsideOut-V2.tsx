@@ -41,8 +41,8 @@ export default function InsideOut() {
           <video
             ref={videoRef}
             className="block max-[900px]:w-[90vw] max-[900px]:h-auto max-[900px]:max-w-full"
-            width={900}
-            height={1030}
+            width={765}
+            height={876}
             muted
             playsInline
           >

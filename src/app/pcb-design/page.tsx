@@ -55,18 +55,21 @@ const coreCapabilities = [
     title: "RF and Microwave PCB Design",
     description:
       "Layout of RF front-ends, antenna integrations, and microwave circuits up to 80GHz. We utilize specialized materials (Rogers, Isola, Taconic) and implement coplanar waveguides, microstrips, and RF shielding to minimize insertion loss and interference.",
+    href: "/case-studies/Wi-Fi-AP",
   },
   {
     label: "C",
     title: "Power Electronics PCB Design",
     description:
       "Designing for high-current and high-voltage applications. We specialize in heavy copper PCBs, metal substrates (IMS), and thermal via arrays to manage heat in EV power modules, motor controllers, and industrial inverters.",
+    href: "/case-studies/polyphase-power_measurement",
   },
   {
     label: "D",
     title: "Analog and Mixed-Signal PCB Design",
     description:
       "Ensuring precision in low-level analog signals while maintaining isolation from noisy digital domains. We implement star grounding, split planes, and guard traces to preserve signal-to-noise ratios (SNR).",
+    href: "/case-studies/Precision-Filtration-Control-System",
   },
   {
     label: "E",
@@ -77,24 +80,28 @@ const coreCapabilities = [
       "Power Integrity: DC drop analysis, AC impedance profiling of PDNs, and decoupling optimization.",
       "Thermal Analysis: Identifying hotspots and optimizing airflow/heatsink interfaces.",
     ],
+    href: "/case-studies/Blade-NIC-Server",
   },
   {
     label: "F",
     title: "PCB Library Services",
     description:
       "Development of IPC-compliant footprints and symbols. We ensure 3D model accuracy for mechanical collision checking and maintain centralized libraries for enterprise consistency.",
+    href: "/case-studies/Aerospace-PCB",
   },
   {
     label: "G",
     title: "PCB Design Review & EMI/EMC Compliance",
     description:
       "Third-party audits of existing designs to identify EMI risks. We evaluate grounding schemes, return path discontinuities, and aperture leaks to ensure readiness for CE, FCC, and VCCI testing.",
+    href: "/case-studies/Security-Controller",
   },
   {
     label: "H",
     title: "DFM / DFx Review",
     description:
       "Exhaustive checks for Design for Manufacturing (DFM), Design for Assembly (DFA), and Design for Test (DFT). We verify annular rings, aspect ratios, solder mask clearances, and test point coverage to ensure high production yields.",
+    href: "/case-studies/Automotive-HID-PCB",
   },
 ];
 
@@ -391,8 +398,8 @@ export default function PCBDesignPage() {
       >
         <div
           className={`absolute inset-0 ${isDark
-              ? "bg-[radial-gradient(circle_at_15%_20%,rgba(148,163,184,0.07),transparent_48%),radial-gradient(circle_at_85%_10%,rgba(45,212,191,0.04),transparent_42%)]"
-              : "bg-[radial-gradient(circle_at_15%_20%,rgba(148,163,184,0.08),transparent_54%),radial-gradient(circle_at_85%_10%,rgba(20,184,166,0.03),transparent_48%)]"
+            ? "bg-[radial-gradient(circle_at_15%_20%,rgba(148,163,184,0.07),transparent_48%),radial-gradient(circle_at_85%_10%,rgba(45,212,191,0.04),transparent_42%)]"
+            : "bg-[radial-gradient(circle_at_15%_20%,rgba(148,163,184,0.08),transparent_54%),radial-gradient(circle_at_85%_10%,rgba(20,184,166,0.03),transparent_48%)]"
             }`}
         />
 
@@ -401,8 +408,8 @@ export default function PCBDesignPage() {
             <div className="mb-6 flex items-center justify-between gap-4">
               <p
                 className={`inline-flex rounded-full border px-4 py-1 text-xs uppercase tracking-[0.16em] ${isDark
-                    ? "border-slate-500/40 bg-slate-400/10 text-slate-100"
-                    : "border-slate-200 bg-white/90 text-slate-600"
+                  ? "border-slate-500/40 bg-slate-400/10 text-slate-100"
+                  : "border-slate-200 bg-white/90 text-slate-600"
                   }`}
               >
                 PCB Design Services
@@ -411,8 +418,8 @@ export default function PCBDesignPage() {
                 type="button"
                 onClick={toggleTheme}
                 className={`rounded-lg border px-3 py-2 text-xs font-semibold transition ${isDark
-                    ? "border-slate-700 bg-slate-900 text-slate-100 hover:bg-slate-800"
-                    : "border-slate-300 bg-white text-slate-800 hover:bg-slate-100"
+                  ? "border-slate-700 bg-slate-900 text-slate-100 hover:bg-slate-800"
+                  : "border-slate-300 bg-white text-slate-800 hover:bg-slate-100"
                   }`}
                 aria-label="Toggle dark and light mode"
               >
@@ -474,8 +481,8 @@ export default function PCBDesignPage() {
             <article
               key={item.title}
               className={`rounded-xl border p-5 ${isDark
-                  ? "border-slate-800 bg-slate-900/60"
-                  : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+                ? "border-slate-800 bg-slate-900/60"
+                : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
                 }`}
             >
               <p className={`text-xs uppercase tracking-[0.12em] ${isDark ? "text-sky-300" : "text-sky-700"}`}>
@@ -505,13 +512,10 @@ export default function PCBDesignPage() {
               <article
                 key={capability.title}
                 className={`rounded-xl border p-5 ${isDark
-                    ? "border-slate-800 bg-slate-950/70"
-                    : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+                  ? "border-slate-800 bg-slate-950/70"
+                  : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
                   }`}
               >
-                <p className={`text-xs uppercase tracking-[0.12em] ${isDark ? "text-sky-300" : "text-sky-700"}`}>
-                  {capability.label}
-                </p>
                 <h3 className={`mt-2 text-lg font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
                   {capability.title}
                 </h3>
@@ -519,14 +523,11 @@ export default function PCBDesignPage() {
                   {capability.description}
                 </p>
                 {capability.points && (
-                  <ul className="mt-3 space-y-2">
+                  <ul className="mt-3 list-inside list-disc space-y-1">
                     {capability.points.map((point) => (
                       <li
                         key={point}
-                        className={`rounded-md border px-3 py-2 text-sm ${isDark
-                            ? "border-slate-800 bg-slate-900/80 text-slate-300"
-                            : "border-slate-200 bg-slate-50 text-slate-700"
-                          }`}
+                        className={`text-sm ${isDark ? "text-slate-300" : "text-slate-700"}`}
                       >
                         {point}
                       </li>
@@ -538,8 +539,8 @@ export default function PCBDesignPage() {
                     <Link
                       href={capability.href}
                       className={`inline-flex items-center rounded-md px-3 py-2 text-sm font-semibold transition ${isDark
-                          ? "bg-sky-500 text-slate-950 hover:bg-sky-400"
-                          : "bg-slate-900 text-white hover:bg-slate-800"
+                        ? "bg-sky-500 text-slate-950 hover:bg-sky-400"
+                        : "bg-slate-900 text-white hover:bg-slate-800"
                         }`}
                     >
                       Learn more
@@ -566,16 +567,16 @@ export default function PCBDesignPage() {
               <tr className={isDark ? "bg-slate-900" : "bg-slate-100"}>
                 <th
                   className={`w-1/3 border-b px-4 py-3 text-left text-sm font-semibold ${isDark
-                      ? "border-slate-800 text-slate-100"
-                      : "border-slate-200 text-slate-900"
+                    ? "border-slate-800 text-slate-100"
+                    : "border-slate-200 text-slate-900"
                     }`}
                 >
                   Feature
                 </th>
                 <th
                   className={`border-b px-4 py-3 text-left text-sm font-semibold ${isDark
-                      ? "border-slate-800 text-slate-100"
-                      : "border-slate-200 text-slate-900"
+                    ? "border-slate-800 text-slate-100"
+                    : "border-slate-200 text-slate-900"
                     }`}
                 >
                   Qmax Advantage
@@ -598,16 +599,16 @@ export default function PCBDesignPage() {
                 >
                   <td
                     className={`border-b px-4 py-3 text-sm font-medium ${isDark
-                        ? "border-slate-800 text-slate-100"
-                        : "border-slate-200 text-slate-900"
+                      ? "border-slate-800 text-slate-100"
+                      : "border-slate-200 text-slate-900"
                       }`}
                   >
                     {row.feature}
                   </td>
                   <td
                     className={`border-b px-4 py-3 text-sm ${isDark
-                        ? "border-slate-800 text-slate-300"
-                        : "border-slate-200 text-slate-700"
+                      ? "border-slate-800 text-slate-300"
+                      : "border-slate-200 text-slate-700"
                       }`}
                   >
                     {row.advantage}
@@ -634,8 +635,8 @@ export default function PCBDesignPage() {
           <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
             <article
               className={`rounded-xl border p-6 ${isDark
-                  ? "border-slate-800 bg-slate-950/70"
-                  : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+                ? "border-slate-800 bg-slate-950/70"
+                : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
                 }`}
             >
               <h3 className={`text-lg font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -652,8 +653,8 @@ export default function PCBDesignPage() {
                   <li
                     key={standard}
                     className={`rounded-md border px-3 py-2 text-sm ${isDark
-                        ? "border-slate-800 bg-slate-900/80 text-slate-300"
-                        : "border-slate-200 bg-slate-50 text-slate-700"
+                      ? "border-slate-800 bg-slate-900/80 text-slate-300"
+                      : "border-slate-200 bg-slate-50 text-slate-700"
                       }`}
                   >
                     {standard}
@@ -664,8 +665,8 @@ export default function PCBDesignPage() {
 
             <article
               className={`rounded-xl border p-6 ${isDark
-                  ? "border-slate-800 bg-slate-950/70"
-                  : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+                ? "border-slate-800 bg-slate-950/70"
+                : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
                 }`}
             >
               <h3 className={`text-lg font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -689,8 +690,8 @@ export default function PCBDesignPage() {
             <article
               key={step.title}
               className={`rounded-xl border p-5 ${isDark
-                  ? "border-slate-800 bg-slate-900/60"
-                  : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+                ? "border-slate-800 bg-slate-900/60"
+                : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
                 }`}
             >
               <p className={`text-xs uppercase tracking-[0.12em] ${isDark ? "text-sky-300" : "text-sky-700"}`}>
@@ -720,8 +721,8 @@ export default function PCBDesignPage() {
               <li
                 key={item}
                 className={`rounded-xl border p-4 text-sm leading-6 ${isDark
-                    ? "border-slate-800 bg-slate-950/70 text-slate-300"
-                    : "border-slate-200 bg-white text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+                  ? "border-slate-800 bg-slate-950/70 text-slate-300"
+                  : "border-slate-200 bg-white text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
                   }`}
               >
                 {item}
@@ -743,8 +744,8 @@ export default function PCBDesignPage() {
             <article
               key={item}
               className={`rounded-xl border p-5 ${isDark
-                  ? "border-slate-800 bg-slate-900/60"
-                  : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+                ? "border-slate-800 bg-slate-900/60"
+                : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
                 }`}
             >
               <p className={`text-sm leading-6 ${isDark ? "text-slate-300" : "text-slate-700"}`}>{item}</p>
@@ -770,8 +771,8 @@ export default function PCBDesignPage() {
               <article
                 key={item}
                 className={`rounded-xl border p-5 ${isDark
-                    ? "border-slate-800 bg-slate-950/70"
-                    : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+                  ? "border-slate-800 bg-slate-950/70"
+                  : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
                   }`}
               >
                 <p className={`text-sm leading-6 ${isDark ? "text-slate-300" : "text-slate-700"}`}>{item}</p>
@@ -784,8 +785,8 @@ export default function PCBDesignPage() {
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div
           className={`rounded-2xl border p-8 md:p-10 ${isDark
-              ? "border-slate-800 bg-gradient-to-r from-slate-900 to-slate-950"
-              : "border-slate-200 bg-gradient-to-r from-sky-50 to-emerald-50"
+            ? "border-slate-800 bg-gradient-to-r from-slate-900 to-slate-950"
+            : "border-slate-200 bg-gradient-to-r from-sky-50 to-emerald-50"
             }`}
         >
           <h2 className={`text-3xl font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -799,8 +800,8 @@ export default function PCBDesignPage() {
               <li
                 key={topic}
                 className={`rounded-lg border px-4 py-3 text-sm ${isDark
-                    ? "border-slate-700 bg-slate-900/70 text-slate-200"
-                    : "border-slate-200 bg-white/80 text-slate-700"
+                  ? "border-slate-700 bg-slate-900/70 text-slate-200"
+                  : "border-slate-200 bg-white/80 text-slate-700"
                   }`}
               >
                 {topic}
@@ -811,8 +812,8 @@ export default function PCBDesignPage() {
             <Link
               href="/contact"
               className={`inline-flex items-center rounded-lg px-5 py-3 text-sm font-semibold transition ${isDark
-                  ? "bg-sky-500 text-slate-950 hover:bg-sky-400"
-                  : "bg-slate-900 text-white hover:bg-slate-800"
+                ? "bg-sky-500 text-slate-950 hover:bg-sky-400"
+                : "bg-slate-900 text-white hover:bg-slate-800"
                 }`}
             >
               Schedule Your Technical Consultation
@@ -838,8 +839,8 @@ export default function PCBDesignPage() {
               <article
                 key={group.title}
                 className={`rounded-xl border p-5 ${isDark
-                    ? "border-slate-800 bg-slate-900/60"
-                    : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+                  ? "border-slate-800 bg-slate-900/60"
+                  : "border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
                   }`}
               >
                 <h3 className={`text-lg font-semibold ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -850,8 +851,8 @@ export default function PCBDesignPage() {
                     <details
                       key={item.q}
                       className={`rounded-lg border px-4 py-3 ${isDark
-                          ? "border-slate-800 bg-slate-950/70"
-                          : "border-slate-200 bg-slate-50"
+                        ? "border-slate-800 bg-slate-950/70"
+                        : "border-slate-200 bg-slate-50"
                         }`}
                     >
                       <summary
