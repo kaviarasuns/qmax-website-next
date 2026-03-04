@@ -1,5 +1,4 @@
 "use client";
-import InsideOut from "@/components/InsideOut";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollCardsAnimationV4 from "@/components/concept-to-manufacturing-v4";
@@ -599,8 +598,8 @@ export default function Home() {
               key={index}
               onClick={() => scrollToSection(index)}
               className={`w-3 h-3 rounded-full transition-all duration-200 shadow-lg ${currentSection === index
-                  ? "bg-white border border-gray-700"
-                  : "bg-gray-600/80 hover:bg-gray-500/90 border border-gray-700/50"
+                ? "bg-white border border-gray-700"
+                : "bg-gray-600/80 hover:bg-gray-500/90 border border-gray-700/50"
                 }`}
               title={name}
             />
