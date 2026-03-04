@@ -111,15 +111,13 @@ export function OpeningsList() {
           </p>
         </div>
 
-        <div className="w-full lg:w-1/2">
-          <div className="grid gap-6 lg:grid-cols-12">
-            <div className="lg:col-span-7">
-              {renderCategoryCard(categories[0], 'h-full')}
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
-              {renderCategoryCard(categories[1])}
-              {renderCategoryCard(categories[2])}
-            </div>
+        <div className="grid gap-6 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            {renderCategoryCard(categories[0], 'h-full')}
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
+            {renderCategoryCard(categories[1])}
+            {renderCategoryCard(categories[2])}
           </div>
         </div>
       </div>

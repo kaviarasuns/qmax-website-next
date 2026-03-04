@@ -322,17 +322,17 @@ export const metadata: Metadata = {
 
 export default function HighSpeedDigitalPCBDesignPage() {
   return (
-    <main className="bg-slate-100 text-slate-900">
-      <section className="relative overflow-hidden border-b border-slate-200">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(2,132,199,0.16),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(16,185,129,0.14),transparent_40%)]" />
+    <main className="bg-zinc-100 text-zinc-900">
+      <section className="relative overflow-hidden border-b border-zinc-200">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(24,24,27,0.08),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(82,82,91,0.08),transparent_40%)]" />
         <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-20 lg:px-8">
-          <p className="inline-flex rounded-full border border-sky-300 bg-sky-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-sky-700">
+          <p className="inline-flex rounded-full border border-zinc-300 bg-zinc-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-zinc-700">
             PCB Design Services
           </p>
-          <h1 className="mt-6 text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
+          <h1 className="mt-6 text-4xl font-semibold leading-tight text-zinc-900 md:text-5xl">
             Advanced High-Speed Digital PCB Engineering &amp; Layout Solutions
           </h1>
-          <div className="mt-6 max-w-4xl space-y-4 text-sm leading-7 text-slate-700 md:text-base">
+          <div className="mt-6 max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
             <p>
               In an era defined by 112G SerDes, DDR5 memory architectures, and
               PCIe Gen6 protocols, PCB design is no longer just about
@@ -354,10 +354,10 @@ export default function HighSpeedDigitalPCBDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-3xl font-semibold text-zinc-900">
           Applications &amp; Real-World Project Experience
         </h2>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+        <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
           Qmax Systems delivers field-proven expertise in developing
           mission-critical hardware. Our portfolio includes:
         </p>
@@ -366,12 +366,12 @@ export default function HighSpeedDigitalPCBDesignPage() {
           {projectExperience.map((item) => (
             <article
               key={item.title}
-              className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+              className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
             >
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+              <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
+              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
                 {item.description}
               </p>
             </article>
@@ -379,17 +379,17 @@ export default function HighSpeedDigitalPCBDesignPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50/80">
+      <section className="border-y border-zinc-200 bg-zinc-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl font-semibold text-zinc-900">
             Technical Capabilities: Pushing the Limits of Physics
           </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+          <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
             Our design team operates at the leading edge of digital signaling
             standards:
           </p>
 
-          <h3 className="mt-8 text-xl font-semibold text-slate-900 md:text-2xl">
+          <h3 className="mt-8 text-xl font-semibold text-zinc-900 md:text-2xl">
             Memory &amp; High-Speed Interfaces
           </h3>
 
@@ -397,12 +397,12 @@ export default function HighSpeedDigitalPCBDesignPage() {
             {technicalCapabilities.map((item) => (
               <article
                 key={item.title}
-                className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+                className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
               >
-                <h4 className="text-base font-semibold text-slate-900 md:text-lg">
+                <h4 className="text-base font-semibold text-zinc-900 md:text-lg">
                   {item.title}
                 </h4>
-                <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
+                <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
                   {item.description}
                 </p>
               </article>
@@ -412,19 +412,19 @@ export default function HighSpeedDigitalPCBDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-3xl font-semibold text-zinc-900">
           Advanced HDI &amp; Fabrication Support
         </h2>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {advancedHdiCapabilities.map((item) => (
             <article
               key={item.title}
-              className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+              className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
             >
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+              <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
+              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
                 {item.description}
               </p>
             </article>
@@ -432,12 +432,12 @@ export default function HighSpeedDigitalPCBDesignPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50/80">
+      <section className="border-y border-zinc-200 bg-zinc-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl font-semibold text-zinc-900">
             Stackup Engineering &amp; Material Selection
           </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+          <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
             A robust high-speed design begins with the substrate. We perform
             rigorous stackup optimization to balance electrical performance
             with fabrication yield.
@@ -447,12 +447,12 @@ export default function HighSpeedDigitalPCBDesignPage() {
             {stackupEngineering.map((item) => (
               <article
                 key={item.title}
-                className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+                className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
               >
-                <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
+                <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
                   {item.description}
                 </p>
               </article>
@@ -462,7 +462,7 @@ export default function HighSpeedDigitalPCBDesignPage() {
           <div className="mt-8">
             <Link
               href="/PCB-design-resources#pcb-design-materials-finishes"
-              className="inline-flex items-center rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              className="inline-flex items-center rounded-lg bg-zinc-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
             >
               View Stackup Options and Material Selection Guide
             </Link>
@@ -471,10 +471,10 @@ export default function HighSpeedDigitalPCBDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-3xl font-semibold text-zinc-900">
           SI/PI/EMI Simulation Methodology
         </h2>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+        <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
           We do not &quot;guess and check.&quot; Our workflow is
           simulation-driven:
         </p>
@@ -483,12 +483,12 @@ export default function HighSpeedDigitalPCBDesignPage() {
           {simulationMethodology.map((item) => (
             <article
               key={item.title}
-              className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+              className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
             >
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+              <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
+              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
                 {item.description}
               </p>
             </article>
@@ -496,12 +496,12 @@ export default function HighSpeedDigitalPCBDesignPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50/80">
+      <section className="border-y border-zinc-200 bg-zinc-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl font-semibold text-zinc-900">
             Complimentary Schematic Review
           </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+          <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
             High-speed PCB success starts at the schematic level. Every Qmax
             PCB layout engagement includes a Complimentary Schematic Review.
             Our senior engineers analyze your design for:
@@ -511,7 +511,7 @@ export default function HighSpeedDigitalPCBDesignPage() {
             {schematicReviewPoints.map((item) => (
               <li
                 key={item}
-                className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base"
+                className="rounded-xl border border-zinc-200 bg-white p-5 text-sm leading-7 text-zinc-700 shadow-[0_4px_20px_rgba(24,24,27,0.05)] md:text-base"
               >
                 {item}
               </li>
@@ -521,29 +521,29 @@ export default function HighSpeedDigitalPCBDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-3xl font-semibold text-zinc-900">
           Why Choose Qmax Systems?
         </h2>
 
-        <div className="mt-8 overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
+        <div className="mt-8 overflow-x-auto rounded-xl border border-zinc-200 bg-white shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
           <table className="min-w-full">
             <thead>
-              <tr className="bg-slate-100">
-                <th className="w-1/3 border-b border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">
+              <tr className="bg-zinc-100">
+                <th className="w-1/3 border-b border-zinc-200 px-4 py-3 text-left text-sm font-semibold text-zinc-900">
                   Feature
                 </th>
-                <th className="border-b border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-900">
+                <th className="border-b border-zinc-200 px-4 py-3 text-left text-sm font-semibold text-zinc-900">
                   Qmax Engineering Advantage
                 </th>
               </tr>
             </thead>
             <tbody>
               {qmaxAdvantages.map((row, index) => (
-                <tr key={row.feature} className={index % 2 === 0 ? "bg-white" : "bg-slate-50"}>
-                  <td className="border-b border-slate-200 px-4 py-3 text-sm font-medium text-slate-900">
+                <tr key={row.feature} className={index % 2 === 0 ? "bg-white" : "bg-zinc-50"}>
+                  <td className="border-b border-zinc-200 px-4 py-3 text-sm font-medium text-zinc-900">
                     {row.feature}
                   </td>
-                  <td className="border-b border-slate-200 px-4 py-3 text-sm text-slate-700">
+                  <td className="border-b border-zinc-200 px-4 py-3 text-sm text-zinc-700">
                     {row.advantage}
                   </td>
                 </tr>
@@ -553,19 +553,19 @@ export default function HighSpeedDigitalPCBDesignPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50/80">
+      <section className="border-y border-zinc-200 bg-zinc-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl font-semibold text-zinc-900">
             Case Studies Section
           </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+          <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
             Explore how we solved complex signal integrity challenges for
             global technology leaders.
           </p>
           <div className="mt-8">
             <Link
               href="/PCB-Design-Case-study"
-              className="inline-flex items-center rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              className="inline-flex items-center rounded-lg bg-zinc-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
             >
               View High-Speed PCB Case Studies
             </Link>
@@ -574,19 +574,19 @@ export default function HighSpeedDigitalPCBDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-3xl font-semibold text-zinc-900">
           Industries Served
         </h2>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {industriesServed.map((item) => (
             <article
               key={item.title}
-              className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+              className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
             >
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+              <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
+              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
                 {item.description}
               </p>
             </article>
@@ -594,9 +594,9 @@ export default function HighSpeedDigitalPCBDesignPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50/80">
+      <section className="border-y border-zinc-200 bg-zinc-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl font-semibold text-zinc-900">
             Frequently Asked Questions (FAQ)
           </h2>
 
@@ -604,12 +604,12 @@ export default function HighSpeedDigitalPCBDesignPage() {
             {faqs.map((item) => (
               <details
                 key={item.question}
-                className="rounded-xl border border-slate-200 bg-white px-5 py-4 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+                className="rounded-xl border border-zinc-200 bg-white px-5 py-4 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
               >
-                <summary className="cursor-pointer list-none pr-6 text-sm font-semibold leading-6 text-slate-900 md:text-base">
+                <summary className="cursor-pointer list-none pr-6 text-sm font-semibold leading-6 text-zinc-900 md:text-base">
                   {item.question}
                 </summary>
-                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                <p className="mt-3 text-sm leading-7 text-zinc-700 md:text-base">
                   {item.answer}
                 </p>
               </details>
@@ -620,11 +620,11 @@ export default function HighSpeedDigitalPCBDesignPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-6 md:grid-cols-2">
-          <article className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_4px_24px_rgba(15,23,42,0.06)]">
-            <h2 className="text-2xl font-semibold text-slate-900 md:text-3xl">
+          <article className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_4px_24px_rgba(24,24,27,0.06)]">
+            <h2 className="text-2xl font-semibold text-zinc-900 md:text-3xl">
               Accelerate Your Hardware Development
             </h2>
-            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+            <p className="mt-4 text-sm leading-7 text-zinc-700 md:text-base">
               Don&apos;t let signal integrity issues delay your product launch.
               Partner with an engineering team that understands the complexities
               of modern high-speed digital design.
@@ -632,18 +632,18 @@ export default function HighSpeedDigitalPCBDesignPage() {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                className="inline-flex items-center rounded-lg bg-zinc-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
               >
                 Contact Our Engineering Team Today
               </Link>
             </div>
           </article>
 
-          <article className="rounded-2xl border border-slate-200 bg-slate-50 p-8 shadow-[0_4px_24px_rgba(15,23,42,0.06)]">
-            <h2 className="text-2xl font-semibold text-slate-900 md:text-3xl">
+          <article className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 shadow-[0_4px_24px_rgba(24,24,27,0.06)]">
+            <h2 className="text-2xl font-semibold text-zinc-900 md:text-3xl">
               1-Hour Complimentary Engineering Consultation
             </h2>
-            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+            <p className="mt-4 text-sm leading-7 text-zinc-700 md:text-base">
               Struggling with a PCIe Gen6 loss budget? Unsure about your DDR5
               stackup? Speak directly with a senior Qmax hardware architect. No
               marketing, just engineering.
@@ -651,7 +651,7 @@ export default function HighSpeedDigitalPCBDesignPage() {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-100"
+                className="inline-flex items-center rounded-lg border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-800 transition hover:bg-zinc-100"
               >
                 Schedule Your Free Technical Consultation
               </Link>
