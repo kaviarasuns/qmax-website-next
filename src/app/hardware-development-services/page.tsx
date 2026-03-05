@@ -544,10 +544,16 @@ export default function HardwareDevelopmentServicesPage() {
               {faqs.map((faq) => (
                 <details
                   key={faq.question}
-                  className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3"
+                  className="group rounded-lg border border-slate-200 bg-slate-50 px-4 py-3"
                 >
-                  <summary className="cursor-pointer list-none pr-6 text-sm font-medium leading-6 text-slate-900">
-                    {faq.question}
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 pr-1 text-sm font-medium leading-6 text-slate-900">
+                    <span>{faq.question}</span>
+                    <span
+                      aria-hidden="true"
+                      className="text-xs font-medium text-slate-400 transition-transform duration-200 group-open:rotate-180"
+                    >
+                      ▾
+                    </span>
                   </summary>
                   <p className="mt-3 text-sm leading-6 text-slate-700">
                     {faq.answer}

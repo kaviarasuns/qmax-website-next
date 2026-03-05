@@ -55,7 +55,7 @@ const coreCapabilities = [
     title: "RF and Microwave PCB Design",
     description:
       "Layout of RF front-ends, antenna integrations, and microwave circuits up to 80GHz. We utilize specialized materials (Rogers, Isola, Taconic) and implement coplanar waveguides, microstrips, and RF shielding to minimize insertion loss and interference.",
-    href: "/case-studies/Wi-Fi-AP",
+    href: "/pcb-design/rf-and-microwave-pcb-design",
   },
   {
     label: "C",
@@ -850,16 +850,23 @@ export default function PCBDesignPage() {
                   {group.items.map((item) => (
                     <details
                       key={item.q}
-                      className={`rounded-lg border px-4 py-3 ${isDark
+                      className={`group rounded-lg border px-4 py-3 ${isDark
                         ? "border-slate-800 bg-slate-950/70"
                         : "border-slate-200 bg-slate-50"
                         }`}
                     >
                       <summary
-                        className={`cursor-pointer list-none pr-6 text-sm font-medium leading-6 ${isDark ? "text-slate-100" : "text-slate-900"
+                        className={`flex cursor-pointer list-none items-center justify-between gap-4 pr-1 text-sm font-medium leading-6 ${isDark ? "text-slate-100" : "text-slate-900"
                           }`}
                       >
-                        {item.q}
+                        <span>{item.q}</span>
+                        <span
+                          aria-hidden="true"
+                          className={`text-xs font-medium transition-transform duration-200 group-open:rotate-180 ${isDark ? "text-slate-500" : "text-slate-400"
+                            }`}
+                        >
+                          ▾
+                        </span>
                       </summary>
                       <p
                         className={`mt-3 text-sm leading-6 ${isDark ? "text-slate-300" : "text-slate-700"

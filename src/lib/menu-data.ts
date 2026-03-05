@@ -95,6 +95,10 @@ export const menuData: MenuItem[] = [
     href: "/printed-circuit-board-faqs",
   },
   {
+    title: "About Us",
+    href: "/about-us",
+  },
+  {
     title: "Careers",
     href: "/careers",
   },
