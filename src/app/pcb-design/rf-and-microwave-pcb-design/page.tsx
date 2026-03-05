@@ -139,7 +139,7 @@ export const metadata: Metadata = {
 
 export default function RFMicrowavePCBDesignPage() {
   return (
-    <main className="bg-zinc-100 text-zinc-900">
+    <main className="bg-zinc-100 text-justify text-zinc-900">
       <section className="relative overflow-hidden border-b border-zinc-200">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(24,24,27,0.08),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(82,82,91,0.08),transparent_40%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch lg:px-8">
@@ -147,7 +147,7 @@ export default function RFMicrowavePCBDesignPage() {
             <p className="inline-flex rounded-full border border-zinc-300 bg-zinc-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-zinc-700">
               PCB Design Services
             </p>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight text-zinc-900 md:text-5xl">
+            <h1 className="text-left mt-6 text-4xl font-semibold leading-tight text-zinc-900 md:text-5xl">
               RF and Microwave PCB Design Services
             </h1>
             <p className="mt-4 text-sm font-medium tracking-wide text-zinc-800 md:text-base">
@@ -190,7 +190,7 @@ export default function RFMicrowavePCBDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-zinc-900">
+        <h2 className="text-left text-3xl font-semibold text-zinc-900">
           Our RF and microwave PCB design services include:
         </h2>
         <ul className="mt-6 list-inside list-disc space-y-2 text-sm leading-7 text-zinc-700 md:text-base">
@@ -210,7 +210,7 @@ export default function RFMicrowavePCBDesignPage() {
 
       <section className="border-y border-zinc-200 bg-zinc-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-zinc-900">
+          <h2 className="text-left text-3xl font-semibold text-zinc-900">
             RF PCB Engineering Approach
           </h2>
           <p className="mt-6 max-w-5xl text-sm leading-7 text-zinc-700 md:text-base">
@@ -246,7 +246,7 @@ export default function RFMicrowavePCBDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-zinc-900">
+        <h2 className="text-left text-3xl font-semibold text-zinc-900">
           Applications &amp; Real Project Experience
         </h2>
         <p className="mt-6 max-w-5xl text-sm leading-7 text-zinc-700 md:text-base">
@@ -255,7 +255,7 @@ export default function RFMicrowavePCBDesignPage() {
         </p>
 
         <article className="mt-8 rounded-2xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] md:p-8">
-          <h3 className="text-xl font-semibold text-zinc-900 md:text-2xl">
+          <h3 className="text-left text-xl font-semibold text-zinc-900 md:text-2xl">
             High-Power RF Power Amplifier - 1 kW @ 13.56 MHz
           </h3>
           <p className="mt-4 text-sm leading-7 text-zinc-700 md:text-base">
@@ -338,7 +338,7 @@ export default function RFMicrowavePCBDesignPage() {
         </article>
 
         <article className="mt-8 rounded-2xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] md:p-8">
-          <h3 className="text-xl font-semibold text-zinc-900 md:text-2xl">
+          <h3 className="text-left text-xl font-semibold text-zinc-900 md:text-2xl">
             WiFi-6 MIMO RF PCB Design
           </h3>
           <p className="mt-2 text-sm font-medium tracking-wide text-zinc-800 md:text-base">
@@ -394,7 +394,7 @@ export default function RFMicrowavePCBDesignPage() {
         </article>
 
         <article className="mt-8 rounded-2xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] md:p-8">
-          <h3 className="text-xl font-semibold text-zinc-900 md:text-2xl">
+          <h3 className="text-left text-xl font-semibold text-zinc-900 md:text-2xl">
             Software Defined Radio (SDR) RF Platforms
           </h3>
           <p className="mt-4 text-sm leading-7 text-zinc-700 md:text-base">
@@ -470,7 +470,7 @@ export default function RFMicrowavePCBDesignPage() {
         </article>
 
         <article className="mt-8 rounded-2xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] md:p-8">
-          <h3 className="text-xl font-semibold text-zinc-900 md:text-2xl">
+          <h3 className="text-left text-xl font-semibold text-zinc-900 md:text-2xl">
             60 GHz Microwave Moisture Measurement System
           </h3>
           <p className="mt-4 text-sm leading-7 text-zinc-700 md:text-base">
@@ -504,7 +504,7 @@ export default function RFMicrowavePCBDesignPage() {
         </article>
 
         <article className="mt-8 rounded-2xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] md:p-8">
-          <h3 className="text-xl font-semibold text-zinc-900 md:text-2xl">
+          <h3 className="text-left text-xl font-semibold text-zinc-900 md:text-2xl">
             LoRa, WiFi, BLE Wireless Modules
           </h3>
           <p className="mt-4 text-sm leading-7 text-zinc-700 md:text-base">
@@ -538,14 +538,14 @@ export default function RFMicrowavePCBDesignPage() {
 
       <section className="border-y border-zinc-200 bg-zinc-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-zinc-900">
+          <h2 className="text-left text-3xl font-semibold text-zinc-900">
             Technical RF PCB Capabilities
           </h2>
           <p className="mt-6 max-w-5xl text-sm leading-7 text-zinc-700 md:text-base">
             Qmax Systems supports RF PCB layout across a wide frequency spectrum.
           </p>
 
-          <h3 className="mt-8 text-xl font-semibold text-zinc-900 md:text-2xl">
+          <h3 className="text-left mt-8 text-xl font-semibold text-zinc-900 md:text-2xl">
             Wireless Technologies
           </h3>
           <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-7 text-zinc-700 md:text-base">
@@ -557,7 +557,7 @@ export default function RFMicrowavePCBDesignPage() {
             <li>RF front-ends</li>
           </ul>
 
-          <h3 className="mt-8 text-xl font-semibold text-zinc-900 md:text-2xl">
+          <h3 className="text-left mt-8 text-xl font-semibold text-zinc-900 md:text-2xl">
             Frequency Coverage
           </h3>
           <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-7 text-zinc-700 md:text-base">
@@ -568,7 +568,7 @@ export default function RFMicrowavePCBDesignPage() {
             <li>mmWave sensor boards</li>
           </ul>
 
-          <h3 className="mt-8 text-xl font-semibold text-zinc-900 md:text-2xl">
+          <h3 className="text-left mt-8 text-xl font-semibold text-zinc-900 md:text-2xl">
             RF PCB Layout Techniques
           </h3>
           <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-7 text-zinc-700 md:text-base">
@@ -583,7 +583,7 @@ export default function RFMicrowavePCBDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-zinc-900">
+        <h2 className="text-left text-3xl font-semibold text-zinc-900">
           RF Stackup Engineering &amp; Material Selection
         </h2>
         <p className="mt-6 max-w-5xl text-sm leading-7 text-zinc-700 md:text-base">
@@ -591,7 +591,7 @@ export default function RFMicrowavePCBDesignPage() {
           microwave frequencies.
         </p>
 
-        <h3 className="mt-8 text-xl font-semibold text-zinc-900 md:text-2xl">
+        <h3 className="text-left mt-8 text-xl font-semibold text-zinc-900 md:text-2xl">
           Common RF substrates used:
         </h3>
         <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-7 text-zinc-700 md:text-base">
@@ -601,7 +601,7 @@ export default function RFMicrowavePCBDesignPage() {
           <li>Megtron low-loss materials</li>
         </ul>
 
-        <h3 className="mt-8 text-xl font-semibold text-zinc-900 md:text-2xl">
+        <h3 className="text-left mt-8 text-xl font-semibold text-zinc-900 md:text-2xl">
           Stackup design parameters include:
         </h3>
         <div className="mt-4 overflow-x-auto rounded-xl border border-zinc-200">
@@ -664,7 +664,7 @@ export default function RFMicrowavePCBDesignPage() {
 
       <section className="border-y border-zinc-200 bg-zinc-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-zinc-900">
+          <h2 className="text-left text-3xl font-semibold text-zinc-900">
             Complimentary Schematic Review
           </h2>
           <p className="mt-6 max-w-5xl text-sm leading-7 text-zinc-700 md:text-base">
@@ -694,7 +694,7 @@ export default function RFMicrowavePCBDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-zinc-900">
+        <h2 className="text-left text-3xl font-semibold text-zinc-900">
           Why Choose Qmax Systems for RF PCB Design
         </h2>
         <div className="mt-8 overflow-x-auto rounded-xl border border-zinc-200 bg-white shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
@@ -765,7 +765,7 @@ export default function RFMicrowavePCBDesignPage() {
 
       <section className="border-y border-zinc-200 bg-zinc-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-zinc-900">
+          <h2 className="text-left text-3xl font-semibold text-zinc-900">
             Additional commitments:
           </h2>
           <ul className="mt-6 list-inside list-disc space-y-2 text-sm leading-7 text-zinc-700 md:text-base">
@@ -777,7 +777,7 @@ export default function RFMicrowavePCBDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-zinc-900">
+        <h2 className="text-left text-3xl font-semibold text-zinc-900">
           RF PCB Case Studies
         </h2>
         <p className="mt-6 max-w-5xl text-sm leading-7 text-zinc-700 md:text-base">
@@ -799,7 +799,7 @@ export default function RFMicrowavePCBDesignPage() {
 
       <section className="border-y border-zinc-200 bg-zinc-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-zinc-900">
+          <h2 className="text-left text-3xl font-semibold text-zinc-900">
             Industries Served
           </h2>
           <p className="mt-6 max-w-5xl text-sm leading-7 text-zinc-700 md:text-base">
@@ -818,7 +818,7 @@ export default function RFMicrowavePCBDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-zinc-900">
+        <h2 className="text-left text-3xl font-semibold text-zinc-900">
           Frequently Asked Questions (RF PCB Design)
         </h2>
         <div className="mt-8 space-y-3">
@@ -847,7 +847,7 @@ export default function RFMicrowavePCBDesignPage() {
       <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
         <div className="grid gap-6 md:grid-cols-2">
           <article className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_4px_24px_rgba(24,24,27,0.06)]">
-            <h2 className="text-2xl font-semibold text-zinc-900 md:text-3xl">
+            <h2 className="text-left text-2xl font-semibold text-zinc-900 md:text-3xl">
               Start Your RF PCB Development Project
             </h2>
             <p className="mt-4 text-sm leading-7 text-zinc-700 md:text-base">
@@ -876,7 +876,7 @@ export default function RFMicrowavePCBDesignPage() {
           </article>
 
           <article className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 shadow-[0_4px_24px_rgba(24,24,27,0.06)]">
-            <h2 className="text-2xl font-semibold text-zinc-900 md:text-3xl">
+            <h2 className="text-left text-2xl font-semibold text-zinc-900 md:text-3xl">
               1-Hour Complimentary Engineering Consultation
             </h2>
             <p className="mt-4 text-sm leading-7 text-zinc-700 md:text-base">

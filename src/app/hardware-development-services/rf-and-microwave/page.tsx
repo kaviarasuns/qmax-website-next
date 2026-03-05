@@ -228,16 +228,14 @@ const rfFaqGroups = [
 
 export default function RfAndMicrowavePage() {
   return (
-    <main className="bg-slate-100 text-slate-900">
+    <main className="bg-slate-100 text-justify text-slate-900">
       <section className="relative overflow-hidden border-b border-slate-200">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(2,132,199,0.16),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(16,185,129,0.14),transparent_40%)]" />
-
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
           <div>
-            <p className="inline-flex rounded-full border border-sky-300 bg-sky-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-sky-700">
+            <p className="inline-flex rounded-full border border-slate-300 bg-slate-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-slate-700">
               RF and Microwave Services
             </p>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
+            <h1 className="text-left mt-6 text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
               RF and Microwave Engineering Services
             </h1>
 
@@ -267,7 +265,7 @@ export default function RfAndMicrowavePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-left text-3xl font-semibold text-slate-900">
           Our RF and Microwave Expertise
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -305,7 +303,7 @@ export default function RfAndMicrowavePage() {
         </ul>
 
         <div className="mt-16">
-          <h3 className="text-2xl font-semibold text-slate-900">
+          <h3 className="text-left text-2xl font-semibold text-slate-900">
             High-Power RF and Industrial Applications
           </h3>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -340,7 +338,7 @@ export default function RfAndMicrowavePage() {
         </div>
 
       <div className="mt-16">
-        <h3 className="text-2xl font-semibold text-slate-900">
+        <h3 className="text-left text-2xl font-semibold text-slate-900">
           Advanced Hardware and PCB Engineering
         </h3>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -378,7 +376,7 @@ export default function RfAndMicrowavePage() {
       </div>
 
       <div className="mt-16">
-        <h3 className="text-2xl font-semibold text-slate-900">
+        <h3 className="text-left text-2xl font-semibold text-slate-900">
             Technical Differentiators: Engineering-First Approach
         </h3>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -414,7 +412,7 @@ export default function RfAndMicrowavePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-left text-3xl font-semibold text-slate-900">
           Core Service Offerings
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -424,7 +422,7 @@ export default function RfAndMicrowavePage() {
 
         <div className="mt-8 space-y-4">
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+            <h3 className="text-left text-base font-semibold text-slate-900 md:text-lg">
               RF PCB Design and Layout
             </h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700 md:text-base">
@@ -447,7 +445,7 @@ export default function RfAndMicrowavePage() {
           </article>
 
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+            <h3 className="text-left text-base font-semibold text-slate-900 md:text-lg">
               RF Front-End (RFFE) Design
             </h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700 md:text-base">
@@ -476,7 +474,7 @@ export default function RfAndMicrowavePage() {
           </article>
 
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+            <h3 className="text-left text-base font-semibold text-slate-900 md:text-lg">
               Simulation and Modeling
             </h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700 md:text-base">
@@ -490,7 +488,7 @@ export default function RfAndMicrowavePage() {
 
       <section className="border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-left text-3xl font-semibold text-slate-900">
             Proven Project Experience
           </h2>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -545,7 +543,7 @@ export default function RfAndMicrowavePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">Case studies</h2>
+        <h2 className="text-left text-3xl font-semibold text-slate-900">Case studies</h2>
         <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
           More case studies after NDA
         </p>
@@ -553,7 +551,7 @@ export default function RfAndMicrowavePage() {
 
       <section className="border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-left text-3xl font-semibold text-slate-900">
             Why Choose Qmax Systems
           </h2>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -628,7 +626,7 @@ export default function RfAndMicrowavePage() {
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_24px_rgba(15,23,42,0.06)] md:p-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-left text-3xl font-semibold text-slate-900">
             Complimentary Consultation
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
@@ -647,7 +645,7 @@ export default function RfAndMicrowavePage() {
 
       <section className="border-t border-slate-200 bg-slate-100/60">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-left text-3xl font-semibold text-slate-900">
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-sm text-slate-700 md:text-base">
@@ -664,7 +662,7 @@ export default function RfAndMicrowavePage() {
                 key={group.title}
                 className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
               >
-                <h3 className="text-lg font-semibold text-slate-900">
+                <h3 className="text-left text-lg font-semibold text-slate-900">
                   {group.title}
                 </h3>
                 <div className="mt-4 space-y-3">

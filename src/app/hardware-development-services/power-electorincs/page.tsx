@@ -79,13 +79,11 @@ export const metadata: Metadata = {
 
 export default function PowerElectorincsPage() {
   return (
-    <main className="bg-slate-100 text-slate-900">
+    <main className="bg-slate-100 text-justify text-slate-900">
       <section className="relative overflow-hidden border-b border-slate-200">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(2,132,199,0.16),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(16,185,129,0.14),transparent_40%)]" />
-
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
           <div>
-            <p className="inline-flex rounded-full border border-sky-300 bg-sky-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-sky-700">
+            <p className="inline-flex rounded-full border border-slate-300 bg-slate-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-slate-700">
               Power Electronics Services
             </p>
             <h1 className="mt-6 text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
