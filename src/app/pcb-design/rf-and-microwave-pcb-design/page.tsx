@@ -329,12 +329,12 @@ export default function RFMicrowavePCBDesignPage() {
             harmonics and conducted emissions.
           </p>
 
-          <a
+          <Link
             href="/case-studies/polyphase-power_measurement"
             className="mt-6 inline-flex items-center rounded-lg bg-zinc-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
           >
             See Case study
-          </a>
+          </Link>
         </article>
 
         <article className="mt-8 rounded-2xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] md:p-8">
@@ -385,12 +385,12 @@ export default function RFMicrowavePCBDesignPage() {
             <li>Vector network analyzers</li>
           </ul>
 
-          <a
+          <Link
             href="/case-studies/Wi-Fi-AP"
             className="mt-6 inline-flex items-center rounded-lg bg-zinc-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
           >
             See Case study
-          </a>
+          </Link>
         </article>
 
         <article className="mt-8 rounded-2xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] md:p-8">
@@ -461,12 +461,12 @@ export default function RFMicrowavePCBDesignPage() {
             This structure ensures clean RF return paths and reduced coupling noise.
           </p>
 
-          <a
+          <Link
             href="/case-studies/Security-Controller"
             className="mt-6 inline-flex items-center rounded-lg bg-zinc-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
           >
             See Case study
-          </a>
+          </Link>
         </article>
 
         <article className="mt-8 rounded-2xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] md:p-8">
@@ -527,12 +527,12 @@ export default function RFMicrowavePCBDesignPage() {
             <li>FCC pre-compliance considerations</li>
           </ul>
 
-          <a
+          <Link
             href="/case-studies/Wi-Fi-AP"
             className="mt-6 inline-flex items-center rounded-lg bg-zinc-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
           >
             See Case study
-          </a>
+          </Link>
         </article>
       </section>
 
