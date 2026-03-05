@@ -68,31 +68,46 @@ export function Navigation() {
                           <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                             {item.subItems.map((subItem) => (
                               <li key={subItem.title}>
-                                <NavigationMenuLink asChild>
-                                  <Link
-                                    href={subItem.href}
-                                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group"
-                                  >
-                                    <div className="relative w-full h-24 mb-2 rounded-md overflow-hidden bg-muted">
-                                      <Image
-                                        src={
-                                          subItem.image || "/placeholder.svg"
-                                        }
-                                        alt={subItem.title}
-                                        fill
-                                        className="object-cover transition-transform group-hover:scale-105"
-                                      />
+                                <div className="group rounded-md p-3 transition-colors hover:bg-accent focus-within:bg-accent">
+                                  <NavigationMenuLink asChild>
+                                    <Link
+                                      href={subItem.href}
+                                      className="block select-none space-y-1 leading-none no-underline outline-none"
+                                    >
+                                      <div className="relative w-full h-24 mb-2 rounded-md overflow-hidden bg-muted">
+                                        <Image
+                                          src={
+                                            subItem.image || "/placeholder.svg"
+                                          }
+                                          alt={subItem.title}
+                                          fill
+                                          className="object-cover transition-transform group-hover:scale-105"
+                                        />
+                                      </div>
+                                      <div className="text-sm font-medium leading-none">
+                                        {subItem.title}
+                                      </div>
+                                      {subItem.description && (
+                                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                          {subItem.description}
+                                        </p>
+                                      )}
+                                    </Link>
+                                  </NavigationMenuLink>
+                                  {subItem.children && subItem.children.length > 0 && (
+                                    <div className="mt-2 space-y-1 overflow-hidden max-h-0 opacity-0 transition-all duration-200 group-hover:max-h-40 group-hover:opacity-100 group-focus-within:max-h-40 group-focus-within:opacity-100">
+                                      {subItem.children.map((childItem) => (
+                                        <Link
+                                          key={childItem.title}
+                                          href={childItem.href}
+                                          className="block rounded px-2 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-background hover:text-foreground"
+                                        >
+                                          {childItem.title}
+                                        </Link>
+                                      ))}
                                     </div>
-                                    <div className="text-sm font-medium leading-none">
-                                      {subItem.title}
-                                    </div>
-                                    {subItem.description && (
-                                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                        {subItem.description}
-                                      </p>
-                                    )}
-                                  </Link>
-                                </NavigationMenuLink>
+                                  )}
+                                </div>
                               </li>
                             ))}
                           </ul>
@@ -154,31 +169,46 @@ export function Navigation() {
                     </div>
                     <div className="pl-4 space-y-1">
                       {item.subItems.map((subItem) => (
-                        <Link
-                          key={subItem.title}
-                          href={subItem.href}
-                          className="flex items-center gap-3 py-2 px-3 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <div className="relative w-12 h-12 rounded overflow-hidden bg-muted flex-shrink-0">
-                            <Image
-                              src={subItem.image || "/placeholder.svg"}
-                              alt={subItem.title}
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <div className="font-medium text-foreground">
-                              {subItem.title}
+                        <div key={subItem.title}>
+                          <Link
+                            href={subItem.href}
+                            className="flex items-center gap-3 py-2 px-3 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <div className="relative w-12 h-12 rounded overflow-hidden bg-muted flex-shrink-0">
+                              <Image
+                                src={subItem.image || "/placeholder.svg"}
+                                alt={subItem.title}
+                                fill
+                                className="object-cover"
+                              />
                             </div>
-                            {subItem.description && (
-                              <p className="text-xs text-muted-foreground line-clamp-1">
-                                {subItem.description}
-                              </p>
-                            )}
-                          </div>
-                        </Link>
+                            <div className="flex-1 min-w-0">
+                              <div className="font-medium text-foreground">
+                                {subItem.title}
+                              </div>
+                              {subItem.description && (
+                                <p className="text-xs text-muted-foreground line-clamp-1">
+                                  {subItem.description}
+                                </p>
+                              )}
+                            </div>
+                          </Link>
+                          {subItem.children && subItem.children.length > 0 && (
+                            <div className="ml-16 mb-2 space-y-1">
+                              {subItem.children.map((childItem) => (
+                                <Link
+                                  key={childItem.title}
+                                  href={childItem.href}
+                                  className="block rounded-md py-1 px-2 text-xs text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  {childItem.title}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       ))}
                     </div>
                   </div>

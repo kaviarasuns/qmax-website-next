@@ -3,6 +3,10 @@ export interface SubMenuItem {
   href: string;
   image: string;
   description: string;
+  children?: {
+    title: string;
+    href: string;
+  }[];
 }
 
 export interface MenuItem {
@@ -21,6 +25,24 @@ export const menuData: MenuItem[] = [
         image:
           "https://images.pexels.com/photos/326518/pexels-photo-326518.jpeg?auto=compress&cs=tinysrgb&w=300",
         description: "Comprehensive hardware design and development",
+        children: [
+          {
+            title: "High Speed Digital Design",
+            href: "/hardware-development-services/high-speed-digital-design",
+          },
+          {
+            title: "Analog Design",
+            href: "/hardware-development-services/analog-design",
+          },
+          {
+            title: "Power Electronics",
+            href: "/hardware-development-services/power-electorincs",
+          },
+          {
+            title: "RF and Microwave",
+            href: "/hardware-development-services/rf-and-microwave",
+          },
+        ],
       },
       {
         title: "PCB Design Services",
@@ -28,6 +50,24 @@ export const menuData: MenuItem[] = [
         image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPOKKQF88ooMa1cZCmXjiXNKAi5nFRq6FU8w&s",
         description: "Professional PCB layout and design services",
+        children: [
+          {
+            title: "High Speed Digital Services",
+            href: "/pcb-design/high-speed-digital-pcb-design",
+          },
+          {
+            title: "Analog and Mixed Signal",
+            href: "/pcb-design/analog-and-mixed-signal",
+          },
+          {
+            title: "Power Electorinics",
+            href: "/pcb-design/power-electorinics",
+          },
+          {
+            title: "RF and Microwave",
+            href: "/pcb-design/rf-and-microwave-pcb-design",
+          },
+        ],
       },
       {
         title: "Embedded System Development Services",
