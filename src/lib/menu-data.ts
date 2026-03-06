@@ -105,46 +105,8 @@ export const menuData: MenuItem[] = [
     ],
   },
   {
-    title: "Resources",
-    subItems: [
-      {
-        title: "PCB Design Resources",
-        href: "/PCB-design-resources",
-        image:
-          "https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Tools and guides for PCB design",
-      },
-      {
-        title: "Embedded Systems Glossary",
-        href: "/embedded-system-glossary",
-        image:
-          "https://images.pexels.com/photos/326518/pexels-photo-326518.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Key terms and definitions",
-      },
-      {
-        title: "PCB Design Glossary",
-        href: "/pcb-design-glossary",
-        image:
-          "https://images.pexels.com/photos/760710/pexels-photo-760710.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "PCB terminology explained",
-      },
-    ],
-  },
-  {
-    title: "FAQs",
-    href: "/printed-circuit-board-faqs",
-  },
-  {
-    title: "About Us",
-    href: "/about-us",
-  },
-  {
     title: "Careers",
     href: "/careers",
-  },
-  {
-    title: "Blog",
-    href: "http://blog.qmaxsys.com/",
   },
   {
     title: "Contact",

@@ -567,7 +567,7 @@ const positions = [
 
 type Position = (typeof positions)[number]
 
-function JobCard({ position, isExpanded, onToggle }: { position: Position; isExpanded: boolean; onToggle: () => void }) {
+function JobCard({ position, isExpanded, onToggle, index }: { position: Position; isExpanded: boolean; onToggle: () => void; index: number }) {
   const detailsId = `job-details-${position.id}`
 
   return (
@@ -614,7 +614,7 @@ function JobCard({ position, isExpanded, onToggle }: { position: Position; isExp
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
 
             {/* Left content: single-column stack for details */}
-            <div className="grid grid-cols-1 gap-6">
+            <div className={`grid grid-cols-1 gap-4 ${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
 
               {/* Responsibilities */}
               <div className="rounded-lg border border-zinc-200 bg-white p-4">
@@ -642,20 +642,8 @@ function JobCard({ position, isExpanded, onToggle }: { position: Position; isExp
                 </ul>
               </div>
 
-            </div>
-
-            {/* Right sidebar: Image + Qualifications + CTA */}
-            <div className="flex flex-col gap-5 h-full">
-              <div className="relative w-full flex-[3] min-h-[16rem] overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100">
-                <img
-                  src={position.imageUrl || '/careers/image1.jpg'}
-                  alt={position.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-
               {/* Qualifications */}
-              <div>
+              <div className="rounded-lg border border-zinc-200 bg-white p-4">
                 <h4 className="mb-3 font-semibold text-zinc-900">Qualifications</h4>
                 <ul className="space-y-2">
                   {position.qualifications.map((qual, idx) => (
@@ -665,6 +653,18 @@ function JobCard({ position, isExpanded, onToggle }: { position: Position; isExp
                     </li>
                   ))}
                 </ul>
+              </div>
+
+            </div>
+
+            {/* Right sidebar: Image + CTA */}
+            <div className={`flex flex-col gap-5 h-full ${index % 2 !== 0 ? 'lg:order-1' : ''}`}>
+              <div className="relative w-full flex-[3] min-h-[16rem] overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100">
+                <img
+                  src={position.imageUrl || '/careers/image1.jpg'}
+                  alt={position.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
               </div>
 
               {/* CTA */}
@@ -679,8 +679,9 @@ function JobCard({ position, isExpanded, onToggle }: { position: Position; isExp
 
           </div>
         </div>
-      )}
-    </Card>
+      )
+      }
+    </Card >
   )
 }
 
@@ -836,12 +837,13 @@ export function CurrentOpenings({ hideHeader = false }: { hideHeader?: boolean }
         {/* Positions Grid */}
         <div className="space-y-4">
           {filteredPositions.length > 0 ? (
-            filteredPositions.map(position => (
+            filteredPositions.map((position, index) => (
               <JobCard
                 key={position.id}
                 position={position}
                 isExpanded={!!expandedCards[position.id]}
                 onToggle={() => toggleCard(position.id)}
+                index={index}
               />
             ))
           ) : (

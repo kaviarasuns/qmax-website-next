@@ -6,9 +6,9 @@ export function Hero() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch">
           <div className="max-w-3xl flex flex-col justify-center">
-            <div className="mb-6 w-fit rounded-md border border-zinc-300 bg-zinc-100 px-4 py-2">
+            {/* <div className="mb-6 w-fit rounded-md border border-zinc-300 bg-zinc-100 px-4 py-2">
               <span className="text-lg font-semibold text-zinc-700">We&apos;re Hiring</span>
-            </div>
+            </div> */}
 
             <h1 className="mb-6 text-4xl font-bold tracking-tight text-zinc-900 md:text-6xl">
               Design, Develop, and Deploy{' '}

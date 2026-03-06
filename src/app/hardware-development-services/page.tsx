@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 
 const workflowItems = [
   {
@@ -34,38 +33,61 @@ const workflowItems = [
   },
 ];
 
-const faqs = [
+const technicalFaq = [
   {
-    question:
-      "What high-speed design standards does Qmax Systems support?",
-    answer:
-      "We specialize in the latest high-speed communication standards, including PCIe Gen 5/6, DDR5, and 112G SerDes. Our engineering team utilizes advanced simulation tools to ensure signal integrity (SI) and power integrity (PI) for data rates exceeding 100Gbps.",
+    title: "General Services & Engagement",
+    items: [
+      {
+        q: "1. Do you provide end-to-end hardware development?",
+        a: "Yes. From early architecture to certified, production-ready hardware, we handle the full lifecycle.",
+      },
+      {
+        q: "2. Where are your engineering teams located?",
+        a: "We operate with a full-fledged engineering team in Chennai, India, and have a sales presence in the USA.",
+      },
+      {
+        q: "3. Do you support manufacturing and scaling?",
+        a: "Yes. We support Design for Manufacturability (DFM), vendor coordination, pilot builds, and volume production handover.",
+      },
+      {
+        q: "4. Do you offer initial consultations?",
+        a: "Yes. We offer a free one-hour consultation with a senior engineer or hardware architect to validate feasibility and identify technical risks.",
+      },
+    ],
   },
   {
-    question: "Can you design custom hardware for AI and Deep Learning?",
-    answer:
-      "Yes. We develop High-Density AI GPU Compute Servers tailored for massive parallel processing. Our designs focus on robust power delivery networks (PDN) and advanced thermal management strategies required to sustain the performance of high-TDP NVIDIA and AMD GPU clusters.",
+    title: "Intellectual Property & Security",
+    items: [
+      {
+        q: "5. Who owns the Intellectual Property (IP)?",
+        a: "Unless otherwise agreed, 100% of the IP ownership belongs to the customer.",
+      },
+      {
+        q: "6. How do you protect customer IP?",
+        a: "We sign NDAs with customers, employees, and vendors. Our security measures include secure IT infrastructure (firewalls, VPN), need-to-know access control, and controlled physical access.",
+      },
+    ],
   },
   {
-    question: "Do you provide O-RAN and 5G infrastructure hardware?",
-    answer:
-      "Absolutely. Qmax Systems is active in the O-RAN ecosystem, designing Distributed Units (DU) and specialized Network Interface Cards (NIC). We help telecom providers and private network operators deploy scalable, open-architecture hardware for 5G rollouts.",
-  },
-  {
-    question:
-      "What processor architectures do you work with for Server Motherboards?",
-    answer:
-      "Our expertise spans the leading x86 and ARM-based enterprise architectures, including Intel Xeon, AMD EPYC, and Ampere Altra CPUs. We design custom server motherboards and Single Board Computers (SBCs) that meet specific form factor and environmental requirements.",
-  },
-  {
-    question: "Do you handle complex, high-layer count PCB designs?",
-    answer:
-      "Yes. Our team is experienced in high-density interconnect (HDI) technology, regularly managing 20+ layer PCB stacks with blind and buried micro-vias. We ensure all designs are optimized for DFM (Design for Manufacturing) and DFT (Design for Test) to streamline the transition to mass production.",
-  },
-  {
-    question: "What is included in the 1-hour complimentary consulting session?",
-    answer:
-      "During this session, you will speak directly with a Senior Hardware Architect. We can review your block diagrams, discuss thermal or signal integrity challenges, provide high-level architecture validation, or help refine your hardware roadmap to reduce time-to-market. We can sign an NDA if required.",
+    title: "Technical & Testing Capabilities",
+    items: [
+      {
+        q: "7. What specific compliance standards can you help with?",
+        a: "We support readiness for major global standards including FCC, CE, IEC, UL, and BIS.",
+      },
+      {
+        q: "8. Do you perform testing in-house?",
+        a: "Yes. We have internal labs for functional validation, thermal cycling, and environmental stress testing. For final certification, we coordinate with NABL-certified laboratories.",
+      },
+      {
+        q: "9. Do you build prototypes?",
+        a: "Yes. We maintain dedicated facilities for prototype PCB assembly, rework, and mechanical fixture creation to speed up development.",
+      },
+      {
+        q: "10. Do you support product maintenance after design?",
+        a: "Yes. We offer lifecycle maintenance services to support your product long after the initial design is complete.",
+      },
+    ],
   },
 ];
 
@@ -160,410 +182,375 @@ export default function HardwareDevelopmentServicesPage() {
             We deliver high-performance designs validated by decades of
             experience. Our HW engineering stack covers six critical domains.
           </p>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
+              <h3 className="text-xl font-semibold text-slate-900">
+                1. Digital Hardware Design
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                We design high-performance digital electronics, ranging from
+                simple MCU boards to complex, high-speed, multi-processor
+                systems.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
+                <li>
+                  <span className="font-semibold text-slate-900">Platforms:</span>{" "}
+                  MCU, MPU, SoC, and FPGA-based platforms.
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    High-Speed Interfaces:
+                  </span>{" "}
+                  PCIe Gen3/4/5, USB 2.0/3.x, Gigabit/10G/25G Ethernet, and
+                  MIPI/LVDS/HDMI display interfaces.
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">Memory:</span>{" "}
+                  DDR3, DDR4, and DDR5 memory subsystem design.
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    PCB Technology:
+                  </span>{" "}
+                  High-density BGA, HDI, and multi-layer PCBs.
+                </li>
+              </ul>
+            </article>
 
-          <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
+              <h3 className="text-xl font-semibold text-slate-900">
+                2. Analog &amp; Mixed-Signal Design
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                We possess deep expertise in precision analog and mixed-signal
+                design, critical for sensing, measurement, and low-noise
+                applications.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
+                <li>
+                  <span className="font-semibold text-slate-900">Sensing:</span>{" "}
+                  Low-noise analog front-ends and sensor interfacing for
+                  pressure, vibration, biomedical, and optical applications.
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    Processing:
+                  </span>{" "}
+                  Signal conditioning, filtering, amplification, and ADC/DAC
+                  integration.
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    Integrity:
+                  </span>{" "}
+                  EMI-aware analog layout and grounding techniques.
+                </li>
+              </ul>
+            </article>
+
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
+              <h3 className="text-xl font-semibold text-slate-900">
+                3. RF &amp; Microwave Hardware
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                Our RF designs are validated in real-world conditions, not just
+                simulations.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    Components:
+                  </span>{" "}
+                  RF front-end design (LNA, PA, filters, matching networks).
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">Antennas:</span>{" "}
+                  Design and integration of PCB, external, horn, and custom
+                  antennas.
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    Protocols:
+                  </span>{" "}
+                  ISM, Wi-Fi, BLE, LTE, and Sub-GHz systems.
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    Validation:
+                  </span>{" "}
+                  RF simulation, tuning, calibration, and EMC-aware layout.
+                </li>
+              </ul>
+            </article>
+
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
+              <h3 className="text-xl font-semibold text-slate-900">
+                4. Power Electronics &amp; High-Voltage
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                We design robust power electronics for industrial, automotive,
+                and energy applications.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    Conversion:
+                  </span>{" "}
+                  AC-DC/DC-DC converters and isolated/non-isolated SMPS
+                  designs.
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    Topologies:
+                  </span>{" "}
+                  Resonant, LLC, CLLC, and Class-D topologies.
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    High Power:
+                  </span>{" "}
+                  Battery systems (BMS), chargers, inverters, and
+                  high-voltage/high-current PCB design.
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    Reliability:
+                  </span>{" "}
+                  Thermal simulation, derating, and reliability analysis.
+                </li>
+              </ul>
+            </article>
+          </div>
+          <div className="mt-12 space-y-12">
             <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              {/* <p className="inline-flex rounded-full border border-sky-300 bg-sky-100 px-3 py-1 text-xs uppercase tracking-[0.12em] text-sky-700">
-                Domain 1 of 6
-              </p> */}
-              <h3 className="mt-4 text-2xl font-semibold text-slate-900">
-                High-Performance Digital Systems Development
+              <h3 className="text-2xl font-semibold text-slate-900">
+                Labs &amp; Engineering Infrastructure
               </h3>
               <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                At Qmax Systems, we bridge the gap between complex conceptual
-                requirements and market-ready hardware. In an era where AI
-                computing, telecom infrastructure, edge servers, and
-                data-intensive applications demand unprecedented speed and
-                reliability, our Hardware Engineering Team delivers robust,
-                scalable, and high-integrity systems tailored for
-                next-generation digital infrastructure.
+                Our in-house labs enable rapid debugging and validation,
+                reducing dependency on external facilities during development.
               </p>
+              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+                <span className="font-semibold text-slate-900">
+                  The Qmax Advantage:
+                </span>{" "}
+                Speed and accuracy are determined by having the right tools. We
+                maintain dedicated in-house electronics and environmental
+                laboratories fully equipped with high-bandwidth oscilloscopes,
+                thermal cameras, and spectrum analyzers. This infrastructure
+                allows our engineers to perform immediate prototype assembly,
+                rework, and rigorous stress testing on-site, ensuring that
+                potential design weaknesses are resolved long before the product
+                reaches external certification labs.
+              </p>
+
+              <div className="mt-6 grid gap-6 md:grid-cols-2">
+                <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                  <h4 className="text-lg font-semibold text-slate-900">
+                    Electronics Test &amp; Validation
+                  </h4>
+                  <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                    Our labs are equipped with industry-standard tools for
+                    rigorous testing:
+                  </p>
+                  <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
+                    <li>
+                      High-bandwidth oscilloscopes (Keysight, Rohde &amp;
+                      Schwarz).
+                    </li>
+                    <li>
+                      Spectrum analyzers and RF testers (CMW-500).
+                    </li>
+                    <li>
+                      Precision digital multimeters (Fluke), thermal cameras,
+                      and Hi-Pot testers.
+                    </li>
+                  </ul>
+                </article>
+
+                <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                  <h4 className="text-lg font-semibold text-slate-900">
+                    Environmental Reliability &amp; Assembly
+                  </h4>
+                  <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                    We perform early environmental validation to uncover design
+                    weaknesses before certification.
+                  </p>
+                  <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
+                    <li>
+                      <span className="font-semibold text-slate-900">
+                        Environmental:
+                      </span>{" "}
+                      Temperature chambers (hot &amp; cold), thermal cycling,
+                      soak testing, drop stress setups, and acoustic chambers.
+                    </li>
+                    <li>
+                      <span className="font-semibold text-slate-900">
+                        Assembly:
+                      </span>{" "}
+                      Dedicated facilities for prototype PCB assembly,
+                      professional soldering/rework, and a mechanical workshop
+                      for fixtures.
+                    </li>
+                  </ul>
+                </article>
+              </div>
             </div>
 
-            <div className="relative h-[300px] overflow-hidden rounded-2xl border border-slate-200 bg-white md:h-[420px]">
-              <Image
-                src="/hw-main/image3.jpg"
-                alt="High-performance digital hardware engineering"
-                fill
-                className="object-cover"
-              />
+            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
+              <h3 className="text-2xl font-semibold text-slate-900">
+                Compliance, Certification &amp; Quality
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+                We ensure your product is ready for global markets. We work
+                closely with NABL-certified laboratories to support EMC/EMI
+                pre-compliance, safety testing, and environmental testing.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+                <span className="font-semibold text-slate-900">
+                  The Qmax Advantage:
+                </span>{" "}
+                We don&apos;t just design for functionality; we design for
+                compliance. Our processes are governed by ISO 9001 and ISO
+                13485 (Medical Devices) certifications, ensuring strict
+                configuration management and traceability. Because our team has
+                deep experience with regulatory standards like FCC, CE, IEC,
+                and UL, we bridge the gap between engineering and
+                certification, managing the complex gap analysis to ensure your
+                product passes on the first attempt whenever possible.
+              </p>
+              <ul className="mt-5 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    Regulatory Support:
+                  </span>{" "}
+                  Assistance with FCC, CE, IEC, UL, and BIS readiness.
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    Quality Standards:
+                  </span>{" "}
+                  Our processes are certified under ISO 9001 (Quality
+                  Management) and ISO 13485 (Medical Devices).
+                </li>
+                <li>
+                  <span className="font-semibold text-slate-900">
+                    Design Rigor:
+                  </span>{" "}
+                  We utilize structured design reviews, configuration
+                  management, and controlled documentation.
+                </li>
+              </ul>
             </div>
+
+            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
+              <h3 className="text-2xl font-semibold text-slate-900">
+                Industries We Serve
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+                We support multi-domain hardware development, adapting design
+                rigor and documentation depth based on regulatory requirements.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+                <span className="font-semibold text-slate-900">
+                  The Qmax Advantage:
+                </span>{" "}
+                Our versatility is a direct result of our multi-domain
+                experience. Having worked on everything from safety-critical
+                medical devices to rugged industrial controls, our engineers
+                understand how to cross-pollinate best practices. We adapt our
+                documentation depth and design rigor to match the specific needs
+                of your industry, ensuring you get the robust reliability of an
+                aerospace product with the agility required for consumer
+                electronics.
+              </p>
+              <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <li className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-800">
+                  Automotive Electronics
+                </li>
+                <li className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-800">
+                  Medical Electronics &amp; Healthcare Devices
+                </li>
+                <li className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-800">
+                  Industrial Automation &amp; Controls
+                </li>
+                <li className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-800">
+                  Aerospace &amp; Defense Systems
+                </li>
+                <li className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-800">
+                  Energy, EV &amp; Power Electronics
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+
+        </div>
+      </section>
+      <section className="border-t border-slate-200 bg-slate-100/60">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+          <h2 className="text-3xl font-semibold text-slate-900">
+            Frequently Asked Questions (FAQ)
+          </h2>
+          <p className="mt-4 text-sm text-slate-700 md:text-base">
+            Common engineering, engagement, compliance, and IP questions answered by our hardware team.
+          </p>
+
+          <div className="mt-8 space-y-5">
+            {technicalFaq.map((group) => (
+              <article
+                key={group.title}
+                className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
+              >
+                <h3 className="text-lg font-semibold text-slate-900">{group.title}</h3>
+                <div className="mt-4 space-y-3">
+                  {group.items.map((item) => (
+                    <details
+                      key={item.q}
+                      className="group rounded-lg border border-slate-200 bg-slate-50 px-4 py-3"
+                    >
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 pr-1 text-sm font-medium leading-6 text-slate-900">
+                        <span>{item.q}</span>
+                        <span
+                          aria-hidden="true"
+                          className="text-xs font-medium text-slate-400 transition-transform duration-200 group-open:rotate-180"
+                        >&#9662;</span>
+                      </summary>
+                      <p className="mt-3 text-sm leading-6 text-slate-700">{item.a}</p>
+                    </details>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
-          Our Core Service Offerings
-        </h2>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-          We specialize in high-speed, high-density, and high-reliability
-          digital systems. Our expertise spans across:
-        </p>
-
-        <div className="mt-8 grid gap-6 xl:grid-cols-3">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <p className="text-xs uppercase tracking-[0.12em] text-sky-700">
-              1. Advanced Compute &amp; Server Solutions
-            </p>
-            <ul className="mt-4 space-y-4">
-              <li>
-                <h3 className="text-base font-semibold text-slate-900">
-                  Multicore CPU Systems
-                </h3>
-                <p className="mt-1 text-sm leading-6 text-slate-700">
-                  High-performance designs utilizing the latest Intel, AMD, and
-                  Ampere CPUs, optimized for thermal efficiency and high-speed
-                  data throughput.
-                </p>
-              </li>
-              <li>
-                <h3 className="text-base font-semibold text-slate-900">
-                  High-Density AI GPU Compute Servers
-                </h3>
-                <p className="mt-1 text-sm leading-6 text-slate-700">
-                  Custom hardware engineering optimized for parallel
-                  processing, designed to house and power high-performance
-                  NVIDIA and AMD GPU clusters.
-                </p>
-              </li>
-              <li>
-                <h3 className="text-base font-semibold text-slate-900">
-                  Single Board Computers (SBCs) &amp; Server Motherboards
-                </h3>
-                <p className="mt-1 text-sm leading-6 text-slate-700">
-                  Tailor-made designs for data centers and rugged industrial
-                  environments, focusing on Power Integrity (PI) and Signal
-                  Integrity (SI).
-                </p>
-              </li>
-            </ul>
-          </article>
-
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <p className="text-xs uppercase tracking-[0.12em] text-sky-700">
-              2. Next-Gen Connectivity &amp; O-RAN Infrastructure
-            </p>
-            <ul className="mt-4 space-y-4">
-              <li>
-                <h3 className="text-base font-semibold text-slate-900">
-                  100Gbps Network Interface Cards (NIC)
-                </h3>
-                <p className="mt-1 text-sm leading-6 text-slate-700">
-                  Ultra-high-speed connectivity solutions for high-end blade
-                  servers, ensuring maximum bandwidth and minimal latency.
-                </p>
-              </li>
-              <li>
-                <h3 className="text-base font-semibold text-slate-900">
-                  O-RAN Distributed Units (DU)
-                </h3>
-                <p className="mt-1 text-sm leading-6 text-slate-700">
-                  Specialized hardware development for Open RAN architecture to
-                  accelerate global 5G infrastructure rollouts.
-                </p>
-              </li>
-              <li>
-                <h3 className="text-base font-semibold text-slate-900">
-                  Fabric Interface Cards (FIC)
-                </h3>
-                <p className="mt-1 text-sm leading-6 text-slate-700">
-                  Innovative designs for Photonic Resource Units, facilitating
-                  seamless optical-to-electrical resource management.
-                </p>
-              </li>
-            </ul>
-          </article>
-
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <p className="text-xs uppercase tracking-[0.12em] text-sky-700">
-              3. Precision Embedded &amp; FPGA Design
-            </p>
-            <ul className="mt-4 space-y-4">
-              <li>
-                <h3 className="text-base font-semibold text-slate-900">
-                  FPGA-Based Hardware
-                </h3>
-                <p className="mt-1 text-sm leading-6 text-slate-700">
-                  Custom development (Xilinx/Intel) for hardware acceleration,
-                  real-time signal processing, and flexible I/O requirements.
-                </p>
-              </li>
-              <li>
-                <h3 className="text-base font-semibold text-slate-900">
-                  Microcontroller Based Products
-                </h3>
-                <p className="mt-1 text-sm leading-6 text-slate-700">
-                  Robust, power-optimized embedded systems using ARM Cortex-M,
-                  ESP32, and PIC architectures for Industrial IoT (IIoT).
-                </p>
-              </li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section className="border-y border-slate-200 bg-slate-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
-            Why Partner with Qmax Systems?
-          </h2>
-
-          <div className="mt-8 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <table className="min-w-full divide-y divide-slate-200">
-              <thead className="bg-slate-100">
-                <tr>
-                  <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.12em] text-slate-700">
-                    Feature
-                  </th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-[0.12em] text-slate-700">
-                    Our Technical Advantage
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-200">
-                <tr>
-                  <td className="px-6 py-4 text-sm font-semibold text-slate-900">
-                    High-Speed Standards
-                  </td>
-                  <td className="px-6 py-4 text-sm text-slate-700">
-                    Expert handling of DDR5, PCIe Gen5/Gen6, 112G SerDes
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 text-sm font-semibold text-slate-900">
-                    Physical Complexity
-                  </td>
-                  <td className="px-6 py-4 text-sm text-slate-700">
-                    Mastery of 30+ layer HDI PCBs with blind/buried microvias
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 text-sm font-semibold text-slate-900">
-                    Manufacturing Readiness
-                  </td>
-                  <td className="px-6 py-4 text-sm text-slate-700">
-                    Complete DFM, DFA, and DFT implementation
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 text-sm font-semibold text-slate-900">
-                    Signal &amp; Power Integrity
-                  </td>
-                  <td className="px-6 py-4 text-sm text-slate-700">
-                    Advanced SI/PI simulation and validation
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 text-sm font-semibold text-slate-900">
-                    Global Compliance
-                  </td>
-                  <td className="px-6 py-4 text-sm text-slate-700">
-                    Pre-designed for EMI/EMC, CE, FCC, UL
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 text-sm font-semibold text-slate-900">
-                    Lifecycle Support
-                  </td>
-                  <td className="px-6 py-4 text-sm text-slate-700">
-                    From concept to mass production
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p className="mt-6 text-sm leading-7 text-slate-700 md:text-base">
-            We design for performance, reliability, and manufacturability - not
-            just for prototypes.
-          </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
-          End-to-End Digital Hardware Engineering Process
-        </h2>
-        <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-          Our development lifecycle includes:
-        </p>
-
-        <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-          <ul className="grid gap-4 md:grid-cols-2">
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ System Architecture &amp; Feasibility Analysis
-            </li>
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ Platform Selection &amp; Risk Assessment
-            </li>
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ High-Speed Schematics &amp; PCB Layout
-            </li>
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ SI / PI / EMI Simulation
-            </li>
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ Prototype &amp; Manufacturing Support
-            </li>
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ Hardware Validation &amp; Testing
-            </li>
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ Compliance &amp; Certification Support
-            </li>
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ Production Release Documentation
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="border-y border-slate-200 bg-slate-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
-            Proven Industry Experience
-          </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-            We have successfully delivered 100s advanced digital hardware
-            platforms, including:
-          </p>
-
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <li className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-medium text-slate-800 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              AI compute servers
-            </li>
-            <li className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-medium text-slate-800 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              O-RAN DU systems
-            </li>
-            <li className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-medium text-slate-800 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              FPGA accelerators
-            </li>
-            <li className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-medium text-slate-800 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              Server motherboards
-            </li>
-            <li className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-medium text-slate-800 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              High-speed NICs
-            </li>
-            <li className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-medium text-slate-800 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              Embedded controllers
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
-          Detailed Case Studies
-        </h2>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <Link
-            href="/hardware-development-services/high-speed-digital-design"
-            className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-900 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition hover:border-sky-300 hover:text-sky-700"
-          >
-            High Speed Digital Design
-          </Link>
-          <Link
-            href="/hardware-development-services/analog-design"
-            className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-900 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition hover:border-sky-300 hover:text-sky-700"
-          >
-            Analog Design
-          </Link>
-          <Link
-            href="/hardware-development-services/power-electorincs"
-            className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-900 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition hover:border-sky-300 hover:text-sky-700"
-          >
-            Power Electorincs
-          </Link>
-          <Link
-            href="/hardware-development-services/rf-and-microwave"
-            className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-900 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition hover:border-sky-300 hover:text-sky-700"
-          >
-            RF and Microwave
-          </Link>
-        </div>
-
-        <p className="mt-6 text-sm leading-7 text-slate-700 md:text-base">
-          Additional Case Studies can be shared after NDA
-        </p>
-      </section>
-
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_6px_30px_rgba(15,23,42,0.08)] md:p-10">
           <h2 className="text-3xl font-semibold text-slate-900">
-            Complimentary Technical Consulting Session
+            Ready to Build Your Hardware?
           </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-            We offer a free 1-hour technical consultation with our senior
-            hardware engineering team.
-          </p>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-            During this session, we will review:
+            <span className="font-semibold text-slate-900">
+              Free 1-Hour Hardware Consulting
+            </span>{" "}
+            Speak with a senior hardware architect to review your architecture
+            and validate feasibility before you commit to development.
           </p>
-
-          <ul className="mt-6 grid gap-3 md:grid-cols-2">
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ Your system architecture
-            </li>
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ Performance and scalability targets
-            </li>
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ Cost and component optimization
-            </li>
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ Development roadmap
-            </li>
-            <li className="text-sm leading-6 text-slate-800 md:text-base">
-              ✔ Technical and compliance risks
-            </li>
-          </ul>
-
-          <p className="mt-6 text-sm leading-7 text-slate-700 md:text-base">
-            This session is practical, engineering-driven, and focused on
-            real-world implementation - not sales.
-          </p>
-          <p className="mt-4 text-sm font-semibold leading-7 text-slate-900 md:text-base">
-            Contact us today to schedule your complimentary consultation and
-            accelerate your product development.
-          </p>
-        </div>
-      </section>
-
-      <section className="border-t border-slate-200 bg-slate-100/60">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">Technical FAQ</h2>
-          <p className="mt-4 text-sm text-slate-700 md:text-base">
-            Common engineering, validation, and production questions answered by
-            our hardware team.
-          </p>
-
-          <div className="mt-8 rounded-xl border border-slate-200 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <div className="space-y-3">
-              {faqs.map((faq) => (
-                <details
-                  key={faq.question}
-                  className="group rounded-lg border border-slate-200 bg-slate-50 px-4 py-3"
-                >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 pr-1 text-sm font-medium leading-6 text-slate-900">
-                    <span>{faq.question}</span>
-                    <span
-                      aria-hidden="true"
-                      className="text-xs font-medium text-slate-400 transition-transform duration-200 group-open:rotate-180"
-                    >
-                      ▾
-                    </span>
-                  </summary>
-                  <p className="mt-3 text-sm leading-6 text-slate-700">
-                    {faq.answer}
-                  </p>
-                </details>
-              ))}
-            </div>
-          </div>
+          <a
+            href="/contact"
+            className="mt-6 inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-800"
+          >
+            Book a Free Consultation
+          </a>
         </div>
       </section>
     </main>
   );
 }
+
+
+
+
+

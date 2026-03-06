@@ -57,13 +57,27 @@ export default function AboutUsPage() {
   return (
     <main className="min-h-screen bg-slate-50 pt-24 pb-14">
       <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12">
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl mb-6">
+            About Us
+          </h1>
+          <div className="space-y-4 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8 max-w-4xl">
+            <p>
+              Qmax Systems is an Electronics Engineering and R&D Services company based in San Jose, California and having development center in India. Established in 1997, Qmax provides Embedded Systems Design and PCB Design Services.
+            </p>
+            <p>
+              Qmax has a Highly experienced, Multi-disciplinary team which can bring out the best solution for your requirement in the shortest time. Our stringent process and hands-on experience help avoid errors, reduces design costs and ensures faster time to market.
+            </p>
+          </div>
+        </div>
+
         <header className="rounded-2xl border border-slate-200 bg-white px-5 py-8 shadow-sm sm:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
             Qmax Systems
           </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Meet The Team
-          </h1>
+          </h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
             Leadership across hardware, software, business development, project
             execution, and corporate operations.
@@ -74,11 +88,13 @@ export default function AboutUsPage() {
           {teamMembers.map((member, index) => (
             <article
               key={member.name}
-              className={`p-5 transition-shadow hover:shadow-sm ${
-                index % 2 === 0 ? "bg-white" : "bg-slate-100"
-              }`}
+              className={`p-8 md:p-10 min-h-[220px] transition-shadow hover:shadow-sm flex flex-col md:items-center gap-6 ${index % 2 === 0 ? "md:flex-row bg-white" : "md:flex-row-reverse bg-slate-100"
+                }`}
             >
-              <div className="flex items-start gap-4">
+              <div
+                className={`flex items-center gap-4 md:w-2/5 lg:w-1/3 flex-shrink-0 ${index % 2 === 0 ? "" : "md:flex-row-reverse md:text-right"
+                  }`}
+              >
                 <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-full ring-1 ring-slate-200">
                   <Image
                     src={member.image}
@@ -96,13 +112,15 @@ export default function AboutUsPage() {
                   <p className="mt-1 text-sm font-medium leading-5 text-slate-700">
                     {member.role}
                   </p>
-                  <p className="mt-2 inline-flex rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-slate-600">
+                  <p className="mt-2 inline-flex rounded-full bg-slate-200/60 px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-slate-600">
                     {member.experience}
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 text-sm leading-6 text-slate-700">{member.bio}</p>
+              <div className="md:w-3/5 lg:w-2/3">
+                <p className="text-sm leading-6 text-slate-700">{member.bio}</p>
+              </div>
             </article>
           ))}
         </div>

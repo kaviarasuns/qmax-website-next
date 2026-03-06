@@ -21,7 +21,7 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 border-b border-white/40 bg-white/75 backdrop-blur-md supports-[backdrop-filter]:bg-white/60 transition-all duration-300`}
+      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-white/95 via-white/55 to-white/0 backdrop-blur-[2px] transition-all duration-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -238,3 +238,4 @@ export function Navigation() {
     </nav>
   );
 }
+
