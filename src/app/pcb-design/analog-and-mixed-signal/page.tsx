@@ -297,7 +297,7 @@ export default function AnalogAndMixedSignalPage() {
                 Component Lifecycle
               </h3>
               <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                Checking for EOL or \"At Risk\" components to ensure long-term manufacturability.
+                Checking for EOL or &quot;At Risk&quot; components to ensure long-term manufacturability.
               </p>
             </article>
           </div>
@@ -394,7 +394,7 @@ export default function AnalogAndMixedSignalPage() {
                 </td>
                 <td className="border-b border-zinc-200 px-4 py-4 text-sm leading-7 text-zinc-700">
                   Challenge: Detecting biopotential signals (EMG) while rejecting 50/60Hz power line
-                  noise. Solution: Implementation of \"moat-and-bridge\" structures and specialized
+                  noise. Solution: Implementation of &quot;moat-and-bridge&quot; structures and specialized
                   medical-grade isolation.
                 </td>
               </tr>
