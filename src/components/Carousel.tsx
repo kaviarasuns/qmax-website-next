@@ -151,7 +151,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   className={`object-cover ${slide.mobileObjectPosition || ""}`}
                 />
               </div>
-              
+
               {/* Desktop Image - visible on md screens and larger */}
               <div className="hidden md:block">
                 <Image
@@ -168,7 +168,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   {/* Orange buttons above typewriter */}
                   {index === currentSlide && (
                     <>
-                      {index === 0 && !isOverlayClosed && (
+                      {/* {index === 0 && !isOverlayClosed && (
                         <div className="absolute top-8 left-[40%] -translate-x-1/2 md:static md:top-auto md:left-auto md:translate-x-0 md:mb-20 w-fit">
                           <button
                             type="button"
@@ -187,7 +187,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                             className="pointer-events-none h-auto w-[66vw] min-w-[280px] max-w-[560px] sm:w-[58vw]"
                           />
                         </div>
-                      )}
+                      )} */}
                       <div className="flex flex-row gap-4 mb-6">
                         {/* Mobile Watch Video Button */}
                         <button
@@ -298,9 +298,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             <DotButton
               key={index}
               onClick={() => onDotButtonClick(index)}
-              className={`bg-transparent cursor-pointer border-0 p-0 mx-1 w-10 h-10 flex items-center justify-center rounded-full ${
-                index === selectedIndex ? "dot-selected" : "dot-default"
-              }`}
+              className={`bg-transparent cursor-pointer border-0 p-0 mx-1 w-10 h-10 flex items-center justify-center rounded-full ${index === selectedIndex ? "dot-selected" : "dot-default"
+                }`}
             />
           ))}
         </div>
