@@ -40,7 +40,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const router = useRouter();
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [modalVideoId, setModalVideoId] = React.useState<string>("");
-  const [isOverlayClosed, setIsOverlayClosed] = React.useState(false);
+  // const [isOverlayClosed, setIsOverlayClosed] = React.useState(false);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
