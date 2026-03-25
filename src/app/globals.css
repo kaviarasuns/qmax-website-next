@@ -111,6 +111,9 @@ body {
   h6 {
     font-family: "Supermolot", sans-serif;
   }
+  p {
+    @apply text-justify;
+  }
 }
 
 /* Dashing Effect Animation */
