@@ -214,10 +214,6 @@ export default function PowerElectorinicsPage() {
               <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">Validating transformer winding geometries and EMI filter stages like Pi-filters and Common Mode Chokes.</p>
             </article>
             <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <h3 className="text-base font-semibold text-zinc-900 md:text-lg">Thermal &amp; Current Analysis</h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">Reviewing copper weights, stackup, and material selection including Rogers, Isola, or Metal Core.</p>
-            </article>
-            <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
               <h3 className="text-base font-semibold text-zinc-900 md:text-lg">Component Lifecycle</h3>
               <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">Checking for EOL or &quot;At Risk&quot; components to ensure long-term production stability.</p>
             </article>
@@ -236,52 +232,71 @@ export default function PowerElectorinicsPage() {
 
       {/* 1-Hour Complimentary Engineering Consultation Section */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
-          <article className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_4px_24px_rgba(24,24,27,0.06)]">
-            <h2 className="text-2xl font-semibold text-zinc-900 md:text-3xl">
-              6. 1-Hour Complimentary Engineering Consultation
-            </h2>
-            <p className="mt-4 text-sm font-semibold text-zinc-900 md:text-base">
-              We offer a free technical session with our senior engineers to discuss your Power Electronics challenges.
-            </p>
-            <ul className="mt-6 list-disc space-y-2 pl-6 text-sm leading-7 text-zinc-700 md:text-base">
-              <li><span className="font-semibold text-zinc-900">Thermal &amp; Current Analysis:</span> Reviewing copper weights, stackup, and material selection including Rogers, Isola, or Metal Core.</li>
-              <li><span className="font-semibold text-zinc-900">EMI/EMC Compliance Strategy:</span> Addressing Conducted (CE) and Radiated (RE) emissions through &quot;EMC-by-design&quot;.</li>
-              <li><span className="font-semibold text-zinc-900">Grounding &amp; Isolation:</span> Evaluating star-grounding and moat-and-bridge structures for high-voltage safety.</li>
-            </ul>
-            <div className="mt-8">
-              <a
-                href="/contact"
-                className="inline-flex items-center rounded-lg border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-800 transition hover:bg-zinc-100"
-              >
-                👉 Schedule Your 1-Hour Consultation
-              </a>
-            </div>
-          </article>
+        <div className="relative overflow-hidden rounded-[2rem] border border-zinc-200 bg-[linear-gradient(135deg,#18181b_0%,#27272a_45%,#fafafa_45%,#ffffff_100%)] shadow-[0_20px_80px_rgba(24,24,27,0.12)]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_30%),radial-gradient(circle_at_75%_25%,rgba(24,24,27,0.08),transparent_22%)]" />
+          <div className="relative grid gap-8 px-6 py-8 md:px-8 md:py-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10 lg:px-10 lg:py-12">
+            <article className="rounded-[1.5rem] border border-white/10 bg-zinc-950/70 p-8 text-white backdrop-blur">
+              <p className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-zinc-200">
+                Complimentary Session
+              </p>
+              <h2 className="mt-5 max-w-xl text-3xl font-semibold leading-tight md:text-4xl">
+                1-Hour Complimentary Engineering Consultation
+              </h2>
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-300 md:text-base">
+                We offer a free technical session with our senior engineers to discuss your power electronics challenges, surface hidden layout risks, and align the design path before execution.
+              </p>
 
-          <article className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_4px_24px_rgba(24,24,27,0.06)]">
-            <h2 className="text-2xl font-semibold text-zinc-900 md:text-3xl">
-              Ready to start your high-power hardware project?
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-zinc-700 md:text-base">
-              Whether your project involves 800V EV architectures or kW-level plasma generators, Qmax Systems delivers production-ready, first-time-right power electronics hardware.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-zinc-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
-              >
-                Request a Technical Quote
-              </a>
-              <span className="hidden text-sm font-medium text-zinc-400 sm:inline">|</span>
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-lg border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-800 transition hover:bg-zinc-100"
-              >
-                Contact us
-              </a>
-            </div>
-          </article>
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <p className="text-xs uppercase tracking-[0.16em] text-zinc-400">Format</p>
+                  <p className="mt-2 text-sm font-semibold text-white md:text-base">1:1 Engineer Review</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <p className="text-xs uppercase tracking-[0.16em] text-zinc-400">Focus</p>
+                  <p className="mt-2 text-sm font-semibold text-white md:text-base">Risk Reduction</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <p className="text-xs uppercase tracking-[0.16em] text-zinc-400">Outcome</p>
+                  <p className="mt-2 text-sm font-semibold text-white md:text-base">Faster Design Decisions</p>
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
+                >
+                  Schedule Your 1-Hour Consultation
+                </a>
+              </div>
+            </article>
+
+            <aside className="rounded-[1.5rem] border border-zinc-200/80 bg-white/90 p-6 shadow-[0_12px_40px_rgba(24,24,27,0.08)] backdrop-blur md:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-zinc-500">
+                What We Cover
+              </p>
+              <div className="mt-5 space-y-4">
+                <article className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+                  <h3 className="text-base font-semibold text-zinc-900">Thermal &amp; Current Analysis</h3>
+                  <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
+                    Reviewing copper weights, stackup, and material selection including Rogers, Isola, or Metal Core.
+                  </p>
+                </article>
+                <article className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+                  <h3 className="text-base font-semibold text-zinc-900">EMI/EMC Compliance Strategy</h3>
+                  <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
+                    Addressing Conducted (CE) and Radiated (RE) emissions through &quot;EMC-by-design&quot;.
+                  </p>
+                </article>
+                <article className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+                  <h3 className="text-base font-semibold text-zinc-900">Grounding &amp; Isolation</h3>
+                  <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
+                    Evaluating star-grounding and moat-and-bridge structures for high-voltage safety.
+                  </p>
+                </article>
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
 

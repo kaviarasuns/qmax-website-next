@@ -337,32 +337,62 @@ export default function MechanicalIndustrialDesignPage() {
 
       {/* Professional Engineering Review Block */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
-          <article className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_4px_24px_rgba(24,24,27,0.06)]">
-            <h2 className="text-2xl font-semibold text-zinc-900 md:text-3xl">
-              Get a Professional Engineering Review
-            </h2>
-            <p className="mt-4 text-sm font-semibold text-zinc-900 md:text-base">
-              Ready to move from a breadboard to a professional product?
-            </p>
-            <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-              Let our senior engineers review your current progress and provide a roadmap for mechanical and industrial success.
-            </p>
-            <ul className="mt-6 list-disc space-y-2 pl-6 text-sm leading-7 text-zinc-700 md:text-base">
-              <li><span className="font-semibold text-zinc-900">Free Technical Consultation:</span> 1-hour session with a senior design lead.</li>
-              <li><span className="font-semibold text-zinc-900">Complimentary Review:</span> We will review your preliminary schematics and enclosure concepts for DFM/DFA gaps.</li>
-            </ul>
-            <div className="mt-8">
-              <a
-                href="/contact"
-                className="inline-flex items-center rounded-lg border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-800 transition hover:bg-zinc-100"
-              >
-                Schedule Your Consultation
-              </a>
-            </div>
-          </article>
+        <article className="relative overflow-hidden rounded-[2rem] border border-zinc-200 bg-white shadow-[0_20px_80px_rgba(24,24,27,0.08)]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(24,24,27,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(161,161,170,0.16),transparent_30%)]" />
+          <div className="relative grid gap-10 px-6 py-8 md:px-10 md:py-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-12 lg:py-12">
+            <div>
+              <div className="inline-flex items-center rounded-full border border-zinc-300 bg-zinc-100 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-700">
+                Senior Design Review
+              </div>
+              <h2 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight text-zinc-900 md:text-4xl">
+                Get a Professional Engineering Review
+              </h2>
+              <p className="mt-4 max-w-2xl text-base font-semibold text-zinc-900 md:text-lg">
+                Ready to move from a breadboard to a professional product? Let our senior engineers review your current progress and provide a roadmap for mechanical and industrial success.
+              </p>
 
-          <article className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_4px_24px_rgba(24,24,27,0.06)]">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-lg bg-zinc-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800"
+                >
+                  Schedule Your Consultation
+                </a>
+              </div>
+            </div>
+
+            <div className="grid gap-4">
+              <div className="rounded-2xl border border-zinc-200 bg-zinc-950 p-6 text-white shadow-[0_16px_40px_rgba(24,24,27,0.18)]">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-zinc-300">
+                  Review includes
+                </p>
+                <div className="mt-5 space-y-4">
+                  {[
+                    {
+                      title: "Free Technical Consultation",
+                      desc: "1-hour session with a senior design lead.",
+                    },
+                    {
+                      title: "Complimentary Review",
+                      desc: "We will review your preliminary schematics and enclosure concepts for DFM/DFA gaps.",
+                    },
+                  ].map((item, idx) => (
+                    <div key={item.title} className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-4">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 text-sm font-semibold text-white">
+                        0{idx + 1}
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-semibold text-white md:text-base">{item.title}</h3>
+                        <p className="mt-1 text-sm leading-6 text-zinc-300">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* <article className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_4px_24px_rgba(24,24,27,0.06)]">
             <h2 className="text-2xl font-semibold text-zinc-900 md:text-3xl">
               Ready to start your product engineering project?
             </h2>
@@ -384,8 +414,8 @@ export default function MechanicalIndustrialDesignPage() {
                 Request a Quote for Design Services
               </a>
             </div>
-          </article>
-        </div>
+          </article> */}
+        </article>
       </section>
 
       {/* Internal Resources */}
