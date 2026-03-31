@@ -87,7 +87,7 @@ export default function MechanicalIndustrialDesignPage() {
                   <p className="text-zinc-700 text-sm">IP-rated sealing, thermal simulation, MIL-spec compliance, and material selection (Plastics, Machined Alloys, Sheet Metal).</p>
                 </div>
               </div>
-              <a href="/mechanical-design" className="inline-flex items-center text-sm font-semibold text-zinc-900 underline underline-offset-4 decoration-zinc-300 hover:decoration-zinc-900 transition">
+              <a href="/mechanical-industrial-design-services/mechanical-design" className="inline-flex items-center text-sm font-semibold text-zinc-900 underline underline-offset-4 decoration-zinc-300 hover:decoration-zinc-900 transition">
                 Explore Mechanical Design Services →
               </a>
             </article>
@@ -103,7 +103,7 @@ export default function MechanicalIndustrialDesignPage() {
                   <p className="text-zinc-700 text-sm">CMF development, ergonomic studies, UI/UX for hardware, and photorealistic visualization.</p>
                 </div>
               </div>
-              <a href="/industrial-design" className="inline-flex items-center text-sm font-semibold text-zinc-900 underline underline-offset-4 decoration-zinc-300 hover:decoration-zinc-900 transition">
+              <a href="/mechanical-industrial-design-services/industrial-design" className="inline-flex items-center text-sm font-semibold text-zinc-900 underline underline-offset-4 decoration-zinc-300 hover:decoration-zinc-900 transition">
                 Explore Industrial Design Services →
               </a>
             </article>
