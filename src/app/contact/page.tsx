@@ -117,15 +117,15 @@ const Contact = () => {
 
   // API call to contact email endpoint
   const submitContactForm = async (data: typeof formData) => {
-    // console.log(data);
-    // const response = await fetch("http://localhost:8080/api/email/contact", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // });
-    // return response.json();
+    console.log(data);
+    const response = await fetch("http://localhost:8080/api/email/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    return response.json();
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
