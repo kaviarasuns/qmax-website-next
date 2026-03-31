@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const services = [
@@ -10,207 +10,120 @@ const services = [
       "https://framerusercontent.com/images/xZdrZACUdNYgULp5M3m2BcUhBI.png",
     description:
       "Develop system architecture and select core electronic components.",
+    href: "/hardware-development-services",
   },
   {
     topic: "Firmware Development",
     image:
       "https://framerusercontent.com/images/URP1Krg4uds9qGHII952XUGsc4.png",
     description:
-      "Program low-level code to bring up boards, handle protocols, and control hardware.",
+      "Program low-level code to bring up boards and handle protocols.",
+    href: "/embedded-design-services",
   },
   {
     topic: "PCB Design",
     image:
       "https://framerusercontent.com/images/7CnP7xCaEUuDiSvOyIyHs36cw4I.png",
     description: "Design and layout production-ready printed circuit boards.",
+    href: "/pcb-design",
   },
   {
-    topic: "Industrial Design And Mechanical",
+    topic: "Industrial & Mechanical",
     image:
       "https://framerusercontent.com/images/kTPtpORfLevVY4rDMRwjeXD72sc.png",
     description:
-      "Design products that look great, feel right, and are ready to manufacture.",
+      "Design products that look great and feel right for manufacturing.",
+    href: "/mechanical-industrial-design-services",
   },
   {
     topic: "Apps and Cloud",
     image: "https://framerusercontent.com/images/8tZqdkd46foyx5TeIzPw8YhbA.png",
     description:
-      "Build full-stack software that connects devices to seamless digital experiences.",
+      "Build full-stack software that connects devices to digital experiences.",
+    href: "/apps-and-cloud",
   },
   {
     topic: "Value Added Services",
     image:
       "https://framerusercontent.com/images/fwoTbHaje1iNRvuK7dPxw0nq3Kg.png",
     description:
-      "Enable production with test jigs, certifications, vendor audits, and prototyping.",
+      "Enable production with test jigs, certifications, and prototyping.",
+    href: "/value-added-services",
   },
 ];
 
-const ServicesV3 = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [displayScale, setDisplayScale] = useState(1);
-  console.log(isMobile);
-
-  // Detect display scale (DPI scaling / zoom level)
-  useEffect(() => {
-    const checkDisplayScale = () => {
-      const scale = window.devicePixelRatio;
-      setDisplayScale(scale);
-      console.log(`Display Scale: ${scale * 100}% (devicePixelRatio: ${scale})`);
-    };
-
-    checkDisplayScale();
-
-    const handleResize = () => {
-      checkDisplayScale();
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    const mediaQueryList = window.matchMedia(
-      `(resolution: ${window.devicePixelRatio}dppx)`
-    );
-    const handleMediaChange = () => {
-      checkDisplayScale();
-    };
-    mediaQueryList.addEventListener("change", handleMediaChange);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      mediaQueryList.removeEventListener("change", handleMediaChange);
-    };
-  }, []);
-
-  // Detect mobile device
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  // Helper function to get scale-based classes
-  const getScaleClasses = (
-    scale100: string,  // scale <= 1
-    scale125: string,  // scale around 1.25
-    scale150: string   // scale >= 1.5
-  ) => {
-    if (displayScale >= 1.5) return scale150;
-    if (displayScale >= 1.25) return scale125;
-    return scale100;
-  };
-
-  return (
-    <section className="w-full h-screen flex items-center justify-center pt-16 md:pt-20 pb-2">
-      <div className={`container mx-auto max-h-[calc(95vh-4rem)] flex flex-col justify-center ${
-        getScaleClasses(
-          "px-8 sm:px-12 md:px-20",      // 100% - most padding
-          "px-6 sm:px-8 md:px-12",        // 125% - medium padding
-          "px-4 sm:px-6"                   // 150% - least padding (original)
-        )
-      }`}>
-        <div className="text-center mb-2 md:mb-3">
-          <h2 className={`font-bold text-gray-800 ${
-            getScaleClasses(
-              "text-2xl md:text-3xl lg:text-4xl",   // 100%
-              "text-xl md:text-2xl lg:text-3xl",    // 125%
-              "text-lg md:text-xl lg:text-2xl"      // 150% (original)
-            )
-          }`}>
-            Our Services
-          </h2>
+const ServiceCard = React.memo(({ service, index }: { service: typeof services[0]; index: number }) => (
+  <motion.div
+    key={index}
+    initial={{ opacity: 0, y: 15 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.4, delay: index * 0.05 }}
+    className="group h-full"
+  >
+    <Link href={service.href} className="flex flex-col h-full">
+      <div className="bg-white rounded-lg shadow-sm border border-gray-100/50 overflow-hidden hover:shadow-md hover:border-red-600/20 transition-all duration-300 flex flex-col h-full group-hover:-translate-y-1">
+        <div className="relative overflow-hidden aspect-[21/9]">
+          <Image
+            src={service.image}
+            alt={service.topic}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
 
-        <div className={`grid grid-cols-3 mx-auto ${
-          getScaleClasses(
-            "gap-4 md:gap-5 lg:gap-6 max-w-6xl",   // 100%
-            "gap-3 md:gap-4 lg:gap-5 max-w-5xl",   // 125%
-            "gap-2 md:gap-3 max-w-4xl"              // 150% (original)
-          )
-        }`}>
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="flex flex-col"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
+        <div className="flex-1 flex flex-col p-3 pt-2">
+          <h3 className="text-sm md:text-base font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-300 mb-0.5 line-clamp-1">
+            {service.topic}
+          </h3>
+
+          <p className="text-gray-500 text-[11px] md:text-xs leading-tight line-clamp-2 mb-2">
+            {service.description}
+          </p>
+
+          <div className="mt-auto flex items-center text-red-600 font-bold text-[10px] md:text-[11px] uppercase tracking-wider group-hover:gap-1.5 transition-all duration-300">
+            <span>Learn More</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-3 w-3 transform group-hover:translate-x-1 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <div className="bg-white rounded-md shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 group flex flex-col h-full">
-                <div className={`relative overflow-hidden ${
-                  getScaleClasses(
-                    "p-2.5 md:p-3",    // 100%
-                    "p-2 md:p-2.5",    // 125%
-                    "p-1.5"            // 150% (original)
-                  )
-                }`}>
-                  <div className={`relative w-full ${
-                    getScaleClasses(
-                      "aspect-[16/11]",    // 100%
-                      "aspect-[16/10.5]",  // 125%
-                      "aspect-[16/10]"     // 150% (original)
-                    )
-                  }`}>
-                    <Image
-                      src={service.image}
-                      alt={service.topic}
-                      fill
-                      className="object-cover transition-transform duration-300 rounded-sm"
-                    />
-                  </div>
-                  <div className={`absolute bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-sm ${
-                    getScaleClasses(
-                      "inset-2.5 md:inset-3",    // 100%
-                      "inset-2 md:inset-2.5",    // 125%
-                      "inset-1.5"                 // 150% (original)
-                    )
-                  }`} />
-                </div>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </Link>
+  </motion.div>
+));
 
-                <div className={`flex-1 flex flex-col ${
-                  getScaleClasses(
-                    "p-2.5 md:p-3.5",    // 100%
-                    "p-2 md:p-3",        // 125%
-                    "p-1.5 md:p-2"       // 150% (original)
-                  )
-                }`}>
-                  <h3 className={`font-bold text-gray-800 group-hover:text-red-600 transition-colors duration-300 line-clamp-1 ${
-                    getScaleClasses(
-                      "text-sm md:text-base lg:text-lg mb-1.5",    // 100%
-                      "text-xs md:text-sm lg:text-base mb-1",      // 125%
-                      "text-[10px] md:text-xs mb-0.5"              // 150% (original)
-                    )
-                  }`}>
-                    {service.topic}
-                  </h3>
+ServiceCard.displayName = "ServiceCard";
 
-                  <p className={`text-gray-600 flex-1 line-clamp-2 leading-tight ${
-                    getScaleClasses(
-                      "text-xs md:text-sm lg:text-base mb-2.5",      // 100%
-                      "text-[10px] md:text-xs lg:text-sm mb-2",      // 125%
-                      "text-[8px] md:text-[10px] mb-1"               // 150% (original)
-                    )
-                  }`}>
-                    {service.description}
-                  </p>
+const ServicesV3 = () => {
+  return (
+    <section className="w-full min-h-screen lg:h-screen flex items-center justify-center py-8 lg:py-0 px-4 sm:px-6 lg:px-8 bg-gray-50/50 overflow-hidden">
+      <div className="max-w-6xl mx-auto w-full">
+        <div className="text-center max-w-2xl mx-auto mb-6 lg:mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-gray-900 mb-1 tracking-tight">
+              Our <span className="text-red-600">Services</span>
+            </h2>
+            <div className="h-0.5 w-12 bg-red-600 mx-auto rounded-full mb-2" />
+          </motion.div>
+        </div>
 
-                  <div className="mt-auto">
-                    <Button className={`w-full bg-red-600 hover:bg-red-700 text-white font-semibold rounded-sm transition-colors duration-300 ${
-                      getScaleClasses(
-                        "text-xs md:text-sm py-2 px-3",          // 100%
-                        "text-[10px] md:text-xs py-1.5 px-2",   // 125%
-                        "text-[8px] md:text-[10px] py-1 px-1.5" // 150% (original)
-                      )
-                    }`}>
-                      Know More
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+          {services.map((service, index) => (
+            <ServiceCard key={service.topic} service={service} index={index} />
           ))}
         </div>
       </div>

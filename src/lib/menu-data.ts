@@ -67,6 +67,18 @@ export const menuData: MenuItem[] = [
             title: "RF and Microwave",
             href: "/pcb-design/rf-and-microwave-pcb-design",
           },
+          {
+            title: "SI & PI Analysis Services",
+            href: "/pcb-design/si-pi-analysis",
+          },
+          {
+            title: "PCB Library Services",
+            href: "/pcb-design/pcb-library-services",
+          },
+          {
+            title: "PCB Design Review Services",
+            href: "/pcb-design/pcb-design-review-services",
+          },
         ],
       },
       {
@@ -82,6 +94,16 @@ export const menuData: MenuItem[] = [
         image:
           "https://images.pexels.com/photos/760710/pexels-photo-760710.jpeg?auto=compress&cs=tinysrgb&w=300",
         description: "Industrial, mechanical and enclosure design services",
+        children: [
+          {
+            title: "Mechanical Design Services",
+            href: "/mechanical-industrial-design-services/mechanical-design",
+          },
+          {
+            title: "Industrial Design Services",
+            href: "/mechanical-industrial-design-services/industrial-design",
+          },
+        ],
       },
     ],
   },

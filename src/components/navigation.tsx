@@ -95,7 +95,7 @@ export function Navigation() {
                                     </Link>
                                   </NavigationMenuLink>
                                   {subItem.children && subItem.children.length > 0 && (
-                                    <div className="mt-2 space-y-1 overflow-hidden max-h-0 opacity-0 transition-all duration-200 group-hover:max-h-40 group-hover:opacity-100 group-focus-within:max-h-40 group-focus-within:opacity-100">
+                                    <div className="mt-2 space-y-1 overflow-hidden max-h-0 opacity-0 transition-all duration-200 group-hover:max-h-60 group-hover:opacity-100 group-focus-within:max-h-60 group-focus-within:opacity-100">
                                       {subItem.children.map((childItem) => (
                                         <Link
                                           key={childItem.title}

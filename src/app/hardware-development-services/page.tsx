@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 const workflowItems = [
   {
@@ -183,142 +184,182 @@ export default function HardwareDevelopmentServicesPage() {
             experience. Our HW engineering stack covers six critical domains.
           </p>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-xl font-semibold text-slate-900">
-                1. Digital Hardware Design
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-                We design high-performance digital electronics, ranging from
-                simple MCU boards to complex, high-speed, multi-processor
-                systems.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
-                <li>
-                  <span className="font-semibold text-slate-900">Platforms:</span>{" "}
-                  MCU, MPU, SoC, and FPGA-based platforms.
-                </li>
-                <li>
-                  <span className="font-semibold text-slate-900">
-                    High-Speed Interfaces:
-                  </span>{" "}
-                  PCIe Gen3/4/5, USB 2.0/3.x, Gigabit/10G/25G Ethernet, and
-                  MIPI/LVDS/HDMI display interfaces.
-                </li>
-                <li>
-                  <span className="font-semibold text-slate-900">Memory:</span>{" "}
-                  DDR3, DDR4, and DDR5 memory subsystem design.
-                </li>
-                <li>
-                  <span className="font-semibold text-slate-900">
-                    PCB Technology:
-                  </span>{" "}
-                  High-density BGA, HDI, and multi-layer PCBs.
-                </li>
-              </ul>
+            <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:shadow-md">
+              <div className="flex-grow">
+                <h3 className="text-xl font-semibold text-slate-900">
+                  1. Digital Hardware Design
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                  We design high-performance digital electronics, ranging from
+                  simple MCU boards to complex, high-speed, multi-processor
+                  systems.
+                </p>
+                <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
+                  <li>
+                    <span className="font-semibold text-slate-900">Platforms:</span>{" "}
+                    MCU, MPU, SoC, and FPGA-based platforms.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-900">
+                      High-Speed Interfaces:
+                    </span>{" "}
+                    PCIe Gen3/4/5, USB 2.0/3.x, Gigabit/10G/25G Ethernet, and
+                    MIPI/LVDS/HDMI display interfaces.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-900">Memory:</span>{" "}
+                    DDR3, DDR4, and DDR5 memory subsystem design.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-900">
+                      PCB Technology:
+                    </span>{" "}
+                    High-density BGA, HDI, and multi-layer PCBs.
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-8">
+                <Link
+                  href="/hardware-development-services/high-speed-digital-design"
+                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800 shadow-sm"
+                >
+                  Know More
+                </Link>
+              </div>
             </article>
 
-            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-xl font-semibold text-slate-900">
-                2. Analog &amp; Mixed-Signal Design
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-                We possess deep expertise in precision analog and mixed-signal
-                design, critical for sensing, measurement, and low-noise
-                applications.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
-                <li>
-                  <span className="font-semibold text-slate-900">Sensing:</span>{" "}
-                  Low-noise analog front-ends and sensor interfacing for
-                  pressure, vibration, biomedical, and optical applications.
-                </li>
-                <li>
-                  <span className="font-semibold text-slate-900">
-                    Processing:
-                  </span>{" "}
-                  Signal conditioning, filtering, amplification, and ADC/DAC
-                  integration.
-                </li>
-                <li>
-                  <span className="font-semibold text-slate-900">
-                    Integrity:
-                  </span>{" "}
-                  EMI-aware analog layout and grounding techniques.
-                </li>
-              </ul>
+            <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:shadow-md">
+              <div className="flex-grow">
+                <h3 className="text-xl font-semibold text-slate-900">
+                  2. Analog &amp; Mixed-Signal Design
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                  We possess deep expertise in precision analog and mixed-signal
+                  design, critical for sensing, measurement, and low-noise
+                  applications.
+                </p>
+                <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
+                  <li>
+                    <span className="font-semibold text-slate-900">Sensing:</span>{" "}
+                    Low-noise analog front-ends and sensor interfacing for
+                    pressure, vibration, biomedical, and optical applications.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-900">
+                      Processing:
+                    </span>{" "}
+                    Signal conditioning, filtering, amplification, and ADC/DAC
+                    integration.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-900">
+                      Integrity:
+                    </span>{" "}
+                    EMI-aware analog layout and grounding techniques.
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-8">
+                <Link
+                  href="/hardware-development-services/analog-design"
+                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800 shadow-sm"
+                >
+                  Know More
+                </Link>
+              </div>
             </article>
 
-            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-xl font-semibold text-slate-900">
-                3. RF &amp; Microwave Hardware
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-                Our RF designs are validated in real-world conditions, not just
-                simulations.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
-                <li>
-                  <span className="font-semibold text-slate-900">
-                    Components:
-                  </span>{" "}
-                  RF front-end design (LNA, PA, filters, matching networks).
-                </li>
-                <li>
-                  <span className="font-semibold text-slate-900">Antennas:</span>{" "}
-                  Design and integration of PCB, external, horn, and custom
-                  antennas.
-                </li>
-                <li>
-                  <span className="font-semibold text-slate-900">
-                    Protocols:
-                  </span>{" "}
-                  ISM, Wi-Fi, BLE, LTE, and Sub-GHz systems.
-                </li>
-                <li>
-                  <span className="font-semibold text-slate-900">
-                    Validation:
-                  </span>{" "}
-                  RF simulation, tuning, calibration, and EMC-aware layout.
-                </li>
-              </ul>
+            <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:shadow-md">
+              <div className="flex-grow">
+                <h3 className="text-xl font-semibold text-slate-900">
+                  3. RF &amp; Microwave Hardware
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                  Our RF designs are validated in real-world conditions, not just
+                  simulations.
+                </p>
+                <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
+                  <li>
+                    <span className="font-semibold text-slate-900">
+                      Components:
+                    </span>{" "}
+                    RF front-end design (LNA, PA, filters, matching networks).
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-900">Antennas:</span>{" "}
+                    Design and integration of PCB, external, horn, and custom
+                    antennas.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-900">
+                      Protocols:
+                    </span>{" "}
+                    ISM, Wi-Fi, BLE, LTE, and Sub-GHz systems.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-900">
+                      Validation:
+                    </span>{" "}
+                    RF simulation, tuning, calibration, and EMC-aware layout.
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-8">
+                <Link
+                  href="/hardware-development-services/rf-and-microwave"
+                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800 shadow-sm"
+                >
+                  Know More
+                </Link>
+              </div>
             </article>
 
-            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-xl font-semibold text-slate-900">
-                4. Power Electronics &amp; High-Voltage
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-                We design robust power electronics for industrial, automotive,
-                and energy applications.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
-                <li>
-                  <span className="font-semibold text-slate-900">
-                    Conversion:
-                  </span>{" "}
-                  AC-DC/DC-DC converters and isolated/non-isolated SMPS
-                  designs.
-                </li>
-                <li>
-                  <span className="font-semibold text-slate-900">
-                    Topologies:
-                  </span>{" "}
-                  Resonant, LLC, CLLC, and Class-D topologies.
-                </li>
-                <li>
-                  <span className="font-semibold text-slate-900">
-                    High Power:
-                  </span>{" "}
-                  Battery systems (BMS), chargers, inverters, and
-                  high-voltage/high-current PCB design.
-                </li>
-                <li>
-                  <span className="font-semibold text-slate-900">
-                    Reliability:
-                  </span>{" "}
-                  Thermal simulation, derating, and reliability analysis.
-                </li>
-              </ul>
+            <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:shadow-md">
+              <div className="flex-grow">
+                <h3 className="text-xl font-semibold text-slate-900">
+                  4. Power Electronics &amp; High-Voltage
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
+                  We design robust power electronics for industrial, automotive,
+                  and energy applications.
+                </p>
+                <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
+                  <li>
+                    <span className="font-semibold text-slate-900">
+                      Conversion:
+                    </span>{" "}
+                    AC-DC/DC-DC converters and isolated/non-isolated SMPS
+                    designs.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-900">
+                      Topologies:
+                    </span>{" "}
+                    Resonant, LLC, CLLC, and Class-D topologies.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-900">
+                      High Power:
+                    </span>{" "}
+                    Battery systems (BMS), chargers, inverters, and
+                    high-voltage/high-current PCB design.
+                  </li>
+                  <li>
+                    <span className="font-semibold text-slate-900">
+                      Reliability:
+                    </span>{" "}
+                    Thermal simulation, derating, and reliability analysis.
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-8">
+                <Link
+                  href="/hardware-development-services/power-electorincs"
+                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800 shadow-sm"
+                >
+                  Know More
+                </Link>
+              </div>
             </article>
           </div>
           <div className="mt-12 space-y-12">

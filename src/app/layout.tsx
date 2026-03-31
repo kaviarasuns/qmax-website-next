@@ -5,6 +5,7 @@ import FooterV2 from "@/components/footer-v2";
 import ContactUsButtonWrapper from "@/components/ContactUsButtonWrapper";
 import { ReactLenis } from "@/utils/lenis";
 import { Navigation } from "@/components/navigation";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+          <ScrollToTop />
           <Navigation />
           {children}
           <FooterV2 />

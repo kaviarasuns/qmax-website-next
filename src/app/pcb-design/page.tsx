@@ -87,14 +87,14 @@ const coreCapabilities = [
     title: "PCB Library Services",
     description:
       "Development of IPC-compliant footprints and symbols. We ensure 3D model accuracy for mechanical collision checking and maintain centralized libraries for enterprise consistency.",
-    href: "/case-studies/Aerospace-PCB",
+    href: "/pcb-design/pcb-library-services",
   },
   {
     label: "G",
-    title: "PCB Design Review & EMI/EMC Compliance",
+    title: "PCB Design Review Services",
     description:
       "Third-party audits of existing designs to identify EMI risks. We evaluate grounding schemes, return path discontinuities, and aperture leaks to ensure readiness for CE, FCC, and VCCI testing.",
-    href: "/case-studies/Security-Controller",
+    href: "/pcb-design/pcb-design-review-services",
   },
   {
     label: "H",
