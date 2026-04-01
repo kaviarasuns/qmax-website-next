@@ -234,15 +234,15 @@ export default function MechanicalDesignServicesPageV2() {
                                 <h3 className="text-xl text-white font-medium mb-4 pr-12">Wi-Fi Security Device Enclosure</h3>
                                 <ul className="space-y-3 font-light text-zinc-400">
                                     <li className="flex items-start gap-3">
-                                        <span className="text-emerald-500 mt-1 text-[10px] opacity-70">///</span>
+                                        <span className="text-emerald-500 mt-1 text-[10px] opacity-70">{"///"}</span>
                                         <span>Low tooling cost</span>
                                     </li>
                                     <li className="flex items-start gap-3">
-                                        <span className="text-emerald-500 mt-1 text-[10px] opacity-70">///</span>
+                                        <span className="text-emerald-500 mt-1 text-[10px] opacity-70">{"///"}</span>
                                         <span>Integrated EMI suppression geometry</span>
                                     </li>
                                     <li className="flex items-start gap-3">
-                                        <span className="text-emerald-500 mt-1 text-[10px] opacity-70">///</span>
+                                        <span className="text-emerald-500 mt-1 text-[10px] opacity-70">{"///"}</span>
                                         <span>Antenna keep-out zones for maximum Wi-Fi throughput</span>
                                     </li>
                                 </ul>
@@ -255,15 +255,15 @@ export default function MechanicalDesignServicesPageV2() {
                                 <p className="text-xs font-mono text-emerald-500 mb-6 tracking-widest uppercase">4G | Wi-Fi | LCD | Battery</p>
                                 <ul className="space-y-3 font-light text-zinc-400">
                                     <li className="flex items-start gap-3">
-                                        <span className="text-emerald-500 mt-1 text-[10px] opacity-70">///</span>
+                                        <span className="text-emerald-500 mt-1 text-[10px] opacity-70">{"///"}</span>
                                         <span>Designed for harsh workshop environments</span>
                                     </li>
                                     <li className="flex items-start gap-3">
-                                        <span className="text-emerald-500 mt-1 text-[10px] opacity-70">///</span>
+                                        <span className="text-emerald-500 mt-1 text-[10px] opacity-70">{"///"}</span>
                                         <span>Robust drop resistance & ergonomic grip geometry</span>
                                     </li>
                                     <li className="flex items-start gap-3">
-                                        <span className="text-emerald-500 mt-1 text-[10px] opacity-70">///</span>
+                                        <span className="text-emerald-500 mt-1 text-[10px] opacity-70">{"///"}</span>
                                         <span>Complex internal RF coordination</span>
                                     </li>
                                 </ul>
@@ -838,15 +838,15 @@ export default function MechanicalDesignServicesPageV2() {
                             <p className="text-[10px] font-mono text-emerald-500 mb-6 tracking-widest uppercase">MIL-STD-810H | L-WEIGHT AL</p>
                             <ul className="space-y-3 text-sm font-light text-zinc-400">
                                 <li className="flex items-start gap-2">
-                                    <span className="text-emerald-500/70">///</span>
+                                    <span className="text-emerald-500/70">{"///"}</span>
                                     <span>Ultra-lightweight Al-alloy manpack for defence application</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-emerald-500/70">///</span>
+                                    <span className="text-emerald-500/70">{"///"}</span>
                                     <span>Qualified for vibration, shock, temperature, and humidity</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-emerald-500/70">///</span>
+                                    <span className="text-emerald-500/70">{"///"}</span>
                                     <span>Weight optimisation alongside full RF shielding integrity</span>
                                 </li>
                             </ul>
@@ -858,11 +858,11 @@ export default function MechanicalDesignServicesPageV2() {
                             <h3 className="text-xl text-white font-medium mb-4 pr-12">Wi-Fi Security Device Enclosure</h3>
                             <ul className="space-y-3 text-sm font-light text-zinc-400">
                                 <li className="flex items-start gap-2">
-                                    <span className="text-emerald-500/70">///</span>
+                                    <span className="text-emerald-500/70">{"///"}</span>
                                     <span>Integrated EMI suppression & antenna keep-out zones</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-emerald-500/70">///</span>
+                                    <span className="text-emerald-500/70">{"///"}</span>
                                     <span>Optimised for maximum Wi-Fi throughput and low tooling cost</span>
                                 </li>
                             </ul>
@@ -875,11 +875,11 @@ export default function MechanicalDesignServicesPageV2() {
                             <p className="text-[10px] font-mono text-emerald-500 mb-6 tracking-widest uppercase">4G | Wi-Fi | LCD | Battery</p>
                             <ul className="space-y-3 text-sm font-light text-zinc-400">
                                 <li className="flex items-start gap-2">
-                                    <span className="text-emerald-500/70">///</span>
+                                    <span className="text-emerald-500/70">{"///"}</span>
                                     <span>Ergonomic grip geometry with robust drop resistance</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-emerald-500/70">///</span>
+                                    <span className="text-emerald-500/70">{"///"}</span>
                                     <span>Complex internal RF coordination for workshop environments</span>
                                 </li>
                             </ul>
