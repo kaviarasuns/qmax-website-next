@@ -108,12 +108,6 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
-  // Logic gate inputs
-  const [input1, setInput1] = useState(false);
-  const [input2, setInput2] = useState(false);
-  
-  // Gate activation logic: active when exactly one input is active (failsafe to prevent BOTH active)
-  const isGateActive = (input1 || input2) && !(input1 && input2);
 
   // API call to contact email endpoint
   const submitContactForm = async (data: typeof formData) => {
@@ -339,106 +333,39 @@ const Contact = () => {
                     />
 
                     <div className="pt-8 pb-4">
-                      <div className="group relative flex items-center w-max">
-                        {/* Input Pins as Toggle Switches */}
-                        <div className="flex flex-col justify-center gap-4 mr-0 z-0">
-                          {/* Input 1 */}
-                          <button
-                            type="button"
-                            onClick={() => setInput1(!input1)}
-                            className="flex items-center group/pin focus:outline-none"
-                            title="Toggle Input 1"
-                          >
-                            <div className={`w-[2.5rem] h-[1.5rem] rounded-md border-2 flex items-center px-0.5 transition-colors duration-300 relative overflow-hidden ${input1 ? 'border-brand-red bg-red-50/50' : 'border-gray-800 bg-white'}`}>
-                               <div className={`w-3.5 h-4 rounded-sm shadow-sm transition-all duration-300 ${input1 ? 'bg-brand-red translate-x-[1.1rem]' : 'bg-gray-800 translate-x-0'}`}></div>
-                            </div>
-                            <div className={`w-4 h-[3px] transition-colors duration-300 shadow-sm relative ${input1 ? 'bg-brand-red' : 'bg-gray-800 group-hover/pin:bg-gray-600'}`}>
-                              {input1 && <div className="absolute top-1/2 -translate-y-1/2 left-1 w-2 h-2 rounded-full bg-brand-red opacity-100 animate-ping"></div>}
-                            </div>
-                          </button>
-
-                          {/* Input 2 */}
-                          <button
-                            type="button"
-                            onClick={() => setInput2(!input2)}
-                            className="flex items-center group/pin focus:outline-none"
-                            title="Toggle Input 2"
-                          >
-                            <div className={`w-[2.5rem] h-[1.5rem] rounded-md border-2 flex items-center px-0.5 transition-colors duration-300 relative overflow-hidden ${input2 ? 'border-brand-red bg-red-50/50' : 'border-gray-800 bg-white'}`}>
-                               <div className={`w-3.5 h-4 rounded-sm shadow-sm transition-all duration-300 ${input2 ? 'bg-brand-red translate-x-[1.1rem]' : 'bg-gray-800 translate-x-0'}`}></div>
-                            </div>
-                            <div className={`w-4 h-[3px] transition-colors duration-300 shadow-sm relative ${input2 ? 'bg-brand-red' : 'bg-gray-800 group-hover/pin:bg-gray-600'}`}>
-                              {input2 && <div className="absolute top-1/2 -translate-y-1/2 left-1 w-2 h-2 rounded-full bg-brand-red opacity-100 animate-ping" style={{ animationDelay: "150ms" }}></div>}
-                            </div>
-                          </button>
-                        </div>
-
-                        {/* Gate Body (The Button) */}
-                        <button
-                          type="submit"
-                          disabled={loading || !isGateActive}
-                          className={`
-                            relative z-10 flex items-center justify-center gap-3
-                            px-8 py-5 ml-[-2px]
-                            border-[3px] 
-                            bg-white
-                            rounded-l-md rounded-r-[3.5rem]
-                            font-bold text-lg tracking-wider
-                            transition-all duration-300 ease-out
-                            ${loading 
-                              ? "border-gray-300 bg-gray-50 text-gray-400 cursor-not-allowed" 
-                              : !isGateActive
-                                ? "border-gray-800 text-gray-400 opacity-80 cursor-not-allowed"
-                                : "border-brand-red text-brand-red shadow-[0_0_20px_rgba(255,17,17,0.15)] scale-[1.02] active:scale-[0.98]"
-                            }
-                          `}
-                        >
-                          {/* Inner circuit pattern decoration */}
-                          <div className="absolute inset-0 rounded-l-[4px] rounded-r-[3.3rem] overflow-hidden pointer-events-none">
-                            <div className={`absolute inset-0 bg-[linear-gradient(90deg,transparent_2px,#f3f4f6_2px,#f3f4f6_3px,transparent_3px)] bg-[size:10px_100%] transition-opacity duration-500 ${isGateActive ? 'opacity-50' : 'opacity-0'}`}></div>
-                            {/* Logic Gate Symbol (NAND) */}
-                            <span className={`absolute right-4 top-1/2 -translate-y-1/2 text-4xl font-serif font-black transition-opacity duration-300 select-none ${isGateActive ? 'text-brand-red/10 opacity-100' : 'text-gray-200 opacity-50'}`}>NAND</span>
-                          </div>
-
-                          {loading ? (
-                            <>
-                              <svg
-                                className="animate-spin h-5 w-5 mr-2"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                              >
-                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                              </svg>
-                              Processing...
-                            </>
-                          ) : (
-                            <>
-                              <span className={`relative z-10 uppercase transition-colors duration-300 ${isGateActive ? 'text-brand-red' : 'text-gray-500'}`}>
-                                Send Message
-                              </span>
-                              <Send className={`relative z-10 w-5 h-5 transition-all duration-300 ${isGateActive ? 'text-brand-red translate-x-1' : 'text-gray-400'}`} />
-                            </>
-                          )}
-                        </button>
-
-                        {/* Inversion Bubble (NAND characteristic) */}
-                        <div className={`w-4 h-4 rounded-full border-[3px] transition-colors duration-300 ml-[-4px] z-10 ${loading ? 'border-gray-300 bg-gray-50' : isGateActive ? 'border-brand-red bg-white shadow-[0_0_10px_rgba(255,17,17,0.2)]' : 'border-gray-800 bg-white'}`}></div>
-
-                        {/* Output Pin */}
-                        <div className={`w-8 h-[3px] transition-colors duration-300 ml-[-4px] z-0 flex items-center justify-end shadow-sm ${loading ? 'bg-gray-300' : isGateActive ? 'bg-brand-red' : 'bg-gray-800'}`}>
-                        </div>
-                        
-                        {/* Output Node */}
-                        <div className={`w-3 h-3 rounded-full border-[3px] transition-colors duration-300 ml-[-2px] z-10 ${loading ? 'border-gray-300 bg-gray-50' : isGateActive ? 'border-brand-red bg-brand-red shadow-[0_0_10px_rgba(255,17,17,0.5)]' : 'border-gray-800 bg-white'}`}></div>
-                      </div>
-                      
-                      {/* Subtext description */}
-                      <p className={`text-xs mt-4 ml-1 font-mono flex items-center gap-2 transition-colors duration-300 ${isGateActive ? 'text-gray-900' : 'text-gray-500'}`}>
-                        <span className={`w-2 h-2 rounded-full border inline-block transition-colors ${isGateActive ? 'bg-green-500 border-green-600' : 'bg-transparent border-gray-400'}`}></span>
-                        {isGateActive ? 'Connection ready' : (input1 && input2) ? 'Output low (NAND logic)' : 'Flip switch to activate connection'}
-                      </p>
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className={`
+                          w-full md:w-max flex items-center justify-center gap-3
+                          px-8 py-3.5 bg-[#0F111A] text-white
+                          rounded-full font-medium text-lg
+                          transition-all duration-300 ease-out
+                          hover:bg-[#1A1D29] hover:shadow-xl hover:shadow-[#0F111A]/10
+                          active:scale-[0.98]
+                          disabled:bg-gray-300 disabled:cursor-not-allowed disabled:shadow-none
+                        `}
+                      >
+                        {loading ? (
+                          <>
+                            <svg
+                              className="animate-spin h-5 w-5 mr-3 text-white"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                            >
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                            </svg>
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <span>Send Message</span>
+                            <Send className="w-5 h-5 stroke-[1.5]" />
+                          </>
+                        )}
+                      </button>
                     </div>
                   </form>
                 )}
