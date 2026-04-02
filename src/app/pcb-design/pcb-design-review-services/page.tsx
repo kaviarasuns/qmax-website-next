@@ -986,18 +986,18 @@ export default function PCBDesignReviewServicesPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-[#0a0a0a] py-32 border-t border-zinc-900 border-b">
+      <section className="bg-[#0a0a0a] py-24 border-t border-zinc-900 border-b">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-24">
+          <div className="mb-16">
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#d9ff00] mb-8">
               FAQ / KNOWLEDGE BASE
             </span>
-            <h2 className="text-4xl font-light text-white md:text-6xl tracking-tighter">
+            <h2 className="text-3xl font-light text-white md:text-5xl tracking-tighter">
               Frequently Asked <br/> Questions.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16">
+          <div className="grid gap-0 max-w-full">
             {[
               {
                 q: "What is the difference between a schematic review and a PCB design review?",
@@ -1083,18 +1083,31 @@ export default function PCBDesignReviewServicesPage() {
                 q: "What are the next steps after a design review engagement?",
                 a: "Clients implement recommendations with our support. We remain available for re-reviews of critical fixes and can provide pre-build fabrication/assembly review and DVT planning support."
               }
-            ].map((faq, idx) => (
-              <div key={idx} className="space-y-4 group">
-                <h3 className="text-xl text-white font-light group-hover:text-[#d9ff00] transition-colors flex items-start gap-4">
-                   <span className="text-xs font-black text-zinc-600 pt-1.5 uppercase">Q.</span>
-                   {faq.q}
-                </h3>
-                <div className="flex items-start gap-4 pl-10 border-l border-zinc-900 group-hover:border-[#d9ff00] transition-colors">
-                   <p className="text-zinc-500 font-light leading-relaxed text-sm">
-                      {faq.a}
-                   </p>
+            ].map((faq, index) => (
+              <details key={index} className="group border-t border-zinc-800 py-6 transition-all last:border-b">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-light leading-relaxed text-zinc-100 md:text-2xl tracking-tight">
+                  <span className="flex-1">{faq.q}</span>
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center">
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="24" 
+                      height="24" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="#d9ff00" 
+                      strokeWidth="1" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="transition-transform duration-300 group-open:rotate-180"
+                    >
+                      <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                  </div>
+                </summary>
+                <div className="mt-4 max-w-4xl text-base leading-relaxed text-zinc-500 font-light">
+                  {faq.a}
                 </div>
-              </div>
+              </details>
             ))}
           </div>
           
@@ -1107,10 +1120,10 @@ export default function PCBDesignReviewServicesPage() {
       </section>
 
       {/* Target Audience Section */}
-      <section className="bg-[#0a0a0a] py-32 border-t border-zinc-900">
+      <section className="bg-[#0a0a0a] py-24 border-t border-zinc-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-24">
-            <h2 className="text-4xl font-light text-zinc-400 md:text-6xl tracking-tighter">
+          <div className="mb-16">
+            <h2 className="text-3xl font-light text-zinc-400 md:text-5xl tracking-tighter">
               Clients & Platforms.
             </h2>
           </div>
@@ -1131,24 +1144,24 @@ export default function PCBDesignReviewServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#0a0a0a] py-32 border-t border-zinc-900">
+      <section className="bg-[#0a0a0a] py-24 border-t border-zinc-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="border-t border-zinc-800 pt-24 pb-12">
+          <div className="border-t border-zinc-800 pt-16 pb-8">
               <a 
                 href="/contact" 
-                className="flex flex-col md:flex-row items-start md:items-center justify-between bg-[#d9ff00] p-8 md:p-16 group hover:bg-white transition-colors duration-500"
+                className="flex flex-col md:flex-row items-start md:items-center justify-between bg-[#d9ff00] p-6 md:p-10 group hover:bg-white transition-colors duration-500"
               >
-                <div className="max-w-3xl">
-                   <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black/40 mb-8 block">READY TO START?</span>
-                   <span className="text-3xl md:text-5xl lg:text-7xl font-light text-black tracking-tighter leading-tight">
+                <div className="max-w-2xl">
+                   <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black/40 mb-6 block">READY TO START?</span>
+                   <span className="text-2xl md:text-4xl lg:text-5xl font-light text-black tracking-tighter leading-tight">
                      Request your <br/> design review.
                    </span>
                 </div>
-                <div className="mt-8 md:mt-0 flex h-24 w-24 shrink-0 items-center justify-center rounded-full border border-black/10 group-hover:border-black/30 group-hover:scale-110 transition-all duration-500">
+                <div className="mt-8 md:mt-0 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-black/10 group-hover:border-black/30 group-hover:scale-110 transition-all duration-500">
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
-                    width="48" 
-                    height="48" 
+                    width="32" 
+                    height="32" 
                     viewBox="0 0 24 24" 
                     fill="none" 
                     stroke="black" 
@@ -1162,7 +1175,7 @@ export default function PCBDesignReviewServicesPage() {
                   </svg>
                 </div>
               </a>
-              <div className="mt-12 flex flex-col md:flex-row gap-8 md:gap-16 text-[10px] font-black uppercase tracking-widest text-zinc-500 px-8">
+              <div className="mt-8 flex flex-col md:flex-row gap-8 md:gap-16 text-[10px] font-black uppercase tracking-widest text-zinc-500 px-8">
                  <span>INFO@QMAXSYS.COM</span>
                  <span>RESPONSE WITHIN 1 BUSINESS DAY</span>
               </div>

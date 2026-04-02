@@ -214,10 +214,10 @@ export default function IndustrialDesignServicesPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-[#0a0a0a] py-32 border-t border-zinc-900">
+      <section className="bg-[#0a0a0a] py-24 border-t border-zinc-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-24">
-            <h2 className="text-4xl font-light text-zinc-500 md:text-6xl tracking-tighter">
+          <div className="mb-16">
+            <h2 className="text-3xl font-light text-zinc-500 md:text-5xl tracking-tighter">
               Frequently asked questions.
             </h2>
           </div>
@@ -231,14 +231,14 @@ export default function IndustrialDesignServicesPage() {
               { q: "How does Qmax Systems's approach to design evolving in the era of AI and emerging technology?", a: "We leverage advanced AI-driven generative design tools to explore complex geometries and optimise material usage. Our team integrates emerging technologies—such as IoT sensors and AR interfaces—directly into the physical form, ensuring that innovation enhances usability rather than complicating it." },
               { q: "What makes Qmax Systems different from other design consultancies?", a: "Our distinction lies in our engineering-first mindset. Unlike traditional design studios that focus solely on aesthetics, we treat industrial design as a technical discipline. Every curve, material choice, and interface detail is validated against manufacturing realities, regulatory standards, and cost targets from day one." }
             ].map((faq, index) => (
-              <details key={index} className="group border-t border-zinc-800 py-10 transition-all">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-xl font-light leading-relaxed text-zinc-100 md:text-3xl tracking-tight">
+              <details key={index} className="group border-t border-zinc-800 py-6 transition-all">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-light leading-relaxed text-zinc-100 md:text-2xl tracking-tight">
                   <span className="flex-1">{faq.q}</span>
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center">
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
-                      width="32" 
-                      height="32" 
+                      width="24" 
+                      height="24" 
                       viewBox="0 0 24 24" 
                       fill="none" 
                       stroke="#d9ff00" 
@@ -251,26 +251,26 @@ export default function IndustrialDesignServicesPage() {
                     </svg>
                   </div>
                 </summary>
-                <div className="mt-8 max-w-4xl text-lg leading-relaxed text-zinc-500 font-light">
+                <div className="mt-4 max-w-4xl text-base leading-relaxed text-zinc-500 font-light">
                   {faq.a}
                 </div>
               </details>
             ))}
             
             {/* Promotional Bar */}
-            <div className="mt-24 border-t border-zinc-800 pt-24 pb-12">
+            <div className="mt-16 border-t border-zinc-800 pt-16 pb-8">
               <a 
                 href="/contact" 
-                className="flex flex-col md:flex-row items-start md:items-center justify-between bg-[#d9ff00] p-8 md:p-16 group hover:bg-white transition-colors duration-500"
+                className="flex flex-col md:flex-row items-start md:items-center justify-between bg-[#d9ff00] p-6 md:p-10 group hover:bg-white transition-colors duration-500"
               >
-                <span className="text-3xl md:text-5xl lg:text-6xl font-light text-black tracking-tighter leading-tight max-w-3xl">
+                <span className="text-2xl md:text-4xl lg:text-5xl font-light text-black tracking-tighter leading-tight max-w-2xl">
                   Connect with us for a <br/>technical consultation.
                 </span>
-                <div className="mt-8 md:mt-0 flex h-24 w-24 shrink-0 items-center justify-center rounded-full border border-black/10 group-hover:border-black/30 group-hover:scale-110 transition-all duration-500">
+                <div className="mt-8 md:mt-0 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-black/10 group-hover:border-black/30 group-hover:scale-110 transition-all duration-500">
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
-                    width="48" 
-                    height="48" 
+                    width="32" 
+                    height="32" 
                     viewBox="0 0 24 24" 
                     fill="none" 
                     stroke="black" 
