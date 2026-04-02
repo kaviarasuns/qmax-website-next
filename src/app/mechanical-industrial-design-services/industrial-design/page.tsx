@@ -9,25 +9,15 @@ export const metadata: Metadata = {
 
 export default function IndustrialDesignServicesPage() {
   return (
-    <main className="bg-[#0a0a0a] text-zinc-100">
+    <main className="bg-[#fcfcfc] text-zinc-900">
 
       {/* Dynamic Hero Section */}
       <section className="relative overflow-hidden pt-24 pb-12 lg:pt-32 lg:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(243,49,23,0.03),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(243,49,23,0.02),transparent_40%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-12">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
-              INDUSTRIAL DESIGN PRACTICE
-            </span>
-            <h1 className="text-5xl font-light leading-[1.1] text-white md:text-7xl lg:text-9xl tracking-tight max-w-5xl">
-              Industrial Design <br className="hidden md:block" />
-              Services.
-            </h1>
-          </div>
-
           {/* Full-width Image Container */}
-          <div className="relative mt-16 aspect-[21/9] w-full overflow-hidden grayscale hover:grayscale-0 transition-[filter] duration-1000 border border-zinc-800">
+          <div className="relative mt-16 aspect-[21/9] w-full overflow-hidden transition-[filter] duration-1000 border border-zinc-200 group">
             <Image
               src="/services/12_mechanical_design_services.jpg"
               alt="Industrial Design Services - Qmax Systems"
@@ -36,18 +26,29 @@ export default function IndustrialDesignServicesPage() {
               sizes="100vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
+            {/* Subtle overlay for text readability if needed, but keeping the requested clear look */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#fcfcfc]/60 via-transparent to-transparent" />
+
+            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
+              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
+                INDUSTRIAL DESIGN PRACTICE
+              </span>
+              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+                Industrial Design <br className="hidden md:block" />
+                Services.
+              </h1>
+            </div>
           </div>
 
           {/* Core Introduction Content */}
-          <div className="mt-24 grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-32 border-t border-zinc-800 pt-16">
+          <div className="mt-24 grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-32 border-t border-zinc-200 pt-16">
             <div>
-              <h2 className="text-sm font-black uppercase tracking-[0.4em] text-zinc-500">
+              <h2 className="text-sm font-black uppercase tracking-[0.4em] text-zinc-400">
                 / Introduction
               </h2>
             </div>
-            <div className="space-y-12 text-xl leading-[1.6] text-zinc-400 font-light max-w-3xl">
-              <p className="text-white font-normal text-2xl md:text-3xl">
+            <div className="space-y-12 text-xl leading-[1.6] text-zinc-600 font-light max-w-3xl">
+              <p className="text-zinc-950 font-normal text-2xl md:text-3xl">
                 Industrial design at Qmax Systems integrates visual, ergonomic, and manufacturing reality from the first sketch — ensuring every decision is grounded in engineering truth.
               </p>
               <div className="space-y-8">
@@ -64,10 +65,10 @@ export default function IndustrialDesignServicesPage() {
       </section>
 
       {/* Industrial Design Capabilities Section */}
-      <section className="bg-[#0a0a0a] py-32 border-t border-zinc-900">
+      <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24">
-            <h2 className="text-4xl font-light text-zinc-400 md:text-6xl tracking-tighter">
+            <h2 className="text-4xl font-light text-zinc-500 md:text-6xl tracking-tighter">
               Capabilities.
             </h2>
           </div>
@@ -100,14 +101,14 @@ export default function IndustrialDesignServicesPage() {
                 desc: "Physical validation through CNC, FDM, SLA, and SLS — testing ergonomics, fitment, and functionality before production investment.",
               }
             ].map((capability, idx) => (
-              <div key={idx} className="group border-t border-zinc-800 py-16 grid grid-cols-1 md:grid-cols-[100px_1fr_1.5fr] gap-8 hover:bg-zinc-950/50 transition-colors px-4">
+              <div key={idx} className="group border-t border-zinc-200 py-10 grid grid-cols-1 md:grid-cols-[100px_1fr_1.5fr] gap-8 hover:bg-zinc-50 transition-colors px-4">
                 <span className="text-xs font-black text-[#F33117] tracking-[0.4em] pt-2">
                   {capability.id}
                 </span>
-                <h3 className="text-2xl md:text-4xl font-light tracking-tight text-white group-hover:text-[#F33117] transition-colors">
+                <h3 className="text-2xl md:text-4xl font-light tracking-tight text-zinc-950 group-hover:text-[#F33117] transition-colors">
                   {capability.title}
                 </h3>
-                <p className="text-lg leading-relaxed text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                <p className="text-lg leading-relaxed text-zinc-500 group-hover:text-zinc-900 transition-colors">
                   {capability.desc}
                 </p>
               </div>
@@ -117,10 +118,10 @@ export default function IndustrialDesignServicesPage() {
       </section>
 
       {/* Our Process Section */}
-      <section className="bg-[#0a0a0a] py-32 border-t border-zinc-900">
+      <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <h2 className="text-4xl font-light text-zinc-400 md:text-6xl tracking-tighter">
+            <h2 className="text-4xl font-light text-zinc-500 md:text-6xl tracking-tighter">
               The Process.
             </h2>
             <p className="max-w-md text-zinc-500 font-light text-lg">
@@ -128,19 +129,19 @@ export default function IndustrialDesignServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-zinc-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-zinc-200">
             {[
               { id: "01", label: "DISCOVERY", title: "Uncover Opportunities", desc: "Behavioural research and technical constraint analysis relevant to the product category." },
               { id: "02", label: "DEFINITION", title: "Informed Ideation", desc: "Structured creativity to produce a range of viable, engineering-led design directions." },
               { id: "03", label: "REFINEMENT", title: "Get Real, Fast", desc: "Detailed form development and high-fidelity prototypes for real-world evaluation." },
               { id: "04", label: "DELIVERY", title: "Ready to Ship", desc: "Finalised documentation package and factory-floor liaison for consistent outcomes." }
             ].map((step, idx) => (
-              <div key={idx} className="p-12 border-r border-b border-zinc-800 flex flex-col min-h-[400px] group hover:bg-zinc-950 transition-colors">
+              <div key={idx} className="p-12 border-r border-b border-zinc-200 flex flex-col min-h-[400px] group hover:bg-zinc-50 transition-colors">
                 <div className="flex justify-between items-center mb-16">
                   <span className="text-[10px] font-black tracking-[0.4em] text-[#F33117] group-hover:translate-x-1 transition-transform">{step.label}</span>
-                  <span className="text-zinc-700 font-mono text-xs">{step.id}</span>
+                  <span className="text-zinc-400 font-mono text-xs">{step.id}</span>
                 </div>
-                <h3 className="text-3xl font-light text-white mb-8 group-hover:underline decoration-[#F33117] underline-offset-8 transition-all">{step.title}</h3>
+                <h3 className="text-3xl font-light text-zinc-950 mb-8 group-hover:underline decoration-[#F33117] underline-offset-8 transition-all">{step.title}</h3>
                 <p className="text-zinc-500 leading-relaxed font-light mt-auto">{step.desc}</p>
               </div>
             ))}
@@ -149,13 +150,13 @@ export default function IndustrialDesignServicesPage() {
       </section>
 
       {/* Why Qmax Section */}
-      <section className="bg-[#0a0a0a] py-32 border-t border-zinc-900">
+      <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-24">
             <div>
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-500 mb-8 block">/ PARTNERSHIP</span>
-              <h2 className="text-4xl font-light text-white md:text-6xl tracking-tighter mb-12">
-                Why Qmax <br className="hidden lg:block"/> Systems.
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 mb-8 block">/ PARTNERSHIP</span>
+              <h2 className="text-4xl font-light text-zinc-950 md:text-6xl tracking-tighter mb-12">
+                Why Qmax <br className="hidden lg:block" /> Systems.
               </h2>
               <div className="h-1 w-24 bg-[#F33117]" />
             </div>
@@ -167,7 +168,7 @@ export default function IndustrialDesignServicesPage() {
                 { title: "Proven Process", desc: "Repeatable results for startups and Fortune 500s across three decades of operation." }
               ].map((item, idx) => (
                 <div key={idx} className="space-y-6">
-                  <h3 className="text-xl font-bold uppercase tracking-widest text-[#F33117] border-b border-zinc-800 pb-4">
+                  <h3 className="text-xl font-bold uppercase tracking-widest text-[#F33117] border-b border-zinc-200 pb-4">
                     {item.title}
                   </h3>
                   <p className="text-zinc-500 font-light leading-relaxed">
@@ -181,10 +182,10 @@ export default function IndustrialDesignServicesPage() {
       </section>
 
       {/* Our Work Section */}
-      <section className="bg-[#0a0a0a] py-32 border-t border-zinc-900 overflow-hidden">
+      <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24">
-            <h2 className="text-4xl font-light text-zinc-400 md:text-6xl tracking-tighter">
+            <h2 className="text-4xl font-light text-zinc-500 md:text-6xl tracking-tighter">
               Case Studies.
             </h2>
           </div>
@@ -196,16 +197,16 @@ export default function IndustrialDesignServicesPage() {
               { title: "Security Hub Enclosure", category: "Security Systems", img: "/industrial_design_case_studies/product_3.png" },
               { title: "Military Communication Unit", category: "Ruggedized Systems", img: "/industrial_design_case_studies/product_4.png" },
             ].map((work, idx) => (
-              <div key={idx} className="group relative aspect-[3/4] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 bg-zinc-900">
+              <div key={idx} className="group relative aspect-[3/4] overflow-hidden transition-all duration-700 bg-zinc-100">
                 <Image
                   src={work.img}
                   alt={work.title}
                   fill
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110 opacity-100"
                 />
-                <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end bg-gradient-to-t from-[#0a0a0a] to-transparent h-1/2">
+                <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end bg-gradient-to-t from-[#fcfcfc] via-[#fcfcfc]/80 to-transparent h-1/2">
                   <span className="text-[10px] font-black tracking-[0.4em] text-[#F33117] mb-4 overflow-hidden text-ellipsis whitespace-nowrap">{work.category}</span>
-                  <h3 className="text-lg font-light text-white leading-tight">{work.title}</h3>
+                  <h3 className="text-lg font-light text-zinc-950 leading-tight">{work.title}</h3>
                 </div>
               </div>
             ))}
@@ -214,10 +215,10 @@ export default function IndustrialDesignServicesPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-[#0a0a0a] py-24 border-t border-zinc-900">
+      <section className="bg-[#fcfcfc] py-24 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16">
-            <h2 className="text-3xl font-light text-zinc-500 md:text-5xl tracking-tighter">
+            <h2 className="text-3xl font-light text-zinc-400 md:text-5xl tracking-tighter">
               Frequently asked questions.
             </h2>
           </div>
@@ -231,52 +232,52 @@ export default function IndustrialDesignServicesPage() {
               { q: "How does Qmax Systems's approach to design evolving in the era of AI and emerging technology?", a: "We leverage advanced AI-driven generative design tools to explore complex geometries and optimise material usage. Our team integrates emerging technologies—such as IoT sensors and AR interfaces—directly into the physical form, ensuring that innovation enhances usability rather than complicating it." },
               { q: "What makes Qmax Systems different from other design consultancies?", a: "Our distinction lies in our engineering-first mindset. Unlike traditional design studios that focus solely on aesthetics, we treat industrial design as a technical discipline. Every curve, material choice, and interface detail is validated against manufacturing realities, regulatory standards, and cost targets from day one." }
             ].map((faq, index) => (
-              <details key={index} className="group border-t border-zinc-800 py-6 transition-all">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-light leading-relaxed text-zinc-100 md:text-2xl tracking-tight">
+              <details key={index} className="group border-t border-zinc-200 py-6 transition-all">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-light leading-relaxed text-zinc-900 md:text-2xl tracking-tight">
                   <span className="flex-1">{faq.q}</span>
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="#F33117" 
-                      strokeWidth="1" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#F33117"
+                      strokeWidth="1"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       className="transition-transform duration-300 group-open:rotate-180"
                     >
-                      <path d="M12 5v14M19 12l-7 7-7-7"/>
+                      <path d="M12 5v14M19 12l-7 7-7-7" />
                     </svg>
                   </div>
                 </summary>
-                <div className="mt-4 max-w-4xl text-base leading-relaxed text-zinc-500 font-light">
+                <div className="mt-4 max-w-4xl text-base leading-relaxed text-zinc-600 font-light">
                   {faq.a}
                 </div>
               </details>
             ))}
-            
+
             {/* Promotional Bar */}
-            <div className="mt-16 border-t border-zinc-800 pt-16 pb-8">
-              <a 
-                href="/contact" 
-                className="flex flex-col md:flex-row items-start md:items-center justify-between bg-[#F33117] p-6 md:p-10 group hover:bg-white transition-colors duration-500"
+            <div className="mt-16 border-t border-zinc-200 pt-16 pb-8">
+              <a
+                href="/contact"
+                className="flex flex-col md:flex-row items-start md:items-center justify-between bg-[#F33117] p-6 md:p-10 group hover:bg-zinc-950 transition-colors duration-500"
               >
-                <span className="text-2xl md:text-4xl lg:text-5xl font-light text-black tracking-tighter leading-tight max-w-2xl">
-                  Connect with us for a <br/>technical consultation.
+                <span className="text-2xl md:text-4xl lg:text-5xl font-light text-white group-hover:text-white tracking-tighter leading-tight max-w-2xl">
+                  Connect with us for a <br />technical consultation.
                 </span>
-                <div className="mt-8 md:mt-0 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-black/10 group-hover:border-black/30 group-hover:scale-110 transition-all duration-500">
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="32" 
-                    height="32" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="black" 
-                    strokeWidth="1.5" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
+                <div className="mt-8 md:mt-0 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-white/20 group-hover:border-white/50 group-hover:scale-110 transition-all duration-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="transition-transform duration-500 group-hover:translate-x-2"
                   >
                     <line x1="5" y1="12" x2="19" y2="12"></line>
