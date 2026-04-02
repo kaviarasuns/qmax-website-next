@@ -6,6 +6,8 @@ import ContactUsButtonWrapper from "@/components/ContactUsButtonWrapper";
 import { ReactLenis } from "@/utils/lenis";
 import { Navigation } from "@/components/navigation";
 import ScrollToTop from "@/components/ScrollToTop";
+import { NavigationV2 } from "@/components/navigation-v2";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
