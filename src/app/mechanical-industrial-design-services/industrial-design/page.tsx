@@ -13,11 +13,11 @@ export default function IndustrialDesignServicesPage() {
 
       {/* Dynamic Hero Section */}
       <section className="relative overflow-hidden pt-24 pb-12 lg:pt-32 lg:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(217,255,0,0.03),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(243,49,23,0.03),transparent_40%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#d9ff00] mb-6">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
               INDUSTRIAL DESIGN PRACTICE
             </span>
             <h1 className="text-5xl font-light leading-[1.1] text-white md:text-7xl lg:text-9xl tracking-tight max-w-5xl">
@@ -101,10 +101,10 @@ export default function IndustrialDesignServicesPage() {
               }
             ].map((capability, idx) => (
               <div key={idx} className="group border-t border-zinc-800 py-16 grid grid-cols-1 md:grid-cols-[100px_1fr_1.5fr] gap-8 hover:bg-zinc-950/50 transition-colors px-4">
-                <span className="text-xs font-black text-[#d9ff00] tracking-[0.4em] pt-2">
+                <span className="text-xs font-black text-[#F33117] tracking-[0.4em] pt-2">
                   {capability.id}
                 </span>
-                <h3 className="text-2xl md:text-4xl font-light tracking-tight text-white group-hover:text-[#d9ff00] transition-colors">
+                <h3 className="text-2xl md:text-4xl font-light tracking-tight text-white group-hover:text-[#F33117] transition-colors">
                   {capability.title}
                 </h3>
                 <p className="text-lg leading-relaxed text-zinc-500 group-hover:text-zinc-300 transition-colors">
@@ -137,10 +137,10 @@ export default function IndustrialDesignServicesPage() {
             ].map((step, idx) => (
               <div key={idx} className="p-12 border-r border-b border-zinc-800 flex flex-col min-h-[400px] group hover:bg-zinc-950 transition-colors">
                 <div className="flex justify-between items-center mb-16">
-                  <span className="text-[10px] font-black tracking-[0.4em] text-[#d9ff00] group-hover:translate-x-1 transition-transform">{step.label}</span>
+                  <span className="text-[10px] font-black tracking-[0.4em] text-[#F33117] group-hover:translate-x-1 transition-transform">{step.label}</span>
                   <span className="text-zinc-700 font-mono text-xs">{step.id}</span>
                 </div>
-                <h3 className="text-3xl font-light text-white mb-8 group-hover:underline decoration-[#d9ff00] underline-offset-8 transition-all">{step.title}</h3>
+                <h3 className="text-3xl font-light text-white mb-8 group-hover:underline decoration-[#F33117] underline-offset-8 transition-all">{step.title}</h3>
                 <p className="text-zinc-500 leading-relaxed font-light mt-auto">{step.desc}</p>
               </div>
             ))}
@@ -157,7 +157,7 @@ export default function IndustrialDesignServicesPage() {
               <h2 className="text-4xl font-light text-white md:text-6xl tracking-tighter mb-12">
                 Why Qmax <br className="hidden lg:block"/> Systems.
               </h2>
-              <div className="h-1 w-24 bg-[#d9ff00]" />
+              <div className="h-1 w-24 bg-[#F33117]" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24">
               {[
@@ -167,7 +167,7 @@ export default function IndustrialDesignServicesPage() {
                 { title: "Proven Process", desc: "Repeatable results for startups and Fortune 500s across three decades of operation." }
               ].map((item, idx) => (
                 <div key={idx} className="space-y-6">
-                  <h3 className="text-xl font-bold uppercase tracking-widest text-[#d9ff00] border-b border-zinc-800 pb-4">
+                  <h3 className="text-xl font-bold uppercase tracking-widest text-[#F33117] border-b border-zinc-800 pb-4">
                     {item.title}
                   </h3>
                   <p className="text-zinc-500 font-light leading-relaxed">
@@ -204,7 +204,7 @@ export default function IndustrialDesignServicesPage() {
                   className="object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-100"
                 />
                 <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end bg-gradient-to-t from-[#0a0a0a] to-transparent h-1/2">
-                  <span className="text-[10px] font-black tracking-[0.4em] text-[#d9ff00] mb-4 overflow-hidden text-ellipsis whitespace-nowrap">{work.category}</span>
+                  <span className="text-[10px] font-black tracking-[0.4em] text-[#F33117] mb-4 overflow-hidden text-ellipsis whitespace-nowrap">{work.category}</span>
                   <h3 className="text-lg font-light text-white leading-tight">{work.title}</h3>
                 </div>
               </div>
@@ -241,7 +241,7 @@ export default function IndustrialDesignServicesPage() {
                       height="24" 
                       viewBox="0 0 24 24" 
                       fill="none" 
-                      stroke="#d9ff00" 
+                      stroke="#F33117" 
                       strokeWidth="1" 
                       strokeLinecap="round" 
                       strokeLinejoin="round" 
@@ -261,7 +261,7 @@ export default function IndustrialDesignServicesPage() {
             <div className="mt-16 border-t border-zinc-800 pt-16 pb-8">
               <a 
                 href="/contact" 
-                className="flex flex-col md:flex-row items-start md:items-center justify-between bg-[#d9ff00] p-6 md:p-10 group hover:bg-white transition-colors duration-500"
+                className="flex flex-col md:flex-row items-start md:items-center justify-between bg-[#F33117] p-6 md:p-10 group hover:bg-white transition-colors duration-500"
               >
                 <span className="text-2xl md:text-4xl lg:text-5xl font-light text-black tracking-tighter leading-tight max-w-2xl">
                   Connect with us for a <br/>technical consultation.
