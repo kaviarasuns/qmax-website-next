@@ -6,9 +6,9 @@ import { useState, useEffect, useRef } from "react";
 import React from "react";
 import { useLenis } from "@/utils/lenis";
 import Typewriter from "typewriter-effect";
-import ServicesV3 from "@/components/Services-V3";
 import { ServicesSection } from "@/components/services-section";
 import InsideOutV2 from "@/components/InsideOut-V2";
+import ServicesV4Stacked from "@/components/Services-V4-Stacked";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -276,9 +276,36 @@ export default function Home() {
 
         const targetRef = sectionRefs[closestSectionIndex];
 
+        if (closestSectionIndex === 2) {
+          // Keep Services section aligned to the start during auto-scroll.
+          // This prevents stacked-cards animation from progressing before user input.
+          if (targetRef.current && lenis) {
+            setIsProgrammaticScroll(true);
+            lenis.scrollTo(targetRef.current, {
+              offset:
+                window.innerWidth <= 768
+                  ? 50
+                  : window.innerWidth <= 1024
+                    ? 80
+                    : 110,
+              duration: 1.5,
+              easing: (t) =>
+                t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2,
+              lock: true,
+              onComplete: () => {
+                setTimeout(() => {
+                  setIsProgrammaticScroll(false);
+                }, 100);
+              },
+            });
+          }
+          return;
+        }
+
         if (closestSectionIndex === 3) {
           // For section 3, scroll to the start of the target ref instead of middle
           if (targetRef.current && lenis) {
+            setIsProgrammaticScroll(true);
             console.log("calling lenis for section 3 - scroll to start");
             console.log("Section changed", closestSectionIndex, currentSection);
             lenis.scrollTo(targetRef.current, {
@@ -292,6 +319,11 @@ export default function Home() {
               easing: (t) =>
                 t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2, // Slow start, fast middle, smooth stop
               lock: true, // Lock user scrolling during animation
+              onComplete: () => {
+                setTimeout(() => {
+                  setIsProgrammaticScroll(false);
+                }, 100);
+              },
             });
           }
           return;
@@ -316,6 +348,7 @@ export default function Home() {
         if (closestSectionIndex === 5) {
           const footerElement = document.querySelector("footer");
           if (footerElement && lenis) {
+            setIsProgrammaticScroll(true);
             console.log("calling lenis for footer");
             console.log("Section changed", closestSectionIndex, currentSection);
             lenis.scrollTo(footerElement, {
@@ -324,6 +357,11 @@ export default function Home() {
               easing: (t) =>
                 t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2,
               lock: true,
+              onComplete: () => {
+                setTimeout(() => {
+                  setIsProgrammaticScroll(false);
+                }, 100);
+              },
             });
           }
           return;
@@ -332,6 +370,7 @@ export default function Home() {
         // Smooth scroll to the section using Lenis when it becomes the current section
 
         if (targetRef.current && lenis) {
+          setIsProgrammaticScroll(true);
           console.log("calling lenis");
           console.log("Section changed", closestSectionIndex, currentSection);
           lenis.scrollTo(targetRef.current, {
@@ -342,6 +381,11 @@ export default function Home() {
             easing: (t) =>
               t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2, // Slow start, fast middle, smooth stop
             lock: true, // Lock user scrolling during animation
+            onComplete: () => {
+              setTimeout(() => {
+                setIsProgrammaticScroll(false);
+              }, 100);
+            },
           });
         }
       }
@@ -399,6 +443,8 @@ export default function Home() {
     if (sectionIndex === 3) {
       // For section 3, scroll to the start of the target ref instead of middle
       if (targetRef.current && lenis) {
+        setIsProgrammaticScroll(true);
+        setCurrentSection(sectionIndex);
         lenis.scrollTo(targetRef.current, {
           offset:
             window.innerWidth <= 768
@@ -410,6 +456,11 @@ export default function Home() {
           easing: (t) =>
             t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2, // Slow start, fast middle, smooth stop
           lock: true, // Lock user scrolling during animation
+          onComplete: () => {
+            setTimeout(() => {
+              setIsProgrammaticScroll(false);
+            }, 100);
+          },
         });
       }
       return;
@@ -543,10 +594,14 @@ export default function Home() {
         <ScrollCardsAnimationV4 onAutoHighlightChange={setIsAutoHighlighting} />
       </div>
       <div ref={servicesRef}>
-        <ServicesV3 />
+        <ServicesV4Stacked
+          lockStackingOnProgrammaticScroll={
+            isProgrammaticScroll && currentSection === 2
+          }
+        />
       </div>
       <div ref={insideOutRef}>
-        <InsideOutV2 />
+        <InsideOutV2 isActive={currentSection === 3} />
       </div>
       <div ref={emblaRef}>
         <ServicesSection />
