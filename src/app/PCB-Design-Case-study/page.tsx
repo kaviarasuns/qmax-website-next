@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
 import PCBCaseStudyCard from "@/components/PCBCaseStudyCard";
 
 const PCBCaseStudyGrid = () => {
@@ -137,18 +134,27 @@ const PCBCaseStudyGrid = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-        >
+    <section className="relative overflow-hidden py-24 bg-[#f8f8f6]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_12%,rgba(243,49,23,0.08),transparent_42%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0),rgba(255,255,255,0.82))]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mb-10 border-b border-zinc-300/70 pb-6">
+          <div>
+            <span className="inline-block text-[10px] font-black tracking-[0.38em] text-[#F33117] uppercase mb-3">
+              PCB Portfolio
+            </span>
+            <h1 className="text-4xl md:text-5xl font-light tracking-tight text-zinc-950">
+              Case Studies.
+            </h1>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
           {pcbCaseStudies.map((study) => (
             <PCBCaseStudyCard key={study.id} {...study} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

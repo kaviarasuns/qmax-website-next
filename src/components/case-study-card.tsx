@@ -8,139 +8,121 @@ interface CaseStudyCardProps {
   caseStudy: CaseStudy;
 }
 
-export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
+function DetailList({
+  title,
+  items,
+}: {
+  title: string;
+  items: string[];
+}) {
+  if (!items.length) {
+    return null;
+  }
+
   return (
-    <div className="space-y-8 py-24">
-      {/* Header */}
-      <div className="bg-gray-200 py-8">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold">
-            <span className="text-brand-red">Case</span>
-            <span className="text-black"> Studies</span>
-          </h1>
-        </div>
-      </div>
+    <Card className="border-zinc-200/80 shadow-[0_16px_40px_-34px_rgba(15,23,42,0.45)]">
+      <CardHeader className="pb-3">
+        <CardTitle className="text-lg font-semibold text-zinc-900">
+          {title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <ul className="space-y-2.5">
+          {items.map((item, index) => (
+            <li key={index} className="flex items-start text-zinc-700">
+              <span className="mr-3 mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#F33117]" />
+              <span className="leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+    </Card>
+  );
+}
 
-      {/* Breadcrumbs */}
-      <div className="container mx-auto px-4">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Case Studies", href: "/Embedded-Case-study" },
-            { label: caseStudy.category, href: "/Embedded-Case-study" },
-            { label: caseStudy.title },
-          ]}
-        />
-      </div>
+export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
+  const hasSummary = Boolean(caseStudy.summary?.trim());
+  const listingPath = caseStudy.category.toLowerCase().includes("pcb")
+    ? "/PCB-Design-Case-study"
+    : "/Embedded-Case-study";
 
-      {/* Main Title */}
-      <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold text-gray-900">{caseStudy.title}</h1>
-      </div>
+  return (
+    <div className="relative overflow-hidden bg-[#f7f7f4] py-14 md:py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_9%_12%,rgba(243,49,23,0.1),transparent_40%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0),rgba(255,255,255,0.86))]" />
 
-      {/* Main Content Grid */}
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Image Carousel */}
-          <div>
-            <CaseStudyCarousel
-              images={caseStudy.images}
-              title={caseStudy.title}
+      <div className="relative mx-auto max-w-7xl space-y-8 px-6 lg:px-8">
+        <div className="rounded-2xl border border-zinc-200/80 bg-white/85 p-5 shadow-[0_20px_50px_-36px_rgba(15,23,42,0.48)] backdrop-blur-sm md:p-6">
+          <div className="mb-5">
+            <Breadcrumbs
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Case Studies", href: listingPath },
+                { label: caseStudy.category, href: listingPath },
+                { label: caseStudy.title },
+              ]}
             />
           </div>
 
-          {/* Features List */}
           <div>
-            <ul className="space-y-3">
-              {caseStudy.features.map((feature, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="w-2 h-2 bg-brand-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span className="text-gray-700">{feature}</span>
-                </li>
-              ))}
-            </ul>
+            <span className="mb-2 inline-block text-[10px] font-black uppercase tracking-[0.36em] text-[#F33117]">
+              Detailed Case Study
+            </span>
+            <h1 className="text-3xl font-semibold leading-tight tracking-tight text-zinc-950 md:text-4xl">
+              {caseStudy.title}
+            </h1>
+            <p className="mt-2 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
+              {caseStudy.category}
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.25fr_0.75fr]">
+          <CaseStudyCarousel images={caseStudy.images} title={caseStudy.title} />
+
+          <Card className="h-fit border-zinc-200/80 shadow-[0_16px_40px_-34px_rgba(15,23,42,0.45)] lg:sticky lg:top-24">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-lg font-semibold text-zinc-900">
+                Project Highlights
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {caseStudy.features.map((feature, index) => (
+                  <li key={index} className="flex items-start text-zinc-700">
+                    <span className="mr-3 mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#F33117]" />
+                    <span className="leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {hasSummary && (
+            <Card className="border-zinc-200/80 shadow-[0_16px_40px_-34px_rgba(15,23,42,0.45)] md:col-span-2">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-lg font-semibold text-zinc-900">
+                  Project Summary
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="leading-relaxed text-zinc-700">{caseStudy.summary}</p>
+              </CardContent>
+            </Card>
+          )}
+
+          <DetailList title="Important Parts" items={caseStudy.importantParts} />
+          <DetailList
+            title="Salient Features"
+            items={caseStudy.salientFeatures}
+          />
+          <div className="md:col-span-2">
+            <DetailList title="Qmax Scope of Work" items={caseStudy.scopeOfWork} />
           </div>
         </div>
       </div>
-
-      {/* Project Summary */}
-      {caseStudy.summary && (
-        <div className="container mx-auto px-4">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Project Summary:</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 leading-relaxed">
-                {caseStudy.summary}
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      )}
-
-      {/* Important Parts */}
-      {caseStudy.importantParts && caseStudy.importantParts.length > 0 && (
-        <div className="container mx-auto px-4">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Important Parts:</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {caseStudy.importantParts.map((part, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="w-2 h-2 bg-brand-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span className="text-gray-700">{part}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      )}
-
-      {/* Salient Features */}
-      {caseStudy.salientFeatures && caseStudy.salientFeatures.length > 0 && (
-        <div className="container mx-auto px-4">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Salient Features:</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {caseStudy.salientFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="w-2 h-2 bg-brand-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      )}
-
-      {/* Scope of Work */}
-      {caseStudy.scopeOfWork && caseStudy.scopeOfWork.length > 0 && (
-        <div className="container mx-auto px-4 pb-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Qmax Scope of work:</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {caseStudy.scopeOfWork.map((work, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="w-2 h-2 bg-brand-red rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span className="text-gray-700">{work}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      )}
     </div>
   );
 }
