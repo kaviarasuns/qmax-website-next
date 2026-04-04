@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { Atkinson_Hyperlegible } from "next/font/google";
 import "./globals.css";
 import FooterV2 from "@/components/footer-v2";
 import ContactUsButtonWrapper from "@/components/ContactUsButtonWrapper";
 import { ReactLenis } from "@/utils/lenis";
 import { Navigation } from "@/components/navigation";
 import ScrollToTop from "@/components/ScrollToTop";
-
-
-const readableFont = Atkinson_Hyperlegible({
-  variable: "--font-readable",
-  weight: ["400", "700"],
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "QMax Systems",
@@ -34,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <ReactLenis root>
-        <body className={`${readableFont.variable} antialiased`}>
+        <body className="antialiased">
           <ScrollToTop />
           <Navigation />
           {children}
