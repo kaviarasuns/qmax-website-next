@@ -12,17 +12,19 @@ import { ServicesCard } from "./services-card"
 const carouselItems = [
   {
     id: 1,
-    image: "/services/security-system-controller.png",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/images/case-study/Security_System_Controller.jpg",
     title: "Case Studies",
     description: "Security System Controller",
     url: "/case-studies/Security-System-Controller",
   },
   {
     id: 2,
-    image: "/services/fpga-health-monitoring.png",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Industrial-Control-2.png",
     title: "Case Studies",
-    description: "FPGA Based Health Monitoring System",
-    url: "/case-studies/fpga-based-health-monitoring-system",
+    description: "Industrial Controller",
+    url: "/case-studies/Industrial-Controller",
   },
   {
     id: 3,

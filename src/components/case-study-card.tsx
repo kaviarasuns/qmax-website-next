@@ -42,9 +42,12 @@ function DetailList({
 
 export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   const hasSummary = Boolean(caseStudy.summary?.trim());
-  const listingPath = caseStudy.category.toLowerCase().includes("pcb")
+  const category = caseStudy.category.toLowerCase();
+  const listingPath = category.includes("pcb")
     ? "/PCB-Design-Case-study"
-    : "/Embedded-Case-study";
+    : category.includes("industrial design")
+      ? "/mechanical-industrial-design-services/industrial-design"
+      : "/Embedded-Case-study";
 
   return (
     <div className="relative overflow-hidden bg-[#f7f7f4] py-14 md:py-20">

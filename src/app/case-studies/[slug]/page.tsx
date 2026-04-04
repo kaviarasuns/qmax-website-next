@@ -1021,6 +1021,134 @@ const caseStudiesData: CaseStudy[] = [
     salientFeatures: [],
     scopeOfWork: [],
   },
+  {
+    id: "Industrial-Automation",
+    title: "Industrial Automation",
+    category: "Industrial Design",
+    images: ["/industrial_design_case_studies/product_1.png"],
+    features: [
+      "Handheld controller enclosure optimized for factory use",
+      "Balanced ergonomics for long-duration operation",
+      "Design intent aligned to DFM and assembly feasibility",
+      "Provision for sealed I/O and robust mounting points",
+    ],
+    summary:
+      "An industrial design study focused on a handheld automation controller built for demanding floor environments. The concept emphasizes operator comfort, clear visual hierarchy, and manufacturable geometry so the product can move from concept to pilot production with minimal redesign.",
+    importantParts: [
+      "Impact-resistant enclosure architecture",
+      "Operator-first button and grip layout",
+      "Service-friendly split housing concept",
+      "Production-ready parting strategy",
+    ],
+    salientFeatures: [
+      "Rugged visual language for industrial settings",
+      "Improved hand feel and grip confidence",
+      "Clear front-face interaction zones",
+      "Design prepared for manufacturing transition",
+    ],
+    scopeOfWork: [
+      "Industrial design concepting",
+      "Form exploration and refinement",
+      "3D CAD surfacing support",
+      "Design-for-manufacture review",
+    ],
+  },
+  {
+    id: "Medical-Design",
+    title: "Medical Design",
+    category: "Industrial Design",
+    images: ["/industrial_design_case_studies/product_2.png"],
+    features: [
+      "Clean, clinical product language",
+      "User-centered layout for diagnostic workflows",
+      "Serviceability-aware enclosure strategy",
+      "High-clarity interfaces and indicator placement",
+    ],
+    summary:
+      "A medical-oriented industrial design concept developed for diagnostic equipment where usability, cleanliness, and trust are central. The design direction combines approachable form with practical engineering constraints to support prototyping and regulatory-path readiness.",
+    importantParts: [
+      "Touch-safe interaction zones",
+      "Sanitization-friendly surface transitions",
+      "Modular external shell architecture",
+      "Display and control ergonomics",
+    ],
+    salientFeatures: [
+      "Premium medical device appearance",
+      "Operator-friendly control access",
+      "Reduced visual complexity in use",
+      "Manufacturable enclosure breakdown",
+    ],
+    scopeOfWork: [
+      "Design research alignment",
+      "Industrial design direction",
+      "Ergonomic evaluation",
+      "Concept-to-CAD handoff package",
+    ],
+  },
+  {
+    id: "Security-Systems",
+    title: "Security Systems",
+    category: "Industrial Design",
+    images: ["/industrial_design_case_studies/product_3.png"],
+    features: [
+      "Compact hub enclosure concept",
+      "Thermal and ventilation-aware form strategy",
+      "Tidy cable and connector accessibility",
+      "Durable exterior for continuous operation",
+    ],
+    summary:
+      "A security systems case study centered on a compact enclosure architecture for connected monitoring hardware. The industrial design approach balances compactness, heat dissipation strategy, and installation practicality while preserving a clean, professional identity.",
+    importantParts: [
+      "Wall-mount and desk-use compatibility",
+      "Connector-first rear access planning",
+      "Vent pattern integration in visual language",
+      "Brand-forward front fascia concept",
+    ],
+    salientFeatures: [
+      "Small footprint, high perceived robustness",
+      "Install-friendly connector layout",
+      "Consistent language across product variants",
+      "Ready for prototyping and validation",
+    ],
+    scopeOfWork: [
+      "Concept architecture",
+      "Industrial design detailing",
+      "Housing split and assembly strategy",
+      "Prototype build support inputs",
+    ],
+  },
+  {
+    id: "Ruggedized-Systems",
+    title: "Ruggedized Systems",
+    category: "Industrial Design",
+    images: ["/industrial_design_case_studies/product_4.png"],
+    features: [
+      "Ruggedized form factor for harsh environments",
+      "Protective shell geometry with reinforced edge zones",
+      "Clear interaction design for glove use scenarios",
+      "Mechanical intent aligned to field serviceability",
+    ],
+    summary:
+      "This ruggedized systems case study explores industrial design for mission-critical hardware expected to operate in demanding field conditions. The concept prioritizes durability cues, practical handling, and maintainability while maintaining production-minded enclosure logic.",
+    importantParts: [
+      "Reinforced corner and edge language",
+      "Grip-enhanced surface zoning",
+      "Fastener and seal strategy awareness",
+      "Field-accessible interface planning",
+    ],
+    salientFeatures: [
+      "High-durability visual and structural intent",
+      "Confident handling in mobile scenarios",
+      "Reduced accidental-impact risk zones",
+      "Design prepared for engineering maturation",
+    ],
+    scopeOfWork: [
+      "Industrial design concept development",
+      "Ruggedization-focused form refinement",
+      "Usability pass for operational contexts",
+      "Production feasibility input",
+    ],
+  },
   // Add more case studies here...
 ];
 

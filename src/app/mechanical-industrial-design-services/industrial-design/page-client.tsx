@@ -2,8 +2,35 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const THEME_STORAGE_KEY = "industrial-design-page-theme";
+const industrialCaseStudies = [
+  {
+    title: "Industrial Automation",
+    category: "Industrial Design",
+    img: "/industrial_design_case_studies/product_1.png",
+    href: "/case-studies/Industrial-Automation",
+  },
+  {
+    title: "Medical Design",
+    category: "Industrial Design",
+    img: "/industrial_design_case_studies/product_2.png",
+    href: "/case-studies/Medical-Design",
+  },
+  {
+    title: "Security Systems",
+    category: "Industrial Design",
+    img: "/industrial_design_case_studies/product_3.png",
+    href: "/case-studies/Security-Systems",
+  },
+  {
+    title: "Ruggedized Systems",
+    category: "Industrial Design",
+    img: "/industrial_design_case_studies/product_4.png",
+    href: "/case-studies/Ruggedized-Systems",
+  },
+];
 
 export default function IndustrialDesignServicesPageClient() {
   const [isDark, setIsDark] = useState(false);
@@ -215,13 +242,13 @@ export default function IndustrialDesignServicesPageClient() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { title: "Handheld Industrial Controller", category: "Industrial Automation", img: "/industrial_design_case_studies/product_1.png" },
-                { title: "Medical Diagnostic System", category: "Medical Design", img: "/industrial_design_case_studies/product_2.png" },
-                { title: "Security Hub Enclosure", category: "Security Systems", img: "/industrial_design_case_studies/product_3.png" },
-                { title: "Military Communication Unit", category: "Ruggedized Systems", img: "/industrial_design_case_studies/product_4.png" },
-              ].map((work, idx) => (
-                <div key={idx} className="group relative aspect-[3/4] overflow-hidden transition-all duration-700 bg-zinc-100 dark:bg-zinc-900">
+              {industrialCaseStudies.map((work) => (
+                <Link
+                  key={work.href}
+                  href={work.href}
+                  aria-label={`Open ${work.title} case study`}
+                  className="group relative aspect-[3/4] overflow-hidden transition-all duration-700 bg-zinc-100 dark:bg-zinc-900 block"
+                >
                   <Image
                     src={work.img}
                     alt={work.title}
@@ -232,8 +259,17 @@ export default function IndustrialDesignServicesPageClient() {
                     <span className="text-[10px] font-black tracking-[0.4em] text-[#F33117] mb-4 overflow-hidden text-ellipsis whitespace-nowrap">{work.category}</span>
                     <h3 className="text-lg font-light text-zinc-950 dark:text-zinc-100 leading-tight">{work.title}</h3>
                   </div>
-                </div>
+                </Link>
               ))}
+            </div>
+
+            <div className="mt-10 flex justify-center">
+              <Link
+                href="/Embedded-Case-study"
+                className="inline-flex items-center justify-center rounded-full border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-7 py-3 text-xs font-black uppercase tracking-[0.24em] text-zinc-800 dark:text-zinc-100 transition-all hover:border-[#F33117] hover:text-[#F33117]"
+              >
+                More Case Studies
+              </Link>
             </div>
           </div>
         </section>
