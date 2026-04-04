@@ -4,15 +4,6 @@
 
 /* @custom-variant dark (&:is(.dark *)); */
 
-@font-face {
-  font-family: "Supermolot"; /* Name you’ll use to reference the font */
-  src: url("/fonts/OTF/TT Supermolot Regular.otf") format("truetype"),
-    /* Path to TTF */ url("/fonts/TTF/TT Supermolot Regular.ttf")
-      format("opentype"); /* Path to OTF (optional) */
-  font-weight: normal; /* Adjust weight if needed (e.g., 400, 700) */
-  font-style: normal; /* Adjust style if needed (e.g., italic) */
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -40,7 +31,7 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --font-tt-supermolot: "Supermolot", sans-serif;
+    --font-readable-family: var(--font-readable), sans-serif;
 
     /* --sidebar: oklch(0.99 0 0);
     --sidebar-foreground: oklch(0.15 0.01 240);
@@ -89,11 +80,11 @@
 }
 
 html {
-  font-family: "Supermolot", sans-serif;
+  font-family: var(--font-readable-family);
 }
 
 body {
-  font-family: "Supermolot", sans-serif;
+  font-family: var(--font-readable-family);
 }
 
 @layer base {
@@ -109,7 +100,7 @@ body {
   h4,
   h5,
   h6 {
-    font-family: "Supermolot", sans-serif;
+    font-family: var(--font-readable-family);
   }
   p {
     @apply text-justify;

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Atkinson_Hyperlegible } from "next/font/google";
 import "./globals.css";
 import FooterV2 from "@/components/footer-v2";
 import ContactUsButtonWrapper from "@/components/ContactUsButtonWrapper";
@@ -8,13 +8,9 @@ import { Navigation } from "@/components/navigation";
 import ScrollToTop from "@/components/ScrollToTop";
 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const readableFont = Atkinson_Hyperlegible({
+  variable: "--font-readable",
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
@@ -38,9 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <ReactLenis root>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+        <body className={`${readableFont.variable} antialiased`}>
           <ScrollToTop />
           <Navigation />
           {children}
