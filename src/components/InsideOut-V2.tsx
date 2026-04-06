@@ -2,28 +2,9 @@
 
 import { useEffect, useRef } from "react";
 
-type InsideOutProps = {
-  isActive?: boolean;
-};
-
-export default function InsideOut({ isActive = false }: InsideOutProps) {
+export default function InsideOut() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const hasPlayed = useRef(false);
-  const isVideoVisible = useRef(false);
-
-  const playVideo = () => {
-    const video = videoRef.current;
-    if (!video || hasPlayed.current || !isVideoVisible.current) return;
-
-    video
-      .play()
-      .then(() => {
-        hasPlayed.current = true;
-      })
-      .catch((err) => {
-        console.log("Video autoplay failed:", err);
-      });
-  };
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   const handleReplay = () => {
     const video = videoRef.current;
@@ -34,48 +15,25 @@ export default function InsideOut({ isActive = false }: InsideOutProps) {
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
-
-    if (isActive) {
-      // If the section is marked active by page navigation, allow autoplay attempt.
-      isVideoVisible.current = true;
-      playVideo();
-    }
-
-    const retryPlay = () => {
-      playVideo();
-    };
-
-    video.addEventListener("loadedmetadata", retryPlay);
-    video.addEventListener("canplay", retryPlay);
-    video.addEventListener("loadeddata", retryPlay);
-    video.addEventListener("canplaythrough", retryPlay);
-
-    return () => {
-      video.removeEventListener("loadedmetadata", retryPlay);
-      video.removeEventListener("canplay", retryPlay);
-      video.removeEventListener("loadeddata", retryPlay);
-      video.removeEventListener("canplaythrough", retryPlay);
-    };
-  }, [isActive]);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const section = sectionRef.current;
+    if (!video || !section) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
-        isVideoVisible.current = entry.isIntersecting;
-
         if (entry.isIntersecting) {
-          playVideo();
+          // Section is visible — play from current position
+          video.play().catch((err) => console.log("Video play failed:", err));
+        } else {
+          // Section scrolled out — pause to save resources
+          video.pause();
         }
       },
-      { threshold: 0.35, rootMargin: "0px 0px -5% 0px" }
+      // Trigger when at least 30% of the section is visible
+      { threshold: 0.3 }
     );
 
-    observer.observe(video);
+    observer.observe(section);
 
     return () => {
       observer.disconnect();
@@ -83,7 +41,7 @@ export default function InsideOut({ isActive = false }: InsideOutProps) {
   }, []);
 
   return (
-    <div className="pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40">
+    <div ref={sectionRef} className="pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40">
       <div className="flex flex-row flex-wrap justify-center items-center gap-12 bg-white z-[1] min-h-screen max-[900px]:flex-col max-[900px]:items-center max-[900px]:gap-8">
         <div className="flex flex-col items-end">
           <video

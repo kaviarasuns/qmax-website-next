@@ -47,7 +47,7 @@ export function Navigation() {
                 <NavigationMenuItem>
                   <Link href="/" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} text-lg font-bold`}
+                      className={`${navigationMenuTriggerStyle()} font-medium text-lg transition-colors`}
                     >
                       Home
                     </NavigationMenuLink>
@@ -61,7 +61,7 @@ export function Navigation() {
                   >
                     {item.subItems ? (
                       <>
-                        <NavigationMenuTrigger className="bg-transparent text-lg font-bold">
+                        <NavigationMenuTrigger className="bg-transparent font-medium text-lg transition-colors">
                           {item.title}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
@@ -116,7 +116,7 @@ export function Navigation() {
                     ) : (
                       <Link href={item.href || "#"} legacyBehavior passHref>
                         <NavigationMenuLink
-                          className={`${navigationMenuTriggerStyle()} text-lg font-bold`}
+                          className={`${navigationMenuTriggerStyle()} font-medium text-lg transition-colors`}
                         >
                           {item.title}
                         </NavigationMenuLink>
@@ -154,7 +154,7 @@ export function Navigation() {
           <div className="px-4 py-4 space-y-1 max-h-[calc(100vh-4rem)] overflow-y-auto">
             <Link
               href="/"
-              className="block py-2 px-3 text-lg font-bold text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+              className="block py-2 px-3 text-xl font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
@@ -164,7 +164,7 @@ export function Navigation() {
               <div key={item.title}>
                 {item.subItems ? (
                   <div className="space-y-1">
-                    <div className="py-2 px-3 text-lg font-bold text-foreground">
+                    <div className="py-2 px-3 text-xl font-medium text-foreground">
                       {item.title}
                     </div>
                     <div className="pl-4 space-y-1">
@@ -215,7 +215,7 @@ export function Navigation() {
                 ) : (
                   <Link
                     href={item.href || "#"}
-                    className="block py-2 px-3 text-lg font-bold text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                    className="block py-2 px-3 text-xl font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.title}

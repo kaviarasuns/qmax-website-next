@@ -25,15 +25,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <ReactLenis root>
-        <body className="antialiased">
-          <ScrollToTop />
-          <Navigation />
-          {children}
-          <FooterV2 />
-          <ContactUsButtonWrapper />
-        </body>
-      </ReactLenis>
+      {/* <ReactLenis root> */}
+      <body className="antialiased">
+        <ScrollToTop />
+        <Navigation />
+        {children}
+        <FooterV2 />
+        <ContactUsButtonWrapper />
+      </body>
+      {/* </ReactLenis> */}
     </html>
   );
 }

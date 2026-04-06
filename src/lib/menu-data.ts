@@ -109,36 +109,7 @@ export const menuData: MenuItem[] = [
   },
   {
     title: "Case Studies",
-    subItems: [
-      {
-        title: "Embedded Systems",
-        href: "/Embedded-Case-study",
-        image:
-          "https://images.pexels.com/photos/4792728/pexels-photo-4792728.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Real-world embedded systems implementations",
-      },
-      {
-        title: "PCB Design",
-        href: "/PCB-Design-Case-study",
-        image:
-          "https://www.cirexx.com/wp-content/uploads/PCB-Layout-Board-1024x455.jpg",
-        description: "Successful PCB design projects and outcomes",
-      },
-      {
-        title: "Mechanical Design",
-        href: "/mechanical-case-study",
-        image:
-          "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Innovative mechanical design project case studies",
-      },
-      {
-        title: "Industrial Design",
-        href: "/industrial-case-study",
-        image:
-          "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=300",
-        description: "Product-focused industrial design case studies",
-      },
-    ],
+    href: "/case-studies",
   },
   {
     title: "Careers",
