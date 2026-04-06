@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import PCBCaseStudyCard from "@/components/PCBCaseStudyCard";
 
@@ -55,72 +57,152 @@ const industrialCaseStudies = [
   { id: 5, title: "Smart Device Product Concept", image: "/industrial_design_case_studies/product_5.png", link: "/mechanical-industrial-design-services/industrial-design", category: "industrial" }
 ];
 
+const sections = [
+  { id: "embedded", label: "Embedded Systems" },
+  { id: "pcb", label: "PCB Design" },
+  { id: "mechanical", label: "Mechanical Design" },
+  { id: "industrial", label: "Industrial Design" },
+];
+
 export default function CaseStudiesPage() {
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "-10% 0px -70% 0px" }
+    );
+
+    sections.forEach((section) => {
+      const el = document.getElementById(section.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 100; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <section className="relative overflow-hidden pt-24 pb-24 bg-[#f8f8f6]">
+    <section className="relative pt-24 pb-24 bg-[#f8f8f6]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_12%,rgba(243,49,23,0.08),transparent_42%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0),rgba(255,255,255,0.82))]" />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mb-14 border-b border-zinc-300/70 pb-6 text-center md:text-left">
-          <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.38em] text-[#F33117]">
-            Complete Portfolio
-          </span>
-          <h1 className="text-4xl font-light tracking-tight text-zinc-950 md:text-5xl lg:text-6xl mb-4">
-            All Case Studies.
-          </h1>
-          <p className="text-xl text-zinc-600 max-w-3xl">
-            Explore our comprehensive portfolio of successful projects across embedded systems, PCB design, mechanical, and industrial capabilities.
-          </p>
-        </div>
+      <div className="relative flex w-full max-w-[1600px] mx-auto">
+        {/* Quick Navigation Sidebar - Pinned to left of screen */}
+        <aside className="hidden xl:block w-[240px] shrink-0 pl-10">
+          <div className="sticky top-32 space-y-8">
+            <div className="relative border-l border-zinc-200/60 ml-2">
+              <div
+                className="absolute left-[-1px] w-[2px] bg-[#F33117] transition-all duration-300 ease-in-out"
+                style={{
+                  height: "24px",
+                  top: `${sections.findIndex(s => s.id === activeSection) * 44 + 4}px`,
+                  opacity: activeSection ? 1 : 0
+                }}
+              />
+              <nav className="flex flex-col space-y-1">
+                {sections.map((section) => (
+                  <button
+                    key={section.id}
+                    onClick={() => scrollToSection(section.id)}
+                    className={`group flex text-left items-center py-2 px-4 text-sm font-medium transition-colors duration-200 ${activeSection === section.id
+                        ? "text-zinc-950"
+                        : "text-zinc-500 hover:text-zinc-800"
+                      }`}
+                  >
+                    {section.label}
+                  </button>
+                ))}
+              </nav>
+            </div>
+          </div>
+        </aside>
 
-        {/* Embedded Section */}
-        <div className="mb-20">
-          <div className="mb-8 border-b border-zinc-200 pb-4">
-            <h2 className="text-2xl font-bold text-zinc-900">Embedded Systems</h2>
+        {/* Main Content */}
+        <main className="flex-1 w-full max-w-6xl px-6 lg:px-12 mx-auto">
+          {/* Embedded Section */}
+          <div id="embedded" className="mb-24 scroll-mt-32">
+            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 01</span>
+                <h2 className="text-3xl font-bold text-zinc-900">Embedded Systems</h2>
+              </div>
+              <span className="text-sm text-zinc-500 font-medium mb-1">{embeddedCaseStudies.length} Projects</span>
+            </div>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+              {embeddedCaseStudies.map((study) => (
+                <CaseStudyCard key={`estudy-${study.id}`} {...study} />
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6">
-            {embeddedCaseStudies.map((study) => (
-              <CaseStudyCard key={`estudy-${study.id}`} {...study} />
-            ))}
-          </div>
-        </div>
 
-        {/* PCB Section */}
-        <div className="mb-20">
-          <div className="mb-8 border-b border-zinc-200 pb-4">
-            <h2 className="text-2xl font-bold text-zinc-900">PCB Design</h2>
+          {/* PCB Section */}
+          <div id="pcb" className="mb-24 scroll-mt-32">
+            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 02</span>
+                <h2 className="text-3xl font-bold text-zinc-900">PCB Design</h2>
+              </div>
+              <span className="text-sm text-zinc-500 font-medium mb-1">{pcbCaseStudies.length} Projects</span>
+            </div>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+              {pcbCaseStudies.map((study) => (
+                <PCBCaseStudyCard key={`pstudy-${study.id}`} {...study} />
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6">
-            {pcbCaseStudies.map((study) => (
-              <PCBCaseStudyCard key={`pstudy-${study.id}`} {...study} />
-            ))}
-          </div>
-        </div>
 
-        {/* Mechanical Section */}
-        <div className="mb-20">
-          <div className="mb-8 border-b border-zinc-200 pb-4">
-            <h2 className="text-2xl font-bold text-zinc-900">Mechanical Design</h2>
+          {/* Mechanical Section */}
+          <div id="mechanical" className="mb-24 scroll-mt-32">
+            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 03</span>
+                <h2 className="text-3xl font-bold text-zinc-900">Mechanical Design</h2>
+              </div>
+              <span className="text-sm text-zinc-500 font-medium mb-1">{mechanicalCaseStudies.length} Projects</span>
+            </div>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+              {mechanicalCaseStudies.map((study) => (
+                <CaseStudyCard key={`mstudy-${study.id}`} {...study} />
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6">
-            {mechanicalCaseStudies.map((study) => (
-              <CaseStudyCard key={`mstudy-${study.id}`} {...study} />
-            ))}
-          </div>
-        </div>
 
-        {/* Industrial Section */}
-        <div className="mb-10">
-          <div className="mb-8 border-b border-zinc-200 pb-4">
-            <h2 className="text-2xl font-bold text-zinc-900">Industrial Design</h2>
+          {/* Industrial Section */}
+          <div id="industrial" className="mb-10 scroll-mt-32">
+            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 04</span>
+                <h2 className="text-3xl font-bold text-zinc-900">Industrial Design</h2>
+              </div>
+              <span className="text-sm text-zinc-500 font-medium mb-1">{industrialCaseStudies.length} Projects</span>
+            </div>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+              {industrialCaseStudies.map((study) => (
+                <CaseStudyCard key={`istudy-${study.id}`} {...study} />
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-6">
-            {industrialCaseStudies.map((study) => (
-              <CaseStudyCard key={`istudy-${study.id}`} {...study} />
-            ))}
-          </div>
-        </div>
+        </main>
       </div>
     </section>
   );
