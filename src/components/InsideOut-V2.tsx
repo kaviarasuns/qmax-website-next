@@ -71,6 +71,7 @@ export default function InsideOut() {
               fontWeight: 700,
               marginBottom: "1rem",
               color: "#222",
+              fontFamily: "'Supermolot', sans-serif"
             }}
           >
             Why Qmax Systems

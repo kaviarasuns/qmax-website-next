@@ -249,7 +249,7 @@ const ServicesV4Stacked = ({
     <section className="w-full bg-gradient-to-b from-gray-50 via-white to-gray-50 py-10 md:py-16">
       <div ref={stackWrapperRef} className="relative h-screen overflow-hidden">
         <div className="pointer-events-none absolute inset-x-0 top-14 z-20 mx-auto max-w-6xl px-4 text-center sm:px-6 md:top-16 lg:px-8">
-          <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 md:text-3xl lg:text-4xl">
+          <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 md:text-3xl lg:text-4xl" style={{ fontFamily: "'Supermolot', sans-serif" }}>
             Our <span className="text-red-600">Services</span>
           </h2>
           <div className="mx-auto mt-2 h-0.5 w-16 rounded-full bg-red-600" />
@@ -264,9 +264,9 @@ const ServicesV4Stacked = ({
             className="absolute inset-0 flex items-center justify-center px-4 pt-20 will-change-transform sm:px-6 md:pt-24 lg:px-8"
           >
             <div className="group block w-full max-w-5xl">
-              <article className="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_24px_60px_-22px_rgba(15,23,42,0.35)]">
+              <article className="isolate overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_24px_60px_-22px_rgba(15,23,42,0.35)]">
                 <div className="grid min-h-[64vh] md:grid-cols-2">
-                  <div className="relative min-h-[240px] md:min-h-full">
+                  <div className="relative overflow-hidden min-h-[240px] md:min-h-full">
                     <Image
                       src={service.image}
                       alt={service.topic}
@@ -279,9 +279,9 @@ const ServicesV4Stacked = ({
 
                   <div className="flex flex-col justify-between p-6 md:p-10">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-red-600">
+                      {/* <p className="text-xs font-semibold uppercase tracking-[0.2em] text-red-600">
                         Service {String(index + 1).padStart(2, "0")}
-                      </p>
+                      </p> */}
                       <h3 className="mt-3 text-2xl font-bold text-gray-900 md:text-3xl">
                         {service.topic}
                       </h3>

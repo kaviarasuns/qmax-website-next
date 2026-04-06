@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import PCBCaseStudyCard from "@/components/PCBCaseStudyCard";
+import EmbeddedCaseStudyCard from "@/components/EmbeddedCaseStudyCard";
 
 const embeddedCaseStudies = [
   { id: 1, title: "Security System Controller", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Security_System_Controller.jpg", link: "case-studies/Security-System-Controller.html", category: "development" },
@@ -125,8 +126,8 @@ export default function CaseStudiesPage() {
                     key={section.id}
                     onClick={() => scrollToSection(section.id)}
                     className={`group flex text-left items-center py-2 px-4 text-sm font-medium transition-colors duration-200 ${activeSection === section.id
-                        ? "text-zinc-950"
-                        : "text-zinc-500 hover:text-zinc-800"
+                      ? "text-zinc-950"
+                      : "text-zinc-500 hover:text-zinc-800"
                       }`}
                   >
                     {section.label}
@@ -150,7 +151,7 @@ export default function CaseStudiesPage() {
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
               {embeddedCaseStudies.map((study) => (
-                <CaseStudyCard key={`estudy-${study.id}`} {...study} />
+                <EmbeddedCaseStudyCard key={`estudy-${study.id}`} {...study} />
               ))}
             </div>
           </div>

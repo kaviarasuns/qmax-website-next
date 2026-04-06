@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Supermolot';
+  src: url('/fonts/OTF/TT Supermolot Regular.otf') format('opentype'),
+       url('/fonts/TTF/TT Supermolot Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* @custom-variant dark (&:is(.dark *)); */
 
 @layer base {

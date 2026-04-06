@@ -83,7 +83,7 @@ export function ServicesSection() {
       <div className="w-full px-8 md:px-12">
         <div className="mb-10 flex flex-col items-end justify-between gap-6 md:flex-row md:items-start">
           <div className="max-w-2xl">
-            <h2 className="mb-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Case Studies</h2>
+            <h2 style={{ fontFamily: "'Supermolot', sans-serif" }} className="mb-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">Case Studies</h2>
             <p className="text-base text-muted-foreground md:text-lg">
               Explore our comprehensive solutions and successful project implementations.
             </p>
