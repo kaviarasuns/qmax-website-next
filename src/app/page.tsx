@@ -11,6 +11,7 @@ import ServicesV4Stacked from "@/components/Services-V4-Stacked";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
+  console.log("isClient", isClient);
   const [showSecondLine, setShowSecondLine] = useState(false);
   const [showBottomText, setShowBottomText] = useState(false);
   const [fadeOutLines, setFadeOutLines] = useState(false);
@@ -89,8 +90,9 @@ export default function Home() {
           <div className="absolute inset-0 flex items-center justify-center z-[2]">
             <div className="text-center">
               <div
-                className={`text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 transition-opacity duration-1000 ${fadeOutLines ? "opacity-0" : "opacity-100"
-                  }`}
+                className={`text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 transition-opacity duration-1000 ${
+                  fadeOutLines ? "opacity-0" : "opacity-100"
+                }`}
               >
                 <Typewriter
                   options={{
@@ -103,8 +105,9 @@ export default function Home() {
               </div>
               {showSecondLine && (
                 <div
-                  className={`text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium transition-opacity duration-1000 ${fadeOutLines ? "opacity-0" : "opacity-100"
-                    }`}
+                  className={`text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium transition-opacity duration-1000 ${
+                    fadeOutLines ? "opacity-0" : "opacity-100"
+                  }`}
                 >
                   <Typewriter
                     options={{
