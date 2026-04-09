@@ -7,6 +7,8 @@ export interface CaseStudyCardProps {
   link: string;
   category?: string;
   summary?: string;
+  specs?: { label: string; value: string }[];
+  stats?: { value: string; label: string };
 }
 
 const CaseStudyCard: React.FC<CaseStudyCardProps> = ({

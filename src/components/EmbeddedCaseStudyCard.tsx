@@ -7,67 +7,70 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
   image,
   link,
   summary,
+  specs,
+  stats,
 }) => {
   return (
-    <div className="group relative w-full h-full min-h-[360px] md:min-h-[420px] overflow-hidden rounded-3xl bg-white border border-zinc-200/80 shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)] transition-all duration-500 hover:shadow-[0_24px_55px_-28px_rgba(15,23,42,0.5)] isolation-auto">
-      <Image
-        src={image}
-        alt={title}
-        fill
-        className="object-contain p-6 pb-24 transition-transform duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105"
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-      />
+    <a href={link} className="group block h-full">
+      <div className="relative h-[380px] flex flex-col bg-white rounded-2xl border border-zinc-200/80 shadow-sm transition-all duration-500 hover:shadow-xl hover:border-zinc-300 overflow-hidden">
 
-      {/* Gradients to ensure text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent opacity-80 mix-blend-multiply transition-opacity duration-500" />
-      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent opacity-90" />
-
-      <div className="absolute inset-x-0 bottom-0 p-4 md:px-6 md:pb-6 flex flex-col justify-end transform transition-transform duration-500">
-        <div className="translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]">
-
-          {/* <div className="flex items-center gap-2 mb-3 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 delay-100">
-            <span className="h-[2px] w-6 bg-[#F33117]" />
-            <span className="text-[10px] font-bold tracking-[0.2em] text-[#F33117] uppercase">
-              Embedded
-            </span>
-          </div> */}
-
-          <h3 className="text-xl md:text-2xl font-bold text-white leading-[1.1] mb-2 drop-shadow-md pr-4">
-            {title}
-          </h3>
-
-          {summary && (
-            <p className="mt-3 text-sm text-zinc-300 line-clamp-2 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-150">
-              {summary}
-            </p>
-          )}
-
-          <div className="mt-5 flex items-center justify-between opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-200">
-            <span className="text-xs font-semibold uppercase tracking-widest text-zinc-300">
-              Explore Project
-            </span>
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-zinc-950 transition-transform duration-300 group-hover:scale-110">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              >
-                <path d="M7 17 17 7" />
-                <path d="M9 7h8v8" />
-              </svg>
-            </span>
+        <div className="flex flex-col flex-1 p-5 overflow-hidden">
+          {/* Image Container - collapses on hover */}
+          <div className="relative flex-shrink-0 w-full overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] max-h-[250px] opacity-100 mb-4 group-hover:max-h-0 group-hover:opacity-0 group-hover:mb-0">
+            <div className="aspect-[1.4/1] relative w-full bg-[#F3F4F6] rounded-xl overflow-hidden">
+              <Image
+                src={image}
+                alt={title}
+                fill
+                className="object-contain p-6 transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+            </div>
           </div>
 
-        </div>
-      </div>
+          {/* Content Area */}
+          <div className="flex-1 flex flex-col min-h-0">
+            <h3 className="text-xl font-bold text-zinc-900 leading-[1.2] mb-3 transition-colors duration-300 group-hover:text-[#F33117]">
+              {title}
+            </h3>
 
-      <a href={link} className="absolute inset-0 z-20" aria-label={`View ${title}`} />
-    </div>
+            {summary && (
+              <p className="text-[15px] text-zinc-600 leading-relaxed mt-2 line-clamp-2 transition-all duration-500 group-hover:line-clamp-4">
+                {summary}
+              </p>
+            )}
+
+            {/* Specs - slides in on hover */}
+            <div className="opacity-0 max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-[300px] group-hover:mt-4">
+              <div className="space-y-0 border-t border-zinc-100">
+                {specs && specs.length > 0 ? (
+                  specs.map((spec, i) => (
+                    <div key={i} className="flex justify-between items-center py-3.5 border-t border-zinc-100 first:border-t-0">
+                      <span className="text-sm text-zinc-500">{spec.label}</span>
+                      <span className="text-sm text-zinc-900 font-medium">{spec.value}</span>
+                    </div>
+                  ))
+                ) : (
+                  // Default mock specs if none provided
+                  <>
+                    <div className="flex justify-between items-center py-3.5 border-t border-zinc-100">
+                      <span className="text-sm text-zinc-500">Size</span>
+                      <span className="text-sm text-zinc-900 font-medium">140*100mm</span>
+                    </div>
+                    <div className="flex justify-between items-center py-3.5 border-t border-zinc-100">
+                      <span className="text-sm text-zinc-500">Chip</span>
+                      <span className="text-sm text-zinc-900 font-medium">RK3568</span>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </a>
   );
 };
 
