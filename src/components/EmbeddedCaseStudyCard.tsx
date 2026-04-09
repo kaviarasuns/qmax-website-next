@@ -6,6 +6,7 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
   title,
   image,
   link,
+  summary,
 }) => {
   return (
     <div className="group relative w-full h-full min-h-[360px] md:min-h-[420px] overflow-hidden rounded-3xl bg-white border border-zinc-200/80 shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)] transition-all duration-500 hover:shadow-[0_24px_55px_-28px_rgba(15,23,42,0.5)] isolation-auto">
@@ -18,9 +19,8 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
       />
 
       {/* Gradients to ensure text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent opacity-80 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent opacity-80 mix-blend-multiply transition-opacity duration-500" />
       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent opacity-90" />
-      <div className="absolute inset-0 opacity-0 bg-black/30 transition-opacity duration-500 group-hover:opacity-100 backdrop-blur-[2px]" />
 
       <div className="absolute inset-x-0 bottom-0 p-4 md:px-6 md:pb-6 flex flex-col justify-end transform transition-transform duration-500">
         <div className="translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]">
@@ -35,6 +35,12 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
           <h3 className="text-xl md:text-2xl font-bold text-white leading-[1.1] mb-2 drop-shadow-md pr-4">
             {title}
           </h3>
+
+          {summary && (
+            <p className="mt-3 text-sm text-zinc-300 line-clamp-2 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-150">
+              {summary}
+            </p>
+          )}
 
           <div className="mt-5 flex items-center justify-between opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-200">
             <span className="text-xs font-semibold uppercase tracking-widest text-zinc-300">

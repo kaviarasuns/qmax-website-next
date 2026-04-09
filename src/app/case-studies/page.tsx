@@ -6,22 +6,22 @@ import PCBCaseStudyCard from "@/components/PCBCaseStudyCard";
 import EmbeddedCaseStudyCard from "@/components/EmbeddedCaseStudyCard";
 
 const embeddedCaseStudies = [
-  { id: 1, title: "Security System Controller", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Security_System_Controller.jpg", link: "case-studies/Security-System-Controller.html", category: "development" },
-  { id: 2, title: "Structural Health Monitoring System", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Aerospace_Structural_Health_Monitoring_System.jpg", link: "case-studies/fpga-based-health-monitoring-system.html", category: "development" },
-  { id: 3, title: "Control system with POE Switch", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Control_system_with_POE_Switch_and_RTOS.jpg", link: "case-studies/Control-system-with-POE-Switch-and-RTOS.html", category: "development" },
-  { id: 4, title: "Lithium Titanate Power Bank", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Lithium_Titanate_Power_Bank.jpg", link: "case-studies/Lithium-Titanate-Power-Bank.html", category: "development" },
-  { id: 5, title: "OBD 2 Device with LoRa and BLE", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/OBD_2_Device_with_LoRa_and_BLE.jpg", link: "case-studies/OBD-2-Device-with-LoRa-and-BLE.html", category: "development" },
-  { id: 6, title: "BLE tag with Wireless Charging", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/BLE_tag_with_Wireless_Charging.png", link: "case-studies/BLE-tag-with-Wireless-Charging.html", category: "development" },
-  { id: 7, title: "IOT Module with Wi-Fi BLE ZigBee", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/IOT_Module_with_Wi-Fi_BLE_ZigBee.jpg", link: "case-studies/IOT-Module-with-Wi-Fi-BLE-ZigBee.html", category: "mobile" },
-  { id: 8, title: "IOT Micro Gateway", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/IOT_Micro_Gateway.jpg", link: "case-studies/IOT-micro-gateway.html", category: "design" },
-  { id: 9, title: "Kneeling and Levelling System", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Kneeling_and_Levelling_System.png", link: "case-studies/kneeling_system.html", category: "development" },
-  { id: 10, title: "Precision Filtration Control System", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Precision_Filtration_Control_System.jpg", link: "case-studies/Precision-Filtration-Control-System.html", category: "development" },
-  { id: 11, title: "Power Measurement System", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Polyphase_Power_Measurement_System.jpg", link: "case-studies/polyphase-power_measurement.html", category: "development" },
-  { id: 12, title: "IOT Connectivity Dongle - BLE ZigBee", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/IOT_Connectivity_Dongle_BLE_ZigBee.jpg", link: "case-studies/IOT-connectivity-dongle-BLE-ZIGBEE.html", category: "development" },
-  { id: 13, title: "IOT Power Measurement Unit", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/IOT_Power_Measurement_Unit.jpg", link: "case-studies/IOT-Power-Measurement-Unit.html", category: "development" },
-  { id: 14, title: "IOT Gateway", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/IOT_Gateway.jpg", link: "case-studies/iot-gateway.html", category: "development" },
-  { id: 15, title: "Wearable Biosensor", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Wearable_Biosensor.jpg", link: "case-studies/Wearable-Biosensor.html", category: "development" },
-  { id: 16, title: "Smart OBD Charging Station", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Smart_OBD_Charging_Station.jpg", link: "case-studies/Smart-OBD-Charging-Station.html", category: "development" }
+  { id: 1, title: "Security System Controller", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Security_System_Controller.jpg", link: "case-studies/Security-System-Controller.html", category: "development", summary: "Edge controller for security with POE+." },
+  { id: 2, title: "Structural Health Monitoring System", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Aerospace_Structural_Health_Monitoring_System.jpg", link: "case-studies/fpga-based-health-monitoring-system.html", category: "development", summary: "FPGA-based real-time health monitoring." },
+  { id: 3, title: "Control system with POE Switch", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Control_system_with_POE_Switch_and_RTOS.jpg", link: "case-studies/Control-system-with-POE-Switch-and-RTOS.html", category: "development", summary: "Industrial control with POE+ & RTOS." },
+  { id: 4, title: "Lithium Titanate Power Bank", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Lithium_Titanate_Power_Bank.jpg", link: "case-studies/Lithium-Titanate-Power-Bank.html", category: "development", summary: "10-minute ultra-fast charging power bank." },
+  { id: 5, title: "OBD 2 Device with LoRa and BLE", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/OBD_2_Device_with_LoRa_and_BLE.jpg", link: "case-studies/OBD-2-Device-with-LoRa-and-BLE.html", category: "development", summary: "OBD diagnostic with LoRa & BLE." },
+  { id: 6, title: "BLE tag with Wireless Charging", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/BLE_tag_with_Wireless_Charging.png", link: "case-studies/BLE-tag-with-Wireless-Charging.html", category: "development", summary: "BLE tag with RF wireless charging." },
+  { id: 7, title: "IOT Module with Wi-Fi BLE ZigBee", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/IOT_Module_with_Wi-Fi_BLE_ZigBee.jpg", link: "case-studies/IOT-Module-with-Wi-Fi-BLE-ZigBee.html", category: "mobile", summary: "Tri-mode Wi-Fi, BLE & ZigBee module." },
+  { id: 8, title: "IOT Micro Gateway", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/IOT_Micro_Gateway.jpg", link: "case-studies/IOT-micro-gateway.html", category: "design", summary: "Plug-and-play Wi-Fi IoT gateway." },
+  { id: 9, title: "Kneeling and Levelling System", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Kneeling_and_Levelling_System.png", link: "case-studies/kneeling_system.html", category: "development", summary: "CAN-based vehicle air suspension control." },
+  { id: 10, title: "Precision Filtration Control System", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Precision_Filtration_Control_System.jpg", link: "case-studies/Precision-Filtration-Control-System.html", category: "development", summary: "Precision filtration & pump controller." },
+  { id: 11, title: "Power Measurement System", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Polyphase_Power_Measurement_System.jpg", link: "case-studies/polyphase-power_measurement.html", category: "development", summary: "Polyphase metering with precise DSP." },
+  { id: 12, title: "IOT Connectivity Dongle - BLE ZigBee", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/IOT_Connectivity_Dongle_BLE_ZigBee.jpg", link: "case-studies/IOT-connectivity-dongle-BLE-ZIGBEE.html", category: "development", summary: "Triple-mode BLE & ZigBee USB dongle." },
+  { id: 13, title: "IOT Power Measurement Unit", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/IOT_Power_Measurement_Unit.jpg", link: "case-studies/IOT-Power-Measurement-Unit.html", category: "development", summary: "24-bit high-precision power monitor." },
+  { id: 14, title: "IOT Gateway", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/IOT_Gateway.jpg", link: "case-studies/iot-gateway.html", category: "development", summary: "Linux-based multi-protocol IoT hub." },
+  { id: 15, title: "Wearable Biosensor", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Wearable_Biosensor.jpg", link: "case-studies/Wearable-Biosensor.html", category: "development", summary: "Health wearable with BLE mesh tracking." },
+  { id: 16, title: "Smart OBD Charging Station", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Smart_OBD_Charging_Station.jpg", link: "case-studies/Smart-OBD-Charging-Station.html", category: "development", summary: "15-port OBD charging & firmware dock." }
 ];
 
 const pcbCaseStudies = [
@@ -51,11 +51,11 @@ const mechanicalCaseStudies = [
 ];
 
 const industrialCaseStudies = [
-  { id: 1, title: "Handheld Industrial Controller", image: "/industrial_design_case_studies/product_1.png", link: "/mechanical-industrial-design-services/industrial-design", category: "industrial" },
-  { id: 2, title: "Medical Diagnostic System", image: "/industrial_design_case_studies/product_2.png", link: "/mechanical-industrial-design-services/industrial-design", category: "industrial" },
-  { id: 3, title: "Security Hub Enclosure", image: "/industrial_design_case_studies/product_3.png", link: "/mechanical-industrial-design-services/industrial-design", category: "industrial" },
-  { id: 4, title: "Military Communication Unit", image: "/industrial_design_case_studies/product_4.png", link: "/mechanical-industrial-design-services/industrial-design", category: "industrial" },
-  { id: 5, title: "Smart Device Product Concept", image: "/industrial_design_case_studies/product_5.png", link: "/mechanical-industrial-design-services/industrial-design", category: "industrial" }
+  { id: 1, title: "Handheld Industrial Controller", image: "/industrial_design_case_studies/product_1.png", link: "/mechanical-industrial-design-services/industrial-design", category: "industrial", summary: "Ergonomic handheld factory controller." },
+  { id: 2, title: "Medical Diagnostic System", image: "/industrial_design_case_studies/product_2.png", link: "/mechanical-industrial-design-services/industrial-design", category: "industrial", summary: "User-centered medical diagnostic system." },
+  { id: 3, title: "Security Hub Enclosure", image: "/industrial_design_case_studies/product_3.png", link: "/mechanical-industrial-design-services/industrial-design", category: "industrial", summary: "Compact thermal-optimized security hub." },
+  { id: 4, title: "Military Communication Unit", image: "/industrial_design_case_studies/product_4.png", link: "/mechanical-industrial-design-services/industrial-design", category: "industrial", summary: "Ruggedized field-ready military unit." },
+  { id: 5, title: "Smart Device Product Concept", image: "/industrial_design_case_studies/product_5.png", link: "/mechanical-industrial-design-services/industrial-design", category: "industrial", summary: "Innovative smart device design concept." }
 ];
 
 const sections = [

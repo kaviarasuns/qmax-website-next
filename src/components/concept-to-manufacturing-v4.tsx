@@ -369,7 +369,7 @@ export default function ScrollCardsAnimationV4({
         <div className="w-full px-4 flex flex-col items-center justify-center">
           <div className="relative top-20">
             <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-center text-black" style={{ fontFamily: "'Supermolot', sans-serif" }}>
-              Design To Manufacturing
+              Design To <span className="text-red-500">Manufacturing</span>
             </h1>
           </div>
           <div

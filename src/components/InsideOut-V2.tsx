@@ -74,7 +74,7 @@ export default function InsideOut() {
               fontFamily: "'Supermolot', sans-serif"
             }}
           >
-            Why Qmax Systems
+            Why Qmax <span className="text-red-500">Systems</span>
           </h2>
           <p
             style={{ fontSize: "1.15rem", color: "#444", lineHeight: 1.6 }}
