@@ -10,6 +10,7 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
   specs,
   stats,
 }) => {
+  console.log(stats);
   return (
     <a href={link} className="group block h-full">
       <div className="relative h-[380px] flex flex-col bg-white rounded-2xl border border-zinc-200/80 shadow-sm transition-all duration-500 hover:shadow-xl hover:border-zinc-300 overflow-hidden">
