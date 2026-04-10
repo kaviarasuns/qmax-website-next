@@ -118,7 +118,7 @@ export default function PCBDesignPage() {
 
               <motion.div variants={itemVariants} className="p-8 bg-gray-50 rounded-2xl border-l-4 border-red-600">
                 <p className="text-lg text-gray-700 italic text-left">
-                  "Whether your project involves a 30-layer HDI board or a high-power converter, our designs are optimized for reliability, compliance, and manufacturability from day one."
+                  &quot;Whether your project involves a 30-layer HDI board or a high-power converter, our designs are optimized for reliability, compliance, and manufacturability from day one.&quot;
                 </p>
               </motion.div>
 
@@ -365,7 +365,7 @@ export default function PCBDesignPage() {
           >
             <div className="absolute top-0 left-0 w-2 h-full bg-red-600" />
             <p className="text-xl md:text-2xl text-gray-800 font-medium leading-relaxed max-w-4xl mx-auto italic">
-              "The difference between a board that works first time and one that requires three re-spins often comes down to how early in the design process risk is identified. Here is what that means in practice at Qmax."
+              &quot;The difference between a board that works first time and one that requires three re-spins often comes down to how early in the design process risk is identified. Here is what that means in practice at Qmax.&quot;
             </p>
           </motion.div>
         </div>

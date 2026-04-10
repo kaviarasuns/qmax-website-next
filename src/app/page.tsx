@@ -45,10 +45,14 @@ export default function Home() {
       setShowBottomText(true);
     }, 3700);
 
+    const firstRef = firstTimeoutRef.current;
+    const secondRef = secondTimeoutRef.current;
+    const fadeRef = fadeTimeoutRef.current;
+
     return () => {
-      if (firstTimeoutRef.current) clearTimeout(firstTimeoutRef.current);
-      if (secondTimeoutRef.current) clearTimeout(secondTimeoutRef.current);
-      if (fadeTimeoutRef.current) clearTimeout(fadeTimeoutRef.current);
+      if (firstRef) clearTimeout(firstRef);
+      if (secondRef) clearTimeout(secondRef);
+      if (fadeRef) clearTimeout(fadeRef);
     };
   }, []);
 
