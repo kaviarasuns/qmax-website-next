@@ -46,7 +46,7 @@ export default function PCBDesignPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white pt-16">
       {/* Hero Section */}
       <section className="relative h-[80vh] w-full flex items-center justify-center overflow-hidden">
         <Image
@@ -74,7 +74,7 @@ export default function PCBDesignPage() {
               <span className="text-red-600">A Multi-Physics</span> <br />
               Engineering Discipline
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed text-justify">
               Where complex conceptual requirements meet market-ready hardware through disciplined engineering.
             </p>
           </motion.div>
@@ -108,22 +108,22 @@ export default function PCBDesignPage() {
                 <span className="inline-block px-4 py-1.5 bg-red-50 text-red-600 text-sm font-semibold tracking-wider uppercase rounded-full">
                   Our Perspective
                 </span>
-                <p className="text-2xl md:text-3xl font-medium text-gray-900 leading-snug">
+                <p className="text-2xl md:text-3xl font-medium text-gray-900 leading-snug text-justify">
                   At Qmax Systems, we view PCB Design Services not merely as an interconnect task, but as a <span className="text-red-600 font-bold italic">complex multi-physics</span> engineering challenge.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed text-left">
+                <p className="text-lg text-gray-600 leading-relaxed text-justify">
                   In modern electronics, the physical layout is a critical component of the circuit itself. Our engineering team specializes in first-time-right PCB design by prioritizing early risk identification and disciplined design methodology.
                 </p>
               </motion.div>
 
               <motion.div variants={itemVariants} className="p-8 bg-gray-50 rounded-2xl border-l-4 border-red-600">
-                <p className="text-lg text-gray-700 italic text-left">
+                <p className="text-lg text-gray-700 italic text-justify">
                   &quot;Whether your project involves a 30-layer HDI board or a high-power converter, our designs are optimized for reliability, compliance, and manufacturability from day one.&quot;
                 </p>
               </motion.div>
 
               <motion.div variants={itemVariants} className="space-y-6">
-                 <p className="text-lg text-gray-600 leading-relaxed text-left">
+                 <p className="text-lg text-gray-600 leading-relaxed text-justify">
                   We deliver production-ready PCB designs that bridge complex conceptual requirements and market-ready hardware. Our approach ensures that performance objectives are met without compromising on scalability.
                 </p>
               </motion.div>
@@ -141,7 +141,7 @@ export default function PCBDesignPage() {
                   </h3>
                   
                   <div className="space-y-8">
-                    <p className="text-gray-600 leading-relaxed text-left">
+                    <p className="text-gray-600 leading-relaxed text-justify">
                       Our approach integrates critical variables into a single, cohesive workflow to ensure stable, noise-free energy distribution:
                     </p>
 
@@ -156,12 +156,12 @@ export default function PCBDesignPage() {
                           <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition-colors uppercase text-sm tracking-widest mb-1">
                             {tech.title}
                           </h4>
-                          <p className="text-sm text-gray-500 text-left">{tech.desc}</p>
+                          <p className="text-sm text-gray-500 text-justify">{tech.desc}</p>
                         </div>
                       ))}
                     </div>
 
-                    <p className="text-sm text-gray-500 pt-4 border-t italic text-left">
+                    <p className="text-sm text-gray-500 pt-4 border-t italic text-justify">
                       Failure to account for these variables often results in costly re-spins and delayed time-to-market.
                     </p>
                   </div>
@@ -182,7 +182,7 @@ export default function PCBDesignPage() {
             className="mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Our PCB Design Specialisations</h2>
-            <p className="text-lg text-gray-600 max-w-4xl leading-relaxed text-left">
+            <p className="text-lg text-gray-600 max-w-4xl leading-relaxed text-justify">
               Qmax Systems provides specialized PCB design engineering across seven practice areas. Each discipline is staffed by engineers with experience, supported by well-documented component libraries built over three decades, and governed by defined processes and checklists at every design stage.
             </p>
           </motion.div>
@@ -247,7 +247,7 @@ export default function PCBDesignPage() {
                     {spec.icon}
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-red-700 transition-colors">{spec.title}</h3>
-                  <p className="text-gray-600 mb-8 leading-relaxed text-left text-base italic group-hover:text-gray-900 transition-colors">
+                  <p className="text-gray-600 mb-8 leading-relaxed text-justify text-base italic group-hover:text-gray-900 transition-colors">
                     {spec.description}
                   </p>
                   <Link 
@@ -350,7 +350,7 @@ export default function PCBDesignPage() {
                 <p className="text-xs font-bold text-red-600 uppercase tracking-[0.2em] leading-relaxed">
                   {reason.subtitle}
                 </p>
-                <p className="text-gray-600 leading-relaxed text-left text-sm opacity-80 group-hover:opacity-100 transition-opacity">
+                <p className="text-gray-600 leading-relaxed text-justify text-sm opacity-80 group-hover:opacity-100 transition-opacity">
                   {reason.description}
                 </p>
               </motion.div>
@@ -364,7 +364,7 @@ export default function PCBDesignPage() {
             className="mt-24 p-12 bg-gray-50 rounded-[3rem] text-center border border-gray-100 relative overflow-hidden"
           >
             <div className="absolute top-0 left-0 w-2 h-full bg-red-600" />
-            <p className="text-xl md:text-2xl text-gray-800 font-medium leading-relaxed max-w-4xl mx-auto italic">
+            <p className="text-xl md:text-2xl text-gray-800 font-medium leading-relaxed max-w-4xl mx-auto italic text-justify">
               &quot;The difference between a board that works first time and one that requires three re-spins often comes down to how early in the design process risk is identified. Here is what that means in practice at Qmax.&quot;
             </p>
           </motion.div>
@@ -376,7 +376,7 @@ export default function PCBDesignPage() {
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent animate-dash-sweep" />
         <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to start your next high-performance project?</h2>
-            <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
+            <p className="text-gray-400 mb-10 max-w-2xl mx-auto text-justify">
                 Join world-class engineering teams who trust Qmax for their most complex PCB design challenges.
             </p>
             <button className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-transform hover:scale-105 active:scale-95 shadow-lg">
