@@ -4,13 +4,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import React from "react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { 
-  Cpu, 
-  Radio, 
-  Zap, 
-  Activity, 
-  LineChart, 
-  Library, 
+import {
+  Cpu,
+  Radio,
+  Zap,
+  Activity,
+  LineChart,
+  Library,
   CheckCircle2,
   ArrowRight
 } from "lucide-react";
@@ -58,7 +58,7 @@ export default function PCBDesignPage() {
         />
         {/* Decorative Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -81,7 +81,7 @@ export default function PCBDesignPage() {
         </div>
 
         {/* Bottom indicator */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
@@ -93,89 +93,70 @@ export default function PCBDesignPage() {
       </section>
 
       {/* Main Content Section */}
-      <section className="py-24 px-6 md:px-12">
+      <section className="py-24 px-6 md:px-12 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-16"
-          >
-            {/* Left Side: Core Philosophy */}
-            <div className="lg:col-span-7 space-y-12">
-              <motion.div variants={itemVariants} className="space-y-6">
-                <span className="inline-block px-4 py-1.5 bg-red-50 text-red-600 text-sm font-semibold tracking-wider uppercase rounded-full">
-                  Our Perspective
-                </span>
-                <p className="text-2xl md:text-3xl font-medium text-gray-900 leading-snug text-justify">
-                  At Qmax Systems, we view PCB Design Services not merely as an interconnect task, but as a <span className="text-red-600 font-bold italic">complex multi-physics</span> engineering challenge.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed text-justify">
-                  In modern electronics, the physical layout is a critical component of the circuit itself. Our engineering team specializes in first-time-right PCB design by prioritizing early risk identification and disciplined design methodology.
-                </p>
-              </motion.div>
-
-              <motion.div variants={itemVariants} className="p-8 bg-gray-50 rounded-2xl border-l-4 border-red-600">
-                <p className="text-lg text-gray-700 italic text-justify">
-                  &quot;Whether your project involves a 30-layer HDI board or a high-power converter, our designs are optimized for reliability, compliance, and manufacturability from day one.&quot;
-                </p>
-              </motion.div>
-
-              <motion.div variants={itemVariants} className="space-y-6">
-                 <p className="text-lg text-gray-600 leading-relaxed text-justify">
-                  We deliver production-ready PCB designs that bridge complex conceptual requirements and market-ready hardware. Our approach ensures that performance objectives are met without compromising on scalability.
-                </p>
-              </motion.div>
-            </div>
-
-            {/* Right Side: Technical Excellence Card */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <motion.div 
-              variants={itemVariants}
-              className="lg:col-span-5 relative"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-5"
             >
-              <div className="sticky top-32 p-1 bg-gradient-to-br from-red-600 to-red-900 rounded-[2rem] shadow-2xl">
-                <div className="bg-white rounded-[1.8rem] p-8 md:p-10 h-full">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-8 border-b pb-4">
-                    Cohesive Workflow Integration
-                  </h3>
-                  
-                  <div className="space-y-8">
-                    <p className="text-gray-600 leading-relaxed text-justify">
-                      Our approach integrates critical variables into a single, cohesive workflow to ensure stable, noise-free energy distribution:
-                    </p>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-8">
+                Engineering <br />
+                <span className="text-red-600">Beyond Connectivity</span>
+              </h2>
+              <div className="w-20 h-1.5 bg-red-600 mb-8" />
+              <p className="text-xl text-gray-800 font-medium leading-relaxed mb-6">
+                At Qmax Systems, we view PCB Design Services not merely as an interconnect task, but as a complex multi-physics engineering challenge.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed text-justify">
+                In modern electronics, the physical layout is a critical component of the circuit itself. Our engineering team specializes in first-time-right PCB design.
+              </p>
+            </motion.div>
 
-                    <div className="grid gap-4">
-                      {[
-                        { title: "Signal Integrity (SI)", desc: "Maintain timing and signal quality." },
-                        { title: "Power Integrity (PI)", desc: "Stable PDN for high-performance silicon." },
-                        { title: "EMI/EMC", desc: "Compliance and electromagnetic compatibility." },
-                        { title: "Thermal Management", desc: "Efficient heat dissipation and reliability." }
-                      ].map((tech) => (
-                        <div key={tech.title} className="group p-4 hover:bg-red-50 rounded-xl transition-colors border border-gray-100">
-                          <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition-colors uppercase text-sm tracking-widest mb-1">
-                            {tech.title}
-                          </h4>
-                          <p className="text-sm text-gray-500 text-justify">{tech.desc}</p>
-                        </div>
-                      ))}
-                    </div>
-
-                    <p className="text-sm text-gray-500 pt-4 border-t italic text-justify">
-                      Failure to account for these variables often results in costly re-spins and delayed time-to-market.
-                    </p>
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:col-span-7 space-y-8"
+            >
+              <div className="bg-gray-50 p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-sm relative group hover:shadow-xl transition-all duration-500">
+                <div className="absolute top-0 right-0 p-8">
+                  <Cpu className="w-12 h-12 text-gray-100 group-hover:text-red-100 transition-colors" />
+                </div>
+                <p className="text-lg text-gray-700 leading-relaxed text-justify mb-8 relative z-10">
+                  By prioritizing early risk identification and disciplined design methodology, we deliver production-ready PCB designs that bridge complex conceptual requirements and market-ready hardware. Whether your project involves a 30-layer HDI board or a high-power converter, our designs are optimized for reliability, compliance, and manufacturability from day one.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-gray-200">
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 w-2 h-2 rounded-full bg-red-600 shrink-0" />
+                    <p className="text-sm font-bold text-gray-900 uppercase tracking-wider">Signal & Power Integrity</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 w-2 h-2 rounded-full bg-red-600 shrink-0" />
+                    <p className="text-sm font-bold text-gray-900 uppercase tracking-wider">EMI & Thermal Management</p>
                   </div>
                 </div>
               </div>
+
+              <div className="bg-red-600 p-8 md:p-12 rounded-[2.5rem] text-white shadow-xl shadow-red-100">
+                <p className="text-lg leading-relaxed text-justify">
+                  Our approach integrates Signal Integrity (SI), Power Integrity (PI), Electromagnetic Interference (EMI), and thermal management into a single, cohesive workflow. This ensures that high-speed signals maintain timing and quality while the Power Distribution Network (PDN) provides stable, noise-free energy to high-performance silicon. Failure to account for these variables often results in costly re-spins and delayed time-to-market.
+                </p>
+              </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Specialisations Section */}
       <section className="py-24 bg-gray-50/50 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -241,7 +222,7 @@ export default function PCBDesignPage() {
                 className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-gray-100 hover:shadow-2xl hover:border-red-100 transition-all duration-500 group relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full -mr-16 -mt-16 group-hover:bg-red-600 transition-colors duration-500" />
-                
+
                 <div className="relative z-10">
                   <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 mb-8 group-hover:bg-white group-hover:scale-110 transition-all duration-500">
                     {spec.icon}
@@ -250,7 +231,7 @@ export default function PCBDesignPage() {
                   <p className="text-gray-600 mb-8 leading-relaxed text-justify text-base italic group-hover:text-gray-900 transition-colors">
                     {spec.description}
                   </p>
-                  <Link 
+                  <Link
                     href={spec.href}
                     className="inline-flex items-center text-red-600 font-bold tracking-tight hover:gap-3 transition-all"
                   >
@@ -357,7 +338,7 @@ export default function PCBDesignPage() {
             ))}
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -375,13 +356,13 @@ export default function PCBDesignPage() {
       <section className="bg-gray-900 py-20 overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent animate-dash-sweep" />
         <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to start your next high-performance project?</h2>
-            <p className="text-gray-400 mb-10 max-w-2xl mx-auto text-justify">
-                Join world-class engineering teams who trust Qmax for their most complex PCB design challenges.
-            </p>
-            <button className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-transform hover:scale-105 active:scale-95 shadow-lg">
-                Consult Our Engineering Team
-            </button>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to start your next high-performance project?</h2>
+          <p className="text-gray-400 mb-10 max-w-2xl mx-auto text-justify">
+            Join world-class engineering teams who trust Qmax for their most complex PCB design challenges.
+          </p>
+          <button className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-transform hover:scale-105 active:scale-95 shadow-lg">
+            Consult Our Engineering Team
+          </button>
         </div>
       </section>
     </main>
