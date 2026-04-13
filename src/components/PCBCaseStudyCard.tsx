@@ -11,7 +11,6 @@ const PCBCaseStudyCard: React.FC<CaseStudyCardProps> = ({
 }) => {
   return (
     <div className={`group relative ${category}`}>
-      <a href={link} className="block" aria-label={title}>
         <article className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_24px_55px_-28px_rgba(15,23,42,0.5)]">
           <div className="relative h-[70%] overflow-hidden">
             <Image
@@ -34,7 +33,7 @@ const PCBCaseStudyCard: React.FC<CaseStudyCardProps> = ({
               </p>
             )}
 
-            <div className="flex items-center justify-between mt-3">
+            <a href={link} className="flex items-center justify-between mt-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F33117]/60 focus-visible:ring-offset-2 rounded" aria-label={title}>
               <span className="text-[11px] font-semibold tracking-[0.18em] text-zinc-500 uppercase">
                 View Case
               </span>
@@ -53,12 +52,11 @@ const PCBCaseStudyCard: React.FC<CaseStudyCardProps> = ({
                   <path d="M9 7h8v8" />
                 </svg>
               </span>
-            </div>
+            </a>
           </div>
 
           <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-zinc-200/70 transition-colors duration-300 group-hover:ring-zinc-300" />
         </article>
-      </a>
     </div>
   );
 };

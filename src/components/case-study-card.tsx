@@ -1,5 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
 import { Breadcrumbs } from "./breadcrumbs";
 import { CaseStudy } from "../../types/case-study";
 import { CaseStudyCarousel } from "./case-study-carousel";
@@ -8,122 +6,187 @@ interface CaseStudyCardProps {
   caseStudy: CaseStudy;
 }
 
-function DetailList({
+function SectionLabel({ index, label }: { index: string; label: string }) {
+  return (
+    <div className="flex items-center gap-3 mb-5">
+      <span className="text-[11px] font-bold tabular-nums tracking-[0.08em] text-brand-red">
+        {index}
+      </span>
+      <span className="h-px flex-1 bg-zinc-200/80" aria-hidden="true" />
+      <span className="text-[10.5px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
+        {label}
+      </span>
+    </div>
+  );
+}
+
+function DetailSection({
+  index,
   title,
   items,
+  variant = "list",
 }: {
+  index: string;
   title: string;
   items: string[];
+  variant?: "list" | "numbered" | "chips";
 }) {
-  if (!items.length) {
-    return null;
-  }
+  if (!items.length) return null;
 
   return (
-    <Card className="border-zinc-200/80 shadow-[0_16px_40px_-34px_rgba(15,23,42,0.45)]">
-      <CardHeader className="pb-3">
-        <CardTitle className="text-lg font-semibold text-zinc-900">
-          {title}
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <ul className="space-y-2.5">
-          {items.map((item, index) => (
-            <li key={index} className="flex items-start text-zinc-700">
-              <span className="mr-3 mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#F33117]" />
-              <span className="leading-relaxed">{item}</span>
+    <div className="rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] break-inside-avoid">
+      <SectionLabel index={index} label={title} />
+
+      {variant === "chips" ? (
+        <div className="flex flex-wrap gap-2">
+          {items.map((item, i) => (
+            <span
+              key={i}
+              className="inline-flex items-center rounded-lg border border-zinc-200/80 bg-zinc-50 px-3 py-1.5 text-[13px] text-zinc-700 leading-snug"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      ) : (
+        <ul className="space-y-3">
+          {items.map((item, i) => (
+            <li key={i} className="flex items-start gap-3 text-[14.5px] text-zinc-700 leading-relaxed">
+              {variant === "numbered" ? (
+                <span className="mt-px flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-zinc-100 text-[10px] font-bold tabular-nums text-zinc-500">
+                  {i + 1}
+                </span>
+              ) : (
+                <span
+                  className="mt-[9px] h-1 w-1 flex-shrink-0 rounded-full bg-brand-red"
+                  aria-hidden="true"
+                />
+              )}
+              <span>{item}</span>
             </li>
           ))}
         </ul>
-      </CardContent>
-    </Card>
+      )}
+    </div>
   );
 }
 
 export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   const hasSummary = Boolean(caseStudy.summary?.trim());
-  const category = caseStudy.category.toLowerCase();
-  const listingPath = category.includes("pcb")
-    ? "/PCB-Design-Case-study"
-    : category.includes("industrial design")
-      ? "/mechanical-industrial-design-services/industrial-design"
-      : "/Embedded-Case-study";
 
   return (
     <div className="relative overflow-hidden bg-[#f7f7f4] py-14 md:py-20">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_9%_12%,rgba(243,49,23,0.1),transparent_40%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0),rgba(255,255,255,0.86))]" />
+      {/* Background gradients */}
+      <div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_9%_12%,rgba(243,49,23,0.08),transparent_40%)]"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0),rgba(255,255,255,0.86))]"
+        aria-hidden="true"
+      />
 
       <div className="relative mx-auto max-w-7xl space-y-8 px-6 lg:px-8">
-        <div className="rounded-2xl border border-zinc-200/80 bg-white/85 p-5 shadow-[0_20px_50px_-36px_rgba(15,23,42,0.48)] backdrop-blur-sm md:p-6">
-          <div className="mb-5">
+
+        {/* ── Header ── */}
+        <header className="rounded-2xl border border-zinc-200/70 bg-white/85 p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-sm md:p-8">
+          <div className="mb-6">
             <Breadcrumbs
               items={[
-                { label: "Home", href: "/" },
-                { label: "Case Studies", href: listingPath },
-                { label: caseStudy.category, href: listingPath },
+                { label: "Case Studies", href: "/case-studies" },
                 { label: caseStudy.title },
               ]}
             />
           </div>
 
-          <div>
-            <span className="mb-2 inline-block text-[10px] font-black uppercase tracking-[0.36em] text-[#F33117]">
-              Detailed Case Study
+          <div className="flex flex-col gap-3">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.3em] text-brand-red">
+              {caseStudy.category}
             </span>
-            <h1 className="text-3xl font-semibold leading-tight tracking-tight text-zinc-950 md:text-4xl">
+            <h1
+              className="text-3xl font-bold leading-tight tracking-tight text-zinc-950 md:text-4xl lg:text-[2.75rem]"
+              style={{ textWrap: "balance" }}
+            >
               {caseStudy.title}
             </h1>
-            <p className="mt-2 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
-              {caseStudy.category}
-            </p>
           </div>
-        </div>
 
+          {/* Red accent line */}
+          <div
+            className="mt-6 h-[2px] w-16 bg-brand-red rounded-full"
+            aria-hidden="true"
+          />
+        </header>
+
+        {/* ── Gallery + Highlights ── */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.25fr_0.75fr]">
           <CaseStudyCarousel images={caseStudy.images} title={caseStudy.title} />
 
-          <Card className="h-fit border-zinc-200/80 shadow-[0_16px_40px_-34px_rgba(15,23,42,0.45)] lg:sticky lg:top-24">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-lg font-semibold text-zinc-900">
-                Project Highlights
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-3">
-                {caseStudy.features.map((feature, index) => (
-                  <li key={index} className="flex items-start text-zinc-700">
-                    <span className="mr-3 mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#F33117]" />
-                    <span className="leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+          <div className="rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] h-fit lg:sticky lg:top-24">
+            <SectionLabel index="01" label="Highlights" />
+            <ul className="space-y-3.5">
+              {caseStudy.features.map((feature, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-3 text-[14.5px] text-zinc-700 leading-relaxed"
+                >
+                  <span
+                    className="mt-[9px] h-1 w-1 flex-shrink-0 rounded-full bg-brand-red"
+                    aria-hidden="true"
+                  />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {hasSummary && (
-            <Card className="border-zinc-200/80 shadow-[0_16px_40px_-34px_rgba(15,23,42,0.45)] md:col-span-2">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg font-semibold text-zinc-900">
-                  Project Summary
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="leading-relaxed text-zinc-700">{caseStudy.summary}</p>
-              </CardContent>
-            </Card>
-          )}
+        {/* ── Summary ── */}
+        {hasSummary && (
+          <div className="rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] md:p-8">
+            <SectionLabel index="02" label="Project Overview" />
+            <div className="relative pl-5 border-l-2 border-brand-red/20">
+              <p className="text-[15.5px] leading-[1.75] text-zinc-600">
+                {caseStudy.summary}
+              </p>
+            </div>
+          </div>
+        )}
 
-          <DetailList title="Important Parts" items={caseStudy.importantParts} />
-          <DetailList
+        {/* ── Details — masonry layout via CSS columns ── */}
+        <div className="columns-1 md:columns-2 gap-6 space-y-6">
+          <DetailSection
+            index="03"
+            title="Key Components"
+            items={caseStudy.importantParts}
+            variant="chips"
+          />
+          <DetailSection
+            index="04"
             title="Salient Features"
             items={caseStudy.salientFeatures}
+            variant="list"
           />
-          <div className="md:col-span-2">
-            <DetailList title="Qmax Scope of Work" items={caseStudy.scopeOfWork} />
-          </div>
+          {caseStudy.scopeOfWork.length > 0 && (
+            <div className="rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] break-inside-avoid">
+              <SectionLabel index="05" label="Scope of Work" />
+              <div className="flex flex-col gap-2.5">
+                {caseStudy.scopeOfWork.map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 rounded-xl border border-zinc-100 bg-zinc-50/60 px-4 py-3"
+                  >
+                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md bg-brand-red/8 text-[10px] font-bold tabular-nums text-brand-red">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[13.5px] font-medium text-zinc-700 leading-snug">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

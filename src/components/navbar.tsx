@@ -138,7 +138,7 @@ export default function Navbar() {
             <ul className="lg:absolute lg:left-0 lg:mt-0 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
               <li>
                 <a
-                  href="/Embedded-Case-study"
+                  href="/case-studies"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   EMBEDDED SYSTEMS

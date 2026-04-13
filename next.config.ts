@@ -36,7 +36,12 @@ const nextConfig: NextConfig = {
       // Specific redirects for case study pages
       {
         source: "/Embedded-Case-study.html",
-        destination: "/Embedded-Case-study",
+        destination: "/case-studies",
+        permanent: true,
+      },
+      {
+        source: "/Embedded-Case-study",
+        destination: "/case-studies",
         permanent: true,
       },
       {

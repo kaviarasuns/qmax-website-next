@@ -563,29 +563,6 @@ export default function ScrollCardsAnimationV4({
               ))}
             </div>
 
-            {/* Enhanced visual elements */}
-            <div className="absolute inset-0 pointer-events-none">
-              {/* Animated background particles */}
-              {[...Array(20)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-1 h-1 bg-red-500/20 rounded-full"
-                  style={{
-                    left: `${(i * 37) % 100}%`,
-                    top: `${(i * 73) % 100}%`,
-                  }}
-                  animate={{
-                    y: [-20, 20, -20],
-                    opacity: [0.2, 0.8, 0.2],
-                  }}
-                  transition={{
-                    duration: 3 + Math.random() * 2,
-                    repeat: Number.POSITIVE_INFINITY,
-                    delay: Math.random() * 2,
-                  }}
-                />
-              ))}
-            </div>
           </div>
         </div>
       )}

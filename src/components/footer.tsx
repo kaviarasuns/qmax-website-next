@@ -53,7 +53,7 @@ export default function Footer() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/embedded-design-services" },
-    { name: "Case Studies", href: "/Embedded-Case-study" },
+    { name: "Case Studies", href: "/case-studies" },
     { name: "Resources", href: "/PCB-design-resources" },
     { name: "FAQ's", href: "/printed-circuit-board-faqs" },
     { name: "Careers", href: "/careers" },

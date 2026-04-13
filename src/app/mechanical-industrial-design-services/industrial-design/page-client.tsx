@@ -265,7 +265,7 @@ export default function IndustrialDesignServicesPageClient() {
 
             <div className="mt-10 flex justify-center">
               <Link
-                href="/Embedded-Case-study"
+                href="/case-studies"
                 className="inline-flex items-center justify-center rounded-full border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-7 py-3 text-xs font-black uppercase tracking-[0.24em] text-zinc-800 dark:text-zinc-100 transition-all hover:border-[#F33117] hover:text-[#F33117]"
               >
                 More Case Studies

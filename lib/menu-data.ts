@@ -36,7 +36,7 @@ export const menuData: MenuItem[] = [
     subItems: [
       {
         title: "Embedded Systems",
-        href: "/Embedded-Case-study",
+        href: "/case-studies",
         image:
           "https://images.pexels.com/photos/4792728/pexels-photo-4792728.jpeg?auto=compress&cs=tinysrgb&w=300",
         description: "Real-world embedded systems implementations",
