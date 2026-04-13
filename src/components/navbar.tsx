@@ -101,20 +101,20 @@ export default function Navbar() {
             </button>
             <ul className="lg:absolute lg:left-0 lg:mt-0 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
               <li>
-                <a
+                <Link
                   href="/embedded-design-services"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   EMBEDDED SYSTEMS
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/pcb-design"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   PCB DESIGN
-                </a>
+                </Link>
               </li>
             </ul>
           </li>
@@ -137,20 +137,20 @@ export default function Navbar() {
             </button>
             <ul className="lg:absolute lg:left-0 lg:mt-0 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-2 pl-4 lg:pl-0">
               <li>
-                <a
+                <Link
                   href="/case-studies"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   EMBEDDED SYSTEMS
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/PCB-Design-Case-study"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   PCB DESIGN
-                </a>
+                </Link>
               </li>
             </ul>
           </li>
@@ -173,45 +173,45 @@ export default function Navbar() {
             </button>
             <ul className="lg:absolute lg:left-0 lg:mt-0 lg:w-48 lg:bg-white lg:shadow-lg lg:invisible group-hover:visible bg-gray-50 mt-0 pl-4 lg:pl-0">
               <li>
-                <a
+                <Link
                   href="/PCB-design-resources"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   PCB DESIGN RESOURCES
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/embedded-system-glossary"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   EMBEDDED SYSTEMS GLOSSARY
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/pcb-design-glossary"
                   className="block px-4 py-2 hover:bg-gray-100"
                 >
                   PCB DESIGN GLOSSARY
-                </a>
+                </Link>
               </li>
             </ul>
           </li>
 
           <li className="py-2 lg:py-0">
-            <a
+            <Link
               href="/printed-circuit-board-faqs"
               className="block hover:text-brand-red text-xl"
             >
               FAQs
-            </a>
+            </Link>
           </li>
 
           <li className="py-2 lg:py-0">
-            <a href="/careers" className="block hover:text-brand-red text-xl">
+            <Link href="/careers" className="block hover:text-brand-red text-xl">
               CAREERS
-            </a>
+            </Link>
           </li>
 
           <li className="py-2 lg:py-0">
@@ -225,9 +225,9 @@ export default function Navbar() {
           </li>
 
           <li className="py-2 lg:py-0">
-            <a href="/contact" className="block hover:text-brand-red text-xl">
+            <Link href="/contact" className="block hover:text-brand-red text-xl">
               CONTACT
-            </a>
+            </Link>
           </li>
         </ul>
 

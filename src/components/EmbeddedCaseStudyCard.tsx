@@ -8,14 +8,10 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
   link,
   summary,
   specs,
-  stats,
 }) => {
   return (
-    <div
-      className="group block h-full rounded-2xl"
-    >
+    <div className="group block h-full rounded-2xl">
       <article className="relative h-[400px] flex flex-col bg-white rounded-2xl border border-zinc-200/70 shadow-[0_1px_3px_rgba(0,0,0,0.04)] overflow-hidden transition-[box-shadow,border-color] duration-500 motion-reduce:transition-none hover:shadow-[0_20px_50px_-16px_rgba(243,49,23,0.10),0_8px_20px_-8px_rgba(0,0,0,0.06)] hover:border-zinc-300/80">
-
         {/* Image — collapses on hover */}
         <div className="relative flex-shrink-0 w-full overflow-hidden transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none max-h-[220px] opacity-100 group-hover:max-h-0 group-hover:opacity-0">
           <div className="relative w-full h-[220px] bg-gradient-to-br from-zinc-50 via-zinc-100/60 to-zinc-50">
@@ -29,7 +25,9 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
             {/* Bottom fade into content */}
             <div
               className="absolute inset-x-0 bottom-0 h-10 pointer-events-none"
-              style={{ background: "linear-gradient(to top, white, transparent)" }}
+              style={{
+                background: "linear-gradient(to top, white, transparent)",
+              }}
               aria-hidden="true"
             />
           </div>
@@ -90,7 +88,11 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
                 strokeWidth={2.5}
                 aria-hidden="true"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                />
               </svg>
             </a>
           </div>
@@ -101,7 +103,6 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
           className="absolute bottom-0 inset-x-0 h-[2px] bg-brand-red origin-left scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none group-hover:scale-x-100"
           aria-hidden="true"
         />
-
       </article>
     </div>
   );
