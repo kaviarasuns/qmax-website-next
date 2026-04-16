@@ -18,15 +18,15 @@ import Link from "next/link";
 import { CaseStudiesSection } from "./case-studies-section";
 
 export default function PCBDesignPage() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
+  // const containerVariants = {
+  //   hidden: { opacity: 0 },
+  //   visible: {
+  //     opacity: 1,
+  //     transition: {
+  //       staggerChildren: 0.3,
+  //     },
+  //   },
+  // };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
