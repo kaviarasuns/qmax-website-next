@@ -101,9 +101,9 @@ const caseStudiesData: CaseStudy[] = [
     title: "Control System with POE Switch and RTOS",
     category: "Industrial Control Systems",
     images: [
-      "/ott/image1.jpg",
-      "/ott/image2.jpg",
-      "/ott/image3.jpg",
+    "/ott/image1.JPG",
+    "/ott/image2.JPG",
+    "/ott/image3.JPG",
       "/ott/image4.png",
       "/ott/image5.png"
     ],

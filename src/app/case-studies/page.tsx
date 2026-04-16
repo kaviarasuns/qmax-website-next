@@ -36,7 +36,7 @@ const embeddedCaseStudies = [
   { 
     id: 3, 
     title: "Control system with POE Switch", 
-    image: "/ott/image1.jpg", 
+    image: "/ott/image1.JPG",
     link: "case-studies/Control-system-with-POE-Switch-and-RTOS.html", 
     category: "development", 
     summary: "A comprehensive industrial control system featuring integrated POE+ switching capabilities and real-time operating system. The system provides centralized control for multiple devices while delivering power and data through a single ethernet connection. Designed for harsh industrial environments with robust communication protocols.",

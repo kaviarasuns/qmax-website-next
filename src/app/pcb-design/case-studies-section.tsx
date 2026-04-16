@@ -7,7 +7,7 @@ import { useState } from "react"
 const caseStudies = [
   {
     title: "Industrial Controller",
-    image: "/ott/image1.jpg",
+    image: "/ott/image1.JPG",
     description: "A robust industrial control system featuring dual-core processing and high-speed I/O connectivity. The system manages complex manufacturing processes with real-time monitoring and failsafe mechanisms.",
     specs: {
       "Processor": "ARM Cortex-A9",
@@ -17,7 +17,7 @@ const caseStudies = [
   },
   {
     title: "Aerospace PCB",
-    image: "/ott/image2.jpg",
+    image: "/ott/image2.JPG",
     description: "High-reliability PCB design for aerospace applications meeting DO-254 and IPC-A-610 standards. Incorporates advanced signal integrity optimization and thermal management for critical avionics systems.",
     specs: {
       "Layers": "14-Layer",
@@ -27,7 +27,7 @@ const caseStudies = [
   },
   {
     title: "Automotive OBD",
-    image: "/ott/image3.jpg",
+    image: "/ott/image3.JPG",
     description: "Advanced diagnostic device for vehicle data acquisition via OBD-II port. Features dual-band wireless connectivity and real-time vehicle telemetry with cloud integration capabilities.",
     specs: {
       "Protocol": "OBD-II",

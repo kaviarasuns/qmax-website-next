@@ -3,12 +3,27 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: [
-      "d1yetprhniwywz.cloudfront.net",
-      "framerusercontent.com",
-      "images.pexels.com",
-      "encrypted-tbn0.gstatic.com",
-      "www.cirexx.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "d1yetprhniwywz.cloudfront.net",
+      },
+      {
+        protocol: "https",
+        hostname: "framerusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.cirexx.com",
+      },
     ],
   },
   async redirects() {
