@@ -8,4 +8,6 @@ export interface CaseStudy {
   importantParts: string[]
   salientFeatures: string[]
   scopeOfWork: string[]
+  /** Zero-based indices of images that should be displayed with black padding (object-contain on a black background) */
+  paddedImages?: number[]
 }

@@ -15,6 +15,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import Link from "next/link";
+import { CaseStudiesSection } from "./case-studies-section";
 
 export default function PCBDesignPage() {
   const containerVariants = {
@@ -95,25 +96,27 @@ export default function PCBDesignPage() {
       {/* Main Content Section */}
       <section className="py-24 px-6 md:px-12 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            <motion.div 
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-stretch">
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-5"
+              className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start"
             >
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-8">
-                Engineering <br />
-                <span className="text-red-600">Beyond Connectivity</span>
-              </h2>
-              <div className="w-20 h-1.5 bg-red-600 mb-8" />
-              <p className="text-xl text-gray-800 font-medium leading-relaxed mb-6">
-                At Qmax Systems, we view PCB Design Services not merely as an interconnect task, but as a complex multi-physics engineering challenge.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed text-justify">
-                In modern electronics, the physical layout is a critical component of the circuit itself. Our engineering team specializes in first-time-right PCB design.
-              </p>
+              <div className="bg-gray-50 rounded-[2.5rem] border border-gray-100 p-8 md:p-12 h-full flex flex-col justify-center">
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-8">
+                  Engineering <br />
+                  <span className="text-red-600">Beyond Connectivity</span>
+                </h2>
+                <div className="w-20 h-1.5 bg-red-600 mb-8" />
+                <p className="text-xl text-gray-800 font-medium leading-relaxed mb-6">
+                  At Qmax Systems, we view PCB Design Services not merely as an interconnect task, but as a complex multi-physics engineering challenge.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed text-justify">
+                  In modern electronics, the physical layout is a critical component of the circuit itself. Our engineering team specializes in first-time-right PCB design.
+                </p>
+              </div>
             </motion.div>
 
             <motion.div 
@@ -245,112 +248,141 @@ export default function PCBDesignPage() {
       </section>
 
       {/* Why Choose Qmax Section */}
-      <section className="py-24 px-6 md:px-12 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-readable-family">Why Engineering Teams Choose Qmax Systems</h2>
-            <div className="w-24 h-2 bg-red-600 rounded-full mb-12" />
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
-            {[
-              {
-                number: "01",
-                title: "ENGINEERING DEPTH",
-                subtitle: "Qualified Electrical Engineers — Not Just Layout Technicians",
-                description: "Every PCB designer at Qmax is a degreed, qualified Electrical Engineer. Our team interprets schematics, identifies signal integrity and power delivery risks, and engages directly with your hardware engineers — not just executing routing instructions. This distinction is critical in high-speed digital, analog, RF, and power designs where layout decisions directly affect circuit performance."
-              },
-              {
-                number: "02",
-                title: "FIRST-TIME-RIGHT DESIGN",
-                subtitle: "Zero-Defect Philosophy — Eliminating Costly Re-Spins",
-                description: "Qmax enforces mandatory process gates at every design phase: pre-layout checks, mid-layout DRV, pre-release DRC/ERC, and final DFM review — none of which are optional. Supported by over three decades of active PCB engineering, our process discipline consistently delivers production-ready designs on the first build, reducing re-spin risk and protecting your time-to-market."
-              },
-              {
-                number: "03",
-                title: "COMPLIMENTARY SCHEMATIC REVIEW",
-                subtitle: "Engineering-Level Review Before a the PCB is Routed",
-                description: "At the outset of every engagement, Qmax engineers conduct a complimentary schematic review covering Connectivity, Circuit functionality, Protection, decoupling strategy, power and ground net conventions, and net naming consistency — at no additional charge. Catching design issues at the schematic stage costs nothing; catching them after fabrication costs everything."
-              },
-              {
-                number: "04",
-                title: "COMMUNICATION & TIME DISCIPLINE",
-                subtitle: "Structured Communication Aligned to US & EU Time Zones",
-                description: "Qmax maintains dedicated overlap hours with US and EU time zones for design reviews and milestone check-ins. English is our working language for all client communication, and project managers deliver structured update cadences, change logs, and review documentation — so your team always has clear visibility into design status without chasing for updates."
-              },
-              {
-                number: "05",
-                title: "IP PROTECTION & CYBERSECURITY",
-                subtitle: "Robust IP Safeguards — US-Standard NDAs and Controlled Access",
-                description: "All engagements operate under strict US-standard NDAs. Design data is handled in controlled environments with file access restricted to assigned engineers only. All design files, libraries, and simulation outputs are the sole intellectual property of the customer — never archived, repurposed, or shared beyond the agreed project scope."
-              },
-              {
-                number: "06",
-                title: "COMPLIANCE — IPC, FCC, UL, CE, ROHS",
-                subtitle: "Designing to Compliance from Day One — Not After a Failed Test",
-                description: "Qmax applies IPC-2221/2222, IPC-7351, IPC-6012, and IPC-A-610 as standard. EMC-by-design methodology addresses return path integrity, shielding, and filtering to support FCC, CE, and VCCI certification. High-voltage designs are governed by IEC 60601, UL 60950, and UL 62368-1. All materials and components are RoHS and REACH verified as a standard deliverable."
-              },
-              {
-                number: "07",
-                title: "VERIFIED COMPONENT LIBRARY",
-                subtitle: "Three Decades of Validated Footprints — Not Off-the-Shelf Parts",
-                description: "Qmax's component library has been built, verified, and actively maintained since the company's founding. Every footprint is validated against manufacturer datasheets and IPC-7351 standards, and updated as components evolve. This proprietary library asset eliminates the risk of incorrect land patterns, incorrect courtyard geometry, and 3D collision errors from the very first revision."
-              },
-              {
-                number: "08",
-                title: "FABRICATION & EMS NETWORK",
-                subtitle: "Direct Fab Relationships Across USA, India, Taiwan, Japan & China",
-                description: "Qmax holds current, detailed knowledge of each fabrication partner's process capabilities — trace/space minimums, via geometry, aspect ratios, impedance tolerances, surface finishes, and HDI processes. Designs are authored directly to fabrication capability, compressing DFM iteration cycles and shortening the path from design release to production-ready boards."
-              },
-              {
-                number: "09",
-                title: "MULTI-DOMAIN ENGINEERING EXPERIENCE",
-                subtitle: "Cross-Industry Expertise Across Regulated and High-Reliability Sectors",
-                description: "Qmax engineers have delivered PCB designs for automotive (ADAS, EV, powertrain), aerospace and defence, medical devices (ISO 13485), industrial automation, telecom and networking, and high-performance computing. This cross-domain background ensures that industry-specific compliance requirements, reliability standards, and design constraints are understood and applied — not learned on your project."
-              }
-            ].map((reason, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="flex flex-col space-y-4 border-t border-gray-100 pt-8 group hover:border-red-500 transition-colors duration-500"
-              >
-                <div className="flex items-baseline justify-between">
-                  <span className="text-5xl font-black text-gray-100 group-hover:text-red-600/20 transition-colors duration-500 font-readable-family">
-                    {reason.number}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 tracking-tight group-hover:text-red-600 transition-colors duration-300">
-                  {reason.title}
-                </h3>
-                <p className="text-xs font-bold text-red-600 uppercase tracking-[0.2em] leading-relaxed">
-                  {reason.subtitle}
-                </p>
-                <p className="text-gray-600 leading-relaxed text-justify text-sm opacity-80 group-hover:opacity-100 transition-opacity">
-                  {reason.description}
-                </p>
-              </motion.div>
-            ))}
+      <section style={{ background: '#faf8f5' }}>
+        <div className="mx-auto max-w-7xl px-6">
+          {/* Section Header */}
+          <div className="py-16 flex flex-col gap-3 max-w-2xl">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight" style={{ color: '#1a1a1a' }}>
+              Why Engineering Teams Choose{" "}
+              <span style={{ color: '#e44332' }}>Qmax Systems</span>
+            </h2>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: '#666666' }}>
+              Every decision we make is guided by engineering rigor and decades of experience building reliable hardware.
+            </p>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="mt-24 p-12 bg-gray-50 rounded-[3rem] text-center border border-gray-100 relative overflow-hidden"
-          >
-            <div className="absolute top-0 left-0 w-2 h-full bg-red-600" />
-            <p className="text-xl md:text-2xl text-gray-800 font-medium leading-relaxed max-w-4xl mx-auto italic text-justify">
-              &quot;The difference between a board that works first time and one that requires three re-spins often comes down to how early in the design process risk is identified. Here is what that means in practice at Qmax.&quot;
-            </p>
-          </motion.div>
+          {/* Two Column Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 pb-20 relative z-10" style={{ backgroundColor: '#faf8f5' }}>
+            {/* Left Side - Video (Sticky) */}
+            <div className="lg:col-span-1">
+              <div className="sticky top-24">
+                {/* Video Container */}
+                <div className="relative w-full rounded-xl overflow-hidden shadow-lg" style={{ aspectRatio: '4/3', backgroundColor: '#1a1a1a' }}>
+                  <video
+                    src="https://d1yetprhniwywz.cloudfront.net/inside_out_V2.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Label Below */}
+                <p className="text-sm mt-4" style={{ color: '#666666' }}>
+                  See how our engineering process transforms concepts into production-ready designs
+                </p>
+              </div>
+            </div>
+
+            {/* Right Side - Stacked Sticky Sections */}
+            <div className="lg:col-span-1 space-y-0">
+              {[
+                {
+                  number: "01",
+                  title: "Engineering Depth Over Surface-Level Design",
+                  description: "Our engineers don't just route traces—they understand the physics. Every design decision considers signal behavior, power distribution, and thermal dynamics to eliminate guesswork."
+                },
+                {
+                  number: "02",
+                  title: "First-Time-Right Philosophy",
+                  description: "We invest heavily in upfront analysis and simulation. This disciplined approach means fewer respins, faster time-to-market, and significantly lower development costs."
+                },
+                {
+                  number: "03",
+                  title: "Schematic Review as Standard Practice",
+                  description: "Before any layout work begins, we thoroughly review your schematic for potential issues—power sequencing, signal routing challenges, and component selection concerns."
+                },
+                {
+                  number: "04",
+                  title: "Clear Communication Throughout",
+                  description: "Weekly progress updates, design review milestones, and direct access to your assigned engineer. No black boxes, no surprises—just transparent collaboration."
+                },
+                {
+                  number: "05",
+                  title: "Strict IP Protection",
+                  description: "Your designs stay yours. NDA as standard, secure file handling, and strict access controls ensure your intellectual property remains protected at every stage."
+                },
+                {
+                  number: "06",
+                  title: "Global Compliance Expertise",
+                  description: "Design for CE, FCC, UL, and other certifications from day one. We build compliance into the architecture, not as an afterthought."
+                },
+                {
+                  number: "07",
+                  title: "Comprehensive Component Libraries",
+                  description: "30,000+ verified footprints and symbols built to IPC standards. Every component we use has been validated for manufacturing accuracy."
+                },
+                {
+                  number: "08",
+                  title: "Fabrication Partner Network",
+                  description: "Direct relationships with qualified PCB fabricators worldwide. We optimize your design for your chosen manufacturer and volume requirements."
+                },
+                {
+                  number: "09",
+                  title: "Multi-Domain Systems Experience",
+                  description: "From IoT sensors to industrial controls to medical devices—we've designed across industries, bringing cross-domain insights to every project."
+                }
+              ].map((reason) => (
+                <div key={reason.number} className="relative">
+                  {/* Sticky Header */}
+                  <div
+                    className="sticky z-20 pt-6 pb-4 border-b overflow-hidden"
+                    style={{
+                      top: '96px',
+                      backgroundColor: '#faf8f5',
+                      borderColor: 'rgba(0, 0, 0, 0.1)'
+                    }}
+                  >
+                    <div className="flex items-center gap-3">
+                      {/* Number Badge */}
+                      <div
+                        className="flex-shrink-0 rounded-full px-3 py-1 text-sm font-bold"
+                        style={{
+                          backgroundColor: 'rgba(228, 67, 50, 0.15)',
+                          color: '#e44332'
+                        }}
+                      >
+                        {reason.number}
+                      </div>
+                      {/* Title */}
+                      <h3 className="text-xl md:text-2xl font-semibold flex-1 leading-tight" style={{ color: '#1a1a1a' }}>
+                        {reason.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="pt-4 pb-16 px-0">
+                    <div
+                      className="bg-white rounded-xl p-5 shadow-sm"
+                      style={{
+                        color: '#666666'
+                      }}
+                    >
+                      <p className="text-base leading-relaxed">
+                        {reason.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Case Studies Section */}
+      <CaseStudiesSection />
 
       {/* Decorative Section */}
       <section className="bg-gray-900 py-20 overflow-hidden relative">

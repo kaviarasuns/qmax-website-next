@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Roboto"', "Arial", "Helvetica", "sans-serif"],
+        readable: ['"Roboto"', "Arial", "Helvetica", "sans-serif"],
+      },
       colors: {
         "brand-red": "#F33117",
         background: "hsl(var(--background))",

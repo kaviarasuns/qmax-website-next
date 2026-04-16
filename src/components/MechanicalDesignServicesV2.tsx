@@ -29,7 +29,7 @@ export default function MechanicalDesignServicesPageV2() {
                     src="/services/12_mechanical_design_services.jpg"
                     alt="Mechanical Engineering and Design"
                     fill
-                    className="object-cover scale-110 group-hover:scale-100 transition-transform duration-[3000ms] ease-out filter grayscale group-hover:grayscale-0 opacity-80"
+                    className="object-cover scale-110 group-hover:scale-100 transition-transform [transition-duration:3000ms] ease-out filter grayscale group-hover:grayscale-0 opacity-80"
                     priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent z-10" />

@@ -14,7 +14,7 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
                 src={image}
                 alt={title}
                 fill
-                className="object-contain p-6 pb-24 transition-transform duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105"
+                className="object-contain p-6 pb-24 transition-transform duration-1000 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
 
@@ -23,7 +23,7 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent opacity-90" />
 
             <div className="absolute inset-x-0 bottom-0 p-4 md:px-6 md:pb-6 flex flex-col justify-end transform transition-transform duration-500">
-                <div className="translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]">
+                <div className="translate-y-8 group-hover:translate-y-0 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)]">
 
                     {/* <div className="flex items-center gap-2 mb-3 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 delay-100">
             <span className="h-[2px] w-6 bg-[#F33117]" />

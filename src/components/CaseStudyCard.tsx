@@ -21,12 +21,12 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   return (
     <div className={`group relative ${category}`}>
         <article className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_24px_55px_-28px_rgba(15,23,42,0.5)]">
-          <div className="relative h-[70%] overflow-hidden">
+          <div className="relative h-[70%] overflow-hidden bg-gradient-to-br from-zinc-50 via-white to-zinc-100/70">
             <Image
               src={image}
               alt={title}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-contain p-5 transition-transform duration-700 group-hover:scale-[1.03]"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             />
 

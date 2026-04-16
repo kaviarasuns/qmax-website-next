@@ -13,7 +13,7 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
     <div className="group block h-full rounded-2xl">
       <article className="relative h-[400px] flex flex-col bg-white rounded-2xl border border-zinc-200/70 shadow-[0_1px_3px_rgba(0,0,0,0.04)] overflow-hidden transition-[box-shadow,border-color] duration-500 motion-reduce:transition-none hover:shadow-[0_20px_50px_-16px_rgba(243,49,23,0.10),0_8px_20px_-8px_rgba(0,0,0,0.06)] hover:border-zinc-300/80">
         {/* Image — collapses on hover */}
-        <div className="relative flex-shrink-0 w-full overflow-hidden transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none max-h-[220px] opacity-100 group-hover:max-h-0 group-hover:opacity-0">
+        <div className="relative flex-shrink-0 w-full overflow-hidden transition-[max-height,opacity] duration-500 [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none max-h-[220px] opacity-100 group-hover:max-h-0 group-hover:opacity-0">
           <div className="relative w-full h-[220px] bg-gradient-to-br from-zinc-50 via-zinc-100/60 to-zinc-50">
             <Image
               src={image}
@@ -50,7 +50,7 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
 
           {/* Specs — revealed on hover */}
           {specs && specs.length > 0 && (
-            <div className="opacity-0 max-h-0 overflow-hidden transition-[opacity,max-height,margin] duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] motion-reduce:transition-none group-hover:opacity-100 group-hover:max-h-[200px] group-hover:mt-3.5">
+            <div className="opacity-0 max-h-0 overflow-hidden transition-[opacity,max-height,margin] duration-500 [transition-timing-function:cubic-bezier(0.25,0.46,0.45,0.94)] motion-reduce:transition-none group-hover:opacity-100 group-hover:max-h-[200px] group-hover:mt-3.5">
               <div className="pt-0.5">
                 {specs.map((spec, i) => (
                   <div
@@ -100,7 +100,7 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
 
         {/* Accent line — sweeps in from left on hover */}
         <div
-          className="absolute bottom-0 inset-x-0 h-[2px] bg-brand-red origin-left scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none group-hover:scale-x-100"
+          className="absolute bottom-0 inset-x-0 h-[2px] bg-brand-red origin-left scale-x-0 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none group-hover:scale-x-100"
           aria-hidden="true"
         />
       </article>

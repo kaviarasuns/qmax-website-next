@@ -40,13 +40,13 @@ const carouselItems = [
     description: "PCB Design Services",
     url: "/pcb-design",
   },
-  {
-    id: 5,
-    image: "/services/industrial-design.png",
-    title: "Industrial Design",
-    description: "Industrial Design & Mechanical Engineering",
-    url: "/case-studies/BLE-tag-with-Wireless-Charging",
-  },
+  // {
+  //   id: 5,
+  //   image: "/services/industrial-design.png",
+  //   title: "Industrial Design",
+  //   description: "Industrial Design & Mechanical Engineering",
+  //   url: "/case-studies/BLE-tag-with-Wireless-Charging",
+  // },
 ]
 
 export function ServicesSection() {
@@ -124,7 +124,7 @@ export function ServicesSection() {
           ))}
         </div>
 
-        <div className="mt-8 flex justify-center gap-2">
+        {/* <div className="mt-8 flex justify-center gap-2">
           {[...Array(5)].map((_, i) => (
             <div
               key={i}
@@ -134,7 +134,7 @@ export function ServicesSection() {
               )}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   )

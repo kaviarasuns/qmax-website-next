@@ -101,11 +101,13 @@ const caseStudiesData: CaseStudy[] = [
     title: "Control System with POE Switch and RTOS",
     category: "Industrial Control Systems",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/case-studies-images/Control_system_with_POE_Switch_and_RTOS/Control_system_with_POE_Switch_and_RTOS-a.jpg",
-      "https://d1yetprhniwywz.cloudfront.net/case-studies-images/Control_system_with_POE_Switch_and_RTOS/Control_system_with_POE_Switch_and_RTOS-b.jpg",
-      "https://d1yetprhniwywz.cloudfront.net/case-studies-images/Control_system_with_POE_Switch_and_RTOS/Control_system_with_POE_Switch_and_RTOS-c.jpg",
-      "https://d1yetprhniwywz.cloudfront.net/case-studies-images/Control_system_with_POE_Switch_and_RTOS/Control_system_with_POE_Switch_and_RTOS-d.jpg",
+      "/ott/image1.jpg",
+      "/ott/image2.jpg",
+      "/ott/image3.jpg",
+      "/ott/image4.png",
+      "/ott/image5.png"
     ],
+    paddedImages: [0, 1, 2, 3, 4],
     features: [
       "Real-Time Operating System",
       "POE+ Switch Integration",

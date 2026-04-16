@@ -7,9 +7,11 @@ import { cn } from "@/lib/utils";
 interface CaseStudyCarouselProps {
   images: string[];
   title: string;
+  /** Zero-based indices of images that should be displayed with black padding */
+  paddedImages?: number[];
 }
 
-export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
+export function CaseStudyCarousel({ images, title, paddedImages = [] }: CaseStudyCarouselProps) {
   const galleryImages = React.useMemo(() => images.filter(Boolean), [images]);
   const [current, setCurrent] = React.useState(0);
 
@@ -38,13 +40,19 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
   return (
     <div className="rounded-2xl border border-zinc-200/70 bg-white p-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)] md:p-4">
       {/* Main image */}
-      <div className="relative overflow-hidden rounded-xl border border-zinc-100 bg-zinc-50">
+      <div className={cn(
+        "relative overflow-hidden rounded-xl border border-zinc-100",
+        paddedImages.includes(current) ? "bg-white" : "bg-zinc-50"
+      )}>
         <img
           src={galleryImages[current]}
           alt={`${title} \u2014 image ${current + 1} of ${galleryImages.length}`}
           width={960}
           height={600}
-          className="h-full w-full object-cover aspect-[4/3] md:aspect-[16/10] transition-opacity duration-300 motion-reduce:transition-none"
+          className={cn(
+            "h-full w-full aspect-[4/3] md:aspect-[16/10] transition-opacity duration-300 motion-reduce:transition-none",
+            paddedImages.includes(current) ? "object-contain p-6" : "object-cover"
+          )}
         />
 
         {galleryImages.length > 1 && (
@@ -101,7 +109,10 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
                 width={72}
                 height={54}
                 loading="lazy"
-                className="aspect-[4/3] h-[50px] w-[72px] object-cover"
+                className={cn(
+                  "aspect-[4/3] h-[50px] w-[72px]",
+                  paddedImages.includes(index) ? "object-contain bg-white p-1" : "object-cover"
+                )}
               />
             </button>
           ))}

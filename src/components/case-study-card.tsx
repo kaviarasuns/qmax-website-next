@@ -120,7 +120,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
 
         {/* ── Gallery + Highlights ── */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.25fr_0.75fr]">
-          <CaseStudyCarousel images={caseStudy.images} title={caseStudy.title} />
+          <CaseStudyCarousel images={caseStudy.images} title={caseStudy.title} paddedImages={caseStudy.paddedImages} />
 
           <div className="rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] h-fit lg:sticky lg:top-24">
             <SectionLabel index="01" label="Highlights" />

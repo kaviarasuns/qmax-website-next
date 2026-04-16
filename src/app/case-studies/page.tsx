@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import PCBCaseStudyCard from "@/components/PCBCaseStudyCard";
-import EmbeddedCaseStudyCard from "@/components/EmbeddedCaseStudyCard";
 
 const embeddedCaseStudies = [
   { 
@@ -37,7 +36,7 @@ const embeddedCaseStudies = [
   { 
     id: 3, 
     title: "Control system with POE Switch", 
-    image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/Control_system_with_POE_Switch_and_RTOS.jpg", 
+    image: "/ott/image1.jpg", 
     link: "case-studies/Control-system-with-POE-Switch-and-RTOS.html", 
     category: "development", 
     summary: "A comprehensive industrial control system featuring integrated POE+ switching capabilities and real-time operating system. The system provides centralized control for multiple devices while delivering power and data through a single ethernet connection. Designed for harsh industrial environments with robust communication protocols.",
@@ -273,6 +272,14 @@ const sections = [
   { id: "industrial", label: "Industrial Design" },
 ];
 
+// Sub-labels for each category with precise specs
+const categorySubLabels: { [key: string]: string } = {
+  'Embedded Systems': 'FPGA • ARM • IoT',
+  'PCB Design': 'High-Speed • Multi-layer • SI',
+  'Mechanical Design': 'Enclosures • Thermal • CAD',
+  'Industrial Design': 'DFMA • UX • Prototyping',
+};
+
 export default function CaseStudiesPage() {
   const [activeSection, setActiveSection] = useState("");
 
@@ -316,34 +323,39 @@ export default function CaseStudiesPage() {
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0),rgba(255,255,255,0.82))]" />
 
       <div className="relative flex w-full max-w-[1600px] mx-auto">
-        {/* Quick Navigation Sidebar - Pinned to left of screen */}
-        <aside className="hidden xl:block w-[240px] shrink-0 pl-10">
-          <div className="sticky top-32 space-y-8">
-            <div className="relative border-l border-zinc-200/60 ml-2">
-              <div
-                className="absolute left-[-1px] w-[2px] bg-[#F33117] transition-all duration-300 ease-in-out"
-                style={{
-                  height: "24px",
-                  top: `${sections.findIndex(s => s.id === activeSection) * 44 + 4}px`,
-                  opacity: activeSection ? 1 : 0
-                }}
-              />
-              <nav className="flex flex-col space-y-1">
-                {sections.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => scrollToSection(section.id)}
-                    className={`group flex text-left items-center py-2 px-4 text-sm font-medium transition-colors duration-200 ${activeSection === section.id
-                      ? "text-zinc-950"
-                      : "text-zinc-500 hover:text-zinc-800"
-                      }`}
-                  >
-                    {section.label}
-                  </button>
-                ))}
-              </nav>
-            </div>
-          </div>
+        {/* Quick Navigation Sidebar */}
+        <aside className="hidden xl:block w-80 shrink-0 pl-10 pt-8 sticky top-24 h-screen self-start">
+          <nav className="flex flex-col space-y-10">
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => scrollToSection(section.id)}
+                className="w-full group text-left transition-all duration-300 p-0 rounded-lg hover:bg-gray-100/40"
+              >
+                {/* Main Title */}
+                <p
+                  className={`text-2xl font-bold transition-colors duration-300 leading-tight mb-3 ${
+                    activeSection === section.id
+                      ? "text-[#E31E24]"
+                      : "text-gray-700 group-hover:text-[#E31E24]"
+                  }`}
+                >
+                  {section.label}
+                </p>
+
+                {/* Sub-label */}
+                <p
+                  className={`text-sm transition-colors duration-300 font-medium tracking-wide ${
+                    activeSection === section.id
+                      ? "text-gray-600"
+                      : "text-gray-400 group-hover:text-gray-500"
+                  }`}
+                >
+                  {categorySubLabels[section.label] || ''}
+                </p>
+              </button>
+            ))}
+          </nav>
         </aside>
 
         {/* Main Content */}
@@ -352,14 +364,14 @@ export default function CaseStudiesPage() {
           <div id="embedded" className="mb-24 scroll-mt-32">
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 01</span>
+                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 01</span> */}
                 <h2 className="text-3xl font-bold text-zinc-900">Embedded Systems</h2>
               </div>
               <span className="text-sm text-zinc-500 font-medium mb-1">{embeddedCaseStudies.length} Projects</span>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
               {embeddedCaseStudies.map((study) => (
-                <EmbeddedCaseStudyCard key={`estudy-${study.id}`} {...study} />
+                <CaseStudyCard key={`estudy-${study.id}`} {...study} />
               ))}
             </div>
           </div>
@@ -368,7 +380,7 @@ export default function CaseStudiesPage() {
           <div id="pcb" className="mb-24 scroll-mt-32">
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 02</span>
+                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 02</span> */}
                 <h2 className="text-3xl font-bold text-zinc-900">PCB Design</h2>
               </div>
               <span className="text-sm text-zinc-500 font-medium mb-1">{pcbCaseStudies.length} Projects</span>
@@ -384,7 +396,7 @@ export default function CaseStudiesPage() {
           <div id="mechanical" className="mb-24 scroll-mt-32">
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 03</span>
+                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 03</span> */}
                 <h2 className="text-3xl font-bold text-zinc-900">Mechanical Design</h2>
               </div>
               <span className="text-sm text-zinc-500 font-medium mb-1">{mechanicalCaseStudies.length} Projects</span>
@@ -400,7 +412,7 @@ export default function CaseStudiesPage() {
           <div id="industrial" className="mb-10 scroll-mt-32">
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 04</span>
+                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 04</span> */}
                 <h2 className="text-3xl font-bold text-zinc-900">Industrial Design</h2>
               </div>
               <span className="text-sm text-zinc-500 font-medium mb-1">{industrialCaseStudies.length} Projects</span>
