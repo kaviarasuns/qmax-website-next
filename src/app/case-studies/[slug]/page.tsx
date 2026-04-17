@@ -105,9 +105,14 @@ const caseStudiesData: CaseStudy[] = [
     "/ott/image2.JPG",
     "/ott/image3.JPG",
       "/ott/image4.png",
-      "/ott/image5.png"
+      "/ott/image5.png",
+      "/ott/image6.JPG",
+      "/ott/image7.JPG",
+      "/ott/CHARA-top.svg",
+      "/ott/TEK_OTT_REV1P0_BOT.svg",
+      "/ott/TEK_OTT_REV1P0_BRD_PR3.svg"
     ],
-    paddedImages: [0, 1, 2, 3, 4],
+    paddedImages: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     features: [
       "Real-Time Operating System",
       "POE+ Switch Integration",

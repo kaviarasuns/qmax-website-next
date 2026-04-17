@@ -1,185 +1,156 @@
 "use client"
 
-import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react"
-import Image from "next/image"
-import { useState } from "react"
+import * as React from "react"
+import Link from "next/link"
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react"
+
+import CaseStudyCard from "@/components/CaseStudyCard"
+import { Button } from "@/components/ui/button"
 
 const caseStudies = [
   {
+    id: 1,
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Industrial-Control-2.png",
     title: "Industrial Controller",
-    image: "/ott/image1.JPG",
-    description: "A robust industrial control system featuring dual-core processing and high-speed I/O connectivity. The system manages complex manufacturing processes with real-time monitoring and failsafe mechanisms.",
-    specs: {
-      "Processor": "ARM Cortex-A9",
-      "Connectivity": "Ethernet / Modbus",
-      "Memory": "512MB DDR3"
-    }
+    summary: "Production-grade industrial control PCB developed for reliable operation in demanding field environments.",
+    link: "/case-studies/Industrial-Controller",
   },
   {
+    id: 2,
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Aerospace-PCB.png",
     title: "Aerospace PCB",
-    image: "/ott/image2.JPG",
-    description: "High-reliability PCB design for aerospace applications meeting DO-254 and IPC-A-610 standards. Incorporates advanced signal integrity optimization and thermal management for critical avionics systems.",
-    specs: {
-      "Layers": "14-Layer",
-      "Temperature": "-55°C to +125°C",
-      "Certification": "DO-254 Qualified"
-    }
+    summary: "High-reliability aerospace board program engineered around strict performance and validation constraints.",
+    link: "/case-studies/Aerospace-PCB",
   },
   {
+    id: 3,
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Automotive-OBD.png",
     title: "Automotive OBD",
-    image: "/ott/image3.JPG",
-    description: "Advanced diagnostic device for vehicle data acquisition via OBD-II port. Features dual-band wireless connectivity and real-time vehicle telemetry with cloud integration capabilities.",
-    specs: {
-      "Protocol": "OBD-II",
-      "Wireless": "4G/LTE + BLE",
-      "Battery": "Li-ion 3000mAh"
-    }
+    summary: "Compact automotive diagnostics platform designed for durability, compliance, and fast integration.",
+    link: "/case-studies/Automotive-OBD",
   },
   {
+    id: 4,
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Security-Controller.png",
     title: "Security Controller",
-    image: "/images/case-security-controller.jpg",
-    description: "A powerful Edge controller device used in high security applications with multi-protocol sensors and reader inputs. The system is powered through POE+ and has options for redundant connectivity.",
-    specs: {
-      "Controller": "SAMA5D3",
-      "Connectivity": "POE+ / Ethernet",
-      "Storage": "Nano Flash"
-    }
+    summary: "Embedded security controller PCB balancing stable power delivery with dependable system monitoring.",
+    link: "/case-studies/Security-System-Controller",
   },
   {
+    id: 5,
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Automotive-HID-PCB.png",
     title: "Automotive HID PCB",
-    image: "/images/case-automotive-hid.jpg",
-    description: "Compact high-power LED driver board for automotive headlight systems. Delivers precise brightness control and thermal management for modern HID and LED headlight assemblies.",
-    specs: {
-      "Power Output": "100W per channel",
-      "Driver IC": "TPS92511",
-      "Thermal": "Active cooling"
-    }
+    summary: "Automotive lighting control board optimized for robust switching behavior and manufacturable layout.",
+    link: "/case-studies/Automotive-HID-PCB",
   },
   {
+    id: 6,
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Networking-Device-2.png",
     title: "Networking Device",
-    image: "/images/case-networking-device.jpg",
-    description: "Enterprise-grade network switch controller with advanced packet processing capabilities. Supports VLAN, QoS, and redundancy protocols for mission-critical data center applications.",
-    specs: {
-      "Processor": "NXP LX2160A",
-      "Ports": "48x Gigabit",
-      "Throughput": "200 Gbps"
-    }
-  }
+    summary: "High-density networking hardware PCB built to support signal integrity across connected subsystems.",
+    link: "/case-studies/Networking-Device",
+  },
 ]
 
 export function CaseStudiesSection() {
-  const [startIndex, setStartIndex] = useState(0)
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const itemsPerView = 3
+  const scrollRef = React.useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = React.useState(false)
+  const [canScrollRight, setCanScrollRight] = React.useState(true)
 
-  const handlePrevious = () => {
-    setStartIndex((prev) => (prev === 0 ? caseStudies.length - itemsPerView : prev - 1))
+  const checkScroll = React.useCallback(() => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current
+      setCanScrollLeft(scrollLeft > 0)
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10)
+    }
+  }, [])
+
+  React.useEffect(() => {
+    checkScroll()
+    window.addEventListener("resize", checkScroll)
+
+    return () => window.removeEventListener("resize", checkScroll)
+  }, [checkScroll])
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = scrollRef.current.clientWidth * 0.8
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      })
+    }
   }
-
-  const handleNext = () => {
-    setStartIndex((prev) => (prev >= caseStudies.length - itemsPerView ? 0 : prev + 1))
-  }
-
-  const visibleStudies = caseStudies.slice(startIndex, startIndex + itemsPerView)
 
   return (
-    <section className="py-16 lg:py-24" style={{ background: '#f1f5f9' }}>
-      <div className="container mx-auto px-2 lg:px-4">
-        <div className="flex flex-col gap-10">
-          {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 px-4 lg:px-8">
-            <div className="flex flex-col gap-4 max-w-2xl">
-              <h2 className="text-3xl lg:text-4xl font-bold leading-tight">
-                Our Work - <span style={{ color: '#ef4444' }}>Case Studies</span>
-              </h2>
-            </div>
-            <button className="flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all w-fit">
+    <section className="bg-slate-100 py-16 lg:py-24">
+      <div className="w-full px-8 md:px-12">
+        <div className="mb-10 flex flex-col items-end justify-between gap-6 md:flex-row md:items-start">
+          <div className="max-w-2xl">
+            <h2 className="mb-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
+              Our Work - <span className="text-red-500">Case Studies</span>
+            </h2>
+            <p className="text-base text-muted-foreground md:text-lg">
+              Explore production-ready PCB programs delivered across industrial, automotive,
+              aerospace, and networking applications.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-red-500"
+            >
               View All Projects
-              <ArrowUpRight className="w-4 h-4" />
-            </button>
-          </div>
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
 
-          {/* Carousel Container */}
-          <div className="flex items-center gap-3 lg:gap-4 px-1">
-            {/* Left Navigation Button */}
-            <button
-              onClick={handlePrevious}
-              className="flex-shrink-0 p-3 rounded-full border border-border/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 text-muted-foreground hover:text-primary"
-              aria-label="Previous case studies"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            {/* Case Studies Grid */}
-            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 overflow-hidden px-2 lg:px-4">
-              {visibleStudies.map((study, index) => {
-                const cardIndex = startIndex + index
-                const isHovered = hoveredIndex === cardIndex
-                return (
-                  <div
-                    key={cardIndex}
-                    onMouseEnter={() => setHoveredIndex(cardIndex)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                    className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 animate-fadeIn h-full cursor-pointer"
-                  >
-                    {/* Front - Image View */}
-                    {!isHovered && (
-                      <div className="flex flex-col h-full">
-                        {/* Image Container */}
-                        <div className="relative w-full aspect-[4/3] overflow-hidden bg-slate-200 flex-shrink-0">
-                          <Image
-                            src={study.image}
-                            alt={study.title}
-                            fill
-                            className="object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-
-                        {/* Content */}
-                        <div className="p-7 flex flex-col justify-between flex-grow">
-                          <h3 className="text-lg font-bold text-foreground leading-snug">{study.title}</h3>
-                          <button className="flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-primary transition-colors w-fit mt-4">
-                            VIEW CASE
-                            <ArrowUpRight className="w-4 h-4" />
-                          </button>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Back - Details View */}
-                    {isHovered && (
-                      <div className="bg-white p-6 flex flex-col justify-between h-full overflow-y-auto">
-                        {/* Title */}
-                        <h3 className="text-xl font-bold text-primary mb-3 leading-snug">{study.title}</h3>
-
-                        {/* Description */}
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-4">{study.description}</p>
-
-                        {/* Specs */}
-                        <div className="space-y-2 border-t border-border/30 pt-4">
-                          {Object.entries(study.specs).map(([key, value], idx) => (
-                            <div key={idx} className="flex justify-between items-center">
-                              <span className="text-xs text-muted-foreground">{key}</span>
-                              <span className="text-xs font-semibold text-foreground">{value}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => scroll("left")}
+                disabled={!canScrollLeft}
+                className="h-12 w-12 rounded-full border-zinc-200 bg-white transition-all hover:bg-zinc-100 disabled:opacity-30"
+                aria-label="Scroll left"
+              >
+                <ArrowLeft className="h-6 w-6" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => scroll("right")}
+                disabled={!canScrollRight}
+                className="h-12 w-12 rounded-full border-zinc-200 bg-white transition-all hover:bg-zinc-100 disabled:opacity-30"
+                aria-label="Scroll right"
+              >
+                <ArrowRight className="h-6 w-6" />
+              </Button>
             </div>
-
-            {/* Right Navigation Button */}
-            <button
-              onClick={handleNext}
-              className="flex-shrink-0 p-3 rounded-full border border-border/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 text-muted-foreground hover:text-primary"
-              aria-label="Next case studies"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
           </div>
+        </div>
+
+        <div
+          ref={scrollRef}
+          onScroll={checkScroll}
+          className="scrollbar-hide flex snap-x snap-mandatory gap-4 overflow-x-auto pb-8 md:gap-5"
+        >
+          {caseStudies.map((study) => (
+            <div key={study.id} className="w-64 shrink-0 snap-start sm:w-72 md:w-80">
+              <CaseStudyCard
+                title={study.title}
+                image={study.image}
+                link={study.link}
+                summary={study.summary}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

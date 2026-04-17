@@ -44,18 +44,23 @@ export default function InsideOut() {
     <div ref={sectionRef} className="pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40">
       <div className="flex flex-row flex-wrap justify-center items-center gap-12 bg-white z-[1] min-h-screen max-[900px]:flex-col max-[900px]:items-center max-[900px]:gap-8">
         <div className="flex flex-col items-end">
-          <video
-            ref={videoRef}
-            className="block max-[900px]:w-[90vw] max-[900px]:h-auto max-[900px]:max-w-full"
-            width={765}
-            height={876}
-            preload="auto"
-            muted
-            playsInline
+          <div
+            className="relative overflow-hidden rounded-xl border border-[#d9d9d9] bg-[#1a1a1a] shadow-lg max-[900px]:w-[90vw] max-[900px]:max-w-full"
+            style={{ width: 765, maxWidth: "100%" }}
           >
-            <source src="https://d1yetprhniwywz.cloudfront.net/inside_out_V2.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+            <video
+              ref={videoRef}
+              className="block h-auto w-full"
+              width={765}
+              height={876}
+              preload="auto"
+              muted
+              playsInline
+            >
+              <source src="https://d1yetprhniwywz.cloudfront.net/inside_out_V2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
           <button
             type="button"
             onClick={handleReplay}

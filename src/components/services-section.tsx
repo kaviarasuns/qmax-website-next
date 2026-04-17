@@ -4,7 +4,7 @@ import * as React from "react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { ServicesCard } from "./services-card"
+import CaseStudyCard from "./CaseStudyCard"
 
 
 const carouselItems = [
@@ -12,31 +12,31 @@ const carouselItems = [
     id: 1,
     image:
       "https://d1yetprhniwywz.cloudfront.net/images/case-study/Security_System_Controller.jpg",
-    title: "Case Studies",
-    description: "Security System Controller",
-    url: "/case-studies/Security-System-Controller",
+    title: "Security System Controller",
+    summary: "Embedded controller program designed for dependable monitoring, control logic, and secure field operation.",
+    link: "/case-studies/Security-System-Controller",
   },
   {
     id: 2,
     image:
       "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Industrial-Control-2.png",
-    title: "Case Studies",
-    description: "Industrial Controller",
-    url: "/case-studies/Industrial-Controller",
+    title: "Industrial Controller",
+    summary: "Industrial electronics platform engineered for rugged deployment, stable power delivery, and manufacturable hardware.",
+    link: "/case-studies/Industrial-Controller",
   },
   {
     id: 3,
     image: "/services/embedded-systems.png",
     title: "Embedded Systems",
-    description: "Embedded Systems Design & Development",
-    url: "/embedded-design-services",
+    summary: "End-to-end embedded design and development for connected products, controls, and intelligent devices.",
+    link: "/embedded-design-services",
   },
   {
     id: 4,
     image: "/services/pcb-design.png",
     title: "PCB Design",
-    description: "PCB Design Services",
-    url: "/pcb-design",
+    summary: "Multi-physics PCB design services focused on signal integrity, manufacturability, and first-pass success.",
+    link: "/pcb-design",
   },
   // {
   //   id: 5,
@@ -117,7 +117,12 @@ export function ServicesSection() {
         >
           {carouselItems.map((item) => (
             <div key={item.id} className="w-64 shrink-0 snap-start sm:w-72 md:w-80">
-              <ServicesCard {...item} />
+              <CaseStudyCard
+                title={item.title}
+                image={item.image}
+                link={item.link}
+                summary={item.summary}
+              />
             </div>
           ))}
         </div>

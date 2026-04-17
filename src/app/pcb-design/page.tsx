@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { CaseStudiesSection } from "./case-studies-section";
+import { FAQSection } from "@/components/faq-section";
 
 export default function PCBDesignPage() {
   // const containerVariants = {
@@ -383,6 +384,9 @@ export default function PCBDesignPage() {
 
       {/* Case Studies Section */}
       <CaseStudiesSection />
+
+      {/* FAQ Section */}
+      <FAQSection />
 
       {/* Decorative Section */}
       <section className="bg-gray-900 py-20 overflow-hidden relative">
