@@ -2,35 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import FAQSection from "@/components/FAQSection";
+import { industrialDesignCaseStudies } from "@/data/service-case-studies";
+import { industrialDesignFAQs } from "@/data/service-faqs";
 
 const THEME_STORAGE_KEY = "industrial-design-page-theme";
-const industrialCaseStudies = [
-  {
-    title: "Industrial Automation",
-    category: "Industrial Design",
-    img: "/industrial_design_case_studies/product_1.png",
-    href: "/case-studies/Industrial-Automation",
-  },
-  {
-    title: "Medical Design",
-    category: "Industrial Design",
-    img: "/industrial_design_case_studies/product_2.png",
-    href: "/case-studies/Medical-Design",
-  },
-  {
-    title: "Security Systems",
-    category: "Industrial Design",
-    img: "/industrial_design_case_studies/product_3.png",
-    href: "/case-studies/Security-Systems",
-  },
-  {
-    title: "Ruggedized Systems",
-    category: "Industrial Design",
-    img: "/industrial_design_case_studies/product_4.png",
-    href: "/case-studies/Ruggedized-Systems",
-  },
-];
 
 export default function IndustrialDesignServicesPageClient() {
   const [isDark, setIsDark] = useState(false);
@@ -233,147 +210,14 @@ export default function IndustrialDesignServicesPageClient() {
         </section>
 
         {/* Our Work Section */}
-        <section className="bg-[#fcfcfc] dark:bg-zinc-950 py-32 border-t border-zinc-200 dark:border-zinc-800 overflow-hidden">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mb-24">
-              <h2 className="text-4xl font-light text-zinc-500 dark:text-zinc-400 md:text-6xl tracking-tighter">
-                Case Studies.
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {industrialCaseStudies.map((work) => (
-                <Link
-                  key={work.href}
-                  href={work.href}
-                  aria-label={`Open ${work.title} case study`}
-                  className="group relative aspect-[3/4] overflow-hidden transition-all duration-700 bg-zinc-100 dark:bg-zinc-900 block"
-                >
-                  <Image
-                    src={work.img}
-                    alt={work.title}
-                    fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-110 opacity-100"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col justify-end bg-gradient-to-t from-[#fcfcfc] dark:from-zinc-950 via-[#fcfcfc]/80 dark:via-zinc-950/85 to-transparent h-1/2">
-                    <span className="text-[10px] font-black tracking-[0.4em] text-[#F33117] mb-4 overflow-hidden text-ellipsis whitespace-nowrap">{work.category}</span>
-                    <h3 className="text-lg font-light text-zinc-950 dark:text-zinc-100 leading-tight">{work.title}</h3>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            <div className="mt-10 flex justify-center">
-              <Link
-                href="/case-studies"
-                className="inline-flex items-center justify-center rounded-full border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 px-7 py-3 text-xs font-black uppercase tracking-[0.24em] text-zinc-800 dark:text-zinc-100 transition-all hover:border-[#F33117] hover:text-[#F33117]"
-              >
-                More Case Studies
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ServiceCaseStudiesSection
+          eyebrow="Industrial Portfolio"
+          studies={industrialDesignCaseStudies}
+          className="bg-[#fcfcfc] dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800"
+        />
 
         {/* FAQ Section */}
-        <section className="bg-[#fcfcfc] dark:bg-zinc-950 py-24 border-t border-zinc-200 dark:border-zinc-800">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mb-16">
-              <h2 className="text-3xl font-light text-zinc-400 dark:text-zinc-500 md:text-5xl tracking-tighter">
-                Frequently asked questions.
-              </h2>
-            </div>
-
-            <div className="grid gap-0 max-w-full">
-              {[
-                { q: "What is industrial design, and how is it different from mechanical design?", a: "Industrial design (ID) focuses on the form, aesthetics, ergonomics, user experience, and material selection of a product. Mechanical design focuses on structural integrity, functional mechanisms, tolerances, and engineering analysis. At Qmax Systems, both disciplines operate in parallel from the outset of a project, ensuring that form and function are developed as an integrated system rather than as separate workstreams." },
-                { q: "At what stage should I engage an industrial design team?", a: "The earlier, the better. Engaging industrial design from the concept phase allows design decisions to directly influence engineering architecture, Bill of Materials cost, and manufacturing approach. Retrofitting industrial design onto a completed mechanical design is expensive and often results in compromised outcomes. Qmax Systems recommends initiating ID engagement prior to CAD modelling." },
-                { q: "Can Qmax Systems handle both industrial design and mechanical engineering on the same project?", a: "Yes. Qmax Systems operates as a multidisciplinary product development organisation. Our in-house team includes industrial designers, mechanical engineers, and electronics engineers. Integrated project delivery eliminates the coordination overhead and technical translation errors that arise when these disciplines are managed separately." },
-                { q: "Which industries does Qmax Systems work with?", a: "Qmax Systems has delivered industrial design and product development programmes across consumer electronics, industrial equipment, medical devices, defence systems, renewable energy, automotive accessories, and retail products. Our process is industry-agnostic; we adapt to the specific compliance requirements, user environments, and manufacturing constraints of each sector." },
-                { q: "How does Qmax Systems's approach to design evolving in the era of AI and emerging technology?", a: "We leverage advanced AI-driven generative design tools to explore complex geometries and optimise material usage. Our team integrates emerging technologies—such as IoT sensors and AR interfaces—directly into the physical form, ensuring that innovation enhances usability rather than complicating it." },
-                { q: "What makes Qmax Systems different from other design consultancies?", a: "Our distinction lies in our engineering-first mindset. Unlike traditional design studios that focus solely on aesthetics, we treat industrial design as a technical discipline. Every curve, material choice, and interface detail is validated against manufacturing realities, regulatory standards, and cost targets from day one." }
-              ].map((faq, index) => (
-                <details key={index} className="group border-t border-zinc-200 dark:border-zinc-800 py-6 transition-all">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-light leading-relaxed text-zinc-900 dark:text-zinc-100 md:text-2xl tracking-tight">
-                    <span className="flex-1">{faq.q}</span>
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#F33117"
-                        strokeWidth="1"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="transition-transform duration-300 group-open:rotate-180"
-                      >
-                        <path d="M12 5v14M19 12l-7 7-7-7" />
-                      </svg>
-                    </div>
-                  </summary>
-                  <div className="mt-4 max-w-4xl text-base leading-relaxed text-zinc-600 dark:text-zinc-300 font-light">
-                    {faq.a}
-                  </div>
-                </details>
-              ))}
-
-              {/* Promotional Bar */}
-              <div className="mt-16 border-t border-zinc-200 dark:border-zinc-800 pt-16 pb-8">
-                <a
-                  href="/contact"
-                  className="flex flex-col md:flex-row items-start md:items-center justify-between bg-[#F33117] p-6 md:p-10 group hover:bg-zinc-950 dark:hover:bg-zinc-800 transition-colors duration-500"
-                >
-                  <span className="text-2xl md:text-4xl lg:text-5xl font-light text-white group-hover:text-white tracking-tighter leading-tight max-w-2xl">
-                    Connect with us for a <br />technical consultation.
-                  </span>
-                  <div className="mt-8 md:mt-0 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-white/20 group-hover:border-white/50 group-hover:scale-110 transition-all duration-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="32"
-                      height="32"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="white"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="transition-transform duration-500 group-hover:translate-x-2"
-                    >
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": [
-                  { q: "What is industrial design, and how is it different from mechanical design?", a: "Industrial design (ID) focuses on the form, aesthetics, ergonomics, user experience, and material selection of a product. Mechanical design focuses on structural integrity, functional mechanisms, tolerances, and engineering analysis. At Qmax Systems, both disciplines operate in parallel from the outset of a project, ensuring that form and function are developed as an integrated system rather than as separate workstreams." },
-                  { q: "At what stage should I engage an industrial design team?", a: "The earlier, the better. Engaging industrial design from the concept phase allows design decisions to directly influence engineering architecture, Bill of Materials cost, and manufacturing approach. Retrofitting industrial design onto a completed mechanical design is expensive and often results in compromised outcomes. Qmax Systems recommends initiating ID engagement prior to CAD modelling." },
-                  { q: "Can Qmax Systems handle both industrial design and mechanical engineering on the same project?", a: "Yes. Qmax Systems operates as a multidisciplinary product development organisation. Our in-house team includes industrial designers, mechanical engineers, and electronics engineers. Integrated project delivery eliminates the coordination overhead and technical translation errors that arise when these disciplines are managed separately." },
-                  { q: "Which industries does Qmax Systems work with?", a: "Qmax Systems has delivered industrial design and product development programmes across consumer electronics, industrial equipment, medical devices, defence systems, renewable energy, automotive accessories, and retail products. Our process is industry-agnostic; we adapt to the specific compliance requirements, user environments, and manufacturing constraints of each sector." },
-                  { q: "How does Qmax Systems's approach to design evolving in the era of AI and emerging technology?", a: "We leverage advanced AI-driven generative design tools to explore complex geometries and optimise material usage. Our team integrates emerging technologies—such as IoT sensors and AR interfaces—directly into the physical form, ensuring that innovation enhances usability rather than complicating it." },
-                  { q: "What makes Qmax Systems different from other design consultancies?", a: "Our distinction lies in our engineering-first mindset. Unlike traditional design studios that focus solely on aesthetics, we treat industrial design as a technical discipline. Every curve, material choice, and interface detail is validated against manufacturing realities, regulatory standards, and cost targets from day one." }
-                ].map(faq => ({
-                  "@type": "Question",
-                  "name": faq.q,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": faq.a
-                  }
-                }))
-              }),
-            }}
-          />
-        </section>
+        <FAQSection faqs={industrialDesignFAQs} />
       </main>
     </div>
   );

@@ -36,7 +36,7 @@ const embeddedCaseStudies = [
   { 
     id: 3, 
     title: "Control system with POE Switch", 
-    image: "/ott/image1.JPG",
+    image: "/ott/image8.png",
     link: "case-studies/Control-system-with-POE-Switch-and-RTOS.html", 
     category: "development", 
     summary: "A comprehensive industrial control system featuring integrated POE+ switching capabilities and real-time operating system. The system provides centralized control for multiple devices while delivering power and data through a single ethernet connection. Designed for harsh industrial environments with robust communication protocols.",
@@ -359,7 +359,11 @@ export default function CaseStudiesPage() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 w-full max-w-6xl px-6 lg:px-12 mx-auto">
+        <main
+          data-budge-target
+          className="flex-1 w-full max-w-6xl px-8 lg:px-12 mx-auto"
+          style={{ paddingLeft: "32px", paddingRight: "32px" }}
+        >
           {/* Embedded Section */}
           <div id="embedded" className="mb-24 scroll-mt-32">
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
@@ -371,7 +375,9 @@ export default function CaseStudiesPage() {
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
               {embeddedCaseStudies.map((study) => (
-                <CaseStudyCard key={`estudy-${study.id}`} {...study} />
+                <CaseStudyCard key={`estudy-${study.id}`} {...study}  
+                // imageBackgroundClassName="bg-blue-200" 
+                />
               ))}
             </div>
           </div>
@@ -419,7 +425,11 @@ export default function CaseStudiesPage() {
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
               {industrialCaseStudies.map((study) => (
-                <CaseStudyCard key={`istudy-${study.id}`} {...study} />
+                <CaseStudyCard
+                  key={`istudy-${study.id}`}
+                  {...study}
+                  // imageBackgroundClassName="bg-blue-200"
+                />
               ))}
             </div>
           </div>

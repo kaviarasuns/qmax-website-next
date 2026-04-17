@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { pcbCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
   title: "PCB Design Review Services | Qmax Systems",
@@ -967,20 +970,8 @@ export default function PCBDesignReviewServicesPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="bg-[#fcfcfc] py-24 border-t border-zinc-200 border-b">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-16">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
-              FAQ / KNOWLEDGE BASE
-            </span>
-            <h2 className="text-3xl font-light text-zinc-950 md:text-5xl tracking-tighter">
-              Frequently Asked <br/> Questions.
-            </h2>
-          </div>
-
-          <div className="grid gap-0 max-w-full">
-            {[
+      <FAQSection
+        faqs={[
               {
                 q: "What is the difference between a schematic review and a PCB design review?",
                 a: "A schematic review evaluates the electrical design intent: component selection, circuit topology, protection, and signal connectivity. A PCB design review evaluates the physical implementation: trace routing, impedance control, copper pours, component placement, and manufacturability. Both are required for a complete pre-production review."
@@ -1064,43 +1055,9 @@ export default function PCBDesignReviewServicesPage() {
               {
                 q: "What are the next steps after a design review engagement?",
                 a: "Clients implement recommendations with our support. We remain available for re-reviews of critical fixes and can provide pre-build fabrication/assembly review and DVT planning support."
-              }
-            ].map((faq, index) => (
-              <details key={index} className="group border-t border-zinc-200 py-6 transition-all last:border-b">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-light leading-relaxed text-zinc-900 md:text-2xl tracking-tight">
-                  <span className="flex-1">{faq.q}</span>
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="#F33117" 
-                      strokeWidth="1" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      className="transition-transform duration-300 group-open:rotate-180"
-                    >
-                      <path d="M12 5v14M19 12l-7 7-7-7"/>
-                    </svg>
-                  </div>
-                </summary>
-                <div className="mt-4 max-w-4xl text-base leading-relaxed text-zinc-600 font-light">
-                  {faq.a}
-                </div>
-              </details>
-            ))}
-          </div>
-          
-           <div className="mt-24 pt-12 border-t border-zinc-200 text-center lg:text-left">
-              <a href="/pcb-design" className="text-zinc-500 hover:text-zinc-950 transition-colors text-xs font-black uppercase tracking-widest border-b border-zinc-200 pb-2">
-                 SEE OUR FULL PCB DESIGN SERVICES OVERVIEW →
-              </a>
-           </div>
-        </div>
-      </section>
-
+              },
+        ]}
+      />
       {/* Target Audience Section */}
       <section className="bg-[#fcfcfc] py-24 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -1164,7 +1121,13 @@ export default function PCBDesignReviewServicesPage() {
             </div>
         </div>
       </section>
+      <ServiceCaseStudiesSection
+        eyebrow="PCB Programs"
+        studies={pcbCaseStudies}
+      />
     </main>
   );
 }
+
+
 

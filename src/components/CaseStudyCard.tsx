@@ -6,6 +6,7 @@ export interface CaseStudyCardProps {
   image: string;
   link: string;
   category?: string;
+  imageBackgroundClassName?: string;
   summary?: string;
   specs?: { label: string; value: string }[];
   stats?: { value: string; label: string };
@@ -16,12 +17,16 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   image,
   link,
   category,
+  imageBackgroundClassName = "bg-zinc-200",
   summary,
 }) => {
   return (
     <div className={`group relative ${category}`}>
+      <a href={link} aria-label={title} className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F33117]/60 focus-visible:ring-offset-2 rounded-2xl">
         <article className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_24px_55px_-28px_rgba(15,23,42,0.5)]">
-          <div className="relative h-[70%] overflow-hidden bg-gradient-to-br from-zinc-50 via-white to-zinc-100/70">
+          <div
+            className={`relative h-[70%] overflow-hidden bg-gradient-to-br from-zinc-50 via-white to-zinc-100/70 ${imageBackgroundClassName}`}
+          >
             <Image
               src={image}
               alt={title}
@@ -43,7 +48,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
               </p>
             )}
 
-            <a href={link} className="flex items-center justify-between mt-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F33117]/60 focus-visible:ring-offset-2 rounded" aria-label={title}>
+            <div className="flex items-center justify-between mt-3">
               <span className="text-[11px] font-semibold tracking-[0.18em] text-zinc-500 uppercase">
                 View Case
               </span>
@@ -62,11 +67,12 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
                   <path d="M9 7h8v8" />
                 </svg>
               </span>
-            </a>
+            </div>
           </div>
 
           <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-zinc-200/70 transition-colors duration-300 group-hover:ring-zinc-300" />
         </article>
+      </a>
     </div>
   );
 };

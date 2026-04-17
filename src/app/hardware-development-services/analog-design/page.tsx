@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { hardwareCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
   title: "Analog Design Services | Qmax",
@@ -378,249 +381,76 @@ export default function AnalogDesignPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
-          Frequently Asked Questions
-        </h2>
-
-        <div className="mt-8 space-y-4">
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                1. How do you manage ground loops in multi-channel DAQ systems?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              We utilize star-grounding configurations, galvanic isolation
-              (opto/digital isolators), and differential signaling to ensure
-              that potential differences between nodes do not introduce noise or
-              errors.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                2. What is your experience with high-speed ADC interfaces?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              We have extensive experience with LVDS and JESD204B/C protocols,
-              managing clock distribution and multi-device synchronization for
-              rates up to 4 Gbps.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                3. Can you design for sub-microvolt signal levels?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Yes. This involves selecting ultra-low-offset op-amps,
-              implementing multi-stage filtering, and using specialized PCB
-              materials to minimize leakage currents.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                4. How do you optimize analog circuits for battery-powered devices?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              We employ power-cycling techniques, select high-efficiency LDOs
-              with low quiescent current, and use low-voltage analog components
-              to extend operational life.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                5. What PCB materials do you recommend for high-frequency mixed-signal designs?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Depending on the frequency, we utilize high-speed laminates like
-              Rogers, Megtron 6, or high-Tg FR4 with controlled dielectric
-              constants to minimize signal loss.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                6. Do you provide FPGA firmware for data acquisition?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Yes, we provide custom RTL (Verilog/VHDL) for high-speed data
-              capture, FIFO buffering, and initial DSP filtering.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                7. How do you handle EMI/EMC compliance in analog designs?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Through early-stage simulation, proper decoupling, multi-layer
-              shielding, and rigorous return path management.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                8. Can you assist with sensor selection?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              We evaluate sensors based on sensitivity, linearity, thermal
-              drift, and output impedance to ensure they match the AFE
-              requirements.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                9. What is your approach to thermal stability in precision circuits?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              We use components with low Temperature Coefficients and implement
-              thermal relief or heat sinking to maintain a constant operating
-              temperature for sensitive references.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                10. How do you achieve high SNR in medical wearables?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              By using high-order active filters to reject 50/60Hz power line
-              noise and implementing robust shielding against RFI from wireless
-              modules (BT/Wi-Fi).
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                11. What bit-depths do you typically work with?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              We design systems ranging from high-speed 8-bit flash converters
-              to high-precision 24-bit Delta-Sigma ADCs.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                12. Do you support simultaneous sampling across multiple channels?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              Yes, we design hardware with synchronized trigger and clock lines
-              to ensure zero-phase skew between channels.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                13. Can you miniaturize existing bulky analog designs?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              We specialize in transitioning through-hole designs to
-              high-density SMT/BGA layouts, often integrating discrete logic
-              into small-footprint FPGAs.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                14. What tools do you use for simulation?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              We utilize industry-standard tools including LTSpice, PSpice, and
-              specialized SI/PI simulation software for high-speed analysis.
-            </p>
-          </details>
-
-          <details className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                15. How do you validate the performance of a completed design?
-              </h3>
-              <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                +
-              </span>
-            </summary>
-            <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-              We perform rigorous characterization using precision signal
-              generators, spectrum analyzers, and automated test fixtures to
-              verify ENOB, SNR, and THD.
-            </p>
-          </details>
-        </div>
-      </section>
+            <FAQSection
+        faqs={[
+          {
+            q: "1. How do you manage ground loops in multi-channel DAQ systems?",
+            a: "We utilize star-grounding configurations, galvanic isolation (opto/digital isolators), and differential signaling to ensure that potential differences between nodes do not introduce noise or errors.",
+          },
+          {
+            q: "2. What is your experience with high-speed ADC interfaces?",
+            a: "We have extensive experience with LVDS and JESD204B/C protocols, managing clock distribution and multi-device synchronization for rates up to 4 Gbps.",
+          },
+          {
+            q: "3. Can you design for sub-microvolt signal levels?",
+            a: "Yes. This involves selecting ultra-low-offset op-amps, implementing multi-stage filtering, and using specialized PCB materials to minimize leakage currents.",
+          },
+          {
+            q: "4. How do you optimize analog circuits for battery-powered devices?",
+            a: "We employ power-cycling techniques, select high-efficiency LDOs with low quiescent current, and use low-voltage analog components to extend operational life.",
+          },
+          {
+            q: "5. What PCB materials do you recommend for high-frequency mixed-signal designs?",
+            a: "Depending on the frequency, we utilize high-speed laminates like Rogers, Megtron 6, or high-Tg FR4 with controlled dielectric constants to minimize signal loss.",
+          },
+          {
+            q: "6. Do you provide FPGA firmware for data acquisition?",
+            a: "Yes, we provide custom RTL (Verilog/VHDL) for high-speed data capture, FIFO buffering, and initial DSP filtering.",
+          },
+          {
+            q: "7. How do you handle EMI/EMC compliance in analog designs?",
+            a: "Through early-stage simulation, proper decoupling, multi-layer shielding, and rigorous return path management.",
+          },
+          {
+            q: "8. Can you assist with sensor selection?",
+            a: "We evaluate sensors based on sensitivity, linearity, thermal drift, and output impedance to ensure they match the AFE requirements.",
+          },
+          {
+            q: "9. What is your approach to thermal stability in precision circuits?",
+            a: "We use components with low Temperature Coefficients and implement thermal relief or heat sinking to maintain a constant operating temperature for sensitive references.",
+          },
+          {
+            q: "10. How do you achieve high SNR in medical wearables?",
+            a: "By using high-order active filters to reject 50/60Hz power line noise and implementing robust shielding against RFI from wireless modules (BT/Wi-Fi).",
+          },
+          {
+            q: "11. What bit-depths do you typically work with?",
+            a: "We design systems ranging from high-speed 8-bit flash converters to high-precision 24-bit Delta-Sigma ADCs.",
+          },
+          {
+            q: "12. Do you support simultaneous sampling across multiple channels?",
+            a: "Yes, we design hardware with synchronized trigger and clock lines to ensure zero-phase skew between channels.",
+          },
+          {
+            q: "13. Can you miniaturize existing bulky analog designs?",
+            a: "We specialize in transitioning through-hole designs to high-density SMT/BGA layouts, often integrating discrete logic into small-footprint FPGAs.",
+          },
+          {
+            q: "14. What tools do you use for simulation?",
+            a: "We utilize industry-standard tools including LTSpice, PSpice, and specialized SI/PI simulation software for high-speed analysis.",
+          },
+          {
+            q: "15. How do you validate the performance of a completed design?",
+            a: "We perform rigorous characterization using precision signal generators, spectrum analyzers, and automated test fixtures to verify ENOB, SNR, and THD.",
+          },
+        ]}
+      />
+      <ServiceCaseStudiesSection
+        eyebrow="Hardware Programs"
+        studies={hardwareCaseStudies}
+      />
     </main>
   );
 }
+
+

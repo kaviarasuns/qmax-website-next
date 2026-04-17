@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { hardwareCaseStudies } from "@/data/service-case-studies";
 
 const expertiseCards = [
   {
@@ -245,29 +248,9 @@ export default function PowerElectorincsPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50/70">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="mt-8 space-y-4">
-            {faqs.map((item) => (
-              <article
-                key={item.question}
-                className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-              >
-                <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                  {item.question}
-                </h3>
-                <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
-                  {item.answer}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        faqs={faqs.map((item) => ({ q: item.question, a: item.answer }))}
+      />
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_4px_24px_rgba(15,23,42,0.06)]">
@@ -296,6 +279,10 @@ export default function PowerElectorincsPage() {
           </div>
         </div>
       </section>
+      <ServiceCaseStudiesSection
+        eyebrow="Hardware Programs"
+        studies={hardwareCaseStudies}
+      />
     </main>
   );
 }

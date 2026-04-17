@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { pcbCaseStudies } from "@/data/service-case-studies";
 const projectExperience = [
   {
     title: "O-RAN Distributed Units (DU)",
@@ -594,29 +597,9 @@ export default function HighSpeedDigitalPCBDesignPage() {
         </div>
       </section>
 
-      <section className="border-y border-zinc-200 bg-zinc-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-zinc-900">
-            Frequently Asked Questions (FAQ)
-          </h2>
-
-          <div className="mt-8 space-y-3">
-            {faqs.map((item) => (
-              <details
-                key={item.question}
-                className="rounded-xl border border-zinc-200 bg-white px-5 py-4 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
-              >
-                <summary className="cursor-pointer list-none pr-6 text-sm font-semibold leading-6 text-zinc-900 md:text-base">
-                  {item.question}
-                </summary>
-                <p className="mt-3 text-sm leading-7 text-zinc-700 md:text-base">
-                  {item.answer}
-                </p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        faqs={faqs.map((item) => ({ q: item.question, a: item.answer }))}
+      />
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-6 md:grid-cols-2">
@@ -659,6 +642,10 @@ export default function HighSpeedDigitalPCBDesignPage() {
           </article>
         </div>
       </section>
+      <ServiceCaseStudiesSection
+        eyebrow="PCB Programs"
+        studies={pcbCaseStudies}
+      />
     </main>
   );
 }

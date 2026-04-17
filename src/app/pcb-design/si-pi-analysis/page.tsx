@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { pcbCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
   title: "SI & PI Analysis Services | Qmax",
@@ -1136,436 +1139,130 @@ export default function SIPIAnalysisServicesPage() {
         </div>
       </section>
 
-      <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
-        <div className="mx-auto max-w-[80rem] text-zinc-800">
-          <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl text-left">
-            11. Frequently Asked Questions
-          </h2>
-          <div className="mt-10 space-y-4">
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q1: Do you offer SI/PI analysis as a standalone service, without PCB layout?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Yes. Standalone SI/PI analysis is a primary service offering. We perform analysis on designs laid out by third parties, designs received from ODM or EMS partners, and as a pre-fabrication sign-off review. We accept Cadence Allegro, Altium Designer, Zuken CR-8000, and Mentor PADS layout files. No PCB layout commitment is required.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q2: At what data rate does a design require SI analysis?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                SI analysis is strongly recommended for single-ended interfaces above 200Mbps or differential interfaces above 1Gbps. For PCIe Gen3 and above, DDR4/DDR5, 10G+ Ethernet, and MIPI CSI-2, SI analysis is necessary for first-pass success. At PCIe Gen5/6 and 112G PAM4 Ethernet, it is not optional &mdash; channel compliance is defined by COM analysis which cannot be assessed without simulation.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q3: What is the difference between NRZ and PAM4 in terms of SI requirements?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                PAM4 encodes 2 bits per symbol across four voltage levels, with each eye opening approximately 9.5dB smaller than an NRZ eye at equivalent swing. This requires tighter insertion loss (SDD21) budgets, lower integrated crosstalk noise (ICN), more aggressive receiver equalization (CTLE + DFE with 4&ndash;24 taps), and mandatory FEC (Reed-Solomon). COM analysis per IEEE 802.3 is the standard methodology for PAM4 channel compliance. All PCIe Gen6 and 112G+ Ethernet channels are PAM4.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q4: What PCB materials do you recommend for PCIe Gen6 and 112G PAM4 designs?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                For PCIe Gen6 (64GT/s PAM4) and 112G PAM4 Ethernet, we require ultra-low-loss laminates with Df &le;0.003 at 10GHz: Panasonic Megtron 6 or Megtron 7, Isola Tachyon 100G, or Ventec VT-901. HVLP copper foil (Ra &lt; 0.4&mu;m) is mandatory. For 224G PAM4 emerging interfaces, Megtron 7 and experimental low-loss constructions are evaluated on a per-fabricator basis. Material selection is confirmed with the specific fabricator for available constructions and lot-measured Dk/Df data.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q5: What is via back-drilling and when is it required?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Back-drilling removes the unused via stub below the last active signal connection, eliminating the quarter-wave stub resonance. Resonant frequency = c / (4 &times; stub_length &times; &radic;Dk). For a 30-mil stub on Megtron 6 (Dk 3.6), resonance is approximately 13GHz &mdash; within the PCIe Gen5 Nyquist band. Back-drilling is required on boards thicker than approximately 1.6mm for PCIe Gen4, and essentially mandatory for Gen5/6 on standard server board thicknesses of 2.4&ndash;3.2mm. We calculate required back-drill depth for every design above 16GT/s and confirm tolerance achievability with the fabricator.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q6: What is COM analysis and why is it required for PCIe Gen6?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                COM (Channel Operating Margin) is the IEEE-defined figure of merit for high-speed channel compliance. It combines channel insertion loss, integrated crosstalk noise (ICN from all aggressor lanes), transmitter and receiver equalization, jitter, and noise into a single dB margin value. COM &ge; 3dB = pass. COM is mandatory for PCIe Gen5/6 per PCI-SIG and for 25G/100G/400G/800G Ethernet per IEEE 802.3. Qmax delivers COM analysis as a standard output for all applicable interfaces.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q7: How do you obtain IBIS-AMI models for SI simulation?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                We obtain silicon-validated IBIS-AMI models directly from silicon vendor application engineering teams &mdash; Broadcom, Intel, AMD, Qualcomm, NXP, Ampere, and MediaTek &mdash; through direct engineering relationships maintained for over 30 years. These models accurately capture transmitter FFE settings and receiver CTLE/DFE algorithms. Using unvalidated generic models is a common source of over-optimistic simulation results that fail to predict board-level SI failures.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q8: How does fiber weave effect impact differential pair routing, and how is it mitigated?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                The periodic glass fiber weave in PCB laminates creates spatially varying local Dk beneath differential pair traces. When P and N conductors overlie different weave regions, differential propagation velocity skew results &mdash; generating mode conversion (SCD21) and differential eye degradation. For interfaces above 10Gbps, Qmax specifies skew-angle routing (5&ndash;10&deg; to the fiber weave direction), resin-rich prepregs (RC &gt; 70%), and 1080/1067 glass style for critical signal layers.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q9: What is PDN target impedance and how is it calculated?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Ztarget = &Delta;V / &Delta;I, where &Delta;V is the allowed supply ripple and &Delta;I is the maximum instantaneous current transient. For a server CPU drawing 200A with 50mV allowable droop on a 1.8V rail, Ztarget = 0.25m&Omega;. Achieving sub-milliohm Ztarget requires multi-phase VRM co-design, precisely calculated bulk capacitor banks, and ceramic decoupling optimised for both value and ESL &mdash; all driven by AC PDN impedance simulation, not rules of thumb.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q10: Can you analyse power delivery for AI accelerators with 700W+ per GPU?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Yes. AI accelerator PDN is an area of specific Qmax depth. We perform full-board DC IR drop, multi-phase VRM co-design for 600&ndash;800W GPU power domains, bulk and ceramic decoupling optimisation targeting sub-milliohm Ztarget, and thermal-PDN co-simulation for sustained AI training workloads. PDN performance at these power levels is analysed as a coupled system with PCIe Gen6 reference plane SI.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q11: How does PDN design affect SI channel performance?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                PDN noise couples into SI performance through two primary paths: supply noise on TX VDD causes output common-mode injection into differential pairs, adding jitter; and ground bounce on PCB reference planes raises the effective noise floor at the receiver, degrading eye margin. A PDN that meets DC IR drop requirements can still cause PAM4 eye failures if its AC impedance is too high in the frequency band where the load switches. Qmax treats SI and PI as a coupled system throughout the analysis workflow.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q12: Do you perform SI/PI analysis for automotive-grade electronics?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Yes. Automotive SI/PI adds AEC-Q200 component qualification for passive components in SI paths, CISPR 25 pre-compliance for in-vehicle radiated emissions, and ISO 26262 FMEA-level failure mode analysis for ASIL implications. We have experience with 100BASE-T1 / 1000BASE-T1 automotive Ethernet, CAN-FD physical layer, and MIPI CSI-2 for ADAS surround-view camera systems, co-ordinated with NXP and Qualcomm automotive platform guidelines.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q13: How does copper foil roughness affect SI and what types do you specify?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Skin effect at high frequency confines current to the conductor surface; rougher copper forces the current to follow a longer effective path, increasing conductor loss. Standard ED copper (Ra 2&ndash;4&mu;m) imposes 30&ndash;50% excess conductor loss versus HVLP foil (Ra &lt; 0.4&mu;m) at 10GHz. For all channels above 16GT/s, Qmax specifies VLP or HVLP copper foil in the stackup specification, confirmed as available with the fabricator before design release. Roughness is modelled using the Huray or Hammerstad model in the simulation tool.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q14: Can you support board bring-up and SI/PI debug on physical prototypes?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Yes. We provide bring-up support covering eye diagram measurement methodology, TDR measurement procedure for via impedance verification, VNA S-parameter measurement setup, and PDN noise measurement technique. When simulation and measurement diverge, we investigate fabricated stackup compliance by requesting impedance test coupon results from the fabricator, verify copper foil type, and correlate simulated via impedance profiles against physical TDR traces to identify root cause.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q15: Do you perform SI/PI analysis for rigid-flex and HDI designs?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Yes. Rigid-flex introduces SI challenges at the flex-to-rigid transition: polyimide dielectric (Dk ~3.4) is different from the rigid laminate Dk, requiring the flex segment to be modelled as a separate transmission line section; bending zone trace current capacity must be verified; and controlled impedance tolerance on polyimide substrates is wider than on rigid FR-4. HDI designs require blind/buried via 3D EM modelling for fine-pitch BGA signal escape. Both are handled within our standard SI/PI analysis workflow.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q16: What surface finish do you recommend for high-speed PCBs?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                ENIG is standard for general high-speed digital boards. For RF content and connectors above 20GHz, ENEPIG is preferred &mdash; the palladium barrier eliminates the high-permeability nickel layer that adds skin-effect loss at high frequency. Hard gold is specified for edge connectors with repeated mating cycles (PCIe slots, memory sockets). Surface finish selection is included in the Qmax stackup specification and confirmed with the fabricator, as it affects both connector contact resistance and high-frequency conductor loss on signal layers.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q17: What mixed-mode S-parameters do you extract and why do they matter?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                We extract the full mixed-mode S-parameter set for all SI-critical differential channels: SDD21 (differential insertion loss), SDD11 (differential return loss), SCD21 (differential-to-common-mode conversion), and SDDS41 (FEXT crosstalk). SCD21, the mode conversion coefficient, is particularly important &mdash; it quantifies asymmetry-driven energy conversion from differential to common mode, which is both a jitter contribution and a primary radiated EMI mechanism. Mode conversion is minimised through matched P/N via geometry, symmetric reference plane coverage, and consistent differential pair routing width and spacing.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q18: How do you specify back-drill depth and what tolerances are achievable?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Back-drill depth is specified as the maximum allowable remaining stub length in mils from the last active signal connection to the drill-out endpoint. Required maximum stub length = 2950 / (Fres_GHz &times; &radic;Dk). Standard fabricator tolerance is &plusmn;2 mils; tight tolerance is &plusmn;1 mil. These tolerances are confirmed with the fabricator during stackup review and incorporated into the via stub analysis as worst-case boundary conditions to ensure compliance even under process variation.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q19: What is SSO noise and how is it managed in high-density ASIC designs?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Simultaneous Switching Output (SSO) noise &mdash; also called ground bounce &mdash; occurs when multiple I/O buffers switch simultaneously, injecting large instantaneous current transients into the device&#39;s VDD/GND supply. On high-density FPGAs and ASICs, SSO noise can cause tens-of-millivolt supply fluctuations that degrade differential SerDes eye quality through common-mode injection. We analyse SSO noise per I/O bank and recommend decoupling capacitor placement and I/O bank power supply partitioning strategies to maintain acceptable noise levels.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q20: What compliance certifications does your SI/PI work support?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                SI/PI analysis directly supports pre-compliance for CE (European Conformity), FCC Part 15 Class A/B, VCCI, CISPR 32 (multimedia equipment), CISPR 25 (automotive in-vehicle), and IEC 60601-1-2 (medical equipment EMC). Return path integrity, mode conversion suppression, and PDN decoupling strategies implemented during SI/PI analysis are the same design choices that determine radiated and conducted emissions compliance. Qmax designs for compliance from day one rather than treating EMC as a post-design correction.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q21: What is plane resonance and how do you address it in PDN design?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Power-ground plane pairs form a parallel-plate resonant cavity. Cavity resonances create PDN impedance peaks at specific frequencies that peripheral decoupling capacitors cannot suppress, because the capacitors are outside the resonant region. Qmax addresses plane resonance through EBG (Electromagnetic Band Gap) structures etched into the power plane, resistive edge termination of the plane cavity, or plane segmentation to raise resonant frequencies above the PDN bandwidth of concern for the specific application.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q22: Can you perform SI/PI analysis on 3D IC and chiplet package interfaces?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Yes. Multi-die packages &mdash; Intel EMIB, AMD 3D V-Cache, TSMC CoWoS &mdash; introduce die-to-die interconnect SI challenges at the package level, including through-silicon via (TSV) channel modelling, bump array via extraction, and package PDN analysis. We work with silicon vendor package models and perform PCB-to-package co-simulation to ensure board SI/PI constraints are compatible with the package interface requirements.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q23: What is ICN (Integrated Crosstalk Noise) and why is it critical for PAM4?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                ICN is the statistical RMS aggregate of all FEXT and NEXT contributions at the receiver, weighted by transmitter power spectral density and integrated over the channel bandwidth. It is a primary input to COM analysis. For PAM4 channels &mdash; where each eye is approximately 9.5dB smaller than an equivalent NRZ eye &mdash; even moderate ICN levels that would be acceptable in an NRZ design can close PAM4 eyes below the compliance mask. ICN is minimised through differential pair routing discipline: consistent reference planes, adequate inter-pair spacing, and matched via placement that avoids inter-lane coupling.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q24: Do you provide SI/PI analysis reports for third-party design audits?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Yes. We regularly provide structured SI/PI audit reports on designs produced by third parties &mdash; ODM suppliers, external design houses, or internal teams without dedicated SI/PI expertise. The audit report covers per-channel SDD21/SDD11 and COM assessment, PDN impedance profile, decoupling strategy evaluation, stackup compliance against interface speed requirements, and a prioritised list of findings with specific corrective recommendations. These reports are used to inform go/no-go decisions before committing to prototype fabrication.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q25: How long does a typical SI/PI engagement take?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                A focused standalone analysis (single interface family, existing layout) typically requires 1&ndash;2 weeks. Full-board SI/PI integrated with PCB design, covering multiple high-speed interface families and complete PDN, requires 3&ndash;6 weeks depending on lane count and 3D EM extraction scope. Emergency bring-up debug support can begin within 24&ndash;48 hours. A detailed project schedule is provided at kickoff.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q26: What simulation outputs are included in the standard SI/PI deliverable set?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Standard deliverables include: per-channel SDD21/SDD11 S-parameter plots, IBIS-AMI statistical eye diagrams with mask overlay, BER bathtub curves, COM analysis results, TDR impedance profiles for critical vias, AC PDN impedance plots per power domain with Ztarget overlay, DC IR drop voltage distribution maps, decoupling capacitor optimisation BOM, stackup specification document, 3D EM-extracted via model library (Touchstone .sNp), native PCB tool constraint files, and all simulation project files. All files are customer property.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q27: Who owns the SI/PI simulation data and all deliverables?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                All simulation files, extracted S-parameter models, analysis reports, constraint files, stackup specifications, and documentation are the sole intellectual property of the customer. Qmax does not retain, reuse, or share any customer design data across programs. Standard NDA applies to all engagements.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q28: How do you handle etch compensation in impedance modelling?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Trace width after chemical etching differs from the artwork dimension due to the etch factor (lateral undercut). This deviation is typically 0.1&ndash;0.4 mils per side, depending on copper weight and fabricator process. On a 4-mil trace targeting 50&Omega;, a 0.3-mil bilateral undercut shifts impedance by 3&ndash;5&Omega; &mdash; a significant error if uncorrected. Qmax obtains etch factor data from the specific fabricator and applies it in the 2D field solver model when calculating artwork trace widths. This is included in the stackup specification delivered to the fabricator.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q29: Can Qmax help with a design that has already failed first-pass bring-up?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Yes. Post-build SI/PI rescue is a standard service. We correlate simulation against physical TDR measurements, VNA S-parameter data, and oscilloscope eye diagrams from the prototype. When results diverge from simulation predictions, we investigate fabricated stackup compliance (requesting impedance test coupon results from the fabricator), copper foil type verification, and via geometry correlation. Root cause typically identifies stackup deviation, via stub length greater than specified, material Dk/Df deviation from the simulation model, or routing constraint violations.
-              </p>
-            </details>
-
-            <details className="group rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)] transition-all">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-zinc-900 md:text-lg">
-                  Q30: How do we begin a SI/PI engagement with Qmax Systems?
-                </h3>
-                <span className="text-xl leading-none text-zinc-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-zinc-200 pt-4 text-sm leading-7 text-zinc-700 md:text-base">
-                Start with the 1-hour complimentary consultation described above &mdash; no commitment required. We review your interface list, proposed stackup, and schedule requirements, then define the analysis scope. Following scope agreement, we issue a fixed-price proposal with specific deliverables and schedule. Upon project initiation, you provide design files (schematics, layout if available, BOM, existing SI/PI data) and we begin the analysis workflow. Contact us at www.qmaxsys.com/contact.
-              </p>
-            </details>
-
-          </div>
-        </div>
-      </section>
+            <FAQSection
+        faqs={[
+          {
+            q: "Q1: Do you offer SI/PI analysis as a standalone service, without PCB layout?",
+            a: "Yes. Standalone SI/PI analysis is a primary service offering. We perform analysis on designs laid out by third parties, designs received from ODM or EMS partners, and as a pre-fabrication sign-off review. We accept Cadence Allegro, Altium Designer, Zuken CR-8000, and Mentor PADS layout files. No PCB layout commitment is required.",
+          },
+          {
+            q: "Q2: At what data rate does a design require SI analysis?",
+            a: "SI analysis is strongly recommended for single-ended interfaces above 200Mbps or differential interfaces above 1Gbps. For PCIe Gen3 and above, DDR4/DDR5, 10G+ Ethernet, and MIPI CSI-2, SI analysis is necessary for first-pass success. At PCIe Gen5/6 and 112G PAM4 Ethernet, it is not optional &mdash; channel compliance is defined by COM analysis which cannot be assessed without simulation.",
+          },
+          {
+            q: "Q3: What is the difference between NRZ and PAM4 in terms of SI requirements?",
+            a: "PAM4 encodes 2 bits per symbol across four voltage levels, with each eye opening approximately 9.5dB smaller than an NRZ eye at equivalent swing. This requires tighter insertion loss (SDD21) budgets, lower integrated crosstalk noise (ICN), more aggressive receiver equalization (CTLE + DFE with 4&ndash;24 taps), and mandatory FEC (Reed-Solomon). COM analysis per IEEE 802.3 is the standard methodology for PAM4 channel compliance. All PCIe Gen6 and 112G+ Ethernet channels are PAM4.",
+          },
+          {
+            q: "Q4: What PCB materials do you recommend for PCIe Gen6 and 112G PAM4 designs?",
+            a: "For PCIe Gen6 (64GT/s PAM4) and 112G PAM4 Ethernet, we require ultra-low-loss laminates with Df &le;0.003 at 10GHz: Panasonic Megtron 6 or Megtron 7, Isola Tachyon 100G, or Ventec VT-901. HVLP copper foil (Ra &lt; 0.4&mu;m) is mandatory. For 224G PAM4 emerging interfaces, Megtron 7 and experimental low-loss constructions are evaluated on a per-fabricator basis. Material selection is confirmed with the specific fabricator for available constructions and lot-measured Dk/Df data.",
+          },
+          {
+            q: "Q5: What is via back-drilling and when is it required?",
+            a: "Back-drilling removes the unused via stub below the last active signal connection, eliminating the quarter-wave stub resonance. Resonant frequency = c / (4 &times; stub_length &times; &radic;Dk). For a 30-mil stub on Megtron 6 (Dk 3.6), resonance is approximately 13GHz &mdash; within the PCIe Gen5 Nyquist band. Back-drilling is required on boards thicker than approximately 1.6mm for PCIe Gen4, and essentially mandatory for Gen5/6 on standard server board thicknesses of 2.4&ndash;3.2mm. We calculate required back-drill depth for every design above 16GT/s and confirm tolerance achievability with the fabricator.",
+          },
+          {
+            q: "Q6: What is COM analysis and why is it required for PCIe Gen6?",
+            a: "COM (Channel Operating Margin) is the IEEE-defined figure of merit for high-speed channel compliance. It combines channel insertion loss, integrated crosstalk noise (ICN from all aggressor lanes), transmitter and receiver equalization, jitter, and noise into a single dB margin value. COM &ge; 3dB = pass. COM is mandatory for PCIe Gen5/6 per PCI-SIG and for 25G/100G/400G/800G Ethernet per IEEE 802.3. Qmax delivers COM analysis as a standard output for all applicable interfaces.",
+          },
+          {
+            q: "Q7: How do you obtain IBIS-AMI models for SI simulation?",
+            a: "We obtain silicon-validated IBIS-AMI models directly from silicon vendor application engineering teams &mdash; Broadcom, Intel, AMD, Qualcomm, NXP, Ampere, and MediaTek &mdash; through direct engineering relationships maintained for over 30 years. These models accurately capture transmitter FFE settings and receiver CTLE/DFE algorithms. Using unvalidated generic models is a common source of over-optimistic simulation results that fail to predict board-level SI failures.",
+          },
+          {
+            q: "Q8: How does fiber weave effect impact differential pair routing, and how is it mitigated?",
+            a: "The periodic glass fiber weave in PCB laminates creates spatially varying local Dk beneath differential pair traces. When P and N conductors overlie different weave regions, differential propagation velocity skew results &mdash; generating mode conversion (SCD21) and differential eye degradation. For interfaces above 10Gbps, Qmax specifies skew-angle routing (5&ndash;10&deg; to the fiber weave direction), resin-rich prepregs (RC &gt; 70%), and 1080/1067 glass style for critical signal layers.",
+          },
+          {
+            q: "Q9: What is PDN target impedance and how is it calculated?",
+            a: "Ztarget = &Delta;V / &Delta;I, where &Delta;V is the allowed supply ripple and &Delta;I is the maximum instantaneous current transient. For a server CPU drawing 200A with 50mV allowable droop on a 1.8V rail, Ztarget = 0.25m&Omega;. Achieving sub-milliohm Ztarget requires multi-phase VRM co-design, precisely calculated bulk capacitor banks, and ceramic decoupling optimised for both value and ESL &mdash; all driven by AC PDN impedance simulation, not rules of thumb.",
+          },
+          {
+            q: "Q10: Can you analyse power delivery for AI accelerators with 700W+ per GPU?",
+            a: "Yes. AI accelerator PDN is an area of specific Qmax depth. We perform full-board DC IR drop, multi-phase VRM co-design for 600&ndash;800W GPU power domains, bulk and ceramic decoupling optimisation targeting sub-milliohm Ztarget, and thermal-PDN co-simulation for sustained AI training workloads. PDN performance at these power levels is analysed as a coupled system with PCIe Gen6 reference plane SI.",
+          },
+          {
+            q: "Q11: How does PDN design affect SI channel performance?",
+            a: "PDN noise couples into SI performance through two primary paths: supply noise on TX VDD causes output common-mode injection into differential pairs, adding jitter; and ground bounce on PCB reference planes raises the effective noise floor at the receiver, degrading eye margin. A PDN that meets DC IR drop requirements can still cause PAM4 eye failures if its AC impedance is too high in the frequency band where the load switches. Qmax treats SI and PI as a coupled system throughout the analysis workflow.",
+          },
+          {
+            q: "Q12: Do you perform SI/PI analysis for automotive-grade electronics?",
+            a: "Yes. Automotive SI/PI adds AEC-Q200 component qualification for passive components in SI paths, CISPR 25 pre-compliance for in-vehicle radiated emissions, and ISO 26262 FMEA-level failure mode analysis for ASIL implications. We have experience with 100BASE-T1 / 1000BASE-T1 automotive Ethernet, CAN-FD physical layer, and MIPI CSI-2 for ADAS surround-view camera systems, co-ordinated with NXP and Qualcomm automotive platform guidelines.",
+          },
+          {
+            q: "Q13: How does copper foil roughness affect SI and what types do you specify?",
+            a: "Skin effect at high frequency confines current to the conductor surface; rougher copper forces the current to follow a longer effective path, increasing conductor loss. Standard ED copper (Ra 2&ndash;4&mu;m) imposes 30&ndash;50% excess conductor loss versus HVLP foil (Ra &lt; 0.4&mu;m) at 10GHz. For all channels above 16GT/s, Qmax specifies VLP or HVLP copper foil in the stackup specification, confirmed as available with the fabricator before design release. Roughness is modelled using the Huray or Hammerstad model in the simulation tool.",
+          },
+          {
+            q: "Q14: Can you support board bring-up and SI/PI debug on physical prototypes?",
+            a: "Yes. We provide bring-up support covering eye diagram measurement methodology, TDR measurement procedure for via impedance verification, VNA S-parameter measurement setup, and PDN noise measurement technique. When simulation and measurement diverge, we investigate fabricated stackup compliance by requesting impedance test coupon results from the fabricator, verify copper foil type, and correlate simulated via impedance profiles against physical TDR traces to identify root cause.",
+          },
+          {
+            q: "Q15: Do you perform SI/PI analysis for rigid-flex and HDI designs?",
+            a: "Yes. Rigid-flex introduces SI challenges at the flex-to-rigid transition: polyimide dielectric (Dk ~3.4) is different from the rigid laminate Dk, requiring the flex segment to be modelled as a separate transmission line section; bending zone trace current capacity must be verified; and controlled impedance tolerance on polyimide substrates is wider than on rigid FR-4. HDI designs require blind/buried via 3D EM modelling for fine-pitch BGA signal escape. Both are handled within our standard SI/PI analysis workflow.",
+          },
+          {
+            q: "Q16: What surface finish do you recommend for high-speed PCBs?",
+            a: "ENIG is standard for general high-speed digital boards. For RF content and connectors above 20GHz, ENEPIG is preferred &mdash; the palladium barrier eliminates the high-permeability nickel layer that adds skin-effect loss at high frequency. Hard gold is specified for edge connectors with repeated mating cycles (PCIe slots, memory sockets). Surface finish selection is included in the Qmax stackup specification and confirmed with the fabricator, as it affects both connector contact resistance and high-frequency conductor loss on signal layers.",
+          },
+          {
+            q: "Q17: What mixed-mode S-parameters do you extract and why do they matter?",
+            a: "We extract the full mixed-mode S-parameter set for all SI-critical differential channels: SDD21 (differential insertion loss), SDD11 (differential return loss), SCD21 (differential-to-common-mode conversion), and SDDS41 (FEXT crosstalk). SCD21, the mode conversion coefficient, is particularly important &mdash; it quantifies asymmetry-driven energy conversion from differential to common mode, which is both a jitter contribution and a primary radiated EMI mechanism. Mode conversion is minimised through matched P/N via geometry, symmetric reference plane coverage, and consistent differential pair routing width and spacing.",
+          },
+          {
+            q: "Q18: How do you specify back-drill depth and what tolerances are achievable?",
+            a: "Back-drill depth is specified as the maximum allowable remaining stub length in mils from the last active signal connection to the drill-out endpoint. Required maximum stub length = 2950 / (Fres_GHz &times; &radic;Dk). Standard fabricator tolerance is &plusmn;2 mils; tight tolerance is &plusmn;1 mil. These tolerances are confirmed with the fabricator during stackup review and incorporated into the via stub analysis as worst-case boundary conditions to ensure compliance even under process variation.",
+          },
+          {
+            q: "Q19: What is SSO noise and how is it managed in high-density ASIC designs?",
+            a: "Simultaneous Switching Output (SSO) noise &mdash; also called ground bounce &mdash; occurs when multiple I/O buffers switch simultaneously, injecting large instantaneous current transients into the device&#39;s VDD/GND supply. On high-density FPGAs and ASICs, SSO noise can cause tens-of-millivolt supply fluctuations that degrade differential SerDes eye quality through common-mode injection. We analyse SSO noise per I/O bank and recommend decoupling capacitor placement and I/O bank power supply partitioning strategies to maintain acceptable noise levels.",
+          },
+          {
+            q: "Q20: What compliance certifications does your SI/PI work support?",
+            a: "SI/PI analysis directly supports pre-compliance for CE (European Conformity), FCC Part 15 Class A/B, VCCI, CISPR 32 (multimedia equipment), CISPR 25 (automotive in-vehicle), and IEC 60601-1-2 (medical equipment EMC). Return path integrity, mode conversion suppression, and PDN decoupling strategies implemented during SI/PI analysis are the same design choices that determine radiated and conducted emissions compliance. Qmax designs for compliance from day one rather than treating EMC as a post-design correction.",
+          },
+          {
+            q: "Q21: What is plane resonance and how do you address it in PDN design?",
+            a: "Power-ground plane pairs form a parallel-plate resonant cavity. Cavity resonances create PDN impedance peaks at specific frequencies that peripheral decoupling capacitors cannot suppress, because the capacitors are outside the resonant region. Qmax addresses plane resonance through EBG (Electromagnetic Band Gap) structures etched into the power plane, resistive edge termination of the plane cavity, or plane segmentation to raise resonant frequencies above the PDN bandwidth of concern for the specific application.",
+          },
+          {
+            q: "Q22: Can you perform SI/PI analysis on 3D IC and chiplet package interfaces?",
+            a: "Yes. Multi-die packages &mdash; Intel EMIB, AMD 3D V-Cache, TSMC CoWoS &mdash; introduce die-to-die interconnect SI challenges at the package level, including through-silicon via (TSV) channel modelling, bump array via extraction, and package PDN analysis. We work with silicon vendor package models and perform PCB-to-package co-simulation to ensure board SI/PI constraints are compatible with the package interface requirements.",
+          },
+          {
+            q: "Q23: What is ICN (Integrated Crosstalk Noise) and why is it critical for PAM4?",
+            a: "ICN is the statistical RMS aggregate of all FEXT and NEXT contributions at the receiver, weighted by transmitter power spectral density and integrated over the channel bandwidth. It is a primary input to COM analysis. For PAM4 channels &mdash; where each eye is approximately 9.5dB smaller than an equivalent NRZ eye &mdash; even moderate ICN levels that would be acceptable in an NRZ design can close PAM4 eyes below the compliance mask. ICN is minimised through differential pair routing discipline: consistent reference planes, adequate inter-pair spacing, and matched via placement that avoids inter-lane coupling.",
+          },
+          {
+            q: "Q24: Do you provide SI/PI analysis reports for third-party design audits?",
+            a: "Yes. We regularly provide structured SI/PI audit reports on designs produced by third parties &mdash; ODM suppliers, external design houses, or internal teams without dedicated SI/PI expertise. The audit report covers per-channel SDD21/SDD11 and COM assessment, PDN impedance profile, decoupling strategy evaluation, stackup compliance against interface speed requirements, and a prioritised list of findings with specific corrective recommendations. These reports are used to inform go/no-go decisions before committing to prototype fabrication.",
+          },
+          {
+            q: "Q25: How long does a typical SI/PI engagement take?",
+            a: "A focused standalone analysis (single interface family, existing layout) typically requires 1&ndash;2 weeks. Full-board SI/PI integrated with PCB design, covering multiple high-speed interface families and complete PDN, requires 3&ndash;6 weeks depending on lane count and 3D EM extraction scope. Emergency bring-up debug support can begin within 24&ndash;48 hours. A detailed project schedule is provided at kickoff.",
+          },
+          {
+            q: "Q26: What simulation outputs are included in the standard SI/PI deliverable set?",
+            a: "Standard deliverables include: per-channel SDD21/SDD11 S-parameter plots, IBIS-AMI statistical eye diagrams with mask overlay, BER bathtub curves, COM analysis results, TDR impedance profiles for critical vias, AC PDN impedance plots per power domain with Ztarget overlay, DC IR drop voltage distribution maps, decoupling capacitor optimisation BOM, stackup specification document, 3D EM-extracted via model library (Touchstone .sNp), native PCB tool constraint files, and all simulation project files. All files are customer property.",
+          },
+          {
+            q: "Q27: Who owns the SI/PI simulation data and all deliverables?",
+            a: "All simulation files, extracted S-parameter models, analysis reports, constraint files, stackup specifications, and documentation are the sole intellectual property of the customer. Qmax does not retain, reuse, or share any customer design data across programs. Standard NDA applies to all engagements.",
+          },
+          {
+            q: "Q28: How do you handle etch compensation in impedance modelling?",
+            a: "Trace width after chemical etching differs from the artwork dimension due to the etch factor (lateral undercut). This deviation is typically 0.1&ndash;0.4 mils per side, depending on copper weight and fabricator process. On a 4-mil trace targeting 50&Omega;, a 0.3-mil bilateral undercut shifts impedance by 3&ndash;5&Omega; &mdash; a significant error if uncorrected. Qmax obtains etch factor data from the specific fabricator and applies it in the 2D field solver model when calculating artwork trace widths. This is included in the stackup specification delivered to the fabricator.",
+          },
+          {
+            q: "Q29: Can Qmax help with a design that has already failed first-pass bring-up?",
+            a: "Yes. Post-build SI/PI rescue is a standard service. We correlate simulation against physical TDR measurements, VNA S-parameter data, and oscilloscope eye diagrams from the prototype. When results diverge from simulation predictions, we investigate fabricated stackup compliance (requesting impedance test coupon results from the fabricator), copper foil type verification, and via geometry correlation. Root cause typically identifies stackup deviation, via stub length greater than specified, material Dk/Df deviation from the simulation model, or routing constraint violations.",
+          },
+          {
+            q: "Q30: How do we begin a SI/PI engagement with Qmax Systems?",
+            a: "Start with the 1-hour complimentary consultation described above &mdash; no commitment required. We review your interface list, proposed stackup, and schedule requirements, then define the analysis scope. Following scope agreement, we issue a fixed-price proposal with specific deliverables and schedule. Upon project initiation, you provide design files (schematics, layout if available, BOM, existing SI/PI data) and we begin the analysis workflow. Contact us at www.qmaxsys.com/contact.",
+          },
+        ]}
+      />
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-4xl text-center text-zinc-800">
@@ -1622,6 +1319,12 @@ export default function SIPIAnalysisServicesPage() {
           </div>
         </div>
       </section>
+      <ServiceCaseStudiesSection
+        eyebrow="PCB Programs"
+        studies={pcbCaseStudies}
+      />
     </main>
   );
 }
+
+

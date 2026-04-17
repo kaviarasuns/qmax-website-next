@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { hardwareCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
   title: "RF and Microwave Services | Qmax",
@@ -643,54 +646,14 @@ export default function RfAndMicrowavePage() {
         </div>
       </section>
 
-      <section className="border-t border-slate-200 bg-slate-100/60">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-left text-3xl font-semibold text-slate-900">
-            Frequently Asked Questions
-          </h2>
-          <p className="mt-4 text-sm text-slate-700 md:text-base">
-            Technical RF and microwave FAQs covering wireless, industrial,
-            compliance, PCB, testing, and process topics.
-          </p>
-          <p className="mt-2 text-sm font-medium text-slate-700 md:text-base">
-            Top 30 Optimized RF and Microwave FAQs
-          </p>
-
-          <div className="mt-8 space-y-5">
-            {rfFaqGroups.map((group) => (
-              <article
-                key={group.title}
-                className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-              >
-                <h3 className="text-left text-lg font-semibold text-slate-900">
-                  {group.title}
-                </h3>
-                <div className="mt-4 space-y-3">
-                  {group.items.map((item) => (
-                    <details
-                      key={item.q}
-                      className="group rounded-lg border border-slate-200 bg-slate-50 px-4 py-3"
-                    >
-                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 pr-1 text-sm font-medium leading-6 text-slate-900">
-                        <span>{item.q}</span>
-                        <span
-                          aria-hidden="true"
-                          className="text-xs font-medium text-slate-400 transition-transform duration-200 group-open:rotate-180"
-                        >
-                          ▾
-                        </span>
-                      </summary>
-                      <p className="mt-3 text-sm leading-6 text-slate-700">
-                        {item.a}
-                      </p>
-                    </details>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection faqs={rfFaqGroups.flatMap((group) => group.items)} />
+      <ServiceCaseStudiesSection
+        eyebrow="Hardware Programs"
+        studies={hardwareCaseStudies}
+      />
     </main>
   );
 }
+
+
+

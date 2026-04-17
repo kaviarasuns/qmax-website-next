@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { hardwareCaseStudies } from "@/data/service-case-studies";
 
 const workflowItems = [
   {
@@ -99,6 +102,8 @@ export const metadata: Metadata = {
 };
 
 export default function HardwareDevelopmentServicesPage() {
+  const hardwareFaqs = technicalFaq.flatMap((group) => group.items);
+
   return (
     <main className="bg-slate-100 text-justify text-slate-900">
       <section className="relative overflow-hidden border-b border-slate-200">
@@ -529,44 +534,7 @@ export default function HardwareDevelopmentServicesPage() {
 
         </div>
       </section>
-      <section className="border-t border-slate-200 bg-slate-100/60">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
-            Frequently Asked Questions (FAQ)
-          </h2>
-          <p className="mt-4 text-sm text-slate-700 md:text-base">
-            Common engineering, engagement, compliance, and IP questions answered by our hardware team.
-          </p>
-
-          <div className="mt-8 space-y-5">
-            {technicalFaq.map((group) => (
-              <article
-                key={group.title}
-                className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-              >
-                <h3 className="text-lg font-semibold text-slate-900">{group.title}</h3>
-                <div className="mt-4 space-y-3">
-                  {group.items.map((item) => (
-                    <details
-                      key={item.q}
-                      className="group rounded-lg border border-slate-200 bg-slate-50 px-4 py-3"
-                    >
-                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 pr-1 text-sm font-medium leading-6 text-slate-900">
-                        <span>{item.q}</span>
-                        <span
-                          aria-hidden="true"
-                          className="text-xs font-medium text-slate-400 transition-transform duration-200 group-open:rotate-180"
-                        >&#9662;</span>
-                      </summary>
-                      <p className="mt-3 text-sm leading-6 text-slate-700">{item.a}</p>
-                    </details>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection faqs={hardwareFaqs} />
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_6px_30px_rgba(15,23,42,0.08)] md:p-10">
           <h2 className="text-3xl font-semibold text-slate-900">
@@ -587,6 +555,11 @@ export default function HardwareDevelopmentServicesPage() {
           </a>
         </div>
       </section>
+
+      <ServiceCaseStudiesSection
+        eyebrow="Hardware Programs"
+        studies={hardwareCaseStudies}
+      />
     </main>
   );
 }

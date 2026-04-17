@@ -32,30 +32,6 @@ const caseStudies = [
     summary: "Compact automotive diagnostics platform designed for durability, compliance, and fast integration.",
     link: "/case-studies/Automotive-OBD",
   },
-  {
-    id: 4,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Security-Controller.png",
-    title: "Security Controller",
-    summary: "Embedded security controller PCB balancing stable power delivery with dependable system monitoring.",
-    link: "/case-studies/Security-System-Controller",
-  },
-  {
-    id: 5,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Automotive-HID-PCB.png",
-    title: "Automotive HID PCB",
-    summary: "Automotive lighting control board optimized for robust switching behavior and manufacturable layout.",
-    link: "/case-studies/Automotive-HID-PCB",
-  },
-  {
-    id: 6,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Networking-Device-2.png",
-    title: "Networking Device",
-    summary: "High-density networking hardware PCB built to support signal integrity across connected subsystems.",
-    link: "/case-studies/Networking-Device",
-  },
 ]
 
 export function CaseStudiesSection() {
@@ -89,68 +65,65 @@ export function CaseStudiesSection() {
   }
 
   return (
-    <section className="bg-slate-100 py-16 lg:py-24">
+    <section className="py-20 lg:py-28">
       <div className="w-full px-8 md:px-12">
-        <div className="mb-10 flex flex-col items-end justify-between gap-6 md:flex-row md:items-start">
-          <div className="max-w-2xl">
-            <h2 className="mb-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
-              Our Work - <span className="text-red-500">Case Studies</span>
+        <div className="mx-auto w-fit">
+          <div className="mb-10 flex items-center justify-between gap-6">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
+              <span className="text-red-500">Case Studies</span>
             </h2>
-            <p className="text-base text-muted-foreground md:text-lg">
-              Explore production-ready PCB programs delivered across industrial, automotive,
-              aerospace, and networking applications.
-            </p>
-          </div>
 
-          <div className="flex items-center gap-3">
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-red-500"
-            >
-              View All Projects
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/case-studies"
+                className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-red-500"
+              >
+                View All Projects
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
 
-            <div className="flex gap-2">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={() => scroll("left")}
-                disabled={!canScrollLeft}
-                className="h-12 w-12 rounded-full border-zinc-200 bg-white transition-all hover:bg-zinc-100 disabled:opacity-30"
-                aria-label="Scroll left"
-              >
-                <ArrowLeft className="h-6 w-6" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={() => scroll("right")}
-                disabled={!canScrollRight}
-                className="h-12 w-12 rounded-full border-zinc-200 bg-white transition-all hover:bg-zinc-100 disabled:opacity-30"
-                aria-label="Scroll right"
-              >
-                <ArrowRight className="h-6 w-6" />
-              </Button>
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => scroll("left")}
+                  disabled={!canScrollLeft}
+                  className="h-12 w-12 rounded-full border-zinc-200 bg-white transition-all hover:bg-zinc-100 disabled:opacity-30"
+                  aria-label="Scroll left"
+                >
+                  <ArrowLeft className="h-6 w-6" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => scroll("right")}
+                  disabled={!canScrollRight}
+                  className="h-12 w-12 rounded-full border-zinc-200 bg-white transition-all hover:bg-zinc-100 disabled:opacity-30"
+                  aria-label="Scroll right"
+                >
+                  <ArrowRight className="h-6 w-6" />
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div
-          ref={scrollRef}
-          onScroll={checkScroll}
-          className="scrollbar-hide flex snap-x snap-mandatory gap-4 overflow-x-auto pb-8 md:gap-5"
-        >
-          {caseStudies.map((study) => (
-            <div key={study.id} className="w-64 shrink-0 snap-start sm:w-72 md:w-80">
-              <CaseStudyCard
-                title={study.title}
-                image={study.image}
-                link={study.link}
-                summary={study.summary}
-              />
-            </div>
-          ))}
+          <div
+            ref={scrollRef}
+            onScroll={checkScroll}
+            className="scrollbar-hide [&::-webkit-scrollbar]:hidden flex snap-x snap-mandatory gap-4 overflow-x-auto pb-8 md:gap-5"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}
+          >
+            {caseStudies.map((study) => (
+              <div key={study.id} className="w-72 shrink-0 snap-start sm:w-80 md:w-96">
+                <CaseStudyCard
+                  title={study.title}
+                  image={study.image}
+                  link={study.link}
+                  summary={study.summary}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

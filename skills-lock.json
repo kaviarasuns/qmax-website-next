@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "budge": {
+      "source": "ben-million/skills",
+      "sourceType": "github",
+      "computedHash": "c274df0173b1821e801f23494b4b0eb1a0e39ca2ca75751080ae507befb52d4f"
+    },
     "frontend-design": {
       "source": "anthropics/skills",
       "sourceType": "github",

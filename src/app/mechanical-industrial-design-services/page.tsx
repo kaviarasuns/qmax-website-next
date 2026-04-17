@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { mechanicalIndustrialCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
   title: "Mechanical & Industrial Design Services | Qmax Systems",
@@ -270,14 +273,8 @@ export default function MechanicalIndustrialDesignPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="border-y border-zinc-200 bg-zinc-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-zinc-900">
-            Technical FAQ
-          </h2>
-          <div className="mt-8 space-y-3">
-            {[
-              {
+      
+      <FAQSection faqs={[{
                 q: "How do you manage heat dissipation in sealed IP67 enclosures?",
                 a: "We utilize thermal simulation (CFD) to design internal heat spreaders and utilize the enclosure's external surface area as a heat sink, often employing thermally conductive plastics or metal chassis."
               },
@@ -316,26 +313,8 @@ export default function MechanicalIndustrialDesignPage() {
               {
                 q: "At what stage should I start mechanical design?",
                 a: "Ideally, at the block diagram stage. Early mechanical involvement ensures that the PCB shape and component placement are optimized for the final enclosure size and thermal requirements."
-              }
-            ].map((faq, index) => (
-              <details key={index} className="group rounded-xl border border-zinc-200 bg-white px-5 py-4 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 pr-1 text-sm font-semibold leading-6 text-zinc-900 md:text-base">
-                  <span>{faq.q}</span>
-                  <span
-                    aria-hidden="true"
-                    className="text-xs font-medium text-zinc-400 transition-transform duration-200 group-open:rotate-180"
-                  >
-                    ▾
-                  </span>
-                </summary>
-                <p className="mt-3 text-sm leading-7 text-zinc-700 md:text-base">{faq.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+              }]} />
 
-      {/* Professional Engineering Review Block */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <article className="relative overflow-hidden rounded-[2rem] border border-zinc-200 bg-white shadow-[0_20px_80px_rgba(24,24,27,0.08)]">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(24,24,27,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(161,161,170,0.16),transparent_30%)]" />
@@ -418,6 +397,11 @@ export default function MechanicalIndustrialDesignPage() {
         </article>
       </section>
 
+      <ServiceCaseStudiesSection
+        eyebrow="Mechanical Portfolio"
+        studies={mechanicalIndustrialCaseStudies}
+      />
+
       {/* Internal Resources */}
       {/* <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 mb-16 border-t border-zinc-200 text-center">
         <h3 className="text-lg font-semibold text-zinc-900 mb-6">Internal Resources</h3>
@@ -434,3 +418,6 @@ export default function MechanicalIndustrialDesignPage() {
     </main>
   );
 }
+
+
+

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { pcbCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
   title: "PCB Library Services | Qmax",
@@ -20,6 +22,10 @@ export default function PCBLibraryServicesPage() {
             <p className="mt-4 text-zinc-500">We are currently preparing detailed information about our PCB Library Services. Please check back soon.</p>
         </div>
       </div>
+      <ServiceCaseStudiesSection
+        eyebrow="PCB Programs"
+        studies={pcbCaseStudies}
+      />
     </main>
   );
 }

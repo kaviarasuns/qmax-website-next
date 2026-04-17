@@ -1,4 +1,7 @@
 import Image from "next/image";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { mechanicalCaseStudies } from "@/data/service-case-studies";
 
 export default function MechanicalDesignServicesPageV1() {
     return (
@@ -691,14 +694,8 @@ export default function MechanicalDesignServicesPageV1() {
                 </article>
             </section>
             {/* FAQ Section */}
-            <section className="border-y border-zinc-200 bg-zinc-50/80">
-                <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-                    <h2 className="text-3xl font-semibold text-zinc-900 mb-8 uppercase tracking-tight">
-                        Frequently Asked Questions
-                    </h2>
-                    <div className="grid gap-4 max-w-4xl">
-                        {[
-                            { q: "What mechanical design software does Qmax Systems use?", a: "Qmax uses professional-grade 3D CAD tools for solid modelling, assembly design, and drawing preparation. FEA and thermal simulation are performed with dedicated analysis software. All deliverables are provided in native format plus neutral exchange formats (STEP, IGES, PDF) to ensure vendor and customer compatibility." },
+            
+      <FAQSection faqs={[{ q: "What mechanical design software does Qmax Systems use?", a: "Qmax uses professional-grade 3D CAD tools for solid modelling, assembly design, and drawing preparation. FEA and thermal simulation are performed with dedicated analysis software. All deliverables are provided in native format plus neutral exchange formats (STEP, IGES, PDF) to ensure vendor and customer compatibility." },
                             { q: "Can Qmax manage both the mechanical design and production sourcing?", a: "Yes. Qmax manages the full cycle from design to qualified prototype and can extend to volume production sourcing. We select manufacturing partners — injection moulders, sheet metal shops, CNC machining houses — based on capability, quality system, location, and lead time. Our 30-year vendor relationships mean we can benchmark cost and qualify suppliers faster than most internal engineering teams." },
                             { q: "How does Qmax approach MIL-STD-810 mechanical qualification?", a: "Qualification begins at the design stage, not at the test lab. We identify applicable MIL-STD-810 test methods for the deployment environment, build structural analysis models to predict response, and design the enclosure to pass with margin. Physical testing at our nearby accredited test facility then validates the analysis. This minimises test failures and re-spin cycles." },
                             { q: "What is the difference between IP65, IP67, and IP68, and how do you ensure compliance?", a: "IP65 is dust-tight and resistant to water jets. IP67 adds immersion to 1 m for 30 minutes. IP68 covers continuous immersion at depths agreed between manufacturer and customer. Compliance is achieved through correct gasket geometry, material, and compression design. We design all sealing interfaces to published standards, specify fastener torque, and validate at our nearby IP test facility before production release." },
@@ -707,24 +704,9 @@ export default function MechanicalDesignServicesPageV1() {
                             { q: "What materials has Qmax worked with beyond standard aluminium and steel?", a: "We have designed parts in PTFE (Teflon), stainless steel (304, 316), polycarbonate, ABS, nylon (PA6/PA66), glass-filled engineering plastics, and titanium alloys. Surface treatments include Type II and III anodising, chromate conversion, electroless nickel, hard chrome, powder coating, and gold plating for low-contact-resistance applications." },
                             { q: "Can Qmax help reduce the manufacturing cost of an existing design?", a: "Yes. Design-for-cost review is a standard Qmax service. Common cost reduction opportunities include: over-toleranced drawings that force expensive machining, unnecessarily tight surface finish specifications, complex geometries that increase tooling cost, non-standard fasteners, and material overspecification. A structured DFM/DFC review typically identifies 10-25% BOM cost reduction in designs not originally optimised for production." },
                             { q: "Does Qmax handle mechanical compliance for medical electronics products?", a: "Yes. We have designed Class I and Class II medical device enclosures with documentation supporting CE marking and IEC 60601 mechanical requirements, including creepage and clearance compliance, UL94 flammability-rated materials, biocompatible materials where required, and IP ratings for clinical environments." },
-                            { q: "What is the typical timeline from mechanical concept to qualified prototype?", a: "A standard plastic enclosure for a handheld device — concept through injection-moulded prototype and IP test — typically runs 8-12 weeks. A MIL-STD-810-qualified rugged metal enclosure, including FEA, machined prototype, and formal test campaign, typically runs 14-20 weeks. Detailed schedules are agreed at project kick-off and include gate reviews at concept freeze, detailed design release, and prototype receipt." }
-                        ].map((faq, idx) => (
-                            <details key={idx} className="group rounded-2xl border border-zinc-200 bg-white px-6 py-5 shadow-sm transition-all hover:border-zinc-900">
-                                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-bold text-zinc-900 md:text-base leading-relaxed">
-                                    <span>{faq.q}</span>
-                                    <span className="text-xs transition-transform duration-300 group-open:rotate-180 text-zinc-400">▾</span>
-                                </summary>
-                                <div className="mt-4 text-sm leading-7 text-zinc-600 border-t border-zinc-50 pt-4 md:text-base">
-                                    {faq.a}
-                                </div>
-                            </details>
-                        ))}
-                    </div>
-                </div>
-            </section>
+                            { q: "What is the typical timeline from mechanical concept to qualified prototype?", a: "A standard plastic enclosure for a handheld device — concept through injection-moulded prototype and IP test — typically runs 8-12 weeks. A MIL-STD-810-qualified rugged metal enclosure, including FEA, machined prototype, and formal test campaign, typically runs 14-20 weeks. Detailed schedules are agreed at project kick-off and include gate reviews at concept freeze, detailed design release, and prototype receipt." }]} />
 
-            {/* Final Engagement Section */}
-            <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 text-center">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 text-center">
                 <div className="max-w-3xl mx-auto space-y-8">
                     <h2 className="text-4xl font-semibold text-zinc-900 md:text-5xl tracking-tight leading-[1.1]">
                         Start a Mechanical Design Engagement
@@ -745,6 +727,13 @@ export default function MechanicalDesignServicesPageV1() {
                     </div>
                 </div>
             </section>
+            <ServiceCaseStudiesSection
+                eyebrow="Mechanical Portfolio"
+                studies={mechanicalCaseStudies}
+            />
         </main>
     );
 }
+
+
+

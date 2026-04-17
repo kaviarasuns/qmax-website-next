@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { pcbCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
   title: "Analog and Mixed Signal PCB Design Services | Qmax",
@@ -522,31 +525,14 @@ export default function AnalogAndMixedSignalPage() {
           </div>
         </div>
       </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-zinc-900">
-          Frequently Asked Questions (Analog &amp; Mixed Signal PCB Design)
-        </h2>
-        <div className="mt-8 space-y-3">
-          {faqs.map((item) => (
-            <details
-              key={item.q}
-              className="group rounded-xl border border-zinc-200 bg-white px-5 py-4 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 pr-1 text-sm font-semibold leading-6 text-zinc-900 md:text-base">
-                <span>{item.q}</span>
-                <span
-                  aria-hidden="true"
-                  className="text-xs font-medium text-zinc-400 transition-transform duration-200 group-open:rotate-180"
-                >
-                  ▾
-                </span>
-              </summary>
-              <p className="mt-3 text-sm leading-7 text-zinc-700 md:text-base">{item.a}</p>
-            </details>
-          ))}
-        </div>
-      </section>
+      <FAQSection faqs={faqs} />
+      <ServiceCaseStudiesSection
+        eyebrow="PCB Programs"
+        studies={pcbCaseStudies}
+      />
     </main>
   );
 }
+
+
+

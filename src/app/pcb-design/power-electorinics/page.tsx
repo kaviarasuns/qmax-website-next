@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { pcbCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
   title: "Power Electronics PCB Design | Qmax Systems",
@@ -301,13 +304,7 @@ export default function PowerElectorinicsPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-zinc-900">
-          Frequently Asked Questions: Power Electronics PCB Design
-        </h2>
-        <div className="mt-8 space-y-3">
-          {[
-            {
+      <FAQSection faqs={[{
               q: "How do you handle high-current requirements in small form factors?",
               a: "We utilize heavy copper PCBs (up to 14oz+), busbar integration, and thermal via arrays to maximize current-carrying capacity while maintaining a compact footprint."
             },
@@ -346,23 +343,13 @@ export default function PowerElectorinicsPage() {
             {
               q: "Do you provide fabrication support?",
               a: "Yes. We act as a direct technical liaison with fabrication houses to resolve stackup, material queries, and DFM issues before production."
-            }
-          ].map((faq, index) => (
-            <details key={index} className="group rounded-xl border border-zinc-200 bg-white px-5 py-4 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 pr-1 text-sm font-semibold leading-6 text-zinc-900 md:text-base">
-                <span>{faq.q}</span>
-                <span
-                  aria-hidden="true"
-                  className="text-xs font-medium text-zinc-400 transition-transform duration-200 group-open:rotate-180"
-                >
-                  ▾
-                </span>
-              </summary>
-              <p className="mt-3 text-sm leading-7 text-zinc-700 md:text-base">{faq.a}</p>
-            </details>
-          ))}
-        </div>
-      </section>
+            }]} />
+      <ServiceCaseStudiesSection
+        eyebrow="PCB Programs"
+        studies={pcbCaseStudies}
+      />
     </main>
   );
 }
+
+

@@ -1,6 +1,36 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { hardwareCaseStudies } from "@/data/service-case-studies";
+
+const faqs = [
+  {
+    q: "What high-speed design standards does Qmax Systems support?",
+    a: "We specialize in the latest high-speed communication standards, including PCIe Gen 5/6, DDR5, and 112G SerDes. Our engineering team utilizes advanced simulation tools to ensure signal integrity (SI) and power integrity (PI) for data rates exceeding 100Gbps.",
+  },
+  {
+    q: "Can you design custom hardware for AI and Deep Learning?",
+    a: "Yes. We develop High-Density AI GPU Compute Servers tailored for massive parallel processing. Our designs focus on robust power delivery networks (PDN) and advanced thermal management strategies required to sustain the performance of high-TDP NVIDIA and AMD GPU clusters.",
+  },
+  {
+    q: "Do you provide O-RAN and 5G infrastructure hardware?",
+    a: "Absolutely. Qmax Systems is active in the O-RAN ecosystem, designing Distributed Units (DU) and specialized Network Interface Cards (NIC). We help telecom providers and private network operators deploy scalable, open-architecture hardware for 5G rollouts.",
+  },
+  {
+    q: "What processor architectures do you work with for Server Motherboards?",
+    a: "Our expertise spans the leading x86 and ARM-based enterprise architectures, including Intel Xeon, AMD EPYC, and Ampere Altra CPUs. We design custom server motherboards and Single Board Computers (SBCs) that meet specific form factor and environmental requirements.",
+  },
+  {
+    q: "Do you handle complex, high-layer count PCB designs?",
+    a: "Yes. Our team is experienced in high-density interconnect (HDI) technology, regularly managing 20+ layer PCB stacks with blind and buried micro-vias. We ensure all designs are optimized for DFM (Design for Manufacturing) and DFT (Design for Test) to streamline the transition to mass production.",
+  },
+  {
+    q: "What is included in the 1-hour complimentary consulting session?",
+    a: "During this session, you will speak directly with a Senior Hardware Architect. We can review your block diagrams, discuss thermal or signal integrity challenges, provide high-level architecture validation, or help refine your hardware roadmap to reduce time-to-market. We can sign an NDA if required.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "High Speed Digital Design Services | Qmax",
@@ -333,57 +363,11 @@ export default function HighSpeedDigitalDesignPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
-          Frequently Asked Questions: High-Performance Digital Systems
-        </h2>
-
-        <div className="mt-8 space-y-4">
-          {[
-            {
-              q: "What high-speed design standards does Qmax Systems support?",
-              a: "We specialize in the latest high-speed communication standards, including PCIe Gen 5/6, DDR5, and 112G SerDes. Our engineering team utilizes advanced simulation tools to ensure signal integrity (SI) and power integrity (PI) for data rates exceeding 100Gbps.",
-            },
-            {
-              q: "Can you design custom hardware for AI and Deep Learning?",
-              a: "Yes. We develop High-Density AI GPU Compute Servers tailored for massive parallel processing. Our designs focus on robust power delivery networks (PDN) and advanced thermal management strategies required to sustain the performance of high-TDP NVIDIA and AMD GPU clusters.",
-            },
-            {
-              q: "Do you provide O-RAN and 5G infrastructure hardware?",
-              a: "Absolutely. Qmax Systems is active in the O-RAN ecosystem, designing Distributed Units (DU) and specialized Network Interface Cards (NIC). We help telecom providers and private network operators deploy scalable, open-architecture hardware for 5G rollouts.",
-            },
-            {
-              q: "What processor architectures do you work with for Server Motherboards?",
-              a: "Our expertise spans the leading x86 and ARM-based enterprise architectures, including Intel Xeon, AMD EPYC, and Ampere Altra CPUs. We design custom server motherboards and Single Board Computers (SBCs) that meet specific form factor and environmental requirements.",
-            },
-            {
-              q: "Do you handle complex, high-layer count PCB designs?",
-              a: "Yes. Our team is experienced in high-density interconnect (HDI) technology, regularly managing 20+ layer PCB stacks with blind and buried micro-vias. We ensure all designs are optimized for DFM (Design for Manufacturing) and DFT (Design for Test) to streamline the transition to mass production.",
-            },
-            {
-              q: "What is included in the 1-hour complimentary consulting session?",
-              a: "During this session, you will speak directly with a Senior Hardware Architect. We can review your block diagrams, discuss thermal or signal integrity challenges, provide high-level architecture validation, or help refine your hardware roadmap to reduce time-to-market. We can sign an NDA if required.",
-            },
-          ].map((faq, index) => (
-            <details
-              key={faq.q}
-              className="group rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
-            >
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
-                <h3 className="text-base font-semibold text-slate-900 md:text-lg">
-                  {index + 1}. {faq.q}
-                </h3>
-                <span className="text-xl leading-none text-slate-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-4 border-t border-slate-200 pt-4 text-sm leading-7 text-slate-700 md:text-base">
-                {faq.a}
-              </p>
-            </details>
-          ))}
-        </div>
-      </section>
+      <FAQSection faqs={faqs} />
+      <ServiceCaseStudiesSection
+        eyebrow="Hardware Programs"
+        studies={hardwareCaseStudies}
+      />
     </main>
   );
 }

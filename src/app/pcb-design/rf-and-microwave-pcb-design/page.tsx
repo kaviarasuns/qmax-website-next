@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { pcbCaseStudies } from "@/data/service-case-studies";
 
 const rfFaqs = [
   {
@@ -817,32 +820,7 @@ export default function RFMicrowavePCBDesignPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-left text-3xl font-semibold text-zinc-900">
-          Frequently Asked Questions (RF PCB Design)
-        </h2>
-        <div className="mt-8 space-y-3">
-          {rfFaqs.map((item) => (
-            <details
-              key={item.question}
-              className="group rounded-xl border border-zinc-200 bg-white px-5 py-4 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 pr-1 text-sm font-semibold leading-6 text-zinc-900 md:text-base">
-                <span>{item.question}</span>
-                <span
-                  aria-hidden="true"
-                  className="text-xs font-medium text-zinc-400 transition-transform duration-200 group-open:rotate-180"
-                >
-                  ▾
-                </span>
-              </summary>
-              <p className="mt-3 text-sm leading-7 text-zinc-700 md:text-base">
-                {item.answer}
-              </p>
-            </details>
-          ))}
-        </div>
-      </section>
+      <FAQSection faqs={rfFaqs.map((item) => ({ q: item.question, a: item.answer }))} />
 
       <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
         <div className="grid gap-6 md:grid-cols-2">
@@ -903,6 +881,13 @@ export default function RFMicrowavePCBDesignPage() {
           </article>
         </div>
       </section>
+      <ServiceCaseStudiesSection
+        eyebrow="PCB Programs"
+        studies={pcbCaseStudies}
+      />
     </main>
   );
 }
+
+
+

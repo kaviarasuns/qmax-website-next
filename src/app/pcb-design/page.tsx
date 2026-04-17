@@ -16,7 +16,10 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { CaseStudiesSection } from "./case-studies-section";
-import { FAQSection } from "@/components/faq-section";
+import FAQSection from "@/components/FAQSection";
+import { pcbDesignFAQs } from "@/data/service-faqs";
+import { OtherCapabilitiesSection } from "@/components/other-capabilities-section";
+import { CTASection } from "@/components/cta-section";
 
 export default function PCBDesignPage() {
   // const containerVariants = {
@@ -249,7 +252,7 @@ export default function PCBDesignPage() {
       </section>
 
       {/* Why Choose Qmax Section */}
-      <section style={{ background: '#faf8f5' }}>
+      <section>
         <div className="mx-auto max-w-7xl px-6">
           {/* Section Header */}
           <div className="py-16 flex flex-col gap-3 max-w-2xl">
@@ -263,10 +266,10 @@ export default function PCBDesignPage() {
           </div>
 
           {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 pb-20 relative z-10" style={{ backgroundColor: '#faf8f5' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 pb-20 relative z-10">
             {/* Left Side - Video (Sticky) */}
             <div className="lg:col-span-1">
-              <div className="sticky top-24">
+              <div className="sticky top-24 flex items-center justify-center min-h-[calc(100vh-6rem)]">
                 {/* Video Container */}
                 <div className="relative w-full rounded-xl overflow-hidden shadow-lg" style={{ aspectRatio: '4/3', backgroundColor: '#1a1a1a' }}>
                   <video
@@ -278,15 +281,16 @@ export default function PCBDesignPage() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {/* Label Below */}
-                <p className="text-sm mt-4" style={{ color: '#666666' }}>
-                  See how our engineering process transforms concepts into production-ready designs
-                </p>
               </div>
             </div>
 
             {/* Right Side - Stacked Sticky Sections */}
-            <div className="lg:col-span-1 space-y-0">
+            <div className="lg:col-span-1 space-y-0 relative">
+              {/* Shield to clip content scrolling above sticky headers */}
+              <div
+                className="sticky bg-white pointer-events-none"
+                style={{ top: 0, height: '96px', zIndex: 10, marginBottom: '-96px' }}
+              />
               {[
                 {
                   number: "01",
@@ -333,15 +337,15 @@ export default function PCBDesignPage() {
                   title: "Multi-Domain Systems Experience",
                   description: "From IoT sensors to industrial controls to medical devices—we've designed across industries, bringing cross-domain insights to every project."
                 }
-              ].map((reason) => (
+              ].map((reason, index) => (
                 <div key={reason.number} className="relative">
                   {/* Sticky Header */}
                   <div
-                    className="sticky z-20 pt-6 pb-4 border-b overflow-hidden"
+                    className="sticky pt-6 pb-4 border-b overflow-hidden bg-white"
                     style={{
                       top: '96px',
-                      backgroundColor: '#faf8f5',
-                      borderColor: 'rgba(0, 0, 0, 0.1)'
+                      borderColor: 'rgba(0, 0, 0, 0.1)',
+                      zIndex: 20 + index
                     }}
                   >
                     <div className="flex items-center gap-3">
@@ -363,7 +367,7 @@ export default function PCBDesignPage() {
                   </div>
 
                   {/* Content */}
-                  <div className="pt-4 pb-16 px-0">
+                  <div className="pt-4 pb-2 px-0">
                     <div
                       className="bg-white rounded-xl p-5 shadow-sm"
                       style={{
@@ -386,21 +390,12 @@ export default function PCBDesignPage() {
       <CaseStudiesSection />
 
       {/* FAQ Section */}
-      <FAQSection />
+      <FAQSection faqs={pcbDesignFAQs} />
 
-      {/* Decorative Section */}
-      <section className="bg-gray-900 py-20 overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent animate-dash-sweep" />
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to start your next high-performance project?</h2>
-          <p className="text-gray-400 mb-10 max-w-2xl mx-auto text-justify">
-            Join world-class engineering teams who trust Qmax for their most complex PCB design challenges.
-          </p>
-          <button className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-transform hover:scale-105 active:scale-95 shadow-lg">
-            Consult Our Engineering Team
-          </button>
-        </div>
-      </section>
+      <OtherCapabilitiesSection/>
+
+      <CTASection/>
+
     </main>
   );
 }
