@@ -76,7 +76,7 @@ export default function InsideOut() {
               fontWeight: 700,
               marginBottom: "1rem",
               color: "#222",
-              fontFamily: "'Supermolot', sans-serif"
+              letterSpacing: "0.025em",
             }}
           >
             Why Qmax <span className="text-red-500">Systems</span>
