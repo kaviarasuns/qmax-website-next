@@ -11,9 +11,9 @@ const caseStudiesData: CaseStudy[] = [
     title: "Security System Controller",
     category: "Embedded System Design",
     images: [
-      "/case-studies/BLUECOLD/BLUECOLD-1.jpg",
-      "/case-studies/BLUECOLD/BLUECOLD-2.jpg",
-      "/case-studies/BLUECOLD/BLUECOLD-3.jpg",
+      "/case-studies/BLUECOLD/BLUECOLD-1-new.png",
+      "/case-studies/BLUECOLD/BLUECOLD-2-new.jpg",
+      "/case-studies/BLUECOLD/BLUECOLD-3-new.jpg",
     ],
     features: [
       "Hardware / Firmware design and Development",

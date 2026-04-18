@@ -8,7 +8,7 @@ const embeddedCaseStudies = [
   { 
     id: 1, 
     title: "Security System Controller", 
-    image: "/case-studies/BLUECOLD/BLUECOLD-1.jpg", 
+    image: "/case-studies/BLUECOLD/BLUECOLD-1-new.png", 
     link: "case-studies/Security-System-Controller.html", 
     category: "development", 
     summary: "A powerful Edge controller device used in high security applications with multi-protocol sensors and reader inputs. The system is powered through POE+ and has options for power backup using an external power supply or battery. It can work as a stand alone device or can be cascaded to control multiple access points.",
