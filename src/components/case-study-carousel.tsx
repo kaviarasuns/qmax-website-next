@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -11,7 +12,7 @@ interface CaseStudyCarouselProps {
   paddedImages?: number[];
 }
 
-export function CaseStudyCarousel({ images, title, paddedImages = [] }: CaseStudyCarouselProps) {
+export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
   const galleryImages = React.useMemo(() => images.filter(Boolean), [images]);
   const [current, setCurrent] = React.useState(0);
 
@@ -41,7 +42,7 @@ export function CaseStudyCarousel({ images, title, paddedImages = [] }: CaseStud
     <div className="rounded-2xl border border-zinc-200/70 bg-white p-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)] md:p-4">
       {/* Main image */}
       <div className="relative overflow-hidden rounded-xl border border-zinc-100 bg-zinc-50">
-        <img
+        <Image
           src={galleryImages[current]}
           alt={`${title} \u2014 image ${current + 1} of ${galleryImages.length}`}
           width={960}
@@ -97,12 +98,11 @@ export function CaseStudyCarousel({ images, title, paddedImages = [] }: CaseStud
                   : "border-zinc-200 hover:border-zinc-300"
               )}
             >
-              <img
+              <Image
                 src={image}
                 alt=""
                 width={72}
                 height={54}
-                loading="lazy"
                 className="aspect-[4/3] h-[50px] w-[72px] object-contain bg-zinc-50 p-1.5"
               />
             </button>
