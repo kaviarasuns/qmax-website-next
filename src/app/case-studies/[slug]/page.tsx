@@ -193,10 +193,10 @@ const caseStudiesData: CaseStudy[] = [
     title: "Automotive OBD Device with LoRa and BLE",
     category: "Automotive Electronics",
     images: [
-      "/ott/image1.JPG",
-      "/ott/image2.JPG",
-        "/ott/image6.JPG",
-        "/ott/image7.JPG",
+      "/case-studies/OTT/1.png",
+      "/case-studies/OTT/2.png",
+        "/case-studies/OTT/3.png",
+        "/case-studies/OTT/4.png",
         "/ott/TEK_OTT_REV1P0_BOT.svg",
         "/ott/TEK_OTT_REV1P0_BRD_PR3.svg"
     ],
