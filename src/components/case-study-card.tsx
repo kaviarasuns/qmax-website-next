@@ -1,4 +1,3 @@
-import { Breadcrumbs } from "./breadcrumbs";
 import { CaseStudy } from "../../types/case-study";
 import { CaseStudyCarousel } from "./case-study-carousel";
 
@@ -89,40 +88,22 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
       <div className="relative mx-auto max-w-7xl space-y-8 px-6 lg:px-8">
 
         {/* ── Header ── */}
-        <header className="rounded-2xl border border-zinc-200/70 bg-white/85 p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] backdrop-blur-sm md:p-8">
-          <div className="mb-6">
-            <Breadcrumbs
-              items={[
-                { label: "Case Studies", href: "/case-studies" },
-                { label: caseStudy.title },
-              ]}
-            />
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.3em] text-brand-red">
-              {caseStudy.category}
-            </span>
-            <h1
-              className="text-3xl font-bold leading-tight tracking-tight text-zinc-950 md:text-4xl lg:text-[2.75rem]"
-              style={{ textWrap: "balance" }}
-            >
-              {caseStudy.title}
-            </h1>
-          </div>
-
-          {/* Red accent line */}
-          <div
-            className="mt-6 h-[2px] w-16 bg-brand-red rounded-full"
-            aria-hidden="true"
-          />
+        <header className="pt-4">
+          <h1
+            className="text-2xl font-bold leading-tight tracking-tight text-zinc-950 md:text-3xl"
+            style={{ textWrap: "balance" }}
+          >
+            {caseStudy.title}
+          </h1>
         </header>
 
         {/* ── Gallery + Highlights ── */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.25fr_0.75fr]">
-          <CaseStudyCarousel images={caseStudy.images} title={caseStudy.title} paddedImages={caseStudy.paddedImages} />
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
+          <div className="lg:w-[65%] shrink-0">
+            <CaseStudyCarousel images={caseStudy.images} title={caseStudy.title} paddedImages={caseStudy.paddedImages} />
+          </div>
 
-          <div className="rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] h-fit lg:sticky lg:top-24">
+          <div className="flex-1 rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] lg:sticky lg:top-24">
             <SectionLabel index="01" label="Highlights" />
             <ul className="space-y-3.5">
               {caseStudy.features.map((feature, index) => (

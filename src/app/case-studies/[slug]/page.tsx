@@ -1269,15 +1269,15 @@ export default async function CaseStudyPage({
         <Link
           href={`/case-studies/${prevStudy.id}`}
           aria-label={`Previous: ${prevStudy.title}`}
-          className="fixed left-3 top-1/2 -translate-y-1/2 z-50 group flex items-center gap-3"
+          className="fixed left-3 top-1/2 -translate-y-1/2 z-50 flex items-center gap-3"
         >
           {/* Circle button */}
-          <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-zinc-200/80 bg-white/90 shadow-md backdrop-blur-sm transition-all duration-200 group-hover:scale-105 group-hover:border-[#E31E24] group-hover:bg-[#E31E24] group-hover:shadow-lg">
+          <div className="group peer flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-zinc-200/80 bg-white/90 shadow-md backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:border-[#E31E24] hover:bg-[#E31E24] hover:shadow-lg">
             <ChevronLeft className="h-5 w-5 text-zinc-500 transition-colors duration-200 group-hover:text-white" />
           </div>
 
           {/* Hover tooltip — hidden on mobile */}
-          <div className="pointer-events-none hidden opacity-0 transition-opacity duration-200 group-hover:opacity-100 md:block">
+          <div className="pointer-events-none hidden opacity-0 transition-opacity duration-200 peer-hover:opacity-100 md:block">
             <div className="rounded-xl border border-zinc-200 bg-white/95 px-3 py-2 shadow-md backdrop-blur-sm">
               <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#E31E24]">
                 Previous
@@ -1295,15 +1295,15 @@ export default async function CaseStudyPage({
         <Link
           href={`/case-studies/${nextStudy.id}`}
           aria-label={`Next: ${nextStudy.title}`}
-          className="fixed right-3 top-1/2 -translate-y-1/2 z-50 group flex flex-row-reverse items-center gap-3"
+          className="fixed right-3 top-1/2 -translate-y-1/2 z-50 flex flex-row-reverse items-center gap-3"
         >
           {/* Circle button */}
-          <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-zinc-200/80 bg-white/90 shadow-md backdrop-blur-sm transition-all duration-200 group-hover:scale-105 group-hover:border-[#E31E24] group-hover:bg-[#E31E24] group-hover:shadow-lg">
+          <div className="group peer flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-zinc-200/80 bg-white/90 shadow-md backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:border-[#E31E24] hover:bg-[#E31E24] hover:shadow-lg">
             <ChevronRight className="h-5 w-5 text-zinc-500 transition-colors duration-200 group-hover:text-white" />
           </div>
 
           {/* Hover tooltip — hidden on mobile */}
-          <div className="pointer-events-none hidden opacity-0 transition-opacity duration-200 group-hover:opacity-100 md:block">
+          <div className="pointer-events-none hidden opacity-0 transition-opacity duration-200 peer-hover:opacity-100 md:block">
             <div className="rounded-xl border border-zinc-200 bg-white/95 px-3 py-2 shadow-md backdrop-blur-sm text-right">
               <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#E31E24]">
                 Next

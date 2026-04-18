@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,22 +13,23 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { menuData } from "@/lib/menu-data";
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isSubItemActive = (subItems: { href: string }[]) =>
+    subItems.some((s) => pathname.startsWith(s.href));
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-white/95 via-white/55 to-white/0 backdrop-blur-[2px] transition-all duration-300"
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-white/20 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className=" flex items-center justify-center">
+            <div className="flex items-center justify-center">
               <Image
                 src="https://d1yetprhniwywz.cloudfront.net/QMAXSYSTEMS-new-logo.svg"
                 // src="./qmax-logo.svg"
@@ -47,7 +49,11 @@ export function Navigation() {
                 <NavigationMenuItem>
                   <Link href="/" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} font-medium text-lg transition-colors`}
+                      className={`inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-[17px] font-normal tracking-[0.08em] transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-ring/50
+                        ${pathname === "/"
+                          ? "text-brand-red"
+                          : "text-foreground/70 hover:text-brand-red hover:bg-accent"
+                        }`}
                     >
                       Home
                     </NavigationMenuLink>
@@ -61,7 +67,13 @@ export function Navigation() {
                   >
                     {item.subItems ? (
                       <>
-                        <NavigationMenuTrigger className="bg-transparent font-medium text-lg transition-colors">
+                        <NavigationMenuTrigger
+                          className={`bg-transparent text-[17px] font-normal tracking-[0.08em] transition-all duration-200
+                            ${isSubItemActive(item.subItems)
+                              ? "text-brand-red"
+                              : "text-foreground/70 hover:text-brand-red"
+                            }`}
+                        >
                           {item.title}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
@@ -76,19 +88,17 @@ export function Navigation() {
                                     >
                                       <div className="relative w-full h-24 mb-2 rounded-md overflow-hidden bg-muted">
                                         <Image
-                                          src={
-                                            subItem.image || "/placeholder.svg"
-                                          }
+                                          src={subItem.image || "/placeholder.svg"}
                                           alt={subItem.title}
                                           fill
                                           className="object-cover transition-transform group-hover:scale-105"
                                         />
                                       </div>
-                                      <div className="text-sm font-medium leading-none">
+                                      <div className="text-sm font-normal tracking-[0.04em] leading-snug text-foreground">
                                         {subItem.title}
                                       </div>
                                       {subItem.description && (
-                                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                        <p className="line-clamp-2 text-xs font-light leading-snug text-muted-foreground tracking-[0.03em]">
                                           {subItem.description}
                                         </p>
                                       )}
@@ -100,7 +110,7 @@ export function Navigation() {
                                         <Link
                                           key={childItem.title}
                                           href={childItem.href}
-                                          className="block rounded px-2 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-background hover:text-foreground"
+                                          className="block rounded px-2 py-1 text-xs font-normal tracking-[0.04em] text-muted-foreground transition-all duration-200 hover:bg-background hover:text-brand-red"
                                         >
                                           {childItem.title}
                                         </Link>
@@ -116,7 +126,11 @@ export function Navigation() {
                     ) : (
                       <Link href={item.href || "#"} legacyBehavior passHref>
                         <NavigationMenuLink
-                          className={`${navigationMenuTriggerStyle()} font-medium text-lg transition-colors`}
+                          className={`inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-[17px] font-normal tracking-[0.08em] transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-ring/50
+                            ${pathname === item.href
+                              ? "text-brand-red"
+                              : "text-foreground/70 hover:text-brand-red hover:bg-accent"
+                            }`}
                         >
                           {item.title}
                         </NavigationMenuLink>
@@ -154,7 +168,11 @@ export function Navigation() {
           <div className="px-4 py-4 space-y-1 max-h-[calc(100vh-4rem)] overflow-y-auto">
             <Link
               href="/"
-              className="block py-2 px-3 text-xl font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+              className={`block py-2 px-3 text-base font-normal tracking-[0.06em] rounded-md transition-all duration-200
+                ${pathname === "/"
+                  ? "text-brand-red bg-accent"
+                  : "text-muted-foreground hover:text-brand-red hover:bg-accent"
+                }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
@@ -164,7 +182,7 @@ export function Navigation() {
               <div key={item.title}>
                 {item.subItems ? (
                   <div className="space-y-1">
-                    <div className="py-2 px-3 text-xl font-medium text-foreground">
+                    <div className="py-2 px-3 text-xs font-medium tracking-[0.12em] uppercase text-foreground">
                       {item.title}
                     </div>
                     <div className="pl-4 space-y-1">
@@ -172,7 +190,11 @@ export function Navigation() {
                         <div key={subItem.title}>
                           <Link
                             href={subItem.href}
-                            className="flex items-center gap-3 py-2 px-3 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                            className={`flex items-center gap-3 py-2 px-3 rounded-md transition-all duration-200
+                              ${pathname === subItem.href
+                                ? "text-brand-red bg-accent"
+                                : "text-muted-foreground hover:text-brand-red hover:bg-accent"
+                              }`}
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             <div className="relative w-12 h-12 rounded overflow-hidden bg-muted flex-shrink-0">
@@ -184,11 +206,11 @@ export function Navigation() {
                               />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <div className="font-medium text-foreground">
+                              <div className="text-sm font-normal tracking-[0.04em] text-foreground">
                                 {subItem.title}
                               </div>
                               {subItem.description && (
-                                <p className="text-xs text-muted-foreground line-clamp-1">
+                                <p className="text-xs font-light tracking-[0.03em] text-muted-foreground line-clamp-1">
                                   {subItem.description}
                                 </p>
                               )}
@@ -200,7 +222,7 @@ export function Navigation() {
                                 <Link
                                   key={childItem.title}
                                   href={childItem.href}
-                                  className="block rounded-md py-1 px-2 text-xs text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                                  className="block rounded-md py-1 px-2 text-xs font-normal tracking-[0.04em] text-muted-foreground transition-all duration-200 hover:text-brand-red hover:bg-accent"
                                   onClick={() => setMobileMenuOpen(false)}
                                 >
                                   {childItem.title}
@@ -215,7 +237,11 @@ export function Navigation() {
                 ) : (
                   <Link
                     href={item.href || "#"}
-                    className="block py-2 px-3 text-xl font-medium text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                    className={`block py-2 px-3 text-base font-normal tracking-[0.06em] rounded-md transition-all duration-200
+                      ${pathname === item.href
+                        ? "text-brand-red bg-accent"
+                        : "text-muted-foreground hover:text-brand-red hover:bg-accent"
+                      }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.title}
@@ -238,4 +264,3 @@ export function Navigation() {
     </nav>
   );
 }
-

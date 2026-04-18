@@ -272,12 +272,11 @@ const sections = [
   { id: "industrial", label: "Industrial Design" },
 ];
 
-// Sub-labels for each category with precise specs
-const categorySubLabels: { [key: string]: string } = {
-  'Embedded Systems': 'FPGA • ARM • IoT',
-  'PCB Design': 'High-Speed • Multi-layer • SI',
-  'Mechanical Design': 'Enclosures • Thermal • CAD',
-  'Industrial Design': 'DFMA • UX • Prototyping',
+const sectionCounts: { [key: string]: number } = {
+  embedded: embeddedCaseStudies.length,
+  pcb: pcbCaseStudies.length,
+  mechanical: mechanicalCaseStudies.length,
+  industrial: industrialCaseStudies.length,
 };
 
 export default function CaseStudiesPage() {
@@ -324,37 +323,51 @@ export default function CaseStudiesPage() {
 
       <div className="relative flex w-full max-w-[1600px] mx-auto">
         {/* Quick Navigation Sidebar */}
-        <aside className="hidden xl:block w-80 shrink-0 pl-10 pt-8 sticky top-24 h-screen self-start">
-          <nav className="flex flex-col space-y-10">
-            {sections.map((section) => (
-              <button
-                key={section.id}
-                onClick={() => scrollToSection(section.id)}
-                className="w-full group text-left transition-all duration-300 p-0 rounded-lg hover:bg-gray-100/40"
-              >
-                {/* Main Title */}
-                <p
-                  className={`text-2xl font-bold transition-colors duration-300 leading-tight mb-3 ${
-                    activeSection === section.id
-                      ? "text-[#E31E24]"
-                      : "text-gray-700 group-hover:text-[#E31E24]"
-                  }`}
-                >
-                  {section.label}
-                </p>
+        <aside className="hidden xl:block w-72 shrink-0 pl-10 pt-8 sticky top-24 h-screen self-start">
+          <nav className="relative flex flex-col">
+            {/* Vertical track line */}
+            <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gray-200 rounded-full" />
 
-                {/* Sub-label */}
-                <p
-                  className={`text-sm transition-colors duration-300 font-medium tracking-wide ${
-                    activeSection === section.id
-                      ? "text-gray-600"
-                      : "text-gray-400 group-hover:text-gray-500"
-                  }`}
+            {sections.map((section) => {
+              const isActive = activeSection === section.id;
+              return (
+                <button
+                  key={section.id}
+                  onClick={() => scrollToSection(section.id)}
+                  className="group relative text-left pl-6 py-4 transition-all duration-300"
                 >
-                  {categorySubLabels[section.label] || ''}
-                </p>
-              </button>
-            ))}
+                  {/* Active indicator line */}
+                  <div
+                    className={`absolute left-0 top-3 bottom-3 w-[2px] rounded-full transition-all duration-300 ${
+                      isActive
+                        ? "bg-[#E31E24] scale-y-100"
+                        : "bg-transparent scale-y-0 group-hover:bg-gray-400 group-hover:scale-y-100"
+                    }`}
+                  />
+
+                  <div className="flex items-center justify-between">
+                    <span
+                      className={`text-lg font-semibold transition-colors duration-300 leading-tight ${
+                        isActive
+                          ? "text-[#E31E24]"
+                          : "text-gray-600 group-hover:text-gray-900"
+                      }`}
+                    >
+                      {section.label}
+                    </span>
+                    <span
+                      className={`text-xs font-medium tabular-nums ml-3 px-2 py-0.5 rounded-full transition-all duration-300 ${
+                        isActive
+                          ? "bg-[#E31E24]/10 text-[#E31E24]"
+                          : "bg-gray-100 text-gray-400 group-hover:bg-gray-200 group-hover:text-gray-600"
+                      }`}
+                    >
+                      {sectionCounts[section.id]}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </nav>
         </aside>
 
