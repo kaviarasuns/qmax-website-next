@@ -33,7 +33,7 @@ function DetailSection({
   if (!items.length) return null;
 
   return (
-    <div className="rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] break-inside-avoid">
+    <div className="rounded-2xl border border-zinc-200/70 bg-zinc-50 p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] break-inside-avoid">
       <SectionLabel index={index} label={title} />
 
       {variant === "chips" ? (
@@ -103,7 +103,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
             <CaseStudyCarousel images={caseStudy.images} title={caseStudy.title} paddedImages={caseStudy.paddedImages} />
           </div>
 
-          <div className="flex-1 rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] lg:sticky lg:top-24">
+          <div className="flex-1 rounded-2xl border border-zinc-200/70 bg-zinc-50 p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] lg:sticky lg:top-24">
             <SectionLabel index="01" label="Highlights" />
             <ul className="space-y-3.5">
               {caseStudy.features.map((feature, index) => (
@@ -124,7 +124,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
 
         {/* ── Summary ── */}
         {hasSummary && (
-          <div className="rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] md:p-8">
+          <div className="rounded-2xl border border-zinc-200/70 bg-zinc-50 p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] md:p-8">
             <SectionLabel index="02" label="Project Overview" />
             <div className="relative pl-5 border-l-2 border-brand-red/20">
               <p className="text-[15.5px] leading-[1.75] text-zinc-600">
@@ -149,7 +149,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
             variant="list"
           />
           {caseStudy.scopeOfWork.length > 0 && (
-            <div className="rounded-2xl border border-zinc-200/70 bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] break-inside-avoid">
+            <div className="rounded-2xl border border-zinc-200/70 bg-zinc-50 p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] break-inside-avoid">
               <SectionLabel index="05" label="Scope of Work" />
               <div className="flex flex-col gap-2.5">
                 {caseStudy.scopeOfWork.map((item, i) => (

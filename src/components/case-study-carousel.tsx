@@ -40,19 +40,13 @@ export function CaseStudyCarousel({ images, title, paddedImages = [] }: CaseStud
   return (
     <div className="rounded-2xl border border-zinc-200/70 bg-white p-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)] md:p-4">
       {/* Main image */}
-      <div className={cn(
-        "relative overflow-hidden rounded-xl border border-zinc-100",
-        paddedImages.includes(current) ? "bg-white" : "bg-zinc-50"
-      )}>
+      <div className="relative overflow-hidden rounded-xl border border-zinc-100 bg-zinc-50">
         <img
           src={galleryImages[current]}
           alt={`${title} \u2014 image ${current + 1} of ${galleryImages.length}`}
           width={960}
           height={600}
-          className={cn(
-            "h-full w-full aspect-[4/3] md:aspect-[16/10] transition-opacity duration-300 motion-reduce:transition-none",
-            paddedImages.includes(current) ? "object-contain p-6" : "object-cover"
-          )}
+          className="h-full w-full aspect-[4/3] md:aspect-[16/10] object-contain p-10 transition-opacity duration-300 motion-reduce:transition-none"
         />
 
         {galleryImages.length > 1 && (
@@ -109,10 +103,7 @@ export function CaseStudyCarousel({ images, title, paddedImages = [] }: CaseStud
                 width={72}
                 height={54}
                 loading="lazy"
-                className={cn(
-                  "aspect-[4/3] h-[50px] w-[72px]",
-                  paddedImages.includes(index) ? "object-contain bg-white p-1" : "object-cover"
-                )}
+                className="aspect-[4/3] h-[50px] w-[72px] object-contain bg-zinc-50 p-1.5"
               />
             </button>
           ))}
