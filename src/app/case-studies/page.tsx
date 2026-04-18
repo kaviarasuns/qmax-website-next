@@ -250,7 +250,7 @@ const pcbCaseStudies = [
   // { id: 16, title: "Wi-Fi AP", image: "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Wi-Fi-AP.png", link: "case-studies/Wi-Fi-AP.html", category: "development" }
 ];
 
-const mechanicalCaseStudies = [
+const mechanicalCaseStudies: { id: number; title: string; image: string; link: string; category: string }[] = [
   // { id: 1, title: "Manpack Communication Equipment", image: "https://images.pexels.com/photos/1592261/pexels-photo-1592261.jpeg?auto=compress&cs=tinysrgb&w=800", link: "/mechanical-industrial-design-services/mechanical-design", category: "mechanical" },
   // { id: 2, title: "Satellite Antenna Stabilizer Housing", image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800", link: "/mechanical-industrial-design-services/mechanical-design", category: "mechanical" },
   // { id: 3, title: "Medical Foot Switch Mechanism", image: "https://images.pexels.com/photos/5726833/pexels-photo-5726833.jpeg?auto=compress&cs=tinysrgb&w=800", link: "/mechanical-industrial-design-services/mechanical-design", category: "mechanical" },
