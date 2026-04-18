@@ -279,35 +279,39 @@ const sectionCounts: { [key: string]: number } = {
   industrial: industrialCaseStudies.length,
 };
 
+const SCROLL_OFFSET = 120;
+
 export default function CaseStudiesPage() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      let current = sections[0].id;
+
+      for (const section of sections) {
+        const el = document.getElementById(section.id);
+        if (el) {
+          const sectionTop = el.getBoundingClientRect().top + scrollY - SCROLL_OFFSET;
+          if (scrollY >= sectionTop - 5) {
+            current = section.id;
           }
-        });
-      },
-      { threshold: 0.2, rootMargin: "-10% 0px -70% 0px" }
-    );
+        }
+      }
 
-    sections.forEach((section) => {
-      const el = document.getElementById(section.id);
-      if (el) observer.observe(el);
-    });
+      setActiveSection(current);
+    };
 
-    return () => observer.disconnect();
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 100; // Account for fixed header
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      const offsetPosition = elementPosition + window.pageYOffset - SCROLL_OFFSET;
 
       window.scrollTo({
         top: offsetPosition,
@@ -318,7 +322,6 @@ export default function CaseStudiesPage() {
 
   return (
     <section className="relative pt-24 pb-24 bg-[#f8f8f6]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_12%,rgba(243,49,23,0.08),transparent_42%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0),rgba(255,255,255,0.82))]" />
 
       <div className="relative flex w-full max-w-[1600px] mx-auto">
