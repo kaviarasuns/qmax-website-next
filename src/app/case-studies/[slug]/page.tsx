@@ -355,10 +355,7 @@ const caseStudiesData: CaseStudy[] = [
     id: "Industrial-Controller",
     title: "Industrial Controller",
     category: "Robotics",
-    images: [
-      "https://d1yetprhniwywz.cloudfront.net/case-studies-images/Industrial-Controller/Industrial-Control-a.png",
-      "https://d1yetprhniwywz.cloudfront.net/case-studies-images/Industrial-Controller/Industrial-Control-b.jpg",
-    ],
+    images: ["/ott/CHARA-top.svg"],
     features: [
       "Robotics Controller Board",
       "6 Layer PCB",
@@ -375,10 +372,7 @@ const caseStudiesData: CaseStudy[] = [
     id: "Aerospace-PCB",
     title: "Aerospace PCB",
     category: "Robotics",
-    images: [
-      "https://d1yetprhniwywz.cloudfront.net/case-studies-images/Aerospace-PCB/Aerospace-a.png",
-      "https://d1yetprhniwywz.cloudfront.net/case-studies-images/Aerospace-PCB/Aerospace-b.jpg",
-    ],
+    images: ["/ott/TEK_OTT_REV1P0_BOT.svg"],
     features: [
       "Aerospace Board",
       "Interfaces: LVDS, SPI, I2C",
@@ -396,10 +390,7 @@ const caseStudiesData: CaseStudy[] = [
     id: "Automotive-OBD",
     title: "Automotive OBD PCB",
     category: "Automotive Electronics",
-    images: [
-      "https://d1yetprhniwywz.cloudfront.net/case-studies-images/Automotive-OBD/Automotive-OBD.png",
-      "https://d1yetprhniwywz.cloudfront.net/case-studies-images/Automotive-OBD/Automotive-OBD-A.jpg",
-    ],
+    images: ["/ott/TEK_OTT_REV1P0_BRD_PR3.svg"],
     features: [
       "Automotive OBD PCB",
       "Interfaces: UART, I2C, SPI",
