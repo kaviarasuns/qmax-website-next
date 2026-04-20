@@ -1,7 +1,10 @@
 import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { mechanicalDesignOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { mechanicalCaseStudies } from "@/data/service-case-studies";
+
 
 export default function MechanicalDesignServicesPageV1() {
     return (
@@ -705,6 +708,7 @@ export default function MechanicalDesignServicesPageV1() {
                             { q: "Can Qmax help reduce the manufacturing cost of an existing design?", a: "Yes. Design-for-cost review is a standard Qmax service. Common cost reduction opportunities include: over-toleranced drawings that force expensive machining, unnecessarily tight surface finish specifications, complex geometries that increase tooling cost, non-standard fasteners, and material overspecification. A structured DFM/DFC review typically identifies 10-25% BOM cost reduction in designs not originally optimised for production." },
                             { q: "Does Qmax handle mechanical compliance for medical electronics products?", a: "Yes. We have designed Class I and Class II medical device enclosures with documentation supporting CE marking and IEC 60601 mechanical requirements, including creepage and clearance compliance, UL94 flammability-rated materials, biocompatible materials where required, and IP ratings for clinical environments." },
                             { q: "What is the typical timeline from mechanical concept to qualified prototype?", a: "A standard plastic enclosure for a handheld device — concept through injection-moulded prototype and IP test — typically runs 8-12 weeks. A MIL-STD-810-qualified rugged metal enclosure, including FEA, machined prototype, and formal test campaign, typically runs 14-20 weeks. Detailed schedules are agreed at project kick-off and include gate reviews at concept freeze, detailed design release, and prototype receipt." }]} />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
 
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 text-center">
                 <div className="max-w-3xl mx-auto space-y-8">

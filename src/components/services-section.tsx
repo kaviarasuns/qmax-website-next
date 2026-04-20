@@ -1,11 +1,10 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import * as React from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import CaseStudyCard from "./CaseStudyCard"
-
+import { Button } from "@/components/ui/button";
+import CaseStudyCard from "./CaseStudyCard";
 
 const carouselItems = [
   {
@@ -13,7 +12,8 @@ const carouselItems = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/images/case-study/Security_System_Controller.jpg",
     title: "Security System Controller",
-    summary: "Embedded controller program designed for dependable monitoring, control logic, and secure field operation.",
+    summary:
+      "Embedded controller program designed for dependable monitoring, control logic, and secure field operation.",
     link: "/case-studies/Security-System-Controller",
   },
   {
@@ -21,21 +21,24 @@ const carouselItems = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Industrial-Control-2.png",
     title: "Industrial Controller",
-    summary: "Industrial electronics platform engineered for rugged deployment, stable power delivery, and manufacturable hardware.",
+    summary:
+      "Industrial electronics platform engineered for rugged deployment, stable power delivery, and manufacturable hardware.",
     link: "/case-studies/Industrial-Controller",
   },
   {
     id: 3,
     image: "/services/embedded-systems.png",
     title: "Embedded Systems",
-    summary: "End-to-end embedded design and development for connected products, controls, and intelligent devices.",
+    summary:
+      "End-to-end embedded design and development for connected products, controls, and intelligent devices.",
     link: "/embedded-design-services",
   },
   {
     id: 4,
     image: "/services/pcb-design.png",
     title: "PCB Design",
-    summary: "Multi-physics PCB design services focused on signal integrity, manufacturability, and first-pass success.",
+    summary:
+      "Multi-physics PCB design services focused on signal integrity, manufacturability, and first-pass success.",
     link: "/pcb-design",
   },
   // {
@@ -45,45 +48,48 @@ const carouselItems = [
   //   description: "Industrial Design & Mechanical Engineering",
   //   url: "/case-studies/BLE-tag-with-Wireless-Charging",
   // },
-]
+];
 
 export function ServicesSection() {
-  const scrollRef = React.useRef<HTMLDivElement>(null)
-  const [canScrollLeft, setCanScrollLeft] = React.useState(false)
-  const [canScrollRight, setCanScrollRight] = React.useState(true)
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
+  const [canScrollRight, setCanScrollRight] = React.useState(true);
 
   const checkScroll = React.useCallback(() => {
     if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current
-      setCanScrollLeft(scrollLeft > 0)
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10)
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
     }
-  }, [])
+  }, []);
 
   React.useEffect(() => {
-    checkScroll()
-    window.addEventListener("resize", checkScroll)
-    return () => window.removeEventListener("resize", checkScroll)
-  }, [checkScroll])
+    checkScroll();
+    window.addEventListener("resize", checkScroll);
+    return () => window.removeEventListener("resize", checkScroll);
+  }, [checkScroll]);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const scrollAmount = scrollRef.current.clientWidth * 0.8
+      const scrollAmount = scrollRef.current.clientWidth * 0.8;
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
-      })
+      });
     }
-  }
+  };
 
   return (
     <section className="bg-background min-h-screen flex flex-col justify-center py-16 lg:py-24">
-      <div className="w-full px-8 md:px-12">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="mb-10 flex flex-col items-end justify-between gap-6 md:flex-row md:items-start">
           <div className="max-w-2xl">
-            <h2 className="mb-3 text-3xl font-bold tracking-wide text-foreground md:text-4xl lg:text-5xl">Case <span className="text-red-500">Studies</span></h2>
+            <h1 className="mb-3 text-3xl font-bold tracking-wide text-foreground md:text-4xl lg:text-5xl">
+              Case <span className="text-red-500">Studies</span>
+            </h1>
             <p className="text-base text-muted-foreground md:text-lg">
-              Explore our comprehensive solutions and successful project implementations.
+              Explore our comprehensive solutions and successful project
+              implementations.
             </p>
           </div>
           <div className="flex gap-2">
@@ -109,14 +115,16 @@ export function ServicesSection() {
             </Button>
           </div>
         </div>
-
         <div
           ref={scrollRef}
           onScroll={checkScroll}
-          className="scrollbar-hide flex snap-x snap-mandatory gap-4 overflow-x-auto pb-8 md:gap-5"
+          className="scrollbar-hide flex snap-x snap-mandatory gap-4 overflow-x-auto pb-8 md:gap-5 lg:grid lg:grid-cols-4 lg:snap-none lg:overflow-visible"
         >
           {carouselItems.map((item) => (
-            <div key={item.id} className="w-64 shrink-0 snap-start sm:w-72 md:w-80">
+            <div
+              key={item.id}
+              className="w-64 shrink-0 snap-start sm:w-72 md:w-80 lg:w-auto lg:shrink"
+            >
               <CaseStudyCard
                 title={item.title}
                 image={item.image}
@@ -126,19 +134,7 @@ export function ServicesSection() {
             </div>
           ))}
         </div>
-
-        {/* <div className="mt-8 flex justify-center gap-2">
-          {[...Array(5)].map((_, i) => (
-            <div
-              key={i}
-              className={cn(
-                "h-2 w-2 rounded-full transition-all duration-300",
-                i === 0 ? "bg-foreground scale-110" : "bg-zinc-200",
-              )}
-            />
-          ))}
-        </div> */}
       </div>
     </section>
-  )
+  );
 }

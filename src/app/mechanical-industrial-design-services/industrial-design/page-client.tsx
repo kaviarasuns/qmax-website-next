@@ -4,10 +4,13 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import FAQSection from "@/components/FAQSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { industrialDesignOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { industrialDesignCaseStudies } from "@/data/service-case-studies";
 import { industrialDesignFAQs } from "@/data/service-faqs";
 
 const THEME_STORAGE_KEY = "industrial-design-page-theme";
+
 
 export default function IndustrialDesignServicesPageClient() {
   const [isDark, setIsDark] = useState(false);
@@ -218,6 +221,7 @@ export default function IndustrialDesignServicesPageClient() {
 
         {/* FAQ Section */}
         <FAQSection faqs={industrialDesignFAQs} />
+        <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       </main>
     </div>
   );

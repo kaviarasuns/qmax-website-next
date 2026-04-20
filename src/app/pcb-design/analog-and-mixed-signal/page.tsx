@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { pcbAnalogMixedSignalOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { pcbCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
@@ -56,6 +58,7 @@ const faqs = [
     a: "Yes. We are also a ISO13485 certified design house",
   },
 ];
+
 
 export default function AnalogAndMixedSignalPage() {
   return (
@@ -526,6 +529,7 @@ export default function AnalogAndMixedSignalPage() {
         </div>
       </section>
       <FAQSection faqs={faqs} />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}

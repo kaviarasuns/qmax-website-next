@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { mechanicalIndustrialDesignOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { mechanicalIndustrialCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
@@ -9,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "At Qmax Systems, our mechanical and industrial design services are specifically tailored for high-stakes electronics, integrating hardware, thermal physics, and manufacturing.",
 };
+
 
 export default function MechanicalIndustrialDesignPage() {
   return (
@@ -314,6 +317,7 @@ export default function MechanicalIndustrialDesignPage() {
                 q: "At what stage should I start mechanical design?",
                 a: "Ideally, at the block diagram stage. Early mechanical involvement ensures that the PCB shape and component placement are optimized for the final enclosure size and thermal requirements."
               }]} />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <article className="relative overflow-hidden rounded-[2rem] border border-zinc-200 bg-white shadow-[0_20px_80px_rgba(24,24,27,0.08)]">

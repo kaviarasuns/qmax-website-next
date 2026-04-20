@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { hwHighSpeedDigitalOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
 
 const faqs = [
@@ -37,6 +39,7 @@ export const metadata: Metadata = {
   description:
     "High-Performance Digital Systems Development. At Qmax Systems, we bridge the gap between complex conceptual requirements and market-ready hardware.",
 };
+
 
 export default function HighSpeedDigitalDesignPage() {
   return (
@@ -364,6 +367,7 @@ export default function HighSpeedDigitalDesignPage() {
       </section>
 
       <FAQSection faqs={faqs} />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}

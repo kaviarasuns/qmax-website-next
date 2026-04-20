@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { CheckCircle2, Shield, Battery, Server, Cpu, Radio, Fingerprint, Activity, Check, Code, Zap, Wifi } from "lucide-react";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { embeddedDesignOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { embeddedCaseStudies } from "@/data/service-case-studies";
+
 
 export default function EmbeddedDesignServicesPage() {
   return (
@@ -381,6 +384,7 @@ export default function EmbeddedDesignServicesPage() {
         </div>
       </section>
 
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       <ServiceCaseStudiesSection
         eyebrow="Embedded Programs"
         studies={embeddedCaseStudies}

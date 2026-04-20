@@ -473,9 +473,7 @@ const caseStudiesData: CaseStudy[] = [
     id: "handheld-industrial-controller",
     title: "Handheld Industrial Controller",
     category: "Industrial Design",
-    images: [
-      "/industrial_design_case_studies/product_1.png",
-    ],
+    images: ["/industrial_design_case_studies/product_1.png"],
     features: [
       "Handheld controller enclosure optimised for factory floor use",
       "Balanced grip ergonomics for long-duration operation",
@@ -514,9 +512,7 @@ const caseStudiesData: CaseStudy[] = [
     id: "medical-diagnostic-system",
     title: "Medical Diagnostic System",
     category: "Industrial Design",
-    images: [
-      "/industrial_design_case_studies/product_2.png",
-    ],
+    images: ["/industrial_design_case_studies/product_2.png"],
     features: [
       "IEC 60601-compliant enclosure design",
       "Antimicrobial surface finish for clinical environments",
@@ -556,9 +552,7 @@ const caseStudiesData: CaseStudy[] = [
     id: "wearable-health-monitor",
     title: "Wearable Health Monitor",
     category: "Industrial Design",
-    images: [
-      "/industrial_design_case_studies/product_3.png",
-    ],
+    images: ["/industrial_design_case_studies/product_3.png"],
     features: [
       "Continuous PPG and SpO₂ biometric sensing",
       "Low-profile wrist-worn enclosure under 11 mm thick",
@@ -598,9 +592,7 @@ const caseStudiesData: CaseStudy[] = [
     id: "portable-field-tester",
     title: "Portable Field Tester",
     category: "Industrial Design",
-    images: [
-      "/industrial_design_case_studies/product_4.png",
-    ],
+    images: ["/industrial_design_case_studies/product_4.png"],
     features: [
       "IP67 and MIL-STD-810G rated enclosure",
       "Transflective LCD for sunlight-readable operation",
@@ -637,12 +629,57 @@ const caseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    id: "fedarant",
+    title: "Fedarant – IoT Micro Gateway",
+    category: "IoT Devices",
+    images: [
+      "/case-studies/FEDERANT/1.png",
+      "/case-studies/FEDERANT/2.png",
+      "/case-studies/FEDERANT/3.png",
+      "/case-studies/FEDERANT/4.png",
+      "/case-studies/FEDERANT/5.png",
+    ],
+    features: [
+      "Qualcomm QCA4020 tri-radio SoC (Wi-Fi / BLE 5.0 / ZigBee)",
+      "Plug-and-play wall-outlet form factor",
+      "Inbuilt universal power supply (100–240 V AC)",
+      "Hardware / Firmware / RF development",
+      "Cloud-ready MQTT & REST API stack",
+      "Compact Design: 48 mm × 42 mm × 30 mm",
+    ],
+    summary:
+      "Fedarant is a compact, plug-and-play IoT Micro Gateway built around the Qualcomm QCA4020 tri-radio SoC. It bridges BLE and ZigBee end-devices to the Internet over dual-band Wi-Fi, eliminating the need for a separate hub. The sleek wall-outlet enclosure houses an inbuilt universal power supply so no external adapter is required. Fedarant can manage dozens of wireless endpoints simultaneously and exposes a cloud-ready MQTT / REST interface, making it a drop-in gateway for smart-home, retail, and light-industrial IoT deployments.",
+    importantParts: [
+      "Qualcomm QCA4020 – Wi-Fi 2.4 / 5 GHz, BLE 5.0, ZigBee 3.0",
+      "Skyworks Wi-Fi Front End Module",
+      "Skyworks RF Power Amplifier",
+      "Macronix 32 Mb NOR Flash Memory",
+      "CUI / Mornsun compact AC-DC power module",
+      "STMicro low-drop voltage regulators",
+    ],
+    salientFeatures: [
+      "Tri-radio operation: Wi-Fi, BLE 5.0, and ZigBee simultaneously.",
+      "No external power adapter — inbuilt universal AC-DC supply.",
+      "Plug-and-play wall-outlet form factor with zero exposed wiring.",
+      "Manages multiple BLE / ZigBee devices concurrently.",
+      "Secure TLS 1.3 cloud communication with WPA3 Wi-Fi.",
+      "OTA firmware update support for remote maintenance.",
+    ],
+    scopeOfWork: [
+      "System architecture and chipset selection",
+      "Schematic entry and PCB layout",
+      "PCB fabrication and assembly",
+      "RF calibration and antenna tuning",
+      "Firmware development and MQTT stack integration",
+      "Enclosure and industrial design",
+      "Board bring-up and end-to-end testing",
+    ],
+  },
+  {
     id: "smart-home-controller",
     title: "Smart Home Controller",
     category: "Industrial Design",
-    images: [
-      "/industrial_design_case_studies/product_5.png",
-    ],
+    images: ["/industrial_design_case_studies/product_5.png"],
     features: [
       "Wall-mount and in-panel installation in under 5 minutes",
       "Full-surface capacitive touch with haptic feedback",
@@ -676,6 +713,46 @@ const caseStudiesData: CaseStudy[] = [
       "LED diffuser optics study",
       "Pre-production prototype review",
       "Design-for-manufacture and tooling handoff",
+    ],
+  },
+  {
+    id: "fedarant",
+    title: "Fedarant",
+    category: "IoT Devices",
+    images: ["/case-studies/FEDERANT/1.png"],
+    features: [
+      "Qualcomm QCA4020 Chipset",
+      "Dual Band Wi-Fi, Bluetooth 5.0, ZigBee",
+      "Hardware / Firmware / RF Development",
+      "Power Supply Design",
+      "Enclosure design / ID",
+      "Zero-Config Setup",
+    ],
+    summary:
+      "Compact IoT Micro Gateway powered by Qualcomm QCA4020. Bridges IoT devices via BLE/ZigBee to the Internet through Wi-Fi. Features an inbuilt power supply in a sleek plug-and-play form factor. Capable of managing multiple wireless devices simultaneously for consumer and industrial settings.",
+    importantParts: [
+      "Qualcomm Wi-Fi, BLE, ZigBee, Thread",
+      "Skyworks Wi-Fi Front End Module",
+      "Skyworks RF Amplifier",
+      "Macronix NOR Flash Memory",
+      "CUI Power Supply Module",
+    ],
+    salientFeatures: [
+      "Dual Band Wi-Fi, BLE 5.0, ZigBee, Thread.",
+      "Inbuilt power supply",
+      "Zero-Config Setup",
+      "WPA3 / TLS Security",
+      "USB-C 5V Power",
+      "90% Setup time reduction",
+    ],
+    scopeOfWork: [
+      "Schematics Entry",
+      "PCB Layout Design",
+      "PCB Fabrication and Assembly",
+      "Firmware development",
+      "RF Calibration and Tuning",
+      "Enclosure Design",
+      "Board Bring-up and testing",
     ],
   },
 ];

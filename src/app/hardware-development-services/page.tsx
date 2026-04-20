@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { hwDevelopmentOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
 
 const workflowItems = [
@@ -100,6 +102,7 @@ export const metadata: Metadata = {
   description:
     "Hardware development services with complete lifecycle ownership from requirements to production handover.",
 };
+
 
 export default function HardwareDevelopmentServicesPage() {
   const hardwareFaqs = technicalFaq.flatMap((group) => group.items);
@@ -535,6 +538,7 @@ export default function HardwareDevelopmentServicesPage() {
         </div>
       </section>
       <FAQSection faqs={hardwareFaqs} />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_6px_30px_rgba(15,23,42,0.08)] md:p-10">
           <h2 className="text-3xl font-semibold text-slate-900">

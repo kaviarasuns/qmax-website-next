@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { pcbPowerElectronicsOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { pcbCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
@@ -9,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Modern power electronics systems demand more than simple interconnects; they require a holistic electromagnetic and thermal engineering strategy.",
 };
+
 
 export default function PowerElectorinicsPage() {
   return (
@@ -344,6 +347,7 @@ export default function PowerElectorinicsPage() {
               q: "Do you provide fabrication support?",
               a: "Yes. We act as a direct technical liaison with fabrication houses to resolve stackup, material queries, and DFM issues before production."
             }]} />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}

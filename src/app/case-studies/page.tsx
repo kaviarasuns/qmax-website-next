@@ -125,6 +125,21 @@ const embeddedCaseStudies = [
     ],
     stats: { value: "90%", label: "Setup time reduction" },
   },
+  {
+    id: 9,
+    title: "Fedarant",
+    image: "/case-studies/FEDERANT/1.png",
+    link: "/case-studies/fedarant",
+    category: "design",
+    summary:
+      "Compact IoT Micro Gateway powered by Qualcomm QCA4020. Bridges IoT devices via BLE/ZigBee to the Internet through Wi-Fi. Features an inbuilt power supply in a sleek plug-and-play form factor. Capable of managing multiple wireless devices simultaneously for consumer and industrial settings.",
+    specs: [
+      { label: "Setup", value: "Zero Config" },
+      { label: "Security", value: "WPA3 / TLS" },
+      { label: "Power", value: "USB-C 5V" },
+    ],
+    stats: { value: "90%", label: "Setup time reduction" },
+  },
 ];
 
 const pcbCaseStudies = [

@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { hwPowerElectronicsOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
 
 const expertiseCards = [
@@ -79,6 +81,7 @@ export const metadata: Metadata = {
   description:
     "Power electronics design and development services from converter architecture through validation and production support.",
 };
+
 
 export default function PowerElectorincsPage() {
   return (
@@ -279,6 +282,7 @@ export default function PowerElectorincsPage() {
           </div>
         </div>
       </section>
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}

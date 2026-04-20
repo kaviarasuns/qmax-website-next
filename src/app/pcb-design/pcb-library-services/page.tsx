@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { pcbLibraryServicesOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { pcbCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
   title: "PCB Library Services | Qmax",
   description: "Professional PCB Library Services by Qmax Systems.",
 };
+
 
 export default function PCBLibraryServicesPage() {
   return (
@@ -22,6 +25,7 @@ export default function PCBLibraryServicesPage() {
             <p className="mt-4 text-zinc-500">We are currently preparing detailed information about our PCB Library Services. Please check back soon.</p>
         </div>
       </div>
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}

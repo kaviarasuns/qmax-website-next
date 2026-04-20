@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { pcbDesignReviewOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { pcbCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
@@ -9,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Qmax Systems provides structured, engineering-led Design Review Services that identify and resolve schematic errors, layout violations, and compliance gaps before they reach production.",
 };
+
 
 export default function PCBDesignReviewServicesPage() {
   return (
@@ -1058,6 +1061,7 @@ export default function PCBDesignReviewServicesPage() {
               },
         ]}
       />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       {/* Target Audience Section */}
       <section className="bg-[#fcfcfc] py-24 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

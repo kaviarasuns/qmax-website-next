@@ -33,9 +33,9 @@ export default function ServiceCaseStudiesSection({
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {studies.map((study) => (
+          {studies.map((study, index) => (
             <CaseStudyCard
-              key={study.link}
+              key={`${study.link}-${index}`}
               title={study.title}
               image={study.image}
               link={study.link}

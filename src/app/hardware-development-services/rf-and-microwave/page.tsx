@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { hwRfMicrowaveOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
@@ -228,6 +230,7 @@ const rfFaqGroups = [
     ],
   },
 ];
+
 
 export default function RfAndMicrowavePage() {
   return (
@@ -647,6 +650,7 @@ export default function RfAndMicrowavePage() {
       </section>
 
       <FAQSection faqs={rfFaqGroups.flatMap((group) => group.items)} />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}

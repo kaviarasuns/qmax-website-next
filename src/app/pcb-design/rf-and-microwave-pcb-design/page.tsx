@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { pcbRfMicrowaveOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { pcbCaseStudies } from "@/data/service-case-studies";
 
 const rfFaqs = [
@@ -139,6 +141,7 @@ export const metadata: Metadata = {
   description:
     "RF and microwave PCB design services including RF front-end layout, antenna feed design, low-loss materials, and EMI-aware implementation.",
 };
+
 
 export default function RFMicrowavePCBDesignPage() {
   return (
@@ -821,6 +824,7 @@ export default function RFMicrowavePCBDesignPage() {
       </section>
 
       <FAQSection faqs={rfFaqs.map((item) => ({ q: item.question, a: item.answer }))} />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
 
       <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
         <div className="grid gap-6 md:grid-cols-2">

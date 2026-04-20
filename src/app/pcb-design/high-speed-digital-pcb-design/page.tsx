@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { pcbHighSpeedDigitalOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { pcbCaseStudies } from "@/data/service-case-studies";
 const projectExperience = [
   {
@@ -323,6 +325,7 @@ export const metadata: Metadata = {
     "High-speed digital PCB design services for DDR4/5, LPDDR, PCIe Gen 5, SerDes up to 112Gbps, and USB4 with SI/PI-driven execution.",
 };
 
+
 export default function HighSpeedDigitalPCBDesignPage() {
   return (
     <main className="bg-zinc-100 text-zinc-900">
@@ -642,6 +645,7 @@ export default function HighSpeedDigitalPCBDesignPage() {
           </article>
         </div>
       </section>
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}

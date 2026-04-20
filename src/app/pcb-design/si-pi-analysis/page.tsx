@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
+import { pcbSiPiAnalysisOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { pcbCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
@@ -10,6 +12,7 @@ export const metadata: Metadata = {
   description:
     "Signal Integrity and Power Integrity analysis services for high-speed digital and RF PCB designs, ensuring robust product performance and reliability.",
 };
+
 
 export default function SIPIAnalysisServicesPage() {
   return (
@@ -1263,6 +1266,7 @@ export default function SIPIAnalysisServicesPage() {
           },
         ]}
       />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-4xl text-center text-zinc-800">
