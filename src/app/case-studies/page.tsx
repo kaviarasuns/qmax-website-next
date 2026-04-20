@@ -164,6 +164,20 @@ const pcbCaseStudies = [
     link: "case-studies/Automotive-OBD.html",
     category: "development",
   },
+  {
+    id: 4,
+    title: "Fedarant PCB – Bottom Layer",
+    image: "/case-studies/FEDERANT/P01306PB1PR2_BOT.svg",
+    link: "/case-studies/federant-pcb-bot",
+    category: "development",
+  },
+  {
+    id: 5,
+    title: "Fedarant PCB – Top Layer",
+    image: "/case-studies/FEDERANT/P01306PB1PR2.svg",
+    link: "/case-studies/federant-pcb",
+    category: "development",
+  },
 ];
 
 const mechanicalCaseStudies: {
