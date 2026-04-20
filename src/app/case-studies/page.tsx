@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import CaseStudyCard from "@/components/CaseStudyCard";
-import PCBCaseStudyCard from "@/components/PCBCaseStudyCard";
 
 const embeddedCaseStudies = [
   {
