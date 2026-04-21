@@ -7,6 +7,7 @@ export interface CaseStudyCardProps {
   link: string;
   category?: string;
   imageBackgroundClassName?: string;
+  imageClassName?: string;
   summary?: string;
   specs?: { label: string; value: string }[];
   stats?: { value: string; label: string };
@@ -17,24 +18,28 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   image,
   link,
   category,
-  imageBackgroundClassName = "bg-zinc-200",
+  imageBackgroundClassName = "bg-[oklch(87.1%_0.006_286.286)]",
+  imageClassName = "object-contain px-8 py-5",
   summary,
 }) => {
   return (
     <div className={`group relative ${category}`}>
-      <a href={link} aria-label={title} className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F33117]/60 focus-visible:ring-offset-2 rounded-2xl">
+      <a
+        href={link}
+        aria-label={title}
+        className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F33117]/60 focus-visible:ring-offset-2 rounded-2xl"
+      >
         <article className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_24px_55px_-28px_rgba(15,23,42,0.5)]">
           <div
-            className={`relative h-[70%] overflow-hidden bg-gradient-to-br from-zinc-100 via-zinc-100 to-zinc-200 ${imageBackgroundClassName}`}
+            className={`relative h-[70%] overflow-hidden ${imageBackgroundClassName}`}
           >
             <Image
               src={image}
               alt={title}
               fill
-              className="object-contain p-5 transition-transform duration-700 group-hover:scale-[1.03]"
+              className={`${imageClassName} transition-transform duration-700 group-hover:scale-[1.03]`}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             />
-
           </div>
 
           <div className="flex h-[30%] flex-col justify-between bg-white px-5 py-4">

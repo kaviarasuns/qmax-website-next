@@ -92,7 +92,7 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
           aria-label={`Zoom image ${current + 1}`}
           onClick={() => openLightbox(current)}
           onKeyDown={(e) => e.key === "Enter" && openLightbox(current)}
-          className="relative overflow-hidden rounded-xl border border-zinc-100 bg-zinc-50 cursor-zoom-in group"
+          className="relative overflow-hidden rounded-xl border border-zinc-100 bg-[oklch(87.1%_0.006_286.286)] cursor-zoom-in group"
         >
           <Image
             src={galleryImages[current]}
@@ -170,7 +170,7 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
                   alt=""
                   width={72}
                   height={54}
-                  className="aspect-[4/3] h-[50px] w-[72px] object-contain bg-zinc-50 p-1.5"
+                  className="aspect-[4/3] h-[50px] w-[72px] object-contain bg-[oklch(87.1%_0.006_286.286)] p-1.5"
                 />
               </button>
             ))}
@@ -210,7 +210,7 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
             </div>
 
             {/* Image stage — fills available space between top bar and thumbnails */}
-            <div className="relative w-full max-w-5xl flex-1 min-h-0 overflow-hidden">
+            <div className="relative w-full max-w-5xl flex-1 min-h-0 overflow-hidden rounded-2xl bg-[oklch(92%_0.004_286.32)]">
               <AnimatePresence mode="wait" custom={direction} initial={false}>
                 <motion.div
                   key={lightboxIndex}
@@ -282,7 +282,7 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
                       alt=""
                       width={64}
                       height={48}
-                      className="aspect-[4/3] h-[48px] w-[64px] object-contain bg-white/5 p-1"
+                      className="aspect-[4/3] h-[48px] w-[64px] object-contain bg-[oklch(92%_0.004_286.32)] p-1"
                     />
                   </button>
                 ))}

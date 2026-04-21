@@ -50,7 +50,10 @@ function DetailSection({
       ) : (
         <ul className="space-y-3">
           {items.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-[14.5px] text-zinc-700 leading-relaxed">
+            <li
+              key={i}
+              className="flex items-start gap-3 text-[14.5px] text-zinc-700 leading-relaxed"
+            >
               {variant === "numbered" ? (
                 <span className="mt-px flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-zinc-100 text-[10px] font-bold tabular-nums text-zinc-500">
                   {i + 1}
@@ -86,7 +89,6 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
       />
 
       <div className="relative mx-auto max-w-7xl space-y-8 px-6 lg:px-8">
-
         {/* ── Header ── */}
         <header className="pt-4">
           <h1
@@ -100,7 +102,11 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
         {/* ── Gallery + Highlights ── */}
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
           <div className="lg:w-[65%] shrink-0">
-            <CaseStudyCarousel images={caseStudy.images} title={caseStudy.title} paddedImages={caseStudy.paddedImages} />
+            <CaseStudyCarousel
+              images={caseStudy.images}
+              title={caseStudy.title}
+              paddedImages={caseStudy.paddedImages}
+            />
           </div>
 
           <div className="flex-1 rounded-2xl border border-zinc-200/70 bg-zinc-50 p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] lg:sticky lg:top-24">

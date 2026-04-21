@@ -185,7 +185,26 @@ const mechanicalCaseStudies: {
   image: string;
   link: string;
   category: string;
-}[] = [];
+  summary?: string;
+  specs?: { label: string; value: string }[];
+  stats?: { value: string; label: string };
+}[] = [
+  {
+    id: 1,
+    title: "CapServe Cell Sensor",
+    image: "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.1.png",
+    link: "/case-studies/capserve-cell-sensor",
+    category: "mechanical",
+    summary:
+      "IP65-rated outdoor cell sensor enclosure with snap-fit assembly, integrated pole-mount bracket, and DFM-reviewed geometry ready for injection-moulding production.",
+    specs: [
+      { label: "Rating", value: "IP65 Sealed" },
+      { label: "Material", value: "UV-stable ABS" },
+      { label: "Mount", value: "Pole / Wall" },
+    ],
+    stats: { value: "IP65", label: "Ingress protection rating" },
+  },
+];
 
 const industrialCaseStudies = [
   {
@@ -374,7 +393,11 @@ export default function CaseStudiesPage() {
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
               {pcbCaseStudies.map((study) => (
-                <CaseStudyCard key={`pstudy-${study.id}`} {...study} />
+                <CaseStudyCard
+                  key={`pstudy-${study.id}`}
+                  {...study}
+                  imageClassName="object-contain px-14 py-5"
+                />
               ))}
             </div>
           </div>
