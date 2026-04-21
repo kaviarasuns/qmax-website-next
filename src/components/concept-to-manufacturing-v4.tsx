@@ -108,7 +108,7 @@ export default function ScrollCardsAnimationV4({
       const scale = window.devicePixelRatio;
       setDisplayScale(scale);
       console.log(
-        `Display Scale: ${scale * 100}% (devicePixelRatio: ${scale})`
+        `Display Scale: ${scale * 100}% (devicePixelRatio: ${scale})`,
       );
     };
 
@@ -123,7 +123,7 @@ export default function ScrollCardsAnimationV4({
 
     // Also use matchMedia for more accurate scale change detection
     const mediaQueryList = window.matchMedia(
-      `(resolution: ${window.devicePixelRatio}dppx)`
+      `(resolution: ${window.devicePixelRatio}dppx)`,
     );
     const handleMediaChange = () => {
       checkDisplayScale();
@@ -153,7 +153,7 @@ export default function ScrollCardsAnimationV4({
                 for (let i = 0; i < cards.length; i++) {
                   setActiveCard(i);
                   await new Promise((resolve) =>
-                    setTimeout(resolve, AUTO_HIGHLIGHT_DELAY)
+                    setTimeout(resolve, AUTO_HIGHLIGHT_DELAY),
                   );
                 }
                 // Reset to no active card after sequence
@@ -183,7 +183,7 @@ export default function ScrollCardsAnimationV4({
       {
         threshold: 0.8, // Trigger when 80% of component is visible
         rootMargin: "0px",
-      }
+      },
     );
 
     if (containerRef.current) {
@@ -368,7 +368,7 @@ export default function ScrollCardsAnimationV4({
         /* Desktop: 7 Cards Visible with Enhanced Visual Appeal */
         <div className="w-full px-4 flex flex-col items-center justify-center">
           <div className="relative top-20">
-            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-center text-black tracking-wide">
+            <h1 className="text-3xl md:text-5xl font-light tracking-wide text-center text-black tracking-wide">
               Design To <span className="text-red-500">Manufacturing</span>
             </h1>
           </div>
@@ -437,8 +437,8 @@ export default function ScrollCardsAnimationV4({
                           ? "w-26 min-h-52 sm:w-32 sm:min-h-60 md:w-36 md:min-h-68 lg:w-44 lg:min-h-80 xl:w-48 xl:min-h-[21rem]"
                           : "w-28 min-h-64 sm:w-36 sm:min-h-72 md:w-40 md:min-h-80 lg:w-48 lg:min-h-96 xl:w-52 xl:min-h-[26rem]"
                         : displayScale >= 1.25
-                        ? "w-26 min-h-48 sm:w-28 sm:min-h-52 md:w-32 md:min-h-60 lg:w-36 lg:min-h-68 xl:w-40 xl:min-h-80"
-                        : "w-28 min-h-60 sm:w-32 sm:min-h-64 md:w-36 md:min-h-72 lg:w-40 lg:min-h-80 xl:w-44 xl:min-h-96"
+                          ? "w-26 min-h-48 sm:w-28 sm:min-h-52 md:w-32 md:min-h-60 lg:w-36 lg:min-h-68 xl:w-40 xl:min-h-80"
+                          : "w-28 min-h-60 sm:w-32 sm:min-h-64 md:w-36 md:min-h-72 lg:w-40 lg:min-h-80 xl:w-44 xl:min-h-96"
                     } bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-700 border-2 relative cursor-pointer border-red-500`}
                   >
                     {/* Animated background pattern */}
@@ -562,7 +562,6 @@ export default function ScrollCardsAnimationV4({
                 </motion.div>
               ))}
             </div>
-
           </div>
         </div>
       )}

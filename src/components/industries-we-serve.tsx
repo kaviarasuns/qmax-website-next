@@ -237,7 +237,7 @@ export function IndustriesWeServe() {
       <div className="max-w-screen-xl mx-auto px-4 lg:px-5">
         {/* Header */}
         <div className="mb-8 lg:mb-12 text-center">
-          <h2 className="font-bold text-2xl lg:text-4xl mb-4 lg:mb-9 text-foreground">
+          <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-4 lg:mb-9 text-foreground">
             Industries <span className="text-[#e44332]">We Serve</span>
           </h2>
           <p className="mt-2 lg:mt-[35px] text-sm lg:text-lg leading-[150%] font-normal text-foreground max-w-2xl mx-auto">
@@ -268,7 +268,7 @@ export function IndustriesWeServe() {
                     <Icon />
                   </div>
                   <span
-                    className={`text-[10px] lg:text-xs font-bold text-center max-w-[60px] lg:max-w-[80px] leading-tight ${selectedIndex === index ? "text-gray-900" : "text-gray-600"}`}
+                    className={`text-xs lg:text-sm font-extrabold text-center max-w-[60px] lg:max-w-[80px] leading-tight ${selectedIndex === index ? "text-gray-900" : "text-gray-600"}`}
                   >
                     {industry.title}
                   </span>

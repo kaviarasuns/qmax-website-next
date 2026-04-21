@@ -149,7 +149,7 @@ export default function InsideOut() {
           </button>
         </div>
         <div className="w-full lg:w-1/2 flex flex-col px-6 lg:px-12 py-12 lg:py-20">
-          <h2 className="text-3xl font-light md:text-5xl tracking-tighter mb-16">
+          <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-16">
             Why Qmax <span className="text-red-500">Systems</span>
           </h2>
 
@@ -186,7 +186,7 @@ export default function InsideOut() {
 
                 {expandedIndex === index && (
                   <div className="mt-4 max-w-4xl">
-                    <p className="text-base leading-relaxed text-zinc-600 font-light">
+                    <p className="text-base leading-relaxed font-light">
                       {reason.description}
                     </p>
                   </div>
@@ -212,7 +212,10 @@ export default function InsideOut() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
           <div className="flex flex-col items-center text-center">
             <TrendingUp size={28} className="text-red-500 mb-2" />
-            <p ref={years.ref} className="text-4xl md:text-5xl font-bold text-zinc-900">
+            <p
+              ref={years.ref}
+              className="text-4xl md:text-5xl font-bold text-zinc-900"
+            >
               {years.count}+
             </p>
             <p className="text-gray-500 text-sm md:text-base font-normal mt-1">
@@ -222,7 +225,10 @@ export default function InsideOut() {
 
           <div className="flex flex-col items-center text-center">
             <Users size={28} className="text-red-500 mb-2" />
-            <p ref={engineers.ref} className="text-4xl md:text-5xl font-bold text-zinc-900">
+            <p
+              ref={engineers.ref}
+              className="text-4xl md:text-5xl font-bold text-zinc-900"
+            >
               {engineers.count}+
             </p>
             <p className="text-gray-500 text-sm md:text-base font-normal mt-1">
@@ -232,7 +238,10 @@ export default function InsideOut() {
 
           <div className="flex flex-col items-center text-center">
             <CheckSquare size={28} className="text-red-500 mb-2" />
-            <p ref={projects.ref} className="text-4xl md:text-5xl font-bold text-zinc-900">
+            <p
+              ref={projects.ref}
+              className="text-4xl md:text-5xl font-bold text-zinc-900"
+            >
               {projects.count}+
             </p>
             <p className="text-gray-500 text-sm md:text-base font-normal mt-1">

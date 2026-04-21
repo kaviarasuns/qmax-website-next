@@ -248,11 +248,11 @@ const ServicesV4Stacked = ({
   return (
     <section className="w-full bg-gradient-to-b from-gray-50 via-white to-gray-50 py-10 md:py-16">
       <div ref={stackWrapperRef} className="relative h-screen overflow-hidden">
-        <div className="pointer-events-none absolute inset-x-0 top-14 z-20 mx-auto max-w-6xl px-4 text-center sm:px-6 md:top-16 lg:px-8">
-          <h2 className="text-2xl font-extrabold tracking-wide text-gray-900 md:text-3xl lg:text-4xl">
+        <div className="pointer-events-none absolute inset-x-0 top-24 z-20 mx-auto max-w-6xl px-4 text-center sm:px-6 md:top-28 lg:px-8">
+          <h2 className="text-2xl font-light  tracking-wide text-gray-900 md:text-3xl lg:text-4xl">
             Our <span className="text-red-600">Services</span>
           </h2>
-          <div className="mx-auto mt-2 h-0.5 w-16 rounded-full bg-red-600" />
+          {/* <div className="mx-auto mt-2 h-0.5 w-16 rounded-full bg-red-600" /> */}
         </div>
 
         {services.map((service, index) => (

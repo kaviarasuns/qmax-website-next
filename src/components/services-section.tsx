@@ -84,7 +84,7 @@ export function ServicesSection() {
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="mb-10 flex flex-col items-end justify-between gap-6 md:flex-row md:items-start">
           <div className="max-w-2xl">
-            <h1 className="mb-3 text-3xl font-bold tracking-wide text-foreground md:text-4xl lg:text-5xl">
+            <h1 className="mb-3 text-3xl font-light  tracking-wide text-foreground md:text-4xl lg:text-5xl">
               Case <span className="text-red-500">Studies</span>
             </h1>
             <p className="text-base text-muted-foreground md:text-lg">
