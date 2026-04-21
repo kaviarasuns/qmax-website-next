@@ -8,6 +8,7 @@ import Typewriter from "typewriter-effect";
 import { ServicesSection } from "@/components/services-section";
 import InsideOutV2 from "@/components/InsideOut-V2";
 import ServicesV4Stacked from "@/components/Services-V4-Stacked";
+import { IndustriesWeServe } from "@/components/industries-we-serve";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -144,6 +145,7 @@ export default function Home() {
       <div>
         <ServicesV4Stacked lockStackingOnProgrammaticScroll={false} />
       </div>
+      <IndustriesWeServe />
       <div>
         <InsideOutV2 />
       </div>
