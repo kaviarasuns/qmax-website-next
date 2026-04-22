@@ -925,9 +925,9 @@ const caseStudiesData: CaseStudy[] = [
     title: "Stellar Main Board",
     category: "Embedded System Design",
     images: [
-      "/case-studies/STELLAR MAIN BORD/1.1.png",
-      "/case-studies/STELLAR MAIN BORD/1.2.png",
-      "/case-studies/STELLAR MAIN BORD/1.3.png",
+      // "/case-studies/STELLAR MAIN BORD/1.1.png",
+      // "/case-studies/STELLAR MAIN BORD/1.2.png",
+      // "/case-studies/STELLAR MAIN BORD/1.3.png",
       "/case-studies/STELLAR MAIN BORD/MAIN BOARD 1.svg",
       "/case-studies/STELLAR MAIN BORD/MAIN BOARD 2.svg",
     ],
