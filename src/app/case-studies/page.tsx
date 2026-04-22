@@ -139,6 +139,21 @@ const embeddedCaseStudies = [
     ],
     stats: { value: "90%", label: "Setup time reduction" },
   },
+  {
+    id: 10,
+    title: "Stellar Main Board",
+    image: "/case-studies/STELLAR MAIN BORD/1.1.png",
+    link: "/case-studies/stellar-main-board",
+    category: "development",
+    summary:
+      "High-density embedded main board for network timing and synchronisation, featuring multiple SFP+ ports (Grandmaster, Backhaul, Auxiliary), GPS/RTC precision timing, and a LOM module for remote management.",
+    specs: [
+      { label: "Platform", value: "FEDERON 2600" },
+      { label: "Timing", value: "GPS / RTC" },
+      { label: "Network", value: "SFP+ Multi-ch" },
+    ],
+    stats: { value: "3", label: "SFP+ network channels" },
+  },
 ];
 
 const pcbCaseStudies = [
@@ -204,6 +219,96 @@ const mechanicalCaseStudies: {
     ],
     stats: { value: "IP65", label: "Ingress protection rating" },
   },
+  {
+    id: 2,
+    title: "UV Disinfection System",
+    image: "/case-studies/mechanicalCaseStudies/1/MYNATEK_RENDER__1.0.png",
+    link: "/case-studies/uv-disinfection-system",
+    category: "mechanical",
+    summary:
+      "Wall-mounted UV-C disinfection unit branded SafeSpaceUV with triple lamp array, sealed optical windows, and two-tone enclosure for healthcare and commercial spaces.",
+    specs: [
+      { label: "Lamps", value: "Triple UV-C" },
+      { label: "Mount", value: "Wall-mount" },
+      { label: "Finish", value: "Two-tone" },
+    ],
+    stats: { value: "3x", label: "UV-C lamp coverage" },
+  },
+  {
+    id: 3,
+    title: "Industrial Splice Detector",
+    image: "/case-studies/mechanicalCaseStudies/2/SPLICE_DETECTOR_RENDER_2.4.png",
+    link: "/case-studies/industrial-splice-detector",
+    category: "mechanical",
+    summary:
+      "Ruggedised splice detector with extruded aluminium heatsink enclosure, M12 industrial connectors, and RS-232 / RS-485 / EtherCAT interfaces for manufacturing lines.",
+    specs: [
+      { label: "Material", value: "Aluminium" },
+      { label: "Connectors", value: "M12 Industrial" },
+      { label: "Power", value: "24 VDC" },
+    ],
+    stats: { value: "24V", label: "Industrial power input" },
+  },
+  {
+    id: 4,
+    title: "OTT Media Gateway",
+    image: "/case-studies/mechanicalCaseStudies/3/OTT_RENDER_27_NOV_2024_MG2.1.png",
+    link: "/case-studies/ott-media-gateway",
+    category: "mechanical",
+    summary:
+      "Sleek OTT media gateway enclosure branded TEKION with dual articulating antenna mounts, angular faceted design, and ventilated base for consumer and commercial streaming.",
+    specs: [
+      { label: "Antennas", value: "Dual Articulating" },
+      { label: "Ports", value: "USB / SD / IR" },
+      { label: "Cooling", value: "Passive" },
+    ],
+    stats: { value: "Fanless", label: "Thermal design" },
+  },
+  {
+    id: 5,
+    title: "RF Signal Generator Enclosure",
+    image: "/case-studies/mechanicalCaseStudies/4/PG10_RENDER_28_OCT_2024_MG1.1.png",
+    link: "/case-studies/rf-signal-generator-enclosure",
+    category: "mechanical",
+    summary:
+      "Heavy-duty sheet metal enclosure with EMI shielding, ventilated panels, N-type RF output, and universal AC input for laboratory and production test environments.",
+    specs: [
+      { label: "Material", value: "Sheet Metal" },
+      { label: "RF Output", value: "N-type" },
+      { label: "AC Input", value: "170 – 240 V" },
+    ],
+    stats: { value: "EMI", label: "Shielded enclosure" },
+  },
+  {
+    id: 6,
+    title: "Pulse Oximeter Enclosure",
+    image: "/case-studies/mechanicalCaseStudies/5/PULSE_OXIMETER_RENDER_2.1.png",
+    link: "/case-studies/pulse-oximeter-enclosure",
+    category: "mechanical",
+    summary:
+      "Compact fingertip pulse oximeter with two-piece clip-on design, medical-grade polycarbonate and ABS construction, and optimised finger channel for consistent sensor contact.",
+    specs: [
+      { label: "Form", value: "Finger-clip" },
+      { label: "Material", value: "PC / ABS" },
+      { label: "Grade", value: "Medical" },
+    ],
+    stats: { value: "SpO2", label: "Clinical monitoring" },
+  },
+  {
+    id: 7,
+    title: "QSafe Tilt Sensor",
+    image: "/case-studies/mechanicalCaseStudies/6/QSAFE_TILT_SENSOR_RENDER_23_DEC_2023.16.png",
+    link: "/case-studies/qsafe-tilt-sensor",
+    category: "mechanical",
+    summary:
+      "Ruggedised tilt sensor enclosure with IP-rated sealed construction, four-point flange mounting, and UV-stable ABS for structural monitoring in outdoor environments.",
+    specs: [
+      { label: "Mount", value: "4-point Flange" },
+      { label: "Material", value: "UV-stable ABS" },
+      { label: "Indicator", value: "Status LED" },
+    ],
+    stats: { value: "IP", label: "Sealed for outdoor use" },
+  },
 ];
 
 const industrialCaseStudies = [
@@ -236,6 +341,36 @@ const industrialCaseStudies = [
       { label: "Display", value: "5″ Touch" },
     ],
     stats: { value: "30%", label: "Faster diagnosis workflow" },
+  },
+  {
+    id: 3,
+    title: "Compact Edge Gateway Enclosure",
+    image: "/case-studies/industrialCaseStudies/1/ENCLOSURE_ASSM_1.9.png",
+    link: "/case-studies/compact-edge-gateway-enclosure",
+    category: "industrial",
+    summary:
+      "Fanless aluminium edge gateway enclosure with finned heatsink top cover, multiple SMA antenna ports, and integrated Ethernet, USB, and M12 industrial interfaces.",
+    specs: [
+      { label: "Material", value: "Aluminium" },
+      { label: "Cooling", value: "Passive Heatsink" },
+      { label: "Connectors", value: "SMA / M12" },
+    ],
+    stats: { value: "Fanless", label: "Silent passive cooling" },
+  },
+  {
+    id: 4,
+    title: "Medical Recording Device",
+    image: "/case-studies/industrialCaseStudies/2/LSR-1.png",
+    link: "/case-studies/medical-recording-device",
+    category: "industrial",
+    summary:
+      "Compact puck-shaped medical recording device with LSR (Liquid Silicone Rubber) overmoulded enclosure, USB-C interface, and antimicrobial surface finish for clinical environments.",
+    specs: [
+      { label: "Material", value: "LSR Overmould" },
+      { label: "Interface", value: "USB-C" },
+      { label: "Form", value: "Puck" },
+    ],
+    stats: { value: "LSR", label: "Antimicrobial surface" },
   },
 ];
 
