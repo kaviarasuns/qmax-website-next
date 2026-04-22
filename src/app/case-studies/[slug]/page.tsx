@@ -61,6 +61,9 @@ const caseStudiesData: CaseStudy[] = [
       "/case-studies/CHARA/1.png",
       "/case-studies/CHARA/2.png",
       "/case-studies/CHARA/3.png",
+      "/case-studies/CHARA/CHARA-T_B.svg",
+      "/case-studies/CHARA/CHARA-TB.svg",
+      "/case-studies/CHARA/CHARA-top.svg",
     ],
     features: [
       "FPGA Spartan-6 Based Multi-channel IO",
