@@ -15,6 +15,7 @@ const caseStudiesData: CaseStudy[] = [
       "/case-studies/BLUECOLD/2.png",
       "/case-studies/BLUECOLD/BLUE_COLD_REV-01_BRD_03_TOP.svg",
       "/case-studies/BLUECOLD/BLUE_COLD_REV-01_BRD_03_TP.svg",
+      "/case-studies/BLUECOLD/5.png",
     ],
     features: [
       "Hardware / Firmware Design and Development",
