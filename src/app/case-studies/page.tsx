@@ -6,9 +6,9 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 const embeddedCaseStudies = [
   {
     id: 1,
-    title: "Security System Controller",
+    title: "Industrial Temperature Control System",
     image: "/case-studies/BLUECOLD/1.png",
-    link: "case-studies/Security-System-Controller.html",
+    link: "/case-studies/industrial-temperature-control-system",
     category: "development",
     summary:
       "A powerful Edge controller device used in high security applications with multi-protocol sensors and reader inputs. The system is powered through POE+ and has options for power backup using an external power supply or battery. It can work as a stand alone device or can be cascaded to control multiple access points.",
@@ -21,9 +21,9 @@ const embeddedCaseStudies = [
   },
   {
     id: 2,
-    title: "Structural Health Monitoring System",
+    title: "Multi IO card for ATE",
     image: "/case-studies/CHARA/1.png",
-    link: "case-studies/fpga-based-health-monitoring-system.html",
+    link: "/case-studies/multi-io-card-for-ate",
     category: "development",
     summary:
       "An advanced health monitoring system utilizing FPGA technology for real-time processing of multiple biosignals. The system integrates various sensors to monitor vital signs and provides wireless connectivity for remote monitoring. Designed with medical-grade standards for reliability and accuracy in clinical environments.",
@@ -36,9 +36,9 @@ const embeddedCaseStudies = [
   },
   {
     id: 3,
-    title: "Control system with POE Switch",
+    title: "Smart Monitoring System",
     image: "/case-studies/CLIMATE CONTROL/1.png",
-    link: "case-studies/Control-system-with-POE-Switch-and-RTOS.html",
+    link: "/case-studies/smart-monitoring-system",
     category: "development",
     summary:
       "A comprehensive industrial control system featuring integrated POE+ switching capabilities and real-time operating system. The system provides centralized control for multiple devices while delivering power and data through a single ethernet connection. Designed for harsh industrial environments with robust communication protocols.",
@@ -51,9 +51,9 @@ const embeddedCaseStudies = [
   },
   {
     id: 4,
-    title: "Lithium Titanate Power Bank",
+    title: "Microscopic Camera Control",
     image: "/case-studies/MICROSCOPIC CAMERA/1.png",
-    link: "case-studies/Lithium-Titanate-Power-Bank.html",
+    link: "/case-studies/microscopic-camera-control",
     category: "development",
     summary:
       "A power bank using a Lithium Titanate battery with super-fast charging characteristics. The design is based on a high power current source and monitoring system using a PIC Microcontroller. The lithium-titanate battery's unique anode structure allows for rapid recharging, achieving a full charge in less than 10 minutes. Includes built-in safety features to prevent overcharging and deep discharge.",
@@ -66,9 +66,9 @@ const embeddedCaseStudies = [
   },
   {
     id: 5,
-    title: "OBD 2 Device with LoRa and BLE",
+    title: "Industrial IOT gateway with POE",
     image: "/case-studies/OTT/1.png",
-    link: "case-studies/OBD-2-Device-with-LoRa-and-BLE.html",
+    link: "/case-studies/industrial-iot-gateway-with-poe",
     category: "development",
     summary:
       "Handheld, battery-operated device that reads car data via the OBD port, transmitting it via LoRa and BLE. Features an STM32F Microcontroller, support for multiple OBD protocols, and a pass-through design. Includes an 800 mAh Li-Po battery with a cut-off mechanism to prevent car battery drain.",
@@ -81,9 +81,9 @@ const embeddedCaseStudies = [
   },
   {
     id: 6,
-    title: "BLE tag with Wireless Charging",
+    title: "POE Control unit",
     image: "/case-studies/POE/1.png",
-    link: "case-studies/BLE-tag-with-Wireless-Charging.html",
+    link: "/case-studies/poe-control-unit",
     category: "development",
     summary:
       "Low power BLE tag integrated with WattUp wireless charging technology. Includes multiple on-board sensors for light, motion, and temperature. Contact-less, orientation-free charging allows for easy maintenance. BLE 5.0 compliant and supports mesh networking for asset tracking and indoor location sensing.",
@@ -96,9 +96,9 @@ const embeddedCaseStudies = [
   },
   {
     id: 7,
-    title: "IOT Module with Wi-Fi BLE ZigBee",
+    title: "POE Power Injector",
     image: "/case-studies/POE/3.png",
-    link: "case-studies/IOT-Module-with-Wi-Fi-BLE-ZigBee.html",
+    link: "/case-studies/poe-power-injector",
     category: "mobile",
     summary:
       "Connectivity module based on the Qualcomm QCA4020, featuring dual-band Wi-Fi, BLE 5.0, and ZigBee. Integrates Cortex M4F for applications and Cortex M0 for networking. Includes hardware-level encryption and co-existence capability, making it ideal for Smart Home and industrial IoT gateways.",
@@ -111,9 +111,9 @@ const embeddedCaseStudies = [
   },
   {
     id: 8,
-    title: "IOT Micro Gateway",
+    title: "Industrial POE switch",
     image: "/case-studies/POE/5.png",
-    link: "case-studies/IOT-micro-gateway.html",
+    link: "/case-studies/industrial-poe-switch",
     category: "design",
     summary:
       "Compact IoT Micro Gateway powered by Qualcomm QCA4020. Bridges IoT devices via BLE/ZigBee to the Internet through Wi-Fi. Features an inbuilt power supply in a sleek plug-and-play form factor. Capable of managing multiple wireless devices simultaneously for consumer and industrial settings.",
@@ -126,9 +126,9 @@ const embeddedCaseStudies = [
   },
   {
     id: 9,
-    title: "Fedarant",
+    title: "Portable EV Charger",
     image: "/case-studies/FEDERANT/1.png",
-    link: "/case-studies/fedarant",
+    link: "/case-studies/portable-ev-charger",
     category: "design",
     summary:
       "Compact IoT Micro Gateway powered by Qualcomm QCA4020. Bridges IoT devices via BLE/ZigBee to the Internet through Wi-Fi. Features an inbuilt power supply in a sleek plug-and-play form factor. Capable of managing multiple wireless devices simultaneously for consumer and industrial settings.",
@@ -146,35 +146,35 @@ const pcbCaseStudies = [
     id: 1,
     title: "Industrial Controller",
     image: "/ott/CHARA-top.svg",
-    link: "case-studies/Industrial-Controller.html",
+    link: "/case-studies/portable-ev-charger-pcb",
     category: "development",
   },
   {
     id: 2,
     title: "Aerospace PCB",
     image: "/ott/TEK_OTT_REV1P0_BOT.svg",
-    link: "case-studies/Aerospace-PCB.html",
+    link: "/case-studies/aerospace-pcb",
     category: "development",
   },
   {
     id: 3,
     title: "Automotive OBD",
     image: "/ott/TEK_OTT_REV1P0_BRD_PR3.svg",
-    link: "case-studies/Automotive-OBD.html",
+    link: "/case-studies/automotive-obd-pcb",
     category: "development",
   },
   {
     id: 4,
     title: "Fedarant PCB – Bottom Layer",
     image: "/case-studies/FEDERANT/P01306PB1PR2_BOT.svg",
-    link: "/case-studies/federant-pcb-bot",
+    link: "/case-studies/fedarant-pcb-bottom-layer",
     category: "development",
   },
   {
     id: 5,
     title: "Fedarant PCB – Top Layer",
     image: "/case-studies/FEDERANT/P01306PB1PR2.svg",
-    link: "/case-studies/federant-pcb",
+    link: "/case-studies/fedarant-pcb-top-layer",
     category: "development",
   },
 ];
