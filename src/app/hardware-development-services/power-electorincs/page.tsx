@@ -86,54 +86,47 @@ export const metadata: Metadata = {
 export default function PowerElectorincsPage() {
   return (
     <main className="bg-slate-100 text-justify text-slate-900">
-      <section className="relative overflow-hidden border-b border-slate-200">
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
-          <div>
-            <p className="inline-flex rounded-full border border-slate-300 bg-slate-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-slate-700">
-              Power Electronics Services
-            </p>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
-              Power Electronics Design and Development Services
-            </h1>
-            <p className="mt-6 text-lg font-medium text-slate-800 md:text-xl">
-              Efficient, Stable, and Scalable Power for Mission-Critical
-              Hardware
-            </p>
-
-            <div className="mt-6 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
-              <p>
-                Qmax Systems delivers end-to-end power electronics engineering
-                for products that demand high efficiency, robust operation, and
-                long-term reliability. We design complete power subsystems,
-                from input protection and conversion stages to point-of-load
-                regulation and system-level validation.
-              </p>
-              <p>
-                Whether you are building edge AI devices, telecom
-                infrastructure, industrial controls, or battery-based products,
-                our team focuses on practical architecture decisions that reduce
-                field failures and improve performance under real operating
-                conditions.
-              </p>
-            </div>
-          </div>
-
-          <div className="relative h-[300px] overflow-hidden rounded-2xl border border-slate-200 bg-white md:h-[420px]">
+      <section className="relative overflow-hidden pt-14 pb-12 border-b border-slate-200 lg:pt-20 lg:pb-24">
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Full-width Image Container */}
+          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-slate-200 group">
             <Image
               src="/hw-main/image2.png"
-              alt="Power electronics architecture and converter design"
+              alt="Power Electronics Design - Qmax Systems"
               fill
-              className="object-contain"
+              className="object-cover"
+              sizes="100vw"
               priority
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white/95 to-transparent p-5">
-              <p className="text-sm font-medium text-slate-900">
-                Converter Design, PI, Thermal, and Validation
-              </p>
-              <p className="mt-1 text-xs text-slate-700">
-                From concept to production-ready power platforms.
-              </p>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-100/60 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
+              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
+                HARDWARE DEVELOPMENT
+              </span>
+              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+                Power Electronics<br className="hidden md:block" />
+                Design Services.
+              </h1>
             </div>
+          </div>
+          <div className="mt-10 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
+            <p className="text-lg font-medium text-slate-800 md:text-xl">
+              Efficient, Stable, and Scalable Power for Mission-Critical Hardware
+            </p>
+            <p>
+              Qmax Systems delivers end-to-end power electronics engineering
+              for products that demand high efficiency, robust operation, and
+              long-term reliability. We design complete power subsystems,
+              from input protection and conversion stages to point-of-load
+              regulation and system-level validation.
+            </p>
+            <p>
+              Whether you are building edge AI devices, telecom
+              infrastructure, industrial controls, or battery-based products,
+              our team focuses on practical architecture decisions that reduce
+              field failures and improve performance under real operating
+              conditions.
+            </p>
           </div>
         </div>
       </section>

@@ -1438,10 +1438,10 @@ export default async function CaseStudyPage({
 
       {/* ── More Case Studies ── */}
       {relatedStudies.length > 0 && (
-        <section className="relative overflow-hidden bg-[#f7f7f4] py-16 md:py-20">
+        <section className="relative overflow-hidden bg-[#f5f5f5] py-16 md:py-20">
           {/* Background accents */}
           <div
-            className="absolute inset-0 bg-[radial-gradient(circle_at_90%_10%,rgba(243,49,23,0.06),transparent_45%)]"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_90%_10%,rgba(0,0,0,0.02),transparent_45%)]"
             aria-hidden="true"
           />
           <div

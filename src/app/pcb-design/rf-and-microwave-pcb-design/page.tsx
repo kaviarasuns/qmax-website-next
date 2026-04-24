@@ -146,51 +146,47 @@ export const metadata: Metadata = {
 export default function RFMicrowavePCBDesignPage() {
   return (
     <main className="bg-zinc-100 text-justify text-zinc-900">
-      <section className="relative overflow-hidden border-b border-zinc-200">
+      <section className="relative overflow-hidden pt-14 pb-12 border-b border-zinc-200 lg:pt-20 lg:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(24,24,27,0.08),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(82,82,91,0.08),transparent_40%)]" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch lg:px-8">
-          <div>
-            <p className="inline-flex rounded-full border border-zinc-300 bg-zinc-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-zinc-700">
-              PCB Design Services
-            </p>
-            <h1 className="text-left mt-6 text-4xl font-semibold leading-tight text-zinc-900 md:text-5xl">
-              RF and Microwave PCB Design Services
-            </h1>
-            <p className="mt-4 text-sm font-medium tracking-wide text-zinc-800 md:text-base">
-              High-Frequency RF Layout | Microwave PCB Engineering | mmWave Design up to 80 GHz
-            </p>
-            <div className="mt-6 max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
-              <p>
-                Modern RF and microwave systems demand far more than conventional PCB
-                routing. At frequencies from hundreds of MHz to millimeter-wave bands,
-                the PCB becomes part of the RF circuit itself. Trace geometry, dielectric
-                loss, via transitions, grounding topology, shielding strategy, and
-                impedance discontinuities directly influence insertion loss, phase
-                stability, noise floor, and EMI compliance.
-              </p>
-              <p>
-                Qmax Systems provides advanced RF PCB design services for wireless
-                communication systems, RF instrumentation, radar sensors, industrial RF
-                generators, and microwave measurement platforms.
-              </p>
-              <p>
-                Our engineering methodology follows a simulation-driven,
-                architecture-first approach where electromagnetic behavior is modeled
-                before routing begins. This reduces RF tuning complexity, shortens
-                bring-up cycles, and increases the probability of first-pass compliance
-                with FCC/CE requirements.
-              </p>
-            </div>
-          </div>
-
-          <div className="relative h-full min-h-[300px] overflow-hidden rounded-2xl border border-zinc-200 bg-white md:min-h-[420px]">
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Full-width Image Container */}
+          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-zinc-200 group">
             <Image
               src="/pcb-design/images/rf-pcb-service.jpg"
-              alt="RF and microwave PCB routing service overview"
+              alt="RF and Microwave PCB Design - Qmax Systems"
               fill
               className="object-cover"
+              sizes="100vw"
               priority
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-100/60 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
+              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
+                PCB DESIGN SERVICES
+              </span>
+              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+                RF and Microwave<br className="hidden md:block" />
+                PCB Design Services.
+              </h1>
+            </div>
+          </div>
+          <div className="mt-10 max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
+            <p className="text-sm font-medium tracking-wide text-zinc-800 md:text-base">
+              High-Frequency RF Layout | Microwave PCB Engineering | mmWave Design up to 80 GHz
+            </p>
+            <p>
+              Modern RF and microwave systems demand far more than conventional PCB
+              routing. At frequencies from hundreds of MHz to millimeter-wave bands,
+              the PCB becomes part of the RF circuit itself. Trace geometry, dielectric
+              loss, via transitions, grounding topology, shielding strategy, and
+              impedance discontinuities directly influence insertion loss, phase
+              stability, noise floor, and EMI compliance.
+            </p>
+            <p>
+              Qmax Systems provides advanced RF PCB design services for wireless
+              communication systems, RF instrumentation, radar sensors, industrial RF
+              generators, and microwave measurement platforms.
+            </p>
           </div>
         </div>
       </section>

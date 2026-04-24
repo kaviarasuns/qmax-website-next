@@ -9,37 +9,35 @@ import CaseStudyCard from "./CaseStudyCard";
 const carouselItems = [
   {
     id: 1,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/Security_System_Controller.jpg",
+    image: "/case-studies/BLUECOLD/1.png",
     title: "Security System Controller",
     summary:
       "Embedded controller program designed for dependable monitoring, control logic, and secure field operation.",
-    link: "/case-studies/Security-System-Controller",
+    link: "/case-studies/industrial-temperature-control-system",
   },
   {
     id: 2,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Industrial-Control-2.png",
+    image: "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.1.png",
     title: "Industrial Controller",
     summary:
       "Industrial electronics platform engineered for rugged deployment, stable power delivery, and manufacturable hardware.",
-    link: "/case-studies/Industrial-Controller",
+    link: "/case-studies/capserve-cell-sensor",
   },
   {
     id: 3,
-    image: "/services/embedded-systems.png",
+    image: "/case-studies/CHARA/1.png",
     title: "Embedded Systems",
     summary:
       "End-to-end embedded design and development for connected products, controls, and intelligent devices.",
-    link: "/embedded-design-services",
+    link: "/case-studies/multi-io-card-for-ate",
   },
   {
     id: 4,
-    image: "/services/pcb-design.png",
+    image: "/case-studies/CLIMATE CONTROL/1.png",
     title: "PCB Design",
     summary:
       "Multi-physics PCB design services focused on signal integrity, manufacturability, and first-pass success.",
-    link: "/pcb-design",
+    link: "/case-studies/smart-monitoring-system",
   },
   // {
   //   id: 5,
@@ -80,7 +78,7 @@ export function ServicesSection() {
   };
 
   return (
-    <section className="bg-background min-h-screen flex flex-col justify-center py-16 lg:py-24">
+    <section className="bg-background flex flex-col justify-center py-12 lg:py-16">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="mb-10 flex flex-col items-end justify-between gap-6 md:flex-row md:items-start">
           <div className="max-w-2xl">

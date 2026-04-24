@@ -44,37 +44,39 @@ export const metadata: Metadata = {
 export default function HighSpeedDigitalDesignPage() {
   return (
     <main className="bg-slate-100 text-slate-900">
-      <section className="relative overflow-hidden border-b border-slate-200">
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
-          <div>
-            <p className="inline-flex rounded-full border border-slate-300 bg-slate-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-slate-700">
-              High Speed Digital Design
-            </p>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
-              High-Performance Digital Systems Development
-            </h1>
-            <div className="mt-6 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
-              <p>
-                At Qmax Systems, we bridge the gap between complex conceptual
-                requirements and market-ready hardware. In an era where AI
-                computing, telecom infrastructure, edge servers, and
-                data-intensive applications demand unprecedented speed and
-                reliability, our Hardware Engineering Team delivers robust,
-                scalable, and high-integrity systems tailored for next-generation
-                digital infrastructure.
-              </p>
-            </div>
-          </div>
-
-          <div className="relative h-[300px] overflow-hidden rounded-2xl border border-slate-200 bg-white md:h-[420px]">
+      <section className="relative overflow-hidden pt-14 pb-12 border-b border-slate-200 lg:pt-20 lg:pb-24">
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Full-width Image Container */}
+          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-slate-200 group">
             <Image
               src="/hw-main/HW-High-Speed-Digital-Design/image1.jpg"
-              alt="High-Performance Digital Systems Development"
+              alt="High-Speed Digital Hardware Development - Qmax Systems"
               fill
               className="object-cover"
+              sizes="100vw"
               priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-100/60 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
+              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
+                HARDWARE DEVELOPMENT
+              </span>
+              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+                High-Performance Digital<br className="hidden md:block" />
+                Systems Development.
+              </h1>
+            </div>
+          </div>
+          <div className="mt-10 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
+            <p>
+              At Qmax Systems, we bridge the gap between complex conceptual
+              requirements and market-ready hardware. In an era where AI
+              computing, telecom infrastructure, edge servers, and
+              data-intensive applications demand unprecedented speed and
+              reliability, our Hardware Engineering Team delivers robust,
+              scalable, and high-integrity systems tailored for next-generation
+              digital infrastructure.
+            </p>
           </div>
         </div>
       </section>

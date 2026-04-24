@@ -18,7 +18,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   image,
   link,
   category,
-  imageBackgroundClassName = "bg-[oklch(87.1%_0.006_286.286)]",
+  imageBackgroundClassName = "bg-[#e5e5e5]",
   imageClassName = "object-contain px-8 py-5",
   summary,
 }) => {

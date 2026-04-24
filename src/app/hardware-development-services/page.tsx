@@ -103,7 +103,6 @@ export const metadata: Metadata = {
     "Hardware development services with complete lifecycle ownership from requirements to production handover.",
 };
 
-
 export default function HardwareDevelopmentServicesPage() {
   const hardwareFaqs = technicalFaq.flatMap((group) => group.items);
 
@@ -204,7 +203,9 @@ export default function HardwareDevelopmentServicesPage() {
                 </p>
                 <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
                   <li>
-                    <span className="font-semibold text-slate-900">Platforms:</span>{" "}
+                    <span className="font-semibold text-slate-900">
+                      Platforms:
+                    </span>{" "}
                     MCU, MPU, SoC, and FPGA-based platforms.
                   </li>
                   <li>
@@ -215,7 +216,9 @@ export default function HardwareDevelopmentServicesPage() {
                     MIPI/LVDS/HDMI display interfaces.
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">Memory:</span>{" "}
+                    <span className="font-semibold text-slate-900">
+                      Memory:
+                    </span>{" "}
                     DDR3, DDR4, and DDR5 memory subsystem design.
                   </li>
                   <li>
@@ -248,7 +251,9 @@ export default function HardwareDevelopmentServicesPage() {
                 </p>
                 <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
                   <li>
-                    <span className="font-semibold text-slate-900">Sensing:</span>{" "}
+                    <span className="font-semibold text-slate-900">
+                      Sensing:
+                    </span>{" "}
                     Low-noise analog front-ends and sensor interfacing for
                     pressure, vibration, biomedical, and optical applications.
                   </li>
@@ -283,8 +288,8 @@ export default function HardwareDevelopmentServicesPage() {
                   3. RF &amp; Microwave Hardware
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-                  Our RF designs are validated in real-world conditions, not just
-                  simulations.
+                  Our RF designs are validated in real-world conditions, not
+                  just simulations.
                 </p>
                 <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
                   <li>
@@ -294,7 +299,9 @@ export default function HardwareDevelopmentServicesPage() {
                     RF front-end design (LNA, PA, filters, matching networks).
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">Antennas:</span>{" "}
+                    <span className="font-semibold text-slate-900">
+                      Antennas:
+                    </span>{" "}
                     Design and integration of PCB, external, horn, and custom
                     antennas.
                   </li>
@@ -407,9 +414,7 @@ export default function HardwareDevelopmentServicesPage() {
                       High-bandwidth oscilloscopes (Keysight, Rohde &amp;
                       Schwarz).
                     </li>
-                    <li>
-                      Spectrum analyzers and RF testers (CMW-500).
-                    </li>
+                    <li>Spectrum analyzers and RF testers (CMW-500).</li>
                     <li>
                       Precision digital multimeters (Fluke), thermal cameras,
                       and Hi-Pot testers.
@@ -460,13 +465,13 @@ export default function HardwareDevelopmentServicesPage() {
                   The Qmax Advantage:
                 </span>{" "}
                 We don&apos;t just design for functionality; we design for
-                compliance. Our processes are governed by ISO 9001 and ISO
-                13485 (Medical Devices) certifications, ensuring strict
-                configuration management and traceability. Because our team has
-                deep experience with regulatory standards like FCC, CE, IEC,
-                and UL, we bridge the gap between engineering and
-                certification, managing the complex gap analysis to ensure your
-                product passes on the first attempt whenever possible.
+                compliance. Our processes are governed by ISO 9001 and ISO 13485
+                (Medical Devices) certifications, ensuring strict configuration
+                management and traceability. Because our team has deep
+                experience with regulatory standards like FCC, CE, IEC, and UL,
+                we bridge the gap between engineering and certification,
+                managing the complex gap analysis to ensure your product passes
+                on the first attempt whenever possible.
               </p>
               <ul className="mt-5 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
                 <li>
@@ -532,9 +537,6 @@ export default function HardwareDevelopmentServicesPage() {
               </ul>
             </div>
           </div>
-
-
-
         </div>
       </section>
       <FAQSection faqs={hardwareFaqs} />
@@ -567,8 +569,3 @@ export default function HardwareDevelopmentServicesPage() {
     </main>
   );
 }
-
-
-
-
-

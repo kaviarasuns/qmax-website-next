@@ -17,46 +17,48 @@ export const metadata: Metadata = {
 export default function AnalogDesignPage() {
   return (
     <main className="bg-slate-100 text-justify text-slate-900">
-      <section className="relative overflow-hidden border-b border-slate-200">
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8">
-          <div>
-            <p className="inline-flex rounded-full border border-slate-300 bg-slate-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-slate-700">
-              Analog Design Services
-            </p>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
-              Analog &amp; Mixed-Signal Design and Development Services
-            </h1>
-            <p className="mt-6 text-lg font-medium text-slate-800 md:text-xl">
-              Precision Engineering for Complex Signal Chains
-            </p>
-
-            <div className="mt-6 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
-              <p>
-                In an increasingly digital world, the interface between the
-                physical and digital domains remains the most critical
-                bottleneck in high-performance electronics. Qmax Systems
-                provides comprehensive analog and mixed-signal development
-                services, specializing in high-fidelity signal acquisition,
-                precision conditioning, and ultra-low-noise environments.
-              </p>
-              <p>
-                From femto-farad capacitance sensing to giga-sample data
-                converters, our engineering team addresses the fundamental
-                challenges of electromagnetic interference, signal integrity,
-                and thermal stability to ensure laboratory-grade accuracy in
-                field-deployed hardware.
-              </p>
-            </div>
-          </div>
-
-          <div className="relative h-[300px] overflow-hidden rounded-2xl border border-slate-200 bg-white md:h-[420px]">
+      <section className="relative overflow-hidden pt-14 pb-12 border-b border-slate-200 lg:pt-20 lg:pb-24">
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Full-width Image Container */}
+          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-slate-200 group">
             <Image
               src="/hw-main/hw-sub/image1.jpg"
-              alt="Analog and mixed-signal precision engineering"
+              alt="Analog and Mixed-Signal Design - Qmax Systems"
               fill
               className="object-cover"
+              sizes="100vw"
               priority
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-100/60 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
+              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
+                HARDWARE DEVELOPMENT
+              </span>
+              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+                Analog &amp; Mixed-Signal<br className="hidden md:block" />
+                Design Services.
+              </h1>
+            </div>
+          </div>
+          <div className="mt-10 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
+            <p className="text-lg font-medium text-slate-800 md:text-xl">
+              Precision Engineering for Complex Signal Chains
+            </p>
+            <p>
+              In an increasingly digital world, the interface between the
+              physical and digital domains remains the most critical
+              bottleneck in high-performance electronics. Qmax Systems
+              provides comprehensive analog and mixed-signal development
+              services, specializing in high-fidelity signal acquisition,
+              precision conditioning, and ultra-low-noise environments.
+            </p>
+            <p>
+              From femto-farad capacitance sensing to giga-sample data
+              converters, our engineering team addresses the fundamental
+              challenges of electromagnetic interference, signal integrity,
+              and thermal stability to ensure laboratory-grade accuracy in
+              field-deployed hardware.
+            </p>
           </div>
         </div>
       </section>

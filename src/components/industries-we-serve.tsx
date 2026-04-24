@@ -233,7 +233,7 @@ export function IndustriesWeServe() {
   const selected = industries[selectedIndex];
 
   return (
-    <section className="py-10 lg:pt-[65px] lg:pb-[75px] bg-white">
+    <section className="py-8 lg:pt-[40px] lg:pb-[50px] bg-white">
       <div className="max-w-screen-xl mx-auto px-4 lg:px-5">
         {/* Header */}
         <div className="mb-8 lg:mb-12 text-center">

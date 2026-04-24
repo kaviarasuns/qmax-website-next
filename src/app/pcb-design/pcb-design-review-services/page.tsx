@@ -18,18 +18,30 @@ export default function PCBDesignReviewServicesPage() {
     <main className="bg-[#fcfcfc] text-zinc-900">
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-24 pb-12 lg:pt-32 lg:pb-24">
+      <section className="relative overflow-hidden pt-14 pb-12 lg:pt-20 lg:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(243,49,23,0.02),transparent_40%)]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-12">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
-              PCB DESIGN SERVICES
-            </span>
-            <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight max-w-5xl">
-              Design Review <br className="hidden md:block" />
-              Services.
-            </h1>
+          {/* Full-width Image Container */}
+          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-zinc-200 group">
+            <Image
+              src="/pcb-design-review-services/image1.png"
+              alt="PCB Design Review Services - Qmax Systems"
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#fcfcfc]/60 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
+              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
+                PCB DESIGN SERVICES
+              </span>
+              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+                Design Review<br className="hidden md:block" />
+                Services.
+              </h1>
+            </div>
           </div>
 
           {/* Core Introduction Content */}
@@ -46,25 +58,6 @@ export default function PCBDesignReviewServicesPage() {
               <p>
                 Qmax Systems provides structured, engineering-led Design Review Services that identify and resolve these issues before they reach the factory floor, the test lab, or the field.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Image Section */}
-      <section className="bg-[#fcfcfc] py-12">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="relative aspect-[21/9] w-full overflow-hidden border border-zinc-200 transition-all duration-1000">
-            <Image
-              src="/pcb-design-review-services/image1.png"
-              alt="PCB Design Review Process - Qmax Systems"
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#fcfcfc] via-transparent to-transparent flex items-end p-8 md:p-16">
-               <p className="text-xs font-black uppercase tracking-[0.4em] text-zinc-500">Production-Grade Technical Review</p>
             </div>
           </div>
         </div>

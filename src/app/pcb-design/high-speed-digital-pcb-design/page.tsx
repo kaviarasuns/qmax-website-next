@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
@@ -329,16 +330,31 @@ export const metadata: Metadata = {
 export default function HighSpeedDigitalPCBDesignPage() {
   return (
     <main className="bg-zinc-100 text-zinc-900">
-      <section className="relative overflow-hidden border-b border-zinc-200">
+      <section className="relative overflow-hidden pt-14 pb-12 border-b border-zinc-200 lg:pt-20 lg:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(24,24,27,0.08),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(82,82,91,0.08),transparent_40%)]" />
-        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-20 lg:px-8">
-          <p className="inline-flex rounded-full border border-zinc-300 bg-zinc-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-zinc-700">
-            PCB Design Services
-          </p>
-          <h1 className="mt-6 text-4xl font-semibold leading-tight text-zinc-900 md:text-5xl">
-            Advanced High-Speed Digital PCB Engineering &amp; Layout Solutions
-          </h1>
-          <div className="mt-6 max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Full-width Image Container */}
+          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-zinc-200 group">
+            <Image
+              src="/pcb-design/images/image1.jpg"
+              alt="High-Speed Digital PCB Design - Qmax Systems"
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-100/60 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
+              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
+                PCB DESIGN SERVICES
+              </span>
+              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+                Advanced High-Speed<br className="hidden md:block" />
+                Digital PCB Engineering.
+              </h1>
+            </div>
+          </div>
+          <div className="mt-10 max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
             <p>
               In an era defined by 112G SerDes, DDR5 memory architectures, and
               PCIe Gen6 protocols, PCB design is no longer just about

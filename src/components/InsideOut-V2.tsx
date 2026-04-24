@@ -116,7 +116,7 @@ export default function InsideOut() {
   return (
     <div
       ref={sectionRef}
-      className="pt-24 sm:pt-28 md:pt-32 lg:pt-36 xl:pt-40 bg-white"
+      className="pt-12 sm:pt-14 md:pt-16 lg:pt-20 xl:pt-24 bg-white"
     >
       <div className="flex flex-col lg:flex-row items-stretch gap-0 z-[1]">
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-6 lg:px-12 py-12">
@@ -252,7 +252,7 @@ export default function InsideOut() {
       </div>
 
       {/* Spacer after animation */}
-      <div style={{ height: "20vh" }} />
+      <div style={{ height: "8vh" }} />
     </div>
   );
 }

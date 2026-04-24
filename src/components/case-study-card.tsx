@@ -77,10 +77,10 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   const hasSummary = Boolean(caseStudy.summary?.trim());
 
   return (
-    <div className="relative overflow-hidden bg-[#f7f7f4] py-14 md:py-20">
+    <div className="relative overflow-hidden bg-[#f5f5f5] py-14 md:py-20">
       {/* Background gradients */}
       <div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_9%_12%,rgba(243,49,23,0.08),transparent_40%)]"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_9%_12%,rgba(0,0,0,0.03),transparent_40%)]"
         aria-hidden="true"
       />
       <div

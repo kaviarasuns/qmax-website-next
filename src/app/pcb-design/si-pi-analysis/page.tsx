@@ -17,43 +17,43 @@ export const metadata: Metadata = {
 export default function SIPIAnalysisServicesPage() {
   return (
     <main className="bg-zinc-100 text-justify text-zinc-900">
-      <section className="relative overflow-hidden border-b border-zinc-200">
+      <section className="relative overflow-hidden pt-14 pb-12 border-b border-zinc-200 lg:pt-20 lg:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(24,24,27,0.08),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(82,82,91,0.08),transparent_40%)]" />
-        <div className="relative mx-auto flex max-w-7xl flex-col gap-10 px-6 py-16 md:py-20 lg:px-8">
-          <div className="relative flex items-center justify-center w-full">
-            <div className="overflow-hidden rounded-2xl shadow-2xl shadow-zinc-900/10 ring-1 ring-zinc-200/50 w-full">
-              <Image
-                src="/pcb-design/SI and PI Analysis Services/image1.png"
-                alt="Si and PI Analysis Services"
-                width={1200}
-                height={800}
-                className="h-auto w-full object-cover transition-transform duration-700 hover:scale-105"
-                priority
-              />
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Full-width Image Container */}
+          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-zinc-200 group">
+            <Image
+              src="/pcb-design/SI and PI Analysis Services/image1.png"
+              alt="Signal and Power Integrity Analysis - Qmax Systems"
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-100/60 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
+              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
+                PCB DESIGN SERVICES
+              </span>
+              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+                SI &amp; PI Analysis<br className="hidden md:block" />
+                Services.
+              </h1>
             </div>
           </div>
-
-          <div className="w-full">
-            <p className="inline-flex rounded-full border border-zinc-300 bg-zinc-100 px-4 py-1 text-xs uppercase tracking-[0.16em] text-zinc-700">
-              PCB Design Services
-            </p>
-            <h1 className="text-left mt-6 text-4xl font-semibold leading-tight text-zinc-900 md:text-5xl lg:text-6xl">
-              Signal Integrity (SI) & Power Integrity (PI) Analysis Services
-            </h1>
-            <p className="mt-4 text-sm font-medium tracking-wide text-zinc-800 md:text-base lg:text-lg">
+          <div className="mt-10 max-w-4xl space-y-6 text-sm leading-8 text-zinc-700 md:text-base lg:text-lg">
+            <p className="text-sm font-medium tracking-wide text-zinc-800 md:text-base lg:text-lg">
               Predictive simulation and optimization for high-speed digital and high-frequency communication protocols.
             </p>
-            <div className="mt-8 space-y-6 text-sm leading-8 text-zinc-700 md:text-base lg:text-lg">
-              <p>
-                At Qmax Systems, Signal Integrity and Power Integrity analysis are embedded into every phase of the PCB design workflow — from initial interface selection and stackup definition, through constraint-driven layout, to post-layout verification and fabrication release. Our first-time-right methodology means that failure mechanisms are identified and engineered out before a board is sent to fabrication, not discovered during prototype bring-up.
-              </p>
-              <p>
-                Our SI/PI engineering team has more than three decades of hands-on experience with the full spectrum of ultra-high-speed digital signaling: NRZ interfaces from 10Gbps to 56Gbps, PAM4 channels at 56Gbps through 224Gbps per lane, multi-lane switch fabrics, complex DDR memory subsystems, and high-current power delivery networks for AI compute, data centre networking, and server platforms. We work directly with silicon vendors and PCB fabricators — not through intermediaries — to obtain validated IBIS-AMI models, fabricator-specific stackup data, and platform design guidelines that are not available through standard distribution channels.
-              </p>
-              <p>
-                SI/PI analysis is available both as a standalone engineering service and as an integrated component of our PCB Design and Hardware Development programs. Customers engage us to review existing designs, audit third-party layouts before fabrication, support bring-up debug, or as a partner throughout a full new-product design cycle. In all cases, all design IP, simulation data, and deliverables remain the sole intellectual property of the customer.
-              </p>
-            </div>
+            <p>
+              At Qmax Systems, Signal Integrity and Power Integrity analysis are embedded into every phase of the PCB design workflow — from initial interface selection and stackup definition, through constraint-driven layout, to post-layout verification and fabrication release. Our first-time-right methodology means that failure mechanisms are identified and engineered out before a board is sent to fabrication, not discovered during prototype bring-up.
+            </p>
+            <p>
+              Our SI/PI engineering team has more than three decades of hands-on experience with the full spectrum of ultra-high-speed digital signaling: NRZ interfaces from 10Gbps to 56Gbps, PAM4 channels at 56Gbps through 224Gbps per lane, multi-lane switch fabrics, complex DDR memory subsystems, and high-current power delivery networks for AI compute, data centre networking, and server platforms.
+            </p>
+            <p>
+              SI/PI analysis is available both as a standalone engineering service and as an integrated component of our PCB Design and Hardware Development programs. All design IP, simulation data, and deliverables remain the sole intellectual property of the customer.
+            </p>
           </div>
         </div>
       </section>

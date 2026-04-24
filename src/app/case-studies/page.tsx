@@ -154,6 +154,156 @@ const embeddedCaseStudies = [
     ],
     stats: { value: "3", label: "SFP+ network channels" },
   },
+  {
+    id: 11,
+    title: "Industrial Automation Controller",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/industrial-automation-controller",
+    category: "development",
+    summary:
+      "Advanced industrial automation controller with real-time processing capabilities, supporting multiple communication protocols and modular I/O expansion. Designed for manufacturing and process control applications.",
+    specs: [
+      { label: "Processor", value: "Cortex-A9" },
+      { label: "Protocols", value: "Modbus / EtherCAT" },
+      { label: "I/O", value: "16 DI/DO Ports" },
+    ],
+    stats: { value: "99.9%", label: "System uptime" },
+  },
+  {
+    id: 12,
+    title: "Wireless Sensor Network Hub",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/wireless-sensor-network-hub",
+    category: "development",
+    summary:
+      "Multi-protocol wireless hub aggregating sensor data from distributed IoT devices. Features advanced mesh networking with automatic routing and cloud connectivity for analytics.",
+    specs: [
+      { label: "Protocols", value: "BLE / Wi-Fi / Zigbee" },
+      { label: "Memory", value: "512 MB RAM" },
+      { label: "Range", value: "500m (Open space)" },
+    ],
+    stats: { value: "256", label: "Max connected devices" },
+  },
+  {
+    id: 13,
+    title: "Real-time Data Logger",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/real-time-data-logger",
+    category: "development",
+    summary:
+      "High-speed data logging device for industrial monitoring with onboard storage and real-time analytics. Supports multiple analog and digital input channels with configurable sampling rates.",
+    specs: [
+      { label: "Sampling", value: "100 kHz max" },
+      { label: "Storage", value: "1 TB eMMC" },
+      { label: "Channels", value: "32 analog inputs" },
+    ],
+    stats: { value: "32", label: "Parallel data channels" },
+  },
+  {
+    id: 14,
+    title: "Environmental Monitoring Station",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/environmental-monitoring-station",
+    category: "development",
+    summary:
+      "Compact environmental monitoring system with integrated sensors for temperature, humidity, air quality, and atmospheric pressure. Features solar charging and extended battery life.",
+    specs: [
+      { label: "Sensors", value: "6-point Environmental" },
+      { label: "Power", value: "Solar + Battery" },
+      { label: "Connectivity", value: "LoRaWAN" },
+    ],
+    stats: { value: "2yr", label: "Battery autonomy" },
+  },
+  {
+    id: 15,
+    title: "Smart Building Controller",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/smart-building-controller",
+    category: "development",
+    summary:
+      "Intelligent building management system controller coordinating HVAC, lighting, and security systems. Provides energy optimization and occupancy-based automation.",
+    specs: [
+      { label: "Zones", value: "Up to 128 zones" },
+      { label: "Interface", value: "BACnet / KNX" },
+      { label: "Processing", value: "Dual-core ARM" },
+    ],
+    stats: { value: "40%", label: "Energy consumption reduction" },
+  },
+  {
+    id: 16,
+    title: "Medical Device Interface",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/medical-device-interface",
+    category: "development",
+    summary:
+      "FDA-compliant interface module for connecting legacy medical equipment to modern networked healthcare systems. Includes rigorous data validation and secure communication.",
+    specs: [
+      { label: "Standards", value: "HL7 / DICOM" },
+      { label: "Grade", value: "Medical Class II" },
+      { label: "Uptime", value: "99.99% SLA" },
+    ],
+    stats: { value: "Zero", label: "Data loss incidents" },
+  },
+  {
+    id: 17,
+    title: "Robotics Motion Controller",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/robotics-motion-controller",
+    category: "development",
+    summary:
+      "High-precision motion controller for industrial robotic arms with real-time servo control and trajectory planning. Supports multiple kinematic configurations.",
+    specs: [
+      { label: "Axes", value: "Up to 16 axes" },
+      { label: "Control Loop", value: "4 kHz refresh" },
+      { label: "Accuracy", value: "±0.1mm" },
+    ],
+    stats: { value: "16", label: "Simultaneous axes" },
+  },
+  {
+    id: 18,
+    title: "Power Distribution Monitor",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/power-distribution-monitor",
+    category: "development",
+    summary:
+      "Three-phase power distribution monitoring device with comprehensive metering, harmonics analysis, and fault detection. Enables predictive maintenance of electrical infrastructure.",
+    specs: [
+      { label: "Phases", value: "3-phase 480V" },
+      { label: "Accuracy", value: "Class 0.5" },
+      { label: "Harmonics", value: "63rd order" },
+    ],
+    stats: { value: "25", label: "Measurable parameters" },
+  },
+  {
+    id: 19,
+    title: "Vehicular Telematics Unit",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/vehicular-telematics-unit",
+    category: "development",
+    summary:
+      "Compact vehicle telematics module for fleet management and vehicle diagnostics. Integrates GPS, accelerometer, and CAN bus interfaces with real-time event logging.",
+    specs: [
+      { label: "GPS", value: "Multi-constellation GNSS" },
+      { label: "Accuracy", value: "±5m CEP" },
+      { label: "CAN", value: "Dual CAN FD" },
+    ],
+    stats: { value: "99.5%", label: "Location uptime" },
+  },
+  {
+    id: 20,
+    title: "Security Access Control Hub",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/security-access-control-hub",
+    category: "development",
+    summary:
+      "Enterprise-grade access control hub with biometric integration, encrypted communication, and offline operation capability. Manages thousands of credentials securely.",
+    specs: [
+      { label: "Capacity", value: "50k credentials" },
+      { label: "Authentication", value: "Biometric + RFID" },
+      { label: "Encryption", value: "AES-256" },
+    ],
+    stats: { value: "99.99%", label: "Availability guarantee" },
+  },
 ];
 
 const pcbCaseStudies = [
@@ -190,6 +340,111 @@ const pcbCaseStudies = [
     title: "Fedarant PCB – Top Layer",
     image: "/case-studies/FEDERANT/P01306PB1PR2.svg",
     link: "/case-studies/fedarant-pcb-top-layer",
+    category: "development",
+  },
+  {
+    id: 6,
+    title: "Medical Sensing Board",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/medical-sensing-board",
+    category: "development",
+  },
+  {
+    id: 7,
+    title: "IoT Gateway PCB",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/iot-gateway-pcb",
+    category: "development",
+  },
+  {
+    id: 8,
+    title: "High-Speed Data Interface",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/high-speed-data-interface",
+    category: "development",
+  },
+  {
+    id: 9,
+    title: "RF Front-End Module",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/rf-front-end-module",
+    category: "development",
+  },
+  {
+    id: 10,
+    title: "Power Management Board",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/power-management-board",
+    category: "development",
+  },
+  {
+    id: 11,
+    title: "Battery Management System",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/battery-management-system",
+    category: "development",
+  },
+  {
+    id: 12,
+    title: "Sensor Interface Board",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/sensor-interface-board",
+    category: "development",
+  },
+  {
+    id: 13,
+    title: "Motor Control PCB",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/motor-control-pcb",
+    category: "development",
+  },
+  {
+    id: 14,
+    title: "Communication Module",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/communication-module",
+    category: "development",
+  },
+  {
+    id: 15,
+    title: "Audio Processing Board",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/audio-processing-board",
+    category: "development",
+  },
+  {
+    id: 16,
+    title: "Lighting Control PCB",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/lighting-control-pcb",
+    category: "development",
+  },
+  {
+    id: 17,
+    title: "FPGA Development Board",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/fpga-development-board",
+    category: "development",
+  },
+  {
+    id: 18,
+    title: "Thermal Management PCB",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/thermal-management-pcb",
+    category: "development",
+  },
+  {
+    id: 19,
+    title: "Security Module Board",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/security-module-board",
+    category: "development",
+  },
+  {
+    id: 20,
+    title: "Testing Interface PCB",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/testing-interface-pcb",
     category: "development",
   },
 ];
@@ -237,7 +492,8 @@ const mechanicalCaseStudies: {
   {
     id: 3,
     title: "Industrial Splice Detector",
-    image: "/case-studies/mechanicalCaseStudies/2/SPLICE_DETECTOR_RENDER_2.4.png",
+    image:
+      "/case-studies/mechanicalCaseStudies/2/SPLICE_DETECTOR_RENDER_2.4.png",
     link: "/case-studies/industrial-splice-detector",
     category: "mechanical",
     summary:
@@ -252,7 +508,8 @@ const mechanicalCaseStudies: {
   {
     id: 4,
     title: "OTT Media Gateway",
-    image: "/case-studies/mechanicalCaseStudies/3/OTT_RENDER_27_NOV_2024_MG2.1.png",
+    image:
+      "/case-studies/mechanicalCaseStudies/3/OTT_RENDER_27_NOV_2024_MG2.1.png",
     link: "/case-studies/ott-media-gateway",
     category: "mechanical",
     summary:
@@ -267,7 +524,8 @@ const mechanicalCaseStudies: {
   {
     id: 5,
     title: "RF Signal Generator Enclosure",
-    image: "/case-studies/mechanicalCaseStudies/4/PG10_RENDER_28_OCT_2024_MG1.1.png",
+    image:
+      "/case-studies/mechanicalCaseStudies/4/PG10_RENDER_28_OCT_2024_MG1.1.png",
     link: "/case-studies/rf-signal-generator-enclosure",
     category: "mechanical",
     summary:
@@ -282,7 +540,8 @@ const mechanicalCaseStudies: {
   {
     id: 6,
     title: "Pulse Oximeter Enclosure",
-    image: "/case-studies/mechanicalCaseStudies/5/PULSE_OXIMETER_RENDER_2.1.png",
+    image:
+      "/case-studies/mechanicalCaseStudies/5/PULSE_OXIMETER_RENDER_2.1.png",
     link: "/case-studies/pulse-oximeter-enclosure",
     category: "mechanical",
     summary:
@@ -297,7 +556,8 @@ const mechanicalCaseStudies: {
   {
     id: 7,
     title: "QSafe Tilt Sensor",
-    image: "/case-studies/mechanicalCaseStudies/6/QSAFE_TILT_SENSOR_RENDER_23_DEC_2023.16.png",
+    image:
+      "/case-studies/mechanicalCaseStudies/6/QSAFE_TILT_SENSOR_RENDER_23_DEC_2023.16.png",
     link: "/case-studies/qsafe-tilt-sensor",
     category: "mechanical",
     summary:
@@ -308,6 +568,201 @@ const mechanicalCaseStudies: {
       { label: "Indicator", value: "Status LED" },
     ],
     stats: { value: "IP", label: "Sealed for outdoor use" },
+  },
+  {
+    id: 8,
+    title: "Industrial Pressure Gauge",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/industrial-pressure-gauge",
+    category: "mechanical",
+    summary:
+      "Robust pressure gauge enclosure with stainless steel wetted parts, IP65 rating, and panel-mount configuration for harsh industrial environments.",
+    specs: [
+      { label: "Material", value: "Stainless Steel" },
+      { label: "Rating", value: "IP65" },
+      { label: "Range", value: "0-1000 PSI" },
+    ],
+    stats: { value: "±0.5%", label: "Accuracy class" },
+  },
+  {
+    id: 9,
+    title: "Compact Flow Meter Housing",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/compact-flow-meter-housing",
+    category: "mechanical",
+    summary:
+      "Lightweight composite flow meter housing with integrated display window, snap-fit assembly, and optimised for inline installation in fluid systems.",
+    specs: [
+      { label: "Material", value: "Engineering Plastic" },
+      { label: "Assembly", value: "Snap-fit" },
+      { label: "Flow Rate", value: "1-100 L/min" },
+    ],
+    stats: { value: "Minimal", label: "Pressure drop" },
+  },
+  {
+    id: 10,
+    title: "Temperature Transmitter Pod",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/temperature-transmitter-pod",
+    category: "mechanical",
+    summary:
+      "Submersible temperature transmitter with corrosion-resistant titanium probe, precision thermowell design, and IP68 waterproof rating for marine applications.",
+    specs: [
+      { label: "Material", value: "Titanium / IP68" },
+      { label: "Range", value: "-40°C to +125°C" },
+      { label: "Accuracy", value: "±0.5°C" },
+    ],
+    stats: { value: "5000m", label: "Submersion depth" },
+  },
+  {
+    id: 11,
+    title: "Ventilation Control Damper",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/ventilation-control-damper",
+    category: "mechanical",
+    summary:
+      "Motorised ventilation damper with low-friction blade mechanism, sealed bearing design, and position feedback for building automation integration.",
+    specs: [
+      { label: "Actuation", value: "24V DC Motor" },
+      { label: "Control", value: "0-10V Modulating" },
+      { label: "Frame", value: "Extruded Aluminium" },
+    ],
+    stats: { value: "100k", label: "Cycle life rating" },
+  },
+  {
+    id: 12,
+    title: "Safety Relief Valve Housing",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/safety-relief-valve-housing",
+    category: "mechanical",
+    summary:
+      "Certified pressure relief valve with redundant safety features, manifold-block integration, and compliance with ASME standards for petrochemical applications.",
+    specs: [
+      { label: "Standard", value: "ASME Certified" },
+      { label: "Pressure", value: "Up to 5000 PSI" },
+      { label: "Material", value: "Ductile Iron" },
+    ],
+    stats: { value: "Zero", label: "Leakage rating" },
+  },
+  {
+    id: 13,
+    title: "Wireless Sensor Node Case",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/wireless-sensor-node-case",
+    category: "mechanical",
+    summary:
+      "Compact multi-sensor enclosure with tool-free battery access, integrated antenna mounting, and desiccant cartridge support for extended outdoor deployment.",
+    specs: [
+      { label: "Form", value: "Compact Module" },
+      { label: "Material", value: "UV-resistant ABS" },
+      { label: "IP Rating", value: "IP66" },
+    ],
+    stats: { value: "1yr", label: "Sealed operation" },
+  },
+  {
+    id: 14,
+    title: "Energy Meter Enclosure",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/energy-meter-enclosure",
+    category: "mechanical",
+    summary:
+      "Wall-mounted smart meter enclosure with tamper-evident features, DIN rail mounting compatibility, and thermal management for utility deployment.",
+    specs: [
+      { label: "Mount", value: "DIN Rail / Wall" },
+      { label: "Material", value: "Fire-rated Plastic" },
+      { label: "Capacity", value: "4 Module slots" },
+    ],
+    stats: { value: "IEC61439", label: "Compliance standard" },
+  },
+  {
+    id: 15,
+    title: "Cable Gland Junction Box",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/cable-gland-junction-box",
+    category: "mechanical",
+    summary:
+      "Industrial cable management junction box with pre-installed glands, strain relief channels, and internal cable routing guides for panel integration.",
+    specs: [
+      { label: "Size", value: "200x300x120mm" },
+      { label: "Glands", value: "12x M20" },
+      { label: "Rating", value: "IP66/IP67" },
+    ],
+    stats: { value: "32A", label: "Wire capacity" },
+  },
+  {
+    id: 16,
+    title: "Modular Connector Panel",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/modular-connector-panel",
+    category: "mechanical",
+    summary:
+      "Standardised connector panel with hot-swappable module slots, keyed insertion design, and label space for industrial equipment front-facing connections.",
+    specs: [
+      { label: "Modules", value: "6-position" },
+      { label: "Keying", value: "Mechanical" },
+      { label: "Material", value: "Anodised Aluminium" },
+    ],
+    stats: { value: "500", label: "Insert/removal cycles" },
+  },
+  {
+    id: 17,
+    title: "Thermal Dissipation Heatsink",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/thermal-dissipation-heatsink",
+    category: "mechanical",
+    summary:
+      "Extruded aluminum heatsink with optimised fin geometry, forced convection cooling, and compact form factor for high-power semiconductor mounting.",
+    specs: [
+      { label: "Material", value: "6061-T6 Aluminium" },
+      { label: "Finish", value: "Black Anodise" },
+      { label: "Thermal", value: "0.25°C/W" },
+    ],
+    stats: { value: "300W", label: "Heat dissipation" },
+  },
+  {
+    id: 18,
+    title: "Vibration Isolation Mount",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/vibration-isolation-mount",
+    category: "mechanical",
+    summary:
+      "Elastomer-based vibration isolation mount with load rating plate, low resonance frequency, and corrosion-resistant fastening for equipment stabilisation.",
+    specs: [
+      { label: "Material", value: "Natural Rubber" },
+      { label: "Load", value: "Up to 500 kg" },
+      { label: "Damping", value: "0.05 Q-factor" },
+    ],
+    stats: { value: "10Hz", label: "Isolation frequency" },
+  },
+  {
+    id: 19,
+    title: "EMI Shielding Gasket Strip",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/emi-shielding-gasket-strip",
+    category: "mechanical",
+    summary:
+      "Conductive silicone gasket strip with integrated EMI shielding, compression set resistance, and design flexibility for custom sealing in electronic enclosures.",
+    specs: [
+      { label: "Material", value: "Conductive Silicone" },
+      { label: "Conductivity", value: "10^-3 S/m" },
+      { label: "Temp Range", value: "-50°C to +200°C" },
+    ],
+    stats: { value: "60dB", label: "Shielding effectiveness" },
+  },
+  {
+    id: 20,
+    title: "Flexible Cable Conduit Assembly",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/flexible-cable-conduit-assembly",
+    category: "mechanical",
+    summary:
+      "Pre-assembled flexible conduit with strain relief fittings, sleeving protection, and colour-coded identification bands for cable route management and protection.",
+    specs: [
+      { label: "Diameter", value: "6-25mm" },
+      { label: "Material", value: "Nylon-reinforced" },
+      { label: "Bend Radius", value: "3x diameter" },
+    ],
+    stats: { value: "1000+", label: "Bend cycle rating" },
   },
 ];
 
@@ -371,6 +826,246 @@ const industrialCaseStudies = [
       { label: "Form", value: "Puck" },
     ],
     stats: { value: "LSR", label: "Antimicrobial surface" },
+  },
+  {
+    id: 5,
+    title: "Portable Test Equipment Case",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/portable-test-equipment-case",
+    category: "industrial",
+    summary:
+      "Rugged carrying case for field test equipment with shock-absorbing foam inserts, weatherproof sealing, and ergonomic handle design for technician field work.",
+    specs: [
+      { label: "Material", value: "Impact-resistant Polymer" },
+      { label: "Sealing", value: "IP67 Rated" },
+      { label: "Form", value: "Compact Case" },
+    ],
+    stats: { value: "5kg", label: "Lightweight design" },
+  },
+  {
+    id: 6,
+    title: "Industrial Pump Assembly",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/industrial-pump-assembly",
+    category: "industrial",
+    summary:
+      "Heavy-duty industrial pump with cast iron body, stainless steel impeller, and balanced design for continuous operation in processing plants.",
+    specs: [
+      { label: "Material", value: "Cast Iron / SS" },
+      { label: "Capacity", value: "500 GPM" },
+      { label: "Head", value: "150 ft" },
+    ],
+    stats: { value: "10yr", label: "Design life" },
+  },
+  {
+    id: 7,
+    title: "Smart Vending Machine Interface",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/smart-vending-machine-interface",
+    category: "industrial",
+    summary:
+      "Touchscreen interface module for vending machines with anti-vandal construction, integrated card reader slot, and weather-resistant design.",
+    specs: [
+      { label: "Display", value: '10.1" Touch' },
+      { label: "Security", value: "Anti-tamper" },
+      { label: "Finish", value: "Polished Stainless" },
+    ],
+    stats: { value: "99.5%", label: "Uptime reliability" },
+  },
+  {
+    id: 8,
+    title: "Safety Instrumented Controller",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/safety-instrumented-controller",
+    category: "industrial",
+    summary:
+      "Safety-rated control module with redundant input monitoring, integrated emergency shutdown interface, and certified for high-risk industrial applications.",
+    specs: [
+      { label: "Rating", value: "SIL 3 Certified" },
+      { label: "Redundancy", value: "2oo3 logic" },
+      { label: "Response Time", value: "50ms max" },
+    ],
+    stats: { value: "Zero", label: "Safety incidents" },
+  },
+  {
+    id: 9,
+    title: "Modular Workstation Cart",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/modular-workstation-cart",
+    category: "industrial",
+    summary:
+      "Height-adjustable workstation cart with removable component trays, integrated cable management, and smooth-rolling casters for facility flexibility.",
+    specs: [
+      { label: "Adjustment", value: "0-30cm range" },
+      { label: "Weight Capacity", value: "50kg per shelf" },
+      { label: "Wheels", value: "Brake-equipped" },
+    ],
+    stats: { value: "4", label: "Configurable shelves" },
+  },
+  {
+    id: 10,
+    title: "Control Room Dashboard Panel",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/control-room-dashboard-panel",
+    category: "industrial",
+    summary:
+      "Integrated control panel with organized button layout, status indicator array, large display zone, and ergonomic mounting for operator comfort.",
+    specs: [
+      { label: "Controls", value: "36 interface points" },
+      { label: "Display", value: "7-segment LCD" },
+      { label: "Material", value: "Brushed Aluminium" },
+    ],
+    stats: { value: "16", label: "Simultaneous readouts" },
+  },
+  {
+    id: 11,
+    title: "Rack-Mount Server Chassis",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/rack-mount-server-chassis",
+    category: "industrial",
+    summary:
+      "Standard 2U rackmount chassis with optimised airflow design, tool-less drive bays, and front panel space for status indicators and emergency controls.",
+    specs: [
+      { label: "Form", value: "2U Rackmount" },
+      { label: "Expansion", value: '4x 3.5" bays' },
+      { label: "Power", value: "Redundant PSU ready" },
+    ],
+    stats: { value: "55W", label: "Max thermal design" },
+  },
+  {
+    id: 12,
+    title: "Heavy Equipment Control Console",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/heavy-equipment-control-console",
+    category: "industrial",
+    summary:
+      "Rugged operator console for heavy machinery with multi-function joystick, tactile feedback buttons, and sealed construction for dust-heavy environments.",
+    specs: [
+      { label: "Input", value: "6-axis Joystick" },
+      { label: "Sealing", value: "IP65 Rated" },
+      { label: "Cable", value: "50m coiled" },
+    ],
+    stats: { value: "30%", label: "Operator fatigue reduction" },
+  },
+  {
+    id: 13,
+    title: "Laboratory Instrument Enclosure",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/laboratory-instrument-enclosure",
+    category: "industrial",
+    summary:
+      "Precision instrument enclosure with vibration isolation feet, temperature-controlled chamber, and optical access windows for laboratory analysis equipment.",
+    specs: [
+      { label: "Isolation", value: "<1Hz resonance" },
+      { label: "Temperature", value: "±1°C stability" },
+      { label: "Optics", value: "Anti-reflection coated" },
+    ],
+    stats: { value: "Class A", label: "Precision grade" },
+  },
+  {
+    id: 14,
+    title: "Water Treatment Control Module",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/water-treatment-control-module",
+    category: "industrial",
+    summary:
+      "Industrial water treatment controller with multi-parameter sensor integration, automated dosing interface, and data logging for regulatory compliance.",
+    specs: [
+      { label: "Parameters", value: "8-point monitoring" },
+      { label: "Dosing", value: "4-channel peristaltic" },
+      { label: "Logging", value: "365-day storage" },
+    ],
+    stats: { value: "NSF", label: "Certification standard" },
+  },
+  {
+    id: 15,
+    title: "Conveyor System Drive Unit",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/conveyor-system-drive-unit",
+    category: "industrial",
+    summary:
+      "Sealed conveyor drive motor with integrated gearbox, oversized bearings for continuous duty, and quick-disconnect coupling for maintenance.",
+    specs: [
+      { label: "Power", value: "7.5 kW" },
+      { label: "Ratio", value: "30:1 reducer" },
+      { label: "Duty", value: "Continuous rated" },
+    ],
+    stats: { value: "50000hr", label: "MTBF rating" },
+  },
+  {
+    id: 16,
+    title: "Radiation Shielding Enclosure",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/radiation-shielding-enclosure",
+    category: "industrial",
+    summary:
+      "Lead-lined containment enclosure with interlocked access door, radiation monitoring port, and sealed seam construction for hazardous material handling.",
+    specs: [
+      { label: "Shielding", value: "10mm lead-lined" },
+      { label: "Interlocks", value: "Safety certified" },
+      { label: "Seal", value: "Welded seams" },
+    ],
+    stats: { value: "100%", label: "Containment rating" },
+  },
+  {
+    id: 17,
+    title: "Clean Room Equipment Trolley",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/clean-room-equipment-trolley",
+    category: "industrial",
+    summary:
+      "Cleanroom-compatible equipment trolley with smooth surfaces, low particle generation wheels, and stainless steel construction for biotech facilities.",
+    specs: [
+      { label: "Material", value: "304 Stainless Steel" },
+      { label: "Wheels", value: "Low-particle elastomer" },
+      { label: "Cleanliness", value: "Class 100 rated" },
+    ],
+    stats: { value: "Zero", label: "Particle shedding" },
+  },
+  {
+    id: 18,
+    title: "Laboratory Balance Housing",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/laboratory-balance-housing",
+    category: "industrial",
+    summary:
+      "Precision analytical balance enclosure with draft shield, static-dissipative platform, and integrated mass calibration system for metrology labs.",
+    specs: [
+      { label: "Accuracy", value: "0.1mg precision" },
+      { label: "Capacity", value: "310g" },
+      { label: "Draft Shield", value: "Acrylic windows" },
+    ],
+    stats: { value: "ISO 6683", label: "Compliance standard" },
+  },
+  {
+    id: 19,
+    title: "Sterile Processing Containment",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/sterile-processing-containment",
+    category: "industrial",
+    summary:
+      "Medical-grade sterile processing containment with removable sterilisable components, positive pressure airflow, and integrated HEPA filtration.",
+    specs: [
+      { label: "Standard", value: "ISO 13485" },
+      { label: "Material", value: "Biocompatible" },
+      { label: "Filtration", value: "HEPA / ULPA" },
+    ],
+    stats: { value: "Class A", label: "Sterility assurance" },
+  },
+  {
+    id: 20,
+    title: "Field Service Tool Kit Case",
+    image: "/case-studies/image_vacationing.png",
+    link: "/case-studies/field-service-tool-kit-case",
+    category: "industrial",
+    summary:
+      "Organizer case for field service technicians with custom-fitted tool storage, protective padding, and quick-access front pocket for documentation.",
+    specs: [
+      { label: "Material", value: "Reinforced Polymer" },
+      { label: "Customization", value: "Modular inserts" },
+      { label: "Weight", value: "3.2kg empty" },
+    ],
+    stats: { value: "25", label: "Tool storage capacity" },
   },
 ];
 
