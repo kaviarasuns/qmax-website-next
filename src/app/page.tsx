@@ -8,7 +8,6 @@ import Typewriter from "typewriter-effect";
 import { ServicesSection } from "@/components/services-section";
 import InsideOutV2 from "@/components/InsideOut-V2";
 import ServicesV4Stacked from "@/components/Services-V4-Stacked";
-import { IndustriesWeServe } from "@/components/industries-we-serve";
 import { IndustriesWeServeV2 } from "@/components/industries-we-serve-v2";
 
 export default function Home() {
