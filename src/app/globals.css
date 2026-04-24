@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Supermolot';
-  src: url('/fonts/OTF/TT Supermolot Regular.otf') format('opentype'),
-       url('/fonts/TTF/TT Supermolot Regular.ttf') format('truetype');
+  font-family: "Supermolot";
+  src:
+    url("/fonts/OTF/TT Supermolot Regular.otf") format("opentype"),
+    url("/fonts/TTF/TT Supermolot Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -122,7 +123,7 @@ body {
   h5,
   h6 {
     font-family: var(--font-readable-family);
-    @apply text-3xl md:text-5xl font-light tracking-wide;
+    @apply text-4xl md:text-5xl font-light tracking-wide;
     line-height: 1.15;
   }
 
