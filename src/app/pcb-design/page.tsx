@@ -13,12 +13,8 @@ import {
   Library,
   CheckCircle2,
   ArrowRight,
-  ArrowLeft,
-  ArrowUpRight,
 } from "lucide-react";
 import Link from "next/link";
-import CaseStudyCard from "@/components/CaseStudyCard";
-import { Button } from "@/components/ui/button";
 import FAQSection from "@/components/FAQSection";
 import { pcbDesignFAQs } from "@/data/service-faqs";
 import { CTASection } from "@/components/cta-section";
@@ -57,35 +53,6 @@ const pcbCaseStudies = [
 ];
 
 export default function PCBDesignPage() {
-  const scrollRef = React.useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
-  const [canScrollRight, setCanScrollRight] = React.useState(true);
-
-  const checkScroll = React.useCallback(() => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  }, []);
-
-  React.useEffect(() => {
-    checkScroll();
-    window.addEventListener("resize", checkScroll);
-    return () => {
-      window.removeEventListener("resize", checkScroll);
-    };
-  }, [checkScroll]);
-
-  const scrollCaseStudies = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = scrollRef.current.clientWidth * 0.8;
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
 
   // const containerVariants = {
   //   hidden: { opacity: 0 },
