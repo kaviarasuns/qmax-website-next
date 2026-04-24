@@ -250,7 +250,7 @@ export default function ScrollCardsAnimationV4({
   return (
     <div
       ref={containerRef}
-      className="relative min-h-screen pt-0 md:pt-20 lg:pt-24 xl:pt-28 flex items-center justify-center md:block"
+      className="relative min-h-0 pt-0 md:pt-8 lg:pt-12 xl:pt-16 pb-0 md:pb-4 lg:pb-8 flex items-center justify-center md:block"
     >
       {/* Horizontal Cards Section */}
 
@@ -367,13 +367,13 @@ export default function ScrollCardsAnimationV4({
       ) : (
         /* Desktop: 7 Cards Visible with Enhanced Visual Appeal */
         <div className="w-full px-4 flex flex-col items-center justify-center">
-          <div className="relative top-20">
+          <div className="relative top-8">
             <h1 className="text-3xl md:text-5xl font-light tracking-wide text-center text-black tracking-wide">
               Design To <span className="text-red-500">Manufacturing</span>
             </h1>
           </div>
           <div
-            className={`w-full flex flex-col items-center justify-center h-104 sm:h-[36rem] md:h-[40rem] lg:h-[44rem] xl:h-[48rem] ${
+            className={`w-full flex flex-col items-center justify-center h-80 sm:h-[30rem] md:h-[34rem] lg:h-[38rem] xl:h-[42rem] ${
               displayScale >= 1.25
                 ? "px-20 md:px-28 lg:px-36 xl:px-48 2xl:px-56"
                 : "px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-40"
