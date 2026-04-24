@@ -60,7 +60,8 @@ const faqs = [
       "Yes. We deliver isolated flyback, forward, and LLC-derived solutions as well as non-isolated buck, boost, and buck-boost topologies based on your efficiency, safety, and cost targets.",
   },
   {
-    question: "Can Qmax optimize designs for low EMI and certification readiness?",
+    question:
+      "Can Qmax optimize designs for low EMI and certification readiness?",
     answer:
       "Absolutely. We apply EMI-aware component selection, switching strategy tuning, filter design, and PCB layout best practices to reduce emissions and accelerate pre-compliance testing.",
   },
@@ -81,7 +82,6 @@ export const metadata: Metadata = {
   description:
     "Power electronics design and development services from converter architecture through validation and production support.",
 };
-
 
 export default function PowerElectorincsPage() {
   return (
@@ -104,35 +104,36 @@ export default function PowerElectorincsPage() {
                 HARDWARE DEVELOPMENT
               </span>
               <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
-                Power Electronics<br className="hidden md:block" />
+                Power Electronics
+                <br className="hidden md:block" />
                 Design Services.
               </h1>
             </div>
           </div>
           <div className="mt-10 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
             <p className="text-lg font-medium text-slate-800 md:text-xl">
-              Efficient, Stable, and Scalable Power for Mission-Critical Hardware
+              Efficient, Stable, and Scalable Power for Mission-Critical
+              Hardware
             </p>
             <p>
-              Qmax Systems delivers end-to-end power electronics engineering
-              for products that demand high efficiency, robust operation, and
-              long-term reliability. We design complete power subsystems,
-              from input protection and conversion stages to point-of-load
-              regulation and system-level validation.
+              Qmax Systems delivers end-to-end power electronics engineering for
+              products that demand high efficiency, robust operation, and
+              long-term reliability. We design complete power subsystems, from
+              input protection and conversion stages to point-of-load regulation
+              and system-level validation.
             </p>
             <p>
-              Whether you are building edge AI devices, telecom
-              infrastructure, industrial controls, or battery-based products,
-              our team focuses on practical architecture decisions that reduce
-              field failures and improve performance under real operating
-              conditions.
+              Whether you are building edge AI devices, telecom infrastructure,
+              industrial controls, or battery-based products, our team focuses
+              on practical architecture decisions that reduce field failures and
+              improve performance under real operating conditions.
             </p>
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-3xl text-slate-900">
           Our Power Electronics Expertise
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -147,9 +148,7 @@ export default function PowerElectorincsPage() {
               key={item.title}
               className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
             >
-              <h3 className="text-base font-semibold text-slate-900">
-                {item.title}
-              </h3>
+              <h3 className="text-base text-slate-900">{item.title}</h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
                 {item.description}
               </p>
@@ -160,9 +159,7 @@ export default function PowerElectorincsPage() {
 
       <section className="border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
-            Core Service Offerings
-          </h2>
+          <h2 className="text-3xl text-slate-900">Core Service Offerings</h2>
 
           <div className="mt-8 space-y-4">
             {serviceOfferings.map((item) => (
@@ -170,7 +167,7 @@ export default function PowerElectorincsPage() {
                 key={item.title}
                 className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
               >
-                <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+                <h3 className="text-base text-slate-900 md:text-lg">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
@@ -184,7 +181,7 @@ export default function PowerElectorincsPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_24px_rgba(15,23,42,0.06)] md:p-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl text-slate-900">
             Typical Engagement Workflow
           </h2>
 
@@ -193,7 +190,7 @@ export default function PowerElectorincsPage() {
               <p className="text-xs uppercase tracking-[0.16em] text-sky-700">
                 Step 1
               </p>
-              <h3 className="mt-2 text-base font-semibold text-slate-900">
+              <h3 className="mt-2 text-base text-slate-900">
                 Requirements & Constraints
               </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
@@ -206,7 +203,7 @@ export default function PowerElectorincsPage() {
               <p className="text-xs uppercase tracking-[0.16em] text-sky-700">
                 Step 2
               </p>
-              <h3 className="mt-2 text-base font-semibold text-slate-900">
+              <h3 className="mt-2 text-base text-slate-900">
                 Architecture & Simulation
               </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
@@ -219,7 +216,7 @@ export default function PowerElectorincsPage() {
               <p className="text-xs uppercase tracking-[0.16em] text-sky-700">
                 Step 3
               </p>
-              <h3 className="mt-2 text-base font-semibold text-slate-900">
+              <h3 className="mt-2 text-base text-slate-900">
                 Design & Prototyping
               </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
@@ -232,7 +229,7 @@ export default function PowerElectorincsPage() {
               <p className="text-xs uppercase tracking-[0.16em] text-sky-700">
                 Step 4
               </p>
-              <h3 className="mt-2 text-base font-semibold text-slate-900">
+              <h3 className="mt-2 text-base text-slate-900">
                 Validation & Handover
               </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
@@ -250,7 +247,7 @@ export default function PowerElectorincsPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_4px_24px_rgba(15,23,42,0.06)]">
-          <h2 className="text-2xl font-semibold text-slate-900 md:text-3xl">
+          <h2 className="text-2xl text-slate-900 md:text-3xl">
             Build Reliable Power Platforms with Qmax
           </h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-700 md:text-base">
@@ -262,24 +259,24 @@ export default function PowerElectorincsPage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm text-white transition hover:bg-slate-800"
             >
               Talk to Our Engineers
             </Link>
             <Link
               href="/hardware-development-services"
-              className="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+              className="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-sm text-slate-700 transition hover:bg-slate-50"
             >
               Back to Hardware Services
             </Link>
           </div>
         </div>
       </section>
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}
       />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>
   );
 }

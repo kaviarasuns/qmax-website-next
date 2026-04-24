@@ -31,6 +31,12 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
   const [lightboxIndex, setLightboxIndex] = React.useState(0);
   const [direction, setDirection] = React.useState(0); // -1 = prev, 1 = next
 
+  // Magnifier lens state
+  const [showLens, setShowLens] = React.useState(false);
+  const [lensPos, setLensPos] = React.useState({ x: 0, y: 0 }); // cursor pos relative to container (px)
+  const [lensPct, setLensPct] = React.useState({ x: 50, y: 50 }); // cursor pos as % of container
+  const imageStageRef = React.useRef<HTMLDivElement>(null);
+
   // Reset carousel when case study changes
   React.useEffect(() => {
     setCurrent(0);
@@ -39,6 +45,7 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
   // ── Lightbox navigation ──────────────────────────────────────────────────
   const navigateLightbox = React.useCallback(
     (dir: number) => {
+      setShowLens(false);
       setDirection(dir);
       setLightboxIndex((i) => {
         if (dir === -1) return i === 0 ? galleryImages.length - 1 : i - 1;
@@ -210,7 +217,22 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
             </div>
 
             {/* Image stage — fills available space between top bar and thumbnails */}
-            <div className="relative w-full max-w-5xl flex-1 min-h-0 overflow-hidden rounded-2xl bg-[oklch(92%_0.004_286.32)]">
+            <div
+              ref={imageStageRef}
+              className="relative w-full max-w-7xl flex-1 min-h-0 overflow-hidden rounded-2xl bg-[oklch(92%_0.004_286.32)] cursor-crosshair"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                setLensPos({ x, y });
+                setLensPct({
+                  x: (x / rect.width) * 100,
+                  y: (y / rect.height) * 100,
+                });
+                if (!showLens) setShowLens(true);
+              }}
+              onMouseLeave={() => setShowLens(false)}
+            >
               <AnimatePresence mode="wait" custom={direction} initial={false}>
                 <motion.div
                   key={lightboxIndex}
@@ -220,18 +242,43 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
                   animate="center"
                   exit="exit"
                   transition={{ duration: 0.22, ease: "easeInOut" }}
-                  className="absolute inset-0 flex items-center justify-center"
+                  className="absolute inset-0 flex items-center justify-center px-10 md:px-16"
                 >
                   <Image
                     src={galleryImages[lightboxIndex]}
                     alt={`${title} — image ${lightboxIndex + 1} of ${galleryImages.length}`}
                     fill
-                    className="object-contain"
+                    className="object-contain px-10 md:px-16"
                     sizes="(max-width: 768px) 100vw, 90vw"
                     priority
                   />
                 </motion.div>
               </AnimatePresence>
+
+              {/* Magnifier lens */}
+              {showLens && (
+                <div
+                  className="pointer-events-none absolute z-10 h-44 w-44 overflow-hidden rounded-full border-2 border-white/70 shadow-[0_0_0_1px_rgba(0,0,0,0.15),0_8px_24px_rgba(0,0,0,0.4)]"
+                  style={{
+                    left: lensPos.x - 88,
+                    top: lensPos.y - 88,
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={galleryImages[lightboxIndex]}
+                    alt=""
+                    className="absolute max-w-none"
+                    style={{
+                      width: (imageStageRef.current?.offsetWidth ?? 0) * 3,
+                      height: (imageStageRef.current?.offsetHeight ?? 0) * 3,
+                      left: -(lensPct.x / 100) * (imageStageRef.current?.offsetWidth ?? 0) * 3 + 88,
+                      top: -(lensPct.y / 100) * (imageStageRef.current?.offsetHeight ?? 0) * 3 + 88,
+                      objectFit: "contain",
+                    }}
+                  />
+                </div>
+              )}
             </div>
 
             {/* Prev / Next arrows */}

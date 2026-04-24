@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   description: "Professional PCB Library Services by Qmax Systems.",
 };
 
-
 export default function PCBLibraryServicesPage() {
   return (
     <main className="bg-zinc-100 text-zinc-900 min-h-screen">
@@ -32,7 +31,8 @@ export default function PCBLibraryServicesPage() {
                 PCB DESIGN SERVICES
               </span>
               <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
-                PCB Library<br className="hidden md:block" />
+                PCB Library
+                <br className="hidden md:block" />
                 Services.
               </h1>
             </div>
@@ -41,15 +41,21 @@ export default function PCBLibraryServicesPage() {
       </section>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="mt-12 p-12 bg-white rounded-2xl border border-zinc-200 shadow-sm text-center">
-            <h2 className="text-2xl font-medium text-zinc-600">Content Yet To be added</h2>
-            <p className="mt-4 text-zinc-500">We are currently preparing detailed information about our PCB Library Services. Please check back soon.</p>
+          <h2 className="text-2xl font-medium text-zinc-600">
+            Content Yet To be added
+          </h2>
+          <p className="mt-4 text-zinc-500">
+            We are currently preparing detailed information about our PCB
+            Library Services. Please check back soon.
+          </p>
         </div>
       </div>
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
+
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}
       />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>
   );
 }

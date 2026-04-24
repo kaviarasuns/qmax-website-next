@@ -282,7 +282,7 @@ const ServicesV4Stacked = ({
                       {/* <p className="text-xs font-semibold uppercase tracking-[0.2em] text-red-600">
                         Service {String(index + 1).padStart(2, "0")}
                       </p> */}
-                      <h3 className="mt-3 text-2xl font-bold text-gray-900 md:text-3xl">
+                      <h3 className="mb-3 text-2xl font-light tracking-wide text-gray-900 md:text-3xl">
                         {service.topic}
                       </h3>
                       <p className="mt-4 max-w-md text-sm leading-relaxed text-gray-600 md:text-base">
@@ -295,7 +295,7 @@ const ServicesV4Stacked = ({
                             <li key={item.title}>
                               <Link
                                 href={item.href}
-                                className="inline-flex items-center gap-2 text-sm font-medium text-red-600 hover:text-red-700"
+                                className="font-light  tracking-wide inline-flex items-center gap-2 text-sm text-red-600 hover:text-red-700"
                               >
                                 <span className="h-1.5 w-1.5 rounded-full bg-red-600" />
                                 <span>{item.title}</span>

@@ -114,23 +114,16 @@ body {
 
   /* ── Typographic Scale ── */
 
-  /* Headings: bold + wide tracking */
+  /* Headings: light weight + wide tracking */
   h1,
   h2,
-  h3 {
-    font-family: var(--font-readable-family);
-    font-weight: 700;
-    @apply tracking-wide;
-    line-height: 1.15;
-  }
-
+  h3,
   h4,
   h5,
   h6 {
     font-family: var(--font-readable-family);
-    font-weight: 600;
-    @apply tracking-wide;
-    line-height: 1.3;
+    @apply text-3xl md:text-5xl font-light tracking-wide;
+    line-height: 1.15;
   }
 
   /* Body text: regular weight, slight spacing for readability */

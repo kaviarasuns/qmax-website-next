@@ -116,7 +116,7 @@ export default function HardwareDevelopmentServicesPage() {
             <p className="inline-flex rounded-full border border-slate-200 bg-white/90 px-4 py-1 text-xs uppercase tracking-[0.16em] text-slate-600">
               Hardware Development Services
             </p>
-            <h1 className="mt-6 text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
+            <h1 className="mt-6 text-4xl leading-tight text-slate-900 md:text-5xl">
               The Complete Hardware Product Lifecycle
             </h1>
 
@@ -140,7 +140,7 @@ export default function HardwareDevelopmentServicesPage() {
               </div>
 
               <p>
-                <span className="font-semibold text-slate-900">
+                <span className="text-slate-900">
                   The Qmax Advantage:
                 </span>{" "}
                 Our development methodology is built on a well-defined,
@@ -158,7 +158,7 @@ export default function HardwareDevelopmentServicesPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-3xl text-slate-900">
           Our End-to-End Workflow Includes
         </h2>
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -170,7 +170,7 @@ export default function HardwareDevelopmentServicesPage() {
               <p className="text-xs uppercase tracking-[0.12em] text-sky-700">
                 Step {index + 1}
               </p>
-              <h3 className="mt-2 text-base font-semibold text-slate-900">
+              <h3 className="mt-2 text-base text-slate-900">
                 {item.title}
               </h3>
               <p className="mt-2 text-sm leading-6 text-slate-700">
@@ -183,7 +183,7 @@ export default function HardwareDevelopmentServicesPage() {
 
       <section className="border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl text-slate-900">
             Core Engineering Capabilities
           </h2>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -193,7 +193,7 @@ export default function HardwareDevelopmentServicesPage() {
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:shadow-md">
               <div className="flex-grow">
-                <h3 className="text-xl font-semibold text-slate-900">
+                <h3 className="text-xl text-slate-900">
                   1. Digital Hardware Design
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
@@ -203,26 +203,26 @@ export default function HardwareDevelopmentServicesPage() {
                 </p>
                 <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       Platforms:
                     </span>{" "}
                     MCU, MPU, SoC, and FPGA-based platforms.
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       High-Speed Interfaces:
                     </span>{" "}
                     PCIe Gen3/4/5, USB 2.0/3.x, Gigabit/10G/25G Ethernet, and
                     MIPI/LVDS/HDMI display interfaces.
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       Memory:
                     </span>{" "}
                     DDR3, DDR4, and DDR5 memory subsystem design.
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       PCB Technology:
                     </span>{" "}
                     High-density BGA, HDI, and multi-layer PCBs.
@@ -232,7 +232,7 @@ export default function HardwareDevelopmentServicesPage() {
               <div className="mt-8">
                 <Link
                   href="/hardware-development-services/high-speed-digital-design"
-                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800 shadow-sm"
+                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm text-white transition hover:bg-sky-800 shadow-sm"
                 >
                   Know More
                 </Link>
@@ -241,7 +241,7 @@ export default function HardwareDevelopmentServicesPage() {
 
             <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:shadow-md">
               <div className="flex-grow">
-                <h3 className="text-xl font-semibold text-slate-900">
+                <h3 className="text-xl text-slate-900">
                   2. Analog &amp; Mixed-Signal Design
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
@@ -251,21 +251,21 @@ export default function HardwareDevelopmentServicesPage() {
                 </p>
                 <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       Sensing:
                     </span>{" "}
                     Low-noise analog front-ends and sensor interfacing for
                     pressure, vibration, biomedical, and optical applications.
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       Processing:
                     </span>{" "}
                     Signal conditioning, filtering, amplification, and ADC/DAC
                     integration.
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       Integrity:
                     </span>{" "}
                     EMI-aware analog layout and grounding techniques.
@@ -275,7 +275,7 @@ export default function HardwareDevelopmentServicesPage() {
               <div className="mt-8">
                 <Link
                   href="/hardware-development-services/analog-design"
-                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800 shadow-sm"
+                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm text-white transition hover:bg-sky-800 shadow-sm"
                 >
                   Know More
                 </Link>
@@ -284,7 +284,7 @@ export default function HardwareDevelopmentServicesPage() {
 
             <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:shadow-md">
               <div className="flex-grow">
-                <h3 className="text-xl font-semibold text-slate-900">
+                <h3 className="text-xl text-slate-900">
                   3. RF &amp; Microwave Hardware
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
@@ -293,26 +293,26 @@ export default function HardwareDevelopmentServicesPage() {
                 </p>
                 <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       Components:
                     </span>{" "}
                     RF front-end design (LNA, PA, filters, matching networks).
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       Antennas:
                     </span>{" "}
                     Design and integration of PCB, external, horn, and custom
                     antennas.
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       Protocols:
                     </span>{" "}
                     ISM, Wi-Fi, BLE, LTE, and Sub-GHz systems.
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       Validation:
                     </span>{" "}
                     RF simulation, tuning, calibration, and EMC-aware layout.
@@ -322,7 +322,7 @@ export default function HardwareDevelopmentServicesPage() {
               <div className="mt-8">
                 <Link
                   href="/hardware-development-services/rf-and-microwave"
-                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800 shadow-sm"
+                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm text-white transition hover:bg-sky-800 shadow-sm"
                 >
                   Know More
                 </Link>
@@ -331,7 +331,7 @@ export default function HardwareDevelopmentServicesPage() {
 
             <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:shadow-md">
               <div className="flex-grow">
-                <h3 className="text-xl font-semibold text-slate-900">
+                <h3 className="text-xl text-slate-900">
                   4. Power Electronics &amp; High-Voltage
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
@@ -340,27 +340,27 @@ export default function HardwareDevelopmentServicesPage() {
                 </p>
                 <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       Conversion:
                     </span>{" "}
                     AC-DC/DC-DC converters and isolated/non-isolated SMPS
                     designs.
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       Topologies:
                     </span>{" "}
                     Resonant, LLC, CLLC, and Class-D topologies.
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       High Power:
                     </span>{" "}
                     Battery systems (BMS), chargers, inverters, and
                     high-voltage/high-current PCB design.
                   </li>
                   <li>
-                    <span className="font-semibold text-slate-900">
+                    <span className="text-slate-900">
                       Reliability:
                     </span>{" "}
                     Thermal simulation, derating, and reliability analysis.
@@ -370,7 +370,7 @@ export default function HardwareDevelopmentServicesPage() {
               <div className="mt-8">
                 <Link
                   href="/hardware-development-services/power-electorincs"
-                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800 shadow-sm"
+                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm text-white transition hover:bg-sky-800 shadow-sm"
                 >
                   Know More
                 </Link>
@@ -379,7 +379,7 @@ export default function HardwareDevelopmentServicesPage() {
           </div>
           <div className="mt-12 space-y-12">
             <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-2xl font-semibold text-slate-900">
+              <h3 className="text-2xl text-slate-900">
                 Labs &amp; Engineering Infrastructure
               </h3>
               <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
@@ -387,7 +387,7 @@ export default function HardwareDevelopmentServicesPage() {
                 reducing dependency on external facilities during development.
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                <span className="font-semibold text-slate-900">
+                <span className="text-slate-900">
                   The Qmax Advantage:
                 </span>{" "}
                 Speed and accuracy are determined by having the right tools. We
@@ -402,7 +402,7 @@ export default function HardwareDevelopmentServicesPage() {
 
               <div className="mt-6 grid gap-6 md:grid-cols-2">
                 <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                  <h4 className="text-lg font-semibold text-slate-900">
+                  <h4 className="text-lg text-slate-900">
                     Electronics Test &amp; Validation
                   </h4>
                   <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
@@ -423,7 +423,7 @@ export default function HardwareDevelopmentServicesPage() {
                 </article>
 
                 <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                  <h4 className="text-lg font-semibold text-slate-900">
+                  <h4 className="text-lg text-slate-900">
                     Environmental Reliability &amp; Assembly
                   </h4>
                   <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
@@ -432,14 +432,14 @@ export default function HardwareDevelopmentServicesPage() {
                   </p>
                   <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
                     <li>
-                      <span className="font-semibold text-slate-900">
+                      <span className="text-slate-900">
                         Environmental:
                       </span>{" "}
                       Temperature chambers (hot &amp; cold), thermal cycling,
                       soak testing, drop stress setups, and acoustic chambers.
                     </li>
                     <li>
-                      <span className="font-semibold text-slate-900">
+                      <span className="text-slate-900">
                         Assembly:
                       </span>{" "}
                       Dedicated facilities for prototype PCB assembly,
@@ -452,7 +452,7 @@ export default function HardwareDevelopmentServicesPage() {
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-2xl font-semibold text-slate-900">
+              <h3 className="text-2xl text-slate-900">
                 Compliance, Certification &amp; Quality
               </h3>
               <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
@@ -461,7 +461,7 @@ export default function HardwareDevelopmentServicesPage() {
                 pre-compliance, safety testing, and environmental testing.
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                <span className="font-semibold text-slate-900">
+                <span className="text-slate-900">
                   The Qmax Advantage:
                 </span>{" "}
                 We don&apos;t just design for functionality; we design for
@@ -475,20 +475,20 @@ export default function HardwareDevelopmentServicesPage() {
               </p>
               <ul className="mt-5 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
                 <li>
-                  <span className="font-semibold text-slate-900">
+                  <span className="text-slate-900">
                     Regulatory Support:
                   </span>{" "}
                   Assistance with FCC, CE, IEC, UL, and BIS readiness.
                 </li>
                 <li>
-                  <span className="font-semibold text-slate-900">
+                  <span className="text-slate-900">
                     Quality Standards:
                   </span>{" "}
                   Our processes are certified under ISO 9001 (Quality
                   Management) and ISO 13485 (Medical Devices).
                 </li>
                 <li>
-                  <span className="font-semibold text-slate-900">
+                  <span className="text-slate-900">
                     Design Rigor:
                   </span>{" "}
                   We utilize structured design reviews, configuration
@@ -498,7 +498,7 @@ export default function HardwareDevelopmentServicesPage() {
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-2xl font-semibold text-slate-900">
+              <h3 className="text-2xl text-slate-900">
                 Industries We Serve
               </h3>
               <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
@@ -506,7 +506,7 @@ export default function HardwareDevelopmentServicesPage() {
                 rigor and documentation depth based on regulatory requirements.
               </p>
               <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                <span className="font-semibold text-slate-900">
+                <span className="text-slate-900">
                   The Qmax Advantage:
                 </span>{" "}
                 Our versatility is a direct result of our multi-domain
@@ -539,15 +539,14 @@ export default function HardwareDevelopmentServicesPage() {
           </div>
         </div>
       </section>
-      <FAQSection faqs={hardwareFaqs} />
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
+
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_6px_30px_rgba(15,23,42,0.08)] md:p-10">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl text-slate-900">
             Ready to Build Your Hardware?
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-            <span className="font-semibold text-slate-900">
+            <span className="text-slate-900">
               Free 1-Hour Hardware Consulting
             </span>{" "}
             Speak with a senior hardware architect to review your architecture
@@ -555,17 +554,18 @@ export default function HardwareDevelopmentServicesPage() {
           </p>
           <a
             href="/contact"
-            className="mt-6 inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-800"
+            className="mt-6 inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-3 text-sm text-white transition hover:bg-sky-800"
           >
             Book a Free Consultation
           </a>
         </div>
       </section>
-
+      <FAQSection faqs={hardwareFaqs} />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}
       />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>
   );
 }

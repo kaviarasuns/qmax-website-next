@@ -9,8 +9,7 @@ export interface ServiceCaseStudy {
 export const hardwareCaseStudies: ServiceCaseStudy[] = [
   {
     title: "Industrial Controller",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Industrial-Control-2.png",
+    image: "/case-studies/BLUECOLD/1.png",
     link: "/case-studies/Industrial-Controller",
     category: "hardware",
     summary:
@@ -18,8 +17,7 @@ export const hardwareCaseStudies: ServiceCaseStudy[] = [
   },
   {
     title: "Aerospace PCB",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Aerospace-PCB.png",
+    image: "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.1.png",
     link: "/case-studies/Aerospace-PCB",
     category: "hardware",
     summary:
@@ -27,8 +25,7 @@ export const hardwareCaseStudies: ServiceCaseStudy[] = [
   },
   {
     title: "OBD 2 Device with LoRa and BLE",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/OBD_2_Device_with_LoRa_and_BLE.jpg",
+    image: "/case-studies/CHARA/1.png",
     link: "/case-studies/OBD-2-Device-with-LoRa-and-BLE",
     category: "hardware",
     summary:
@@ -39,28 +36,25 @@ export const hardwareCaseStudies: ServiceCaseStudy[] = [
 export const pcbCaseStudies: ServiceCaseStudy[] = [
   {
     title: "Industrial Controller",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Industrial-Control-2.png",
-    link: "/case-studies/Industrial-Controller",
-    category: "pcb",
+    image: "/ott/CHARA-top.svg",
+    link: "/case-studies/portable-ev-charger-pcb",
+    category: "development",
     summary:
-      "Industrial control PCB developed for reliable operation, manufacturability, and long-term field stability.",
+      "Production-grade industrial control PCB developed for reliable operation in demanding field environments.",
   },
   {
     title: "Aerospace PCB",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Aerospace-PCB.png",
-    link: "/case-studies/Aerospace-PCB",
-    category: "pcb",
+    image: "/ott/TEK_OTT_REV1P0_BOT.svg",
+    link: "/case-studies/aerospace-pcb",
+    category: "development",
     summary:
-      "High-reliability board program optimized for demanding aerospace signal integrity and validation requirements.",
+      "High-reliability aerospace board program engineered around strict performance and validation constraints.",
   },
   {
     title: "Automotive OBD",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Automotive-OBD.png",
-    link: "/case-studies/Automotive-OBD",
-    category: "pcb",
+    image: "/ott/TEK_OTT_REV1P0_BRD_PR3.svg",
+    link: "/case-studies/automotive-obd-pcb",
+    category: "development",
     summary:
       "Compact automotive diagnostics PCB designed around durability, compliance, and fast system integration.",
   },
@@ -68,31 +62,28 @@ export const pcbCaseStudies: ServiceCaseStudy[] = [
 
 export const embeddedCaseStudies: ServiceCaseStudy[] = [
   {
-    title: "IOT Module with Wi-Fi BLE ZigBee",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/IOT_Module_with_Wi-Fi_BLE_ZigBee.jpg",
-    link: "/case-studies/IOT-Module-with-Wi-Fi-BLE-ZigBee",
-    category: "embedded",
+    title: "Industrial Temperature Control System",
+    image: "/case-studies/BLUECOLD/1.png",
+    link: "/case-studies/industrial-temperature-control-system",
+    category: "development",
     summary:
-      "Multi-radio Qualcomm-based IoT module combining Wi-Fi, BLE, and ZigBee for connected embedded products.",
+      "A powerful Edge controller device used in high security applications with multi-protocol sensors and reader inputs. The system is powered through POE+ and has options for power backup using an external power supply or battery. It can work as a stand alone device or can be cascaded to control multiple access points.",
   },
   {
-    title: "IOT Micro Gateway",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/IOT_Micro_Gateway.jpg",
-    link: "/case-studies/IOT-micro-gateway",
-    category: "embedded",
+    title: "Multi IO card for ATE",
+    image: "/case-studies/CHARA/1.png",
+    link: "/case-studies/multi-io-card-for-ate",
+    category: "development",
     summary:
-      "Compact embedded gateway bridging BLE and ZigBee devices to the internet through integrated Wi-Fi.",
+      "An advanced health monitoring system utilizing FPGA technology for real-time processing of multiple biosignals. The system integrates various sensors to monitor vital signs and provides wireless connectivity for remote monitoring. Designed with medical-grade standards for reliability and accuracy in clinical environments.",
   },
   {
-    title: "Power Measurement System",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/Polyphase_Power_Measurement_System.jpg",
-    link: "/case-studies/polyphase-power_measurement",
-    category: "embedded",
+    title: "Smart Monitoring System",
+    image: "/case-studies/CLIMATE CONTROL/1.png",
+    link: "/case-studies/smart-monitoring-system",
+    category: "development",
     summary:
-      "Real-time embedded power metering platform with precision sensing and industrial-grade processing.",
+      "A comprehensive industrial control system featuring integrated POE+ switching capabilities and real-time operating system. The system provides centralized control for multiple devices while delivering power and data through a single ethernet connection. Designed for harsh industrial environments with robust communication protocols.",
   },
 ];
 
@@ -154,7 +145,29 @@ export const industrialDesignCaseStudies: ServiceCaseStudy[] = [
 ];
 
 export const mechanicalIndustrialCaseStudies: ServiceCaseStudy[] = [
-  mechanicalCaseStudies[0],
-  mechanicalCaseStudies[1],
-  industrialDesignCaseStudies[0],
+  {
+    title: "CapServe Cell Sensor",
+    image: "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.1.png",
+    link: "/case-studies/capserve-cell-sensor",
+    category: "mechanical",
+    summary:
+      "IP65-rated outdoor cell sensor enclosure with snap-fit assembly, integrated pole-mount bracket, and DFM-reviewed geometry ready for injection-moulding production.",
+  },
+  {
+    title: "UV Disinfection System",
+    image: "/case-studies/mechanicalCaseStudies/1/MYNATEK_RENDER__1.0.png",
+    link: "/case-studies/uv-disinfection-system",
+    category: "mechanical",
+    summary:
+      "Wall-mounted UV-C disinfection unit branded SafeSpaceUV with triple lamp array, sealed optical windows, and two-tone enclosure for healthcare and commercial spaces.",
+  },
+  {
+    title: "Industrial Splice Detector",
+    image:
+      "/case-studies/mechanicalCaseStudies/2/SPLICE_DETECTOR_RENDER_2.4.png",
+    link: "/case-studies/industrial-splice-detector",
+    category: "mechanical",
+    summary:
+      "Ruggedised splice detector with extruded aluminium heatsink enclosure, M12 industrial connectors, and RS-232 / RS-485 / EtherCAT interfaces for manufacturing lines.",
+  },
 ];

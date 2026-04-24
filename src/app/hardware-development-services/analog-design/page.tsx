@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     "Analog design services by Qmax Systems. Detailed content for this service page can be added incrementally.",
 };
 
-
 export default function AnalogDesignPage() {
   return (
     <main className="bg-slate-100 text-justify text-slate-900">
@@ -35,7 +34,8 @@ export default function AnalogDesignPage() {
                 HARDWARE DEVELOPMENT
               </span>
               <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
-                Analog &amp; Mixed-Signal<br className="hidden md:block" />
+                Analog &amp; Mixed-Signal
+                <br className="hidden md:block" />
                 Design Services.
               </h1>
             </div>
@@ -46,17 +46,17 @@ export default function AnalogDesignPage() {
             </p>
             <p>
               In an increasingly digital world, the interface between the
-              physical and digital domains remains the most critical
-              bottleneck in high-performance electronics. Qmax Systems
-              provides comprehensive analog and mixed-signal development
-              services, specializing in high-fidelity signal acquisition,
-              precision conditioning, and ultra-low-noise environments.
+              physical and digital domains remains the most critical bottleneck
+              in high-performance electronics. Qmax Systems provides
+              comprehensive analog and mixed-signal development services,
+              specializing in high-fidelity signal acquisition, precision
+              conditioning, and ultra-low-noise environments.
             </p>
             <p>
               From femto-farad capacitance sensing to giga-sample data
               converters, our engineering team addresses the fundamental
-              challenges of electromagnetic interference, signal integrity,
-              and thermal stability to ensure laboratory-grade accuracy in
+              challenges of electromagnetic interference, signal integrity, and
+              thermal stability to ensure laboratory-grade accuracy in
               field-deployed hardware.
             </p>
           </div>
@@ -64,18 +64,18 @@ export default function AnalogDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-3xl text-slate-900">
           Our Analog &amp; Mixed-Signal Expertise
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-          Bridging the gap between raw physical phenomena and actionable
-          digital data requires a deep understanding of physics and electronic
-          theory. Our expertise spans the entire signal chain:
+          Bridging the gap between raw physical phenomena and actionable digital
+          data requires a deep understanding of physics and electronic theory.
+          Our expertise spans the entire signal chain:
         </p>
 
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900">
+            <h3 className="text-base text-slate-900">
               Low-Noise Signal Conditioning
             </h3>
             <p className="mt-2 text-sm leading-6 text-slate-700">
@@ -85,7 +85,7 @@ export default function AnalogDesignPage() {
           </article>
 
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900">
+            <h3 className="text-base text-slate-900">
               High-Speed Data Acquisition (DAQ)
             </h3>
             <p className="mt-2 text-sm leading-6 text-slate-700">
@@ -95,7 +95,7 @@ export default function AnalogDesignPage() {
           </article>
 
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900">
+            <h3 className="text-base text-slate-900">
               Power Integrity for Analog
             </h3>
             <p className="mt-2 text-sm leading-6 text-slate-700">
@@ -105,9 +105,7 @@ export default function AnalogDesignPage() {
           </article>
 
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900">
-              Advanced PCB Topology
-            </h3>
+            <h3 className="text-base text-slate-900">Advanced PCB Topology</h3>
             <p className="mt-2 text-sm leading-6 text-slate-700">
               Specialized layout techniques for isolation, guard rings, and
               star-grounding to eliminate ground loops and crosstalk.
@@ -118,13 +116,11 @@ export default function AnalogDesignPage() {
 
       <section className="border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
-            Core Service Offerings
-          </h2>
+          <h2 className="text-3xl text-slate-900">Core Service Offerings</h2>
 
           <div className="mt-8 space-y-4">
             <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+              <h3 className="text-base text-slate-900 md:text-lg">
                 1. Precision Analog Front-End (AFE) Design
               </h3>
               <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
@@ -136,7 +132,7 @@ export default function AnalogDesignPage() {
             </article>
 
             <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+              <h3 className="text-base text-slate-900 md:text-lg">
                 2. Mixed-Signal System-on-Module Integration
               </h3>
               <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
@@ -148,19 +144,19 @@ export default function AnalogDesignPage() {
             </article>
 
             <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+              <h3 className="text-base text-slate-900 md:text-lg">
                 3. RF and High-Speed Signal Interconnects
               </h3>
               <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
                 Design and simulation of transmission lines, controlled
                 impedance routing, and return path optimization for
-                multi-gigahertz signals used in Software Defined Radio (SDR)
-                and telecommunications.
+                multi-gigahertz signals used in Software Defined Radio (SDR) and
+                telecommunications.
               </p>
             </article>
 
             <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+              <h3 className="text-base text-slate-900 md:text-lg">
                 4. Low-Power Wearable Electronics
               </h3>
               <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
@@ -174,12 +170,10 @@ export default function AnalogDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
-          Proven Project Experience
-        </h2>
+        <h2 className="text-3xl text-slate-900">Proven Project Experience</h2>
         <ul className="mt-8 grid gap-4 md:grid-cols-2">
           <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">
+            <span className="text-slate-900">
               Aerospace Structural Health Monitoring:
             </span>{" "}
             Developed ruggedized sensing nodes for commercial aircraft, capable
@@ -187,37 +181,31 @@ export default function AnalogDesignPage() {
             environments.
           </li>
           <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">
-              32-Channel High-Speed DAQ:
-            </span>{" "}
+            <span className="text-slate-900">32-Channel High-Speed DAQ:</span>{" "}
             Engineering a simultaneous sampling system for industrial physics
             applications, utilizing FPGA-based real-time data capture.
           </li>
           <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">
-              Medical Acoustic Sensing:
-            </span>{" "}
-            Designed a wearable lung sound recorder featuring a low-noise
-            analog front-end for clinical-grade diagnostic audio.
+            <span className="text-slate-900">Medical Acoustic Sensing:</span>{" "}
+            Designed a wearable lung sound recorder featuring a low-noise analog
+            front-end for clinical-grade diagnostic audio.
           </li>
           <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">
+            <span className="text-slate-900">
               Femto-Farad Capacitance Measurement:
             </span>{" "}
             Implementation of ultra-high sensitivity measurement systems for
             specialized industrial proximity and material analysis.
           </li>
           <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">
+            <span className="text-slate-900">
               Aerospace Cable Tension Meters:
             </span>{" "}
             High-reliability force measurement systems with calibrated analog
             outputs for flight-critical applications.
           </li>
           <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">
-              Ultra-Low-Cost Hearing Aid:
-            </span>{" "}
+            <span className="text-slate-900">Ultra-Low-Cost Hearing Aid:</span>{" "}
             Engineering a low-power, high-gain analog signal path optimized for
             mass-market accessibility and long battery life.
           </li>
@@ -226,7 +214,7 @@ export default function AnalogDesignPage() {
 
       <section className="border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">Case Studies</h2>
+          <h2 className="text-3xl text-slate-900">Case Studies</h2>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
             More case studies after NDA
           </p>
@@ -234,12 +222,10 @@ export default function AnalogDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
-          Technical Differentiators
-        </h2>
+        <h2 className="text-3xl text-slate-900">Technical Differentiators</h2>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900">
+            <h3 className="text-base text-slate-900">
               Noise Reduction and Isolation
             </h3>
             <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
@@ -250,7 +236,7 @@ export default function AnalogDesignPage() {
           </article>
 
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900">
+            <h3 className="text-base text-slate-900">
               Return Path Optimization
             </h3>
             <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
@@ -261,7 +247,7 @@ export default function AnalogDesignPage() {
           </article>
 
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900">
+            <h3 className="text-base text-slate-900">
               Real-Time FPGA Signal Processing
             </h3>
             <p className="mt-2 text-sm leading-7 text-slate-700 md:text-base">
@@ -275,49 +261,40 @@ export default function AnalogDesignPage() {
 
       <section className="border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl text-slate-900">
             End-to-End Development Process
           </h2>
           <ul className="mt-8 space-y-3">
             <li className="rounded-lg border border-slate-200 bg-white px-5 py-4 text-sm leading-7 text-slate-700 md:text-base">
-              <span className="font-semibold text-slate-900">
+              <span className="text-slate-900">
                 Architecture &amp; Specification:
               </span>{" "}
-              Definition of dynamic range, bandwidth, and accuracy
-              requirements.
+              Definition of dynamic range, bandwidth, and accuracy requirements.
             </li>
             <li className="rounded-lg border border-slate-200 bg-white px-5 py-4 text-sm leading-7 text-slate-700 md:text-base">
-              <span className="font-semibold text-slate-900">
-                Simulation &amp; Modeling:
-              </span>{" "}
+              <span className="text-slate-900">Simulation &amp; Modeling:</span>{" "}
               SPICE modeling and signal integrity simulations to validate
               circuit behavior.
             </li>
             <li className="rounded-lg border border-slate-200 bg-white px-5 py-4 text-sm leading-7 text-slate-700 md:text-base">
-              <span className="font-semibold text-slate-900">
-                Schematic Capture:
-              </span>{" "}
+              <span className="text-slate-900">Schematic Capture:</span>{" "}
               Component selection based on TCR (Temperature Coefficient of
               Resistance), voltage coefficient, and long-term stability.
             </li>
             <li className="rounded-lg border border-slate-200 bg-white px-5 py-4 text-sm leading-7 text-slate-700 md:text-base">
-              <span className="font-semibold text-slate-900">
-                Specialized Layout:
-              </span>{" "}
+              <span className="text-slate-900">Specialized Layout:</span>{" "}
               Critical placement of analog and digital planes, differential pair
               routing, and thermal management.
             </li>
             <li className="rounded-lg border border-slate-200 bg-white px-5 py-4 text-sm leading-7 text-slate-700 md:text-base">
-              <span className="font-semibold text-slate-900">
+              <span className="text-slate-900">
                 Prototyping &amp; Characterization:
               </span>{" "}
-              Validation using high-bandwidth oscilloscopes, spectrum
-              analyzers, and precision source-measure units (SMUs).
+              Validation using high-bandwidth oscilloscopes, spectrum analyzers,
+              and precision source-measure units (SMUs).
             </li>
             <li className="rounded-lg border border-slate-200 bg-white px-5 py-4 text-sm leading-7 text-slate-700 md:text-base">
-              <span className="font-semibold text-slate-900">
-                Certification Support:
-              </span>{" "}
+              <span className="text-slate-900">Certification Support:</span>{" "}
               Pre-compliance testing for EMI/EMC standards (FCC, CE, MIL-STD).
             </li>
           </ul>
@@ -325,51 +302,46 @@ export default function AnalogDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
-          Compliance &amp; Standards
-        </h2>
+        <h2 className="text-3xl text-slate-900">Compliance &amp; Standards</h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
           We adhere to stringent global standards to ensure reliability in
           regulated industries:
         </p>
         <ul className="mt-8 grid gap-4 md:grid-cols-3">
           <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">Medical:</span> ISO
-            13485, IEC 60601-1 (Signal isolation and patient safety).
+            <span className="text-slate-900">Medical:</span> ISO 13485, IEC
+            60601-1 (Signal isolation and patient safety).
           </li>
           <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">Aerospace:</span>{" "}
-            MIL-STD-461 (EMI) and DO-160.
+            <span className="text-slate-900">Aerospace:</span> MIL-STD-461 (EMI)
+            and DO-160.
           </li>
           <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">Industrial:</span>{" "}
-            IPC-2221/2222 for PCB design and IEC 61000 for immunity.
+            <span className="text-slate-900">Industrial:</span> IPC-2221/2222
+            for PCB design and IEC 61000 for immunity.
           </li>
         </ul>
       </section>
 
       <section className="border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
-            Why Choose Qmax Systems
-          </h2>
+          <h2 className="text-3xl text-slate-900">Why Choose Qmax Systems</h2>
           <p className="mt-4 max-w-5xl text-sm leading-7 text-slate-700 md:text-base">
             Qmax Systems combines theoretical depth with manufacturing reality.
             Unlike pure-play design firms, we understand how parasitic elements
             in physical PCBs affect theoretical models. Our &quot;First Time
-            Right&quot;
-            philosophy is backed by a track record of solving the most
-            difficult noise and interference challenges in the industry.
+            Right&quot; philosophy is backed by a track record of solving the
+            most difficult noise and interference challenges in the industry.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_6px_30px_rgba(15,23,42,0.08)] md:p-10">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl text-slate-900">
             Complimentary Consultation Section
           </h2>
-          <h3 className="mt-4 text-xl font-semibold text-slate-900">
+          <h3 className="mt-4 text-xl text-slate-900">
             Discuss Your Signal Integrity Challenges
           </h3>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -379,14 +351,14 @@ export default function AnalogDesignPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-flex rounded-lg border border-sky-300 bg-sky-100 px-5 py-3 text-sm font-semibold text-sky-700 transition hover:border-sky-400 hover:bg-sky-200"
+            className="mt-6 inline-flex rounded-lg border border-sky-300 bg-sky-100 px-5 py-3 text-sm text-sky-700 transition hover:border-sky-400 hover:bg-sky-200"
           >
             Request Technical Consultation
           </Link>
         </div>
       </section>
 
-            <FAQSection
+      <FAQSection
         faqs={[
           {
             q: "1. How do you manage ground loops in multi-channel DAQ systems?",
@@ -450,13 +422,11 @@ export default function AnalogDesignPage() {
           },
         ]}
       />
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}
       />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>
   );
 }
-
-

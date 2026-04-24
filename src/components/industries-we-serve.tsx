@@ -233,10 +233,10 @@ export function IndustriesWeServe() {
   const selected = industries[selectedIndex];
 
   return (
-    <section className="py-8 lg:pt-[40px] lg:pb-[50px] bg-white">
+    <section className="py-6 lg:pt-[30px] lg:pb-[40px] bg-white">
       <div className="max-w-screen-xl mx-auto px-4 lg:px-5">
         {/* Header */}
-        <div className="mb-8 lg:mb-12 text-center">
+        <div className="mb-6 lg:mb-8 text-center">
           <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-4 lg:mb-9 text-foreground">
             Industries <span className="text-[#e44332]">We Serve</span>
           </h2>
@@ -279,9 +279,10 @@ export function IndustriesWeServe() {
 
           {/* Detailed Industry Card */}
           <div className="bg-[#f8f8f8] rounded-b-lg lg:rounded-b-none lg:rounded-r-lg overflow-hidden flex-1">
-            <div className="flex flex-col md:grid md:grid-cols-2 gap-5 lg:gap-6 p-5 lg:p-8 items-stretch h-full">
+            1
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-4 lg:gap-5 p-4 lg:p-6 items-stretch h-full">
               {/* Image - shown first on mobile */}
-              <div className="h-[200px] md:h-full md:order-2 w-full md:min-h-[300px]">
+              <div className="h-[180px] md:h-full md:order-2 w-full md:min-h-[250px]">
                 <img
                   src={selected.image}
                   alt={selected.title}
@@ -291,28 +292,28 @@ export function IndustriesWeServe() {
 
               {/* Content */}
               <div className="flex flex-col justify-center md:order-1">
-                <h3 className="font-bold text-xl lg:text-2xl text-gray-900 mb-3 lg:mb-4">
+                <h3 className="font-bold text-xl lg:text-2xl text-gray-900 mb-2 lg:mb-3">
                   {selected.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed text-gray-700 mb-2 lg:mb-3 font-sans">
+                <p className="text-sm leading-relaxed text-gray-700 mb-1.5 lg:mb-2 font-sans">
                   {selected.description}
                 </p>
 
-                <p className="text-sm leading-relaxed text-gray-700 mb-4 lg:mb-5 font-sans">
+                <p className="text-sm leading-relaxed text-gray-700 mb-3 lg:mb-4 font-sans">
                   {selected.additionalContent}
                 </p>
 
                 {/* Related Case Studies */}
-                <div className="mb-4 lg:mb-5">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                <div className="mb-3 lg:mb-4">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-1.5">
                     Related Case Studies
                   </h4>
-                  <div className="flex flex-wrap gap-1.5 lg:gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {selected.relatedServices.map((service) => (
                       <span
                         key={service}
-                        className="px-3 py-1.5 lg:px-4 lg:py-2 bg-white border border-gray-300 text-gray-700 text-xs lg:text-sm font-medium rounded-full hover:bg-gray-50 transition-colors"
+                        className="px-3 py-1 lg:px-3.5 lg:py-1.5 bg-white border border-gray-300 text-gray-700 text-xs lg:text-sm font-medium rounded-full hover:bg-gray-50 transition-colors"
                       >
                         {service}
                       </span>
@@ -321,13 +322,13 @@ export function IndustriesWeServe() {
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-wrap gap-3 lg:gap-4">
-                  <button className="bg-[#ef4444] text-white font-semibold px-5 py-2.5 lg:px-6 lg:py-3 text-sm lg:text-base rounded-md hover:bg-[#dc2626] transition-colors duration-300">
+                <div className="flex flex-wrap gap-3">
+                  <button className="bg-[#ef4444] text-white font-semibold px-5 py-2 lg:px-6 lg:py-2.5 text-sm lg:text-base rounded-md hover:bg-[#dc2626] transition-colors duration-300">
                     Get an instant quote
                   </button>
                   <Link
                     href="#"
-                    className="bg-white text-gray-900 font-semibold px-5 py-2.5 lg:px-6 lg:py-3 text-sm lg:text-base rounded-md border border-gray-300 hover:bg-gray-50 transition-colors duration-300 flex items-center gap-2"
+                    className="bg-white text-gray-900 font-semibold px-5 py-2 lg:px-6 lg:py-2.5 text-sm lg:text-base rounded-md border border-gray-300 hover:bg-gray-50 transition-colors duration-300 flex items-center gap-2"
                   >
                     Learn more
                     <span>→</span>

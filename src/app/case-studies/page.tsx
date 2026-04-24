@@ -274,36 +274,6 @@ const embeddedCaseStudies = [
     ],
     stats: { value: "25", label: "Measurable parameters" },
   },
-  {
-    id: 19,
-    title: "Vehicular Telematics Unit",
-    image: "/case-studies/image_vacationing.png",
-    link: "/case-studies/vehicular-telematics-unit",
-    category: "development",
-    summary:
-      "Compact vehicle telematics module for fleet management and vehicle diagnostics. Integrates GPS, accelerometer, and CAN bus interfaces with real-time event logging.",
-    specs: [
-      { label: "GPS", value: "Multi-constellation GNSS" },
-      { label: "Accuracy", value: "±5m CEP" },
-      { label: "CAN", value: "Dual CAN FD" },
-    ],
-    stats: { value: "99.5%", label: "Location uptime" },
-  },
-  {
-    id: 20,
-    title: "Security Access Control Hub",
-    image: "/case-studies/image_vacationing.png",
-    link: "/case-studies/security-access-control-hub",
-    category: "development",
-    summary:
-      "Enterprise-grade access control hub with biometric integration, encrypted communication, and offline operation capability. Manages thousands of credentials securely.",
-    specs: [
-      { label: "Capacity", value: "50k credentials" },
-      { label: "Authentication", value: "Biometric + RFID" },
-      { label: "Encryption", value: "AES-256" },
-    ],
-    stats: { value: "99.99%", label: "Availability guarantee" },
-  },
 ];
 
 const pcbCaseStudies = [
@@ -431,20 +401,6 @@ const pcbCaseStudies = [
     title: "Thermal Management PCB",
     image: "/case-studies/image_vacationing.png",
     link: "/case-studies/thermal-management-pcb",
-    category: "development",
-  },
-  {
-    id: 19,
-    title: "Security Module Board",
-    image: "/case-studies/image_vacationing.png",
-    link: "/case-studies/security-module-board",
-    category: "development",
-  },
-  {
-    id: 20,
-    title: "Testing Interface PCB",
-    image: "/case-studies/image_vacationing.png",
-    link: "/case-studies/testing-interface-pcb",
     category: "development",
   },
 ];
@@ -734,36 +690,6 @@ const mechanicalCaseStudies: {
     ],
     stats: { value: "10Hz", label: "Isolation frequency" },
   },
-  {
-    id: 19,
-    title: "EMI Shielding Gasket Strip",
-    image: "/case-studies/image_vacationing.png",
-    link: "/case-studies/emi-shielding-gasket-strip",
-    category: "mechanical",
-    summary:
-      "Conductive silicone gasket strip with integrated EMI shielding, compression set resistance, and design flexibility for custom sealing in electronic enclosures.",
-    specs: [
-      { label: "Material", value: "Conductive Silicone" },
-      { label: "Conductivity", value: "10^-3 S/m" },
-      { label: "Temp Range", value: "-50°C to +200°C" },
-    ],
-    stats: { value: "60dB", label: "Shielding effectiveness" },
-  },
-  {
-    id: 20,
-    title: "Flexible Cable Conduit Assembly",
-    image: "/case-studies/image_vacationing.png",
-    link: "/case-studies/flexible-cable-conduit-assembly",
-    category: "mechanical",
-    summary:
-      "Pre-assembled flexible conduit with strain relief fittings, sleeving protection, and colour-coded identification bands for cable route management and protection.",
-    specs: [
-      { label: "Diameter", value: "6-25mm" },
-      { label: "Material", value: "Nylon-reinforced" },
-      { label: "Bend Radius", value: "3x diameter" },
-    ],
-    stats: { value: "1000+", label: "Bend cycle rating" },
-  },
 ];
 
 const industrialCaseStudies = [
@@ -1036,36 +962,6 @@ const industrialCaseStudies = [
       { label: "Draft Shield", value: "Acrylic windows" },
     ],
     stats: { value: "ISO 6683", label: "Compliance standard" },
-  },
-  {
-    id: 19,
-    title: "Sterile Processing Containment",
-    image: "/case-studies/image_vacationing.png",
-    link: "/case-studies/sterile-processing-containment",
-    category: "industrial",
-    summary:
-      "Medical-grade sterile processing containment with removable sterilisable components, positive pressure airflow, and integrated HEPA filtration.",
-    specs: [
-      { label: "Standard", value: "ISO 13485" },
-      { label: "Material", value: "Biocompatible" },
-      { label: "Filtration", value: "HEPA / ULPA" },
-    ],
-    stats: { value: "Class A", label: "Sterility assurance" },
-  },
-  {
-    id: 20,
-    title: "Field Service Tool Kit Case",
-    image: "/case-studies/image_vacationing.png",
-    link: "/case-studies/field-service-tool-kit-case",
-    category: "industrial",
-    summary:
-      "Organizer case for field service technicians with custom-fitted tool storage, protective padding, and quick-access front pocket for documentation.",
-    specs: [
-      { label: "Material", value: "Reinforced Polymer" },
-      { label: "Customization", value: "Modular inserts" },
-      { label: "Weight", value: "3.2kg empty" },
-    ],
-    stats: { value: "25", label: "Tool storage capacity" },
   },
 ];
 

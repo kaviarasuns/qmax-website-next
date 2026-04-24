@@ -18,6 +18,7 @@ import { menuData } from "@/lib/menu-data";
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuValue, setMenuValue] = useState("");
   const pathname = usePathname();
 
   const isSubItemActive = (subItems: { href: string }[]) =>
@@ -44,7 +45,7 @@ export function Navigation() {
 
           {/* Desktop Navigation with Dropdowns */}
           <div className="hidden lg:flex items-center">
-            <NavigationMenu>
+            <NavigationMenu value={menuValue} onValueChange={setMenuValue}>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link href="/" legacyBehavior passHref>
@@ -63,6 +64,7 @@ export function Navigation() {
                 {menuData.map((item) => (
                   <NavigationMenuItem
                     key={item.title}
+                    value={item.title}
                     className="bg-transparent"
                   >
                     {item.subItems ? (
@@ -85,6 +87,7 @@ export function Navigation() {
                                     <Link
                                       href={subItem.href}
                                       className="block select-none space-y-1 leading-none no-underline outline-none"
+                                      onClick={() => setMenuValue("")}
                                     >
                                       <div className="relative w-full h-24 mb-2 rounded-md overflow-hidden bg-muted">
                                         <Image
@@ -111,6 +114,7 @@ export function Navigation() {
                                           key={childItem.title}
                                           href={childItem.href}
                                           className="block rounded px-2 py-1 text-xs font-normal tracking-[0.04em] text-muted-foreground transition-all duration-200 hover:bg-background hover:text-brand-red"
+                                          onClick={() => setMenuValue("")}
                                         >
                                           {childItem.title}
                                         </Link>

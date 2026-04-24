@@ -57,7 +57,7 @@ export default function EmbeddedDesignServicesPage() {
               />
             </div>
             <div className="order-1 lg:order-2 lg:pl-10">
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-6 leading-tight">
+              <h2 className="text-3xl tracking-tight text-slate-900 sm:text-4xl mb-6 leading-tight">
                 Proactive Insights & Experience
               </h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
@@ -80,7 +80,7 @@ export default function EmbeddedDesignServicesPage() {
       <section className="py-20 lg:py-32 bg-slate-50 border-y border-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Platform Expertise</h2>
+            <h2 className="text-3xl tracking-tight text-slate-900 sm:text-4xl">Platform Expertise</h2>
             <p className="mt-4 text-lg text-slate-600">Comprehensive coverage across modern embedded hardware architectures powering next-generation devices.</p>
           </div>
 
@@ -97,14 +97,14 @@ export default function EmbeddedDesignServicesPage() {
           </div>
 
           <div className="mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-16 text-center">Domain Expertise</h2>
+            <h2 className="text-3xl tracking-tight text-slate-900 sm:text-4xl mb-16 text-center">Domain Expertise</h2>
 
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 mb-24 items-center">
               <div>
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 mb-8 shadow-sm">
                   <Wifi className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Router & Network Operating Systems</h3>
+                <h3 className="text-2xl text-slate-900 mb-6">Router & Network Operating Systems</h3>
                 <ul className="space-y-5">
                   {[
                     "OpenWrt-based router firmware development",
@@ -145,7 +145,7 @@ export default function EmbeddedDesignServicesPage() {
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 mb-8 shadow-sm">
                   <Server className="w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Server-Grade Full stack Firmware</h3>
+                <h3 className="text-2xl text-slate-900 mb-6">Server-Grade Full stack Firmware</h3>
                 <p className="text-slate-600 mb-8 text-lg leading-relaxed">
                   End-to-end firmware development for server platforms - from board bring-up and power sequencing to secure remote management.
                 </p>
@@ -175,7 +175,7 @@ export default function EmbeddedDesignServicesPage() {
       <section className="py-20 lg:py-32 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Chipsets & Silicon Expertise</h2>
+            <h2 className="text-3xl tracking-tight text-slate-900 sm:text-4xl">Chipsets & Silicon Expertise</h2>
             <p className="mt-4 text-lg text-slate-600">
               Extensive experience across leading microcontroller silicon platforms powering modern embedded and IoT devices.
             </p>
@@ -196,8 +196,8 @@ export default function EmbeddedDesignServicesPage() {
               <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                 <Cpu className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">Microcontrollers</h3>
-              <p className="text-xs font-bold text-blue-600 mb-6 uppercase tracking-widest">Multi-Vendor MCU Expertise</p>
+              <h3 className="text-2xl text-slate-900 mb-3">Microcontrollers</h3>
+              <p className="text-xs text-blue-600 mb-6 uppercase tracking-widest">Multi-Vendor MCU Expertise</p>
               <ul className="space-y-4">
                 {["STM32 (STM32F0 / F4 / H7 / WB)", "ESP32 family (ESP32, S3, C3)", "NXP (LPC, i.MX RT series)", "Renesas (RA, RX families)", "TI (MSP430, Sitara, SimpleLink)", "Nordic (nRF52 / nRF53 BLE)"].map((item, i) => (
                   <li key={i} className="flex gap-4 text-slate-600">
@@ -212,7 +212,7 @@ export default function EmbeddedDesignServicesPage() {
               <div className="w-16 h-16 rounded-2xl bg-indigo-50 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                 <Code className="w-8 h-8 text-indigo-600" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-8">Silicon Bring-up & Integration</h3>
+              <h3 className="text-2xl text-slate-900 mb-8">Silicon Bring-up & Integration</h3>
               <ul className="space-y-4">
                 {["Board bring-up and silicon validation", "Peripheral driver development (SPI, I2C, UART, ADC)", "Clock tree configuration and power mgmt", "Bootloader design and flash memory mgmt"].map((item, i) => (
                   <li key={i} className="flex gap-4 text-slate-600">
@@ -227,7 +227,7 @@ export default function EmbeddedDesignServicesPage() {
               <div className="w-16 h-16 rounded-2xl bg-violet-50 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                 <Radio className="w-8 h-8 text-violet-600" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-8">Connectivity Platforms</h3>
+              <h3 className="text-2xl text-slate-900 mb-8">Connectivity Platforms</h3>
               <ul className="space-y-4">
                 {["Wi-Fi and BLE SoCs", "LoRa / Sub-GHz radio platforms", "Sensor interface and mixed-signal integration", "Edge IoT device firmware architectures"].map((item, i) => (
                   <li key={i} className="flex gap-4 text-slate-600">
@@ -242,7 +242,7 @@ export default function EmbeddedDesignServicesPage() {
               <div className="w-16 h-16 rounded-2xl bg-emerald-50 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                 <Battery className="w-8 h-8 text-emerald-600" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-8">Low-Power Design</h3>
+              <h3 className="text-2xl text-slate-900 mb-8">Low-Power Design</h3>
               <ul className="space-y-4">
                 {["Ultra-low power firmware for battery devices", "Sleep modes, wake sources and energy profiling", "Battery-powered sensor node design"].map((item, i) => (
                   <li key={i} className="flex gap-4 text-slate-600">
@@ -305,7 +305,7 @@ export default function EmbeddedDesignServicesPage() {
                 <div className={`w-14 h-14 rounded-2xl ${card.bg} flex items-center justify-center mb-6`}>
                   <card.icon className={`w-7 h-7 ${card.color}`} />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{card.title}</h3>
+                <h3 className="text-xl text-white mb-3">{card.title}</h3>
                 <p className="text-sm text-slate-400 mb-6">{card.description}</p>
                 <ul className="space-y-3">
                   {card.items.map((item, i) => (
@@ -344,7 +344,7 @@ export default function EmbeddedDesignServicesPage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left relative z-10">
               <div className="bg-black/20 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:bg-black/30 transition-colors">
-                <div className="text-blue-400 mb-3 font-bold text-lg">01. MISRA-C / C++</div>
+                <div className="text-blue-400 mb-3 text-lg">01. MISRA-C / C++</div>
                 <p className="text-sm text-blue-100 mb-4">Guidelines for safety-critical systems.</p>
                 <ul className="text-sm text-blue-200 space-y-2">
                   <li className="flex gap-2"><span>•</span> Eliminates undefined behavior</li>
@@ -353,7 +353,7 @@ export default function EmbeddedDesignServicesPage() {
                 </ul>
               </div>
               <div className="bg-black/20 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:bg-black/30 transition-colors">
-                <div className="text-blue-400 mb-3 font-bold text-lg">02. Static Analysis</div>
+                <div className="text-blue-400 mb-3 text-lg">02. Static Analysis</div>
                 <p className="text-sm text-blue-100 mb-4">Automated tools to detect issues early.</p>
                 <ul className="text-sm text-blue-200 space-y-2">
                   <li className="flex gap-2"><span>•</span> Secure memory handling</li>
@@ -362,7 +362,7 @@ export default function EmbeddedDesignServicesPage() {
                 </ul>
               </div>
               <div className="bg-black/20 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:bg-black/30 transition-colors">
-                <div className="text-blue-400 mb-3 font-bold text-lg">03. HIL Testing</div>
+                <div className="text-blue-400 mb-3 text-lg">03. HIL Testing</div>
                 <p className="text-sm text-blue-100 mb-4">Hardware limits in automated endpoints.</p>
                 <ul className="text-sm text-blue-200 space-y-2">
                   <li className="flex gap-2"><span>•</span> Real-time interaction</li>
@@ -371,7 +371,7 @@ export default function EmbeddedDesignServicesPage() {
                 </ul>
               </div>
               <div className="bg-black/20 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:bg-black/30 transition-colors">
-                <div className="text-blue-400 mb-3 font-bold text-lg">04. Endurance Testing</div>
+                <div className="text-blue-400 mb-3 text-lg">04. Endurance Testing</div>
                 <p className="text-sm text-blue-100 mb-4">Long-duration reliability testing.</p>
                 <ul className="text-sm text-blue-200 space-y-2">
                   <li className="flex gap-2"><span>•</span> 24-72h endurance tests</li>

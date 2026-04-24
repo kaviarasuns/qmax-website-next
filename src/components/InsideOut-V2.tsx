@@ -71,6 +71,10 @@ export default function InsideOut() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const [showReplay, setShowReplay] = useState(false);
+  const playCountRef = useRef(0);
+  const hasCompletedRef = useRef(false);
+  const isReplayModeRef = useRef(false);
   const years = useCountUp(25);
   const engineers = useCountUp(45);
   const projects = useCountUp(1000, 2500);
@@ -82,6 +86,8 @@ export default function InsideOut() {
   const handleReplay = () => {
     const video = videoRef.current;
     if (!video) return;
+    setShowReplay(false);
+    isReplayModeRef.current = true;
     video.currentTime = 0;
     video.play().catch((err) => console.log("Video replay failed:", err));
   };
@@ -91,24 +97,42 @@ export default function InsideOut() {
     const section = sectionRef.current;
     if (!video || !section) return;
 
+    const handleEnded = () => {
+      if (isReplayModeRef.current) {
+        isReplayModeRef.current = false;
+        setShowReplay(true);
+        return;
+      }
+      playCountRef.current += 1;
+      if (playCountRef.current < 3) {
+        video.currentTime = 0;
+        video.play().catch((err) => console.log("Video loop failed:", err));
+      } else {
+        hasCompletedRef.current = true;
+        setShowReplay(true);
+      }
+    };
+
+    video.addEventListener("ended", handleEnded);
+
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
         if (entry.isIntersecting) {
-          // Section is visible — play from current position
-          video.play().catch((err) => console.log("Video play failed:", err));
+          if (!hasCompletedRef.current) {
+            video.play().catch((err) => console.log("Video play failed:", err));
+          }
         } else {
-          // Section scrolled out — pause to save resources
           video.pause();
         }
       },
-      // Trigger when at least 30% of the section is visible
       { threshold: 0.3 },
     );
 
     observer.observe(section);
 
     return () => {
+      video.removeEventListener("ended", handleEnded);
       observer.disconnect();
     };
   }, []);
@@ -119,7 +143,7 @@ export default function InsideOut() {
       className="pt-12 sm:pt-14 md:pt-16 lg:pt-20 xl:pt-24 bg-white"
     >
       <div className="flex flex-col lg:flex-row items-stretch gap-0 z-[1]">
-        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-6 lg:px-12 py-12">
+        <div className="w-full lg:w-[60%] flex flex-col items-center px-6 lg:px-12 py-12">
           <div
             className="relative overflow-hidden rounded-xl border border-[#d9d9d9] bg-[#1a1a1a] shadow-lg w-full max-w-[500px]"
             style={{ maxWidth: "100%" }}
@@ -140,15 +164,17 @@ export default function InsideOut() {
               Your browser does not support the video tag.
             </video>
           </div>
-          <button
-            type="button"
-            onClick={handleReplay}
-            className="mt-3 rounded-full border border-[#222] px-3 py-1 text-xs font-medium text-[#222] transition hover:bg-[#222] hover:text-white"
-          >
-            Replay
-          </button>
+          {showReplay && (
+            <button
+              type="button"
+              onClick={handleReplay}
+              className="mt-3 rounded-full border border-[#222] px-3 py-1 text-xs font-medium text-[#222] transition hover:bg-[#222] hover:text-white"
+            >
+              Replay
+            </button>
+          )}
         </div>
-        <div className="w-full lg:w-1/2 flex flex-col px-6 lg:px-12 py-12 lg:py-20">
+        <div className="w-full lg:w-[40%] flex flex-col px-6 lg:px-12 py-12 lg:overflow-y-auto">
           <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-16">
             Why Qmax <span className="text-red-500">Systems</span>
           </h2>

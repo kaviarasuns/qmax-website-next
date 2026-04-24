@@ -24,6 +24,7 @@ import { pcbDesignFAQs } from "@/data/service-faqs";
 import { CTASection } from "@/components/cta-section";
 import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
 import { pcbDesignOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 
 const pcbCaseStudies = [
   {
@@ -54,7 +55,6 @@ const pcbCaseStudies = [
     link: "/case-studies/Automotive-OBD",
   },
 ];
-
 
 export default function PCBDesignPage() {
   const scrollRef = React.useRef<HTMLDivElement>(null);
@@ -139,7 +139,7 @@ export default function PCBDesignPage() {
             <div className="mb-6">
               <Breadcrumbs items={breadcrumbItems} />
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1]">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl text-white mb-8 leading-[1.1]">
               PCB Design: <br />
               <span className="text-red-600">A Multi-Physics</span> <br />
               Engineering Discipline
@@ -177,7 +177,7 @@ export default function PCBDesignPage() {
               className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start"
             >
               <div className="bg-gray-50 rounded-[2.5rem] border border-gray-100 p-8 md:p-12 h-full flex flex-col justify-center">
-                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-8">
+                <h2 className="text-3xl md:text-5xl text-gray-900 leading-tight mb-8">
                   Engineering <br />
                   <span className="text-red-600">Beyond Connectivity</span>
                 </h2>
@@ -218,13 +218,13 @@ export default function PCBDesignPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-gray-200">
                   <div className="flex items-start gap-4">
                     <div className="mt-1 w-2 h-2 rounded-full bg-red-600 shrink-0" />
-                    <p className="text-sm font-bold text-gray-900 uppercase tracking-wider">
+                    <p className="text-sm text-gray-900 uppercase tracking-wider">
                       Signal & Power Integrity
                     </p>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="mt-1 w-2 h-2 rounded-full bg-red-600 shrink-0" />
-                    <p className="text-sm font-bold text-gray-900 uppercase tracking-wider">
+                    <p className="text-sm text-gray-900 uppercase tracking-wider">
                       EMI & Thermal Management
                     </p>
                   </div>
@@ -257,7 +257,7 @@ export default function PCBDesignPage() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-5xl text-gray-900 mb-6">
               Our PCB Design Specialisations
             </h2>
             <p className="text-lg text-gray-600 max-w-4xl leading-relaxed text-justify">
@@ -335,7 +335,7 @@ export default function PCBDesignPage() {
                   <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 mb-8 group-hover:bg-white group-hover:scale-110 transition-all duration-500">
                     {spec.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-red-700 transition-colors">
+                  <h3 className="text-2xl text-gray-900 mb-4 group-hover:text-red-700 transition-colors">
                     {spec.title}
                   </h3>
                   <p className="text-gray-600 mb-8 leading-relaxed text-justify text-base italic group-hover:text-gray-900 transition-colors">
@@ -343,7 +343,7 @@ export default function PCBDesignPage() {
                   </p>
                   <Link
                     href={spec.href}
-                    className="inline-flex items-center text-red-600 font-bold tracking-tight hover:gap-3 transition-all"
+                    className="inline-flex items-center text-red-600 tracking-tight hover:gap-3 transition-all"
                   >
                     Learn More <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
@@ -360,7 +360,7 @@ export default function PCBDesignPage() {
           {/* Section Header */}
           <div className="py-16 flex flex-col gap-3 max-w-2xl">
             <h2
-              className="text-4xl md:text-5xl font-bold leading-tight"
+              className="text-4xl md:text-5xl leading-tight"
               style={{ color: "#1a1a1a" }}
             >
               Why Engineering Teams Choose{" "}
@@ -478,7 +478,7 @@ export default function PCBDesignPage() {
                     <div className="flex items-center gap-3">
                       {/* Number Badge */}
                       <div
-                        className="flex-shrink-0 rounded-full px-3 py-1 text-sm font-bold"
+                        className="flex-shrink-0 rounded-full px-3 py-1 text-sm"
                         style={{
                           backgroundColor: "rgba(228, 67, 50, 0.15)",
                           color: "#e44332",
@@ -488,7 +488,7 @@ export default function PCBDesignPage() {
                       </div>
                       {/* Title */}
                       <h3
-                        className="text-xl md:text-2xl font-semibold flex-1 leading-tight"
+                        className="text-xl md:text-2xl flex-1 leading-tight"
                         style={{ color: "#1a1a1a" }}
                       >
                         {reason.title}
@@ -515,86 +515,18 @@ export default function PCBDesignPage() {
           </div>
         </div>
       </section>
-
-      {/* Case Studies Section */}
-      <section className="py-20 lg:py-28">
-        <div className="w-full px-8 md:px-12">
-          <div className="mx-auto w-fit">
-            <div className="mb-10 flex items-center justify-between gap-6">
-              <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
-                <span className="text-red-500">Case Studies</span>
-              </h2>
-
-              <div className="flex items-center gap-3">
-                <Link
-                  href="/case-studies"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-red-500"
-                >
-                  View All Projects
-                  <ArrowUpRight className="h-4 w-4" />
-                </Link>
-
-                <div className="flex gap-2">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={() => scrollCaseStudies("left")}
-                    disabled={!canScrollLeft}
-                    className="h-12 w-12 rounded-full border-zinc-200 bg-white transition-all hover:bg-zinc-100 disabled:opacity-30"
-                    aria-label="Scroll left"
-                  >
-                    <ArrowLeft className="h-6 w-6" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={() => scrollCaseStudies("right")}
-                    disabled={!canScrollRight}
-                    className="h-12 w-12 rounded-full border-zinc-200 bg-white transition-all hover:bg-zinc-100 disabled:opacity-30"
-                    aria-label="Scroll right"
-                  >
-                    <ArrowRight className="h-6 w-6" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            <div
-              ref={scrollRef}
-              onScroll={checkScroll}
-              className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-8 md:gap-5 [&::-webkit-scrollbar]:hidden"
-              style={
-                {
-                  scrollbarWidth: "none",
-                  msOverflowStyle: "none",
-                } as React.CSSProperties
-              }
-            >
-              {pcbCaseStudies.map((study) => (
-                <div
-                  key={study.id}
-                  className="w-72 shrink-0 snap-start sm:w-80 md:w-96"
-                >
-                  <CaseStudyCard
-                    title={study.title}
-                    image={study.image}
-                    link={study.link}
-                    summary={study.summary}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection />
 
       {/* FAQ Section */}
       <FAQSection faqs={pcbDesignFAQs} />
 
+      <ServiceCaseStudiesSection
+        eyebrow="Hardware Programs"
+        studies={pcbCaseStudies}
+      />
+
       {/* Other Capabilities Section */}
       <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
-
-      <CTASection />
     </main>
   );
 }

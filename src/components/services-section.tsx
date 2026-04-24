@@ -79,7 +79,7 @@ export function ServicesSection() {
 
   return (
     <section className="bg-background flex flex-col justify-center py-12 lg:py-16">
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1600px] px-4 md:px-6 lg:px-8">
         <div className="mb-10 flex flex-col items-end justify-between gap-6 md:flex-row md:items-start">
           <div className="max-w-2xl">
             <h1 className="mb-3 text-3xl font-light  tracking-wide text-foreground md:text-4xl lg:text-5xl">

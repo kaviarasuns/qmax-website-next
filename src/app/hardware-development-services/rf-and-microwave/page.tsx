@@ -231,7 +231,6 @@ const rfFaqGroups = [
   },
 ];
 
-
 export default function RfAndMicrowavePage() {
   return (
     <main className="bg-slate-100 text-justify text-slate-900">
@@ -253,7 +252,8 @@ export default function RfAndMicrowavePage() {
                 HARDWARE DEVELOPMENT
               </span>
               <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
-                RF and Microwave<br className="hidden md:block" />
+                RF and Microwave
+                <br className="hidden md:block" />
                 Engineering Services.
               </h1>
             </div>
@@ -261,19 +261,18 @@ export default function RfAndMicrowavePage() {
           <div className="mt-10 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
             <p>
               Qmax Systems provides comprehensive RF and Microwave Engineering
-              services, bridging the gap between theoretical
-              electromagnetics and robust, manufacturable hardware. From
-              sub-GHz IoT modules to high-power plasma generators and mmWave
-              sensor arrays, we deliver end-to-end design, simulation, and
-              validation services that ensure optimal signal integrity and
-              regulatory compliance.
+              services, bridging the gap between theoretical electromagnetics
+              and robust, manufacturable hardware. From sub-GHz IoT modules to
+              high-power plasma generators and mmWave sensor arrays, we deliver
+              end-to-end design, simulation, and validation services that ensure
+              optimal signal integrity and regulatory compliance.
             </p>
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-left text-3xl font-semibold text-slate-900">
+        <h2 className="text-left text-3xl text-slate-900">
           Our RF and Microwave Expertise
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -284,34 +283,27 @@ export default function RfAndMicrowavePage() {
 
         <ul className="mt-8 space-y-4">
           <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">
-              WiFi 6/6E and WiFi 7:
-            </span>{" "}
-            Implementation of High-Efficiency (HE) and Extremely High
-            Throughput (EHT) standards. Expertise in 4 x 4 and 8 x 8 MU-MIMO
-            antenna configurations and OFDMA sub-carrier mapping.
+            <span className="text-slate-900">WiFi 6/6E and WiFi 7:</span>{" "}
+            Implementation of High-Efficiency (HE) and Extremely High Throughput
+            (EHT) standards. Expertise in 4 x 4 and 8 x 8 MU-MIMO antenna
+            configurations and OFDMA sub-carrier mapping.
           </li>
           <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">
-              Cellular (4G LTE / 5G NR):
-            </span>{" "}
+            <span className="text-slate-900">Cellular (4G LTE / 5G NR):</span>{" "}
             Design of RFFE involving Low Noise Amplifiers (LNA) and Power
             Amplifiers (PA). We manage complex carrier aggregation and
             beamforming architectures for sub-6 GHz and mmWave bands.
           </li>
           <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">
-              LPWAN and Short Range:
-            </span>{" "}
-            Specialized low-power optimization for LoRaWAN, Sigfox, and BLE
-            5.4. We focus on maximizing battery life through rigorous
-            sleep-current profiling and impedance matching at the antenna feed
-            point.
+            <span className="text-slate-900">LPWAN and Short Range:</span>{" "}
+            Specialized low-power optimization for LoRaWAN, Sigfox, and BLE 5.4.
+            We focus on maximizing battery life through rigorous sleep-current
+            profiling and impedance matching at the antenna feed point.
           </li>
         </ul>
 
         <div className="mt-16">
-          <h3 className="text-left text-2xl font-semibold text-slate-900">
+          <h3 className="text-left text-2xl text-slate-900">
             High-Power RF and Industrial Applications
           </h3>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -321,22 +313,18 @@ export default function RfAndMicrowavePage() {
 
           <ul className="mt-8 space-y-4">
             <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                RF Generators:
-              </span>{" "}
-              Design of high-power HF/LF generators (up to 1 kW) for plasma
-              etching, thin-film deposition, and medical ablation.
+              <span className="text-slate-900">RF Generators:</span> Design of
+              high-power HF/LF generators (up to 1 kW) for plasma etching,
+              thin-film deposition, and medical ablation.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                Industrial Sensing:
-              </span>{" "}
-              Development of microwave-based sensors for non-destructive
-              testing (NDT), including high-accuracy moisture measurement and
-              material density analysis using phase-shift detection.
+              <span className="text-slate-900">Industrial Sensing:</span>{" "}
+              Development of microwave-based sensors for non-destructive testing
+              (NDT), including high-accuracy moisture measurement and material
+              density analysis using phase-shift detection.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
+              <span className="text-slate-900">
                 Power Electronics Integration:
               </span>{" "}
               Managing thermal dissipation and EMI shielding in high-density
@@ -345,48 +333,42 @@ export default function RfAndMicrowavePage() {
           </ul>
         </div>
 
-      <div className="mt-16">
-        <h3 className="text-left text-2xl font-semibold text-slate-900">
-          Advanced Hardware and PCB Engineering
-        </h3>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-          The physics of the PCB substrate is foundational to RF performance.
-          We move beyond standard FR-4 to manage the dielectric challenges of
-          high-frequency designs.
-        </p>
+        <div className="mt-16">
+          <h3 className="text-left text-2xl text-slate-900">
+            Advanced Hardware and PCB Engineering
+          </h3>
+          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+            The physics of the PCB substrate is foundational to RF performance.
+            We move beyond standard FR-4 to manage the dielectric challenges of
+            high-frequency designs.
+          </p>
 
-        <ul className="mt-8 space-y-4">
-          <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">
-              Substrate Selection:
-            </span>{" "}
-            Expert utilization of low-loss materials including Rogers
-            4350B/3003, Panasonic Megtron 6, and Tachyon 100G to minimize
-            dissipation factors. Surface finish selection, precise surface
-            roughness calculations, and skin effect calculations are applied to
-            ensure minimal I2R losses.
-          </li>
-          <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">
-              Precision Layout:
-            </span>{" "}
-            Implementation of controlled impedance traces with strict adherence
-            to phase matching and propagation delay requirements.
-          </li>
-          <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-            <span className="font-semibold text-slate-900">
-              Signal Integrity (SI):
-            </span>{" "}
-            Mitigation of skin effect losses, copper roughness impact, and
-            via-stub resonance at frequencies exceeding 24 GHz.
-          </li>
-        </ul>
-      </div>
+          <ul className="mt-8 space-y-4">
+            <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
+              <span className="text-slate-900">Substrate Selection:</span>{" "}
+              Expert utilization of low-loss materials including Rogers
+              4350B/3003, Panasonic Megtron 6, and Tachyon 100G to minimize
+              dissipation factors. Surface finish selection, precise surface
+              roughness calculations, and skin effect calculations are applied
+              to ensure minimal I2R losses.
+            </li>
+            <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
+              <span className="text-slate-900">Precision Layout:</span>{" "}
+              Implementation of controlled impedance traces with strict
+              adherence to phase matching and propagation delay requirements.
+            </li>
+            <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
+              <span className="text-slate-900">Signal Integrity (SI):</span>{" "}
+              Mitigation of skin effect losses, copper roughness impact, and
+              via-stub resonance at frequencies exceeding 24 GHz.
+            </li>
+          </ul>
+        </div>
 
-      <div className="mt-16">
-        <h3 className="text-left text-2xl font-semibold text-slate-900">
+        <div className="mt-16">
+          <h3 className="text-left text-2xl text-slate-900">
             Technical Differentiators: Engineering-First Approach
-        </h3>
+          </h3>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
             We solve the invisible problems that cause field failures and
             compliance rejections.
@@ -394,43 +376,37 @@ export default function RfAndMicrowavePage() {
 
           <ul className="mt-8 space-y-4">
             <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                Noise Floor Reduction:
-              </span>{" "}
+              <span className="text-slate-900">Noise Floor Reduction:</span>{" "}
               Strategic partitioning of analog, digital, power, and RF domains
               to prevent cross-talk and desensitization.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                Impedance Matching:
-              </span>{" "}
+              <span className="text-slate-900">Impedance Matching:</span>{" "}
               Utilization of Smith Charts for complex conjugate matching,
               ensuring VSWR &lt; 1.5:1 across operational bandwidths.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-6 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                EMI/EMC Pre-compliance:
-              </span>{" "}
+              <span className="text-slate-900">EMI/EMC Pre-compliance:</span>{" "}
               Early-stage simulation and internal testing to address Radiated
               Emissions (RE) and Conducted Emissions (CE). We specialize in
               ground loop elimination and common-mode choke selection.
             </li>
           </ul>
-      </div>
+        </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-left text-3xl font-semibold text-slate-900">
+        <h2 className="text-left text-3xl text-slate-900">
           Core Service Offerings
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-          We provide a vertical suite of engineering services tailored to
-          modern communication and industrial RF needs.
+          We provide a vertical suite of engineering services tailored to modern
+          communication and industrial RF needs.
         </p>
 
         <div className="mt-8 space-y-4">
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-left text-base font-semibold text-slate-900 md:text-lg">
+            <h3 className="text-left text-base text-slate-900 md:text-lg">
               RF PCB Design and Layout
             </h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700 md:text-base">
@@ -453,28 +429,22 @@ export default function RfAndMicrowavePage() {
           </article>
 
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-left text-base font-semibold text-slate-900 md:text-lg">
+            <h3 className="text-left text-base text-slate-900 md:text-lg">
               RF Front-End (RFFE) Design
             </h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700 md:text-base">
               <li>
-                <span className="font-semibold text-slate-900">
-                  LNA and PA Design:
-                </span>{" "}
+                <span className="text-slate-900">LNA and PA Design:</span>{" "}
                 Development of Low Noise Amplifiers and Power Amplifiers for
                 4G/5G infrastructure.
               </li>
               <li>
-                <span className="font-semibold text-slate-900">
-                  Filter Design:
-                </span>{" "}
+                <span className="text-slate-900">Filter Design:</span>{" "}
                 Integration of SAW, BAW, and discrete LC filters for harmonic
                 suppression.
               </li>
               <li>
-                <span className="font-semibold text-slate-900">
-                  Impedance Matching:
-                </span>{" "}
+                <span className="text-slate-900">Impedance Matching:</span>{" "}
                 Smith chart-based matching network optimization for maximum
                 power transfer.
               </li>
@@ -482,7 +452,7 @@ export default function RfAndMicrowavePage() {
           </article>
 
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-left text-base font-semibold text-slate-900 md:text-lg">
+            <h3 className="text-left text-base text-slate-900 md:text-lg">
               Simulation and Modeling
             </h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700 md:text-base">
@@ -496,7 +466,7 @@ export default function RfAndMicrowavePage() {
 
       <section className="border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-left text-3xl font-semibold text-slate-900">
+          <h2 className="text-left text-3xl text-slate-900">
             Proven Project Experience
           </h2>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -506,52 +476,46 @@ export default function RfAndMicrowavePage() {
 
           <ul className="mt-8 grid gap-4 md:grid-cols-2">
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
+              <span className="text-slate-900">
                 Enterprise WiFi 6 Solutions:
               </span>{" "}
               Developed 4x4 MIMO systems operating concurrently at 2.4GHz,
               5.1GHz, and 5.8GHz using Qualcomm and MediaTek SoCs.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                Industrial RF Generation:
-              </span>{" "}
+              <span className="text-slate-900">Industrial RF Generation:</span>{" "}
               Engineered 1KW HF and 500W LF RF generators specifically for
               plasma generation applications.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                BLE Reference Designs:
-              </span>{" "}
-              Created ultra-low power BLE &quot;Mousefull&quot; reference designs for
-              global semiconductor leaders.
+              <span className="text-slate-900">BLE Reference Designs:</span>{" "}
+              Created ultra-low power BLE &quot;Mousefull&quot; reference
+              designs for global semiconductor leaders.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
+              <span className="text-slate-900">
                 Telecommunications Infrastructure:
               </span>{" "}
               Designed high-gain LNAs and PAs for 4G Radio units.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
+              <span className="text-slate-900">
                 Precision Microwave Sensing:
               </span>{" "}
               Implemented microwave-based moisture measurement systems for food
               grain analysis.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                IoT Ecosystems:
-              </span>{" "}
-              Deployed numerous LoRa, BLE, and WiFi-based industrial IoT
-              devices with optimized PCB antennas.
+              <span className="text-slate-900">IoT Ecosystems:</span> Deployed
+              numerous LoRa, BLE, and WiFi-based industrial IoT devices with
+              optimized PCB antennas.
             </li>
           </ul>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-left text-3xl font-semibold text-slate-900">Case studies</h2>
+        <h2 className="text-left text-3xl text-slate-900">Case studies</h2>
         <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
           More case studies after NDA
         </p>
@@ -559,7 +523,7 @@ export default function RfAndMicrowavePage() {
 
       <section className="border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-left text-3xl font-semibold text-slate-900">
+          <h2 className="text-left text-3xl text-slate-900">
             Why Choose Qmax Systems
           </h2>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -569,30 +533,24 @@ export default function RfAndMicrowavePage() {
 
           <ul className="mt-8 space-y-4">
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
+              <span className="text-slate-900">
                 Noise Reduction and Signal Conditioning:
               </span>{" "}
               Advanced techniques for lowering the noise floor in sensitive
               receiver chains.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                Ground Loop Elimination:
-              </span>{" "}
+              <span className="text-slate-900">Ground Loop Elimination:</span>{" "}
               Strategic partitioning of analog, digital, and RF grounds to
               prevent parasitic interference.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                EMI/EMC Mitigation:
-              </span>{" "}
+              <span className="text-slate-900">EMI/EMC Mitigation:</span>{" "}
               Proactive design for Radiated Emissions (RE) and Conducted
               Emissions (CE) optimization.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                In-House Validation:
-              </span>{" "}
+              <span className="text-slate-900">In-House Validation:</span>{" "}
               Utilization of advanced instrumentation, including the Rohde and
               Schwarz CMW500, high-bandwidth oscilloscopes, and spectrum
               analyzers.
@@ -601,29 +559,21 @@ export default function RfAndMicrowavePage() {
 
           <ul className="mt-8 grid gap-4 md:grid-cols-2">
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                Domain Expertise:
-              </span>{" "}
-              Decades of experience in high-speed digital and RF co-existence.
+              <span className="text-slate-900">Domain Expertise:</span> Decades
+              of experience in high-speed digital and RF co-existence.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                Platform Versatility:
-              </span>{" "}
-              Deep experience with Qualcomm, MediaTek, Nordic, and TI wireless
+              <span className="text-slate-900">Platform Versatility:</span> Deep
+              experience with Qualcomm, MediaTek, Nordic, and TI wireless
               platforms.
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                Manufacturing Readiness:
-              </span>{" "}
+              <span className="text-slate-900">Manufacturing Readiness:</span>{" "}
               Our designs are optimized for DFM (Design for Manufacturing) and
               DFT (Design for Test).
             </li>
             <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
-              <span className="font-semibold text-slate-900">
-                Reduced Time-to-Market:
-              </span>{" "}
+              <span className="text-slate-900">Reduced Time-to-Market:</span>{" "}
               Proven reference designs and modular blocks accelerate the
               development cycle RF, HP PCB vendor relationships, and silicon
               vendor relationships.
@@ -634,7 +584,7 @@ export default function RfAndMicrowavePage() {
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_24px_rgba(15,23,42,0.06)] md:p-8">
-          <h2 className="text-left text-3xl font-semibold text-slate-900">
+          <h2 className="text-left text-3xl text-slate-900">
             Complimentary Consultation
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
@@ -643,7 +593,7 @@ export default function RfAndMicrowavePage() {
             mmWave sensor, we provide the technical depth required to succeed.{" "}
             <Link
               href="/contact"
-              className="font-semibold text-sky-700 underline decoration-sky-300 underline-offset-4 hover:text-sky-800"
+              className="text-sky-700 underline decoration-sky-300 underline-offset-4 hover:text-sky-800"
             >
               Contact our RF Engineering Team
             </Link>
@@ -652,14 +602,11 @@ export default function RfAndMicrowavePage() {
       </section>
 
       <FAQSection faqs={rfFaqGroups.flatMap((group) => group.items)} />
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}
       />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>
   );
 }
-
-
-

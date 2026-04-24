@@ -48,7 +48,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
             </h3>
 
             {summary && (
-              <p className="mt-2 text-[13px] text-zinc-600 line-clamp-2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 tracking-wide">
+              <p className="mt-2 text-[13px] text-zinc-600 line-clamp-1 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 tracking-wide">
                 {summary}
               </p>
             )}

@@ -40,7 +40,6 @@ export const metadata: Metadata = {
     "High-Performance Digital Systems Development. At Qmax Systems, we bridge the gap between complex conceptual requirements and market-ready hardware.",
 };
 
-
 export default function HighSpeedDigitalDesignPage() {
   return (
     <main className="bg-slate-100 text-slate-900">
@@ -62,7 +61,8 @@ export default function HighSpeedDigitalDesignPage() {
                 HARDWARE DEVELOPMENT
               </span>
               <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
-                High-Performance Digital<br className="hidden md:block" />
+                High-Performance Digital
+                <br className="hidden md:block" />
                 Systems Development.
               </h1>
             </div>
@@ -82,9 +82,7 @@ export default function HighSpeedDigitalDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
-          Our Core Service Offerings
-        </h2>
+        <h2 className="text-3xl text-slate-900">Our Core Service Offerings</h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
           We specialize in high-speed, high-density, and high-reliability
           digital systems. Our expertise spans across:
@@ -92,20 +90,18 @@ export default function HighSpeedDigitalDesignPage() {
 
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+            <h3 className="text-base text-slate-900 md:text-lg">
               1. Advanced Compute &amp; Server Solutions
             </h3>
             <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
               <li>
-                <span className="font-semibold text-slate-900">
-                  Multicore CPU Systems:
-                </span>{" "}
+                <span className="text-slate-900">Multicore CPU Systems:</span>{" "}
                 High-performance designs utilizing the latest Intel, AMD, and
                 Ampere CPUs, optimized for thermal efficiency and high-speed
                 data throughput.
               </li>
               <li>
-                <span className="font-semibold text-slate-900">
+                <span className="text-slate-900">
                   High-Density AI GPU Compute Servers:
                 </span>{" "}
                 Custom hardware engineering optimized for parallel processing,
@@ -113,7 +109,7 @@ export default function HighSpeedDigitalDesignPage() {
                 clusters.
               </li>
               <li>
-                <span className="font-semibold text-slate-900">
+                <span className="text-slate-900">
                   Single Board Computers (SBCs) &amp; Server Motherboards:
                 </span>{" "}
                 Tailor-made designs for data centers and rugged industrial
@@ -124,26 +120,26 @@ export default function HighSpeedDigitalDesignPage() {
           </article>
 
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+            <h3 className="text-base text-slate-900 md:text-lg">
               2. Next-Gen Connectivity &amp; O-RAN Infrastructure
             </h3>
             <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
               <li>
-                <span className="font-semibold text-slate-900">
+                <span className="text-slate-900">
                   100Gbps Network Interface Cards (NIC):
                 </span>{" "}
                 Ultra-high-speed connectivity solutions for high-end blade
                 servers, ensuring maximum bandwidth and minimal latency.
               </li>
               <li>
-                <span className="font-semibold text-slate-900">
+                <span className="text-slate-900">
                   O-RAN Distributed Units (DU):
                 </span>{" "}
                 Specialized hardware development for Open RAN architecture to
                 accelerate global 5G infrastructure rollouts.
               </li>
               <li>
-                <span className="font-semibold text-slate-900">
+                <span className="text-slate-900">
                   Fabric Interface Cards (FIC):
                 </span>{" "}
                 Innovative designs for Photonic Resource Units, facilitating
@@ -153,19 +149,17 @@ export default function HighSpeedDigitalDesignPage() {
           </article>
 
           <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base font-semibold text-slate-900 md:text-lg">
+            <h3 className="text-base text-slate-900 md:text-lg">
               3. Precision Embedded &amp; FPGA Design
             </h3>
             <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
               <li>
-                <span className="font-semibold text-slate-900">
-                  FPGA-Based Hardware:
-                </span>{" "}
+                <span className="text-slate-900">FPGA-Based Hardware:</span>{" "}
                 Custom development (Xilinx/Intel) for hardware acceleration,
                 real-time signal processing, and flexible I/O requirements.
               </li>
               <li>
-                <span className="font-semibold text-slate-900">
+                <span className="text-slate-900">
                   Microcontroller Based Products:
                 </span>{" "}
                 Robust, power-optimized embedded systems using ARM Cortex-M,
@@ -178,7 +172,7 @@ export default function HighSpeedDigitalDesignPage() {
 
       <section className="border-t border-slate-200 bg-slate-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl text-slate-900">
             Why Partner with Qmax Systems?
           </h2>
 
@@ -186,17 +180,17 @@ export default function HighSpeedDigitalDesignPage() {
             <table className="min-w-full divide-y divide-slate-200">
               <thead className="bg-slate-100">
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
+                  <th className="px-6 py-4 text-left text-sm text-slate-900">
                     Feature
                   </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
+                  <th className="px-6 py-4 text-left text-sm text-slate-900">
                     Our Technical Advantage
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200">
                 <tr>
-                  <td className="px-6 py-4 text-sm font-semibold text-slate-900">
+                  <td className="px-6 py-4 text-sm text-slate-900">
                     High-Speed Standards
                   </td>
                   <td className="px-6 py-4 text-sm leading-6 text-slate-700">
@@ -204,7 +198,7 @@ export default function HighSpeedDigitalDesignPage() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 text-sm font-semibold text-slate-900">
+                  <td className="px-6 py-4 text-sm text-slate-900">
                     Physical Complexity
                   </td>
                   <td className="px-6 py-4 text-sm leading-6 text-slate-700">
@@ -212,7 +206,7 @@ export default function HighSpeedDigitalDesignPage() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 text-sm font-semibold text-slate-900">
+                  <td className="px-6 py-4 text-sm text-slate-900">
                     Manufacturing Readiness
                   </td>
                   <td className="px-6 py-4 text-sm leading-6 text-slate-700">
@@ -220,7 +214,7 @@ export default function HighSpeedDigitalDesignPage() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 text-sm font-semibold text-slate-900">
+                  <td className="px-6 py-4 text-sm text-slate-900">
                     Signal &amp; Power Integrity
                   </td>
                   <td className="px-6 py-4 text-sm leading-6 text-slate-700">
@@ -228,7 +222,7 @@ export default function HighSpeedDigitalDesignPage() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 text-sm font-semibold text-slate-900">
+                  <td className="px-6 py-4 text-sm text-slate-900">
                     Global Compliance
                   </td>
                   <td className="px-6 py-4 text-sm leading-6 text-slate-700">
@@ -236,7 +230,7 @@ export default function HighSpeedDigitalDesignPage() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-6 py-4 text-sm font-semibold text-slate-900">
+                  <td className="px-6 py-4 text-sm text-slate-900">
                     Lifecycle Support
                   </td>
                   <td className="px-6 py-4 text-sm leading-6 text-slate-700">
@@ -255,7 +249,7 @@ export default function HighSpeedDigitalDesignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-3xl text-slate-900">
           End-to-End Digital Hardware Engineering Process
         </h2>
         <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -277,7 +271,7 @@ export default function HighSpeedDigitalDesignPage() {
               key={item}
               className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base"
             >
-              <span className="mr-3 font-semibold text-emerald-600">+</span>
+              <span className="mr-3 text-emerald-600">+</span>
               {item}
             </li>
           ))}
@@ -286,7 +280,7 @@ export default function HighSpeedDigitalDesignPage() {
 
       <section className="border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl text-slate-900">
             Proven Industry Experience
           </h2>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -320,7 +314,7 @@ export default function HighSpeedDigitalDesignPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_6px_30px_rgba(15,23,42,0.08)] md:p-10">
-          <h2 className="text-3xl font-semibold text-slate-900">
+          <h2 className="text-3xl text-slate-900">
             Complimentary Technical Consulting Session
           </h2>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
@@ -343,7 +337,7 @@ export default function HighSpeedDigitalDesignPage() {
                 key={item}
                 className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-6 text-slate-700"
               >
-                <span className="mr-3 font-semibold text-emerald-600">+</span>
+                <span className="mr-3 text-emerald-600">+</span>
                 {item}
               </li>
             ))}
@@ -361,7 +355,7 @@ export default function HighSpeedDigitalDesignPage() {
 
           <Link
             href="/contact"
-            className="mt-6 inline-flex rounded-lg border border-sky-300 bg-sky-100 px-5 py-3 text-sm font-semibold text-sky-700 transition hover:border-sky-400 hover:bg-sky-200"
+            className="mt-6 inline-flex rounded-lg border border-sky-300 bg-sky-100 px-5 py-3 text-sm text-sky-700 transition hover:border-sky-400 hover:bg-sky-200"
           >
             Schedule Complimentary Consultation
           </Link>
@@ -369,11 +363,12 @@ export default function HighSpeedDigitalDesignPage() {
       </section>
 
       <FAQSection faqs={faqs} />
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
+
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}
       />
+      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>
   );
 }
