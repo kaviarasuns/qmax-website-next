@@ -31,12 +31,11 @@ export const otherCapabilities: Capability[] = [
       "https://framerusercontent.com/images/URP1Krg4uds9qGHII952XUGsc4.png",
   },
   {
-    title: "PCB Design Services",
+    title: "Apps and Cloud",
     summary:
-      "Expert PCB layout and design for high-speed digital, analog, RF, and power electronics applications.",
-    link: "/embedded-design-services",
-    image:
-      "https://framerusercontent.com/images/7CnP7xCaEUuDiSvOyIyHs36cw4I.png",
+      "Build full-stack software that connects devices to digital experiences.",
+    link: "/apps-and-cloud",
+    image: "https://framerusercontent.com/images/8tZqdkd46foyx5TeIzPw8YhbA.png",
   },
 ];
 

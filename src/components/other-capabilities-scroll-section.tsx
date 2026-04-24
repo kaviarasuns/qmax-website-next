@@ -131,7 +131,7 @@ export function OtherCapabilitiesScrollSection({
 
                           <div className="flex items-center justify-between mt-3">
                             <span className="text-[11px] font-semibold tracking-[0.18em] text-zinc-500 uppercase">
-                              View Case
+                              Explore Service
                             </span>
                             <span className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300 text-zinc-700 transition-all duration-300 group-hover:border-[#F33117] group-hover:text-[#F33117] group-hover:translate-x-0.5">
                               <svg
