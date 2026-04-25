@@ -183,7 +183,7 @@ export default function InsideOut() {
             {reasons.map((reason, index) => (
               <div
                 key={index}
-                className="border-t border-zinc-200 py-3 transition-all"
+                className="border-t border-zinc-200 py-1 transition-all"
               >
                 <button
                   onClick={() => toggleItem(index)}
@@ -211,7 +211,7 @@ export default function InsideOut() {
                 </button>
 
                 {expandedIndex === index && (
-                  <div className="mt-4 max-w-4xl">
+                  <div className="mt-2 max-w-4xl">
                     <p className="text-base leading-relaxed font-light">
                       {reason.description}
                     </p>
