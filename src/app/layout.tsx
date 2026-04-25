@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import FooterV2 from "@/components/footer-v2";
+import FooterWrapper from "@/components/FooterWrapper";
 import ContactUsButtonWrapper from "@/components/ContactUsButtonWrapper";
 import { Navigation } from "@/components/navigation";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -26,7 +26,11 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
@@ -37,7 +41,7 @@ export default function RootLayout({
         <ScrollToTop />
         <Navigation />
         {children}
-        <FooterV2 />
+        <FooterWrapper />
         <ContactUsButtonWrapper />
       </body>
       {/* </ReactLenis> */}
