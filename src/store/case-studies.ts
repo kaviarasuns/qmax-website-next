@@ -197,10 +197,10 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Industrial IOT gateway with POE",
     category: "Industrial IoT",
     images: [
-      "/case-studies/OTT/1.png",
+      "/case-studies/OTT/4.png",
       "/case-studies/OTT/2.png",
       "/case-studies/OTT/3.png",
-      "/case-studies/OTT/4.png",
+      "/case-studies/OTT/1.png",
       "/case-studies/OTT/TEK_OTT_REV1P0_BRD_PR3.svg",
       "/case-studies/OTT/TEK_OTT_REV1P0_BRD_PR3.bot.svg",
       "/case-studies/OTT/OTT_RENDER_27_NOV_2024_MG2.1.png",
@@ -433,9 +433,9 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Stellar Main Board",
     category: "Embedded System Design",
     images: [
-      "/case-studies/STELLAR MAIN BORD/1.png",
-      "/case-studies/STELLAR MAIN BORD/2.png",
       "/case-studies/STELLAR MAIN BORD/3.png",
+      "/case-studies/STELLAR MAIN BORD/2.png",
+      "/case-studies/STELLAR MAIN BORD/1.png",
       "/case-studies/STELLAR MAIN BORD/MAIN BOARD 1.svg",
       "/case-studies/STELLAR MAIN BORD/MAIN BOARD 2.svg",
     ],
@@ -2967,6 +2967,8 @@ export type CaseStudyListItem = {
   summary?: string;
   specs?: { label: string; value: string }[];
   stats?: { value: string; label: string };
+  cardImageClassName?: string;
+  cardImageZoom?: number;
 };
 
 const toCaseStudyListItem = (
@@ -2982,6 +2984,8 @@ const toCaseStudyListItem = (
   summary: caseStudy.summary,
   specs: caseStudy.specs,
   stats: caseStudy.stats,
+  cardImageClassName: caseStudy.cardImageClassName,
+  cardImageZoom: caseStudy.cardImageZoom,
 });
 
 export const embeddedCaseStudies = embeddedCaseStudiesData.map(

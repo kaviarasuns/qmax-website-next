@@ -136,7 +136,7 @@ export const industrialDesignCaseStudies: ServiceCaseStudy[] = [
   },
   {
     title: "Security Systems",
-    image: "/industrial_design_case_studies/product_3.png",
+    image: "/case-studies/industrialCaseStudies/1/ENCLOSURE_ASSM_1.9.png",
     link: "/case-studies/Security-Systems",
     category: "Industrial Design",
     summary:

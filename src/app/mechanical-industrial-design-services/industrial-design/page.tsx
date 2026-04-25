@@ -77,11 +77,17 @@ export default function IndustrialDesignServicesPage() {
             </div>
 
             {/* Core Introduction Content */}
-            <div className="mt-24 grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-32 border-t border-zinc-200 dark:border-zinc-800 pt-16">
-              <div>
-                <h2 className="text-sm font-black uppercase tracking-[0.4em] text-zinc-400 dark:text-zinc-500">
-                  / Introduction
-                </h2>
+            <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 border-t border-zinc-200 dark:border-zinc-800 pt-16">
+              <div className="relative overflow-hidden border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900 lg:h-full">
+                <video
+                  src="https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4"
+                  className="aspect-video w-full object-cover lg:aspect-auto lg:h-full"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-label="Industrial design service overview video"
+                />
               </div>
               <div className="space-y-12 text-xl leading-[1.6] text-zinc-600 dark:text-zinc-300 font-light max-w-3xl">
                 <p className="text-zinc-950 dark:text-zinc-100 font-normal text-2xl md:text-3xl">
@@ -162,6 +168,18 @@ export default function IndustrialDesignServicesPage() {
                   </p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-24 overflow-hidden border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
+              <video
+                src="https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_1.mp4"
+                className="aspect-[16/7] w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-label="Industrial design capabilities video"
+              />
             </div>
           </div>
         </section>
