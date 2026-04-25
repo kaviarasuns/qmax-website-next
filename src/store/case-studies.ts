@@ -1817,7 +1817,13 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     id: "industrial-pressure-gauge",
     title: "Industrial Pressure Gauge",
     category: "Mechanical Design",
-    images: ["/case-studies/image_vacationing.png"],
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/MarmaEnclosure Final.14.png",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/MarmaEnclosure.10.png",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/MarmaEnclosure.14.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/MarmaEnclosure Final.15.png",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/MarmaEnclosure.11.png",
+    ],
     features: [
       "Robust pressure gauge enclosure design",
       "Stainless steel wetted parts",
@@ -1854,7 +1860,13 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     id: "compact-flow-meter-housing",
     title: "Compact Flow Meter Housing",
     category: "Mechanical Design",
-    images: ["/case-studies/image_vacationing.png"],
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.5.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/20Jan2022TekionOBD.4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.11.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.9.png",
+    ],
     features: [
       "Lightweight composite flow meter housing",
       "Integrated display window",
@@ -1892,7 +1904,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     id: "temperature-transmitter-pod",
     title: "Temperature Transmitter Pod",
     category: "Mechanical Design",
-    images: ["/case-studies/image_vacationing.png"],
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/pneumatic/PNEUMATIC_TEST_JIG_RENDER.2.1.png",
+    ],
     features: [
       "Submersible temperature transmitter design",
       "Corrosion-resistant titanium probe",
@@ -1930,7 +1944,13 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     id: "ventilation-control-damper",
     title: "Ventilation Control Damper",
     category: "Mechanical Design",
-    images: ["/case-studies/image_vacationing.png"],
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.7.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.3.png",
+    ],
     features: [
       "Motorised ventilation damper assembly",
       "Low-friction blade mechanism",
@@ -1968,7 +1988,12 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     id: "safety-relief-valve-housing",
     title: "Safety Relief Valve Housing",
     category: "Mechanical Design",
-    images: ["/case-studies/image_vacationing.png"],
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SMOAD/SMOAD.1.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SMOAD/SMOAD.14.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SMOAD/SMOAD.15.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SMOAD/SMOAD.png",
+    ],
     features: [
       "Certified pressure relief valve design",
       "Redundant safety features",
@@ -2238,7 +2263,14 @@ export const industrialCaseStudiesData: CaseStudy[] = [
     id: "handheld-industrial-controller",
     title: "Handheld Industrial Controller",
     category: "Industrial Design",
-    images: ["/industrial_design_case_studies/product_1.png"],
+    images: [
+      "/industrial_design_case_studies/product_1.png",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/hydronet/Hydronett3.png",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/untitled.9.png",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/Ventogen for Expo.9 square.png",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/untitled.8.png",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/Ventogen for Expo.3.png",
+    ],
     features: [
       "Handheld controller enclosure optimised for factory floor use",
       "Balanced grip ergonomics for long-duration operation",
@@ -2409,7 +2441,12 @@ export const industrialCaseStudiesData: CaseStudy[] = [
     id: "wearable-health-monitor",
     title: "Wearable Health Monitor",
     category: "Industrial Design",
-    images: ["/case-studies/image_vacationing.png"],
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.19.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.21.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.5.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.6.png",
+    ],
     features: [
       "Continuous PPG and SpO₂ biometric sensing",
       "Low-profile wrist-worn enclosure under 11 mm thick",
