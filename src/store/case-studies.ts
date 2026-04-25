@@ -2984,8 +2984,6 @@ const toCaseStudyListItem = (
   summary: caseStudy.summary,
   specs: caseStudy.specs,
   stats: caseStudy.stats,
-  cardImageClassName: caseStudy.cardImageClassName,
-  cardImageZoom: caseStudy.cardImageZoom,
 });
 
 export const embeddedCaseStudies = embeddedCaseStudiesData.map(
