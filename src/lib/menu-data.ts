@@ -36,7 +36,7 @@ export const menuData: MenuItem[] = [
           },
           {
             title: "Power Electronics",
-            href: "/hardware-development-services/power-electorincs",
+            href: "/hardware-development-services/power-electronics",
           },
           {
             title: "RF and Microwave",
@@ -60,8 +60,8 @@ export const menuData: MenuItem[] = [
             href: "/pcb-design/analog-and-mixed-signal",
           },
           {
-            title: "Power Electorinics",
-            href: "/pcb-design/power-electorinics",
+            title: "Power Electronics",
+            href: "/pcb-design/power-electronics",
           },
           {
             title: "RF and Microwave",

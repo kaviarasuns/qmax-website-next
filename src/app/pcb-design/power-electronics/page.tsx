@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Modern power electronics systems demand more than simple interconnects; they require a holistic electromagnetic and thermal engineering strategy.",
 };
 
-export default function PowerElectorinicsPage() {
+export default function PowerElectronicsPage() {
   return (
     <main className="bg-zinc-100 text-zinc-900">
       {/* Hero Section */}

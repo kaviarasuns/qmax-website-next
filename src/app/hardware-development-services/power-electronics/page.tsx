@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     "Power electronics design and development services from converter architecture through validation and production support.",
 };
 
-export default function PowerElectorincsPage() {
+export default function PowerElectronicsPage() {
   return (
     <main className="bg-slate-100 text-justify text-slate-900">
       <section className="relative overflow-hidden pt-14 pb-12 border-b border-slate-200 lg:pt-20 lg:pb-24">

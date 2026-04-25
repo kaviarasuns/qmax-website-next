@@ -1,6 +1,13 @@
 "use client";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { MapPin, Phone, Mail, Send, CheckCircle, ArrowRight } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Send,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
 
 type CountryKey = "United States" | "India";
 type JobKey = "Careers  ( Jobs / Intern )" | "Suppliers / Vendors";
@@ -108,7 +115,6 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
-
   // API call to contact email endpoint
   const submitContactForm = async (data: typeof formData) => {
     console.log(data);
@@ -132,7 +138,7 @@ const Contact = () => {
   };
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -140,12 +146,24 @@ const Contact = () => {
     });
   };
 
+  const getLocationUrl = ({
+    name,
+    address,
+  }: Pick<AddressData, "name" | "address">) => {
+    const query = encodeURIComponent(`${name}, ${address.join(", ")}`);
+    return `https://www.google.com/maps/search/?api=1&query=${query}`;
+  };
+
   const offices = [
     {
       country: "United States",
       name: "Qmax Systems LLC",
-      address: ["14105 Willow Tank Drive", "Austin, TX 78717", "USA"],
-      phone: "+1-412-265-2314",
+      address: [
+        "539 W Commerce St # 7953",
+        "Dallas, TX 75208 - 1953",
+        "United States",
+      ],
+      phone: "+1 412 265 2314",
       email: "info@qmaxsys.com",
       mapSrc:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.0686396845626!2d-97.7954428240553!3d30.490807874701883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865b2d4e291550c1%3A0xee9f813c2cf8bced!2s14105%20Willow%20Tank%20Dr%2C%20Austin%2C%20TX%2078717%2C%20USA!5e0!3m2!1sen!2sin!4v1767094405947!5m2!1sen!2sin",
@@ -211,21 +229,19 @@ const Contact = () => {
     },
   };
 
-
-
   return (
     <main className="bg-white">
       {/* Hero + Contact Form Section - Combined for immediate access */}
       <section className="relative overflow-hidden">
         {/* Subtle gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100" />
-        
+
         {/* Subtle pattern overlay */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, rgb(0,0,0) 1px, transparent 0)`,
-            backgroundSize: '32px 32px'
+            backgroundSize: "32px 32px",
           }}
         />
 
@@ -235,10 +251,7 @@ const Contact = () => {
         </div>
 
         <div className="relative container mx-auto px-6 pt-20 pb-8 md:pt-24 md:pb-8 lg:pt-28 lg:pb-8">
-          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            
-            
             {/* Left Column - Contact Form */}
             <div>
               <p className="text-brand-red font-medium tracking-widest text-sm uppercase mb-4">
@@ -251,15 +264,17 @@ const Contact = () => {
                 </span>
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                Discuss your project with us today. We&apos;re here to transform your ideas into exceptional solutions.
+                Discuss your project with us today. We&apos;re here to transform
+                your ideas into exceptional solutions.
               </p>
-              
+
               <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-gray-100">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                   Send us a message
                 </h2>
                 <p className="text-gray-500 mb-6">
-                  Fill out the form below and we&apos;ll get back to you within 24 hours.
+                  Fill out the form below and we&apos;ll get back to you within
+                  24 hours.
                 </p>
 
                 {showThankYou ? (
@@ -278,8 +293,9 @@ const Contact = () => {
                       </div>
                     </div>
                     <p className="text-gray-600 leading-relaxed">
-                      We&apos;ve received your message and will get back to you shortly. 
-                      In the meantime, feel free to explore our case studies.
+                      We&apos;ve received your message and will get back to you
+                      shortly. In the meantime, feel free to explore our case
+                      studies.
                     </p>
                     <button
                       onClick={() => setShowThankYou(false)}
@@ -354,8 +370,19 @@ const Contact = () => {
                               fill="none"
                               viewBox="0 0 24 24"
                             >
-                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                              <circle
+                                className="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                strokeWidth="4"
+                              />
+                              <path
+                                className="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                              />
                             </svg>
                             Sending...
                           </>
@@ -374,15 +401,16 @@ const Contact = () => {
 
             {/* Right Column - Contact Us Section */}
             <div className="lg:sticky lg:top-32">
-       
-              <h2 className="text-xl font-semibold mb-6 text-gray-900">CONTACT US</h2>
-              
+              <h2 className="text-xl font-semibold mb-6 text-gray-900">
+                CONTACT US
+              </h2>
+
               {/* Contact Cards Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 {/* Address Cards */}
                 {(Object.keys(addresses) as CountryKey[]).map((country) => (
-                  <div 
-                    key={country} 
+                  <div
+                    key={country}
                     className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
                   >
                     <div className="w-full font-bold text-left px-4 py-3 text-sm bg-brand-red text-white flex items-center gap-2">
@@ -390,13 +418,15 @@ const Contact = () => {
                       {country}
                     </div>
                     <div className="p-4 text-sm bg-zinc-800 h-full">
-                      <p className="font-semibold text-white mb-2">{addresses[country].name}</p>
+                      <p className="font-semibold text-white mb-2">
+                        {addresses[country].name}
+                      </p>
                       <div className="text-gray-400 space-y-0.5 mb-3">
                         {addresses[country].address.map((line, index) => (
                           <p key={index}>{line}</p>
                         ))}
                       </div>
-                      <a 
+                      <a
                         href={`tel:${addresses[country].phone.replace(/\s/g, "")}`}
                         className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-2"
                       >
@@ -408,10 +438,10 @@ const Contact = () => {
                           const timestamp = Date.now();
                           const email = addresses[country].email;
                           const subject = encodeURIComponent(
-                            "Inquiry from Qmax Systems Website"
+                            "Inquiry from Qmax Systems Website",
                           );
                           const body = encodeURIComponent(
-                            "Hello,\n\nI would like to get in touch with Qmax Systems.\n\nBest regards,"
+                            "Hello,\n\nI would like to get in touch with Qmax Systems.\n\nBest regards,",
                           );
                           const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
                           window.location.href = mailtoUrl;
@@ -430,8 +460,8 @@ const Contact = () => {
 
                 {/* Jobs Cards */}
                 {(Object.keys(jobs) as JobKey[]).map((key) => (
-                  <div 
-                    key={key} 
+                  <div
+                    key={key}
                     className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
                   >
                     <div className="w-full font-bold text-left px-4 py-3 text-sm bg-brand-red text-white flex items-center gap-2">
@@ -439,13 +469,15 @@ const Contact = () => {
                       {key}
                     </div>
                     <div className="p-4 text-sm bg-zinc-800 h-full">
-                      <p className="font-semibold text-white mb-2">{jobs[key].name}</p>
+                      <p className="font-semibold text-white mb-2">
+                        {jobs[key].name}
+                      </p>
                       <div className="text-gray-400 space-y-0.5 mb-3">
                         {jobs[key].address.map((line, index) => (
                           <p key={index}>{line}</p>
                         ))}
                       </div>
-                      <a 
+                      <a
                         href={`tel:${jobs[key].phone.replace(/\s/g, "")}`}
                         className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-2"
                       >
@@ -457,12 +489,12 @@ const Contact = () => {
                           const timestamp = Date.now();
                           const email = jobs[key].email;
                           const subject = encodeURIComponent(
-                            `Inquiry for ${key} - Qmax Systems`
+                            `Inquiry for ${key} - Qmax Systems`,
                           );
                           const body = encodeURIComponent(
                             "Hello,\n\nI would like to get in touch regarding " +
                               key +
-                              ".\n\nBest regards,"
+                              ".\n\nBest regards,",
                           );
                           const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
                           window.location.href = mailtoUrl;
@@ -521,7 +553,9 @@ const Contact = () => {
                   <div className="absolute top-4 right-4 px-4 py-2 bg-white/95 backdrop-blur-sm rounded-full shadow-lg">
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-brand-red" />
-                      <span className="font-semibold text-gray-900">{office.country}</span>
+                      <span className="font-semibold text-gray-900">
+                        {office.country}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -564,7 +598,9 @@ const Contact = () => {
 
                   {/* CTA */}
                   <a
-                    href={`mailto:${office.email}?subject=Inquiry from Qmax Website`}
+                    href={getLocationUrl(office)}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 mt-6 text-brand-red font-medium hover:gap-3 transition-all"
                   >
                     Get Directions
@@ -582,39 +618,37 @@ const Contact = () => {
 
 export default Contact;
 
+// {/* Bottom CTA Section */}
+//   <section className="relative py-20 lg:py-32 overflow-hidden">
+//     {/* Background gradient */}
+//     <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800" />
 
+//     {/* Decorative elements */}
+//     <div className="absolute top-0 left-0 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl" />
+//     <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-red/5 rounded-full blur-3xl" />
 
-    // {/* Bottom CTA Section */}
-    //   <section className="relative py-20 lg:py-32 overflow-hidden">
-    //     {/* Background gradient */}
-    //     <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800" />
-        
-    //     {/* Decorative elements */}
-    //     <div className="absolute top-0 left-0 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl" />
-    //     <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-red/5 rounded-full blur-3xl" />
-
-    //     <div className="relative container mx-auto px-6 text-center">
-    //       <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-    //         Ready to Start Your Project?
-    //       </h2>
-    //       <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-    //         Request a quote online or call us directly. Our team is ready to bring your vision to life.
-    //       </p>
-    //       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-    //         <a
-    //           href="tel:+14122652314"
-    //           className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg"
-    //         >
-    //           <Phone className="w-5 h-5" />
-    //           +1-412-265-2314
-    //         </a>
-    //         <a
-    //           href="mailto:info@qmaxsys.com"
-    //           className="inline-flex items-center gap-3 px-8 py-4 bg-brand-red text-white rounded-full font-semibold text-lg hover:bg-red-600 transition-colors shadow-lg shadow-brand-red/25"
-    //         >
-    //           <Mail className="w-5 h-5" />
-    //           Request a Quote
-    //         </a>
-    //       </div>
-    //     </div>
-    //   </section>
+//     <div className="relative container mx-auto px-6 text-center">
+//       <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+//         Ready to Start Your Project?
+//       </h2>
+//       <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+//         Request a quote online or call us directly. Our team is ready to bring your vision to life.
+//       </p>
+//       <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+//         <a
+//           href="tel:+14122652314"
+//           className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg"
+//         >
+//           <Phone className="w-5 h-5" />
+//           +1-412-265-2314
+//         </a>
+//         <a
+//           href="mailto:info@qmaxsys.com"
+//           className="inline-flex items-center gap-3 px-8 py-4 bg-brand-red text-white rounded-full font-semibold text-lg hover:bg-red-600 transition-colors shadow-lg shadow-brand-red/25"
+//         >
+//           <Mail className="w-5 h-5" />
+//           Request a Quote
+//         </a>
+//       </div>
+//     </div>
+//   </section>

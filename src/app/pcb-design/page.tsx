@@ -53,7 +53,6 @@ const pcbCaseStudies = [
 ];
 
 export default function PCBDesignPage() {
-
   // const containerVariants = {
   //   hidden: { opacity: 0 },
   //   visible: {
@@ -256,7 +255,7 @@ export default function PCBDesignPage() {
                 title: "Power Electronics PCB Design",
                 description:
                   "Power electronics PCB layout demands precise current path management, thermal dissipation planning, and EMI containment. Our engineers are experienced in DC-DC converters, AC-DC power supplies, motor drive circuits, and high-density power modules. We apply copper weight optimization, current-carrying capacity analysis, thermal via arrays, and snubber placement discipline to ensure reliable operation under full thermal and electrical load.",
-                href: "/pcb-design/power-electorinics",
+                href: "/pcb-design/power-electronics",
                 icon: <Zap className="w-6 h-6" />,
               },
               {

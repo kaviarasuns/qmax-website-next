@@ -18,8 +18,8 @@ export default function FooterV2() {
     "United States": {
       name: "Qmax Systems LLC",
       address: [
-        "14105, Willow Tank Drive",
-        "Austin, TX 78717",
+        "539 W Commerce St # 7953",
+        "Dallas, TX 75208 - 1953",
         "United States",
       ],
       phone: "+1 412 265 2314",
@@ -54,10 +54,11 @@ export default function FooterV2() {
                   Systems Design and PCB Design Services.
                 </p>
                 <p className="text-white text-sm mt-4 leading-relaxed">
-                  Qmax has a Highly experienced, Multi-disciplinary team which can
-                  bring out the best solution for your requirement in the shortest
-                  time. Our stringent process and hands-on experience help avoid
-                  errors, reduces design costs and ensures faster time to market.
+                  Qmax has a Highly experienced, Multi-disciplinary team which
+                  can bring out the best solution for your requirement in the
+                  shortest time. Our stringent process and hands-on experience
+                  help avoid errors, reduces design costs and ensures faster
+                  time to market.
                 </p>
               </div>
 
@@ -80,7 +81,9 @@ export default function FooterV2() {
                   </Button>
                 </Link>
                 {/* Space before Social Media subsection */}
-                <h3 className="text-xl font-semibold mb-4 mt-8">Social Media</h3>
+                <h3 className="text-xl font-semibold mb-4 mt-8">
+                  Social Media
+                </h3>
                 <p className="mb-4">Get in touch with us on social media.</p>
                 <div className="flex gap-6">
                   <Link
@@ -119,57 +122,90 @@ export default function FooterV2() {
                 <h2 className="text-xl font-semibold mb-4">QUICK LINKS</h2>
                 <ul className="space-y-3">
                   <li>
-                    <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+                    <Link
+                      href="/"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link href="/about-us" className="text-gray-300 hover:text-white transition-colors">
+                    <Link
+                      href="/about-us"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link href="http://blog.qmaxsys.com/" className="text-gray-300 hover:text-white transition-colors">
+                    <Link
+                      href="http://blog.qmaxsys.com/"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
                       Blog
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services" className="text-gray-300 hover:text-white transition-colors">
+                    <Link
+                      href="/services"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
                       Services
                     </Link>
                   </li>
                   <li>
-                    <Link href="/projects" className="text-gray-300 hover:text-white transition-colors">
+                    <Link
+                      href="/projects"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
                       Projects
                     </Link>
                   </li>
                   <li>
-                    <Link href="/careers" className="text-gray-300 hover:text-white transition-colors">
+                    <Link
+                      href="/careers"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
                       Careers
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                    <Link
+                      href="/contact"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
                       Contact Us
                     </Link>
                   </li>
                   <li>
-                    <Link href="/PCB-design-resources" className="text-gray-300 hover:text-white transition-colors">
+                    <Link
+                      href="/PCB-design-resources"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
                       PCB Design Resources
                     </Link>
                   </li>
                   <li>
-                    <Link href="/embedded-system-glossary" className="text-gray-300 hover:text-white transition-colors">
+                    <Link
+                      href="/embedded-system-glossary"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
                       Embedded Systems Glossary
                     </Link>
                   </li>
                   <li>
-                    <Link href="/pcb-design-glossary" className="text-gray-300 hover:text-white transition-colors">
+                    <Link
+                      href="/pcb-design-glossary"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
                       PCB Design Glossary
                     </Link>
                   </li>
                   <li>
-                    <Link href="/printed-circuit-board-faqs" className="text-gray-300 hover:text-white transition-colors">
+                    <Link
+                      href="/printed-circuit-board-faqs"
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
                       FAQs
                     </Link>
                   </li>
@@ -189,7 +225,9 @@ export default function FooterV2() {
                         {country}
                       </div>
                       <div className="p-3 text-sm text-gray-300 bg-zinc-800">
-                        <p className="font-semibold">{addresses[country].name}</p>
+                        <p className="font-semibold">
+                          {addresses[country].name}
+                        </p>
                         {addresses[country].address.map((line, index) => (
                           <p key={index}>{line}</p>
                         ))}
@@ -199,10 +237,10 @@ export default function FooterV2() {
                             const timestamp = Date.now();
                             const email = addresses[country].email;
                             const subject = encodeURIComponent(
-                              "Inquiry from Qmax Systems Website"
+                              "Inquiry from Qmax Systems Website",
                             );
                             const body = encodeURIComponent(
-                              "Hello,\n\nI would like to get in touch with Qmax Systems.\n\nBest regards,"
+                              "Hello,\n\nI would like to get in touch with Qmax Systems.\n\nBest regards,",
                             );
                             const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
 
