@@ -142,6 +142,7 @@ export default function InsideOut() {
       ref={sectionRef}
       className="pt-12 sm:pt-14 md:pt-16 lg:pt-20 xl:pt-24 bg-white"
     >
+      {/*Main Section*/}
       <div className="flex flex-col lg:flex-row items-stretch gap-0 z-[1]">
         <div className="w-full lg:w-[60%] flex flex-col items-center px-6 lg:px-12 py-12">
           <div
@@ -234,7 +235,10 @@ export default function InsideOut() {
       </div>
 
       {/* Stats Row - Full Width */}
-      <div className="w-full max-w-6xl mx-auto mt-12 px-6">
+      <div
+        className="w-full max-w-6xl mx-auto mt-10 px-6"
+        style={{ marginTop: "40px" }}
+      >
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
           <div className="flex flex-col items-center text-center">
             <TrendingUp size={28} className="text-red-500 mb-2" />
@@ -278,7 +282,7 @@ export default function InsideOut() {
       </div>
 
       {/* Spacer after animation */}
-      <div style={{ height: "8vh" }} />
+      {/* <div data-budge-target style={{ height: "6vh" }} /> */}
     </div>
   );
 }
