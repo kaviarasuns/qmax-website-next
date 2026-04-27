@@ -23,6 +23,19 @@ const sectionCounts: { [key: string]: number } = {
   industrial: industrialCaseStudies.length,
 };
 
+// --- Pending image counts (remove this block when all images are added) ---
+const PLACEHOLDER_IMAGE = "/case-studies/image_vacationing.png";
+const pendingCounts: { [key: string]: number } = {
+  embedded: embeddedCaseStudies.filter((s) => s.image === PLACEHOLDER_IMAGE)
+    .length,
+  pcb: pcbCaseStudies.filter((s) => s.image === PLACEHOLDER_IMAGE).length,
+  mechanical: mechanicalCaseStudies.filter((s) => s.image === PLACEHOLDER_IMAGE)
+    .length,
+  industrial: industrialCaseStudies.filter((s) => s.image === PLACEHOLDER_IMAGE)
+    .length,
+};
+// --- End pending image counts ---
+
 const SCROLL_OFFSET = 120;
 
 export default function CaseStudiesPage() {
@@ -104,15 +117,24 @@ export default function CaseStudiesPage() {
                     >
                       {section.label}
                     </span>
-                    <span
-                      className={`text-xs font-medium tabular-nums ml-3 px-2 py-0.5 rounded-full transition-all duration-300 ${
-                        isActive
-                          ? "bg-[#E31E24]/10 text-[#E31E24]"
-                          : "bg-gray-100 text-gray-400 group-hover:bg-gray-200 group-hover:text-gray-600"
-                      }`}
-                    >
-                      {sectionCounts[section.id]}
-                    </span>
+                    <div className="flex items-center gap-1.5 ml-3">
+                      <span
+                        className={`text-xs font-medium tabular-nums px-2 py-0.5 rounded-full transition-all duration-300 ${
+                          isActive
+                            ? "bg-[#E31E24]/10 text-[#E31E24]"
+                            : "bg-gray-100 text-gray-400 group-hover:bg-gray-200 group-hover:text-gray-600"
+                        }`}
+                      >
+                        {sectionCounts[section.id]}
+                      </span>
+                      {/* --- Pending badge (remove when all images are added) --- */}
+                      {pendingCounts[section.id] > 0 && (
+                        <span className="text-[10px] font-medium tabular-nums px-2 py-0.5 rounded-full bg-amber-100 text-amber-600 whitespace-nowrap">
+                          🏖️ {pendingCounts[section.id]} on the way
+                        </span>
+                      )}
+                      {/* --- End pending badge --- */}
+                    </div>
                   </div>
                 </button>
               );

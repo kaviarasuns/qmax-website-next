@@ -3039,4 +3039,19 @@ export const industrialCaseStudies = industrialCaseStudiesData.map(
   (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "industrial"),
 );
 
+const countPendingImages = (studies: CaseStudy[]): number => {
+  return studies.filter(
+    (study) =>
+      study.images.length > 0 &&
+      study.images[0] === "/case-studies/image_vacationing.png"
+  ).length;
+};
+
+export const pendingImageCounts = {
+  embedded: countPendingImages(embeddedCaseStudiesData),
+  pcb: countPendingImages(pcbCaseStudiesData),
+  mechanical: countPendingImages(mechanicalCaseStudiesData),
+  industrial: countPendingImages(industrialCaseStudiesData),
+};
+
 export const caseStudiesData = allCaseStudiesData;
