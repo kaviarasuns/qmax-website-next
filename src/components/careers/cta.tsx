@@ -1,41 +1,37 @@
-import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-
-
 export function CTA() {
   return (
-    <section className="py-10">
-      <div className="container mx-auto px-4 md:px-6">
-        <Card className="relative overflow-hidden p-12 md:p-20">
-          {/* Background gradient */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-primary/20 blur-3xl"></div>
-            <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-accent/20 blur-3xl"></div>
-          </div>
+    <section className="py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="border border-zinc-200 p-8 sm:p-10 md:p-16 text-center">
+          <h2 className="mb-4 text-2xl md:text-3xl font-bold text-zinc-900">
+            Ready to Make an Impact?
+          </h2>
 
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl text-foreground">
-              Ready to Make an Impact?
-            </h2>
+          <p className="mb-8 text-sm sm:text-base md:text-lg text-zinc-600 max-w-2xl mx-auto">
+            Whether you&apos;re an experienced engineer or just starting your
+            career, we have opportunities for you. Let&apos;s build the future
+            of technology together.
+          </p>
 
-            <p className="mb-8 text-lg text-foreground/70">
-              Whether you&apos;re an experienced engineer or just starting your career, we have opportunities for you. Let&apos;s build the future of technology together.
-            </p>
+          <a
+            href="https://careers.qmaxsys.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center bg-zinc-900 text-white px-8 py-3 text-sm font-semibold hover:bg-zinc-800 transition-colors"
+          >
+            Apply Now
+          </a>
 
-            <div className="flex flex-col gap-4 sm:flex-row justify-center">
-              <a href="https://careers.qmaxsys.com/" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="w-full sm:w-auto bg-zinc-900 text-white hover:bg-zinc-800">
-                  Apply Now
-                </Button>
-              </a>
-            </div>
-
-            <p className="mt-6 text-sm text-foreground/60">
-              Questions? Reach out to our recruitment team at{' '}
-              <a href="mailto:careers@qmaxsys.com" className="underline underline-offset-2 hover:text-foreground/80 transition-colors">careers@qmaxsys.com</a>
-            </p>
-          </div>
-        </Card>
+          <p className="mt-6 text-xs sm:text-sm text-zinc-500">
+            Questions? Reach out to our recruitment team at{' '}
+            <a
+              href="mailto:careers@qmaxsys.com"
+              className="underline underline-offset-2 hover:text-zinc-700 transition-colors"
+            >
+              careers@qmaxsys.com
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   )
