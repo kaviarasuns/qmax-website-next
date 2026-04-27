@@ -146,7 +146,7 @@ export default function InsideOut() {
       <div className="flex flex-col lg:flex-row items-stretch gap-0 z-[1]">
         <div className="w-full lg:w-[60%] flex flex-col items-center px-6 lg:px-12 py-12">
           <div
-            className="relative overflow-hidden rounded-xl border border-[#d9d9d9] bg-[#1a1a1a] shadow-lg w-full max-w-[500px]"
+            className="relative w-full"
             style={{ maxWidth: "100%" }}
           >
             <video

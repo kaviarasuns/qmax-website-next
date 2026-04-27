@@ -112,6 +112,10 @@ export const menuData: MenuItem[] = [
     href: "/case-studies",
   },
   {
+    title: "About Us",
+    href: "/about-us",
+  },
+  {
     title: "Careers",
     href: "/careers",
   },
