@@ -12,6 +12,8 @@ interface CaseStudyCarouselProps {
   title: string;
   /** Zero-based indices of images that should be displayed with black padding */
   paddedImages?: number[];
+  /** Map of zero-based image index to rotation in degrees applied before display */
+  rotatedImages?: Record<number, number>;
 }
 
 const slideVariants = {
@@ -20,8 +22,17 @@ const slideVariants = {
   exit: (dir: number) => ({ opacity: 0, x: dir * -48 }),
 };
 
-export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
+export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCarouselProps) {
   const galleryImages = React.useMemo(() => images.filter(Boolean), [images]);
+
+  const getRotation = React.useCallback(
+    (index: number) => {
+      const original = images.indexOf(galleryImages[index]);
+      const deg = rotatedImages?.[original >= 0 ? original : index];
+      return typeof deg === "number" ? deg : 0;
+    },
+    [images, galleryImages, rotatedImages]
+  );
 
   // Carousel state
   const [current, setCurrent] = React.useState(0);
@@ -101,13 +112,22 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
           onKeyDown={(e) => e.key === "Enter" && openLightbox(current)}
           className="relative overflow-hidden rounded-xl border border-zinc-100 bg-[oklch(87.1%_0.006_286.286)] cursor-zoom-in group"
         >
-          <Image
-            src={galleryImages[current]}
-            alt={`${title} — image ${current + 1} of ${galleryImages.length}`}
-            width={960}
-            height={600}
-            className="h-full w-full aspect-[4/3] md:aspect-[16/10] object-contain p-10 transition-opacity duration-300 motion-reduce:transition-none"
-          />
+          <div
+            className="block w-full transition-opacity duration-300 motion-reduce:transition-none"
+            style={
+              getRotation(current)
+                ? { transform: `rotate(${getRotation(current)}deg)` }
+                : undefined
+            }
+          >
+            <Image
+              src={galleryImages[current]}
+              alt={`${title} — image ${current + 1} of ${galleryImages.length}`}
+              width={960}
+              height={600}
+              className="h-full w-full aspect-[4/3] md:aspect-[16/10] object-contain p-10"
+            />
+          </div>
 
           {/* Zoom hint badge — appears on hover */}
           <div className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-black/50 px-2.5 py-1.5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -172,13 +192,22 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
                     : "border-zinc-200 hover:border-zinc-300"
                 )}
               >
-                <Image
-                  src={image}
-                  alt=""
-                  width={72}
-                  height={54}
-                  className="aspect-[4/3] h-[50px] w-[72px] object-contain bg-[oklch(87.1%_0.006_286.286)] p-1.5"
-                />
+                <div
+                  className="block"
+                  style={
+                    getRotation(index)
+                      ? { transform: `rotate(${getRotation(index)}deg)` }
+                      : undefined
+                  }
+                >
+                  <Image
+                    src={image}
+                    alt=""
+                    width={72}
+                    height={54}
+                    className="aspect-[4/3] h-[50px] w-[72px] object-contain bg-[oklch(87.1%_0.006_286.286)] p-1.5"
+                  />
+                </div>
               </button>
             ))}
           </div>
@@ -244,14 +273,23 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
                   transition={{ duration: 0.22, ease: "easeInOut" }}
                   className="absolute inset-0 flex items-center justify-center px-10 md:px-16"
                 >
-                  <Image
-                    src={galleryImages[lightboxIndex]}
-                    alt={`${title} — image ${lightboxIndex + 1} of ${galleryImages.length}`}
-                    fill
-                    className="object-contain px-10 md:px-16"
-                    sizes="(max-width: 768px) 100vw, 90vw"
-                    priority
-                  />
+                  <div
+                    className="absolute inset-0"
+                    style={
+                      getRotation(lightboxIndex)
+                        ? { transform: `rotate(${getRotation(lightboxIndex)}deg)` }
+                        : undefined
+                    }
+                  >
+                    <Image
+                      src={galleryImages[lightboxIndex]}
+                      alt={`${title} — image ${lightboxIndex + 1} of ${galleryImages.length}`}
+                      fill
+                      className="object-contain px-10 md:px-16"
+                      sizes="(max-width: 768px) 100vw, 90vw"
+                      priority
+                    />
+                  </div>
                 </motion.div>
               </AnimatePresence>
 
@@ -275,6 +313,9 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
                       left: -(lensPct.x / 100) * (imageStageRef.current?.offsetWidth ?? 0) * 3 + 88,
                       top: -(lensPct.y / 100) * (imageStageRef.current?.offsetHeight ?? 0) * 3 + 88,
                       objectFit: "contain",
+                      transform: getRotation(lightboxIndex)
+                        ? `rotate(${getRotation(lightboxIndex)}deg)`
+                        : undefined,
                     }}
                   />
                 </div>
@@ -324,13 +365,22 @@ export function CaseStudyCarousel({ images, title }: CaseStudyCarouselProps) {
                         : "border-transparent opacity-40 hover:opacity-75"
                     )}
                   >
-                    <Image
-                      src={image}
-                      alt=""
-                      width={64}
-                      height={48}
-                      className="aspect-[4/3] h-[48px] w-[64px] object-contain bg-[oklch(92%_0.004_286.32)] p-1"
-                    />
+                    <div
+                      className="block"
+                      style={
+                        getRotation(index)
+                          ? { transform: `rotate(${getRotation(index)}deg)` }
+                          : undefined
+                      }
+                    >
+                      <Image
+                        src={image}
+                        alt=""
+                        width={64}
+                        height={48}
+                        className="aspect-[4/3] h-[48px] w-[64px] object-contain bg-[oklch(92%_0.004_286.32)] p-1"
+                      />
+                    </div>
                   </button>
                 ))}
               </div>
