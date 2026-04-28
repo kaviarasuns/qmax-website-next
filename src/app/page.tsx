@@ -8,6 +8,7 @@ import HeroSection from "@/components/home/hero-section";
 import FullPageScroll from "@/components/home/full-page-scroll";
 import FooterV2 from "@/components/footer-v2";
 import OurServices from "@/components/our-services";
+import { IndustriesWeServeV3 } from "@/components/industries-we-serve-v3";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <ScrollCardsAnimationV4 onAutoHighlightChange={() => {}} />
       {/* <ServicesV4Stacked lockStackingOnProgrammaticScroll={false} /> */}
       <OurServices />
-      <IndustriesWeServeV2 />
+      <IndustriesWeServeV3 />
       <InsideOutV2 />
       <ServicesSection />
       <FooterV2 />

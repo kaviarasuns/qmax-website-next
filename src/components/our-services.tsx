@@ -74,12 +74,12 @@ export default function OurServices() {
     <section
       id="our-services"
       aria-labelledby="our-services-heading"
-      className="bg-white py-20"
+      className="bg-white py-10 scroll-mt-16"
     >
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 id="our-services-heading" className="text-4xl md:text-5xl">
+        <div className="text-center mb-7">
+          <h2 id="our-services-heading" className="text-3xl md:text-4xl">
             <span className="text-black">Our</span>{" "}
             <span className="text-red-500">Services</span>
           </h2>
@@ -90,7 +90,7 @@ export default function OurServices() {
         </div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {services.map((service) => {
             const Icon = service.Icon;
             return (
@@ -98,12 +98,12 @@ export default function OurServices() {
                 key={service.id}
                 href={service.href}
                 aria-label={`Learn more about ${service.title}`}
-                className="group relative flex flex-col bg-[#f8f8f8] rounded-2xl p-8 transition-all duration-300 hover:bg-white hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+                className="group relative flex flex-col bg-[#f8f8f8] rounded-2xl p-6 transition-all duration-300 hover:bg-white hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
               >
                 {/* Top row: icon + arrow */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-black text-white transition-colors duration-300 group-hover:bg-red-500">
-                    <Icon className="h-6 w-6" aria-hidden="true" />
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-black text-white transition-colors duration-300 group-hover:bg-red-500">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <span
                     aria-hidden="true"
@@ -114,20 +114,20 @@ export default function OurServices() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl md:text-2xl font-semibold text-black tracking-tight">
+                <h3 className="text-lg md:text-xl font-semibold text-black tracking-tight">
                   {service.title}
                 </h3>
 
                 {/* Blurb */}
-                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                <p className="mt-1.5 text-sm text-gray-600 leading-relaxed">
                   {service.blurb}
                 </p>
 
                 {/* Divider */}
-                <div className="my-6 h-px w-full bg-gray-200" />
+                <div className="my-4 h-px w-full bg-gray-200" />
 
                 {/* Items */}
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
                   {service.items.map((item) => (
                     <li
                       key={item}
@@ -143,7 +143,7 @@ export default function OurServices() {
                 </ul>
 
                 {/* Footer label */}
-                <div className="mt-7 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-gray-500 transition-colors duration-300 group-hover:text-red-500">
+                <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-gray-500 transition-colors duration-300 group-hover:text-red-500">
                   Explore service
                   <ArrowUpRight
                     className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
