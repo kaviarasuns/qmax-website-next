@@ -296,7 +296,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "POE Power Injector",
     category: "Power over Ethernet",
     images: [
-      "/case-studies/POE/3.png",
+      "/case-studies/POE/3_new.png",
       "/case-studies/POE/4.png",
       "/case-studies/POE/2.1.svg",
       "/case-studies/POE/2.2.svg",
