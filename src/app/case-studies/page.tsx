@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import {
   embeddedCaseStudies,
@@ -8,6 +8,13 @@ import {
   mechanicalCaseStudies,
   pcbCaseStudies,
 } from "@/store/case-studies";
+
+// useLayoutEffect logs a warning during SSR; fall back to useEffect on the
+// server. The actual scroll restoration only matters on the client anyway.
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+const SCROLL_STORAGE_KEY = "case-studies:scroll-y";
 
 const sections = [
   { id: "embedded", label: "Embedded Systems" },
@@ -41,7 +48,88 @@ const SCROLL_OFFSET = 120;
 export default function CaseStudiesPage() {
   const [activeSection, setActiveSection] = useState("");
 
+  // ---------------------------------------------------------------------
+  // Scroll restoration
+  // ---------------------------------------------------------------------
+  // Goal: returning to this page via the browser back button lands the
+  // user exactly where they were, without a visible jump from the top.
+  //
+  // Strategy (standard pattern):
+  //   1. Take ownership of scroll restoration ONCE (`history.scrollRestoration
+  //      = "manual"`) and never restore it to "auto" — otherwise the next
+  //      mount races with the browser/Next.js auto restorer.
+  //   2. Persist the latest scroll position to sessionStorage continuously
+  //      while the user scrolls, plus a final flush on unmount so the
+  //      value is guaranteed-fresh when the user clicks a card.
+  //   3. On mount, restore the saved Y. Use a rAF retry loop bounded by
+  //      a short timeout to handle cases where the page is still settling
+  //      (images loading, fonts swapping) or Next.js issues its own
+  //      scroll-to-top after our layout effect.
+  // ---------------------------------------------------------------------
+
+  // (1) Set scroll restoration to manual exactly once, and restore the
+  //     saved position before paint with a rAF retry fallback.
+  useIsomorphicLayoutEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    const saved = sessionStorage.getItem(SCROLL_STORAGE_KEY);
+    if (saved === null) return;
+    const targetY = Number(saved);
+    if (!Number.isFinite(targetY) || targetY <= 0) return;
+
+    // Synchronous first attempt — when layout is already stable (the
+    // common case on this static page), this restores before first paint
+    // with no flash.
+    window.scrollTo(0, targetY);
+
+    // Retry across animation frames in case:
+    //   - the document isn't tall enough yet (lazy images, font swap),
+    //   - Next.js's scroll handling fires after this effect and resets us.
+    let rafId = 0;
+    const start =
+      typeof performance !== "undefined" ? performance.now() : Date.now();
+    const TIMEOUT_MS = 1000;
+
+    const tick = () => {
+      const now =
+        typeof performance !== "undefined" ? performance.now() : Date.now();
+      const maxReachable = Math.max(
+        0,
+        document.documentElement.scrollHeight - window.innerHeight
+      );
+      const y = Math.min(targetY, maxReachable);
+
+      if (Math.abs(window.scrollY - y) > 1) {
+        window.scrollTo(0, y);
+      }
+
+      // Stop once we've actually reached the saved Y; otherwise keep
+      // trying until the page grows or we time out.
+      if (window.scrollY < targetY - 1 && now - start < TIMEOUT_MS) {
+        rafId = requestAnimationFrame(tick);
+      }
+    };
+
+    rafId = requestAnimationFrame(tick);
+
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      // Intentionally do NOT reset window.history.scrollRestoration here.
+      // Resetting it to "auto" on unmount causes the next back-navigation
+      // mount to race with the browser's auto restorer.
+    };
+  }, []);
+
+  // (2) Track active section AND persist scroll position. Combined into a
+  //     single scroll listener for efficiency. Writes to sessionStorage
+  //     are rAF-throttled, but a final synchronous save runs on unmount
+  //     so the latest position is captured even if the user clicks a card
+  //     between rAF ticks.
   useEffect(() => {
+    let rafId = 0;
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       let current = sections[0].id;
@@ -58,11 +146,24 @@ export default function CaseStudiesPage() {
       }
 
       setActiveSection(current);
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          sessionStorage.setItem(SCROLL_STORAGE_KEY, String(window.scrollY));
+          rafId = 0;
+        });
+      }
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+      // Final flush — guarantees the latest scroll position is persisted
+      // when this page unmounts due to a Next.js client-side navigation.
+      sessionStorage.setItem(SCROLL_STORAGE_KEY, String(window.scrollY));
+    };
   }, []);
 
   const scrollToSection = (id: string) => {
