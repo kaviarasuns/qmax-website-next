@@ -186,8 +186,6 @@ export const industrialCaseStudiesData: CaseStudy[] = [
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.19.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.21.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.5.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.6.png",
     ],
     features: [
       "Continuous PPG and SpO₂ biometric sensing",
@@ -228,7 +226,10 @@ export const industrialCaseStudiesData: CaseStudy[] = [
     id: "portable-field-tester",
     title: "Portable Field Tester",
     category: "Industrial Design",
-    images: ["/case-studies/image_vacationing.png"],
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.5.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.6.png",
+    ],
     features: [
       "IP67 and MIL-STD-810G rated enclosure",
       "Transflective LCD for sunlight-readable operation",
