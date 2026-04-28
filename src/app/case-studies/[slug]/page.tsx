@@ -99,6 +99,7 @@ export default async function CaseStudyPage({
                   link={`/case-studies/${study.id}`}
                   category={study.category}
                   summary={study.summary || undefined}
+                  imageRotation={study.rotatedImages?.[0]}
                 />
               ))}
             </div>

@@ -11,6 +11,8 @@ export interface CaseStudyCardProps {
   summary?: string;
   specs?: { label: string; value: string }[];
   stats?: { value: string; label: string };
+  /** Rotation in degrees applied to the card image before display */
+  imageRotation?: number;
 }
 
 const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
@@ -20,6 +22,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   category,
   imageBackgroundClassName = "bg-[#e5e5e5]",
   imageClassName = "object-contain px-8 py-5",
+  imageRotation,
 }) => {
   return (
     <div className={`group relative ${category}`}>
@@ -32,13 +35,22 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
           <div
             className={`relative h-[70%] overflow-hidden ${imageBackgroundClassName}`}
           >
-            <Image
-              src={image}
-              alt={title}
-              fill
-              className={`${imageClassName} transition-transform duration-700 group-hover:scale-[1.03]`}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            />
+            <div
+              className="absolute inset-0"
+              style={
+                imageRotation
+                  ? { transform: `rotate(${imageRotation}deg)` }
+                  : undefined
+              }
+            >
+              <Image
+                src={image}
+                alt={title}
+                fill
+                className={`${imageClassName} transition-transform duration-700 group-hover:scale-[1.03]`}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              />
+            </div>
           </div>
 
           <div className="flex h-[30%] flex-col justify-between bg-white px-5 py-4">
