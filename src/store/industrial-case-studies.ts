@@ -51,7 +51,11 @@ export const industrialCaseStudiesData: CaseStudy[] = [
     id: "medical-diagnostic-system",
     title: "Medical Diagnostic System",
     category: "Industrial Design",
-    images: ["/industrial_design_case_studies/product_2.png"],
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/rettina_scanner/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/rettina_scanner/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/rettina_scanner/3.png"
+    ],
     features: [
       "IEC 60601-compliant enclosure design",
       "Antimicrobial surface finish for clinical environments",

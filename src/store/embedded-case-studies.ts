@@ -575,8 +575,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Real-time Data Logger",
     category: "Embedded System Design",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_management_system/1.1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_management_system/1.2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_pack/1.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_pack/1.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_management_system/1.3.png",
     ],
     features: [
@@ -709,8 +709,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Medical Device Interface",
     category: "Embedded System Design",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_1/1.1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_1/1.2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/pcb_a/1.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/pcb_a/1.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_1/1.3.png",
     ],
     features: [
@@ -753,8 +753,10 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Robotics Motion Controller",
     category: "Embedded System Design",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/femtofarad_level_capacitance/1.1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/femtofarad_level_capacitance/1.2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/femtofarad_level_capacitance/1.3.png",
     ],
     features: [
@@ -1070,6 +1072,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/1.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/1.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/1.3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/5.png",
     ],
     features: [
       "Wi-Fi 6E connectivity",
@@ -1112,10 +1116,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Embedded Device Interface",
     category: "Embedded System Design",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.2.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.3.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.4.png",
+      "/case-studies/embedded/battery_pack/1.1.png"
     ],
     features: [
       "FDA-compliant interface module",
