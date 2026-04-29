@@ -279,7 +279,7 @@ export default function ScrollCardsAnimationV4({
                   <CardContent className="p-4">
                     {/* Card Title */}
                     <div className="text-center mb-3">
-                      <h3 className="text-black font-bold text-sm tracking-wide leading-tight">
+                      <h3 className="text-black text-sm tracking-wide leading-tight">
                         {cards[activeCard].title}
                       </h3>
                     </div>
@@ -310,14 +310,8 @@ export default function ScrollCardsAnimationV4({
                             delay: 0.3 + itemIndex * 0.1,
                           }}
                         >
-                          <div
-                            className="w-3 h-1.5 bg-red-500 mr-2 flex-shrink-0"
-                            style={{
-                              clipPath:
-                                "polygon(0 0, 100% 0, 80% 100%, 0 100%)",
-                            }}
-                          ></div>
-                          <span>{item}</span>
+                          <div className="w-1.5 h-1.5 bg-red-500 mr-2 flex-shrink-0 rounded-full"></div>
+                          <span className="tracking-wide">{item}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -466,7 +460,7 @@ export default function ScrollCardsAnimationV4({
                       {/* Card Title - Fixed height container */}
                       <div className="text-center mb-1 sm:mb-2 lg:mb-3 mt-3 sm:mt-4 h-8 sm:h-10 lg:h-12 xl:h-14 flex items-center justify-center px-2">
                         <motion.h3
-                          className={`font-bold tracking-wide leading-tight transition-colors duration-500 text-center line-clamp-2 ${
+                          className={`tracking-wide leading-tight transition-colors duration-500 text-center line-clamp-2 ${
                             displayScale >= 1.25
                               ? "text-[8px] sm:text-[10px] lg:text-xs xl:text-sm"
                               : "text-[10px] sm:text-xs lg:text-sm xl:text-base"
@@ -530,14 +524,8 @@ export default function ScrollCardsAnimationV4({
                               delay: 0.3 + itemIndex * 0.1,
                             }}
                           >
-                            <div
-                              className="w-3 h-1.5 sm:w-4 sm:h-2 bg-red-500 mr-1 sm:mr-2 flex-shrink-0"
-                              style={{
-                                clipPath:
-                                  "polygon(0 0, 100% 0, 80% 100%, 0 100%)",
-                              }}
-                            />
-                            <span className="font-medium">{item}</span>
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 mr-1 sm:mr-2 flex-shrink-0 rounded-full" />
+                            <span className="tracking-wide">{item}</span>
                           </motion.div>
                         ))}
 
