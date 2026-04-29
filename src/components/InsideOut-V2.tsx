@@ -1,43 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { TrendingUp, Users, CheckSquare } from "lucide-react";
-
-function useCountUp(target: number, duration = 2000) {
-  const [count, setCount] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
-  const ref = useRef<HTMLParagraphElement>(null);
-
-  const start = useCallback(() => {
-    if (hasStarted) return;
-    setHasStarted(true);
-    const startTime = performance.now();
-    const step = (now: number) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // ease-out quad
-      const eased = 1 - (1 - progress) * (1 - progress);
-      setCount(Math.round(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [target, duration, hasStarted]);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) start();
-      },
-      { threshold: 0.5 },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [start]);
-
-  return { count, ref };
-}
+import { useEffect, useRef, useState } from "react";
 
 const reasons = [
   {
@@ -75,10 +38,6 @@ export default function InsideOutV2() {
   const playCountRef = useRef(0);
   const hasCompletedRef = useRef(false);
   const isReplayModeRef = useRef(false);
-  const years = useCountUp(25);
-  const engineers = useCountUp(45);
-  const projects = useCountUp(1000, 2500);
-
   const toggleItem = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
