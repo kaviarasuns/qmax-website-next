@@ -2,33 +2,33 @@ const industries = [
   {
     id: "industrial-electronics",
     label: "Industrial\nElectronics",
-    image: "/industries-we-serve/industrial-controller.jpg",
+    image: "https://d1yetprhniwywz.cloudfront.net/v2/home/industries_we_serve/oil_refineries.png",
   },
   {
     id: "communication-systems",
     label: "Communication\nSystems",
-    image: "/industries-we-serve/rf-industry.jpg",
+    image: "https://d1yetprhniwywz.cloudfront.net/v2/home/industries_we_serve/communication_systems.png",
   },
   {
     id: "high-performance-computing",
     label: "High Performance\nComputing",
-    image: "/industries-we-serve/data-centers.jpg",
+    image: "https://d1yetprhniwywz.cloudfront.net/v2/home/industries_we_serve/large_data_center.jpeg",
   },
   {
     id: "medical-electronics",
     label: "Medical\nElectronics",
-    image: "/industries-we-serve/medical-industries.jpg",
+    image: "https://d1yetprhniwywz.cloudfront.net/v2/home/industries_we_serve/medical_electronics.jpeg",
   },
   {
     id: "automotive-electronics",
     label: "Automotive\nElectronics",
-    image: "/industries-we-serve/motor-controller.jpg",
+    image: "https://d1yetprhniwywz.cloudfront.net/v2/home/industries_we_serve/automative_electronics.jpeg",
   },
 ];
 
 export function IndustriesWeServeV3() {
   return (
-    <section className="bg-white py-10">
+    <section className="bg-white pt-24 pb-10 h-full flex flex-col justify-center">
       {/* Heading */}
       <div className="text-center mb-6 px-4">
         <h2 className="text-3xl md:text-4xl font-light tracking-wide">
@@ -42,7 +42,7 @@ export function IndustriesWeServeV3() {
         {industries.map((industry) => (
           <div
             key={industry.id}
-            className="relative flex-1 min-w-[160px] h-[340px] md:h-[400px] overflow-hidden"
+            className="relative flex-1 min-w-[160px] h-[380px] md:h-[460px] overflow-hidden"
           >
             {/* Background image */}
             <img
@@ -57,12 +57,12 @@ export function IndustriesWeServeV3() {
             {/* Label */}
             <div className="absolute bottom-0 left-0 p-4">
               {industry.label.split("\n").map((line, i) => (
-                <p
+                <h1
                   key={i}
-                  className="text-white text-sm font-semibold leading-snug"
+                  className="text-white text-2xl md:text-3xl"
                 >
                   {line}
-                </p>
+                </h1>
               ))}
             </div>
           </div>
