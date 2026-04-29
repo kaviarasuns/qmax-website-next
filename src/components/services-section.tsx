@@ -7,38 +7,46 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CaseStudyCard from "./CaseStudyCard";
 
-const carouselItems = [
+const carouselItems: {
+  id: number;
+  image: string;
+  title: string;
+  summary: string;
+  link: string;
+  imageRotation?: number;
+}[] = [
   {
     id: 1,
-    image: "/case-studies/BLUECOLD/1.png",
-    title: "Security System Controller",
+    image: "/case-studies/OTT/4.png",
+    title: "Industrial IOT gateway with POE",
     summary:
       "Embedded controller program designed for dependable monitoring, control logic, and secure field operation.",
-    link: "/case-studies/industrial-temperature-control-system",
+    link: "/case-studies/industrial-iot-gateway-with-poe",
   },
   {
     id: 2,
-    image: "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.1.png",
-    title: "Industrial Controller",
+    image: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_BOT.svg",
+    title: "Aerospace PCB",
     summary:
       "Industrial electronics platform engineered for rugged deployment, stable power delivery, and manufacturable hardware.",
-    link: "/case-studies/capserve-cell-sensor",
+    link: "/case-studies/aerospace-pcb",
+    imageRotation: 90,
   },
   {
     id: 3,
-    image: "/case-studies/CHARA/1.png",
-    title: "Embedded Systems",
+    image: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ventilation_control_damper/military_man_with_bigcat3.7.png",
+    title: "Ventilation Control Damper",
     summary:
       "End-to-end embedded design and development for connected products, controls, and intelligent devices.",
-    link: "/case-studies/multi-io-card-for-ate",
+    link: "/case-studies/ventilation-control-dampert",
   },
   {
     id: 4,
-    image: "/case-studies/CLIMATE CONTROL/1.png",
-    title: "PCB Design",
+    image: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/1.png",
+    title: "Handheld Industrial Controller",
     summary:
       "Multi-physics PCB design services focused on signal integrity, manufacturability, and first-pass success.",
-    link: "/case-studies/smart-monitoring-system",
+      link: "/case-studies/handheld-industrial-controller",
   },
   // {
   //   id: 5,
@@ -132,6 +140,7 @@ export function ServicesSection() {
                 image={item.image}
                 link={item.link}
                 summary={item.summary}
+                imageRotation={item.imageRotation}
               />
             </div>
           ))}
