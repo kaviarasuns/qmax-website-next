@@ -714,42 +714,5 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "PCB Layout Design (Thermal)",
       "Testing and Validation",
     ],
-  },
-    {
-    id: "thermal-management-pcb",
-    title: "Thermal Management PCB",
-    category: "PCB Design",
-    images: ["/case-studies/image_vacationing.png"],
-    features: [
-      "Thermal control and monitoring board",
-      "Temperature sensor interface",
-      "Fan control circuits",
-      "Heat dissipation optimization",
-      "Redundant cooling paths",
-      "Remote monitoring capability",
-    ],
-    summary:
-      "Thermal management PCB featuring temperature monitoring, fan control, and heat dissipation optimization for high-power computing and industrial applications.",
-    importantParts: [
-      "Temperature sensor circuits",
-      "PWM fan control drivers",
-      "Thermal interface materials",
-      "Heat pipe integration",
-      "Remote monitoring interface",
-      "Thermal de-rating circuits",
-    ],
-    salientFeatures: [
-      "Multi-point temperature monitoring.",
-      "Intelligent fan control algorithms.",
-      "Optimized heat dissipation paths.",
-      "Redundant cooling capability.",
-    ],
-    scopeOfWork: [
-      "Thermal Analysis",
-      "Temperature Sensor Integration",
-      "Fan Control Design",
-      "PCB Layout Design (Thermal)",
-      "Testing and Validation",
-    ],
-  },
+  }
 ];

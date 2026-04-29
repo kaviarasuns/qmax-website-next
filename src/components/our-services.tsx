@@ -74,12 +74,12 @@ export default function OurServices() {
     <section
       id="our-services"
       aria-labelledby="our-services-heading"
-      className="flex min-h-screen items-center bg-white py-10 scroll-mt-16"
+      className="flex min-h-screen items-start bg-white pt-20 pb-10 scroll-mt-24"
     >
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-7">
-          <h2 id="our-services-heading" className="text-3xl md:text-4xl">
+          <h2 id="our-services-heading">
             <span className="text-black">Our</span>{" "}
             <span className="text-red-500">Services</span>
           </h2>

@@ -30,18 +30,6 @@ const sectionCounts: { [key: string]: number } = {
   industrial: industrialCaseStudies.length,
 };
 
-// --- Pending image counts (remove this block when all images are added) ---
-const PLACEHOLDER_IMAGE = "/case-studies/image_vacationing.png";
-const pendingCounts: { [key: string]: number } = {
-  embedded: embeddedCaseStudies.filter((s) => s.image === PLACEHOLDER_IMAGE)
-    .length,
-  pcb: pcbCaseStudies.filter((s) => s.image === PLACEHOLDER_IMAGE).length,
-  mechanical: mechanicalCaseStudies.filter((s) => s.image === PLACEHOLDER_IMAGE)
-    .length,
-  industrial: industrialCaseStudies.filter((s) => s.image === PLACEHOLDER_IMAGE)
-    .length,
-};
-// --- End pending image counts ---
 
 const SCROLL_OFFSET = 120;
 
@@ -228,13 +216,6 @@ export default function CaseStudiesPage() {
                       >
                         {sectionCounts[section.id]}
                       </span>
-                      {/* --- Pending badge (remove when all images are added) --- */}
-                      {pendingCounts[section.id] > 0 && (
-                        <span className="text-[10px] font-medium tabular-nums px-2 py-0.5 rounded-full bg-amber-100 text-amber-600 whitespace-nowrap">
-                          🏖️ {pendingCounts[section.id]} on the way
-                        </span>
-                      )}
-                      {/* --- End pending badge --- */}
                     </div>
                   </div>
                 </button>

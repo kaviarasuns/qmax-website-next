@@ -67,7 +67,7 @@ const reasons = [
   },
 ];
 
-export default function InsideOut() {
+export default function InsideOutV2() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
@@ -144,7 +144,7 @@ export default function InsideOut() {
     >
       {/*Main Section*/}
       <div className="flex flex-col lg:flex-row items-stretch gap-0 z-[1]">
-        <div className="w-full lg:w-[60%] flex flex-col items-center px-6 lg:px-12 py-12">
+        <div className="w-full lg:w-[60%] flex flex-col items-center px-6 lg:pl-12 lg:pr-2 py-12">
           <div
             className="relative w-full"
             style={{ maxWidth: "100%" }}
@@ -175,7 +175,7 @@ export default function InsideOut() {
             </button>
           )}
         </div>
-        <div className="w-full lg:w-[40%] flex flex-col px-6 lg:px-12 py-12 lg:overflow-y-auto">
+        <div className="w-full lg:w-[40%] flex flex-col px-6 lg:pl-2 lg:pr-12 py-12 lg:overflow-y-auto">
           <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-16">
             Why Qmax <span className="text-red-500">Systems</span>
           </h2>
