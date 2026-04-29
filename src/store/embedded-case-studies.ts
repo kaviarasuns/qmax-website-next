@@ -481,10 +481,10 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Industrial Automation Controller",
     category: "Embedded System Design",
     images: [
-      "/case-studies/embedded/HIPPACK1/1.png",
-      "/case-studies/embedded/HIPPACK1/2.png",
-      "/case-studies/embedded/HIPPACK1/3.png",
-      "/case-studies/embedded/HIPPACK1/4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/HIPPACK/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/HIPPACK/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/HIPPACK/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/HIPPACK/4.png",
       "/case-studies/embedded/HIPPACK1/2.1.svg",
       "/case-studies/embedded/HIPPACK1/2.2.svg",
     ],
@@ -934,8 +934,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Thermal Analysis and Management",
     category: "Industrial Embedded Systems",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/thermal_analysis_and_management/1.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/thermal_analysis_and_management/1.2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/thermal_analysis_and_management/1.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/thermal_analysis_and_management/1.4.png",
     ],
     features: [

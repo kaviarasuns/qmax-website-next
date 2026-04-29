@@ -7,10 +7,10 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     title: "Innovide",
     category: "PCB Design",
     images: [
-      "/case-studies/PCB/INNOVIDE/INNOVIDE_SIG45.svg",
-      "/case-studies/PCB/INNOVIDE/INNOVIDE_SIG56.svg",
-      "/case-studies/PCB/INNOVIDE/INNOVIDE_SIG123.svg",
-      "/case-studies/PCB/INNOVIDE/INNOVIDE_SIG123456.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG123.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG56.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG123.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG123456.svg",
     ],
     rotatedImages: { 0: 90, 1: 90, 2: 90, 3: 90 },
     features: [
@@ -306,7 +306,11 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     id: "fedarant-pcb-top-layer",
     title: "Fedarant PCB – Top Layer",
     category: "PCB Design",
-    images: ["/case-studies/image_vacationing.png"],
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_flux/SEAT-SENSOR-21DEC2023-QMAX.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_flux/SEAT-SENSOR-TB.svg",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_flux/SEAT-SENSOR-TOP.svg",
+    ],
     features: [
       "Fedarant IoT Gateway – Top Layer View",
       "Multi-radio PCB (Wi-Fi / BLE 5.0 / ZigBee)",
@@ -671,6 +675,43 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    id: "thermal-management-pcb",
+    title: "Thermal Management PCB",
+    category: "PCB Design",
+    images: ["/case-studies/image_vacationing.png"],
+    features: [
+      "Thermal control and monitoring board",
+      "Temperature sensor interface",
+      "Fan control circuits",
+      "Heat dissipation optimization",
+      "Redundant cooling paths",
+      "Remote monitoring capability",
+    ],
+    summary:
+      "Thermal management PCB featuring temperature monitoring, fan control, and heat dissipation optimization for high-power computing and industrial applications.",
+    importantParts: [
+      "Temperature sensor circuits",
+      "PWM fan control drivers",
+      "Thermal interface materials",
+      "Heat pipe integration",
+      "Remote monitoring interface",
+      "Thermal de-rating circuits",
+    ],
+    salientFeatures: [
+      "Multi-point temperature monitoring.",
+      "Intelligent fan control algorithms.",
+      "Optimized heat dissipation paths.",
+      "Redundant cooling capability.",
+    ],
+    scopeOfWork: [
+      "Thermal Analysis",
+      "Temperature Sensor Integration",
+      "Fan Control Design",
+      "PCB Layout Design (Thermal)",
+      "Testing and Validation",
+    ],
+  },
+    {
     id: "thermal-management-pcb",
     title: "Thermal Management PCB",
     category: "PCB Design",
