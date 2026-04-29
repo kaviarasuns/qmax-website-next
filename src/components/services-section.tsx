@@ -34,7 +34,7 @@ const carouselItems: {
   },
   {
     id: 3,
-    image: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ventilation_control_damper/military_man_with_bigcat3.7.png",
+    image: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.1.png",
     title: "Ventilation Control Damper",
     summary:
       "End-to-end embedded design and development for connected products, controls, and intelligent devices.",

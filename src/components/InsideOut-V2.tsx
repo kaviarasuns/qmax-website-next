@@ -144,9 +144,9 @@ export default function InsideOutV2() {
     >
       {/*Main Section*/}
       <div className="flex flex-col lg:flex-row items-stretch gap-0 z-[1]">
-        <div className="w-full lg:w-[60%] flex flex-col items-center px-6 lg:pl-12 lg:pr-2 py-12">
+        <div className="w-full lg:w-[60%] flex flex-col items-center px-6 lg:pl-12 lg:pr-2 py-16 lg:py-20">
           <div
-            className="relative w-full"
+            className="relative w-full lg:translate-x-8 xl:translate-x-12"
             style={{ maxWidth: "100%" }}
           >
             <video
@@ -175,7 +175,7 @@ export default function InsideOutV2() {
             </button>
           )}
         </div>
-        <div className="w-full lg:w-[40%] flex flex-col px-6 lg:pl-2 lg:pr-12 py-12 lg:overflow-y-auto">
+        <div className="relative z-10 w-full lg:w-[40%] lg:self-center flex flex-col px-6 lg:pl-2 lg:pr-12 py-12 lg:py-8 lg:overflow-y-auto lg:-ml-16 xl:-ml-24 bg-white lg:bg-transparent">
           <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-16">
             Why Qmax <span className="text-red-500">Systems</span>
           </h2>
@@ -235,7 +235,7 @@ export default function InsideOutV2() {
       </div>
 
       {/* Stats Row - Full Width */}
-      <div
+      {/* <div
         className="w-full max-w-6xl mx-auto mt-10 px-6"
         style={{ marginTop: "40px" }}
       >
@@ -279,7 +279,7 @@ export default function InsideOutV2() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Spacer after animation */}
       {/* <div data-budge-target style={{ height: "6vh" }} /> */}

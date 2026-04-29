@@ -307,9 +307,10 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     title: "Fedarant PCB – Top Layer",
     category: "PCB Design",
     images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_signal/P01201CB2-SEATSENSOR-SINGLE_PR1_TOP.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_signal/P01201CB2-SEATSENSOR-SINGLE_PR1_BOT.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_signal/P01201CB2-SEATSENSOR-SINGLE_PR1_TB.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_signal/P01201CB2-SEATSENSOR-SINGLE_PR1_TOP.svg",
+
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_flux/SEAT-SENSOR-21DEC2023-QMAX.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_flux/SEAT-SENSOR-TB.svg",
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_flux/SEAT-SENSOR-TOP.svg",
@@ -350,9 +351,10 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       title: "Arc Detector",
       category: "PCB Design",
       images: [
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/arc_detector/AFDD-REV0P1_ARC DETECTOR_TB.svg",
         "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/arc_detector/AFDD-REV0P1_ARC DETECTOR_BOT.svg",
         "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/arc_detector/AFDD-REV0P1_ARC DETECTOR_SP.svg",
-        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/arc_detector/AFDD-REV0P1_ARC DETECTOR_TB.svg",
+       
         "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/arc_detector/AFDD-REV0P1_ARC DETECTOR_TOP.svg",
       ],
       rotatedImages: {},
@@ -438,10 +440,11 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       title: "Rugged OBD",
       category: "PCB Design",
       images: [
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/rugged_obd/I01256CB1_20JUN2024_RUG_TB.svg",
         "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/rugged_obd/I01256CB1_20JUN2024_RUG_BOT.svg",
         "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/rugged_obd/I01256CB1_20JUN2024_RUG_PR1_TOP.svg",
         "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/rugged_obd/I01256CB1_20JUN2024_RUG_SIG12.svg",
-        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/rugged_obd/I01256CB1_20JUN2024_RUG_TB.svg",
+       
       ],
       rotatedImages: {},
       features: [
