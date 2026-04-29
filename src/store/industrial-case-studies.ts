@@ -188,8 +188,9 @@ export const industrialCaseStudiesData: CaseStudy[] = [
     title: "Wearable Health Monitor",
     category: "Industrial Design",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.19.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.21.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.19.png",
+
     ],
     features: [
       "Continuous PPG and SpO₂ biometric sensing",

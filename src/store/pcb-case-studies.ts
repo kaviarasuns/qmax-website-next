@@ -307,9 +307,13 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     title: "Fedarant PCB – Top Layer",
     category: "PCB Design",
     images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_signal/P01201CB2-SEATSENSOR-SINGLE_PR1_BOT.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_signal/P01201CB2-SEATSENSOR-SINGLE_PR1_TB.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_signal/P01201CB2-SEATSENSOR-SINGLE_PR1_TOP.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_flux/SEAT-SENSOR-21DEC2023-QMAX.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_flux/SEAT-SENSOR-TB.svg",
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_flux/SEAT-SENSOR-TOP.svg",
+   
     ],
     features: [
       "Fedarant IoT Gateway – Top Layer View",

@@ -2,52 +2,52 @@ import { CaseStudy } from "../../types/case-study";
 
 // ─── Mechanical Design ────────────────────────────────────────────────────────
 export const mechanicalCaseStudiesData: CaseStudy[] = [
-  {
-    id: "capserve-cell-sensor",
-    title: "CapServe Cell Sensor",
-    category: "Mechanical Design",
-    images: [
-      "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.1.png",
-      "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.2.png",
-      "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.3.png",
-      "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.4.png",
-    ],
-    features: [
-      "Compact cell sensor enclosure for field deployment",
-      "IP65-rated sealed housing with snap-fit assembly",
-      "Integrated mounting bracket for pole and surface installation",
-      "Optimised internal cavity for PCB and battery stack",
-      "UV-stable ABS construction for outdoor environments",
-      "Designed for DFM and low-volume injection moulding",
-    ],
-    summary:
-      "A precision mechanical enclosure developed for the CapServe cell sensor platform. The design balances a compact footprint with full IP65 ingress protection, enabling reliable outdoor deployment in cellular monitoring applications. The snap-fit housing strategy eliminates exposed fasteners and speeds field servicing, while the integrated pole-mount bracket allows flexible installation across diverse site conditions. All geometry was reviewed for injection-moulding feasibility before handoff to tooling.",
-    importantParts: [
-      "UV-stable ABS primary enclosure shell",
-      "TPE gasket seal for IP65 ingress protection",
-      "Snap-fit lid retention with tool-free access",
-      "Integrated pole and flat-surface mounting bracket",
-      "Internal PCB stand-offs and battery retention ribs",
-      "Overmoulded cable entry gland",
-    ],
-    salientFeatures: [
-      "IP65 sealed enclosure for outdoor and industrial use.",
-      "Snap-fit assembly — no visible fasteners.",
-      "Flexible mounting: pole, wall, or flat surface.",
-      "UV-stable materials rated for extended outdoor exposure.",
-      "Service-friendly design with tool-free lid removal.",
-      "DFM-approved geometry ready for production tooling.",
-    ],
-    scopeOfWork: [
-      "Concept ideation and form factor exploration",
-      "3D CAD enclosure modelling and detailing",
-      "Gasket and sealing strategy for IP65 compliance",
-      "Mounting bracket design and load analysis",
-      "Design-for-manufacture review",
-      "Prototype build and fit/seal evaluation",
-      "Tooling handoff documentation",
-    ],
-  },
+  // {
+  //   id: "capserve-cell-sensor",
+  //   title: "CapServe Cell Sensor",
+  //   category: "Mechanical Design",
+  //   images: [
+  //     "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.1.png",
+  //     "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.2.png",
+  //     "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.3.png",
+  //     "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.4.png",
+  //   ],
+  //   features: [
+  //     "Compact cell sensor enclosure for field deployment",
+  //     "IP65-rated sealed housing with snap-fit assembly",
+  //     "Integrated mounting bracket for pole and surface installation",
+  //     "Optimised internal cavity for PCB and battery stack",
+  //     "UV-stable ABS construction for outdoor environments",
+  //     "Designed for DFM and low-volume injection moulding",
+  //   ],
+  //   summary:
+  //     "A precision mechanical enclosure developed for the CapServe cell sensor platform. The design balances a compact footprint with full IP65 ingress protection, enabling reliable outdoor deployment in cellular monitoring applications. The snap-fit housing strategy eliminates exposed fasteners and speeds field servicing, while the integrated pole-mount bracket allows flexible installation across diverse site conditions. All geometry was reviewed for injection-moulding feasibility before handoff to tooling.",
+  //   importantParts: [
+  //     "UV-stable ABS primary enclosure shell",
+  //     "TPE gasket seal for IP65 ingress protection",
+  //     "Snap-fit lid retention with tool-free access",
+  //     "Integrated pole and flat-surface mounting bracket",
+  //     "Internal PCB stand-offs and battery retention ribs",
+  //     "Overmoulded cable entry gland",
+  //   ],
+  //   salientFeatures: [
+  //     "IP65 sealed enclosure for outdoor and industrial use.",
+  //     "Snap-fit assembly — no visible fasteners.",
+  //     "Flexible mounting: pole, wall, or flat surface.",
+  //     "UV-stable materials rated for extended outdoor exposure.",
+  //     "Service-friendly design with tool-free lid removal.",
+  //     "DFM-approved geometry ready for production tooling.",
+  //   ],
+  //   scopeOfWork: [
+  //     "Concept ideation and form factor exploration",
+  //     "3D CAD enclosure modelling and detailing",
+  //     "Gasket and sealing strategy for IP65 compliance",
+  //     "Mounting bracket design and load analysis",
+  //     "Design-for-manufacture review",
+  //     "Prototype build and fit/seal evaluation",
+  //     "Tooling handoff documentation",
+  //   ],
+  // },
   {
     id: "uv-disinfection-system",
     title: "UV Disinfection System",

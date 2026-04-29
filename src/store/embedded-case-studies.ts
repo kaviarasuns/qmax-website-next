@@ -528,10 +528,10 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Wireless Sensor Network Hub",
     category: "Embedded System Design",
     images: [
-      "/case-studies/embedded/HIPPACK2/4.png",
-      "/case-studies/embedded/HIPPACK2/2.png",
-      "/case-studies/embedded/HIPPACK2/3.png",
-      "/case-studies/embedded/HIPPACK2/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/HIPPACK2/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/HIPPACK2/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/HIPPACK2/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/HIPPACK2/4.png",
       "/case-studies/embedded/HIPPACK2/1.1.svg",
       "/case-studies/embedded/HIPPACK2/1.2.svg",
     ],
@@ -1108,49 +1108,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "Security Protocol Integration",
       "Mesh Network Implementation",
       "Performance Testing and Validation",
-    ],
-  },
-
-  {
-    id: "embedded-device-interface",
-    title: "Embedded Device Interface",
-    category: "Embedded System Design",
-    images: [
-      "/case-studies/embedded/battery_pack/1.1.png"
-    ],
-    features: [
-      "FDA-compliant interface module",
-      "Legacy medical equipment connectivity",
-      "Modern networked healthcare systems",
-      "Rigorous data validation",
-      "Secure communication",
-      "99.99% SLA uptime",
-    ],
-    summary:
-      "FDA-compliant interface module for connecting legacy medical equipment to modern networked healthcare systems. Includes rigorous data validation and secure communication.",
-    importantParts: [
-      "Medical-grade Processor",
-      "HL7 / DICOM Protocol Stack",
-      "Secure Communication Module",
-      "Data Validation Engine",
-      "Battery Backup",
-      "Medical-certified Housing",
-    ],
-    salientFeatures: [
-      "FDA Class II medical device certification.",
-      "HL7 and DICOM protocol support.",
-      "Zero data loss incidents in field deployment.",
-      "99.99% SLA uptime guarantee.",
-      "Encrypted data transmission.",
-      "Comprehensive audit logging.",
-    ],
-    scopeOfWork: [
-      "FDA Compliance Planning",
-      "Protocol Implementation",
-      "Security Hardening",
-      "Data Validation Design",
-      "Testing and Validation",
-      "Regulatory Submission Support",
     ],
   },
 ];
