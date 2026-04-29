@@ -150,7 +150,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Microscopic Camera Control",
     category: "Imaging & Optics",
     images: [
-      "/case-studies/MICROSCOPIC CAMERA/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/microscopic_camera/1.png",
       "/case-studies/MICROSCOPIC CAMERA/2.png",
       "/case-studies/MICROSCOPIC CAMERA/3.png",
       "/case-studies/MICROSCOPIC CAMERA/4.png",

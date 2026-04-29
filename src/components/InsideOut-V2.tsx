@@ -18,11 +18,11 @@ const reasons = [
     description:
       "Every element is considered. Every connection, deliberate. Designed for the conditions your product will actually face — built to scale from first prototype to full production.",
   },
-  {
-    title: "Fast Turnaround",
-    description:
-      "Skilled in-house teams and streamlined workflows deliver high-quality designs quickly, keeping your product roadmap on track without compromising reliability.",
-  },
+  // {
+  //   title: "Fast Turnaround",
+  //   description:
+  //     "Skilled in-house teams and streamlined workflows deliver high-quality designs quickly, keeping your product roadmap on track without compromising reliability.",
+  // },
   {
     title: "Long-Term Partnership",
     description:
@@ -97,10 +97,11 @@ export default function InsideOutV2() {
   }, []);
 
   return (
-    <div
-      ref={sectionRef}
-      className="pt-12 sm:pt-14 md:pt-16 lg:pt-20 xl:pt-24 bg-white"
-    >
+    <div className="h-full w-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div
+        ref={sectionRef}
+        className="bg-white w-full max-w-7xl rounded-2xl border border-zinc-200 overflow-hidden"
+      >
       {/*Main Section*/}
       <div className="flex flex-col lg:flex-row items-stretch gap-0 z-[1]">
         <div className="w-full lg:w-[60%] flex flex-col items-center px-6 lg:pl-12 lg:pr-2 py-16 lg:py-20">
@@ -135,7 +136,7 @@ export default function InsideOutV2() {
           )}
         </div>
         <div className="relative z-10 w-full lg:w-[40%] lg:self-center flex flex-col px-6 lg:pl-2 lg:pr-12 py-12 lg:py-8 lg:overflow-y-auto lg:-ml-16 xl:-ml-24 bg-white lg:bg-transparent">
-          <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-16">
+          <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-6">
             Why Qmax <span className="text-red-500">Systems</span>
           </h2>
 
@@ -181,7 +182,7 @@ export default function InsideOutV2() {
             ))}
           </div>
 
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <a
               href="/mechanical-industrial-design-services/industrial-design"
               className="text-gray-900 font-semibold underline hover:text-red-500 transition-colors inline-flex items-center gap-2"
@@ -189,7 +190,7 @@ export default function InsideOutV2() {
               Explore Our Services
               <span>→</span>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -242,6 +243,7 @@ export default function InsideOutV2() {
 
       {/* Spacer after animation */}
       {/* <div data-budge-target style={{ height: "6vh" }} /> */}
+      </div>
     </div>
   );
 }
