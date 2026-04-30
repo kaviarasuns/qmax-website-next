@@ -263,7 +263,7 @@ export default function FooterV2() {
           </div>
 
           {/* Logo and Copyright Section */}
-          <div className="pb-6 pt-12 w-full mt-auto">
+          <div className="pb-6 w-full mt-auto">
             <div className="flex flex-col items-center gap-6">
               {/* <Image
                 src="/qmax-logo.svg"

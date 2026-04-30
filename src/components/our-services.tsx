@@ -48,8 +48,7 @@ const services: ServiceCard[] = [
   {
     id: "pcb",
     title: "PCB Design Services",
-    blurb:
-      "Multi-layer, high-speed, and RF layouts built for manufacturability.",
+    blurb: "High-speed, multi-layer, and RF layouts ready for production.",
     items: [
       "PCB Design",
       "PCB Library",
@@ -74,7 +73,7 @@ export default function OurServices() {
     <section
       id="our-services"
       aria-labelledby="our-services-heading"
-      className="flex min-h-screen items-start bg-white pt-20 pb-10 scroll-mt-24"
+      className="flex min-h-screen items-start justify-center bg-white pt-24 pb-28 scroll-mt-24"
     >
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Heading */}
@@ -100,28 +99,26 @@ export default function OurServices() {
                 aria-label={`Learn more about ${service.title}`}
                 className="group relative flex flex-col bg-[#f8f8f8] rounded-2xl p-6 transition-all duration-300 hover:bg-white hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
               >
-                {/* Top row: icon + arrow */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-black text-white transition-colors duration-300 group-hover:bg-red-500">
+                {/* Header: icon + title/blurb + arrow */}
+                <div className="flex items-start gap-3">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-black text-white transition-colors duration-300 group-hover:bg-red-500 flex-shrink-0">
                     <Icon className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <div className="flex-1 min-w-0 min-h-[4.75rem]">
+                    <h3 className="text-lg md:text-xl font-semibold text-black tracking-tight leading-tight">
+                      {service.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-600 leading-relaxed">
+                      {service.blurb}
+                    </p>
                   </div>
                   <span
                     aria-hidden="true"
-                    className="flex items-center justify-center h-9 w-9 rounded-full border border-gray-200 text-gray-400 transition-all duration-300 group-hover:border-black group-hover:text-black group-hover:rotate-0"
+                    className="flex items-center justify-center h-9 w-9 rounded-full border border-gray-200 text-gray-400 transition-all duration-300 group-hover:border-black group-hover:text-black flex-shrink-0"
                   >
                     <ArrowUpRight className="h-4 w-4" />
                   </span>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-lg md:text-xl font-semibold text-black tracking-tight">
-                  {service.title}
-                </h3>
-
-                {/* Blurb */}
-                <p className="mt-1.5 text-sm text-gray-600 leading-relaxed">
-                  {service.blurb}
-                </p>
 
                 {/* Divider */}
                 <div className="my-4 h-px w-full bg-gray-200" />
@@ -143,7 +140,7 @@ export default function OurServices() {
                 </ul>
 
                 {/* Footer label */}
-                <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-gray-500 transition-colors duration-300 group-hover:text-red-500">
+                <div className="mt-auto pt-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-gray-500 transition-colors duration-300 group-hover:text-red-500">
                   Explore service
                   <ArrowUpRight
                     className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

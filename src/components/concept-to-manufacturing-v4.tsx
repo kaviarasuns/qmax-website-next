@@ -392,10 +392,6 @@ export default function ScrollCardsAnimationV4({
                       index === activeCard && activeCard !== -1
                         ? "-1.25rem"
                         : "-1rem",
-                    height:
-                      index === activeCard && activeCard !== -1
-                        ? "auto"
-                        : undefined,
                     rotateY: 0,
                     z: index === activeCard && activeCard !== -1 ? 20 : 0,
                   }}
@@ -426,13 +422,9 @@ export default function ScrollCardsAnimationV4({
 
                   <Card
                     className={`${
-                      index === activeCard
-                        ? displayScale >= 1.25
-                          ? "w-26 min-h-52 sm:w-32 sm:min-h-60 md:w-36 md:min-h-68 lg:w-44 lg:min-h-80 xl:w-48 xl:min-h-[21rem]"
-                          : "w-28 min-h-64 sm:w-36 sm:min-h-72 md:w-40 md:min-h-80 lg:w-48 lg:min-h-96 xl:w-52 xl:min-h-[26rem]"
-                        : displayScale >= 1.25
-                          ? "w-26 min-h-48 sm:w-28 sm:min-h-52 md:w-32 md:min-h-60 lg:w-36 lg:min-h-68 xl:w-40 xl:min-h-80"
-                          : "w-28 min-h-60 sm:w-32 sm:min-h-64 md:w-36 md:min-h-72 lg:w-40 lg:min-h-80 xl:w-44 xl:min-h-96"
+                      displayScale >= 1.25
+                        ? "w-26 min-h-40 sm:w-28 sm:min-h-44 md:w-32 md:min-h-52 lg:w-36 lg:min-h-60 xl:w-40 xl:min-h-68"
+                        : "w-28 min-h-52 sm:w-32 sm:min-h-56 md:w-36 md:min-h-64 lg:w-40 lg:min-h-72 xl:w-44 xl:min-h-80"
                     } bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-700 border-2 relative cursor-pointer border-red-500`}
                   >
                     {/* Animated background pattern */}
@@ -478,7 +470,7 @@ export default function ScrollCardsAnimationV4({
                       </div>
 
                       {/* Card Image - Fixed height container */}
-                      <div className="mb-1 sm:mb-2 lg:mb-3 overflow-hidden relative h-16 sm:h-20 md:h-24 lg:h-32 xl:h-40">
+                      <div className="mb-1 sm:mb-2 lg:mb-3 overflow-hidden relative h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48">
                         <motion.img
                           src={card.image}
                           alt={card.title}
@@ -498,7 +490,7 @@ export default function ScrollCardsAnimationV4({
 
                       {/* Card Content - Flexible height container */}
                       <motion.div
-                        className="space-y-0.5 sm:space-y-1 lg:space-y-1.5 min-h-24 sm:min-h-28 md:min-h-32 lg:min-h-36 xl:min-h-40 flex-1 px-2"
+                        className="space-y-0.5 sm:space-y-1 lg:space-y-1.5 h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 px-2"
                         initial={{ opacity: 1, y: 0 }}
                         animate={{
                           opacity: 1,

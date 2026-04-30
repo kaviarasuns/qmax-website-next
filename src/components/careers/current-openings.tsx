@@ -1,5 +1,7 @@
 'use client'
 
+import { useState } from 'react'
+
 type TabId = 'full-time' | 'part-time' | 'internships'
 
 const slugify = (str: string) =>
@@ -462,8 +464,73 @@ const tabs: { id: TabId; label: string; count: number }[] = [
   { id: 'internships', label: 'Internships', count: internPositions.length },
 ]
 
+type SectionKey = 'responsibilities' | 'requirements' | 'qualifications'
+
+function SectionAccordion({
+  title,
+  items,
+  isOpen,
+  onToggle,
+}: {
+  title: string
+  items: string[]
+  isOpen: boolean
+  onToggle: () => void
+}) {
+  return (
+    <div className="border-b border-zinc-300">
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={isOpen}
+        className="w-full flex items-center justify-between gap-2 py-2 text-left cursor-pointer group"
+      >
+        <h4 className="text-xs sm:text-sm font-bold text-zinc-800 tracking-wide group-hover:text-zinc-900 transition-colors">
+          {title}
+        </h4>
+        <svg
+          className={`w-4 h-4 text-zinc-500 transition-transform duration-300 flex-shrink-0 ${
+            isOpen ? 'rotate-180' : ''
+          }`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      {isOpen && (
+        <ul className="space-y-1 pb-3 pt-1">
+          {items.map((item, idx) => (
+            <li
+              key={idx}
+              className="flex gap-2 text-xs sm:text-sm text-zinc-700"
+            >
+              <span className="text-zinc-400 flex-shrink-0 leading-5">
+                &bull;
+              </span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
+
 function JobCard({ position, index }: { position: Position; index: number }) {
   const isReversed = index % 2 !== 0
+
+  const [openSections, setOpenSections] = useState<Record<SectionKey, boolean>>({
+    responsibilities: false,
+    requirements: false,
+    qualifications: false,
+  })
+
+  const toggle = (key: SectionKey) =>
+    setOpenSections((prev) => ({ ...prev, [key]: !prev[key] }))
 
   return (
     <div
@@ -486,68 +553,30 @@ function JobCard({ position, index }: { position: Position; index: number }) {
         className={`p-5 sm:p-6 md:p-8 flex flex-col ${isReversed ? 'lg:order-1' : ''}`}
       >
         {/* Title */}
-        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-zinc-900 pb-2 border-b-2 border-zinc-400 mb-5">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-zinc-900 pb-2 border-b-2 border-zinc-400 mb-3">
           {position.title}
         </h3>
 
-        {/* Key Responsibilities */}
-        <div className="mb-4">
-          <h4 className="text-xs sm:text-sm font-bold text-zinc-800 tracking-wide pb-1.5 border-b border-zinc-300 mb-2.5">
-            Key Responsibilities
-          </h4>
-          <ul className="space-y-1">
-            {position.responsibilities.map((item, idx) => (
-              <li
-                key={idx}
-                className="flex gap-2 text-xs sm:text-sm text-zinc-700"
-              >
-                <span className="text-zinc-400 flex-shrink-0 leading-5">
-                  &bull;
-                </span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Requirements */}
-        <div className="mb-4">
-          <h4 className="text-xs sm:text-sm font-bold text-zinc-800 tracking-wide pb-1.5 border-b border-zinc-300 mb-2.5">
-            Requirements
-          </h4>
-          <ul className="space-y-1">
-            {position.requirements.map((item, idx) => (
-              <li
-                key={idx}
-                className="flex gap-2 text-xs sm:text-sm text-zinc-700"
-              >
-                <span className="text-zinc-400 flex-shrink-0 leading-5">
-                  &bull;
-                </span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Qualification */}
+        {/* Accordion sections */}
         <div className="mb-6">
-          <h4 className="text-xs sm:text-sm font-bold text-zinc-800 tracking-wide pb-1.5 border-b border-zinc-300 mb-2.5">
-            Qualification
-          </h4>
-          <ul className="space-y-1">
-            {position.qualifications.map((item, idx) => (
-              <li
-                key={idx}
-                className="flex gap-2 text-xs sm:text-sm text-zinc-700"
-              >
-                <span className="text-zinc-400 flex-shrink-0 leading-5">
-                  &bull;
-                </span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+          <SectionAccordion
+            title="Key Responsibilities"
+            items={position.responsibilities}
+            isOpen={openSections.responsibilities}
+            onToggle={() => toggle('responsibilities')}
+          />
+          <SectionAccordion
+            title="Requirements"
+            items={position.requirements}
+            isOpen={openSections.requirements}
+            onToggle={() => toggle('requirements')}
+          />
+          <SectionAccordion
+            title="Qualification"
+            items={position.qualifications}
+            isOpen={openSections.qualifications}
+            onToggle={() => toggle('qualifications')}
+          />
         </div>
 
         {/* Action Buttons */}
@@ -595,7 +624,7 @@ export function CurrentOpenings({ activeTab, onTabChange }: CurrentOpeningsProps
         className="sticky top-16 z-40 bg-white/95 backdrop-blur-sm border-b border-zinc-200"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-0 -mb-px overflow-x-auto">
+          <div className="flex gap-0 -mb-px overflow-x-auto justify-end">
             {tabs.map((tab) => (
               <button
                 key={tab.id}

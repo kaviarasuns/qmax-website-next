@@ -33,7 +33,7 @@ const reasons = [
 export default function InsideOutV2() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [showReplay, setShowReplay] = useState(false);
   const playCountRef = useRef(0);
   const hasCompletedRef = useRef(false);
@@ -41,6 +41,14 @@ export default function InsideOutV2() {
   const toggleItem = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
+
+  useEffect(() => {
+    if (expandedIndex === null) return;
+    const timer = setTimeout(() => {
+      setExpandedIndex(null);
+    }, 10000);
+    return () => clearTimeout(timer);
+  }, [expandedIndex]);
 
   const handleReplay = () => {
     const video = videoRef.current;
@@ -104,9 +112,9 @@ export default function InsideOutV2() {
       >
       {/*Main Section*/}
       <div className="flex flex-col lg:flex-row items-stretch gap-0 z-[1]">
-        <div className="w-full lg:w-[60%] flex flex-col items-center px-6 lg:pl-12 lg:pr-2 py-16 lg:py-20">
+        <div className="w-full lg:w-[60%] flex flex-col items-center px-6 lg:pl-12 lg:pr-2 py-8 lg:py-10">
           <div
-            className="relative w-full lg:-translate-x-4 xl:-translate-x-8"
+            className="relative w-full lg:-translate-x-12 xl:-translate-x-20"
             style={{ maxWidth: "100%" }}
           >
             <video
@@ -135,7 +143,7 @@ export default function InsideOutV2() {
             </button>
           )}
         </div>
-        <div className="relative z-10 w-full lg:w-[40%] lg:self-center flex flex-col px-6 lg:pl-2 lg:pr-12 py-12 lg:py-8 lg:-ml-16 xl:-ml-24 bg-white lg:bg-transparent">
+        <div className="relative z-10 w-full lg:w-[40%] lg:self-center flex flex-col px-6 lg:pl-2 lg:pr-12 py-6 lg:py-4 lg:-ml-16 xl:-ml-24 bg-white lg:bg-transparent">
           <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-6">
             Why Qmax <span className="text-red-500">Systems</span>
           </h2>
