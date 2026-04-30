@@ -458,6 +458,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.7.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ventilation_control_damper/military_man_bigcat_2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ventilation_control_damper/military_man_with_bigcat3.7.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ventilation_control_damper/military_man_with_bigcat3.6.png",
     ],
     features: [
       "Motorised ventilation damper assembly",
@@ -1127,47 +1130,4 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
         "Production Support",
       ],
     },
-
-    {
-      id: "ventilation-control-dampert",
-      title: "Ventilation Control Damper",
-      category: "Mechanical Design",
-      images: [
-        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ventilation_control_damper/military_man_bigcat_2.png",
-        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ventilation_control_damper/military_man_with_bigcat3.7.png",
-        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ventilation_control_damper/military_man_with_bigcat3.6.png",
-      ],
-      rotatedImages: {},
-      features: [
-        "Heavy-duty military vehicle design",
-        "Rugged structural body development",
-        "Off-road operational capability",
-        "High-strength chassis integration",
-        "Field-ready durable assembly",
-        "Mission-focused mechanical architecture",
-      ],
-      summary:
-        "A robust military vehicle mechanical design developed for demanding terrain conditions, structural durability, and reliable operational performance.",
-      importantParts: [
-        "Main structural chassis",
-        "Protective outer body",
-        "Heavy-duty suspension system",
-        "Operator access framework",
-        "Load-bearing support structure",
-        "Terrain-ready wheel assembly",
-      ],
-      salientFeatures: [
-        "Rugged field-deployable construction",
-        "High-strength structural integrity",
-        "Designed for harsh terrain performance",
-        "Reliable mission-ready mechanical assembly",
-      ],
-      scopeOfWork: [
-        "Mechanical Product Design",
-        "Structural CAD Development",
-        "Heavy-Duty Assembly Design",
-        "Prototype Validation",
-        "Manufacturing Support",
-      ],
-    }
 ];

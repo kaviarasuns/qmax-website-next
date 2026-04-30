@@ -106,12 +106,12 @@ export default function InsideOutV2() {
       <div className="flex flex-col lg:flex-row items-stretch gap-0 z-[1]">
         <div className="w-full lg:w-[60%] flex flex-col items-center px-6 lg:pl-12 lg:pr-2 py-16 lg:py-20">
           <div
-            className="relative w-full lg:translate-x-8 xl:translate-x-12"
+            className="relative w-full lg:-translate-x-4 xl:-translate-x-8"
             style={{ maxWidth: "100%" }}
           >
             <video
               ref={videoRef}
-              className="block h-auto w-full"
+              className="block h-auto w-full lg:scale-110 xl:scale-[1.15] origin-center"
               width={765}
               height={876}
               preload="auto"
@@ -129,13 +129,13 @@ export default function InsideOutV2() {
             <button
               type="button"
               onClick={handleReplay}
-              className="mt-3 rounded-full border border-[#222] px-3 py-1 text-xs font-medium text-[#222] transition hover:bg-[#222] hover:text-white"
+              className="relative z-10 mt-3 lg:mt-12 xl:mt-16 rounded-full border border-[#222] bg-white px-3 py-1 text-xs font-medium text-[#222] transition hover:bg-[#222] hover:text-white"
             >
               Replay
             </button>
           )}
         </div>
-        <div className="relative z-10 w-full lg:w-[40%] lg:self-center flex flex-col px-6 lg:pl-2 lg:pr-12 py-12 lg:py-8 lg:overflow-y-auto lg:-ml-16 xl:-ml-24 bg-white lg:bg-transparent">
+        <div className="relative z-10 w-full lg:w-[40%] lg:self-center flex flex-col px-6 lg:pl-2 lg:pr-12 py-12 lg:py-8 lg:-ml-16 xl:-ml-24 bg-white lg:bg-transparent">
           <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-6">
             Why Qmax <span className="text-red-500">Systems</span>
           </h2>
