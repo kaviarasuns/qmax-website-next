@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, ZoomIn, Square, SquareDashed } from "lucide-react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -41,6 +41,9 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
   const [lightboxOpen, setLightboxOpen] = React.useState(false);
   const [lightboxIndex, setLightboxIndex] = React.useState(0);
   const [direction, setDirection] = React.useState(0); // -1 = prev, 1 = next
+
+  // Background toggle state (lightbox)
+  const [bgEnabled, setBgEnabled] = React.useState(true);
 
   // Magnifier lens state
   const [showLens, setShowLens] = React.useState(false);
@@ -235,20 +238,43 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
                 {lightboxIndex + 1} / {galleryImages.length}
               </span>
 
-              <Dialog.Close asChild>
+              <div className="flex items-center gap-2">
                 <button
-                  aria-label="Close lightbox"
-                  className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm hover:bg-white/25 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                  type="button"
+                  onClick={() => setBgEnabled((v) => !v)}
+                  aria-label={bgEnabled ? "Remove background" : "Restore background"}
+                  aria-pressed={!bgEnabled}
+                  title={bgEnabled ? "Remove background" : "Restore background"}
+                  className="pointer-events-auto flex h-9 items-center gap-1.5 rounded-full bg-white/10 px-3 text-white backdrop-blur-sm hover:bg-white/25 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
                 >
-                  <X className="h-4 w-4" aria-hidden="true" />
+                  {bgEnabled ? (
+                    <Square className="h-4 w-4" aria-hidden="true" />
+                  ) : (
+                    <SquareDashed className="h-4 w-4" aria-hidden="true" />
+                  )}
+                  <span className="text-[11px] font-medium leading-none">
+                    {bgEnabled ? "Remove BG" : "Show BG"}
+                  </span>
                 </button>
-              </Dialog.Close>
+
+                <Dialog.Close asChild>
+                  <button
+                    aria-label="Close lightbox"
+                    className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm hover:bg-white/25 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                  >
+                    <X className="h-4 w-4" aria-hidden="true" />
+                  </button>
+                </Dialog.Close>
+              </div>
             </div>
 
             {/* Image stage — fills available space between top bar and thumbnails */}
             <div
               ref={imageStageRef}
-              className="relative w-full max-w-7xl flex-1 min-h-0 overflow-hidden rounded-2xl bg-[oklch(92%_0.004_286.32)] cursor-crosshair"
+              className={cn(
+                "relative w-full max-w-7xl flex-1 min-h-0 overflow-hidden rounded-2xl cursor-crosshair transition-colors duration-200",
+                bgEnabled ? "bg-[oklch(92%_0.004_286.32)]" : "bg-transparent"
+              )}
               onMouseMove={(e) => {
                 const rect = e.currentTarget.getBoundingClientRect();
                 const x = e.clientX - rect.left;

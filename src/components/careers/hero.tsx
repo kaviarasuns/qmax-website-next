@@ -1,27 +1,17 @@
 'use client'
 
-type TabId = 'full-time' | 'part-time' | 'internships'
+import Image from 'next/image'
 
-const navItems: { label: string; id: TabId }[] = [
-  { label: 'Full Time Roles', id: 'full-time' },
-  { label: 'Part Time Roles', id: 'part-time' },
-  { label: 'Internships', id: 'internships' },
-]
-
-interface HeroProps {
-  activeTab: TabId
-  onTabChange: (tab: TabId) => void
-}
-
-export function Hero({ activeTab, onTabChange }: HeroProps) {
+export function Hero() {
   return (
     <section className="bg-white pt-16">
       {/* Hero Image */}
       <div className="relative h-[40vh] sm:h-[45vh] md:h-[50vh] lg:h-[55vh] w-full overflow-hidden">
-        <img
+        <Image
           src="/careers/image1.jpg"
           alt="Design and Engineering Team at Work"
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          className="object-cover"
         />
       </div>
 

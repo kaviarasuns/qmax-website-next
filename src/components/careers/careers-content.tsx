@@ -27,7 +27,7 @@ export function CareersContent() {
 
   return (
     <>
-      <Hero activeTab={activeTab} onTabChange={handleTabChange} />
+      <Hero />
       <CurrentOpenings activeTab={activeTab} onTabChange={handleTabChange} />
       <CTA />
     </>

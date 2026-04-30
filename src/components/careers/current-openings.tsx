@@ -523,14 +523,12 @@ function SectionAccordion({
 function JobCard({ position, index }: { position: Position; index: number }) {
   const isReversed = index % 2 !== 0
 
-  const [openSections, setOpenSections] = useState<Record<SectionKey, boolean>>({
-    responsibilities: false,
-    requirements: false,
-    qualifications: false,
-  })
+  const [openSection, setOpenSection] = useState<SectionKey | null>(
+    'responsibilities',
+  )
 
   const toggle = (key: SectionKey) =>
-    setOpenSections((prev) => ({ ...prev, [key]: !prev[key] }))
+    setOpenSection((prev) => (prev === key ? null : key))
 
   return (
     <div
@@ -562,19 +560,19 @@ function JobCard({ position, index }: { position: Position; index: number }) {
           <SectionAccordion
             title="Key Responsibilities"
             items={position.responsibilities}
-            isOpen={openSections.responsibilities}
+            isOpen={openSection === 'responsibilities'}
             onToggle={() => toggle('responsibilities')}
           />
           <SectionAccordion
             title="Requirements"
             items={position.requirements}
-            isOpen={openSections.requirements}
+            isOpen={openSection === 'requirements'}
             onToggle={() => toggle('requirements')}
           />
           <SectionAccordion
             title="Qualification"
             items={position.qualifications}
-            isOpen={openSections.qualifications}
+            isOpen={openSection === 'qualifications'}
             onToggle={() => toggle('qualifications')}
           />
         </div>
