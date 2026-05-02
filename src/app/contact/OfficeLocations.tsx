@@ -52,7 +52,7 @@ const OfficeLocations = () => {
       {/* Section header */}
       <div className="container mx-auto px-6 mb-12 lg:mb-16">
         <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2>
             Our <span className="text-red-500">Locations</span>
           </h2>
         </div>
