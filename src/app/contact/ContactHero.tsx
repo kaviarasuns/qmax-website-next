@@ -50,7 +50,7 @@ const InputField = ({
   const isActive = isFocused || hasValue;
 
   const baseClasses = `
-    w-full px-0 py-2.5 bg-transparent border-0 border-b-2
+    w-full px-0 py-3.5 bg-transparent border-0 border-b-2
     transition-all duration-300 ease-out
     text-gray-900 text-base
     focus:outline-none focus:ring-0
@@ -60,17 +60,17 @@ const InputField = ({
 
   const labelClasses = `
     absolute left-0 transition-all duration-300 ease-out pointer-events-none
-    ${isActive ? "top-0 text-xs font-medium" : "top-2.5 text-base"}
+    ${isActive ? "top-0 text-xs font-medium" : "top-3.5 text-base"}
     ${isFocused ? "text-brand-red" : "text-gray-500"}
   `;
 
   if (isTextarea) {
     return (
-      <div className="relative mt-4">
+      <div className="relative mt-5">
         <textarea
           name={name}
           required={required}
-          className={`${baseClasses} resize-none min-h-[64px]`}
+          className={`${baseClasses} resize-none min-h-[88px]`}
           onChange={onChange}
           onFocus={onFocus}
           onBlur={onBlur}
@@ -84,7 +84,7 @@ const InputField = ({
   }
 
   return (
-    <div className="relative mt-4">
+    <div className="relative mt-5">
       <input
         type={type}
         name={name}
@@ -192,7 +192,7 @@ const ContactHero = () => {
   };
 
   return (
-    <section className="relative h-full flex items-start justify-center overflow-hidden">
+    <section className="relative h-full flex items-center justify-center overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100" />
 
@@ -211,30 +211,30 @@ const ContactHero = () => {
       </div>
 
       <div className="relative container mx-auto px-6 py-6 md:py-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start lg:items-stretch">
           {/* Left Column - Contact Form */}
           <div>
             <p className="text-brand-red font-medium tracking-widest text-xs uppercase mb-2">
               Get in Touch
             </p>
-            <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-[1.1] tracking-tight">
+            <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl text-gray-900 leading-[1.1] tracking-tight">
               Let&apos;s Build{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-600">
                 Something Great
               </span>
             </h1>
 
-            <div className="bg-white rounded-3xl p-5 lg:p-6 shadow-xl border border-gray-100">
+            <div className="bg-white rounded-xl p-6 lg:p-8 shadow-xl border border-gray-100">
               <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-1">
                 Send us a message
               </h2>
-              <p className="text-gray-500 text-xs mb-3">
+              <p className="text-gray-500 text-sm mb-4">
                 Fill out the form below and we&apos;ll get back to you within
                 24 hours.
               </p>
 
               {showThankYou ? (
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100">
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 border border-green-100">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
                       <CheckCircle className="w-6 h-6 text-green-600" />
@@ -304,13 +304,13 @@ const ContactHero = () => {
                     onBlur={() => setFocusedField(null)}
                   />
 
-                  <div className="pt-5">
+                  <div className="pt-6">
                     <button
                       type="submit"
                       disabled={loading}
                       className={`
                         w-full md:w-max flex items-center justify-center gap-3
-                        px-7 py-3 bg-[#0F111A] text-white
+                        px-8 py-3.5 bg-[#0F111A] text-white
                         rounded-full font-medium text-base
                         transition-all duration-300 ease-out
                         hover:bg-[#1A1D29] hover:shadow-xl hover:shadow-[#0F111A]/10
@@ -356,35 +356,26 @@ const ContactHero = () => {
           </div>
 
           {/* Right Column - Contact Us Section */}
-          <div>
-            {/* Spacer to vertically align CONTACT US with the form card on lg+.
-                Must mirror the eyebrow + h1 markup on the left exactly so
-                heights match. */}
-            <div className="hidden lg:block invisible" aria-hidden="true">
-              <p className="text-brand-red font-medium tracking-widest text-xs uppercase mb-2">
-                Get in Touch
-              </p>
-              <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.1] tracking-tight">
-                Let&apos;s Build Something Great
-              </h1>
-            </div>
+          <div className="lg:flex lg:flex-col lg:h-full">
             <h2 className="text-lg font-semibold mb-3 text-gray-900 tracking-wide">
               CONTACT US
             </h2>
 
-            {/* Contact Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Contact Cards Grid — flex-1 + auto-rows-fr stretches the
+                cards vertically on lg+ so the bottom of the bottom row
+                ("Careers" / "Suppliers") aligns with the form card bottom. */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:flex-1 lg:auto-rows-fr">
               {/* Address Cards */}
               {(Object.keys(addresses) as CountryKey[]).map((country) => (
                 <div
                   key={country}
-                  className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+                  className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group flex flex-col"
                 >
                   <div className="w-full font-bold text-left px-4 py-3 text-sm bg-brand-red text-white flex items-center gap-2">
                     <MapPin className="w-4 h-4" />
                     {country}
                   </div>
-                  <div className="p-4 text-sm bg-zinc-800 h-full">
+                  <div className="p-4 text-sm bg-zinc-800 flex-1">
                     <p className="font-semibold text-white mb-2">
                       {addresses[country].name}
                     </p>
@@ -429,13 +420,13 @@ const ContactHero = () => {
               {(Object.keys(jobs) as JobKey[]).map((key) => (
                 <div
                   key={key}
-                  className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+                  className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group flex flex-col"
                 >
                   <div className="w-full font-bold text-left px-4 py-3 text-sm bg-brand-red text-white flex items-center gap-2">
                     <ArrowRight className="w-4 h-4" />
                     {key}
                   </div>
-                  <div className="p-4 text-sm bg-zinc-800 h-full">
+                  <div className="p-4 text-sm bg-zinc-800 flex-1">
                     <p className="font-semibold text-white mb-2">
                       {jobs[key].name}
                     </p>
