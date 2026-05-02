@@ -50,9 +50,9 @@ const InputField = ({
   const isActive = isFocused || hasValue;
 
   const baseClasses = `
-    w-full px-0 py-4 bg-transparent border-0 border-b-2
+    w-full px-0 py-2.5 bg-transparent border-0 border-b-2
     transition-all duration-300 ease-out
-    text-gray-900 text-lg
+    text-gray-900 text-base
     focus:outline-none focus:ring-0
     placeholder-transparent
     ${isFocused ? "border-brand-red" : "border-gray-200 hover:border-gray-400"}
@@ -60,17 +60,17 @@ const InputField = ({
 
   const labelClasses = `
     absolute left-0 transition-all duration-300 ease-out pointer-events-none
-    ${isActive ? "top-0 text-xs font-medium" : "top-4 text-lg"}
+    ${isActive ? "top-0 text-xs font-medium" : "top-2.5 text-base"}
     ${isFocused ? "text-brand-red" : "text-gray-500"}
   `;
 
   if (isTextarea) {
     return (
-      <div className="relative mt-6">
+      <div className="relative mt-4">
         <textarea
           name={name}
           required={required}
-          className={`${baseClasses} resize-none min-h-[100px]`}
+          className={`${baseClasses} resize-none min-h-[64px]`}
           onChange={onChange}
           onFocus={onFocus}
           onBlur={onBlur}
@@ -84,7 +84,7 @@ const InputField = ({
   }
 
   return (
-    <div className="relative mt-6">
+    <div className="relative mt-4">
       <input
         type={type}
         name={name}
@@ -192,7 +192,7 @@ const ContactHero = () => {
   };
 
   return (
-    <section className="relative h-full flex items-center justify-center overflow-y-auto">
+    <section className="relative h-full flex items-start justify-center overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100" />
 
@@ -210,25 +210,25 @@ const ContactHero = () => {
         <div className="absolute right-0 top-0 w-[500px] h-[500px] bg-gradient-to-br from-brand-red/5 to-transparent rounded-full blur-3xl" />
       </div>
 
-      <div className="relative container mx-auto px-6 py-8 md:py-10 lg:py-12 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+      <div className="relative container mx-auto px-6 py-6 md:py-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start">
           {/* Left Column - Contact Form */}
           <div>
-            <p className="text-brand-red font-medium tracking-widest text-sm uppercase mb-4">
+            <p className="text-brand-red font-medium tracking-widest text-xs uppercase mb-2">
               Get in Touch
             </p>
-            <h1 className="mb-8 lg:mb-10 text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-[1.1] tracking-tight">
+            <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-[1.1] tracking-tight">
               Let&apos;s Build{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-600">
                 Something Great
               </span>
             </h1>
 
-            <div className="bg-white rounded-3xl p-6 lg:p-8 shadow-xl border border-gray-100">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+            <div className="bg-white rounded-3xl p-5 lg:p-6 shadow-xl border border-gray-100">
+              <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-1">
                 Send us a message
               </h2>
-              <p className="text-gray-500 text-sm mb-4">
+              <p className="text-gray-500 text-xs mb-3">
                 Fill out the form below and we&apos;ll get back to you within
                 24 hours.
               </p>
@@ -304,14 +304,14 @@ const ContactHero = () => {
                     onBlur={() => setFocusedField(null)}
                   />
 
-                  <div className="pt-8 pb-4">
+                  <div className="pt-5">
                     <button
                       type="submit"
                       disabled={loading}
                       className={`
                         w-full md:w-max flex items-center justify-center gap-3
-                        px-8 py-3.5 bg-[#0F111A] text-white
-                        rounded-full font-medium text-lg
+                        px-7 py-3 bg-[#0F111A] text-white
+                        rounded-full font-medium text-base
                         transition-all duration-300 ease-out
                         hover:bg-[#1A1D29] hover:shadow-xl hover:shadow-[#0F111A]/10
                         active:scale-[0.98]
@@ -357,16 +357,18 @@ const ContactHero = () => {
 
           {/* Right Column - Contact Us Section */}
           <div>
-            {/* Spacer to vertically align CONTACT US with the form card on lg+ */}
+            {/* Spacer to vertically align CONTACT US with the form card on lg+.
+                Must mirror the eyebrow + h1 markup on the left exactly so
+                heights match. */}
             <div className="hidden lg:block invisible" aria-hidden="true">
-              <p className="text-sm uppercase font-medium tracking-widest mb-4">
+              <p className="text-brand-red font-medium tracking-widest text-xs uppercase mb-2">
                 Get in Touch
               </p>
-              <h1 className="mb-8 lg:mb-10 text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.1] tracking-tight">
+              <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.1] tracking-tight">
                 Let&apos;s Build Something Great
               </h1>
             </div>
-            <h2 className="text-xl font-semibold mb-4 text-gray-900 tracking-wide">
+            <h2 className="text-lg font-semibold mb-3 text-gray-900 tracking-wide">
               CONTACT US
             </h2>
 
