@@ -97,7 +97,7 @@ export default function OurServices() {
                 key={service.id}
                 href={service.href}
                 aria-label={`Learn more about ${service.title}`}
-                className="group relative flex flex-col bg-[#f8f8f8] rounded-2xl p-6 transition-all duration-300 hover:bg-white hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+                className="group relative flex flex-col bg-[#f3f4f6] border border-black/[0.06] rounded-2xl p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all duration-300 hover:bg-white hover:border-transparent hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
               >
                 {/* Header: icon + title/blurb + arrow */}
                 <div className="flex items-start gap-3">
