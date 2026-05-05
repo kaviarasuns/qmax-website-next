@@ -953,9 +953,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.58.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.59.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.60.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.61.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.62.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.63.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.64.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.65.png",

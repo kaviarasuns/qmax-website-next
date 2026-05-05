@@ -10,8 +10,9 @@ const Contact = () => {
     <FullPageScroll2>
       <ContactHero />
       <OfficeLocations />
-      {/* Footer bleeds behind the fixed nav so its `min-h-screen`
-          (shared with non-FPS pages) isn't clipped at the bottom. */}
+      {/* Footer bleeds behind the fixed nav. FullBleed stretches its
+          child to fill the snap section; FooterV2 itself is naturally
+          sized so it also works on non-FPS pages via FooterWrapper. */}
       <FullBleed>
         <FooterV2 />
       </FullBleed>

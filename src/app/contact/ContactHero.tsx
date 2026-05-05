@@ -106,11 +106,7 @@ const InputField = ({
 const addresses: Record<CountryKey, AddressData> = {
   "United States": {
     name: "Qmax Systems LLC",
-    address: [
-      "14105, Willow Tank Drive",
-      "Austin, TX 78717",
-      "United States",
-    ],
+    address: ["14105, Willow Tank Drive", "Austin, TX 78717", "United States"],
     phone: "+1 412 265 2314",
     email: "info@qmaxsys.com",
   },
@@ -218,9 +214,9 @@ const ContactHero = () => {
               Get in Touch
             </p>
             <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl text-gray-900 leading-[1.1] tracking-tight">
-              Let&apos;s Build{" "}
+              Let&apos;s Engineer{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-600">
-                Something Great
+                Your Next Product
               </span>
             </h1>
 
@@ -229,8 +225,8 @@ const ContactHero = () => {
                 Send us a message
               </h2>
               <p className="text-gray-500 text-sm mb-4">
-                Fill out the form below and we&apos;ll get back to you within
-                24 hours.
+                Fill out the form below and we&apos;ll get back to you within 24
+                hours.
               </p>
 
               {showThankYou ? (
@@ -375,7 +371,7 @@ const ContactHero = () => {
                     <MapPin className="w-4 h-4" />
                     {country}
                   </div>
-                  <div className="p-4 text-sm bg-zinc-800 flex-1">
+                  <div className="px-4 pt-4 text-sm bg-zinc-800 flex-1">
                     <p className="font-semibold text-white mb-2">
                       {addresses[country].name}
                     </p>
@@ -407,9 +403,9 @@ const ContactHero = () => {
                           window.open(mailtoUrl, "_blank");
                         }, 100);
                       }}
-                      className="flex items-center gap-2 text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left transition-colors"
+                      className="flex items-center gap-3 text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left transition-colors text-lg tracking-wide"
                     >
-                      <Mail className="w-3.5 h-3.5" />
+                      <Mail className="w-4 h-4" />
                       {addresses[country].email}
                     </button>
                   </div>
@@ -426,7 +422,7 @@ const ContactHero = () => {
                     <ArrowRight className="w-4 h-4" />
                     {key}
                   </div>
-                  <div className="p-4 text-sm bg-zinc-800 flex-1">
+                  <div className="px-4 pt-4 text-sm bg-zinc-800 flex-1">
                     <p className="font-semibold text-white mb-2">
                       {jobs[key].name}
                     </p>
@@ -460,9 +456,9 @@ const ContactHero = () => {
                           window.open(mailtoUrl, "_blank");
                         }, 100);
                       }}
-                      className="flex items-center gap-2 text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left transition-colors"
+                      className="flex items-center gap-3 text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left transition-colors text-lg tracking-wide"
                     >
-                      <Mail className="w-3.5 h-3.5" />
+                      <Mail className="w-4 h-4" />
                       {jobs[key].email}
                     </button>
                   </div>
