@@ -40,12 +40,12 @@ export default function FooterV2() {
   return (
     <>
       {" "}
-      <footer className="bg-zinc-900 text-white min-h-screen flex flex-col [&>*]:tracking-wider">
-        <div className="mx-auto w-full flex flex-col flex-1 px-4 md:px-0">
+      <footer className="bg-zinc-900 text-white min-h-screen flex flex-col overflow-x-clip [&>*]:tracking-wider">
+        <div className="mx-auto w-full flex flex-col flex-1">
           <div className="flex-1 flex flex-col justify-center w-full">
-            <div className="container mx-auto flex flex-col md:flex-row justify-around gap-12 md:items-start items-center mt-12">
+            <div className="max-w-7xl mx-auto w-full px-4 md:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-start mt-12">
               {/* About Us Section */}
-              <div className="flex-1">
+              <div className="min-w-0">
                 <h2 className="text-xl font-semibold mb-4">ABOUT US</h2>
                 <p className="text-white text-sm leading-relaxed">
                   Qmax Systems is an Electronics Engineering and R&D Services
@@ -63,7 +63,7 @@ export default function FooterV2() {
               </div>
 
               {/* Social Media Section */}
-              <div className="flex-1">
+              <div className="min-w-0">
                 <h2 className="text-xl font-semibold mb-4">PRESENTATION</h2>
                 <p className="text-gray-300 mb-4">
                   Click here to download our company presentation.
@@ -118,7 +118,7 @@ export default function FooterV2() {
               </div>
 
               {/* Quick Links Section */}
-              <div className="flex-1 w-full mt-16 md:mt-0">
+              <div className="min-w-0 w-full">
                 <h2 className="text-xl font-semibold mb-4">QUICK LINKS</h2>
                 <ul className="space-y-3">
                   <li>
@@ -213,7 +213,7 @@ export default function FooterV2() {
               </div>
 
               {/* Contact Us Section (replacing Social Media) */}
-              <div className="flex-1 w-full mt-16 md:mt-0">
+              <div className="min-w-0 w-full">
                 <h2 className="text-xl font-semibold mb-4">CONTACT US</h2>
                 <div className="space-y-4 w-full">
                   {(Object.keys(addresses) as CountryKey[]).map((country) => (
@@ -224,7 +224,7 @@ export default function FooterV2() {
                       <div className="w-full font-bold text-left p-2 text-sm bg-gray-500 text-white">
                         {country}
                       </div>
-                      <div className="p-3 text-sm text-gray-300 bg-zinc-800">
+                      <div className="p-3 text-sm text-gray-300 bg-zinc-800 break-words">
                         <p className="font-semibold">
                           {addresses[country].name}
                         </p>
@@ -250,7 +250,7 @@ export default function FooterV2() {
                               window.open(mailtoUrl, "_blank");
                             }, 100);
                           }}
-                          className="text-gray-500 hover:text-gray-300 cursor-pointer bg-transparent border-none p-0 text-left"
+                          className="text-gray-500 hover:text-gray-300 cursor-pointer bg-transparent border-none p-0 text-left break-all"
                         >
                           {addresses[country].email}
                         </button>
