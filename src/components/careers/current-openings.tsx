@@ -447,8 +447,6 @@ const positions = [
 
 type Position = (typeof positions)[number]
 
-type SectionKey = 'responsibilities' | 'requirements' | 'qualifications'
-
 function SectionAccordion({
   title,
   items,
