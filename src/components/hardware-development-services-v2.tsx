@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import "./hardware-design.css";
 import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
@@ -264,10 +263,10 @@ const INDUSTRIES = {
 const INDUSTRY_SLIDES = [
   { src: "/hardware-design/ind-automotive.jpg", alt: "Automotive Electronics" },
   { src: "/hardware-design/ind-medical.jpg", alt: "Medical & Healthcare" },
-  { src: "/hardware-design/ind-aerospace.jpeg", alt: "Aerospace Systems" },
+  { src: "/hardware-design/aerospace.png", alt: "Aerospace Systems" },
   { src: "/hardware-design/ind-energy.png", alt: "Energy, EV & Power" },
   { src: "/hardware-design/ind-defense.png", alt: "Defense Electronics" },
-  { src: "/hardware-design/ind-industrial.jpg", alt: "Industrial Automation" },
+  { src: "/hardware-design/industrial_automation.png", alt: "Industrial Automation" },
 ];
 
 const WHY_CARDS = [
@@ -352,7 +351,7 @@ const TESTIMONIALS = [
     caseTag: "AUTOMOTIVE",
     caseTitle: "ADAS Sensor Fusion ECU",
     caseDesc: "Full-cycle development of a 6-layer ECU integrating radar, camera, and LiDAR inputs under ISO 26262 ASIL-B constraints.",
-    caseImage: "/hardware-design/ind-automotive.jpg",
+    caseImage: "/case-studies/BLUECOLD/1.png",
   },
   {
     tab: "Smart Patient Monitor",
@@ -467,24 +466,26 @@ const FAQ_ITEMS = [
 function CapabilitiesSection() {
   const [activeIdx, setActiveIdx] = useState(0);
   return (
-    <section className="capabilities">
-      <div className="capabilities-inner">
-        <div className="cap-header">
-          <h2>Core Engineering Capabilities</h2>
-          <p>We deliver high-performance designs validated by decades of experience. Our HW engineering stack covers:</p>
+    <section className="bg-white px-16 py-24 max-[900px]:px-6 max-[900px]:py-16">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="m-0 p-0">
+          <h2 className="text-4xl md:text-5xl font-light tracking-wide">Core Engineering <span className="text-brand-500">Capabilities</span></h2>
+          {/* <p>We deliver high-performance designs validated by decades of experience. Our HW engineering stack covers:</p> */}
         </div>
         {/* Tabs */}
-        <div className="cap-tabs" role="tablist">
+        <div className="my-14 mb-16 grid grid-cols-5 gap-0 border-b border-gray-200 max-[900px]:grid-cols-2 max-[900px]:gap-1 max-[900px]:overflow-x-auto" role="tablist">
           {CAPABILITIES.map((cap, i) => (
             <button
               key={cap.id}
               type="button"
               role="tab"
               aria-selected={activeIdx === i}
-              className={`cap-tab${activeIdx === i ? " active" : ""}`}
+              className={`relative flex cursor-pointer items-center justify-center gap-3 bg-transparent px-3 py-[18px] text-left text-black transition-colors duration-200 hover:text-red-500 max-[900px]:px-2 max-[900px]:py-3.5 ${
+                activeIdx === i ? "text-red-500 after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:bg-red-500" : ""
+              }`}
               onClick={() => setActiveIdx(i)}
             >
-              <span className="cap-tab-icon">{cap.tabIcon}</span>
+              <span className="h-[22px] w-[22px] shrink-0 transition-colors duration-200">{cap.tabIcon}</span>
               <span>{cap.tabLabel}</span>
             </button>
           ))}
@@ -494,24 +495,24 @@ function CapabilitiesSection() {
           <div
             key={cap.id}
             role="tabpanel"
-            className={`cap-panel${activeIdx === i ? " active" : ""}`}
+            className={`${activeIdx === i ? "grid" : "hidden"} grid-cols-[1fr_1.4fr] items-start gap-24 max-[900px]:grid-cols-1 max-[900px]:gap-8`}
           >
-            <div className="cap-left">
-              <h3>{cap.headline}</h3>
-              <div className="cap-cta-row">
-                <a className="cap-learn-btn" href="/contact">Learn more</a>
-                <a className="cap-cta" href="/contact">Get in Touch</a>
+            <div>
+              <h3 className="mb-8 max-w-[480px] text-2xl font-light tracking-wide text-black md:text-3xl">{cap.headline}</h3>
+              <div className="flex flex-wrap items-center gap-3">
+                <a className="inline-block rounded-md border-[1.5px] border-slate-900 bg-transparent px-7 py-[7px] text-slate-900 no-underline transition-colors duration-200 hover:bg-slate-900 hover:text-white hover:no-underline" href="/contact">Learn more</a>
+                <a className="inline-block rounded-md bg-[var(--qmax-red-500)] px-7 py-[7px] text-white no-underline transition-colors duration-200 hover:bg-[var(--qmax-red-600)] hover:text-white hover:no-underline" href="/contact">Get in Touch</a>
               </div>
             </div>
-            <div className="cap-right">
-              <p className="cap-desc">{cap.intro}</p>
-              <div className="cap-bullets-grid">
+            <div>
+              <p className="mb-9 text-[#383838]">{cap.intro}</p>
+              <div className="grid grid-cols-2 gap-12 max-[900px]:grid-cols-1 max-[900px]:gap-7">
                 {cap.bullets.map((b) => (
-                  <div key={b.title} className="cap-bullet-group">
-                    <h4>{b.title}</h4>
-                    <ul>
+                  <div key={b.title}>
+                    <h4 className="mb-[18px] text-lg font-light tracking-wide text-[#383838] md:text-xl">{b.title}</h4>
+                    <ul className="m-0 flex list-none flex-col gap-3.5 p-0">
                       {b.items.map((item) => (
-                        <li key={item}>{item}</li>
+                        <li key={item} className="relative pl-[22px] text-[#383838] before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-red-500">{item}</li>
                       ))}
                     </ul>
                   </div>
@@ -556,9 +557,9 @@ function IndustriesSection() {
       <div className="blob blob-2" />
       <div className="industries-inner">
         <div className="industries-head">
-          <h2>Industries We Serve</h2>
-          <div className="industries-divider" />
-          <p>Multi-domain hardware development with design rigor and documentation depth calibrated to each industry&apos;s regulatory and reliability bar.</p>
+          <h2 className="text-4xl md:text-5xl font-light tracking-wide">Industries We <span className="text-brand-500">Serve</span></h2>
+        
+          {/* <p>Multi-domain hardware development with design rigor and documentation depth calibrated to each industry&apos;s regulatory and reliability bar.</p> */}
         </div>
         <div className="ind-cols">
           {/* LEFT */}
@@ -572,7 +573,7 @@ function IndustriesSection() {
               >
                 <div className="ind-item-head">
                   <div className="ind-icon-wrap">{ind.icon}</div>
-                  <h3>{ind.title}</h3>
+                  <h3 className="text-base md:text-lg font-medium tracking-wide">{ind.title}</h3>
                 </div>
                 <p>{ind.desc}</p>
                 <div className="learn-more">
@@ -621,7 +622,7 @@ function IndustriesSection() {
               >
                 <div className="ind-item-head">
                   <div className="ind-icon-wrap">{ind.icon}</div>
-                  <h3>{ind.title}</h3>
+                  <h3 className="text-base md:text-lg font-medium tracking-wide">{ind.title}</h3>
                 </div>
                 <p>{ind.desc}</p>
                 <div className="learn-more">
@@ -644,14 +645,14 @@ function WhySection() {
     <section className="why" id="why-section">
       <div className="why-inner">
         <div className="why-head">
-          <h2>Why Choose Qmax for Hardware Design?</h2>
+          <h2 className="text-4xl md:text-5xl font-light tracking-wide">Why Choose Qmax for <span className="text-brand-500">Hardware Design?</span></h2>
         </div>
         <div className="why-grid">
           {WHY_CARDS.map((card) => (
             <article key={card.title} className="why-card">
               <div className="why-card-head">
                 <div className="why-icon">{card.icon}</div>
-                <h3>{card.title}</h3>
+                <h3 className="text-lg md:text-xl font-medium tracking-wide">{card.title}</h3>
               </div>
               <p>{card.desc}</p>
             </article>
@@ -663,12 +664,23 @@ function WhySection() {
             aria-label="Questions? Let's Talk! Contact Saravanabhavan, Founder & CEO"
           >
             <Image
-              src="/hardware-design/founder-saravanabhavan-2.png"
+              src="/hardware-design/founder_csb.png"
               alt="Questions? Let's Talk! Contact us. Saravanabhavan, Founder & CEO"
               width={600}
               height={340}
               style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
             />
+            <span className="why-cta-overlay why-cta-top-left">
+              Questions?
+              <br />
+              Let&apos;s Talk!
+            </span>
+            <span className="why-cta-overlay why-cta-bottom-left">Contact Us</span>
+            <span className="why-cta-overlay why-cta-bottom-right">
+              Saravanabhavan
+              <br />
+              Founder &amp; CEO
+            </span>
           </a>
         </div>
       </div>
@@ -681,8 +693,7 @@ function PartnershipsSection() {
     <section className="partnerships" id="partnerships-section">
       <div className="part-inner">
         <div className="part-head">
-          <h2>Partnerships</h2>
-          <div className="part-divider" />
+          <h2 className="text-4xl md:text-5xl font-light tracking-wide">Partnerships</h2>
           <p>
             With a strong focus on new product development, <strong>Qmax</strong> maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. Our teams gain early access to upcoming silicon, roadmap visibility, and training on the latest technologies — with reference modules and evaluation kits ready to kick-start your product development.
           </p>
@@ -804,7 +815,7 @@ function WorkflowSection() {
 
   return (
     <section className="workflow">
-      <h2 className="workflow-title">Our Custom Hardware Design Approach</h2>
+      <h2 className="workflow-title text-4xl md:text-5xl font-light tracking-wide">Our Custom Hardware <span className="text-brand-500"> Design Approach</span></h2>
       <div className="timeline-wrap">
         <div className="timeline-line" />
         {WORKFLOW_STEPS.map((step, i) => {
@@ -816,7 +827,7 @@ function WorkflowSection() {
               className={`step ${isRight ? "right" : "left"}`}
             >
               <div className="step-content">
-                <h3>{step.title}</h3>
+                <h3 className="text-2xl md:text-3xl font-base tracking-wide">{step.title}</h3>
                 <p>{step.description}</p>
               </div>
               <div className="step-badge">{step.number}</div>
@@ -835,7 +846,7 @@ function TestimonialsSection() {
     <section className="testi" id="testi-section">
       <div className="testi-inner">
         <div className="testi-head">
-          <h2>Customer Success <span className="accent">Stories</span></h2>
+          <h2 className="text-4xl md:text-5xl font-light tracking-wide">Customer Success <span className="text-brand-500">Stories</span></h2>
         </div>
         <div className="testi-tabs">
           {TESTIMONIALS.map((t, i) => (
@@ -866,8 +877,8 @@ function TestimonialsSection() {
               </div>
               <div className="testi-right">
                 <span className="testi-case-tag">{t.caseTag}</span>
-                <h3 className="testi-case-title">{t.caseTitle}</h3>
-                <div style={{ position: "relative", width: "100%", aspectRatio: "16/9", borderRadius: 8, overflow: "hidden", marginTop: 8 }}>
+                <h3 className="text-xl md:text-2xl font-medium tracking-wide">{t.caseTitle}</h3>
+                <div style={{ position: "relative", width: "100%", aspectRatio: "21/9", borderRadius: 8, overflow: "hidden", marginTop: 4 }}>
                   <Image src={t.caseImage} alt={t.caseTitle} fill style={{ objectFit: "cover" }} sizes="(max-width: 900px) 100vw, 50vw" />
                 </div>
                 <p className="testi-case-desc">{t.caseDesc}</p>
@@ -881,7 +892,7 @@ function TestimonialsSection() {
             </div>
           ))}
         </div>
-        <div className="testi-arrows">
+        {/* <div className="testi-arrows">
           <button
             className="testi-arrow"
             onClick={() => setActiveIdx((p) => (p - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
@@ -900,7 +911,7 @@ function TestimonialsSection() {
               <path d="M5 12h14M13 5l7 7-7 7" />
             </svg>
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -912,15 +923,15 @@ function FeaturedArticlesSection() {
       <div className="feat-inner">
         <div className="feat-head">
           <div className="feat-title-block">
-            <div className="feat-eyebrow">
+            {/* <div className="feat-eyebrow">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: 16, height: 16 }}>
                 <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
                 <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
               </svg>
               Featured Articles
-            </div>
-            <h2>Insights from our engineers</h2>
-            <div className="feat-divider" />
+            </div> */}
+            <h2 className="text-4xl md:text-5xl font-light tracking-wide">Insights From Our <span className="text-brand-500">Engineers</span></h2>
+            {/* <div className="feat-divider" /> */}
           </div>
         </div>
         <div className="feat-grid">
@@ -953,7 +964,7 @@ function FeaturedArticlesSection() {
               </svg>
             </div>
             <div className="feat-meta">Article · PCB Design</div>
-            <h3 className="feat-card-title">High-Speed PCB Layout: Controlling Impedance &amp; Crosstalk in Mixed-Signal Boards</h3>
+            <h3 className="text-lg md:text-xl !font-medium tracking-wide">High-Speed PCB Layout: Controlling Impedance &amp; Crosstalk in Mixed-Signal Boards</h3>
             <p className="feat-excerpt">Stack-up planning, return-path discipline, and EMC pre-compliance practices that get a board through certification on the first spin.</p>
             <a className="feat-readmore" href="#">
               Read article
@@ -986,7 +997,7 @@ function FeaturedArticlesSection() {
               </svg>
             </div>
             <div className="feat-meta">Article · Embedded Systems</div>
-            <h3 className="feat-card-title">Hardening Firmware for Functional Safety: From RTOS Choice to Field Updates</h3>
+            <h3 className="text-lg md:text-xl !font-medium tracking-wide">Hardening Firmware for Functional Safety: From RTOS Choice to Field Updates</h3>
             <p className="feat-excerpt">A practical look at memory protection, watchdog strategy, and OTA architectures that hold up under ISO 26262 and IEC 62304 audits.</p>
             <a className="feat-readmore" href="#">
               Read article
@@ -1029,7 +1040,7 @@ function FeaturedArticlesSection() {
               </svg>
             </div>
             <div className="feat-meta">Article · Mechanical &amp; Industrial</div>
-            <h3 className="feat-card-title">Designing Enclosures That Survive: DFM, Thermal Paths &amp; IP-Rated Sealing</h3>
+            <h3 className="text-lg md:text-xl !font-medium tracking-wide">Designing Enclosures That Survive: DFM, Thermal Paths &amp; IP-Rated Sealing</h3>
             <p className="feat-excerpt">How early CAD-to-CAE collaboration on the mechanical envelope avoids the late-stage rework that derails most hardware programs.</p>
             <a className="feat-readmore" href="#">
               Read article
@@ -1052,7 +1063,7 @@ function CTABannerSection() {
         <span className="cta-square cta-square-br" aria-hidden="true" />
         <div className="cta-banner-panel">
           <div className="cta-banner-copy">
-            <h2>Ready to bring your hardware design project to life?</h2>
+            <h2 className="text-4xl md:text-5xl font-light tracking-wide">Ready to bring your hardware design project to <span className="text-brand-500">life?</span></h2>
             <p>Contact us today to get started.</p>
           </div>
           <a href="/contact" className="cta-banner-btn">
@@ -1072,8 +1083,7 @@ function FAQSection() {
     <section className="faq">
       <div className="faq-inner">
         <div className="faq-head">
-          <h2>Frequently asked <span className="accent">questions</span></h2>
-          <div className="divider" />
+          <h2 className="text-4xl md:text-5xl font-light">Frequently Asked <span className="text-brand-500">Questions</span></h2>
         </div>
         <div className="faq-list">
           {FAQ_ITEMS.map((item) => (
@@ -1160,17 +1170,8 @@ export default function HardwareDevelopmentServicesComponentV2() {
       <section className="hero" id="hero">
         <div className="hero-inner">
           <div className="hero-copy">
-            <nav aria-label="Breadcrumb">
-              <ol className="breadcrumb">
-                <li><Link href="/">Home</Link></li>
-                <li className="sep">/</li>
-                <li><Link href="/#services">Services</Link></li>
-                <li className="sep">/</li>
-                <li className="current">Hardware Design</li>
-              </ol>
-            </nav>
-            <h1>Hardware Development Services: The Complete Hardware Product Lifecycle</h1>
-            <p className="hero-desc">
+            <h1 className="text-4xl md:text-5xl font-medium tracking-wide">Hardware Development Services: The Complete Hardware Product Lifecycle</h1>
+            <p className="hero-desc text-xl">
               We provide full hardware lifecycle ownership, taking your product from early requirement analysis to production handover. Our lifecycle-driven approach minimizes risk, shortens development cycles, and ensures compliance readiness from day one.
             </p>
             <a className="btn-red" href="#workflow">EXPLORE OUR APPROACH</a>

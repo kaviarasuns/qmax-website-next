@@ -55,8 +55,8 @@ export function OtherCapabilitiesScrollSection({
         <div className="mx-auto w-fit">
           <div className="mb-10 flex items-center justify-between gap-6">
             <h2 className="text-3xl font-light tracking-wide text-foreground md:text-4xl lg:text-5xl">
-              Our other Engineering{" "}
-              <span className="text-red-500">capabilities</span>
+              Our Other Engineering{" "}
+              <span className="text-red-500">Capabilities</span>
             </h2>
 
             <div className="flex gap-2">

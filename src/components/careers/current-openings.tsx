@@ -1,8 +1,6 @@
 'use client'
 
-import { useState } from 'react'
-
-type TabId = 'full-time' | 'part-time' | 'internships'
+import { useState, useEffect, useRef } from 'react'
 
 const slugify = (str: string) =>
   str
@@ -46,24 +44,18 @@ const positions = [
     responsibilities: [
       'Firmware architecture and module-level design',
       'Bare-metal or RTOS-based firmware development',
-      'Peripheral driver development',
-      'Hardware bring-up and board-level debugging',
-      'Code optimization, testing, and documentation',
-      'Version control and release management',
+      'Peripheral driver development, hardware bring-up, and board-level debugging',
+      'Code optimization, testing, documentation, and release management',
     ],
     requirements: [
       'Strong C programming (mandatory)',
       'Good understanding of MCU architecture',
       'RTOS concepts: tasks, queues, semaphores, ISRs',
       'Peripheral drivers: GPIO, UART, SPI, I2C, ADC, PWM',
-      'Debugging using JTAG/SWD',
-      'Basic understanding of linker scripts and memory maps',
-      'Git-based workflow',
+      'JTAG/SWD debugging, linker scripts, memory maps, and Git-based workflow',
     ],
     qualifications: [
-      'BE / BTech in ECE, CSE, Embedded Systems, or Electrical Engineering',
-      'Diploma holders with strong embedded C experience may be considered',
-      'Interns: Final-year students with hands-on embedded projects',
+      'BE / BTech in ECE, CSE, Embedded Systems, or Electrical Engineering; diploma holders with strong embedded C experience or final-year students with hands-on embedded projects also considered',
     ],
     imageUrl: '/careers/image3.png',
   },
@@ -455,15 +447,6 @@ const positions = [
 
 type Position = (typeof positions)[number]
 
-const fullTimePositions = positions.filter((p) => p.type === 'Full-time')
-const internPositions = positions.filter((p) => p.type === 'Internship')
-
-const tabs: { id: TabId; label: string; count: number }[] = [
-  { id: 'full-time', label: 'Full Time Roles', count: fullTimePositions.length },
-  { id: 'part-time', label: 'Part Time Roles', count: 0 },
-  { id: 'internships', label: 'Internships', count: internPositions.length },
-]
-
 type SectionKey = 'responsibilities' | 'requirements' | 'qualifications'
 
 function SectionAccordion({
@@ -471,11 +454,13 @@ function SectionAccordion({
   items,
   isOpen,
   onToggle,
+  showChevron = true,
 }: {
   title: string
   items: string[]
   isOpen: boolean
   onToggle: () => void
+  showChevron?: boolean
 }) {
   return (
     <div className="border-b border-zinc-300">
@@ -483,23 +468,28 @@ function SectionAccordion({
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="w-full flex items-center justify-between gap-2 py-2 text-left cursor-pointer group"
+        disabled={!showChevron}
+        className={`w-full flex items-center justify-between gap-2 py-2 text-left group ${
+          showChevron ? 'cursor-pointer' : 'cursor-default'
+        }`}
       >
         <h4 className="text-xs sm:text-sm font-bold text-zinc-800 tracking-wide group-hover:text-zinc-900 transition-colors">
           {title}
         </h4>
-        <svg
-          className={`w-4 h-4 text-zinc-500 transition-transform duration-300 flex-shrink-0 ${
-            isOpen ? 'rotate-180' : ''
-          }`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
-          aria-hidden="true"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
+        {showChevron && (
+          <svg
+            className={`w-4 h-4 text-zinc-500 transition-transform duration-300 flex-shrink-0 ${
+              isOpen ? 'rotate-180' : ''
+            }`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+            aria-hidden="true"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        )}
       </button>
       {isOpen && (
         <ul className="space-y-1 pb-3 pt-1">
@@ -523,21 +513,20 @@ function SectionAccordion({
 function JobCard({ position, index }: { position: Position; index: number }) {
   const isReversed = index % 2 !== 0
 
-  const [openSection, setOpenSection] = useState<SectionKey | null>(
-    'responsibilities',
-  )
+  const [activeSection, setActiveSection] = useState<
+    'responsibilities' | 'requirements' | null
+  >('responsibilities')
 
-  const toggle = (key: SectionKey) =>
-    setOpenSection((prev) => (prev === key ? null : key))
+  const toggle = (key: 'responsibilities' | 'requirements') =>
+    setActiveSection((prev) => (prev === key ? null : key))
 
   return (
     <div
-      id={slugify(position.title)}
-      className="grid grid-cols-1 lg:grid-cols-2 border border-zinc-200 bg-white overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-lg"
+      className="grid grid-cols-1 lg:grid-cols-2 lg:h-[calc(100vh-9rem)] w-full border-2 border-zinc-200 bg-white overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-xl hover:border-zinc-300"
     >
       {/* Image */}
       <div
-        className={`relative min-h-[260px] sm:min-h-[300px] lg:min-h-0 ${isReversed ? 'lg:order-2' : ''}`}
+        className={`relative min-h-[50vh] lg:min-h-0 ${isReversed ? 'lg:order-2' : ''}`}
       >
         <img
           src={position.imageUrl || '/careers/image1.jpg'}
@@ -548,37 +537,38 @@ function JobCard({ position, index }: { position: Position; index: number }) {
 
       {/* Content */}
       <div
-        className={`p-5 sm:p-6 md:p-8 flex flex-col ${isReversed ? 'lg:order-1' : ''}`}
+        className={`p-8 sm:p-10 md:p-14 flex flex-col ${isReversed ? 'lg:order-1' : ''}`}
       >
         {/* Title */}
-        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-zinc-900 pb-2 border-b-2 border-zinc-400 mb-3">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-zinc-900 pb-3 border-b-2 border-zinc-400 mb-4">
           {position.title}
         </h3>
 
         {/* Accordion sections */}
-        <div className="mb-6">
+        <div className="flex-1 min-h-0 overflow-y-auto mb-6 lg:mb-0 pr-1">
           <SectionAccordion
             title="Key Responsibilities"
             items={position.responsibilities}
-            isOpen={openSection === 'responsibilities'}
+            isOpen={activeSection === 'responsibilities'}
             onToggle={() => toggle('responsibilities')}
           />
           <SectionAccordion
             title="Requirements"
             items={position.requirements}
-            isOpen={openSection === 'requirements'}
+            isOpen={activeSection === 'requirements'}
             onToggle={() => toggle('requirements')}
           />
           <SectionAccordion
             title="Qualification"
             items={position.qualifications}
-            isOpen={openSection === 'qualifications'}
-            onToggle={() => toggle('qualifications')}
+            isOpen={true}
+            onToggle={() => {}}
+            showChevron={false}
           />
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-3 mt-auto pt-2">
+        <div className="flex gap-3 mt-4 pt-2 flex-shrink-0 lg:mt-3">
           <a
             href="https://careers.qmaxsys.com/"
             target="_blank"
@@ -601,72 +591,117 @@ function JobCard({ position, index }: { position: Position; index: number }) {
   )
 }
 
-interface CurrentOpeningsProps {
-  activeTab: TabId
-  onTabChange: (tab: TabId) => void
+function SideNav({
+  positions,
+  activeId,
+}: {
+  positions: Position[]
+  activeId: string | null
+}) {
+  const scrollTo = (title: string) => {
+    const id = slugify(title)
+    const el = document.getElementById(id)
+    if (!el) return
+    const nav = document.querySelector('nav')
+    const navHeight = nav ? nav.getBoundingClientRect().height : 0
+    const top = el.getBoundingClientRect().top + window.scrollY - navHeight
+    window.scrollTo({ top, behavior: 'smooth' })
+  }
+
+  return (
+    <aside className="hidden lg:block w-48 flex-shrink-0 self-start sticky top-20">
+      <div className="max-h-[calc(100vh-10rem)] overflow-y-auto">
+        <p className="text-[10px] font-semibold text-zinc-400 uppercase tracking-widest mb-3 pl-2">
+          Jump to
+        </p>
+        <nav className="space-y-4">
+          {(
+            [
+              { type: 'Full-time', label: 'Full Time Roles' },
+              { type: 'Part-time', label: 'Part Time Roles' },
+              { type: 'Internship', label: 'Internships' },
+            ] as const
+          ).map(({ type, label }) => {
+            const group = positions.filter((p) => p.type === type)
+            if (group.length === 0) return null
+            return (
+              <div key={type}>
+                <p className="text-[10px] font-semibold text-zinc-900 uppercase tracking-widest mb-1 pl-2">
+                  {label}
+                </p>
+                <ul className="space-y-0.5">
+                  {group.map((pos) => {
+                    const id = slugify(pos.title)
+                    const isActive = activeId === id
+                    return (
+                      <li key={pos.id}>
+                        <button
+                          type="button"
+                          onClick={() => scrollTo(pos.title)}
+                          className={`w-full text-left text-xs px-2.5 py-1.5 rounded-md transition-colors cursor-pointer leading-snug ${
+                            isActive
+                              ? 'text-red-500 font-semibold'
+                              : 'text-zinc-500 hover:text-zinc-800 hover:bg-zinc-50'
+                          }`}
+                        >
+                          {pos.title}
+                        </button>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            )
+          })}
+        </nav>
+      </div>
+    </aside>
+  )
 }
 
-export function CurrentOpenings({ activeTab, onTabChange }: CurrentOpeningsProps) {
-  const activePositions =
-    activeTab === 'full-time'
-      ? fullTimePositions
-      : activeTab === 'internships'
-        ? internPositions
-        : []
+export function CurrentOpenings() {
+  const [activeId, setActiveId] = useState<string | null>(null)
+  const observerRef = useRef<IntersectionObserver | null>(null)
+
+  useEffect(() => {
+    const ids = positions.map((p) => slugify(p.title))
+    const elements = ids
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[]
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+        if (visible.length > 0) setActiveId(visible[0].target.id)
+      },
+      { rootMargin: '-80px 0px -55% 0px', threshold: 0 },
+    )
+
+    elements.forEach((el) => observer.observe(el))
+    observerRef.current = observer
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section className="bg-white">
-      {/* Sticky Tab Bar */}
-      <div
-        id="careers-tab-bar"
-        className="sticky top-16 z-40 bg-white/95 backdrop-blur-sm border-b border-zinc-200"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-0 -mb-px overflow-x-auto justify-end">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => onTabChange(tab.id)}
-                className={`relative px-4 sm:px-6 py-3.5 text-sm sm:text-base font-medium transition-colors whitespace-nowrap cursor-pointer border-b-2 ${
-                  activeTab === tab.id
-                    ? 'border-zinc-900 text-zinc-900'
-                    : 'border-transparent text-zinc-400 hover:text-zinc-600 hover:border-zinc-300'
-                }`}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-6 lg:pt-0 pb-10 md:pb-14">
+        <div className="flex gap-8 items-start">
+          <SideNav positions={positions} activeId={activeId} />
+          <div className="flex-1 min-w-0 space-y-6 lg:space-y-0">
+            {positions.map((position, index) => (
+              <div
+                key={position.id}
+                id={slugify(position.title)}
+                className="lg:h-[calc(100vh-4rem)] lg:flex lg:items-center"
               >
-                {tab.label}
-                {tab.count > 0 && (
-                  <span
-                    className={`ml-2 text-xs px-1.5 py-0.5 rounded-full transition-colors ${
-                      activeTab === tab.id
-                        ? 'bg-zinc-900 text-white'
-                        : 'bg-zinc-100 text-zinc-500'
-                    }`}
-                  >
-                    {tab.count}
-                  </span>
-                )}
-              </button>
+                <JobCard position={position} index={index} />
+              </div>
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Tab Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
-        {activePositions.length > 0 ? (
-          <div key={activeTab} className="space-y-8 md:space-y-10">
-            {activePositions.map((position, index) => (
-              <JobCard key={position.id} position={position} index={index} />
-            ))}
-          </div>
-        ) : (
-          <div key={activeTab} className="py-20 text-center">
-            <p className="text-zinc-500 text-base">
-              No part-time positions are currently available. Check back soon
-              for updates.
-            </p>
-          </div>
-        )}
       </div>
     </section>
   )

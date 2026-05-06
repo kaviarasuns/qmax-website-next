@@ -38,6 +38,330 @@ const workflowItems = [
   },
 ];
 
+const capabilities = [
+  {
+    title: "Digital Hardware Design",
+    href: "/hardware-development-services/high-speed-digital-design",
+    description:
+      "High-performance digital electronics from MCU boards to complex multi-processor systems.",
+    highlights: [
+      "MCU, MPU, SoC & FPGA platforms",
+      "PCIe Gen3/4/5, USB 2.0/3.x, 10G/25G Ethernet",
+      "DDR3, DDR4 & DDR5 memory subsystems",
+      "HDI, BGA & multi-layer PCBs",
+    ],
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <rect x="9" y="9" width="6" height="6" />
+        <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />
+      </svg>
+    ),
+  },
+  {
+    title: "Analog & Mixed-Signal",
+    href: "/hardware-development-services/analog-design",
+    description:
+      "Precision analog and mixed-signal design for sensing, measurement, and low-noise applications.",
+    highlights: [
+      "Low-noise analog front-ends",
+      "Pressure, vibration & biomedical sensing",
+      "ADC/DAC integration & filtering",
+      "EMI-aware analog layout",
+    ],
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <path d="M2 12h3l3-9 4 18 3-12 2 6h5" />
+      </svg>
+    ),
+  },
+  {
+    title: "RF & Microwave",
+    href: "/hardware-development-services/rf-and-microwave",
+    description:
+      "RF designs validated in real-world conditions across ISM, Wi-Fi, BLE, LTE, and Sub-GHz bands.",
+    highlights: [
+      "RF front-end (LNA, PA, filters)",
+      "PCB, external & custom antennas",
+      "ISM, Wi-Fi, BLE, LTE protocols",
+      "Calibration & EMC-aware layout",
+    ],
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <circle cx="12" cy="12" r="2" />
+        <path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 16.24a6 6 0 0 1 0-8.49M20.49 4.51a10 10 0 0 1 0 14.14M3.51 19.49a10 10 0 0 1 0-14.14" />
+      </svg>
+    ),
+  },
+  {
+    title: "Power Electronics",
+    href: "/hardware-development-services/power-electronics",
+    description:
+      "Robust power electronics for industrial, automotive, and energy applications with full thermal margin.",
+    highlights: [
+      "AC-DC / DC-DC converters & SMPS",
+      "Resonant, LLC, CLLC topologies",
+      "BMS, chargers & inverters",
+      "Thermal & reliability analysis",
+    ],
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+      </svg>
+    ),
+  },
+];
+
+const industries = [
+  {
+    title: "Automotive Electronics",
+    image: "/hardware-design/ind-automotive.jpg",
+    description:
+      "Powertrain control, infotainment, and ADAS sensor electronics designed to AEC-Q100.",
+  },
+  {
+    title: "Medical & Healthcare",
+    image: "/hardware-design/ind-medical.jpg",
+    description:
+      "Patient monitors, point-of-care diagnostics, and wearables developed under IEC 60601 and ISO 13485.",
+  },
+  {
+    title: "Aerospace Systems",
+    image: "/hardware-design/ind-aerospace.jpeg",
+    description:
+      "Avionics interfaces, radar sub-systems, and ruggedized SBCs validated to MIL-STD-810/461 and DO-160.",
+  },
+  {
+    title: "Energy, EV & Power",
+    image: "/hardware-design/ind-energy.png",
+    description:
+      "Battery management systems, on-board chargers, and grid-tied inverters engineered for high efficiency.",
+  },
+  {
+    title: "Industrial Automation",
+    image: "/hardware-design/ind-industrial.jpg",
+    description:
+      "PLC interface boards, motor drives, and IIoT edge nodes engineered for 24/7 factory operation.",
+  },
+  {
+    title: "Defense Electronics",
+    image: "/hardware-design/ind-defense.png",
+    description:
+      "Secure mission computers, tactical radio interfaces, and ground-system controllers built to ITAR workflows.",
+  },
+];
+
+const insights = [
+  {
+    category: "PCB Design",
+    title: "High-Speed PCB Layout: Controlling Impedance & Crosstalk",
+    excerpt:
+      "Stack-up planning, return-path discipline, and EMC pre-compliance practices that get a board through certification on the first spin.",
+    href: "#",
+    thumb: (
+      <svg
+        viewBox="0 0 400 280"
+        preserveAspectRatio="xMidYMid slice"
+        className="h-full w-full"
+      >
+        <defs>
+          <linearGradient id="pcbBgV1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#0E2336" />
+            <stop offset="1" stopColor="#0B5FA5" />
+          </linearGradient>
+        </defs>
+        <rect width="400" height="280" fill="url(#pcbBgV1)" />
+        <g stroke="#39C2A4" strokeWidth="1.6" fill="none" opacity="0.85">
+          <path d="M60 90 L180 90 L210 120 L360 120 L390 90" />
+          <path d="M60 150 L120 150 L150 180 L300 180 L330 150 L450 150" />
+          <path d="M60 240 L150 240 L180 270 L270 270 L300 240 L420 240" />
+        </g>
+        <g fill="#FFC857">
+          <circle cx="180" cy="90" r="5" />
+          <circle cx="360" cy="120" r="5" />
+          <circle cx="150" cy="180" r="5" />
+          <circle cx="330" cy="150" r="5" />
+        </g>
+        <rect
+          x="230"
+          y="165"
+          width="140"
+          height="120"
+          rx="4"
+          fill="#1C2A3A"
+          stroke="#39C2A4"
+          strokeWidth="1.5"
+        />
+        <text
+          x="300"
+          y="232"
+          textAnchor="middle"
+          fontFamily="monospace"
+          fontSize="14"
+          fill="#39C2A4"
+          letterSpacing="2"
+        >
+          QMAX-SOC
+        </text>
+      </svg>
+    ),
+  },
+  {
+    category: "Embedded Systems",
+    title: "Hardening Firmware for Functional Safety",
+    excerpt:
+      "Memory protection, watchdog strategy, and OTA architectures that hold up under ISO 26262 and IEC 62304 audits.",
+    href: "#",
+    thumb: (
+      <svg
+        viewBox="0 0 400 280"
+        preserveAspectRatio="xMidYMid slice"
+        className="h-full w-full"
+      >
+        <rect width="400" height="280" fill="#1C2A3A" />
+        <g>
+          <rect x="20" y="20" width="40" height="6" rx="1" fill="#5A6B7B" />
+          <rect x="64" y="20" width="120" height="6" rx="1" fill="#39C2A4" />
+          <rect x="20" y="34" width="20" height="6" rx="1" fill="#5A6B7B" />
+          <rect x="44" y="34" width="80" height="6" rx="1" fill="#FFC857" />
+          <rect x="36" y="48" width="60" height="6" rx="1" fill="#0B5FA5" />
+          <rect x="100" y="48" width="40" height="6" rx="1" fill="#E63329" />
+          <rect x="36" y="62" width="100" height="6" rx="1" fill="#39C2A4" />
+          <rect x="20" y="82" width="30" height="6" rx="1" fill="#5A6B7B" />
+          <rect
+            x="54"
+            y="82"
+            width="140"
+            height="6"
+            rx="1"
+            fill="#E5E7EB"
+            opacity="0.4"
+          />
+          <rect x="36" y="96" width="80" height="6" rx="1" fill="#0B5FA5" />
+          <rect x="120" y="96" width="50" height="6" rx="1" fill="#39C2A4" />
+        </g>
+        <text
+          x="295"
+          y="32"
+          fontFamily="monospace"
+          fontSize="10"
+          fill="#39C2A4"
+        >{"// RTOS task"}</text>
+        <text
+          x="295"
+          y="50"
+          fontFamily="monospace"
+          fontSize="10"
+          fill="#E5E7EB"
+        >
+          priority: 3
+        </text>
+        <text
+          x="295"
+          y="68"
+          fontFamily="monospace"
+          fontSize="10"
+          fill="#FFC857"
+        >
+          RUNNING
+        </text>
+      </svg>
+    ),
+  },
+  {
+    category: "Mechanical & Industrial",
+    title: "Designing Enclosures That Survive: DFM & IP-Rated Sealing",
+    excerpt:
+      "How early CAD-to-CAE collaboration on the mechanical envelope avoids the late-stage rework that derails most hardware programs.",
+    href: "#",
+    thumb: (
+      <svg
+        viewBox="0 0 400 280"
+        preserveAspectRatio="xMidYMid slice"
+        className="h-full w-full"
+      >
+        <defs>
+          <linearGradient id="mechBgV1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#F5F0E8" />
+            <stop offset="1" stopColor="#E5DDD0" />
+          </linearGradient>
+        </defs>
+        <rect width="400" height="280" fill="url(#mechBgV1)" />
+        <g stroke="#C8B79C" strokeWidth="0.5" opacity="0.5">
+          <line x1="0" y1="40" x2="400" y2="40" />
+          <line x1="0" y1="80" x2="400" y2="80" />
+          <line x1="0" y1="120" x2="400" y2="120" />
+          <line x1="0" y1="160" x2="400" y2="160" />
+          <line x1="40" y1="0" x2="40" y2="280" />
+          <line x1="80" y1="0" x2="80" y2="280" />
+          <line x1="120" y1="0" x2="120" y2="280" />
+          <line x1="160" y1="0" x2="160" y2="280" />
+          <line x1="200" y1="0" x2="200" y2="280" />
+          <line x1="240" y1="0" x2="240" y2="280" />
+        </g>
+        <g transform="translate(120 80)">
+          <polygon
+            points="0,40 80,0 200,0 200,100 120,140 0,140"
+            fill="#3A4A5A"
+          />
+          <polygon
+            points="0,40 80,0 200,0 120,40 0,40"
+            fill="#5A6B7B"
+            opacity="0.9"
+          />
+          <polygon
+            points="200,0 200,100 120,140 120,40"
+            fill="#0E1822"
+            opacity="0.85"
+          />
+          <g stroke="#39C2A4" strokeWidth="1" opacity="0.6">
+            <line x1="20" y1="60" x2="100" y2="60" />
+            <line x1="20" y1="74" x2="100" y2="74" />
+            <line x1="20" y1="88" x2="100" y2="88" />
+          </g>
+          <circle cx="60" cy="125" r="3" fill="#E63329" />
+          <circle cx="60" cy="125" r="6" fill="#E63329" opacity="0.3" />
+        </g>
+        <text x="220" y="258" fontFamily="monospace" fontSize="10" fill="#1C2A3A">
+          180 mm
+        </text>
+      </svg>
+    ),
+  },
+];
+
 const technicalFaq = [
   {
     title: "General Services & Engagement",
@@ -100,7 +424,8 @@ export default function HardwareDevelopmentServicesComponentV1() {
   const hardwareFaqs = technicalFaq.flatMap((group) => group.items);
 
   return (
-    <main className="bg-slate-100 text-justify text-slate-900">
+    <main className="bg-slate-100 text-slate-900">
+      {/* HERO */}
       <section className="relative overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(148,163,184,0.08),transparent_54%),radial-gradient(circle_at_85%_10%,rgba(20,184,166,0.03),transparent_48%)]" />
 
@@ -148,11 +473,12 @@ export default function HardwareDevelopmentServicesComponentV1() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      {/* WORKFLOW */}
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <h2 className="text-3xl text-slate-900">
           Our End-to-End Workflow Includes
         </h2>
-        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {workflowItems.map((item, index) => (
             <article
               key={item.title}
@@ -170,318 +496,155 @@ export default function HardwareDevelopmentServicesComponentV1() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-slate-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl text-slate-900">
-            Core Engineering Capabilities
-          </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-            We deliver high-performance designs validated by decades of
-            experience. Our HW engineering stack covers six critical domains.
-          </p>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:shadow-md">
-              <div className="flex-grow">
-                <h3 className="text-xl text-slate-900">
-                  1. Digital Hardware Design
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-                  We design high-performance digital electronics, ranging from
-                  simple MCU boards to complex, high-speed, multi-processor
-                  systems.
+      {/* CORE ENGINEERING CAPABILITIES — single screen */}
+      <section className="flex min-h-screen items-center border-y border-slate-200 bg-slate-50/80">
+        <div className="mx-auto w-full max-w-7xl px-6 py-14 lg:px-8">
+          <header className="mb-10">
+            <p className="text-xs uppercase tracking-[0.2em] text-sky-700">
+              Engineering Stack
+            </p>
+            <h2 className="mt-3 text-3xl text-slate-900 md:text-4xl">
+              Core Engineering Capabilities
+            </h2>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-700 md:text-base">
+              We deliver high-performance designs validated by decades of
+              experience across four critical engineering domains.
+            </p>
+          </header>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {capabilities.map((cap) => (
+              <article
+                key={cap.title}
+                className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-sky-50 text-sky-700">
+                  {cap.icon}
+                </div>
+                <h3 className="text-lg text-slate-900">{cap.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-700">
+                  {cap.description}
                 </p>
-                <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
-                  <li>
-                    <span className="text-slate-900">Platforms:</span> MCU, MPU,
-                    SoC, and FPGA-based platforms.
-                  </li>
-                  <li>
-                    <span className="text-slate-900">
-                      High-Speed Interfaces:
-                    </span>{" "}
-                    PCIe Gen3/4/5, USB 2.0/3.x, Gigabit/10G/25G Ethernet, and
-                    MIPI/LVDS/HDMI display interfaces.
-                  </li>
-                  <li>
-                    <span className="text-slate-900">Memory:</span> DDR3, DDR4,
-                    and DDR5 memory subsystem design.
-                  </li>
-                  <li>
-                    <span className="text-slate-900">PCB Technology:</span>{" "}
-                    High-density BGA, HDI, and multi-layer PCBs.
-                  </li>
-                </ul>
-              </div>
-              <div className="mt-8">
-                <Link
-                  href="/hardware-development-services/high-speed-digital-design"
-                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm text-white transition hover:bg-sky-800 shadow-sm"
-                >
-                  Know More
-                </Link>
-              </div>
-            </article>
-
-            <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:shadow-md">
-              <div className="flex-grow">
-                <h3 className="text-xl text-slate-900">
-                  2. Analog &amp; Mixed-Signal Design
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-                  We possess deep expertise in precision analog and mixed-signal
-                  design, critical for sensing, measurement, and low-noise
-                  applications.
-                </p>
-                <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
-                  <li>
-                    <span className="text-slate-900">Sensing:</span> Low-noise
-                    analog front-ends and sensor interfacing for pressure,
-                    vibration, biomedical, and optical applications.
-                  </li>
-                  <li>
-                    <span className="text-slate-900">Processing:</span> Signal
-                    conditioning, filtering, amplification, and ADC/DAC
-                    integration.
-                  </li>
-                  <li>
-                    <span className="text-slate-900">Integrity:</span> EMI-aware
-                    analog layout and grounding techniques.
-                  </li>
-                </ul>
-              </div>
-              <div className="mt-8">
-                <Link
-                  href="/hardware-development-services/analog-design"
-                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm text-white transition hover:bg-sky-800 shadow-sm"
-                >
-                  Know More
-                </Link>
-              </div>
-            </article>
-
-            <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:shadow-md">
-              <div className="flex-grow">
-                <h3 className="text-xl text-slate-900">
-                  3. RF &amp; Microwave Hardware
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-                  Our RF designs are validated in real-world conditions, not
-                  just simulations.
-                </p>
-                <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
-                  <li>
-                    <span className="text-slate-900">Components:</span> RF
-                    front-end design (LNA, PA, filters, matching networks).
-                  </li>
-                  <li>
-                    <span className="text-slate-900">Antennas:</span> Design and
-                    integration of PCB, external, horn, and custom antennas.
-                  </li>
-                  <li>
-                    <span className="text-slate-900">Protocols:</span> ISM,
-                    Wi-Fi, BLE, LTE, and Sub-GHz systems.
-                  </li>
-                  <li>
-                    <span className="text-slate-900">Validation:</span> RF
-                    simulation, tuning, calibration, and EMC-aware layout.
-                  </li>
-                </ul>
-              </div>
-              <div className="mt-8">
-                <Link
-                  href="/hardware-development-services/rf-and-microwave"
-                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm text-white transition hover:bg-sky-800 shadow-sm"
-                >
-                  Know More
-                </Link>
-              </div>
-            </article>
-
-            <article className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:shadow-md">
-              <div className="flex-grow">
-                <h3 className="text-xl text-slate-900">
-                  4. Power Electronics &amp; High-Voltage
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-                  We design robust power electronics for industrial, automotive,
-                  and energy applications.
-                </p>
-                <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
-                  <li>
-                    <span className="text-slate-900">Conversion:</span>{" "}
-                    AC-DC/DC-DC converters and isolated/non-isolated SMPS
-                    designs.
-                  </li>
-                  <li>
-                    <span className="text-slate-900">Topologies:</span>{" "}
-                    Resonant, LLC, CLLC, and Class-D topologies.
-                  </li>
-                  <li>
-                    <span className="text-slate-900">High Power:</span> Battery
-                    systems (BMS), chargers, inverters, and
-                    high-voltage/high-current PCB design.
-                  </li>
-                  <li>
-                    <span className="text-slate-900">Reliability:</span> Thermal
-                    simulation, derating, and reliability analysis.
-                  </li>
-                </ul>
-              </div>
-              <div className="mt-8">
-                <Link
-                  href="/hardware-development-services/power-electronics"
-                  className="inline-flex items-center justify-center rounded-lg bg-sky-700 px-5 py-2.5 text-sm text-white transition hover:bg-sky-800 shadow-sm"
-                >
-                  Know More
-                </Link>
-              </div>
-            </article>
-          </div>
-          <div className="mt-12 space-y-12">
-            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-2xl text-slate-900">
-                Labs &amp; Engineering Infrastructure
-              </h3>
-              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                Our in-house labs enable rapid debugging and validation,
-                reducing dependency on external facilities during development.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                <span className="text-slate-900">The Qmax Advantage:</span>{" "}
-                Speed and accuracy are determined by having the right tools. We
-                maintain dedicated in-house electronics and environmental
-                laboratories fully equipped with high-bandwidth oscilloscopes,
-                thermal cameras, and spectrum analyzers. This infrastructure
-                allows our engineers to perform immediate prototype assembly,
-                rework, and rigorous stress testing on-site, ensuring that
-                potential design weaknesses are resolved long before the product
-                reaches external certification labs.
-              </p>
-
-              <div className="mt-6 grid gap-6 md:grid-cols-2">
-                <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                  <h4 className="text-lg text-slate-900">
-                    Electronics Test &amp; Validation
-                  </h4>
-                  <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-                    Our labs are equipped with industry-standard tools for
-                    rigorous testing:
-                  </p>
-                  <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
-                    <li>
-                      High-bandwidth oscilloscopes (Keysight, Rohde &amp;
-                      Schwarz).
+                <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
+                  {cap.highlights.map((point) => (
+                    <li key={point} className="flex gap-2 text-left">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-700" />
+                      <span>{point}</span>
                     </li>
-                    <li>Spectrum analyzers and RF testers (CMW-500).</li>
-                    <li>
-                      Precision digital multimeters (Fluke), thermal cameras,
-                      and Hi-Pot testers.
-                    </li>
-                  </ul>
-                </article>
-
-                <article className="rounded-xl border border-slate-200 bg-slate-50 p-5">
-                  <h4 className="text-lg text-slate-900">
-                    Environmental Reliability &amp; Assembly
-                  </h4>
-                  <p className="mt-3 text-sm leading-7 text-slate-700 md:text-base">
-                    We perform early environmental validation to uncover design
-                    weaknesses before certification.
-                  </p>
-                  <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
-                    <li>
-                      <span className="text-slate-900">Environmental:</span>{" "}
-                      Temperature chambers (hot &amp; cold), thermal cycling,
-                      soak testing, drop stress setups, and acoustic chambers.
-                    </li>
-                    <li>
-                      <span className="text-slate-900">Assembly:</span>{" "}
-                      Dedicated facilities for prototype PCB assembly,
-                      professional soldering/rework, and a mechanical workshop
-                      for fixtures.
-                    </li>
-                  </ul>
-                </article>
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-2xl text-slate-900">
-                Compliance, Certification &amp; Quality
-              </h3>
-              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                We ensure your product is ready for global markets. We work
-                closely with NABL-certified laboratories to support EMC/EMI
-                pre-compliance, safety testing, and environmental testing.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                <span className="text-slate-900">The Qmax Advantage:</span> We
-                don&apos;t just design for functionality; we design for
-                compliance. Our processes are governed by ISO 9001 and ISO 13485
-                (Medical Devices) certifications, ensuring strict configuration
-                management and traceability. Because our team has deep
-                experience with regulatory standards like FCC, CE, IEC, and UL,
-                we bridge the gap between engineering and certification,
-                managing the complex gap analysis to ensure your product passes
-                on the first attempt whenever possible.
-              </p>
-              <ul className="mt-5 space-y-2 text-sm leading-6 text-slate-700 md:text-base">
-                <li>
-                  <span className="text-slate-900">Regulatory Support:</span>{" "}
-                  Assistance with FCC, CE, IEC, UL, and BIS readiness.
-                </li>
-                <li>
-                  <span className="text-slate-900">Quality Standards:</span> Our
-                  processes are certified under ISO 9001 (Quality Management)
-                  and ISO 13485 (Medical Devices).
-                </li>
-                <li>
-                  <span className="text-slate-900">Design Rigor:</span> We
-                  utilize structured design reviews, configuration management,
-                  and controlled documentation.
-                </li>
-              </ul>
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-              <h3 className="text-2xl text-slate-900">Industries We Serve</h3>
-              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                We support multi-domain hardware development, adapting design
-                rigor and documentation depth based on regulatory requirements.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
-                <span className="text-slate-900">The Qmax Advantage:</span> Our
-                versatility is a direct result of our multi-domain experience.
-                Having worked on everything from safety-critical medical devices
-                to rugged industrial controls, our engineers understand how to
-                cross-pollinate best practices. We adapt our documentation depth
-                and design rigor to match the specific needs of your industry,
-                ensuring you get the robust reliability of an aerospace product
-                with the agility required for consumer electronics.
-              </p>
-              <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                <li className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-800">
-                  Automotive Electronics
-                </li>
-                <li className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-800">
-                  Medical Electronics &amp; Healthcare Devices
-                </li>
-                <li className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-800">
-                  Industrial Automation &amp; Controls
-                </li>
-                <li className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-800">
-                  Aerospace &amp; Defense Systems
-                </li>
-                <li className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-800">
-                  Energy, EV &amp; Power Electronics
-                </li>
-              </ul>
-            </div>
+                  ))}
+                </ul>
+                <div className="mt-auto pt-5">
+                  <Link
+                    href={cap.href}
+                    className="inline-flex items-center gap-1.5 text-sm text-sky-700 hover:text-sky-800"
+                  >
+                    Know More
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-3.5 w-3.5"
+                    >
+                      <path d="M5 12h14M13 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      {/* LABS + COMPLIANCE — compact two-column block */}
+      <section className="border-b border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+          <div className="grid gap-6 md:grid-cols-2">
+            <article className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
+              <h3 className="text-xl text-slate-900">
+                Labs &amp; Engineering Infrastructure
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                In-house electronics and environmental laboratories for rapid
+                debug, prototype assembly, and validation — reducing dependency
+                on external facilities during development.
+              </p>
+              <ul className="mt-4 grid gap-2 text-sm leading-6 text-slate-700 sm:grid-cols-2">
+                <li>High-bandwidth oscilloscopes (Keysight, R&amp;S)</li>
+                <li>Spectrum analyzers &amp; CMW-500 RF testers</li>
+                <li>Temperature, thermal cycling &amp; acoustic chambers</li>
+                <li>Prototype PCB assembly &amp; rework</li>
+              </ul>
+            </article>
+            <article className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
+              <h3 className="text-xl text-slate-900">
+                Compliance, Certification &amp; Quality
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-slate-700">
+                We design for compliance from day one — partnering with
+                NABL-certified labs and operating under ISO 9001 and ISO 13485
+                quality systems for traceable, audit-ready delivery.
+              </p>
+              <ul className="mt-4 grid gap-2 text-sm leading-6 text-slate-700 sm:grid-cols-2">
+                <li>FCC, CE, IEC, UL, BIS readiness</li>
+                <li>ISO 9001 &amp; ISO 13485 processes</li>
+                <li>Structured design reviews</li>
+                <li>Configuration management &amp; traceability</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRIES WE SERVE — single screen */}
+      <section className="flex min-h-screen items-center bg-white">
+        <div className="mx-auto w-full max-w-7xl px-6 py-14 lg:px-8">
+          <header className="mb-10 text-center">
+            <p className="text-xs uppercase tracking-[0.2em] text-sky-700">
+              Domains
+            </p>
+            <h2 className="mt-3 text-3xl text-slate-900 md:text-4xl">
+              Industries We Serve
+            </h2>
+            <p className="mx-auto mt-3 max-w-3xl text-sm leading-7 text-slate-700 md:text-base">
+              Multi-domain hardware development with design rigor and
+              documentation depth calibrated to each industry&apos;s regulatory
+              and reliability bar.
+            </p>
+          </header>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {industries.map((ind) => (
+              <article
+                key={ind.title}
+                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <div className="relative h-40 w-full overflow-hidden">
+                  <Image
+                    src={ind.image}
+                    alt={ind.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/10 to-transparent" />
+                  <h3 className="absolute bottom-3 left-4 right-4 text-base text-white">
+                    {ind.title}
+                  </h3>
+                </div>
+                <div className="p-4">
+                  <p className="text-sm leading-6 text-slate-700">
+                    {ind.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* READY TO BUILD — CTA */}
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_6px_30px_rgba(15,23,42,0.08)] md:p-10">
           <h2 className="text-3xl text-slate-900">
             Ready to Build Your Hardware?
@@ -501,11 +664,83 @@ export default function HardwareDevelopmentServicesComponentV1() {
           </a>
         </div>
       </section>
-      <FAQSection faqs={hardwareFaqs} />
+
+      {/* CUSTOMER SUCCESS STORIES — single screen */}
       <ServiceCaseStudiesSection
+        title="Customer Success Stories"
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}
+        className="flex min-h-screen items-center bg-[#fcfcfc] border-t border-zinc-200 py-14"
       />
+
+      {/* INSIGHTS FROM OUR ENGINEERS — single screen */}
+      <section className="flex min-h-screen items-center border-t border-slate-200 bg-slate-50/80">
+        <div className="mx-auto w-full max-w-7xl px-6 py-14 lg:px-8">
+          <header className="mb-10 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-sky-700">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-4 w-4"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                </svg>
+                Featured Articles
+              </p>
+              <h2 className="mt-3 text-3xl text-slate-900 md:text-4xl">
+                Insights from Our Engineers
+              </h2>
+              <div className="mt-3 h-0.5 w-16 bg-sky-700" />
+            </div>
+          </header>
+          <div className="grid gap-6 md:grid-cols-3">
+            {insights.map((article) => (
+              <article
+                key={article.title}
+                className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.05)] transition-all hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <div className="aspect-[4/3] overflow-hidden rounded-lg bg-slate-100">
+                  {article.thumb}
+                </div>
+                <p className="mt-4 text-xs uppercase tracking-[0.16em] text-slate-500">
+                  Article · {article.category}
+                </p>
+                <h3 className="mt-2 text-lg leading-snug text-slate-900 transition-colors group-hover:text-sky-700">
+                  {article.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-700">
+                  {article.excerpt}
+                </p>
+                <Link
+                  href={article.href}
+                  className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm text-sky-700 hover:text-sky-800"
+                >
+                  Read article
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-3.5 w-3.5"
+                  >
+                    <path d="M5 12h14M13 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FAQSection faqs={hardwareFaqs} />
       <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>
   );

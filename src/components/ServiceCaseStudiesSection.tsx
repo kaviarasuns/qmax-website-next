@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import CaseStudyCard from "@/components/CaseStudyCard";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
+import { cn } from "@/lib/utils";
 
 interface ServiceCaseStudiesSectionProps {
   title?: string;
@@ -21,7 +22,7 @@ export default function ServiceCaseStudiesSection({
   className = "bg-[#fcfcfc] border-t border-zinc-200",
 }: ServiceCaseStudiesSectionProps) {
   return (
-    <section className={`${className} overflow-hidden py-24`}>
+    <section className={cn("overflow-hidden py-24", className)}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-12 border-b border-zinc-200/80 pb-6 dark:border-zinc-800/80">
           <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.38em] text-[#F33117]">

@@ -25,6 +25,9 @@ export default {
   		},
   		colors: {
   			'brand-red': '#F33117',
+  			brand: {
+  				500: '#F33117',
+  			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
