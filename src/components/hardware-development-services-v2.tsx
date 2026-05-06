@@ -1093,60 +1093,60 @@ function FAQSection() {
   );
 }
 
-function OtherCapabilitiesSection() {
-  const ocCards = [
-    {
-      title: "PCB Design Services",
-      desc: "Expert PCB design, layout optimization, signal integrity analysis, and DFM reviews for reliable high-performance boards from concept to manufacturing.",
-      img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=900&q=80&auto=format&fit=crop",
-      href: "/pcb-design",
-    },
-    {
-      title: "Firmware Development Services",
-      desc: "Firmware development, microcontroller selection, and real-time systems optimization for reliable embedded solutions.",
-      img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80&auto=format&fit=crop",
-      href: "/embedded-design-services",
-    },
-    {
-      title: "Apps and Cloud",
-      desc: "Mobile and web applications with cloud integration, IoT connectivity, and scalable backend architecture.",
-      img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=80&auto=format&fit=crop",
-      href: "/apps-and-cloud",
-    },
-  ];
+// function OtherCapabilitiesSection() {
+//   const ocCards = [
+//     {
+//       title: "PCB Design Services",
+//       desc: "Expert PCB design, layout optimization, signal integrity analysis, and DFM reviews for reliable high-performance boards from concept to manufacturing.",
+//       img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=900&q=80&auto=format&fit=crop",
+//       href: "/pcb-design",
+//     },
+//     {
+//       title: "Firmware Development Services",
+//       desc: "Firmware development, microcontroller selection, and real-time systems optimization for reliable embedded solutions.",
+//       img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=80&auto=format&fit=crop",
+//       href: "/embedded-design-services",
+//     },
+//     {
+//       title: "Apps and Cloud",
+//       desc: "Mobile and web applications with cloud integration, IoT connectivity, and scalable backend architecture.",
+//       img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=80&auto=format&fit=crop",
+//       href: "/apps-and-cloud",
+//     },
+//   ];
 
-  return (
-    <section className="other-caps">
-      <div className="other-caps-inner">
-        <div className="other-caps-head">
-          <h2>Our other Engineering <span className="accent">capabilities</span></h2>
-        </div>
-        <div className="other-caps-grid">
-          {ocCards.map((card) => (
-            <article key={card.title} className="oc-card">
-              <div className="oc-media">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={card.img} alt={card.title} loading="lazy" />
-              </div>
-              <div className="oc-body">
-                <h3>{card.title}</h3>
-                <div className="oc-desc"><p>{card.desc}</p></div>
-                <div className="oc-foot">
-                  <span className="label">Explore Service</span>
-                  <Link href={card.href} className="oc-arrow" aria-label={`Explore ${card.title}`}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+//   return (
+//     <section className="other-caps">
+//       <div className="other-caps-inner">
+//         <div className="other-caps-head">
+//           <h2>Our other Engineering <span className="accent">capabilities</span></h2>
+//         </div>
+//         <div className="other-caps-grid">
+//           {ocCards.map((card) => (
+//             <article key={card.title} className="oc-card">
+//               <div className="oc-media">
+//                 {/* eslint-disable-next-line @next/next/no-img-element */}
+//                 <img src={card.img} alt={card.title} loading="lazy" />
+//               </div>
+//               <div className="oc-body">
+//                 <h3>{card.title}</h3>
+//                 <div className="oc-desc"><p>{card.desc}</p></div>
+//                 <div className="oc-foot">
+//                   <span className="label">Explore Service</span>
+//                   <Link href={card.href} className="oc-arrow" aria-label={`Explore ${card.title}`}>
+//                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+//                       <line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" />
+//                     </svg>
+//                   </Link>
+//                 </div>
+//               </div>
+//             </article>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 /* ============================================================
    PAGE
