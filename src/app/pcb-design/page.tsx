@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import React from "react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import {
@@ -63,18 +62,6 @@ export default function PCBDesignPage() {
   //   },
   // };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
   const breadcrumbItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
@@ -96,15 +83,15 @@ export default function PCBDesignPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-4xl"
-          >
-            <div className="mb-6">
+          > */}
+            {/* <div className="mb-6">
               <Breadcrumbs items={breadcrumbItems} />
-            </div>
+            </div> */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl text-white mb-8 leading-[1.1]">
               PCB Design: <br />
               <span className="text-red-600">A Multi-Physics</span> <br />
@@ -114,35 +101,20 @@ export default function PCBDesignPage() {
               Where complex conceptual requirements meet market-ready hardware
               through disciplined engineering.
             </p>
-          </motion.div>
-        </div>
 
-        {/* Bottom indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/50"
-        >
-          <span className="text-xs uppercase tracking-widest mb-2 text-white">
+          {/* <button className="mt-4 px-4 py-2.5 text-sm border border-white text-white bg-transparent rounded-md transition hover:bg-white/10 uppercase tracking-widest mb-3">
             Explore Our Approach
-          </span>
-          <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent" />
-        </motion.div>
+          </button> */}
+          {/* </motion.div> */}
+        </div>
       </section>
 
       {/* Main Content Section */}
       <section className="py-24 px-6 md:px-12 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-stretch">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start"
-            >
-              <div className="bg-gray-50 rounded-[2.5rem] border border-gray-100 p-8 md:p-12 h-full flex flex-col justify-center">
+            <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
+              <div className="bg-gray-50 rounded-2xl border border-gray-100 p-8 md:p-12 h-full flex flex-col justify-center">
                 <h2 className="text-3xl md:text-5xl text-gray-900 leading-tight mb-8">
                   Engineering <br />
                   <span className="text-red-600">Beyond Connectivity</span>
@@ -159,16 +131,10 @@ export default function PCBDesignPage() {
                   specializes in first-time-right PCB design.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:col-span-7 space-y-8"
-            >
-              <div className="bg-gray-50 p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-sm relative group hover:shadow-xl transition-all duration-500">
+            <div className="lg:col-span-7 space-y-8">
+              <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-100 shadow-sm relative group hover:shadow-xl transition-all duration-500">
                 <div className="absolute top-0 right-0 p-8">
                   <Cpu className="w-12 h-12 text-gray-100 group-hover:text-red-100 transition-colors" />
                 </div>
@@ -197,7 +163,7 @@ export default function PCBDesignPage() {
                 </div>
               </div>
 
-              <div className="bg-red-600 p-8 md:p-12 rounded-[2.5rem] text-white shadow-xl shadow-red-100">
+              <div className="bg-red-600 p-8 md:p-12 rounded-2xl text-white shadow-xl shadow-red-100">
                 <p className="text-lg leading-relaxed text-justify">
                   Our approach integrates Signal Integrity (SI), Power Integrity
                   (PI), Electromagnetic Interference (EMI), and thermal
@@ -209,7 +175,7 @@ export default function PCBDesignPage() {
                   time-to-market.
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -217,12 +183,7 @@ export default function PCBDesignPage() {
       {/* Specialisations Section */}
       <section className="py-24 bg-gray-50/50 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
+          <div className="mb-16">
             <h2 className="text-3xl md:text-5xl text-gray-900 mb-6">
               Our PCB Design Specialisations
             </h2>
@@ -233,7 +194,7 @@ export default function PCBDesignPage() {
               over three decades, and governed by defined processes and
               checklists at every design stage.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {[
@@ -287,13 +248,9 @@ export default function PCBDesignPage() {
                 icon: <CheckCircle2 className="w-6 h-6" />,
               },
             ].map((spec, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={itemVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-gray-100 hover:shadow-2xl hover:border-red-100 transition-all duration-500 group relative overflow-hidden"
+                className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl hover:border-red-100 transition-all duration-500 group relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full -mr-16 -mt-16 group-hover:bg-red-600 transition-colors duration-500" />
 
@@ -304,7 +261,7 @@ export default function PCBDesignPage() {
                   <h3 className="text-2xl text-gray-900 mb-4 group-hover:text-red-700 transition-colors">
                     {spec.title}
                   </h3>
-                  <p className="text-gray-600 mb-8 leading-relaxed text-justify text-base italic group-hover:text-gray-900 transition-colors">
+                  <p className="text-gray-600 mb-8 leading-relaxed text-justify text-base group-hover:text-gray-900 transition-colors">
                     {spec.description}
                   </p>
                   <Link
@@ -314,7 +271,7 @@ export default function PCBDesignPage() {
                     Learn More <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

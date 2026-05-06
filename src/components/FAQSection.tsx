@@ -14,8 +14,8 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
     <section className="bg-[#fcfcfc] dark:bg-zinc-950 py-12 border-t border-zinc-200 dark:border-zinc-800">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-8">
-          <h2 className="text-3xl font-light text-zinc-400 dark:text-zinc-500 md:text-5xl tracking-tighter">
-            Frequently asked questions.
+          <h2 className="tracking-wide text-3xl font-light text-gray-900 md:text-5xl tracking-tighter">
+            Frequently Asked Questions
           </h2>
         </div>
 
@@ -44,7 +44,7 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
                   </svg>
                 </div>
               </summary>
-              <div className="mt-2 max-w-4xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-300 font-light">
+              <div className="mt-2 max-w-4xl text-sm leading-relaxed text-gray-900 dark:text-zinc-300 font-light">
                 {faq.a}
               </div>
             </details>

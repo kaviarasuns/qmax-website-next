@@ -132,22 +132,6 @@ export default function FullPageScroll({ children }: FullPageScrollProps) {
           </div>
         ))}
       </div>
-
-      {/* Section indicator dots */}
-      <div className="fixed right-4 top-1/2 z-50 flex -translate-y-1/2 flex-col gap-3">
-        {sections.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSection(index)}
-            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
-              index === currentSection
-                ? "scale-125 bg-red-500"
-                : "bg-gray-400/50 hover:bg-gray-400"
-            }`}
-            aria-label={`Go to section ${index + 1}`}
-          />
-        ))}
-      </div>
     </div>
   );
 }
