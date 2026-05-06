@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import React from "react";
-import { Breadcrumbs } from "@/components/breadcrumbs";
 import {
   Cpu,
   Radio,
@@ -61,12 +60,6 @@ export default function PCBDesignPage() {
   //     },
   //   },
   // };
-
-  const breadcrumbItems = [
-    { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "PCB Design" },
-  ];
 
   return (
     <main className="min-h-screen bg-white pt-16">
