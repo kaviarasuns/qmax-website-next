@@ -557,7 +557,7 @@ function IndustriesSection() {
       <div className="blob blob-2" />
       <div className="industries-inner">
         <div className="industries-head">
-          <h2 className="text-4xl md:text-5xl mb-6 font-light tracking-wide">Industries We <span className="text-brand-500">Serve</span></h2>
+          <h2 className="text-4xl md:text-5xl mb-14 font-light tracking-wide">Industries We <span className="text-brand-500">Serve</span></h2>
         
           {/* <p>Multi-domain hardware development with design rigor and documentation depth calibrated to each industry&apos;s regulatory and reliability bar.</p> */}
         </div>
@@ -642,24 +642,27 @@ function IndustriesSection() {
 
 function WhySection() {
   return (
-    <section className="why" id="why-section">
-      <div className="why-inner">
-        <div className="why-head">
-          <h2 className="text-4xl md:text-5xl font-light tracking-wide text-center">Why Choose Qmax for <span className="text-brand-500">Hardware Design?</span></h2>
+    <section className="bg-white px-16 py-24 max-[900px]:px-6 max-[900px]:py-16" id="why-section">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="mb-14">
+          <h2 className="text-4xl md:text-5xl font-light tracking-wide text-center text-black">Why Choose Qmax for <span className="text-brand-500">Hardware Design?</span></h2>
         </div>
-        <div className="why-grid">
+        <div className="grid grid-cols-2 items-stretch gap-6 max-[900px]:grid-cols-1 max-[900px]:gap-4">
           {WHY_CARDS.map((card) => (
-            <article key={card.title} className="why-card">
-              <div className="why-card-head">
-                <div className="why-icon">{card.icon}</div>
-                <h3 className="text-lg md:text-xl font-medium tracking-wide">{card.title}</h3>
+            <article
+              key={card.title}
+              className="flex flex-col gap-3.5 rounded-xl bg-white px-7 pb-6 pt-7 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center text-red-500 [&>svg]:h-full [&>svg]:w-full">{card.icon}</div>
+                <h3 className="mt-2 text-lg md:text-xl font-medium tracking-wide text-slate-900">{card.title}</h3>
               </div>
-              <p>{card.desc}</p>
+              <p className="pl-14 text-gray-600 max-[900px]:pl-0">{card.desc}</p>
             </article>
           ))}
           {/* Founder CTA tile — baked PNG */}
           <a
-            className="why-cta-card"
+            className="relative block h-full max-h-[220px] cursor-pointer overflow-hidden rounded-xl bg-[#0a0a0a] no-underline shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
             href="/contact"
             aria-label="Questions? Let's Talk! Contact Saravanabhavan, Founder & CEO"
           >
@@ -670,13 +673,13 @@ function WhySection() {
               height={340}
               style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
             />
-            <span className="why-cta-overlay why-cta-top-left">
+            <span className="pointer-events-none absolute left-[22px] top-[18px] z-[2] text-3xl font-bold leading-[1.45] tracking-[0.2px] text-white [text-shadow:_0_1px_4px_rgba(0,0,0,0.45)]">
               Questions?
               <br />
               Let&apos;s Talk!
             </span>
-            <span className="why-cta-overlay why-cta-bottom-left">Contact Us</span>
-            <span className="why-cta-overlay why-cta-bottom-right">
+            <span className="pointer-events-none absolute bottom-[18px] left-[22px] z-[2] rounded-md bg-white px-[18px] py-2 text-lg font-bold tracking-[0.2px] text-[#0a0a0a] shadow-[0_2px_8px_rgba(0,0,0,0.18)] [text-shadow:none]">Contact Us</span>
+            <span className="pointer-events-none absolute bottom-[18px] right-[22px] z-[2] text-right text-[17px] font-semibold leading-[1.3] tracking-[0.2px] text-white [text-shadow:_0_1px_4px_rgba(0,0,0,0.45)]">
               Saravanabhavan
               <br />
               Founder &amp; CEO
@@ -694,7 +697,7 @@ function PartnershipsSection() {
   return (
     <section className="relative overflow-hidden bg-white px-8 pb-[72px] pt-16 text-[#1C2A3A] max-[900px]:px-6 max-[900px]:py-12" id="partnerships-section">
       <div className="mx-auto max-w-[1100px]">
-        <div className="mb-9 flex flex-col items-center text-center">
+        <div className="mb-14 flex flex-col items-center text-center">
           <h2 className="mb-6 text-4xl md:text-5xl font-light tracking-wide">Partnerships</h2>
           <p className="mx-auto max-w-[820px] text-[#5A6778]">
             With a strong focus on new product development, Qmax maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. Our teams gain early access to upcoming silicon, roadmap visibility, and training on the latest technologies — with reference modules and evaluation kits ready to kick-start your product development.

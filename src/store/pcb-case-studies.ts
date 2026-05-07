@@ -393,9 +393,9 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     title: "Stator Coil",
     category: "PCB Design",
     images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/stator_coil/STATOR-COIL-LAYER12.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/stator_coil/STATOR-COIL-LAYER1.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/stator_coil/STATOR-COIL-LAYER2.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/stator_coil/STATOR-COIL-LAYER12.svg",
     ],
     rotatedImages: { 0: 90, 1: 90, 2: 90, 3: 90 },
     features: [
