@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import "./hardware-design.css";
 import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { hardwareDevelopmentOtherCapabilities, hwDevelopmentOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
+import { hardwareDevelopmentOtherCapabilities,  } from "@/data/other-capabilities";
 
 /* ============================================================
    DATA
