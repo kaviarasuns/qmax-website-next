@@ -13,6 +13,32 @@ export interface Capability {
   image: string;
 }
 
+export const hardwareDevelopmentOtherCapabilities: Capability[] = [
+  {
+    title: "PCB Design Services",
+    summary:
+    "PCB design services for digital, analog, RF, and power electronics systems.",
+    link: "/pcb-design",
+    image:
+      "https://framerusercontent.com/images/xZdrZACUdNYgULp5M3m2BcUhBI.png",
+  },
+  {
+    title: "Firmware Development Services",
+    summary:
+      "Firmware development, microcontroller selection, and real-time systems optimization for reliable performance.",
+    link: "/pcb-design",
+    image:
+      "https://framerusercontent.com/images/URP1Krg4uds9qGHII952XUGsc4.png",
+  },
+  {
+    title: "Apps and Cloud",
+    summary:
+      "Build full-stack software that connects devices to digital experiences.",
+    link: "/apps-and-cloud",
+    image: "https://framerusercontent.com/images/8tZqdkd46foyx5TeIzPw8YhbA.png",
+  },
+];
+
 export const otherCapabilities: Capability[] = [
   {
     title: "Hardware Development Services",

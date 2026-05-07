@@ -53,13 +53,13 @@ export function OtherCapabilitiesScrollSection({
     <section className="bg-white py-20 lg:py-28">
       <div className="w-full px-8 md:px-12">
         <div className="mx-auto w-fit">
-          <div className="mb-10 flex items-center justify-between gap-6">
-            <h2 className="text-3xl font-light tracking-wide text-foreground md:text-4xl lg:text-5xl">
+          <div className="mb-10 relative flex items-center justify-center">
+            <h2 className="text-3xl font-light tracking-wide text-foreground text-center md:text-4xl lg:text-5xl">
               Our Other Engineering{" "}
               <span className="text-red-500">Capabilities</span>
             </h2>
 
-            <div className="flex gap-2">
+            <div className="flex gap-2 absolute right-0">
               <Button
                 variant="outline"
                 size="icon"
@@ -124,7 +124,7 @@ export function OtherCapabilitiesScrollSection({
                           </h3>
 
                           {summary && (
-                            <p className="mt-2 text-[13px] text-zinc-600 line-clamp-2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 tracking-wide">
+                            <p className="mt-2 text-[13px] text-zinc-600 line-clamp-2 tracking-wide">
                               {summary}
                             </p>
                           )}

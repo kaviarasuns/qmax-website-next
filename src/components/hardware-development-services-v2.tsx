@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import "./hardware-design.css";
 import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { hwDevelopmentOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
+import { hardwareDevelopmentOtherCapabilities, hwDevelopmentOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 
 /* ============================================================
    DATA
@@ -237,9 +237,9 @@ const INDUSTRIES = {
       ),
     },
     {
-      title: "Defense Electronics",
-      desc: "Secure mission computers, tactical radio interfaces, and ground-system controllers built to ITAR/JSS workflows with TEMPEST-aware layout and tamper-evident assembly.",
-      badge: "MIL-STD-461 · ITAR-aware",
+      title: "Communication Systems",
+      desc: "RF transceivers, 5G baseband boards, and optical network nodes engineered for O-RAN and IEEE standards, with rigorous signal integrity (SI/PI) and strict impedance control.",
+      badge: "FCC / CE · IEEE Compliant ➔",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7z" />
@@ -265,7 +265,7 @@ const INDUSTRY_SLIDES = [
   { src: "/hardware-design/ind-medical.jpg", alt: "Medical & Healthcare" },
   { src: "/hardware-design/aerospace.png", alt: "Aerospace Systems" },
   { src: "/hardware-design/ind-energy.png", alt: "Energy, EV & Power" },
-  { src: "/hardware-design/ind-defense.png", alt: "Defense Electronics" },
+  { src: "/hardware-design/communications.png", alt: "Defense Electronics" },
   { src: "/hardware-design/industrial_automation.png", alt: "Industrial Automation" },
 ];
 
@@ -334,7 +334,7 @@ const WHY_CARDS = [
 
 const TESTIMONIALS = [
   {
-    tab: "Automotive ECU",
+    tab: "Temperature Control System",
     logo: (
       <svg viewBox="0 0 180 36" xmlns="http://www.w3.org/2000/svg" aria-label="Velocon Mobility" style={{ height: 36, width: "auto" }}>
         <circle cx="18" cy="18" r="12" fill="none" stroke="#E63329" strokeWidth="2.5" />
@@ -349,12 +349,12 @@ const TESTIMONIALS = [
     avatarColor: "#0B5FA5",
     avatarInitials: "JR",
     caseTag: "AUTOMOTIVE",
-    caseTitle: "ADAS Sensor Fusion ECU",
-    caseDesc: "Full-cycle development of a 6-layer ECU integrating radar, camera, and LiDAR inputs under ISO 26262 ASIL-B constraints.",
+    caseTitle: "Industrial Temperature Control System",
+    caseDesc: "Multi-zone PID temperature control built on SAMA5D3, with POE+ single-cable deployment for cold-chain and manufacturing environments.",
     caseImage: "/case-studies/BLUECOLD/1.png",
   },
   {
-    tab: "Smart Patient Monitor",
+    tab: "Multi IO card",
     logo: (
       <svg viewBox="0 0 180 36" xmlns="http://www.w3.org/2000/svg" aria-label="MedCore" style={{ height: 36, width: "auto" }}>
         <rect x="2" y="8" width="20" height="20" rx="4" fill="#158B4E" />
@@ -368,12 +368,12 @@ const TESTIMONIALS = [
     avatarColor: "#158B4E",
     avatarInitials: "PS",
     caseTag: "MEDICAL",
-    caseTitle: "Portable Patient Monitor",
-    caseDesc: "IEC 60601-1 compliant multi-parameter monitor with cloud-connected ECG, SpO2, and NIBP channels for point-of-care environments.",
-    caseImage: "/hardware-design/ind-medical.jpg",
+    caseTitle: "Multi IO Card for ATE",
+    caseDesc: "Spartan-6 FPGA-based ATE IO card with high-speed ADC/DAC channels, fiber optic connectivity, and 12× faster sampling than conventional solutions.",
+    caseImage: "/case-studies/CHARA/1.png",
   },
   {
-    tab: "EV Battery System",
+    tab: "Smart Monitoring System",
     logo: (
       <svg viewBox="0 0 180 36" xmlns="http://www.w3.org/2000/svg" aria-label="VoltArc Energy" style={{ height: 36, width: "auto" }}>
         <polygon points="14,6 6,20 13,20 11,30 22,14 15,14" fill="#E63329" />
@@ -387,12 +387,12 @@ const TESTIMONIALS = [
     avatarColor: "#E63329",
     avatarInitials: "DK",
     caseTag: "ENERGY / EV",
-    caseTitle: "96-Cell BMS for Commercial EV",
-    caseDesc: "High-voltage battery management system with isolated cell monitoring, active balancing, and CAN/LIN communication for a 400 V commercial vehicle platform.",
-    caseImage: "/hardware-design/ind-energy.png",
+    caseTitle: "Smart Monitoring System",
+    caseDesc: "ARM Cortex-M7 system with FreeRTOS tracking temperature, humidity, and air quality across zones via L2 managed switch, achieving 40% better power efficiency.",
+    caseImage: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/climate_control/1.png",
   },
   {
-    tab: "Avionics Module",
+    tab: "Microscopic Camera Control",
     logo: (
       <svg viewBox="0 0 180 36" xmlns="http://www.w3.org/2000/svg" aria-label="AeroTech" style={{ height: 36, width: "auto" }}>
         <path d="M18 4 L28 16 L18 28 L8 16 Z" fill="none" stroke="#0B5FA5" strokeWidth="2" />
@@ -406,9 +406,9 @@ const TESTIMONIALS = [
     avatarColor: "#374151",
     avatarInitials: "MS",
     caseTag: "AEROSPACE",
-    caseTitle: "Ruggedized Avionics Interface Module",
-    caseDesc: "MIL-STD-810 qualified SBC with MIL-1553B and ARINC 429 interfaces, conformal coated for -55°C to +125°C operation in airborne systems.",
-    caseImage: "/hardware-design/ind-aerospace.jpeg",
+    caseTitle: "Microscopic Camera Control",
+    caseDesc: "Stepper motor-driven focus and zoom system with high-resolution CMOS imaging, USB 3.0 and Ethernet streaming, and OLED status display for lab and inspection use.",
+    caseImage: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/microscopic_camera/1.png",
   },
   {
     tab: "Industrial IoT Gateway",
@@ -426,9 +426,9 @@ const TESTIMONIALS = [
     avatarColor: "#374151",
     avatarInitials: "TY",
     caseTag: "INDUSTRIAL",
-    caseTitle: "Multi-Protocol IIoT Edge Gateway",
-    caseDesc: "Industrial gateway supporting PROFIBUS, Modbus RTU/TCP, and OPC-UA, with DIN-rail mount enclosure rated for IEC 61000-4 EMC in Class A environments.",
-    caseImage: "/hardware-design/ind-industrial.jpg",
+    caseTitle: "Industrial IoT Gateway with POE",
+    caseDesc: "POE+-powered multi-radio gateway aggregating LoRa, BLE, and CAN bus data to cloud, with 15 km LoRa range and 99.9% uplink accuracy for factory deployments.",
+    caseImage: "/case-studies/OTT/4.png",
   },
 ];
 
@@ -469,7 +469,7 @@ function CapabilitiesSection() {
     <section className="bg-white px-16 py-24 max-[900px]:px-6 max-[900px]:py-16">
       <div className="mx-auto max-w-[1200px]">
         <div className="m-0 p-0">
-          <h2 className="text-4xl md:text-5xl font-light tracking-wide">Core Engineering <span className="text-brand-500">Capabilities</span></h2>
+          <h2 className="text-4xl md:text-5xl font-light tracking-wide text-center">Core Engineering <span className="text-brand-500">Capabilities</span></h2>
           {/* <p>We deliver high-performance designs validated by decades of experience. Our HW engineering stack covers:</p> */}
         </div>
         {/* Tabs */}
@@ -480,7 +480,7 @@ function CapabilitiesSection() {
               type="button"
               role="tab"
               aria-selected={activeIdx === i}
-              className={`relative flex cursor-pointer items-center justify-center gap-3 bg-transparent px-3 py-[18px] text-left text-black transition-colors duration-200 hover:text-red-500 max-[900px]:px-2 max-[900px]:py-3.5 ${
+              className={`text-m font-bold relative flex cursor-pointer items-center justify-center gap-3 bg-transparent px-3 py-[18px] text-left text-black transition-colors duration-200 hover:text-red-500 max-[900px]:px-2 max-[900px]:py-3.5 ${
                 activeIdx === i ? "text-red-500 after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:bg-red-500" : ""
               }`}
               onClick={() => setActiveIdx(i)}
@@ -557,7 +557,7 @@ function IndustriesSection() {
       <div className="blob blob-2" />
       <div className="industries-inner">
         <div className="industries-head">
-          <h2 className="text-4xl md:text-5xl font-light tracking-wide">Industries We <span className="text-brand-500">Serve</span></h2>
+          <h2 className="text-4xl md:text-5xl mb-6 font-light tracking-wide">Industries We <span className="text-brand-500">Serve</span></h2>
         
           {/* <p>Multi-domain hardware development with design rigor and documentation depth calibrated to each industry&apos;s regulatory and reliability bar.</p> */}
         </div>
@@ -645,7 +645,7 @@ function WhySection() {
     <section className="why" id="why-section">
       <div className="why-inner">
         <div className="why-head">
-          <h2 className="text-4xl md:text-5xl font-light tracking-wide">Why Choose Qmax for <span className="text-brand-500">Hardware Design?</span></h2>
+          <h2 className="text-4xl md:text-5xl font-light tracking-wide text-center">Why Choose Qmax for <span className="text-brand-500">Hardware Design?</span></h2>
         </div>
         <div className="why-grid">
           {WHY_CARDS.map((card) => (
@@ -688,26 +688,28 @@ function WhySection() {
   );
 }
 
+const TILE_CLASS = "flex aspect-[16/11] items-center justify-content-center rounded-md border border-gray-200 bg-white px-[26px] py-[22px] transition-all duration-300 [&>svg]:block [&>svg]:h-auto [&>svg]:max-h-full [&>svg]:w-auto [&>svg]:max-w-full [&>svg]:object-contain hover:-translate-y-[3px] hover:border-[rgba(230,51,41,0.35)] hover:shadow-[0_8px_20px_rgba(16,24,40,0.08)]";
+
 function PartnershipsSection() {
   return (
-    <section className="partnerships" id="partnerships-section">
-      <div className="part-inner">
-        <div className="part-head">
-          <h2 className="text-4xl md:text-5xl font-light tracking-wide">Partnerships</h2>
-          <p>
-            With a strong focus on new product development, <strong>Qmax</strong> maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. Our teams gain early access to upcoming silicon, roadmap visibility, and training on the latest technologies — with reference modules and evaluation kits ready to kick-start your product development.
+    <section className="relative overflow-hidden bg-white px-8 pb-[72px] pt-16 text-[#1C2A3A] max-[900px]:px-6 max-[900px]:py-12" id="partnerships-section">
+      <div className="mx-auto max-w-[1100px]">
+        <div className="mb-9 flex flex-col items-center text-center">
+          <h2 className="mb-6 text-4xl md:text-5xl font-light tracking-wide">Partnerships</h2>
+          <p className="mx-auto max-w-[820px] text-[#5A6778]">
+            With a strong focus on new product development, <strong className="text-[#1C2A3A]">Qmax</strong> maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. Our teams gain early access to upcoming silicon, roadmap visibility, and training on the latest technologies — with reference modules and evaluation kits ready to kick-start your product development.
           </p>
         </div>
-        <div className="part-grid">
+        <div className="grid grid-cols-5 gap-4 max-[900px]:grid-cols-2 max-[900px]:gap-3">
           {/* Qualcomm */}
-          <div className="part-tile">
+          <div className={TILE_CLASS} style={{ justifyContent: "center" }}>
             <svg viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" aria-label="Qualcomm">
               <text x="110" y="40" textAnchor="middle" fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif" fontSize="26" fontWeight="700" fill="#3253DC" letterSpacing="-0.5">Qualcomm</text>
               <path d="M148 44 q4 5 9 0" stroke="#3253DC" strokeWidth="2.5" fill="none" strokeLinecap="round" />
             </svg>
           </div>
           {/* NXP */}
-          <div className="part-tile">
+          <div className={TILE_CLASS} style={{ justifyContent: "center" }}>
             <svg viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" aria-label="NXP">
               <g transform="translate(56 12)">
                 <rect x="0" y="0" width="36" height="40" fill="#E8B22B" />
@@ -720,7 +722,7 @@ function PartnershipsSection() {
             </svg>
           </div>
           {/* NVIDIA */}
-          <div className="part-tile">
+          <div className={TILE_CLASS} style={{ justifyContent: "center" }}>
             <svg viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" aria-label="NVIDIA">
               <g transform="translate(20 18)">
                 <path d="M14 0 C6 0 0 6 0 14 C0 22 6 28 14 28 C20 28 24 25 26 21 C22 23 18 23 15 21 C11 19 9 16 9 13 C9 9 13 6 17 7 C20 7.5 23 9 26 12 C24 5 19 0 14 0 Z" fill="#76B900" />
@@ -729,7 +731,7 @@ function PartnershipsSection() {
             </svg>
           </div>
           {/* Analog Devices */}
-          <div className="part-tile">
+          <div className={TILE_CLASS} style={{ justifyContent: "center" }}>
             <svg viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" aria-label="Analog Devices">
               <polygon points="22,18 22,46 50,32" fill="#1F1F1F" />
               <text x="58" y="30" fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif" fontSize="14" fontWeight="800" fill="#1F1F1F" letterSpacing="1">ANALOG</text>
@@ -737,21 +739,21 @@ function PartnershipsSection() {
             </svg>
           </div>
           {/* onsemi */}
-          <div className="part-tile">
+          <div className={TILE_CLASS} style={{ justifyContent: "center" }}>
             <svg viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" aria-label="onsemi">
               <text x="100" y="42" textAnchor="middle" fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif" fontSize="32" fontWeight="400" fill="#3F4A52" letterSpacing="-1">onsemi</text>
               <line x1="156" y1="44" x2="166" y2="22" stroke="#E63329" strokeWidth="2.5" strokeLinecap="round" />
             </svg>
           </div>
           {/* Infineon */}
-          <div className="part-tile">
+          <div className={TILE_CLASS} style={{ justifyContent: "center" }}>
             <svg viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" aria-label="Infineon">
               <text x="110" y="36" textAnchor="middle" fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif" fontSize="26" fontWeight="500" fill="#0B3D6F" letterSpacing="-0.3">Infineon</text>
               <path d="M50 50 q60 -22 120 0" stroke="#E63329" strokeWidth="3" fill="none" strokeLinecap="round" />
             </svg>
           </div>
           {/* Ambarella */}
-          <div className="part-tile">
+          <div className={TILE_CLASS} style={{ justifyContent: "center" }}>
             <svg viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" aria-label="Ambarella">
               <g transform="translate(76 4)">
                 <polygon points="0,24 10,10 20,24" fill="#7BB661" />
@@ -763,7 +765,7 @@ function PartnershipsSection() {
             </svg>
           </div>
           {/* Texas Instruments */}
-          <div className="part-tile">
+          <div className={TILE_CLASS} style={{ justifyContent: "center" }}>
             <svg viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" aria-label="Texas Instruments">
               <g transform="translate(20 16)">
                 <rect x="0" y="0" width="36" height="36" rx="3" fill="#CC0000" />
@@ -774,7 +776,7 @@ function PartnershipsSection() {
             </svg>
           </div>
           {/* Microchip */}
-          <div className="part-tile">
+          <div className={TILE_CLASS} style={{ justifyContent: "center" }}>
             <svg viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" aria-label="Microchip">
               <g transform="translate(28 14)">
                 <path d="M18 0 L0 18 L6 18 L6 36 L30 36 L30 18 L36 18 Z" fill="#E63329" />
@@ -784,7 +786,7 @@ function PartnershipsSection() {
             </svg>
           </div>
           {/* Wolfspeed */}
-          <div className="part-tile">
+          <div className={TILE_CLASS} style={{ justifyContent: "center" }}>
             <svg viewBox="0 0 220 64" xmlns="http://www.w3.org/2000/svg" aria-label="Wolfspeed">
               <path d="M28 26 q12 -14 26 -6 q8 5 16 -2 q10 -8 22 -2 q12 6 24 -4" stroke="#5C2D91" strokeWidth="3.5" fill="none" strokeLinecap="round" />
               <circle cx="148" cy="14" r="3" fill="#5C2D91" />
@@ -815,7 +817,7 @@ function WorkflowSection() {
 
   return (
     <section className="workflow">
-      <h2 className="workflow-title text-4xl md:text-5xl font-light tracking-wide">Our Custom Hardware <span className="text-brand-500"> Design Approach</span></h2>
+      <h2 className="workflow-title text-4xl md:text-5xl font-light tracking-wide text-center">Our Custom Hardware <span className="text-brand-500"> Design Approach</span></h2>
       <div className="timeline-wrap">
         <div className="timeline-line" />
         {WORKFLOW_STEPS.map((step, i) => {
@@ -843,48 +845,65 @@ function WorkflowSection() {
 function TestimonialsSection() {
   const [activeIdx, setActiveIdx] = useState(0);
   return (
-    <section className="testi" id="testi-section">
-      <div className="testi-inner">
-        <div className="testi-head">
-          <h2 className="text-4xl md:text-5xl font-light tracking-wide">Customer Success <span className="text-brand-500">Stories</span></h2>
+    <section className="bg-white overflow-hidden px-16 py-12 max-[900px]:px-6 max-[900px]:py-16" id="testi-section">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="mb-5 text-center">
+          <h2 className="text-4xl md:text-5xl font-light tracking-wide mb-8">Customer Success <span className="text-brand-500">Stories</span></h2>
         </div>
-        <div className="testi-tabs">
+        <div className="mb-5 flex flex-wrap justify-center border-b-2 border-gray-200 max-[900px]:flex-nowrap max-[900px]:justify-start max-[900px]:overflow-x-auto">
           {TESTIMONIALS.map((t, i) => (
             <button
               key={t.tab}
-              className={`testi-tab${activeIdx === i ? " active" : ""}`}
+              className={`relative -mb-0.5 cursor-pointer border-none bg-transparent px-5 py-2 whitespace-nowrap transition-colors max-[900px]:px-[18px] max-[900px]:py-2.5 ${
+                activeIdx === i
+                  ? "text-red-500 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[3px] after:rounded-t-sm after:bg-[#E63329] after:content-['']"
+                  : "text-gray-500 hover:text-[#1C2A3A]"
+              }`}
               onClick={() => setActiveIdx(i)}
             >
               {t.tab}
             </button>
           ))}
         </div>
-        <div className="testi-slider">
+        <div className="relative overflow-hidden py-2">
           {TESTIMONIALS.map((t, i) => (
-            <div key={t.tab} className={`testi-slide${activeIdx === i ? " active" : ""}`}>
-              <div className="testi-left">
-                <div className="testi-logo">{t.logo}</div>
-                <p className="testi-quote-text">&ldquo;{t.quote}&rdquo;</p>
-                <div className="testi-author">
-                  <div className="testi-avatar" style={{ background: t.avatarColor }}>
+            <div
+              key={t.tab}
+              className={`${
+                activeIdx === i ? "grid animate-[tFadeIn_0.4s_ease]" : "hidden"
+              } grid-cols-2 items-stretch gap-8 max-[900px]:grid-cols-1`}
+            >
+              {/* Left: quote */}
+              <div className="flex flex-col justify-center gap-4">
+                {/* <div className="flex max-h-10 items-center">{t.logo}</div> */}
+                <p className="m-0 text-gray-800 !font-medium !text-lg md:text-xl !font-medium tracking-wide">&ldquo;{t.quote}&rdquo;</p>
+                <div className="flex items-center gap-3 border-t border-gray-200 pt-2">
+                  <div
+                    className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-white"
+                    style={{ background: t.avatarColor }}
+                  >
                     {t.avatarInitials}
                   </div>
                   <div>
-                    <p className="testi-author-name">{t.authorName}</p>
-                    <p className="testi-author-role">{t.authorRole}</p>
+                    <p className="m-0 text-[#1C2A3A]">{t.authorName}</p>
+                    <p className="m-0 mt-0.5 text-sm text-gray-500">{t.authorRole}</p>
                   </div>
                 </div>
               </div>
-              <div className="testi-right">
-                <span className="testi-case-tag">{t.caseTag}</span>
+              {/* Right: case card */}
+              <div className="flex h-full flex-col gap-2.5 rounded-lg bg-white p-5 shadow-[0_3px_12px_0_rgba(0,92,136,0.15)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_20px_0_rgba(0,92,136,0.20)]">
+                {/* <span className="w-fit text-sm font-medium uppercase text-red-500">{t.caseTag}</span> */}
                 <h3 className="text-xl md:text-2xl font-medium tracking-wide">{t.caseTitle}</h3>
-                <div style={{ position: "relative", width: "100%", aspectRatio: "21/9", borderRadius: 8, overflow: "hidden", marginTop: 4 }}>
-                  <Image src={t.caseImage} alt={t.caseTitle} fill style={{ objectFit: "cover" }} sizes="(max-width: 900px) 100vw, 50vw" />
+                <div style={{ position: "relative", width: "100%", aspectRatio: "21/9", borderRadius: 8, overflow: "hidden", marginTop: 4, background: "#f3f4f6" }}>
+                  <Image src={t.caseImage} alt={t.caseTitle} fill style={{ objectFit: "contain" }} sizes="(max-width: 900px) 100vw, 50vw" />
                 </div>
-                <p className="testi-case-desc">{t.caseDesc}</p>
-                <a className="testi-case-btn" href="/contact">
+                <p className="m-0 text-gray-600">{t.caseDesc}</p>
+                <a
+                  className="mt-auto inline-flex w-fit items-center gap-1.5 rounded-md bg-[#E63329] px-3 py-1.5 text-sm text-white no-underline transition-colors hover:bg-[#C72A21] hover:text-white hover:no-underline"
+                  href="/contact"
+                >
                   View Case Study
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: 14, height: 14 }}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: 12, height: 12 }}>
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
                 </a>
@@ -892,26 +911,6 @@ function TestimonialsSection() {
             </div>
           ))}
         </div>
-        {/* <div className="testi-arrows">
-          <button
-            className="testi-arrow"
-            onClick={() => setActiveIdx((p) => (p - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
-            aria-label="Previous"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M19 12H5M12 5l-7 7 7 7" />
-            </svg>
-          </button>
-          <button
-            className="testi-arrow"
-            onClick={() => setActiveIdx((p) => (p + 1) % TESTIMONIALS.length)}
-            aria-label="Next"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M13 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div> */}
       </div>
     </section>
   );
@@ -930,7 +929,7 @@ function FeaturedArticlesSection() {
               </svg>
               Featured Articles
             </div> */}
-            <h2 className="text-4xl md:text-5xl font-light tracking-wide">Insights From Our <span className="text-brand-500">Engineers</span></h2>
+            <h2 className="text-4xl md:text-5xl font-light tracking-wide text-center">Insights From Our <span className="text-brand-500">Engineers</span></h2>
             {/* <div className="feat-divider" /> */}
           </div>
         </div>
@@ -1063,7 +1062,7 @@ function CTABannerSection() {
         <span className="cta-square cta-square-br" aria-hidden="true" />
         <div className="cta-banner-panel">
           <div className="cta-banner-copy">
-            <h2 className="text-4xl md:text-5xl font-light tracking-wide">Ready to bring your hardware design project to <span className="text-brand-500">life?</span></h2>
+            <h2 className="text-3xl md:text-4xl font-light tracking-wide">Ready to bring your hardware design project to life?</h2>
             <p>Contact us today to get started.</p>
           </div>
           <a href="/contact" className="cta-banner-btn">
@@ -1080,21 +1079,21 @@ function CTABannerSection() {
 
 function FAQSection() {
   return (
-    <section className="faq">
-      <div className="faq-inner">
-        <div className="faq-head">
-          <h2 className="text-4xl md:text-5xl font-light">Frequently Asked <span className="text-brand-500">Questions</span></h2>
+    <section className="bg-white py-24 px-16 max-[900px]:px-6 max-[900px]:py-16">
+      <div className="mx-auto max-w-[960px]">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-light text-center">Frequently Asked <span className="text-brand-500">Questions</span></h2>
         </div>
-        <div className="faq-list">
+        <div className="flex flex-col">
           {FAQ_ITEMS.map((item) => (
-            <details key={item.q} className="faq-item">
-              <summary>
+            <details key={item.q} className="border-b border-gray-200 py-6 group">
+              <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer flex justify-between items-center gap-4 text-zinc-900 text-lg md:text-2xl font-light leading-relaxed tracking-tight hover:text-gray-700 transition-colors duration-200">
                 {item.q}
-                <svg className="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="flex-shrink-0 w-6 h-6 text-red-600 transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </summary>
-              <div className="answer">{item.a}</div>
+              <div className="mt-4 text-base font-light leading-relaxed">{item.a}</div>
             </details>
           ))}
         </div>
@@ -1167,14 +1166,18 @@ export default function HardwareDevelopmentServicesComponentV2() {
   return (
     <div className="hd-root">
       {/* HERO */}
-      <section className="hero" id="hero">
-        <div className="hero-inner">
-          <div className="hero-copy">
-            <h1 className="text-4xl md:text-5xl font-medium tracking-wide">Hardware Development Services: The Complete Hardware Product Lifecycle</h1>
-            <p className="hero-desc text-xl">
+      <section
+        className="relative w-full min-h-screen bg-cover bg-center flex items-center overflow-hidden after:absolute after:inset-0 after:bg-black/45 after:pointer-events-none after:content-['']"
+        id="hero"
+        style={{ backgroundImage: "linear-gradient(135deg, rgba(11,95,165,0.45), rgba(14,20,27,0.55)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=2000&q=80&auto=format&fit=crop')" }}
+      >
+        <div className="relative z-[2] w-full py-20 px-16 max-w-[1400px] mx-auto max-[900px]:py-16 max-[900px]:px-6">
+          <div className="max-w-[820px]">
+            <h1 className="text-white mb-6 font-bold leading-[1.1] tracking-[-0.01em] text-balance text-[clamp(36px,5vw,60px)]">Hardware Development Services: The Complete Hardware Product Lifecycle</h1>
+            <p className="text-white/[0.92] text-xl leading-[1.6] font-normal mb-10 max-w-[720px]">
               We provide full hardware lifecycle ownership, taking your product from early requirement analysis to production handover. Our lifecycle-driven approach minimizes risk, shortens development cycles, and ensures compliance readiness from day one.
             </p>
-            <a className="btn-red" href="#workflow">EXPLORE OUR APPROACH</a>
+            <a className="bg-[#E63329] text-white font-semibold text-base tracking-[0.04em] py-[14px] px-8 rounded-md cursor-pointer transition-colors duration-150 no-underline inline-block hover:bg-[#C72A21] hover:text-white hover:no-underline" href="#workflow">EXPLORE OUR APPROACH</a>
           </div>
         </div>
       </section>
@@ -1199,17 +1202,17 @@ export default function HardwareDevelopmentServicesComponentV2() {
       {/* CUSTOMER SUCCESS STORIES */}
       <TestimonialsSection />
 
-      {/* FEATURED ARTICLES */}
-      <FeaturedArticlesSection />
-
       {/* CTA BANNER */}
       <CTABannerSection />
+
+      {/* FEATURED ARTICLES */}
+      <FeaturedArticlesSection />
 
       {/* FAQ */}
       <FAQSection />
 
       {/* OTHER CAPABILITIES */}
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
+      <OtherCapabilitiesScrollSection capabilities={hardwareDevelopmentOtherCapabilities} />
     </div>
   );
 }
