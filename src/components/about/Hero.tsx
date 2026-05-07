@@ -1,0 +1,62 @@
+'use client';
+
+import { ArrowRight, Phone } from 'lucide-react';
+import Image from 'next/image';
+
+export default function Hero() {
+  return (
+    <section className="bg-white relative overflow-hidden pt-20 pb-16 md:pb-24">
+      {/* Subtle radial gradient background */}
+      <div className="absolute inset-0 bg-gradient-radial from-red-500/5 to-transparent opacity-40"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
+                About{' '}
+                <span className="text-red-500">Qmax</span>
+              </h1>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
+                Systems
+              </h2>
+            </div>
+
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
+              Engineering Innovation Since 1997 — From Concept to Manufacturing
+            </p>
+
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-lg">
+              Qmax Systems is a trusted partner for electronics engineering and R&D services, specializing in embedded systems design and PCB design services. With 25+ years of experience, we&apos;ve helped innovators and enterprises bring breakthrough products to market.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <button className="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-full transition-colors flex items-center justify-center gap-2">
+                Explore Our Services
+                <ArrowRight size={18} />
+              </button>
+              <button className="border-2 border-black text-black hover:bg-black/10 font-semibold px-8 py-3 rounded-full transition-colors flex items-center justify-center gap-2">
+                <Phone size={18} />
+                Talk to an Engineer
+              </button>
+            </div>
+          </div>
+
+          {/* Right - PCB Image */}
+          <div className="relative h-96 md:h-full min-h-96">
+            <div className="absolute inset-0 bg-gradient-to-r from-red-500/30 to-red-500/10 rounded-2xl blur-3xl"></div>
+            <Image
+              src="/about-us/pcb-circuit.jpg"
+              alt="PCB Circuit Board Design"
+              fill
+              className="object-cover rounded-2xl"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
