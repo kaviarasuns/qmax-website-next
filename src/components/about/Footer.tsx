@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 export default function Footer() {
@@ -22,9 +23,9 @@ export default function Footer() {
           <div>
             <h4 className="font-extrabold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="/" className="text-gray-400 hover:text-red-500 transition-colors">Home</a></li>
+              <li><Link href="/" className="text-gray-400 hover:text-red-500 transition-colors">Home</Link></li>
               <li><a href="/services" className="text-gray-400 hover:text-red-500 transition-colors">Services</a></li>
-              <li><a href="/case-studies" className="text-gray-400 hover:text-red-500 transition-colors">Case Studies</a></li>
+              <li><Link href="/case-studies" className="text-gray-400 hover:text-red-500 transition-colors">Case Studies</Link></li>
               <li><a href="/about" className="text-gray-400 hover:text-red-500 transition-colors">About Us</a></li>
             </ul>
           </div>

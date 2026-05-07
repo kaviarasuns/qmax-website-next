@@ -8,7 +8,7 @@ export default function FinalCTA() {
     <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center space-y-8">
-        <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl text-gray-900 leading-[1.1] tracking-tight">
+        <h1 className="mb-4 lg:mb-6 text-gray-900 leading-[1.1] tracking-tight">
               Let&apos;s Engineer{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-600">
                 Your Next Product

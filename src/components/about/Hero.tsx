@@ -14,11 +14,11 @@ export default function Hero() {
           {/* Left Content */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
+              <h1 className="leading-tight text-black">
                 About{' '}
                 <span className="text-red-500">Qmax</span>
               </h1>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-black">
+              <h2 className="leading-tight text-black">
                 Systems
               </h2>
             </div>

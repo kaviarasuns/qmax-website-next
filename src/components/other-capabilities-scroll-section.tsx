@@ -2,9 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
 interface Capability {
   title: string;
   summary: string;
@@ -19,36 +16,6 @@ interface OtherCapabilitiesScrollSectionProps {
 export function OtherCapabilitiesScrollSection({
   capabilities,
 }: OtherCapabilitiesScrollSectionProps) {
-  const capScrollRef = React.useRef<HTMLDivElement>(null);
-  const [capCanScrollLeft, setCapCanScrollLeft] = React.useState(false);
-  const [capCanScrollRight, setCapCanScrollRight] = React.useState(true);
-
-  const checkCapScroll = React.useCallback(() => {
-    if (capScrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = capScrollRef.current;
-      setCapCanScrollLeft(scrollLeft > 0);
-      setCapCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  }, []);
-
-  React.useEffect(() => {
-    checkCapScroll();
-    window.addEventListener("resize", checkCapScroll);
-    return () => {
-      window.removeEventListener("resize", checkCapScroll);
-    };
-  }, [checkCapScroll]);
-
-  const scrollCapabilities = (direction: "left" | "right") => {
-    if (capScrollRef.current) {
-      const scrollAmount = capScrollRef.current.clientWidth * 0.8;
-      capScrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <section className="bg-white py-20 lg:py-28">
       <div className="w-full px-8 md:px-12">
@@ -59,7 +26,7 @@ export function OtherCapabilitiesScrollSection({
               <span className="text-red-500">Capabilities</span>
             </h2>
 
-            <div className="flex gap-2 absolute right-0">
+            {/* <div className="flex gap-2 absolute right-0">
               <Button
                 variant="outline"
                 size="icon"
@@ -80,12 +47,10 @@ export function OtherCapabilitiesScrollSection({
               >
                 <ArrowRight className="h-6 w-6" />
               </Button>
-            </div>
+            </div> */}
           </div>
 
           <div
-            ref={capScrollRef}
-            onScroll={checkCapScroll}
             className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-8 md:gap-5 [&::-webkit-scrollbar]:hidden"
             style={
               {

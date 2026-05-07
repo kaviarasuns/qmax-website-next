@@ -5,7 +5,6 @@ import HowWeWorkInternational from "@/components/about/HowWeWorkInternational";
 import ImpactStats from "@/components/about/ImpactStats";
 import MeetTheTeam from "@/components/about/MeetTheTeam";
 import MissionVision from "@/components/about/MissionVision";
-import OurJourney from "@/components/about/OurJourney";
 import OurStory from "@/components/about/OurStory";
 import OurValues from "@/components/about/OurValues";
 import WhyQmax from "@/components/about/WhyQmax";

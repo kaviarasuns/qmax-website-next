@@ -13,7 +13,7 @@ export default function MissionVision() {
               <div className="bg-red-500/20 p-3 rounded-lg">
                 <Target className="text-red-500" size={28} />
               </div>
-              <h3 className="text-2xl md:text-3xl font-extrabold text-black">
+              <h3 className="text-black">
                 Our Mission
               </h3>
             </div>
@@ -29,7 +29,7 @@ export default function MissionVision() {
               <div className="bg-red-500/20 p-3 rounded-lg">
                 <Lightbulb className="text-red-500" size={28} />
               </div>
-              <h3 className="text-2xl md:text-3xl font-extrabold text-black">
+              <h3 className="text-black">
                 Our Vision
               </h3>
             </div>

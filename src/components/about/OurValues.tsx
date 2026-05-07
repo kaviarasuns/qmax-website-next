@@ -40,10 +40,7 @@ export default function OurValues() {
     <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-2">
-            <span className="text-black">Our</span>{' '}
-            <span className="text-red-500">Values</span>
-          </h2>
+          <h2 className="mb-2">Our <span className="text-red-500">Values</span></h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -57,7 +54,7 @@ export default function OurValues() {
                 <div className="bg-red-500/20 w-14 h-14 rounded-lg flex items-center justify-center mb-5 group-hover:bg-red-500/30 transition-colors">
                   <IconComponent className="text-red-500" size={28} />
                 </div>
-                <h3 className="text-xl md:text-2xl font-extrabold text-black mb-3">
+                <h3 className="text-2xl text-black mb-3">
                   {value.title}
                 </h3>
                 <p className="text-gray-700 leading-relaxed">

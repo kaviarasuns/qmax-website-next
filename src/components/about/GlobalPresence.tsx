@@ -26,7 +26,7 @@ export default function GlobalPresence() {
     <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-2">
+          <h2 className="mb-2">
             <span className="text-black">Global</span>{' '}
             <span className="text-red-500">Presence</span>
           </h2>
@@ -45,7 +45,7 @@ export default function GlobalPresence() {
                 <div className="bg-red-500/20 p-3 rounded-lg">
                   <MapPin className="text-red-500" size={24} />
                 </div>
-                <h3 className="text-2xl md:text-3xl font-extrabold text-black">
+                <h3 className="text-black">
                   {office.location}
                 </h3>
               </div>

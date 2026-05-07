@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QMax Systems | Customer Success Stories — NDA-Friendly</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #ffffff;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #1a1a1a;
+        }
+
+        .section-label {
+            background: #1a1a1a;
+            color: #ff3d2e;
+            padding: 14px 40px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-left: 4px solid #ff3d2e;
+        }
+
+        section.case-section {
+            padding: 70px 40px 90px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 44px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+        .section-heading span { color: #ff3d2e; }
+        .section-subheading {
+            text-align: center;
+            color: #6a6a6a;
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        .tab {
+            padding: 14px 4px;
+            font-size: 16px;
+            color: #6a6a6a;
+            cursor: pointer;
+            position: relative;
+        }
+        .tab.active {
+            color: #ff3d2e;
+        }
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #ff3d2e;
+        }
+
+        /* ============ APPROACH A: Industry + Role + NDA Badge ============ */
+        .approach-a {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        .testimonial-card-a {
+            padding: 10px 30px 0 0;
+        }
+        .industry-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff5f4;
+            color: #ff3d2e;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .industry-tag svg {
+            width: 14px;
+            height: 14px;
+            fill: #ff3d2e;
+        }
+        .quote-text {
+            font-size: 20px;
+            line-height: 1.55;
+            color: #2a2a2a;
+            font-weight: 400;
+            margin-bottom: 28px;
+            padding-left: 20px;
+            border-left: 3px solid #ff3d2e;
+        }
+        .attribution {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e5e5;
+        }
+        .industry-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .industry-avatar svg {
+            width: 28px;
+            height: 28px;
+            fill: #ff3d2e;
+        }
+        .attribution-text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            flex-grow: 1;
+        }
+        .attribution-role {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .attribution-company {
+            font-size: 14px;
+            color: #6a6a6a;
+        }
+        .nda-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f5f5f5;
+            color: #4a4a4a;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border: 1px solid #e0e0e0;
+        }
+        .nda-badge svg {
+            width: 14px;
+            height: 14px;
+            fill: #4a4a4a;
+        }
+        .project-card {
+            background: #fafafa;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 32px;
+        }
+        .project-tag {
+            color: #ff3d2e;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .project-title {
+            font-size: 26px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 22px;
+            line-height: 1.2;
+        }
+        .project-image {
+            width: 100%;
+            height: 240px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 6px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff3d2e;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .project-desc {
+            color: #4a4a4a;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .project-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #ff3d2e;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .project-btn:hover { background: #e63326; }
+
+        /* ============ APPROACH B: Outcome-First ============ */
+        .approach-b {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .outcome-card {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-top: 4px solid #ff3d2e;
+            padding: 32px 28px;
+            border-radius: 6px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .outcome-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        }
+        .outcome-metric {
+            font-size: 44px;
+            font-weight: 800;
+            color: #ff3d2e;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .outcome-metric-label {
+            font-size: 14px;
+            color: #4a4a4a;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .outcome-quote {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2a2a2a;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        .outcome-source {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-top: 18px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 13px;
+            color: #6a6a6a;
+        }
+        .outcome-source svg {
+            width: 16px;
+            height: 16px;
+            fill: #ff3d2e;
+        }
+
+        /* ============ APPROACH C: Project Profile (no person attribution) ============ */
+        .approach-c {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .profile-card {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .profile-industry {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #ff3d2e;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .profile-industry svg {
+            width: 16px;
+            height: 16px;
+            fill: #ff3d2e;
+        }
+        .profile-confidential {
+            font-size: 11px;
+            color: #888;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .profile-confidential svg {
+            width: 12px;
+            height: 12px;
+            fill: #888;
+        }
+        .profile-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.3;
+        }
+        .profile-meta {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            padding: 16px 0;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .profile-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .profile-meta-label {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .profile-meta-value {
+            font-size: 14px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        .profile-results {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .profile-results li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: #2a2a2a;
+            line-height: 1.5;
+        }
+        .profile-results svg {
+            width: 18px;
+            height: 18px;
+            fill: #ff3d2e;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .profile-quote {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #4a4a4a;
+            font-style: italic;
+            padding: 16px;
+            background: #fafafa;
+            border-left: 3px solid #ff3d2e;
+            border-radius: 0 4px 4px 0;
+        }
+        .profile-quote-source {
+            display: block;
+            margin-top: 8px;
+            font-size: 12px;
+            color: #888;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .approach-a, .approach-b, .approach-c {
+                grid-template-columns: 1fr;
+            }
+            .section-heading { font-size: 30px; }
+            .quote-text { font-size: 17px; }
+            .attribution { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ APPROACH A ============ -->
+    <div class="section-label">Approach A — Drop-in Replacement (Industry + Role + NDA Badge)</div>
+    <section class="case-section">
+        <h2 class="section-heading">Customer Success <span>Stories</span></h2>
+        <p class="section-subheading">Real outcomes from real engineering teams — names withheld under NDA.</p>
+        <div class="tabs">
+            <div class="tab active">Automotive ECU</div>
+            <div class="tab">Smart Patient Monitor</div>
+            <div class="tab">EV Battery System</div>
+            <div class="tab">Avionics Module</div>
+            <div class="tab">Industrial IoT Gateway</div>
+        </div>
+        <div class="approach-a">
+            <div class="testimonial-card-a">
+                <div class="industry-tag">
+                    <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+                    Automotive · Tier-1 OEM
+                </div>
+                <p class="quote-text">"Qmax delivered a production-ready ECU that passed AEC-Q100 qualification on the first build. Their EMC-first layout approach saved us two full spins."</p>
+                <div class="attribution">
+                    <div class="industry-avatar">
+                        <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+                    </div>
+                    <div class="attribution-text">
+                        <div class="attribution-role">VP, Hardware Engineering</div>
+                        <div class="attribution-company">US-based Tier-1 Automotive Supplier</div>
+                    </div>
+                    <div class="nda-badge">
+                        <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        NDA Protected
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-tag">Automotive</div>
+                <h3 class="project-title">ADAS Sensor Fusion ECU</h3>
+                <div class="project-image">[ Product Image ]</div>
+                <p class="project-desc">Full-cycle development of a 6-layer ECU integrating radar, camera, and LiDAR inputs under ISO 26262 ASIL-B constraints.</p>
+                <a href="#" class="project-btn">View Case Study →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ APPROACH B ============ -->
+    <div class="section-label">Approach B — Outcome-First Cards (Metric Up Front)</div>
+    <section class="case-section">
+        <h2 class="section-heading">Real <span>Outcomes</span></h2>
+        <p class="section-subheading">Anonymous testimonials, verified results.</p>
+        <div class="approach-b">
+            <div class="outcome-card">
+                <div class="outcome-metric">2 Spins</div>
+                <div class="outcome-metric-label">Saved on first-pass build</div>
+                <p class="outcome-quote">"Qmax delivered a production-ready ECU that passed AEC-Q100 qualification on the first build. Their EMC-first layout approach saved us two full spins."</p>
+                <div class="outcome-source">
+                    <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    VP Engineering · Automotive Tier-1 (NDA)
+                </div>
+            </div>
+            <div class="outcome-card">
+                <div class="outcome-metric">40%</div>
+                <div class="outcome-metric-label">BOM cost reduction</div>
+                <p class="outcome-quote">"They redesigned our power section and brought our BOM cost down by nearly half — without compromising on field reliability."</p>
+                <div class="outcome-source">
+                    <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    Director of Engineering · Industrial IoT (NDA)
+                </div>
+            </div>
+            <div class="outcome-card">
+                <div class="outcome-metric">3 Months</div>
+                <div class="outcome-metric-label">Faster to certification</div>
+                <p class="outcome-quote">"Their compliance-first approach got us through FCC and CE testing on the first attempt. We launched a full quarter ahead of schedule."</p>
+                <div class="outcome-source">
+                    <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    Hardware Lead · Medical Devices (NDA)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ APPROACH C ============ -->
+    <div class="section-label">Approach C — Project Profile Cards (Skip Person, Highlight Project)</div>
+    <section class="case-section">
+        <h2 class="section-heading">Engineered for <span>Production</span></h2>
+        <p class="section-subheading">Selected client engagements — details anonymized per NDA.</p>
+        <div class="approach-c">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-industry">
+                        <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+                        Automotive
+                    </div>
+                    <div class="profile-confidential">
+                        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                        Client confidential
+                    </div>
+                </div>
+                <h3 class="profile-title">ADAS Sensor Fusion ECU</h3>
+                <div class="profile-meta">
+                    <div class="profile-meta-item">
+                        <span class="profile-meta-label">Client Type</span>
+                        <span class="profile-meta-value">Tier-1 OEM</span>
+                    </div>
+                    <div class="profile-meta-item">
+                        <span class="profile-meta-label">Region</span>
+                        <span class="profile-meta-value">North America</span>
+                    </div>
+                    <div class="profile-meta-item">
+                        <span class="profile-meta-label">Year</span>
+                        <span class="profile-meta-value">2024</span>
+                    </div>
+                </div>
+                <ul class="profile-results">
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> 6-layer board integrating radar, camera & LiDAR inputs</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Passed AEC-Q100 qualification on first build</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Saved 2 full design spins through EMC-first layout</li>
+                </ul>
+                <div class="profile-quote">
+                    "Production-ready on the first build. Their EMC discipline saved us two spins."
+                    <span class="profile-quote-source">— VP Hardware Engineering, Automotive Tier-1</span>
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-industry">
+                        <svg viewBox="0 0 24 24"><path d="m20.57 14.86 2.43-2.43-1.41-1.41-1.43 1.43-2.86-2.86 1.43-1.43-1.41-1.41-2.43 2.43-7.71-7.71-1.41 1.41 7.71 7.71-2.43 2.43 1.41 1.41 1.43-1.43 2.86 2.86-1.43 1.43 1.41 1.41 2.43-2.43 7.71 7.71 1.41-1.41-7.71-7.71z"/></svg>
+                        Medical Devices
+                    </div>
+                    <div class="profile-confidential">
+                        <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                        Client confidential
+                    </div>
+                </div>
+                <h3 class="profile-title">Smart Patient Monitor</h3>
+                <div class="profile-meta">
+                    <div class="profile-meta-item">
+                        <span class="profile-meta-label">Client Type</span>
+                        <span class="profile-meta-value">Series-B Startup</span>
+                    </div>
+                    <div class="profile-meta-item">
+                        <span class="profile-meta-label">Region</span>
+                        <span class="profile-meta-value">Europe</span>
+                    </div>
+                    <div class="profile-meta-item">
+                        <span class="profile-meta-label">Year</span>
+                        <span class="profile-meta-value">2024</span>
+                    </div>
+                </div>
+                <ul class="profile-results">
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> IEC 60601-1 compliant patient-side electronics</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Wireless telemetry with 30-day battery life</li>
+                    <li><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Passed FCC, CE & medical certification first time</li>
+                </ul>
+                <div class="profile-quote">
+                    "Their compliance-first mindset got us to market a full quarter ahead of plan."
+                    <span class="profile-quote-source">— Hardware Lead, Medical Device OEM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -239,7 +239,7 @@ const INDUSTRIES = {
     {
       title: "Communication Systems",
       desc: "RF transceivers, 5G baseband boards, and optical network nodes engineered for O-RAN and IEEE standards, with rigorous signal integrity (SI/PI) and strict impedance control.",
-      badge: "FCC / CE · IEEE Compliant ➔",
+      badge: "FCC / CE · IEEE Compliant",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7z" />
@@ -343,9 +343,9 @@ const TESTIMONIALS = [
         <text x="103" y="24" fontFamily="sans-serif" fontSize="16" fill="#5A6778">Mobility</text>
       </svg>
     ),
-    quote: "Qmax delivered a production-ready ECU that passed AEC-Q100 qualification on the first build. Their EMC-first layout approach saved us two full spins.",
-    authorName: "James R.",
-    authorRole: "VP Hardware Engineering, Velocon Mobility",
+    quote: "Qmax delivered a production-ready ECU that passed AEC-Q100 qualification on the first build. Their EMC-first layout approach saved us two full spins and kept the entire program on schedule. The upfront signal integrity work and meticulous component selection gave our compliance team total confidence in the final design.",
+    authorName: "VP, Hardware Engineering",
+    authorRole: "US-based Tier-1 Automotive Supplier",
     avatarColor: "#0B5FA5",
     avatarInitials: "JR",
     caseTag: "AUTOMOTIVE",
@@ -362,9 +362,9 @@ const TESTIMONIALS = [
         <text x="28" y="25" fontFamily="sans-serif" fontSize="18" fontWeight="700" fill="#1C2A3A">MedCore</text>
       </svg>
     ),
-    quote: "The DHF package Qmax delivered was the most thorough we've seen from a contract partner. Our FDA reviewer complimented the traceability.",
-    authorName: "Priya S.",
-    authorRole: "Director of Engineering, MedCore Diagnostics",
+    quote: "The DHF package Qmax delivered was the most thorough we've seen from any contract partner. Our FDA reviewer specifically complimented the traceability and the clean linkage between requirements, design inputs, and verification evidence. It made our submission timeline noticeably shorter and far less stressful for the team.",
+    authorName: "Director of Engineering",
+    authorRole: "European Medical Diagnostics OEM",
     avatarColor: "#158B4E",
     avatarInitials: "PS",
     caseTag: "MEDICAL",
@@ -381,9 +381,9 @@ const TESTIMONIALS = [
         <text x="89" y="24" fontFamily="sans-serif" fontSize="16" fill="#5A6778">Energy</text>
       </svg>
     ),
-    quote: "Qmax's BMS handled our 96-cell pack on the first revision. The thermal simulation work meant we hit our efficiency targets with no board respins.",
-    authorName: "David K.",
-    authorRole: "CTO, VoltArc Energy",
+    quote: "Qmax's BMS handled our 96-cell pack flawlessly on the very first revision. The thermal simulation and power integrity work meant we hit every efficiency target with no board respins, no late surprises, and a clean handoff to our pack assembly team. Their deep domain experience really showed in the finer details.",
+    authorName: "CTO",
+    authorRole: "Series-B EV Battery Systems Startup",
     avatarColor: "#E63329",
     avatarInitials: "DK",
     caseTag: "ENERGY / EV",
@@ -400,9 +400,9 @@ const TESTIMONIALS = [
         <text x="36" y="23" fontFamily="sans-serif" fontSize="17" fontWeight="700" fill="#1C2A3A">AeroTech</text>
       </svg>
     ),
-    quote: "They understood DO-254 from day one. The design assurance documentation was integrated into the workflow, not bolted on at the end.",
-    authorName: "Col. M. Santos",
-    authorRole: "Systems Director, AeroTech Systems",
+    quote: "They understood DO-254 from day one and built it into the program rather than around it. Every design assurance artifact was integrated into the engineering workflow, not bolted on at the end. That single decision saved us weeks of audit prep and gave our certification authority full visibility throughout the project.",
+    authorName: "Systems Director",
+    authorRole: "Aerospace & Defense Avionics Contractor",
     avatarColor: "#374151",
     avatarInitials: "MS",
     caseTag: "AEROSPACE",
@@ -420,9 +420,9 @@ const TESTIMONIALS = [
         <text x="36" y="23" fontFamily="sans-serif" fontSize="15" fontWeight="700" fill="#1C2A3A">IndustriLink</text>
       </svg>
     ),
-    quote: "The gateway has been running on our factory floor for 18 months with zero field failures. The EMC hardening Qmax insisted on proved its worth.",
-    authorName: "T. Yamamoto",
-    authorRole: "Head of IIoT, IndustriLink GmbH",
+    quote: "The gateway has been running on our factory floor for 18 months straight with zero field failures across more than forty deployed units. The EMC hardening and isolation strategy Qmax insisted on early in the design proved its worth in a brutally noisy industrial environment. It just keeps working, shift after shift.",
+    authorName: "Head of IIoT",
+    authorRole: "European Industrial Automation Firm",
     avatarColor: "#374151",
     avatarInitials: "TY",
     caseTag: "INDUSTRIAL",
@@ -697,7 +697,7 @@ function PartnershipsSection() {
         <div className="mb-9 flex flex-col items-center text-center">
           <h2 className="mb-6 text-4xl md:text-5xl font-light tracking-wide">Partnerships</h2>
           <p className="mx-auto max-w-[820px] text-[#5A6778]">
-            With a strong focus on new product development, <strong className="text-[#1C2A3A]">Qmax</strong> maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. Our teams gain early access to upcoming silicon, roadmap visibility, and training on the latest technologies — with reference modules and evaluation kits ready to kick-start your product development.
+            With a strong focus on new product development, Qmax maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. Our teams gain early access to upcoming silicon, roadmap visibility, and training on the latest technologies — with reference modules and evaluation kits ready to kick-start your product development.
           </p>
         </div>
         <div className="grid grid-cols-5 gap-4 max-[900px]:grid-cols-2 max-[900px]:gap-3">
@@ -842,21 +842,70 @@ function WorkflowSection() {
   );
 }
 
+function getIndustryIcon(caseTag: string) {
+  const tag = caseTag.toUpperCase();
+  if (tag.includes("AUTOMOTIVE")) {
+    return (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+      </svg>
+    );
+  }
+  if (tag.includes("MEDICAL")) {
+    return (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+        <path d="M19 8h-2V3H7v5H5c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2zM9 5h6v3H9V5zm6 11h-2v2h-2v-2H9v-2h2v-2h2v2h2v2z" />
+      </svg>
+    );
+  }
+  if (tag.includes("ENERGY") || tag.includes("EV")) {
+    return (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+        <path d="M7 2v11h3v9l7-12h-4l4-8z" />
+      </svg>
+    );
+  }
+  if (tag.includes("AEROSPACE")) {
+    return (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+        <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+      </svg>
+    );
+  }
+  if (tag.includes("INDUSTRIAL")) {
+    return (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+        <path d="M22 22V11l-6 4V11l-6 4V3H2v19h20zm-13-2H4v-2h5v2zm0-4H4v-2h5v2zm0-4H4v-2h5v2zm0-4H4V6h5v2zm11 12h-9v-2h9v2zm0-4h-9v-2h9v2z" />
+      </svg>
+    );
+  }
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+      <circle cx="12" cy="12" r="10" />
+    </svg>
+  );
+}
+
 function TestimonialsSection() {
   const [activeIdx, setActiveIdx] = useState(0);
   return (
     <section className="bg-white overflow-hidden px-16 py-12 max-[900px]:px-6 max-[900px]:py-16" id="testi-section">
       <div className="mx-auto max-w-[1200px]">
-        <div className="mb-5 text-center">
-          <h2 className="text-4xl md:text-5xl font-light tracking-wide mb-8">Customer Success <span className="text-brand-500">Stories</span></h2>
+        <div className="mb-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-light tracking-wide mb-3">
+            Customer Success <span className="text-brand-500">Stories</span>
+          </h2>
+          {/* <p className="mb-10 text-base text-gray-500">
+            Real outcomes from real engineering teams &mdash; names withheld under NDA.
+          </p> */}
         </div>
-        <div className="mb-5 flex flex-wrap justify-center border-b-2 border-gray-200 max-[900px]:flex-nowrap max-[900px]:justify-start max-[900px]:overflow-x-auto">
+        <div className="mb-12 flex flex-wrap justify-center gap-x-12 border-b border-gray-200 max-[900px]:flex-nowrap max-[900px]:justify-start max-[900px]:gap-x-6 max-[900px]:overflow-x-auto">
           {TESTIMONIALS.map((t, i) => (
             <button
               key={t.tab}
-              className={`relative -mb-0.5 cursor-pointer border-none bg-transparent px-5 py-2 whitespace-nowrap transition-colors max-[900px]:px-[18px] max-[900px]:py-2.5 ${
+              className={`relative -mb-px cursor-pointer border-none bg-transparent px-1 py-3.5 text-base whitespace-nowrap transition-colors max-[900px]:px-[18px] max-[900px]:py-2.5 ${
                 activeIdx === i
-                  ? "text-red-500 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-[3px] after:rounded-t-sm after:bg-[#E63329] after:content-['']"
+                  ? "text-[#E63329] after:absolute after:inset-x-0 after:-bottom-px after:h-[3px] after:bg-[#E63329] after:content-['']"
                   : "text-gray-500 hover:text-[#1C2A3A]"
               }`}
               onClick={() => setActiveIdx(i)}
@@ -871,35 +920,50 @@ function TestimonialsSection() {
               key={t.tab}
               className={`${
                 activeIdx === i ? "grid animate-[tFadeIn_0.4s_ease]" : "hidden"
-              } grid-cols-2 items-stretch gap-8 max-[900px]:grid-cols-1`}
+              } grid-cols-2 items-start gap-12 max-[900px]:grid-cols-1 max-[900px]:gap-8`}
             >
               {/* Left: quote */}
-              <div className="flex flex-col justify-center gap-4">
-                {/* <div className="flex max-h-10 items-center">{t.logo}</div> */}
-                <p className="m-0 text-gray-800 !font-medium !text-lg md:text-xl !font-medium tracking-wide">&ldquo;{t.quote}&rdquo;</p>
-                <div className="flex items-center gap-3 border-t border-gray-200 pt-2">
+              <div className="flex flex-col gap-6 pr-2 max-[900px]:pr-0">
+                <div className="inline-flex w-fit items-center gap-2 rounded-full bg-[#fff5f4] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#E63329]">
+                  {getIndustryIcon(t.caseTag)}
+                  {t.caseTag}
+                </div>
+                <p className="text-lg md:text-xl !font-medium tracking-wide m-0 border-l-[3px] border-[#E63329] pl-5 text-lg md:text-xl font-medium leading-relaxed text-gray-800 tracking-wide">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div className="mt-1 flex flex-wrap items-center gap-4 border-t border-gray-200 pt-5">
                   <div
-                    className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-white"
+                    className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full font-semibold text-white"
                     style={{ background: t.avatarColor }}
                   >
                     {t.avatarInitials}
                   </div>
-                  <div>
-                    <p className="m-0 text-[#1C2A3A]">{t.authorName}</p>
-                    <p className="m-0 mt-0.5 text-sm text-gray-500">{t.authorRole}</p>
+                  <div className="flex flex-grow flex-col gap-0.5">
+                    <p className="m-0 font-semibold text-[#1a1a1a]">{t.authorName}</p>
+                    <p className="m-0 text-sm text-gray-500">{t.authorRole}</p>
+                  </div>
+                  <div className="inline-flex items-center gap-1.5 rounded border border-gray-200 bg-gray-100 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-gray-600">
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+                      <path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                    </svg>
+                    NDA Protected
                   </div>
                 </div>
               </div>
               {/* Right: case card */}
-              <div className="flex h-full flex-col gap-2.5 rounded-lg bg-white p-5 shadow-[0_3px_12px_0_rgba(0,92,136,0.15)] transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_20px_0_rgba(0,92,136,0.20)]">
-                {/* <span className="w-fit text-sm font-medium uppercase text-red-500">{t.caseTag}</span> */}
-                <h3 className="text-xl md:text-2xl font-medium tracking-wide">{t.caseTitle}</h3>
+              <div className="flex h-full flex-col gap-3 rounded-lg border border-gray-200 bg-[#fafafa] p-7 transition-all hover:-translate-y-0.5 hover:border-gray-300 hover:shadow-[0_8px_20px_0_rgba(0,92,136,0.12)]">
+                {/* <span className="text-xs font-bold uppercase tracking-[2px] text-[#E63329]">
+                  {t.caseTag}
+                </span> */}
+                <h3 className="!font-semibold text-xl md:text-2xl leading-tight tracking-wide text-[#1a1a1a]">
+                  {t.caseTitle}
+                </h3>
                 <div style={{ position: "relative", width: "100%", aspectRatio: "21/9", borderRadius: 8, overflow: "hidden", marginTop: 4, background: "#f3f4f6" }}>
                   <Image src={t.caseImage} alt={t.caseTitle} fill style={{ objectFit: "contain" }} sizes="(max-width: 900px) 100vw, 50vw" />
                 </div>
-                <p className="m-0 text-gray-600">{t.caseDesc}</p>
+                <p className="m-0 text-sm leading-relaxed text-gray-600">{t.caseDesc}</p>
                 <a
-                  className="mt-auto inline-flex w-fit items-center gap-1.5 rounded-md bg-[#E63329] px-3 py-1.5 text-sm text-white no-underline transition-colors hover:bg-[#C72A21] hover:text-white hover:no-underline"
+                  className="mt-auto inline-flex w-fit items-center gap-1.5 rounded-md bg-[#E63329] px-3 py-1.5 text-xs font-semibold text-white no-underline transition-colors hover:bg-[#C72A21] hover:text-white hover:no-underline"
                   href="/contact"
                 >
                   View Case Study
@@ -1079,7 +1143,7 @@ function CTABannerSection() {
 
 function FAQSection() {
   return (
-    <section className="bg-white py-24 px-16 max-[900px]:px-6 max-[900px]:py-16">
+    <section className="bg-white pt-24 pb-0 px-16 max-[900px]:px-6 max-[900px]:pt-16 max-[900px]:pb-0">
       <div className="mx-auto max-w-[960px]">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-light text-center">Frequently Asked <span className="text-brand-500">Questions</span></h2>

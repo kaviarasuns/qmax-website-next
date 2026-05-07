@@ -66,10 +66,10 @@ export default function MeetTheTeam() {
           {/* <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-red-500">
             Meet our team
           </p> */}
-          <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          <h1 className="text-slate-900 sm:text-5xl">
             Our Leadership <span className="text-red-500">Team</span>
           </h1>
-          <div className="mt-5 h-1 w-16 rounded-full bg-red-500" />
+          {/* <div className="mt-5 h-1 w-16 rounded-full bg-red-500" /> */}
           {/* <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
             Decades of combined expertise in hardware, embedded systems, and
             engineering execution — driving QMax Systems forward.

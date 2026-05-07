@@ -38,7 +38,7 @@ export default function OurJourney() {
     <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-2">
+          <h2 className="mb-2">
             <span className="text-black">Our</span>{' '}
             <span className="text-red-500">Journey</span>
           </h2>
@@ -59,7 +59,7 @@ export default function OurJourney() {
                       <div className="text-2xl md:text-3xl font-extrabold text-red-500 mb-2">
                         {item.year}
                       </div>
-                      <h3 className="text-lg md:text-xl font-extrabold text-black mb-3">
+                      <h3 className="text-black mb-3">
                         {item.title}
                       </h3>
                       <p className="text-gray-700 text-sm md:text-base leading-relaxed">
@@ -81,7 +81,7 @@ export default function OurJourney() {
                       <div className="text-2xl md:text-3xl font-extrabold text-red-500 mb-2">
                         {item.year}
                       </div>
-                      <h3 className="text-lg md:text-xl font-extrabold text-black mb-3">
+                      <h3 className="text-black mb-3">
                         {item.title}
                       </h3>
                       <p className="text-gray-700 text-sm md:text-base leading-relaxed">

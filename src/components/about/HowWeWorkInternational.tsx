@@ -39,7 +39,7 @@ export default function HowWeWorkInternational() {
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Heading with Red Underline */}
         <div className="mb-12 text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-2">
+          <h2 className="mb-2">
             <span className="text-black">How We Work With</span>{' '}
             <span className="text-[#EF3E42]">International Clients</span>
           </h2>
@@ -65,7 +65,7 @@ export default function HowWeWorkInternational() {
                 </div>
 
                 {/* Card Title */}
-                <h3 className="text-xl font-bold text-black mb-4">{card.title}</h3>
+                <h3 className="text-2xl text-black mb-4">{card.title}</h3>
 
                 {/* Card Body */}
                 <p className="text-gray-600 leading-relaxed text-sm">{card.body}</p>
