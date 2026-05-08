@@ -3,6 +3,7 @@ import { CaseStudy } from "../../types/case-study";
 // ─── Embedded Systems ────────────────────────────────────────────────────────
 export const embeddedCaseStudiesData: CaseStudy[] = [
   {
+    serialNumber: 1,
     id: "industrial-temperature-control-system",
     title: "Industrial Temperature Control System",
     category: "Embedded System Design",
@@ -50,6 +51,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 2,
     id: "multi-io-card-for-ate",
     title: "Multi IO card for ATE",
     category: "Test & Measurement",
@@ -99,6 +101,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 3,
     id: "smart-monitoring-system",
     title: "Smart Monitoring System",
     category: "Industrial Control Systems",
@@ -146,6 +149,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 4,
     id: "microscopic-camera-control",
     title: "Microscopic Camera Control",
     category: "Imaging & Optics",
@@ -193,6 +197,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 5,
     id: "industrial-iot-gateway-with-poe",
     title: "Industrial IOT gateway with POE",
     category: "Industrial IoT",
@@ -246,6 +251,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 6,
     id: "poe-control-unit",
     title: "POE Control unit",
     category: "Power over Ethernet",
@@ -292,6 +298,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 7,
     id: "poe-power-injector",
     title: "POE Power Injector",
     category: "Power over Ethernet",
@@ -335,6 +342,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 8,
     id: "industrial-poe-switch",
     title: "Industrial POE switch",
     category: "Power over Ethernet",
@@ -380,6 +388,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 9,
     id: "stellar-main-board",
     title: "Stellar Main Board",
     category: "Embedded System Design",
@@ -429,6 +438,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 10,
     id: "stellar-power-board",
     title: "Portable EV Charger",
     category: "Embedded Systems",
@@ -473,6 +483,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 11,
     id: "industrial-automation-controller",
     title: "Industrial Automation Controller",
     category: "Embedded System Design",
@@ -520,6 +531,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 12,
     id: "high-speed-camera-interface",
     title: "High Speed Camera Interface",
     category: "Embedded System Design",
@@ -567,6 +579,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 13,
     id: "real-time-data-logger",
     title: "Real-time Data Logger",
     category: "Embedded System Design",
@@ -611,8 +624,9 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "environmental-monitoring-station",
-    title: "Environmental Monitoring Station",
+    serialNumber: 14,
+    id: "bms-controller",
+    title: "BMS Controller",
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/1.1.png",
@@ -656,8 +670,9 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "smart-building-controller",
-    title: "Smart Building Controller",
+    serialNumber: 15,
+    id: "ultra-low-power-bluetooth-mouse",
+    title: "Ultra Low Power Bluetooth Mouse",
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/connected_car_demonstration_unit/1.1.png",
@@ -701,6 +716,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 16,
     id: "medical-device-interface",
     title: "Medical Device Interface",
     category: "Embedded System Design",
@@ -745,6 +761,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 17,
     id: "robotics-motion-controller",
     title: "Robotics Motion Controller",
     category: "Embedded System Design",
@@ -791,8 +808,9 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "power-distribution-monitor",
-    title: "Power Distribution Monitor",
+    serialNumber: 18,
+    id: "industrial-defect-monitoring-system",
+    title: "Industrial Defect Monitoring System",
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_data_acquisation/1.1.png",
@@ -836,8 +854,9 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "mixed-signal-system",
-    title: "Mixed Signal System",
+    serialNumber: 19,
+    id: "gigabit-ethernet-switch-module",
+    title: "Gigabit Ethernet Switch Module",
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/mixed_signal/1.1.png",
@@ -881,6 +900,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
 
   {
+    serialNumber: 20,
     id: "rugged-industrial-io-board",
     title: "Rugged Industrial IO Board",
     category: "Industrial Automation",
@@ -926,6 +946,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
 
   {
+    serialNumber: 21,
     id: "thermal-management-system",
     title: "Thermal Analysis and Management",
     category: "Industrial Embedded Systems",
@@ -971,6 +992,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
 
   {
+    serialNumber: 22,
     id: "ultra-low-noise-adc-board",
     title: "Ultra Low Noise ADC Board",
     category: "Precision Instrumentation",
@@ -1016,6 +1038,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
 
   {
+    serialNumber: 23,
     id: "ultra-low-power-ble-mouse",
     title: "Ultra Low Power BLE Mouse",
     category: "Consumer Electronics",
@@ -1061,6 +1084,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
 
   {
+    serialNumber: 24,
     id: "wifi-6e-router-marma",
     title: "Wi-Fi 6E Router - Marma",
     category: "Networking & Embedded Systems",

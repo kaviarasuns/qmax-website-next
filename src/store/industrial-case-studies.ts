@@ -3,8 +3,9 @@ import { CaseStudy } from "../../types/case-study";
 // ─── Industrial Design ────────────────────────────────────────────────────────
 export const industrialCaseStudiesData: CaseStudy[] = [
   {
-    id: "handheld-industrial-controller",
-    title: "Handheld Industrial Controller",
+    serialNumber: 1,
+    id: "oxygen-generator",
+    title: "Oxygen Generator",
     category: "Industrial Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/1.png",
@@ -48,6 +49,7 @@ export const industrialCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 2,
     id: "medical-diagnostic-system",
     title: "Medical Diagnostic System",
     category: "Industrial Design",
@@ -92,6 +94,7 @@ export const industrialCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 3,
     id: "compact-edge-gateway-enclosure",
     title: "Compact Edge Gateway Enclosure",
     category: "Industrial Design",
@@ -136,6 +139,7 @@ export const industrialCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 4,
     id: "medical-recording-device",
     title: "Medical Recording Device",
     category: "Industrial Design",
@@ -184,8 +188,9 @@ export const industrialCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "wearable-health-monitor",
-    title: "Wearable Health Monitor",
+    serialNumber: 5,
+    id: "inline-moisture-meter",
+    title: "Inline Moisture Meter",
     category: "Industrial Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.21.png",
@@ -227,8 +232,9 @@ export const industrialCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "portable-field-tester",
-    title: "Portable Field Tester",
+    serialNumber: 6,
+    id: "desktop-moisture-meter",
+    title: "Desktop Moisture Meter",
     category: "Industrial Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.5.png",

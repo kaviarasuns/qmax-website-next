@@ -1,4 +1,5 @@
 export interface CaseStudy {
+  serialNumber?: number
   id: string
   title: string
   category: string

@@ -3,6 +3,7 @@ import { CaseStudy } from "../../types/case-study";
 // ─── Mechanical Design ────────────────────────────────────────────────────────
 export const mechanicalCaseStudiesData: CaseStudy[] = [
   {
+    serialNumber: 1,
     id: "uv-disinfection-system",
     title: "UV Disinfection System",
     category: "Mechanical Design",
@@ -52,6 +53,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 2,
     id: "industrial-splice-detector",
     title: "Industrial Splice Detector",
     category: "Mechanical Design",
@@ -96,6 +98,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 3,
     id: "ott-media-gateway",
     title: "OTT Media Gateway",
     category: "Mechanical Design",
@@ -144,6 +147,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 4,
     id: "rf-signal-generator-enclosure",
     title: "RF Signal Generator Enclosure",
     category: "Mechanical Design",
@@ -188,6 +192,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 5,
     id: "pulse-oximeter-enclosure",
     title: "Pulse Oximeter Enclosure",
     category: "Mechanical Design",
@@ -232,8 +237,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "industrial-pressure-gauge",
-    title: "Industrial Pressure Gauge",
+    serialNumber: 6,
+    id: "6e-wifi-router-enclosure",
+    title: "6E Wi-Fi Router Enclosure",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/4.png",
@@ -275,8 +281,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "compact-flow-meter-housing",
-    title: "Compact Flow Meter Housing",
+    serialNumber: 7,
+    id: "obd-enclosure",
+    title: "OBD Enclosure",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.1.png",
@@ -319,8 +326,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "temperature-transmitter-pod",
-    title: "Temperature Transmitter Pod",
+    serialNumber: 8,
+    id: "pneumatic-test-jig",
+    title: "Pneumatic Test Jig",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/pneumatic/PNEUMATIC_TEST_JIG_RENDER.2.1.png",
@@ -359,8 +367,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "ventilation-control-damper",
-    title: "Ventilation Control Damper",
+    serialNumber: 9,
+    id: "rugged-communication-control-system-enclosure",
+    title: "Rugged Communication Control System Enclosure",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.1.png",
@@ -406,8 +415,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "safety-relief-valve-housing",
-    title: "Safety Relief Valve Housing",
+    serialNumber: 10,
+    id: "5g-router",
+    title: "5G Router",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SMOAD/SMOAD.1.1.png",
@@ -449,8 +459,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "wireless-sensor-node-case",
-    title: "Wireless Sensor Node Case",
+    serialNumber: 11,
+    id: "emf-flow-meter",
+    title: "EMF Flow Meter",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/hydronet/1.png",
@@ -490,8 +501,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "energy-meter-enclosure",
-    title: "Energy Meter Enclosure",
+    serialNumber: 12,
+    id: "ultrasonic-flow-meter",
+    title: "Ultrasonic Flow Meter",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/hydronet-2/1.1.png",
@@ -532,51 +544,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "3-axis-tilt-sensor",
-    title: "3-Axis Tilt Sensor",
-    category: "Industrial Sensors & Embedded Systems",
-    images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/3-axis_tilt_sensor/1.1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/3-axis_tilt_sensor/1.2.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/3-axis_tilt_sensor/1.3.png",
-    ],
-    features: [
-      "Three-axis inclination sensing",
-      "High precision angle detection",
-      "Shock and vibration resistance",
-      "Real-time orientation monitoring",
-      "Industrial communication support",
-      "Low power operation",
-    ],
-    summary:
-      "High-precision 3-axis tilt sensor designed for industrial monitoring, structural safety, and machine alignment with reliable real-time orientation tracking.",
-    importantParts: [
-      "MEMS Accelerometer",
-      "Signal Conditioning Circuit",
-      "Microcontroller Unit",
-      "RS485 Communication Interface",
-      "Power Regulation Unit",
-      "Industrial Enclosure",
-    ],
-    salientFeatures: [
-      "Accurate 3-axis tilt angle measurement.",
-      "High vibration and shock tolerance.",
-      "Supports Modbus and RS485 communication.",
-      "Low drift long-term stability.",
-      "Compact industrial-grade housing.",
-      "Low power consumption for remote deployment.",
-    ],
-    scopeOfWork: [
-      "Sensor Hardware Design",
-      "Signal Conditioning Development",
-      "Tilt Calculation Algorithm",
-      "Industrial Protocol Integration",
-      "Mechanical Ruggedization",
-      "Calibration and Validation",
-    ],
-  },
-
-  {
+    serialNumber: 14,
     id: "360-degree-camera-4k",
     title: "360 Degree Camera with 4K Resolution",
     category: "Imaging & Embedded Vision Systems",
@@ -622,51 +590,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "industrial-iot-gateway",
-    title: "Industrial IoT Gateway",
-    category: "Industrial IoT & Edge Computing",
-    images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/indutrial_iot_gateway/1.1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/indutrial_iot_gateway/1.2.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/indutrial_iot_gateway/1.3.png",
-    ],
-    features: [
-      "Multi-protocol industrial connectivity",
-      "Edge data processing",
-      "Cloud integration",
-      "Remote diagnostics",
-      "Secure device management",
-      "Rugged industrial deployment",
-    ],
-    summary:
-      "Robust industrial IoT gateway enabling seamless machine connectivity, edge analytics, and secure cloud integration for modern factory automation environments.",
-    importantParts: [
-      "Industrial Processor",
-      "RS485 / CAN Interfaces",
-      "LTE & Ethernet Module",
-      "Edge Analytics Engine",
-      "Secure Storage Unit",
-      "Rugged Enclosure",
-    ],
-    salientFeatures: [
-      "Supports Modbus, CAN, and MQTT protocols.",
-      "Real-time edge data filtering and processing.",
-      "Cloud dashboard connectivity.",
-      "Remote diagnostics and firmware updates.",
-      "Industrial-grade thermal and surge protection.",
-      "Secure encrypted communication support.",
-    ],
-    scopeOfWork: [
-      "Gateway Hardware Design",
-      "Industrial Protocol Integration",
-      "Edge Computing Implementation",
-      "Cloud Connectivity Setup",
-      "Security Layer Development",
-      "Field Deployment Testing",
-    ],
-  },
-
-  {
+    serialNumber: 16,
     id: "iot-gateway",
     title: "IoT Gateway",
     category: "IoT Connectivity Solutions",
@@ -713,6 +637,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
   },
 
   {
+    serialNumber: 17,
     id: "obd-v4-system",
     title: "OBD V4 Smart Diagnostic Unit",
     category: "Automotive Embedded Systems",
@@ -759,6 +684,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
+    serialNumber: 18,
     id: "footswitch",
     title: "Footswitch",
     category: "Mechanical Design",
@@ -807,6 +733,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
   },
 
   {
+    serialNumber: 19,
     id: "frizb-ai-box",
     title: "Frizb AI Box",
     category: "Mechanical Design",
@@ -857,8 +784,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "mcs",
-    title: "MCS",
+    serialNumber: 20,
+    id: "mega-watt-charging-station",
+    title: "Mega Watt Charging Station",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.58.png",
@@ -905,6 +833,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
   },
 
   {
+    serialNumber: 21,
     id: "smart-tap",
     title: "Smart Tap",
     category: "Mechanical Design",
@@ -947,6 +876,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
   },
 
   {
+    serialNumber: 22,
     id: "smart-wifi-stethoscope",
     title: "Smart Wi-Fi Stethoscope",
     category: "Mechanical Design",
@@ -990,8 +920,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "tensionmeter",
-    title: "Tension Meter",
+    serialNumber: 23,
+    id: "600kg-cable-tension-measurement-system",
+    title: "600Kg Cable Tension Measurement System",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/tensionmeter/TM450LB_RENDERING_28_MAR_2025_S1.1png.10.png",
@@ -1040,6 +971,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
   },
 
   {
+    serialNumber: 24,
     id: "gimbal",
     title: "4-Axis Gimbal",
     category: "Mechanical Design",
@@ -1084,8 +1016,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "idock",
-    title: "Frizb iDock",
+    serialNumber: 25,
+    id: "industrial-camera-controller-unit",
+    title: "Industrial Camera Controller Unit",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/IDOCK/FRIZB_IDOCK_RENDER_02_MAY_2026_S1.15.png",
@@ -1129,6 +1062,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
   },
 
   {
+    serialNumber: 26,
     id: "pc-oxy",
     title: "PC & Oxygen Assembly",
     category: "Mechanical Design",
@@ -1177,8 +1111,9 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "tensionmeter-small",
-    title: "Tension Meter Sensor Unit",
+    serialNumber: 27,
+    id: "cable-tension-measurement-system",
+    title: "Cable Tension Measurement System",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/TENSIONMETER_SMALL/TENSIONMETER_SENSOR_UNIT_28_APR_2026_S1.15.png",
