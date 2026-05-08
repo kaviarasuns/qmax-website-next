@@ -484,8 +484,9 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
   {
     serialNumber: 11,
-    id: "industrial-automation-controller",
-    title: "Industrial Automation Controller",
+    id: "high-speed-camera-interface",
+    title: "High Speed Camera Interface",
+
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/HIPPACK/1.png",
@@ -532,8 +533,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
   {
     serialNumber: 12,
-    id: "high-speed-camera-interface",
-    title: "High Speed Camera Interface",
+    id: "industrial-automation-controller",
+    title: "Industrial Automation Controller",
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/HIPPACK2/1.png",
@@ -580,8 +581,9 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
   {
     serialNumber: 13,
-    id: "real-time-data-logger",
-    title: "Real-time Data Logger",
+    id: "bms-controller",
+    title: "BMS Controller",
+
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_pack/1.1.png",
@@ -625,8 +627,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
   {
     serialNumber: 14,
-    id: "bms-controller",
-    title: "BMS Controller",
+    id: "ultra-low-power-bluetooth-mouse",
+    title: "Ultra Low Power Bluetooth Mouse",
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/1.1.png",
@@ -671,8 +673,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
   {
     serialNumber: 15,
-    id: "ultra-low-power-bluetooth-mouse",
-    title: "Ultra Low Power Bluetooth Mouse",
+    id: "smart-building-controller",
+    title: "Smart Building Controller",
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/connected_car_demonstration_unit/1.1.png",
@@ -762,8 +764,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
   {
     serialNumber: 17,
-    id: "robotics-motion-controller",
-    title: "Robotics Motion Controller",
+   id: "industrial-defect-monitoring-system",
+    title: "Industrial Defect Monitoring System",
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.1.png",
@@ -809,8 +811,10 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
   {
     serialNumber: 18,
-    id: "industrial-defect-monitoring-system",
-    title: "Industrial Defect Monitoring System",
+    id: "gigabit-ethernet-switch-module",
+    title: "Gigabit Ethernet Switch Module",
+
+ 
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_data_acquisation/1.1.png",
@@ -855,8 +859,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
 
   {
     serialNumber: 19,
-    id: "gigabit-ethernet-switch-module",
-    title: "Gigabit Ethernet Switch Module",
+    id: "robotics-motion-controller",
+    title: "Robotics Motion Controller",
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/mixed_signal/1.1.png",

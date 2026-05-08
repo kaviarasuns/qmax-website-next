@@ -2,56 +2,7 @@ import { CaseStudy } from "../../types/case-study";
 
 // ─── Mechanical Design ────────────────────────────────────────────────────────
 export const mechanicalCaseStudiesData: CaseStudy[] = [
-  {
-    serialNumber: 1,
-    id: "uv-disinfection-system",
-    title: "UV Disinfection System",
-    category: "Mechanical Design",
-    images: [
-      "/case-studies/mechanicalCaseStudies/1/MYNATEK_RENDER__1.0.png",
-      "/case-studies/mechanicalCaseStudies/1/MYNATEK_RENDER__3.2.png",
-      "/case-studies/mechanicalCaseStudies/1/MYNATEK_RENDER_4.17.png",
-      "/case-studies/mechanicalCaseStudies/1/MYNATEK_RENDER_9_TOP_ISO_1.png",
-      "/case-studies/mechanicalCaseStudies/1/MYNATEK_RENDER_9_BOTTOM_ISO_1.png",
-      "/case-studies/mechanicalCaseStudies/1/MYNATEK_RENDER_9_LEFT.png",
-      "/case-studies/mechanicalCaseStudies/1/MYNATEK_RENDER_9_RIGHT.png",
-    ],
-    features: [
-      "Wall-mounted UV-C disinfection unit",
-      "Triple UV lamp array for wide-area coverage",
-      "Sleek white and silver two-tone enclosure",
-      "Integrated occupancy and ambient light sensors",
-      "Sealed lamp windows for safe UV containment",
-      "Designed for healthcare and commercial spaces",
-    ],
-    summary:
-      "A wall-mounted UV disinfection system branded SafeSpaceUV, engineered for continuous air and surface sanitisation in healthcare, commercial, and public environments. The enclosure houses a triple UV-C lamp array behind sealed optical windows, delivering broad-area coverage while containing UV radiation safely. The two-tone white and silver finish blends into modern interiors, while the wall-mount design keeps floor space free and positions the unit at optimal height for effective disinfection.",
-    importantParts: [
-      "UV-C lamp modules with sealed optical windows",
-      "Two-tone ABS / polycarbonate enclosure shell",
-      "Wall-mount bracket and retention system",
-      "Integrated occupancy sensor module",
-      "Internal reflector array for UV distribution",
-      "Thermal management and airflow channels",
-    ],
-    salientFeatures: [
-      "Triple UV-C lamp array for wide-area disinfection.",
-      "Sealed optical windows for safe UV containment.",
-      "Wall-mount design for optimal positioning.",
-      "Two-tone premium finish for modern interiors.",
-      "Integrated sensors for automated operation.",
-      "DFM-reviewed geometry for production readiness.",
-    ],
-    scopeOfWork: [
-      "Concept ideation and form factor exploration",
-      "3D CAD enclosure modelling and detailing",
-      "UV optics and reflector design",
-      "Thermal management analysis",
-      "Wall-mount bracket engineering",
-      "Design-for-manufacture review",
-      "Prototype build and fit evaluation",
-    ],
-  },
+
   {
     serialNumber: 2,
     id: "industrial-splice-detector",
@@ -734,8 +685,8 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
 
   {
     serialNumber: 19,
-    id: "frizb-ai-box",
-    title: "Frizb AI Box",
+    id: "warehouse-camera-controller-unit",
+    title: "Warehouse Camera Controller Unit",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/frizb_ai_box/FRIZB_AI_BOX_S2.12.png",
