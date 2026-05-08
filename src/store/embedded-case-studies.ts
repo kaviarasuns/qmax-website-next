@@ -1089,8 +1089,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
 
   {
     serialNumber: 24,
-    id: "wifi-6e-router-marma",
-    title: "Wi-Fi 6E Router - Marma",
+    id: "wifi-6e-router",
+    title: "Wi-Fi 6E Router",
     category: "Networking & Embedded Systems",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/1.png",
