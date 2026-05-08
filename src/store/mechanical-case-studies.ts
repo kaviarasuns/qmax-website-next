@@ -2,52 +2,6 @@ import { CaseStudy } from "../../types/case-study";
 
 // ─── Mechanical Design ────────────────────────────────────────────────────────
 export const mechanicalCaseStudiesData: CaseStudy[] = [
-  // {
-  //   id: "capserve-cell-sensor",
-  //   title: "CapServe Cell Sensor",
-  //   category: "Mechanical Design",
-  //   images: [
-  //     "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.1.png",
-  //     "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.2.png",
-  //     "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.3.png",
-  //     "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.4.png",
-  //   ],
-  //   features: [
-  //     "Compact cell sensor enclosure for field deployment",
-  //     "IP65-rated sealed housing with snap-fit assembly",
-  //     "Integrated mounting bracket for pole and surface installation",
-  //     "Optimised internal cavity for PCB and battery stack",
-  //     "UV-stable ABS construction for outdoor environments",
-  //     "Designed for DFM and low-volume injection moulding",
-  //   ],
-  //   summary:
-  //     "A precision mechanical enclosure developed for the CapServe cell sensor platform. The design balances a compact footprint with full IP65 ingress protection, enabling reliable outdoor deployment in cellular monitoring applications. The snap-fit housing strategy eliminates exposed fasteners and speeds field servicing, while the integrated pole-mount bracket allows flexible installation across diverse site conditions. All geometry was reviewed for injection-moulding feasibility before handoff to tooling.",
-  //   importantParts: [
-  //     "UV-stable ABS primary enclosure shell",
-  //     "TPE gasket seal for IP65 ingress protection",
-  //     "Snap-fit lid retention with tool-free access",
-  //     "Integrated pole and flat-surface mounting bracket",
-  //     "Internal PCB stand-offs and battery retention ribs",
-  //     "Overmoulded cable entry gland",
-  //   ],
-  //   salientFeatures: [
-  //     "IP65 sealed enclosure for outdoor and industrial use.",
-  //     "Snap-fit assembly — no visible fasteners.",
-  //     "Flexible mounting: pole, wall, or flat surface.",
-  //     "UV-stable materials rated for extended outdoor exposure.",
-  //     "Service-friendly design with tool-free lid removal.",
-  //     "DFM-approved geometry ready for production tooling.",
-  //   ],
-  //   scopeOfWork: [
-  //     "Concept ideation and form factor exploration",
-  //     "3D CAD enclosure modelling and detailing",
-  //     "Gasket and sealing strategy for IP65 compliance",
-  //     "Mounting bracket design and load analysis",
-  //     "Design-for-manufacture review",
-  //     "Prototype build and fit/seal evaluation",
-  //     "Tooling handoff documentation",
-  //   ],
-  // },
   {
     id: "uv-disinfection-system",
     title: "UV Disinfection System",
@@ -275,50 +229,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "Material selection and biocompatibility review",
       "Hinge mechanism design and testing",
       "Design-for-manufacture documentation",
-    ],
-  },
-  {
-    id: "qsafe-tilt-sensor",
-    title: "QSafe Tilt Sensor",
-    category: "Mechanical Design",
-    images: [
-      "/case-studies/mechanicalCaseStudies/6/QSAFE_TILT_SENSOR_RENDER_23_DEC_2023.16.png",
-      "/case-studies/mechanicalCaseStudies/6/QSAFE_TILT_SENSOR_RENDER_23_DEC_2023.17.png",
-      "/case-studies/mechanicalCaseStudies/6/QSAFE_TILT_SENSOR_RENDER_23_DEC_2023.20.png",
-    ],
-    features: [
-      "Sealed industrial enclosure with flanged mounting base",
-      "Power button and status LED for field diagnostics",
-      "IP-rated construction for outdoor and industrial use",
-      "Four-point flange mounting for structural installations",
-      "UV-stable grey ABS construction",
-      "Compact form factor for pole and surface mounting",
-    ],
-    summary:
-      "A ruggedised tilt sensor enclosure branded QSafe, designed for structural monitoring and safety applications in outdoor and industrial environments. The sealed grey ABS enclosure features a flanged four-point mounting base for secure attachment to poles, walls, and structural members. A front-panel power button and green status LED provide quick field diagnostics without requiring a connected display. The IP-rated construction ensures reliable operation in rain, dust, and temperature extremes.",
-    importantParts: [
-      "UV-stable ABS enclosure shell",
-      "Flanged four-point mounting base",
-      "Sealed power button assembly",
-      "Status LED indicator module",
-      "Internal gasket for IP-rated sealing",
-      "PCB and battery retention features",
-    ],
-    salientFeatures: [
-      "IP-rated sealed enclosure for outdoor deployment.",
-      "Four-point flange mounting for structural installations.",
-      "Front-panel power button and status LED.",
-      "UV-stable materials for extended sun exposure.",
-      "Compact form factor for unobtrusive installation.",
-      "DFM-approved geometry for production tooling.",
-    ],
-    scopeOfWork: [
-      "Enclosure concept design and form exploration",
-      "Mounting bracket and flange design",
-      "3D CAD modelling and detailing",
-      "Gasket and sealing strategy for IP compliance",
-      "Design-for-manufacture review",
-      "Prototype build and environmental testing",
     ],
   },
   {
@@ -1311,3 +1221,54 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
 ];
+
+
+
+
+
+
+
+// {
+//   id: "qsafe-tilt-sensor",
+//   title: "QSafe Tilt Sensor",
+//   category: "Mechanical Design",
+//   images: [
+//     "/case-studies/mechanicalCaseStudies/6/QSAFE_TILT_SENSOR_RENDER_23_DEC_2023.16.png",
+//     "/case-studies/mechanicalCaseStudies/6/QSAFE_TILT_SENSOR_RENDER_23_DEC_2023.17.png",
+//     "/case-studies/mechanicalCaseStudies/6/QSAFE_TILT_SENSOR_RENDER_23_DEC_2023.20.png",
+//   ],
+//   features: [
+//     "Sealed industrial enclosure with flanged mounting base",
+//     "Power button and status LED for field diagnostics",
+//     "IP-rated construction for outdoor and industrial use",
+//     "Four-point flange mounting for structural installations",
+//     "UV-stable grey ABS construction",
+//     "Compact form factor for pole and surface mounting",
+//   ],
+//   summary:
+//     "A ruggedised tilt sensor enclosure branded QSafe, designed for structural monitoring and safety applications in outdoor and industrial environments. The sealed grey ABS enclosure features a flanged four-point mounting base for secure attachment to poles, walls, and structural members. A front-panel power button and green status LED provide quick field diagnostics without requiring a connected display. The IP-rated construction ensures reliable operation in rain, dust, and temperature extremes.",
+//   importantParts: [
+//     "UV-stable ABS enclosure shell",
+//     "Flanged four-point mounting base",
+//     "Sealed power button assembly",
+//     "Status LED indicator module",
+//     "Internal gasket for IP-rated sealing",
+//     "PCB and battery retention features",
+//   ],
+//   salientFeatures: [
+//     "IP-rated sealed enclosure for outdoor deployment.",
+//     "Four-point flange mounting for structural installations.",
+//     "Front-panel power button and status LED.",
+//     "UV-stable materials for extended sun exposure.",
+//     "Compact form factor for unobtrusive installation.",
+//     "DFM-approved geometry for production tooling.",
+//   ],
+//   scopeOfWork: [
+//     "Enclosure concept design and form exploration",
+//     "Mounting bracket and flange design",
+//     "3D CAD modelling and detailing",
+//     "Gasket and sealing strategy for IP compliance",
+//     "Design-for-manufacture review",
+//     "Prototype build and environmental testing",
+//   ],
+// },

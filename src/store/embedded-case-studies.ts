@@ -380,55 +380,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "portable-ev-charger",
-    title: "Portable EV Charger",
-    category: "IoT Devices",
-    images: [
-      "/case-studies/FEDERANT/1.png",
-      "/case-studies/FEDERANT/2.png",
-      "/case-studies/FEDERANT/3.png",
-      "/case-studies/FEDERANT/4.png",
-      "/case-studies/FEDERANT/5.png",
-      "/case-studies/FEDERANT/P01306PB1PR2_BOT.svg",
-      "/case-studies/FEDERANT/P01306PB1PR2.svg",
-    ],
-    features: [
-      "Qualcomm QCA4020 tri-radio SoC (Wi-Fi / BLE 5.0 / ZigBee)",
-      "Plug-and-play wall-outlet form factor",
-      "Inbuilt universal power supply (100–240 V AC)",
-      "Hardware / Firmware / RF development",
-      "Cloud-ready MQTT & REST API stack",
-      "Compact Design: 48 mm × 42 mm × 30 mm",
-    ],
-    summary:
-      "Fedarant is a compact, plug-and-play IoT Micro Gateway built around the Qualcomm QCA4020 tri-radio SoC. It bridges BLE and ZigBee end-devices to the Internet over dual-band Wi-Fi, eliminating the need for a separate hub. The sleek wall-outlet enclosure houses an inbuilt universal power supply so no external adapter is required. Fedarant can manage dozens of wireless endpoints simultaneously and exposes a cloud-ready MQTT / REST interface, making it a drop-in gateway for smart-home, retail, and light-industrial IoT deployments.",
-    importantParts: [
-      "Qualcomm QCA4020 – Wi-Fi 2.4 / 5 GHz, BLE 5.0, ZigBee 3.0",
-      "Skyworks Wi-Fi Front End Module",
-      "Skyworks RF Power Amplifier",
-      "Macronix 32 Mb NOR Flash Memory",
-      "CUI / Mornsun compact AC-DC power module",
-      "STMicro low-drop voltage regulators",
-    ],
-    salientFeatures: [
-      "Tri-radio operation: Wi-Fi, BLE 5.0, and ZigBee simultaneously.",
-      "No external power adapter — inbuilt universal AC-DC supply.",
-      "Plug-and-play wall-outlet form factor with zero exposed wiring.",
-      "Manages multiple BLE / ZigBee devices concurrently.",
-      "Secure TLS 1.3 cloud communication with WPA3 Wi-Fi.",
-      "OTA firmware update support for remote maintenance.",
-    ],
-    scopeOfWork: [
-      "System architecture and chipset selection",
-      "Schematic entry and PCB layout",
-      "PCB fabrication and assembly",
-      "RF calibration and antenna tuning",
-      "Firmware development and MQTT stack integration",
-      "Enclosure and industrial design",
-      "Board bring-up and end-to-end testing",
-    ],
-  },
-  {
     id: "stellar-main-board",
     title: "Stellar Main Board",
     category: "Embedded System Design",
@@ -479,7 +430,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
   {
     id: "stellar-power-board",
-    title: "Stellar Power Board",
+    title: "Portable EV Charger",
     category: "Embedded Systems",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/stellar_power_board/1.png",
@@ -569,8 +520,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "wireless-sensor-network-hub",
-    title: "Wireless Sensor Network Hub",
+    id: "high-speed-camera-interface",
+    title: "High Speed Camera Interface",
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/HIPPACK2/1.png",
