@@ -53,6 +53,7 @@ const CAPABILITIES = [
   {
     id: "digital-design",
     tabLabel: "Digital",
+    learnMoreHref: "/case-studies/hardware-development-services/high-speed-digital-design",
     tabIcon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -77,6 +78,7 @@ const CAPABILITIES = [
   {
     id: "rf-microwave",
     tabLabel: "RF & Microwave",
+    learnMoreHref: "/case-studies/hardware-development-services/rf-and-microwave",
     tabIcon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="2" />
@@ -106,6 +108,7 @@ const CAPABILITIES = [
   {
     id: "analog-design",
     tabLabel: "Analog & Mixed-Signal",
+    learnMoreHref: "/case-studies/hardware-development-services/analog-design",
     tabIcon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M2 12h3l3-9 4 18 3-12 2 6h5" />
@@ -134,6 +137,7 @@ const CAPABILITIES = [
   {
     id: "power-electronics",
     tabLabel: "Power Electronics",
+    learnMoreHref: "/case-studies/hardware-development-services/power-electronics",
     tabIcon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
@@ -155,35 +159,6 @@ const CAPABILITIES = [
         items: [
           "Battery systems (BMS), chargers, inverters, HV/HC PCB design.",
           "Thermal simulation, derating, and reliability analysis.",
-        ],
-      },
-    ],
-  },
-  {
-    id: "labs-infrastructure",
-    tabLabel: "Labs & Infrastructure",
-    tabIcon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 2v6L4 18a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3L15 8V2" />
-        <path d="M8 2h8M7 14h10" />
-      </svg>
-    ),
-    headline: "In-house labs that accelerate debug, validation, and reduce external dependency.",
-    intro:
-      "Our in-house labs exist so debug and validation never wait on an external vendor. We operate high-bandwidth scopes and spectrum analyzers, environmental and thermal-cycling chambers, and a full prototype-assembly workshop, integrated into every program from bring-up to PVT.",
-    bullets: [
-      {
-        title: "Electronics & Environmental Test",
-        items: [
-          "High-bandwidth scopes (Keysight, R&S), spectrum analyzers, CMW-500 RF testers.",
-          "Temperature chambers, thermal cycling, drop-stress, and acoustic chambers.",
-        ],
-      },
-      {
-        title: "Assembly & Workshop",
-        items: [
-          "Prototype PCB assembly and professional soldering/rework.",
-          "Mechanical workshop and dedicated bring-up facilities.",
         ],
       },
     ],
@@ -352,6 +327,7 @@ const TESTIMONIALS = [
     caseTitle: "Industrial Temperature Control System",
     caseDesc: "Multi-zone PID temperature control built on SAMA5D3, with POE+ single-cable deployment for cold-chain and manufacturing environments.",
     caseImage: "/case-studies/BLUECOLD/1.png",
+    caseHref: "/case-studies/industrial-temperature-control-system",
   },
   {
     tab: "Multi IO card",
@@ -371,6 +347,7 @@ const TESTIMONIALS = [
     caseTitle: "Multi IO Card for ATE",
     caseDesc: "Spartan-6 FPGA-based ATE IO card with high-speed ADC/DAC channels, fiber optic connectivity, and 12× faster sampling than conventional solutions.",
     caseImage: "/case-studies/CHARA/1.png",
+    caseHref: "/case-studies/multi-io-card-for-ate",
   },
   {
     tab: "Smart Monitoring System",
@@ -390,6 +367,7 @@ const TESTIMONIALS = [
     caseTitle: "Smart Monitoring System",
     caseDesc: "ARM Cortex-M7 system with FreeRTOS tracking temperature, humidity, and air quality across zones via L2 managed switch, achieving 40% better power efficiency.",
     caseImage: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/climate_control/1.png",
+    caseHref: "/case-studies/smart-monitoring-system",
   },
   {
     tab: "Microscopic Camera Control",
@@ -409,6 +387,7 @@ const TESTIMONIALS = [
     caseTitle: "Microscopic Camera Control",
     caseDesc: "Stepper motor-driven focus and zoom system with high-resolution CMOS imaging, USB 3.0 and Ethernet streaming, and OLED status display for lab and inspection use.",
     caseImage: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/microscopic_camera/1.png",
+    caseHref: "/case-studies/microscopic-camera-control",
   },
   {
     tab: "Industrial IoT Gateway",
@@ -429,6 +408,7 @@ const TESTIMONIALS = [
     caseTitle: "Industrial IoT Gateway with POE",
     caseDesc: "POE+-powered multi-radio gateway aggregating LoRa, BLE, and CAN bus data to cloud, with 15 km LoRa range and 99.9% uplink accuracy for factory deployments.",
     caseImage: "/case-studies/OTT/4.png",
+    caseHref: "/case-studies/industrial-iot-gateway-with-poe",
   },
 ];
 
@@ -473,7 +453,7 @@ function CapabilitiesSection() {
           {/* <p>We deliver high-performance designs validated by decades of experience. Our HW engineering stack covers:</p> */}
         </div>
         {/* Tabs */}
-        <div className="my-14 mb-16 grid grid-cols-5 gap-0 border-b border-gray-200 max-[900px]:grid-cols-2 max-[900px]:gap-1 max-[900px]:overflow-x-auto" role="tablist">
+        <div className="my-14 mb-16 grid grid-cols-4 gap-0 border-b border-gray-200 max-[900px]:grid-cols-2 max-[900px]:gap-1 max-[900px]:overflow-x-auto" role="tablist">
           {CAPABILITIES.map((cap, i) => (
             <button
               key={cap.id}
@@ -500,8 +480,8 @@ function CapabilitiesSection() {
             <div>
               <h3 className="mb-8 max-w-[480px] text-2xl font-light tracking-wide text-black md:text-3xl">{cap.headline}</h3>
               <div className="flex flex-wrap items-center gap-3">
-                <a className="inline-block rounded-md border-[1.5px] border-slate-900 bg-transparent px-7 py-[7px] text-slate-900 no-underline transition-colors duration-200 hover:bg-slate-900 hover:text-white hover:no-underline" href="/contact">Learn more</a>
-                <a className="inline-block rounded-md bg-[var(--qmax-red-500)] px-7 py-[7px] text-white no-underline transition-colors duration-200 hover:bg-[var(--qmax-red-600)] hover:text-white hover:no-underline" href="/contact">Get in Touch</a>
+                <a className="inline-block rounded-md border-[1.5px] border-slate-900 bg-transparent px-7 py-[7px] text-slate-900 no-underline transition-colors duration-200 hover:bg-slate-900 hover:text-white hover:no-underline" href={cap.learnMoreHref}>Learn more</a>
+                <a className="inline-block rounded-md bg-[var(--qmax-red-500)] px-7 py-[7px] text-white no-underline transition-colors duration-200 hover:bg-[var(--qmax-red-600)] hover:text-white hover:no-underline" href="/hardware-development-services/contact">Get in Touch</a>
               </div>
             </div>
             <div>
@@ -663,7 +643,7 @@ function WhySection() {
           {/* Founder CTA tile — baked PNG */}
           <a
             className="relative block h-full max-h-[220px] cursor-pointer overflow-hidden rounded-xl bg-[#0a0a0a] no-underline shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
-            href="/contact"
+            href="/hardware-development-services/contact"
             aria-label="Questions? Let's Talk! Contact Saravanabhavan, Founder & CEO"
           >
             <Image
@@ -967,7 +947,7 @@ function TestimonialsSection() {
                 <p className="m-0 text-sm leading-relaxed text-gray-600">{t.caseDesc}</p>
                 <a
                   className="mt-auto inline-flex w-fit items-center gap-1.5 rounded-md bg-[#E63329] px-3 py-1.5 text-xs font-semibold text-white no-underline transition-colors hover:bg-[#C72A21] hover:text-white hover:no-underline"
-                  href="/contact"
+                  href={t.caseHref}
                 >
                   View Case Study
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: 12, height: 12 }}>
@@ -1244,7 +1224,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
             <p className="text-white/[0.92] text-xl leading-[1.6] font-normal mb-10 max-w-[720px]">
               We provide full hardware lifecycle ownership, taking your product from early requirement analysis to production handover. Our lifecycle-driven approach minimizes risk, shortens development cycles, and ensures compliance readiness from day one.
             </p>
-            <a className="bg-[#E63329] text-white font-semibold text-base tracking-[0.04em] py-[14px] px-8 rounded-md cursor-pointer transition-colors duration-150 no-underline inline-block hover:bg-[#C72A21] hover:text-white hover:no-underline" href="#workflow">EXPLORE OUR APPROACH</a>
+            <a className="bg-[#E63329] text-white font-semibold text-base tracking-[0.04em] py-[14px] px-8 rounded-md cursor-pointer transition-colors duration-150 no-underline inline-block hover:bg-[#C72A21] hover:text-white hover:no-underline" href="/hardware-development-services/contact">EXPLORE OUR APPROACH</a>
           </div>
         </div>
       </section>

@@ -673,8 +673,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
   {
     serialNumber: 15,
-    id: "smart-building-controller",
-    title: "Smart Building Controller",
+    id: "connected-car-demonstration-unit",
+    title: "Connected Car Demonstration Unit",
     category: "Embedded System Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/connected_car_demonstration_unit/1.1.png",
@@ -813,13 +813,11 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     serialNumber: 18,
     id: "gigabit-ethernet-switch-module",
     title: "Gigabit Ethernet Switch Module",
-
- 
     category: "Embedded System Design",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_data_acquisation/1.1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_data_acquisation/1.2.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_data_acquisation/1.3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_data_acquisation/1.4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_data_acquisation/1.5.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_data_acquisation/1.6.png",
     ],
     features: [
       "Three-phase power monitoring",
@@ -1134,4 +1132,54 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "Performance Testing and Validation",
     ],
   },
+
+  {
+    id: "capserve",
+    title: "Capserve",
+    category: "Embedded Systems",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/1.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/1.2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/1.3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/2.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/2.2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/2.3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/2.4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/3.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/3.2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/3.3.png",
+    ],
+    rotatedImages: {},
+    features: [
+      "Embedded system hardware platform",
+      "Compact integrated electronics architecture",
+      "Multi-board system integration",
+      "Optimized power and communication design",
+      "Industrial-grade embedded reliability",
+      "Scalable modular hardware structure",
+    ],
+    summary:
+      "Capserve is a scalable embedded hardware platform designed for reliable system integration, efficient communication, and industrial-grade performance.",
+    importantParts: [
+      "Embedded controller board",
+      "Communication interfaces",
+      "Power management circuitry",
+      "Connector integration modules",
+      "Thermal management sections",
+      "Peripheral expansion interfaces",
+    ],
+    salientFeatures: [
+      "Compact and modular embedded architecture",
+      "Reliable industrial system integration",
+      "Efficient power and communication handling",
+      "Scalable multi-board platform design",
+    ],
+    scopeOfWork: [
+      "Embedded Hardware Design",
+      "System Architecture Development",
+      "PCB Integration",
+      "Prototype Validation",
+      "Manufacturing Support",
+    ],
+  }
 ];

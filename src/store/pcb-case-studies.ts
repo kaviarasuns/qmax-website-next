@@ -8,11 +8,12 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG123.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG56.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG45.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG45_ZIN.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG45.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG56.svg",
+
     ],
-    rotatedImages: { 0: 90, 1: 90, 2: 90 },
+    rotatedImages: { 0: 90, 2: 90, 3: 90 },
     features: [
       "Medical sensing PCB board",
       "High-precision analog front-end",
@@ -51,10 +52,10 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/1.1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/1.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG12.svg",
-       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG136.svg",
-       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG23.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/1.2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG136.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG23.svg",
     ],
     features: [
       "IoT gateway main board",
@@ -173,8 +174,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "aerospace-pcb",
-    title: "Aerospace PCB",
+    id: "obd",
+    title: "OBD",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_BOT.svg",
@@ -215,8 +216,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "automotive-obd-pcb",
-    title: "Automotive OBD",
+    id: "ubihub",
+    title: "Ubihub",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/2.png",
@@ -477,9 +478,9 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     title: "Energy Meter",
     category: "PCB Design",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/energy_meter/P01363MMC1-ENERGY METER_BOT_1.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/energy_meter/P01363MMC1-ENERGY METER_TB.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/energy_meter/P01363MMC1-ENERGY METER_TOP.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/energy_meter/ENERGY_METER_BOT_PR1.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/energy_meter/ENERGY_METER_TB_PR1.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/energy_meter/ENERGY_METER_TOP_PR1.svg",
     ],
     rotatedImages: { 0: 90, 1: 90, 2: 90, 3: 90 },
     features: [
@@ -610,8 +611,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LBM/1.1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LBM/1.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LBM/LBM_REV1_SIG123_pr8.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LBM/1.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LBM/LBM_REV1_SIG123_pr9.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LBM/LBM_REV1_SIG123_pr14.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LBM/LBM_REV1_SIG123_pr15.svg",
@@ -792,12 +793,13 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     title: "Pegasus",
     category: "PCB Design",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/1.1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/Pegasus_SIG48.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/1.2.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/Pegasus_SIG123.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/1.3.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/Pegasus_SIG567.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/1.4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/Pegasus_ALL LAYER_PR101.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/1.5.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/Pegasus_ALL LAYER_PR112.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/1.6.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/Pegasus_ALL LAYER_PR123.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/Pegasus_ALL LAYER_PR134.svg",
     ],
     rotatedImages: {},
     features: [

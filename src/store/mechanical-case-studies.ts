@@ -603,8 +603,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.58.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.59.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.61.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.63.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.64.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.65.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S3.66.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S3.67.png",
@@ -642,9 +640,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "Production Engineering Support",
     ],
   },
-
-
-
   {
     serialNumber: 23,
     id: "600kg-cable-tension-measurement-system",
@@ -969,6 +964,51 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "MIL-STD compliance documentation",
     ],
   },
+  {
+    id: "stellar",
+    title: "Stellar",
+    category: "Mechanical Design",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/STELLAR_RENDER_07_MAY_2026_S1.4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/STELLAR_RENDER_07_MAY_2026_S1.5.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/STELLAR_RENDER_07_MAY_2026_S1.6.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/STELLAR_RENDER_07_MAY_2026_S1.7.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/STELLAR_RENDER_07_MAY_2026_S1.8.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/STELLAR_RENDER_07_MAY_2026_S1.9.png",
+    ],
+    rotatedImages: {},
+    features: [
+      "Advanced industrial enclosure design",
+      "Precision mechanical assembly",
+      "Compact structural integration",
+      "Thermal-aware enclosure layout",
+      "Robust mounting architecture",
+      "Modern industrial product aesthetics",
+    ],
+    summary:
+      "Stellar is a precision-engineered mechanical system designed for robust structural integration, thermal efficiency, and reliable industrial deployment.",
+    importantParts: [
+      "Main enclosure body",
+      "Internal mounting structures",
+      "Ventilation and airflow sections",
+      "Protective outer casing",
+      "Connector access regions",
+      "Structural support framework",
+    ],
+    salientFeatures: [
+      "Compact and robust mechanical architecture",
+      "Thermally optimized enclosure design",
+      "Industrial-grade structural stability",
+      "Clean and modern product integration",
+    ],
+    scopeOfWork: [
+      "Industrial Product Design",
+      "Mechanical CAD Modeling",
+      "Structural Design Validation",
+      "Prototype Development",
+      "Manufacturing Support",
+    ],
+  }
 ];
 
 
