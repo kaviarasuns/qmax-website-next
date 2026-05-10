@@ -10,9 +10,11 @@ interface WorkflowStep {
 
 interface WorkflowSectionProps {
   steps: WorkflowStep[];
+  title?: string;
+  titleHighlight?: string;
 }
 
-export function WorkflowSection({ steps }: WorkflowSectionProps) {
+export function WorkflowSection({ steps, title = "Our Custom Hardware", titleHighlight = "Design Approach" }: WorkflowSectionProps) {
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -33,8 +35,8 @@ export function WorkflowSection({ steps }: WorkflowSectionProps) {
   return (
     <section className="workflow">
       <h2 className="workflow-title text-4xl md:text-5xl font-light tracking-wide text-center">
-        Our Custom Hardware{" "}
-        <span className="text-brand-500"> Design Approach</span>
+        {title}{" "}
+        <span className="text-brand-500"> {titleHighlight}</span>
       </h2>
       <div className="timeline-wrap">
         <div className="timeline-line" />

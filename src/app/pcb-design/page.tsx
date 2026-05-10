@@ -6,8 +6,12 @@ import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSecti
 import { CTABannerSection } from "@/components/services-cmp/CTABannerSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { FeaturedArticlesSection } from "@/components/services-cmp/FeaturedArticlesSection";
-import { IndustriesSection } from "@/components/services-cmp/IndustriesSection";
 import { PartnershipsSection } from "@/components/services-cmp/PartnershipsSection";
+import { PCBCapabilitiesStripSection } from "@/components/services-cmp/PCBCapabilitiesStripSection";
+import {
+  PCBIndustriesSection,
+  type PCBIndustry,
+} from "@/components/services-cmp/PCBIndustriesSection";
 import { TestimonialsSection } from "@/components/services-cmp/TestimonialsSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
@@ -60,7 +64,7 @@ const CAPABILITIES = [
   {
     id: "high-speed",
     tabLabel: "High-Speed",
-    learnMoreHref: "/pcb-design/high-speed-digital",
+    learnMoreHref: "/pcb-design/high-speed-digital-pcb-design",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -97,7 +101,7 @@ const CAPABILITIES = [
   {
     id: "rf-microwave",
     tabLabel: "RF & Microwave",
-    learnMoreHref: "/pcb-design/rf-and-microwave",
+    learnMoreHref: "/pcb-design/rf-and-microwave-pcb-design",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -135,7 +139,7 @@ const CAPABILITIES = [
   {
     id: "analog-design",
     tabLabel: "Analog & Mixed-Signal",
-    learnMoreHref: "/pcb-design/analog-mixed-signal",
+    learnMoreHref: "/pcb-design/analog-and-mixed-signal",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -244,7 +248,7 @@ const CAPABILITIES = [
   {
     id: "pcb-library",
     tabLabel: "PCB Library",
-    learnMoreHref: "/pcb-design/library",
+    learnMoreHref: "/pcb-design/pcb-library-services",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -278,7 +282,7 @@ const CAPABILITIES = [
   {
     id: "design-review",
     tabLabel: "Design Review",
-    learnMoreHref: "/pcb-design/design-review",
+    learnMoreHref: "/pcb-design/pcb-design-review-services",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -313,134 +317,216 @@ const CAPABILITIES = [
   },
 ];
 
-const INDUSTRIES = {
-  left: [
-    {
-      title: "Automotive Electronics",
-      desc: "Designing automotive PCBs for ECUs, infotainment, ADAS, and EV powertrain systems built to meet AEC-Q100 and IATF 16949 standards. Our layouts handle harsh thermal cycling, severe vibration, and aggressive EMI across every cabin, chassis, and under-the-hood application.",
-      badge: "AEC-Q100 · IATF 16949",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M5 17h14l-1.5-5.5a2 2 0 0 0-1.9-1.5H8.4a2 2 0 0 0-1.9 1.5L5 17z" />
-          <circle cx="7.5" cy="17.5" r="1.5" />
-          <circle cx="16.5" cy="17.5" r="1.5" />
-        </svg>
-      ),
-    },
-    {
-      title: "Medical & Healthcare",
-      desc: "Designing PCBs for medical devices, diagnostics, imaging, and life-critical patient systems. From wearable monitors to surgical equipment, our layouts meet IPC-6012 Class 3 standards, ISO 13485 design controls, and the strict isolation requirements of regulated healthcare environments.",
-      badge: "IPC-6012 Class 3 · ISO 13485",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M3.5 12.5h3l2-5 4 10 2-5h6" />
-        </svg>
-      ),
-    },
-    {
-      title: "Aerospace Systems",
-      desc: "Designing PCBs for avionics, satellite payloads, defense electronics, and flight-critical aerospace systems where failure is not an option. Our layouts conform to IPC-6012 Class 3/A, support DO-254 design assurance, and survive extreme thermal, vibration, and altitude environments.",
-      badge: "IPC-6012 Class 3/A · DO-254",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M21 16v-2l-8-5V4a1.5 1.5 0 0 0-3 0v5l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1L15 22v-1.5L13 19v-5.5z" />
-        </svg>
-      ),
-    },
-  ],
-  right: [
-    {
-      title: "Energy, EV & Power",
-      desc: "Designing power-dense PCBs for EV charging, battery management, solar inverters, and grid-scale energy systems. Our layouts handle high voltages, heavy currents, and aggressive thermal loads using thick-copper stack-ups, GaN/SiC topologies, and meticulously routed commutation loops.",
-      badge: "GaN / SiC · Thick-Copper",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Communication Systems",
-      desc: "Designing high-frequency PCBs for 5G infrastructure, satellite communication, IoT gateways, and broadband networking equipment. Our RF and high-speed digital layouts deliver controlled impedance, low-loss laminates, and tight signal integrity from sub-GHz through to mmWave.",
-      badge: "Sub-GHz to mmWave · Controlled Impedance",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Industrial Automation",
-      desc: "Designing PCBs for PLCs, motor controllers, factory IoT, robotics, and process automation equipment. Our layouts handle heavy electrical noise, wide temperature ranges, and the long operational lifespans demanded by 24/7 factory floors and mission-critical industrial environments.",
-      badge: "EMI-Hardened · 24/7 Reliability",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="12" cy="12" r="3" />
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-        </svg>
-      ),
-    },
-  ],
-};
-
-const INDUSTRY_SLIDES = [
-  { src: "/hardware-design/ind-automotive.jpg", alt: "Automotive Electronics" },
-  { src: "/hardware-design/ind-medical.jpg", alt: "Medical & Healthcare" },
-  { src: "/hardware-design/aerospace.png", alt: "Aerospace Systems" },
-  { src: "/hardware-design/ind-energy.png", alt: "Energy, EV & Power" },
-  { src: "/hardware-design/communications.png", alt: "Defense Electronics" },
+const PCB_CAPABILITIES_STRIP = [
   {
-    src: "/hardware-design/industrial_automation.png",
-    alt: "Industrial Automation",
+    title: "Design Tools",
+    description:
+      "Cadence Allegro · Mentor Xpedition / PADS · Altium Designer · OrCAD · KiCad · Valor Genesis · SI/PI simulation suites",
+  },
+  {
+    title: "Layer & Stack-Up Range",
+    description:
+      "Up to 64 layers · Fine-pitch BGA (0.3 / 0.4 mm) · HDI / ELIC / stacked vias · Multi-impedance (50 / 90 / 100 Ω) on a single board",
+  },
+  {
+    title: "Materials We Support",
+    description:
+      "FR-4 (standard and high-Tg) · Rogers · Tachyon · Arlon 85N · PTFE-based RF laminates",
+  },
+  {
+    title: "Fabrication Partners",
+    description:
+      "Direct relationships with qualified PCB fabricators worldwide. Every layout is optimized for the chosen fab and target volume.",
+  },
+];
+
+const PCB_INDUSTRIES: PCBIndustry[] = [
+  {
+    id: "automotive-electronics",
+    label: "Automotive Electronics",
+    title: "Automotive Electronics",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M5 17h14l-1.5-5.5a2 2 0 0 0-1.9-1.5H8.4a2 2 0 0 0-1.9 1.5L5 17z" />
+        <circle cx="7.5" cy="17.5" r="2" />
+        <circle cx="16.5" cy="17.5" r="2" />
+      </svg>
+    ),
+    description:
+      "Designing automotive PCBs for ECUs, infotainment, ADAS, and EV powertrain systems built to meet AEC-Q100 and IATF 16949 standards. Our layouts are engineered to handle harsh thermal cycling, severe vibration, and aggressive EMI across every cabin, chassis, and under-the-hood application.",
+    subDescription:
+      "From multi-layer ECU boards to high-current EV battery management PCBs, we deliver designs that meet zero-defect quality and full automotive traceability.",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/automotive.png",
+    relatedCaseStudies: [
+      {
+        title: "Automotive OBD",
+        image: "/hardware-design/cs-automotive-obd.png",
+        href: "#",
+      },
+    ],
+  },
+  {
+    id: "medical-healthcare",
+    label: "Medical & Healthcare",
+    title: "Medical & Healthcare",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M3.5 12.5h3l2-5 4 10 2-5h6" />
+      </svg>
+    ),
+    description:
+      "Designing PCBs for medical devices, diagnostics, imaging, and life-critical patient systems. From wearable monitors to surgical equipment, our layouts meet IPC-6012 Class 3 standards, ISO 13485 design controls, and the strict isolation requirements of regulated healthcare environments.",
+    subDescription:
+      "We engineer leakage-current-safe routing, reinforced isolation barriers, and long-life stack-ups built for sterilization, longevity, and clinical reliability.",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/medical.png",
+    relatedCaseStudies: [
+      {
+        title: "Innovide",
+        href: "/hardware-design/cs-automotive-obd.png",
+      },
+    ],
+  },
+  {
+    id: "aerospace-systems",
+    label: "Aerospace Systems",
+    title: "Aerospace Systems",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M21 16v-2l-8-5V4a1.5 1.5 0 0 0-3 0v5l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1L15 22v-1.5L13 19v-5.5L21 16z" />
+      </svg>
+    ),
+    description:
+      "Designing PCBs for avionics, satellite payloads, defense electronics, and flight-critical aerospace systems where failure is not an option. Our layouts conform to IPC-6012 Class 3/A, support DO-254 design assurance, and survive extreme thermal, vibration, and altitude environments.",
+    subDescription:
+      "From rigid-flex avionics boards to high-reliability digital backbones, we deliver PCBs proven to withstand the harshest aerospace mission profiles.",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/aerospace.png",
+    relatedCaseStudies: [
+      {
+        title: "Aerospace PCB",
+        image: "/hardware-design/cs-aerospace-pcb.png",
+        href: "#",
+      },
+    ],
+  },
+  {
+    id: "energy-ev-power",
+    label: "Energy, EV & Power",
+    title: "Energy, EV & Power",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
+      </svg>
+    ),
+    description:
+      "Designing power-dense PCBs for EV charging, battery management, solar inverters, and grid-scale energy systems. Our layouts handle high voltages, heavy currents, and aggressive thermal loads using thick-copper stack-ups, GaN/SiC topologies, and meticulously routed commutation loops.",
+    subDescription:
+      "We deliver layouts that minimize parasitics, maximize efficiency, and survive the demanding duty cycles of modern electrification and renewable platforms.",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/ev and power.png",
+    relatedCaseStudies: [
+      {
+        title: "Energy Meter",
+        image: "/hardware-design/cs-energy-meter.png",
+        href: "#",
+      },
+    ],
+  },
+  {
+    id: "communication-systems",
+    label: "Communication Systems",
+    title: "Communication Systems",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="2" />
+        <path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 16.24a6 6 0 0 1 0-8.49M20.49 3.51a12 12 0 0 1 0 16.97M3.51 20.49a12 12 0 0 1 0-16.97" />
+      </svg>
+    ),
+    description:
+      "Designing high-frequency PCBs for 5G infrastructure, satellite communication, IoT gateways, and broadband networking equipment. Our RF and high-speed digital layouts deliver controlled impedance, low-loss laminates, and tight signal integrity from sub-GHz applications through to mmWave.",
+    subDescription:
+      "We optimize antenna routing, ground plane integrity, and EMI containment to ensure reliable, low-noise performance across complex multi-layer boards.",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/communication.png",
+    relatedCaseStudies: [
+      {
+        title: "IoT Gateway PCB",
+        href: "/hardware-design/cs-automotive-obd.png",
+      },
+    ],
+  },
+  {
+    id: "industrial-automation",
+    label: "Industrial Automation",
+    title: "Industrial Automation",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M2 20h20M4 20V8l4-3v15M12 20V4l4 3v13M20 20v-9l-4-2" />
+      </svg>
+    ),
+    description:
+      "Designing PCBs for PLCs, motor controllers, factory IoT, robotics, and process automation equipment. Our layouts handle heavy electrical noise, wide temperature ranges, and the long operational lifespans demanded by 24/7 factory floors and mission-critical industrial environments.",
+    subDescription:
+      "Heavy-copper power planes, isolated I/O zones, and EMI-hardened layouts deliver the reliability and durability that industrial deployments require.",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/industry.png",
+    relatedCaseStudies: [
+      {
+        title: "Industrial Controller",
+        href: "/hardware-design/cs-automotive-obd.png",
+      },
+    ],
   },
 ];
 
 const WHY_CARDS = [
   {
     title: "Engineering Depth Over Surface-Level Layout",
-    desc: "Our engineers understand the full signal chain. Every layer decision is driven by electrical, thermal, and mechanical constraints — never routing convenience.",
+    desc: "Engineers understand the full signal chain. Every layer decision is driven by electrical, thermal, and mechanical constraints, not routing convenience.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -457,7 +543,7 @@ const WHY_CARDS = [
   },
   {
     title: "First-Time-Right Philosophy",
-    desc: "DRC, SI, and thermal simulations run before Gerbers leave the building. The first fabricated board behaves as designed — no costly re-spins, no last-minute rework.",
+    desc: "DRC, SI, and thermal simulations run before Gerbers leave the building. First fabricated board behaves as designed — no costly re-spins.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -474,7 +560,7 @@ const WHY_CARDS = [
   },
   {
     title: "30,000+ Verified Component Libraries",
-    desc: "Every symbol, footprint, and 3D model is validated against manufacturer datasheets. No pad mismatches, no assembly surprises, no wasted spins on library errors.",
+    desc: "Every symbol, footprint, and 3D model validated against manufacturer datasheets. No pad mismatches, no assembly surprises.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -492,7 +578,7 @@ const WHY_CARDS = [
   },
   {
     title: "Strict IP Protection",
-    desc: "Mutual NDA from day one. Files are stored in an access-controlled vault, never on shared drives, with role-based permissions and complete audit trails on every project.",
+    desc: "Mutual NDA from day one. Files stored in an access-controlled vault, never on shared drives.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -510,7 +596,7 @@ const WHY_CARDS = [
   },
   {
     title: "Global Compliance Expertise",
-    desc: "CE, FCC, UL, and IPC requirements are designed in at the layout stage. Compliance testing is a confirmation, not a gamble — every board enters the lab with clear margin.",
+    desc: "CE, FCC, UL, and IPC requirements designed in at layout stage. Compliance testing is a confirmation, not a gamble.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -523,6 +609,139 @@ const WHY_CARDS = [
         <circle cx="24" cy="24" r="18" />
         <path d="M6 24 H42" />
         <path d="M24 6 C30 12 30 36 24 42 C18 36 18 12 24 6 Z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Fabrication Partner Network",
+    desc: "Qualified fabs and assembly houses with competitive lead times, controlled processes, and traceable material sourcing.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M6 42 V22 L18 28 V22 L30 28 V14 L42 14 V42 Z" />
+        <path d="M12 36 H16 M22 36 H26 M34 36 H38" />
+      </svg>
+    ),
+  },
+  {
+    title: "Multi-Domain Systems Experience",
+    desc: "Cross-domain background across automotive, medical, aerospace, and industrial. Complex mixed-signal and safety-critical designs handled by experienced engineers.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="6" y="6" width="15" height="15" rx="1.5" />
+        <rect x="27" y="6" width="15" height="15" rx="1.5" />
+        <rect x="6" y="27" width="15" height="15" rx="1.5" />
+        <rect x="27" y="27" width="15" height="15" rx="1.5" />
+      </svg>
+    ),
+  },
+];
+
+const PCB_SPECIALISATIONS = [
+  {
+    title: "Design Tools",
+    items: [
+      "Cadence Allegro",
+      "Mentor Xpedition / PADS",
+      "Altium Designer",
+      "OrCAD",
+      "KiCad",
+      "Valor Genesis",
+      "SI/PI simulation suites",
+    ],
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+        <path d="M8 12h8M12 8v8" />
+      </svg>
+    ),
+  },
+  {
+    title: "Layer & Stack-Up Range",
+    items: [
+      "Up to 64 layers",
+      "Fine-pitch BGA (0.3 / 0.4 mm)",
+      "HDI / ELIC / stacked vias",
+      "Multi-impedance (50 / 90 / 100 Ω) on a single board",
+    ],
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M3 9h18M3 15h18M9 3v18M15 3v18" />
+      </svg>
+    ),
+  },
+  {
+    title: "Materials We Support",
+    items: [
+      "FR-4 (standard and high-Tg)",
+      "Rogers",
+      "Tachyon",
+      "Arlon 85N",
+      "PTFE-based RF laminates",
+    ],
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+        <line x1="9" y1="9" x2="9.01" y2="9" />
+        <line x1="15" y1="9" x2="15.01" y2="9" />
+      </svg>
+    ),
+  },
+  {
+    title: "Fabrication Partners",
+    items: [
+      "Direct relationships with qualified PCB fabricators worldwide",
+      "Every layout is optimized for the chosen fab and target volume",
+    ],
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
   },
@@ -804,7 +1023,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
         id="hero"
         style={{
           backgroundImage:
-            "linear-gradient(135deg, rgba(11,95,165,0.45), rgba(14,20,27,0.55)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=2000&q=80&auto=format&fit=crop')",
+            "linear-gradient(135deg, rgba(11,95,165,0.45), rgba(14,20,27,0.55)), url('/pcb-design/images/image1.jpg')",
         }}
       >
         <div className="relative z-[2] w-full py-20 px-16 max-w-[1400px] mx-auto max-[900px]:py-16 max-[900px]:px-6">
@@ -832,36 +1051,43 @@ export default function HardwareDevelopmentServicesComponentV2() {
       {/* CORE CAPABILITIES */}
       <CapabilitiesSection capabilities={CAPABILITIES} />
 
-      {/* INDUSTRIES WE SERVE */}
-      <IndustriesSection industries={INDUSTRIES} slides={INDUSTRY_SLIDES} />
+      {/* PCB CAPABILITIES STRIP — Design Tools, Stack-Up, Materials, Fab Partners */}
+      <PCBCapabilitiesStripSection items={PCB_CAPABILITIES_STRIP} />
+
+      {/* PCB DESIGN ACROSS INDUSTRIES (tabbed) */}
+      <PCBIndustriesSection
+        industries={PCB_INDUSTRIES}
+        ctaLabel="Get a PCB Design Quote"
+      />
 
       {/* WHY CHOOSE QMAX */}
-      <WhySection whyCards={WHY_CARDS} />
+      <WhySection whyCards={WHY_CARDS} titleHighlight="PCB Design?" />
 
       {/* PARTNERSHIPS */}
-      <PartnershipsSection />
+      {/* <PartnershipsSection /> */}
 
       {/* WORKFLOW TIMELINE */}
       <div id="workflow">
-        <WorkflowSection steps={WORKFLOW_STEPS} />
+        <WorkflowSection steps={WORKFLOW_STEPS} title="Our Custom PCB" />
       </div>
 
       {/* CUSTOMER SUCCESS STORIES */}
-      <TestimonialsSection testimonials={TESTIMONIALS} />
+      {/* <TestimonialsSection testimonials={TESTIMONIALS} /> */}
 
-      {/* CTA BANNER */}
-      <CTABannerSection />
+      {/* CTA BANNER update con*/}
+      {/* <CTABannerSection /> */}
 
       {/* FEATURED ARTICLES */}
-      <FeaturedArticlesSection />
+      {/* <FeaturedArticlesSection /> */}
 
       {/* FAQ */}
       <FAQSection faqItems={FAQ_ITEMS} />
+      <div className="pb-28"></div>
 
       {/* OTHER CAPABILITIES */}
-      <OtherCapabilitiesScrollSection
+      {/* <OtherCapabilitiesScrollSection
         capabilities={hardwareDevelopmentOtherCapabilities}
-      />
+      /> */}
     </div>
   );
 }

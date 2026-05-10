@@ -8,9 +8,10 @@ interface WhyCard {
 
 interface WhySectionProps {
   whyCards: WhyCard[];
+  titleHighlight?: string;
 }
 
-export function WhySection({ whyCards }: WhySectionProps) {
+export function WhySection({ whyCards, titleHighlight = "Hardware Design?" }: WhySectionProps) {
   return (
     <section
       className="bg-white px-16 py-24 max-[900px]:px-6 max-[900px]:py-16"
@@ -20,7 +21,7 @@ export function WhySection({ whyCards }: WhySectionProps) {
         <div className="mb-14">
           <h2 className="text-4xl md:text-5xl font-light tracking-wide text-center text-black">
             Why Choose Qmax for{" "}
-            <span className="text-brand-500">Hardware Design?</span>
+            <span className="text-brand-500">{titleHighlight}</span>
           </h2>
         </div>
         <div className="grid grid-cols-2 items-stretch gap-6 max-[900px]:grid-cols-1 max-[900px]:gap-4">

@@ -16,7 +16,9 @@ interface CapabilitiesSectionProps {
   capabilities: Capability[];
 }
 
-export function CapabilitiesSection({ capabilities }: CapabilitiesSectionProps) {
+export function CapabilitiesSection({
+  capabilities,
+}: CapabilitiesSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
   return (
     <section className="bg-white px-16 py-24 max-[900px]:px-6 max-[900px]:py-16">
@@ -30,7 +32,7 @@ export function CapabilitiesSection({ capabilities }: CapabilitiesSectionProps) 
         </div>
         {/* Tabs */}
         <div
-          className="my-14 mb-16 grid grid-cols-4 gap-0 border-b border-gray-200 max-[900px]:grid-cols-2 max-[900px]:gap-1 max-[900px]:overflow-x-auto"
+          className="my-14 mb-16 flex gap-0 border-b border-gray-200 max-[900px]:gap-1"
           role="tablist"
         >
           {capabilities.map((cap, i) => (
@@ -39,7 +41,7 @@ export function CapabilitiesSection({ capabilities }: CapabilitiesSectionProps) 
               type="button"
               role="tab"
               aria-selected={activeIdx === i}
-              className={`text-m font-bold relative flex cursor-pointer items-center justify-center gap-3 bg-transparent px-3 py-[18px] text-left text-black transition-colors duration-200 hover:text-red-500 max-[900px]:px-2 max-[900px]:py-3.5 ${
+              className={`text-m font-bold relative flex flex-1 cursor-pointer items-start justify-start gap-3 bg-transparent px-3 py-[18px] text-left text-black transition-colors duration-200 hover:text-red-500 whitespace-normal max-[900px]:gap-2 max-[900px]:px-2 max-[900px]:py-3.5 max-[900px]:text-sm max-[900px]:items-center ${
                 activeIdx === i
                   ? "text-red-500 after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:bg-red-500"
                   : ""
@@ -49,7 +51,7 @@ export function CapabilitiesSection({ capabilities }: CapabilitiesSectionProps) 
               <span className="h-[22px] w-[22px] shrink-0 transition-colors duration-200">
                 {cap.tabIcon}
               </span>
-              <span>{cap.tabLabel}</span>
+              <span className="break-words">{cap.tabLabel}</span>
             </button>
           ))}
         </div>
@@ -73,7 +75,7 @@ export function CapabilitiesSection({ capabilities }: CapabilitiesSectionProps) 
                 </a>
                 <a
                   className="inline-block rounded-md bg-[var(--qmax-red-500)] px-7 py-[7px] text-white no-underline transition-colors duration-200 hover:bg-[var(--qmax-red-600)] hover:text-white hover:no-underline"
-                  href="/hardware-development-services/contact"
+                  href="/pcb-design/contact"
                 >
                   Get in Touch
                 </a>

@@ -30,10 +30,13 @@ const STATS = [
   },
 ];
 
-export default function HardwareDevelopmentServicesContactPage() {
+export default function PCBServicesContactPage() {
   return (
     <ServicesContactHero
-      heading={{ line1: "Interested in Hardware Design?", line2: "Let's Talk!" }}
+      heading={{
+        line1: "Interested in PCB Design?",
+        line2: "Let's Talk!",
+      }}
       subheading="To learn more about how Qmax can help you, contact us. We'd be happy to take on the challenge!"
       stats={STATS}
       backgroundImage="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=2000&q=80"
