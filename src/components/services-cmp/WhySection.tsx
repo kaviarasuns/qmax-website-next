@@ -45,19 +45,16 @@ export function WhySection({ whyCards, titleHighlight = "Hardware Design?" }: Wh
           ))}
           {/* Founder CTA tile — baked PNG */}
           <a
-            className="relative block h-full max-h-[220px] cursor-pointer overflow-hidden rounded-xl bg-[#0a0a0a] no-underline shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
+            className="relative block h-full cursor-pointer overflow-hidden rounded-xl bg-[#0a0a0a] no-underline shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
             href="/hardware-development-services/contact"
             aria-label="Questions? Let's Talk! Contact Saravanabhavan, Founder & CEO"
           >
             <Image
               src="/hardware-design/founder_csb.png"
               alt="Questions? Let's Talk! Contact us. Saravanabhavan, Founder & CEO"
-              width={600}
-              height={340}
+              fill
+              sizes="(max-width: 900px) 100vw, 600px"
               style={{
-                display: "block",
-                width: "100%",
-                height: "100%",
                 objectFit: "cover",
                 objectPosition: "center",
               }}
