@@ -1,448 +1,867 @@
 "use client";
 
-import Image from "next/image";
-import React from "react";
-import {
-  Cpu,
-  Radio,
-  Zap,
-  Activity,
-  LineChart,
-  Library,
-  CheckCircle2,
-  ArrowRight,
-} from "lucide-react";
-import Link from "next/link";
-import FAQSection from "@/components/FAQSection";
-import { pcbDesignFAQs } from "@/data/service-faqs";
-import { CTASection } from "@/components/cta-section";
+import "../../components/hardware-design.css";
 import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { pcbDesignOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
-import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
+import { CTABannerSection } from "@/components/services-cmp/CTABannerSection";
+import { FAQSection } from "@/components/services-cmp/FAQSection";
+import { FeaturedArticlesSection } from "@/components/services-cmp/FeaturedArticlesSection";
+import { IndustriesSection } from "@/components/services-cmp/IndustriesSection";
+import { PartnershipsSection } from "@/components/services-cmp/PartnershipsSection";
+import { TestimonialsSection } from "@/components/services-cmp/TestimonialsSection";
+import { WhySection } from "@/components/services-cmp/WhySection";
+import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
+import { hardwareDevelopmentOtherCapabilities } from "@/data/other-capabilities";
 
-const pcbCaseStudies = [
+/* ============================================================
+   DATA
+   ============================================================ */
+
+const WORKFLOW_STEPS = [
   {
-    id: 1,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Industrial-Control-2.png",
-    title: "Industrial Controller",
-    summary:
-      "Production-grade industrial control PCB developed for reliable operation in demanding field environments.",
-    link: "/case-studies/Industrial-Controller",
+    number: 1,
+    title: "Requirements",
+    description:
+      "We begin with full PCB requirements capture — schematic intent, electrical specs, mechanical constraints, and environment. Stack-up, layer count, and impedance targets are locked early to set a clear baseline.",
   },
   {
-    id: 2,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Aerospace-PCB.png",
-    title: "Aerospace PCB",
-    summary:
-      "High-reliability aerospace board program engineered around strict performance and validation constraints.",
-    link: "/case-studies/Aerospace-PCB",
+    number: 2,
+    title: "Library & Stack-up",
+    description:
+      "Footprints, 3D models, and pads are validated against IPC-7351 and your fab partner's rules. Stack-up and impedance profiles are simulated and locked, ensuring a dimensionally accurate, electrically sound foundation.",
   },
   {
-    id: 3,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Automotive-OBD.png",
-    title: "Automotive OBD",
-    summary:
-      "Compact automotive diagnostics platform designed for durability, compliance, and fast integration.",
-    link: "/case-studies/Automotive-OBD",
+    number: 3,
+    title: "Placement & Floorplanning",
+    description:
+      "Components are placed for optimal signal flow, thermal dissipation, and mechanical fit. Critical nets, RF zones, and power sections are isolated early, easing every later stage of the layout and minimizing crosstalk.",
+  },
+  {
+    number: 4,
+    title: "Routing & Layout Execution",
+    description:
+      "Our designers route controlled-impedance lanes, length-tuned differential pairs, and clean return paths. Power integrity is engineered through plane partitioning, decoupling strategy, and disciplined via stitching.",
+  },
+  {
+    number: 5,
+    title: "SI / PI / EMI Analysis & Review",
+    description:
+      "Pre-layout and post-layout simulations validate signal integrity, power integrity, and EMI behavior across every critical channel. Peer reviews and customer checkpoints catch issues before fabrication release.",
+  },
+  {
+    number: 6,
+    title: "DFM Review & Fab Handover",
+    description:
+      "Final DFM, DFA, and DFT reviews are run with your fab and assembly partners to eliminate yield risks. We deliver a complete manufacturing package — Gerbers, ODB++, drill files, and assembly notes ready for production.",
   },
 ];
 
-export default function PCBDesignPage() {
-  // const containerVariants = {
-  //   hidden: { opacity: 0 },
-  //   visible: {
-  //     opacity: 1,
-  //     transition: {
-  //       staggerChildren: 0.3,
-  //     },
-  //   },
-  // };
+const CAPABILITIES = [
+  {
+    id: "high-speed",
+    tabLabel: "High-Speed",
+    learnMoreHref: "/pcb-design/high-speed-digital",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M3 12h4l2-6 4 12 2-6h6" />
+      </svg>
+    ),
+    headline:
+      "High-speed PCB layout governed by signal-integrity and timing margins.",
+    intro:
+      "We layout high-speed digital boards where signal integrity, timing margin, and power delivery decide whether the board boots. Our team handles DDR4/DDR5 routing, PCIe Gen3/Gen4 channel design, and 10/25G SerDes lanes, validated through pre- and post-layout SI/PI simulation.",
+    bullets: [
+      {
+        title: "Standards & Interfaces",
+        items: [
+          "IPC-2221, IPC-2152, IPC-2141 controlled-impedance routing.",
+          "DDR3/4/5, PCIe Gen3/4, 10G/25G SerDes, USB 3.x, HDMI.",
+        ],
+      },
+      {
+        title: "Tools & Verification",
+        items: [
+          "Cadence Sigrity, Ansys SIwave for SI/PI simulation.",
+          "Length-matched differential pairs, return-path integrity, decap optimisation.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "rf-microwave",
+    tabLabel: "RF & Microwave",
+    learnMoreHref: "/pcb-design/rf-and-microwave",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="2" />
+        <path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 16.24a6 6 0 0 1 0-8.49M20.49 4.51a10 10 0 0 1 0 14.14M3.51 19.49a10 10 0 0 1 0-14.14" />
+      </svg>
+    ),
+    headline:
+      "RF designs validated in real-world conditions, not just simulations.",
+    intro:
+      "RF & microwave design is where simulation and reality diverge, so we validate every link budget on real hardware in our labs. Our team handles front-end architecture, antenna integration, and EMC-aware layout, qualified across ISM, Wi-Fi, BLE, LTE, and Sub-GHz bands.",
+    bullets: [
+      {
+        title: "Components & Antennas",
+        items: [
+          "RF front-end design (LNA, PA, filters, matching networks).",
+          "PCB, external, horn, and custom antenna integration.",
+        ],
+      },
+      {
+        title: "Protocols & Validation",
+        items: [
+          "ISM, Wi-Fi, BLE, LTE, and Sub-GHz systems.",
+          "RF simulation, tuning, calibration, and EMC-aware layout.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "analog-design",
+    tabLabel: "Analog & Mixed-Signal",
+    learnMoreHref: "/pcb-design/analog-mixed-signal",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M2 12h3l3-9 4 18 3-12 2 6h5" />
+      </svg>
+    ),
+    headline:
+      "Precision analog and mixed-signal design for sensing, measurement, and control.",
+    intro:
+      "To recover clean signal from noisy environments, we build precision analog and mixed-signal front-ends for sensing, measurement, and control. Our engineers deliver low-noise sensor interfaces, ADC/DAC conditioning chains, and EMI-hardened layout, integrated into a single qualified board.",
+    bullets: [
+      {
+        title: "Sensing & Front-Ends",
+        items: [
+          "Low-noise analog front-ends and sensor interfacing.",
+          "Pressure, vibration, biomedical, and optical signal acquisition.",
+        ],
+      },
+      {
+        title: "Processing & Integrity",
+        items: [
+          "Signal conditioning, filtering, amplification, ADC/DAC integration.",
+          "EMI-aware analog layout and grounding techniques.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "power-electronics",
+    tabLabel: "Power Electronics",
+    learnMoreHref: "/pcb-design/power-electronics",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+      </svg>
+    ),
+    headline:
+      "Robust power electronics for industrial, automotive, and energy applications.",
+    intro:
+      "We design power electronics for industrial, automotive, and energy systems where efficiency, isolation, and thermal margin are non-negotiable. Our team builds AC-DC and DC-DC converters, battery management systems, and HV/HC PCBs, each verified against derating and reliability targets before sign-off.",
+    bullets: [
+      {
+        title: "Conversion & Topologies",
+        items: [
+          "AC-DC/DC-DC converters and isolated/non-isolated SMPS.",
+          "Resonant, LLC, CLLC, and Class-D topologies.",
+        ],
+      },
+      {
+        title: "High Power & Reliability",
+        items: [
+          "Battery systems (BMS), chargers, inverters, HV/HC PCB design.",
+          "Thermal simulation, derating, and reliability analysis.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "si-pi-analysis",
+    tabLabel: "SI / PI Analysis",
+    learnMoreHref: "/pcb-design/si-pi-analysis",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M3 12h3l2-7 4 14 2-7h7" />
+      </svg>
+    ),
+    headline:
+      "Pre- and post-layout signal & power integrity analysis before a single board is fabricated.",
+    intro:
+      "Our engineers perform transmission line simulation, eye diagram analysis, IBIS-based driver/receiver modeling, and PDN impedance analysis. SI/PI is offered as a standalone service or as an integrated element of any PCB layout engagement.",
+    bullets: [
+      {
+        title: "Simulation & Modeling",
+        items: [
+          "Transmission line simulation, eye diagram, and IBIS-based driver/receiver modeling.",
+        ],
+      },
+      {
+        title: "PDN & Decoupling",
+        items: [
+          "Power delivery network impedance analysis and decoupling capacitor optimization.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "pcb-library",
+    tabLabel: "PCB Library",
+    learnMoreHref: "/pcb-design/library",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M4 4h6v16H4zM10 4h6v16h-6zM16 6l4 1-3 14-4-1z" />
+      </svg>
+    ),
+    headline: "A PCB design is only as reliable as its component library.",
+    intro:
+      "Over three decades, Qmax has built a verified, well-documented library covering schematic symbols, PCB footprints, and 3D STEP models. Every part is validated against manufacturer datasheets and IPC-7351 land pattern standards.",
+    bullets: [
+      {
+        title: "Library Standards",
+        items: [
+          "Schematic symbols, PCB footprints, and 3D STEP models validated to IPC-7351.",
+        ],
+      },
+      {
+        title: "Lifecycle Management",
+        items: [
+          "Footprint accuracy maintained through component revisions, reducing manufacturing errors.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "design-review",
+    tabLabel: "Design Review",
+    learnMoreHref: "/pcb-design/design-review",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M9 11l3 3L22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+      </svg>
+    ),
+    headline:
+      "An independent PCB design review — identifying risks before you release to fabrication.",
+    intro:
+      "Qmax engineers review your existing layout against a structured checklist covering layer stack-up, placement, routing, silkscreen, drill notes, and documentation. Findings are delivered as a formal technical report with prioritized recommendations.",
+    bullets: [
+      {
+        title: "Review Coverage",
+        items: [
+          "Stack-up, placement, routing, silkscreen, drill notes, and documentation completeness.",
+        ],
+      },
+      {
+        title: "Deliverable",
+        items: [
+          "Formal technical report with prioritized SI, DFM, thermal, and compliance findings.",
+        ],
+      },
+    ],
+  },
+];
 
-  return (
-    <main className="min-h-screen bg-white pt-16">
-      {/* Hero Section */}
-      <section className="relative h-[80vh] w-full flex items-center justify-center overflow-hidden">
-        <Image
-          src="/pcb-design/pcb_design_main.png"
-          alt="PCB Design: A Multi-Physics Engineering Discipline"
-          fill
-          priority
-          className="object-cover scale-105"
+const INDUSTRIES = {
+  left: [
+    {
+      title: "Automotive Electronics",
+      desc: "Designing automotive PCBs for ECUs, infotainment, ADAS, and EV powertrain systems built to meet AEC-Q100 and IATF 16949 standards. Our layouts handle harsh thermal cycling, severe vibration, and aggressive EMI across every cabin, chassis, and under-the-hood application.",
+      badge: "AEC-Q100 · IATF 16949",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M5 17h14l-1.5-5.5a2 2 0 0 0-1.9-1.5H8.4a2 2 0 0 0-1.9 1.5L5 17z" />
+          <circle cx="7.5" cy="17.5" r="1.5" />
+          <circle cx="16.5" cy="17.5" r="1.5" />
+        </svg>
+      ),
+    },
+    {
+      title: "Medical & Healthcare",
+      desc: "Designing PCBs for medical devices, diagnostics, imaging, and life-critical patient systems. From wearable monitors to surgical equipment, our layouts meet IPC-6012 Class 3 standards, ISO 13485 design controls, and the strict isolation requirements of regulated healthcare environments.",
+      badge: "IPC-6012 Class 3 · ISO 13485",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M3.5 12.5h3l2-5 4 10 2-5h6" />
+        </svg>
+      ),
+    },
+    {
+      title: "Aerospace Systems",
+      desc: "Designing PCBs for avionics, satellite payloads, defense electronics, and flight-critical aerospace systems where failure is not an option. Our layouts conform to IPC-6012 Class 3/A, support DO-254 design assurance, and survive extreme thermal, vibration, and altitude environments.",
+      badge: "IPC-6012 Class 3/A · DO-254",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M21 16v-2l-8-5V4a1.5 1.5 0 0 0-3 0v5l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1L15 22v-1.5L13 19v-5.5z" />
+        </svg>
+      ),
+    },
+  ],
+  right: [
+    {
+      title: "Energy, EV & Power",
+      desc: "Designing power-dense PCBs for EV charging, battery management, solar inverters, and grid-scale energy systems. Our layouts handle high voltages, heavy currents, and aggressive thermal loads using thick-copper stack-ups, GaN/SiC topologies, and meticulously routed commutation loops.",
+      badge: "GaN / SiC · Thick-Copper",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
+        </svg>
+      ),
+    },
+    {
+      title: "Communication Systems",
+      desc: "Designing high-frequency PCBs for 5G infrastructure, satellite communication, IoT gateways, and broadband networking equipment. Our RF and high-speed digital layouts deliver controlled impedance, low-loss laminates, and tight signal integrity from sub-GHz through to mmWave.",
+      badge: "Sub-GHz to mmWave · Controlled Impedance",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7z" />
+        </svg>
+      ),
+    },
+    {
+      title: "Industrial Automation",
+      desc: "Designing PCBs for PLCs, motor controllers, factory IoT, robotics, and process automation equipment. Our layouts handle heavy electrical noise, wide temperature ranges, and the long operational lifespans demanded by 24/7 factory floors and mission-critical industrial environments.",
+      badge: "EMI-Hardened · 24/7 Reliability",
+      icon: (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+      ),
+    },
+  ],
+};
+
+const INDUSTRY_SLIDES = [
+  { src: "/hardware-design/ind-automotive.jpg", alt: "Automotive Electronics" },
+  { src: "/hardware-design/ind-medical.jpg", alt: "Medical & Healthcare" },
+  { src: "/hardware-design/aerospace.png", alt: "Aerospace Systems" },
+  { src: "/hardware-design/ind-energy.png", alt: "Energy, EV & Power" },
+  { src: "/hardware-design/communications.png", alt: "Defense Electronics" },
+  {
+    src: "/hardware-design/industrial_automation.png",
+    alt: "Industrial Automation",
+  },
+];
+
+const WHY_CARDS = [
+  {
+    title: "Engineering Depth Over Surface-Level Layout",
+    desc: "Our engineers understand the full signal chain. Every layer decision is driven by electrical, thermal, and mechanical constraints — never routing convenience.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M14 6 L34 6 L34 18 L42 26 L34 34 L34 42 L14 42 L14 34 L6 26 L14 18 Z" />
+        <circle cx="24" cy="24" r="4" />
+      </svg>
+    ),
+  },
+  {
+    title: "First-Time-Right Philosophy",
+    desc: "DRC, SI, and thermal simulations run before Gerbers leave the building. The first fabricated board behaves as designed — no costly re-spins, no last-minute rework.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="24" cy="24" r="18" />
+        <path d="M14 25 L21 32 L34 18" />
+      </svg>
+    ),
+  },
+  {
+    title: "30,000+ Verified Component Libraries",
+    desc: "Every symbol, footprint, and 3D model is validated against manufacturer datasheets. No pad mismatches, no assembly surprises, no wasted spins on library errors.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <ellipse cx="24" cy="12" rx="16" ry="5" />
+        <path d="M8 12 V24 C8 26.8 15.2 29 24 29 C32.8 29 40 26.8 40 24 V12" />
+        <path d="M8 24 V36 C8 38.8 15.2 41 24 41 C32.8 41 40 38.8 40 36 V24" />
+      </svg>
+    ),
+  },
+  {
+    title: "Strict IP Protection",
+    desc: "Mutual NDA from day one. Files are stored in an access-controlled vault, never on shared drives, with role-based permissions and complete audit trails on every project.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="10" y="22" width="28" height="20" rx="2" />
+        <path d="M16 22 V14 a8 8 0 0 1 16 0 V22" />
+        <circle cx="24" cy="32" r="2.5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Global Compliance Expertise",
+    desc: "CE, FCC, UL, and IPC requirements are designed in at the layout stage. Compliance testing is a confirmation, not a gamble — every board enters the lab with clear margin.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="24" cy="24" r="18" />
+        <path d="M6 24 H42" />
+        <path d="M24 6 C30 12 30 36 24 42 C18 36 18 12 24 6 Z" />
+      </svg>
+    ),
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    tab: "Temperature Control System",
+    logo: (
+      <svg
+        viewBox="0 0 180 36"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="Velocon Mobility"
+        style={{ height: 36, width: "auto" }}
+      >
+        <circle
+          cx="18"
+          cy="18"
+          r="12"
+          fill="none"
+          stroke="#E63329"
+          strokeWidth="2.5"
         />
-        {/* Decorative Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+        <path
+          d="M18 8 L28 18 L18 28 L8 18 Z"
+          fill="none"
+          stroke="#E63329"
+          strokeWidth="1.5"
+        />
+        <text
+          x="38"
+          y="24"
+          fontFamily="sans-serif"
+          fontSize="16"
+          fontWeight="700"
+          fill="#1C2A3A"
+        >
+          Velocon
+        </text>
+        <text
+          x="103"
+          y="24"
+          fontFamily="sans-serif"
+          fontSize="16"
+          fill="#5A6778"
+        >
+          Mobility
+        </text>
+      </svg>
+    ),
+    quote:
+      "Qmax delivered a production-ready ECU that passed AEC-Q100 qualification on the first build. Their EMC-first layout approach saved us two full spins and kept the entire program on schedule. The upfront signal integrity work and meticulous component selection gave our compliance team total confidence in the final design.",
+    authorName: "VP, Hardware Engineering",
+    authorRole: "US-based Tier-1 Automotive Supplier",
+    avatarColor: "#0B5FA5",
+    avatarInitials: "JR",
+    caseTag: "AUTOMOTIVE",
+    caseTitle: "Industrial Temperature Control System",
+    caseDesc:
+      "Multi-zone PID temperature control built on SAMA5D3, with POE+ single-cable deployment for cold-chain and manufacturing environments.",
+    caseImage: "/case-studies/BLUECOLD/1.png",
+    caseHref: "/case-studies/industrial-temperature-control-system",
+  },
+  {
+    tab: "Multi IO card",
+    logo: (
+      <svg
+        viewBox="0 0 180 36"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="MedCore"
+        style={{ height: 36, width: "auto" }}
+      >
+        <rect x="2" y="8" width="20" height="20" rx="4" fill="#158B4E" />
+        <path
+          d="M7 18h10M12 13v10"
+          stroke="#fff"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+        <text
+          x="28"
+          y="25"
+          fontFamily="sans-serif"
+          fontSize="18"
+          fontWeight="700"
+          fill="#1C2A3A"
+        >
+          MedCore
+        </text>
+      </svg>
+    ),
+    quote:
+      "The DHF package Qmax delivered was the most thorough we've seen from any contract partner. Our FDA reviewer specifically complimented the traceability and the clean linkage between requirements, design inputs, and verification evidence. It made our submission timeline noticeably shorter and far less stressful for the team.",
+    authorName: "Director of Engineering",
+    authorRole: "European Medical Diagnostics OEM",
+    avatarColor: "#158B4E",
+    avatarInitials: "PS",
+    caseTag: "MEDICAL",
+    caseTitle: "Multi IO Card for ATE",
+    caseDesc:
+      "Spartan-6 FPGA-based ATE IO card with high-speed ADC/DAC channels, fiber optic connectivity, and 12× faster sampling than conventional solutions.",
+    caseImage: "/case-studies/CHARA/1.png",
+    caseHref: "/case-studies/multi-io-card-for-ate",
+  },
+  {
+    tab: "Smart Monitoring System",
+    logo: (
+      <svg
+        viewBox="0 0 180 36"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="VoltArc Energy"
+        style={{ height: 36, width: "auto" }}
+      >
+        <polygon points="14,6 6,20 13,20 11,30 22,14 15,14" fill="#E63329" />
+        <text
+          x="28"
+          y="24"
+          fontFamily="sans-serif"
+          fontSize="16"
+          fontWeight="700"
+          fill="#1C2A3A"
+        >
+          VoltArc
+        </text>
+        <text
+          x="89"
+          y="24"
+          fontFamily="sans-serif"
+          fontSize="16"
+          fill="#5A6778"
+        >
+          Energy
+        </text>
+      </svg>
+    ),
+    quote:
+      "Qmax's BMS handled our 96-cell pack flawlessly on the very first revision. The thermal simulation and power integrity work meant we hit every efficiency target with no board respins, no late surprises, and a clean handoff to our pack assembly team. Their deep domain experience really showed in the finer details.",
+    authorName: "CTO",
+    authorRole: "Series-B EV Battery Systems Startup",
+    avatarColor: "#E63329",
+    avatarInitials: "DK",
+    caseTag: "ENERGY / EV",
+    caseTitle: "Smart Monitoring System",
+    caseDesc:
+      "ARM Cortex-M7 system with FreeRTOS tracking temperature, humidity, and air quality across zones via L2 managed switch, achieving 40% better power efficiency.",
+    caseImage:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/climate_control/1.png",
+    caseHref: "/case-studies/smart-monitoring-system",
+  },
+  {
+    tab: "Microscopic Camera Control",
+    logo: (
+      <svg
+        viewBox="0 0 180 36"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="AeroTech"
+        style={{ height: 36, width: "auto" }}
+      >
+        <path
+          d="M18 4 L28 16 L18 28 L8 16 Z"
+          fill="none"
+          stroke="#0B5FA5"
+          strokeWidth="2"
+        />
+        <circle cx="18" cy="16" r="4" fill="#0B5FA5" />
+        <text
+          x="36"
+          y="23"
+          fontFamily="sans-serif"
+          fontSize="17"
+          fontWeight="700"
+          fill="#1C2A3A"
+        >
+          AeroTech
+        </text>
+      </svg>
+    ),
+    quote:
+      "They understood DO-254 from day one and built it into the program rather than around it. Every design assurance artifact was integrated into the engineering workflow, not bolted on at the end. That single decision saved us weeks of audit prep and gave our certification authority full visibility throughout the project.",
+    authorName: "Systems Director",
+    authorRole: "Aerospace & Defense Avionics Contractor",
+    avatarColor: "#374151",
+    avatarInitials: "MS",
+    caseTag: "AEROSPACE",
+    caseTitle: "Microscopic Camera Control",
+    caseDesc:
+      "Stepper motor-driven focus and zoom system with high-resolution CMOS imaging, USB 3.0 and Ethernet streaming, and OLED status display for lab and inspection use.",
+    caseImage:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/microscopic_camera/1.png",
+    caseHref: "/case-studies/microscopic-camera-control",
+  },
+  {
+    tab: "Industrial IoT Gateway",
+    logo: (
+      <svg
+        viewBox="0 0 180 36"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="IndustriLink"
+        style={{ height: 36, width: "auto" }}
+      >
+        <rect
+          x="2"
+          y="10"
+          width="16"
+          height="16"
+          rx="2"
+          fill="none"
+          stroke="#0B5FA5"
+          strokeWidth="2"
+        />
+        <circle cx="10" cy="18" r="3" fill="#0B5FA5" />
+        <path
+          d="M18 18h4M24 14l4 4-4 4"
+          stroke="#0B5FA5"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <text
+          x="36"
+          y="23"
+          fontFamily="sans-serif"
+          fontSize="15"
+          fontWeight="700"
+          fill="#1C2A3A"
+        >
+          IndustriLink
+        </text>
+      </svg>
+    ),
+    quote:
+      "The gateway has been running on our factory floor for 18 months straight with zero field failures across more than forty deployed units. The EMC hardening and isolation strategy Qmax insisted on early in the design proved its worth in a brutally noisy industrial environment. It just keeps working, shift after shift.",
+    authorName: "Head of IIoT",
+    authorRole: "European Industrial Automation Firm",
+    avatarColor: "#374151",
+    avatarInitials: "TY",
+    caseTag: "INDUSTRIAL",
+    caseTitle: "Industrial IoT Gateway with POE",
+    caseDesc:
+      "POE+-powered multi-radio gateway aggregating LoRa, BLE, and CAN bus data to cloud, with 15 km LoRa range and 99.9% uplink accuracy for factory deployments.",
+    caseImage: "/case-studies/OTT/4.png",
+    caseHref: "/case-studies/industrial-iot-gateway-with-poe",
+  },
+];
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
-          {/* <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="max-w-4xl"
-          > */}
-            {/* <div className="mb-6">
-              <Breadcrumbs items={breadcrumbItems} />
-            </div> */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl text-white mb-8 leading-[1.1]">
-              PCB Design: <br />
-              <span className="text-red-600">A Multi-Physics</span> <br />
-              Engineering Discipline
+const FAQ_ITEMS = [
+  {
+    q: "Do you provide end-to-end PCB design services?",
+    a: "Yes. We handle the full PCB design cycle — from schematic capture and stack-up planning to detailed layout, signal integrity analysis, and Gerber generation. Our IPC-trained designers manage every step from initial netlist to fabrication-ready output, giving you one accountable team for every PCB your product depends on.",
+  },
+  {
+    q: "What PCB technologies and complexities do you handle?",
+    a: "We design from 2-layer boards to 32+ layer HDI, rigid-flex, and mixed-signal PCBs. Our team routinely delivers high-density BGA fanouts, controlled impedance routing, blind and buried vias, and length-tuned high-speed channels — every layout engineered for performance, manufacturability, and reliable operation across demanding environments.",
+  },
+  {
+    q: "Which PCB design CAD tools do you support?",
+    a: "Our team is proficient across all major PCB CAD platforms, including Altium Designer, Cadence Allegro, Mentor Xpedition, OrCAD, KiCad, and PADS. We adapt to your existing toolchain and library standards, ensuring seamless collaboration with your in-house engineering teams and full design data compatibility from start to finish.",
+  },
+  {
+    q: "Do you handle high-speed and signal integrity design?",
+    a: "Yes. Our high-speed expertise covers DDR4/DDR5, PCIe Gen5, USB 4.0, Ethernet up to 112G SerDes, and RF up to mmWave. We run pre-layout and post-layout SI/PI/EMI simulations using industry-grade tools, deliver controlled-impedance stack-ups, and rigorously manage crosstalk, return paths, and power integrity across every critical net.",
+  },
+  {
+    q: "Do you perform DFM and pre-fabrication reviews?",
+    a: "Yes. Every design passes through internal DFM, DFA, and DFT reviews before fabrication release. We coordinate directly with your manufacturing partners on stack-up, panelization, and tolerance, identifying yield risks early. The result is a manufacture-ready design package that minimizes spins, reduces NRE, and shortens time to volume.",
+  },
+  {
+    q: "How do you protect our PCB design data and IP?",
+    a: "All engagements operate under strict NDAs with our employees, customers, and third-party vendors. Design files are stored on access-controlled, encrypted servers with role-based permissions and complete audit trails. You retain 100% IP ownership, and your schematics, layouts, and libraries are never reused, shared, or referenced beyond your project.",
+  },
+];
+
+export default function HardwareDevelopmentServicesComponentV2() {
+  return (
+    <div className="hd-root">
+      {/* HERO */}
+      <section
+        className="relative w-full min-h-screen bg-cover bg-center flex items-center overflow-hidden after:absolute after:inset-0 after:bg-black/45 after:pointer-events-none after:content-['']"
+        id="hero"
+        style={{
+          backgroundImage:
+            "linear-gradient(135deg, rgba(11,95,165,0.45), rgba(14,20,27,0.55)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=2000&q=80&auto=format&fit=crop')",
+        }}
+      >
+        <div className="relative z-[2] w-full py-20 px-16 max-w-[1400px] mx-auto max-[900px]:py-16 max-[900px]:px-6">
+          <div className="max-w-[820px]">
+            <h1 className="text-white mb-6 font-bold leading-[1.1] tracking-[-0.01em] text-balance text-[clamp(36px,5vw,60px)]">
+              PCB Design Services: A Multi-Physics Engineering Discipline
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 font-light max-w-2xl leading-relaxed text-justify">
-              Where complex conceptual requirements meet market-ready hardware
-              through disciplined engineering.
+            <p className="text-white/[0.92] text-xl leading-[1.6] font-normal mb-10 max-w-[720px]">
+              <strong>Engineering Beyond Connectivity.</strong> Qmax Systems
+              treats PCB design as a critical engineering discipline, not just
+              interconnection. Our experts deliver reliable, first-time-right
+              PCB layouts optimized for performance, compliance, and
+              manufacturability.
             </p>
-
-          {/* <button className="mt-4 px-4 py-2.5 text-sm border border-white text-white bg-transparent rounded-md transition hover:bg-white/10 uppercase tracking-widest mb-3">
-            Explore Our Approach
-          </button> */}
-          {/* </motion.div> */}
-        </div>
-      </section>
-
-      {/* Main Content Section */}
-      <section className="py-24 px-6 md:px-12 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-stretch">
-            <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
-              <div className="bg-gray-50 rounded-2xl border border-gray-100 p-8 md:p-12 h-full flex flex-col justify-center">
-                <h2 className="text-3xl md:text-5xl text-gray-900 leading-tight mb-8">
-                  Engineering <br />
-                  <span className="text-red-600">Beyond Connectivity</span>
-                </h2>
-                <div className="w-20 h-1.5 bg-red-600 mb-8" />
-                <p className="text-xl text-gray-800 font-medium leading-relaxed mb-6">
-                  At Qmax Systems, we view PCB Design Services not merely as an
-                  interconnect task, but as a complex multi-physics engineering
-                  challenge.
-                </p>
-                <p className="text-lg text-gray-600 leading-relaxed text-justify">
-                  In modern electronics, the physical layout is a critical
-                  component of the circuit itself. Our engineering team
-                  specializes in first-time-right PCB design.
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 space-y-8">
-              <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-100 shadow-sm relative group hover:shadow-xl transition-all duration-500">
-                <div className="absolute top-0 right-0 p-8">
-                  <Cpu className="w-12 h-12 text-gray-100 group-hover:text-red-100 transition-colors" />
-                </div>
-                <p className="text-lg text-gray-700 leading-relaxed text-justify mb-8 relative z-10">
-                  By prioritizing early risk identification and disciplined
-                  design methodology, we deliver production-ready PCB designs
-                  that bridge complex conceptual requirements and market-ready
-                  hardware. Whether your project involves a 30-layer HDI board
-                  or a high-power converter, our designs are optimized for
-                  reliability, compliance, and manufacturability from day one.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-gray-200">
-                  <div className="flex items-start gap-4">
-                    <div className="mt-1 w-2 h-2 rounded-full bg-red-600 shrink-0" />
-                    <p className="text-sm text-gray-900 uppercase tracking-wider">
-                      Signal & Power Integrity
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="mt-1 w-2 h-2 rounded-full bg-red-600 shrink-0" />
-                    <p className="text-sm text-gray-900 uppercase tracking-wider">
-                      EMI & Thermal Management
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-red-600 p-8 md:p-12 rounded-2xl text-white shadow-xl shadow-red-100">
-                <p className="text-lg leading-relaxed text-justify">
-                  Our approach integrates Signal Integrity (SI), Power Integrity
-                  (PI), Electromagnetic Interference (EMI), and thermal
-                  management into a single, cohesive workflow. This ensures that
-                  high-speed signals maintain timing and quality while the Power
-                  Distribution Network (PDN) provides stable, noise-free energy
-                  to high-performance silicon. Failure to account for these
-                  variables often results in costly re-spins and delayed
-                  time-to-market.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Specialisations Section */}
-      <section className="py-24 bg-gray-50/50 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-5xl text-gray-900 mb-6">
-              Our PCB Design Specialisations
-            </h2>
-            <p className="text-lg text-gray-600 max-w-4xl leading-relaxed text-justify">
-              Qmax Systems provides specialized PCB design engineering across
-              seven practice areas. Each discipline is staffed by engineers with
-              experience, supported by well-documented component libraries built
-              over three decades, and governed by defined processes and
-              checklists at every design stage.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {[
-              {
-                title: "High-Speed Digital PCB Design",
-                description:
-                  "Modern high-speed digital designs — operating at multi-gigabit data rates — impose strict constraints on PCB trace geometry, layer stack-up, via topology, and return path continuity. Our engineers apply rigorous signal integrity discipline to DDR4/5 memory interfaces, PCIe Gen 4/5, USB 3.x, Ethernet (1G to 100G), FPGA I/O, and SoC-level designs. Controlled differential impedance, length matching, crosstalk mitigation, and via stub management are standard elements of every high-speed layout we deliver.",
-                href: "/pcb-design/high-speed-digital-pcb-design",
-                icon: <Cpu className="w-6 h-6" />,
-              },
-              {
-                title: "RF and Microwave PCB Design",
-                description:
-                  "RF and microwave PCB layout requires precision substrate material selection, microstrip and stripline impedance control, low-loss routing, and careful RF-to-digital isolation strategy. Qmax engineers are experienced in designs spanning sub-GHz ISM band through Ka-band frequencies, including antenna feed networks, LNA stages, PA matching networks, and mixed RF/digital architectures on single and multi-layer substrates including PTFE-based materials.",
-                href: "/pcb-design/rf-and-microwave-pcb-design",
-                icon: <Radio className="w-6 h-6" />,
-              },
-              {
-                title: "Power Electronics PCB Design",
-                description:
-                  "Power electronics PCB layout demands precise current path management, thermal dissipation planning, and EMI containment. Our engineers are experienced in DC-DC converters, AC-DC power supplies, motor drive circuits, and high-density power modules. We apply copper weight optimization, current-carrying capacity analysis, thermal via arrays, and snubber placement discipline to ensure reliable operation under full thermal and electrical load.",
-                href: "/pcb-design/power-electronics",
-                icon: <Zap className="w-6 h-6" />,
-              },
-              {
-                title: "Analog and Mixed-Signal PCB Design",
-                description:
-                  "Analog and mixed-signal PCB layout is among the most demanding disciplines in electronics engineering. Noise coupling, ground plane partitioning, supply decoupling placement, shielding, and the careful physical separation of high-gain analog signal paths from switching noise sources require detailed engineering judgment at every placement and routing decision. Qmax engineers apply established analog layout principles to precision instrumentation, sensor interfaces, ADC/DAC signal chains, and mixed-signal SoC designs.",
-                href: "/pcb-design/analog-and-mixed-signal",
-                icon: <Activity className="w-6 h-6" />,
-              },
-              {
-                title: "SI, PI Analysis",
-                description:
-                  "Pre- and post-layout SI/PI analysis allows design problems to be identified and corrected before a board is fabricated. Our engineers perform transmission line simulation, eye diagram analysis, IBIS-based driver/receiver modeling, power delivery network (PDN) impedance analysis, and decoupling capacitor optimization. SI/PI analysis is offered as a standalone service or as an integrated element of our PCB layout engagements.",
-                href: "/pcb-design/si-pi-analysis",
-                icon: <LineChart className="w-6 h-6" />,
-              },
-              {
-                title: "PCB Library Services",
-                description:
-                  "A PCB design is only as reliable as its component library. Over three decades of active design work, Qmax has developed a verified, well-documented component library covering schematic symbols, PCB footprints, and 3D STEP models. Library parts are validated against manufacturer datasheets and IPC-7351 land pattern standards. Our library management process ensures that footprint accuracy is maintained as component revisions occur, reducing the risk of manufacturing errors caused by incorrect or outdated pad geometries.",
-                href: "/pcb-design/pcb-library-services",
-                icon: <Library className="w-6 h-6" />,
-              },
-              {
-                title: "PCB Design Review Services",
-                description:
-                  "An independent PCB design review — performed by Qmax engineers against your existing layout — is an efficient, cost-effective way to identify signal integrity risks, DFM issues, thermal concerns, and standard violations before releasing to fabrication. Our review process follows a structured checklist covering layer stack-up, placement, routing, silkscreen, drill and fabrication notes, and documentation completeness. Review findings are delivered as a formal technical report with prioritized recommendations.",
-                href: "/pcb-design/pcb-design-review-services",
-                icon: <CheckCircle2 className="w-6 h-6" />,
-              },
-            ].map((spec, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl hover:border-red-100 transition-all duration-500 group relative overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full -mr-16 -mt-16 group-hover:bg-red-600 transition-colors duration-500" />
-
-                <div className="relative z-10">
-                  <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 mb-8 group-hover:bg-white group-hover:scale-110 transition-all duration-500">
-                    {spec.icon}
-                  </div>
-                  <h3 className="text-2xl text-gray-900 mb-4 group-hover:text-red-700 transition-colors">
-                    {spec.title}
-                  </h3>
-                  <p className="text-gray-600 mb-8 leading-relaxed text-justify text-base group-hover:text-gray-900 transition-colors">
-                    {spec.description}
-                  </p>
-                  <Link
-                    href={spec.href}
-                    className="inline-flex items-center text-red-600 tracking-tight hover:gap-3 transition-all"
-                  >
-                    Learn More <ArrowRight className="ml-2 w-5 h-5" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Qmax Section */}
-      <section>
-        <div className="mx-auto max-w-7xl px-6">
-          {/* Section Header */}
-          <div className="py-16 flex flex-col gap-3 max-w-2xl">
-            <h2
-              className="text-4xl md:text-5xl leading-tight"
-              style={{ color: "#1a1a1a" }}
+            <a
+              className="bg-[#E63329] text-white font-semibold text-base tracking-[0.04em] py-[14px] px-8 rounded-md cursor-pointer transition-colors duration-150 no-underline inline-block hover:bg-[#C72A21] hover:text-white hover:no-underline"
+              href="/pcb-design/contact"
             >
-              Why Engineering Teams Choose{" "}
-              <span style={{ color: "#e44332" }}>Qmax Systems</span>
-            </h2>
-            <p
-              className="text-base md:text-lg leading-relaxed"
-              style={{ color: "#666666" }}
-            >
-              Every decision we make is guided by engineering rigor and decades
-              of experience building reliable hardware.
-            </p>
-          </div>
-
-          {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 pb-20 relative z-10">
-            {/* Left Side - Video (Sticky) */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-24 flex items-center justify-center min-h-[calc(100vh-6rem)]">
-                {/* Video Container */}
-                <div
-                  className="relative w-full rounded-xl overflow-hidden shadow-lg"
-                  style={{ aspectRatio: "4/3", backgroundColor: "#1a1a1a" }}
-                >
-                  <video
-                    src="https://d1yetprhniwywz.cloudfront.net/inside_out_V2.mp4"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side - Stacked Sticky Sections */}
-            <div className="lg:col-span-1 space-y-0 relative">
-              {/* Shield to clip content scrolling above sticky headers */}
-              <div
-                className="sticky bg-white pointer-events-none"
-                style={{
-                  top: 0,
-                  height: "96px",
-                  zIndex: 10,
-                  marginBottom: "-96px",
-                }}
-              />
-              {[
-                {
-                  number: "01",
-                  title: "Engineering Depth Over Surface-Level Design",
-                  description:
-                    "Our engineers don't just route traces—they understand the physics. Every design decision considers signal behavior, power distribution, and thermal dynamics to eliminate guesswork.",
-                },
-                {
-                  number: "02",
-                  title: "First-Time-Right Philosophy",
-                  description:
-                    "We invest heavily in upfront analysis and simulation. This disciplined approach means fewer respins, faster time-to-market, and significantly lower development costs.",
-                },
-                {
-                  number: "03",
-                  title: "Schematic Review as Standard Practice",
-                  description:
-                    "Before any layout work begins, we thoroughly review your schematic for potential issues—power sequencing, signal routing challenges, and component selection concerns.",
-                },
-                {
-                  number: "04",
-                  title: "Clear Communication Throughout",
-                  description:
-                    "Weekly progress updates, design review milestones, and direct access to your assigned engineer. No black boxes, no surprises—just transparent collaboration.",
-                },
-                {
-                  number: "05",
-                  title: "Strict IP Protection",
-                  description:
-                    "Your designs stay yours. NDA as standard, secure file handling, and strict access controls ensure your intellectual property remains protected at every stage.",
-                },
-                {
-                  number: "06",
-                  title: "Global Compliance Expertise",
-                  description:
-                    "Design for CE, FCC, UL, and other certifications from day one. We build compliance into the architecture, not as an afterthought.",
-                },
-                {
-                  number: "07",
-                  title: "Comprehensive Component Libraries",
-                  description:
-                    "30,000+ verified footprints and symbols built to IPC standards. Every component we use has been validated for manufacturing accuracy.",
-                },
-                {
-                  number: "08",
-                  title: "Fabrication Partner Network",
-                  description:
-                    "Direct relationships with qualified PCB fabricators worldwide. We optimize your design for your chosen manufacturer and volume requirements.",
-                },
-                {
-                  number: "09",
-                  title: "Multi-Domain Systems Experience",
-                  description:
-                    "From IoT sensors to industrial controls to medical devices—we've designed across industries, bringing cross-domain insights to every project.",
-                },
-              ].map((reason, index) => (
-                <div key={reason.number} className="relative">
-                  {/* Sticky Header */}
-                  <div
-                    className="sticky pt-6 pb-4 border-b overflow-hidden bg-white"
-                    style={{
-                      top: "96px",
-                      borderColor: "rgba(0, 0, 0, 0.1)",
-                      zIndex: 20 + index,
-                    }}
-                  >
-                    <div className="flex items-center gap-3">
-                      {/* Number Badge */}
-                      <div
-                        className="flex-shrink-0 rounded-full px-3 py-1 text-sm"
-                        style={{
-                          backgroundColor: "rgba(228, 67, 50, 0.15)",
-                          color: "#e44332",
-                        }}
-                      >
-                        {reason.number}
-                      </div>
-                      {/* Title */}
-                      <h3
-                        className="text-xl md:text-2xl flex-1 leading-tight"
-                        style={{ color: "#1a1a1a" }}
-                      >
-                        {reason.title}
-                      </h3>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="pt-4 pb-2 px-0">
-                    <div
-                      className="bg-white rounded-xl p-5 shadow-sm"
-                      style={{
-                        color: "#666666",
-                      }}
-                    >
-                      <p className="text-base leading-relaxed">
-                        {reason.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+              EXPLORE OUR APPROACH
+            </a>
           </div>
         </div>
       </section>
-      <CTASection />
 
-      {/* FAQ Section */}
-      <FAQSection faqs={pcbDesignFAQs} />
+      {/* CORE CAPABILITIES */}
+      <CapabilitiesSection capabilities={CAPABILITIES} />
 
-      <ServiceCaseStudiesSection
-        eyebrow="Hardware Programs"
-        studies={pcbCaseStudies}
+      {/* INDUSTRIES WE SERVE */}
+      <IndustriesSection industries={INDUSTRIES} slides={INDUSTRY_SLIDES} />
+
+      {/* WHY CHOOSE QMAX */}
+      <WhySection whyCards={WHY_CARDS} />
+
+      {/* PARTNERSHIPS */}
+      <PartnershipsSection />
+
+      {/* WORKFLOW TIMELINE */}
+      <div id="workflow">
+        <WorkflowSection steps={WORKFLOW_STEPS} />
+      </div>
+
+      {/* CUSTOMER SUCCESS STORIES */}
+      <TestimonialsSection testimonials={TESTIMONIALS} />
+
+      {/* CTA BANNER */}
+      <CTABannerSection />
+
+      {/* FEATURED ARTICLES */}
+      <FeaturedArticlesSection />
+
+      {/* FAQ */}
+      <FAQSection faqItems={FAQ_ITEMS} />
+
+      {/* OTHER CAPABILITIES */}
+      <OtherCapabilitiesScrollSection
+        capabilities={hardwareDevelopmentOtherCapabilities}
       />
-
-      {/* Other Capabilities Section */}
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
-    </main>
+    </div>
   );
 }
