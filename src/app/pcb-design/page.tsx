@@ -333,23 +333,6 @@ const CAPABILITIES = [
 
 const WHY_CARDS = [
   {
-    title: "Engineering Depth Over Surface-Level Layout",
-    desc: "Engineers understand the full signal chain. Every layer decision is driven by electrical, thermal, and mechanical constraints, not routing convenience.",
-    icon: (
-      <svg
-        viewBox="0 0 48 48"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M14 6 L34 6 L34 18 L42 26 L34 34 L34 42 L14 42 L14 34 L6 26 L14 18 Z" />
-        <circle cx="24" cy="24" r="4" />
-      </svg>
-    ),
-  },
-  {
     title: "First-Time-Right Philosophy",
     desc: "DRC, SI, and thermal simulations run before Gerbers leave the building. First fabricated board behaves as designed — no costly re-spins.",
     icon: (
@@ -453,6 +436,23 @@ const WHY_CARDS = [
         <rect x="27" y="6" width="15" height="15" rx="1.5" />
         <rect x="6" y="27" width="15" height="15" rx="1.5" />
         <rect x="27" y="27" width="15" height="15" rx="1.5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Engineering Depth Over Surface-Level Layout",
+    desc: "Engineers understand the full signal chain. Every layer decision is driven by electrical, thermal, and mechanical constraints, not routing convenience.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M14 6 L34 6 L34 18 L42 26 L34 34 L34 42 L14 42 L14 34 L6 26 L14 18 Z" />
+        <circle cx="24" cy="24" r="4" />
       </svg>
     ),
   },

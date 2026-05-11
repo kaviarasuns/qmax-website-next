@@ -1,5 +1,5 @@
 const TILE_CLASS =
-  "flex aspect-[16/11] items-center justify-content-center rounded-md border border-gray-200 bg-white px-[6px] py-[5px] transition-all duration-300 [&>svg]:block [&>svg]:h-auto [&>svg]:max-h-full [&>svg]:w-auto [&>svg]:max-w-full [&>svg]:object-contain hover:-translate-y-[3px] hover:border-[rgba(230,51,41,0.35)] hover:shadow-[0_8px_20px_rgba(16,24,40,0.08)]";
+  "flex aspect-[16/7] items-center justify-content-center rounded-md border border-gray-200 bg-white px-1 py-1 transition-all duration-300 [&>svg]:block [&>svg]:h-auto [&>svg]:max-h-full [&>svg]:w-auto [&>svg]:max-w-full [&>svg]:object-contain hover:-translate-y-[3px] hover:border-[rgba(230,51,41,0.35)] hover:shadow-[0_8px_20px_rgba(16,24,40,0.08)]";
 
 export function PartnershipsSection() {
   return (
@@ -7,7 +7,7 @@ export function PartnershipsSection() {
       className="relative overflow-hidden bg-white px-8 pb-[72px] pt-16 text-[#1C2A3A] max-[900px]:px-6 max-[900px]:py-12"
       id="partnerships-section"
     >
-      <div className="mx-auto max-w-[1100px]">
+      <div className="mx-auto max-w-[1280px]">
         <div className="mb-14 flex flex-col items-center text-center">
           <h2 className="mb-6 text-4xl md:text-5xl font-light tracking-wide">
             Partnerships

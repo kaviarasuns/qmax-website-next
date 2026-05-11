@@ -35,7 +35,7 @@ export function WhySection({ whyCards, titleHighlight = "Hardware Design?", ctaH
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center text-red-500 [&>svg]:h-full [&>svg]:w-full">
                   {card.icon}
                 </div>
-                <h3 className="mt-2 min-h-[2lh] text-xl md:text-2xl font-medium tracking-wide text-slate-900">
+                <h3 className="mt-2 text-xl md:text-2xl font-medium tracking-wide text-slate-900">
                   {card.title}
                 </h3>
               </div>
