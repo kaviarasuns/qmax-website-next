@@ -760,15 +760,15 @@ export default function HardwareDevelopmentServicesPage() {
       <CTABannerSection />
 
       {/* FEATURED ARTICLES */}
-      <FeaturedArticlesSection />
+      {/* <FeaturedArticlesSection /> */}
 
       {/* FAQ */}
       <FAQSection faqItems={FAQ_ITEMS} />
 
       {/* OTHER CAPABILITIES */}
-      <OtherCapabilitiesScrollSection
+      {/* <OtherCapabilitiesScrollSection
         capabilities={hardwareDevelopmentOtherCapabilities}
-      />
+      /> */}
     </div>
   );
 }
