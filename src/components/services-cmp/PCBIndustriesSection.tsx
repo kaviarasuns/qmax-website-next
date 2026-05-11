@@ -45,11 +45,10 @@ export function PCBIndustriesSection({
 
     const interval = setInterval(() => {
       setCaseIdx((prev) => (prev + 1) % cases.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [active.relatedCaseStudies]);
-
 
   return (
     <section
@@ -104,7 +103,7 @@ export function PCBIndustriesSection({
             <h3 className="m-0 mb-4 text-2xl font-bold tracking-tight text-black">
               {active.title}
             </h3>
-            <p className="m-0 mb-4 text-[15px] leading-[1.65] text-gray-600">
+            <p className="m-0 mb-4 min-h-[198px] text-[15px] leading-[1.65] text-gray-600">
               {active.description}
             </p>
             <p className="m-0 mb-4 text-[15px] leading-[1.65] text-gray-600">
@@ -151,7 +150,11 @@ export function PCBIndustriesSection({
                           fill
                           sizes="(max-width: 900px) 100vw, 33vw"
                           className="object-contain px-12 py-6"
-                          style={cs.rotation ? { transform: `rotate(${cs.rotation}deg)` } : undefined}
+                          style={
+                            cs.rotation
+                              ? { transform: `rotate(${cs.rotation}deg)` }
+                              : undefined
+                          }
                         />
                       ) : null}
                     </div>

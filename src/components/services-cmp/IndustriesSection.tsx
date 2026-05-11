@@ -67,7 +67,7 @@ export function IndustriesSection({
 
           {/* <p>Multi-domain hardware development with design rigor and documentation depth calibrated to each industry&apos;s regulatory and reliability bar.</p> */}
         </div>
-        <div className="ind-cols pb-10 md:pb-16">
+        <div className="ind-cols pb-12 md:pb-[72px]">
           {/* LEFT */}
           <div className="ind-col-list left">
             {industries.left.map((ind, i) => (
