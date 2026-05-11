@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface RelatedCaseStudy {
   title: string;
   image?: string;
   href: string;
+  rotation?: number;
 }
 
 export interface PCBIndustry {
@@ -31,8 +32,24 @@ export function PCBIndustriesSection({
   ctaLabel = "Learn more",
 }: PCBIndustriesSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [caseIdx, setCaseIdx] = useState(0);
   const active = industries[activeIdx];
-  const firstCase = active.relatedCaseStudies[0];
+
+  useEffect(() => {
+    setCaseIdx(0);
+  }, [activeIdx]);
+
+  useEffect(() => {
+    const cases = active.relatedCaseStudies;
+    if (cases.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setCaseIdx((prev) => (prev + 1) % cases.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [active.relatedCaseStudies]);
+
 
   return (
     <section
@@ -113,38 +130,40 @@ export function PCBIndustriesSection({
             />
           </div>
 
-          {/* RIGHT — related case studies + CTA */}
-          <div className="flex flex-col gap-3 rounded-2xl bg-[#f8f8f8] p-5">
-            <h4 className="m-0 mb-4 text-xs font-bold uppercase tracking-[0.14em] text-gray-500">
-              Related PCB Design Projects
-            </h4>
-            <ul className="m-0 flex min-h-0 flex-1 list-none p-0">
-              {firstCase && (
-                <li className="flex min-h-0 flex-1">
+          {/* RIGHT — related case studies (auto-scrolling) */}
+          <div className="flex flex-col gap-3 rounded-2xl overflow-hidden">
+            <div className="relative flex-1 overflow-hidden rounded-2xl">
+              {active.relatedCaseStudies.map((cs, i) => (
+                <div
+                  key={cs.href + i}
+                  className="absolute inset-0 transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(${(i - caseIdx) * 100}%)` }}
+                >
                   <a
-                    href={firstCase.href}
-                    className="flex flex-1 flex-col overflow-hidden rounded-2xl bg-white text-inherit no-underline shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)]"
+                    href={cs.href}
+                    className="flex h-full flex-col overflow-hidden rounded-2xl bg-white text-inherit no-underline shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-[box-shadow] duration-200 hover:no-underline hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)]"
                   >
-                    <div className="flex min-h-[160px] flex-[2] items-center justify-center bg-[#e8e8e8]">
-                      {firstCase.image ? (
+                    <div className="relative flex flex-1 items-center justify-center bg-[#f0f0f0]">
+                      {cs.image ? (
                         <Image
-                          src={firstCase.image}
-                          alt={firstCase.title}
-                          width={400}
-                          height={260}
-                          className="h-full w-full object-cover"
+                          src={cs.image}
+                          alt={cs.title}
+                          fill
+                          sizes="(max-width: 900px) 100vw, 33vw"
+                          className="object-contain px-12 py-6"
+                          style={cs.rotation ? { transform: `rotate(${cs.rotation}deg)` } : undefined}
                         />
                       ) : null}
                     </div>
                     <div className="flex flex-col gap-3.5 bg-white px-[18px] pb-4 pt-[18px]">
-                      <h5 className="m-0 text-[21px] font-bold leading-tight text-[#0f0f10]">
-                        {firstCase.title}
+                      <h5 className="m-0 text-[18px] font-bold leading-tight text-[#0f0f10]">
+                        {cs.title}
                       </h5>
                       <div className="flex items-center justify-between">
                         <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-400">
                           View Case
                         </span>
-                        <span className="ind-cs-arrow inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-[#0f0f10] transition-colors duration-200">
+                        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-[#0f0f10]">
                           <svg
                             viewBox="0 0 24 24"
                             fill="none"
@@ -161,9 +180,27 @@ export function PCBIndustriesSection({
                       </div>
                     </div>
                   </a>
-                </li>
-              )}
-            </ul>
+                </div>
+              ))}
+            </div>
+
+            {/* Dot indicators */}
+            {active.relatedCaseStudies.length > 1 && (
+              <div className="flex justify-center gap-1.5 pt-1">
+                {active.relatedCaseStudies.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setCaseIdx(i)}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      i === caseIdx
+                        ? "w-4 bg-brand-500"
+                        : "w-1.5 bg-gray-300 hover:bg-gray-400"
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

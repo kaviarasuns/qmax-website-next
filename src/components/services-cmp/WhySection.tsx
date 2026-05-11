@@ -9,9 +9,10 @@ interface WhyCard {
 interface WhySectionProps {
   whyCards: WhyCard[];
   titleHighlight?: string;
+  ctaHref?: string;
 }
 
-export function WhySection({ whyCards, titleHighlight = "Hardware Design?" }: WhySectionProps) {
+export function WhySection({ whyCards, titleHighlight = "Hardware Design?", ctaHref = "/hardware-development-services/contact" }: WhySectionProps) {
   return (
     <section
       className="bg-white px-16 py-24 max-[900px]:px-6 max-[900px]:py-16"
@@ -24,21 +25,21 @@ export function WhySection({ whyCards, titleHighlight = "Hardware Design?" }: Wh
             <span className="text-brand-500">{titleHighlight}</span>
           </h2>
         </div>
-        <div className="grid grid-cols-2 items-stretch gap-6 max-[900px]:grid-cols-1 max-[900px]:gap-4">
+        <div className="grid grid-cols-2 items-stretch gap-8 max-[900px]:grid-cols-1 max-[900px]:gap-5">
           {whyCards.map((card) => (
             <article
               key={card.title}
-              className="flex flex-col gap-3.5 rounded-xl bg-white px-7 pb-6 pt-7 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
+              className="flex flex-col gap-5 rounded-2xl bg-white px-10 pb-9 pt-10 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
             >
-              <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center text-red-500 [&>svg]:h-full [&>svg]:w-full">
+              <div className="flex items-start gap-5">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center text-red-500 [&>svg]:h-full [&>svg]:w-full">
                   {card.icon}
                 </div>
-                <h3 className="mt-2 text-lg md:text-xl font-medium tracking-wide text-slate-900">
+                <h3 className="mt-2 text-xl md:text-2xl font-medium tracking-wide text-slate-900">
                   {card.title}
                 </h3>
               </div>
-              <p className="pl-14 text-gray-600 max-[900px]:pl-0">
+              <p className="pl-[68px] text-base text-gray-600 max-[900px]:pl-0">
                 {card.desc}
               </p>
             </article>
@@ -46,7 +47,7 @@ export function WhySection({ whyCards, titleHighlight = "Hardware Design?" }: Wh
           {/* Founder CTA tile — baked PNG */}
           <a
             className="relative block h-full cursor-pointer overflow-hidden rounded-xl bg-[#0a0a0a] no-underline shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
-            href="/hardware-development-services/contact"
+            href={ctaHref}
             aria-label="Questions? Let's Talk! Contact Saravanabhavan, Founder & CEO"
           >
             <Image

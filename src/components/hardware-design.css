@@ -31,7 +31,7 @@
 .industries {
   position: relative;
   background: linear-gradient(180deg, var(--neutral-50) 0%, #FAFBFC 100%);
-  padding: 20px 32px;
+  padding: 0 32px;
   overflow: hidden;
   color: var(--qmax-ink);
 }

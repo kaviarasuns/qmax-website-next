@@ -25,7 +25,10 @@ interface IndustriesSectionProps {
   slides: IndustrySlide[];
 }
 
-export function IndustriesSection({ industries, slides }: IndustriesSectionProps) {
+export function IndustriesSection({
+  industries,
+  slides,
+}: IndustriesSectionProps) {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -57,14 +60,14 @@ export function IndustriesSection({ industries, slides }: IndustriesSectionProps
       <div className="blob blob-1" />
       <div className="blob blob-2" />
       <div className="industries-inner">
-        <div className="industries-head">
+        <div className="industries-head pt-14">
           <h2 className="text-4xl md:text-5xl mb-14 font-light tracking-wide">
             Industries We <span className="text-brand-500">Serve</span>
           </h2>
 
           {/* <p>Multi-domain hardware development with design rigor and documentation depth calibrated to each industry&apos;s regulatory and reliability bar.</p> */}
         </div>
-        <div className="ind-cols">
+        <div className="ind-cols pb-10 md:pb-16">
           {/* LEFT */}
           <div className="ind-col-list left">
             {industries.left.map((ind, i) => (
