@@ -761,6 +761,7 @@ export default function HardwareDevelopmentServicesPage() {
 
       {/* FAQ */}
       <FAQSection faqItems={FAQ_ITEMS} />
+      <div className="pb-28"></div>
 
       {/* OTHER CAPABILITIES */}
       {/* <OtherCapabilitiesScrollSection
