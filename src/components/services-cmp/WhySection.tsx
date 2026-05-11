@@ -29,7 +29,7 @@ export function WhySection({ whyCards, titleHighlight = "Hardware Design?", ctaH
           {whyCards.map((card) => (
             <article
               key={card.title}
-              className="flex flex-col gap-5 rounded-2xl bg-white px-10 pb-9 pt-10 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
+              className="flex flex-col gap-5 rounded-2xl bg-white px-10 pb-9 pt-6 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
             >
               <div className="flex items-start gap-5">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center text-red-500 [&>svg]:h-full [&>svg]:w-full">

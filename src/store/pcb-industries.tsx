@@ -63,7 +63,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Designing PCBs for medical devices, diagnostics, imaging, and life-critical patient systems. From wearable monitors to surgical equipment, our layouts meet IPC-6012 Class 3 standards, ISO 13485 design controls, and the strict isolation requirements of regulated healthcare environments.",
+      "Designing PCBs for medical devices, diagnostics, imaging, and life-critical patient systems. From wearable monitors to surgical and implantable equipment, our layouts meet IPC-6012 Class 3 standards, ISO 13485 design controls, and the strict isolation, creepage, and clearance requirements of regulated healthcare environments.",
     subDescription:
       "We engineer leakage-current-safe routing, reinforced isolation barriers, and long-life stack-ups built for sterilization, longevity, and clinical reliability.",
     image:
@@ -107,7 +107,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Designing PCBs for avionics, satellite payloads, defense electronics, and flight-critical aerospace systems where failure is not an option. Our layouts conform to IPC-6012 Class 3/A, support DO-254 design assurance, and survive extreme thermal, vibration, and altitude environments.",
+      "Designing PCBs for avionics, satellite payloads, defense electronics, and flight-critical and safety-critical aerospace systems where failure is not an option. Our layouts conform to IPC-6012 Class 3/A, support DO-254 design assurance, and survive extreme thermal, vibration, radiation, and altitude environments.",
     subDescription:
       "From rigid-flex avionics boards to high-reliability digital backbones, we deliver PCBs proven to withstand the harshest aerospace mission profiles.",
     image:
@@ -151,7 +151,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Designing power-dense PCBs for EV charging, battery management, solar inverters, and grid-scale energy systems. Our layouts handle high voltages, heavy currents, and aggressive thermal loads using thick-copper stack-ups, GaN/SiC topologies, and meticulously routed commutation loops.",
+      "Designing power-dense PCBs for EV charging, battery management, solar inverters, and grid-scale energy storage systems. Our layouts handle high voltages, heavy currents, and aggressive electromagnetic and thermal loads using thick-copper stack-ups, GaN/SiC topologies, and meticulously routed commutation loops.",
     subDescription:
       "We deliver layouts that minimize parasitics, maximize efficiency, and survive the demanding duty cycles of modern electrification and renewable platforms.",
     image:
@@ -196,7 +196,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Designing high-frequency PCBs for 5G infrastructure, satellite communication, IoT gateways, and broadband networking equipment. Our RF and high-speed digital layouts deliver controlled impedance, low-loss laminates, and tight signal integrity from sub-GHz applications through to mmWave.",
+      "Designing high-frequency PCBs for 5G infrastructure, satellite communication, IoT gateways, and broadband networking equipment. Our RF, mixed-signal, and high-speed digital layouts deliver controlled impedance, low-loss laminates, and tight signal integrity from sub-GHz applications through to mmWave.",
     subDescription:
       "We optimize antenna routing, ground plane integrity, and EMI containment to ensure reliable, low-noise performance across complex multi-layer boards.",
     image:
@@ -238,7 +238,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Designing PCBs for PLCs, motor controllers, factory IoT, robotics, and process automation equipment. Our layouts handle heavy electrical noise, wide temperature ranges, and the long operational lifespans demanded by 24/7 factory floors and mission-critical industrial environments.",
+      "Designing PCBs for PLCs, servo drives, motor controllers, factory IoT, robotics, and process automation equipment. Our high-reliability layouts handle heavy electrical noise, wide temperature ranges, and the long operational lifespans demanded by 24/7 factory floors and mission-critical industrial control environments.",
     subDescription:
       "Heavy-copper power planes, isolated I/O zones, and EMI-hardened layouts deliver the reliability and durability that industrial deployments require.",
     image:

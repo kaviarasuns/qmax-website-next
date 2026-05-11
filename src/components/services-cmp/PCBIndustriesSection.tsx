@@ -103,7 +103,7 @@ export function PCBIndustriesSection({
             <h3 className="m-0 mb-4 text-2xl font-bold tracking-tight text-black">
               {active.title}
             </h3>
-            <p className="m-0 mb-4 min-h-[198px] text-[15px] leading-[1.65] text-gray-600">
+            <p className="m-0 mb-4 text-[15px] leading-[1.65] text-gray-600">
               {active.description}
             </p>
             <p className="m-0 mb-4 text-[15px] leading-[1.65] text-gray-600">
