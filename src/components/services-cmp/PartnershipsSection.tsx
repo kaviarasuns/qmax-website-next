@@ -1,5 +1,5 @@
 const TILE_CLASS =
-  "flex aspect-[16/11] items-center justify-content-center rounded-md border border-gray-200 bg-white px-[26px] py-[22px] transition-all duration-300 [&>svg]:block [&>svg]:h-auto [&>svg]:max-h-full [&>svg]:w-auto [&>svg]:max-w-full [&>svg]:object-contain hover:-translate-y-[3px] hover:border-[rgba(230,51,41,0.35)] hover:shadow-[0_8px_20px_rgba(16,24,40,0.08)]";
+  "flex aspect-[16/11] items-center justify-content-center rounded-md border border-gray-200 bg-white px-[6px] py-[5px] transition-all duration-300 [&>svg]:block [&>svg]:h-auto [&>svg]:max-h-full [&>svg]:w-auto [&>svg]:max-w-full [&>svg]:object-contain hover:-translate-y-[3px] hover:border-[rgba(230,51,41,0.35)] hover:shadow-[0_8px_20px_rgba(16,24,40,0.08)]";
 
 export function PartnershipsSection() {
   return (
