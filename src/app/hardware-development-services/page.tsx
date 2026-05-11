@@ -6,10 +6,7 @@ import { PartnershipsSection } from "@/components/services-cmp/PartnershipsSecti
 import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
 import { TestimonialsSection } from "@/components/services-cmp/TestimonialsSection";
 import { CTABannerSection } from "@/components/services-cmp/CTABannerSection";
-import { FeaturedArticlesSection } from "@/components/services-cmp/FeaturedArticlesSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
-import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { hardwareDevelopmentOtherCapabilities } from "@/data/other-capabilities";
 import "../../components/hardware-design.css";
 
 export const metadata: Metadata = {

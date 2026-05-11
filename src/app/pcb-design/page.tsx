@@ -3,7 +3,6 @@
 import "../../components/hardware-design.css";
 import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
-import { PCBCapabilitiesStripSection } from "@/components/services-cmp/PCBCapabilitiesStripSection";
 import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
@@ -309,28 +308,28 @@ const CAPABILITIES = [
   },
 ];
 
-const PCB_CAPABILITIES_STRIP = [
-  {
-    title: "Design Tools",
-    description:
-      "Cadence Allegro · Mentor Xpedition / PADS · Altium Designer · OrCAD · KiCad · Valor Genesis · SI/PI simulation suites",
-  },
-  {
-    title: "Layer & Stack-Up Range",
-    description:
-      "Up to 64 layers · Fine-pitch BGA (0.3 / 0.4 mm) · HDI / ELIC / stacked vias · Multi-impedance (50 / 90 / 100 Ω) on a single board",
-  },
-  {
-    title: "Materials We Support",
-    description:
-      "FR-4 (standard and high-Tg) · Rogers · Tachyon · Arlon 85N · PTFE-based RF laminates",
-  },
-  {
-    title: "Fabrication Partners",
-    description:
-      "Direct relationships with qualified PCB fabricators worldwide. Every layout is optimized for the chosen fab and target volume.",
-  },
-];
+// const PCB_CAPABILITIES_STRIP = [
+//   {
+//     title: "Design Tools",
+//     description:
+//       "Cadence Allegro · Mentor Xpedition / PADS · Altium Designer · OrCAD · KiCad · Valor Genesis · SI/PI simulation suites",
+//   },
+//   {
+//     title: "Layer & Stack-Up Range",
+//     description:
+//       "Up to 64 layers · Fine-pitch BGA (0.3 / 0.4 mm) · HDI / ELIC / stacked vias · Multi-impedance (50 / 90 / 100 Ω) on a single board",
+//   },
+//   {
+//     title: "Materials We Support",
+//     description:
+//       "FR-4 (standard and high-Tg) · Rogers · Tachyon · Arlon 85N · PTFE-based RF laminates",
+//   },
+//   {
+//     title: "Fabrication Partners",
+//     description:
+//       "Direct relationships with qualified PCB fabricators worldwide. Every layout is optimized for the chosen fab and target volume.",
+//   },
+// ];
 
 const WHY_CARDS = [
   {
