@@ -11,7 +11,6 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG45_ZIN.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG45.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG56.svg",
-
     ],
     rotatedImages: { 0: 90, 2: 90, 3: 90 },
     features: [
@@ -353,7 +352,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/arc_detector/1.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/arc_detector/AFDD-REV0P1_ARC DETECTOR_BOT.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/arc_detector/AFDD-REV0P1_ARC DETECTOR_TB.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/arc_detector/AFDD-REV0P1_ARC DETECTOR_TOP.svg", 
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/arc_detector/AFDD-REV0P1_ARC DETECTOR_TOP.svg",
     ],
     rotatedImages: {},
     features: [
@@ -569,7 +568,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/FE1600/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/FE1600/FE1600_MODULE_REV-02_PR5.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/FE1600/4.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/FE1600/FE1600_MODULE_REV-02_PR6.svg"
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/FE1600/FE1600_MODULE_REV-02_PR6.svg",
     ],
     rotatedImages: {},
     features: [
@@ -746,13 +745,10 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     title: "MX1",
     category: "PCB Design",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/MX1/Mx1_PR1_ALL.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/MX1/Mx1_PR1_BOT.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/MX1/Mx1_PR1_TOP.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/MX1/Mx1_PR1_TS1.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/MX1/Mx1_PR1_TS1RS.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/MX1/Mx1_PR1_TS2.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/MX1/Mx1_PR1_TS2RS.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/MX1/Mx1_PR1.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/MX1/Mx1_PR2.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/MX1/Mx1_PR3.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/MX1/Mx1_PR4.svg",
     ],
     rotatedImages: {},
     features: [

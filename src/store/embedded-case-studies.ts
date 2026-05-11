@@ -56,9 +56,9 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Multi IO card for ATE",
     category: "Test & Measurement",
     images: [
-      "/case-studies/CHARA/1.png",
-      "/case-studies/CHARA/2.png",
-      "/case-studies/CHARA/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/CHARA/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/CHARA/2.1.PNG",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/CHARA/3.1.PNG",
       "/case-studies/CHARA/CHARA-T_B.svg",
       "/case-studies/CHARA/CHARA-TB.svg",
       "/case-studies/CHARA/CHARA-top.svg",
@@ -764,7 +764,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
   {
     serialNumber: 17,
-   id: "industrial-defect-monitoring-system",
+    id: "industrial-defect-monitoring-system",
     title: "Industrial Defect Monitoring System",
     category: "Embedded System Design",
     images: [
@@ -1181,5 +1181,5 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "Prototype Validation",
       "Manufacturing Support",
     ],
-  }
+  },
 ];

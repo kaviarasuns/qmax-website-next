@@ -2,7 +2,6 @@ import { CaseStudy } from "../../types/case-study";
 
 // ─── Mechanical Design ────────────────────────────────────────────────────────
 export const mechanicalCaseStudiesData: CaseStudy[] = [
-
   {
     serialNumber: 2,
     id: "industrial-splice-detector",
@@ -1008,14 +1007,57 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "Prototype Development",
       "Manufacturing Support",
     ],
-  }
+  },
+  {
+    id: "ecl-fuel-cell-generator",
+    title: "ECL Fuel Cell Generator",
+    category: "Mechanical Design",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.10.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.11.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.12.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.13.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.15.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.18.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.19.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.20.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.21.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.22.png",
+    ],
+    rotatedImages: {},
+    features: [
+      "Fuel cell generator mechanical assembly",
+      "Industrial-grade structural enclosure",
+      "Thermal and airflow optimized design",
+      "Modular subsystem integration",
+      "Heavy-duty mounting architecture",
+      "High-efficiency cooling layout",
+    ],
+    summary:
+      "ECL Fuel Cell Generator is a mechanically engineered power system platform designed for efficient thermal management, modular integration, and reliable industrial operation.",
+    importantParts: [
+      "Fuel cell enclosure assembly",
+      "Thermal airflow channels",
+      "Structural support frame",
+      "Cooling and ventilation sections",
+      "Power subsystem mounting brackets",
+      "Industrial protective casing",
+    ],
+    salientFeatures: [
+      "Robust industrial mechanical architecture",
+      "Thermally optimized enclosure system",
+      "Modular fuel cell integration",
+      "Reliable heavy-duty structural design",
+    ],
+    scopeOfWork: [
+      "Mechanical System Design",
+      "Industrial CAD Modeling",
+      "Thermal and Airflow Optimization",
+      "Prototype Validation",
+      "Manufacturing Support",
+    ],
+  },
 ];
-
-
-
-
-
-
 
 // {
 //   id: "qsafe-tilt-sensor",
