@@ -301,7 +301,8 @@ export default function IndustrialDesignServicesPage() {
         <ServiceCaseStudiesSection
           eyebrow="Industrial Portfolio"
           studies={industrialDesignCaseStudies}
-          className="bg-[#fcfcfc] dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800"
+          className="bg-[#fcfcfc] dark:bg-zinc-950"
+          hideTopBorder
         />
 
         <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />

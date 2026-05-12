@@ -1954,6 +1954,7 @@ export default function SIPIAnalysisServicesPage() {
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}
+        hideTopBorder
       />
       <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>

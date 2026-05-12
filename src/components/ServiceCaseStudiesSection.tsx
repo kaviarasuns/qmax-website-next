@@ -11,6 +11,8 @@ interface ServiceCaseStudiesSectionProps {
   moreHref?: string;
   moreLabel?: string;
   className?: string;
+  /** Omit top border when stacked flush after FAQSection (same background) */
+  hideTopBorder?: boolean;
 }
 
 export default function ServiceCaseStudiesSection({
@@ -19,10 +21,20 @@ export default function ServiceCaseStudiesSection({
   studies,
   moreHref = "/case-studies",
   moreLabel = "More Case Studies",
-  className = "bg-[#fcfcfc] border-t border-zinc-200",
+  className,
+  hideTopBorder,
 }: ServiceCaseStudiesSectionProps) {
   return (
-    <section className={cn("overflow-hidden py-24", className)}>
+    <section
+      className={cn(
+        "overflow-hidden py-24",
+        hideTopBorder
+          ? "bg-[#fcfcfc]"
+          : "bg-[#fcfcfc] border-t border-zinc-200",
+        className,
+        hideTopBorder && "border-t-0 dark:border-t-0",
+      )}
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-12 border-b border-zinc-200/80 pb-6 dark:border-zinc-800/80">
           <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.38em] text-[#F33117]">

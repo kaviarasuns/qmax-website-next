@@ -605,6 +605,7 @@ export default function RfAndMicrowavePage() {
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}
+        hideTopBorder
       />
       <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>

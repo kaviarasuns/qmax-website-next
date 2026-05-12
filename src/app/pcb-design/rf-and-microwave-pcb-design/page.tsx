@@ -926,6 +926,7 @@ export default function RFMicrowavePCBDesignPage() {
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}
+        hideTopBorder
       />
       <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>

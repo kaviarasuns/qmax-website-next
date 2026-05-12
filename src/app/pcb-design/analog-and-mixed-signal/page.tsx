@@ -576,6 +576,7 @@ export default function AnalogAndMixedSignalPage() {
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}
+        hideTopBorder
       />
       <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>

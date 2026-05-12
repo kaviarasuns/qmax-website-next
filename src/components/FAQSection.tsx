@@ -7,11 +7,19 @@ export interface FAQItem {
 
 interface FAQSectionProps {
   faqs: FAQItem[];
+  /** Omit top border when stacked flush after a preceding section (e.g. technical advantages) */
+  hideTopBorder?: boolean;
 }
 
-export default function FAQSection({ faqs }: FAQSectionProps) {
+export default function FAQSection({ faqs, hideTopBorder }: FAQSectionProps) {
   return (
-    <section className="bg-[#fcfcfc] dark:bg-zinc-950 py-12 border-t border-zinc-200 dark:border-zinc-800">
+    <section
+      className={
+        hideTopBorder
+          ? "bg-[#fcfcfc] py-12 dark:bg-zinc-950"
+          : "border-t border-zinc-200 bg-[#fcfcfc] py-12 dark:border-zinc-800 dark:bg-zinc-950"
+      }
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-8">
           <h2 className="tracking-wide text-3xl font-light text-gray-900 md:text-5xl tracking-tighter">

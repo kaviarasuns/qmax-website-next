@@ -642,6 +642,7 @@ export default function HighSpeedDigitalPCBDesignPage() {
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}
+        hideTopBorder
       />
       <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>

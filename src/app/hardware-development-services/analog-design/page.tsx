@@ -6,9 +6,9 @@ import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-
 import { hwAnalogDesignOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
 import {
-  HighSpeedCoreServiceOfferingsSection,
+  CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
-} from "@/components/services-cmp/HighSpeedCoreServiceOfferingsSection";
+} from "@/components/services-cmp/CoreServiceOfferingsSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import {
   TechnicalAdvantageSection,
@@ -392,18 +392,19 @@ export default function AnalogDesignPage() {
           </div>
           <div className="mt-10 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
             <p>
-              In an increasingly digital world, the interface between the physical
-              and digital domains remains the critical path in high-performance
-              electronics. Qmax Systems provides comprehensive analog and
-              mixed-signal development — from microvolt sensor conditioning to
-              giga-sample converters — with rigorous control of noise, signal
-              integrity, and timing across the entire signal chain.
+              In an increasingly digital world, the interface between the
+              physical and digital domains remains the critical path in
+              high-performance electronics. Qmax Systems provides comprehensive
+              analog and mixed-signal development — from microvolt sensor
+              conditioning to giga-sample converters — with rigorous control of
+              noise, signal integrity, and timing across the entire signal
+              chain.
             </p>
           </div>
         </div>
       </section>
 
-      <HighSpeedCoreServiceOfferingsSection offerings={coreServiceOfferings} />
+      <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Analog & Mixed-Signal Design?"
@@ -415,12 +416,12 @@ export default function AnalogDesignPage() {
         columns="three"
         sectionHeadingId="technical-advantage-analog-heading"
       />
-      <FAQSection faqs={faqs} />
+      <FAQSection faqs={faqs} hideTopBorder />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}
+        hideTopBorder
       />
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </>
   );
 }

@@ -6,9 +6,9 @@ import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-
 import { hwPowerElectronicsOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
 import {
-  HighSpeedCoreServiceOfferingsSection,
+  CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
-} from "@/components/services-cmp/HighSpeedCoreServiceOfferingsSection";
+} from "@/components/services-cmp/CoreServiceOfferingsSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import {
   TechnicalAdvantageSection,
@@ -360,7 +360,7 @@ export default function PowerElectronicsPage() {
         </div>
       </section>
 
-      <HighSpeedCoreServiceOfferingsSection offerings={coreServiceOfferings} />
+      <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Power Electronics Design?"
@@ -372,12 +372,12 @@ export default function PowerElectronicsPage() {
         columns="two"
         sectionHeadingId="technical-advantage-power-heading"
       />
-      <FAQSection faqs={faqs} />
+      <FAQSection faqs={faqs} hideTopBorder />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}
+        hideTopBorder
       />
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </>
   );
 }

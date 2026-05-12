@@ -4,9 +4,9 @@ import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
 import {
-  HighSpeedCoreServiceOfferingsSection,
+  CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
-} from "@/components/services-cmp/HighSpeedCoreServiceOfferingsSection";
+} from "@/components/services-cmp/CoreServiceOfferingsSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { DigitalHardwareTechnicalAdvantageSection } from "@/components/services-cmp/TechnicalAdvantageSection";
 
@@ -236,7 +236,7 @@ export default function HighSpeedDigitalDesignPage() {
         </div>
       </section>
 
-      <HighSpeedCoreServiceOfferingsSection offerings={coreServiceOfferings} />
+      <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Digital Hardware Design?"
@@ -244,11 +244,12 @@ export default function HighSpeedDigitalDesignPage() {
 
       <DigitalHardwareTechnicalAdvantageSection />
 
-      <FAQSection faqs={faqs} />
+      <FAQSection faqs={faqs} hideTopBorder />
 
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}
+        hideTopBorder
       />
     </>
   );

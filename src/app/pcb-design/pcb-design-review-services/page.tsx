@@ -1584,6 +1584,7 @@ export default function PCBDesignReviewServicesPage() {
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}
+        hideTopBorder
       />
       <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>

@@ -621,6 +621,7 @@ export default function MechanicalIndustrialDesignPage() {
       <ServiceCaseStudiesSection
         eyebrow="Mechanical Portfolio"
         studies={mechanicalIndustrialCaseStudies}
+        hideTopBorder
       />
 
       <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />

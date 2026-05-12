@@ -15,13 +15,13 @@ export type HighSpeedCoreOffering = {
   applications: string;
 };
 
-interface HighSpeedCoreServiceOfferingsSectionProps {
+interface CoreServiceOfferingsSectionProps {
   offerings: HighSpeedCoreOffering[];
 }
 
-export function HighSpeedCoreServiceOfferingsSection({
+export function CoreServiceOfferingsSection({
   offerings,
-}: HighSpeedCoreServiceOfferingsSectionProps) {
+}: CoreServiceOfferingsSectionProps) {
   const [activeId, setActiveId] = useState(offerings[0]?.id ?? "");
   const activeOffering =
     offerings.find((item) => item.id === activeId) ?? offerings[0];
@@ -31,7 +31,7 @@ export function HighSpeedCoreServiceOfferingsSection({
   }
 
   return (
-    <section className="border-b border-slate-200 px-6 py-16 lg:px-8 lg:py-20">
+    <section className="px-6 py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-center text-3xl font-light tracking-tight text-slate-900 md:text-5xl">
           Our Core Service <span className="text-[#F33117]">Offerings</span>

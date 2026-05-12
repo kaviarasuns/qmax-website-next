@@ -439,6 +439,7 @@ export default function PCBDesignPageV1() {
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={pcbCaseStudies}
+        hideTopBorder
       />
 
       {/* Other Capabilities Section */}
