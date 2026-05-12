@@ -27,12 +27,12 @@ export default function ImpactStats() {
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-white border border-gray-200 rounded-2xl p-8 text-center hover:border-red-500 transition-colors"
+              className="bg-white border border-gray-200 rounded-2xl p-8 flex flex-col items-center text-center hover:border-red-500 transition-colors"
             >
               <div className="text-5xl md:text-6xl font-extrabold text-red-500 mb-3">
                 {stat.number}
               </div>
-              <p className="text-gray-700 text-lg font-medium">
+              <p className="text-gray-700 text-lg font-medium text-center">
                 {stat.label}
               </p>
             </div>

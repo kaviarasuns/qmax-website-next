@@ -59,13 +59,12 @@ export default function HowWeWorkInternational() {
                 key={index}
                 className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"
               >
-                {/* Red Icon Accent */}
-                <div className="mb-4">
-                  <Icon className="w-8 h-8 text-[#EF3E42]" strokeWidth={1.5} />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="shrink-0">
+                    <Icon className="w-8 h-8 text-[#EF3E42]" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-2xl text-black">{card.title}</h3>
                 </div>
-
-                {/* Card Title */}
-                <h3 className="text-2xl text-black mb-4">{card.title}</h3>
 
                 {/* Card Body */}
                 <p className="text-gray-600 leading-relaxed text-sm">{card.body}</p>

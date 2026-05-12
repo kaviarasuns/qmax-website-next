@@ -61,7 +61,8 @@ const teamMembers: TeamMember[] = [
 
 export default function MeetTheTeam() {
   return (
-      <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-16 md:py-24">
+      <div className="container mx-auto px-4">
         <header className="mb-12 text-left">
           {/* <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-red-500">
             Meet our team
@@ -135,6 +136,7 @@ export default function MeetTheTeam() {
             </article>
           ))}
         </div>
-      </section>
+      </div>
+    </section>
   );
 }

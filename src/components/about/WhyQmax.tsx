@@ -47,12 +47,14 @@ export default function WhyQmax() {
                 key={idx}
                 className="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-2xl p-8 hover:border-red-500/50 transition-colors group"
               >
-                <div className="bg-red-500/20 w-12 h-12 rounded-lg flex items-center justify-center mb-5 group-hover:bg-red-500/30 transition-colors">
-                  <IconComponent className="text-red-500" size={24} />
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="bg-red-500/20 w-12 h-12 rounded-lg flex shrink-0 items-center justify-center group-hover:bg-red-500/30 transition-colors">
+                    <IconComponent className="text-red-500" size={24} />
+                  </div>
+                  <h3 className="text-2xl text-black">
+                    {reason.title}
+                  </h3>
                 </div>
-                <h3 className="text-2xl text-black mb-3">
-                  {reason.title}
-                </h3>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                   {reason.description}
                 </p>

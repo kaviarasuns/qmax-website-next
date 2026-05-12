@@ -51,12 +51,14 @@ export default function OurValues() {
                 key={idx}
                 className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow group"
               >
-                <div className="bg-red-500/20 w-14 h-14 rounded-lg flex items-center justify-center mb-5 group-hover:bg-red-500/30 transition-colors">
-                  <IconComponent className="text-red-500" size={28} />
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="bg-red-500/20 w-14 h-14 rounded-lg flex shrink-0 items-center justify-center group-hover:bg-red-500/30 transition-colors">
+                    <IconComponent className="text-red-500" size={28} />
+                  </div>
+                  <h3 className="text-2xl text-black">
+                    {value.title}
+                  </h3>
                 </div>
-                <h3 className="text-2xl text-black mb-3">
-                  {value.title}
-                </h3>
                 <p className="text-gray-700 leading-relaxed">
                   {value.description}
                 </p>
