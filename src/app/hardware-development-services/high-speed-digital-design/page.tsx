@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { hwHighSpeedDigitalOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
+import {
+  HighSpeedCoreServiceOfferingsSection,
+  type HighSpeedCoreOffering,
+} from "@/components/services-cmp/HighSpeedCoreServiceOfferingsSection";
+import { WhySection } from "@/components/services-cmp/WhySection";
+import { DigitalHardwareTechnicalAdvantageSection } from "@/components/services-cmp/TechnicalAdvantageSection";
 
 const faqs = [
   {
@@ -34,6 +37,158 @@ const faqs = [
   },
 ];
 
+const coreServiceOfferings: HighSpeedCoreOffering[] = [
+  {
+    id: "compute",
+    tab: "Compute & Servers",
+    headline:
+      "High-performance compute and server hardware built for AI, data centers, and rugged industrial deployment.",
+    intro:
+      "Qmax Systems engineers high-performance digital compute platforms, from multicore CPU systems to dense AI GPU servers and ruggedized single-board computers. Our hardware design team builds for AI training and inference workloads, hyperscale data centers, telecom edge deployments, and industrial environments where signal integrity and thermal performance are non-negotiable.",
+    points: [
+      {
+        boldLead: "Multicore CPU Systems",
+        rest: " - high-performance digital designs utilizing Intel Xeon, AMD EPYC, and Ampere Altra CPUs, optimized for thermal efficiency and high-speed data throughput.",
+      },
+      {
+        boldLead: "High-Density AI GPU Compute Servers",
+        rest: " - custom hardware engineering for parallel processing workloads, designed to house and power NVIDIA and AMD GPU clusters for AI training and inference.",
+      },
+      {
+        boldLead: "Single Board Computers (SBCs) & Server Motherboards",
+        rest: " - tailor-made designs for data centers and rugged industrial environments, validated for power integrity and signal integrity.",
+      },
+    ],
+    applications:
+      "AI training infrastructure · Hyperscale data centers · Telecom edge compute · Rugged industrial computing · High-performance computing (HPC)",
+  },
+  {
+    id: "connectivity",
+    tab: "Connectivity & O-RAN",
+    headline:
+      "Ultra-high-speed connectivity hardware powering 5G and next-generation telecom infrastructure.",
+    intro:
+      "Qmax Systems designs the high-speed networking and telecom hardware that drives modern data center fabrics and global 5G rollouts. From 100 Gbps network interface cards to O-RAN distributed units and fabric interface cards for photonic networks, our team builds the connectivity layer for telecom operators, hyperscalers, and network equipment vendors.",
+    points: [
+      {
+        boldLead: "100 Gbps Network Interface Cards (NIC)",
+        rest: " - ultra-high-speed connectivity solutions for high-end blade servers, delivering maximum bandwidth and minimal latency for modern workloads.",
+      },
+      {
+        boldLead: "O-RAN Distributed Units (DU)",
+        rest: " - specialized hardware development for Open RAN architecture, accelerating global 4G and 5G infrastructure deployments.",
+      },
+      {
+        boldLead: "Fabric Interface Cards (FIC)",
+        rest: " - innovative designs for photonic resource units, enabling seamless optical-to-electrical resource management in disaggregated data centers.",
+      },
+    ],
+    applications:
+      "4G and 5G telecom infrastructure · Open RAN deployments · Hyperscale data centers · Photonic networks · Disaggregated network fabrics",
+  },
+  {
+    id: "embedded",
+    tab: "Embedded & FPGA",
+    headline:
+      "Custom FPGA and embedded platforms engineered for acceleration, real-time processing, and Industrial IoT.",
+    intro:
+      "Qmax Systems develops custom FPGA platforms and embedded systems for hardware acceleration, real-time digital signal processing, and connected edge devices. Our team works across Xilinx (AMD) and Intel (Altera) FPGA families, plus ARM Cortex-M, ESP32, and PIC microcontroller architectures, building precision hardware for Industrial IoT, edge AI, robotics, and motor control applications.",
+    points: [
+      {
+        boldLead: "FPGA-Based Hardware",
+        rest: " - custom development on Xilinx and Intel platforms for hardware acceleration, real-time signal processing, and flexible high-speed I/O.",
+      },
+      {
+        boldLead: "Microcontroller-Based Products",
+        rest: " - robust, power-optimized embedded systems using ARM Cortex-M, ESP32, and PIC architectures for industrial IoT deployments.",
+      },
+    ],
+    applications:
+      "Industrial IoT (IIoT) · Edge AI inference · Robotics and automation · Real-time DSP · Motor control · Smart sensors",
+  },
+];
+
+const WHY_CARDS = [
+  {
+    title: "Transparent & Supervised Process",
+    desc: "You see every milestone, design review, and risk register as it happens. Qmax Systems program managers run a weekly cadence with traceable deliverables, on-time builds, and zero hidden surprises at handover.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="10" cy="14" r="3" />
+        <circle cx="38" cy="14" r="3" />
+        <circle cx="10" cy="34" r="3" />
+        <circle cx="38" cy="34" r="3" />
+        <circle cx="24" cy="24" r="4" />
+        <path d="M13 14h8M27 14h8M13 34h8M27 34h8M14 16l8 6M34 16l-8 6M14 32l8-6M34 32l-8-6" />
+      </svg>
+    ),
+  },
+  {
+    title: "Digital Platforms Built from Scratch",
+    desc: "Every digital hardware program starts with R&D and a proof-of-concept build to retire architectural risk early. We confirm feasibility, lock the BoM, validate stackup and high-speed channel margin, and prove critical assumptions before a single production layer is committed.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M8 30 L18 20 L24 26 L34 16 L42 24" />
+        <path d="M34 16 L34 24 L42 24" />
+        <path d="M6 38 L42 38" />
+        <path d="M14 12 L18 16 L22 12" />
+      </svg>
+    ),
+  },
+  {
+    title: "Smooth Hardware-Software Integration",
+    desc: "We select SoCs, FPGAs, memories, and toolchains that fit your existing platform rather than forcing a re-platform. The result is firmware that brings up cleanly, board support packages that drop into your OS, and lower long-term maintenance cost.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M24 6 L24 18 M18 12 L24 18 L30 12" />
+        <path d="M24 42 L24 30 M18 36 L24 30 L30 36" />
+        <path d="M6 24 L18 24 M12 18 L18 24 L12 30" />
+        <path d="M42 24 L30 24 M36 18 L30 24 L36 30" />
+        <circle cx="24" cy="24" r="4" />
+      </svg>
+    ),
+  },
+  {
+    title: "Expert Digital Hardware Engineers",
+    desc: "Qmax Systems digital hardware engineers average 12+ years across AI infrastructure, telecom and O-RAN, embedded edge computing, defense electronics, and industrial IoT. Only senior engineers touch your design — no junior hand-offs, no learning on your timeline.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="24" cy="24" r="16" />
+        <circle cx="24" cy="24" r="9" />
+        <circle cx="24" cy="24" r="3" fill="currentColor" />
+      </svg>
+    ),
+  },
+];
+
 export const metadata: Metadata = {
   title: "High Speed Digital Design Services | Qmax",
   description:
@@ -42,8 +197,8 @@ export const metadata: Metadata = {
 
 export default function HighSpeedDigitalDesignPage() {
   return (
-    <main className="bg-slate-100 text-slate-900">
-      <section className="relative overflow-hidden pt-14 pb-12 border-b border-slate-200 lg:pt-20 lg:pb-24">
+    <>
+      <section className="relative overflow-hidden pt-14 pb-12 lg:pt-20 lg:pb-24">
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           {/* Full-width Image Container */}
           <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-slate-200 group">
@@ -81,286 +236,13 @@ export default function HighSpeedDigitalDesignPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl text-slate-900">Our Core Service Offerings</h2>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-          We specialize in high-speed, high-density, and high-reliability
-          digital systems. Our expertise spans across:
-        </p>
+      <HighSpeedCoreServiceOfferingsSection offerings={coreServiceOfferings} />
+      <WhySection
+        whyCards={WHY_CARDS}
+        titleHighlight="Digital Hardware Design?"
+      />
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
-          <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base text-slate-900 md:text-lg">
-              1. Advanced Compute &amp; Server Solutions
-            </h3>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
-              <li>
-                <span className="text-slate-900">Multicore CPU Systems:</span>{" "}
-                High-performance designs utilizing the latest Intel, AMD, and
-                Ampere CPUs, optimized for thermal efficiency and high-speed
-                data throughput.
-              </li>
-              <li>
-                <span className="text-slate-900">
-                  High-Density AI GPU Compute Servers:
-                </span>{" "}
-                Custom hardware engineering optimized for parallel processing,
-                designed to house and power high-performance NVIDIA and AMD GPU
-                clusters.
-              </li>
-              <li>
-                <span className="text-slate-900">
-                  Single Board Computers (SBCs) &amp; Server Motherboards:
-                </span>{" "}
-                Tailor-made designs for data centers and rugged industrial
-                environments, focusing on Power Integrity (PI) and Signal
-                Integrity (SI).
-              </li>
-            </ul>
-          </article>
-
-          <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base text-slate-900 md:text-lg">
-              2. Next-Gen Connectivity &amp; O-RAN Infrastructure
-            </h3>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
-              <li>
-                <span className="text-slate-900">
-                  100Gbps Network Interface Cards (NIC):
-                </span>{" "}
-                Ultra-high-speed connectivity solutions for high-end blade
-                servers, ensuring maximum bandwidth and minimal latency.
-              </li>
-              <li>
-                <span className="text-slate-900">
-                  O-RAN Distributed Units (DU):
-                </span>{" "}
-                Specialized hardware development for Open RAN architecture to
-                accelerate global 5G infrastructure rollouts.
-              </li>
-              <li>
-                <span className="text-slate-900">
-                  Fabric Interface Cards (FIC):
-                </span>{" "}
-                Innovative designs for Photonic Resource Units, facilitating
-                seamless optical-to-electrical resource management.
-              </li>
-            </ul>
-          </article>
-
-          <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <h3 className="text-base text-slate-900 md:text-lg">
-              3. Precision Embedded &amp; FPGA Design
-            </h3>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
-              <li>
-                <span className="text-slate-900">FPGA-Based Hardware:</span>{" "}
-                Custom development (Xilinx/Intel) for hardware acceleration,
-                real-time signal processing, and flexible I/O requirements.
-              </li>
-              <li>
-                <span className="text-slate-900">
-                  Microcontroller Based Products:
-                </span>{" "}
-                Robust, power-optimized embedded systems using ARM Cortex-M,
-                ESP32, and PIC architectures for Industrial IoT (IIoT).
-              </li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section className="border-t border-slate-200 bg-slate-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl text-slate-900">
-            Why Partner with Qmax Systems?
-          </h2>
-
-          <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
-            <table className="min-w-full divide-y divide-slate-200">
-              <thead className="bg-slate-100">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm text-slate-900">
-                    Feature
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm text-slate-900">
-                    Our Technical Advantage
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-200">
-                <tr>
-                  <td className="px-6 py-4 text-sm text-slate-900">
-                    High-Speed Standards
-                  </td>
-                  <td className="px-6 py-4 text-sm leading-6 text-slate-700">
-                    Expert handling of DDR5, PCIe Gen5/Gen6, 112G SerDes
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 text-sm text-slate-900">
-                    Physical Complexity
-                  </td>
-                  <td className="px-6 py-4 text-sm leading-6 text-slate-700">
-                    Mastery of 30+ layer HDI PCBs with blind/buried microvias
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 text-sm text-slate-900">
-                    Manufacturing Readiness
-                  </td>
-                  <td className="px-6 py-4 text-sm leading-6 text-slate-700">
-                    Complete DFM, DFA, and DFT implementation
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 text-sm text-slate-900">
-                    Signal &amp; Power Integrity
-                  </td>
-                  <td className="px-6 py-4 text-sm leading-6 text-slate-700">
-                    Advanced SI/PI simulation and validation
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 text-sm text-slate-900">
-                    Global Compliance
-                  </td>
-                  <td className="px-6 py-4 text-sm leading-6 text-slate-700">
-                    Pre-designed for EMI/EMC, CE, FCC, UL
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4 text-sm text-slate-900">
-                    Lifecycle Support
-                  </td>
-                  <td className="px-6 py-4 text-sm leading-6 text-slate-700">
-                    From concept to mass production
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p className="mt-6 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-            We design for performance, reliability, and manufacturability - not
-            just for prototypes.
-          </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl text-slate-900">
-          End-to-End Digital Hardware Engineering Process
-        </h2>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-          Our development lifecycle includes:
-        </p>
-
-        <ul className="mt-8 grid gap-4 md:grid-cols-2">
-          {[
-            "System Architecture & Feasibility Analysis",
-            "Platform Selection & Risk Assessment",
-            "High-Speed Schematics & PCB Layout",
-            "SI / PI / EMI Simulation",
-            "Prototype & Manufacturing Support",
-            "Hardware Validation & Testing",
-            "Compliance & Certification Support",
-            "Production Release Documentation",
-          ].map((item) => (
-            <li
-              key={item}
-              className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base"
-            >
-              <span className="mr-3 text-emerald-600">+</span>
-              {item}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="border-y border-slate-200 bg-slate-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl text-slate-900">
-            Proven Industry Experience
-          </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-            We have successfully delivered 100s advanced digital hardware
-            platforms, including:
-          </p>
-
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              "AI compute servers",
-              "O-RAN DU systems",
-              "FPGA accelerators",
-              "Server motherboards",
-              "High-speed NICs",
-              "Embedded controllers",
-            ].map((item) => (
-              <li
-                key={item}
-                className="rounded-xl border border-slate-200 bg-white px-5 py-4 text-sm font-medium leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-
-          <p className="mt-6 text-sm leading-7 text-slate-700 md:text-base">
-            Additional Case Studies can be shared after NDA
-          </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_6px_30px_rgba(15,23,42,0.08)] md:p-10">
-          <h2 className="text-3xl text-slate-900">
-            Complimentary Technical Consulting Session
-          </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-            We offer a free 1-hour technical consultation with our senior
-            hardware engineering team.
-          </p>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-            During this session, we will review:
-          </p>
-
-          <ul className="mt-6 grid gap-3 md:grid-cols-2">
-            {[
-              "Your system architecture",
-              "Performance and scalability targets",
-              "Cost and component optimization",
-              "Development roadmap",
-              "Technical and compliance risks",
-            ].map((item) => (
-              <li
-                key={item}
-                className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-6 text-slate-700"
-              >
-                <span className="mr-3 text-emerald-600">+</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-
-          <p className="mt-6 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-            This session is practical, engineering-driven, and focused on
-            real-world implementation - not sales.
-          </p>
-
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
-            Contact us today to schedule your complimentary consultation and
-            accelerate your product development.
-          </p>
-
-          <Link
-            href="/contact"
-            className="mt-6 inline-flex rounded-lg border border-sky-300 bg-sky-100 px-5 py-3 text-sm text-sky-700 transition hover:border-sky-400 hover:bg-sky-200"
-          >
-            Schedule Complimentary Consultation
-          </Link>
-        </div>
-      </section>
+      <DigitalHardwareTechnicalAdvantageSection />
 
       <FAQSection faqs={faqs} />
 
@@ -368,7 +250,6 @@ export default function HighSpeedDigitalDesignPage() {
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}
       />
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
-    </main>
+    </>
   );
 }
