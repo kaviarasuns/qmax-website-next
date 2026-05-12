@@ -13,6 +13,7 @@ export const industrialCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/5.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/oxygen_generator_presentation.mp4",
     ],
     features: [
       "Handheld controller enclosure optimised for factory floor use",
@@ -381,6 +382,7 @@ export const industrialCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smart_Wi-Fi_stethoscope/1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smart_Wi-Fi_stethoscope/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smart_Wi-Fi_stethoscope/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smart_Wi-Fi_stethoscope/wifi_stethoscope_presentation.mp4",
     ],
     rotatedImages: {},
     features: [
