@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 
-export type HighSpeedCorePoint =
-  | string
-  | { boldLead: string; rest: string };
+export type HighSpeedCorePoint = string | { boldLead: string; rest: string };
 
 export type HighSpeedCoreOffering = {
   id: string;
@@ -77,7 +75,7 @@ export function CoreServiceOfferingsSection({
                 Learn more
               </a>
               <a
-                href="/contact"
+                href="/hardware-development-services/contact"
                 className="rounded-md border border-[#F33117] bg-[#F33117] px-6 py-2.5 text-sm font-medium text-white transition hover:border-[#d42b13] hover:bg-[#d42b13]"
               >
                 Get in Touch
