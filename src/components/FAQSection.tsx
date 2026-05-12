@@ -21,9 +21,9 @@ export default function FAQSection({ faqs, hideTopBorder }: FAQSectionProps) {
       }
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mb-8">
-          <h2 className="tracking-wide text-3xl font-light text-gray-900 md:text-5xl tracking-tighter">
-            Frequently Asked Questions
+        <div className="mb-8 pb-6 text-center">
+          <h2 className="text-3xl font-light tracking-tighter text-gray-900 md:text-5xl">
+            Frequently Asked <span className="text-red-500">Questions</span>
           </h2>
         </div>
 

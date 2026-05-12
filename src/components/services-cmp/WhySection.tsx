@@ -39,7 +39,7 @@ export function WhySection({ whyCards, titleHighlight = "Hardware Design?", ctaH
                   {card.title}
                 </h3>
               </div>
-              <p className="pl-[68px] text-base text-gray-600 max-[900px]:pl-0">
+              <p className="text-base text-gray-600">
                 {card.desc}
               </p>
             </article>

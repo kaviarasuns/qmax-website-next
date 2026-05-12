@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
 import {
@@ -10,6 +9,7 @@ import { WhySection } from "@/components/services-cmp/WhySection";
 import { DigitalHardwareTechnicalAdvantageSection } from "@/components/services-cmp/TechnicalAdvantageSection";
 import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
+import { FAQSection } from "@/components/services-cmp/FAQSection";
 
 const faqs = [
   {
@@ -214,11 +214,12 @@ export default function HighSpeedDigitalDesignPage() {
         description={
           <p>
             At Qmax Systems, we bridge the gap between complex conceptual
-            requirements and market-ready hardware. In an era where AI computing,
-            telecom infrastructure, edge servers, and data-intensive applications
-            demand unprecedented speed and reliability, our Hardware Engineering
-            Team delivers robust, scalable, and high-integrity systems tailored for
-            next-generation digital infrastructure.
+            requirements and market-ready hardware. In an era where AI
+            computing, telecom infrastructure, edge servers, and data-intensive
+            applications demand unprecedented speed and reliability, our
+            Hardware Engineering Team delivers robust, scalable, and
+            high-integrity systems tailored for next-generation digital
+            infrastructure.
           </p>
         }
         ctaHref="/hardware-development-services/contact"
@@ -233,7 +234,8 @@ export default function HighSpeedDigitalDesignPage() {
 
       <DigitalHardwareTechnicalAdvantageSection />
 
-      <FAQSection faqs={faqs} hideTopBorder />
+      <FAQSection faqItems={faqs} />
+      <div className="pb-28"></div>
 
       <ConsultationCtaBar
         heading="Get a complimentary consultation with our digital hardware experts."
