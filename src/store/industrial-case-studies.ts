@@ -151,6 +151,7 @@ export const industrialCaseStudiesData: CaseStudy[] = [
       "/case-studies/industrialCaseStudies/2/LSR-9.png",
       "/case-studies/industrialCaseStudies/2/LSR-10.png",
       "/case-studies/industrialCaseStudies/2/LSR-11.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4",
     ],
     features: [
       "Compact puck-shaped form factor for clinical use",
@@ -335,6 +336,7 @@ export const industrialCaseStudiesData: CaseStudy[] = [
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smart_tap/1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smart_tap/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_1.mp4",
     ],
     rotatedImages: {},
     features: [

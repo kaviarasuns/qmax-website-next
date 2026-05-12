@@ -13,7 +13,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG56.svg",
     ],
     rotatedImages: { 0: 90, 2: 90, 3: 90 },
-    enlargedImages: { 0: 1.3, 1: 0.9, 2: 1.3, 3: 1.3 },
+    enlargedImages: { 0: 1.6, 1: 0.9, 2: 1.6, 3: 1.6 },
     features: [
       "Medical sensing PCB board",
       "High-precision analog front-end",
@@ -52,15 +52,15 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/1.1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/alphion/ALPHION-AOLT-PR1_SIG12.webp",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/alphion/ALPHION-AOLT-PR1_SIG12.webp",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG12.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/1.2.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/alphion/ALPHION-AOLT-PR1_SIG136.webp",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/alphion/ALPHION-AOLT-PR1_SIG136.webp",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG136.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/alphion/ALPHION-AOLT-PR1_SIG23.webp",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/alphion/ALPHION-AOLT-PR1_SIG23.webp",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG23.svg",
     ],
-    enlargedImages: { 2: 1.1, 5: 1.1, 7: 1.1 },
+    enlargedImages: { 2: 1.1, 3: 0.9, 5: 1.1, 7: 1.1 },
     features: [
       "IoT gateway main board",
       "Multiple wireless protocol support",
@@ -145,6 +145,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/LUCAS TVS_PR1_TOP.svg",
     ],
     rotatedImages: { 0: 90, 1: 90, 2: 90 },
+    enlargedImages: { 0: 1.7, 1: 1.7, 2: 1.7 },
     features: [
       "Industrial control board design",
       "Multi-layer PCB with high current traces",
@@ -187,6 +188,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_TOP.svg",
     ],
     rotatedImages: { 0: 90, 1: 90, 2: 90 },
+    enlargedImages: { 0: 1.7, 1: 1.7, 2: 1.7 },
     features: [
       "Aerospace-grade PCB design",
       "High-speed digital interfaces (LVDS, SPI, I2C)",
@@ -226,13 +228,14 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/4.png",
-      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/7.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/7.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/8.png",
       // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_SIG12.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_TS1.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_TS12_V.svg",
     ],
-    rotatedImages: { 3: 90, 5: 90, 4: 90 },
+    rotatedImages: { 2: 90, 5: 90, 4: 90 },
+    enlargedImages: { 2: 1.6, 4: 1.4, 5: 1.4 },
     features: [
       "Automotive OBD2 interface board",
       "Multi-protocol support (UART, I2C, SPI)",
@@ -445,6 +448,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/rugged_obd/I01256CB1_20JUN2024_RUG_PR1_TOP.svg",
     ],
     rotatedImages: { 0: 270, 1: 270 },
+    enlargedImages: { 0: 1.1, 1: 1.1 },
     features: [
       "Automotive rugged OBD PCB design",
       "Vehicle diagnostic communication support",
@@ -487,7 +491,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/energy_meter/ENERGY_METER_TOP_PR1.svg",
     ],
     rotatedImages: { 0: 90, 1: 90, 2: 90, 3: 90 },
-    enlargedImages: { 0: 1.2, 1: 1.2, 2: 1.1 },
+    enlargedImages: { 0: 1.4, 1: 1.4, 2: 1.3 },
     features: [
       "High-accuracy energy metering PCB",
       "Multi-layer compact board design",
@@ -531,7 +535,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/animal_tracker/ANIMAL TRACKER_TOP.svg",
     ],
     rotatedImages: {},
-    enlargedImages: { 0: 0.9, 1: 0.9, 2: 0.9 },
+    enlargedImages: { 0: 1, 1: 1, 2: 1 },
     features: [
       "Compact animal tracking PCB design",
       "GPS and wireless communication integration",
@@ -709,9 +713,10 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     title: "LSR Board",
     category: "PCB Design",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LSR/P01186LS7_PR1_TOP.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LSR/P01186LS7_PR1_TB.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LSR/P01186LS7_PR1_BOT.svg",
+
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LSR/P01186LS7_PR1_TB.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LSR/P01186LS7_PR1_TOP.svg",
     ],
     rotatedImages: {},
     features: [

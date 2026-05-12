@@ -2,10 +2,84 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, X, ZoomIn, Square, SquareDashed } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, ZoomIn, Square, SquareDashed, Play } from "lucide-react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+
+const VIDEO_EXT_REGEX = /\.(mp4|webm|mov|m4v)(\?|#|$)/i;
+const isVideoSrc = (src: string) => VIDEO_EXT_REGEX.test(src);
+
+function VideoPlayer({
+  src,
+  autoPlay = false,
+  containerClassName,
+  videoClassName,
+  buttonSize = "md",
+}: {
+  src: string;
+  autoPlay?: boolean;
+  containerClassName?: string;
+  videoClassName?: string;
+  buttonSize?: "md" | "lg";
+}) {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = React.useState(false);
+
+  const handlePlay = React.useCallback(() => {
+    const node = videoRef.current;
+    if (!node) return;
+    const result = node.play();
+    if (result && typeof result.catch === "function") {
+      result.catch(() => {
+        // Autoplay rejection — leave the overlay visible.
+      });
+    }
+  }, []);
+
+  return (
+    <div className={cn("relative", containerClassName)}>
+      <video
+        ref={videoRef}
+        key={src}
+        src={src}
+        controls
+        playsInline
+        preload="metadata"
+        autoPlay={autoPlay}
+        onPlay={() => setIsPlaying(true)}
+        onPlaying={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onEnded={() => setIsPlaying(false)}
+        className={cn("block bg-black", videoClassName)}
+      >
+        Your browser does not support the video tag.
+      </video>
+
+      {!isPlaying && (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <button
+            type="button"
+            onClick={handlePlay}
+            aria-label="Play video"
+            className={cn(
+              "pointer-events-auto flex items-center justify-center rounded-full bg-white/90 text-zinc-900 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white motion-reduce:transition-none",
+              buttonSize === "lg" ? "h-20 w-20 md:h-24 md:w-24" : "h-14 w-14 md:h-16 md:w-16"
+            )}
+          >
+            <Play
+              className={cn(
+                "translate-x-[2px] fill-current",
+                buttonSize === "lg" ? "h-8 w-8 md:h-10 md:w-10" : "h-6 w-6 md:h-7 md:w-7"
+              )}
+              aria-hidden="true"
+            />
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
 
 interface CaseStudyCarouselProps {
   images: string[];
@@ -127,41 +201,65 @@ export function CaseStudyCarousel({
     );
   }
 
+  const currentIsVideo = isVideoSrc(galleryImages[current]);
+  const lightboxIsVideo = isVideoSrc(galleryImages[lightboxIndex]);
+
   return (
     <>
       {/* ── Carousel ─────────────────────────────────────────────────────── */}
       <div className="rounded-2xl border border-zinc-200/70 bg-white p-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)] md:p-4">
 
-        {/* Main image — click to open lightbox */}
+        {/* Main slide — image opens lightbox, video plays inline */}
         <div
-          role="button"
-          tabIndex={0}
-          aria-label={`Zoom image ${current + 1}`}
-          onClick={() => openLightbox(current)}
-          onKeyDown={(e) => e.key === "Enter" && openLightbox(current)}
-          className="relative overflow-hidden rounded-xl border border-zinc-100 bg-[oklch(87.1%_0.006_286.286)] cursor-zoom-in group"
+          role={currentIsVideo ? undefined : "button"}
+          tabIndex={currentIsVideo ? undefined : 0}
+          aria-label={
+            currentIsVideo ? undefined : `Zoom image ${current + 1}`
+          }
+          onClick={currentIsVideo ? undefined : () => openLightbox(current)}
+          onKeyDown={
+            currentIsVideo
+              ? undefined
+              : (e) => e.key === "Enter" && openLightbox(current)
+          }
+          className={cn(
+            "relative overflow-hidden rounded-xl group",
+            currentIsVideo
+              ? "cursor-default bg-black"
+              : "cursor-zoom-in border border-zinc-100 bg-[oklch(87.1%_0.006_286.286)]"
+          )}
         >
           <div
             className="block w-full transition-opacity duration-300 motion-reduce:transition-none"
-            style={getImageTransform(current)}
+            style={currentIsVideo ? undefined : getImageTransform(current)}
           >
-            <Image
-              src={galleryImages[current]}
-              alt={`${title} — image ${current + 1} of ${galleryImages.length}`}
-              width={960}
-              height={600}
-              unoptimized
-              className="h-full w-full aspect-[4/3] md:aspect-[16/10] object-contain p-10"
-            />
+            {currentIsVideo ? (
+              <VideoPlayer
+                src={galleryImages[current]}
+                containerClassName="aspect-[4/3] md:aspect-[16/10] w-full"
+                videoClassName="h-full w-full object-contain"
+              />
+            ) : (
+              <Image
+                src={galleryImages[current]}
+                alt={`${title} — image ${current + 1} of ${galleryImages.length}`}
+                width={960}
+                height={600}
+                unoptimized
+                className="h-full w-full aspect-[4/3] md:aspect-[16/10] object-contain p-10"
+              />
+            )}
           </div>
 
-          {/* Zoom hint badge — appears on hover */}
-          <div className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-black/50 px-2.5 py-1.5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            <ZoomIn className="h-3.5 w-3.5 text-white" aria-hidden="true" />
-            <span className="text-[11px] font-medium text-white/90 leading-none">
-              Click to zoom
-            </span>
-          </div>
+          {/* Zoom hint badge — images only */}
+          {!currentIsVideo && (
+            <div className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-black/50 px-2.5 py-1.5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <ZoomIn className="h-3.5 w-3.5 text-white" aria-hidden="true" />
+              <span className="text-[11px] font-medium text-white/90 leading-none">
+                Click to zoom
+              </span>
+            </div>
+          )}
 
           {galleryImages.length > 1 && (
             <>
@@ -198,41 +296,68 @@ export function CaseStudyCarousel({
           <div
             className="mt-3 flex gap-2 overflow-x-auto pb-1"
             role="tablist"
-            aria-label="Image thumbnails"
+            aria-label="Media thumbnails"
           >
-            {galleryImages.map((image, index) => (
-              <button
-                key={image + index}
-                type="button"
-                role="tab"
-                aria-selected={index === current}
-                onClick={() => setCurrent(index)}
-                onMouseEnter={() => setCurrent(index)}
-                onFocus={() => setCurrent(index)}
-                aria-label={`View image ${index + 1}`}
-                className={cn(
-                  "relative min-w-[72px] overflow-hidden rounded-lg border transition-[border-color,box-shadow] duration-200 motion-reduce:transition-none",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/60 focus-visible:ring-offset-1",
-                  index === current
-                    ? "border-brand-red shadow-[0_0_0_2px_rgba(243,49,23,0.12)]"
-                    : "border-zinc-200 hover:border-zinc-300"
-                )}
-              >
-                <div
-                  className="block"
-                  style={getImageTransform(index)}
+            {galleryImages.map((image, index) => {
+              const thumbIsVideo = isVideoSrc(image);
+              return (
+                <button
+                  key={image + index}
+                  type="button"
+                  role="tab"
+                  aria-selected={index === current}
+                  onClick={() => setCurrent(index)}
+                  onMouseEnter={() => setCurrent(index)}
+                  onFocus={() => setCurrent(index)}
+                  aria-label={
+                    thumbIsVideo
+                      ? `View video ${index + 1}`
+                      : `View image ${index + 1}`
+                  }
+                  className={cn(
+                    "relative min-w-[72px] overflow-hidden rounded-lg border transition-[border-color,box-shadow] duration-200 motion-reduce:transition-none",
+                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/60 focus-visible:ring-offset-1",
+                    index === current
+                      ? "border-brand-red shadow-[0_0_0_2px_rgba(243,49,23,0.12)]"
+                      : "border-zinc-200 hover:border-zinc-300"
+                  )}
                 >
-                  <Image
-                    src={image}
-                    alt=""
-                    width={72}
-                    height={54}
-                    unoptimized
-                    className="aspect-[4/3] h-[50px] w-[72px] object-contain bg-[oklch(87.1%_0.006_286.286)] p-1.5"
-                  />
-                </div>
-              </button>
-            ))}
+                  <div
+                    className="block"
+                    style={thumbIsVideo ? undefined : getImageTransform(index)}
+                  >
+                    {thumbIsVideo ? (
+                      <div className="relative">
+                        <video
+                          src={image}
+                          muted
+                          playsInline
+                          preload="metadata"
+                          className="aspect-[4/3] h-[50px] w-[72px] object-contain bg-[oklch(87.1%_0.006_286.286)] p-1.5"
+                        />
+                        <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-black/55 backdrop-blur-sm">
+                            <Play
+                              className="h-2.5 w-2.5 fill-white text-white"
+                              aria-hidden="true"
+                            />
+                          </span>
+                        </span>
+                      </div>
+                    ) : (
+                      <Image
+                        src={image}
+                        alt=""
+                        width={72}
+                        height={54}
+                        unoptimized
+                        className="aspect-[4/3] h-[50px] w-[72px] object-contain bg-[oklch(87.1%_0.006_286.286)] p-1.5"
+                      />
+                    )}
+                  </div>
+                </button>
+              );
+            })}
           </div>
         )}
       </div>
@@ -292,10 +417,12 @@ export function CaseStudyCarousel({
             <div
               ref={imageStageRef}
               className={cn(
-                "relative w-full max-w-7xl flex-1 min-h-0 overflow-hidden rounded-2xl cursor-crosshair transition-colors duration-200",
+                "relative w-full max-w-7xl flex-1 min-h-0 overflow-hidden rounded-2xl transition-colors duration-200",
+                lightboxIsVideo ? "cursor-default" : "cursor-crosshair",
                 bgEnabled ? "bg-[oklch(92%_0.004_286.32)]" : "bg-transparent"
               )}
               onMouseMove={(e) => {
+                if (lightboxIsVideo) return;
                 const rect = e.currentTarget.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
@@ -317,27 +444,44 @@ export function CaseStudyCarousel({
                   animate="center"
                   exit="exit"
                   transition={{ duration: 0.22, ease: "easeInOut" }}
-                  className="absolute inset-0 flex items-center justify-center p-10 md:p-16"
+                  className={cn(
+                    "absolute inset-0 flex items-center justify-center",
+                    lightboxIsVideo ? "p-0" : "p-10 md:p-16"
+                  )}
                 >
                   <div
                     className="absolute inset-0"
-                    style={getImageTransform(lightboxIndex)}
+                    style={
+                      lightboxIsVideo
+                        ? undefined
+                        : getImageTransform(lightboxIndex)
+                    }
                   >
-                    <Image
-                      src={galleryImages[lightboxIndex]}
-                      alt={`${title} — image ${lightboxIndex + 1} of ${galleryImages.length}`}
-                      fill
-                      unoptimized
-                      className="object-contain p-10 md:p-16"
-                      sizes="(max-width: 768px) 100vw, 90vw"
-                      priority
-                    />
+                    {lightboxIsVideo ? (
+                      <VideoPlayer
+                        src={galleryImages[lightboxIndex]}
+                        autoPlay
+                        containerClassName="absolute inset-0"
+                        videoClassName="absolute inset-0 h-full w-full object-contain"
+                        buttonSize="lg"
+                      />
+                    ) : (
+                      <Image
+                        src={galleryImages[lightboxIndex]}
+                        alt={`${title} — image ${lightboxIndex + 1} of ${galleryImages.length}`}
+                        fill
+                        unoptimized
+                        className="object-contain p-10 md:p-16"
+                        sizes="(max-width: 768px) 100vw, 90vw"
+                        priority
+                      />
+                    )}
                   </div>
                 </motion.div>
               </AnimatePresence>
 
-              {/* Magnifier lens */}
-              {showLens && (
+              {/* Magnifier lens — images only */}
+              {showLens && !lightboxIsVideo && (
                 <div
                   className="pointer-events-none absolute z-10 h-44 w-44 overflow-hidden rounded-full border-2 border-white/70 shadow-[0_0_0_1px_rgba(0,0,0,0.15),0_8px_24px_rgba(0,0,0,0.4)]"
                   style={{
@@ -391,39 +535,70 @@ export function CaseStudyCarousel({
             {/* Thumbnail strip */}
             {galleryImages.length > 1 && (
               <div className="flex shrink-0 gap-2 overflow-x-auto pb-1 max-w-full">
-                {galleryImages.map((image, index) => (
-                  <button
-                    key={image + index}
-                    type="button"
-                    onClick={() => {
-                      setDirection(index > lightboxIndex ? 1 : -1);
-                      setLightboxIndex(index);
-                    }}
-                    aria-label={`View image ${index + 1}`}
-                    aria-current={index === lightboxIndex ? "true" : undefined}
-                    className={cn(
-                      "relative min-w-[64px] overflow-hidden rounded-lg border-2 transition-[border-color,opacity] duration-200",
-                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50",
-                      index === lightboxIndex
-                        ? "border-white opacity-100"
-                        : "border-transparent opacity-40 hover:opacity-75"
-                    )}
-                  >
-                    <div
-                      className="block"
-                      style={getImageTransform(index)}
+                {galleryImages.map((image, index) => {
+                  const thumbIsVideo = isVideoSrc(image);
+                  return (
+                    <button
+                      key={image + index}
+                      type="button"
+                      onClick={() => {
+                        setDirection(index > lightboxIndex ? 1 : -1);
+                        setLightboxIndex(index);
+                      }}
+                      aria-label={
+                        thumbIsVideo
+                          ? `View video ${index + 1}`
+                          : `View image ${index + 1}`
+                      }
+                      aria-current={
+                        index === lightboxIndex ? "true" : undefined
+                      }
+                      className={cn(
+                        "relative min-w-[64px] overflow-hidden rounded-lg border-2 transition-[border-color,opacity] duration-200",
+                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50",
+                        index === lightboxIndex
+                          ? "border-white opacity-100"
+                          : "border-transparent opacity-40 hover:opacity-75"
+                      )}
                     >
-                      <Image
-                        src={image}
-                        alt=""
-                        width={64}
-                        height={48}
-                        unoptimized
-                        className="aspect-[4/3] h-[48px] w-[64px] object-contain bg-[oklch(92%_0.004_286.32)] p-1"
-                      />
-                    </div>
-                  </button>
-                ))}
+                      <div
+                        className="block"
+                        style={
+                          thumbIsVideo ? undefined : getImageTransform(index)
+                        }
+                      >
+                        {thumbIsVideo ? (
+                          <div className="relative">
+                            <video
+                              src={image}
+                              muted
+                              playsInline
+                              preload="metadata"
+                              className="aspect-[4/3] h-[48px] w-[64px] object-contain bg-[oklch(92%_0.004_286.32)] p-1"
+                            />
+                            <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-black/55 backdrop-blur-sm">
+                                <Play
+                                  className="h-2.5 w-2.5 fill-white text-white"
+                                  aria-hidden="true"
+                                />
+                              </span>
+                            </span>
+                          </div>
+                        ) : (
+                          <Image
+                            src={image}
+                            alt=""
+                            width={64}
+                            height={48}
+                            unoptimized
+                            className="aspect-[4/3] h-[48px] w-[64px] object-contain bg-[oklch(92%_0.004_286.32)] p-1"
+                          />
+                        )}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             )}
           </Dialog.Content>
