@@ -297,7 +297,7 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
                   animate="center"
                   exit="exit"
                   transition={{ duration: 0.22, ease: "easeInOut" }}
-                  className="absolute inset-0 flex items-center justify-center px-10 md:px-16"
+                  className="absolute inset-0 flex items-center justify-center p-10 md:p-16"
                 >
                   <div
                     className="absolute inset-0"
@@ -311,7 +311,7 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
                       src={galleryImages[lightboxIndex]}
                       alt={`${title} — image ${lightboxIndex + 1} of ${galleryImages.length}`}
                       fill
-                      className="object-contain px-10 md:px-16"
+                      className="object-contain p-10 md:p-16"
                       sizes="(max-width: 768px) 100vw, 90vw"
                       priority
                     />

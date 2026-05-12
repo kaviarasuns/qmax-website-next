@@ -226,11 +226,11 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/7.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/8.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_SIG12.svg",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_SIG12.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_TS1.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_TS12_V.svg",
     ],
-    rotatedImages: { 2: 90 },
+    rotatedImages: { 2: 90, 4: 90, 5: 90 },
     features: [
       "Automotive OBD2 interface board",
       "Multi-protocol support (UART, I2C, SPI)",
@@ -400,7 +400,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/stator_coil/STATOR-COIL-LAYER1.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/stator_coil/STATOR-COIL-LAYER2.svg",
     ],
-    rotatedImages: { 0: 90, 1: 90, 2: 90, 3: 90 },
+    rotatedImages: { 0: 180, 1: 180, 2: 180 },
     features: [
       "High-current stator coil PCB design",
       "Multi-layer copper routing optimization",
