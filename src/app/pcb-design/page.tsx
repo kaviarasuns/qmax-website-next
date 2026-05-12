@@ -5,51 +5,11 @@ import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSecti
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
-import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
 import { PCB_INDUSTRIES } from "@/store/pcb-industries";
 
 /* ============================================================
    DATA
    ============================================================ */
-
-const WORKFLOW_STEPS = [
-  {
-    number: 1,
-    title: "Requirements",
-    description:
-      "We begin with full PCB requirements capture — schematic intent, electrical specs, mechanical constraints, and environment. Stack-up, layer count, and impedance targets are locked early to set a clear baseline.",
-  },
-  {
-    number: 2,
-    title: "Library & Stack-up",
-    description:
-      "Footprints, 3D models, and pads are validated against IPC-7351 and your fab partner's rules. Stack-up and impedance profiles are simulated and locked, ensuring a dimensionally accurate, electrically sound foundation.",
-  },
-  {
-    number: 3,
-    title: "Placement & Floorplanning",
-    description:
-      "Components are placed for optimal signal flow, thermal dissipation, and mechanical fit. Critical nets, RF zones, and power sections are isolated early, easing every later stage of the layout and minimizing crosstalk.",
-  },
-  {
-    number: 4,
-    title: "Routing & Layout Execution",
-    description:
-      "Our designers route controlled-impedance lanes, length-tuned differential pairs, and clean return paths. Power integrity is engineered through plane partitioning, decoupling strategy, and disciplined via stitching.",
-  },
-  {
-    number: 5,
-    title: "SI / PI / EMI Analysis & Review",
-    description:
-      "Pre-layout and post-layout simulations validate signal integrity, power integrity, and EMI behavior across every critical channel. Peer reviews and customer checkpoints catch issues before fabrication release.",
-  },
-  {
-    number: 6,
-    title: "DFM Review & Fab Handover",
-    description:
-      "Final DFM, DFA, and DFT reviews are run with your fab and assembly partners to eliminate yield risks. We deliver a complete manufacturing package — Gerbers, ODB++, drill files, and assembly notes ready for production.",
-  },
-];
 
 const CAPABILITIES = [
   {
@@ -878,10 +838,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
       {/* PARTNERSHIPS */}
       {/* <PartnershipsSection /> */}
 
-      {/* WORKFLOW TIMELINE */}
-      {/* <div id="workflow">
-        <WorkflowSection steps={WORKFLOW_STEPS} title="Our Custom PCB" />
-      </div> */}
+      {/* WORKFLOW TIMELINE — re-add WorkflowSection + steps data when enabled */}
 
       {/* CUSTOMER SUCCESS STORIES */}
       {/* <TestimonialsSection testimonials={TESTIMONIALS} /> */}
