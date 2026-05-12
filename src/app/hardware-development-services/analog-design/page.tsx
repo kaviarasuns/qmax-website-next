@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { hwAnalogDesignOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
 import {
   CoreServiceOfferingsSection,
