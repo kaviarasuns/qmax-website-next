@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
@@ -9,31 +8,41 @@ import {
 } from "@/components/services-cmp/CoreServiceOfferingsSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { DigitalHardwareTechnicalAdvantageSection } from "@/components/services-cmp/TechnicalAdvantageSection";
+import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
+import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 
 const faqs = [
   {
     q: "What high-speed design standards does Qmax Systems support?",
-    a: "We specialize in the latest high-speed communication standards, including PCIe Gen 5/6, DDR5, and 112G SerDes. Our engineering team utilizes advanced simulation tools to ensure signal integrity (SI) and power integrity (PI) for data rates exceeding 100Gbps.",
+    a: "Qmax Systems specializes in the latest high-speed communication standards, including PCIe Gen 5/6, DDR5, and 112G SerDes. The Qmax Systems engineering team utilizes advanced simulation tools — full-wave EM, IBIS-AMI channel modeling, and target-impedance methodologies — to ensure signal integrity (SI) and power integrity (PI) for data rates exceeding 100 Gbps.",
   },
   {
-    q: "Can you design custom hardware for AI and Deep Learning?",
-    a: "Yes. We develop High-Density AI GPU Compute Servers tailored for massive parallel processing. Our designs focus on robust power delivery networks (PDN) and advanced thermal management strategies required to sustain the performance of high-TDP NVIDIA and AMD GPU clusters.",
+    q: "Can Qmax Systems design custom hardware for AI and Deep Learning?",
+    a: "Yes. Qmax Systems develops High-Density AI GPU Compute Servers tailored for massive parallel processing workloads. Our designs focus on robust Power Delivery Networks (PDN) and advanced thermal management strategies required to sustain the performance of high-TDP NVIDIA and AMD GPU clusters used in AI training and inference.",
   },
   {
-    q: "Do you provide O-RAN and 5G infrastructure hardware?",
-    a: "Absolutely. Qmax Systems is active in the O-RAN ecosystem, designing Distributed Units (DU) and specialized Network Interface Cards (NIC). We help telecom providers and private network operators deploy scalable, open-architecture hardware for 5G rollouts.",
+    q: "Does Qmax Systems provide O-RAN and 5G infrastructure hardware?",
+    a: "Absolutely. Qmax Systems is active in the O-RAN ecosystem, designing Distributed Units (DU) and specialized Network Interface Cards (NIC). We help telecom providers and private network operators deploy scalable, open-architecture hardware for 4G and 5G rollouts.",
   },
   {
-    q: "What processor architectures do you work with for Server Motherboards?",
-    a: "Our expertise spans the leading x86 and ARM-based enterprise architectures, including Intel Xeon, AMD EPYC, and Ampere Altra CPUs. We design custom server motherboards and Single Board Computers (SBCs) that meet specific form factor and environmental requirements.",
+    q: "What processor architectures does Qmax Systems work with for server motherboards?",
+    a: "Qmax Systems' expertise spans the leading x86 and ARM-based enterprise architectures, including Intel Xeon, AMD EPYC, and Ampere Altra CPUs. We design custom server motherboards and Single Board Computers (SBCs) in OCP-compliant, 1U/2U rackmount, and rugged industrial form factors that meet specific environmental and compliance requirements.",
   },
   {
-    q: "Do you handle complex, high-layer count PCB designs?",
-    a: "Yes. Our team is experienced in high-density interconnect (HDI) technology, regularly managing 20+ layer PCB stacks with blind and buried micro-vias. We ensure all designs are optimized for DFM (Design for Manufacturing) and DFT (Design for Test) to streamline the transition to mass production.",
+    q: "Does Qmax Systems handle complex, high-layer count PCB designs?",
+    a: "Yes. Qmax Systems engineers are experienced in high-density interconnect (HDI) technology, regularly managing 20+ layer PCB stacks with blind and buried microvias for DDR5, PCIe Gen6, and 112G SerDes routing. We ensure every design is optimized for DFM (Design for Manufacturing) and DFT (Design for Test) to streamline the transition to mass production.",
   },
   {
     q: "What is included in the 1-hour complimentary consulting session?",
-    a: "During this session, you will speak directly with a Senior Hardware Architect. We can review your block diagrams, discuss thermal or signal integrity challenges, provide high-level architecture validation, or help refine your hardware roadmap to reduce time-to-market. We can sign an NDA if required.",
+    a: "During this session, you will speak directly with a Senior Hardware Architect from Qmax Systems. We can review your block diagrams, discuss thermal or signal integrity challenges, provide high-level architecture validation, or help refine your hardware roadmap to reduce time-to-market. We can sign an NDA if required.",
+  },
+  {
+    q: "How does Qmax Systems protect customer design data and intellectual property?",
+    a: "Qmax Systems treats every engagement under strict IP protection: NDAs signed before any technical discussion, dedicated secure project workspaces, role-based access control to design files, and customer-owned IP at every milestone — schematics, layouts, BoMs, and firmware. Qmax Systems engineers never reuse or repurpose customer IP across other client engagements.",
+  },
+  {
+    q: "How does Qmax Systems ensure signal integrity and power integrity in high-speed digital designs?",
+    a: "Qmax Systems' SI/PI methodology combines full-wave 3D electromagnetic simulation, IBIS-AMI channel modeling for DDR5 and SerDes interfaces, and target-impedance PDN design backed by simulation-driven decoupling. Every high-speed design — DDR5, PCIe Gen5/Gen6, 100GbE, 112G SerDes — is validated against compliance margin before fabrication, eliminating costly re-spins.",
   },
 ];
 
@@ -44,19 +53,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "High-performance compute and server hardware built for AI, data centers, and rugged industrial deployment.",
     intro:
-      "Qmax Systems engineers high-performance digital compute platforms, from multicore CPU systems to dense AI GPU servers and ruggedized single-board computers. Our hardware design team builds for AI training and inference workloads, hyperscale data centers, telecom edge deployments, and industrial environments where signal integrity and thermal performance are non-negotiable.",
+      "Qmax Systems engineers high-performance digital compute platforms — from multicore CPU systems to dense AI GPU servers and ruggedized single-board computers. Our hardware design team builds for AI training and inference workloads, hyperscale data centers, telecom edge deployments, and industrial environments where signal integrity and thermal performance are non-negotiable.",
     points: [
       {
         boldLead: "Multicore CPU Systems",
-        rest: " - high-performance digital designs utilizing Intel Xeon, AMD EPYC, and Ampere Altra CPUs, optimized for thermal efficiency and high-speed data throughput.",
+        rest: " — high-performance digital designs utilizing the latest Intel Xeon, AMD EPYC, and Ampere Altra CPUs, optimized for thermal efficiency and high-speed data throughput.",
       },
       {
         boldLead: "High-Density AI GPU Compute Servers",
-        rest: " - custom hardware engineering for parallel processing workloads, designed to house and power NVIDIA and AMD GPU clusters for AI training and inference.",
+        rest: " — custom hardware engineering for parallel processing workloads, designed to house and power NVIDIA and AMD GPU clusters for AI training and inference.",
       },
       {
         boldLead: "Single Board Computers (SBCs) & Server Motherboards",
-        rest: " - tailor-made designs for data centers and rugged industrial environments, validated for power integrity and signal integrity.",
+        rest: " — tailor-made designs for data centers and rugged industrial environments, validated for Power Integrity (PI) and Signal Integrity (SI).",
       },
     ],
     applications:
@@ -68,23 +77,23 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Ultra-high-speed connectivity hardware powering 5G and next-generation telecom infrastructure.",
     intro:
-      "Qmax Systems designs the high-speed networking and telecom hardware that drives modern data center fabrics and global 5G rollouts. From 100 Gbps network interface cards to O-RAN distributed units and fabric interface cards for photonic networks, our team builds the connectivity layer for telecom operators, hyperscalers, and network equipment vendors.",
+      "Qmax Systems designs the high-speed networking and telecom hardware that drives modern data center fabrics and global 5G rollouts. From 100 Gbps Network Interface Cards to O-RAN Distributed Units and Fabric Interface Cards for photonic networks, our team builds the connectivity layer for telecom operators, hyperscalers, and network equipment vendors.",
     points: [
       {
         boldLead: "100 Gbps Network Interface Cards (NIC)",
-        rest: " - ultra-high-speed connectivity solutions for high-end blade servers, delivering maximum bandwidth and minimal latency for modern workloads.",
+        rest: " — ultra-high-speed connectivity solutions for high-end blade servers, delivering maximum bandwidth and minimal latency for modern workloads.",
       },
       {
         boldLead: "O-RAN Distributed Units (DU)",
-        rest: " - specialized hardware development for Open RAN architecture, accelerating global 4G and 5G infrastructure deployments.",
+        rest: " — specialized hardware development for Open RAN architecture, accelerating global 4G and 5G infrastructure deployments.",
       },
       {
         boldLead: "Fabric Interface Cards (FIC)",
-        rest: " - innovative designs for photonic resource units, enabling seamless optical-to-electrical resource management in disaggregated data centers.",
+        rest: " — innovative designs for Photonic Resource Units, enabling seamless optical-to-electrical resource management in disaggregated data centers.",
       },
     ],
     applications:
-      "4G and 5G telecom infrastructure · Open RAN deployments · Hyperscale data centers · Photonic networks · Disaggregated network fabrics",
+      "4G and 5G telecom infrastructure · Open RAN (O-RAN) deployments · Hyperscale data centers · Photonic networks · Disaggregated network fabrics",
   },
   {
     id: "embedded",
@@ -96,15 +105,15 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     points: [
       {
         boldLead: "FPGA-Based Hardware",
-        rest: " - custom development on Xilinx and Intel platforms for hardware acceleration, real-time signal processing, and flexible high-speed I/O.",
+        rest: " — custom development on Xilinx and Intel platforms for hardware acceleration, real-time signal processing, and flexible high-speed I/O.",
       },
       {
         boldLead: "Microcontroller-Based Products",
-        rest: " - robust, power-optimized embedded systems using ARM Cortex-M, ESP32, and PIC architectures for industrial IoT deployments.",
+        rest: " — robust, power-optimized embedded systems using ARM Cortex-M, ESP32, and PIC architectures for Industrial IoT (IIoT) deployments.",
       },
     ],
     applications:
-      "Industrial IoT (IIoT) · Edge AI inference · Robotics and automation · Real-time DSP · Motor control · Smart sensors",
+      "Industrial IoT (IIoT) · Edge AI inference · Robotics & automation · Real-time DSP · Motor control · Smart sensors",
   },
 ];
 
@@ -198,43 +207,23 @@ export const metadata: Metadata = {
 export default function HighSpeedDigitalDesignPage() {
   return (
     <>
-      <section className="relative overflow-hidden pt-14 pb-12 lg:pt-20 lg:pb-24">
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          {/* Full-width Image Container */}
-          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-slate-200 group">
-            <Image
-              src="/hw-main/HW-High-Speed-Digital-Design/image1.jpg"
-              alt="High-Speed Digital Hardware Development - Qmax Systems"
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-100/60 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
-              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
-                HARDWARE DEVELOPMENT
-              </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
-                High-Performance Digital
-                <br className="hidden md:block" />
-                Systems Development.
-              </h1>
-            </div>
-          </div>
-          <div className="mt-10 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
-            <p>
-              At Qmax Systems, we bridge the gap between complex conceptual
-              requirements and market-ready hardware. In an era where AI
-              computing, telecom infrastructure, edge servers, and
-              data-intensive applications demand unprecedented speed and
-              reliability, our Hardware Engineering Team delivers robust,
-              scalable, and high-integrity systems tailored for next-generation
-              digital infrastructure.
-            </p>
-          </div>
-        </div>
-      </section>
+      <HardwareServiceHeroSection
+        imageSrc="/hw-main/HW-High-Speed-Digital-Design/image1.jpg"
+        imageAlt="High-Performance Digital Systems — Qmax Systems"
+        title="High-Performance Digital Systems Development"
+        description={
+          <p>
+            At Qmax Systems, we bridge the gap between complex conceptual
+            requirements and market-ready hardware. In an era where AI computing,
+            telecom infrastructure, edge servers, and data-intensive applications
+            demand unprecedented speed and reliability, our Hardware Engineering
+            Team delivers robust, scalable, and high-integrity systems tailored for
+            next-generation digital infrastructure.
+          </p>
+        }
+        ctaHref="/hardware-development-services/contact"
+        ctaLabel="Talk to Our Engineers"
+      />
 
       <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
       <WhySection
@@ -245,6 +234,12 @@ export default function HighSpeedDigitalDesignPage() {
       <DigitalHardwareTechnicalAdvantageSection />
 
       <FAQSection faqs={faqs} hideTopBorder />
+
+      <ConsultationCtaBar
+        heading="Get a complimentary consultation with our digital hardware experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/hardware-development-services/contact"
+      />
 
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"

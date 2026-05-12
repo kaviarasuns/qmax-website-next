@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
@@ -12,6 +11,8 @@ import {
   TechnicalAdvantageSection,
   type TechnicalAdvantageCard,
 } from "@/components/services-cmp/TechnicalAdvantageSection";
+import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
+import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
@@ -322,41 +323,35 @@ export const metadata: Metadata = {
 export default function PowerElectronicsPage() {
   return (
     <>
-      <section className="relative overflow-hidden pt-14 pb-12 lg:pt-20 lg:pb-24">
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-slate-200 group">
-            <Image
-              src="/hw-main/image2.png"
-              alt="Power Electronics Design - Qmax Systems"
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-100/60 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
-              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
-                HARDWARE DEVELOPMENT
-              </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
-                Power Electronics
-                <br className="hidden md:block" />
-                Design Services.
-              </h1>
-            </div>
-          </div>
-          <div className="mt-10 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
+      <HardwareServiceHeroSection
+        imageSrc="/hw-main/image2.png"
+        imageAlt="Power Electronics Design — Qmax Systems"
+        title={
+          <>
+            Power Electronics Design Services: Efficient, Stable, and Scalable
+            Power for Mission-Critical Hardware
+          </>
+        }
+        description={
+          <>
             <p>
               Qmax Systems delivers end-to-end power electronics engineering for
-              products that demand high efficiency, robust operation, and
-              long-term reliability. We design complete power subsystems, from
-              input protection and conversion stages to point-of-load regulation
-              and system-level validation — for edge AI, telecom infrastructure,
-              industrial controls, and battery-based products.
+              products that demand high efficiency, robust operation, and long-term
+              reliability. We design complete power subsystems, from input
+              protection and conversion stages to point-of-load regulation and
+              system-level validation.
             </p>
-          </div>
-        </div>
-      </section>
+            <p>
+              Whether you are building edge AI devices, telecom infrastructure,
+              industrial controls, or battery-based products, our team focuses on
+              practical architecture decisions that reduce field failures and
+              improve performance under real operating conditions.
+            </p>
+          </>
+        }
+        ctaHref="/hardware-development-services/contact"
+        ctaLabel="Talk to Our Engineers"
+      />
 
       <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
       <WhySection
@@ -371,6 +366,11 @@ export default function PowerElectronicsPage() {
         sectionHeadingId="technical-advantage-power-heading"
       />
       <FAQSection faqs={faqs} hideTopBorder />
+      <ConsultationCtaBar
+        heading="Get a complimentary consultation with our power electronics experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/hardware-development-services/contact"
+      />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
@@ -12,6 +11,8 @@ import {
   TechnicalAdvantageSection,
   type TechnicalAdvantageCard,
 } from "@/components/services-cmp/TechnicalAdvantageSection";
+import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
+import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
@@ -365,42 +366,32 @@ export const metadata: Metadata = {
 export default function AnalogDesignPage() {
   return (
     <>
-      <section className="relative overflow-hidden pt-14 pb-12 lg:pt-20 lg:pb-24">
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-slate-200 group">
-            <Image
-              src="/hw-main/hw-sub/image1.jpg"
-              alt="Analog and Mixed-Signal Design - Qmax Systems"
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-100/60 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
-              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
-                HARDWARE DEVELOPMENT
-              </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
-                Analog &amp; Mixed-Signal
-                <br className="hidden md:block" />
-                Design Services.
-              </h1>
-            </div>
-          </div>
-          <div className="mt-10 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
-            <p>
-              In an increasingly digital world, the interface between the
-              physical and digital domains remains the critical path in
-              high-performance electronics. Qmax Systems provides comprehensive
-              analog and mixed-signal development — from microvolt sensor
-              conditioning to giga-sample converters — with rigorous control of
-              noise, signal integrity, and timing across the entire signal
-              chain.
-            </p>
-          </div>
-        </div>
-      </section>
+      <HardwareServiceHeroSection
+        imageSrc="/hw-main/hw-sub/image1.jpg"
+        imageAlt="Analog and Mixed-Signal Design — Qmax Systems"
+        title={
+          <>
+            Analog &amp; Mixed-Signal Design Services: Precision Engineering for
+            Complex Signal Chains
+          </>
+        }
+        description={
+          <p>
+            In an increasingly digital world, the interface between the physical
+            and digital domains remains the most critical bottleneck in
+            high-performance electronics. Qmax Systems provides comprehensive
+            analog and mixed-signal development services, specializing in
+            high-fidelity signal acquisition, precision conditioning, and
+            ultra-low-noise environments. From femto-farad capacitance sensing to
+            giga-sample data converters, our engineering team addresses the
+            fundamental challenges of electromagnetic interference, signal
+            integrity, and thermal stability to ensure laboratory-grade accuracy
+            in field-deployed hardware.
+          </p>
+        }
+        ctaHref="/hardware-development-services/contact"
+        ctaLabel="Get in Touch for Details"
+      />
 
       <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
       <WhySection
@@ -415,6 +406,11 @@ export default function AnalogDesignPage() {
         sectionHeadingId="technical-advantage-analog-heading"
       />
       <FAQSection faqs={faqs} hideTopBorder />
+      <ConsultationCtaBar
+        heading="Get a complimentary consultation with our analog & mixed-signal experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/hardware-development-services/contact"
+      />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={hardwareCaseStudies}
