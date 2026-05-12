@@ -1,26 +1,23 @@
-'use client';
+"use client";
 
-import { ArrowRight, Phone } from 'lucide-react';
-import Image from 'next/image';
+import { ArrowRight, Phone } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="bg-white relative overflow-hidden pt-20 pb-16 md:pb-24">
       {/* Subtle radial gradient background */}
       <div className="absolute inset-0 bg-gradient-radial from-red-500/5 to-transparent opacity-40"></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
             <div className="space-y-4">
               <h1 className="leading-tight text-black">
-                About{' '}
-                <span className="text-red-500">Qmax</span>
+                About <span className="text-red-500">Qmax</span>
               </h1>
-              <h2 className="leading-tight text-black">
-                Systems
-              </h2>
+              <h2 className="leading-tight text-black">Systems</h2>
             </div>
 
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
@@ -28,7 +25,10 @@ export default function Hero() {
             </p>
 
             <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-lg">
-              Qmax Systems is a trusted partner for electronics engineering and R&D services, specializing in embedded systems design and PCB design services. With 25+ years of experience, we&apos;ve helped innovators and enterprises bring breakthrough products to market.
+              Qmax Systems is a trusted partner for electronics engineering and
+              R&D services, specializing in embedded systems design and PCB
+              design services. With 25+ years of experience, we&apos;ve helped
+              innovators and enterprises bring breakthrough products to market.
             </p>
 
             {/* CTA Buttons */}
@@ -48,7 +48,7 @@ export default function Hero() {
           <div className="relative h-96 md:h-full min-h-96">
             <div className="absolute inset-0 bg-gradient-to-r from-red-500/30 to-red-500/10 rounded-2xl blur-3xl"></div>
             <Image
-              src="/about-us/pcb-circuit.jpg"
+              src="https://d1yetprhniwywz.cloudfront.net/v2/about-us/office.png"
               alt="PCB Circuit Board Design"
               fill
               className="object-cover rounded-2xl"

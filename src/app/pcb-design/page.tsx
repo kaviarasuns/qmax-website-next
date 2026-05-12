@@ -879,9 +879,9 @@ export default function HardwareDevelopmentServicesComponentV2() {
       {/* <PartnershipsSection /> */}
 
       {/* WORKFLOW TIMELINE */}
-      <div id="workflow">
+      {/* <div id="workflow">
         <WorkflowSection steps={WORKFLOW_STEPS} title="Our Custom PCB" />
-      </div>
+      </div> */}
 
       {/* CUSTOMER SUCCESS STORIES */}
       {/* <TestimonialsSection testimonials={TESTIMONIALS} /> */}

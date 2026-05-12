@@ -51,9 +51,12 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/1.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/alphion/ALPHION-AOLT-PR1_SIG12.webp",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG12.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/1.2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/alphion/ALPHION-AOLT-PR1_SIG136.webp",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG136.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/alphion/ALPHION-AOLT-PR1_SIG23.webp",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG23.svg",
     ],
     features: [
