@@ -14,6 +14,8 @@ interface CaseStudyCarouselProps {
   paddedImages?: number[];
   /** Map of zero-based image index to rotation in degrees applied before display */
   rotatedImages?: Record<number, number>;
+  /** Map of zero-based image index to scale multiplier (e.g. { 1: 1.2 }) */
+  enlargedImages?: Record<number, number>;
 }
 
 const slideVariants = {
@@ -22,7 +24,12 @@ const slideVariants = {
   exit: (dir: number) => ({ opacity: 0, x: dir * -48 }),
 };
 
-export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCarouselProps) {
+export function CaseStudyCarousel({
+  images,
+  title,
+  rotatedImages,
+  enlargedImages,
+}: CaseStudyCarouselProps) {
   const galleryImages = React.useMemo(() => images.filter(Boolean), [images]);
 
   const getRotation = React.useCallback(
@@ -32,6 +39,25 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
       return typeof deg === "number" ? deg : 0;
     },
     [images, galleryImages, rotatedImages]
+  );
+
+  const getScale = React.useCallback(
+    (index: number) => {
+      const original = images.indexOf(galleryImages[index]);
+      const scale = enlargedImages?.[original >= 0 ? original : index];
+      return typeof scale === "number" && scale > 0 ? scale : 1;
+    },
+    [images, galleryImages, enlargedImages]
+  );
+
+  const getImageTransform = React.useCallback(
+    (index: number) => {
+      const rotate = getRotation(index);
+      const scale = getScale(index);
+      if (!rotate && scale === 1) return undefined;
+      return { transform: `rotate(${rotate}deg) scale(${scale})` };
+    },
+    [getRotation, getScale]
   );
 
   // Carousel state
@@ -117,11 +143,7 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
         >
           <div
             className="block w-full transition-opacity duration-300 motion-reduce:transition-none"
-            style={
-              getRotation(current)
-                ? { transform: `rotate(${getRotation(current)}deg)` }
-                : undefined
-            }
+            style={getImageTransform(current)}
           >
             <Image
               src={galleryImages[current]}
@@ -198,11 +220,7 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
               >
                 <div
                   className="block"
-                  style={
-                    getRotation(index)
-                      ? { transform: `rotate(${getRotation(index)}deg)` }
-                      : undefined
-                  }
+                  style={getImageTransform(index)}
                 >
                   <Image
                     src={image}
@@ -303,11 +321,7 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
                 >
                   <div
                     className="absolute inset-0"
-                    style={
-                      getRotation(lightboxIndex)
-                        ? { transform: `rotate(${getRotation(lightboxIndex)}deg)` }
-                        : undefined
-                    }
+                    style={getImageTransform(lightboxIndex)}
                   >
                     <Image
                       src={galleryImages[lightboxIndex]}
@@ -342,9 +356,10 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
                       left: -(lensPct.x / 100) * (imageStageRef.current?.offsetWidth ?? 0) * 3 + 88,
                       top: -(lensPct.y / 100) * (imageStageRef.current?.offsetHeight ?? 0) * 3 + 88,
                       objectFit: "contain",
-                      transform: getRotation(lightboxIndex)
-                        ? `rotate(${getRotation(lightboxIndex)}deg)`
-                        : undefined,
+                      transform:
+                        getRotation(lightboxIndex) || getScale(lightboxIndex) !== 1
+                          ? `rotate(${getRotation(lightboxIndex)}deg) scale(${getScale(lightboxIndex)})`
+                          : undefined,
                     }}
                   />
                 </div>
@@ -396,11 +411,7 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
                   >
                     <div
                       className="block"
-                      style={
-                        getRotation(index)
-                          ? { transform: `rotate(${getRotation(index)}deg)` }
-                          : undefined
-                      }
+                      style={getImageTransform(index)}
                     >
                       <Image
                         src={image}

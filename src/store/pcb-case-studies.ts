@@ -13,6 +13,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG56.svg",
     ],
     rotatedImages: { 0: 90, 2: 90, 3: 90 },
+    enlargedImages: { 0: 1.3, 1: 0.9, 2: 1.3, 3: 1.3 },
     features: [
       "Medical sensing PCB board",
       "High-precision analog front-end",
@@ -59,6 +60,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/alphion/ALPHION-AOLT-PR1_SIG23.webp",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG23.svg",
     ],
+    enlargedImages: { 2: 1.1, 5: 1.1, 7: 1.1 },
     features: [
       "IoT gateway main board",
       "Multiple wireless protocol support",
@@ -442,7 +444,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/rugged_obd/I01256CB1_20JUN2024_RUG_PR1_tb.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/rugged_obd/I01256CB1_20JUN2024_RUG_PR1_TOP.svg",
     ],
-    rotatedImages: {},
+    rotatedImages: { 0: 270, 1: 270 },
     features: [
       "Automotive rugged OBD PCB design",
       "Vehicle diagnostic communication support",
@@ -485,6 +487,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/energy_meter/ENERGY_METER_TOP_PR1.svg",
     ],
     rotatedImages: { 0: 90, 1: 90, 2: 90, 3: 90 },
+    enlargedImages: { 0: 1.2, 1: 1.2, 2: 1.1 },
     features: [
       "High-accuracy energy metering PCB",
       "Multi-layer compact board design",
@@ -528,6 +531,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/animal_tracker/ANIMAL TRACKER_TOP.svg",
     ],
     rotatedImages: {},
+    enlargedImages: { 0: 0.9, 1: 0.9, 2: 0.9 },
     features: [
       "Compact animal tracking PCB design",
       "GPS and wireless communication integration",

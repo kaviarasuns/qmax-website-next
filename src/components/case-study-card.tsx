@@ -107,6 +107,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
               title={caseStudy.title}
               paddedImages={caseStudy.paddedImages}
               rotatedImages={caseStudy.rotatedImages}
+              enlargedImages={caseStudy.enlargedImages}
             />
           </div>
 
