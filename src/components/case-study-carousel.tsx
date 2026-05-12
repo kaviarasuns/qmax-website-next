@@ -128,6 +128,7 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
               alt={`${title} — image ${current + 1} of ${galleryImages.length}`}
               width={960}
               height={600}
+              unoptimized
               className="h-full w-full aspect-[4/3] md:aspect-[16/10] object-contain p-10"
             />
           </div>
@@ -208,6 +209,7 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
                     alt=""
                     width={72}
                     height={54}
+                    unoptimized
                     className="aspect-[4/3] h-[50px] w-[72px] object-contain bg-[oklch(87.1%_0.006_286.286)] p-1.5"
                   />
                 </div>
@@ -311,6 +313,7 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
                       src={galleryImages[lightboxIndex]}
                       alt={`${title} — image ${lightboxIndex + 1} of ${galleryImages.length}`}
                       fill
+                      unoptimized
                       className="object-contain p-10 md:p-16"
                       sizes="(max-width: 768px) 100vw, 90vw"
                       priority
@@ -404,6 +407,7 @@ export function CaseStudyCarousel({ images, title, rotatedImages }: CaseStudyCar
                         alt=""
                         width={64}
                         height={48}
+                        unoptimized
                         className="aspect-[4/3] h-[48px] w-[64px] object-contain bg-[oklch(92%_0.004_286.32)] p-1"
                       />
                     </div>
