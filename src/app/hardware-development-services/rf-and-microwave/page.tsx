@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { hwRfMicrowaveOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
@@ -607,7 +605,6 @@ export default function RfAndMicrowavePage() {
         studies={hardwareCaseStudies}
         hideTopBorder
       />
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>
   );
 }

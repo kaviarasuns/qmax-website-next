@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { pcbLibraryServicesOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { pcbCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
@@ -55,7 +53,6 @@ export default function PCBLibraryServicesPage() {
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}
       />
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>
   );
 }

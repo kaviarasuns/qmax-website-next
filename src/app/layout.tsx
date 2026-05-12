@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import FooterWrapper from "@/components/FooterWrapper";
 import ContactUsButtonWrapper from "@/components/ContactUsButtonWrapper";
@@ -43,6 +44,35 @@ export default function RootLayout({
         {children}
         <FooterWrapper />
         <ContactUsButtonWrapper />
+        <div
+          data-budge={JSON.stringify({
+            slides: [
+              {
+                label: "min-height",
+                property: "min-height",
+                min: 50,
+                max: 100,
+                value: 100,
+                original: 86,
+                unit: "vh",
+              },
+              {
+                label: "margin-top",
+                property: "margin-top",
+                min: 0,
+                max: 160,
+                value: 64,
+                original: 64,
+                unit: "px",
+              },
+            ],
+          })}
+          hidden
+        />
+        <Script
+          src="https://skills-pearl.vercel.app/budge.iife.js"
+          strategy="afterInteractive"
+        />
       </body>
       {/* </ReactLenis> */}
     </html>

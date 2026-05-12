@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { mechanicalIndustrialDesignOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { mechanicalIndustrialCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
@@ -624,7 +622,6 @@ export default function MechanicalIndustrialDesignPage() {
         hideTopBorder
       />
 
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       {/* Internal Resources */}
       {/* <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 mb-16 border-t border-zinc-200 text-center">
         <h3 className="text-lg text-zinc-900 mb-6">Internal Resources</h3>

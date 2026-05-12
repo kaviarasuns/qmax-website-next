@@ -25,9 +25,13 @@ export function HardwareServiceHeroSection({
   ctaLabel,
   priority = true,
 }: HardwareServiceHeroSectionProps) {
-  // mt-16 clears fixed `Navigation` (h-16). min-height keeps ~86vh feel below the bar.
+  // mt-16 clears fixed `Navigation` (h-16). min-height fills the viewport below the bar.
   return (
-    <section className="relative mt-16 flex min-h-[calc(86vh-4rem)] items-center overflow-hidden">
+    <section
+      data-budge-target
+      style={{ minHeight: "calc(100vh - 4rem)" }}
+      className="relative mt-16 flex min-h-[calc(100vh-4rem)] items-center overflow-hidden"
+    >
       <Image
         src={imageSrc}
         alt={imageAlt}

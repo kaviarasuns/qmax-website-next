@@ -46,7 +46,6 @@ export default function Hero() {
 
           {/* Right - PCB Image */}
           <div className="relative h-96 md:h-full min-h-96">
-            <div className="absolute inset-0 bg-gradient-to-r from-red-500/30 to-red-500/10 rounded-2xl blur-3xl"></div>
             <Image
               src="https://d1yetprhniwywz.cloudfront.net/v2/about-us/office.png"
               alt="PCB Circuit Board Design"

@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { pcbPowerElectronicsOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { pcbCaseStudies } from "@/data/service-case-studies";
 
 export const metadata: Metadata = {
@@ -521,7 +519,6 @@ export default function PowerElectronicsPage() {
         studies={pcbCaseStudies}
         hideTopBorder
       />
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>
   );
 }

@@ -1,8 +1,6 @@
 import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { mechanicalDesignOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { mechanicalCaseStudies } from "@/data/service-case-studies";
 
 export default function MechanicalDesignServicesPageV1() {
@@ -1161,7 +1159,6 @@ export default function MechanicalDesignServicesPageV1() {
         studies={mechanicalCaseStudies}
         hideTopBorder
       />
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>
   );
 }

@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { pcbHighSpeedDigitalOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { pcbCaseStudies } from "@/data/service-case-studies";
 const projectExperience = [
   {
@@ -644,7 +642,6 @@ export default function HighSpeedDigitalPCBDesignPage() {
         studies={pcbCaseStudies}
         hideTopBorder
       />
-      <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
     </main>
   );
 }

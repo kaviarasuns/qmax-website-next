@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import FAQSection from "@/components/FAQSection";
-import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
-import { industrialDesignOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { industrialDesignCaseStudies } from "@/data/service-case-studies";
 import { industrialDesignFAQs } from "@/data/service-faqs";
 
@@ -304,8 +302,6 @@ export default function IndustrialDesignServicesPage() {
           className="bg-[#fcfcfc] dark:bg-zinc-950"
           hideTopBorder
         />
-
-        <OtherCapabilitiesScrollSection capabilities={otherCapabilities} />
       </main>
     </div>
   );
