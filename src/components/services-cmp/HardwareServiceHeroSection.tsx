@@ -47,10 +47,10 @@ export function HardwareServiceHeroSection({
       />
       <div className="relative z-10 w-full px-7 py-16 sm:px-10 md:px-[72px] md:py-20">
         <div className="w-full md:w-2/3">
-          <h1 className="mb-7 text-[32px] font-semibold leading-[1.14] tracking-[-0.5px] text-white md:text-[44px]">
+          <h1 className="text-white mb-6 font-bold leading-[1.1] tracking-[-0.01em] text-balance">
             {title}
           </h1>
-          <div className="mb-10 space-y-4 text-[17px] leading-[1.78] text-white text-justify md:mb-[42px]">
+          <div className="font-semibold text-xl mb-10 space-y-4 text-white text-justify md:mb-[42px] ">
             {description}
           </div>
           <Link
