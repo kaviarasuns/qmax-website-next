@@ -26,11 +26,11 @@ export function PartnershipsSection() {
       id="partnerships-section"
     >
       <div className="mx-auto max-w-[1280px]">
-        <div className="mb-14 flex flex-col items-center text-center">
+        <div className="mb-14 flex w-full flex-col items-center text-center">
           <h2 className="mb-6 text-4xl md:text-5xl font-light tracking-wide">
             Partnerships
           </h2>
-          <p className="mx-auto max-w-[820px] text-[#5A6778]">
+          <p className="w-full text-[#5A6778]">
             With a strong focus on new product development, Qmax maintains
             strategic partnerships with leading platform providers including
             Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella,
@@ -41,9 +41,15 @@ export function PartnershipsSection() {
           </p>
         </div>
         <div className="grid grid-cols-5 gap-4 max-[900px]:grid-cols-2 max-[900px]:gap-3">
-          {PARTNER_LOGOS.map(({ name, file }) => (
+          {PARTNER_LOGOS.map(({ name, file }, index) => (
             <div key={file} className={TILE_CLASS}>
-              <div className="absolute inset-5 max-[900px]:inset-4">
+              <div
+                className={
+                  index === 0
+                    ? "absolute inset-2 max-[900px]:inset-1"
+                    : "absolute inset-5 max-[900px]:inset-4"
+                }
+              >
                 <Image
                   src={`${PARTNERSHIP_LOGO_BASE}/${file}`}
                   alt={`${name} logo`}
