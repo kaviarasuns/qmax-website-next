@@ -85,7 +85,8 @@ const STAT_NUM =
 
 const STAT_LABEL = "font-semibold text-base text-white mt-1";
 
-const STAT_DESC = "text-[0.95rem] leading-[1.45] text-white max-w-[460px] mt-2";
+const STAT_DESC =
+  "text-left text-[0.95rem] leading-[1.45] text-white max-w-[460px] mt-2";
 
 const SOURCE_SANS: React.CSSProperties = {
   fontFamily: '"Source Sans 3", "Open Sans", system-ui, sans-serif',
@@ -98,7 +99,7 @@ const DEFAULT_STATS: Stat[] = [
     desc: "Delivering electronics engineering and R&D services since 1997.",
   },
   {
-    num: "1000+",
+    num: "500+",
     label: "Completed Projects",
     desc: "Across embedded systems, PCB design, and hardware development.",
   },

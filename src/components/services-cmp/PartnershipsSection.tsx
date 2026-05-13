@@ -4,7 +4,7 @@ const PARTNERSHIP_LOGO_BASE =
   "https://d1yetprhniwywz.cloudfront.net/v2/partnerships_logo";
 
 const TILE_CLASS =
-  "relative flex aspect-[16/7] items-center justify-center overflow-hidden rounded-md border border-gray-200 bg-white p-2 transition-all duration-300 hover:-translate-y-[3px] hover:border-[rgba(230,51,41,0.35)] hover:shadow-[0_8px_20px_rgba(16,24,40,0.08)]";
+  "relative flex aspect-[16/9] items-center justify-center overflow-hidden rounded-md border border-gray-200 bg-white p-2 transition-all duration-300 hover:-translate-y-[3px] hover:border-[rgba(230,51,41,0.35)] hover:shadow-[0_8px_20px_rgba(16,24,40,0.08)]";
 
 const PARTNER_LOGOS = [
   { name: "Qualcomm", file: "qualcomm-logo.webp" },

@@ -14,7 +14,7 @@ const STATS = [
     desc: "Delivering electronics engineering and R&D services since 1997.",
   },
   {
-    num: "1000+",
+    num: "500+",
     label: "Completed Projects",
     desc: "Across embedded systems, PCB design, and hardware development.",
   },

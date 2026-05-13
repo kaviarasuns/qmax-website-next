@@ -31,12 +31,12 @@ export function CoreServiceOfferingsSection({
   return (
     <section className="px-6 py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-center text-3xl font-light tracking-tight text-slate-900 md:text-5xl">
+        <h2 className="text-center text-3xl font-light tracking-tight text-black md:text-5xl">
           Our Core Service <span className="text-[#F33117]">Offerings</span>
         </h2>
 
         <div
-          className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 border-b border-slate-200"
+          className="mt-10 flex w-full border-b border-slate-200"
           role="tablist"
           aria-label="Core service offerings"
         >
@@ -49,10 +49,10 @@ export function CoreServiceOfferingsSection({
                 type="button"
                 role="tab"
                 aria-selected={isActive}
-                className={`-mb-px border-b-2 px-1 pb-4 pt-3 text-sm font-medium transition-colors md:text-base ${
+                className={`-mb-px flex-1 min-w-0 border-b-2 px-2 pb-4 pt-3 text-center text-sm font-medium transition-colors md:px-3 md:text-base ${
                   isActive
-                    ? "border-[#F33117] text-[#F33117]"
-                    : "border-transparent text-slate-500 hover:text-slate-800"
+                    ? "border-[#F33117] text-black"
+                    : "border-transparent text-black/60 hover:text-black"
                 }`}
                 onClick={() => setActiveId(item.id)}
               >
@@ -64,7 +64,7 @@ export function CoreServiceOfferingsSection({
 
         <div className="grid gap-10 py-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
           <div>
-            <h3 className="max-w-xl text-2xl font-light leading-tight tracking-tight text-slate-900 md:text-4xl">
+            <h3 className="max-w-xl text-2xl font-light leading-tight tracking-tight text-black md:text-4xl">
               {activeOffering.headline}
             </h3>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -84,7 +84,7 @@ export function CoreServiceOfferingsSection({
           </div>
 
           <div>
-            <h4 className="text-xl font-medium text-slate-900">
+            <h4 className="text-xl font-medium text-black">
               What we deliver
             </h4>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
