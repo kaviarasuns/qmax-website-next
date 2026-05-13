@@ -14,10 +14,12 @@ interface Capability {
 
 interface CapabilitiesSectionProps {
   capabilities: Capability[];
+  getInTouchHref?: string;
 }
 
 export function CapabilitiesSection({
   capabilities,
+  getInTouchHref = "/pcb-design/contact",
 }: CapabilitiesSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -243,8 +245,8 @@ export function CapabilitiesSection({
         </div>
         {/* Tabs */}
         <div className="my-14 mb-16 overflow-x-auto">
-          <div className="relative mx-auto w-max px-6 max-[900px]:px-3" ref={wrapperRef}>
-            <div className="relative z-[1] flex w-max" role="tablist" ref={tabBarRef}>
+          <div className="relative w-full px-6 max-[900px]:px-3" ref={wrapperRef}>
+            <div className="relative z-[1] flex w-max min-w-full justify-between" role="tablist" ref={tabBarRef}>
               {capabilities.map((cap, i) => (
                 <button
                   key={cap.id}
@@ -254,14 +256,20 @@ export function CapabilitiesSection({
                   type="button"
                   role="tab"
                   aria-selected={activeIdx === i}
-                  className={`relative flex cursor-pointer items-center gap-[6px] whitespace-nowrap bg-transparent px-4 pb-[17px] pt-[15px] text-[13px] font-medium leading-[1.35] transition-colors duration-200 ${
-                    activeIdx === i
-                      ? "font-bold text-[var(--qmax-red-500)]"
-                      : "text-[#666] hover:text-[#222]"
+                  className={`relative flex cursor-pointer items-center gap-[10px] whitespace-nowrap bg-transparent px-4 pb-[17px] pt-[15px] text-[14px] font-medium leading-[1.35] text-black transition-colors duration-200 ${
+                    activeIdx === i ? "font-bold" : ""
                   }`}
                   onClick={() => setActiveIdx(i)}
                 >
-                  <span className="h-[18px] w-[18px] shrink-0">{cap.tabIcon}</span>
+                  <span
+                    className={`h-[18px] w-[18px] shrink-0 transition-colors duration-200 ${
+                      activeIdx === i
+                        ? "text-[var(--qmax-red-500)]"
+                        : "text-black"
+                    }`}
+                  >
+                    {cap.tabIcon}
+                  </span>
                   <span>{cap.tabLabel}</span>
                 </button>
               ))}
@@ -305,7 +313,7 @@ export function CapabilitiesSection({
                 </a>
                 <a
                   className="inline-block rounded-md bg-[var(--qmax-red-500)] px-7 py-[7px] text-white no-underline transition-colors duration-200 hover:bg-[var(--qmax-red-600)] hover:text-white hover:no-underline"
-                  href="/pcb-design/contact"
+                  href={getInTouchHref}
                 >
                   Get in Touch
                 </a>

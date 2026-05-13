@@ -23,11 +23,11 @@ const STATS = [
     label: "Industries Served",
     desc: "Industrial, communication, medical, automotive, and high-performance computing.",
   },
-  {
-    num: "100%",
-    label: "Customer Satisfaction",
-    desc: "Trusted long-term engineering partner with proven repeat-client engagements.",
-  },
+  // {
+  //   num: "100%",
+  //   label: "Customer Satisfaction",
+  //   desc: "Trusted long-term engineering partner with proven repeat-client engagements.",
+  // },
 ];
 
 export default function PCBServicesContactPage() {

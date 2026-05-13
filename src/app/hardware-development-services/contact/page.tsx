@@ -23,17 +23,20 @@ const STATS = [
     label: "Industries Served",
     desc: "Industrial, communication, medical, automotive, and high-performance computing.",
   },
-  {
-    num: "100%",
-    label: "Customer Satisfaction",
-    desc: "Trusted long-term engineering partner with proven repeat-client engagements.",
-  },
+  // {
+  //   num: "100%",
+  //   label: "Customer Satisfaction",
+  //   desc: "Trusted long-term engineering partner with proven repeat-client engagements.",
+  // },
 ];
 
 export default function HardwareDevelopmentServicesContactPage() {
   return (
     <ServicesContactHero
-      heading={{ line1: "Interested in Hardware Design?", line2: "Let's Talk!" }}
+      heading={{
+        line1: "Interested in Hardware Design?",
+        line2: "Let's Talk!",
+      }}
       subheading="To learn more about how Qmax can help you, contact us. We'd be happy to take on the challenge!"
       stats={STATS}
       backgroundImage="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=2000&q=80"

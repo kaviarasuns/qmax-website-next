@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  ChangeEvent,
-  FormEvent,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 
 interface Stat {
   num: string;
@@ -147,10 +140,6 @@ export default function ServicesContactHero({
   const [phoneCountry, setPhoneCountry] = useState("US");
   const [phoneCodeOpen, setPhoneCodeOpen] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-  const formCardRef = useRef<HTMLDivElement | null>(null);
-  const firstStatRef = useRef<HTMLDivElement | null>(null);
-  const lastStatRef = useRef<HTMLDivElement | null>(null);
-  const leftRef = useRef<HTMLDivElement | null>(null);
   const countryRef = useRef<HTMLDivElement | null>(null);
   const phoneCodeRef = useRef<HTMLDivElement | null>(null);
 
@@ -221,39 +210,6 @@ export default function ServicesContactHero({
     autosize();
   }, [form.message]);
 
-  useLayoutEffect(() => {
-    const align = () => {
-      const card = formCardRef.current;
-      const first = firstStatRef.current;
-      const last = lastStatRef.current;
-      const left = leftRef.current;
-      if (!card || !first || !last || !left) return;
-      if (window.innerWidth < 1024) {
-        card.style.marginTop = "";
-        card.style.minHeight = "";
-        return;
-      }
-      const leftRect = left.getBoundingClientRect();
-      const firstRect = first.getBoundingClientRect();
-      const lastRect = last.getBoundingClientRect();
-      const topOffset = firstRect.top - leftRect.top;
-      const targetHeight = lastRect.bottom - firstRect.top;
-      card.style.marginTop = topOffset + "px";
-      card.style.minHeight = targetHeight + "px";
-    };
-    align();
-    const t1 = window.setTimeout(align, 100);
-    const t2 = window.setTimeout(align, 400);
-    window.addEventListener("resize", align);
-    window.addEventListener("load", align);
-    return () => {
-      window.clearTimeout(t1);
-      window.clearTimeout(t2);
-      window.removeEventListener("resize", align);
-      window.removeEventListener("load", align);
-    };
-  }, []);
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (status !== "idle") return;
@@ -308,28 +264,25 @@ export default function ServicesContactHero({
             <span className="block">{heading.line1}</span>
             <span className="block">{heading.line2}</span>
           </h1>
-          <p className="text-[15px] font-medium leading-[1.5] text-white mt-4 mb-12">
+          <p className="text-[15px] font-medium leading-[1.5] text-white mt-8 mb-12">
             {subheading}
           </p>
         </div>
 
         {/* Stats + form grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_460px] gap-0 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_460px] gap-0 lg:gap-12 items-start lg:items-stretch">
           {/* LEFT — stats */}
-          <div
-            className="flex flex-col w-full max-w-[560px] lg:max-w-none mx-auto lg:mx-0"
-            ref={leftRef}
-          >
-            <div className="flex flex-col gap-7">
+          <div className="flex flex-col w-full max-w-[560px] lg:max-w-none mx-auto lg:mx-0 lg:h-full lg:min-h-0">
+            <div className="flex flex-col gap-7 flex-1 lg:min-h-0">
               {stats.map((stat, i) => {
-                const isFirst = i === 0;
                 const isLast = i === stats.length - 1;
                 const hasDivider = !isLast;
                 return (
                   <div
                     key={stat.label}
-                    className={hasDivider ? "pb-7 border-b border-white/[18%]" : ""}
-                    ref={isFirst ? firstStatRef : isLast ? lastStatRef : undefined}
+                    className={`flex flex-col lg:flex-1 lg:min-h-0 lg:justify-center ${
+                      hasDivider ? "pb-7 border-b border-white/[18%]" : ""
+                    }`}
                   >
                     <div className={STAT_NUM} style={SOURCE_SANS}>
                       {stat.num}
@@ -345,10 +298,7 @@ export default function ServicesContactHero({
           </div>
 
           {/* RIGHT — form card */}
-          <div
-            className="bg-white text-[#2a2a2a] w-full lg:w-[480px] pt-8 px-8 pb-7 rounded-[6px] mt-8 lg:mt-0 self-start shadow-[0_12px_32px_rgba(0,0,0,0.28)] relative flex flex-col max-w-[560px] mx-auto lg:mx-0 lg:max-w-none"
-            ref={formCardRef}
-          >
+          <div className="bg-white text-[#2a2a2a] w-full lg:w-[480px] pt-8 px-8 pb-7 rounded-[6px] mt-8 lg:mt-0 lg:h-full shadow-[0_12px_32px_rgba(0,0,0,0.28)] relative flex flex-col max-w-[560px] mx-auto lg:mx-0 lg:max-w-none">
             <form
               className="grid grid-cols-2 gap-x-[18px] gap-y-[18px] flex-1"
               onSubmit={handleSubmit}

@@ -61,7 +61,7 @@ const WORKFLOW_STEPS = [
 const CAPABILITIES = [
   {
     id: "digital-design",
-    tabLabel: "Digital",
+    tabLabel: "High Speed Digital Design",
     learnMoreHref: "/hardware-development-services/high-speed-digital-design",
     tabIcon: (
       <svg
@@ -734,7 +734,10 @@ export default function HardwareDevelopmentServicesPage() {
       </section>
 
       {/* CORE CAPABILITIES */}
-      <CapabilitiesSection capabilities={CAPABILITIES} />
+      <CapabilitiesSection
+        capabilities={CAPABILITIES}
+        getInTouchHref="/hardware-development-services/contact"
+      />
 
       {/* INDUSTRIES WE SERVE */}
       <IndustriesSection industries={INDUSTRIES} slides={INDUSTRY_SLIDES} />
