@@ -244,7 +244,7 @@ export function CapabilitiesSection({
           {/* <p>We deliver high-performance designs validated by decades of experience. Our HW engineering stack covers:</p> */}
         </div>
         {/* Tabs */}
-        <div className="my-14 mb-16 overflow-x-auto">
+        <div className="my-14 mb-16 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="relative w-full px-6 max-[900px]:px-3" ref={wrapperRef}>
             <div className="relative z-[1] flex w-max min-w-full justify-between" role="tablist" ref={tabBarRef}>
               {capabilities.map((cap, i) => (
