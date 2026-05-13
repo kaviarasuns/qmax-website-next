@@ -700,6 +700,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/GIMBAL/GIMBAL_4_AXIS.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/GIMBAL/GIMBAL_4_AXIS.3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/GIMBAL/GIMBAL_4_AXIS.4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/GIMBAL/Gimble.mp4",
     ],
     rotatedImages: {},
     features: [
