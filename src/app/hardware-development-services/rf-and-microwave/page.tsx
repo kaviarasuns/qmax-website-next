@@ -5,6 +5,19 @@ import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { hardwareCaseStudies } from "@/data/service-case-studies";
 
+const rfCaseStudies = [
+  ...hardwareCaseStudies,
+  {
+    title: "Wi-Fi 6E Router",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/1.png",
+    link: "/case-studies/wifi-6e-router",
+    category: "hardware",
+    summary:
+      "Multi-band RF platform engineered for Wi-Fi 6E throughput, low-latency connectivity, and robust thermal design.",
+  },
+];
+
 export const metadata: Metadata = {
   title: "RF and Microwave Services | Qmax",
   description:
@@ -602,7 +615,7 @@ export default function RfAndMicrowavePage() {
       <FAQSection faqs={rfFaqGroups.flatMap((group) => group.items)} />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
-        studies={hardwareCaseStudies}
+        studies={rfCaseStudies}
         hideTopBorder
       />
     </main>

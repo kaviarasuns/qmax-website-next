@@ -8,6 +8,7 @@ import { TestimonialsSection } from "@/components/services-cmp/TestimonialsSecti
 import { CTABannerSection } from "@/components/services-cmp/CTABannerSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import "../../components/hardware-design.css";
+import { HeroConceptToSilicon } from "@/components/services-cmp/HeroConceptToSilicon";
 
 export const metadata: Metadata = {
   title: "Hardware Development Services | Qmax",
@@ -703,35 +704,12 @@ export default function HardwareDevelopmentServicesPage() {
   return (
     <div className="hd-root">
       {/* HERO */}
-      <section
-        className="relative w-full min-h-screen bg-cover bg-center flex items-center overflow-hidden after:absolute after:inset-0 after:bg-black/45 after:pointer-events-none after:content-['']"
-        id="hero"
-        style={{
-          backgroundImage:
-            "linear-gradient(135deg, rgba(11,95,165,0.45), rgba(14,20,27,0.55)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=2000&q=80&auto=format&fit=crop')",
-        }}
-      >
-        <div className="relative z-[2] w-full py-20 px-16 max-w-[1400px] mx-auto max-[900px]:py-16 max-[900px]:px-6">
-          <div className="max-w-[820px]">
-            <h1 className="text-white mb-6 font-bold leading-[1.1] tracking-[-0.01em] text-balance text-[clamp(36px,5vw,60px)]">
-              Hardware Development Services: The Complete Hardware Product
-              Lifecycle
-            </h1>
-            <p className="text-white/[0.92] text-xl leading-[1.6] font-normal mb-10 max-w-[720px]">
-              We provide full hardware lifecycle ownership, taking your product
-              from early requirement analysis to production handover. Our
-              lifecycle-driven approach minimizes risk, shortens development
-              cycles, and ensures compliance readiness from day one.
-            </p>
-            <a
-              className="bg-[#E63329] text-white font-semibold text-base tracking-[0.04em] py-[14px] px-8 rounded-md cursor-pointer transition-colors duration-150 no-underline inline-block hover:bg-[#C72A21] hover:text-white hover:no-underline"
-              href="/hardware-development-services/contact"
-            >
-              EXPLORE OUR APPROACH
-            </a>
-          </div>
-        </div>
-      </section>
+      <HeroConceptToSilicon
+        title="Hardware Development Services: The Complete Hardware Product Lifecycle"
+        description="We provide full hardware lifecycle ownership, taking your product from early requirement analysis to production handover. Our lifecycle-driven approach minimizes risk, shortens development cycles, and ensures compliance readiness from day one."
+        ctaLabel="Talk to our engineer"
+        ctaHref="/hardware-development-services/contact"
+      />
 
       {/* CORE CAPABILITIES */}
       <CapabilitiesSection
@@ -745,13 +723,16 @@ export default function HardwareDevelopmentServicesPage() {
       {/* WHY CHOOSE QMAX */}
       <WhySection whyCards={WHY_CARDS} />
 
+      <div className="pb-12"></div>
       {/* PARTNERSHIPS */}
       <PartnershipsSection />
 
+      <div className="pb-12"></div>
+
       {/* WORKFLOW TIMELINE */}
-      <div id="workflow">
+      {/* <div id="workflow">
         <WorkflowSection steps={WORKFLOW_STEPS} />
-      </div>
+      </div> */}
 
       {/* CUSTOMER SUCCESS STORIES */}
       <TestimonialsSection testimonials={TESTIMONIALS} />

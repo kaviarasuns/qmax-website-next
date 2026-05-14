@@ -14,10 +14,35 @@ import {
 import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 
+const analogCaseStudies = [
+  ...hardwareCaseStudies,
+  {
+    title: "Ultra Low Noise ADC Board",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/1.1.png",
+    link: "/case-studies/ultra-low-noise-adc-board",
+    category: "hardware",
+    summary:
+      "Precision analog acquisition platform built for ultra-low-noise measurements and high-resolution conversion accuracy.",
+  },
+];
+
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
     id: "afe",
     tab: "Precision AFE",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M2 12h3l3-9 4 18 3-12 2 6h5" />
+      </svg>
+    ),
     headline:
       "Precision analog front-end design that converts microvolt sensor signals into reliable digital data.",
     intro:
@@ -42,6 +67,20 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
     id: "mixed-signal",
     tab: "Mixed-Signal SoM",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="3" y="5" width="18" height="14" rx="1.5" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <path d="M7 8.5h3M14 8.5h3M7 15.5h3M14 15.5h3" />
+      </svg>
+    ),
     headline:
       "Mixed-signal System-on-Module integration that lets high-resolution converters talk reliably to FPGAs and SoCs.",
     intro:
@@ -66,6 +105,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
     id: "interconnect",
     tab: "RF & High-Speed Interconnect",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="2" />
+        <path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 16.24a6 6 0 0 1 0-8.49M20.49 4.51a10 10 0 0 1 0 14.14M3.51 19.49a10 10 0 0 1 0-14.14" />
+      </svg>
+    ),
     headline:
       "RF and high-speed interconnect design for multi-gigahertz mixed-signal systems.",
     intro:
@@ -90,6 +142,20 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
     id: "wearable",
     tab: "Low-Power Wearable",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="6" y="7" width="12" height="10" rx="2" />
+        <path d="M9 7V4h6v3M9 17v3h6v-3" />
+        <path d="M9 12h2l1-2 1 4 1-2h2" />
+      </svg>
+    ),
     headline:
       "Low-power wearable electronics where nano-ampere currents don't compromise signal fidelity.",
     intro:
@@ -413,7 +479,7 @@ export default function AnalogDesignPage() {
       />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
-        studies={hardwareCaseStudies}
+        studies={analogCaseStudies}
         hideTopBorder
       />
     </>

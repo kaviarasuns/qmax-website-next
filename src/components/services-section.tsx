@@ -25,28 +25,31 @@ const carouselItems: {
   },
   {
     id: 2,
-    image: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_BOT.svg",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_BOT.svg",
     title: "Aerospace PCB",
     summary:
       "Industrial electronics platform engineered for rugged deployment, stable power delivery, and manufacturable hardware.",
-    link: "/case-studies/aerospace-pcb",
+    link: "/case-studies/obd",
     imageRotation: 90,
   },
   {
     id: 3,
-    image: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.1.png",
-    title: "Ventilation Control Damper",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.1.png",
+    title: "Communication Control System Enclosure",
     summary:
       "End-to-end embedded design and development for connected products, controls, and intelligent devices.",
-    link: "/case-studies/ventilation-control-dampert",
+    link: "/case-studies/rugged-communication-control-system-enclosure",
   },
   {
     id: 4,
-    image: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/1.png",
-    title: "Handheld Industrial Controller",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/1.png",
+    title: "Oxygen Generator",
     summary:
       "Multi-physics PCB design services focused on signal integrity, manufacturability, and first-pass success.",
-      link: "/case-studies/handheld-industrial-controller",
+    link: "/case-studies/oxygen-generator",
   },
   // {
   //   id: 5,
@@ -89,40 +92,22 @@ export function ServicesSection() {
   return (
     <section className="bg-background flex min-h-screen flex-col items-center justify-center py-12 lg:py-16">
       <div className="mx-auto w-full max-w-[1600px] px-4 md:px-6 lg:px-8">
-        <div className="mb-10 flex flex-col items-end justify-between gap-6 md:flex-row md:items-start">
-          <div className="max-w-2xl">
-            <h1 className="mb-3 text-3xl font-light  tracking-wide text-foreground md:text-4xl lg:text-5xl">
+        <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr] md:items-center">
+          <div className="hidden md:block" aria-hidden />
+          <div className="w-full max-w-2xl justify-self-center text-center">
+            <h1 className="mb-3 text-3xl font-light tracking-wide text-foreground md:text-4xl lg:text-5xl">
               Case <span className="text-red-500">Studies</span>
             </h1>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex w-full items-center justify-end gap-4">
             <Link href="/case-studies">
-              <Button variant="outline" className="rounded-full border-zinc-200 hover:bg-zinc-100">
+              <Button
+                variant="outline"
+                className="rounded-full border-zinc-200 hover:bg-zinc-100"
+              >
                 More Case Studies
               </Button>
             </Link>
-            <div className="flex gap-2">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={() => scroll("left")}
-                disabled={!canScrollLeft}
-                className="h-12 w-12 rounded-full border-zinc-200 transition-all hover:bg-zinc-100 disabled:opacity-30"
-                aria-label="Scroll left"
-              >
-                <ArrowLeft className="h-6 w-6" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={() => scroll("right")}
-                disabled={!canScrollRight}
-                className="h-12 w-12 rounded-full border-zinc-200 transition-all hover:bg-zinc-100 disabled:opacity-30"
-                aria-label="Scroll right"
-              >
-                <ArrowRight className="h-6 w-6" />
-              </Button>
-            </div>
           </div>
         </div>
         <div

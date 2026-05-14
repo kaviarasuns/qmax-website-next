@@ -14,10 +14,37 @@ import {
 import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 
+const powerElectronicsCaseStudies = [
+  ...hardwareCaseStudies,
+  {
+    title: "BMS Controller",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_pack/1.1.png",
+    link: "/case-studies/bms-controller",
+    category: "hardware",
+    summary:
+      "Battery management hardware with real-time monitoring, protection logic, and reliable field performance for energy systems.",
+  },
+];
+
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
     id: "psu",
     tab: "AC-DC & DC-DC Supplies",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M9 2v6M15 2v6" />
+        <path d="M6 8h12v3a6 6 0 0 1-12 0V8z" />
+        <path d="M12 17v5" />
+      </svg>
+    ),
     headline:
       "AC-DC and DC-DC power supply design built for efficiency, ripple, and global compliance.",
     intro:
@@ -42,6 +69,18 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
     id: "pdn",
     tab: "PDN Engineering",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+      </svg>
+    ),
     headline:
       "Power Delivery Network engineering that keeps modern AI accelerators, GPUs, and FPGAs alive at their advertised performance.",
     intro:
@@ -66,6 +105,22 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
     id: "bms",
     tab: "BMS & Energy Storage",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="2" y="7" width="18" height="10" rx="2" />
+        <line x1="22" y1="11" x2="22" y2="13" />
+        <line x1="6" y1="11" x2="6" y2="13" />
+        <line x1="10" y1="11" x2="10" y2="13" />
+        <line x1="14" y1="11" x2="14" y2="13" />
+      </svg>
+    ),
     headline:
       "Battery Management System and energy storage electronics for EV, ESS, UPS, and portable platforms.",
     intro:
@@ -90,6 +145,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
     id: "thermal",
     tab: "Thermal & Reliability",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
+        <line x1="11.5" y1="14" x2="11.5" y2="6" />
+      </svg>
+    ),
     headline:
       "Joint electrical-thermal co-design that delivers long-term field reliability — not just bench-tested prototypes.",
     intro:
@@ -373,7 +441,7 @@ export default function PowerElectronicsPage() {
       />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
-        studies={hardwareCaseStudies}
+        studies={powerElectronicsCaseStudies}
         hideTopBorder
       />
     </>

@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import type { ReactNode } from "react";
+import { CapabilitiesTabs } from "./CapabilitiesTabs";
 
 export type HighSpeedCorePoint = string | { boldLead: string; rest: string };
 
 export type HighSpeedCoreOffering = {
   id: string;
   tab: string;
+  tabIcon?: ReactNode;
   headline: string;
   intro: string;
   points: HighSpeedCorePoint[];
@@ -20,9 +23,18 @@ interface CoreServiceOfferingsSectionProps {
 export function CoreServiceOfferingsSection({
   offerings,
 }: CoreServiceOfferingsSectionProps) {
-  const [activeId, setActiveId] = useState(offerings[0]?.id ?? "");
-  const activeOffering =
-    offerings.find((item) => item.id === activeId) ?? offerings[0];
+  const [activeIdx, setActiveIdx] = useState(0);
+  const activeOffering = offerings[activeIdx] ?? offerings[0];
+
+  const tabCapabilities = useMemo(
+    () =>
+      offerings.map((item) => ({
+        id: item.id,
+        tabLabel: item.tab,
+        tabIcon: item.tabIcon,
+      })),
+    [offerings],
+  );
 
   if (!activeOffering) {
     return null;
@@ -35,32 +47,11 @@ export function CoreServiceOfferingsSection({
           Our Core Service <span className="text-[#F33117]">Offerings</span>
         </h2>
 
-        <div
-          className="mt-10 flex w-full border-b border-slate-200"
-          role="tablist"
-          aria-label="Core service offerings"
-        >
-          {offerings.map((item) => {
-            const isActive = activeId === item.id;
-
-            return (
-              <button
-                key={item.id}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                className={`-mb-px flex-1 min-w-0 border-b-2 px-2 pb-4 pt-3 text-center text-sm font-medium transition-colors md:px-3 md:text-base ${
-                  isActive
-                    ? "border-[#F33117] text-black"
-                    : "border-transparent text-black/60 hover:text-black"
-                }`}
-                onClick={() => setActiveId(item.id)}
-              >
-                {item.tab}
-              </button>
-            );
-          })}
-        </div>
+        <CapabilitiesTabs
+          capabilities={tabCapabilities}
+          activeIdx={activeIdx}
+          onTabClick={setActiveIdx}
+        />
 
         <div className="grid gap-10 py-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
           <div>
@@ -84,9 +75,7 @@ export function CoreServiceOfferingsSection({
           </div>
 
           <div>
-            <h4 className="text-xl font-medium text-black">
-              What we deliver
-            </h4>
+            <h4 className="text-xl font-medium text-black">What we deliver</h4>
             <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
               {activeOffering.intro}
             </p>

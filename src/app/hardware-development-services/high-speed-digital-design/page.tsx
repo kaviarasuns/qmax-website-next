@@ -11,6 +11,18 @@ import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 
+const highSpeedCaseStudies = [
+  ...hardwareCaseStudies,
+  {
+    title: "High-Speed Data Interface",
+    image: "/case-studies/PCB/PCB-0541/PCB-0541-00_BRD_PR_SIG12.svg",
+    link: "/case-studies/high-speed-data-interface",
+    category: "hardware",
+    summary:
+      "High-speed digital interface platform with PCIe/DDR-class routing and signal integrity optimization for data-intensive systems.",
+  },
+];
+
 const faqs = [
   {
     q: "What high-speed design standards does Qmax Systems support?",
@@ -50,6 +62,21 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
     id: "compute",
     tab: "Compute & Servers",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="3" y="3" width="18" height="6" rx="1" />
+        <rect x="3" y="15" width="18" height="6" rx="1" />
+        <line x1="7" y1="6" x2="7.01" y2="6" />
+        <line x1="7" y1="18" x2="7.01" y2="18" />
+      </svg>
+    ),
     headline:
       "High-performance compute and server hardware built for AI, data centers, and rugged industrial deployment.",
     intro:
@@ -74,6 +101,21 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
     id: "connectivity",
     tab: "Connectivity & O-RAN",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+        <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+        <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+        <line x1="12" y1="20" x2="12.01" y2="20" />
+      </svg>
+    ),
     headline:
       "Ultra-high-speed connectivity hardware powering 5G and next-generation telecom infrastructure.",
     intro:
@@ -98,6 +140,20 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
     id: "embedded",
     tab: "Embedded & FPGA",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="6" y="6" width="12" height="12" rx="1" />
+        <rect x="10" y="10" width="4" height="4" />
+        <path d="M2 10h4M2 14h4M18 10h4M18 14h4M10 2v4M14 2v4M10 18v4M14 18v4" />
+      </svg>
+    ),
     headline:
       "Custom FPGA and embedded platforms engineered for acceleration, real-time processing, and Industrial IoT.",
     intro:
@@ -245,7 +301,7 @@ export default function HighSpeedDigitalDesignPage() {
 
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
-        studies={hardwareCaseStudies}
+        studies={highSpeedCaseStudies}
         hideTopBorder
       />
     </>
