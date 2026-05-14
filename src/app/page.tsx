@@ -8,12 +8,14 @@ import FullPageScroll from "@/components/home/full-page-scroll";
 import FooterV2 from "@/components/footer-v2";
 import OurServices from "@/components/our-services";
 import { IndustriesWeServeV3 } from "@/components/industries-we-serve-v3";
+import StackReveal from "@/components/StackReveal";
 
 export default function Home() {
   return (
     <FullPageScroll>
       <HeroSection />
-      <ScrollCardsAnimationV4 onAutoHighlightChange={() => {}} />
+      <StackReveal />
+      {/* <ScrollCardsAnimationV4 onAutoHighlightChange={() => {}} /> */}
       {/* <ServicesV4Stacked lockStackingOnProgrammaticScroll={false} /> */}
       <OurServices />
       <IndustriesWeServeV3 />
