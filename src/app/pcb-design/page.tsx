@@ -810,7 +810,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
               className="bg-[#E63329] text-white font-semibold text-base tracking-[0.04em] py-[14px] px-8 rounded-md cursor-pointer transition-colors duration-150 no-underline inline-block hover:bg-[#C72A21] hover:text-white hover:no-underline"
               href="/pcb-design/contact"
             >
-              EXPLORE OUR APPROACH
+              TALK TO OUR ENGINEER
             </a>
           </div>
         </div>

@@ -8,28 +8,30 @@ export interface ServiceCaseStudy {
 
 export const hardwareCaseStudies: ServiceCaseStudy[] = [
   {
-    title: "Industrial Controller",
+    title: "Industrial Temperature Control System",
     image: "/case-studies/BLUECOLD/1.png",
-    link: "/case-studies/Industrial-Controller",
+    link: "/case-studies/industrial-temperature-control-system",
     category: "hardware",
     summary:
-      "Production-grade industrial control platform engineered for dependable operation in demanding environments.",
+      "Industrial-grade temperature control with multi-zone monitoring, POE+ connectivity, and closed-loop regulation for demanding environments.",
   },
   {
-    title: "Aerospace PCB",
-    image: "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.1.png",
-    link: "/case-studies/Aerospace-PCB",
+    title: "Capserve",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/1.1.png",
+    link: "/case-studies/capserve",
     category: "hardware",
     summary:
-      "High-reliability aerospace electronics program executed around strict validation and performance constraints.",
+      "Scalable embedded hardware platform for reliable system integration, efficient communication, and industrial-grade performance.",
   },
   {
-    title: "OBD 2 Device with LoRa and BLE",
-    image: "/case-studies/CHARA/1.png",
-    link: "/case-studies/OBD-2-Device-with-LoRa-and-BLE",
+    title: "Multi IO card for ATE",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/CHARA/1.png",
+    link: "/case-studies/multi-io-card-for-ate",
     category: "hardware",
     summary:
-      "Portable automotive hardware with LoRa, BLE, battery management, and robust field-ready integration.",
+      "FPGA-based multi-channel IO for automated test equipment with high-speed sampling and fiber-optic connectivity for noise-immune measurement.",
   },
 ];
 

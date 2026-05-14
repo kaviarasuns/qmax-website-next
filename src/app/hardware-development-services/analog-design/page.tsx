@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { hardwareCaseStudies } from "@/data/service-case-studies";
+import type { ServiceCaseStudy } from "@/data/service-case-studies";
+import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 import {
   CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
@@ -14,18 +15,33 @@ import {
 import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 
-const analogCaseStudies = [
-  ...hardwareCaseStudies,
-  {
-    title: "Ultra Low Noise ADC Board",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/1.1.png",
-    link: "/case-studies/ultra-low-noise-adc-board",
-    category: "hardware",
-    summary:
-      "Precision analog acquisition platform built for ultra-low-noise measurements and high-resolution conversion accuracy.",
-  },
-];
+function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = industrialCaseStudiesData.find((c) => c.id === id);
+    const image = study?.images[0];
+    if (!study || !image) {
+      throw new Error(`Industrial case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "hardware",
+      summary,
+    };
+  });
+}
+
+const analogCaseStudies: ServiceCaseStudy[] = industrialServiceCaseStudies([
+  "medical-diagnostic-system",
+  "medical-recording-device",
+  "smart-wifi-stethoscope",
+  "oxygen-generator",
+]);
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
@@ -448,15 +464,15 @@ export default function AnalogDesignPage() {
             high-performance electronics. Qmax Systems provides comprehensive
             analog and mixed-signal development services, specializing in
             high-fidelity signal acquisition, precision conditioning, and
-            ultra-low-noise environments. From femto-farad capacitance sensing to
-            giga-sample data converters, our engineering team addresses the
+            ultra-low-noise environments. From femto-farad capacitance sensing
+            to giga-sample data converters, our engineering team addresses the
             fundamental challenges of electromagnetic interference, signal
             integrity, and thermal stability to ensure laboratory-grade accuracy
             in field-deployed hardware.
           </p>
         }
         ctaHref="/hardware-development-services/contact"
-        ctaLabel="Get in Touch for Details"
+        ctaLabel="Talk to our engineer"
       />
 
       <CoreServiceOfferingsSection offerings={coreServiceOfferings} />

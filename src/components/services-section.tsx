@@ -26,7 +26,7 @@ const carouselItems: {
     id: 2,
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_BOT.svg",
-    title: "Aerospace PCB",
+    title: "OBD",
     summary:
       "Industrial electronics platform engineered for rugged deployment, stable power delivery, and manufacturable hardware.",
     link: "/case-studies/obd",

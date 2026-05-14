@@ -732,7 +732,10 @@ export function HeroConceptToSilicon({
         <div className="cts-hero-copy">
           <h1 className="cts-hero-title">{title}</h1>
           <p className="cts-hero-desc">{description}</p>
-          <Link className="cts-btn-red" href={ctaHref}>
+          <Link
+            className="inline-block rounded-md bg-red-600 px-8 py-3.5 text-base font-semibold uppercase tracking-[0.04em] text-white no-underline transition duration-150 ease-in-out hover:-translate-y-0.5 hover:bg-red-700"
+            href={ctaHref}
+          >
             {ctaLabel}
           </Link>
         </div>
@@ -849,28 +852,6 @@ export function HeroConceptToSilicon({
           margin: 0 0 26px;
           font-weight: 400;
         }
-        .cts-btn-red {
-          background: #e52222;
-          color: #fff;
-          border: none;
-          font-weight: 600;
-          font-size: 16px;
-          padding: 14px 32px;
-          border-radius: 6px;
-          letter-spacing: 0.04em;
-          cursor: pointer;
-          transition:
-            background 0.15s ease,
-            transform 0.15s ease;
-          text-transform: uppercase;
-          display: inline-block;
-          text-decoration: none;
-        }
-        .cts-btn-red:hover {
-          background: #c21818;
-          transform: translateY(-1px);
-        }
-
         .cts-hero-lifecycle {
           position: relative;
           z-index: 2;

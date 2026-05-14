@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { hardwareCaseStudies } from "@/data/service-case-studies";
+import type { ServiceCaseStudy } from "@/data/service-case-studies";
+import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 import {
   CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
@@ -11,17 +12,35 @@ import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 
-const highSpeedCaseStudies = [
-  ...hardwareCaseStudies,
-  {
-    title: "High-Speed Data Interface",
-    image: "/case-studies/PCB/PCB-0541/PCB-0541-00_BRD_PR_SIG12.svg",
-    link: "/case-studies/high-speed-data-interface",
-    category: "hardware",
-    summary:
-      "High-speed digital interface platform with PCIe/DDR-class routing and signal integrity optimization for data-intensive systems.",
-  },
-];
+function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = industrialCaseStudiesData.find((c) => c.id === id);
+    const image = study?.images[0];
+    if (!study || !image) {
+      throw new Error(`Industrial case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "hardware",
+      summary,
+    };
+  });
+}
+
+// First three IDs differ from rf-and-microwave (gateway + 6E router + 360° camera);
+// 6e-wifi-router-enclosure still appears on both pages.
+const highSpeedCaseStudies: ServiceCaseStudy[] = industrialServiceCaseStudies([
+  "warehouse-camera-controller-unit",
+  "medical-recording-device",
+  "6e-wifi-router-enclosure",
+  "compact-edge-gateway-enclosure",
+]);
 
 const faqs = [
   {

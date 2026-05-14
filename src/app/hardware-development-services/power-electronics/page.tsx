@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { hardwareCaseStudies } from "@/data/service-case-studies";
+import type { ServiceCaseStudy } from "@/data/service-case-studies";
+import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 import {
   CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
@@ -14,18 +15,34 @@ import {
 import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 
-const powerElectronicsCaseStudies = [
-  ...hardwareCaseStudies,
-  {
-    title: "BMS Controller",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_pack/1.1.png",
-    link: "/case-studies/bms-controller",
-    category: "hardware",
-    summary:
-      "Battery management hardware with real-time monitoring, protection logic, and reliable field performance for energy systems.",
-  },
-];
+function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = industrialCaseStudiesData.find((c) => c.id === id);
+    const image = study?.images[0];
+    if (!study || !image) {
+      throw new Error(`Industrial case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "hardware",
+      summary,
+    };
+  });
+}
+
+const powerElectronicsCaseStudies: ServiceCaseStudy[] =
+  industrialServiceCaseStudies([
+    "oxygen-generator",
+    "uv-disinfection-system",
+    "warehouse-camera-controller-unit",
+    "smart-tap",
+  ]);
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {

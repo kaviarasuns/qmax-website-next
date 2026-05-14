@@ -3,20 +3,36 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { hardwareCaseStudies } from "@/data/service-case-studies";
+import type { ServiceCaseStudy } from "@/data/service-case-studies";
+import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 
-const rfCaseStudies = [
-  ...hardwareCaseStudies,
-  {
-    title: "Wi-Fi 6E Router",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/1.png",
-    link: "/case-studies/wifi-6e-router",
-    category: "hardware",
-    summary:
-      "Multi-band RF platform engineered for Wi-Fi 6E throughput, low-latency connectivity, and robust thermal design.",
-  },
-];
+function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = industrialCaseStudiesData.find((c) => c.id === id);
+    const image = study?.images[0];
+    if (!study || !image) {
+      throw new Error(`Industrial case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "hardware",
+      summary,
+    };
+  });
+}
+
+const rfCaseStudies: ServiceCaseStudy[] = industrialServiceCaseStudies([
+  "compact-edge-gateway-enclosure",
+  "6e-wifi-router-enclosure",
+  "360-degree-camera-4k",
+  "smart-wifi-stethoscope",
+]);
 
 export const metadata: Metadata = {
   title: "RF and Microwave Services | Qmax",

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import Typewriter from "typewriter-effect";
@@ -118,9 +119,12 @@ export default function HeroSection() {
             <div className="text-base sm:text-xl md:text-2xl font-medium mt-2">
               <p>From Concept to Production</p>
             </div>
-            <button className="mt-5 px-4 py-2.5 sm:px-5 sm:py-2.5 text-sm sm:text-base border border-white text-white bg-transparent rounded-md transition hover:bg-white/10">
+            <Link
+              href="/contact"
+              className="mt-5 inline-block px-4 py-2.5 sm:px-5 sm:py-2.5 text-sm sm:text-base border border-white text-white bg-transparent rounded-md transition hover:bg-white/10"
+            >
               Let&apos;s Build
-            </button>
+            </Link>
           </div>
         )}
       </motion.div>

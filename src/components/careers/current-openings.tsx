@@ -607,12 +607,12 @@ function SideNav({
   };
 
   return (
-    <aside className="hidden lg:block w-48 flex-shrink-0 self-start sticky top-20">
+    <aside className="hidden lg:block w-64 flex-shrink-0 self-start sticky top-20">
       <div className="max-h-[calc(100vh-10rem)] overflow-y-auto">
         {/* <p className="text-[10px] font-semibold text-zinc-400 uppercase tracking-widest mb-3 pl-2">
           Jump to
         </p> */}
-        <nav className="space-y-4">
+        <nav className="space-y-5">
           {(
             [
               { type: "Full-time", label: "Full Time Roles" },
@@ -624,7 +624,7 @@ function SideNav({
             if (group.length === 0) return null;
             return (
               <div key={type}>
-                <p className="text-[10px] font-semibold text-zinc-900 uppercase tracking-widest mb-1 pl-2">
+                <p className="text-xs font-semibold text-black uppercase tracking-widest mb-1.5 pl-2">
                   {label}
                 </p>
                 <ul className="space-y-0.5">
@@ -636,10 +636,10 @@ function SideNav({
                         <button
                           type="button"
                           onClick={() => scrollTo(pos.title)}
-                          className={`w-full text-left text-xs px-2.5 py-1.5 rounded-md transition-colors cursor-pointer leading-snug ${
+                          className={`w-full text-left text-sm px-3 py-2 rounded-md transition-colors cursor-pointer leading-snug ${
                             isActive
                               ? "text-red-500 font-semibold"
-                              : "text-zinc-500 hover:text-zinc-800 hover:bg-zinc-50"
+                              : "text-black hover:bg-zinc-50"
                           }`}
                         >
                           {pos.title}
@@ -685,7 +685,7 @@ export function CurrentOpenings() {
 
   return (
     <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-6 lg:pt-0 pb-10 md:pb-14">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-6 lg:pt-0 pb-10 md:pb-14">
         <div className="flex gap-8 items-start">
           <SideNav positions={positions} activeId={activeId} />
           <div className="flex-1 min-w-0 space-y-6 lg:space-y-0">
