@@ -523,32 +523,28 @@ const PHASES: Phase[] = [
               strokeLinejoin="round"
             >
               <rect
-                x="8"
+                x="10"
                 y="14"
-                width="32"
-                height="22"
+                width="28"
+                height="20"
                 rx="2"
                 fill="currentColor"
                 fillOpacity="0.06"
               />
               <rect
-                x="12"
+                x="14"
                 y="18"
-                width="24"
-                height="14"
+                width="20"
+                height="12"
                 rx="1"
                 fill="currentColor"
                 fillOpacity="0.12"
               />
-              <line x1="20" y1="36" x2="28" y2="36" />
-              <line x1="24" y1="36" x2="24" y2="40" />
-              <line x1="18" y1="40" x2="30" y2="40" />
-              <line x1="4" y1="10" x2="6" y2="12" />
-              <line x1="4" y1="40" x2="6" y2="38" />
-              <line x1="44" y1="10" x2="42" y2="12" />
-              <line x1="44" y1="40" x2="42" y2="38" />
+              <line x1="20" y1="34" x2="28" y2="34" />
+              <line x1="24" y1="34" x2="24" y2="38" />
+              <line x1="18" y1="38" x2="30" y2="38" />
               <path
-                d="M15 25 L19 25 L21 22 L24 28 L27 22 L29 25 L33 25"
+                d="M16 24 L19 24 L21 21 L24 27 L27 21 L29 24 L32 24"
                 strokeWidth="1.8"
               />
             </svg>
@@ -1126,6 +1122,7 @@ export function HeroConceptToSilicon({
           align-items: center;
           justify-content: flex-start;
           gap: 6px;
+          min-width: 0;
           min-height: 108px;
           border: 1.5px solid rgba(255, 255, 255, 0.6);
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
@@ -1177,6 +1174,9 @@ export function HeroConceptToSilicon({
           line-height: 1.22;
           text-align: center;
           padding: 0 1px;
+          min-width: 0;
+          overflow-wrap: break-word;
+          hyphens: auto;
         }
         .cts-sub.tall .cts-sub-label {
           font-size: 14px;
