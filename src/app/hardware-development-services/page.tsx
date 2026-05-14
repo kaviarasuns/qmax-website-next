@@ -3,7 +3,6 @@ import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSecti
 import { IndustriesSection } from "@/components/services-cmp/IndustriesSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { PartnershipsSection } from "@/components/services-cmp/PartnershipsSection";
-import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
 import { TestimonialsSection } from "@/components/services-cmp/TestimonialsSection";
 import { CTABannerSection } from "@/components/services-cmp/CTABannerSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
@@ -20,44 +19,44 @@ export const metadata: Metadata = {
    DATA
    ============================================================ */
 
-const WORKFLOW_STEPS = [
-  {
-    number: 1,
-    title: "Requirements & Architecture",
-    description:
-      "We translate product requirements into a hardware architecture. Block diagrams, interface definitions, power budgets, and a risk register are agreed before a single component is selected.",
-  },
-  {
-    number: 2,
-    title: "PoC & Feasibility (EVT0)",
-    description:
-      "For high-risk sub-systems — novel power topologies, untested RF links, new sensors — we build a minimal proof-of-concept to validate the architecture and de-risk the main program.",
-  },
-  {
-    number: 3,
-    title: "Detailed Design (Schematic & Layout)",
-    description:
-      "Full schematic capture with design-rule checks, component selection and second-source planning, PCB stack-up definition, constraint-driven layout, and SI/PI simulations where required.",
-  },
-  {
-    number: 4,
-    title: "EVT (Engineering Validation Test)",
-    description:
-      "First prototypes go through functional bring-up, debug, and iterative fixes. A final functional check confirms every interface and feature works to spec before advancing to design validation.",
-  },
-  {
-    number: 5,
-    title: "DVT (Design Validation Test)",
-    description:
-      "The hardware is stress-tested across environmental, reliability, and compliance regimes. This phase proves the design is robust, regulatory-ready, and fit for production-grade conditions.",
-  },
-  {
-    number: 6,
-    title: "PVT (Production Validation Test)",
-    description:
-      "We develop test jigs, production programming flows, and end-of-line tests for the manufacturing partner. The output is a fully characterized, production-ready design with full handover documentation.",
-  },
-];
+// const WORKFLOW_STEPS = [
+//   {
+//     number: 1,
+//     title: "Requirements & Architecture",
+//     description:
+//       "We translate product requirements into a hardware architecture. Block diagrams, interface definitions, power budgets, and a risk register are agreed before a single component is selected.",
+//   },
+//   {
+//     number: 2,
+//     title: "PoC & Feasibility (EVT0)",
+//     description:
+//       "For high-risk sub-systems — novel power topologies, untested RF links, new sensors — we build a minimal proof-of-concept to validate the architecture and de-risk the main program.",
+//   },
+//   {
+//     number: 3,
+//     title: "Detailed Design (Schematic & Layout)",
+//     description:
+//       "Full schematic capture with design-rule checks, component selection and second-source planning, PCB stack-up definition, constraint-driven layout, and SI/PI simulations where required.",
+//   },
+//   {
+//     number: 4,
+//     title: "EVT (Engineering Validation Test)",
+//     description:
+//       "First prototypes go through functional bring-up, debug, and iterative fixes. A final functional check confirms every interface and feature works to spec before advancing to design validation.",
+//   },
+//   {
+//     number: 5,
+//     title: "DVT (Design Validation Test)",
+//     description:
+//       "The hardware is stress-tested across environmental, reliability, and compliance regimes. This phase proves the design is robust, regulatory-ready, and fit for production-grade conditions.",
+//   },
+//   {
+//     number: 6,
+//     title: "PVT (Production Validation Test)",
+//     description:
+//       "We develop test jigs, production programming flows, and end-of-line tests for the manufacturing partner. The output is a fully characterized, production-ready design with full handover documentation.",
+//   },
+// ];
 
 const CAPABILITIES = [
   {

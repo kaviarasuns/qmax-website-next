@@ -678,7 +678,6 @@ export function HeroConceptToSilicon({
   ctaLabel = "Talk to our engineer",
   ctaHref = "/hardware-development-services/contact",
   eyebrow = "Always shipping · concept to production",
-  caption = "// concept → silicon · always in motion",
 }: HeroConceptToSiliconProps) {
   const flowRef = useRef<HTMLDivElement | null>(null);
 
