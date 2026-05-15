@@ -1,6 +1,4 @@
-import FullPageScroll2, {
-  FullBleed,
-} from "@/components/home/full-page-scroll-2";
+import { FullBleed } from "@/components/home/full-page-scroll-2";
 import ContactHero from "./ContactHero";
 import OfficeLocations from "./OfficeLocations";
 import FooterV2 from "@/components/footer-v2";

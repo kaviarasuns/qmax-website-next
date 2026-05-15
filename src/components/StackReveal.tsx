@@ -1,5 +1,3 @@
-import type { ReactNode } from "react";
-
 export type StackRevealItem = {
   step: string;
   title: string;
@@ -78,9 +76,6 @@ const DEFAULT_ITEMS: StackRevealItem[] = [
 
 type StackRevealConcept06Props = {
   items?: StackRevealItem[];
-  eyebrow?: ReactNode;
-  title?: ReactNode;
-  subtitle?: ReactNode;
   className?: string;
 };
 
@@ -90,23 +85,6 @@ type StackRevealConcept06Props = {
  */
 export default function StackReveal({
   items = DEFAULT_ITEMS,
-  eyebrow = (
-    <>
-      <span
-        className="inline-block size-2 rounded-full bg-[#E94B3C] shadow-[0_0_0_4px_rgba(233,75,60,0.15)]"
-        aria-hidden
-      />
-      Concept 06 · Stack Reveal
-    </>
-  ),
-  title = "Design To Manufacturing",
-  subtitle = (
-    <>
-      Seven slim image panels — minimal labels until you hover. The active panel
-      expands and reveals full detail. Encourages playful exploration without
-      dominating the page.
-    </>
-  ),
   className = "",
 }: StackRevealConcept06Props) {
   return (
