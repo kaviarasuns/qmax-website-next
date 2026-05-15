@@ -999,9 +999,13 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Ultra Low Noise ADC Board",
     category: "Precision Instrumentation",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/1.1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/1.2.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/1.3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/1.1.1png.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/1.2.2png.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/1.3.3png.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/1.4.4.png",
     ],
     features: [
       "Ultra-low noise acquisition",

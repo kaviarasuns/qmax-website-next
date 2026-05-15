@@ -599,12 +599,11 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     title: "Mega Watt Charging Station",
     category: "Mechanical Design",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.58.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.59.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.61.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S2.65.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S3.66.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/MCS_ASSM_RENDER_S3.67.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/5.jpg",
     ],
     rotatedImages: {},
     features: [
