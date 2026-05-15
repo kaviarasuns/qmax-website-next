@@ -7,7 +7,8 @@ import FooterV2 from "@/components/footer-v2";
 
 const Contact = () => {
   return (
-    <FullPageScroll2>
+    <>
+      {/* <FullPageScroll2> */}
       <ContactHero />
       <OfficeLocations />
       {/* Footer bleeds behind the fixed nav. FullBleed stretches its
@@ -16,7 +17,8 @@ const Contact = () => {
       <FullBleed>
         <FooterV2 />
       </FullBleed>
-    </FullPageScroll2>
+      {/* </FullPageScroll2> */}
+    </>
   );
 };
 

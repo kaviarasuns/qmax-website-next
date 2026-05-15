@@ -188,7 +188,7 @@ const ContactHero = () => {
   };
 
   return (
-    <section className="relative h-full flex items-center justify-center overflow-hidden">
+    <section className="pt-24 relative h-full flex items-center justify-center overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100" />
 

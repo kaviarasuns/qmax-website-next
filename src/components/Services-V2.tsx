@@ -1,238 +1,213 @@
-import React, { useRef, useState, useEffect } from "react";
-import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
-import { Button } from "./ui/button";
-import { motion } from "framer-motion";
+"use client";
 
-const services = [
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+
+type Service = {
+  topic: string;
+  image: string;
+  description: string;
+  href: string;
+};
+
+const services: Service[] = [
   {
     topic: "Hardware Design",
     image:
       "https://framerusercontent.com/images/xZdrZACUdNYgULp5M3m2BcUhBI.png",
     description:
       "Develop system architecture and select core electronic components.",
+    href: "/hardware-development-services",
   },
   {
-    topic: "Firmware Developemnt",
-    image:
-      "https://framerusercontent.com/images/URP1Krg4uds9qGHII952XUGsc4.png",
+    topic: "Firmware Development",
+    image: "https://framerusercontent.com/images/8tZqdkd46foyx5TeIzPw8YhbA.png",
     description:
       "Program low-level code to bring up boards, handle protocols, and control hardware.",
+    href: "/embedded-design-services",
   },
   {
     topic: "PCB Design",
     image:
       "https://framerusercontent.com/images/7CnP7xCaEUuDiSvOyIyHs36cw4I.png",
     description: "Design and layout production-ready printed circuit boards.",
+    href: "/pcb-design",
   },
   {
-    topic: "Industrial Design And Mechanical",
+    topic: "Industrial Design & Mechanical",
     image:
       "https://framerusercontent.com/images/kTPtpORfLevVY4rDMRwjeXD72sc.png",
     description:
       "Design products that look great, feel right, and are ready to manufacture.",
-  },
-  {
-    topic: "Apps and Cloud",
-    image: "https://framerusercontent.com/images/8tZqdkd46foyx5TeIzPw8YhbA.png",
-    description:
-      "Build full-stack software that connects devices to seamless digital experiences.",
-  },
-  {
-    topic: "Value Added Services",
-    image:
-      "https://framerusercontent.com/images/fwoTbHaje1iNRvuK7dPxw0nq3Kg.png",
-    description:
-      "Enable production with test jigs, certifications, vendor audits, and prototyping.",
+    href: "/mechanical-industrial-design-services",
   },
 ];
 
+const AUTOPLAY_MS = 2800;
+
 const ServicesV2 = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [activeCard, setActiveCard] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isUserInteracting, setIsUserInteracting] = useState(false);
 
-  // Detect mobile device
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Clear auto-play interval
-  const clearAutoPlay = () => {
+  const clearAutoPlay = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
-  };
+  }, []);
 
-  // Start auto-play interval
-  const startAutoPlay = () => {
-    clearAutoPlay(); // Prevent multiple intervals
+  useEffect(() => {
+    clearAutoPlay();
     if (!isUserInteracting) {
       intervalRef.current = setInterval(() => {
         setActiveCard((prev) => (prev + 1) % services.length);
-      }, 2000);
+      }, AUTOPLAY_MS);
     }
-  };
-
-  // Auto-play effect
-  useEffect(() => {
-    startAutoPlay();
     return () => clearAutoPlay();
-  }, [isUserInteracting, startAutoPlay]);
+  }, [isUserInteracting, clearAutoPlay]);
 
-  // Component cleanup
-  useEffect(() => {
-    return () => clearAutoPlay();
-  }, []);
-
-  // Handle card hover for desktop interaction
-  const handleCardHover = (index: number) => {
-    if (!isMobile) {
-      clearAutoPlay(); // Immediately stop auto-play
-      setIsUserInteracting(true);
-      setActiveCard(index);
-    }
-  };
-
-  // Handle mouse enter on card
-  const handleCardMouseEnter = (index: number) => {
-    clearAutoPlay(); // Immediately stop auto-play
+  const handleMouseEnter = (idx: number) => {
+    if (isMobile) return;
     setIsUserInteracting(true);
-    handleCardHover(index);
+    setActiveCard(idx);
   };
 
-  const handleMouseLeave = () => {
-    if (!isMobile) {
-      setIsUserInteracting(false);
-      // Auto-play will restart due to useEffect dependency
-    }
+  const handleSectionMouseLeave = () => {
+    if (isMobile) return;
+    setIsUserInteracting(false);
   };
 
   return (
     <section
-      ref={containerRef}
-      className="w-full h-full pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 py-8 lg:py-12 flex items-center "
-      onMouseLeave={handleMouseLeave}
+      className="w-full bg-[#fafafa] py-16 sm:py-20 lg:py-24"
+      onMouseLeave={handleSectionMouseLeave}
+      aria-labelledby="services-v2-heading"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 flex flex-col items-center">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 lg:mb-4 text-center">
-          Our Services
-        </h2>
-        <div className="pb-1 md:pb-3 lg:pb-4 xl:pb-6"></div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 xl:gap-8 w-full max-w-6xl mx-auto">
-          {services.map((service, idx) => (
-            <motion.div
-              key={idx}
-              animate={{
-                scale: isMobile ? 1 : idx === activeCard ? 1.05 : 1,
-                opacity: 1,
-                y: isMobile ? 0 : idx === activeCard ? -10 : 0,
-              }}
-              transition={{
-                duration: 0.8,
-                type: "spring",
-                stiffness: 80,
-                damping: 20,
-              }}
-              onMouseEnter={() => handleCardMouseEnter(idx)}
-            >
-              <Card
-                className={`relative flex flex-col h-[200px] sm:h-[220px] md:h-[200px] lg:h-[220px] xl:h-[240px] overflow-hidden group shadow-lg 
-                ${
-                  !isMobile && idx === activeCard
-                    ? "border-2 border-red-500"
-                    : "border-0"
-                }`}
-              >
-                {/* Background image */}
-                <div
-                  className="absolute inset-0 w-full h-full bg-center bg-cover z-0"
-                  style={{ backgroundImage: `url(${service.image})` }}
-                  aria-hidden="true"
-                />
-                {/* Gradient overlay for readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-10" />
-
-                {/* Glow effect for active card */}
-                {!isMobile && idx === activeCard && (
-                  <motion.div
-                    className="absolute inset-0 bg-red-500/20 rounded-xl blur-xl z-5"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                  />
-                )}
-
-                {/* Card content overlays */}
-                <div className="relative z-20 flex flex-col h-full justify-between p-2 sm:p-3 lg:p-3 xl:p-4">
-                  <CardHeader className="p-0 mb-1 bg-transparent">
-                    <motion.div
-                      animate={{
-                        scale: isMobile ? 1.05 : idx === activeCard ? 1.05 : 1,
-                      }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <CardTitle
-                        className={`text-xs sm:text-sm md:text-sm lg:text-base xl:text-lg text-white text-center drop-shadow font-bold tracking-wide 
-                        ${
-                          !isMobile && idx === activeCard
-                            ? "text-red-100"
-                            : "text-white"
-                        }`}
-                      >
-                        {service.topic}
-                      </CardTitle>
-                    </motion.div>
-                  </CardHeader>
-                  <CardContent className="p-0 mt-auto flex flex-col items-center">
-                    <motion.p
-                      className="text-xs sm:text-xs md:text-xs lg:text-sm text-white text-center mb-1 lg:mb-2 drop-shadow"
-                      animate={{
-                        opacity: isMobile ? 1 : idx === activeCard ? 1 : 0.8,
-                      }}
-                    >
-                      {service.description}
-                    </motion.p>
-                    <Button
-                      variant={
-                        !isMobile && idx === activeCard
-                          ? "destructive"
-                          : "secondary"
-                      }
-                      className="w-full max-w-[100px] lg:max-w-[120px] text-xs sm:text-xs md:text-xs lg:text-sm py-1 lg:py-1.5"
-                    >
-                      Know More
-                    </Button>
-                  </CardContent>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
+      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-10 flex flex-col items-center text-center lg:mb-14">
+          <h2
+            id="services-v2-heading"
+            className="text-3xl font-light tracking-tight text-black sm:text-4xl lg:text-5xl"
+          >
+            Our <span className="font-semibold text-red-500">Services</span>
+          </h2>
         </div>
 
-        {/* Card indicators */}
-        {/* <div className="flex space-x-1.5 mt-4 lg:mt-6">
+        {/* Grid */}
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6">
+          {services.map((service, idx) => {
+            const isActive = !isMobile && idx === activeCard;
+            return (
+              <motion.div
+                key={service.topic}
+                animate={{ y: isActive ? -6 : 0 }}
+                transition={{ type: "spring", stiffness: 220, damping: 24 }}
+                className="h-full min-h-0"
+              >
+                <Link
+                  href={service.href}
+                  aria-label={`Learn more about ${service.topic}`}
+                  onMouseEnter={() => handleMouseEnter(idx)}
+                  className="group relative block aspect-[5/4] h-full min-h-0 overflow-hidden rounded-2xl bg-neutral-900 shadow-[0_1px_3px_rgba(0,0,0,0.08)] outline-none transition-shadow duration-300 hover:shadow-[0_18px_40px_-12px_rgba(0,0,0,0.25)] focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#fafafa] sm:aspect-[4/3]"
+                >
+                {/* Background image */}
+                <div
+                  className={`absolute inset-0 bg-cover bg-center transition-transform duration-[1200ms] ease-out ${
+                    isActive ? "scale-[1.06]" : "scale-100"
+                  } group-hover:scale-[1.06]`}
+                  style={{ backgroundImage: `url(${service.image})` }}
+                  aria-hidden
+                />
+
+                {/* Gradient overlay */}
+                <div
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/5"
+                  aria-hidden
+                />
+
+                {/* Active inset ring (does not affect layout) */}
+                <div
+                  className={`pointer-events-none absolute inset-0 rounded-2xl ring-2 ring-inset transition-colors duration-300 ${
+                    isActive ? "ring-red-500/80" : "ring-transparent"
+                  }`}
+                  aria-hidden
+                />
+
+                {/* Active soft glow */}
+                <div
+                  className={`pointer-events-none absolute -inset-px rounded-2xl transition-opacity duration-500 ${
+                    isActive ? "opacity-100" : "opacity-0"
+                  }`}
+                  style={{
+                    boxShadow: "0 0 0 1px rgba(233,75,60,0.0), 0 18px 50px -10px rgba(233,75,60,0.45)",
+                  }}
+                  aria-hidden
+                />
+
+                {/* Content */}
+                <div className="relative flex h-full flex-col justify-between p-5 lg:p-5">
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="text-base font-bold leading-tight tracking-tight text-white drop-shadow-sm sm:text-lg lg:text-base xl:text-lg">
+                      {service.topic}
+                    </h3>
+                    <span
+                      aria-hidden
+                      className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                        isActive
+                          ? "border-red-400/70 bg-red-500/20 text-white"
+                          : "border-white/30 bg-white/10 text-white/80"
+                      } group-hover:border-red-400/70 group-hover:bg-red-500/20 group-hover:text-white`}
+                    >
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                  </div>
+
+                  <div className="space-y-3">
+                    <p className="text-xs leading-relaxed text-white/85 sm:text-[13px]">
+                      {service.description}
+                    </p>
+                    <span
+                      className={`inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 ${
+                        isActive ? "text-red-300" : "text-white/90"
+                      } group-hover:text-red-300`}
+                    >
+                      Know more
+                      <ArrowUpRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
+                  </div>
+                </div>
+                </Link>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Mobile-only dots indicator */}
+        <div className="mt-6 flex items-center justify-center gap-1.5 sm:hidden">
           {services.map((_, index) => (
             <button
               key={index}
+              type="button"
               onClick={() => setActiveCard(index)}
-              className={`w-1.5 h-1.5 md:w-2.5 md:h-2.5 rounded-full transition-all duration-300 ${
-                index === activeCard
-                  ? "bg-red-500 scale-125"
-                  : "bg-gray-400 hover:bg-gray-600"
+              aria-label={`Show service ${index + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                index === activeCard ? "w-5 bg-red-500" : "w-1.5 bg-gray-300"
               }`}
-              aria-label={`Select service ${index + 1}`}
             />
           ))}
-        </div> */}
+        </div>
       </div>
     </section>
   );
