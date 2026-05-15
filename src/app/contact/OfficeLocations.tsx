@@ -49,9 +49,10 @@ const getLocationUrl = ({
 const OfficeLocations = () => {
   return (
     <section className="relative h-full bg-gray-50 flex flex-col items-center justify-center overflow-y-auto py-8 lg:py-12">
+      <div className="mb-24"></div>
       {/* Section header */}
       <div className="container mx-auto px-6 mb-12 lg:mb-16">
-        <div className="text-center max-w-2xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-7">
           <h2>
             Our <span className="text-red-500">Locations</span>
           </h2>
@@ -136,6 +137,7 @@ const OfficeLocations = () => {
           ))}
         </div>
       </div>
+      <div className="mb-24"></div>
     </section>
   );
 };

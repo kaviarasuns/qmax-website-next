@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
-import { IndustriesSection } from "@/components/services-cmp/IndustriesSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { PartnershipsSection } from "@/components/services-cmp/PartnershipsSection";
-import { TestimonialsSection } from "@/components/services-cmp/TestimonialsSection";
 import { CTABannerSection } from "@/components/services-cmp/CTABannerSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import "../../components/hardware-design.css";
 import { HeroConceptToSilicon } from "@/components/services-cmp/HeroConceptToSilicon";
+import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
+import { PCB_INDUSTRIES } from "@/store/pcb-industries";
 
 export const metadata: Metadata = {
   title: "Hardware Development Services | Qmax",
@@ -208,129 +208,129 @@ const CAPABILITIES = [
   },
 ];
 
-const INDUSTRIES = {
-  left: [
-    {
-      title: "Automotive Electronics",
-      desc: "Powertrain control units, infotainment, and ADAS sensor electronics designed to AEC-Q100 with EMC, thermal, and vibration qualification baked into the workflow.",
-      badge: "AEC-Q100 · ISO 26262",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M5 17h14l-1.5-5.5a2 2 0 0 0-1.9-1.5H8.4a2 2 0 0 0-1.9 1.5L5 17z" />
-          <circle cx="7.5" cy="17.5" r="1.5" />
-          <circle cx="16.5" cy="17.5" r="1.5" />
-        </svg>
-      ),
-    },
-    {
-      title: "Medical & Healthcare",
-      desc: "Patient monitors, point-of-care diagnostics, and connected wearables developed under IEC 60601 and ISO 13485, with full DHF traceability from concept to PVT.",
-      badge: "IEC 60601 · ISO 13485",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M3.5 12.5h3l2-5 4 10 2-5h6" />
-        </svg>
-      ),
-    },
-    {
-      title: "Aerospace Systems",
-      desc: "Avionics interfaces, radar sub-systems, and ruggedized SBCs validated to MIL-STD-810/461 and DO-160, with conformal coating and obsolescence management built in.",
-      badge: "MIL-STD-810/461 · DO-160",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M21 16v-2l-8-5V4a1.5 1.5 0 0 0-3 0v5l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1L15 22v-1.5L13 19v-5.5z" />
-        </svg>
-      ),
-    },
-  ],
-  right: [
-    {
-      title: "Energy, EV & Power",
-      desc: "Battery management systems, on-board chargers, and grid-tied inverters engineered for high-efficiency power conversion, with isolation and creepage rigorously verified.",
-      badge: "UL 2580 · IEC 62133",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Communication Systems",
-      desc: "RF transceivers, 5G baseband boards, and optical network nodes engineered for O-RAN and IEEE standards, with rigorous signal integrity (SI/PI) and strict impedance control.",
-      badge: "FCC / CE · IEEE Compliant",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7z" />
-        </svg>
-      ),
-    },
-    {
-      title: "Industrial Automation",
-      desc: "PLC interface boards, motor drives, and IIoT edge nodes engineered for 24/7 operation in harsh factory environments — extended temperature, surge, and EMC hardened.",
-      badge: "IEC 61131 · IEC 61000",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="12" cy="12" r="3" />
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-        </svg>
-      ),
-    },
-  ],
-};
+// const INDUSTRIES = {
+//   left: [
+//     {
+//       title: "Automotive Electronics",
+//       desc: "Powertrain control units, infotainment, and ADAS sensor electronics designed to AEC-Q100 with EMC, thermal, and vibration qualification baked into the workflow.",
+//       badge: "AEC-Q100 · ISO 26262",
+//       icon: (
+//         <svg
+//           viewBox="0 0 24 24"
+//           fill="none"
+//           stroke="currentColor"
+//           strokeWidth="2"
+//           strokeLinecap="round"
+//           strokeLinejoin="round"
+//         >
+//           <path d="M5 17h14l-1.5-5.5a2 2 0 0 0-1.9-1.5H8.4a2 2 0 0 0-1.9 1.5L5 17z" />
+//           <circle cx="7.5" cy="17.5" r="1.5" />
+//           <circle cx="16.5" cy="17.5" r="1.5" />
+//         </svg>
+//       ),
+//     },
+//     {
+//       title: "Medical & Healthcare",
+//       desc: "Patient monitors, point-of-care diagnostics, and connected wearables developed under IEC 60601 and ISO 13485, with full DHF traceability from concept to PVT.",
+//       badge: "IEC 60601 · ISO 13485",
+//       icon: (
+//         <svg
+//           viewBox="0 0 24 24"
+//           fill="none"
+//           stroke="currentColor"
+//           strokeWidth="2"
+//           strokeLinecap="round"
+//           strokeLinejoin="round"
+//         >
+//           <path d="M3.5 12.5h3l2-5 4 10 2-5h6" />
+//         </svg>
+//       ),
+//     },
+//     {
+//       title: "Aerospace Systems",
+//       desc: "Avionics interfaces, radar sub-systems, and ruggedized SBCs validated to MIL-STD-810/461 and DO-160, with conformal coating and obsolescence management built in.",
+//       badge: "MIL-STD-810/461 · DO-160",
+//       icon: (
+//         <svg
+//           viewBox="0 0 24 24"
+//           fill="none"
+//           stroke="currentColor"
+//           strokeWidth="2"
+//           strokeLinecap="round"
+//           strokeLinejoin="round"
+//         >
+//           <path d="M21 16v-2l-8-5V4a1.5 1.5 0 0 0-3 0v5l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1L15 22v-1.5L13 19v-5.5z" />
+//         </svg>
+//       ),
+//     },
+//   ],
+//   right: [
+//     {
+//       title: "Energy, EV & Power",
+//       desc: "Battery management systems, on-board chargers, and grid-tied inverters engineered for high-efficiency power conversion, with isolation and creepage rigorously verified.",
+//       badge: "UL 2580 · IEC 62133",
+//       icon: (
+//         <svg
+//           viewBox="0 0 24 24"
+//           fill="none"
+//           stroke="currentColor"
+//           strokeWidth="2"
+//           strokeLinecap="round"
+//           strokeLinejoin="round"
+//         >
+//           <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
+//         </svg>
+//       ),
+//     },
+//     {
+//       title: "Communication Systems",
+//       desc: "RF transceivers, 5G baseband boards, and optical network nodes engineered for O-RAN and IEEE standards, with rigorous signal integrity (SI/PI) and strict impedance control.",
+//       badge: "FCC / CE · IEEE Compliant",
+//       icon: (
+//         <svg
+//           viewBox="0 0 24 24"
+//           fill="none"
+//           stroke="currentColor"
+//           strokeWidth="2"
+//           strokeLinecap="round"
+//           strokeLinejoin="round"
+//         >
+//           <path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7z" />
+//         </svg>
+//       ),
+//     },
+//     {
+//       title: "Industrial Automation",
+//       desc: "PLC interface boards, motor drives, and IIoT edge nodes engineered for 24/7 operation in harsh factory environments — extended temperature, surge, and EMC hardened.",
+//       badge: "IEC 61131 · IEC 61000",
+//       icon: (
+//         <svg
+//           viewBox="0 0 24 24"
+//           fill="none"
+//           stroke="currentColor"
+//           strokeWidth="2"
+//           strokeLinecap="round"
+//           strokeLinejoin="round"
+//         >
+//           <circle cx="12" cy="12" r="3" />
+//           <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+//         </svg>
+//       ),
+//     },
+//   ],
+// };
 
-const INDUSTRY_SLIDES = [
-  { src: "/hardware-design/ind-automotive.jpg", alt: "Automotive Electronics" },
-  { src: "/hardware-design/ind-medical.jpg", alt: "Medical & Healthcare" },
-  { src: "/hardware-design/aerospace.png", alt: "Aerospace Systems" },
-  { src: "/hardware-design/ind-energy.png", alt: "Energy, EV & Power" },
-  { src: "/hardware-design/communications.png", alt: "Defense Electronics" },
-  {
-    src: "/hardware-design/industrial_automation.png",
-    alt: "Industrial Automation",
-  },
-];
+// const INDUSTRY_SLIDES = [
+//   { src: "/hardware-design/ind-automotive.jpg", alt: "Automotive Electronics" },
+//   { src: "/hardware-design/ind-medical.jpg", alt: "Medical & Healthcare" },
+//   { src: "/hardware-design/aerospace.png", alt: "Aerospace Systems" },
+//   { src: "/hardware-design/ind-energy.png", alt: "Energy, EV & Power" },
+//   { src: "/hardware-design/communications.png", alt: "Defense Electronics" },
+//   {
+//     src: "/hardware-design/industrial_automation.png",
+//     alt: "Industrial Automation",
+//   },
+// ];
 
 const WHY_CARDS = [
   {
@@ -432,245 +432,245 @@ const WHY_CARDS = [
   },
 ];
 
-const TESTIMONIALS = [
-  {
-    tab: "Temperature Control System",
-    logo: (
-      <svg
-        viewBox="0 0 180 36"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-label="Velocon Mobility"
-        style={{ height: 36, width: "auto" }}
-      >
-        <circle
-          cx="18"
-          cy="18"
-          r="12"
-          fill="none"
-          stroke="#E63329"
-          strokeWidth="2.5"
-        />
-        <path
-          d="M18 8 L28 18 L18 28 L8 18 Z"
-          fill="none"
-          stroke="#E63329"
-          strokeWidth="1.5"
-        />
-        <text
-          x="38"
-          y="24"
-          fontFamily="sans-serif"
-          fontSize="16"
-          fontWeight="700"
-          fill="#1C2A3A"
-        >
-          Velocon
-        </text>
-        <text
-          x="103"
-          y="24"
-          fontFamily="sans-serif"
-          fontSize="16"
-          fill="#5A6778"
-        >
-          Mobility
-        </text>
-      </svg>
-    ),
-    quote:
-      "Qmax delivered a production-ready ECU that passed AEC-Q100 qualification on the first build. Their EMC-first layout approach saved us two full spins and kept the entire program on schedule. The upfront signal integrity work and meticulous component selection gave our compliance team total confidence in the final design.",
-    authorName: "VP, Hardware Engineering",
-    authorRole: "US-based Tier-1 Automotive Supplier",
-    avatarColor: "#0B5FA5",
-    avatarInitials: "JR",
-    caseTag: "AUTOMOTIVE",
-    caseTitle: "Industrial Temperature Control System",
-    caseDesc:
-      "Multi-zone PID temperature control built on SAMA5D3, with POE+ single-cable deployment for cold-chain and manufacturing environments.",
-    caseImage: "/case-studies/BLUECOLD/1.png",
-    caseHref: "/case-studies/industrial-temperature-control-system",
-  },
-  {
-    tab: "Multi IO card",
-    logo: (
-      <svg
-        viewBox="0 0 180 36"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-label="MedCore"
-        style={{ height: 36, width: "auto" }}
-      >
-        <rect x="2" y="8" width="20" height="20" rx="4" fill="#158B4E" />
-        <path
-          d="M7 18h10M12 13v10"
-          stroke="#fff"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
-        <text
-          x="28"
-          y="25"
-          fontFamily="sans-serif"
-          fontSize="18"
-          fontWeight="700"
-          fill="#1C2A3A"
-        >
-          MedCore
-        </text>
-      </svg>
-    ),
-    quote:
-      "The DHF package Qmax delivered was the most thorough we've seen from any contract partner. Our FDA reviewer specifically complimented the traceability and the clean linkage between requirements, design inputs, and verification evidence. It made our submission timeline noticeably shorter and far less stressful for the team.",
-    authorName: "Director of Engineering",
-    authorRole: "European Medical Diagnostics OEM",
-    avatarColor: "#158B4E",
-    avatarInitials: "PS",
-    caseTag: "MEDICAL",
-    caseTitle: "Multi IO Card for ATE",
-    caseDesc:
-      "Spartan-6 FPGA-based ATE IO card with high-speed ADC/DAC channels, fiber optic connectivity, and 12× faster sampling than conventional solutions.",
-    caseImage: "/case-studies/CHARA/1.png",
-    caseHref: "/case-studies/multi-io-card-for-ate",
-  },
-  {
-    tab: "Smart Monitoring System",
-    logo: (
-      <svg
-        viewBox="0 0 180 36"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-label="VoltArc Energy"
-        style={{ height: 36, width: "auto" }}
-      >
-        <polygon points="14,6 6,20 13,20 11,30 22,14 15,14" fill="#E63329" />
-        <text
-          x="28"
-          y="24"
-          fontFamily="sans-serif"
-          fontSize="16"
-          fontWeight="700"
-          fill="#1C2A3A"
-        >
-          VoltArc
-        </text>
-        <text
-          x="89"
-          y="24"
-          fontFamily="sans-serif"
-          fontSize="16"
-          fill="#5A6778"
-        >
-          Energy
-        </text>
-      </svg>
-    ),
-    quote:
-      "Qmax's BMS handled our 96-cell pack flawlessly on the very first revision. The thermal simulation and power integrity work meant we hit every efficiency target with no board respins, no late surprises, and a clean handoff to our pack assembly team. Their deep domain experience really showed in the finer details.",
-    authorName: "CTO",
-    authorRole: "Series-B EV Battery Systems Startup",
-    avatarColor: "#E63329",
-    avatarInitials: "DK",
-    caseTag: "ENERGY / EV",
-    caseTitle: "Smart Monitoring System",
-    caseDesc:
-      "ARM Cortex-M7 system with FreeRTOS tracking temperature, humidity, and air quality across zones via L2 managed switch, achieving 40% better power efficiency.",
-    caseImage:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/climate_control/1.png",
-    caseHref: "/case-studies/smart-monitoring-system",
-  },
-  {
-    tab: "Microscopic Camera Control",
-    logo: (
-      <svg
-        viewBox="0 0 180 36"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-label="AeroTech"
-        style={{ height: 36, width: "auto" }}
-      >
-        <path
-          d="M18 4 L28 16 L18 28 L8 16 Z"
-          fill="none"
-          stroke="#0B5FA5"
-          strokeWidth="2"
-        />
-        <circle cx="18" cy="16" r="4" fill="#0B5FA5" />
-        <text
-          x="36"
-          y="23"
-          fontFamily="sans-serif"
-          fontSize="17"
-          fontWeight="700"
-          fill="#1C2A3A"
-        >
-          AeroTech
-        </text>
-      </svg>
-    ),
-    quote:
-      "They understood DO-254 from day one and built it into the program rather than around it. Every design assurance artifact was integrated into the engineering workflow, not bolted on at the end. That single decision saved us weeks of audit prep and gave our certification authority full visibility throughout the project.",
-    authorName: "Systems Director",
-    authorRole: "Aerospace & Defense Avionics Contractor",
-    avatarColor: "#374151",
-    avatarInitials: "MS",
-    caseTag: "AEROSPACE",
-    caseTitle: "Microscopic Camera Control",
-    caseDesc:
-      "Stepper motor-driven focus and zoom system with high-resolution CMOS imaging, USB 3.0 and Ethernet streaming, and OLED status display for lab and inspection use.",
-    caseImage:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/microscopic_camera/1.png",
-    caseHref: "/case-studies/microscopic-camera-control",
-  },
-  {
-    tab: "Industrial IoT Gateway",
-    logo: (
-      <svg
-        viewBox="0 0 180 36"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-label="IndustriLink"
-        style={{ height: 36, width: "auto" }}
-      >
-        <rect
-          x="2"
-          y="10"
-          width="16"
-          height="16"
-          rx="2"
-          fill="none"
-          stroke="#0B5FA5"
-          strokeWidth="2"
-        />
-        <circle cx="10" cy="18" r="3" fill="#0B5FA5" />
-        <path
-          d="M18 18h4M24 14l4 4-4 4"
-          stroke="#0B5FA5"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <text
-          x="36"
-          y="23"
-          fontFamily="sans-serif"
-          fontSize="15"
-          fontWeight="700"
-          fill="#1C2A3A"
-        >
-          IndustriLink
-        </text>
-      </svg>
-    ),
-    quote:
-      "The gateway has been running on our factory floor for 18 months straight with zero field failures across more than forty deployed units. The EMC hardening and isolation strategy Qmax insisted on early in the design proved its worth in a brutally noisy industrial environment. It just keeps working, shift after shift.",
-    authorName: "Head of IIoT",
-    authorRole: "European Industrial Automation Firm",
-    avatarColor: "#374151",
-    avatarInitials: "TY",
-    caseTag: "INDUSTRIAL",
-    caseTitle: "Industrial IoT Gateway with POE",
-    caseDesc:
-      "POE+-powered multi-radio gateway aggregating LoRa, BLE, and CAN bus data to cloud, with 15 km LoRa range and 99.9% uplink accuracy for factory deployments.",
-    caseImage: "/case-studies/OTT/4.png",
-    caseHref: "/case-studies/industrial-iot-gateway-with-poe",
-  },
-];
+// const TESTIMONIALS = [
+//   {
+//     tab: "Temperature Control System",
+//     logo: (
+//       <svg
+//         viewBox="0 0 180 36"
+//         xmlns="http://www.w3.org/2000/svg"
+//         aria-label="Velocon Mobility"
+//         style={{ height: 36, width: "auto" }}
+//       >
+//         <circle
+//           cx="18"
+//           cy="18"
+//           r="12"
+//           fill="none"
+//           stroke="#E63329"
+//           strokeWidth="2.5"
+//         />
+//         <path
+//           d="M18 8 L28 18 L18 28 L8 18 Z"
+//           fill="none"
+//           stroke="#E63329"
+//           strokeWidth="1.5"
+//         />
+//         <text
+//           x="38"
+//           y="24"
+//           fontFamily="sans-serif"
+//           fontSize="16"
+//           fontWeight="700"
+//           fill="#1C2A3A"
+//         >
+//           Velocon
+//         </text>
+//         <text
+//           x="103"
+//           y="24"
+//           fontFamily="sans-serif"
+//           fontSize="16"
+//           fill="#5A6778"
+//         >
+//           Mobility
+//         </text>
+//       </svg>
+//     ),
+//     quote:
+//       "Qmax delivered a production-ready ECU that passed AEC-Q100 qualification on the first build. Their EMC-first layout approach saved us two full spins and kept the entire program on schedule. The upfront signal integrity work and meticulous component selection gave our compliance team total confidence in the final design.",
+//     authorName: "VP, Hardware Engineering",
+//     authorRole: "US-based Tier-1 Automotive Supplier",
+//     avatarColor: "#0B5FA5",
+//     avatarInitials: "JR",
+//     caseTag: "AUTOMOTIVE",
+//     caseTitle: "Industrial Temperature Control System",
+//     caseDesc:
+//       "Multi-zone PID temperature control built on SAMA5D3, with POE+ single-cable deployment for cold-chain and manufacturing environments.",
+//     caseImage: "/case-studies/BLUECOLD/1.png",
+//     caseHref: "/case-studies/industrial-temperature-control-system",
+//   },
+//   {
+//     tab: "Multi IO card",
+//     logo: (
+//       <svg
+//         viewBox="0 0 180 36"
+//         xmlns="http://www.w3.org/2000/svg"
+//         aria-label="MedCore"
+//         style={{ height: 36, width: "auto" }}
+//       >
+//         <rect x="2" y="8" width="20" height="20" rx="4" fill="#158B4E" />
+//         <path
+//           d="M7 18h10M12 13v10"
+//           stroke="#fff"
+//           strokeWidth="2.5"
+//           strokeLinecap="round"
+//         />
+//         <text
+//           x="28"
+//           y="25"
+//           fontFamily="sans-serif"
+//           fontSize="18"
+//           fontWeight="700"
+//           fill="#1C2A3A"
+//         >
+//           MedCore
+//         </text>
+//       </svg>
+//     ),
+//     quote:
+//       "The DHF package Qmax delivered was the most thorough we've seen from any contract partner. Our FDA reviewer specifically complimented the traceability and the clean linkage between requirements, design inputs, and verification evidence. It made our submission timeline noticeably shorter and far less stressful for the team.",
+//     authorName: "Director of Engineering",
+//     authorRole: "European Medical Diagnostics OEM",
+//     avatarColor: "#158B4E",
+//     avatarInitials: "PS",
+//     caseTag: "MEDICAL",
+//     caseTitle: "Multi IO Card for ATE",
+//     caseDesc:
+//       "Spartan-6 FPGA-based ATE IO card with high-speed ADC/DAC channels, fiber optic connectivity, and 12× faster sampling than conventional solutions.",
+//     caseImage: "/case-studies/CHARA/1.png",
+//     caseHref: "/case-studies/multi-io-card-for-ate",
+//   },
+//   {
+//     tab: "Smart Monitoring System",
+//     logo: (
+//       <svg
+//         viewBox="0 0 180 36"
+//         xmlns="http://www.w3.org/2000/svg"
+//         aria-label="VoltArc Energy"
+//         style={{ height: 36, width: "auto" }}
+//       >
+//         <polygon points="14,6 6,20 13,20 11,30 22,14 15,14" fill="#E63329" />
+//         <text
+//           x="28"
+//           y="24"
+//           fontFamily="sans-serif"
+//           fontSize="16"
+//           fontWeight="700"
+//           fill="#1C2A3A"
+//         >
+//           VoltArc
+//         </text>
+//         <text
+//           x="89"
+//           y="24"
+//           fontFamily="sans-serif"
+//           fontSize="16"
+//           fill="#5A6778"
+//         >
+//           Energy
+//         </text>
+//       </svg>
+//     ),
+//     quote:
+//       "Qmax's BMS handled our 96-cell pack flawlessly on the very first revision. The thermal simulation and power integrity work meant we hit every efficiency target with no board respins, no late surprises, and a clean handoff to our pack assembly team. Their deep domain experience really showed in the finer details.",
+//     authorName: "CTO",
+//     authorRole: "Series-B EV Battery Systems Startup",
+//     avatarColor: "#E63329",
+//     avatarInitials: "DK",
+//     caseTag: "ENERGY / EV",
+//     caseTitle: "Smart Monitoring System",
+//     caseDesc:
+//       "ARM Cortex-M7 system with FreeRTOS tracking temperature, humidity, and air quality across zones via L2 managed switch, achieving 40% better power efficiency.",
+//     caseImage:
+//       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/climate_control/1.png",
+//     caseHref: "/case-studies/smart-monitoring-system",
+//   },
+//   {
+//     tab: "Microscopic Camera Control",
+//     logo: (
+//       <svg
+//         viewBox="0 0 180 36"
+//         xmlns="http://www.w3.org/2000/svg"
+//         aria-label="AeroTech"
+//         style={{ height: 36, width: "auto" }}
+//       >
+//         <path
+//           d="M18 4 L28 16 L18 28 L8 16 Z"
+//           fill="none"
+//           stroke="#0B5FA5"
+//           strokeWidth="2"
+//         />
+//         <circle cx="18" cy="16" r="4" fill="#0B5FA5" />
+//         <text
+//           x="36"
+//           y="23"
+//           fontFamily="sans-serif"
+//           fontSize="17"
+//           fontWeight="700"
+//           fill="#1C2A3A"
+//         >
+//           AeroTech
+//         </text>
+//       </svg>
+//     ),
+//     quote:
+//       "They understood DO-254 from day one and built it into the program rather than around it. Every design assurance artifact was integrated into the engineering workflow, not bolted on at the end. That single decision saved us weeks of audit prep and gave our certification authority full visibility throughout the project.",
+//     authorName: "Systems Director",
+//     authorRole: "Aerospace & Defense Avionics Contractor",
+//     avatarColor: "#374151",
+//     avatarInitials: "MS",
+//     caseTag: "AEROSPACE",
+//     caseTitle: "Microscopic Camera Control",
+//     caseDesc:
+//       "Stepper motor-driven focus and zoom system with high-resolution CMOS imaging, USB 3.0 and Ethernet streaming, and OLED status display for lab and inspection use.",
+//     caseImage:
+//       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/microscopic_camera/1.png",
+//     caseHref: "/case-studies/microscopic-camera-control",
+//   },
+//   {
+//     tab: "Industrial IoT Gateway",
+//     logo: (
+//       <svg
+//         viewBox="0 0 180 36"
+//         xmlns="http://www.w3.org/2000/svg"
+//         aria-label="IndustriLink"
+//         style={{ height: 36, width: "auto" }}
+//       >
+//         <rect
+//           x="2"
+//           y="10"
+//           width="16"
+//           height="16"
+//           rx="2"
+//           fill="none"
+//           stroke="#0B5FA5"
+//           strokeWidth="2"
+//         />
+//         <circle cx="10" cy="18" r="3" fill="#0B5FA5" />
+//         <path
+//           d="M18 18h4M24 14l4 4-4 4"
+//           stroke="#0B5FA5"
+//           strokeWidth="2"
+//           strokeLinecap="round"
+//           strokeLinejoin="round"
+//         />
+//         <text
+//           x="36"
+//           y="23"
+//           fontFamily="sans-serif"
+//           fontSize="15"
+//           fontWeight="700"
+//           fill="#1C2A3A"
+//         >
+//           IndustriLink
+//         </text>
+//       </svg>
+//     ),
+//     quote:
+//       "The gateway has been running on our factory floor for 18 months straight with zero field failures across more than forty deployed units. The EMC hardening and isolation strategy Qmax insisted on early in the design proved its worth in a brutally noisy industrial environment. It just keeps working, shift after shift.",
+//     authorName: "Head of IIoT",
+//     authorRole: "European Industrial Automation Firm",
+//     avatarColor: "#374151",
+//     avatarInitials: "TY",
+//     caseTag: "INDUSTRIAL",
+//     caseTitle: "Industrial IoT Gateway with POE",
+//     caseDesc:
+//       "POE+-powered multi-radio gateway aggregating LoRa, BLE, and CAN bus data to cloud, with 15 km LoRa range and 99.9% uplink accuracy for factory deployments.",
+//     caseImage: "/case-studies/OTT/4.png",
+//     caseHref: "/case-studies/industrial-iot-gateway-with-poe",
+//   },
+// ];
 
 const FAQ_ITEMS = [
   {
@@ -717,7 +717,11 @@ export default function HardwareDevelopmentServicesPage() {
       />
 
       {/* INDUSTRIES WE SERVE */}
-      <IndustriesSection industries={INDUSTRIES} slides={INDUSTRY_SLIDES} />
+      {/* <IndustriesSection industries={INDUSTRIES} slides={INDUSTRY_SLIDES} /> */}
+      <PCBIndustriesSection
+        industries={PCB_INDUSTRIES}
+        ctaLabel="Get a PCB Design Quote"
+      />
 
       {/* WHY CHOOSE QMAX */}
       <WhySection whyCards={WHY_CARDS} />
@@ -734,7 +738,7 @@ export default function HardwareDevelopmentServicesPage() {
       </div> */}
 
       {/* CUSTOMER SUCCESS STORIES */}
-      <TestimonialsSection testimonials={TESTIMONIALS} />
+      {/* <TestimonialsSection testimonials={TESTIMONIALS} /> */}
 
       {/* CTA BANNER */}
       <CTABannerSection />

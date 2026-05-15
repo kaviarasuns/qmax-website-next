@@ -99,9 +99,9 @@ const ServicesV2 = () => {
         <div className="mb-10 flex flex-col items-center text-center lg:mb-14">
           <h2
             id="services-v2-heading"
-            className="text-3xl font-light tracking-tight text-black sm:text-4xl lg:text-5xl"
+            className="text-3xl md:text-5xl font-light tracking-wide text-center text-black tracking-wide"
           >
-            Our <span className="font-semibold text-red-500">Services</span>
+            Our <span className="text-red-500">Services</span>
           </h2>
         </div>
 
@@ -122,72 +122,73 @@ const ServicesV2 = () => {
                   onMouseEnter={() => handleMouseEnter(idx)}
                   className="group relative block aspect-[5/4] h-full min-h-0 overflow-hidden rounded-2xl bg-neutral-900 shadow-[0_1px_3px_rgba(0,0,0,0.08)] outline-none transition-shadow duration-300 hover:shadow-[0_18px_40px_-12px_rgba(0,0,0,0.25)] focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#fafafa] sm:aspect-[4/3]"
                 >
-                {/* Background image */}
-                <div
-                  className={`absolute inset-0 bg-cover bg-center transition-transform duration-[1200ms] ease-out ${
-                    isActive ? "scale-[1.06]" : "scale-100"
-                  } group-hover:scale-[1.06]`}
-                  style={{ backgroundImage: `url(${service.image})` }}
-                  aria-hidden
-                />
+                  {/* Background image */}
+                  <div
+                    className={`absolute inset-0 bg-cover bg-center transition-transform duration-[1200ms] ease-out ${
+                      isActive ? "scale-[1.06]" : "scale-100"
+                    } group-hover:scale-[1.06]`}
+                    style={{ backgroundImage: `url(${service.image})` }}
+                    aria-hidden
+                  />
 
-                {/* Gradient overlay */}
-                <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/5"
-                  aria-hidden
-                />
+                  {/* Gradient overlay */}
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/5"
+                    aria-hidden
+                  />
 
-                {/* Active inset ring (does not affect layout) */}
-                <div
-                  className={`pointer-events-none absolute inset-0 rounded-2xl ring-2 ring-inset transition-colors duration-300 ${
-                    isActive ? "ring-red-500/80" : "ring-transparent"
-                  }`}
-                  aria-hidden
-                />
+                  {/* Active inset ring (does not affect layout) */}
+                  <div
+                    className={`pointer-events-none absolute inset-0 rounded-2xl ring-2 ring-inset transition-colors duration-300 ${
+                      isActive ? "ring-red-500/80" : "ring-transparent"
+                    }`}
+                    aria-hidden
+                  />
 
-                {/* Active soft glow */}
-                <div
-                  className={`pointer-events-none absolute -inset-px rounded-2xl transition-opacity duration-500 ${
-                    isActive ? "opacity-100" : "opacity-0"
-                  }`}
-                  style={{
-                    boxShadow: "0 0 0 1px rgba(233,75,60,0.0), 0 18px 50px -10px rgba(233,75,60,0.45)",
-                  }}
-                  aria-hidden
-                />
+                  {/* Active soft glow */}
+                  <div
+                    className={`pointer-events-none absolute -inset-px rounded-2xl transition-opacity duration-500 ${
+                      isActive ? "opacity-100" : "opacity-0"
+                    }`}
+                    style={{
+                      boxShadow:
+                        "0 0 0 1px rgba(233,75,60,0.0), 0 18px 50px -10px rgba(233,75,60,0.45)",
+                    }}
+                    aria-hidden
+                  />
 
-                {/* Content */}
-                <div className="relative flex h-full flex-col justify-between p-5 lg:p-5">
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="text-base font-bold leading-tight tracking-tight text-white drop-shadow-sm sm:text-lg lg:text-base xl:text-lg">
-                      {service.topic}
-                    </h3>
-                    <span
-                      aria-hidden
-                      className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
-                        isActive
-                          ? "border-red-400/70 bg-red-500/20 text-white"
-                          : "border-white/30 bg-white/10 text-white/80"
-                      } group-hover:border-red-400/70 group-hover:bg-red-500/20 group-hover:text-white`}
-                    >
-                      <ArrowUpRight className="h-4 w-4" />
-                    </span>
+                  {/* Content */}
+                  <div className="relative flex h-full flex-col justify-between p-5 lg:p-5">
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="text-base font-bold leading-tight tracking-tight text-white drop-shadow-sm sm:text-lg lg:text-base xl:text-lg">
+                        {service.topic}
+                      </h3>
+                      <span
+                        aria-hidden
+                        className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                          isActive
+                            ? "border-red-400/70 bg-red-500/20 text-white"
+                            : "border-white/30 bg-white/10 text-white/80"
+                        } group-hover:border-red-400/70 group-hover:bg-red-500/20 group-hover:text-white`}
+                      >
+                        <ArrowUpRight className="h-4 w-4" />
+                      </span>
+                    </div>
+
+                    <div className="space-y-3">
+                      <p className="text-xs leading-relaxed text-white/85 sm:text-[13px]">
+                        {service.description}
+                      </p>
+                      <span
+                        className={`inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 ${
+                          isActive ? "text-red-300" : "text-white/90"
+                        } group-hover:text-red-300`}
+                      >
+                        Know more
+                        <ArrowUpRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </span>
+                    </div>
                   </div>
-
-                  <div className="space-y-3">
-                    <p className="text-xs leading-relaxed text-white/85 sm:text-[13px]">
-                      {service.description}
-                    </p>
-                    <span
-                      className={`inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 ${
-                        isActive ? "text-red-300" : "text-white/90"
-                      } group-hover:text-red-300`}
-                    >
-                      Know more
-                      <ArrowUpRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </span>
-                  </div>
-                </div>
                 </Link>
               </motion.div>
             );

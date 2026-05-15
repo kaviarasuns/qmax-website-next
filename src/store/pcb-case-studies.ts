@@ -849,12 +849,13 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/typheon/4.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/typheon/Typhoon_SIG910.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/typheon/Typhoon_SIG78.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/typheon/5.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/typheon/Typhoon_SIG34.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/typheon/Typhoon_SIG123.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/typheon/6.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/typheon/Typhoon_SIG567.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/typheon/Typhoon_SIG12_WSS.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/typheon/Typhoon_SIG456.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/typheon/Typhoon_SIG910.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/typheon/Typhoon_SIGALL.png",
     ],
     rotatedImages: {},
     features: [

@@ -97,7 +97,7 @@ export default function StackReveal({
       <h1 className="text-3xl md:text-5xl font-light tracking-wide text-center text-black tracking-wide">
         Design To <span className="text-red-500">Manufacturing</span>
       </h1>
-      <div className="py-14"></div>
+      <div className="py-9"></div>
       {/* <h2 className="mb-3.5 text-balance text-[clamp(1.75rem,3.4vw,2.75rem)] font-extrabold tracking-[-0.02em] text-[#0e1116]">
         {title}
       </h2> */}
