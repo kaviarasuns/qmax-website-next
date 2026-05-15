@@ -14,7 +14,7 @@ type Service = {
 
 const services: Service[] = [
   {
-    topic: "Hardware Design",
+    topic: "Hardware Design Services",
     image:
       "https://framerusercontent.com/images/xZdrZACUdNYgULp5M3m2BcUhBI.png",
     description:
@@ -22,21 +22,21 @@ const services: Service[] = [
     href: "/hardware-development-services",
   },
   {
-    topic: "Firmware Development",
+    topic: "Embedded Systems Development Services",
     image: "https://framerusercontent.com/images/8tZqdkd46foyx5TeIzPw8YhbA.png",
     description:
       "Program low-level code to bring up boards, handle protocols, and control hardware.",
     href: "/embedded-design-services",
   },
   {
-    topic: "PCB Design",
+    topic: "PCB Design Services",
     image:
       "https://framerusercontent.com/images/7CnP7xCaEUuDiSvOyIyHs36cw4I.png",
     description: "Design and layout production-ready printed circuit boards.",
     href: "/pcb-design",
   },
   {
-    topic: "Industrial Design & Mechanical",
+    topic: "Industrial Design & Mechanical Services",
     image:
       "https://framerusercontent.com/images/kTPtpORfLevVY4rDMRwjeXD72sc.png",
     description:
