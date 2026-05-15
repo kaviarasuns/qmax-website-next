@@ -255,7 +255,7 @@ export function CapabilitiesTabs({
               type="button"
               role="tab"
               aria-selected={activeIdx === i}
-              className={`relative flex cursor-pointer items-center gap-[10px] whitespace-nowrap bg-transparent px-4 pb-[17px] pt-[15px] text-[14px] font-medium leading-[1.35] text-black transition-colors duration-200 ${
+              className={`group relative flex cursor-pointer items-center gap-[10px] whitespace-nowrap bg-transparent px-4 pb-[17px] pt-[15px] text-[14px] font-medium leading-[1.35] text-black transition-colors duration-200 hover:text-[#F33117] ${
                 activeIdx === i ? "font-bold" : ""
               }`}
               onClick={() => onTabClick(i)}
@@ -263,7 +263,9 @@ export function CapabilitiesTabs({
               {cap.tabIcon ? (
                 <span
                   className={`h-[18px] w-[18px] shrink-0 transition-colors duration-200 ${
-                    activeIdx === i ? "text-[#F33117]" : "text-black"
+                    activeIdx === i
+                      ? "text-[#F33117]"
+                      : "text-black group-hover:text-[#F33117]"
                   }`}
                 >
                   {cap.tabIcon}

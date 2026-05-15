@@ -7,7 +7,7 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 import "../../components/hardware-design.css";
 import { HeroConceptToSilicon } from "@/components/services-cmp/HeroConceptToSilicon";
 import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
-import { PCB_INDUSTRIES } from "@/store/pcb-industries";
+import { HARDWARE_INDUSTRIES } from "@/store/hardware-industries";
 
 export const metadata: Metadata = {
   title: "Hardware Development Services | Qmax",
@@ -719,7 +719,7 @@ export default function HardwareDevelopmentServicesPage() {
       {/* INDUSTRIES WE SERVE */}
       {/* <IndustriesSection industries={INDUSTRIES} slides={INDUSTRY_SLIDES} /> */}
       <PCBIndustriesSection
-        industries={PCB_INDUSTRIES}
+        industries={HARDWARE_INDUSTRIES}
         headingPrefix="Hardware Development"
         ctaLabel="Get a Hardware Design Quote"
       />
