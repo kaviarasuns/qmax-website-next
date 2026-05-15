@@ -24,11 +24,13 @@ export interface PCBIndustry {
 
 interface PCBIndustriesSectionProps {
   industries: PCBIndustry[];
+  headingPrefix?: string;
   ctaLabel?: string;
 }
 
 export function PCBIndustriesSection({
   industries,
+  headingPrefix = "PCB Design",
   ctaLabel = "Learn more",
 }: PCBIndustriesSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -59,7 +61,8 @@ export function PCBIndustriesSection({
         {/* Heading */}
         <div className="mb-12 text-center">
           <h2 className="m-0 text-center text-4xl md:text-5xl font-light tracking-wide text-black">
-            PCB Design Across <span className="text-brand-500">Industries</span>
+            {headingPrefix} Across{" "}
+            <span className="text-brand-500">Industries</span>
           </h2>
         </div>
 

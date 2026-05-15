@@ -160,23 +160,23 @@ const ServicesV2 = () => {
                   {/* Content */}
                   <div className="relative flex h-full flex-col justify-between p-5 lg:p-5">
                     <div className="flex items-start justify-between gap-2">
-                      <h3 className="text-base font-bold leading-tight tracking-tight text-white drop-shadow-sm sm:text-lg lg:text-base xl:text-lg">
+                      <h3 className="text-lg !font-bold leading-tight tracking-tight text-white drop-shadow-sm sm:text-xl lg:text-xl xl:text-3xl">
                         {service.topic}
                       </h3>
                       <span
                         aria-hidden
                         className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
                           isActive
-                            ? "border-red-400/70 bg-red-500/20 text-white"
+                            ? "border-red-500 bg-red-600/35 text-white"
                             : "border-white/30 bg-white/10 text-white/80"
-                        } group-hover:border-red-400/70 group-hover:bg-red-500/20 group-hover:text-white`}
+                        } group-hover:border-red-500 group-hover:bg-red-600/35 group-hover:text-white`}
                       >
-                        <ArrowUpRight className="h-4 w-4" />
+                        <ArrowUpRight className="h-4 w-4 transition-colors duration-300" />
                       </span>
                     </div>
 
                     <div className="space-y-3">
-                      <p className="text-xs leading-relaxed text-white/85 sm:text-[13px]">
+                      <p className="text-sm leading-relaxed text-white/85 sm:text-base lg:text-base xl:text-lg">
                         {service.description}
                       </p>
                       <span

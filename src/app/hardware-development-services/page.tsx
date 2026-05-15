@@ -720,7 +720,8 @@ export default function HardwareDevelopmentServicesPage() {
       {/* <IndustriesSection industries={INDUSTRIES} slides={INDUSTRY_SLIDES} /> */}
       <PCBIndustriesSection
         industries={PCB_INDUSTRIES}
-        ctaLabel="Get a PCB Design Quote"
+        headingPrefix="Hardware Development"
+        ctaLabel="Get a Hardware Design Quote"
       />
 
       {/* WHY CHOOSE QMAX */}
