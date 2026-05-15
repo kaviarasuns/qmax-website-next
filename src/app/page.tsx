@@ -17,7 +17,9 @@ export default function Home() {
       {/* <ServicesV4Stacked lockStackingOnProgrammaticScroll={false} /> */}
       <ServicesV2 />
       <IndustriesWeServeV3 />
+      <div className="mb-24"></div>
       <InsideOutV2 />
+
       <ServicesSection />
       <FooterV2 />
     </>
