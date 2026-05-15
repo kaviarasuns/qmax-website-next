@@ -108,11 +108,14 @@ export default function InsideOutV2() {
     <div className="h-full w-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div
         ref={sectionRef}
-        className="bg-white w-full max-w-7xl rounded-2xl border border-zinc-200 overflow-hidden"
+        className="bg-white w-full max-w-7xl rounded-2xl overflow-hidden"
       >
+      <h2 className="text-center text-3xl md:text-5xl font-light tracking-wide px-6 pt-8 pb-4 lg:pt-10 lg:pb-6">
+        Why Qmax <span className="text-red-500">Systems</span>
+      </h2>
       {/*Main Section*/}
-      <div className="flex flex-col lg:flex-row items-stretch gap-0 z-[1]">
-        <div className="w-full lg:w-[60%] flex flex-col items-center px-6 lg:pl-12 lg:pr-2 py-8 lg:py-10">
+      <div className="flex flex-col lg:flex-row lg:items-center items-stretch gap-0 z-[1]">
+        <div className="w-full lg:w-[60%] flex flex-col items-center justify-center px-6 lg:pl-12 lg:pr-2 py-8 lg:py-10">
           <div
             className="relative w-full lg:-translate-x-12 xl:-translate-x-20"
             style={{ maxWidth: "100%" }}
@@ -143,12 +146,8 @@ export default function InsideOutV2() {
             </button>
           )}
         </div>
-        <div className="relative z-10 w-full lg:w-[40%] lg:self-center flex flex-col px-6 lg:pl-2 lg:pr-12 py-6 lg:py-4 lg:-ml-16 xl:-ml-24 bg-white lg:bg-transparent">
-          <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-6">
-            Why Qmax <span className="text-red-500">Systems</span>
-          </h2>
-
-          <div className="grid gap-0 flex-1">
+        <div className="relative z-10 w-full lg:w-[40%] flex flex-col justify-center px-6 lg:pl-2 lg:pr-12 py-6 lg:py-8 lg:-ml-16 xl:-ml-24 bg-white lg:bg-transparent">
+          <div className="grid w-full max-w-lg mx-auto gap-0">
             {reasons.map((reason, index) => (
               <div
                 key={index}

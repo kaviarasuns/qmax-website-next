@@ -115,7 +115,7 @@ export default function StackReveal({
 
   return (
     <section
-      className={`border-t border-[#e6e7eb] bg-[#fafafa] px-[6vw] py-24 max-md:px-5 ${className}`}
+      className={`border-t border-[#e6e7eb] px-[6vw] py-24 max-md:px-5 ${className}`}
     >
       {/* <div className="mb-3 flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.18em] text-[#E94B3C]">
         {eyebrow}
@@ -144,7 +144,7 @@ export default function StackReveal({
           <div
             key={item.step}
             tabIndex={0}
-            className={`group relative flex min-h-0 flex-1 cursor-pointer flex-col justify-end overflow-hidden p-6 text-white outline-none transition-[flex-grow,flex-basis,padding-bottom] duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] hover:flex-[5] hover:pb-20 focus-visible:ring-2 focus-visible:ring-[#E94B3C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fafafa] focus-within:flex-[5] focus-within:pb-20 max-[1100px]:min-h-[140px] max-[1100px]:flex-none max-[1100px]:hover:flex-none max-[1100px]:focus-within:flex-none max-[1100px]:hover:pb-6 max-[1100px]:focus-within:pb-6 ${isAutoExpanded ? "is-auto-expanded flex-[5] pb-20 max-[1100px]:pb-6" : ""}`}
+            className={`group relative flex min-h-0 flex-1 cursor-pointer flex-col justify-end overflow-hidden p-6 text-white outline-none transition-[flex-grow,flex-basis,padding-bottom] duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] hover:flex-[5] hover:pb-20 focus-visible:ring-2 focus-visible:ring-[#E94B3C] focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-within:flex-[5] focus-within:pb-20 max-[1100px]:min-h-[140px] max-[1100px]:flex-none max-[1100px]:hover:flex-none max-[1100px]:focus-within:flex-none max-[1100px]:hover:pb-6 max-[1100px]:focus-within:pb-6 ${isAutoExpanded ? "is-auto-expanded flex-[5] pb-20 max-[1100px]:pb-6" : ""}`}
           >
             <div
               className={`absolute inset-0 bg-cover bg-center transition-[transform,filter] duration-500 ease-out ${item.fallbackClassName} scale-110 brightness-[0.55] group-hover:scale-100 group-hover:brightness-[0.85] group-focus-within:scale-100 group-focus-within:brightness-[0.85] group-[.is-auto-expanded]:scale-100 group-[.is-auto-expanded]:brightness-[0.85]`}

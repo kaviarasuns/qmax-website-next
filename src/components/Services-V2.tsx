@@ -90,7 +90,7 @@ const ServicesV2 = () => {
 
   return (
     <section
-      className="w-full bg-[#fafafa] py-16 sm:py-20 lg:py-24"
+      className="w-full py-16 sm:py-20 lg:py-24"
       onMouseLeave={handleSectionMouseLeave}
       aria-labelledby="services-v2-heading"
     >
@@ -120,7 +120,7 @@ const ServicesV2 = () => {
                   href={service.href}
                   aria-label={`Learn more about ${service.topic}`}
                   onMouseEnter={() => handleMouseEnter(idx)}
-                  className="group relative block aspect-[5/4] h-full min-h-0 overflow-hidden rounded-2xl bg-neutral-900 shadow-[0_1px_3px_rgba(0,0,0,0.08)] outline-none transition-shadow duration-300 hover:shadow-[0_18px_40px_-12px_rgba(0,0,0,0.25)] focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#fafafa] sm:aspect-[4/3]"
+                  className="group relative block aspect-[5/4] h-full min-h-0 overflow-hidden rounded-2xl bg-neutral-900 shadow-[0_1px_3px_rgba(0,0,0,0.08)] outline-none transition-shadow duration-300 hover:shadow-[0_18px_40px_-12px_rgba(0,0,0,0.25)] focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:aspect-[4/3]"
                 >
                   {/* Background image */}
                   <div
