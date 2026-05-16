@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { mechanicalCaseStudiesData } from "@/store/mechanical-case-studies";
 import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
+import { MechanicalIndustrialHero } from "@/components/services-cmp/MechanicalIndustrialHero";
+import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
+import { MECHANICAL_INDUSTRIES } from "@/store/mechanical-industries";
 
 const CAPABILITIES = [
   {
@@ -245,6 +247,16 @@ const WHY_CARDS = [
   },
 ];
 
+const MECHANICAL_INDUSTRIAL_HERO = {
+  videoSrc:
+    "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_&_Mechnical.mp4",
+  title: "Mechanical & Industrial Design Services.",
+  subtitle:
+    "At Qmax Systems, our mechanical and industrial design services are specifically tailored for high-stakes electronics, moving beyond generic CAD modeling to provide deep integration between hardware, thermal physics, and manufacturing realities.",
+  ctaHref: "/hardware-development-services/contact",
+  ctaLabel: "Talk to Our Engineers",
+};
+
 const mechanicalIndustrialCaseStudies = mechanicalCaseStudiesData
   .slice(0, 4)
   .map((caseStudy) => ({
@@ -265,33 +277,17 @@ export const metadata: Metadata = {
 export default function MechanicalIndustrialDesignPage() {
   return (
     <main className="text-zinc-900">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-14 pb-12 lg:pt-20 lg:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(24,24,27,0.08),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(82,82,91,0.08),transparent_40%)]" />
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          {/* Full-width Image Container */}
-          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-zinc-200 group">
-            <Image
-              src="/Mechanical_Industrial_Design_Services.jpg"
-              alt="Mechanical and Industrial Design Services - Qmax Systems"
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-100/60 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
-              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
-                MECHANICAL &amp; INDUSTRIAL DESIGN
-              </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
-                Mechanical &amp; Industrial
-                <br className="hidden md:block" />
-                Design Services.
-              </h1>
-            </div>
-          </div>
-          <div className="mt-10 grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_minmax(280px,42%)] lg:items-stretch lg:gap-12">
+      <MechanicalIndustrialHero
+        videoSrc={MECHANICAL_INDUSTRIAL_HERO.videoSrc}
+        title={MECHANICAL_INDUSTRIAL_HERO.title}
+        subtitle={MECHANICAL_INDUSTRIAL_HERO.subtitle}
+        ctaHref={MECHANICAL_INDUSTRIAL_HERO.ctaHref}
+        ctaLabel={MECHANICAL_INDUSTRIAL_HERO.ctaLabel}
+      />
+
+      <section className="py-14 lg:py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_minmax(280px,42%)] lg:items-stretch lg:gap-12">
             <div className="max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
               <p>
                 At Qmax Systems, we understand that an electronics product is
@@ -322,7 +318,7 @@ export default function MechanicalIndustrialDesignPage() {
                 your overall system.
               </p>
             </div>
-            <div className="relative overflow-hidden border border-zinc-200 bg-zinc-100 lg:h-full">
+            <div className="relative overflow-hidden lg:h-full">
               <video
                 src="https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4"
                 className="aspect-video w-full object-cover lg:aspect-auto lg:h-full"
@@ -341,6 +337,12 @@ export default function MechanicalIndustrialDesignPage() {
       <CapabilitiesSection
         capabilities={CAPABILITIES}
         getInTouchHref="/hardware-development-services/contact"
+      />
+
+      <PCBIndustriesSection
+        industries={MECHANICAL_INDUSTRIES}
+        headingPrefix="Mechanical Development"
+        ctaLabel="Get a Mechanical Design Quote"
       />
 
       <WorkflowSection
