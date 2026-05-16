@@ -7,6 +7,7 @@ type Sub = {
   label: ReactNode;
   icon: ReactNode;
   tall?: boolean;
+  wide?: boolean;
 };
 
 type Phase = {
@@ -470,6 +471,7 @@ const PHASES: Phase[] = [
     rows: [
       [
         {
+          wide: true,
           label: (
             <>
               Environmental
@@ -612,6 +614,7 @@ const PHASES: Phase[] = [
           ),
         },
         {
+          wide: true,
           label: (
             <>
               Production
@@ -1118,6 +1121,15 @@ export function HeroConceptToSilicon({
           justify-content: center;
           gap: 10px;
         }
+        .cts-sub-row > .cts-sub.wide {
+          flex: 1.35;
+          padding-left: 2px;
+          padding-right: 2px;
+        }
+        .cts-sub.wide .cts-sub-label {
+          font-size: 11px;
+          letter-spacing: -0.005em;
+        }
         .cts-sub-icon {
           width: 46px;
           height: 46px;
@@ -1281,7 +1293,9 @@ function SubItem({
 }) {
   return (
     <>
-      <div className={`cts-sub${sub.tall ? " tall" : ""}`}>
+      <div
+        className={`cts-sub${sub.tall ? " tall" : ""}${sub.wide ? " wide" : ""}`}
+      >
         <div className="cts-sub-icon">{sub.icon}</div>
         <div className="cts-sub-label">{sub.label}</div>
       </div>
