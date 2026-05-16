@@ -70,26 +70,30 @@ export function MechanicalIndustrialHero({
         return;
       }
 
-      const p2 = clamp((sy - vh) / vh, 0, 1);
-      const p2e = easeOutCubic(p2);
+      const p = clamp(sy / vh, 0, 1);
 
-      const h1Shift = -p2e * 100;
+      // Phase 1 (0 → 0.18): subtitle reveals within the first scroll step.
+      const sRaw = clamp(p / 0.18, 0, 1);
+      const sE = easeOutCubic(sRaw);
+      sub.style.opacity = sE.toFixed(4);
+      sub.style.transform = `translateY(${((1 - sE) * 24).toFixed(2)}px)`;
+      sub.style.pointerEvents = sE > 0.5 ? "auto" : "none";
+
+      // Phase 1 (0.04 → 0.24): CTA follows right behind the subtitle.
+      const cRaw = clamp((p - 0.04) / 0.2, 0, 1);
+      const cE = easeOutCubic(cRaw);
+      cta.style.opacity = cE.toFixed(4);
+      cta.style.transform = `translateY(${((1 - cE) * 24).toFixed(2)}px)`;
+      cta.style.pointerEvents = cE > 0.5 ? "auto" : "none";
+
+      // Phase 2 (0.15 → 0.5): once the copy has landed, drift the hero upward.
+      const hRaw = clamp((p - 0.15) / 0.35, 0, 1);
+      const hE = easeOutCubic(hRaw);
+      const h1Shift = -hE * 120;
       h1.style.transform = `translateY(${h1Shift.toFixed(2)}px)`;
 
       const h1Rect = h1.getBoundingClientRect();
       enterGroup.style.top = `${h1Rect.bottom + 24}px`;
-
-      const sRaw = clamp((p2 - 0.05) / 0.45, 0, 1);
-      const sE = easeOutCubic(sRaw);
-      sub.style.opacity = sE.toFixed(4);
-      sub.style.transform = `translateY(${((1 - sE) * 36).toFixed(2)}px)`;
-      sub.style.pointerEvents = sE > 0.5 ? "auto" : "none";
-
-      const cRaw = clamp((p2 - 0.3) / 0.45, 0, 1);
-      const cE = easeOutCubic(cRaw);
-      cta.style.opacity = cE.toFixed(4);
-      cta.style.transform = `translateY(${((1 - cE) * 36).toFixed(2)}px)`;
-      cta.style.pointerEvents = cE > 0.5 ? "auto" : "none";
 
       ticking = false;
     };

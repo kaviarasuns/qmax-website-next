@@ -244,7 +244,7 @@ export function CapabilitiesTabs({
       <div className="relative w-full px-6 max-[900px]:px-3" ref={wrapperRef}>
         <div
           className={`relative z-[1] flex w-max min-w-full ${
-            shouldCenterTabs ? "justify-center gap-8" : "justify-between"
+            shouldCenterTabs ? "justify-evenly" : "justify-between"
           }`}
           role="tablist"
           ref={tabBarRef}

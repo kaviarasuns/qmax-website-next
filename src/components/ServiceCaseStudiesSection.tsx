@@ -37,7 +37,7 @@ export default function ServiceCaseStudiesSection({
     >
       <div className="mx-auto w-full max-w-[1600px] px-4 md:px-6 lg:px-8">
         <div className="mb-12 border-b border-zinc-200/80 pb-6 dark:border-zinc-800/80">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="relative flex flex-col items-center gap-6 md:block">
             <div className="w-full text-center">
               <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.38em] text-[#F33117]">
                 {eyebrow}
@@ -62,7 +62,7 @@ export default function ServiceCaseStudiesSection({
             </div>
             <Link
               href={moreHref}
-              className="inline-flex items-center justify-center self-start whitespace-nowrap rounded-full border border-zinc-300 bg-white px-7 py-3 text-xs font-black uppercase tracking-[0.24em] text-zinc-800 transition-all hover:border-[#F33117] hover:text-[#F33117] md:self-auto dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-zinc-300 bg-white px-7 py-3 text-xs font-black uppercase tracking-[0.24em] text-zinc-800 transition-all hover:border-[#F33117] hover:text-[#F33117] md:absolute md:bottom-0 md:right-0 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
             >
               {moreLabel}
             </Link>
