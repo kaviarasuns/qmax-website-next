@@ -2,6 +2,7 @@
 
 import "../../components/hardware-design.css";
 import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
+import { PcbMainHero } from "@/components/services-cmp/pcb-main-hero";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
@@ -785,36 +786,7 @@ const FAQ_ITEMS = [
 export default function HardwareDevelopmentServicesComponentV2() {
   return (
     <div className="hd-root">
-      {/* HERO */}
-      <section
-        className="relative w-full min-h-screen bg-cover bg-center flex items-center overflow-hidden after:absolute after:inset-0 after:bg-black/45 after:pointer-events-none after:content-['']"
-        id="hero"
-        style={{
-          backgroundImage:
-            "linear-gradient(135deg, rgba(11,95,165,0.45), rgba(14,20,27,0.55)), url('/pcb-design/images/image1.jpg')",
-        }}
-      >
-        <div className="relative z-[2] w-full py-20 px-16 max-w-[1400px] mx-auto max-[900px]:py-16 max-[900px]:px-6">
-          <div className="max-w-[820px]">
-            <h1 className="text-white mb-6 font-bold leading-[1.1] tracking-[-0.01em] text-balance text-[clamp(36px,5vw,60px)]">
-              PCB Design Services: A Multi-Physics Engineering Discipline
-            </h1>
-            <p className="text-white/[0.92] text-xl leading-[1.6] font-normal mb-10 max-w-[720px]">
-              <strong>Engineering Beyond Connectivity.</strong> Qmax Systems
-              treats PCB design as a critical engineering discipline, not just
-              interconnection. Our experts deliver reliable, first-time-right
-              PCB layouts optimized for performance, compliance, and
-              manufacturability.
-            </p>
-            <a
-              className="bg-[#E63329] text-white font-semibold text-base tracking-[0.04em] py-[14px] px-8 rounded-md cursor-pointer transition-colors duration-150 no-underline inline-block hover:bg-[#C72A21] hover:text-white hover:no-underline"
-              href="/pcb-design/contact"
-            >
-              TALK TO OUR ENGINEER
-            </a>
-          </div>
-        </div>
-      </section>
+      <PcbMainHero />
 
       {/* CORE CAPABILITIES */}
       <CapabilitiesSection capabilities={CAPABILITIES} />
@@ -859,4 +831,36 @@ export default function HardwareDevelopmentServicesComponentV2() {
       /> */}
     </div>
   );
+}
+
+{
+  /* <section
+className="relative w-full min-h-screen bg-cover bg-center flex items-center overflow-hidden after:absolute after:inset-0 after:bg-black/45 after:pointer-events-none after:content-['']"
+id="hero"
+style={{
+  backgroundImage:
+    "linear-gradient(135deg, rgba(11,95,165,0.45), rgba(14,20,27,0.55)), url('/pcb-design/images/image1.jpg')",
+}}
+>
+<div className="relative z-[2] w-full py-20 px-16 max-w-[1400px] mx-auto max-[900px]:py-16 max-[900px]:px-6">
+  <div className="max-w-[820px]">
+    <h1 className="text-white mb-6 font-bold leading-[1.1] tracking-[-0.01em] text-balance text-[clamp(36px,5vw,60px)]">
+      PCB Design Services: A Multi-Physics Engineering Discipline
+    </h1>
+    <p className="text-white/[0.92] text-xl leading-[1.6] font-normal mb-10 max-w-[720px]">
+      <strong>Engineering Beyond Connectivity.</strong> Qmax Systems
+      treats PCB design as a critical engineering discipline, not just
+      interconnection. Our experts deliver reliable, first-time-right
+      PCB layouts optimized for performance, compliance, and
+      manufacturability.
+    </p>
+    <a
+      className="bg-[#E63329] text-white font-semibold text-base tracking-[0.04em] py-[14px] px-8 rounded-md cursor-pointer transition-colors duration-150 no-underline inline-block hover:bg-[#C72A21] hover:text-white hover:no-underline"
+      href="/pcb-design/contact"
+    >
+      TALK TO OUR ENGINEER
+    </a>
+  </div>
+</div>
+</section> */
 }
