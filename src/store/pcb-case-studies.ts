@@ -60,7 +60,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/alphion/ALPHION-AOLT-PR1_SIG23.webp",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG23.svg",
     ],
-    enlargedImages: { 2: 1.1, 3: 0.9, 5: 1.1, 7: 1.1 },
+    enlargedImages: { 2: 1.0, 5: 1.1, 7: 1.1 },
     features: [
       "IoT gateway main board",
       "Multiple wireless protocol support",

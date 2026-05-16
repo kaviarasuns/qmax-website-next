@@ -549,6 +549,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "/case-studies/embedded/HIPPACK2/1.1.svg",
       "/case-studies/embedded/HIPPACK2/1.2.svg",
     ],
+    rotatedImages: { 6: 90, 7: 90 },
+    enlargedImages: { 6: 1.3, 7: 1.3 },
     features: [
       "Multi-protocol wireless aggregation",
       "Advanced mesh networking",
@@ -779,6 +781,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/femtofarad_level_capacitance/1.3.png",
     ],
+    rotatedImages: {},
+    enlargedImages: { 4: 1.5 },
     features: [
       "High-precision motion control",
       "Real-time servo control",
@@ -916,6 +920,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rugged_industrial_io_board/1.3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rugged_industrial_io_board/1.1.png",
     ],
+    enlargedImages: { 2: 1.3 },
     features: [
       "Digital and analog IO",
       "Industrial protocol support",
@@ -1469,7 +1474,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/LUCAS TVS_PR1_TB.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/LUCAS TVS_PR1_TOP.svg",
     ],
-    rotatedImages: {},
+    rotatedImages: { 5: 90, 6: 90, 7: 90 },
+    enlargedImages: { 5: 1.7, 6: 1.7, 7: 1.7 },
     features: [
       "Low-cost EV motor control platform",
       "BLDC motor driver integration",
