@@ -3,8 +3,8 @@ import { CaseStudy } from "../../types/case-study";
 // ─── PCB Design ───────────────────────────────────────────────────────────────
 export const pcbCaseStudiesData: CaseStudy[] = [
   {
-    id: "medical-sensing-board",
-    title: "Innovide",
+    id: "ai-gpu-expansion-chassis-motherboard",
+    title: "AI GPU Expansion Chassis Motherboard",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG123.svg",
@@ -94,8 +94,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "high-speed-data-interface",
-    title: "High-Speed Data Interface",
+    id: "pcie-gen5-cpo-board",
+    title: "PCIe Gen5 CPO Board",
     category: "PCB Design",
     images: [
       "/case-studies/PCB/PCB-0541/PCB-0541-00_BRD_PR_SIG12.svg",
@@ -136,8 +136,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "portable-ev-charger-pcb",
-    title: "Industrial Controller",
+    id: "ultra-low-cost-bldc-motor-controller-for-evs",
+    title: "Ultra Low Cost BLDC motor controller for EVs",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/LUCAS TVS_PR1_BOT.svg",
@@ -179,8 +179,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "obd",
-    title: "OBD",
+    id: "smart-obd2-device",
+    title: "Smart OBD2 Device",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_BOT.svg",
@@ -222,8 +222,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "ubihub",
-    title: "Ubihub",
+    id: "qualcomm-wifi-6-triband-router",
+    title: "Qualcomm WIFI 6 TriBand Router",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/2.png",
@@ -397,8 +397,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "stator-coil",
-    title: "Stator Coil",
+    id: "planar-motor",
+    title: "Planar Motor",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/stator_coil/STATOR-COIL-LAYER12.svg",
@@ -482,8 +482,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "energy-meter",
-    title: "Energy Meter",
+    id: "3-phase-smart-energy-meter",
+    title: "3 phase Smart Energy Meter",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/energy_meter/ENERGY_METER_BOT_PR1.svg",
@@ -665,8 +665,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "lightning",
-    title: "Lightning",
+    id: "qualcomm-wifi4-routers",
+    title: "Qualcomm WIFI4 Routers",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lightning/LIGHTNING-PR1_TOP.svg",
@@ -708,8 +708,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "lsr",
-    title: "LSR Board",
+    id: "digital-stethoscope",
+    title: "Digital Stethoscope",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LSR/P01186LS7_PR1_BOT.svg",

@@ -4,9 +4,10 @@ export interface ServiceCaseStudy {
   link: string;
   category?: string;
   summary?: string;
+  imageRotation?: number;
 }
 
-export const hardwareCaseStudies: ServiceCaseStudy[] = [
+const hardwareCaseStudies: ServiceCaseStudy[] = [
   {
     title: "Industrial Temperature Control System",
     image: "/case-studies/BLUECOLD/1.png",
@@ -35,11 +36,11 @@ export const hardwareCaseStudies: ServiceCaseStudy[] = [
   },
 ];
 
-export const pcbCaseStudies: ServiceCaseStudy[] = [
+const pcbCaseStudies: ServiceCaseStudy[] = [
   {
-    title: "Industrial Controller",
+    title: "Ultra Low Cost BLDC motor controller for EVs",
     image: "/ott/CHARA-top.svg",
-    link: "/case-studies/portable-ev-charger-pcb",
+    link: "/case-studies/ultra-low-cost-bldc-motor-controller-for-evs",
     category: "development",
     summary:
       "Production-grade industrial control PCB developed for reliable operation in demanding field environments.",
@@ -62,7 +63,7 @@ export const pcbCaseStudies: ServiceCaseStudy[] = [
   },
 ];
 
-export const embeddedCaseStudies: ServiceCaseStudy[] = [
+const embeddedCaseStudies: ServiceCaseStudy[] = [
   {
     title: "Industrial Temperature Control System",
     image: "/case-studies/BLUECOLD/1.png",
@@ -89,7 +90,7 @@ export const embeddedCaseStudies: ServiceCaseStudy[] = [
   },
 ];
 
-export const mechanicalCaseStudies: ServiceCaseStudy[] = [
+const mechanicalCaseStudies: ServiceCaseStudy[] = [
   {
     title: "Manpack Communication Equipment",
     image:
@@ -119,7 +120,7 @@ export const mechanicalCaseStudies: ServiceCaseStudy[] = [
   },
 ];
 
-export const industrialDesignCaseStudies: ServiceCaseStudy[] = [
+const industrialDesignCaseStudies: ServiceCaseStudy[] = [
   {
     title: "Industrial Automation",
     image: "/industrial_design_case_studies/product_1.png",
@@ -146,7 +147,7 @@ export const industrialDesignCaseStudies: ServiceCaseStudy[] = [
   },
 ];
 
-export const mechanicalIndustrialCaseStudies: ServiceCaseStudy[] = [
+const mechanicalIndustrialCaseStudies: ServiceCaseStudy[] = [
   {
     title: "CapServe Cell Sensor",
     image: "/case-studies/CAPSERVE/CAPES_CELL_SENSOR_20_APR_2026.1.png",

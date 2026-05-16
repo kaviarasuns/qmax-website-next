@@ -27,10 +27,10 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/automotive.png",
     relatedCaseStudies: [
       {
-        title: "Ubihub",
+        title: "Qualcomm WIFI 6 TriBand Router",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/2.png",
-        href: "/case-studies/ubihub",
+        href: "/case-studies/qualcomm-wifi-6-triband-router",
       },
       {
         title: "Rugged OBD",
@@ -39,10 +39,10 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
         href: "/case-studies/rugged-obd",
       },
       {
-        title: "Lightning",
+        title: "Qualcomm WIFI4 Routers",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lightning/LIGHTNING-PR1_TOP.svg",
-        href: "/case-studies/lightning",
+        href: "/case-studies/qualcomm-wifi4-routers",
       },
     ],
   },
@@ -70,10 +70,10 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/medical.png",
     relatedCaseStudies: [
       {
-        title: "Innovide",
+        title: "AI GPU Expansion Chassis Motherboard",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG123.svg",
-        href: "/case-studies/medical-sensing-board",
+        href: "/case-studies/ai-gpu-expansion-chassis-motherboard",
         rotation: 90,
       },
       {
@@ -114,17 +114,17 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/aerospace.png",
     relatedCaseStudies: [
       {
-        title: "OBD",
+        title: "Smart OBD2 Device",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_BOT.svg",
-        href: "/case-studies/obd",
+        href: "/case-studies/smart-obd2-device",
         rotation: 90,
       },
       {
-        title: "LSR Board",
+        title: "Digital Stethoscope",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LSR/P01186LS7_PR1_TOP.svg",
-        href: "/case-studies/lsr",
+        href: "/case-studies/digital-stethoscope",
       },
       {
         title: "LBM",
@@ -164,10 +164,10 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
         href: "/case-studies/arc-detector",
       },
       {
-        title: "Energy Meter",
+        title: "3 phase Smart Energy Meter",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/energy_meter/ENERGY_METER_BOT_PR1.svg",
-        href: "/case-studies/energy-meter",
+        href: "/case-studies/3-phase-smart-energy-meter",
         rotation: 90,
       },
       {
@@ -209,9 +209,9 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
         href: "/case-studies/fedarant-pcb-top-layer",
       },
       {
-        title: "High-Speed Data Interface",
+        title: "PCIe Gen5 CPO Board",
         image: "/case-studies/PCB/PCB-0541/PCB-0541-00_BRD_PR_SIG12.svg",
-        href: "/case-studies/high-speed-data-interface",
+        href: "/case-studies/pcie-gen5-cpo-board",
       },
       {
         title: "IoT Gateway PCB",
@@ -245,17 +245,17 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/industry.png",
     relatedCaseStudies: [
       {
-        title: "Industrial Controller",
+        title: "Ultra Low Cost BLDC motor controller for EVs",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/LUCAS TVS_PR1_BOT.svg",
-        href: "/case-studies/portable-ev-charger-pcb",
+        href: "/case-studies/ultra-low-cost-bldc-motor-controller-for-evs",
         rotation: 90,
       },
       {
-        title: "Stator Coil",
+        title: "Planar Motor",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/stator_coil/STATOR-COIL-LAYER12.svg",
-        href: "/case-studies/stator-coil",
+        href: "/case-studies/planar-motor",
       },
       {
         title: "FE1600",

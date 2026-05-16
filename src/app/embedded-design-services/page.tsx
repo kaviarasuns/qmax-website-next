@@ -14,7 +14,18 @@ import {
   Wifi,
 } from "lucide-react";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { embeddedCaseStudies } from "@/data/service-case-studies";
+import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
+
+const embeddedCaseStudies = embeddedCaseStudiesData
+  .slice(0, 4)
+  .map((caseStudy) => ({
+    title: caseStudy.title,
+    image: caseStudy.images[0],
+    link: `/case-studies/${caseStudy.id}`,
+    category: "development",
+    summary: caseStudy.summary,
+    imageRotation: caseStudy.rotatedImages?.[0],
+  }));
 
 export default function EmbeddedDesignServicesPage() {
   return (

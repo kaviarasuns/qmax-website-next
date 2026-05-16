@@ -3,7 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { pcbCaseStudies } from "@/data/service-case-studies";
+import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+
+const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
+  title: caseStudy.title,
+  image: caseStudy.images[0],
+  link: `/case-studies/${caseStudy.id}`,
+  category: "development",
+  summary: caseStudy.summary,
+  imageRotation: caseStudy.rotatedImages?.[0],
+}));
 const projectExperience = [
   {
     title: "O-RAN Distributed Units (DU)",

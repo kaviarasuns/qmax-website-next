@@ -4,10 +4,20 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import FAQSection from "@/components/FAQSection";
-import { industrialDesignCaseStudies } from "@/data/service-case-studies";
+import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 import { industrialDesignFAQs } from "@/data/service-faqs";
 
 const THEME_STORAGE_KEY = "industrial-design-page-theme";
+const industrialDesignCaseStudies = industrialCaseStudiesData
+  .slice(0, 4)
+  .map((caseStudy) => ({
+    title: caseStudy.title,
+    image: caseStudy.images[0],
+    link: `/case-studies/${caseStudy.id}`,
+    category: "industrial",
+    summary: caseStudy.summary,
+    imageRotation: caseStudy.rotatedImages?.[0],
+  }));
 
 // export const metadata: Metadata = {
 //   title: "Industrial Design Services | Qmax Systems",

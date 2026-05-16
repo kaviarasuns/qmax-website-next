@@ -78,6 +78,7 @@ export default function ServiceCaseStudiesSection({
               link={study.link}
               category={study.category}
               summary={study.summary}
+              imageRotation={study.imageRotation}
             />
           ))}
         </div>

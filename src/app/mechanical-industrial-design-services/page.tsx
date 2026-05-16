@@ -2,7 +2,18 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { mechanicalIndustrialCaseStudies } from "@/data/service-case-studies";
+import { mechanicalCaseStudiesData } from "@/store/mechanical-case-studies";
+
+const mechanicalIndustrialCaseStudies = mechanicalCaseStudiesData
+  .slice(0, 4)
+  .map((caseStudy) => ({
+    title: caseStudy.title,
+    image: caseStudy.images[0],
+    link: `/case-studies/${caseStudy.id}`,
+    category: "mechanical",
+    summary: caseStudy.summary,
+    imageRotation: caseStudy.rotatedImages?.[0],
+  }));
 
 export const metadata: Metadata = {
   title: "Mechanical & Industrial Design Services | Qmax Systems",
