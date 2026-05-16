@@ -4,7 +4,18 @@ import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
 import { hwDevelopmentOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
-import { hardwareCaseStudies } from "@/data/service-case-studies";
+import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
+
+const hardwareCaseStudies = embeddedCaseStudiesData.slice(0, 4).map(
+  (caseStudy) => ({
+    title: caseStudy.title,
+    image: caseStudy.images[0],
+    link: `/case-studies/${caseStudy.id}`,
+    category: "development",
+    summary: caseStudy.summary,
+    imageRotation: caseStudy.rotatedImages?.[0],
+  }),
+);
 
 const workflowItems = [
   {
