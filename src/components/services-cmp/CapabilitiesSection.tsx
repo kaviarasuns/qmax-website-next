@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { CapabilitiesPanels } from "./CapabilitiesPanels";
 import { CapabilitiesTabs } from "./CapabilitiesTabs";
+import type { CapabilitiesStripItem } from "./CapabilitiesStripSection";
 
 interface Capability {
   id: string;
@@ -12,6 +13,8 @@ interface Capability {
   headline: string;
   intro: string;
   bullets: { title: string; items: string[] }[];
+  deliverables?: CapabilitiesStripItem[];
+  deliverablesAriaLabel?: string;
 }
 
 interface CapabilitiesSectionProps {

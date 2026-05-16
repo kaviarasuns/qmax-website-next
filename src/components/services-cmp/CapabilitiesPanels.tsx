@@ -1,9 +1,16 @@
+import {
+  CapabilitiesStrip,
+  type CapabilitiesStripItem,
+} from "./CapabilitiesStripSection";
+
 interface PanelsCapability {
   id: string;
   headline: string;
   intro: string;
   learnMoreHref: string;
   bullets: { title: string; items: string[] }[];
+  deliverables?: CapabilitiesStripItem[];
+  deliverablesAriaLabel?: string;
 }
 
 interface CapabilitiesPanelsProps {
@@ -23,51 +30,58 @@ export function CapabilitiesPanels({
         <div
           key={cap.id}
           role="tabpanel"
-          className={`${
-            activeIdx === i ? "grid [animation:panelIn_460ms_ease]" : "hidden"
-          } grid-cols-[1fr_1.4fr] items-start gap-24 max-[900px]:grid-cols-1 max-[900px]:gap-8`}
+          className={activeIdx === i ? "block [animation:panelIn_460ms_ease]" : "hidden"}
         >
-          <div>
-            <h3 className="mb-8 max-w-[480px] text-2xl font-light tracking-wide text-black md:text-3xl">
-              {cap.headline}
-            </h3>
-            <div className="flex flex-wrap items-center gap-3">
-              <a
-                className="inline-block rounded-md border-[1.5px] border-slate-900 bg-transparent px-7 py-[7px] text-slate-900 no-underline transition-colors duration-200 hover:bg-slate-900 hover:text-white hover:no-underline"
-                href={cap.learnMoreHref}
-              >
-                Learn more
-              </a>
-              <a
-                className="inline-block rounded-md bg-[#E63329] px-7 py-[7px] text-white no-underline transition-colors duration-200 hover:bg-[#C72A21] hover:text-white hover:no-underline"
-                href={getInTouchHref}
-              >
-                Get in Touch
-              </a>
+          <div className="grid grid-cols-[1fr_1.4fr] items-start gap-24 max-[900px]:grid-cols-1 max-[900px]:gap-8">
+            <div>
+              <h3 className="mb-8 max-w-[480px] text-2xl font-light tracking-wide text-black md:text-3xl">
+                {cap.headline}
+              </h3>
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  className="inline-block rounded-md border-[1.5px] border-slate-900 bg-transparent px-7 py-[7px] text-slate-900 no-underline transition-colors duration-200 hover:bg-slate-900 hover:text-white hover:no-underline"
+                  href={cap.learnMoreHref}
+                >
+                  Learn more
+                </a>
+                <a
+                  className="inline-block rounded-md bg-[#E63329] px-7 py-[7px] text-white no-underline transition-colors duration-200 hover:bg-[#C72A21] hover:text-white hover:no-underline"
+                  href={getInTouchHref}
+                >
+                  Get in Touch
+                </a>
+              </div>
+            </div>
+            <div>
+              <p className="mb-9 text-[#383838]">{cap.intro}</p>
+              <div className="grid grid-cols-2 gap-12 max-[900px]:grid-cols-1 max-[900px]:gap-7">
+                {cap.bullets.map((b) => (
+                  <div key={b.title}>
+                    <h4 className="mb-[18px] text-lg font-light tracking-wide text-[#383838] md:text-xl">
+                      {b.title}
+                    </h4>
+                    <ul className="m-0 flex list-none flex-col gap-3.5 p-0">
+                      {b.items.map((item) => (
+                        <li
+                          key={item}
+                          className="relative pl-[22px] text-[#383838] before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-red-500"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          <div>
-            <p className="mb-9 text-[#383838]">{cap.intro}</p>
-            <div className="grid grid-cols-2 gap-12 max-[900px]:grid-cols-1 max-[900px]:gap-7">
-              {cap.bullets.map((b) => (
-                <div key={b.title}>
-                  <h4 className="mb-[18px] text-lg font-light tracking-wide text-[#383838] md:text-xl">
-                    {b.title}
-                  </h4>
-                  <ul className="m-0 flex list-none flex-col gap-3.5 p-0">
-                    {b.items.map((item) => (
-                      <li
-                        key={item}
-                        className="relative pl-[22px] text-[#383838] before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-red-500"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
+          {cap.deliverables && cap.deliverables.length > 0 && (
+            <CapabilitiesStrip
+              items={cap.deliverables}
+              className="mt-12"
+              ariaLabel={cap.deliverablesAriaLabel}
+            />
+          )}
         </div>
       ))}
     </>

@@ -820,7 +820,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
       <CapabilitiesSection capabilities={CAPABILITIES} />
 
       {/* PCB CAPABILITIES STRIP — Design Tools, Stack-Up, Materials, Fab Partners */}
-      {/* <PCBCapabilitiesStripSection items={PCB_CAPABILITIES_STRIP} /> */}
+      {/* <CapabilitiesStripSection items={PCB_CAPABILITIES_STRIP} /> */}
 
       {/* PCB DESIGN ACROSS INDUSTRIES (tabbed) */}
       <PCBIndustriesSection
