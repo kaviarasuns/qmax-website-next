@@ -253,7 +253,7 @@ const MECHANICAL_INDUSTRIAL_HERO = {
   title: "Mechanical & Industrial Design Services.",
   subtitle:
     "At Qmax Systems, our mechanical and industrial design services are specifically tailored for high-stakes electronics, moving beyond generic CAD modeling to provide deep integration between hardware, thermal physics, and manufacturing realities.",
-  ctaHref: "/hardware-development-services/contact",
+  ctaHref: "/mechanical-industrial-design-services/contact",
   ctaLabel: "Talk to Our Engineers",
 };
 
@@ -336,7 +336,7 @@ export default function MechanicalIndustrialDesignPage() {
       {/* CORE CAPABILITIES */}
       <CapabilitiesSection
         capabilities={CAPABILITIES}
-        getInTouchHref="/hardware-development-services/contact"
+        getInTouchHref="/mechanical-industrial-design-services/contact"
       />
 
       <PCBIndustriesSection
@@ -354,7 +354,7 @@ export default function MechanicalIndustrialDesignPage() {
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Mechanical & Industrial Design?"
-        ctaHref="/hardware-development-services/contact"
+        ctaHref="/mechanical-industrial-design-services/contact"
       />
 
       <FAQSection

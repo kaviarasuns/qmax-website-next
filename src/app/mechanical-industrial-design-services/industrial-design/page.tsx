@@ -9,7 +9,7 @@ const INDUSTRIAL_DESIGN_HERO = {
   title: "Industrial Design Services.",
   subtitle:
     "Industrial design at Qmax Systems integrates visual, ergonomic, and manufacturing reality from the first sketch — ensuring every decision is grounded in engineering truth.",
-  ctaHref: "/hardware-development-services/contact",
+  ctaHref: "/mechanical-industrial-design-services/contact",
   ctaLabel: "Talk to Our Engineers",
 };
 const industrialDesignCaseStudies = industrialCaseStudiesData
@@ -51,17 +51,18 @@ export default function IndustrialDesignServicesPage() {
                 decision is grounded in engineering truth.
               </p>
               <p>
-                We help entrepreneurs, startups, and Fortune 500 companies create
-                products that users value and manufacturers can build efficiently.
-                With over 25 years of experience, our multidisciplinary team —
-                industrial designers, mechanical engineers, and electronics
-                experts — delivers market-ready solutions.
+                We help entrepreneurs, startups, and Fortune 500 companies
+                create products that users value and manufacturers can build
+                efficiently. With over 25 years of experience, our
+                multidisciplinary team — industrial designers, mechanical
+                engineers, and electronics experts — delivers market-ready
+                solutions.
               </p>
               <p>
                 Our designs are not conceptual exercises. Form, material
                 selection, and interface elements are evaluated against
-                production constraints, cost targets, and global compliance before
-                a single prototype is built.
+                production constraints, cost targets, and global compliance
+                before a single prototype is built.
               </p>
             </div>
             <div className="relative overflow-hidden lg:h-full">
