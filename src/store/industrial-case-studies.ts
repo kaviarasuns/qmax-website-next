@@ -462,4 +462,47 @@ export const industrialCaseStudiesData: CaseStudy[] = [
       "DFM Support",
     ],
   },
+  {
+    id: "data-centre-management-system-uiux",
+    title: "Data Centre Management System UI/UX",
+    category: "Industrial Design",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/data%20_centre_management_system_UI&UX/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/data%20_centre_management_system_UI&UX/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/data%20_centre_management_system_UI&UX/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/data%20_centre_management_system_UI&UX/4.png",
+    ],
+    rotatedImages: {},
+    features: [
+      "Data centre monitoring dashboard UI",
+      "Industrial-grade visualization system",
+      "Real-time infrastructure monitoring",
+      "Responsive UI/UX architecture",
+      "Operational analytics integration",
+      "Modern control room interface design",
+    ],
+    summary:
+      "A modern data centre management UI/UX platform designed for real-time infrastructure monitoring, operational analytics, and intuitive industrial control workflows.",
+    importantParts: [
+      "Monitoring dashboard panels",
+      "Real-time analytics widgets",
+      "Infrastructure status indicators",
+      "Alert and notification modules",
+      "Navigation and control systems",
+      "Responsive visualization layouts",
+    ],
+    salientFeatures: [
+      "Clean industrial dashboard design",
+      "Real-time operational visibility",
+      "Scalable monitoring interface architecture",
+      "User-focused responsive workflows",
+    ],
+    scopeOfWork: [
+      "UI/UX Research",
+      "Dashboard Design",
+      "Industrial Visualization Design",
+      "Responsive Interface Development",
+      "User Workflow Optimization",
+    ],
+  },
 ];
