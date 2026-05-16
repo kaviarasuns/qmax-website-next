@@ -161,7 +161,7 @@ export function MechanicalIndustrialHero({
         >
           <p
             ref={subRef}
-            className="max-w-[840px] text-pretty font-bold leading-[1.62] text-white/90 opacity-0 will-change-[transform,opacity] [font-size:clamp(14px,1.3vw,17px)] pointer-events-none"
+            className="max-w-[840px] text-center text-pretty font-bold leading-[1.62] text-white/90 opacity-0 will-change-[transform,opacity] [font-size:clamp(14px,1.3vw,17px)] pointer-events-none"
           >
             {subtitle}
           </p>
