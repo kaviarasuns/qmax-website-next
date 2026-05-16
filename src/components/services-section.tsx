@@ -63,7 +63,7 @@ export function ServicesSection() {
   const scrollRef = React.useRef<HTMLDivElement>(null);
 
   return (
-    <section className="bg-background flex min-h-screen flex-col items-center justify-center py-12 lg:py-16">
+    <section className="bg-background flex min-h-screen flex-col items-center justify-center py-16 sm:py-20 lg:py-24">
       <div className="mx-auto w-full max-w-[1600px] px-4 md:px-6 lg:px-8">
         <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr] md:items-center">
           <div className="hidden md:block" aria-hidden />

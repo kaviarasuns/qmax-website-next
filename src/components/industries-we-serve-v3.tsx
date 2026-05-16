@@ -30,7 +30,7 @@ const industries = [
 
 export function IndustriesWeServeV3() {
   return (
-    <section className="flex min-h-screen items-center justify-center bg-white px-3 pb-8 pt-24 sm:px-4 lg:px-6">
+    <section className="flex min-h-screen items-center justify-center bg-white px-3 py-16 sm:px-4 sm:py-20 lg:px-6 lg:py-24">
       <div className="mx-auto w-full max-w-[1260px]">
         <div className="mb-8 text-center md:mb-9">
           <h2 className="text-center text-4xl font-light tracking-normal text-zinc-950 md:text-5xl lg:text-6xl">

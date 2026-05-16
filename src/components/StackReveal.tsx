@@ -115,7 +115,7 @@ export default function StackReveal({
 
   return (
     <section
-      className={`border-t border-[#e6e7eb] px-[6vw] py-24 max-md:px-5 ${className}`}
+      className={`px-[6vw] py-16 sm:py-20 lg:py-24 max-md:px-5 ${className}`}
     >
       {/* <div className="mb-3 flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.18em] text-[#E94B3C]">
         {eyebrow}
