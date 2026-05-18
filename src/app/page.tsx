@@ -6,7 +6,7 @@ import HeroSection from "@/components/home/hero-section";
 import FooterV2 from "@/components/footer-v2";
 import { IndustriesWeServeV3 } from "@/components/industries-we-serve-v3";
 import StackReveal from "@/components/StackReveal";
-import ServicesV2 from "@/components/Services-V2";
+import OurServices from "@/components/our-services";
 
 export default function Home() {
   return (
@@ -15,8 +15,8 @@ export default function Home() {
       <StackReveal />
       {/* <ScrollCardsAnimationV4 onAutoHighlightChange={() => {}} /> */}
       {/* <ServicesV4Stacked lockStackingOnProgrammaticScroll={false} /> */}
-      <ServicesV2 />
-      {/* <OurServices /> */}
+      {/* <ServicesV2 /> */}
+      <OurServices />
       <IndustriesWeServeV3 />
       <InsideOutV2 />
 
