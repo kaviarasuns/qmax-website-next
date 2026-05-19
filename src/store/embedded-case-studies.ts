@@ -1621,7 +1621,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/smart_rail/SMART_RAIL_PB/SMART_RAIL_POWER_BOARD_TOP.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/smart_rail/SMART_RAIL_PB/SMART_RAIL_POWER_BOARD_TB.svg",
     ],
-
+    rotatedImages: { 0: 90, 1: 90, 2: 90 },
+    enlargedImages: { 0: 1.4, 1: 1.4, 2: 1.5 },
     features: [
       "Smart rail embedded control platform",
       "Integrated controller and power boards",
