@@ -1480,8 +1480,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/LUCAS TVS_PR1_TB.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/LUCAS TVS_PR1_TOP.svg",
     ],
-    rotatedImages: { 5: 90, 6: 90, 7: 90 },
-    enlargedImages: { 5: 1.7, 6: 1.7, 7: 1.7 },
+    rotatedImages: { 6: 90, 7: 90, 8: 90 },
+    enlargedImages: { 6: 1.7, 7: 1.7, 8: 1.7 },
     features: [
       "Low-cost EV motor control platform",
       "BLDC motor driver integration",
@@ -1621,7 +1621,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/smart_rail/SMART_RAIL_PB/SMART_RAIL_POWER_BOARD_TOP.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/smart_rail/SMART_RAIL_PB/SMART_RAIL_POWER_BOARD_TB.svg",
     ],
-    rotatedImages: {},
+
     features: [
       "Smart rail embedded control platform",
       "Integrated controller and power boards",
