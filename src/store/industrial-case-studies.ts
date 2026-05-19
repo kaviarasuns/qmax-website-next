@@ -471,6 +471,7 @@ export const industrialCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/data%20_centre_management_system_UI&UX/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/data%20_centre_management_system_UI&UX/3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/data%20_centre_management_system_UI&UX/4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/ecl_ui_ux.mp4",
     ],
     rotatedImages: {},
     features: [
