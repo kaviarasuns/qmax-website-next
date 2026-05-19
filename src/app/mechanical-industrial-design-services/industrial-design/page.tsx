@@ -42,7 +42,7 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CapabilitiesFolderTabItem[] = [
     tabIcon: FOLDER_TAB_ICONS.uiUx,
     description:
       "Complete user experience design for embedded displays and physical interfaces using human factors engineering and interaction logic that puts operators first.",
-    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_1.mp4",
+    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ecl_ui_ux.mp4",
   },
   {
     id: "renders",
