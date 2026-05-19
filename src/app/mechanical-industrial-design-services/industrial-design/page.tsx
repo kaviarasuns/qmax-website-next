@@ -1,8 +1,15 @@
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import FAQSection from "@/components/FAQSection";
 import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 import { industrialDesignFAQs } from "@/data/service-faqs";
 import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
+import {
+  CapabilitiesFolderTabs,
+  FOLDER_TAB_ICONS,
+  type CapabilitiesFolderTabItem,
+} from "@/components/services-cmp/capabilities-folder-tabs";
+import { WhySection } from "@/components/services-cmp/WhySection";
+import { FAQSection } from "@/components/services-cmp/FAQSection";
+import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
 
 const HERO = {
   videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_V2.mp4",
@@ -12,6 +19,149 @@ const HERO = {
   ctaHref: "/mechanical-industrial-design-services/contact",
   ctaLabel: "Talk to Our Engineers",
 };
+const INDUSTRIAL_DESIGN_CAPABILITIES: CapabilitiesFolderTabItem[] = [
+  {
+    id: "product-story",
+    tabLabel: "Product Story",
+    tabIcon: FOLDER_TAB_ICONS.productStory,
+    description:
+      "Translation of requirements, brand values, and user needs into structured visual narratives through digital concept illustrations and visualisation boards that align all stakeholders early.",
+    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_1.mp4",
+  },
+  {
+    id: "cad-3d",
+    tabLabel: "CAD & 3D",
+    tabIcon: FOLDER_TAB_ICONS.cad3d,
+    description:
+      "Parametric models built for construction — with tolerancing, draft angles, and wall thickness constraints using CATIA, SolidWorks, and Fusion 360 to match manufacturer requirements.",
+    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4",
+  },
+  {
+    id: "ui-ux",
+    tabLabel: "UI & UX",
+    tabIcon: FOLDER_TAB_ICONS.uiUx,
+    description:
+      "Complete user experience design for embedded displays and physical interfaces using human factors engineering and interaction logic that puts operators first.",
+    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_1.mp4",
+  },
+  {
+    id: "renders",
+    tabLabel: "Renders",
+    tabIcon: FOLDER_TAB_ICONS.renders,
+    description:
+      "Studio-grade photorealistic renders and high-definition animations produced directly from industrial CAD data, ready for marketing campaigns and investor presentations.",
+    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4",
+  },
+  {
+    id: "prototyping",
+    tabLabel: "Prototyping",
+    tabIcon: FOLDER_TAB_ICONS.prototyping,
+    description:
+      "Physical validation through CNC, FDM, SLA, and SLS — testing ergonomics, fitment, and functionality rigorously before committing to production tooling investment.",
+    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_1.mp4",
+  },
+];
+
+const WHY_CARDS = [
+  {
+    title: "Multidisciplinary",
+    desc: "Integrated teams of industrial designers, mechanical engineers, and electronics experts.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="5" r="2.5" />
+        <circle cx="5" cy="19" r="2.5" />
+        <circle cx="19" cy="19" r="2.5" />
+        <path d="M12 7.5V12m0 0l-5.5 5m5.5-5l5.5 5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Direct Access",
+    desc: "Rapid validation through in-house prototype oversight and vetted manufacturing networks.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+      </svg>
+    ),
+  },
+  {
+    title: "Compliance First",
+    desc: "Global framework expertise (CE, UL, FCC) built into the initial design iteration.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+  },
+  {
+    title: "Proven Process",
+    desc: "Repeatable results for startups and Fortune 500s across three decades of operation.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+        <polyline points="22 4 12 14.01 9 11.01" />
+      </svg>
+    ),
+  },
+];
+
+const WORKFLOW_STEPS = [
+  {
+    number: 1,
+    title: "Uncover Opportunities",
+    description:
+      "Behavioural research and technical constraint analysis relevant to the product category.",
+  },
+  {
+    number: 2,
+    title: "Informed Ideation",
+    description:
+      "Structured creativity to produce a range of viable, engineering-led design directions.",
+  },
+  {
+    number: 3,
+    title: "Get Real, Fast",
+    description:
+      "Detailed form development and high-fidelity prototypes for real-world evaluation.",
+  },
+  {
+    number: 4,
+    title: "Ready to Ship",
+    description:
+      "Finalised documentation package and factory-floor liaison for consistent outcomes.",
+  },
+];
+
 const industrialDesignCaseStudies = industrialCaseStudiesData
   .slice(0, 4)
   .map((caseStudy) => ({
@@ -35,7 +185,7 @@ export default function IndustrialDesignServicesPage() {
       <ServiceVideoHero {...HERO} />
 
       {/* Core Introduction */}
-      <section className="py-14 lg:py-20">
+      {/* <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_minmax(280px,42%)] lg:items-stretch lg:gap-12">
             <div className="max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
@@ -72,78 +222,18 @@ export default function IndustrialDesignServicesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Industrial Design Capabilities Section */}
-      <section className="bg-[#fcfcfc] dark:bg-zinc-950 py-32 border-t border-zinc-200 dark:border-zinc-800">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-24">
-            <h2 className="text-4xl font-light text-zinc-500 dark:text-zinc-400 md:text-6xl tracking-tighter">
-              Capabilities.
-            </h2>
-          </div>
+      <CapabilitiesFolderTabs capabilities={INDUSTRIAL_DESIGN_CAPABILITIES} />
 
-          <div className="space-y-0">
-            {[
-              {
-                id: "01",
-                title: "Product Story & Visualisation",
-                desc: "Translation of requirements, brand values, and user needs into structured visual narratives through digital concept illustrations and visualisation boards.",
-              },
-              {
-                id: "02",
-                title: "CAD & 3D Modelling",
-                desc: "Parametric models built for construction — with tolerancing, draft angles, and wall thickness constraints using CATIA, SolidWorks, and Fusion 360.",
-              },
-              {
-                id: "03",
-                title: "UI & UX Design",
-                desc: "Complete user experience design for embedded displays and physical interfaces using human factors engineering and interaction logic.",
-              },
-              {
-                id: "04",
-                title: "Photorealistic assets",
-                desc: "Studio-grade photorealistic renders and high-definition animations produced directly from industrial CAD data for marketing and investment.",
-              },
-              {
-                id: "05",
-                title: "Rapid Prototyping",
-                desc: "Physical validation through CNC, FDM, SLA, and SLS — testing ergonomics, fitment, and functionality before production investment.",
-              },
-            ].map((capability, idx) => (
-              <div
-                key={idx}
-                className="group border-t border-zinc-200 dark:border-zinc-800 py-10 grid grid-cols-1 md:grid-cols-[100px_1fr_1.5fr] gap-8 hover:bg-zinc-50 dark:hover:bg-zinc-900/70 transition-colors px-4"
-              >
-                <span className="text-xs font-black text-[#F33117] tracking-[0.4em] pt-2">
-                  {capability.id}
-                </span>
-                <h3 className="text-2xl md:text-4xl font-light tracking-tight text-zinc-950 dark:text-zinc-100 group-hover:text-[#F33117] transition-colors">
-                  {capability.title}
-                </h3>
-                <p className="text-lg leading-relaxed text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors">
-                  {capability.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-24 overflow-hidden border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
-            <video
-              src="https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_1.mp4"
-              className="aspect-[16/7] w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-label="Industrial design capabilities video"
-            />
-          </div>
-        </div>
-      </section>
+      <WorkflowSection
+        steps={WORKFLOW_STEPS}
+        title="The"
+        titleHighlight="Process"
+      />
 
       {/* Our Process Section */}
-      <section className="bg-[#fcfcfc] dark:bg-zinc-950 py-32 border-t border-zinc-200 dark:border-zinc-800">
+      {/* <section className="bg-[#fcfcfc] dark:bg-zinc-950 py-32 border-t border-zinc-200 dark:border-zinc-800">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <h2 className="text-4xl font-light text-zinc-500 dark:text-zinc-400 md:text-6xl tracking-tighter">
@@ -204,10 +294,17 @@ export default function IndustrialDesignServicesPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/* WHY CHOOSE QMAX */}
+      <WhySection
+        whyCards={WHY_CARDS}
+        titleHighlight="Industrial Design?"
+        ctaHref="/mechanical-industrial-design-services/contact"
+      />
 
       {/* Why Qmax Section */}
-      <section className="bg-[#fcfcfc] dark:bg-zinc-950 py-32 border-t border-zinc-200 dark:border-zinc-800">
+      {/* <section className="bg-[#fcfcfc] dark:bg-zinc-950 py-32 border-t border-zinc-200 dark:border-zinc-800">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-24">
             <div>
@@ -250,10 +347,10 @@ export default function IndustrialDesignServicesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
-      <FAQSection faqs={industrialDesignFAQs} />
+      <FAQSection faqItems={industrialDesignFAQs} />
 
       {/* Our Work Section */}
       <ServiceCaseStudiesSection

@@ -26,76 +26,60 @@ export function MechanicalIndustrialHero({
   ctaHref,
   ctaLabel,
 }: MechanicalIndustrialHeroProps) {
-  const h1Ref = useRef<HTMLHeadingElement>(null);
-  const enterGroupRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const subRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
-    const h1 = h1Ref.current;
-    const enterGroup = enterGroupRef.current;
+    const wrapper = wrapperRef.current;
     const sub = subRef.current;
     const cta = ctaRef.current;
-    if (!h1 || !enterGroup || !sub || !cta) return;
+    if (!wrapper || !sub || !cta) return;
+
+    const applyReveal = (subProgress: number, ctaProgress: number) => {
+      sub.style.opacity = subProgress.toFixed(4);
+      sub.style.transform = `translateY(${((1 - subProgress) * 28).toFixed(2)}px)`;
+      sub.style.pointerEvents = subProgress > 0.5 ? "auto" : "none";
+
+      cta.style.opacity = ctaProgress.toFixed(4);
+      cta.style.transform = `translateY(${((1 - ctaProgress) * 28).toFixed(2)}px)`;
+      cta.style.pointerEvents = ctaProgress > 0.5 ? "auto" : "none";
+    };
 
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
     if (reducedMotion) {
-      const rect = h1.getBoundingClientRect();
-      enterGroup.style.top = `${rect.bottom + 24}px`;
-      sub.style.opacity = "1";
-      sub.style.transform = "";
-      sub.style.pointerEvents = "auto";
-      cta.style.opacity = "1";
-      cta.style.transform = "";
-      cta.style.pointerEvents = "auto";
+      applyReveal(1, 1);
       return;
     }
 
     let ticking = false;
-
-    const positionEnterGroup = () => {
-      const rect = h1.getBoundingClientRect();
-      enterGroup.style.top = `${rect.bottom + 24}px`;
-    };
+    let lastProgress = -1;
 
     const update = () => {
-      const sy = window.scrollY;
-      const vh = window.innerHeight;
-
-      if (sy >= 2 * vh) {
-        ticking = false;
-        return;
-      }
-
-      const p = clamp(sy / vh, 0, 1);
-
-      // Phase 1 (0 → 0.18): subtitle reveals within the first scroll step.
-      const sRaw = clamp(p / 0.18, 0, 1);
-      const sE = easeOutCubic(sRaw);
-      sub.style.opacity = sE.toFixed(4);
-      sub.style.transform = `translateY(${((1 - sE) * 24).toFixed(2)}px)`;
-      sub.style.pointerEvents = sE > 0.5 ? "auto" : "none";
-
-      // Phase 1 (0.04 → 0.24): CTA follows right behind the subtitle.
-      const cRaw = clamp((p - 0.04) / 0.2, 0, 1);
-      const cE = easeOutCubic(cRaw);
-      cta.style.opacity = cE.toFixed(4);
-      cta.style.transform = `translateY(${((1 - cE) * 24).toFixed(2)}px)`;
-      cta.style.pointerEvents = cE > 0.5 ? "auto" : "none";
-
-      // Phase 2 (0.15 → 0.5): once the copy has landed, drift the hero upward.
-      const hRaw = clamp((p - 0.15) / 0.35, 0, 1);
-      const hE = easeOutCubic(hRaw);
-      const h1Shift = -hE * 120;
-      h1.style.transform = `translateY(${h1Shift.toFixed(2)}px)`;
-
-      const h1Rect = h1.getBoundingClientRect();
-      enterGroup.style.top = `${h1Rect.bottom + 24}px`;
-
       ticking = false;
+
+      // Derive progress from the wrapper's position so the reveal stays
+      // accurate regardless of anything above the hero in the page.
+      const rect = wrapper.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const pinned = -rect.top;
+      const p = clamp(pinned / vh, 0, 1);
+
+      if (p === lastProgress) return;
+      lastProgress = p;
+
+      // Subtitle eases in over the first 55% of the pinned scroll.
+      const subRaw = clamp(p / 0.55, 0, 1);
+      const subE = easeOutCubic(subRaw);
+
+      // CTA follows behind, easing in between 25% and 85%.
+      const ctaRaw = clamp((p - 0.25) / 0.6, 0, 1);
+      const ctaE = easeOutCubic(ctaRaw);
+
+      applyReveal(subE, ctaE);
     };
 
     const onScroll = () => {
@@ -105,25 +89,18 @@ export function MechanicalIndustrialHero({
       }
     };
 
-    const onResize = () => {
-      positionEnterGroup();
-      update();
-    };
-
-    positionEnterGroup();
     update();
-
-    window.addEventListener("resize", onResize);
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
 
     return () => {
-      window.removeEventListener("resize", onResize);
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
     };
   }, []);
 
   return (
-    <div className="h-[300vh]">
+    <div ref={wrapperRef} className="h-[200vh]">
       <section
         className="sticky top-0 z-0 h-screen overflow-hidden bg-[#04243D]"
         aria-labelledby="mechanical-industrial-hero-title"
@@ -149,30 +126,25 @@ export function MechanicalIndustrialHero({
           }}
         />
 
-        <div className="absolute inset-0 z-[2] flex flex-col items-center justify-end px-[clamp(24px,6vw,96px)] pb-[clamp(150px,17vh,200px)] text-center">
+        <div className="absolute inset-0 z-[2] flex flex-col items-center justify-end px-[clamp(24px,6vw,96px)] pb-[clamp(96px,13vh,160px)] text-center">
           <h1
             id="mechanical-industrial-hero-title"
-            ref={h1Ref}
-            className="max-w-[900px] text-balance font-bold leading-[1.1] tracking-[-0.022em] text-white will-change-transform [font-size:clamp(34px,4vw,58px)]"
+            className="max-w-[900px] text-balance font-bold leading-[1.1] tracking-[-0.022em] text-white [font-size:clamp(34px,4vw,58px)]"
           >
             {title}
           </h1>
-        </div>
-
-        <div
-          ref={enterGroupRef}
-          className="absolute left-0 right-0 z-[2] flex flex-col items-center gap-[18px] px-[clamp(24px,6vw,96px)] text-center"
-        >
           <p
             ref={subRef}
-            className="max-w-[840px] text-center text-pretty font-bold leading-[1.62] text-white/90 opacity-0 will-change-[transform,opacity] [font-size:clamp(14px,1.3vw,17px)] pointer-events-none"
+            className="mt-6 max-w-[840px] text-pretty font-bold leading-[1.62] text-white/90 opacity-0 will-change-[transform,opacity] [font-size:clamp(14px,1.3vw,17px)] pointer-events-none"
+            style={{ transform: "translateY(28px)" }}
           >
             {subtitle}
           </p>
           <Link
             ref={ctaRef}
             href={ctaHref}
-            className="inline-flex items-center gap-[9px] rounded-md bg-brand-red px-7 py-[13px] text-[14.5px] font-bold tracking-[0.01em] text-white opacity-0 will-change-[transform,opacity] transition-colors hover:bg-[#d92b14] pointer-events-none"
+            className="mt-5 inline-flex items-center gap-[9px] rounded-md bg-brand-red px-7 py-[13px] text-[14.5px] font-bold tracking-[0.01em] text-white opacity-0 will-change-[transform,opacity] transition-colors hover:bg-[#d92b14] pointer-events-none"
+            style={{ transform: "translateY(28px)" }}
           >
             {ctaLabel}
             <svg
