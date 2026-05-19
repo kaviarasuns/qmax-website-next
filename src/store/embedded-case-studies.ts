@@ -1380,8 +1380,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "WiFi 6 Triband Router",
     category: "Embedded Systems",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/1_new.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/2_new.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/7.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/8.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_TS1.svg",
