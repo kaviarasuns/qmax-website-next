@@ -2,7 +2,7 @@
 
 import "../../components/hardware-design.css";
 import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
-import { PcbMainHero } from "@/components/services-cmp/pcb-main-hero";
+import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
@@ -11,6 +11,21 @@ import { PCB_INDUSTRIES } from "@/store/pcb-industries";
 /* ============================================================
    DATA
    ============================================================ */
+
+const HERO = {
+  title: "PCB Design Services: A Multi-Physics Engineering Discipline",
+  description: (
+    <>
+      <strong>Engineering Beyond Connectivity.</strong> Qmax Systems treats PCB
+      design as a critical engineering discipline, not just interconnection. Our
+      experts deliver reliable, first-time-right PCB layouts optimized for
+      performance, compliance, and manufacturability.
+    </>
+  ),
+  ctaHref: "/pcb-design/contact",
+  ctaLabel: "TALK TO OUR ENGINEERS",
+  videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/PCB_Design_Hero.mp4",
+};
 
 const CAPABILITIES = [
   {
@@ -786,7 +801,7 @@ const FAQ_ITEMS = [
 export default function HardwareDevelopmentServicesComponentV2() {
   return (
     <div className="hd-root">
-      <PcbMainHero />
+      <ServiceVideoHero {...HERO} />
 
       {/* CORE CAPABILITIES */}
       <CapabilitiesSection capabilities={CAPABILITIES} />

@@ -1,13 +1,13 @@
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import FAQSection from "@/components/FAQSection";
-import { MechanicalIndustrialHero } from "@/components/services-cmp/MechanicalIndustrialHero";
 import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 import { industrialDesignFAQs } from "@/data/service-faqs";
+import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 
-const INDUSTRIAL_DESIGN_HERO = {
+const HERO = {
   videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_V2.mp4",
   title: "Industrial Design Services.",
-  subtitle:
+  description:
     "Industrial design at Qmax Systems integrates visual, ergonomic, and manufacturing reality from the first sketch — ensuring every decision is grounded in engineering truth.",
   ctaHref: "/mechanical-industrial-design-services/contact",
   ctaLabel: "Talk to Our Engineers",
@@ -32,13 +32,7 @@ const industrialDesignCaseStudies = industrialCaseStudiesData
 export default function IndustrialDesignServicesPage() {
   return (
     <main className="relative bg-[#fcfcfc] text-zinc-900">
-      <MechanicalIndustrialHero
-        videoSrc={INDUSTRIAL_DESIGN_HERO.videoSrc}
-        title={INDUSTRIAL_DESIGN_HERO.title}
-        subtitle={INDUSTRIAL_DESIGN_HERO.subtitle}
-        ctaHref={INDUSTRIAL_DESIGN_HERO.ctaHref}
-        ctaLabel={INDUSTRIAL_DESIGN_HERO.ctaLabel}
-      />
+      <ServiceVideoHero {...HERO} />
 
       {/* Core Introduction */}
       <section className="py-14 lg:py-20">
