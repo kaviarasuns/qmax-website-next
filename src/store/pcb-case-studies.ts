@@ -570,8 +570,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "fe1600",
-    title: "FE1600",
+    id: "100gbe-high-speed-networking-board",
+    title: "100GbE High-Speed Networking Board",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/FE1600/1.png",
@@ -796,8 +796,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "pegasus",
-    title: "Pegasus",
+    id: "video-processor-pcb",
+    title: "Video Processor PCB",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/1.4.png",

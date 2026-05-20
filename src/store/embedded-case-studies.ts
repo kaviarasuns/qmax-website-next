@@ -1522,8 +1522,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
   },
 
   {
-    id: "acellenttech-br",
-    title: "AcellentTech BR",
+    id: "high-speed-analog-mux",
+    title: "High Speed Analog Mux",
     category: "Embedded Systems",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/1.1.png",
@@ -1706,8 +1706,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "luber",
-    title: "Luber",
+    id: "lubrication-controller",
+    title: "Lubrication Controller",
     category: "Embedded Systems",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/1.png",
