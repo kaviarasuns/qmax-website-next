@@ -18,7 +18,7 @@ export type DayOneThinkingSectionProps = {
 };
 
 export function DayOneThinkingSection({
-  title = "Day‑1 Thinking for",
+  title = "Day‑1 Thinking For",
   titleHighlight = "Real‑World Deployment",
   description,
   insights,

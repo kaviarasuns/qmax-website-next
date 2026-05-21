@@ -20,7 +20,7 @@ const HERO = {
     "Embedded Development Services: From Requirement To Production, Complete Lifecycle",
   description:
     "Production isn’t a milestone — it’s a set of unforgiving demands. Certification windows, field reliability, OTA recovery, manufacturing yield, security patch cadence — and each domain piles on its own: ASIL traceability for automotive, IEC 62304 for medical, DO‑178C for avionics, OPC‑UA determinism for industrial. Our firmware lifecycle is built around those realities from Day 1, not retrofitted at sign‑off.",
-  ctaLabel: "Talk to our engineer",
+  ctaLabel: "Talk to our engineers",
   ctaHref: "/embedded-design-services/contact",
   videoSrc:
     "https://d1yetprhniwywz.cloudfront.net/v2/services_video/embedded_hero_video.mp4",
@@ -262,7 +262,7 @@ const DAY_ONE_INSIGHTS: DayOneInsight[] = [
 ];
 
 const DAY_ONE_THINKING = {
-  title: "Day‑1 Thinking for",
+  title: "Day‑1 Thinking For",
   titleHighlight: "Real‑World Deployment",
   description: (
     <>
@@ -574,8 +574,8 @@ const MODULAR_FIRMWARE_FRAMEWORKS: FirmwareFramework[] = [
 ];
 
 const MODULAR_FIRMWARE = {
-  title: "Modular firmware frameworks built for",
-  titleHighlight: "reuse, scale, and security",
+  title: "Modular Firmware Frameworks Built For",
+  titleHighlight: "Reuse, Scale, And Security",
   description:
     "To accelerate product development and ensure long-term maintainability, we build modular firmware frameworks and reusable libraries — battle-tested across deployments, with a focus on security, reliability, and scalability for large fleets.",
   frameworks: MODULAR_FIRMWARE_FRAMEWORKS,
@@ -775,7 +775,7 @@ export default function EmbeddedDesignServicesPage() {
             />
             <div className="pointer-events-none absolute inset-0 z-[2] flex items-center justify-between px-[5%] py-6 max-[900px]:px-5 max-[900px]:py-4">
               <div className="flex max-w-[54%] flex-col gap-3 max-[900px]:max-w-[62%] max-[900px]:gap-2">
-                <h2 className="text-[clamp(1.15rem,3.4vw,2.75rem)] leading-[1.12] tracking-[0.2px] text-white [text-shadow:_0_1px_4px_rgba(0,0,0,0.45)]">
+                <h2 className="text-[clamp(1rem,2.8vw,2.35rem)] font-semibold leading-[1.12] tracking-[0.2px] text-white [text-shadow:_0_1px_4px_rgba(0,0,0,0.45)]">
                   Have Your Questions Answered!
                 </h2>
                 <p className="text-[clamp(0.5rem,1.15vw,0.9rem)] uppercase leading-[1.35] tracking-[0.1em] text-white/95 [text-shadow:_0_1px_3px_rgba(0,0,0,0.4)]">
@@ -785,7 +785,7 @@ export default function EmbeddedDesignServicesPage() {
                   Ask a Question
                 </span>
               </div>
-              <div className="shrink-0 text-right text-[clamp(0.7rem,1.35vw,1.125rem)] font-semibold leading-[1.3] tracking-[0.2px] text-white [text-shadow:_0_1px_4px_rgba(0,0,0,0.45)] max-[900px]:absolute max-[900px]:bottom-4 max-[900px]:right-5">
+              <div className="absolute bottom-4 right-[5%] shrink-0 text-right text-[clamp(0.7rem,1.35vw,1.125rem)] font-semibold leading-[1.3] tracking-[0.2px] text-white [text-shadow:_0_1px_4px_rgba(0,0,0,0.45)] max-[900px]:right-5">
                 <span className="block font-bold">
                   Saravanaperumal Annamalai
                 </span>

@@ -143,7 +143,7 @@ export function MechanicalIndustrialHero({
           <Link
             ref={ctaRef}
             href={ctaHref}
-            className="mt-5 inline-flex items-center gap-[9px] rounded-md bg-brand-red px-7 py-[13px] text-[14.5px] font-bold tracking-[0.01em] text-white opacity-0 will-change-[transform,opacity] transition-colors hover:bg-[#d92b14] pointer-events-none"
+            className="mt-5 inline-flex items-center gap-[9px] rounded-md bg-brand-red px-7 py-[13px] text-[14.5px] font-bold uppercase tracking-[0.01em] text-white opacity-0 will-change-[transform,opacity] transition-colors hover:bg-[#d92b14] pointer-events-none"
             style={{ transform: "translateY(28px)" }}
           >
             {ctaLabel}

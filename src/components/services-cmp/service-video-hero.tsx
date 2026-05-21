@@ -56,7 +56,7 @@ export function ServiceVideoHero({
           </p>
           <Link
             href={ctaHref}
-            className="inline-block cursor-pointer rounded-md bg-[#E63329] px-8 py-[14px] text-base font-semibold tracking-[0.04em] text-white no-underline transition-colors duration-150 hover:bg-[#C72A21] hover:text-white hover:no-underline"
+            className="inline-block cursor-pointer rounded-md bg-[#E63329] px-8 py-[14px] text-base font-semibold uppercase tracking-[0.04em] text-white no-underline transition-colors duration-150 hover:bg-[#C72A21] hover:text-white hover:no-underline"
           >
             {ctaLabel}
           </Link>

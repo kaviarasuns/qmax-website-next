@@ -705,7 +705,7 @@ const HERO = {
     "Hardware Development Services: The Complete Hardware Product Lifecycle",
   description:
     "We provide full hardware lifecycle ownership, taking your product from early requirement analysis to production handover. Our lifecycle-driven approach minimizes risk, shortens development cycles, and ensures compliance readiness from day one.",
-  ctaLabel: "Talk to our engineer",
+  ctaLabel: "Talk to our engineers",
   ctaHref: "/hardware-development-services/contact",
   videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/hardware_hero_bg.mp4",
 };

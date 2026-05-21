@@ -14,7 +14,12 @@ interface WhySectionProps {
   className?: string;
 }
 
-export function WhySection({ whyCards, titleHighlight = "Hardware Design?", ctaHref = "/hardware-development-services/contact", className }: WhySectionProps) {
+export function WhySection({
+  whyCards,
+  titleHighlight = "Hardware Design?",
+  ctaHref = "/hardware-development-services/contact",
+  className,
+}: WhySectionProps) {
   return (
     <section
       className={cn(
@@ -26,7 +31,7 @@ export function WhySection({ whyCards, titleHighlight = "Hardware Design?", ctaH
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-14">
           <h2 className="text-4xl md:text-5xl font-light tracking-wide text-center text-black">
-            Why Choose Qmax for{" "}
+            Why Choose Qmax For{" "}
             <span className="text-brand-500">{titleHighlight}</span>
           </h2>
         </div>
@@ -44,9 +49,7 @@ export function WhySection({ whyCards, titleHighlight = "Hardware Design?", ctaH
                   {card.title}
                 </h3>
               </div>
-              <p className="text-base text-gray-600">
-                {card.desc}
-              </p>
+              <p className="text-base text-gray-600">{card.desc}</p>
             </article>
           ))}
           {/* Founder CTA tile — baked PNG */}
