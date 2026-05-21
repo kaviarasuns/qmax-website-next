@@ -1,3 +1,5 @@
+import "./CTABannerSection.css";
+
 export function CTABannerSection() {
   return (
     <section className="cta-banner" id="cta-banner-section">

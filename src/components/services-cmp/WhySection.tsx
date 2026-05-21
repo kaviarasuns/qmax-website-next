@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 interface WhyCard {
   title: string;
@@ -10,12 +11,16 @@ interface WhySectionProps {
   whyCards: WhyCard[];
   titleHighlight?: string;
   ctaHref?: string;
+  className?: string;
 }
 
-export function WhySection({ whyCards, titleHighlight = "Hardware Design?", ctaHref = "/hardware-development-services/contact" }: WhySectionProps) {
+export function WhySection({ whyCards, titleHighlight = "Hardware Design?", ctaHref = "/hardware-development-services/contact", className }: WhySectionProps) {
   return (
     <section
-      className="bg-white px-16 py-24 max-[900px]:px-6 max-[900px]:py-16"
+      className={cn(
+        "bg-white px-16 pt-24 pb-24 max-[900px]:px-6 max-[900px]:pt-16 max-[900px]:pb-16",
+        className,
+      )}
       id="why-section"
     >
       <div className="mx-auto max-w-[1200px]">

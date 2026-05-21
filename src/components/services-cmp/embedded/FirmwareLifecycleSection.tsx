@@ -103,6 +103,7 @@ export function FirmwareLifecycleSection({
           color: var(--qmax-ink);
           margin: 0 0 12px;
           line-height: 1.15;
+          text-align: center;
         }
 
         .fw-lifecycle-head-sub {
@@ -112,6 +113,7 @@ export function FirmwareLifecycleSection({
           color: var(--qmax-ink);
           margin: 0;
           line-height: 1.15;
+          text-align: center;
         }
 
         .fw-lifecycle-accent {

@@ -735,7 +735,10 @@ export default function HardwareDevelopmentServicesPage() {
 
       <div className="pb-12"></div>
       {/* PARTNERSHIPS */}
-      <PartnershipsSection />
+      <PartnershipsSection
+        heading="Partnerships"
+        paragraph="With a strong focus on new product development, Qmax maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. Our teams gain early access to upcoming silicon, roadmap visibility, and training on the latest technologies — with reference modules and evaluation kits ready to kick-start your product development."
+      />
 
       <div className="pb-12"></div>
 

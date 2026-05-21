@@ -705,28 +705,28 @@ const WHY_CARDS = [
 
 const FAQ_ITEMS = [
   {
-    q: "Do you provide end-to-end hardware development?",
-    a: "Yes. We manage the complete hardware lifecycle — from concept, architecture, schematic design, and PCB layout to prototyping, compliance testing, and production handover. Our structured, architecture-first approach minimizes risk and shortens development cycles, giving you a single accountable partner from idea to certified, market-ready product.",
+    q: "Do you provide end-to-end embedded firmware development?",
+    a: "Yes. We own the entire firmware lifecycle — from requirements, architecture, driver and application development, through bring-up, validation, and production handover. Our lifecycle aligns tightly with hardware prototype development and continues into OTA-based field maintenance, giving you a single accountable partner from concept to fleet operation.",
   },
   {
     q: "Who owns the Intellectual Property (IP)?",
-    a: "You do — 100%. Unless otherwise agreed in writing, all IP generated during your project belongs exclusively to you. This includes schematics, PCB designs, firmware, and documentation. We operate under strict NDAs with our customers, employees, and third-party vendors to fully safeguard your innovations throughout the engagement.",
+    a: "You do — 100%. Unless otherwise agreed in writing, all IP generated during your project belongs exclusively to you, including source code, build scripts, test suites, and documentation. We operate under strict NDAs with our customers, employees, and third-party vendors to fully safeguard your innovations throughout the engagement.",
   },
   {
-    q: "What compliance standards can you help with?",
-    a: "We support readiness for FCC, CE, IEC, UL, and BIS standards. Compliance work begins at the design stage through DFM reviews and pre-compliance testing, coordinated with NABL-certified labs. Our ISO 9001 and ISO 13485-certified processes ensure complete documentation and traceability to meet global regulatory requirements.",
+    q: "What chipsets and platforms do you support?",
+    a: "We work across STM32 (F0/F4/H7/WB), ESP32 family (ESP32, S3, C3), NXP (LPC, i.MX RT), Renesas (RA, RX), TI (MSP430, Sitara, SimpleLink), Nordic (nRF52/nRF53), Qualcomm, Ambarella, and more. On the OS side we cover bare-metal, FreeRTOS, Zephyr, ThreadX, and embedded Linux via Yocto / Buildroot.",
   },
   {
-    q: "Do you support manufacturing and scaling?",
-    a: "Yes. We provide Design for Manufacturability (DFM) reviews, BOM optimization, and vendor coordination to ensure a smooth transition from prototype to volume production. We support pilot builds and manage full production handover, delivering your supply chain team a thoroughly validated, manufacture-ready design package.",
+    q: "How do you handle security and OTA?",
+    a: "Security is a Day-1 decision. We design signed and encrypted OTA pipelines with dual-bank rollback, delta updates, and device-side authentication. Identity is anchored in secure elements or TPM where supported, with X.509 device certificates and TLS/DTLS transport. Commissioning supports QR or mobile-assisted onboarding with secure key exchange.",
   },
   {
-    q: "Do you perform testing in-house?",
-    a: "Yes. Our in-house labs include high-bandwidth oscilloscopes, spectrum analyzers, thermal cameras, temperature cycling chambers, and Hi-Pot testers. We perform functional validation, thermal stress, and environmental reliability testing on-site, identifying and resolving design weaknesses early — before coordinating final certification with NABL-accredited external laboratories.",
+    q: "What coding standards and quality processes do you follow?",
+    a: "Our process enforces MISRA-C / C++ for safety-critical work, automated static analysis, peer code review, and HIL testing for timing and real-world endpoint behavior. Every release goes through 24–72 hour endurance testing with OTA validation and memory-leak monitoring, supported by our ISO 9001 and ISO 13485-aligned processes.",
   },
   {
-    q: "Do you support product maintenance after design?",
-    a: "Yes. Our engagement extends well beyond launch. We offer lifecycle maintenance services covering design updates, component obsolescence management, and ongoing technical support. Whether you need minor revisions or a next-generation redesign, our team remains your long-term engineering partner throughout your product's entire commercial life.",
+    q: "Do you support long-term maintenance and updates?",
+    a: "Yes. Our engagement extends well beyond launch. We offer lifecycle maintenance covering feature updates, silicon obsolescence management, security patches, and OTA rollout support. Whether you need minor revisions or a next-generation redesign, our team remains your long-term firmware partner throughout your product's entire commercial life.",
   },
 ];
 
@@ -740,11 +740,15 @@ export default function EmbeddedDesignServicesPage() {
       <ModularFirmwareFrameworksSection {...MODULAR_FIRMWARE} />
       <PCBIndustriesSection
         industries={HARDWARE_INDUSTRIES}
-        headingPrefix="Hardware Development"
-        ctaLabel="Get a Hardware Design Quote"
+        headingPrefix="Embedded Engineering"
+        ctaLabel="Learn More"
       />
       {/* WHY CHOOSE QMAX */}
-      <WhySection whyCards={WHY_CARDS} titleHighlight="Embedded Design?" />
+      <WhySection
+        whyCards={WHY_CARDS}
+        titleHighlight="Embedded Design?"
+        className="pb-6 max-[900px]:pb-4"
+      />
 
       <section
         className="bg-white px-16 pb-24 pt-0 max-[900px]:px-6 max-[900px]:pb-16"
@@ -769,7 +773,11 @@ export default function EmbeddedDesignServicesPage() {
 
       <div className="pb-12"></div>
       {/* PARTNERSHIPS */}
-      <PartnershipsSection />
+      <PartnershipsSection
+        heading="Silicon Platforms"
+        headingHighlight="We Build On"
+        paragraph="Across hundreds of programs, our firmware engineers have shipped production code on the silicon below. We carry hands-on experience with their toolchains, SDKs, errata sheets, and reference designs — so your project starts from working ground, not from scratch."
+      />
 
       <div className="pb-12"></div>
 

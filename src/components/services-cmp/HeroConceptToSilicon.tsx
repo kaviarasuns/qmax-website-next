@@ -667,8 +667,9 @@ export type HeroConceptToSiliconProps = {
   description?: ReactNode;
   ctaLabel?: string;
   ctaHref?: string;
-  eyebrow?: string;
   caption?: string;
+  lifecycleTitle?: string;
+  lifecycleSubtitleHighlight?: string;
 };
 
 export function HeroConceptToSilicon({
@@ -676,7 +677,8 @@ export function HeroConceptToSilicon({
   description,
   ctaLabel = "Talk to our engineer",
   ctaHref = "/hardware-development-services/contact",
-  eyebrow = "Always shipping · concept to production",
+  lifecycleTitle = "Hardware Lifecycle",
+  lifecycleSubtitleHighlight = "requirement to production",
 }: HeroConceptToSiliconProps) {
   const showCopy = title != null && description != null;
   const flowRef = useRef<HTMLDivElement | null>(null);
@@ -748,7 +750,15 @@ export function HeroConceptToSilicon({
       </div>
 
       <div className="cts-hero-lifecycle">
-        <div className="cts-hero-flow-eyebrow">{eyebrow}</div>
+        <div className="cts-hero-lifecycle-head">
+          <h2 className="cts-hero-lifecycle-title">{lifecycleTitle}</h2>
+          <p className="cts-hero-lifecycle-sub">
+            From{" "}
+            <span className="cts-hero-lifecycle-accent">
+              {lifecycleSubtitleHighlight}
+            </span>
+          </p>
+        </div>
         <div className="cts-flow" ref={flowRef}>
           <div className="cts-energy-track" />
           <div className="cts-energy-trail" />
@@ -831,28 +841,36 @@ export function HeroConceptToSilicon({
           margin: 0 auto;
           padding: 8px 16px 0;
         }
-        .cts-hero-flow-eyebrow {
-          font-size: 12px;
-          font-weight: 700;
-          letter-spacing: 0.18em;
-          text-transform: uppercase;
-          color: #8ac4e7;
-          margin-bottom: 18px;
+        .cts-hero-lifecycle-head {
           display: flex;
+          flex-direction: column;
           align-items: center;
-          gap: 14px;
+          width: 100%;
+          margin: 0 auto 40px;
+          text-align: center;
         }
-        .cts-hero-flow-eyebrow::before,
-        .cts-hero-flow-eyebrow::after {
-          content: "";
-          flex: 1;
-          height: 1px;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(138, 196, 231, 0.35),
-            transparent
-          );
+        .cts-hero-lifecycle-title {
+          width: 100%;
+          font-size: clamp(32px, 4vw, 48px);
+          font-weight: 300;
+          letter-spacing: 1.2px;
+          color: #1c2a3a;
+          margin: 0 0 12px;
+          line-height: 1.15;
+          text-align: center;
+        }
+        .cts-hero-lifecycle-sub {
+          width: 100%;
+          font-size: clamp(32px, 4vw, 48px);
+          font-weight: 300;
+          letter-spacing: 1.2px;
+          color: #1c2a3a;
+          margin: 0;
+          line-height: 1.15;
+          text-align: center;
+        }
+        .cts-hero-lifecycle-accent {
+          color: #e63329;
         }
 
         .cts-flow {
@@ -987,28 +1005,28 @@ export function HeroConceptToSilicon({
           transform: translateY(0);
         }
         .cts-phase[data-p="1"] {
-          background: rgba(79, 160, 211, 0.12);
-          border-color: rgba(79, 160, 211, 0.35);
+          background: rgba(79, 160, 211, 0.32);
+          border-color: rgba(79, 160, 211, 0.5);
         }
         .cts-phase[data-p="2"] {
-          background: rgba(77, 190, 184, 0.12);
-          border-color: rgba(77, 190, 184, 0.35);
+          background: rgba(77, 190, 184, 0.32);
+          border-color: rgba(77, 190, 184, 0.5);
         }
         .cts-phase[data-p="3"] {
-          background: rgba(111, 195, 108, 0.12);
-          border-color: rgba(111, 195, 108, 0.35);
+          background: rgba(111, 195, 108, 0.32);
+          border-color: rgba(111, 195, 108, 0.5);
         }
         .cts-phase[data-p="4"] {
-          background: rgba(240, 203, 69, 0.12);
-          border-color: rgba(240, 203, 69, 0.35);
+          background: rgba(240, 203, 69, 0.36);
+          border-color: rgba(240, 203, 69, 0.52);
         }
         .cts-phase[data-p="5"] {
-          background: rgba(242, 161, 80, 0.12);
-          border-color: rgba(242, 161, 80, 0.35);
+          background: rgba(242, 161, 80, 0.34);
+          border-color: rgba(242, 161, 80, 0.5);
         }
         .cts-phase[data-p="6"] {
-          background: rgba(236, 126, 102, 0.12);
-          border-color: rgba(236, 126, 102, 0.35);
+          background: rgba(236, 126, 102, 0.34);
+          border-color: rgba(236, 126, 102, 0.5);
         }
         .cts-phase-header {
           border-radius: 10px;
@@ -1066,7 +1084,6 @@ export function HeroConceptToSilicon({
           flex: 1;
         }
         .cts-sub {
-          background: rgba(255, 255, 255, 0.92);
           border-radius: 10px;
           padding: 10px 4px;
           display: flex;
@@ -1076,9 +1093,33 @@ export function HeroConceptToSilicon({
           gap: 6px;
           min-width: 0;
           min-height: 108px;
-          border: 1.5px solid rgba(255, 255, 255, 0.6);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+          border: 1.5px solid transparent;
+          box-shadow: 0 2px 6px rgba(16, 24, 40, 0.1);
           transition: all 0.25s;
+        }
+        .cts-phase[data-p="1"] .cts-sub {
+          background: rgba(47, 127, 180, 0.22);
+          border-color: rgba(47, 127, 180, 0.35);
+        }
+        .cts-phase[data-p="2"] .cts-sub {
+          background: rgba(47, 147, 140, 0.22);
+          border-color: rgba(47, 147, 140, 0.35);
+        }
+        .cts-phase[data-p="3"] .cts-sub {
+          background: rgba(70, 142, 63, 0.22);
+          border-color: rgba(70, 142, 63, 0.35);
+        }
+        .cts-phase[data-p="4"] .cts-sub {
+          background: rgba(165, 127, 18, 0.2);
+          border-color: rgba(165, 127, 18, 0.34);
+        }
+        .cts-phase[data-p="5"] .cts-sub {
+          background: rgba(199, 108, 32, 0.22);
+          border-color: rgba(199, 108, 32, 0.35);
+        }
+        .cts-phase[data-p="6"] .cts-sub {
+          background: rgba(184, 77, 52, 0.22);
+          border-color: rgba(184, 77, 52, 0.35);
         }
         .cts-sub:hover {
           transform: scale(1.04);
@@ -1159,7 +1200,7 @@ export function HeroConceptToSilicon({
           display: grid;
           place-items: center;
           align-self: center;
-          color: rgba(255, 255, 255, 0.4);
+          color: rgba(62, 78, 99, 0.45);
           opacity: 0;
           transform: translateX(-6px);
           transition:
@@ -1179,15 +1220,14 @@ export function HeroConceptToSilicon({
           height: 24px;
         }
         .cts-chevron.pulsing {
-          color: #fff;
-          filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+          color: #3e4e63;
+          filter: drop-shadow(0 0 6px rgba(62, 78, 99, 0.35));
         }
         .cts-phase.energized {
-          border-color: #fff !important;
           box-shadow:
-            0 0 0 1px rgba(255, 255, 255, 0.4),
-            0 0 30px rgba(255, 255, 255, 0.15),
-            0 0 60px var(--cts-energy-color, rgba(91, 175, 224, 0.4));
+            0 0 0 1px var(--cts-energy-color, rgba(91, 175, 224, 0.55)),
+            0 0 24px var(--cts-energy-color, rgba(91, 175, 224, 0.35)),
+            0 8px 28px rgba(16, 24, 40, 0.14);
           transform: translateY(-4px);
         }
         .cts-phase[data-p="1"].energized {

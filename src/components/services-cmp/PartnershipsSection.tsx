@@ -19,7 +19,17 @@ const PARTNER_LOGOS = [
   { name: "Wolfspeed", file: "Wolfspeed_logo.svg" },
 ] as const;
 
-export function PartnershipsSection() {
+interface PartnershipsSectionProps {
+  heading: string;
+  headingHighlight?: string;
+  paragraph: string;
+}
+
+export function PartnershipsSection({
+  heading,
+  headingHighlight,
+  paragraph,
+}: PartnershipsSectionProps) {
   return (
     <section
       className="relative overflow-hidden bg-white px-8 pb-[72px] pt-16 text-[#1C2A3A] max-[900px]:px-6 max-[900px]:py-12"
@@ -28,17 +38,15 @@ export function PartnershipsSection() {
       <div className="mx-auto max-w-[1280px]">
         <div className="mb-14 flex w-full flex-col items-center text-center">
           <h2 className="mb-6 text-4xl md:text-5xl font-light tracking-wide">
-            Partnerships
+            {heading}
+            {headingHighlight ? (
+              <>
+                {" "}
+                <span className="text-brand-500">{headingHighlight}</span>
+              </>
+            ) : null}
           </h2>
-          <p className="w-full text-[#5A6778]">
-            With a strong focus on new product development, Qmax maintains
-            strategic partnerships with leading platform providers including
-            Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella,
-            Texas Instruments, Microchip, and Wolfspeed. Our teams gain early
-            access to upcoming silicon, roadmap visibility, and training on the
-            latest technologies — with reference modules and evaluation kits
-            ready to kick-start your product development.
-          </p>
+          <p className="w-full text-[#5A6778]">{paragraph}</p>
         </div>
         <div className="grid grid-cols-5 gap-4 max-[900px]:grid-cols-2 max-[900px]:gap-3">
           {PARTNER_LOGOS.map(({ name, file }, index) => (
