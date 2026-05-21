@@ -749,10 +749,14 @@ export default function EmbeddedDesignServicesPage() {
         ctaLabel="Learn More"
       />
       {/* WHY CHOOSE QMAX */}
-      <WhySection whyCards={WHY_CARDS} titleHighlight="Embedded Design?" />
+      <WhySection
+        whyCards={WHY_CARDS}
+        titleHighlight="Embedded Design?"
+        className="pb-0 max-[900px]:pb-0"
+      />
 
       <section
-        className="bg-white px-16 py-24 max-[900px]:px-6 max-[900px]:py-16"
+        className="bg-white px-16 pt-0 pb-24 max-[900px]:px-6 max-[900px]:pb-16"
         aria-label="Contact founder"
       >
         <div className="mx-auto max-w-[1200px]">
