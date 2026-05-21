@@ -1,550 +1,784 @@
 import Image from "next/image";
-import {
-  CheckCircle2,
-  Shield,
-  Battery,
-  Server,
-  Cpu,
-  Radio,
-  Fingerprint,
-  Activity,
-  Check,
-  Code,
-  Zap,
-  Wifi,
-} from "lucide-react";
-import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
+import { DayOneThinkingSection } from "@/components/services-cmp/embedded/DayOneThinkingSection";
+import { EmbeddedSoftwareCapabilitiesSection } from "@/components/services-cmp/embedded/EmbeddedSoftwareCapabilitiesSection";
+import { FirmwareLifecycleSection } from "@/components/services-cmp/embedded/FirmwareLifecycleSection";
+import { ModularFirmwareFrameworksSection } from "@/components/services-cmp/embedded/ModularFirmwareFrameworksSection";
+import type { DayOneInsight } from "@/components/services-cmp/embedded/DayOneThinkingSection";
+import type { EmbeddedSoftwareCapability } from "@/components/services-cmp/embedded/EmbeddedSoftwareCapabilitiesSection";
+import type { FirmwareLifecyclePhase } from "@/components/services-cmp/embedded/FirmwareLifecycleSection";
+import type { FirmwareFramework } from "@/components/services-cmp/embedded/ModularFirmwareFrameworksSection";
+import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
+import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
+import { HARDWARE_INDUSTRIES } from "@/store/hardware-industries";
+import { WhySection } from "@/components/services-cmp/WhySection";
+import { PartnershipsSection } from "@/components/services-cmp/PartnershipsSection";
+import { CTABannerSection } from "@/components/services-cmp/CTABannerSection";
+import { FAQSection } from "@/components/services-cmp/FAQSection";
 
-const embeddedCaseStudies = embeddedCaseStudiesData
-  .slice(0, 4)
-  .map((caseStudy) => ({
-    title: caseStudy.title,
-    image: caseStudy.images[0],
-    link: `/case-studies/${caseStudy.id}`,
-    category: "development",
-    summary: caseStudy.summary,
-    imageRotation: caseStudy.rotatedImages?.[0],
-  }));
+const HERO = {
+  title:
+    "Embedded Development Services: From Requirement To Production, Complete Lifecycle",
+  description:
+    "Production isn’t a milestone — it’s a set of unforgiving demands. Certification windows, field reliability, OTA recovery, manufacturing yield, security patch cadence — and each domain piles on its own: ASIL traceability for automotive, IEC 62304 for medical, DO‑178C for avionics, OPC‑UA determinism for industrial. Our firmware lifecycle is built around those realities from Day 1, not retrofitted at sign‑off.",
+  ctaLabel: "Talk to our engineer",
+  ctaHref: "/hardware-development-services/contact",
+  videoSrc:
+    "https://d1yetprhniwywz.cloudfront.net/v2/services_video/embedded_hero_video.mp4",
+};
+
+const FIRMWARE_LIFECYCLE = {
+  title: "Firmware Lifecycle",
+  subtitleHighlight: "requirement to production",
+  phases: [
+    {
+      phase: 1,
+      title: "Requirements",
+      items: ["Firmware PRD", "Feasibility & toolchain"],
+    },
+    {
+      phase: 2,
+      title: "Architecture",
+      items: ["SW architecture", "RTOS / Linux selection"],
+    },
+    {
+      phase: 3,
+      title: "Detailed Design",
+      items: ["Drivers & BSP", "Middleware & app", "Code reviews"],
+    },
+    {
+      phase: 4,
+      title: "Bring-up",
+      items: ["Bootloader & BSP", "Functional bring-up", "Debug & iterate"],
+    },
+    {
+      phase: 5,
+      title: "Validation",
+      items: ["Stress & endurance", "HIL & integration"],
+    },
+    {
+      phase: 6,
+      title: "QA & Compliance",
+      items: ["MISRA & static analysis", "Security audit", "Cert readiness"],
+    },
+    {
+      phase: 7,
+      title: "Production",
+      items: ["Mfg firmware & jigs", "Provisioning", "OTA & maintenance"],
+    },
+  ] satisfies FirmwareLifecyclePhase[],
+};
+
+const DAY_ONE_INSIGHTS: DayOneInsight[] = [
+  {
+    title: "OTA Updates",
+    description:
+      "Signed, encrypted firmware delivery with dual‑bank rollback and delta updates — designed in before line one.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M17 10h-1A5 5 0 0 0 6 9.5 4 4 0 0 0 6.5 17H17a3.5 3.5 0 0 0 0-7z" />
+        <path d="M12 11v6" />
+        <polyline points="9 14 12 17 15 14" />
+      </svg>
+    ),
+  },
+  {
+    title: "Battery Optimization",
+    description:
+      "Adaptive duty cycling, deep‑sleep wake sources, and energy profiling — so devices last years on a single charge.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="3" y="7" width="16" height="11" rx="2" />
+        <line x1="19" y1="11" x2="21.5" y2="11" />
+        <line x1="19" y1="14" x2="21.5" y2="14" />
+        <polyline
+          points="8 15 11 11 10 11 13 8"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Certification",
+    description:
+      "FCC, CE, BIS, IEC, UL, ISO 13485, IEC 62304, AEC‑Q100 — compliance considered in architecture, not bolted on later.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z" />
+        <polyline points="9 12 11 14 15 10" stroke="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    title: "Commissioning",
+    description:
+      "QR or mobile‑assisted onboarding, identity provisioning, cloud registration, and secure key exchange built‑in.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <path d="M14 14h3v3h-3zM18 18h3v3h-3z" stroke="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    title: "On‑Field Troubleshooting",
+    description:
+      "Logging, remote diagnostics, watchdog telemetry, and remote command interfaces — engineered for fleet operations, not lab demos.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path
+          d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-1.5-1.5 2.5-2.5z"
+          stroke="currentColor"
+        />
+        <circle cx="17" cy="17" r="3" />
+        <line x1="17" y1="14" x2="17" y2="17" />
+        <line x1="17" y1="17" x2="19" y2="17" />
+      </svg>
+    ),
+  },
+  {
+    title: "Communication Cost",
+    description:
+      "Payload compression, delta encoding, and smart backoff — measured against your cellular / LPWAN bill from day one.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <line x1="4" y1="20" x2="4" y2="16" />
+        <line x1="9" y1="20" x2="9" y2="13" />
+        <line x1="14" y1="20" x2="14" y2="10" />
+        <line x1="19" y1="20" x2="19" y2="6" />
+        <circle cx="19" cy="6" r="2.5" stroke="currentColor" />
+        <text
+          x="16.5"
+          y="9"
+          fontSize="6"
+          fill="#E63329"
+          stroke="none"
+          fontFamily="sans-serif"
+          fontWeight="700"
+        >
+          $
+        </text>
+      </svg>
+    ),
+  },
+  {
+    title: "MTBF & Reliability",
+    description:
+      "Component derating, thermal margin, watchdogs, and 24‑72h endurance runs — reliability designed and proven, not assumed.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="13" r="8" />
+        <polyline points="12 8 12 13 16 15" stroke="currentColor" />
+        <line x1="12" y1="3" x2="12" y2="5" />
+        <line x1="9" y1="3" x2="15" y2="3" />
+      </svg>
+    ),
+  },
+  {
+    title: "Security Updates",
+    description:
+      "Secure boot, signed images, X.509 identity, TPM/secure element anchoring, and a patch pipeline that survives the whole product life.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="5" y="11" width="14" height="10" rx="2" />
+        <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+        <path d="M12 15v2" stroke="currentColor" />
+        <circle
+          cx="12"
+          cy="15"
+          r="0.5"
+          fill="currentColor"
+          stroke="currentColor"
+        />
+      </svg>
+    ),
+  },
+];
+
+const DAY_ONE_THINKING = {
+  title: "Day‑1 Thinking for",
+  titleHighlight: "Real‑World Deployment",
+  description: (
+    <>
+      We understand the issues and challenges your product will face once it
+      leaves the lab — and our proactive insights and experience save you both
+      time and money. On <span className="fw-d1-lead-emph">Day&nbsp;1</span> —
+      before the first line of production firmware is written — we engineer for
+      OTA, battery optimization, certification, commissioning, on‑field
+      troubleshooting, communication cost, MTBF, security updates, and the
+      domain‑specific factors unique to your product.
+    </>
+  ),
+  insights: DAY_ONE_INSIGHTS,
+  calloutTitle: "...and many more domain‑specific factors",
+  calloutDescription:
+    "From IEC 62304 software life‑cycle for medical, to ISO 26262 ASIL traceability for automotive, to DO‑178C for avionics, to OPC‑UA determinism for industrial — we anticipate the factors unique to your domain and engineer for them from Day 1, not after the first field failure.",
+};
+
+const EMBEDDED_SOFTWARE_CAPABILITIES: EmbeddedSoftwareCapability[] = [
+  {
+    id: "bare-metal",
+    tabLabel: "Bare-metal Firmware (C / C++)",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <rect x="9" y="9" width="6" height="6" />
+        <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />
+      </svg>
+    ),
+    headline: "Bare-metal firmware in C / C++ across leading MCU silicon.",
+    intro:
+      "We start at first power-on — clock tree configuration, boot ROM, flash and memory map — and deliver deterministic, MISRA-C / C++ compliant firmware. Drivers, peripherals, and application code engineered for the tight constraints of resource-limited embedded targets, instrumented with logging and diagnostics from day one.",
+    bullets: [
+      {
+        title: "Multi-Vendor MCU Expertise",
+        items: [
+          "STM32 (F0 / F4 / H7 / WB).",
+          "ESP32 family (ESP32, S3, C3).",
+          "NXP (LPC, i.MX RT series).",
+          "Renesas (RA, RX), TI (MSP430, Sitara, SimpleLink).",
+          "Nordic (nRF52 / nRF53 BLE).",
+        ],
+      },
+      {
+        title: "Bare-Metal Engineering",
+        items: [
+          "Board bring-up & silicon validation.",
+          "Peripheral drivers (SPI, I²C, UART, ADC, USB, CAN).",
+          "Clock tree & power management.",
+          "Bootloader design & flash memory mgmt.",
+          "MISRA-C / C++ compliance & static analysis.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "rtos-linux",
+    tabLabel: "RTOS & Embedded Linux",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4" />
+      </svg>
+    ),
+    headline:
+      "RTOS and Embedded Linux platforms tuned for real-time and reliability.",
+    intro:
+      "From FreeRTOS and Zephyr on Cortex-M to Yocto and Buildroot Linux on Cortex-A, we engineer real-time platforms with bounded latency, secure boot, and a clean driver model. We tune scheduler behavior, ISR design, and memory layout against measurable timing and footprint targets.",
+    bullets: [
+      {
+        title: "RTOS Platforms",
+        items: [
+          "FreeRTOS, Zephyr, ThreadX, RT-Thread.",
+          "Scheduler tuning & ISR design.",
+          "Inter-task communication & timing budget.",
+          "Bounded latency & determinism analysis.",
+        ],
+      },
+      {
+        title: "Embedded Linux",
+        items: [
+          "Yocto / Buildroot custom distributions.",
+          "U-Boot, kernel patches, device tree.",
+          "Linux drivers (char, I²C, SPI, USB, V4L2).",
+          "Secure boot, dm-verity, signed root FS.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "router-netos",
+    tabLabel: "Router & Network OS",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="3" y="13" width="18" height="7" rx="1.5" />
+        <path d="M7 17h.01M11 17h.01" />
+        <path d="M12 13V9M8 9a4 4 0 0 1 8 0M5 6a7 7 0 0 1 14 0" />
+      </svg>
+    ),
+    headline:
+      "Router platforms and network operating systems for carrier-grade reliability.",
+    intro:
+      "OpenWrt-based router firmware, OpenWiFi integration, Wi-Fi 6 / 6E mesh networking, and service-provider grade VPN, firewall, VLAN, QoS, and routing stacks. Full remote management with monitoring, diagnostics, and OTA fleet upgrade pipelines.",
+    bullets: [
+      {
+        title: "Router & AP Platforms",
+        items: [
+          "OpenWrt-based router firmware.",
+          "OpenWiFi integration.",
+          "Wi-Fi 6 / 6E mesh networking.",
+          "Access point firmware.",
+        ],
+      },
+      {
+        title: "Network Stacks & Management",
+        items: [
+          "Firewall and VPN stacks (IPsec, WireGuard, OpenVPN).",
+          "VLAN, QoS, and advanced routing protocols.",
+          "Network monitoring & diagnostics.",
+          "Remote OTA updates & fleet management.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "server-grade",
+    tabLabel: "Server-Grade Systems · Full Stack",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="3" y="3" width="18" height="7" rx="1.5" />
+        <rect x="3" y="14" width="18" height="7" rx="1.5" />
+        <path d="M7 6.5h.01M7 17.5h.01M11 6.5h6M11 17.5h6" />
+      </svg>
+    ),
+    headline: "Server-grade systems — full stack from BMC to BIOS to power.",
+    intro:
+      "End-to-end firmware development for server platforms — from board bring-up and power sequencing to secure remote management. OpenBMC, UEFI / EDK-II BIOS, CPLD / FPGA board control, Linux for server platforms, and TPM-anchored secure boot all delivered under one accountable team.",
+    bullets: [
+      {
+        title: "BMC, BIOS & OS Bring-up",
+        items: [
+          "OpenBMC, IPMI, Redfish.",
+          "BIOS / UEFI development (EDK-II).",
+          "Linux bring-up for server platforms.",
+          "Power sequencing & management.",
+        ],
+      },
+      {
+        title: "Board Control & Security",
+        items: [
+          "CPLD / FPGA firmware for board control.",
+          "Sensor monitoring & telemetry.",
+          "Secure boot, TPM, and integrity.",
+          "Remote management & diagnostics.",
+        ],
+      },
+    ],
+  },
+];
+
+const EMBEDDED_SOFTWARE = {
+  title: "Embedded Software Across The Full Stack —",
+  titleHighlight: "Bare‑Metal To Server‑Grade",
+  description:
+    "Whether you need a single firmware engineer to bring up a sensor node, or a team to deliver OpenBMC, Linux BSP, and a connectivity stack in parallel, we cover the full range — built to strict coding standards and proven on real silicon.",
+  capabilities: EMBEDDED_SOFTWARE_CAPABILITIES,
+  getInTouchHref: "/hardware-development-services/contact",
+};
+
+const MODULAR_FIRMWARE_FRAMEWORKS: FirmwareFramework[] = [
+  {
+    title: "Secure OTA",
+    subtitle: "Over-the-Air firmware updates for remote upgrades.",
+    items: [
+      "Signed & encrypted images",
+      "Dual-bank rollback",
+      "Delta updates",
+      "Device authentication",
+    ],
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M17 10h-1A5 5 0 0 0 6 9.5 4 4 0 0 0 6.5 17H17a3.5 3.5 0 0 0 0-7z" />
+        <path d="M12 11v6" />
+        <polyline points="9 14 12 17 15 14" />
+      </svg>
+    ),
+  },
+  {
+    title: "Battery Mgmt",
+    subtitle: "Efficient power usage for remote IoT devices.",
+    items: [
+      "Advanced sleep states",
+      "Adaptive duty cycling",
+      "Battery health monitoring",
+      "Dynamic frequency scaling",
+    ],
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="3" y="7" width="16" height="11" rx="2" />
+        <line x1="19" y1="11" x2="21.5" y2="11" />
+        <line x1="19" y1="14" x2="21.5" y2="14" />
+        <polyline
+          points="8 15 11 11 10 11 13 8"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "Cellular Comm",
+    subtitle: "Secure communication stacks for cellular devices.",
+    items: [
+      "LTE-M / NB-IoT / GSM",
+      "TLS / DTLS messaging",
+      "MQTT / CoAP",
+      "Auto-recovery & backoff",
+    ],
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M5 12.5 a8 8 0 0 1 14 0" />
+        <path d="M8 14.5 a5 5 0 0 1 8 0" />
+        <path d="M11 16.5 a2 2 0 0 1 2 0" />
+        <circle cx="12" cy="19" r="0.8" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    title: "Commissioning",
+    subtitle: "Secure onboarding infrastructure for IoT ecosystems.",
+    items: [
+      "Identity provisioning",
+      "QR / mobile assisted",
+      "Cloud registration",
+      "Secure key exchange",
+    ],
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <path d="M14 14h3v3h-3zM18 18h3v3h-3z" />
+      </svg>
+    ),
+  },
+];
+
+const MODULAR_FIRMWARE = {
+  title: "Modular firmware frameworks built for",
+  titleHighlight: "reuse, scale, and security",
+  description:
+    "To accelerate product development and ensure long-term maintainability, we build modular firmware frameworks and reusable libraries — battle-tested across deployments, with a focus on security, reliability, and scalability for large fleets.",
+  frameworks: MODULAR_FIRMWARE_FRAMEWORKS,
+};
+
+const WHY_CARDS = [
+  {
+    title: "Transparent & Supervised Process",
+    desc: "You see every milestone, design review, and risk register as it happens. Weekly cadence, traceable deliverables, on-time builds, and zero hidden surprises at handover.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M8 24c0-8 8-14 16-14s16 6 16 14" />
+        <circle cx="24" cy="24" r="4" />
+        <path d="M24 8v4M24 36v4M8 24h4M36 24h4" />
+        <path d="M14 14l3 3M31 31l3 3M14 34l3-3M31 17l3-3" />
+      </svg>
+    ),
+  },
+  {
+    title: "Lifecycle Maintenance",
+    desc: "Our engagement extends well beyond launch — feature updates, silicon obsolescence management, security patches, and OTA fleet rollouts keep your product healthy across its full commercial life.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M24 8v8l6 4" />
+        <path d="M40 24a16 16 0 1 1-6.2-12.7" />
+        <path d="M32 8h8v8" />
+      </svg>
+    ),
+  },
+  {
+    title: "Smooth Hardware-Firmware Integration",
+    desc: "Our firmware engineers sit next to our hardware team — board bring-up timelines collapse, schematic risks surface early, and the system comes up clean on the first prototype spin.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="8" y="10" width="14" height="14" rx="2" />
+        <rect x="26" y="24" width="14" height="14" rx="2" />
+        <path d="M22 17h4M22 20h2" />
+        <path d="M30 30h4M30 33h2" />
+        <path d="M22 17l8 13" />
+      </svg>
+    ),
+  },
+  {
+    title: "Expert Engineers",
+    desc: "Our team averages 12+ years across automotive, medical, aerospace, IoT, and networking. Senior engineers own your design — no junior hand-offs, no learning on your timeline.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="24" cy="24" r="6" />
+        <path d="M24 8 A 16 16 0 0 1 40 24" />
+        <path d="M40 24 A 16 16 0 0 1 24 40" />
+        <path d="M24 40 A 16 16 0 0 1 8 24" />
+        <path d="M8 24 A 16 16 0 0 1 24 8" />
+      </svg>
+    ),
+  },
+  {
+    title: "Strict Coding Standards & Quality",
+    desc: "MISRA‑C/C++ enforcement, static analysis, HIL testing, and 24–72 hour endurance runs with memory-leak and OTA-rollback validation as part of every release.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M24 6 10 12v10c0 9 6 16 14 18 8-2 14-9 14-18V12L24 6z" />
+        <path d="M18 24l4 4 8-8" />
+      </svg>
+    ),
+  },
+  {
+    title: "Reusable Frameworks",
+    desc: "Battle-tested libraries for secure OTA, battery management, cellular comms, and commissioning shorten time-to-market and lower long-term maintenance cost.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <rect x="10" y="26" width="28" height="12" rx="2" />
+        <rect x="14" y="16" width="20" height="10" rx="2" />
+        <rect x="18" y="8" width="12" height="8" rx="2" />
+      </svg>
+    ),
+  },
+];
+
+const FAQ_ITEMS = [
+  {
+    q: "Do you provide end-to-end hardware development?",
+    a: "Yes. We manage the complete hardware lifecycle — from concept, architecture, schematic design, and PCB layout to prototyping, compliance testing, and production handover. Our structured, architecture-first approach minimizes risk and shortens development cycles, giving you a single accountable partner from idea to certified, market-ready product.",
+  },
+  {
+    q: "Who owns the Intellectual Property (IP)?",
+    a: "You do — 100%. Unless otherwise agreed in writing, all IP generated during your project belongs exclusively to you. This includes schematics, PCB designs, firmware, and documentation. We operate under strict NDAs with our customers, employees, and third-party vendors to fully safeguard your innovations throughout the engagement.",
+  },
+  {
+    q: "What compliance standards can you help with?",
+    a: "We support readiness for FCC, CE, IEC, UL, and BIS standards. Compliance work begins at the design stage through DFM reviews and pre-compliance testing, coordinated with NABL-certified labs. Our ISO 9001 and ISO 13485-certified processes ensure complete documentation and traceability to meet global regulatory requirements.",
+  },
+  {
+    q: "Do you support manufacturing and scaling?",
+    a: "Yes. We provide Design for Manufacturability (DFM) reviews, BOM optimization, and vendor coordination to ensure a smooth transition from prototype to volume production. We support pilot builds and manage full production handover, delivering your supply chain team a thoroughly validated, manufacture-ready design package.",
+  },
+  {
+    q: "Do you perform testing in-house?",
+    a: "Yes. Our in-house labs include high-bandwidth oscilloscopes, spectrum analyzers, thermal cameras, temperature cycling chambers, and Hi-Pot testers. We perform functional validation, thermal stress, and environmental reliability testing on-site, identifying and resolving design weaknesses early — before coordinating final certification with NABL-accredited external laboratories.",
+  },
+  {
+    q: "Do you support product maintenance after design?",
+    a: "Yes. Our engagement extends well beyond launch. We offer lifecycle maintenance services covering design updates, component obsolescence management, and ongoing technical support. Whether you need minor revisions or a next-generation redesign, our team remains your long-term engineering partner throughout your product's entire commercial life.",
+  },
+];
 
 export default function EmbeddedDesignServicesPage() {
   return (
-    <main className="bg-white text-slate-900">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-slate-50 pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="absolute inset-0 bg-grid-slate-100/[0.04] bg-[size:20px_20px]" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium text-sm mb-6 border border-blue-100 shadow-sm">
-              <Zap className="w-4 h-4" />
-              <span>Expert Embedded Solutions</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-8 leading-tight">
-              Embedded Firmware <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                Development Service
-              </span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-10">
-              Our Firmware Life Cycle aligns with HW proto development and
-              travels till production implementation and system maintenance.
-            </p>
-          </div>
-
-          <div className="relative mx-auto mt-12 max-w-5xl rounded-3xl overflow-hidden shadow-2xl ring-1 ring-slate-200">
-            <Image
-              src="/em-firm-services/image2.png"
-              alt="Embedded firmware development service"
-              width={1200}
-              height={800}
-              className="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-105"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none" />
-          </div>
-        </div>
-      </section>
-
-      {/* Proactive Insights */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-slate-200">
-              <Image
-                src="/em-firm-services/image3.png"
-                alt="Embedded firmware development additional visual"
-                width={1200}
-                height={800}
-                className="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-105"
-              />
-            </div>
-            <div className="order-1 lg:order-2 lg:pl-10">
-              <h2 className="text-3xl tracking-tight text-slate-900 sm:text-4xl mb-6 leading-tight">
-                Proactive Insights & Experience
-              </h2>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                We understand the issues and challenges you will face in the
-                field, and our proactive insights and experience can help you
-                save both time and money.
-              </p>
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl p-8 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-4 opacity-10 transform transition-transform group-hover:scale-110 group-hover:rotate-12">
-                  <Activity className="w-24 h-24 text-blue-900" />
-                </div>
-                <p className="text-blue-900 font-medium leading-relaxed relative z-10 text-lg">
-                  We think on Day 1 about OTA, Battery optimization,
-                  Certification, Commissioning, On-field trouble shooting,
-                  Communication cost, MTBF, Security update and many other
-                  factors on day 1 and not while your device hit the field.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Platform & Domain Expertise */}
-      <section className="py-20 lg:py-32 bg-slate-50 border-y border-slate-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl tracking-tight text-slate-900 sm:text-4xl">
-              Platform Expertise
-            </h2>
-            <p className="mt-4 text-lg text-slate-600">
-              Comprehensive coverage across modern embedded hardware
-              architectures powering next-generation devices.
-            </p>
-          </div>
-
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-1 ring-slate-200 mb-24 max-w-5xl mx-auto bg-white p-2">
-            <div className="rounded-2xl overflow-hidden">
-              <Image
-                src="/em-firm-services/image5.png"
-                alt="Platform expertise"
-                width={1200}
-                height={800}
-                className="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-[1.02]"
-              />
-            </div>
-          </div>
-
-          <div className="mb-16">
-            <h2 className="text-3xl tracking-tight text-slate-900 sm:text-4xl mb-16 text-center">
-              Domain Expertise
-            </h2>
-
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 mb-24 items-center">
-              <div>
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 mb-8 shadow-sm">
-                  <Wifi className="w-7 h-7" />
-                </div>
-                <h3 className="text-2xl text-slate-900 mb-6">
-                  Router & Network Operating Systems
-                </h3>
-                <ul className="space-y-5">
-                  {[
-                    "OpenWrt-based router firmware development",
-                    "OpenWiFi integration, firewall and VPN stacks",
-                    "VLAN, QoS, and advanced routing protocols",
-                    "Wi-Fi mesh networking and access point firmware",
-                    "Network monitoring, diagnostics, and OTA updates",
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-4 text-slate-700 text-lg">
-                      <CheckCircle2 className="w-6 h-6 text-indigo-500 shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-slate-200">
-                <Image
-                  src="/em-firm-services/image7.png"
-                  alt="Router and network operating systems"
-                  width={1200}
-                  height={800}
-                  className="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
-              <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-slate-200">
-                <Image
-                  src="/em-firm-services/image7.png"
-                  alt="Server-grade full stack firmware"
-                  width={1200}
-                  height={800}
-                  className="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-              <div className="order-1 lg:order-2">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 mb-8 shadow-sm">
-                  <Server className="w-7 h-7" />
-                </div>
-                <h3 className="text-2xl text-slate-900 mb-6">
-                  Server-Grade Full stack Firmware
-                </h3>
-                <p className="text-slate-600 mb-8 text-lg leading-relaxed">
-                  End-to-end firmware development for server platforms - from
-                  board bring-up and power sequencing to secure remote
-                  management.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {[
-                    "BMC firmware (OpenBMC, IPMI, Redfish)",
-                    "BIOS / UEFI development (EDK-II)",
-                    "Linux bring-up for server platforms",
-                    "CPLD / FPGA firmware for board control",
-                    "Power sequencing and management",
-                    "Sensor monitoring and telemetry",
-                    "Secure boot, TPM, and integrity",
-                  ].map((item, i) => (
-                    <div key={i} className="flex gap-3 text-slate-700">
-                      <CheckCircle2 className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
-                      <span className="text-sm font-medium">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Chipsets & Silicon Expertise */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl tracking-tight text-slate-900 sm:text-4xl">
-              Chipsets & Silicon Expertise
-            </h2>
-            <p className="mt-4 text-lg text-slate-600">
-              Extensive experience across leading microcontroller silicon
-              platforms powering modern embedded and IoT devices.
-            </p>
-          </div>
-
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-1 ring-slate-200 mb-20">
-            <Image
-              src="/em-firm-services/image6.png"
-              alt="Chipsets and silicon expertise"
-              width={1920}
-              height={900}
-              className="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-[1.02]"
-            />
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="group bg-white rounded-3xl p-10 ring-1 ring-slate-200 shadow-sm hover:shadow-xl hover:ring-blue-500/50 transition-all duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                <Cpu className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-2xl text-slate-900 mb-3">Microcontrollers</h3>
-              <p className="text-xs text-blue-600 mb-6 uppercase tracking-widest">
-                Multi-Vendor MCU Expertise
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "STM32 (STM32F0 / F4 / H7 / WB)",
-                  "ESP32 family (ESP32, S3, C3)",
-                  "NXP (LPC, i.MX RT series)",
-                  "Renesas (RA, RX families)",
-                  "TI (MSP430, Sitara, SimpleLink)",
-                  "Nordic (nRF52 / nRF53 BLE)",
-                ].map((item, i) => (
-                  <li key={i} className="flex gap-4 text-slate-600">
-                    <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span className="font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="group bg-white rounded-3xl p-10 ring-1 ring-slate-200 shadow-sm hover:shadow-xl hover:ring-indigo-500/50 transition-all duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-indigo-50 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                <Code className="w-8 h-8 text-indigo-600" />
-              </div>
-              <h3 className="text-2xl text-slate-900 mb-8">
-                Silicon Bring-up & Integration
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  "Board bring-up and silicon validation",
-                  "Peripheral driver development (SPI, I2C, UART, ADC)",
-                  "Clock tree configuration and power mgmt",
-                  "Bootloader design and flash memory mgmt",
-                ].map((item, i) => (
-                  <li key={i} className="flex gap-4 text-slate-600">
-                    <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span className="font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="group bg-white rounded-3xl p-10 ring-1 ring-slate-200 shadow-sm hover:shadow-xl hover:ring-violet-500/50 transition-all duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-violet-50 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                <Radio className="w-8 h-8 text-violet-600" />
-              </div>
-              <h3 className="text-2xl text-slate-900 mb-8">
-                Connectivity Platforms
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  "Wi-Fi and BLE SoCs",
-                  "LoRa / Sub-GHz radio platforms",
-                  "Sensor interface and mixed-signal integration",
-                  "Edge IoT device firmware architectures",
-                ].map((item, i) => (
-                  <li key={i} className="flex gap-4 text-slate-600">
-                    <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span className="font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="group bg-white rounded-3xl p-10 ring-1 ring-slate-200 shadow-sm hover:shadow-xl hover:ring-emerald-500/50 transition-all duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-emerald-50 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                <Battery className="w-8 h-8 text-emerald-600" />
-              </div>
-              <h3 className="text-2xl text-slate-900 mb-8">Low-Power Design</h3>
-              <ul className="space-y-4">
-                {[
-                  "Ultra-low power firmware for battery devices",
-                  "Sleep modes, wake sources and energy profiling",
-                  "Battery-powered sensor node design",
-                ].map((item, i) => (
-                  <li key={i} className="flex gap-4 text-slate-600">
-                    <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span className="font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Standards & Reusable Firmware Libraries */}
-      <section className="py-20 lg:py-32 bg-slate-950 text-white relative overflow-hidden">
-        {/* Background Decorative Elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[128px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-[128px]" />
-        </div>
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto mb-20">
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-5xl mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
-              Standards & Reusable Libraries
-            </h2>
-            <p className="text-xl text-slate-300 leading-relaxed">
-              To accelerate product development and ensure long-term
-              maintainability, we build modular firmware frameworks and reusable
-              libraries. Focus on security, reliability, and scalability for
-              large IoT deployments.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
-            {[
-              {
-                icon: Shield,
-                color: "text-blue-400",
-                bg: "bg-blue-500/10",
-                title: "Secure OTA",
-                description:
-                  "Over-the-Air firmware updates for remote upgrades.",
-                items: [
-                  "Signed/encrypted images",
-                  "Dual-bank rollback",
-                  "Delta updates",
-                  "Device auth",
-                ],
-              },
-              {
-                icon: Battery,
-                color: "text-emerald-400",
-                bg: "bg-emerald-500/10",
-                title: "Battery Mgmt",
-                description: "Efficient power usage for remote IoT devices.",
-                items: [
-                  "Advanced sleep",
-                  "Adaptive duty cycling",
-                  "Health monitoring",
-                  "Dynamic scaling",
-                ],
-              },
-              {
-                icon: Radio,
-                color: "text-violet-400",
-                bg: "bg-violet-500/10",
-                title: "Cellular Comm",
-                description:
-                  "Secure communication stacks for cellular devices.",
-                items: [
-                  "LTE-M/NB-IoT/GSM",
-                  "TLS / DTLS messaging",
-                  "MQTT / CoAP",
-                  "Auto-recovery",
-                ],
-              },
-              {
-                icon: Fingerprint,
-                color: "text-amber-400",
-                bg: "bg-amber-500/10",
-                title: "Commissioning",
-                description:
-                  "Secure onboarding infrastructure for IoT ecosystems.",
-                items: [
-                  "Identity provisioning",
-                  "QR/Mobile assisted",
-                  "Cloud registration",
-                  "Secure key exchange",
-                ],
-              },
-            ].map((card, idx) => (
-              <div
-                key={idx}
-                className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.05] transition-colors relative overflow-hidden group"
-              >
-                <div
-                  className={`w-14 h-14 rounded-2xl ${card.bg} flex items-center justify-center mb-6`}
-                >
-                  <card.icon className={`w-7 h-7 ${card.color}`} />
-                </div>
-                <h3 className="text-xl text-white mb-3">{card.title}</h3>
-                <p className="text-sm text-slate-400 mb-6">
-                  {card.description}
-                </p>
-                <ul className="space-y-3">
-                  {card.items.map((item, i) => (
-                    <li key={i} className="flex gap-3 text-slate-300 text-sm">
-                      <CheckCircle2
-                        className={`w-4 h-4 ${card.color} shrink-0 mt-0.5`}
-                      />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10 mb-24">
-            <Image
-              src="/em-firm-services/image8.png"
-              alt="Standards and reusable firmware libraries"
-              width={1920}
-              height={900}
-              className="w-full h-auto object-cover transform transition-transform duration-1000 hover:scale-105 opacity-80"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent pointer-events-none" />
-          </div>
-
-          {/* Quality Standards */}
-          <div className="bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-950 rounded-3xl p-10 lg:p-16 text-center shadow-2xl relative overflow-hidden border border-blue-500/30">
-            <div className="absolute top-0 right-0 p-8 opacity-10 blur-xl">
-              <Activity className="w-64 h-64 text-blue-400" />
-            </div>
-
-            <Activity className="w-16 h-16 text-blue-300 mx-auto mb-8 relative z-10" />
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 relative z-10">
-              Our Coding Standards & Quality
-            </h2>
-            <p className="text-blue-100 max-w-3xl mx-auto text-lg mb-16 relative z-10">
-              To ensure reliability in mission-critical embedded systems, our
-              development process follows strict coding standards and validation
-              procedures.
-            </p>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left relative z-10">
-              <div className="bg-black/20 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:bg-black/30 transition-colors">
-                <div className="text-blue-400 mb-3 text-lg">
-                  01. MISRA-C / C++
-                </div>
-                <p className="text-sm text-blue-100 mb-4">
-                  Guidelines for safety-critical systems.
-                </p>
-                <ul className="text-sm text-blue-200 space-y-2">
-                  <li className="flex gap-2">
-                    <span>•</span> Eliminates undefined behavior
-                  </li>
-                  <li className="flex gap-2">
-                    <span>•</span> Improves maintainability
-                  </li>
-                  <li className="flex gap-2">
-                    <span>•</span> Enforces determinism
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-black/20 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:bg-black/30 transition-colors">
-                <div className="text-blue-400 mb-3 text-lg">
-                  02. Static Analysis
-                </div>
-                <p className="text-sm text-blue-100 mb-4">
-                  Automated tools to detect issues early.
-                </p>
-                <ul className="text-sm text-blue-200 space-y-2">
-                  <li className="flex gap-2">
-                    <span>•</span> Secure memory handling
-                  </li>
-                  <li className="flex gap-2">
-                    <span>•</span> Vulnerability scanning
-                  </li>
-                  <li className="flex gap-2">
-                    <span>•</span> Peer code reviews
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-black/20 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:bg-black/30 transition-colors">
-                <div className="text-blue-400 mb-3 text-lg">
-                  03. HIL Testing
-                </div>
-                <p className="text-sm text-blue-100 mb-4">
-                  Hardware limits in automated endpoints.
-                </p>
-                <ul className="text-sm text-blue-200 space-y-2">
-                  <li className="flex gap-2">
-                    <span>•</span> Real-time interaction
-                  </li>
-                  <li className="flex gap-2">
-                    <span>•</span> Timing validation
-                  </li>
-                  <li className="flex gap-2">
-                    <span>•</span> Continuous integration
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-black/20 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:bg-black/30 transition-colors">
-                <div className="text-blue-400 mb-3 text-lg">
-                  04. Endurance Testing
-                </div>
-                <p className="text-sm text-blue-100 mb-4">
-                  Long-duration reliability testing.
-                </p>
-                <ul className="text-sm text-blue-200 space-y-2">
-                  <li className="flex gap-2">
-                    <span>•</span> 24-72h endurance tests
-                  </li>
-                  <li className="flex gap-2">
-                    <span>•</span> OTA validation
-                  </li>
-                  <li className="flex gap-2">
-                    <span>•</span> Memory leak monitoring
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <ServiceCaseStudiesSection
-        eyebrow="Embedded Programs"
-        studies={embeddedCaseStudies}
+    <>
+      <ServiceVideoHero {...HERO} />
+      <FirmwareLifecycleSection {...FIRMWARE_LIFECYCLE} />
+      <DayOneThinkingSection {...DAY_ONE_THINKING} />
+      <EmbeddedSoftwareCapabilitiesSection {...EMBEDDED_SOFTWARE} />
+      <ModularFirmwareFrameworksSection {...MODULAR_FIRMWARE} />
+      <PCBIndustriesSection
+        industries={HARDWARE_INDUSTRIES}
+        headingPrefix="Hardware Development"
+        ctaLabel="Get a Hardware Design Quote"
       />
-    </main>
+      {/* WHY CHOOSE QMAX */}
+      <WhySection whyCards={WHY_CARDS} titleHighlight="Embedded Design?" />
+
+      <section
+        className="bg-white px-16 pb-24 pt-0 max-[900px]:px-6 max-[900px]:pb-16"
+        aria-label="Contact founder"
+      >
+        <div className="mx-auto max-w-[1200px]">
+          <a
+            className="relative block aspect-[2396/520] w-full cursor-pointer overflow-hidden rounded-xl bg-black no-underline shadow-[0_1px_2px_rgba(16,24,40,0.06)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_6px_16px_rgba(16,24,40,0.10)]"
+            href="/hardware-development-services/contact"
+            aria-label="Questions? Let's talk — contact Saravanabhavan, Founder & CEO"
+          >
+            <Image
+              src="/embedded-design-services/founder-cta-banner.png"
+              alt="Questions? Let's talk — Saravanabhavan, Founder & CEO"
+              fill
+              sizes="(max-width: 900px) 100vw, 1200px"
+              className="object-cover object-center"
+            />
+          </a>
+        </div>
+      </section>
+
+      <div className="pb-12"></div>
+      {/* PARTNERSHIPS */}
+      <PartnershipsSection />
+
+      <div className="pb-12"></div>
+
+      {/* CTA BANNER */}
+      <CTABannerSection />
+
+      {/* FAQ */}
+      <FAQSection faqItems={FAQ_ITEMS} />
+      <div className="pb-28"></div>
+    </>
   );
 }
