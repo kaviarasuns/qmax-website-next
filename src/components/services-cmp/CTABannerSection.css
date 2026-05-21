@@ -4,7 +4,7 @@
 
 .cta-banner {
   background: #fff;
-  padding: 32px 32px 64px;
+  padding: 96px 32px;
   position: relative;
 }
 .cta-banner-inner {
@@ -67,7 +67,7 @@
 .cta-square-br { bottom: -10px; left: 5%; }
 
 @media (max-width: 900px) {
-  .cta-banner { padding: 24px 20px 48px; }
+  .cta-banner { padding: 64px 24px; }
   .cta-banner-panel {
     flex-direction: column;
     align-items: flex-start;

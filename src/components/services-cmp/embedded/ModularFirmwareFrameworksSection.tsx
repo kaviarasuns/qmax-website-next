@@ -22,16 +22,17 @@ export function ModularFirmwareFrameworksSection({
 }: ModularFirmwareFrameworksSectionProps) {
   return (
     <section
-      className="bg-white px-16 py-24 max-[1100px]:px-8 max-[640px]:px-5 max-[640px]:py-12"
+      className="bg-white px-16 py-24 max-[1100px]:px-8 max-[900px]:py-16 max-[640px]:px-5"
       id="modular-firmware-frameworks"
       aria-label="Modular firmware frameworks"
     >
       <div className="mx-auto max-w-[1200px]">
-        <div className="mb-8 max-w-[800px]">
-          <h2 className="mb-4 text-[clamp(32px,4vw,48px)] font-light tracking-[1.2px] text-black">
-            {title} <span className="text-brand-500">{titleHighlight}</span>
+        <div className="mb-14 flex w-full flex-col items-center text-center max-[900px]:mb-10">
+          <h2 className="mb-6 text-4xl font-light tracking-wide text-black md:text-5xl">
+            {title}{" "}
+            <span className="text-brand-500">{titleHighlight}</span>
           </h2>
-          <p className="text-[15px] leading-6 text-gray-600">{description}</p>
+          <p className="w-full text-[#383838]">{description}</p>
         </div>
 
         <div className="grid grid-cols-4 gap-4 max-[1100px]:grid-cols-2 max-[640px]:grid-cols-1">

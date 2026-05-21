@@ -21,7 +21,7 @@ const HERO = {
   description:
     "Production isn’t a milestone — it’s a set of unforgiving demands. Certification windows, field reliability, OTA recovery, manufacturing yield, security patch cadence — and each domain piles on its own: ASIL traceability for automotive, IEC 62304 for medical, DO‑178C for avionics, OPC‑UA determinism for industrial. Our firmware lifecycle is built around those realities from Day 1, not retrofitted at sign‑off.",
   ctaLabel: "Talk to our engineer",
-  ctaHref: "/hardware-development-services/contact",
+  ctaHref: "/embedded-design-services/contact",
   videoSrc:
     "https://d1yetprhniwywz.cloudfront.net/v2/services_video/embedded_hero_video.mp4",
 };
@@ -461,7 +461,6 @@ const EMBEDDED_SOFTWARE = {
   description:
     "Whether you need a single firmware engineer to bring up a sensor node, or a team to deliver OpenBMC, Linux BSP, and a connectivity stack in parallel, we cover the full range — built to strict coding standards and proven on real silicon.",
   capabilities: EMBEDDED_SOFTWARE_CAPABILITIES,
-  getInTouchHref: "/hardware-development-services/contact",
 };
 
 const MODULAR_FIRMWARE_FRAMEWORKS: FirmwareFramework[] = [
@@ -736,28 +735,30 @@ export default function EmbeddedDesignServicesPage() {
       <ServiceVideoHero {...HERO} />
       <FirmwareLifecycleSection {...FIRMWARE_LIFECYCLE} />
       <DayOneThinkingSection {...DAY_ONE_THINKING} />
-      <EmbeddedSoftwareCapabilitiesSection {...EMBEDDED_SOFTWARE} />
+      <EmbeddedSoftwareCapabilitiesSection
+        {...EMBEDDED_SOFTWARE}
+        getInTouchHref="/embedded-design-services/contact"
+      />
       <ModularFirmwareFrameworksSection {...MODULAR_FIRMWARE} />
       <PCBIndustriesSection
-        industries={HARDWARE_INDUSTRIES}
+        industries={HARDWARE_INDUSTRIES.map((industry) => ({
+          ...industry,
+          ctaHref: "/embedded-design-services/contact",
+        }))}
         headingPrefix="Embedded Engineering"
         ctaLabel="Learn More"
       />
       {/* WHY CHOOSE QMAX */}
-      <WhySection
-        whyCards={WHY_CARDS}
-        titleHighlight="Embedded Design?"
-        className="pb-6 max-[900px]:pb-4"
-      />
+      <WhySection whyCards={WHY_CARDS} titleHighlight="Embedded Design?" />
 
       <section
-        className="bg-white px-16 pb-24 pt-0 max-[900px]:px-6 max-[900px]:pb-16"
+        className="bg-white px-16 py-24 max-[900px]:px-6 max-[900px]:py-16"
         aria-label="Contact founder"
       >
         <div className="mx-auto max-w-[1200px]">
           <a
             className="relative block aspect-[2396/520] w-full cursor-pointer overflow-hidden rounded-xl bg-black no-underline shadow-[0_1px_2px_rgba(16,24,40,0.06)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_6px_16px_rgba(16,24,40,0.10)]"
-            href="/hardware-development-services/contact"
+            href="/embedded-design-services/contact"
             aria-label="Have your questions answered — contact Saravanaperumal Annamalai, VP - SWE Engineering"
           >
             <Image
@@ -791,7 +792,6 @@ export default function EmbeddedDesignServicesPage() {
         </div>
       </section>
 
-      <div className="pb-12"></div>
       {/* PARTNERSHIPS */}
       <PartnershipsSection
         heading="Silicon Platforms"
@@ -799,10 +799,8 @@ export default function EmbeddedDesignServicesPage() {
         paragraph="Across hundreds of programs, our firmware engineers have shipped production code on the silicon below. We carry hands-on experience with their toolchains, SDKs, errata sheets, and reference designs — so your project starts from working ground, not from scratch."
       />
 
-      <div className="pb-12"></div>
-
       {/* CTA BANNER */}
-      <CTABannerSection />
+      <CTABannerSection href="/embedded-design-services/contact" />
 
       {/* FAQ */}
       <FAQSection faqItems={FAQ_ITEMS} />

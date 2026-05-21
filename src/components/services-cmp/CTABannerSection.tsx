@@ -1,6 +1,12 @@
 import "./CTABannerSection.css";
 
-export function CTABannerSection() {
+type CTABannerSectionProps = {
+  href?: string;
+};
+
+export function CTABannerSection({
+  href = "/hardware-development-services/contact",
+}: CTABannerSectionProps) {
   return (
     <section className="cta-banner" id="cta-banner-section">
       <div className="cta-banner-inner">
@@ -13,10 +19,7 @@ export function CTABannerSection() {
             </h2>
             <p>Contact Us Today To Get Started.</p>
           </div>
-          <a
-            href="/hardware-development-services/contact"
-            className="cta-banner-btn"
-          >
+          <a href={href} className="cta-banner-btn">
             <span>BOOK A MEETING</span>
             <svg
               viewBox="0 0 24 24"

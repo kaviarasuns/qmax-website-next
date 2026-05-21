@@ -32,7 +32,7 @@ export function PartnershipsSection({
 }: PartnershipsSectionProps) {
   return (
     <section
-      className="relative overflow-hidden bg-white px-8 pb-[72px] pt-16 text-[#1C2A3A] max-[900px]:px-6 max-[900px]:py-12"
+      className="relative overflow-hidden bg-white px-8 py-24 text-[#1C2A3A] max-[900px]:px-6 max-[900px]:py-16"
       id="partnerships-section"
     >
       <div className="mx-auto max-w-[1280px]">

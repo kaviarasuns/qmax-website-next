@@ -282,7 +282,7 @@ export function DayOneThinkingSection({
 
         @media (max-width: 1100px) {
           .fw-d1-thinking {
-            padding: 64px 32px;
+            padding: 96px 32px;
           }
 
           .fw-d1-grid {
@@ -290,9 +290,15 @@ export function DayOneThinkingSection({
           }
         }
 
+        @media (max-width: 900px) {
+          .fw-d1-thinking {
+            padding: 64px 24px;
+          }
+        }
+
         @media (max-width: 640px) {
           .fw-d1-thinking {
-            padding: 48px 20px;
+            padding: 64px 20px;
           }
 
           .fw-d1-grid {

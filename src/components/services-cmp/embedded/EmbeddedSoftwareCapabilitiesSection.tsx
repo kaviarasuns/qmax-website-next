@@ -26,7 +26,7 @@ export function EmbeddedSoftwareCapabilitiesSection({
   titleHighlight = "Bare‑Metal To Server‑Grade",
   description = "Whether you need a single firmware engineer to bring up a sensor node, or a team to deliver OpenBMC, Linux BSP, and a connectivity stack in parallel, we cover the full range — built to strict coding standards and proven on real silicon.",
   capabilities,
-  getInTouchHref = "/hardware-development-services/contact",
+  getInTouchHref = "/embedded-design-services/contact",
 }: EmbeddedSoftwareCapabilitiesSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
 
@@ -41,12 +41,9 @@ export function EmbeddedSoftwareCapabilitiesSection({
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-14 flex w-full flex-col items-center text-center max-[900px]:mb-10">
           <h2 className="mb-6 text-4xl font-light tracking-wide text-black md:text-5xl">
-            {title}{" "}
-            <span className="text-brand-500">{titleHighlight}</span>
+            {title} <span className="text-brand-500">{titleHighlight}</span>
           </h2>
-          <p className="w-full text-[#383838]">
-            {description}
-          </p>
+          <p className="w-full text-[#383838]">{description}</p>
         </div>
 
         <div
@@ -86,7 +83,7 @@ export function EmbeddedSoftwareCapabilitiesSection({
 
         {capabilities.map((cap, index) => {
           const isActive = activeIdx === index;
-          const learnMoreHref = cap.learnMoreHref ?? getInTouchHref;
+          const learnMoreHref = cap.learnMoreHref;
 
           return (
             <div
@@ -120,9 +117,7 @@ export function EmbeddedSoftwareCapabilitiesSection({
               </div>
 
               <div>
-                <p className="mb-9 text-[#383838]">
-                  {cap.intro}
-                </p>
+                <p className="mb-9 text-[#383838]">{cap.intro}</p>
                 <div className="grid grid-cols-2 gap-12 max-[900px]:grid-cols-1 max-[900px]:gap-7">
                   {cap.bullets.map((group) => (
                     <div key={group.title}>

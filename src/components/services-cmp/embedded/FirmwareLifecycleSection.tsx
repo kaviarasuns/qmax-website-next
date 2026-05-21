@@ -297,6 +297,10 @@ export function FirmwareLifecycleSection({
           .fw-lifecycle-grid {
             grid-template-columns: repeat(3, minmax(0, 1fr));
           }
+
+          .fw-lifecycle {
+            padding: 64px 24px;
+          }
         }
 
         @media (max-width: 640px) {
