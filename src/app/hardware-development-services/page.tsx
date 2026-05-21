@@ -8,6 +8,7 @@ import "../../components/hardware-design.css";
 import { HeroConceptToSilicon } from "@/components/services-cmp/HeroConceptToSilicon";
 import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
 import { HARDWARE_INDUSTRIES } from "@/store/hardware-industries";
+import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 
 export const metadata: Metadata = {
   title: "Hardware Development Services | Qmax",
@@ -699,16 +700,21 @@ const FAQ_ITEMS = [
   },
 ];
 
+const HERO = {
+  title:
+    "Hardware Development Services: The Complete Hardware Product Lifecycle",
+  description:
+    "We provide full hardware lifecycle ownership, taking your product from early requirement analysis to production handover. Our lifecycle-driven approach minimizes risk, shortens development cycles, and ensures compliance readiness from day one.",
+  ctaLabel: "Talk to our engineer",
+  ctaHref: "/hardware-development-services/contact",
+  videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/hardware_hero_bg.mp4",
+};
+
 export default function HardwareDevelopmentServicesPage() {
   return (
     <div className="hd-root">
-      {/* HERO */}
-      <HeroConceptToSilicon
-        title="Hardware Development Services: The Complete Hardware Product Lifecycle"
-        description="We provide full hardware lifecycle ownership, taking your product from early requirement analysis to production handover. Our lifecycle-driven approach minimizes risk, shortens development cycles, and ensures compliance readiness from day one."
-        ctaLabel="Talk to our engineer"
-        ctaHref="/hardware-development-services/contact"
-      />
+      <ServiceVideoHero {...HERO} />
+      <HeroConceptToSilicon />
 
       {/* CORE CAPABILITIES */}
       <CapabilitiesSection

@@ -663,8 +663,8 @@ const PHASES: Phase[] = [
 ];
 
 export type HeroConceptToSiliconProps = {
-  title: ReactNode;
-  description: ReactNode;
+  title?: ReactNode;
+  description?: ReactNode;
   ctaLabel?: string;
   ctaHref?: string;
   eyebrow?: string;
@@ -678,6 +678,7 @@ export function HeroConceptToSilicon({
   ctaHref = "/hardware-development-services/contact",
   eyebrow = "Always shipping · concept to production",
 }: HeroConceptToSiliconProps) {
+  const showCopy = title != null && description != null;
   const flowRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -730,18 +731,20 @@ export function HeroConceptToSilicon({
   }, []);
 
   return (
-    <section className="cts-hero mt-16">
+    <section className="cts-hero">
       <div className="cts-hero-inner">
-        <div className="cts-hero-copy">
-          <h1 className="cts-hero-title">{title}</h1>
-          <p className="cts-hero-desc">{description}</p>
-          <Link
-            className="inline-block rounded-md bg-red-600 px-8 py-3.5 text-base font-semibold uppercase tracking-[0.04em] text-white no-underline transition duration-150 ease-in-out hover:-translate-y-0.5 hover:bg-red-700"
-            href={ctaHref}
-          >
-            {ctaLabel}
-          </Link>
-        </div>
+        {showCopy ? (
+          <div className="cts-hero-copy">
+            <h1 className="cts-hero-title">{title}</h1>
+            <p className="cts-hero-desc">{description}</p>
+            <Link
+              className="inline-block rounded-md bg-red-600 px-8 py-3.5 text-base font-semibold uppercase tracking-[0.04em] text-white no-underline transition duration-150 ease-in-out hover:-translate-y-0.5 hover:bg-red-700"
+              href={ctaHref}
+            >
+              {ctaLabel}
+            </Link>
+          </div>
+        ) : null}
       </div>
 
       <div className="cts-hero-lifecycle">
@@ -781,18 +784,6 @@ export function HeroConceptToSilicon({
           position: relative;
           width: 100%;
           min-height: calc(100vh - 4rem);
-          background:
-            radial-gradient(
-              ellipse at top right,
-              rgba(79, 160, 211, 0.18),
-              transparent 55%
-            ),
-            radial-gradient(
-              ellipse at bottom left,
-              rgba(236, 126, 102, 0.12),
-              transparent 55%
-            ),
-            linear-gradient(180deg, #0f172a 0%, #1b2a3d 100%);
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -805,29 +796,6 @@ export function HeroConceptToSilicon({
             sans-serif;
           padding: 40px 24px 32px;
         }
-        .cts-hero::before,
-        .cts-hero::after {
-          content: "";
-          position: absolute;
-          width: 360px;
-          height: 360px;
-          border-radius: 50%;
-          background: radial-gradient(
-            circle,
-            rgba(91, 175, 224, 0.16) 0%,
-            transparent 70%
-          );
-          pointer-events: none;
-        }
-        .cts-hero::before {
-          top: -120px;
-          left: -120px;
-        }
-        .cts-hero::after {
-          bottom: -120px;
-          right: -120px;
-        }
-
         .cts-hero-inner {
           position: relative;
           z-index: 2;
