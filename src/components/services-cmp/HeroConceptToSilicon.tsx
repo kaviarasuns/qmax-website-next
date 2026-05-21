@@ -737,8 +737,11 @@ export function HeroConceptToSilicon({
       <div className="cts-hero-inner">
         {showCopy ? (
           <div className="cts-hero-copy">
-            <h1 className="cts-hero-title">{title}</h1>
-            <p className="cts-hero-desc">{description}</p>
+            <h1 className="!m-0 !mb-[26px] !text-[clamp(34px,4.2vw,52px)] !font-bold !leading-[1.12] !tracking-[-0.01em] !text-white ![text-wrap:balance]">
+              {title}
+              <br />
+              {description}
+            </h1>
             <Link
               className="inline-block rounded-md bg-red-600 px-8 py-3.5 text-base font-semibold uppercase tracking-[0.04em] text-white no-underline transition duration-150 ease-in-out hover:-translate-y-0.5 hover:bg-red-700"
               href={ctaHref}
@@ -817,22 +820,6 @@ export function HeroConceptToSilicon({
         .cts-hero-copy {
           max-width: none;
         }
-        .cts-hero-title {
-          font-size: clamp(34px, 4.2vw, 52px);
-          line-height: 1.12;
-          font-weight: 700;
-          color: #fff;
-          letter-spacing: -0.01em;
-          margin: 0 0 18px;
-          text-wrap: balance;
-        }
-        .cts-hero-desc {
-          font-size: 18px;
-          line-height: 1.55;
-          color: rgba(255, 255, 255, 0.78);
-          margin: 0 0 26px;
-          font-weight: 400;
-        }
         .cts-hero-lifecycle {
           position: relative;
           z-index: 2;
@@ -861,6 +848,7 @@ export function HeroConceptToSilicon({
         }
         .cts-hero-lifecycle-sub {
           width: 100%;
+          font-family: var(--font-readable-family);
           font-size: clamp(32px, 4vw, 48px);
           font-weight: 300;
           letter-spacing: 1.2px;
@@ -1047,7 +1035,6 @@ export function HeroConceptToSilicon({
         }
         .cts-phase[data-p="4"] .cts-phase-header {
           background: linear-gradient(180deg, #f0cb45 0%, #e6bf33 100%);
-          color: #4a3a00;
         }
         .cts-phase[data-p="5"] .cts-phase-header {
           background: linear-gradient(180deg, #f2a150 0%, #e5933f 100%);
@@ -1093,32 +1080,27 @@ export function HeroConceptToSilicon({
           gap: 6px;
           min-width: 0;
           min-height: 108px;
+          background: #fff;
           border: 1.5px solid transparent;
           box-shadow: 0 2px 6px rgba(16, 24, 40, 0.1);
           transition: all 0.25s;
         }
         .cts-phase[data-p="1"] .cts-sub {
-          background: rgba(47, 127, 180, 0.22);
           border-color: rgba(47, 127, 180, 0.35);
         }
         .cts-phase[data-p="2"] .cts-sub {
-          background: rgba(47, 147, 140, 0.22);
           border-color: rgba(47, 147, 140, 0.35);
         }
         .cts-phase[data-p="3"] .cts-sub {
-          background: rgba(70, 142, 63, 0.22);
           border-color: rgba(70, 142, 63, 0.35);
         }
         .cts-phase[data-p="4"] .cts-sub {
-          background: rgba(165, 127, 18, 0.2);
           border-color: rgba(165, 127, 18, 0.34);
         }
         .cts-phase[data-p="5"] .cts-sub {
-          background: rgba(199, 108, 32, 0.22);
           border-color: rgba(199, 108, 32, 0.35);
         }
         .cts-phase[data-p="6"] .cts-sub {
-          background: rgba(184, 77, 52, 0.22);
           border-color: rgba(184, 77, 52, 0.35);
         }
         .cts-sub:hover {

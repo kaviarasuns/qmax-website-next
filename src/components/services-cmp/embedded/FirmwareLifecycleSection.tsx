@@ -104,6 +104,7 @@ export function FirmwareLifecycleSection({
           margin: 0 0 12px;
           line-height: 1.15;
           text-align: center;
+          text-transform: capitalize;
         }
 
         .fw-lifecycle-head-sub {
@@ -114,6 +115,7 @@ export function FirmwareLifecycleSection({
           margin: 0;
           line-height: 1.15;
           text-align: center;
+          text-transform: capitalize;
         }
 
         .fw-lifecycle-accent {

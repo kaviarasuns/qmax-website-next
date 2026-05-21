@@ -9,9 +9,9 @@ export function CTABannerSection() {
         <div className="cta-banner-panel">
           <div className="cta-banner-copy">
             <h2 className="text-3xl md:text-4xl font-light tracking-wide">
-              Ready to bring your hardware design project to life?
+              Ready To Bring Your Hardware Design Project To Life?
             </h2>
-            <p>Contact us today to get started.</p>
+            <p>Contact Us Today To Get Started.</p>
           </div>
           <a
             href="/hardware-development-services/contact"

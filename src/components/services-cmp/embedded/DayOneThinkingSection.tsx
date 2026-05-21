@@ -34,8 +34,7 @@ export function DayOneThinkingSection({
       <div className="fw-d1-container">
         <div className="fw-d1-section-head">
           <h2>
-            {title}{" "}
-            <span className="fw-d1-accent">{titleHighlight}</span>
+            {title} <span className="fw-d1-accent">{titleHighlight}</span>
           </h2>
           <p>{description}</p>
         </div>
@@ -43,33 +42,35 @@ export function DayOneThinkingSection({
         <div className="fw-d1-grid">
           {insights.map((insight) => (
             <article key={insight.title} className="fw-d1-card">
-              <div className="fw-d1-card-icon">{insight.icon}</div>
-              <h3>{insight.title}</h3>
+              <div className="fw-d1-card-head">
+                <div className="fw-d1-card-icon">{insight.icon}</div>
+                <h3 className="!font-medium">{insight.title}</h3>
+              </div>
               <p>{insight.description}</p>
             </article>
           ))}
         </div>
 
         <div className="fw-d1-more">
-          <div className="fw-d1-more-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <circle cx="12" cy="12" r="9" />
-              <line x1="8" y1="12" x2="16" y2="12" />
-              <line x1="12" y1="8" x2="12" y2="16" />
-            </svg>
+          <div className="fw-d1-more-head">
+            <div className="fw-d1-more-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <line x1="8" y1="12" x2="16" y2="12" />
+                <line x1="12" y1="8" x2="12" y2="16" />
+              </svg>
+            </div>
+            <h3 className="!font-medium">{calloutTitle}</h3>
           </div>
-          <div>
-            <h3>{calloutTitle}</h3>
-            <p>{calloutDescription}</p>
-          </div>
+          <p>{calloutDescription}</p>
         </div>
       </div>
 
@@ -87,8 +88,12 @@ export function DayOneThinkingSection({
         }
 
         .fw-d1-section-head {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           max-width: 880px;
-          margin: 0 0 32px;
+          margin: 0 auto 32px;
+          text-align: center;
         }
 
         .fw-d1-section-head h2 {
@@ -109,14 +114,6 @@ export function DayOneThinkingSection({
           color: #5a6878;
           line-height: 1.6;
           margin: 0;
-        }
-
-        .fw-d1-section-head :global(.fw-d1-lead-emph) {
-          background: linear-gradient(120deg, #e63329, #c72a21);
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-          font-weight: 700;
         }
 
         .fw-d1-grid {
@@ -157,13 +154,22 @@ export function DayOneThinkingSection({
           border-color: var(--qmax-red-500);
         }
 
+        .fw-d1-card-head {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 8px;
+        }
+
         .fw-d1-card-icon {
           width: 44px;
           height: 44px;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          margin-bottom: 12px;
+          flex-shrink: 0;
           color: #e63329;
         }
 
@@ -185,7 +191,10 @@ export function DayOneThinkingSection({
           font-size: 15px;
           font-weight: 600;
           color: #0a1929;
-          margin: 0 0 5px;
+          margin: 0;
+          line-height: 1.3;
+          min-width: 0;
+          flex: 1 1 auto;
         }
 
         .fw-d1-card p {
@@ -201,9 +210,6 @@ export function DayOneThinkingSection({
           border: 1px solid #e3e8ef;
           border-radius: 14px;
           padding: 26px 30px;
-          display: flex;
-          align-items: center;
-          gap: 22px;
           box-shadow: 0 6px 22px rgba(10, 25, 41, 0.07);
           position: relative;
           overflow: hidden;
@@ -211,6 +217,15 @@ export function DayOneThinkingSection({
             transform 0.15s,
             box-shadow 0.15s,
             border-color 0.15s;
+        }
+
+        .fw-d1-more-head {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
+          gap: 14px;
+          margin-bottom: 8px;
         }
 
         .fw-d1-more::before {
@@ -248,14 +263,17 @@ export function DayOneThinkingSection({
           fill: none;
         }
 
-        .fw-d1-more h3 {
+        .fw-d1-more-head h3 {
+          font-size: 15px;
           font-weight: 600;
-          font-size: 18px;
           color: #0a1929;
-          margin: 0 0 4px;
+          margin: 0;
+          line-height: 1.3;
+          min-width: 0;
+          flex: 1 1 auto;
         }
 
-        .fw-d1-more > div > p {
+        .fw-d1-more > p {
           color: #5a6878;
           margin: 0;
           font-size: 14.5px;
@@ -279,11 +297,6 @@ export function DayOneThinkingSection({
 
           .fw-d1-grid {
             grid-template-columns: 1fr;
-          }
-
-          .fw-d1-more {
-            flex-direction: column;
-            align-items: flex-start;
           }
         }
       `}</style>
