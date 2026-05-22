@@ -3,8 +3,8 @@ import { CoreEngineeringMechanical } from "@/components/services-cmp/core-engine
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 import { WhyChooseQmaxMechanical } from "@/components/services-cmp/why-choose-qmax-mechanical";
-import { ServiceCaseStudy } from "@/data/service-case-studies";
-import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
+import type { ServiceCaseStudy } from "@/data/service-case-studies";
+import { mechanicalCaseStudiesData } from "@/store/mechanical-case-studies";
 
 const FAQ_ITEMS = [
   {
@@ -47,33 +47,28 @@ const HERO = {
     "https://d1yetprhniwywz.cloudfront.net/v2/services_video/mechanical_desing.mp4",
 };
 
-function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+function mechanicalServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {
-    const study = industrialCaseStudiesData.find((c) => c.id === id);
+    const study = mechanicalCaseStudiesData.find((c) => c.id === id);
     const image = study?.images[0];
     if (!study || !image) {
-      throw new Error(`Industrial case study missing or has no image: ${id}`);
+      throw new Error(`Mechanical case study missing or has no image: ${id}`);
     }
-    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
-    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
-    const summary =
-      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
     return {
       title: study.title,
       image,
       link: `/case-studies/${study.id}`,
-      category: "hardware",
-      summary,
+      category: "mechanical",
     };
   });
 }
 
-const powerElectronicsCaseStudies: ServiceCaseStudy[] =
-  industrialServiceCaseStudies([
-    "oxygen-generator",
-    "uv-disinfection-system",
-    "warehouse-camera-controller-unit",
-    "smart-tap",
+const MECHANICAL_CASE_STUDIES: ServiceCaseStudy[] =
+  mechanicalServiceCaseStudies([
+    "industrial-splice-detector",
+    "ott-media-gateway",
+    "rf-signal-generator-enclosure",
+    "pulse-oximeter-enclosure",
   ]);
 
 export default function MechanicalDesignServicesPage() {
@@ -84,8 +79,8 @@ export default function MechanicalDesignServicesPage() {
       <WhyChooseQmaxMechanical />
       <FAQSection faqItems={FAQ_ITEMS} />
       <ServiceCaseStudiesSection
-        eyebrow="Hardware Programs"
-        studies={powerElectronicsCaseStudies}
+        studies={MECHANICAL_CASE_STUDIES}
+        moreHref="/case-studies?category=mechanical"
         hideTopBorder
       />
     </>

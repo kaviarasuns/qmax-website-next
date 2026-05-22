@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   Atom,
   FlaskConical,
@@ -8,13 +10,21 @@ import {
   Droplets,
   Cog,
   FileCheck,
+  ChevronRight,
 } from "lucide-react";
 
 /* ── Types ── */
 
 type SmallCard = { title: string; description: string; icon?: ReactNode };
 type CheckItem = string;
-type PortfolioItem = { title: string; description: string; tag?: string };
+type PortfolioItem = {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+  label?: string;
+  tag?: string;
+};
 type TableRow = string[];
 type IpCard = { rating: string; description: string };
 type AnalysisRow = { type: string; standard: string; output: string };
@@ -25,7 +35,12 @@ type ContentSection =
   | { kind: "table"; title: string; headers: string[]; rows: TableRow[] }
   | { kind: "materials"; title: string; items: SmallCard[]; footnote?: string }
   | { kind: "ip-cards"; title: string; items: IpCard[] }
-  | { kind: "portfolio"; title: string; items: PortfolioItem[] }
+  | {
+      kind: "portfolio";
+      title: string;
+      layout: "grid" | "featured";
+      items: PortfolioItem[];
+    }
   | { kind: "analysis"; title: string; rows: AnalysisRow[] }
   | { kind: "doc-cards"; title: string; items: SmallCard[] };
 
@@ -82,16 +97,25 @@ const SERVICES: MechanicalService[] = [
       {
         kind: "portfolio",
         title: "Portfolio",
+        layout: "grid",
         items: [
           {
             title: "Wi-Fi Security Device Enclosure",
             description:
               "Low tooling cost, integrated EMI suppression geometry, antenna keep-out zones for maximum Wi-Fi throughput.",
+            label: "IoT / Security",
+            image:
+              "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/iot_gateway/1.1.png",
+            href: "/case-studies/iot-gateway",
           },
           {
             title: "Handheld OBD2 Diagnostic Device",
             description:
               "4G, Wi-Fi, LCD, battery. Workshop-grade drop resistance, ergonomic grip geometry, internal RF coordination.",
+            label: "Automotive",
+            image:
+              "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD2/OBD_V4_RENDER_23_NOV_2024_MG2_2.1.png",
+            href: "/case-studies/obd-v4-system",
           },
         ],
       },
@@ -176,12 +200,17 @@ const SERVICES: MechanicalService[] = [
       {
         kind: "portfolio",
         title: "Portfolio Case Study",
+        layout: "featured",
         items: [
           {
             title: "Manpack Communication Equipment",
             description:
               "Ultra-lightweight Al-alloy manpack for defence application. MIL-STD-810 qualified for vibration, shock, temperature, and humidity. Weight optimisation was a primary design constraint alongside full RF shielding integrity and field-maintainability requirements.",
+            label: "Defence",
             tag: "Manpack Comms",
+            image:
+              "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ventilation_control_damper/military_man_with_bigcat3.7.png",
+            href: "/case-studies/rugged-communication-control-system-enclosure",
           },
         ],
       },
@@ -238,12 +267,17 @@ const SERVICES: MechanicalService[] = [
       {
         kind: "portfolio",
         title: "Portfolio",
+        layout: "featured",
         items: [
           {
             title: "Satellite Antenna Stabiliser",
             description:
               "Shipborne system maintaining antenna pointing towards a geostationary satellite. Salt-laden marine environment requiring IP-rated enclosures, corrosion-resistant materials, and sealed cable penetrations.",
+            label: "Marine / Satcom",
             tag: "Satellite Comms",
+            image:
+              "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/GIMBAL/GIMBAL_4_AXIS.1.png",
+            href: "/case-studies/gimbal",
           },
         ],
       },
@@ -291,12 +325,17 @@ const SERVICES: MechanicalService[] = [
       {
         kind: "portfolio",
         title: "Portfolio Case Study",
+        layout: "featured",
         items: [
           {
             title: "Foot Switch for Ophthalmic Surgery (Cataract)",
             description:
               "Ergonomic, ultra-high-precision foot switch for eye cataract surgery equipment. Precisely calibrated actuation force and travel, repeatable tactile feedback, full EMC compliance. Medical-grade materials, IP-rated, CE-marked.",
-            tag: "Medical Systems",
+            label: "Medical Systems",
+            tag: "Cataract Surgery",
+            image:
+              "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/footswitch/FOOTSWITCH_27_APR_2026_S1.10.png",
+            href: "/case-studies/footswitch",
           },
         ],
       },
@@ -579,33 +618,98 @@ function IpCards({ items }: { items: IpCard[] }) {
   );
 }
 
-function PortfolioCards({ items }: { items: PortfolioItem[] }) {
-  const gridClass =
-    items.length > 1
-      ? "grid grid-cols-1 gap-5 sm:grid-cols-2"
-      : "grid grid-cols-1 gap-5";
+function ViewCaseLink({ href }: { href: string }) {
+  return (
+    <Link
+      href={href}
+      className="mt-4 inline-flex items-center gap-2 rounded-md border border-brand-500/30 px-[18px] py-2 text-[13px] font-semibold text-brand-500 no-underline transition-all duration-200 hover:border-brand-500 hover:bg-brand-500/10 hover:no-underline hover:translate-x-0.5"
+    >
+      View Case
+      <ChevronRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
+    </Link>
+  );
+}
+
+function PortfolioGridCard({ item }: { item: PortfolioItem }) {
+  return (
+    <article className="overflow-hidden rounded-[10px] bg-zinc-900 p-7 text-white">
+      <div className="relative mb-5 h-[180px] overflow-hidden rounded-lg bg-white">
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 100vw, 50vw"
+        />
+      </div>
+      {item.label ? (
+        <p className="mb-2 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
+          {item.label}
+        </p>
+      ) : null}
+      <h4 className="mb-2.5 text-[18px] font-medium leading-snug text-white">
+        {item.title}
+      </h4>
+      <p className="text-[15px] leading-[22.5px] text-white/90">
+        {item.description}
+      </p>
+      <ViewCaseLink href={item.href} />
+    </article>
+  );
+}
+
+function PortfolioFeaturedCard({ item }: { item: PortfolioItem }) {
+  return (
+    <article className="flex flex-col items-center gap-8 overflow-hidden rounded-[10px] bg-zinc-900 p-7 text-white min-[900px]:flex-row min-[900px]:items-center min-[900px]:justify-between min-[900px]:gap-8 min-[900px]:px-8 min-[900px]:py-7">
+      <div className="w-full min-[900px]:flex-1">
+        {item.label ? (
+          <p className="mb-2 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
+            {item.label}
+          </p>
+        ) : null}
+        <h4 className="mb-2.5 text-[18px] font-medium leading-snug text-white">
+          {item.title}
+        </h4>
+        <p className="text-[15px] leading-[22.5px] text-white/90">
+          {item.description}
+        </p>
+        <ViewCaseLink href={item.href} />
+        {item.tag ? (
+          <span className="mt-4 inline-block rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-zinc-400">
+            {item.tag}
+          </span>
+        ) : null}
+      </div>
+      <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-lg bg-white min-[900px]:h-[200px] min-[900px]:w-[280px]">
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 900px) 100vw, 280px"
+        />
+      </div>
+    </article>
+  );
+}
+
+function PortfolioCards({
+  items,
+  layout,
+}: {
+  items: PortfolioItem[];
+  layout: "grid" | "featured";
+}) {
+  if (layout === "featured") {
+    const item = items[0];
+    if (!item) return null;
+    return <PortfolioFeaturedCard item={item} />;
+  }
 
   return (
-    <div className={gridClass}>
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
       {items.map((item) => (
-        <div
-          key={item.title}
-          className="rounded-[10px] bg-zinc-900 px-8 py-7 text-white"
-        >
-          <div className="mb-4 flex items-start justify-between gap-4">
-            <h4 className="text-[15px] font-semibold leading-snug">
-              {item.title}
-            </h4>
-            {item.tag ? (
-              <span className="shrink-0 rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-zinc-400">
-                {item.tag}
-              </span>
-            ) : null}
-          </div>
-          <p className="text-[13.5px] leading-[21px] text-zinc-400">
-            {item.description}
-          </p>
-        </div>
+        <PortfolioGridCard key={item.title} item={item} />
       ))}
     </div>
   );
@@ -714,7 +818,7 @@ function SectionContent({ section }: { section: ContentSection }) {
       return (
         <div>
           <SectionTitle>{section.title}</SectionTitle>
-          <PortfolioCards items={section.items} />
+          <PortfolioCards items={section.items} layout={section.layout} />
         </div>
       );
     case "analysis":
