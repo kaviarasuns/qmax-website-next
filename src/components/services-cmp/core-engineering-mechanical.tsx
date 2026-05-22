@@ -671,12 +671,14 @@ function PortfolioFeaturedCard({ item }: { item: PortfolioItem }) {
         <p className="text-[15px] leading-[22.5px] text-white/90">
           {item.description}
         </p>
-        <ViewCaseLink href={item.href} />
-        {item.tag ? (
-          <span className="mt-4 inline-block rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-white">
-            {item.tag}
-          </span>
-        ) : null}
+        <div className="mt-4 flex flex-wrap items-center gap-4 [&_a]:mt-0">
+          <ViewCaseLink href={item.href} />
+          {item.tag ? (
+            <span className="inline-block rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-white">
+              {item.tag}
+            </span>
+          ) : null}
+        </div>
       </div>
       <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-lg bg-white min-[900px]:h-[200px] min-[900px]:w-[280px]">
         <div className="absolute inset-3">
