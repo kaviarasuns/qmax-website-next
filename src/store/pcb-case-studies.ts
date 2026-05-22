@@ -136,8 +136,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "ultra-low-cost-bldc-motor-controller-for-evs",
-    title: "Ultra Low Cost BLDC motor controller for EVs",
+    id: "ultra-low-cost-bldc-motor-controller",
+    title: "Ultra Low Cost BLDC motor controller",
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/LUCAS TVS_PR1_BOT.svg",
