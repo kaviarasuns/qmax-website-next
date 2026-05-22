@@ -31,17 +31,24 @@ const toCaseStudyListItem = (
   caseStudy: CaseStudy,
   index: number,
   category: string,
-): CaseStudyListItem => ({
-  id: index + 1,
-  title: caseStudy.title,
-  image: caseStudy.images[0],
-  link: "/case-studies/" + caseStudy.id,
-  category,
-  summary: caseStudy.summary,
-  specs: caseStudy.specs,
-  stats: caseStudy.stats,
-  imageRotation: caseStudy.rotatedImages?.[0],
-});
+): CaseStudyListItem => {
+  const cardImageIndex = Math.min(
+    Math.max(caseStudy.cardImageIndex ?? 0, 0),
+    Math.max(caseStudy.images.length - 1, 0),
+  );
+
+  return {
+    id: index + 1,
+    title: caseStudy.title,
+    image: caseStudy.images[cardImageIndex] ?? caseStudy.images[0],
+    link: "/case-studies/" + caseStudy.id,
+    category,
+    summary: caseStudy.summary,
+    specs: caseStudy.specs,
+    stats: caseStudy.stats,
+    imageRotation: caseStudy.rotatedImages?.[cardImageIndex],
+  };
+};
 
 export const embeddedCaseStudies = embeddedCaseStudiesData.map(
   (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "development"),

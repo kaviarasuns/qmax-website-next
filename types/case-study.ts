@@ -11,6 +11,8 @@ export interface CaseStudy {
   scopeOfWork: string[]
   /** Zero-based indices of images that should be displayed with black padding (object-contain on a black background) */
   paddedImages?: number[]
+  /** Zero-based index into `images` used for the main listing card thumbnail (defaults to 0) */
+  cardImageIndex?: number
   /** Map of zero-based image index to rotation in degrees applied before display (e.g. { 0: 90, 2: 180 }) */
   rotatedImages?: Record<number, number>
   /** Map of zero-based image index to scale multiplier used to enlarge selected images */

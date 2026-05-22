@@ -227,15 +227,15 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_TS1.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/7.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/8.png",
       // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_SIG12.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_TS1.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_TS12_V.svg",
     ],
-    rotatedImages: { 2: 90, 5: 90, 4: 90 },
-    enlargedImages: { 2: 1.6, 4: 1.4, 5: 1.4 },
+    rotatedImages: { 3: 90, 1: 90, 5: 90 },
+    enlargedImages: { 3: 1.6, 1: 1.4, 5: 1.4 },
     features: [
       "Automotive OBD2 interface board",
       "Multi-protocol support (UART, I2C, SPI)",
