@@ -1895,7 +1895,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Security_System_Controller/Mx1_PR3.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Security_System_Controller/Mx1_PR4.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Security_System_Controller/1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Security_System_Controller/6.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Security_System_Controller/V2.6.11.PNG",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Security_System_Controller/6.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Security_System_Controller/2.png",
     ],
