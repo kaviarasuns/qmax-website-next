@@ -157,13 +157,13 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
     relatedCaseStudies: [
       {
         title: "Industrial IOT gateway with POE",
-        image: "/case-studies/OTT/4.png",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/4.png",
         href: "/case-studies/industrial-iot-gateway-with-poe",
       },
       {
         title: "POE Control unit",
-        image:
-          "/case-studies/POE/1.png",
+        image: "/case-studies/POE/1.png",
         href: "/case-studies/poe-control-unit",
       },
       {
@@ -242,8 +242,7 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
     relatedCaseStudies: [
       {
         title: "Industrial Temperature Control System",
-        image:
-          "/case-studies/BLUECOLD/1.png",
+        image: "/case-studies/BLUECOLD/1.png",
         href: "/case-studies/industrial-temperature-control-system",
       },
       {

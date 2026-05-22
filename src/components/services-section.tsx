@@ -16,7 +16,8 @@ const carouselItems: {
 }[] = [
   {
     id: 1,
-    image: "/case-studies/OTT/4.png",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/4.png",
     title: "Industrial IOT gateway with POE",
     summary:
       "Embedded controller program designed for dependable monitoring, control logic, and secure field operation.",

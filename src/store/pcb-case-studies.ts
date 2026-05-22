@@ -532,7 +532,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/animal_tracker/ANIMAL TRACKER_TOP.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/animal_tracker/ANIMAL TRACKER_TOP_R.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/animal_tracker/ANIMAL TRACKER_TOP.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/animal_tracker/V2.ANIMAL TRACKER_TB.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/animal_tracker/V2.ANIMAL TRACKER_TOP.svg",
     ],
     rotatedImages: {},
     enlargedImages: { 0: 1, 1: 1, 2: 1 },
