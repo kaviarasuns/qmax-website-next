@@ -5,12 +5,11 @@ import {
   Atom,
   FlaskConical,
   ArrowRight,
-  Box,
-  Shield,
-  Droplets,
-  Cog,
-  FileCheck,
+  CircleDotDashed,
+  ClipboardCheck,
+  Eye,
   ChevronRight,
+  PlugZap,
 } from "lucide-react";
 
 /* ── Types ── */
@@ -26,7 +25,12 @@ type PortfolioItem = {
   tag?: string;
 };
 type TableRow = string[];
-type IpCard = { rating: string; description: string };
+type IpCard = {
+  rating: string;
+  description: string;
+  detail?: string;
+  applications?: string;
+};
 type AnalysisRow = { type: string; standard: string; output: string };
 
 type ContentSection =
@@ -74,13 +78,13 @@ const SERVICES: MechanicalService[] = [
             title: "Thermoplastics",
             description:
               "Polycarbonate (PC), ABS, PC-ABS blends. Nylon PA6 / PA66 and glass-filled engineering variants for structural applications.",
-            icon: <Atom className="h-5 w-5" strokeWidth={1.75} />,
+            icon: <Atom className="h-8 w-8" strokeWidth={1.75} />,
           },
           {
             title: "Specialist Grades",
             description:
               "PTFE (Teflon) for chemical or dielectric applications. UV-stabilised, flame-retardant UL94-V0 compliant materials.",
-            icon: <FlaskConical className="h-5 w-5" strokeWidth={1.75} />,
+            icon: <FlaskConical className="h-8 w-8" strokeWidth={1.75} />,
           },
         ],
       },
@@ -114,7 +118,7 @@ const SERVICES: MechanicalService[] = [
               "4G, Wi-Fi, LCD, battery. Workshop-grade drop resistance, ergonomic grip geometry, internal RF coordination.",
             label: "Automotive",
             image:
-              "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD2/OBD_V4_RENDER_23_NOV_2024_MG2_2.1.png",
+              "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.1.png",
             href: "/case-studies/obd-v4-system",
           },
         ],
@@ -209,7 +213,7 @@ const SERVICES: MechanicalService[] = [
             label: "Defence",
             tag: "Manpack Comms",
             image:
-              "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ventilation_control_damper/military_man_with_bigcat3.7.png",
+              "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.1.png",
             href: "/case-studies/rugged-communication-control-system-enclosure",
           },
         ],
@@ -241,8 +245,9 @@ const SERVICES: MechanicalService[] = [
           },
           {
             rating: "IP68",
-            description:
-              "Dust-tight · Continuous immersion (specified depth) · Subsea, underwater sensors",
+            description: "Dust-tight · Continuous immersion",
+            detail: "(specified depth)",
+            applications: "Subsea, underwater sensors",
           },
         ],
       },
@@ -254,13 +259,13 @@ const SERVICES: MechanicalService[] = [
             title: "Gasket Engineering",
             description:
               "O-ring cross-section, durometer, and groove geometry per standard engineering practice. Silicone, EPDM, Viton selected by temperature range, chemical exposure, and compression set.",
-            icon: <Droplets className="h-5 w-5" strokeWidth={1.75} />,
+            icon: <CircleDotDashed className="h-8 w-8" strokeWidth={1.75} />,
           },
           {
             title: "Test Validation",
             description:
               "All IP-rated designs validated at the nearest accredited test facility before production release. Fastener torque fully specified and documented.",
-            icon: <Shield className="h-5 w-5" strokeWidth={1.75} />,
+            icon: <ClipboardCheck className="h-8 w-8" strokeWidth={1.75} />,
           },
         ],
       },
@@ -300,25 +305,25 @@ const SERVICES: MechanicalService[] = [
             title: "Mechanism Design & Kinematics",
             description:
               "Linkage geometry, cam and follower, pivot and hinge design, travel limits, actuation force analysis.",
-            icon: <Cog className="h-5 w-5" strokeWidth={1.75} />,
+            icon: <TablerSettings2Icon className="h-8 w-8" />,
           },
           {
             title: "Electromechanical Integration",
             description:
               "Motor and actuator mounting, encoder alignment, harness routing within mechanical sub-systems.",
-            icon: <Box className="h-5 w-5" strokeWidth={1.75} />,
+            icon: <TablerBoltIcon className="h-8 w-8" />,
           },
           {
             title: "Optical & Sensor Systems",
             description:
               "Mechanical design of optical assemblies and precision mounting structures for demanding environments.",
-            icon: <Atom className="h-5 w-5" strokeWidth={1.75} />,
+            icon: <Eye className="h-8 w-8" strokeWidth={1.75} />,
           },
           {
             title: "Cable Management",
             description:
               "EMI-segregated routing, strain relief design, bend radius compliance throughout the assembly.",
-            icon: <ArrowRight className="h-5 w-5" strokeWidth={1.75} />,
+            icon: <PlugZap className="h-8 w-8" strokeWidth={1.75} />,
           },
         ],
       },
@@ -381,16 +386,19 @@ const SERVICES: MechanicalService[] = [
             title: "ISO 286",
             description:
               "Limits and fits. All tolerances based on functional requirements and the manufacturing process.",
+            icon: <TablerRulerMeasureIcon className="h-8 w-8" />,
           },
           {
             title: "ASME Y14.5",
             description:
               "Full GD&T-annotated drawing sets. Any qualified machine shop can manufacture without verbal clarification.",
+            icon: <TablerPencilPlusIcon className="h-8 w-8" />,
           },
           {
             title: "Package Contents",
             description:
               "Part drawings, assembly drawings, BOM, material callouts, surface finish callouts, and standard references.",
+            icon: <TablerPackageIcon className="h-8 w-8" />,
           },
         ],
       },
@@ -457,6 +465,86 @@ const SERVICES: MechanicalService[] = [
 
 /* ── Sub-components ── */
 
+function TablerOutlineIcon({
+  className,
+  children,
+}: {
+  className?: string;
+  children: ReactNode;
+}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      {children}
+    </svg>
+  );
+}
+
+function TablerSettings2Icon({ className }: { className?: string }) {
+  return (
+    <TablerOutlineIcon className={className}>
+      <path d="M19.875 6.27a2.225 2.225 0 0 1 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033" />
+      <path d="M9 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+    </TablerOutlineIcon>
+  );
+}
+
+function TablerBoltIcon({ className }: { className?: string }) {
+  return (
+    <TablerOutlineIcon className={className}>
+      <path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11" />
+    </TablerOutlineIcon>
+  );
+}
+
+function TablerRulerMeasureIcon({ className }: { className?: string }) {
+  return (
+    <TablerOutlineIcon className={className}>
+      <path d="M19.875 12c.621 0 1.125 .512 1.125 1.143v5.714c0 .631 -.504 1.143 -1.125 1.143h-15.875a1 1 0 0 1 -1 -1v-5.857c0 -.631 .504 -1.143 1.125 -1.143h15.75" />
+      <path d="M9 12v2" />
+      <path d="M6 12v3" />
+      <path d="M12 12v3" />
+      <path d="M18 12v3" />
+      <path d="M15 12v2" />
+      <path d="M3 3v4" />
+      <path d="M3 5h18" />
+      <path d="M21 3v4" />
+    </TablerOutlineIcon>
+  );
+}
+
+function TablerPencilPlusIcon({ className }: { className?: string }) {
+  return (
+    <TablerOutlineIcon className={className}>
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M16 19h6" />
+      <path d="M19 16v6" />
+    </TablerOutlineIcon>
+  );
+}
+
+function TablerPackageIcon({ className }: { className?: string }) {
+  return (
+    <TablerOutlineIcon className={className}>
+      <path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5" />
+      <path d="M12 12l8 -4.5" />
+      <path d="M12 12l0 9" />
+      <path d="M12 12l-8 -4.5" />
+      <path d="M16 5.25l-8 4.5" />
+    </TablerOutlineIcon>
+  );
+}
+
 function SectionTitle({ children }: { children: ReactNode }) {
   return (
     <div className="mb-[18px] flex items-center gap-3">
@@ -474,19 +562,19 @@ function SmallCards({ items }: { items: SmallCard[] }) {
       {items.map((item) => (
         <div
           key={item.title}
-          className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_12px_32px_rgba(16,24,40,0.08)]"
+          className="rounded-xl border border-zinc-200 bg-white p-7 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_12px_32px_rgba(16,24,40,0.08)]"
         >
           <div className="mb-3 flex items-center gap-3">
             {item.icon ? (
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-100 text-brand-500">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center text-brand-500">
                 {item.icon}
               </div>
             ) : null}
-            <h4 className="text-[15px] font-semibold text-black">
+            <h4 className="text-base font-semibold leading-snug tracking-[-0.3px] text-[#0f172a]">
               {item.title}
             </h4>
           </div>
-          <p className="text-[13.5px] leading-[21px] text-black">
+          <p className="text-[14px] leading-[22px] text-[#4b5563]">
             {item.description}
           </p>
         </div>
@@ -594,22 +682,52 @@ function MaterialCards({
   );
 }
 
+const IP_CARD_STYLES: Record<string, string> = {
+  IP65: "border-[#fce8c3] bg-[#fff8f0]",
+  IP67: "border-[#bde0fa] bg-[#f0f9ff]",
+  IP68: "border-[#b3f0d4] bg-[#f0fff8]",
+};
+
+function splitIpDescription(description: string) {
+  const lastSep = description.lastIndexOf(" · ");
+  if (lastSep === -1) {
+    return { specs: description, applications: null };
+  }
+
+  return {
+    specs: description.slice(0, lastSep),
+    applications: description.slice(lastSep + 3),
+  };
+}
+
 function IpCards({ items }: { items: IpCard[] }) {
   return (
-    <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-      {items.map((item) => (
-        <div
-          key={item.rating}
-          className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm"
-        >
-          <div className="mb-3 text-2xl font-light tracking-tight text-brand-500">
-            {item.rating}
+    <div className="mb-8 grid grid-cols-1 gap-[14px] sm:grid-cols-3">
+      {items.map((item) => {
+        const { specs, applications } = splitIpDescription(item.description);
+        const cardStyle =
+          IP_CARD_STYLES[item.rating] ?? "border-zinc-200 bg-white";
+
+        return (
+          <div
+            key={item.rating}
+            className={`rounded-lg border-2 p-[22px] text-center ${cardStyle}`}
+          >
+            <div className="text-[28px] font-bold tracking-[-0.02em] text-black">
+              {item.rating}
+            </div>
+            <p className="mt-2 text-center text-[13.5px] leading-5 text-black">
+              {specs}
+              {applications ? (
+                <>
+                  <br />
+                  {applications}
+                </>
+              ) : null}
+            </p>
           </div>
-          <p className="text-[13.5px] leading-[21px] text-black">
-            {item.description}
-          </p>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
@@ -736,7 +854,7 @@ function AnalysisTable({ rows }: { rows: AnalysisRow[] }) {
           key={row.type}
           className="grid grid-cols-1 border-b border-zinc-100 transition-colors last:border-b-0 hover:bg-[#fdfcfa] min-[720px]:grid-cols-[156px_186px_1fr]"
         >
-          <div className="border-b border-zinc-100 px-4 py-3.5 text-[13.5px] font-semibold text-black min-[720px]:border-b-0 min-[720px]:border-r min-[720px]:border-zinc-100 min-[720px]:font-normal">
+          <div className="border-b border-zinc-100 px-4 py-3.5 text-[13.5px] font-semibold text-black min-[720px]:border-b-0 min-[720px]:border-r min-[720px]:border-zinc-100">
             <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-black min-[720px]:hidden">
               Analysis Type
             </span>
@@ -768,8 +886,12 @@ function DocCards({ items }: { items: SmallCard[] }) {
           key={item.title}
           className="rounded-xl border border-zinc-200 bg-zinc-50 p-6"
         >
-          <div className="mb-3 flex items-center gap-2">
-            <FileCheck className="h-4 w-4 text-brand-500" strokeWidth={1.75} />
+          <div className="mb-3 flex items-center gap-3">
+            {item.icon ? (
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center text-brand-500">
+                {item.icon}
+              </div>
+            ) : null}
             <h4 className="text-[11.5px] font-bold uppercase tracking-[0.5px] text-black">
               {item.title}
             </h4>
