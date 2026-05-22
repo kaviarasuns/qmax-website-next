@@ -460,7 +460,7 @@ const SERVICES: MechanicalService[] = [
 function SectionTitle({ children }: { children: ReactNode }) {
   return (
     <div className="mb-[18px] flex items-center gap-3">
-      <span className="shrink-0 text-[11.5px] font-bold uppercase tracking-[0.5px] text-zinc-500">
+      <span className="shrink-0 text-[11.5px] font-bold uppercase tracking-[0.5px] text-black">
         {children}
       </span>
       <span className="h-px flex-1 bg-zinc-200" aria-hidden />
@@ -476,15 +476,17 @@ function SmallCards({ items }: { items: SmallCard[] }) {
           key={item.title}
           className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-shadow duration-200 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_12px_32px_rgba(16,24,40,0.08)]"
         >
-          {item.icon ? (
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-100 text-brand-500">
-              {item.icon}
-            </div>
-          ) : null}
-          <h4 className="mb-2 text-[15px] font-semibold text-zinc-900">
-            {item.title}
-          </h4>
-          <p className="text-[13.5px] leading-[21px] text-zinc-600">
+          <div className="mb-3 flex items-center gap-3">
+            {item.icon ? (
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-100 text-brand-500">
+                {item.icon}
+              </div>
+            ) : null}
+            <h4 className="text-[15px] font-semibold text-black">
+              {item.title}
+            </h4>
+          </div>
+          <p className="text-[13.5px] leading-[21px] text-black">
             {item.description}
           </p>
         </div>
@@ -506,7 +508,7 @@ function CheckGrid({ items }: { items: CheckItem[] }) {
             strokeWidth={2}
             aria-hidden
           />
-          <span className="text-[13.5px] leading-[21px] text-zinc-700">
+          <span className="text-[13.5px] leading-[21px] text-black">
             {item}
           </span>
         </div>
@@ -515,13 +517,7 @@ function CheckGrid({ items }: { items: CheckItem[] }) {
   );
 }
 
-function DataTable({
-  headers,
-  rows,
-}: {
-  headers: string[];
-  rows: TableRow[];
-}) {
+function DataTable({ headers, rows }: { headers: string[]; rows: TableRow[] }) {
   return (
     <div className="mb-9 overflow-hidden rounded-lg border border-zinc-200">
       <table className="w-full border-collapse text-left">
@@ -546,9 +542,9 @@ function DataTable({
               {row.map((cell, cellIdx) => (
                 <td
                   key={cellIdx}
-                  className={`px-5 py-3.5 text-[13.5px] leading-[21px] text-zinc-600 ${
+                  className={`px-5 py-3.5 text-[13.5px] leading-[21px] text-black ${
                     cellIdx === 0
-                      ? "border-r border-zinc-100 font-semibold text-zinc-900"
+                      ? "border-r border-zinc-100 font-semibold text-black"
                       : cellIdx < row.length - 1
                         ? "border-r border-zinc-100"
                         : ""
@@ -580,17 +576,17 @@ function MaterialCards({
             key={item.title}
             className="rounded-xl border border-zinc-200 bg-white p-5"
           >
-            <h4 className="mb-3 text-[11.5px] font-bold uppercase tracking-[0.5px] text-zinc-900">
+            <h4 className="mb-3 text-[11.5px] font-bold uppercase tracking-[0.5px] text-black">
               {item.title}
             </h4>
-            <p className="text-[13.5px] leading-[21px] text-zinc-600">
+            <p className="text-[13.5px] leading-[21px] text-black">
               {item.description}
             </p>
           </div>
         ))}
       </div>
       {footnote ? (
-        <p className="mt-6 text-center text-[11.5px] font-bold uppercase tracking-[0.5px] text-zinc-500">
+        <p className="mt-6 text-center text-[11.5px] font-bold uppercase tracking-[0.5px] text-black">
           {footnote}
         </p>
       ) : null}
@@ -609,7 +605,7 @@ function IpCards({ items }: { items: IpCard[] }) {
           <div className="mb-3 text-2xl font-light tracking-tight text-brand-500">
             {item.rating}
           </div>
-          <p className="text-[13.5px] leading-[21px] text-zinc-600">
+          <p className="text-[13.5px] leading-[21px] text-black">
             {item.description}
           </p>
         </div>
@@ -634,13 +630,15 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
   return (
     <article className="overflow-hidden rounded-[10px] bg-zinc-900 p-7 text-white">
       <div className="relative mb-5 h-[180px] overflow-hidden rounded-lg bg-white">
-        <Image
-          src={item.image}
-          alt={item.title}
-          fill
-          className="object-cover"
-          sizes="(max-width: 640px) 100vw, 50vw"
-        />
+        <div className="absolute inset-3">
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className="object-contain object-center"
+            sizes="(max-width: 640px) 100vw, 50vw"
+          />
+        </div>
       </div>
       {item.label ? (
         <p className="mb-2 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
@@ -675,19 +673,21 @@ function PortfolioFeaturedCard({ item }: { item: PortfolioItem }) {
         </p>
         <ViewCaseLink href={item.href} />
         {item.tag ? (
-          <span className="mt-4 inline-block rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-zinc-400">
+          <span className="mt-4 inline-block rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.5px] text-white">
             {item.tag}
           </span>
         ) : null}
       </div>
       <div className="relative h-[200px] w-full shrink-0 overflow-hidden rounded-lg bg-white min-[900px]:h-[200px] min-[900px]:w-[280px]">
-        <Image
-          src={item.image}
-          alt={item.title}
-          fill
-          className="object-cover"
-          sizes="(max-width: 900px) 100vw, 280px"
-        />
+        <div className="absolute inset-3">
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className="object-contain object-center"
+            sizes="(max-width: 900px) 100vw, 280px"
+          />
+        </div>
       </div>
     </article>
   );
@@ -719,8 +719,12 @@ function AnalysisTable({ rows }: { rows: AnalysisRow[] }) {
   return (
     <div className="overflow-hidden rounded-lg border border-zinc-200">
       <div className="grid grid-cols-1 border-b border-zinc-100 bg-zinc-900 text-[11.5px] font-bold uppercase tracking-[0.5px] text-white min-[720px]:grid-cols-[156px_186px_1fr]">
-        <div className="hidden px-4 py-3.5 min-[720px]:block">Analysis Type</div>
-        <div className="hidden px-4 py-3.5 min-[720px]:block">Standard</div>
+        <div className="hidden border-r border-zinc-800 px-4 py-3.5 min-[720px]:block">
+          Analysis Type
+        </div>
+        <div className="hidden border-r border-zinc-800 px-4 py-3.5 min-[720px]:block">
+          Standard
+        </div>
         <div className="hidden px-4 py-3.5 min-[720px]:block">
           Expected Output
         </div>
@@ -730,20 +734,20 @@ function AnalysisTable({ rows }: { rows: AnalysisRow[] }) {
           key={row.type}
           className="grid grid-cols-1 border-b border-zinc-100 transition-colors last:border-b-0 hover:bg-[#fdfcfa] min-[720px]:grid-cols-[156px_186px_1fr]"
         >
-          <div className="px-4 py-3.5 text-[13.5px] font-semibold text-zinc-900 min-[720px]:font-normal">
-            <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-zinc-400 min-[720px]:hidden">
+          <div className="border-b border-zinc-100 px-4 py-3.5 text-[13.5px] font-semibold text-black min-[720px]:border-b-0 min-[720px]:border-r min-[720px]:border-zinc-100 min-[720px]:font-normal">
+            <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-black min-[720px]:hidden">
               Analysis Type
             </span>
             {row.type}
           </div>
-          <div className="px-4 py-3.5 text-[13.5px] italic text-zinc-500">
-            <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-zinc-400 not-italic min-[720px]:hidden">
+          <div className="border-b border-zinc-100 px-4 py-3.5 text-[13.5px] leading-[21px] text-black min-[720px]:border-b-0 min-[720px]:border-r min-[720px]:border-zinc-100">
+            <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-black min-[720px]:hidden">
               Standard
             </span>
             {row.standard}
           </div>
-          <div className="px-4 py-3.5 text-[13.5px] leading-[21px] text-zinc-600">
-            <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-zinc-400 min-[720px]:hidden">
+          <div className="px-4 py-3.5 text-[13.5px] leading-[21px] text-black">
+            <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-black min-[720px]:hidden">
               Expected Output
             </span>
             {row.output}
@@ -764,11 +768,11 @@ function DocCards({ items }: { items: SmallCard[] }) {
         >
           <div className="mb-3 flex items-center gap-2">
             <FileCheck className="h-4 w-4 text-brand-500" strokeWidth={1.75} />
-            <h4 className="text-[11.5px] font-bold uppercase tracking-[0.5px] text-zinc-900">
+            <h4 className="text-[11.5px] font-bold uppercase tracking-[0.5px] text-black">
               {item.title}
             </h4>
           </div>
-          <p className="text-[13.5px] leading-[21px] text-zinc-600">
+          <p className="text-[13.5px] leading-[21px] text-black">
             {item.description}
           </p>
         </div>
@@ -847,21 +851,21 @@ function ServiceBlock({ service }: { service: MechanicalService }) {
       className="grid grid-cols-1 items-start max-[960px]:grid-cols-1 min-[960px]:grid-cols-[35%_65%]"
     >
       <div className="bg-white px-5 py-12 max-[640px]:px-5 min-[640px]:px-8 min-[960px]:sticky min-[960px]:top-[calc(var(--nav-h)+8px)] min-[960px]:self-start min-[960px]:px-[52px] min-[960px]:py-[72px] min-[960px]:pl-[max(1.5rem,var(--page-pad,4rem))]">
-        <h2 className="mb-3 font-light leading-[1.1] tracking-[-0.02em] text-zinc-900 [font-size:clamp(28px,3.2vw,42px)]">
+        <h2 className="mb-3 font-light leading-[1.1] tracking-[-0.02em] text-black [font-size:clamp(28px,3.2vw,42px)]">
           {service.titleBefore}{" "}
           <span className="text-brand-500">{service.titleAccent}</span>
         </h2>
-        <p className="mb-5 text-[11.5px] font-bold uppercase tracking-[0.5px] text-zinc-500">
+        <p className="mb-5 text-[11.5px] font-bold uppercase tracking-[0.5px] text-black">
           {service.subtitle}
         </p>
-        <p className="mb-7 border-l-[3px] border-brand-500 pl-[18px] text-[15px] leading-[22.5px] text-zinc-600 text-justify">
+        <p className="mb-7 border-l-[3px] border-brand-500 pl-[18px] text-[15px] leading-[22.5px] text-black text-justify">
           {service.description}
         </p>
         <div className="flex flex-wrap gap-1.5">
           {service.chips.map((chip) => (
             <span
               key={chip}
-              className="whitespace-nowrap rounded-[3px] border border-[#e8e4de] bg-[#f5f3ef] px-2.5 py-1 text-[11.5px] font-bold uppercase tracking-[0.5px] text-zinc-500"
+              className="whitespace-nowrap rounded-[3px] border border-[#e8e4de] bg-[#f5f3ef] px-2.5 py-1 text-[11.5px] font-bold uppercase tracking-[0.5px] text-black"
             >
               {chip}
             </span>
@@ -890,12 +894,12 @@ export function CoreEngineeringMechanical() {
         <div className="mx-auto max-w-[1200px]">
           <h2
             id="core-engineering-capabilities-heading"
-            className="mb-7 font-light leading-[1.15] tracking-[-0.01em] text-zinc-900 [font-size:clamp(32px,4vw,48px)]"
+            className="mb-7 font-light leading-[1.15] tracking-[-0.01em] text-black [font-size:clamp(32px,4vw,48px)]"
           >
             Our Core Engineering{" "}
             <span className="text-brand-500">Capabilities</span>
           </h2>
-          <p className="mx-auto max-w-[820px] text-[15px] leading-[22.5px] text-zinc-600">
+          <p className="mx-auto max-w-[820px] text-[15px] leading-[22.5px] text-black">
             Qmax Systems delivers precision mechanical engineering across seven
             specialist disciplines — from injection-moulded plastic enclosures
             for consumer IoT products to MIL-STD-810H-qualified rugged systems
