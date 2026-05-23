@@ -14,8 +14,16 @@ import {
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { ServiceCaseStudy } from "@/data/service-case-studies";
-import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
+import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+
+const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
+  title: caseStudy.title,
+  image: caseStudy.images[0],
+  link: `/case-studies/${caseStudy.id}`,
+  category: "development",
+  summary: caseStudy.summary,
+  imageRotation: caseStudy.rotatedImages?.[0],
+}));
 
 const projectExperience: ProjectExperienceItem[] = [
   {
@@ -515,34 +523,6 @@ const FAQ_ITEMS = [
   },
 ];
 
-function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
-  return ids.map((id) => {
-    const study = industrialCaseStudiesData.find((c) => c.id === id);
-    const image = study?.images[0];
-    if (!study || !image) {
-      throw new Error(`Industrial case study missing or has no image: ${id}`);
-    }
-    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
-    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
-    const summary =
-      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
-    return {
-      title: study.title,
-      image,
-      link: `/case-studies/${study.id}`,
-      category: "hardware",
-      summary,
-    };
-  });
-}
-
-const rfCaseStudies: ServiceCaseStudy[] = industrialServiceCaseStudies([
-  "compact-edge-gateway-enclosure",
-  "6e-wifi-router-enclosure",
-  "360-degree-camera-4k",
-  "smart-wifi-stethoscope",
-]);
-
 export default function HighSpeedDigitalPCBDesignPage() {
   return (
     <>
@@ -588,8 +568,8 @@ export default function HighSpeedDigitalPCBDesignPage() {
       <FAQSection faqItems={FAQ_ITEMS} />
 
       <ServiceCaseStudiesSection
-        eyebrow="Hardware Programs"
-        studies={rfCaseStudies}
+        eyebrow="PCB Programs"
+        studies={pcbCaseStudies}
         hideTopBorder
       />
       <div className="pb-28"></div>
