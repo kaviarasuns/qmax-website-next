@@ -1,54 +1,466 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import {
+  ApplicationsProjectExperienceSection,
+  type ProjectExperienceItem,
+} from "@/components/services-cmp/ApplicationsProjectExperienceSection";
+import {
+  ComplimentarySchematicReviewSection,
+  type SchematicReviewItem,
+} from "@/components/services-cmp/ComplimentarySchematicReviewSection";
+import {
+  CoreServiceOfferingsSection,
+  type HighSpeedCoreOffering,
+} from "@/components/services-cmp/CoreServiceOfferingsSection";
+import { FAQSection } from "@/components/services-cmp/FAQSection";
+import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
+import { WhySection } from "@/components/services-cmp/WhySection";
+import { ServiceCaseStudy } from "@/data/service-case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
-const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
-  title: caseStudy.title,
-  image: caseStudy.images[0],
-  link: `/case-studies/${caseStudy.id}`,
-  category: "development",
-  summary: caseStudy.summary,
-  imageRotation: caseStudy.rotatedImages?.[0],
-}));
+const coreServiceOfferings: HighSpeedCoreOffering[] = [
+  {
+    id: "current",
+    tab: "High-Current Distribution",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+      </svg>
+    ),
+    headline:
+      "Heavy copper and busbar integration for extreme current demands.",
+    intro:
+      "Power circuits operate in environments where parasitic inductance and thermal bottlenecks can compromise the entire system. Our PCB designs handle the most demanding current distribution challenges.",
+    points: [
+      {
+        boldLead: "Heavy Copper PCBs (4oz to 14oz+)",
+        rest: " — purpose-built stackups for high-current bus bars and power planes handling 1000A+ DC sources.",
+      },
+      {
+        boldLead: "Busbar Integration",
+        rest: " — embedded and laminated busbar structures for ultra-low-inductance current paths in inverter and converter stages.",
+      },
+      {
+        boldLead: "Current Sharing & Balancing",
+        rest: " — symmetric trace routing and copper balancing techniques to prevent hotspots in parallel MOSFET configurations.",
+      },
+    ],
+    applications:
+      "EV inverters · Industrial motor drives · DC-DC converters · Welding equipment · UPS systems",
+  },
+  {
+    id: "creepage",
+    tab: "Creepage & Clearance",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+    headline:
+      "High-voltage isolation designed for safety certification from day one.",
+    intro:
+      "Adhering to IEC 60601, UL 62368-1, and IPC-2221 standards for high-voltage isolation up to 1500VDC. We design creepage and clearance into the board from the start — not as a late-stage correction.",
+    points: [
+      {
+        boldLead: "Safety Standard Compliance",
+        rest: " — creepage/clearance rules mapped to IEC 60601 (medical), UL 62368-1 (IT/AV), and IPC-2221 from schematic through layout.",
+      },
+      {
+        boldLead: "Isolation Barrier Design",
+        rest: " — slot cuts, routed channels, and reinforced isolation zones for primary-to-secondary boundaries up to 1500VDC.",
+      },
+      {
+        boldLead: "Pollution Degree & CTI Analysis",
+        rest: " — material and spacing selection based on operating environment, altitude, and Comparative Tracking Index requirements.",
+      },
+    ],
+    applications:
+      "Medical power supplies · EV battery management · Solar inverters · Industrial HV controllers",
+  },
+  {
+    id: "noise",
+    tab: "Switching Noise Mitigation",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+      </svg>
+    ),
+    headline:
+      "Reducing conducted and radiated emissions in high-frequency switching designs.",
+    intro:
+      "High-frequency SiC and GaN MOSFETs switch at slew rates that turn every trace into an antenna. Our layouts are designed to contain EMI at the source.",
+    points: [
+      {
+        boldLead: "Gate Driver Loop Optimization",
+        rest: " — minimizing parasitic inductance in gate-source loops to control ringing and overshoot in SiC/GaN circuits.",
+      },
+      {
+        boldLead: "Power Loop Minimization",
+        rest: " — tight coupling of DC bus capacitors to switching devices, reducing the hot loop area that drives radiated emissions.",
+      },
+      {
+        boldLead: "EMI Filter Placement",
+        rest: " — strategic positioning of CM chokes, Pi-filters, and snubbers for CISPR 32 and CE/RE compliance without late-stage redesign.",
+      },
+    ],
+    applications:
+      "GaN/SiC converters · High-frequency DC-DC · Telecom rectifiers · Plasma generators",
+  },
+  {
+    id: "thermal",
+    tab: "Thermal Considerations",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
+      </svg>
+    ),
+    headline:
+      "Thermal management engineered into the PCB — not bolted on after.",
+    intro:
+      "Utilizing metal substrates (IMS), thermal via arrays, and specialized cooling interfaces to prevent junction temperature violations under sustained load.",
+    points: [
+      {
+        boldLead: "Thermal Via Arrays",
+        rest: " — optimized via patterns under power devices for direct heat transfer to heatsink or chassis ground planes.",
+      },
+      {
+        boldLead: "IMS & Metal-Core Substrates",
+        rest: " — insulated metal substrate (IMS) and metal-core PCB designs for LED drivers, motor controllers, and high-dissipation modules.",
+      },
+      {
+        boldLead: "Thermal Simulation Alignment",
+        rest: " — copper pours and stackup design coordinated with thermal simulation results to prevent junction temperature violations.",
+      },
+    ],
+    applications:
+      "LED drivers · Motor controllers · Battery chargers · Induction heating · High-power RF amplifiers",
+  },
+];
 
-export const metadata: Metadata = {
-  title: "Power Electronics PCB Design | Qmax Systems",
-  description:
-    "Modern power electronics systems demand more than simple interconnects; they require a holistic electromagnetic and thermal engineering strategy.",
-};
+const projectExperience: ProjectExperienceItem[] = [
+  {
+    id: "pf-controllers",
+    listTitle: "PF Controllers for Load Banks",
+    captionTitle: "High Voltage PF Correction",
+    description:
+      "High voltage PF correction with low THD. Designed optimized PFC loops with controlled switching noise and EMI filtering.",
+    placeholderGradient: "linear-gradient(135deg, #ede9e0, #d4ccbe)",
+  },
+  {
+    id: "smart-pdu",
+    listTitle: "50kW 3-Phase Smart PDU",
+    captionTitle: "High Current Distribution",
+    description:
+      "Bus bar integration for high current distribution. Thermal management using copper planes + mechanical integration.",
+    placeholderGradient: "linear-gradient(135deg, #dce4ec, #c4d0dc)",
+  },
+  {
+    id: "bms-800v",
+    listTitle: "800V Battery Management System",
+    captionTitle: "High Voltage Isolation & Precision Sensing",
+    description:
+      "HV isolation, active balancing, precision sensing under high noise environment.",
+    placeholderGradient: "linear-gradient(135deg, #dceade, #c4d8c6)",
+  },
+  {
+    id: "cllc-charger",
+    listTitle: "3-Phase CLLC Onboard Charger",
+    captionTitle: "Resonant Converter Design",
+    description:
+      "High-frequency resonant operation. Minimized loop inductance and optimized magnetics placement.",
+    placeholderGradient: "linear-gradient(135deg, #ecdce6, #dcc4d4)",
+  },
+  {
+    id: "bldc-controller",
+    listTitle: "BLDC / PMSM Motor Controller",
+    captionTitle: "High di/dt Switching & Thermal Management",
+    description:
+      "High di/dt switching, gate driver isolation, low EMI layout, thermal path optimization.",
+    placeholderGradient: "linear-gradient(135deg, #ece9dc, #dcd8c4)",
+  },
+  {
+    id: "smart-energy-meter",
+    listTitle: "Smart Energy Meter",
+    captionTitle: "Precision Measurement & Surge Protection",
+    description:
+      "High accuracy measurement with isolation and surge protection (EFT/ESD).",
+    placeholderGradient: "linear-gradient(135deg, #e0e9ed, #c8d4dc)",
+  },
+  {
+    id: "induction-motor",
+    listTitle: "3-Phase Induction Motor Controller",
+    captionTitle: "High Current & EMI Suppression",
+    description:
+      "High current switching, robust grounding, EMI suppression techniques.",
+    placeholderGradient: "linear-gradient(135deg, #ede0e9, #dcc8d4)",
+  },
+  {
+    id: "ozone-generator",
+    listTitle: "1kW LF Ozone Generator",
+    captionTitle: "High Power Analog & CE/IEC Compliance",
+    description:
+      "High power analog + switching coexistence. CE/IEC compliance achieved.",
+    placeholderGradient: "linear-gradient(135deg, #e9ede0, #d4dcc8)",
+  },
+  {
+    id: "rf-plasma",
+    listTitle: "1.2kW RF Plasma Generator",
+    captionTitle: "RF & Power Electronics Coexistence",
+    description:
+      "RF + power electronics coexistence. Reduced radiated emissions through shielding and layout discipline.",
+    placeholderGradient: "linear-gradient(135deg, #ede0ec, #dcc8dc)",
+  },
+  {
+    id: "1500vdc",
+    listTitle: "1500VDC Systems (Heavy Equipment)",
+    captionTitle: "Extreme Clearance & HV Safety",
+    description:
+      "Extreme clearance/creepage design, HV safety, insulation coordination.",
+    placeholderGradient: "linear-gradient(135deg, #e0ecec, #c8d8d8)",
+  },
+];
+
+const WHY_CARDS = [
+  {
+    title: "Engineering-Led Design",
+    desc: "All PCB designers at Qmax are Electrical Engineers capable of understanding circuit functionality and performing circuit analysis.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+  {
+    title: "First-Time-Right Philosophy",
+    desc: "A structured, 25-year evolved process with checklists covering HV safety, EMI, thermal, and manufacturability.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+        <line x1="9" y1="9" x2="9.01" y2="9" />
+        <line x1="15" y1="9" x2="15.01" y2="9" />
+      </svg>
+    ),
+  },
+  {
+    title: "Compliance-Ready Layout",
+    desc: "CE, FCC, UL, and IEC certification requirements addressed from Day 1, not as a late-stage retrofit.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M9 11l3 3L22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+      </svg>
+    ),
+  },
+  {
+    title: "IP Ownership",
+    desc: "The customer retains 100% ownership of all native CAD files, libraries, and simulation data.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      </svg>
+    ),
+  },
+];
+
+const schematicReviewItems: SchematicReviewItem[] = [
+  {
+    id: "hv-lv-isolation",
+    title: "HV/LV Isolation Strategy",
+    description:
+      "Reviewing opto-isolation, creepage paths, and magnetic barriers for IEC 60601 and UL 62368-1 safety compliance.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+  },
+  {
+    id: "magnetics-filtering",
+    title: "Magnetics & Filtering",
+    description:
+      "Validating transformer winding geometries and EMI filter stages — Pi-filters and Common Mode Chokes — for clean CE/RE performance.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+      </svg>
+    ),
+  },
+  {
+    id: "component-lifecycle",
+    title: "Component Lifecycle",
+    description:
+      'Screening for EOL and "at-risk" components to ensure long-term production stability.',
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+    ),
+  },
+];
+
+const FAQ_ITEMS = [
+  {
+    q: "How do you handle high-current requirements in small form factors?",
+    a: "We utilize heavy copper PCBs (up to 14oz+), busbar integration, and thermal via arrays to maximize current-carrying capacity while maintaining a compact footprint.",
+  },
+  {
+    q: "What standards do you follow for high-voltage isolation?",
+    a: "We strictly adhere to IPC-2221B for generic design and IEC 60601 (Medical) or UL 62368-1 for specific safety clearances and creepage distances.",
+  },
+  {
+    q: "How do you mitigate switching noise in SiC or GaN designs?",
+    a: "By minimizing loop inductance in the gate drive and power loops, implementing Pi-filters, and using 3D EM simulation to identify and suppress high-frequency harmonics.",
+  },
+  {
+    q: "Do you design custom magnetics for power converters?",
+    a: "Yes. We specify core materials, winding geometries, and litz wire for custom inductors and transformers to optimize efficiency and thermal performance.",
+  },
+  {
+    q: "How is thermal management validated?",
+    a: "We perform 3D Thermal Analysis to identify hotspots and optimize the interface between the PCB, components, and heatsinks or enclosures.",
+  },
+  {
+    q: "Can you assist with boards that failed EMI (CE/RE) testing?",
+    a: 'Yes. We provide "rescue" services, using near-field probes to locate noise sources and redesigning layouts to ensure compliance with CE/FCC standards.',
+  },
+  {
+    q: "Do you support busbar-to-PCB integration?",
+    a: "Absolutely. We design the mechanical and electrical interfaces for high-current busbars, ensuring reliable connections for industrial PDUs and motor drives.",
+  },
+  {
+    q: "What materials are recommended for high-power applications?",
+    a: "Beyond standard FR-4, we utilize metal-clad substrates (IMS) for heat dissipation or high-Tg materials for high-temperature environments.",
+  },
+  {
+    q: "How do you manage THD in PFC controllers?",
+    a: "We focus on precision current sensing layout and low-impedance feedback paths to ensure the controller maintains high power factor and low Total Harmonic Distortion.",
+  },
+  {
+    q: "Do you provide fabrication support?",
+    a: "Yes. We act as a direct technical liaison with fabrication houses to resolve stackup, material queries, and DFM issues before production.",
+  },
+];
+
+function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = pcbCaseStudiesData.find((c) => c.id === id);
+    const image = study?.images[0];
+    if (!study || !image) {
+      throw new Error(`PCB case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "development",
+      summary,
+      imageRotation: study.rotatedImages?.[0],
+    };
+  });
+}
+
+const powerElectronicsCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
+  "ai-gpu-expansion-chassis-motherboard",
+  "iot-gateway-pcb",
+  "pcie-gen5-cpo-board",
+  "ultra-low-cost-bldc-motor-controller",
+]);
 
 export default function PowerElectronicsPage() {
   return (
-    <main className="bg-zinc-100 text-zinc-900">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-14 pb-12 border-b border-zinc-200 lg:pt-20 lg:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(24,24,27,0.08),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(82,82,91,0.08),transparent_40%)]" />
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          {/* Full-width Image Container */}
-          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-zinc-200 group">
-            <Image
-              src="/pcb-design/Power-Electronics-PCB.png"
-              alt="Power Electronics PCB Design - Qmax Systems"
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-100/60 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
-              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
-                PCB DESIGN SERVICES
-              </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
-                Power Electronics
-                <br className="hidden md:block" />
-                PCB Design.
-              </h1>
-            </div>
-          </div>
-          <div className="mt-10 max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
+    <>
+      <HardwareServiceHeroSection
+        imageSrc="/pcb-design/Power-Electronics-PCB.png"
+        imageAlt="Power Electronics PCB Design — Qmax Systems"
+        title="Power Electronics PCB Design."
+        description={
+          <>
             <p>
               Modern power electronics systems demand more than simple
               interconnects; they require a holistic electromagnetic and thermal
@@ -60,474 +472,39 @@ export default function PowerElectronicsPage() {
             <p>
               Our engineering team specializes in First-Time-Right PCB design,
               prioritizing early risk identification to eliminate the costly
-              re-spins often associated with high-power R&D. Whether your
+              re-spins often associated with high-power R&amp;D. Whether your
               project involves 800V EV architectures or kW-level plasma
               generators, our designs are optimized for reliability, safety, and
               manufacturability from day one.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Introduction to Power Electronics PCB Engineering Section */}
-      <section className="border-y border-zinc-200 bg-zinc-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl text-zinc-900">
-            Introduction to Power Electronics PCB Engineering
-          </h2>
-          <p className="mt-6 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
-            Power circuits operate in environments where parasitic inductance
-            and thermal bottlenecks can compromise the entire system. Unlike
-            standard digital boards, Power Electronics PCBs must manage:
-          </p>
-
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                High-Current Distribution
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                Implementing heavy copper (4oz to 14oz+) and busbar integration
-                to handle 1000A+ DC sources.
-              </p>
-            </article>
-            <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                Creepage and Clearance
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                Adhering to IEC 60601, UL 62368-1, and IPC-2221 standards for
-                high-voltage isolation up to 1500VDC.
-              </p>
-            </article>
-            <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                Switching Noise Mitigation
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                Reducing conducted (CE) and radiated emissions (RE) in
-                high-frequency SiC and GaN MOSFET applications.
-              </p>
-            </article>
-            <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                Thermal Considerations
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                Utilizing metal substrates (IMS), thermal via arrays, and
-                specialized cooling interfaces to prevent junction temperature
-                violations.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Served Section */}
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl text-zinc-900">Industries Served</h2>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
-          Our power electronics expertise supports sectors requiring
-          high-reliability and high-efficiency energy conversion:
-        </p>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-            <h3 className="text-base text-zinc-900 md:text-lg">
-              Industrial Automation
-            </h3>
-            <p className="mt-2 text-sm leading-7 text-zinc-700">
-              Intelligent motor controllers, 3-phase induction systems, and
-              high-power LF ozone generators.
-            </p>
-          </article>
-          <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-            <h3 className="text-base text-zinc-900 md:text-lg">
-              Renewable Energy &amp; EV
-            </h3>
-            <p className="mt-2 text-sm leading-7 text-zinc-700">
-              800V Battery Management Systems (BMS), Onboard Chargers (OBC),
-              solar PFC controllers, smart meters, and PF controllers.
-            </p>
-          </article>
-          <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-            <h3 className="text-base text-zinc-900 md:text-lg">Datacenters</h3>
-            <p className="mt-2 text-sm leading-7 text-zinc-700">
-              50KW Class 3-phase Smart PDUs with integrated power monitoring.
-            </p>
-          </article>
-          <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-            <h3 className="text-base text-zinc-900 md:text-lg">
-              Aerospace &amp; Defense
-            </h3>
-            <p className="mt-2 text-sm leading-7 text-zinc-700">
-              Ruggedized power modules and high-reliability 1500VDC systems for
-              heavy machinery.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      {/* Why Choose Qmax Systems Section */}
-      <section className="border-y border-zinc-200 bg-zinc-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl text-zinc-900">Why Choose Qmax Systems?</h2>
-
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                Engineering-Led Design
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                All PCB designers at Qmax are Electrical Engineers capable of
-                understanding circuit functionality and perform circuit
-                analysis.
-              </p>
-            </article>
-            <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                First-Time-Right Philosophy
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                We utilize a structured 25-year evolved process and checklists
-                covering HV safety, EMI, thermal, and manufacturability.
-              </p>
-            </article>
-            <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                Compliance-Ready Layout
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                We focus on CE, FCC, UL, and IEC certification requirements
-                starting from Day 1.
-              </p>
-            </article>
-            <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                IP Ownership
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                The customer retains 100% ownership of all native CAD files,
-                libraries, and simulation data.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* Applications & Real Project Experience Section */}
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl text-zinc-900">
-          4. Applications &amp; Real Project Experience
-        </h2>
-        <p className="mt-6 max-w-5xl text-sm leading-7 text-zinc-700 md:text-base">
-          Qmax Systems has a proven track record of delivering high-power
-          hardware for complex industrial and automotive applications.
-        </p>
-
-        <div className="mt-8 overflow-x-auto rounded-2xl border border-zinc-200 bg-white shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-          <table className="min-w-full">
-            <thead>
-              <tr className="bg-zinc-100">
-                <th className="w-[28%] border-b border-zinc-200 px-4 py-3 text-left text-sm text-zinc-900">
-                  Application
-                </th>
-                <th className="border-b border-zinc-200 px-4 py-3 text-left text-sm text-zinc-900">
-                  Technical Challenges &amp; Qmax Approach
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="bg-white align-top">
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm font-medium text-zinc-900">
-                  PF Controllers for Load Banks
-                </td>
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm leading-7 text-zinc-700">
-                  High voltage PF correction with low THD. Designed optimized
-                  PFC loops with controlled switching noise and EMI filtering.
-                </td>
-              </tr>
-              <tr className="bg-zinc-50 align-top">
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm font-medium text-zinc-900">
-                  50kW 3-Phase Smart PDU
-                </td>
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm leading-7 text-zinc-700">
-                  Bus bar integration for high current distribution. Thermal
-                  management using copper planes + mechanical integration.
-                </td>
-              </tr>
-              <tr className="bg-white align-top">
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm font-medium text-zinc-900">
-                  800V Battery Management System
-                </td>
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm leading-7 text-zinc-700">
-                  HV isolation, active balancing, precision sensing under high
-                  noise environment.
-                </td>
-              </tr>
-              <tr className="bg-zinc-50 align-top">
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm font-medium text-zinc-900">
-                  3-Phase CLLC Onboard Charger
-                </td>
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm leading-7 text-zinc-700">
-                  High-frequency resonant operation. Minimized loop inductance
-                  and optimized magnetics placement.
-                </td>
-              </tr>
-              <tr className="bg-white align-top">
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm font-medium text-zinc-900">
-                  BLDC / PMSM Motor Controller
-                </td>
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm leading-7 text-zinc-700">
-                  High di/dt switching, gate driver isolation, low EMI layout,
-                  thermal path optimization.
-                </td>
-              </tr>
-              <tr className="bg-zinc-50 align-top">
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm font-medium text-zinc-900">
-                  Smart Energy Meter
-                </td>
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm leading-7 text-zinc-700">
-                  High accuracy measurement with isolation and surge protection
-                  (EFT/ESD).
-                </td>
-              </tr>
-              <tr className="bg-white align-top">
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm font-medium text-zinc-900">
-                  3-Phase Induction Motor Controller
-                </td>
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm leading-7 text-zinc-700">
-                  High current switching, robust grounding, EMI suppression
-                  techniques.
-                </td>
-              </tr>
-              <tr className="bg-zinc-50 align-top">
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm font-medium text-zinc-900">
-                  1kW LF Ozone Generator
-                </td>
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm leading-7 text-zinc-700">
-                  High power analog + switching coexistence. CE/IEC compliance
-                  achieved.
-                </td>
-              </tr>
-              <tr className="bg-white align-top">
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm font-medium text-zinc-900">
-                  1.2kW RF Plasma Generator
-                </td>
-                <td className="border-b border-zinc-200 px-4 py-4 text-sm leading-7 text-zinc-700">
-                  RF + power electronics coexistence. Reduced radiated emissions
-                  through shielding and layout discipline.
-                </td>
-              </tr>
-              <tr className="bg-zinc-50 align-top">
-                <td className="px-4 py-4 text-sm font-medium text-zinc-900">
-                  1500VDC Systems (Heavy Equipment)
-                </td>
-                <td className="px-4 py-4 text-sm leading-7 text-zinc-700">
-                  Extreme clearance/creepage design, HV safety, insulation
-                  coordination.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* Complimentary Schematic Review Section */}
-      <section className="border-y border-zinc-200 bg-zinc-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl text-zinc-900">
-            Complimentary Schematic Review
-          </h2>
-          <p className="mt-6 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
-            Every power electronics engagement includes a complimentary
-            schematic review to identify architectural risks before layout
-            begins:
-          </p>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                HV/LV Isolation Strategy
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                Reviewing opto-isolation, creepage paths, and magnetic barriers.
-              </p>
-            </article>
-            <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                Magnetics &amp; Filtering
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                Validating transformer winding geometries and EMI filter stages
-                like Pi-filters and Common Mode Chokes.
-              </p>
-            </article>
-            <article className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                Component Lifecycle
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                Checking for EOL or &quot;At Risk&quot; components to ensure
-                long-term production stability.
-              </p>
-            </article>
-          </div>
-
-          <div className="mt-8">
-            <a
-              href="/contact"
-              className="inline-flex items-center rounded-lg bg-zinc-900 px-5 py-3 text-sm text-white transition hover:bg-zinc-800"
-            >
-              📩 Contact us today to schedule your complimentary review
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* 1-Hour Complimentary Engineering Consultation Section */}
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2rem] border border-zinc-200 bg-[linear-gradient(135deg,#18181b_0%,#27272a_45%,#fafafa_45%,#ffffff_100%)] shadow-[0_20px_80px_rgba(24,24,27,0.12)]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_30%),radial-gradient(circle_at_75%_25%,rgba(24,24,27,0.08),transparent_22%)]" />
-          <div className="relative grid gap-8 px-6 py-8 md:px-8 md:py-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10 lg:px-10 lg:py-12">
-            <article className="rounded-[1.5rem] border border-white/10 bg-zinc-950/70 p-8 text-white backdrop-blur">
-              <p className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-zinc-200">
-                Complimentary Session
-              </p>
-              <h2 className="mt-5 max-w-xl text-3xl leading-tight md:text-4xl">
-                1-Hour Complimentary Engineering Consultation
-              </h2>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-300 md:text-base">
-                We offer a free technical session with our senior engineers to
-                discuss your power electronics challenges, surface hidden layout
-                risks, and align the design path before execution.
-              </p>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-xs uppercase tracking-[0.16em] text-zinc-400">
-                    Format
-                  </p>
-                  <p className="mt-2 text-sm text-white md:text-base">
-                    1:1 Engineer Review
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-xs uppercase tracking-[0.16em] text-zinc-400">
-                    Focus
-                  </p>
-                  <p className="mt-2 text-sm text-white md:text-base">
-                    Risk Reduction
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-xs uppercase tracking-[0.16em] text-zinc-400">
-                    Outcome
-                  </p>
-                  <p className="mt-2 text-sm text-white md:text-base">
-                    Faster Design Decisions
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center rounded-xl bg-white px-5 py-3 text-sm text-zinc-900 transition hover:bg-zinc-100"
-                >
-                  Schedule Your 1-Hour Consultation
-                </a>
-              </div>
-            </article>
-
-            <aside className="rounded-[1.5rem] border border-zinc-200/80 bg-white/90 p-6 shadow-[0_12px_40px_rgba(24,24,27,0.08)] backdrop-blur md:p-8">
-              <p className="text-sm uppercase tracking-[0.16em] text-zinc-500">
-                What We Cover
-              </p>
-              <div className="mt-5 space-y-4">
-                <article className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
-                  <h3 className="text-base text-zinc-900">
-                    Thermal &amp; Current Analysis
-                  </h3>
-                  <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                    Reviewing copper weights, stackup, and material selection
-                    including Rogers, Isola, or Metal Core.
-                  </p>
-                </article>
-                <article className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
-                  <h3 className="text-base text-zinc-900">
-                    EMI/EMC Compliance Strategy
-                  </h3>
-                  <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                    Addressing Conducted (CE) and Radiated (RE) emissions
-                    through &quot;EMC-by-design&quot;.
-                  </p>
-                </article>
-                <article className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
-                  <h3 className="text-base text-zinc-900">
-                    Grounding &amp; Isolation
-                  </h3>
-                  <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                    Evaluating star-grounding and moat-and-bridge structures for
-                    high-voltage safety.
-                  </p>
-                </article>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <FAQSection
-        faqs={[
-          {
-            q: "How do you handle high-current requirements in small form factors?",
-            a: "We utilize heavy copper PCBs (up to 14oz+), busbar integration, and thermal via arrays to maximize current-carrying capacity while maintaining a compact footprint.",
-          },
-          {
-            q: "What standards do you follow for high-voltage isolation?",
-            a: "We strictly adhere to IPC-2221B for generic design and IEC 60601 (Medical) or UL 62368-1 for specific safety clearances and creepage distances.",
-          },
-          {
-            q: "How do you mitigate switching noise in SiC or GaN designs?",
-            a: "By minimizing loop inductance in the gate drive and power loops, implementing Pi-filters, and using 3D EM simulation to identify and suppress high-frequency harmonics.",
-          },
-          {
-            q: "Do you design custom magnetics for power converters?",
-            a: "Yes. We specify core materials, winding geometries, and litz wire for custom inductors and transformers to optimize efficiency and thermal performance.",
-          },
-          {
-            q: "How is thermal management validated?",
-            a: "We perform 3D Thermal Analysis to identify hotspots and optimize the interface between the PCB, components, and heatsinks or enclosures.",
-          },
-          {
-            q: "Can you assist with boards that failed EMI (CE/RE) testing?",
-            a: 'Yes. We provide "rescue" services, using near-field probes to locate noise sources and redesigning layouts to ensure compliance with CE/FCC standards.',
-          },
-          {
-            q: "Do you support busbar-to-PCB integration?",
-            a: "Absolutely. We design the mechanical and electrical interfaces for high-current busbars, ensuring reliable connections for industrial PDUs and motor drives.",
-          },
-          {
-            q: "What materials are recommended for high-power applications?",
-            a: "Beyond standard FR-4, we utilize metal-clad substrates (IMS) for heat dissipation or high-Tg materials for high-temperature environments.",
-          },
-          {
-            q: "How do you manage THD in PFC controllers?",
-            a: "We focus on precision current sensing layout and low-impedance feedback paths to ensure the controller maintains high power factor and low Total Harmonic Distortion.",
-          },
-          {
-            q: "Do you provide fabrication support?",
-            a: "Yes. We act as a direct technical liaison with fabrication houses to resolve stackup, material queries, and DFM issues before production.",
-          },
-        ]}
+          </>
+        }
+        ctaHref="/hardware-development-services/contact"
+        ctaLabel="Talk to Our Engineers"
       />
-
+      <CoreServiceOfferingsSection
+        offerings={coreServiceOfferings}
+        title="Introduction to Power Electronics "
+        titleHighlight="PCB Engineering"
+      />
+      <ApplicationsProjectExperienceSection projects={projectExperience} />
+      <WhySection
+        whyCards={WHY_CARDS}
+        titleHighlight="Power Electronics PCB Design?"
+        className="pb-8 max-[900px]:pb-8"
+      />
+      <ComplimentarySchematicReviewSection
+        items={schematicReviewItems}
+        titleHighlight="Power Electronics PCB Design"
+        subtitle="Every power electronics engagement includes a complimentary schematic review to identify architectural risks before layout begins."
+      />
+      <FAQSection faqItems={FAQ_ITEMS} />
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
-        studies={pcbCaseStudies}
+        studies={powerElectronicsCaseStudies}
         hideTopBorder
       />
-    </main>
+      <div className="pb-28" />
+    </>
   );
 }

@@ -18,10 +18,14 @@ export type HighSpeedCoreOffering = {
 
 interface CoreServiceOfferingsSectionProps {
   offerings: HighSpeedCoreOffering[];
+  title?: string;
+  titleHighlight?: string;
 }
 
 export function CoreServiceOfferingsSection({
   offerings,
+  title = "Our Core Service ",
+  titleHighlight = "Offerings",
 }: CoreServiceOfferingsSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
   const activeOffering = offerings[activeIdx] ?? offerings[0];
@@ -44,7 +48,8 @@ export function CoreServiceOfferingsSection({
     <section className="px-6 py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-center text-3xl font-light tracking-tight text-black md:text-5xl">
-          Our Core Service <span className="text-[#F33117]">Offerings</span>
+          {title}
+          <span className="text-[#F33117]">{titleHighlight}</span>
         </h2>
 
         <CapabilitiesTabs

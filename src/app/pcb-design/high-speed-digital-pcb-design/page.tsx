@@ -1,369 +1,561 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import FAQSection from "@/components/FAQSection";
+import { FAQSection } from "@/components/services-cmp/FAQSection";
+import {
+  ApplicationsProjectExperienceSection,
+  type ProjectExperienceItem,
+} from "@/components/services-cmp/ApplicationsProjectExperienceSection";
+import {
+  ComplimentarySchematicReviewSection,
+  type SchematicReviewItem,
+} from "@/components/services-cmp/ComplimentarySchematicReviewSection";
+import {
+  CoreServiceOfferingsSection,
+  HighSpeedCoreOffering,
+} from "@/components/services-cmp/CoreServiceOfferingsSection";
+import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
+import { WhySection } from "@/components/services-cmp/WhySection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import { ServiceCaseStudy } from "@/data/service-case-studies";
+import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 
-const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
-  title: caseStudy.title,
-  image: caseStudy.images[0],
-  link: `/case-studies/${caseStudy.id}`,
-  category: "development",
-  summary: caseStudy.summary,
-  imageRotation: caseStudy.rotatedImages?.[0],
-}));
-const projectExperience = [
+const projectExperience: ProjectExperienceItem[] = [
   {
-    title: "O-RAN Distributed Units (DU)",
+    id: "oran-du",
+    listTitle: "O-RAN Distributed Units (DU)",
+    captionTitle: "Ampere Altra Processors",
     description:
       "Developed using Ampere Altra processors. These designs involve massive pin-count BGA escape routing, complex power delivery networks (PDN) to support high TDP, and synchronized timing for 5G radio units.",
+    placeholderGradient: "linear-gradient(135deg, #ede9e0, #d4ccbe)",
   },
   {
-    title: "AI GPU Chassis PCIe Gen6 Switch Boards",
+    id: "ai-gpu-switch",
+    listTitle: "AI GPU Chassis PCIe Gen6 Switch Boards",
+    captionTitle: "Ultra-High-Bandwidth Fabrics",
     description:
       "Engineering of ultra-high-bandwidth fabrics requiring precision routing for 64 GT/s signaling, stringent insertion loss budgets, and advanced material selection to mitigate fiber weave effects.",
+    placeholderGradient: "linear-gradient(135deg, #dce4ec, #c4d0dc)",
   },
   {
-    title: "Server Motherboards (Intel Sapphire Rapids / AMD EPYC)",
+    id: "server-motherboards",
+    listTitle: "Server Motherboards (Intel Sapphire Rapids / AMD EPYC)",
+    captionTitle: "Multi-Socket Architectures",
     description:
       "Comprehensive layout for multi-socket architectures, including DDR5-6400+ 8-channel memory routing and high-density interconnect (HDI) transitions.",
+    placeholderGradient: "linear-gradient(135deg, #dceade, #c4d8c6)",
   },
   {
-    title: "100G x 4 Network Interface Cards (NIC)",
+    id: "nic-100g",
+    listTitle: "100G x 4 Network Interface Cards (NIC)",
+    captionTitle: "Blade Server Environments",
     description:
       "Designed for blade server environments utilizing QSFP-DD form factors and 25G/56G NRZ/PAM4 SerDes lanes.",
+    placeholderGradient: "linear-gradient(135deg, #ecdce6, #dcc4d4)",
   },
   {
-    title: "FPGA-Based Image Processing",
+    id: "fpga-imaging",
+    listTitle: "FPGA-Based Image Processing",
+    captionTitle: "Real-Time 8K Video Capture",
     description:
       "High-speed LVDS and MIPI CSI-2 interfacing for real-time 8K video capture, focusing on precise phase matching and skew control.",
+    placeholderGradient: "linear-gradient(135deg, #ece9dc, #dcd8c4)",
   },
   {
-    title: "NXP i.MX8 Single Board Computers (SBC)",
+    id: "imx8-sbc",
+    listTitle: "NXP i.MX8 Single Board Computers (SBC)",
+    captionTitle: "Thermal Management",
     description:
       "Compact, multi-layer designs balancing thermal management with high-speed LPDDR4x routing in space-constrained industrial envelopes.",
+    placeholderGradient: "linear-gradient(135deg, #e0e9ed, #c8d4dc)",
   },
   {
-    title: "Core Switches & Routers",
+    id: "core-switches",
+    listTitle: "Core Switches & Routers",
+    captionTitle: "Broadcom StrataXGS",
     description:
-      "High-layer count backplanes (30+ layers) with complex E-T-P (Equalization, Termination, and Propagation) parameters.",
+      "Development of multi-port switches using Broadcom StrataXGS™ and Marvell Prestera switching fabrics, requiring heavy use of back-drilling, differential impedance optimization, and crosstalk modeling.",
+    placeholderGradient: "linear-gradient(135deg, #ede0e9, #dcc8d4)",
   },
 ];
 
-const technicalCapabilities = [
+const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
-    title: "DDR5 & LPDDR5",
-    description:
-      "Implementation of Decision Feedback Equalization (DFE), CA parity, and CRC. We manage ultra-tight timing margins and address the complexities of on-DIMM PMICs.",
+    id: "memory",
+    tab: "Memory & High-Speed Interfaces",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="2" y="6" width="20" height="12" rx="2" />
+        <line x1="6" y1="10" x2="6" y2="14" />
+        <line x1="10" y1="10" x2="10" y2="14" />
+        <line x1="14" y1="10" x2="14" y2="14" />
+        <line x1="18" y1="10" x2="18" y2="14" />
+      </svg>
+    ),
+    headline:
+      "High-speed memory and serial interfaces routed at the edge of physics.",
+    intro:
+      "Our design team operates at the leading edge of digital signaling standards, delivering PCB layouts validated against the tightest timing and loss budgets in the industry.",
+    points: [
+      {
+        boldLead: "DDR5 & LPDDR5",
+        rest: " — implementation of Decision Feedback Equalization (DFE), CA parity, and CRC. We manage ultra-tight timing margins and address the complexities of on-DIMM PMICs.",
+      },
+      {
+        boldLead: "PCIe Gen5 & Gen6",
+        rest: " — expertise in PAM4 signaling, ensuring compliance with strict jitter and noise floor requirements.",
+      },
+      {
+        boldLead: "112G SerDes",
+        rest: " — advanced routing for 112 Gbps per lane, utilizing state-of-the-art simulation to minimize reflections and crosstalk.",
+      },
+    ],
+    applications:
+      "AI GPU chassis · O-RAN distributed units · Server motherboards · Network interface cards · FPGA-based imaging",
   },
   {
-    title: "PCIe Gen5 & Gen6",
-    description:
-      "Expertise in PAM4 signaling, ensuring compliance with strict jitter and noise floor requirements.",
+    id: "hdi",
+    tab: "Advanced HDI & Fabrication",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="3" />
+        <line x1="2" y1="8" x2="22" y2="8" />
+        <line x1="8" y1="2" x2="8" y2="22" />
+        <line x1="16" y1="2" x2="16" y2="22" />
+      </svg>
+    ),
+    headline:
+      "Complex interconnect structures for the densest digital designs.",
+    intro:
+      "Mastery of advanced HDI fabrication techniques that enable maximum routing density while maintaining signal integrity and manufacturability.",
+    points: [
+      {
+        boldLead: "30-Layer HDI PCB Design",
+        rest: " — mastery of Type I, II, and III HDI structures, including stacked and staggered microvias, via-in-pad, and ELIC (Every Layer Interconnect).",
+      },
+      {
+        boldLead: "USB4 & Thunderbolt 4",
+        rest: " — high-speed differential pair routing with integrated ESD protection and EMI containment.",
+      },
+    ],
+    applications:
+      "High-density server boards · Multi-chip module substrates · Advanced networking equipment",
   },
   {
-    title: "112G SerDes",
-    description:
-      "Advanced routing for 112 Gbps per lane, utilizing state-of-the-art simulation to minimize reflections and crosstalk.",
-  },
-];
-
-const advancedHdiCapabilities = [
-  {
-    title: "30-Layer HDI PCB Design",
-    description:
-      "Mastery of Type I, II, and III HDI structures, including stacked and staggered microvias, via-in-pad, and ELIC (Every Layer Interconnect).",
-  },
-  {
-    title: "USB4 & Thunderbolt 4",
-    description:
-      "High-speed differential pair routing with integrated ESD protection and EMI containment.",
-  },
-];
-
-const stackupEngineering = [
-  {
-    title: "Material Expertise",
-    description:
-      "Selection of ultra-low-loss laminates such as Megtron 6/7/8, Tachyon 100G, and Rogers hybrids.",
-  },
-  {
-    title: "Impedance Control",
-    description:
-      "Precision modeling of single-ended (50 Ohm) and differential (85 Ohm/90 Ohm/100 Ohm) traces.",
-  },
-  {
-    title: "Glass Weave Mitigation",
-    description:
-      'Use of "spread glass" fabrics and zig-zag routing techniques to eliminate skew.',
-  },
-];
-
-const simulationMethodology = [
-  {
-    title: "Pre-Layout Analysis",
-    description: "Determining stackup, material, and topology constraints.",
+    id: "stackup",
+    tab: "Stackup & Material Selection",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5" />
+        <path d="M2 12l10 5 10-5" />
+      </svg>
+    ),
+    headline:
+      "Rigorous stackup optimization balancing electrical performance with fabrication yield.",
+    intro:
+      "A robust high-speed design begins with the substrate. We perform rigorous stackup optimization to balance electrical performance with fabrication yield.",
+    points: [
+      {
+        boldLead: "Material Expertise",
+        rest: " — selection of ultra-low-loss laminates such as Megtron 6/7/8, Tachyon 100G, and Rogers hybrids.",
+      },
+      {
+        boldLead: "Impedance Control",
+        rest: " — precision modeling of single-ended (50 Ohm) and differential (85 Ohm/90 Ohm/100 Ohm) traces.",
+      },
+      {
+        boldLead: "Glass Weave Mitigation",
+        rest: ' — use of "spread glass" fabrics and zig-zag routing techniques to eliminate skew.',
+      },
+    ],
+    applications:
+      "28+ layer PCBs · Controlled-impedance backplanes · Mixed-dielectric hybrid stackups",
   },
   {
-    title: "Post-Layout Verification",
-    description:
-      "Full-wave extraction of routing to verify Eye Diagrams, BER (Bit Error Rate), and TDR (Time Domain Reflectometry).",
-  },
-  {
-    title: "Power Integrity (PI)",
-    description:
-      "Analyzing DC IR Drop, AC impedance profiles, and decoupling capacitor optimization to support high-transient current demands.",
-  },
-  {
-    title: "EMI/EMC",
-    description:
-      "Identifying potential radiation hotspots and resonance issues before the prototype stage.",
-  },
-];
-
-const schematicReviewPoints = [
-  "Pin-mapping optimization for routing efficiency.",
-  "BOM risk mitigation and component obsolescence checks.",
-  "Power tree verification and decoupling strategies.",
-  "Compliance readiness for CE, FCC, and UL certification.",
-];
-
-const qmaxAdvantages = [
-  {
-    feature: "Philosophy",
-    advantage: "Architecture-first; Simulation-driven constraints.",
-  },
-  {
-    feature: "IP Ownership",
-    advantage: "100% Customer Ownership of all design files.",
-  },
-  {
-    feature: "Manufacturing",
-    advantage:
-      "Direct coordination with Tier-1 fabrication and assembly houses.",
-  },
-  {
-    feature: "Compliance",
-    advantage: "Design for EMI/EMC (CISPR 32) and Safety (UL 62368-1).",
-  },
-  {
-    feature: "Reliability",
-    advantage: "Production-ready DFM/DFT (Design for Manufacturing/Test).",
-  },
-];
-
-const industriesServed = [
-  {
-    title: "Data Centers",
-    description: "AI servers, GPU accelerators, and high-speed networking.",
-  },
-  {
-    title: "Telecommunications",
-    description: "5G O-RAN, Edge computing, and SatCom.",
-  },
-  {
-    title: "Aerospace & Defense",
-    description: "High-reliability FPGA processing and ruggedized SBCs.",
-  },
-  {
-    title: "Automotive",
-    description: "ADAS sensors and infotainment backbones.",
-  },
-];
-
-const faqs = [
-  {
-    question: "What is your approach to DDR5 PCB layout?",
-    answer:
-      "We use simulation to define length matching, T-topology or fly-by constraints, and verify signal eye opening against JEDEC standards.",
-  },
-  {
-    question: "Do you support PCIe Gen6 PCB layout?",
-    answer:
-      "Yes, we are experts in PCIe Gen6 layout, specifically managing the transition to PAM4 signaling and tight loss budgets.",
-  },
-  {
-    question: "Can you handle 30-layer HDI PCB designs?",
-    answer:
-      "Absolutely. We regularly design 30+ layer boards with complex microvia structures and ELIC.",
-  },
-  {
-    question: "Do you provide SI/PI simulation services separately?",
-    answer:
-      "Yes, we offer standalone SI/PI analysis or integrated simulation within the layout process.",
-  },
-  {
-    question: "How do you mitigate crosstalk in high-density designs?",
-    answer:
-      "Through rigorous 3D EM modeling and implementing specific 3W/5W spacing rules and guard traces.",
-  },
-  {
-    question: "Which EDA tools do you use?",
-    answer:
-      "We primarily utilize Cadence Allegro/Orcad, Altium Designer, and Mentor Xpedition.",
-  },
-  {
-    question: 'What is a "Simulation-driven" constraint?',
-    answer:
-      "It means we run SI simulations to determine the exact routing rules (width, gap, length) before the layout starts.",
-  },
-  {
-    question: "Do you provide DFM reports?",
-    answer:
-      "Yes, every design undergoes a comprehensive DFM/DFT check to ensure high manufacturing yields.",
-  },
-  {
-    question: "Can you help with component obsolescence?",
-    answer:
-      "Yes, during schematic review, we identify at-risk parts and suggest pin-compatible or functional alternatives.",
-  },
-  {
-    question: "What is your experience with 112G SerDes?",
-    answer:
-      "We have designed interfaces for 112G PAM4, focusing on via stub removal (back-drilling) and pad stack optimization.",
-  },
-  {
-    question: "Do you support 100G Ethernet NIC design?",
-    answer:
-      "Yes, we have experience with multi-port 100G NICs and QSFP-DD/OSFP form factors.",
-  },
-  {
-    question: "What materials do you recommend for high-speed digital PCBs?",
-    answer:
-      "Typically Megtron 6/7, Isola I-Tera, or Rogers 4350B/4003C depending on the frequency and budget.",
-  },
-  {
-    question: "How do you handle high-current PDNs?",
-    answer:
-      "We use PI simulation to map DC IR drop and ensure copper density is sufficient for thermal and electrical requirements.",
-  },
-  {
-    question: "Is Qmax an Indian PCB design company?",
-    answer:
-      "Yes, Qmax Systems is a leading high-speed digital PCB design services provider in India, serving global clients.",
-  },
-  {
-    question: "Do you design server motherboards?",
-    answer:
-      "Yes, we design multi-processor server motherboards for Intel, AMD, and ARM architectures.",
-  },
-  {
-    question: "What is your first-time-right ratio?",
-    answer:
-      "Over 95% of our high-speed designs move to production without requiring a second spin for electrical issues.",
-  },
-  {
-    question: "Can you design for O-RAN hardware?",
-    answer:
-      "Yes, we have specific experience with O-RAN Radio Units (RU) and Distributed Units (DU).",
-  },
-  {
-    question: "Do you manage the fabrication process?",
-    answer:
-      "We coordinate directly with your preferred fab house or recommend one from our audited partner list.",
-  },
-  {
-    question: "What is back-drilling, and when is it used?",
-    answer:
-      "It is the removal of unused via stubs to prevent signal reflections, critical for signals above 10Gbps.",
-  },
-  {
-    question: "Do you support USB4 design?",
-    answer:
-      "Yes, including routing for 40Gbps throughput and Type-C PD integration.",
-  },
-  {
-    question: "How do you minimize EMI?",
-    answer:
-      "Through proper ground plane referencing, shielding, and minimizing common-mode noise via balanced routing.",
-  },
-  {
-    question: "What is ELIC?",
-    answer:
-      "Every Layer Interconnect-an HDI technology where any layer can be connected to any other layer using stacked copper-filled microvias.",
-  },
-  {
-    question: "Do you provide the source files?",
-    answer:
-      "Yes, all design IP, including source schematics, layout files, and simulation models, belongs to the customer.",
-  },
-  {
-    question: "How do you handle differential pair skew?",
-    answer:
-      "We implement serpentine trace compensation and phase-matching at the point of mismatch.",
-  },
-  {
-    question: "Can you design AI GPU chassis PCBs?",
-    answer:
-      "Yes, we specialize in the high-speed backplanes and switch boards required for AI clusters.",
-  },
-  {
-    question: "What is a PDN impedance profile?",
-    answer:
-      "It is a plot of the power network's impedance vs. frequency, ensuring it stays below the target impedance to prevent noise.",
-  },
-  {
-    question: "Do you support NXP i.MX8 designs?",
-    answer:
-      "Yes, we have extensive experience with the i.MX8 family and its LPDDR4 memory requirements.",
-  },
-  {
-    question: "What are fiber weave effects?",
-    answer:
-      "Variations in the dielectric constant caused by the resin/glass pattern. We mitigate this with angled routing or specific glass styles.",
-  },
-  {
-    question: "Do you offer thermal simulation?",
-    answer:
-      "Yes, we can perform thermal analysis to identify hotspots and optimize heatsink/fan placement.",
-  },
-  {
-    question: "How do I get started?",
-    answer:
-      "You can book a 1-hour complimentary engineering consultation via our website.",
+    id: "simulation",
+    tab: "SI/PI/EMI Simulation",
+    tabIcon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+      </svg>
+    ),
+    headline: 'Simulation-driven workflow — we do not "guess and check."',
+    intro:
+      "Every high-speed design is backed by pre- and post-layout simulation covering signal integrity, power delivery, and electromagnetic compliance.",
+    points: [
+      {
+        boldLead: "Pre-Layout Analysis",
+        rest: " — determining stackup, material, and topology constraints.",
+      },
+      {
+        boldLead: "Post-Layout Verification",
+        rest: " — full-wave extraction of routing to verify Eye Diagrams, BER (Bit Error Rate), and TDR (Time Domain Reflectometry).",
+      },
+      {
+        boldLead: "Power Integrity (PI)",
+        rest: " — analyzing DC IR Drop, AC impedance profiles, and decoupling capacitor optimization to support high-transient current demands.",
+      },
+      {
+        boldLead: "EMI/EMC",
+        rest: " — identifying potential radiation hotspots and resonance issues before the prototype stage.",
+      },
+    ],
+    applications: "Cadence Sigrity · Ansys SIwave · Full-wave EM extraction",
   },
 ];
 
-export const metadata: Metadata = {
-  title: "High-Speed Digital PCB Design | Qmax",
-  description:
-    "High-speed digital PCB design services for DDR4/5, LPDDR, PCIe Gen 5, SerDes up to 112Gbps, and USB4 with SI/PI-driven execution.",
-};
+const schematicReviewItems: SchematicReviewItem[] = [
+  {
+    id: "pin-mapping",
+    title: "Pin-Mapping Optimization",
+    description:
+      "Pin-mapping optimization for BGA escape efficiency and clean DDR5 / PCIe Gen6 / SerDes routing within your stackup.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="3" />
+        <circle cx="12" cy="12" r="3" />
+        <line x1="12" y1="2" x2="12" y2="5" />
+        <line x1="12" y1="19" x2="12" y2="22" />
+        <line x1="2" y1="12" x2="5" y2="12" />
+        <line x1="19" y1="12" x2="22" y2="12" />
+      </svg>
+    ),
+  },
+  {
+    id: "power-tree",
+    title: "Power Tree Verification",
+    description:
+      "Power tree verification and decoupling strategy to support high-current, low-noise rails across the PDN.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+      </svg>
+    ),
+  },
+  {
+    id: "bom-risk",
+    title: "BOM Risk Mitigation",
+    description:
+      "BOM risk mitigation with EOL and obsolescence screening to protect long-lifecycle data center, telecom, and defense programs.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+  },
+  {
+    id: "compliance",
+    title: "Compliance Readiness",
+    description:
+      "Compliance readiness for CE, FCC, UL 62368-1, and CISPR 32 — eliminating late-stage certification surprises.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M9 11l3 3L22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+      </svg>
+    ),
+  },
+];
+
+const WHY_CARDS = [
+  {
+    title: "Transparent & Supervised Process",
+    desc: "You see every milestone, design review, and risk register as it happens. Qmax Systems program managers run a weekly cadence with traceable deliverables, on-time builds, and zero hidden surprises at handover.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="10" cy="14" r="3" />
+        <circle cx="38" cy="14" r="3" />
+        <circle cx="10" cy="34" r="3" />
+        <circle cx="38" cy="34" r="3" />
+        <circle cx="24" cy="24" r="4" />
+        <path d="M13 14h8M27 14h8M13 34h8M27 34h8M14 16l8 6M34 16l-8 6M14 32l8-6M34 32l-8-6" />
+      </svg>
+    ),
+  },
+  {
+    title: "Mixed-Signal Designs Built from Scratch",
+    desc: "Every analog and mixed-signal program starts with R&D and a proof-of-concept build to retire architectural risk early. We confirm feasibility, characterize noise floor, validate AFE topology, and prove critical assumptions before a single production layer is committed.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M8 30 L18 20 L24 26 L34 16 L42 24" />
+        <path d="M34 16 L34 24 L42 24" />
+        <path d="M6 38 L42 38" />
+        <path d="M14 12 L18 16 L22 12" />
+      </svg>
+    ),
+  },
+  {
+    title: "Smooth Hardware-Software Integration",
+    desc: "We select AFEs, ADCs, DACs, FPGAs, and toolchains that fit your existing platform rather than forcing a re-platform. The result is firmware that brings up cleanly, drivers that drop into your OS, and lower long-term maintenance cost.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M24 6 L24 18 M18 12 L24 18 L30 12" />
+        <path d="M24 42 L24 30 M18 36 L24 30 L30 36" />
+        <path d="M6 24 L18 24 M12 18 L18 24 L12 30" />
+        <path d="M42 24 L30 24 M36 18 L30 24 L36 30" />
+        <circle cx="24" cy="24" r="4" />
+      </svg>
+    ),
+  },
+  {
+    title: "Expert Analog & Mixed-Signal Engineers",
+    desc: "Qmax Systems analog and mixed-signal engineers average 12+ years across medical instrumentation, industrial sensing, defense electronics, automotive sensor electronics, and consumer wearables. Only senior engineers touch your design — no junior hand-offs, no learning on your timeline.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="24" cy="24" r="16" />
+        <circle cx="24" cy="24" r="9" />
+        <circle cx="24" cy="24" r="3" fill="currentColor" />
+      </svg>
+    ),
+  },
+];
+
+const FAQ_ITEMS = [
+  {
+    q: "What data rates do you support?",
+    a: "We design for data rates ranging from DDR5-6400 (9.6 GT/s) to PCIe Gen6 (64 GT/s) and 112G SerDes (112 Gbps per lane). Our expertise spans NRZ, PAM4, and equalization technologies required for modern high-speed serial interfaces.",
+  },
+  {
+    q: "Do you support PCIe Gen6 PCB layout?",
+    a: "Yes, we are experts in PCIe Gen6 layout, specifically managing the transition to PAM4 signaling and tight loss budgets.",
+  },
+  {
+    q: "Can you handle 30-layer HDI PCB designs?",
+    a: "Absolutely. We regularly design 30+ layer boards with complex microvia structures and ELIC.",
+  },
+  {
+    q: "Do you provide SI/PI simulation services separately?",
+    a: "Yes, we offer standalone SI/PI analysis or integrated simulation within the layout process.",
+  },
+  {
+    q: "How do you mitigate crosstalk in high-density designs?",
+    a: "Through rigorous 3D EM modeling and implementing specific 3W/5W spacing rules and guard traces.",
+  },
+  {
+    q: "Which EDA tools do you use?",
+    a: "We primarily utilize Cadence Allegro/Orcad, Altium Designer, and Mentor Xpedition.",
+  },
+  {
+    q: 'What is a "Simulation-driven" constraint?',
+    a: "It means we run SI simulations to determine the exact routing rules (width, gap, length) before the layout starts.",
+  },
+  {
+    q: "Do you provide DFM reports?",
+    a: "Yes, every design undergoes a comprehensive DFM/DFT check to ensure high manufacturing yields.",
+  },
+  {
+    q: "Can you help with component obsolescence?",
+    a: "Yes, during schematic review, we identify at-risk parts and suggest pin-compatible or functional alternatives.",
+  },
+  {
+    q: "What is your experience with 112G SerDes?",
+    a: "We have designed interfaces for 112G PAM4, focusing on via stub removal (back-drilling) and pad stack optimization.",
+  },
+  {
+    q: "Do you support 100G Ethernet NIC design?",
+    a: "Yes, we have experience with multi-port 100G NICs and QSFP-DD/OSFP form factors.",
+  },
+  {
+    q: "What materials do you recommend for high-speed digital PCBs?",
+    a: "Typically Megtron 6/7, Isola I-Tera, or Rogers 4350B/4003C depending on the frequency and budget.",
+  },
+  {
+    q: "How do you handle high-current PDNs?",
+    a: "We use PI simulation to map DC IR drop and ensure copper density is sufficient for thermal and electrical requirements.",
+  },
+  {
+    q: "Is Qmax an Indian PCB design company?",
+    a: "Yes, Qmax Systems is a leading high-speed digital PCB design services provider in India, serving global clients.",
+  },
+  {
+    q: "Do you design server motherboards?",
+    a: "Yes, we design multi-processor server motherboards for Intel, AMD, and ARM architectures.",
+  },
+  {
+    q: "What is your first-time-right ratio?",
+    a: "Over 95% of our high-speed designs move to production without requiring a second spin for electrical issues.",
+  },
+  {
+    q: "Can you design for O-RAN hardware?",
+    a: "Yes, we have specific experience with O-RAN Radio Units (RU) and Distributed Units (DU).",
+  },
+  {
+    q: "Do you manage the fabrication process?",
+    a: "We coordinate directly with your preferred fab house or recommend one from our audited partner list.",
+  },
+  {
+    q: "What is back-drilling, and when is it used?",
+    a: "It is the removal of unused via stubs to prevent signal reflections, critical for signals above 10Gbps.",
+  },
+  {
+    q: "Do you support USB4 design?",
+    a: "Yes, including routing for 40Gbps throughput and Type-C PD integration.",
+  },
+  {
+    q: "How do you minimize EMI?",
+    a: "Through proper ground plane referencing, shielding, and minimizing common-mode noise via balanced routing.",
+  },
+  {
+    q: "What is ELIC?",
+    a: "Every Layer Interconnect — an HDI technology where any layer can be connected to any other layer using stacked copper-filled microvias.",
+  },
+  {
+    q: "Do you provide the source files?",
+    a: "Yes, all design IP, including source schematics, layout files, and simulation models, belongs to the customer.",
+  },
+  {
+    q: "How do you handle differential pair skew?",
+    a: "We implement serpentine trace compensation and phase-matching at the point of mismatch.",
+  },
+  {
+    q: "Can you design AI GPU chassis PCBs?",
+    a: "Yes, we specialize in the high-speed backplanes and switch boards required for AI clusters.",
+  },
+  {
+    q: "What is a PDN impedance profile?",
+    a: "It is a plot of the power network's impedance vs. frequency, ensuring it stays below the target impedance to prevent noise.",
+  },
+  {
+    q: "Do you support NXP i.MX8 designs?",
+    a: "Yes, we have extensive experience with the i.MX8 family and its LPDDR4 memory requirements.",
+  },
+  {
+    q: "What are fiber weave effects?",
+    a: "Variations in the dielectric constant caused by the resin/glass pattern. We mitigate this with angled routing or specific glass styles.",
+  },
+  {
+    q: "Do you offer thermal simulation?",
+    a: "Yes, we can perform thermal analysis to identify hotspots and optimize heatsink/fan placement.",
+  },
+  {
+    q: "How do I get started?",
+    a: "You can book a 1-hour complimentary engineering consultation via our website.",
+  },
+];
+
+function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = industrialCaseStudiesData.find((c) => c.id === id);
+    const image = study?.images[0];
+    if (!study || !image) {
+      throw new Error(`Industrial case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "hardware",
+      summary,
+    };
+  });
+}
+
+const rfCaseStudies: ServiceCaseStudy[] = industrialServiceCaseStudies([
+  "compact-edge-gateway-enclosure",
+  "6e-wifi-router-enclosure",
+  "360-degree-camera-4k",
+  "smart-wifi-stethoscope",
+]);
 
 export default function HighSpeedDigitalPCBDesignPage() {
   return (
-    <main className="bg-zinc-100 text-zinc-900">
-      <section className="relative overflow-hidden pt-14 pb-12 border-b border-zinc-200 lg:pt-20 lg:pb-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(24,24,27,0.08),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(82,82,91,0.08),transparent_40%)]" />
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          {/* Full-width Image Container */}
-          <div className="relative mt-4 aspect-[21/9] w-full overflow-hidden border border-zinc-200 group">
-            <Image
-              src="/pcb-design/images/image1.jpg"
-              alt="High-Speed Digital PCB Design - Qmax Systems"
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-100/60 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
-              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
-                PCB DESIGN SERVICES
-              </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
-                Advanced High-Speed
-                <br className="hidden md:block" />
-                Digital PCB Engineering.
-              </h1>
-            </div>
-          </div>
-          <div className="mt-10 max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
+    <>
+      <HardwareServiceHeroSection
+        imageSrc="/pcb-design/images/image1.jpg"
+        imageAlt="High-Performance Digital Systems — Qmax Systems"
+        title="Advanced High-Speed Digital PCB Engineering."
+        description={
+          <>
             <p>
               In an era defined by 112G SerDes, DDR5 memory architectures, and
               PCIe Gen6 protocols, PCB design is no longer just about
-              connectivity - it is about physics. Qmax Systems provides
+              connectivity — it is about physics. Qmax Systems provides
               specialized high-speed digital PCB design services that bridge the
               gap between complex architectural requirements and reliable,
               production-ready hardware.
@@ -372,285 +564,35 @@ export default function HighSpeedDigitalPCBDesignPage() {
               Our engineering-first approach prioritizes Signal Integrity (SI)
               and Power Integrity (PI) simulation long before a single trace is
               routed. By implementing a simulation-driven constraint
-              methodology, we ensure your high-complexity boards - from AI GPU
-              chassis to O-RAN Distributed Units - achieve first-time-right
+              methodology, we ensure your high-complexity boards — from AI GPU
+              chassis to O-RAN Distributed Units — achieve first-time-right
               success.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl text-zinc-900">
-          Applications &amp; Real-World Project Experience
-        </h2>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
-          Qmax Systems delivers field-proven expertise in developing
-          mission-critical hardware. Our portfolio includes:
-        </p>
-
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {projectExperience.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
-            >
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                {item.description}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-y border-zinc-200 bg-zinc-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl text-zinc-900">
-            Technical Capabilities: Pushing the Limits of Physics
-          </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
-            Our design team operates at the leading edge of digital signaling
-            standards:
-          </p>
-
-          <h3 className="mt-8 text-xl text-zinc-900 md:text-2xl">
-            Memory &amp; High-Speed Interfaces
-          </h3>
-
-          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {technicalCapabilities.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
-              >
-                <h4 className="text-base text-zinc-900 md:text-lg">
-                  {item.title}
-                </h4>
-                <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl text-zinc-900">
-          Advanced HDI &amp; Fabrication Support
-        </h2>
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {advancedHdiCapabilities.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
-            >
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                {item.description}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-y border-zinc-200 bg-zinc-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl text-zinc-900">
-            Stackup Engineering &amp; Material Selection
-          </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
-            A robust high-speed design begins with the substrate. We perform
-            rigorous stackup optimization to balance electrical performance with
-            fabrication yield.
-          </p>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {stackupEngineering.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
-              >
-                <h3 className="text-base text-zinc-900 md:text-lg">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-8">
-            <Link
-              href="/PCB-design-resources#pcb-design-materials-finishes"
-              className="inline-flex items-center rounded-lg bg-zinc-900 px-5 py-3 text-sm text-white transition hover:bg-zinc-800"
-            >
-              View Stackup Options and Material Selection Guide
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl text-zinc-900">
-          SI/PI/EMI Simulation Methodology
-        </h2>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
-          We do not &quot;guess and check.&quot; Our workflow is
-          simulation-driven:
-        </p>
-
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {simulationMethodology.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
-            >
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                {item.description}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="border-y border-zinc-200 bg-zinc-50/80">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-          <h2 className="text-3xl text-zinc-900">
-            Complimentary Schematic Review
-          </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-zinc-700 md:text-base">
-            High-speed PCB success starts at the schematic level. Every Qmax PCB
-            layout engagement includes a Complimentary Schematic Review. Our
-            senior engineers analyze your design for:
-          </p>
-
-          <ul className="mt-8 grid gap-4 md:grid-cols-2">
-            {schematicReviewPoints.map((item) => (
-              <li
-                key={item}
-                className="rounded-xl border border-zinc-200 bg-white p-5 text-sm leading-7 text-zinc-700 shadow-[0_4px_20px_rgba(24,24,27,0.05)] md:text-base"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl text-zinc-900">Why Choose Qmax Systems?</h2>
-
-        <div className="mt-8 overflow-x-auto rounded-xl border border-zinc-200 bg-white shadow-[0_4px_20px_rgba(24,24,27,0.05)]">
-          <table className="min-w-full">
-            <thead>
-              <tr className="bg-zinc-100">
-                <th className="w-1/3 border-b border-zinc-200 px-4 py-3 text-left text-sm text-zinc-900">
-                  Feature
-                </th>
-                <th className="border-b border-zinc-200 px-4 py-3 text-left text-sm text-zinc-900">
-                  Qmax Engineering Advantage
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {qmaxAdvantages.map((row, index) => (
-                <tr
-                  key={row.feature}
-                  className={index % 2 === 0 ? "bg-white" : "bg-zinc-50"}
-                >
-                  <td className="border-b border-zinc-200 px-4 py-3 text-sm font-medium text-zinc-900">
-                    {row.feature}
-                  </td>
-                  <td className="border-b border-zinc-200 px-4 py-3 text-sm text-zinc-700">
-                    {row.advantage}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="text-3xl text-zinc-900">Industries Served</h2>
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {industriesServed.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
-            >
-              <h3 className="text-base text-zinc-900 md:text-lg">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-700 md:text-base">
-                {item.description}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid gap-6 md:grid-cols-2">
-          <article className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-[0_4px_24px_rgba(24,24,27,0.06)]">
-            <h2 className="text-2xl text-zinc-900 md:text-3xl">
-              Accelerate Your Hardware Development
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-zinc-700 md:text-base">
-              Don&apos;t let signal integrity issues delay your product launch.
-              Partner with an engineering team that understands the complexities
-              of modern high-speed digital design.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-lg bg-zinc-900 px-5 py-3 text-sm text-white transition hover:bg-zinc-800"
-              >
-                Contact Our Engineering Team Today
-              </Link>
-            </div>
-          </article>
-
-          <article className="rounded-2xl border border-zinc-200 bg-zinc-50 p-8 shadow-[0_4px_24px_rgba(24,24,27,0.06)]">
-            <h2 className="text-2xl text-zinc-900 md:text-3xl">
-              1-Hour Complimentary Engineering Consultation
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-zinc-700 md:text-base">
-              Struggling with a PCIe Gen6 loss budget? Unsure about your DDR5
-              stackup? Speak directly with a senior Qmax hardware architect. No
-              marketing, just engineering.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-lg border border-zinc-300 bg-white px-5 py-3 text-sm text-zinc-800 transition hover:bg-zinc-100"
-              >
-                Schedule Your Free Technical Consultation
-              </Link>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <FAQSection
-        faqs={faqs.map((item) => ({ q: item.question, a: item.answer }))}
+          </>
+        }
+        ctaHref="/hardware-development-services/contact"
+        ctaLabel="Talk to Our Engineers"
       />
+      <CoreServiceOfferingsSection
+        offerings={coreServiceOfferings}
+        title="Technical Capabilities: "
+        titleHighlight="Pushing the Limits of Physics"
+      />
+      <ApplicationsProjectExperienceSection projects={projectExperience} />
+      <WhySection
+        whyCards={WHY_CARDS}
+        titleHighlight="Analog & Mixed-Signal Design?"
+      />
+      <ComplimentarySchematicReviewSection items={schematicReviewItems} />
+
+      <FAQSection faqItems={FAQ_ITEMS} />
 
       <ServiceCaseStudiesSection
-        eyebrow="PCB Programs"
-        studies={pcbCaseStudies}
+        eyebrow="Hardware Programs"
+        studies={rfCaseStudies}
         hideTopBorder
       />
-    </main>
+      <div className="pb-28"></div>
+    </>
   );
 }
