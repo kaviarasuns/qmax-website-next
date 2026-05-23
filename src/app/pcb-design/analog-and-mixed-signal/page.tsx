@@ -498,7 +498,9 @@ export default function AnalogAndMixedSignalPage() {
 
       <WhySection
         whyCards={WHY_CARDS}
-        titleHighlight="Analog & Mixed-Signal Design?"
+        title="Why Choose Qmax"
+        titleHighlight="Systems?"
+        description="Engineering-led analog and mixed-signal PCB design — built for first-time-right performance from schematic to production."
         className="pb-8 max-[900px]:pb-8"
       />
 

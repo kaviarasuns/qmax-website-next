@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -9,14 +10,18 @@ interface WhyCard {
 
 interface WhySectionProps {
   whyCards: WhyCard[];
+  title?: string;
   titleHighlight?: string;
+  description?: ReactNode;
   ctaHref?: string;
   className?: string;
 }
 
 export function WhySection({
   whyCards,
+  title = "Why Choose Qmax For",
   titleHighlight = "Hardware Design?",
+  description,
   ctaHref = "/hardware-development-services/contact",
   className,
 }: WhySectionProps) {
@@ -31,9 +36,14 @@ export function WhySection({
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-14">
           <h2 className="text-4xl md:text-5xl font-light tracking-wide text-center text-black">
-            Why Choose Qmax For{" "}
+            {title}{" "}
             <span className="text-brand-500">{titleHighlight}</span>
           </h2>
+          {description ? (
+            <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-gray-600">
+              {description}
+            </p>
+          ) : null}
         </div>
         <div className="grid grid-cols-2 items-stretch gap-8 max-[900px]:grid-cols-1 max-[900px]:gap-5">
           {whyCards.map((card) => (

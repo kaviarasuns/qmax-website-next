@@ -490,7 +490,9 @@ export default function PowerElectronicsPage() {
       <ApplicationsProjectExperienceSection projects={projectExperience} />
       <WhySection
         whyCards={WHY_CARDS}
-        titleHighlight="Power Electronics PCB Design?"
+        title="Why Choose Qmax"
+        titleHighlight="Systems?"
+        description="25 years of power electronics PCB expertise — from HV isolation to EMI-compliant production files."
         className="pb-8 max-[900px]:pb-8"
       />
       <ComplimentarySchematicReviewSection

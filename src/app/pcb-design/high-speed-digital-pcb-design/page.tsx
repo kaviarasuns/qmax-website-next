@@ -321,80 +321,107 @@ const schematicReviewItems: SchematicReviewItem[] = [
 
 const WHY_CARDS = [
   {
-    title: "Transparent & Supervised Process",
-    desc: "You see every milestone, design review, and risk register as it happens. Qmax Systems program managers run a weekly cadence with traceable deliverables, on-time builds, and zero hidden surprises at handover.",
+    title: "First-Time-Right Philosophy",
+    desc: "Architecture-first engineering with simulation-driven constraints defined before layout begins.",
     icon: (
       <svg
-        viewBox="0 0 48 48"
+        viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.2"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <circle cx="10" cy="14" r="3" />
-        <circle cx="38" cy="14" r="3" />
-        <circle cx="10" cy="34" r="3" />
-        <circle cx="38" cy="34" r="3" />
-        <circle cx="24" cy="24" r="4" />
-        <path d="M13 14h8M27 14h8M13 34h8M27 34h8M14 16l8 6M34 16l-8 6M14 32l8-6M34 32l-8-6" />
+        <circle cx="12" cy="12" r="10" />
+        <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+        <line x1="9" y1="9" x2="9.01" y2="9" />
+        <line x1="15" y1="9" x2="15.01" y2="9" />
       </svg>
     ),
   },
   {
-    title: "Mixed-Signal Designs Built from Scratch",
-    desc: "Every analog and mixed-signal program starts with R&D and a proof-of-concept build to retire architectural risk early. We confirm feasibility, characterize noise floor, validate AFE topology, and prove critical assumptions before a single production layer is committed.",
+    title: "Engineering-Led Design",
+    desc: "All Qmax PCB designers are Electrical Engineers capable of performing complex circuit and noise analysis.",
     icon: (
       <svg
-        viewBox="0 0 48 48"
+        viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.2"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M8 30 L18 20 L24 26 L34 16 L42 24" />
-        <path d="M34 16 L34 24 L42 24" />
-        <path d="M6 38 L42 38" />
-        <path d="M14 12 L18 16 L22 12" />
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
   },
   {
-    title: "Smooth Hardware-Software Integration",
-    desc: "We select AFEs, ADCs, DACs, FPGAs, and toolchains that fit your existing platform rather than forcing a re-platform. The result is firmware that brings up cleanly, drivers that drop into your OS, and lower long-term maintenance cost.",
+    title: "DFM/DFT Validation",
+    desc: "Production-ready DFM/DFT-verified files for high first-time-right yields tailored to each fabrication house's specific capabilities.",
     icon: (
       <svg
-        viewBox="0 0 48 48"
+        viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.2"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M24 6 L24 18 M18 12 L24 18 L30 12" />
-        <path d="M24 42 L24 30 M18 36 L24 30 L30 36" />
-        <path d="M6 24 L18 24 M12 18 L18 24 L12 30" />
-        <path d="M42 24 L30 24 M36 18 L30 24 L36 30" />
-        <circle cx="24" cy="24" r="4" />
+        <path d="M9 11l3 3L22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
       </svg>
     ),
   },
   {
-    title: "Expert Analog & Mixed-Signal Engineers",
-    desc: "Qmax Systems analog and mixed-signal engineers average 12+ years across medical instrumentation, industrial sensing, defense electronics, automotive sensor electronics, and consumer wearables. Only senior engineers touch your design — no junior hand-offs, no learning on your timeline.",
+    title: "IP Ownership",
+    desc: "100% customer ownership of all schematics, layout files, and simulation data remain the sole property of the customer.",
     icon: (
       <svg
-        viewBox="0 0 48 48"
+        viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.2"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <circle cx="24" cy="24" r="16" />
-        <circle cx="24" cy="24" r="9" />
-        <circle cx="24" cy="24" r="3" fill="currentColor" />
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      </svg>
+    ),
+  },
+  {
+    title: "Manufacturing Alignment",
+    desc: "Direct coordination with Tier-1 fabrication and assembly houses for stackup and impedance alignment.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Compliance-Ready",
+    desc: "Designed for EMI/EMC (CISPR 32) and Safety (UL 62368-1) from day one.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
   },
@@ -561,7 +588,10 @@ export default function HighSpeedDigitalPCBDesignPage() {
       <ApplicationsProjectExperienceSection projects={projectExperience} />
       <WhySection
         whyCards={WHY_CARDS}
-        titleHighlight="Analog & Mixed-Signal Design?"
+        title="Why Choose Qmax"
+        titleHighlight="Systems?"
+        description="Architecture-first engineering with simulation-driven constraints — delivering high-speed digital PCBs that work on the first build."
+        className="pb-8 max-[900px]:pb-8"
       />
       <ComplimentarySchematicReviewSection items={schematicReviewItems} />
 

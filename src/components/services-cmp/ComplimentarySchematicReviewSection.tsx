@@ -85,7 +85,7 @@ export function ComplimentarySchematicReviewSection({
         <div className="px-6 pb-16 md:px-8 md:pb-20">
           <div className="mx-auto flex max-w-[1080px] flex-col items-center justify-between gap-10 rounded-2xl bg-[#f3f4f6] px-8 py-10 md:flex-row md:gap-12 md:px-14 md:py-[52px] max-[800px]:px-8 max-[800px]:py-10">
             <div className="w-full max-w-[480px]">
-              <h3 className="text-[28px] font-extrabold uppercase leading-[1.1] tracking-[-0.5px] text-[#1a1a1a] md:text-4xl">
+              <h3 className="text-[28px] uppercase  md:text-4xl">
                 {consultationHeading}
               </h3>
               <p className="mt-3.5 text-[15px] leading-relaxed text-[#555]">

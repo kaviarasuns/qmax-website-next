@@ -60,7 +60,7 @@ export function ApplicationsProjectExperienceSection({
     <section className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-[1320px] px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-slate-800 md:text-[42px] md:leading-tight">
+          <h2 className="text-3xl font-base tracking-wide text-slate-800 md:text-[42px] md:leading-tight">
             {title}
             <span className="text-[#F33117]">{titleHighlight}</span>
           </h2>
@@ -99,8 +99,8 @@ export function ApplicationsProjectExperienceSection({
                     </span>
                     <span
                       className={cn(
-                        "text-sm font-bold tracking-tight transition-colors duration-200 md:text-base",
-                        isActive ? "text-slate-800" : "text-[#999] hover:text-slate-800",
+                        "text-sm tracking-tight md:text-base",
+                        isActive ? "text-red-500" : "text-slate-800",
                       )}
                     >
                       {project.listTitle}
@@ -133,7 +133,9 @@ export function ApplicationsProjectExperienceSection({
                     key={project.id}
                     className={cn(
                       "absolute inset-0 flex flex-col transition-opacity duration-[550ms] ease-in-out",
-                      isActive ? "opacity-100" : "pointer-events-none opacity-0",
+                      isActive
+                        ? "opacity-100"
+                        : "pointer-events-none opacity-0",
                     )}
                   >
                     <div
@@ -163,9 +165,6 @@ export function ApplicationsProjectExperienceSection({
                       )}
                     </div>
                     <div className="border-t border-[#e4e0d8] bg-white px-6 py-5 md:px-7">
-                      <p className="mb-1 font-mono text-[10px] tracking-[0.14em] text-[#F33117]">
-                        {formatItemNumber(index)} — {project.listTitle}
-                      </p>
                       <p className="text-[15px] font-bold tracking-tight text-slate-800">
                         {project.captionTitle}
                       </p>
