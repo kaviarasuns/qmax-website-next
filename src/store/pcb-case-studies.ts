@@ -8,7 +8,8 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     category: "PCB Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG45_ZIN.svg",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/5.png",
     ],
