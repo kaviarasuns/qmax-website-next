@@ -967,6 +967,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/STELLAR_RENDER_07_MAY_2026_S1.7.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/STELLAR_RENDER_07_MAY_2026_S1.8.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/STELLAR_RENDER_07_MAY_2026_S1.9.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/stellar_video.mp4",
     ],
     features: [
       "Advanced industrial enclosure design",
