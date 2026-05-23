@@ -64,7 +64,7 @@ export function ApplicationsProjectExperienceSection({
             {title}
             <span className="text-[#F33117]">{titleHighlight}</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-[720px] text-base leading-relaxed text-slate-500">
+          <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-slate-500">
             {subtitle}
           </p>
         </div>
@@ -139,7 +139,11 @@ export function ApplicationsProjectExperienceSection({
                     )}
                   >
                     <div
-                      className="relative flex flex-1 items-center justify-center overflow-hidden"
+                      className={cn(
+                        "relative flex flex-1 items-center justify-center overflow-hidden",
+                        project.imageSrc &&
+                          "bg-gradient-to-br from-zinc-50 via-zinc-100/60 to-zinc-50",
+                      )}
                       style={
                         project.imageSrc
                           ? undefined
@@ -155,7 +159,7 @@ export function ApplicationsProjectExperienceSection({
                           src={project.imageSrc}
                           alt={project.imageAlt ?? project.listTitle}
                           fill
-                          className="object-cover"
+                          className="object-contain p-6 md:p-8"
                           sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                       ) : (
