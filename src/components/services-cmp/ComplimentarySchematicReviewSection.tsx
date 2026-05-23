@@ -47,7 +47,7 @@ export function ComplimentarySchematicReviewSection({
   return (
     <section className={cn("bg-white", className)}>
       <div className="mx-auto max-w-[1200px] px-6 py-16 md:px-8 md:py-20">
-        <h2 className="text-center text-3xl font-semibold leading-tight tracking-tight text-slate-800 md:text-[42px]">
+        <h2 className="text-center text-3xlleading-tight tracking-tight text-slate-800 md:text-[42px]">
           {title}
           <br />
           <span className="text-[#F33117]">{titleHighlight}</span>
@@ -65,7 +65,7 @@ export function ComplimentarySchematicReviewSection({
                 "md:last:odd:col-span-2 md:last:odd:mx-auto md:last:odd:max-w-[calc(50%-0.75rem)]",
               )}
             >
-              <h3 className="flex items-center gap-3 text-xl font-semibold text-slate-800 md:text-[22px]">
+              <h3 className="flex items-center gap-3 text-xl text-slate-800 md:text-[22px]">
                 {item.icon ? (
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center text-[#F33117] [&>svg]:h-7 [&>svg]:w-7">
                     {item.icon}
