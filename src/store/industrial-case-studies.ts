@@ -339,7 +339,6 @@ export const industrialCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smart_tap/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_1.mp4",
     ],
-    rotatedImages: {},
     features: [
       "Touchless smart water dispensing design",
       "Compact sensor-integrated housing",
@@ -384,7 +383,6 @@ export const industrialCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smart_Wi-Fi_stethoscope/3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smart_Wi-Fi_stethoscope/wifi_stethoscope_presentation.mp4",
     ],
-    rotatedImages: {},
     features: [
       "Portable medical device enclosure",
       "Integrated Wi-Fi electronics support",
@@ -429,7 +427,6 @@ export const industrialCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/frizb_ai_box/4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/frizb_ai_box/5.png",
     ],
-    rotatedImages: {},
     features: [
       "AI-enabled industrial enclosure",
       "Compact system packaging",
@@ -473,7 +470,6 @@ export const industrialCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/data%20_centre_management_system_UI&UX/4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/ecl_ui_ux.mp4",
     ],
-    rotatedImages: {},
     features: [
       "Data centre monitoring dashboard UI",
       "Industrial-grade visualization system",

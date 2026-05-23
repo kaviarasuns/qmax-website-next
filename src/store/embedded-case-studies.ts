@@ -458,7 +458,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/stellar_power_board/4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/stellar_power_board/5.png",
     ],
-    rotatedImages: {},
     features: [
       "High-efficiency power management board",
       "Multi-rail power distribution design",
@@ -797,7 +796,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.4.png",
     ],
-    rotatedImages: {},
     enlargedImages: { 0: 1.5 },
     features: [
       "High-precision motion control",
@@ -1184,7 +1182,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/3.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/capserve/3.3.png",
     ],
-    rotatedImages: {},
     features: [
       "Embedded system hardware platform",
       "Compact integrated electronics architecture",
@@ -1230,7 +1227,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/1.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/1.2.png",
     ],
-    rotatedImages: {},
     features: [
       "Embedded hardware platform development",
       "Multi-layer PCB and system integration",
@@ -1275,7 +1271,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/fedarant/1.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/fedarant/1.2.png",
     ],
-    rotatedImages: {},
     features: [
       "Compact embedded hardware platform",
       "Integrated system-level architecture",
@@ -1324,7 +1319,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_analog_board/2.png",
       // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_analog_board/1.png",
     ],
-    rotatedImages: {},
     features: [
       "High-speed analog signal processing design",
       "Precision mixed-signal board architecture",
@@ -1368,7 +1362,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/pdu/1.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/pdu/1.2.png",
     ],
-    rotatedImages: {},
     features: [
       "Rack-mounted power distribution system",
       "Embedded power monitoring integration",
@@ -1407,17 +1400,17 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     category: "Embedded Systems",
     cardImageIndex: 4,
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/8.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_TS1.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/7.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/UBIHUB_PR1_TS12_V.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.8.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.7.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.9.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/1_new.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/2_new.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/7.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/7.2.png",
     ],
-    rotatedImages: { 1: 90, 2: 90, 3: 90 },
-    enlargedImages: { 1: 1.5, 2: 1.3, 3: 1.3 },
+    // rotatedImages: { 1: 90, 2: 90, 3: 90 },
+    // enlargedImages: { 1: 1.5, 2: 1.3, 3: 1.3 },
     features: [
       "WiFi 6 triband networking platform",
       "High-speed wireless communication architecture",
@@ -1462,7 +1455,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_power_processor/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_power_processor/3.png",
     ],
-    rotatedImages: {},
     features: [
       "RF power processing architecture",
       "High-frequency signal handling design",
@@ -1501,9 +1493,9 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     category: "Embedded Systems",
     cardImageIndex: 8,
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/LUCAS TVS_PR1_TOP.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/LUCAS TVS_PR1_BOT.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/LUCAS TVS_PR1_TB.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_cost_bldc_motor_controller_for_evs/1.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_cost_bldc_motor_controller_for_evs/1.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_cost_bldc_motor_controller_for_evs/1.3.png",
@@ -1511,8 +1503,8 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_cost_bldc_motor_controller_for_evs/1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_cost_bldc_motor_controller_for_evs/Ultra Low Cost BLDC Motor Controller for EVs.png",
     ],
-    rotatedImages: { 0: 90, 1: 90, 2: 90 },
-    enlargedImages: { 0: 1.7, 1: 1.7, 2: 1.7 },
+    // rotatedImages: { 0: 90, 1: 90, 2: 90 },
+    // enlargedImages: { 0: 1.7, 1: 1.7, 2: 1.7 },
     features: [
       "Low-cost EV motor control platform",
       "BLDC motor driver integration",
@@ -1556,7 +1548,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/1.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/1.3.png",
     ],
-    rotatedImages: {},
     features: [
       "Embedded hardware system integration",
       "Compact industrial electronics platform",
@@ -1611,7 +1602,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/automotive/5.1.png",
       // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/automotive/5.2.png",
     ],
-    rotatedImages: {},
     features: [
       "Automotive-grade embedded electronics platform",
       "Vehicle communication system integration",
@@ -1660,8 +1650,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/smart_rail/N3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/smart_rail/N4.png",
     ],
-    rotatedImages: {},
-    enlargedImages: {},
     features: [
       "Smart rail embedded control platform",
       "Integrated controller and power boards",
@@ -1706,7 +1694,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/lung_sound_recorder/3.3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/lung_sound_recorder/3.1.png",
     ],
-    rotatedImages: {},
     features: [
       "Medical-grade lung sound acquisition system",
       "Embedded audio signal processing platform",
@@ -1753,7 +1740,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/5.png",
     ],
-    rotatedImages: {},
     features: [
       "Industrial lubrication control platform",
       "Embedded monitoring and control system",
@@ -1802,7 +1788,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "/case-studies/industrialCaseStudies/2/LSR-11.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4",
     ],
-    rotatedImages: {},
     features: [
       "Portable medical recording platform",
       "Embedded biomedical signal acquisition",
@@ -1841,17 +1826,17 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     category: "Embedded Systems",
     cardImageIndex: 4,
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_BOT.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_TOP.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_TB.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.5.png",
     ],
-    rotatedImages: { 0: 90, 1: 90, 2: 90 },
-    enlargedImages: { 0: 1.7, 1: 1.7, 2: 1.7 },
+    // rotatedImages: { 0: 90, 1: 90, 2: 90 },
+    // enlargedImages: { 0: 1.7, 1: 1.7, 2: 1.7 },
     features: [
       "Smart automotive diagnostic platform",
       "OBD2 vehicle communication integration",
@@ -1900,7 +1885,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Security_System_Controller/2.png",
     ],
     enlargedImages: { 4: 1.1 },
-    rotatedImages: {},
     features: [
       "Embedded security control platform",
       "Multi-layer controller board architecture",
@@ -1949,7 +1933,6 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/IR_BLE_AC_Controller/BLE_MESH_AC_CONTROLLER_RENDER_11.6.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/IR_BLE_AC_Controller/BLE_MESH_AC_CONTROLLER_RENDER_11.7.png",
     ],
-    rotatedImages: {},
     features: [
       "IR and BLE based AC control platform",
       "BLE mesh communication integration",

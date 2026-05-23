@@ -559,7 +559,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/footswitch/FOOTSWITCH_27_APR_2026_S1.8.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/footswitch/FOOTSWITCH_27_APR_2026_S1.9.png",
     ],
-    rotatedImages: {},
     features: [
       "Ergonomic industrial footswitch design",
       "Durable pedal actuation mechanism",
@@ -605,7 +604,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/5.jpg",
     ],
-    rotatedImages: {},
     features: [
       "Complex mechanical assembly system",
       "Precision-fit component structure",
@@ -655,7 +653,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/tensionmeter/TM450LB_RENDERING_28_MAR_2025_S1.1png.9.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/tensionmeter/TM450LB_RENDERING_28_MAR_2025_S1.1png.png",
     ],
-    rotatedImages: {},
     features: [
       "Industrial tension measurement device",
       "Precision force monitoring design",
@@ -701,7 +698,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/GIMBAL/GIMBAL_4_AXIS.4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/GIMBAL/Gimble.mp4",
     ],
-    rotatedImages: {},
     features: [
       "4-axis stabilization mechanism",
       "Precision rotational joints",
@@ -747,7 +743,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/IDOCK/FRIZB_IDOCK_RENDER_02_MAY_2026_S1.19.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/IDOCK/FRIZB_IDOCK_RENDER_02_MAY_2026_S1.20.png",
     ],
-    rotatedImages: {},
     features: [
       "Compact docking station design",
       "Device alignment and locking mechanism",
@@ -796,7 +791,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PC&OXY/PC_ASSY_RENDER_02_MAY_2026_S1.32.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PC&OXY/PC_OXY_ASSY_RENDER_02_MAY_2026_S1.31.png",
     ],
-    rotatedImages: {},
     features: [
       "Integrated dual-system assembly design",
       "Robust enclosure and mounting structure",
@@ -842,7 +836,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/TENSIONMETER_SMALL/TENSIONMETER_SENSOR_UNIT_28_APR_2026_S1.18.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/TENSIONMETER_SMALL/TENSIONMETER_SENSOR_UNIT_28_APR_2026_S1.19.png",
     ],
-    rotatedImages: {},
     features: [
       "Compact tension sensing unit design",
       "Precision mechanical housing",
@@ -975,7 +968,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/STELLAR_RENDER_07_MAY_2026_S1.8.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/STELLAR_RENDER_07_MAY_2026_S1.9.png",
     ],
-    rotatedImages: {},
     features: [
       "Advanced industrial enclosure design",
       "Precision mechanical assembly",
@@ -1024,7 +1016,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.21.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.22.png",
     ],
-    rotatedImages: {},
     features: [
       "Fuel cell generator mechanical assembly",
       "Industrial-grade structural enclosure",
@@ -1065,7 +1056,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/digital_dry_bath/1.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/digital_dry_bath/1.2.png",
     ],
-    rotatedImages: {},
     features: [
       "Precision laboratory equipment enclosure",
       "Compact thermal system integration",
@@ -1107,7 +1097,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/digital_lock/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/digital_lock/3.png",
     ],
-    rotatedImages: {},
     features: [
       "Smart digital locking mechanism",
       "Compact industrial enclosure design",
@@ -1152,7 +1141,6 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/TRNDX_SERVER/TRNDX_SERVER_ASSM_RENDER_S2.106.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/TRNDX_SERVER/TRNDX_SERVER_ASSM_RENDER_S2.107.png",
     ],
-    rotatedImages: {},
     enlargedImages: {
       0: 1.4,
       1: 1.4,
