@@ -15,6 +15,7 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
+import { getCaseStudyCardImage } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
@@ -171,7 +172,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "High Voltage PF Correction",
     description:
       "High voltage PF correction with low THD. Designed optimized PFC loops with controlled switching noise and EMI filtering.",
-    placeholderGradient: "linear-gradient(135deg, #ede9e0, #d4ccbe)",
+    imageSrc: getCaseStudyCardImage("lbm"),
+    imageAlt: "PF Controllers for Load Banks",
   },
   {
     id: "smart-pdu",
@@ -179,7 +181,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "High Current Distribution",
     description:
       "Bus bar integration for high current distribution. Thermal management using copper planes + mechanical integration.",
-    placeholderGradient: "linear-gradient(135deg, #dce4ec, #c4d0dc)",
+    imageSrc: getCaseStudyCardImage("rack-pdu"),
+    imageAlt: "50kW 3-Phase Smart PDU",
   },
   {
     id: "bms-800v",
@@ -187,7 +190,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "High Voltage Isolation & Precision Sensing",
     description:
       "HV isolation, active balancing, precision sensing under high noise environment.",
-    placeholderGradient: "linear-gradient(135deg, #dceade, #c4d8c6)",
+    imageSrc: getCaseStudyCardImage("bms-controller"),
+    imageAlt: "800V Battery Management System",
   },
   {
     id: "cllc-charger",
@@ -195,7 +199,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Resonant Converter Design",
     description:
       "High-frequency resonant operation. Minimized loop inductance and optimized magnetics placement.",
-    placeholderGradient: "linear-gradient(135deg, #ecdce6, #dcc4d4)",
+    imageSrc: getCaseStudyCardImage("stellar-power-board"),
+    imageAlt: "3-Phase CLLC Onboard Charger",
   },
   {
     id: "bldc-controller",
@@ -203,7 +208,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "High di/dt Switching & Thermal Management",
     description:
       "High di/dt switching, gate driver isolation, low EMI layout, thermal path optimization.",
-    placeholderGradient: "linear-gradient(135deg, #ece9dc, #dcd8c4)",
+    imageSrc: getCaseStudyCardImage("ultra-low-cost-bldc-motor-controller"),
+    imageAlt: "BLDC / PMSM Motor Controller",
   },
   {
     id: "smart-energy-meter",
@@ -211,7 +217,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Precision Measurement & Surge Protection",
     description:
       "High accuracy measurement with isolation and surge protection (EFT/ESD).",
-    placeholderGradient: "linear-gradient(135deg, #e0e9ed, #c8d4dc)",
+    imageSrc: getCaseStudyCardImage("3-phase-smart-energy-meter"),
+    imageAlt: "Smart Energy Meter",
   },
   {
     id: "induction-motor",
@@ -219,7 +226,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "High Current & EMI Suppression",
     description:
       "High current switching, robust grounding, EMI suppression techniques.",
-    placeholderGradient: "linear-gradient(135deg, #ede0e9, #dcc8d4)",
+    imageSrc: getCaseStudyCardImage("planar-motor"),
+    imageAlt: "3-Phase Induction Motor Controller",
   },
   {
     id: "ozone-generator",
@@ -227,7 +235,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "High Power Analog & CE/IEC Compliance",
     description:
       "High power analog + switching coexistence. CE/IEC compliance achieved.",
-    placeholderGradient: "linear-gradient(135deg, #e9ede0, #d4dcc8)",
+    imageSrc: getCaseStudyCardImage("ecl-fuel-cell-generator"),
+    imageAlt: "1kW LF Ozone Generator",
   },
   {
     id: "rf-plasma",
@@ -235,7 +244,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "RF & Power Electronics Coexistence",
     description:
       "RF + power electronics coexistence. Reduced radiated emissions through shielding and layout discipline.",
-    placeholderGradient: "linear-gradient(135deg, #ede0ec, #dcc8dc)",
+    imageSrc: getCaseStudyCardImage("rf-power-processor"),
+    imageAlt: "1.2kW RF Plasma Generator",
   },
   {
     id: "1500vdc",
@@ -243,7 +253,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Extreme Clearance & HV Safety",
     description:
       "Extreme clearance/creepage design, HV safety, insulation coordination.",
-    placeholderGradient: "linear-gradient(135deg, #e0ecec, #c8d8d8)",
+    imageSrc: getCaseStudyCardImage("mega-watt-charging-station"),
+    imageAlt: "1500VDC Systems (Heavy Equipment)",
   },
 ];
 

@@ -14,6 +14,7 @@ import {
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { getCaseStudyCardImage } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
@@ -32,7 +33,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Ampere Altra Processors",
     description:
       "Developed using Ampere Altra processors. These designs involve massive pin-count BGA escape routing, complex power delivery networks (PDN) to support high TDP, and synchronized timing for 5G radio units.",
-    placeholderGradient: "linear-gradient(135deg, #ede9e0, #d4ccbe)",
+    imageSrc: getCaseStudyCardImage("stellar-main-board"),
+    imageAlt: "O-RAN Distributed Units (DU)",
   },
   {
     id: "ai-gpu-switch",
@@ -40,7 +42,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Ultra-High-Bandwidth Fabrics",
     description:
       "Engineering of ultra-high-bandwidth fabrics requiring precision routing for 64 GT/s signaling, stringent insertion loss budgets, and advanced material selection to mitigate fiber weave effects.",
-    placeholderGradient: "linear-gradient(135deg, #dce4ec, #c4d0dc)",
+    imageSrc: getCaseStudyCardImage("ai-gpu-expansion-chassis-motherboard"),
+    imageAlt: "AI GPU Chassis PCIe Gen6 Switch Boards",
   },
   {
     id: "server-motherboards",
@@ -48,7 +51,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Multi-Socket Architectures",
     description:
       "Comprehensive layout for multi-socket architectures, including DDR5-6400+ 8-channel memory routing and high-density interconnect (HDI) transitions.",
-    placeholderGradient: "linear-gradient(135deg, #dceade, #c4d8c6)",
+    imageSrc: getCaseStudyCardImage("typheon"),
+    imageAlt: "Server Motherboards (Intel Sapphire Rapids / AMD EPYC)",
   },
   {
     id: "nic-100g",
@@ -56,7 +60,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Blade Server Environments",
     description:
       "Designed for blade server environments utilizing QSFP-DD form factors and 25G/56G NRZ/PAM4 SerDes lanes.",
-    placeholderGradient: "linear-gradient(135deg, #ecdce6, #dcc4d4)",
+    imageSrc: getCaseStudyCardImage("100gbe-high-speed-networking-board"),
+    imageAlt: "100G x 4 Network Interface Cards (NIC)",
   },
   {
     id: "fpga-imaging",
@@ -64,7 +69,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Real-Time 8K Video Capture",
     description:
       "High-speed LVDS and MIPI CSI-2 interfacing for real-time 8K video capture, focusing on precise phase matching and skew control.",
-    placeholderGradient: "linear-gradient(135deg, #ece9dc, #dcd8c4)",
+    imageSrc: getCaseStudyCardImage("video-processor-pcb"),
+    imageAlt: "FPGA-Based Image Processing",
   },
   {
     id: "imx8-sbc",
@@ -72,7 +78,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Thermal Management",
     description:
       "Compact, multi-layer designs balancing thermal management with high-speed LPDDR4x routing in space-constrained industrial envelopes.",
-    placeholderGradient: "linear-gradient(135deg, #e0e9ed, #c8d4dc)",
+    imageSrc: getCaseStudyCardImage("mx1"),
+    imageAlt: "NXP i.MX8 Single Board Computers (SBC)",
   },
   {
     id: "core-switches",
@@ -80,7 +87,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Broadcom StrataXGS",
     description:
       "Development of multi-port switches using Broadcom StrataXGS™ and Marvell Prestera switching fabrics, requiring heavy use of back-drilling, differential impedance optimization, and crosstalk modeling.",
-    placeholderGradient: "linear-gradient(135deg, #ede0e9, #dcc8d4)",
+    imageSrc: getCaseStudyCardImage("qualcomm-wifi4-routers"),
+    imageAlt: "Core Switches & Routers",
   },
 ];
 

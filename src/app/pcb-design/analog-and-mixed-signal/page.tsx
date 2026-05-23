@@ -14,6 +14,7 @@ import {
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
+import { getCaseStudyCardImage } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
@@ -192,7 +193,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "32-Channel Synchronized Sampling",
     description:
       "Challenge: 32-channel synchronized sampling without channel-to-channel crosstalk. Solution: Strategic partitioning and matched-length differential routing for ADC clocks.",
-    placeholderGradient: "linear-gradient(135deg, #ede9e0, #d4ccbe)",
+    imageSrc: getCaseStudyCardImage("multi-io-card-for-ate"),
+    imageAlt: "High-Speed Data Acquisition (DAQ)",
   },
   {
     id: "lung-sound-recorder",
@@ -200,7 +202,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Microvolt-Level Acoustic Capture",
     description:
       "Challenge: Capturing microvolt-level acoustic signals in a compact, portable form factor. Solution: Implementation of ultra-low-noise preamplifiers with active shielding to reject environmental EMI.",
-    placeholderGradient: "linear-gradient(135deg, #dce4ec, #c4d0dc)",
+    imageSrc: getCaseStudyCardImage("lung-sound-recorder"),
+    imageAlt: "Lung Sound Recorder",
   },
   {
     id: "ultrasonic-sensor-amplifiers",
@@ -208,7 +211,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "High-Gain Pulse Receiver Design",
     description:
       "Challenge: Managing high-gain stages near high-voltage pulse generators. Solution: Physical isolation and dedicated return paths to prevent pulse transients from desensitizing the receiver.",
-    placeholderGradient: "linear-gradient(135deg, #dceade, #c4d8c6)",
+    imageSrc: getCaseStudyCardImage("high-speed-analog-mux"),
+    imageAlt: "Ultrasonic Sensor Amplifiers",
   },
   {
     id: "shm-adc-dac",
@@ -216,7 +220,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Structural Health Monitoring",
     description:
       "Challenge: Structural Health Monitoring requires high dynamic range across wide temperature variants. Solution: Thermal management for reference voltages and 3D EM simulation of high-speed converter interfaces.",
-    placeholderGradient: "linear-gradient(135deg, #ecdce6, #dcc4d4)",
+    imageSrc: getCaseStudyCardImage("high-speed-analog-board"),
+    imageAlt: "High-Speed ADCs/DACs for SHM",
   },
   {
     id: "instrumentation-amplifiers",
@@ -224,7 +229,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Precision Industrial Measurement",
     description:
       "Challenge: Precision measurement of temperature and pressure in noisy industrial environments. Solution: High CMRR layout techniques and star-grounding to eliminate ground loops.",
-    placeholderGradient: "linear-gradient(135deg, #ece9dc, #dcd8c4)",
+    imageSrc: getCaseStudyCardImage("ultra-low-noise-adc-board"),
+    imageAlt: "Instrumentation Amplifiers",
   },
   {
     id: "emg-amplifiers",
@@ -232,7 +238,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Biopotential Signal Detection",
     description:
       'Challenge: Detecting biopotential signals (EMG) while rejecting 50/60Hz power line noise. Solution: Implementation of "moat-and-bridge" structures and specialized medical-grade isolation.',
-    placeholderGradient: "linear-gradient(135deg, #e0e9ed, #c8d4dc)",
+    imageSrc: getCaseStudyCardImage("medical-recorder-device"),
+    imageAlt: "Low-Noise EMG Amplifiers",
   },
   {
     id: "femto-farad-capacitance",
@@ -240,7 +247,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Sub-Picofarad Measurement",
     description:
       "Challenge: Measuring sub-picofarad changes amidst parasitic PCB capacitance. Solution: Use of low-loss substrates (Rogers/Megtron) and guard rings to neutralize parasitic leakage.",
-    placeholderGradient: "linear-gradient(135deg, #ede0e9, #dcc8d4)",
+    imageSrc: getCaseStudyCardImage("capserve"),
+    imageAlt: "Femto-Farad Capacitance Device",
   },
   {
     id: "hearing-aids",
@@ -248,7 +256,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Miniaturized Audio Processing",
     description:
       "Challenge: Extreme miniaturization with high-gain audio processing and BLE interference. Solution: HDI layout with microvias and rigid-flex substrates for 3D packaging.",
-    placeholderGradient: "linear-gradient(135deg, #ede9e0, #d4ccbe)",
+    imageSrc: getCaseStudyCardImage("animal-tracker"),
+    imageAlt: "Hearing Aids",
   },
   {
     id: "plasma-generators",
@@ -256,7 +265,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "kW-Level RF/LF Switching Control",
     description:
       "Challenge: Sensitive analog control circuitry operating near kW-level RF/LF switching. Solution: Faraday cage shielding, heavy copper traces (4oz+), and rigorous ESD/EFT mitigation.",
-    placeholderGradient: "linear-gradient(135deg, #dce4ec, #c4d0dc)",
+    imageSrc: getCaseStudyCardImage("rf-power-processor"),
+    imageAlt: "High-Power LF Plasma Generators",
   },
 ];
 

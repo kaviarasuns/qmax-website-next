@@ -27,15 +27,30 @@ export type CaseStudyListItem = {
   imageRotation?: number;
 };
 
+const getCardImageIndex = (caseStudy: CaseStudy): number =>
+  Math.min(
+    Math.max(caseStudy.cardImageIndex ?? 0, 0),
+    Math.max(caseStudy.images.length - 1, 0),
+  );
+
+/** Returns the listing-card image for a case study slug, or undefined if not found. */
+export function getCaseStudyCardImage(caseStudyId: string): string | undefined {
+  const caseStudy = allCaseStudiesData.find((study) => study.id === caseStudyId);
+  if (!caseStudy?.images.length) return undefined;
+
+  const preferred =
+    caseStudy.images[getCardImageIndex(caseStudy)] ?? caseStudy.images[0];
+  if (!preferred.endsWith(".mp4")) return preferred;
+
+  return caseStudy.images.find((image) => !image.endsWith(".mp4"));
+}
+
 const toCaseStudyListItem = (
   caseStudy: CaseStudy,
   index: number,
   category: string,
 ): CaseStudyListItem => {
-  const cardImageIndex = Math.min(
-    Math.max(caseStudy.cardImageIndex ?? 0, 0),
-    Math.max(caseStudy.images.length - 1, 0),
-  );
+  const cardImageIndex = getCardImageIndex(caseStudy);
 
   return {
     id: index + 1,

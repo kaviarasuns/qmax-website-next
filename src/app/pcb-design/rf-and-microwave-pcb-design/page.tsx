@@ -15,6 +15,7 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
+import { getCaseStudyCardImage } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
@@ -177,7 +178,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Industrial RF Power Delivery",
     description:
       "High-power RF amplifier design for industrial heating and plasma applications, featuring precision impedance matching, thermal management, and harmonic suppression at 13.56 MHz ISM band.",
-    placeholderGradient: "linear-gradient(135deg, #ede9e0, #d4ccbe)",
+    imageSrc: getCaseStudyCardImage("rf-power-processor"),
+    imageAlt: "High-Power RF Power Amplifier - 1 kW @ 13.56 MHz",
   },
   {
     id: "wifi6-mimo",
@@ -185,7 +187,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Multi-Antenna WiFi 6 Systems",
     description:
       "4x4 MIMO WiFi 6 router design with optimized antenna placement, RF isolation techniques, and dual-band 2.4/5 GHz front-end architecture for maximum throughput and coverage.",
-    placeholderGradient: "linear-gradient(135deg, #dce4ec, #c4d0dc)",
+    imageSrc: getCaseStudyCardImage("wifi6-triband-router"),
+    imageAlt: "WiFi-6 MIMO RF PCB Design",
   },
   {
     id: "sdr-platforms",
@@ -193,7 +196,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Wideband SDR Design",
     description:
       "Multi-band SDR platform supporting 70 MHz to 6 GHz coverage with integrated RF front-end, LNA/PA switching, and high-dynamic-range signal path for research and communications applications.",
-    placeholderGradient: "linear-gradient(135deg, #dceade, #c4d8c6)",
+    imageSrc: getCaseStudyCardImage("rf-signal-generator-enclosure"),
+    imageAlt: "Software Defined Radio (SDR) RF Platforms",
   },
   {
     id: "60ghz-moisture",
@@ -201,7 +205,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "mmWave Sensor Electronics",
     description:
       "60 GHz mmWave radar system for non-contact moisture measurement in industrial processes, featuring specialized RF substrates, precise impedance control, and advanced EMI shielding for V-band operation.",
-    placeholderGradient: "linear-gradient(135deg, #ecdce6, #dcc4d4)",
+    imageSrc: getCaseStudyCardImage("inline-moisture-meter"),
+    imageAlt: "60 GHz Microwave Moisture Measurement System",
   },
   {
     id: "lora-wifi-ble",
@@ -209,7 +214,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Multi-Protocol IoT Modules",
     description:
       "Compact wireless modules integrating LoRa sub-GHz, WiFi, and BLE radios with antenna diversity, RF coexistence filtering, and ultra-low power design for battery-operated IoT deployments.",
-    placeholderGradient: "linear-gradient(135deg, #ece9dc, #dcd8c4)",
+    imageSrc: getCaseStudyCardImage("iot-gateway-pcb"),
+    imageAlt: "LoRa, WiFi, BLE Wireless Modules",
   },
 ];
 
