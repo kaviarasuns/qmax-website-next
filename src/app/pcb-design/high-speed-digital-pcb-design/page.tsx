@@ -3,10 +3,6 @@ import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
-import {
-  ComplimentarySchematicReviewSection,
-  type SchematicReviewItem,
-} from "@/components/services-cmp/ComplimentarySchematicReviewSection";
 import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
 import {
   CoreServiceOfferingsSection,
@@ -248,86 +244,86 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
   },
 ];
 
-const schematicReviewItems: SchematicReviewItem[] = [
-  {
-    id: "pin-mapping",
-    title: "Pin-Mapping Optimization",
-    description:
-      "Pin-mapping optimization for BGA escape efficiency and clean DDR5 / PCIe Gen6 / SerDes routing within your stackup.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="2" y="2" width="20" height="20" rx="3" />
-        <circle cx="12" cy="12" r="3" />
-        <line x1="12" y1="2" x2="12" y2="5" />
-        <line x1="12" y1="19" x2="12" y2="22" />
-        <line x1="2" y1="12" x2="5" y2="12" />
-        <line x1="19" y1="12" x2="22" y2="12" />
-      </svg>
-    ),
-  },
-  {
-    id: "power-tree",
-    title: "Power Tree Verification",
-    description:
-      "Power tree verification and decoupling strategy to support high-current, low-noise rails across the PDN.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
-  },
-  {
-    id: "bom-risk",
-    title: "BOM Risk Mitigation",
-    description:
-      "BOM risk mitigation with EOL and obsolescence screening to protect long-lifecycle data center, telecom, and defense programs.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-  },
-  {
-    id: "compliance",
-    title: "Compliance Readiness",
-    description:
-      "Compliance readiness for CE, FCC, UL 62368-1, and CISPR 32 — eliminating late-stage certification surprises.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M9 11l3 3L22 4" />
-        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-      </svg>
-    ),
-  },
-];
+// const schematicReviewItems: SchematicReviewItem[] = [
+//   {
+//     id: "pin-mapping",
+//     title: "Pin-Mapping Optimization",
+//     description:
+//       "Pin-mapping optimization for BGA escape efficiency and clean DDR5 / PCIe Gen6 / SerDes routing within your stackup.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <rect x="2" y="2" width="20" height="20" rx="3" />
+//         <circle cx="12" cy="12" r="3" />
+//         <line x1="12" y1="2" x2="12" y2="5" />
+//         <line x1="12" y1="19" x2="12" y2="22" />
+//         <line x1="2" y1="12" x2="5" y2="12" />
+//         <line x1="19" y1="12" x2="22" y2="12" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     id: "power-tree",
+//     title: "Power Tree Verification",
+//     description:
+//       "Power tree verification and decoupling strategy to support high-current, low-noise rails across the PDN.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     id: "bom-risk",
+//     title: "BOM Risk Mitigation",
+//     description:
+//       "BOM risk mitigation with EOL and obsolescence screening to protect long-lifecycle data center, telecom, and defense programs.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     id: "compliance",
+//     title: "Compliance Readiness",
+//     description:
+//       "Compliance readiness for CE, FCC, UL 62368-1, and CISPR 32 — eliminating late-stage certification surprises.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <path d="M9 11l3 3L22 4" />
+//         <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+//       </svg>
+//     ),
+//   },
+// ];
 
 const WHY_CARDS = [
   {

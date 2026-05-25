@@ -5,10 +5,6 @@ import {
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
 import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
 import {
-  ComplimentarySchematicReviewSection,
-  SchematicReviewItem,
-} from "@/components/services-cmp/ComplimentarySchematicReviewSection";
-import {
   CoreServiceOfferingsSection,
   HighSpeedCoreOffering,
 } from "@/components/services-cmp/CoreServiceOfferingsSection";
@@ -346,84 +342,84 @@ const WHY_CARDS = [
   },
 ];
 
-const schematicReviewItems: SchematicReviewItem[] = [
-  {
-    id: "analog-digital-isolation",
-    title: "Analog/Digital Isolation Strategy",
-    description:
-      "Reviewing partitioning and noise-coupling paths to protect sensitive analog stages from digital aggressors.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <line x1="2" y1="12" x2="6" y2="12" />
-        <line x1="18" y1="12" x2="22" y2="12" />
-        <rect x="6" y="4" width="12" height="16" rx="2" />
-        <line x1="6" y1="12" x2="18" y2="12" strokeDasharray="2 2" />
-      </svg>
-    ),
-  },
-  {
-    id: "power-supply-filtering",
-    title: "Power Supply Filtering",
-    description:
-      "Optimizing low-noise LDOs and decoupling networks for high-resolution ADCs and precision analog front-ends.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
-  },
-  {
-    id: "termination-impedance",
-    title: "Termination & Impedance",
-    description:
-      "Validating signal termination schemes for high-speed converters and instrumentation interfaces.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-      </svg>
-    ),
-  },
-  {
-    id: "component-lifecycle",
-    title: "Component Lifecycle",
-    description:
-      'Screening for EOL and "at-risk" components to ensure long-term manufacturability.',
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="12 6 12 12 16 14" />
-      </svg>
-    ),
-  },
-];
+// const schematicReviewItems: SchematicReviewItem[] = [
+//   {
+//     id: "analog-digital-isolation",
+//     title: "Analog/Digital Isolation Strategy",
+//     description:
+//       "Reviewing partitioning and noise-coupling paths to protect sensitive analog stages from digital aggressors.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <line x1="2" y1="12" x2="6" y2="12" />
+//         <line x1="18" y1="12" x2="22" y2="12" />
+//         <rect x="6" y="4" width="12" height="16" rx="2" />
+//         <line x1="6" y1="12" x2="18" y2="12" strokeDasharray="2 2" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     id: "power-supply-filtering",
+//     title: "Power Supply Filtering",
+//     description:
+//       "Optimizing low-noise LDOs and decoupling networks for high-resolution ADCs and precision analog front-ends.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     id: "termination-impedance",
+//     title: "Termination & Impedance",
+//     description:
+//       "Validating signal termination schemes for high-speed converters and instrumentation interfaces.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     id: "component-lifecycle",
+//     title: "Component Lifecycle",
+//     description:
+//       'Screening for EOL and "at-risk" components to ensure long-term manufacturability.',
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <circle cx="12" cy="12" r="10" />
+//         <polyline points="12 6 12 12 16 14" />
+//       </svg>
+//     ),
+//   },
+// ];
 
 const FAQ_ITEMS = [
   {

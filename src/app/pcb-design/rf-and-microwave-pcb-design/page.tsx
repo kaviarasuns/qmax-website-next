@@ -5,10 +5,6 @@ import {
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
 import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
 import {
-  ComplimentarySchematicReviewSection,
-  type SchematicReviewItem,
-} from "@/components/services-cmp/ComplimentarySchematicReviewSection";
-import {
   CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
 } from "@/components/services-cmp/CoreServiceOfferingsSection";
@@ -325,102 +321,102 @@ const WHY_CARDS = [
   },
 ];
 
-const schematicReviewItems: SchematicReviewItem[] = [
-  {
-    id: "rf-signal-chain",
-    title: "RF Signal Chain Architecture",
-    description:
-      "Gain stages, filter placement, and link-budget assumptions for first-pass RF performance.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z" />
-        <circle cx="12" cy="12" r="3" />
-      </svg>
-    ),
-  },
-  {
-    id: "impedance-matching",
-    title: "Impedance Matching Networks",
-    description:
-      "Matching topologies and component values aligned to VSWR and return-loss targets.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-      </svg>
-    ),
-  },
-  {
-    id: "power-supply-filtering",
-    title: "Power Supply Filtering",
-    description:
-      "Decoupling and bias networks to keep PA, LNA, and transceiver rails RF-clean.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
-  },
-  {
-    id: "rf-ground",
-    title: "RF Ground References",
-    description:
-      "Ground continuity and return-path strategy to prevent radiation and desensitization.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="2" y="2" width="20" height="20" rx="3" />
-        <line x1="2" y1="12" x2="22" y2="12" />
-        <line x1="12" y1="2" x2="12" y2="22" />
-      </svg>
-    ),
-  },
-  {
-    id: "component-lifecycle",
-    title: "Component Lifecycle Risk",
-    description:
-      "EOL and obsolescence screening for long-life wireless, defense, and instrumentation programs.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="12 6 12 12 16 14" />
-      </svg>
-    ),
-  },
-];
+// const schematicReviewItems: SchematicReviewItem[] = [
+//   {
+//     id: "rf-signal-chain",
+//     title: "RF Signal Chain Architecture",
+//     description:
+//       "Gain stages, filter placement, and link-budget assumptions for first-pass RF performance.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z" />
+//         <circle cx="12" cy="12" r="3" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     id: "impedance-matching",
+//     title: "Impedance Matching Networks",
+//     description:
+//       "Matching topologies and component values aligned to VSWR and return-loss targets.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     id: "power-supply-filtering",
+//     title: "Power Supply Filtering",
+//     description:
+//       "Decoupling and bias networks to keep PA, LNA, and transceiver rails RF-clean.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     id: "rf-ground",
+//     title: "RF Ground References",
+//     description:
+//       "Ground continuity and return-path strategy to prevent radiation and desensitization.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <rect x="2" y="2" width="20" height="20" rx="3" />
+//         <line x1="2" y1="12" x2="22" y2="12" />
+//         <line x1="12" y1="2" x2="12" y2="22" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     id: "component-lifecycle",
+//     title: "Component Lifecycle Risk",
+//     description:
+//       "EOL and obsolescence screening for long-life wireless, defense, and instrumentation programs.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <circle cx="12" cy="12" r="10" />
+//         <polyline points="12 6 12 12 16 14" />
+//       </svg>
+//     ),
+//   },
+// ];
 
 const FAQ_ITEMS = [
   {

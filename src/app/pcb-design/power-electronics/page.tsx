@@ -5,10 +5,6 @@ import {
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
 import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
 import {
-  ComplimentarySchematicReviewSection,
-  type SchematicReviewItem,
-} from "@/components/services-cmp/ComplimentarySchematicReviewSection";
-import {
   CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
 } from "@/components/services-cmp/CoreServiceOfferingsSection";
@@ -334,63 +330,63 @@ const WHY_CARDS = [
   },
 ];
 
-const schematicReviewItems: SchematicReviewItem[] = [
-  {
-    id: "hv-lv-isolation",
-    title: "HV/LV Isolation Strategy",
-    description:
-      "Reviewing opto-isolation, creepage paths, and magnetic barriers for IEC 60601 and UL 62368-1 safety compliance.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-  },
-  {
-    id: "magnetics-filtering",
-    title: "Magnetics & Filtering",
-    description:
-      "Validating transformer winding geometries and EMI filter stages — Pi-filters and Common Mode Chokes — for clean CE/RE performance.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-      </svg>
-    ),
-  },
-  {
-    id: "component-lifecycle",
-    title: "Component Lifecycle",
-    description:
-      'Screening for EOL and "at-risk" components to ensure long-term production stability.',
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="12 6 12 12 16 14" />
-      </svg>
-    ),
-  },
-];
+// const schematicReviewItems: SchematicReviewItem[] = [
+//   {
+//     id: "hv-lv-isolation",
+//     title: "HV/LV Isolation Strategy",
+//     description:
+//       "Reviewing opto-isolation, creepage paths, and magnetic barriers for IEC 60601 and UL 62368-1 safety compliance.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     id: "magnetics-filtering",
+//     title: "Magnetics & Filtering",
+//     description:
+//       "Validating transformer winding geometries and EMI filter stages — Pi-filters and Common Mode Chokes — for clean CE/RE performance.",
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+//       </svg>
+//     ),
+//   },
+//   {
+//     id: "component-lifecycle",
+//     title: "Component Lifecycle",
+//     description:
+//       'Screening for EOL and "at-risk" components to ensure long-term production stability.',
+//     icon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="2"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <circle cx="12" cy="12" r="10" />
+//         <polyline points="12 6 12 12 16 14" />
+//       </svg>
+//     ),
+//   },
+// ];
 
 const FAQ_ITEMS = [
   {
