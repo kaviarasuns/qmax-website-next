@@ -186,7 +186,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/2.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/3.png",
     ],
     // rotatedImages: { 0: 90, 1: 90, 2: 90 },
     // enlargedImages: { 0: 1.7, 1: 1.7, 2: 1.7 },

@@ -1182,6 +1182,92 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "Manufacturing Support",
     ],
   },
+  {
+    id: "qsafe",
+    title: "QSafe",
+    category: "Mechanical Design",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/qsafe/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/qsafe/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/qsafe/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/qsafe/4.png",
+    ],
+    rotatedImages: {},
+    features: [
+      "Industrial safety device enclosure",
+      "Compact rugged mechanical design",
+      "Portable field-use architecture",
+      "Integrated sensor mounting support",
+      "Durable industrial-grade construction",
+      "Ergonomic product form factor",
+    ],
+    summary:
+      "QSafe is a rugged industrial product enclosure designed for portable safety monitoring applications with durable construction and reliable field usability.",
+    importantParts: [
+      "Protective outer enclosure",
+      "Sensor mounting structure",
+      "Internal support frame",
+      "Connector access interfaces",
+      "Portable handling sections",
+      "Battery compartment housing",
+    ],
+    salientFeatures: [
+      "Compact and rugged industrial design",
+      "Portable field-ready architecture",
+      "Reliable sensor integration support",
+      "Durable mechanical construction",
+    ],
+    scopeOfWork: [
+      "Mechanical Product Design",
+      "Industrial CAD Modeling",
+      "Enclosure Development",
+      "Prototype Validation",
+      "Manufacturing Support",
+    ],
+  },
+  {
+    id: "smartrail",
+    title: "Smart Rail",
+    category: "Mechanical Design",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smartrail/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smartrail/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smartrail/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smartrail/4.png",
+    ],
+    rotatedImages: {},
+    features: [
+      "Rail infrastructure mechanical system",
+      "Industrial enclosure and mounting design",
+      "Robust structural integration",
+      "Weather-resistant mechanical architecture",
+      "Efficient cable and component management",
+      "Field-deployable industrial construction",
+    ],
+    summary:
+      "Smart Rail is a mechanically engineered industrial platform designed for reliable rail infrastructure deployment, structural durability, and efficient system integration.",
+    importantParts: [
+      "Main structural enclosure",
+      "Mounting and support brackets",
+      "Cable routing channels",
+      "Protective external housing",
+      "Internal component frame",
+      "Rail interface structures",
+    ],
+    salientFeatures: [
+      "Rugged rail-ready construction",
+      "Reliable industrial enclosure system",
+      "Efficient internal component organization",
+      "Field-deployable mechanical architecture",
+    ],
+    scopeOfWork: [
+      "Mechanical System Design",
+      "Industrial CAD Modeling",
+      "Structural Optimization",
+      "Prototype Development",
+      "Manufacturing Support",
+    ],
+  },
 ];
 
 // {

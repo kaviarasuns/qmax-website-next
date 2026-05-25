@@ -1965,4 +1965,47 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "Prototype Validation",
     ],
   },
+  {
+    id: "dosingpump",
+    title: "Dosing Pump",
+    category: "Embedded Systems",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/4.png",
+    ],
+    rotatedImages: {},
+    features: [
+      "Embedded fluid dosing control platform",
+      "Precision pump control electronics",
+      "Compact industrial embedded design",
+      "Reliable sensor and actuator integration",
+      "Efficient power management system",
+      "Industrial automation compatibility",
+    ],
+    summary:
+      "Dosing Pump is an embedded control platform designed for precise fluid dispensing, reliable industrial automation, and efficient system integration.",
+    importantParts: [
+      "Pump control circuitry",
+      "Embedded processing unit",
+      "Sensor integration modules",
+      "Motor driver stage",
+      "Power regulation section",
+      "Industrial interface connectors",
+    ],
+    salientFeatures: [
+      "Precision fluid dosing control",
+      "Reliable embedded automation platform",
+      "Compact industrial hardware architecture",
+      "Efficient actuator and sensor integration",
+    ],
+    scopeOfWork: [
+      "Embedded Hardware Design",
+      "Control Electronics Development",
+      "PCB Layout Optimization",
+      "System Integration Testing",
+      "Prototype Validation",
+    ],
+  },
 ];
