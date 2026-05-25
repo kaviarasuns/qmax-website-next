@@ -3,12 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import {
-  ApplicationsProjectExperienceSection,
-  type ProjectExperienceItem,
-} from "@/components/services-cmp/ApplicationsProjectExperienceSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
-import { getCaseStudyCardImage } from "@/store/case-studies";
 import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 
 function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
@@ -38,62 +33,6 @@ const rfCaseStudies: ServiceCaseStudy[] = industrialServiceCaseStudies([
   "360-degree-camera-4k",
   "smart-wifi-stethoscope",
 ]);
-
-const projectExperience: ProjectExperienceItem[] = [
-  {
-    id: "enterprise-wifi-6",
-    listTitle: "Enterprise WiFi 6 Solutions",
-    captionTitle: "4x4 MIMO Tri-Band Systems",
-    description:
-      "Developed 4x4 MIMO systems operating concurrently at 2.4GHz, 5.1GHz, and 5.8GHz using Qualcomm and MediaTek SoCs.",
-    imageSrc: getCaseStudyCardImage("wifi6-triband-router"),
-    imageAlt: "Enterprise WiFi 6 Solutions",
-  },
-  {
-    id: "industrial-rf-generation",
-    listTitle: "Industrial RF Generation",
-    captionTitle: "1KW HF & 500W LF Generators",
-    description:
-      "Engineered 1KW HF and 500W LF RF generators specifically for plasma generation applications.",
-    imageSrc: getCaseStudyCardImage("rf-power-processor"),
-    imageAlt: "Industrial RF Generation",
-  },
-  {
-    id: "ble-reference-designs",
-    listTitle: "BLE Reference Designs",
-    captionTitle: 'Ultra-Low Power "Mousefull" Platforms',
-    description:
-      'Created ultra-low power BLE "Mousefull" reference designs for global semiconductor leaders.',
-    imageSrc: getCaseStudyCardImage("ultra-low-power-ble-mouse"),
-    imageAlt: "BLE Reference Designs",
-  },
-  {
-    id: "telecom-infrastructure",
-    listTitle: "Telecommunications Infrastructure",
-    captionTitle: "4G Radio Front-End Design",
-    description: "Designed high-gain LNAs and PAs for 4G Radio units.",
-    imageSrc: getCaseStudyCardImage("qualcomm-wifi4-routers"),
-    imageAlt: "Telecommunications Infrastructure",
-  },
-  {
-    id: "microwave-sensing",
-    listTitle: "Precision Microwave Sensing",
-    captionTitle: "Food Grain Moisture Analysis",
-    description:
-      "Implemented microwave-based moisture measurement systems for food grain analysis.",
-    imageSrc: getCaseStudyCardImage("inline-moisture-meter"),
-    imageAlt: "Precision Microwave Sensing",
-  },
-  {
-    id: "iot-ecosystems",
-    listTitle: "IoT Ecosystems",
-    captionTitle: "Multi-Protocol Industrial IoT",
-    description:
-      "Deployed numerous LoRa, BLE, and WiFi-based industrial IoT devices with optimized PCB antennas.",
-    imageSrc: getCaseStudyCardImage("industrial-iot-gateway-with-poe"),
-    imageAlt: "IoT Ecosystems",
-  },
-];
 
 export const metadata: Metadata = {
   title: "RF and Microwave Services | Qmax",
@@ -319,7 +258,7 @@ const rfFaqGroups = [
   },
 ];
 
-export default function RfAndMicrowavePage() {
+export default function RfAndMicrowavePageDeprecated() {
   return (
     <main className="bg-slate-100 text-justify text-slate-900">
       <section className="relative overflow-hidden pt-14 pb-12 border-b border-slate-200 lg:pt-20 lg:pb-24">
@@ -552,12 +491,55 @@ export default function RfAndMicrowavePage() {
         </div>
       </section>
 
-      <ApplicationsProjectExperienceSection
-        projects={projectExperience}
-        // title="Proven "
-        // titleHighlight="Project Experience"
-        subtitle="Our portfolio reflects a deep understanding of hardware constraints and high-performance requirements."
-      />
+      <section className="border-y border-slate-200 bg-slate-50/80">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+          <h2 className="text-left text-3xl text-slate-900">
+            Proven Project Experience
+          </h2>
+          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+            Our portfolio reflects a deep understanding of hardware constraints
+            and high-performance requirements.
+          </p>
+
+          <ul className="mt-8 grid gap-4 md:grid-cols-2">
+            <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
+              <span className="text-slate-900">
+                Enterprise WiFi 6 Solutions:
+              </span>{" "}
+              Developed 4x4 MIMO systems operating concurrently at 2.4GHz,
+              5.1GHz, and 5.8GHz using Qualcomm and MediaTek SoCs.
+            </li>
+            <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
+              <span className="text-slate-900">Industrial RF Generation:</span>{" "}
+              Engineered 1KW HF and 500W LF RF generators specifically for
+              plasma generation applications.
+            </li>
+            <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
+              <span className="text-slate-900">BLE Reference Designs:</span>{" "}
+              Created ultra-low power BLE &quot;Mousefull&quot; reference
+              designs for global semiconductor leaders.
+            </li>
+            <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
+              <span className="text-slate-900">
+                Telecommunications Infrastructure:
+              </span>{" "}
+              Designed high-gain LNAs and PAs for 4G Radio units.
+            </li>
+            <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
+              <span className="text-slate-900">
+                Precision Microwave Sensing:
+              </span>{" "}
+              Implemented microwave-based moisture measurement systems for food
+              grain analysis.
+            </li>
+            <li className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-[0_4px_20px_rgba(15,23,42,0.05)] md:text-base">
+              <span className="text-slate-900">IoT Ecosystems:</span> Deployed
+              numerous LoRa, BLE, and WiFi-based industrial IoT devices with
+              optimized PCB antennas.
+            </li>
+          </ul>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <h2 className="text-left text-3xl text-slate-900">Case studies</h2>
