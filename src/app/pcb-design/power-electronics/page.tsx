@@ -3,6 +3,7 @@ import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
+import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
 import {
   ComplimentarySchematicReviewSection,
   type SchematicReviewItem,
@@ -506,11 +507,12 @@ export default function PowerElectronicsPage() {
         description="25 years of power electronics PCB expertise — from HV isolation to EMI-compliant production files."
         className="pb-8 max-[900px]:pb-8"
       />
-      <ComplimentarySchematicReviewSection
+      {/* <ComplimentarySchematicReviewSection
         items={schematicReviewItems}
         titleHighlight="Power Electronics PCB Design"
         subtitle="Every power electronics engagement includes a complimentary schematic review to identify architectural risks before layout begins."
-      />
+      /> */}
+      <ComplimentaryConsultationSection variant="pcb" />
       <FAQSection faqItems={FAQ_ITEMS} />
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"

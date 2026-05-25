@@ -2,6 +2,7 @@
 
 import "../../components/hardware-design.css";
 import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
+import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
 import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
@@ -500,6 +501,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
       {/* <FeaturedArticlesSection /> */}
 
       {/* FAQ */}
+      <ComplimentaryConsultationSection variant="pcb" />
       <FAQSection faqItems={FAQ_ITEMS} />
       <div className="pb-28"></div>
 

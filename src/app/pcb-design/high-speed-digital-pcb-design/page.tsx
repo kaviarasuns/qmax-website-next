@@ -7,6 +7,7 @@ import {
   ComplimentarySchematicReviewSection,
   type SchematicReviewItem,
 } from "@/components/services-cmp/ComplimentarySchematicReviewSection";
+import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
 import {
   CoreServiceOfferingsSection,
   HighSpeedCoreOffering,
@@ -602,7 +603,8 @@ export default function HighSpeedDigitalPCBDesignPage() {
         description="Architecture-first engineering with simulation-driven constraints — delivering high-speed digital PCBs that work on the first build."
         className="pb-8 max-[900px]:pb-8"
       />
-      <ComplimentarySchematicReviewSection items={schematicReviewItems} />
+      {/* <ComplimentarySchematicReviewSection items={schematicReviewItems} /> */}
+      <ComplimentaryConsultationSection variant="pcb" />
 
       <FAQSection faqItems={FAQ_ITEMS} />
 

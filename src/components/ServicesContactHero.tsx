@@ -24,7 +24,6 @@ interface FormState {
   country: string;
   company: string;
   message: string;
-  consent: boolean;
 }
 
 const INITIAL_FORM: FormState = {
@@ -35,7 +34,6 @@ const INITIAL_FORM: FormState = {
   country: "United States",
   company: "",
   message: "",
-  consent: false,
 };
 
 const COUNTRIES = [
@@ -165,15 +163,8 @@ export default function ServicesContactHero({
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
-    const { name, value, type } = e.target;
-    if (type === "checkbox") {
-      setForm((prev) => ({
-        ...prev,
-        [name]: (e.target as HTMLInputElement).checked,
-      }));
-    } else {
-      setForm((prev) => ({ ...prev, [name]: value }));
-    }
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const selectCountry = (c: string) => {
@@ -490,38 +481,11 @@ export default function ServicesContactHero({
                 />
               </div>
 
-              {/* Consent */}
-              <label
-                className="col-span-full flex items-start gap-[14px] mt-4 cursor-pointer select-none"
-                htmlFor="consent"
-              >
-                <input
-                  id="consent"
-                  name="consent"
-                  type="checkbox"
-                  checked={form.consent}
-                  onChange={handleChange}
-                  className="absolute opacity-0 pointer-events-none"
-                />
-                <span
-                  className={`inline-block w-[22px] h-[22px] border-2 rounded-sm shrink-0 relative transition-all duration-150 mt-px ${
-                    form.consent
-                      ? "bg-[#ef4444] border-[#ef4444]"
-                      : "bg-white border-[#bdbdbd]"
-                  }`}
-                >
-                  {form.consent && (
-                    <span className="absolute left-[6px] top-[2px] w-[6px] h-[11px] border-r-[2.5px] border-b-[2.5px] border-white rotate-45 block" />
-                  )}
-                </span>
-                <span className="text-[15px] text-[#9aa0a6]">
-                  I agree to Qmax{" "}
-                  <span className="text-[#2a2a2a] font-bold">
-                    Privacy and Cookies Policy
-                  </span>
-                  .
-                </span>
-              </label>
+              {/* Privacy notice */}
+              <p className="col-span-full mt-4 text-[15px] leading-[1.45] text-[#9aa0a6]">
+                Your data is secure with us; we never leak, share, or sell your
+                details to third parties.
+              </p>
 
               {/* Submit */}
               <button

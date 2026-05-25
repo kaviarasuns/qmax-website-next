@@ -155,11 +155,19 @@ const ContactHero = () => {
   });
   const [showThankYou, setShowThankYou] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
-  const submitContactForm = async (data: typeof formData) => {
-    console.log(data);
-    const response = await fetch("http://localhost:8080/api/email/contact", {
+  const baseUrl = "https://pmdash.v2.qmaxsys.com";
+  // const baseUrl = "http://localhost:8080";
+
+  const submitContactForm = async (data: {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+  }) => {
+    const response = await fetch(`${baseUrl}/api/email/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -173,9 +181,27 @@ const ContactHero = () => {
     e.preventDefault();
     setLoading(true);
     setShowThankYou(false);
-    await submitContactForm(formData);
-    setLoading(false);
-    setShowThankYou(true);
+    setError(null);
+
+    try {
+      const response = await submitContactForm({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      });
+      if (response.error) {
+        throw new Error(response.error);
+      }
+      setShowThankYou(true);
+    } catch (err) {
+      console.error("Failed to send message:", err);
+      setError(
+        "We couldn't send your message. Please check your connection and try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -299,6 +325,12 @@ const ContactHero = () => {
                     onFocus={() => setFocusedField("message")}
                     onBlur={() => setFocusedField(null)}
                   />
+
+                  {error ? (
+                    <p className="mt-4 text-sm text-red-600" role="alert">
+                      {error}
+                    </p>
+                  ) : null}
 
                   <div className="pt-6">
                     <button

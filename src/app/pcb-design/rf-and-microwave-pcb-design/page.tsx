@@ -3,6 +3,7 @@ import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
+import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
 import {
   ComplimentarySchematicReviewSection,
   type SchematicReviewItem,
@@ -614,11 +615,14 @@ export default function RFMicrowavePCBDesignPage() {
         description="RF architecture validated before layout begins — backed by simulation-driven constraints and RF measurement expertise."
         className="pb-8 max-[900px]:pb-8"
       />
-      <ComplimentarySchematicReviewSection
+      {/* <ComplimentarySchematicReviewSection
         items={schematicReviewItems}
         titleHighlight="RF & Microwave PCB Design"
         subtitle="When customers engage Qmax Systems for RF PCB layout services, we perform a complimentary schematic review before layout begins. The review covers:"
-        consultationSubtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch. This early validation prevents costly PCB re-spins and RF tuning delays."
+      /> */}
+      <ComplimentaryConsultationSection
+        variant="pcb"
+        subtitleSuffix=" This early validation prevents costly PCB re-spins and RF tuning delays."
       />
       <FAQSection faqItems={FAQ_ITEMS} />
       <ServiceCaseStudiesSection

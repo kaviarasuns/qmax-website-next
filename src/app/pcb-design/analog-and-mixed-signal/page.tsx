@@ -3,6 +3,7 @@ import {
   ApplicationsProjectExperienceSection,
   ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
+import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
 import {
   ComplimentarySchematicReviewSection,
   SchematicReviewItem,
@@ -529,11 +530,12 @@ export default function AnalogAndMixedSignalPage() {
         </div>
       </section>
 
-      <ComplimentarySchematicReviewSection
+      {/* <ComplimentarySchematicReviewSection
         items={schematicReviewItems}
         titleHighlight="Analog & Mixed-Signal PCB Design"
         subtitle="Every PCB layout engagement at Qmax Systems includes a complimentary schematic review. Before a single trace is routed, our engineers analyze:"
-      />
+      /> */}
+      <ComplimentaryConsultationSection variant="pcb" />
 
       <FAQSection faqItems={FAQ_ITEMS} />
 
