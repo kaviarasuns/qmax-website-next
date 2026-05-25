@@ -69,7 +69,8 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Real-Time 8K Video Capture",
     description:
       "High-speed LVDS and MIPI CSI-2 interfacing for real-time 8K video capture, focusing on precise phase matching and skew control.",
-    imageSrc: getCaseStudyCardImage("video-processor-pcb"),
+    imageSrc:
+      "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design-services/Video Processor PCB Design 25Jan2020.png",
     imageAlt: "FPGA-Based Image Processing",
   },
   {

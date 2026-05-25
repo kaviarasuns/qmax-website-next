@@ -14,6 +14,11 @@ import {
 } from "@/components/services-cmp/TechnicalAdvantageSection";
 import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
+import {
+  ApplicationsProjectExperienceSection,
+  type ProjectExperienceItem,
+} from "@/components/services-cmp/ApplicationsProjectExperienceSection";
+import { getCaseStudyCardImage } from "@/store/case-studies";
 
 function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {
@@ -43,6 +48,54 @@ const powerElectronicsCaseStudies: ServiceCaseStudy[] =
     "warehouse-camera-controller-unit",
     "smart-tap",
   ]);
+
+const projectExperience: ProjectExperienceItem[] = [
+  {
+    id: "3-phase-obc",
+    listTitle: "3-Phase 11kW On-Board Charger",
+    captionTitle: "SiC MOSFETs & Bidirectional V2G",
+    description:
+      "Featuring SiC MOSFETs and bidirectional power flow for V2G (Vehicle-to-Grid) applications.",
+    imageSrc: getCaseStudyCardImage("stellar-power-board"),
+    imageAlt: "3-Phase 11kW On-Board Charger",
+  },
+  {
+    id: "high-density-server-pdu",
+    listTitle: "High-Density Server PDU",
+    captionTitle: "48V DC AI GPU Distribution",
+    description:
+      "48V DC distribution system for AI GPU clusters with integrated Power Integrity (PI) analysis.",
+    imageSrc: getCaseStudyCardImage("rack-pdu"),
+    imageAlt: "High-Density Server PDU",
+  },
+  {
+    id: "industrial-pmsm-controller",
+    listTitle: "Industrial PMSM Controller",
+    captionTitle: "ASIL-D Functional Safety",
+    description:
+      "50kW motor drive with liquid cooling and ASIL-D functional safety compliance.",
+    imageSrc: getCaseStudyCardImage("ultra-low-cost-bldc-motor-controller-for-evs"),
+    imageAlt: "Industrial PMSM Controller",
+  },
+  {
+    id: "multi-cell-bms",
+    listTitle: "Multi-Cell BMS",
+    captionTitle: "Aerospace Energy Storage",
+    description:
+      "800V battery management system with active cell balancing for aerospace energy storage.",
+    imageSrc: getCaseStudyCardImage("bms-controller"),
+    imageAlt: "Multi-Cell BMS",
+  },
+  {
+    id: "precision-rf-generator",
+    listTitle: "Precision 1kW RF Generator",
+    captionTitle: "Plasma Etching & Medical Ablation",
+    description:
+      "High-frequency power source for industrial plasma etching and medical ablation.",
+    imageSrc: getCaseStudyCardImage("rf-power-processor"),
+    imageAlt: "Precision 1kW RF Generator",
+  },
+];
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
@@ -421,15 +474,15 @@ export default function PowerElectronicsPage() {
           <>
             <p>
               Qmax Systems delivers end-to-end power electronics engineering for
-              products that demand high efficiency, robust operation, and long-term
-              reliability. We design complete power subsystems, from input
-              protection and conversion stages to point-of-load regulation and
-              system-level validation.
+              products that demand high efficiency, robust operation, and
+              long-term reliability. We design complete power subsystems, from
+              input protection and conversion stages to point-of-load regulation
+              and system-level validation.
             </p>
             <p>
               Whether you are building edge AI devices, telecom infrastructure,
-              industrial controls, or battery-based products, our team focuses on
-              practical architecture decisions that reduce field failures and
+              industrial controls, or battery-based products, our team focuses
+              on practical architecture decisions that reduce field failures and
               improve performance under real operating conditions.
             </p>
           </>
@@ -439,6 +492,12 @@ export default function PowerElectronicsPage() {
       />
 
       <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
+      <ApplicationsProjectExperienceSection
+        projects={projectExperience}
+        title="Proven Project "
+        titleHighlight="Experience"
+        subtitle="Our portfolio includes hundreds of advanced power platforms delivered to regulated industries:"
+      />
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Power Electronics Design?"

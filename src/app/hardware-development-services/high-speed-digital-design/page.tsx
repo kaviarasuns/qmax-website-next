@@ -11,6 +11,11 @@ import { DigitalHardwareTechnicalAdvantageSection } from "@/components/services-
 import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
+import {
+  ApplicationsProjectExperienceSection,
+  type ProjectExperienceItem,
+} from "@/components/services-cmp/ApplicationsProjectExperienceSection";
+import { getCaseStudyCardImage } from "@/store/case-studies";
 
 function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {
@@ -41,6 +46,63 @@ const highSpeedCaseStudies: ServiceCaseStudy[] = industrialServiceCaseStudies([
   "6e-wifi-router-enclosure",
   "compact-edge-gateway-enclosure",
 ]);
+
+const projectExperience: ProjectExperienceItem[] = [
+  {
+    id: "ai-compute-servers",
+    listTitle: "AI Compute Servers",
+    captionTitle: "High-Density GPU Infrastructure",
+    description:
+      "Custom hardware engineering for AI training and inference workloads, with robust power delivery networks and advanced thermal management for high-TDP NVIDIA and AMD GPU clusters.",
+    imageSrc: getCaseStudyCardImage("ai-gpu-expansion-chassis-motherboard"),
+    imageAlt: "AI Compute Servers",
+  },
+  {
+    id: "oran-du-systems",
+    listTitle: "O-RAN DU Systems",
+    captionTitle: "Open RAN Infrastructure",
+    description:
+      "Specialized hardware development for Open RAN Distributed Units, enabling scalable 4G and 5G rollouts with synchronized timing and high-integrity digital signal routing.",
+    imageSrc: getCaseStudyCardImage("stellar-main-board"),
+    imageAlt: "O-RAN DU Systems",
+  },
+  {
+    id: "fpga-accelerators",
+    listTitle: "FPGA Accelerators",
+    captionTitle: "Hardware Acceleration Platforms",
+    description:
+      "Custom FPGA-based platforms on Xilinx and Intel devices for real-time signal processing, parallel I/O, and flexible high-speed acceleration at the edge.",
+    imageSrc: getCaseStudyCardImage("multi-io-card-for-ate"),
+    imageAlt: "FPGA Accelerators",
+  },
+  {
+    id: "server-motherboards",
+    listTitle: "Server Motherboards",
+    captionTitle: "Enterprise-Grade Compute",
+    description:
+      "Tailor-made server motherboard designs spanning Intel Xeon, AMD EPYC, and Ampere Altra architectures, validated for power integrity and signal integrity in data center deployments.",
+    imageSrc: getCaseStudyCardImage("typheon"),
+    imageAlt: "Server Motherboards",
+  },
+  {
+    id: "high-speed-nics",
+    listTitle: "High-Speed NICs",
+    captionTitle: "Ultra-High-Bandwidth Connectivity",
+    description:
+      "100 Gbps Network Interface Cards for blade server environments, delivering maximum bandwidth and minimal latency with QSFP-DD and high-speed SerDes lanes.",
+    imageSrc: getCaseStudyCardImage("100gbe-high-speed-networking-board"),
+    imageAlt: "High-Speed NICs",
+  },
+  {
+    id: "embedded-controllers",
+    listTitle: "Embedded Controllers",
+    captionTitle: "Industrial Edge Platforms",
+    description:
+      "Robust, power-optimized embedded controller designs using ARM, ESP32, and PIC architectures for Industrial IoT, edge compute, and connected field devices.",
+    imageSrc: getCaseStudyCardImage("mx1"),
+    imageAlt: "Embedded Controllers",
+  },
+];
 
 const faqs = [
   {
@@ -302,6 +364,12 @@ export default function HighSpeedDigitalDesignPage() {
       />
 
       <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
+      <ApplicationsProjectExperienceSection
+        projects={projectExperience}
+        title="Proven Industry "
+        titleHighlight="Experience"
+        subtitle="We have successfully delivered hundreds of advanced digital hardware platforms, including:"
+      />
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Digital Hardware Design?"

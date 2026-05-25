@@ -14,6 +14,11 @@ import {
 } from "@/components/services-cmp/TechnicalAdvantageSection";
 import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
+import {
+  ApplicationsProjectExperienceSection,
+  ProjectExperienceItem,
+} from "@/components/services-cmp/ApplicationsProjectExperienceSection";
+import { getCaseStudyCardImage } from "@/store/case-studies";
 
 function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {
@@ -42,6 +47,63 @@ const analogCaseStudies: ServiceCaseStudy[] = industrialServiceCaseStudies([
   "smart-wifi-stethoscope",
   "oxygen-generator",
 ]);
+
+const projectExperience: ProjectExperienceItem[] = [
+  {
+    id: "aerospace-shm",
+    listTitle: "Aerospace Structural Health Monitoring",
+    captionTitle: "High-EMI Environments",
+    description:
+      "Developed ruggedized sensing nodes for commercial aircraft, capable of high-precision strain and vibration analysis in high-EMI environments.",
+    imageSrc: getCaseStudyCardImage("high-speed-analog-board"),
+    imageAlt: "Aerospace Structural Health Monitoring",
+  },
+  {
+    id: "32-channel-daq",
+    listTitle: "32-Channel High-Speed DAQ",
+    captionTitle: "FPGA-Based Real-Time Capture",
+    description:
+      "Engineering a simultaneous sampling system for industrial physics applications, utilizing FPGA-based real-time data capture.",
+    imageSrc: getCaseStudyCardImage("multi-io-card-for-ate"),
+    imageAlt: "32-Channel High-Speed DAQ",
+  },
+  {
+    id: "medical-acoustic-sensing",
+    listTitle: "Medical Acoustic Sensing",
+    captionTitle: "Clinical-Grade Diagnostic Audio",
+    description:
+      "Designed a wearable lung sound recorder featuring a low-noise analog front-end for clinical-grade diagnostic audio.",
+    imageSrc: getCaseStudyCardImage("lung-sound-recorder"),
+    imageAlt: "Medical Acoustic Sensing",
+  },
+  {
+    id: "femto-farad-capacitance",
+    listTitle: "Femto-Farad Capacitance Measurement",
+    captionTitle: "Industrial Proximity & Material Analysis",
+    description:
+      "Implementation of ultra-high sensitivity measurement systems for specialized industrial proximity and material analysis.",
+    imageSrc: getCaseStudyCardImage("capserve"),
+    imageAlt: "Femto-Farad Capacitance Measurement",
+  },
+  {
+    id: "aerospace-cable-tension",
+    listTitle: "Aerospace Cable Tension Meters",
+    captionTitle: "Flight-Critical Force Measurement",
+    description:
+      "High-reliability force measurement systems with calibrated analog outputs for flight-critical applications.",
+    imageSrc: getCaseStudyCardImage("600kg-cable-tension-measurement-system"),
+    imageAlt: "Aerospace Cable Tension Meters",
+  },
+  {
+    id: "ultra-low-cost-hearing-aid",
+    listTitle: "Ultra-Low-Cost Hearing Aid",
+    captionTitle: "Mass-Market Accessibility",
+    description:
+      "Engineering a low-power, high-gain analog signal path optimized for mass-market accessibility and long battery life.",
+    imageSrc: getCaseStudyCardImage("animal-tracker"),
+    imageAlt: "Ultra-Low-Cost Hearing Aid",
+  },
+];
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
@@ -476,6 +538,8 @@ export default function AnalogDesignPage() {
       />
 
       <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
+
+      <ApplicationsProjectExperienceSection projects={projectExperience} />
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Analog & Mixed-Signal Design?"
