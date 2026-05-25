@@ -494,8 +494,6 @@ export default function PowerElectronicsPage() {
       <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
       <ApplicationsProjectExperienceSection
         projects={projectExperience}
-        title="Proven Project "
-        titleHighlight="Experience"
         subtitle="Our portfolio includes hundreds of advanced power platforms delivered to regulated industries:"
       />
       <WhySection

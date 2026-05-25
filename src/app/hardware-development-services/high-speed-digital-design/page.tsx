@@ -366,8 +366,6 @@ export default function HighSpeedDigitalDesignPage() {
       <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
       <ApplicationsProjectExperienceSection
         projects={projectExperience}
-        title="Proven Industry "
-        titleHighlight="Experience"
         subtitle="We have successfully delivered hundreds of advanced digital hardware platforms, including:"
       />
       <WhySection

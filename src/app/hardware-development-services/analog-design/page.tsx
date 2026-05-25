@@ -539,7 +539,10 @@ export default function AnalogDesignPage() {
 
       <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
 
-      <ApplicationsProjectExperienceSection projects={projectExperience} />
+      <ApplicationsProjectExperienceSection
+        projects={projectExperience}
+        subtitle="Our portfolio includes hundreds of precision analog and mixed-signal platforms delivered to regulated industries, including:"
+      />
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Analog & Mixed-Signal Design?"
