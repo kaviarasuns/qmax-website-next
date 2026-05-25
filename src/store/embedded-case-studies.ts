@@ -1649,6 +1649,10 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/smart_rail/N2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/smart_rail/N3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/smart_rail/N4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smartrail/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smartrail/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smartrail/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smartrail/4.png",
     ],
     features: [
       "Smart rail embedded control platform",
