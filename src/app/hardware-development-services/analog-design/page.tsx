@@ -100,7 +100,7 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Mass-Market Accessibility",
     description:
       "Engineering a low-power, high-gain analog signal path optimized for mass-market accessibility and long battery life.",
-    imageSrc: getCaseStudyCardImage("animal-tracker"),
+    imageSrc: getCaseStudyCardImage("ultra-low-noise-adc-board"),
     imageAlt: "Ultra-Low-Cost Hearing Aid",
   },
 ];

@@ -72,7 +72,7 @@ const projectExperience: ProjectExperienceItem[] = [
     listTitle: "Telecommunications Infrastructure",
     captionTitle: "4G Radio Front-End Design",
     description: "Designed high-gain LNAs and PAs for 4G Radio units.",
-    imageSrc: getCaseStudyCardImage("qualcomm-wifi4-routers"),
+    imageSrc: getCaseStudyCardImage("wifi-6e-router"),
     imageAlt: "Telecommunications Infrastructure",
   },
   {

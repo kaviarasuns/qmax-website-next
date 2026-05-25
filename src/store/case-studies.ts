@@ -35,7 +35,9 @@ const getCardImageIndex = (caseStudy: CaseStudy): number =>
 
 /** Returns the listing-card image for a case study slug, or undefined if not found. */
 export function getCaseStudyCardImage(caseStudyId: string): string | undefined {
-  const caseStudy = allCaseStudiesData.find((study) => study.id === caseStudyId);
+  const caseStudy = allCaseStudiesData.find(
+    (study) => study.id === caseStudyId,
+  );
   if (!caseStudy?.images.length) return undefined;
 
   const preferred =

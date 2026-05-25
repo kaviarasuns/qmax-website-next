@@ -54,7 +54,7 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "High-Density GPU Infrastructure",
     description:
       "Custom hardware engineering for AI training and inference workloads, with robust power delivery networks and advanced thermal management for high-TDP NVIDIA and AMD GPU clusters.",
-    imageSrc: getCaseStudyCardImage("ai-gpu-expansion-chassis-motherboard"),
+    imageSrc: getCaseStudyCardImage("capserve"),
     imageAlt: "AI Compute Servers",
   },
   {
@@ -81,7 +81,7 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Enterprise-Grade Compute",
     description:
       "Tailor-made server motherboard designs spanning Intel Xeon, AMD EPYC, and Ampere Altra architectures, validated for power integrity and signal integrity in data center deployments.",
-    imageSrc: getCaseStudyCardImage("typheon"),
+    imageSrc: getCaseStudyCardImage("bluebinaries"),
     imageAlt: "Server Motherboards",
   },
   {
@@ -90,7 +90,7 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Ultra-High-Bandwidth Connectivity",
     description:
       "100 Gbps Network Interface Cards for blade server environments, delivering maximum bandwidth and minimal latency with QSFP-DD and high-speed SerDes lanes.",
-    imageSrc: getCaseStudyCardImage("100gbe-high-speed-networking-board"),
+    imageSrc: getCaseStudyCardImage("wifi-6e-router"),
     imageAlt: "High-Speed NICs",
   },
   {
@@ -99,7 +99,7 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "Industrial Edge Platforms",
     description:
       "Robust, power-optimized embedded controller designs using ARM, ESP32, and PIC architectures for Industrial IoT, edge compute, and connected field devices.",
-    imageSrc: getCaseStudyCardImage("mx1"),
+    imageSrc: getCaseStudyCardImage("industrial-iot-gateway-with-poe"),
     imageAlt: "Embedded Controllers",
   },
 ];

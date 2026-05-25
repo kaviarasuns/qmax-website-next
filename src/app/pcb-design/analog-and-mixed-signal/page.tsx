@@ -475,7 +475,7 @@ export default function AnalogAndMixedSignalPage() {
   return (
     <>
       <HardwareServiceHeroSection
-        imageSrc="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&h=900&fit=crop&q=80"
+        imageSrc="/pcb-design/analog-and-mixed-signal.jpg"
         imageAlt="High-Performance Digital Systems — Qmax Systems"
         title="Analog and Mixed Signal PCB Design Services."
         description={
