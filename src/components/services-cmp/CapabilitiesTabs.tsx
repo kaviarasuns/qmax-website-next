@@ -11,12 +11,15 @@ interface CapabilitiesTabsProps {
   capabilities: TabCapability[];
   activeIdx: number;
   onTabClick: (index: number) => void;
+  /** Selected tab + content panel render as one elevated card (desktop only). */
+  connectedCard?: boolean;
 }
 
 export function CapabilitiesTabs({
   capabilities,
   activeIdx,
   onTabClick,
+  connectedCard = false,
 }: CapabilitiesTabsProps) {
   const shouldCenterTabs = capabilities.length === 2;
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -240,7 +243,11 @@ export function CapabilitiesTabs({
   }, []);
 
   return (
-    <div className="my-14 mb-16 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    <div
+      className={`my-14 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+        connectedCard ? "mb-10 min-[901px]:mb-0" : "mb-16"
+      }`}
+    >
       <div className="relative w-full px-6 max-[900px]:px-3" ref={wrapperRef}>
         <div
           className={`relative z-[1] flex w-max min-w-full ${
@@ -260,6 +267,10 @@ export function CapabilitiesTabs({
               aria-selected={activeIdx === i}
               className={`group relative flex cursor-pointer items-center gap-[10px] whitespace-nowrap bg-transparent px-4 pb-[17px] pt-[15px] text-[14px] font-medium leading-[1.35] text-black transition-colors duration-200 hover:text-[#F33117] ${
                 activeIdx === i ? "font-bold" : ""
+              } ${
+                connectedCard
+                  ? "min-[901px]:aria-selected:z-[2] min-[901px]:aria-selected:rounded-t-[15px] min-[901px]:aria-selected:bg-[#F8F9FB] min-[901px]:aria-selected:shadow-[-3px_0_8px_rgba(16,24,40,0.025),3px_0_8px_rgba(16,24,40,0.025)]"
+                  : ""
               }`}
               onClick={() => onTabClick(i)}
             >
@@ -280,7 +291,9 @@ export function CapabilitiesTabs({
         </div>
         <svg
           ref={svgRef}
-          className="pointer-events-none absolute bottom-0 left-0 block w-full overflow-visible"
+          className={`pointer-events-none absolute bottom-0 left-0 block w-full overflow-visible ${
+            connectedCard ? "z-[5]" : ""
+          }`}
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
