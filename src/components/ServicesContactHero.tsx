@@ -482,7 +482,7 @@ export default function ServicesContactHero({
               </div>
 
               {/* Privacy notice */}
-              <p className="col-span-full mt-4 text-[15px] leading-[1.45] text-[#9aa0a6]">
+              <p className="col-span-full mt-4 text-[15px] leading-[1.45] text-black">
                 Your data is secure with us; we never leak, share, or sell your
                 details to third parties.
               </p>

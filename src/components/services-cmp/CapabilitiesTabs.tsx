@@ -21,7 +21,6 @@ export function CapabilitiesTabs({
   onTabClick,
   connectedCard = false,
 }: CapabilitiesTabsProps) {
-  const shouldCenterTabs = capabilities.length === 2;
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const tabBarRef = useRef<HTMLDivElement | null>(null);
   const svgRef = useRef<SVGSVGElement | null>(null);
@@ -250,9 +249,7 @@ export function CapabilitiesTabs({
     >
       <div className="relative w-full px-6 max-[900px]:px-3" ref={wrapperRef}>
         <div
-          className={`relative z-[1] flex w-max min-w-full ${
-            shouldCenterTabs ? "justify-evenly" : "justify-between"
-          }`}
+          className="relative z-[1] flex w-max min-w-full justify-around"
           role="tablist"
           ref={tabBarRef}
         >
