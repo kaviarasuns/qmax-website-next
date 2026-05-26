@@ -12,8 +12,31 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
-import { getCaseStudyCardImage } from "@/store/case-studies";
+import { allCaseStudiesData, getCaseStudyCardImage } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+
+function projectExperienceEntry(
+  id: string,
+  listTitle: string,
+  caseStudyId: string,
+  description?: string,
+): ProjectExperienceItem {
+  const study = allCaseStudiesData.find(
+    (caseStudy) => caseStudy.id === caseStudyId,
+  );
+  if (!study) {
+    throw new Error(`Case study not found: ${caseStudyId}`);
+  }
+
+  return {
+    id,
+    listTitle,
+    captionTitle: study.title,
+    description: description ?? study.summary,
+    imageSrc: getCaseStudyCardImage(caseStudyId),
+    imageAlt: study.title,
+  };
+}
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
@@ -163,96 +186,40 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 ];
 
 const projectExperience: ProjectExperienceItem[] = [
-  {
-    id: "pf-controllers",
-    listTitle: "PF Controllers for Load Banks",
-    captionTitle: "High Voltage PF Correction",
-    description:
-      "High voltage PF correction with low THD. Designed optimized PFC loops with controlled switching noise and EMI filtering.",
-    imageSrc: getCaseStudyCardImage("lbm"),
-    imageAlt: "PF Controllers for Load Banks",
-  },
-  {
-    id: "smart-pdu",
-    listTitle: "50kW 3-Phase Smart PDU",
-    captionTitle: "High Current Distribution",
-    description:
-      "Bus bar integration for high current distribution. Thermal management using copper planes + mechanical integration.",
-    imageSrc: getCaseStudyCardImage("rack-pdu"),
-    imageAlt: "50kW 3-Phase Smart PDU",
-  },
-  {
-    id: "bms-800v",
-    listTitle: "800V Battery Management System",
-    captionTitle: "High Voltage Isolation & Precision Sensing",
-    description:
-      "HV isolation, active balancing, precision sensing under high noise environment.",
-    imageSrc: getCaseStudyCardImage("bms-controller"),
-    imageAlt: "800V Battery Management System",
-  },
-  {
-    id: "cllc-charger",
-    listTitle: "3-Phase CLLC Onboard Charger",
-    captionTitle: "Resonant Converter Design",
-    description:
-      "High-frequency resonant operation. Minimized loop inductance and optimized magnetics placement.",
-    imageSrc: getCaseStudyCardImage("stellar-power-board"),
-    imageAlt: "3-Phase CLLC Onboard Charger",
-  },
-  {
-    id: "bldc-controller",
-    listTitle: "BLDC / PMSM Motor Controller",
-    captionTitle: "High di/dt Switching & Thermal Management",
-    description:
-      "High di/dt switching, gate driver isolation, low EMI layout, thermal path optimization.",
-    imageSrc: getCaseStudyCardImage("ultra-low-cost-bldc-motor-controller"),
-    imageAlt: "BLDC / PMSM Motor Controller",
-  },
-  {
-    id: "smart-energy-meter",
-    listTitle: "Smart Energy Meter",
-    captionTitle: "Precision Measurement & Surge Protection",
-    description:
-      "High accuracy measurement with isolation and surge protection (EFT/ESD).",
-    imageSrc: getCaseStudyCardImage("3-phase-smart-energy-meter"),
-    imageAlt: "Smart Energy Meter",
-  },
-  {
-    id: "induction-motor",
-    listTitle: "3-Phase Induction Motor Controller",
-    captionTitle: "High Current & EMI Suppression",
-    description:
-      "High current switching, robust grounding, EMI suppression techniques.",
-    imageSrc: getCaseStudyCardImage("planar-motor"),
-    imageAlt: "3-Phase Induction Motor Controller",
-  },
-  {
-    id: "ozone-generator",
-    listTitle: "1kW LF Ozone Generator",
-    captionTitle: "High Power Analog & CE/IEC Compliance",
-    description:
-      "High power analog + switching coexistence. CE/IEC compliance achieved.",
-    imageSrc: getCaseStudyCardImage("ecl-fuel-cell-generator"),
-    imageAlt: "1kW LF Ozone Generator",
-  },
-  {
-    id: "rf-plasma",
-    listTitle: "1.2kW RF Plasma Generator",
-    captionTitle: "RF & Power Electronics Coexistence",
-    description:
-      "RF + power electronics coexistence. Reduced radiated emissions through shielding and layout discipline.",
-    imageSrc: getCaseStudyCardImage("rf-power-processor"),
-    imageAlt: "1.2kW RF Plasma Generator",
-  },
-  {
-    id: "1500vdc",
-    listTitle: "1500VDC Systems (Heavy Equipment)",
-    captionTitle: "Extreme Clearance & HV Safety",
-    description:
-      "Extreme clearance/creepage design, HV safety, insulation coordination.",
-    imageSrc: getCaseStudyCardImage("mega-watt-charging-station"),
-    imageAlt: "1500VDC Systems (Heavy Equipment)",
-  },
+  projectExperienceEntry(
+    "high-current-layout",
+    "High-Current PCB Layout Design",
+    "bms-controller",
+    "BMS controller PCB with high-current power distribution, heavy copper routing, and thermal-aware layout for battery pack monitoring and cell balancing under sustained load.",
+  ),
+  projectExperienceEntry(
+    "smps-power-converter",
+    "SMPS & Power Converter PCB Development",
+    "stellar-power-board",
+  ),
+  projectExperienceEntry(
+    "thermal-management",
+    "Thermal Management & Heat Dissipation",
+    "thermal-management-system",
+  ),
+  projectExperienceEntry(
+    "power-integrity-grounding",
+    "Power Integrity & Grounding Optimization",
+    "100gbe-high-speed-networking-board",
+    "Multi-layer layout with optimized power distribution planes, ground isolation regions, and stable PDN design for high-current and high-speed coexistence on a 100GbE networking board.",
+  ),
+  projectExperienceEntry(
+    "emi-emc-power-pcb",
+    "EMI/EMC Compliant Power PCB Design",
+    "connected-car-demonstration-unit",
+    "Power PCB layout for a connected car demonstration unit with disciplined switching-node placement, filtered power rails, and EMI containment for automotive EMC compliance.",
+  ),
+  projectExperienceEntry(
+    "hv-isolation-safety",
+    "High-Voltage Isolation & Safety Layout",
+    "3-phase-smart-energy-meter",
+    "Precision 3-phase smart energy meter PCB with high-accuracy sensing, reinforced isolation barriers, and clearance/creepage compliance for mains-connected metering applications.",
+  ),
 ];
 
 const WHY_CARDS = [

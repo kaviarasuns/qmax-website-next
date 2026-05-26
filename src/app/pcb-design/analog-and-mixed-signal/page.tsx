@@ -1,7 +1,7 @@
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import {
   ApplicationsProjectExperienceSection,
-  ProjectExperienceItem,
+  type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
 import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
 import {
@@ -11,7 +11,7 @@ import {
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
-import { getCaseStudyCardImage } from "@/store/case-studies";
+import { getCaseStudyCardImage, allCaseStudiesData } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
@@ -22,6 +22,29 @@ const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
   summary: caseStudy.summary,
   imageRotation: caseStudy.rotatedImages?.[0],
 }));
+
+function projectExperienceEntry(
+  id: string,
+  listTitle: string,
+  caseStudyId: string,
+  description?: string,
+): ProjectExperienceItem {
+  const study = allCaseStudiesData.find(
+    (caseStudy) => caseStudy.id === caseStudyId,
+  );
+  if (!study) {
+    throw new Error(`Case study not found: ${caseStudyId}`);
+  }
+
+  return {
+    id,
+    listTitle,
+    captionTitle: study.title,
+    description: description ?? study.summary,
+    imageSrc: getCaseStudyCardImage(caseStudyId),
+    imageAlt: study.title,
+  };
+}
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
@@ -184,87 +207,38 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 ];
 
 const projectExperience: ProjectExperienceItem[] = [
-  {
-    id: "high-speed-daq",
-    listTitle: "High-Speed Data Acquisition (DAQ)",
-    captionTitle: "32-Channel Synchronized Sampling",
-    description:
-      "Challenge: 32-channel synchronized sampling without channel-to-channel crosstalk. Solution: Strategic partitioning and matched-length differential routing for ADC clocks.",
-    imageSrc: getCaseStudyCardImage("multi-io-card-for-ate"),
-    imageAlt: "High-Speed Data Acquisition (DAQ)",
-  },
-  {
-    id: "lung-sound-recorder",
-    listTitle: "Lung Sound Recorder",
-    captionTitle: "Microvolt-Level Acoustic Capture",
-    description:
-      "Challenge: Capturing microvolt-level acoustic signals in a compact, portable form factor. Solution: Implementation of ultra-low-noise preamplifiers with active shielding to reject environmental EMI.",
-    imageSrc: getCaseStudyCardImage("lung-sound-recorder"),
-    imageAlt: "Lung Sound Recorder",
-  },
-  {
-    id: "ultrasonic-sensor-amplifiers",
-    listTitle: "Ultrasonic Sensor Amplifiers",
-    captionTitle: "High-Gain Pulse Receiver Design",
-    description:
-      "Challenge: Managing high-gain stages near high-voltage pulse generators. Solution: Physical isolation and dedicated return paths to prevent pulse transients from desensitizing the receiver.",
-    imageSrc: getCaseStudyCardImage("high-speed-analog-mux"),
-    imageAlt: "Ultrasonic Sensor Amplifiers",
-  },
-  {
-    id: "shm-adc-dac",
-    listTitle: "High-Speed ADCs/DACs for SHM",
-    captionTitle: "Structural Health Monitoring",
-    description:
-      "Challenge: Structural Health Monitoring requires high dynamic range across wide temperature variants. Solution: Thermal management for reference voltages and 3D EM simulation of high-speed converter interfaces.",
-    imageSrc: getCaseStudyCardImage("high-speed-analog-board"),
-    imageAlt: "High-Speed ADCs/DACs for SHM",
-  },
-  {
-    id: "instrumentation-amplifiers",
-    listTitle: "Instrumentation Amplifiers",
-    captionTitle: "Precision Industrial Measurement",
-    description:
-      "Challenge: Precision measurement of temperature and pressure in noisy industrial environments. Solution: High CMRR layout techniques and star-grounding to eliminate ground loops.",
-    imageSrc: getCaseStudyCardImage("ultra-low-noise-adc-board"),
-    imageAlt: "Instrumentation Amplifiers",
-  },
-  {
-    id: "emg-amplifiers",
-    listTitle: "Low-Noise EMG Amplifiers",
-    captionTitle: "Biopotential Signal Detection",
-    description:
-      'Challenge: Detecting biopotential signals (EMG) while rejecting 50/60Hz power line noise. Solution: Implementation of "moat-and-bridge" structures and specialized medical-grade isolation.',
-    imageSrc: getCaseStudyCardImage("medical-recorder-device"),
-    imageAlt: "Low-Noise EMG Amplifiers",
-  },
-  {
-    id: "femto-farad-capacitance",
-    listTitle: "Femto-Farad Capacitance Device",
-    captionTitle: "Sub-Picofarad Measurement",
-    description:
-      "Challenge: Measuring sub-picofarad changes amidst parasitic PCB capacitance. Solution: Use of low-loss substrates (Rogers/Megtron) and guard rings to neutralize parasitic leakage.",
-    imageSrc: getCaseStudyCardImage("capserve"),
-    imageAlt: "Femto-Farad Capacitance Device",
-  },
-  {
-    id: "hearing-aids",
-    listTitle: "Hearing Aids",
-    captionTitle: "Miniaturized Audio Processing",
-    description:
-      "Challenge: Extreme miniaturization with high-gain audio processing and BLE interference. Solution: HDI layout with microvias and rigid-flex substrates for 3D packaging.",
-    imageSrc: getCaseStudyCardImage("animal-tracker"),
-    imageAlt: "Hearing Aids",
-  },
-  {
-    id: "plasma-generators",
-    listTitle: "High-Power LF Plasma Generators",
-    captionTitle: "kW-Level RF/LF Switching Control",
-    description:
-      "Challenge: Sensitive analog control circuitry operating near kW-level RF/LF switching. Solution: Faraday cage shielding, heavy copper traces (4oz+), and rigorous ESD/EFT mitigation.",
-    imageSrc: getCaseStudyCardImage("rf-power-processor"),
-    imageAlt: "High-Power LF Plasma Generators",
-  },
+  projectExperienceEntry(
+    "precision-analog-layout",
+    "Precision Analog PCB Layout",
+    "high-speed-analog-board",
+  ),
+  projectExperienceEntry(
+    "low-noise-signal-routing",
+    "Low-Noise Signal Routing",
+    "digital-stethoscope",
+    "Compact multi-layer layout with optimized signal routing, stable power distribution, and dedicated ground reference planes for low-noise analog capture on a digital stethoscope platform.",
+  ),
+  projectExperienceEntry(
+    "power-ground-plane",
+    "Power & Ground Plane Optimization",
+    "poe-power-injector",
+  ),
+  projectExperienceEntry(
+    "mixed-signal-design",
+    "Mixed-Signal PCB Design",
+    "high-speed-analog-mux",
+  ),
+  projectExperienceEntry(
+    "emi-emc-reduction",
+    "EMI/EMC Reduction Techniques",
+    "high-speed-camera-interface",
+    "EMI-hardened layout for a high-speed camera interface board, with controlled return paths, shielding discipline, and noise isolation between sensitive analog front-ends and high-speed digital processing.",
+  ),
+  projectExperienceEntry(
+    "thermal-component-placement",
+    "Thermal & Component Placement Optimization",
+    "ultra-low-cost-bldc-motor-controller-for-evs",
+  ),
 ];
 
 const WHY_CARDS = [

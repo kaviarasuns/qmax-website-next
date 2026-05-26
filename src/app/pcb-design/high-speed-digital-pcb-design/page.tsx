@@ -23,71 +23,61 @@ const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
   imageRotation: caseStudy.rotatedImages?.[0],
 }));
 
+function pcbProjectExperienceEntry(
+  id: string,
+  listTitle: string,
+  caseStudyId: string,
+  description?: string,
+): ProjectExperienceItem {
+  const study = pcbCaseStudiesData.find((caseStudy) => caseStudy.id === caseStudyId);
+  if (!study) {
+    throw new Error(`PCB case study not found: ${caseStudyId}`);
+  }
+
+  return {
+    id,
+    listTitle,
+    captionTitle: study.title,
+    description: description ?? study.summary,
+    imageSrc: getCaseStudyCardImage(caseStudyId),
+    imageAlt: study.title,
+  };
+}
+
 const projectExperience: ProjectExperienceItem[] = [
-  {
-    id: "oran-du",
-    listTitle: "O-RAN Distributed Units (DU)",
-    captionTitle: "Ampere Altra Processors",
-    description:
-      "Developed using Ampere Altra processors. These designs involve massive pin-count BGA escape routing, complex power delivery networks (PDN) to support high TDP, and synchronized timing for 5G radio units.",
-    imageSrc: getCaseStudyCardImage("stellar-main-board"),
-    imageAlt: "O-RAN Distributed Units (DU)",
-  },
-  {
-    id: "ai-gpu-switch",
-    listTitle: "AI GPU Chassis PCIe Gen6 Switch Boards",
-    captionTitle: "Ultra-High-Bandwidth Fabrics",
-    description:
-      "Engineering of ultra-high-bandwidth fabrics requiring precision routing for 64 GT/s signaling, stringent insertion loss budgets, and advanced material selection to mitigate fiber weave effects.",
-    imageSrc: getCaseStudyCardImage("ai-gpu-expansion-chassis-motherboard"),
-    imageAlt: "AI GPU Chassis PCIe Gen6 Switch Boards",
-  },
-  {
-    id: "server-motherboards",
-    listTitle: "Server Motherboards (Intel Sapphire Rapids / AMD EPYC)",
-    captionTitle: "Multi-Socket Architectures",
-    description:
-      "Comprehensive layout for multi-socket architectures, including DDR5-6400+ 8-channel memory routing and high-density interconnect (HDI) transitions.",
-    imageSrc: getCaseStudyCardImage("typheon"),
-    imageAlt: "Server Motherboards (Intel Sapphire Rapids / AMD EPYC)",
-  },
-  {
-    id: "nic-100g",
-    listTitle: "100G x 4 Network Interface Cards (NIC)",
-    captionTitle: "Blade Server Environments",
-    description:
-      "Designed for blade server environments utilizing QSFP-DD form factors and 25G/56G NRZ/PAM4 SerDes lanes.",
-    imageSrc: getCaseStudyCardImage("100gbe-high-speed-networking-board"),
-    imageAlt: "100G x 4 Network Interface Cards (NIC)",
-  },
-  {
-    id: "fpga-imaging",
-    listTitle: "FPGA-Based Image Processing",
-    captionTitle: "Real-Time 8K Video Capture",
-    description:
-      "High-speed LVDS and MIPI CSI-2 interfacing for real-time 8K video capture, focusing on precise phase matching and skew control.",
-    imageSrc:
-      "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design-services/Video Processor PCB Design 25Jan2020.png",
-    imageAlt: "FPGA-Based Image Processing",
-  },
-  {
-    id: "imx8-sbc",
-    listTitle: "NXP i.MX8 Single Board Computers (SBC)",
-    captionTitle: "Thermal Management",
-    description:
-      "Compact, multi-layer designs balancing thermal management with high-speed LPDDR4x routing in space-constrained industrial envelopes.",
-    imageSrc: getCaseStudyCardImage("mx1"),
-    imageAlt: "NXP i.MX8 Single Board Computers (SBC)",
-  },
-  {
-    id: "core-switches",
-    listTitle: "Core Switches & Routers",
-    captionTitle: "Broadcom StrataXGS",
-    description:
-      "Development of multi-port switches using Broadcom StrataXGS™ and Marvell Prestera switching fabrics, requiring heavy use of back-drilling, differential impedance optimization, and crosstalk modeling.",
-    imageSrc: getCaseStudyCardImage("qualcomm-wifi4-routers"),
-    imageAlt: "Core Switches & Routers",
-  },
+  pcbProjectExperienceEntry(
+    "multilayer-layout",
+    "High-Speed Multilayer PCB Layout",
+    "ai-gpu-expansion-chassis-motherboard",
+    "Complex multi-layer layout for AI GPU expansion chassis motherboards, featuring high pin-count BGA escape routing, HDI microvia structures, and dense interconnect for ultra-high-bandwidth PCIe fabrics.",
+  ),
+  pcbProjectExperienceEntry(
+    "controlled-impedance-routing",
+    "Controlled Impedance Routing",
+    "qualcomm-wifi-6-triband-router",
+    "Precision single-ended and differential impedance routing on a Qualcomm WiFi 6 triband router platform, with stackup optimization for consistent 50 Ω and 100 Ω targets across all high-speed data paths.",
+  ),
+  pcbProjectExperienceEntry(
+    "signal-integrity-analysis",
+    "Signal Integrity Analysis",
+    "ai-gpu-expansion-chassis-motherboard",
+    "Pre- and post-layout signal integrity verification for AI GPU expansion chassis motherboards, including eye diagram analysis, TDR characterization, and crosstalk modeling for PCIe Gen6-class signaling.",
+  ),
+  pcbProjectExperienceEntry(
+    "ddr-memory-routing",
+    "DDR & High-Speed Memory Routing",
+    "video-processor-pcb",
+  ),
+  pcbProjectExperienceEntry(
+    "high-frequency-pcb-design",
+    "High-Frequency PCB Design",
+    "pcie-gen5-cpo-board",
+  ),
+  pcbProjectExperienceEntry(
+    "differential-pair-routing",
+    "Differential Pair Routing & Length Matching",
+    "qualcomm-wifi4-routers",
+  ),
 ];
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [

@@ -12,8 +12,31 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
-import { getCaseStudyCardImage } from "@/store/case-studies";
+import { allCaseStudiesData, getCaseStudyCardImage } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+
+function projectExperienceEntry(
+  id: string,
+  listTitle: string,
+  caseStudyId: string,
+  description?: string,
+): ProjectExperienceItem {
+  const study = allCaseStudiesData.find(
+    (caseStudy) => caseStudy.id === caseStudyId,
+  );
+  if (!study) {
+    throw new Error(`Case study not found: ${caseStudyId}`);
+  }
+
+  return {
+    id,
+    listTitle,
+    captionTitle: study.title,
+    description: description ?? study.summary,
+    imageSrc: getCaseStudyCardImage(caseStudyId),
+    imageAlt: study.title,
+  };
+}
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
@@ -169,51 +192,41 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 ];
 
 const projectExperience: ProjectExperienceItem[] = [
-  {
-    id: "rf-pa-13mhz",
-    listTitle: "High-Power RF Power Amplifier - 1 kW @ 13.56 MHz",
-    captionTitle: "Industrial RF Power Delivery",
-    description:
-      "High-power RF amplifier design for industrial heating and plasma applications, featuring precision impedance matching, thermal management, and harmonic suppression at 13.56 MHz ISM band.",
-    imageSrc: getCaseStudyCardImage("rf-power-processor"),
-    imageAlt: "High-Power RF Power Amplifier - 1 kW @ 13.56 MHz",
-  },
-  {
-    id: "wifi6-mimo",
-    listTitle: "WiFi-6 MIMO RF PCB Design",
-    captionTitle: "Multi-Antenna WiFi 6 Systems",
-    description:
-      "4x4 MIMO WiFi 6 router design with optimized antenna placement, RF isolation techniques, and dual-band 2.4/5 GHz front-end architecture for maximum throughput and coverage.",
-    imageSrc: getCaseStudyCardImage("wifi6-triband-router"),
-    imageAlt: "WiFi-6 MIMO RF PCB Design",
-  },
-  {
-    id: "sdr-platforms",
-    listTitle: "Software Defined Radio (SDR) RF Platforms",
-    captionTitle: "Wideband SDR Design",
-    description:
-      "Multi-band SDR platform supporting 70 MHz to 6 GHz coverage with integrated RF front-end, LNA/PA switching, and high-dynamic-range signal path for research and communications applications.",
-    imageSrc: getCaseStudyCardImage("rf-signal-generator-enclosure"),
-    imageAlt: "Software Defined Radio (SDR) RF Platforms",
-  },
-  {
-    id: "60ghz-moisture",
-    listTitle: "60 GHz Microwave Moisture Measurement System",
-    captionTitle: "mmWave Sensor Electronics",
-    description:
-      "60 GHz mmWave radar system for non-contact moisture measurement in industrial processes, featuring specialized RF substrates, precise impedance control, and advanced EMI shielding for V-band operation.",
-    imageSrc: getCaseStudyCardImage("inline-moisture-meter"),
-    imageAlt: "60 GHz Microwave Moisture Measurement System",
-  },
-  {
-    id: "lora-wifi-ble",
-    listTitle: "LoRa, WiFi, BLE Wireless Modules",
-    captionTitle: "Multi-Protocol IoT Modules",
-    description:
-      "Compact wireless modules integrating LoRa sub-GHz, WiFi, and BLE radios with antenna diversity, RF coexistence filtering, and ultra-low power design for battery-operated IoT deployments.",
-    imageSrc: getCaseStudyCardImage("iot-gateway-pcb"),
-    imageAlt: "LoRa, WiFi, BLE Wireless Modules",
-  },
+  projectExperienceEntry(
+    "rf-multilayer-layout",
+    "RF Multilayer PCB Layout",
+    "high-speed-analog-board",
+    "Multi-layer RF PCB layout with high-frequency signal integrity support, precision routing, and thermally optimized stack design for reliable microwave operation.",
+  ),
+  projectExperienceEntry(
+    "controlled-impedance-rf",
+    "Controlled Impedance RF Routing",
+    "wifi6-triband-router",
+    "Controlled 50 Ω microstrip and differential RF routing on a WiFi 6 triband router platform, with stackup-tuned impedance targets across 2.4, 5, and 6 GHz bands.",
+  ),
+  projectExperienceEntry(
+    "antenna-pcb-integration",
+    "Antenna PCB Integration",
+    "animal-tracker",
+  ),
+  projectExperienceEntry(
+    "microwave-transmission-line",
+    "Microwave Transmission Line Design",
+    "wifi-6e-router",
+    "Microwave transmission line design for a WiFi 6E router, with multi-band microstrip routing, low-loss interconnect, and impedance-matched RF paths for 6 GHz operation.",
+  ),
+  projectExperienceEntry(
+    "rf-shielding-emi",
+    "RF Shielding & EMI Reduction",
+    "wifi6-triband-router",
+    "RF shielding and EMI reduction layout on a WiFi 6 triband router, with grounded coplanar structures, isolation between RF chains, and containment of radiated emissions.",
+  ),
+  projectExperienceEntry(
+    "hf-material-optimization",
+    "High-Frequency Material & Optimization",
+    "lbm",
+    "High-frequency material selection and stackup optimization on an LBM multi-layer PCB, balancing low-loss laminates, thermal copper distribution, and manufacturing-ready RF layout.",
+  ),
 ];
 
 const WHY_CARDS = [
