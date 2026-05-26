@@ -25,15 +25,15 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   imageRotation,
 }) => {
   return (
-    <div className={`group relative ${category}`}>
+    <div className={`group relative h-full ${category}`}>
       <a
         href={link}
         aria-label={title}
-        className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F33117]/60 focus-visible:ring-offset-2 rounded-2xl"
+        className="block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F33117]/60 focus-visible:ring-offset-2 rounded-2xl"
       >
-        <article className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_24px_55px_-28px_rgba(15,23,42,0.5)]">
+        <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_24px_55px_-28px_rgba(15,23,42,0.5)]">
           <div
-            className={`relative h-[70%] overflow-hidden ${imageBackgroundClassName}`}
+            className={`relative aspect-[3/2.8] w-full overflow-hidden ${imageBackgroundClassName}`}
           >
             <div
               className="absolute inset-0"
@@ -53,7 +53,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
             </div>
           </div>
 
-          <div className="flex h-[30%] flex-col justify-between bg-white px-5 py-4">
+          <div className="flex flex-1 flex-col justify-between gap-3 bg-white px-5 py-4">
             <h3 className="text-base md:text-lg font-semibold text-zinc-950 leading-tight tracking-wide">
               {title}
             </h3>
@@ -64,7 +64,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
               </p>
             )} */}
 
-            <div className="flex items-center justify-between mt-3">
+            <div className="flex items-center justify-between">
               <span className="text-[11px] font-semibold tracking-[0.18em] text-zinc-500 uppercase">
                 View Case
               </span>
