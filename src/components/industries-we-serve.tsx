@@ -278,7 +278,7 @@ export function IndustriesWeServe() {
           </div>
 
           {/* Detailed Industry Card */}
-          <div className="bg-[#f8f8f8] rounded-b-lg lg:rounded-b-none lg:rounded-r-lg overflow-hidden flex-1">
+          <div className="bg-qmax-grey rounded-b-lg lg:rounded-b-none lg:rounded-r-lg overflow-hidden flex-1">
             1
             <div className="flex flex-col md:grid md:grid-cols-2 gap-4 lg:gap-5 p-4 lg:p-6 items-stretch h-full">
               {/* Image - shown first on mobile */}

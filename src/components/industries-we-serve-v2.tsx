@@ -158,7 +158,7 @@ export function IndustriesWeServeV2() {
         {/* Content Grid - 3 Columns */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column - Cream/Beige Card */}
-          <div className="bg-[#f8f8f8] rounded-2xl p-8 flex flex-col">
+          <div className="bg-qmax-grey rounded-2xl p-8 flex flex-col">
             <h3 className="text-2xl font-bold text-black mb-4">
               {selected.title}
             </h3>
@@ -187,7 +187,7 @@ export function IndustriesWeServeV2() {
           </div>
 
           {/* Right Column - Related Case Studies */}
-          <div className="bg-[#f8f8f8] rounded-2xl p-8 flex flex-col">
+          <div className="bg-qmax-grey rounded-2xl p-8 flex flex-col">
             <h4 className="text-sm font-semibold text-gray-600 mb-4">
               Related Case Studies
             </h4>

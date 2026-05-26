@@ -13,14 +13,11 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <div className="space-y-4">
-              <h1 className="leading-tight text-black">
-                About <span className="text-red-500">Qmax</span>
-              </h1>
-              <h2 className="leading-tight text-black">Systems</h2>
-            </div>
+            <h1 className="leading-tight text-black">
+              About Qmax <span className="text-red-500">Systems</span>
+            </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
+            <p className="text-left text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
               Engineering Innovation Since 1997 — From Concept to Manufacturing
             </p>
 
@@ -33,11 +30,11 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-full transition-colors flex items-center justify-center gap-2">
+              <button className="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-md transition-colors flex items-center justify-center gap-2">
                 Explore Our Services
                 <ArrowRight size={18} />
               </button>
-              <button className="border-2 border-black text-black hover:bg-black/10 font-semibold px-8 py-3 rounded-full transition-colors flex items-center justify-center gap-2">
+              <button className="border-2 border-black text-black hover:bg-black/10 font-semibold px-8 py-3 rounded-md transition-colors flex items-center justify-center gap-2">
                 <Phone size={18} />
                 Talk to an Engineer
               </button>

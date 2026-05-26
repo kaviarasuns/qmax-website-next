@@ -50,7 +50,7 @@ export function HardwareServiceHeroSection({
           <h1 className="w-full text-white mb-6 font-bold leading-[1.1] tracking-[-0.01em] [font-size:clamp(32px,4.4vw,56px)]">
             {title}
           </h1>
-          <div className="w-full font-semibold text-xl mb-10 space-y-4 text-white text-left md:mb-[42px] [&_p]:text-left">
+          <div className="w-full font-semibold text-xl mb-10 space-y-4 text-white text-justify md:mb-[42px] [&_p]:text-justify">
             {description}
           </div>
           <Link

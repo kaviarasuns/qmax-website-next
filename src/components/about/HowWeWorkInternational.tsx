@@ -78,7 +78,7 @@ export default function HowWeWorkInternational() {
           {badges.map((badge, index) => (
             <span
               key={index}
-              className="px-4 py-2 bg-[#FEF3F3] border border-[#EF3E42] rounded-full text-sm font-medium text-[#EF3E42] transition-colors duration-200 hover:bg-[#EF3E42] hover:text-white"
+              className="px-4 py-2 bg-[#FEF3F3] border border-[#EF3E42] rounded-md text-sm font-medium text-[#EF3E42] transition-colors duration-200 hover:bg-[#EF3E42] hover:text-white"
             >
               {badge}
             </span>

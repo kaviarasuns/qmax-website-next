@@ -102,7 +102,7 @@ export function PCBIndustriesSection({
         {/* Grid */}
         <div className="grid grid-cols-3 items-stretch gap-6 max-[900px]:grid-cols-1 max-[900px]:gap-4">
           {/* LEFT — copy + CTA */}
-          <div className="flex flex-col gap-3 rounded-2xl bg-[#f8f8f8] p-8">
+          <div className="flex flex-col gap-3 rounded-2xl bg-qmax-grey p-8">
             <h3 className="m-0 mb-4 text-2xl font-bold tracking-tight text-black">
               {active.title}
             </h3>
@@ -141,51 +141,62 @@ export function PCBIndustriesSection({
                   className="absolute inset-0 transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(${(i - caseIdx) * 100}%)` }}
                 >
-                  <a
-                    href={cs.href}
-                    className="flex h-full flex-col overflow-hidden rounded-2xl bg-white text-inherit no-underline shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-[box-shadow] duration-200 hover:no-underline hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)]"
-                  >
-                    <div className="relative flex flex-1 items-center justify-center bg-[#f0f0f0]">
-                      {cs.image ? (
-                        <Image
-                          src={cs.image}
-                          alt={cs.title}
-                          fill
-                          sizes="(max-width: 900px) 100vw, 33vw"
-                          className="object-contain px-12 py-6"
-                          style={
-                            cs.rotation
-                              ? { transform: `rotate(${cs.rotation}deg)` }
-                              : undefined
-                          }
-                        />
-                      ) : null}
-                    </div>
-                    <div className="flex flex-col gap-3.5 bg-white px-[18px] pb-4 pt-[18px]">
-                      <h5 className="m-0 text-[18px] font-bold leading-tight text-[#0f0f10]">
-                        {cs.title}
-                      </h5>
-                      <div className="flex items-center justify-between">
-                        <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-400">
-                          View Case
-                        </span>
-                        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white text-[#0f0f10]">
-                          <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="h-4 w-4"
-                          >
-                            <line x1="7" y1="17" x2="17" y2="7" />
-                            <polyline points="7 7 17 7 17 17" />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </a>
+                  <div className="relative h-full">
+                    <a
+                      href={cs.href}
+                      aria-label={cs.title}
+                      className="block h-full rounded-2xl text-inherit no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F33117]/60 focus-visible:ring-offset-2 hover:no-underline"
+                    >
+                      <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)]">
+                        <div className="relative aspect-[3/2.8] w-full overflow-hidden bg-[#e5e5e5]">
+                          {cs.image ? (
+                            <div
+                              className="absolute inset-0"
+                              style={
+                                cs.rotation
+                                  ? { transform: `rotate(${cs.rotation}deg)` }
+                                  : undefined
+                              }
+                            >
+                              <Image
+                                src={cs.image}
+                                alt={cs.title}
+                                fill
+                                sizes="(max-width: 900px) 100vw, 33vw"
+                                className="object-contain px-8 py-5"
+                              />
+                            </div>
+                          ) : null}
+                        </div>
+                        <div className="flex flex-1 flex-col justify-between gap-3 bg-white px-5 py-4">
+                          <h5 className="m-0 text-base font-semibold leading-tight tracking-wide text-zinc-950 md:text-lg">
+                            {cs.title}
+                          </h5>
+                          <div className="flex items-center justify-between">
+                            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+                              View Case
+                            </span>
+                            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300 text-zinc-700">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.7"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="h-4 w-4"
+                              >
+                                <path d="M7 17 17 7" />
+                                <path d="M9 7h8v8" />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                        <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-zinc-200/70" />
+                      </article>
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>

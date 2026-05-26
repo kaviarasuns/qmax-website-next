@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { CapabilitiesTabs } from "./CapabilitiesTabs";
+import { ConnectedTabPanel } from "./ConnectedTabPanel";
 
 export type HighSpeedCorePoint = string | { boldLead: string; rest: string };
 
@@ -59,7 +60,7 @@ export function CoreServiceOfferingsSection({
           connectedCard
         />
 
-        <div className="grid gap-10 py-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16 min-[901px]:relative min-[901px]:z-[3] min-[901px]:-mt-px min-[901px]:rounded-b-[15px] min-[901px]:bg-[#F8F9FB] min-[901px]:px-10 min-[901px]:pt-8 min-[901px]:pb-10 min-[901px]:shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] min-[901px]:[clip-path:inset(0_-40px_-40px_-40px)]">
+        <ConnectedTabPanel className="grid gap-10 py-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
           <div>
             <h3 className="max-w-xl text-2xl font-light leading-tight tracking-tight text-black md:text-4xl">
               {activeOffering.headline}
@@ -110,7 +111,7 @@ export function CoreServiceOfferingsSection({
               {activeOffering.applications}
             </p>
           </div>
-        </div>
+        </ConnectedTabPanel>
       </div>
     </section>
   );

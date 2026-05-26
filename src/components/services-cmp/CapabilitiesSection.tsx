@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { CapabilitiesPanels } from "./CapabilitiesPanels";
 import { CapabilitiesTabs } from "./CapabilitiesTabs";
+import { ConnectedTabPanel } from "./ConnectedTabPanel";
 import type { CapabilitiesStripItem } from "./CapabilitiesStripSection";
 
 interface Capability {
@@ -30,12 +31,12 @@ export function CapabilitiesSection({
 
   return (
     <>
-      <section className="bg-white px-16 py-24 max-[900px]:px-6 max-[900px]:py-16">
-        <div className="mx-auto max-w-[1200px]">
+      <section className="px-6 py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-7xl">
           <div className="m-0 p-0">
-            <h2 className="text-4xl md:text-5xl font-light tracking-wide text-center">
+            <h2 className="text-center text-3xl font-light tracking-tight text-black md:text-5xl">
               Core Engineering{" "}
-              <span className="text-brand-500">Capabilities</span>
+              <span className="text-[#F33117]">Capabilities</span>
             </h2>
             {/* <p>We deliver high-performance designs validated by decades of experience. Our HW engineering stack covers:</p> */}
           </div>
@@ -44,13 +45,15 @@ export function CapabilitiesSection({
             capabilities={capabilities}
             activeIdx={activeIdx}
             onTabClick={setActiveIdx}
+            connectedCard
           />
-          {/* Panels */}
-          <CapabilitiesPanels
-            capabilities={capabilities}
-            activeIdx={activeIdx}
-            getInTouchHref={getInTouchHref}
-          />
+          <ConnectedTabPanel>
+            <CapabilitiesPanels
+              capabilities={capabilities}
+              activeIdx={activeIdx}
+              getInTouchHref={getInTouchHref}
+            />
+          </ConnectedTabPanel>
         </div>
       </section>
       <style jsx>{`

@@ -44,9 +44,7 @@ export default function GlobalPresence() {
               className="bg-white border border-gray-200 rounded-2xl p-8 md:p-10 hover:shadow-lg transition-shadow"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="bg-red-500/20 p-3 rounded-lg">
-                  <MapPin className="text-red-500" size={24} />
-                </div>
+                <MapPin className="text-red-500 shrink-0" size={24} />
                 <h3 className="text-black">{office.location}</h3>
               </div>
 

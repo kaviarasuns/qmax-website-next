@@ -115,7 +115,7 @@ export default function MeetTheTeam() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${member.name} on LinkedIn`}
-                      className="inline-flex items-center gap-1.5 rounded-full bg-[#0A66C2] px-3 py-1.5 text-xs font-medium text-white shadow-sm ring-1 ring-inset ring-[#084d92]/40 transition-all duration-200 hover:bg-[#084d92] hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2] focus-visible:ring-offset-2"
+                      className="inline-flex items-center gap-1.5 rounded-md bg-[#0A66C2] px-3 py-1.5 text-xs font-medium text-white shadow-sm ring-1 ring-inset ring-[#084d92]/40 transition-all duration-200 hover:bg-[#084d92] hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2] focus-visible:ring-offset-2"
                     >
                       <svg
                         viewBox="0 0 24 24"

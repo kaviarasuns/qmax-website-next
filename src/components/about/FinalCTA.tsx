@@ -19,7 +19,7 @@ export default function FinalCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <button className="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-full transition-colors flex items-center justify-center gap-2">
+            <button className="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-md transition-colors flex items-center justify-center gap-2">
               Contact Us Today
               <ArrowRight size={18} />
             </button>
@@ -27,7 +27,7 @@ export default function FinalCTA() {
               href="/Qmax_Systems_Electronics_Engineering_Services_Std.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="border-2 border-black text-black hover:bg-black/10 font-semibold px-8 py-3 rounded-full transition-colors flex items-center justify-center gap-2"
+              className="border-2 border-black text-black hover:bg-black/10 font-semibold px-8 py-3 rounded-md transition-colors flex items-center justify-center gap-2"
             >
               <Download size={18} />
               Download Company Presentation

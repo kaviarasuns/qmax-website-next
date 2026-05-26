@@ -1,28 +1,32 @@
-'use client';
+"use client";
 
-import { Users, Zap, Rocket, Layers } from 'lucide-react';
+import { Users, Zap, Rocket, Layers } from "lucide-react";
 
 export default function WhyQmax() {
   const reasons = [
     {
       icon: Users,
-      title: 'Multi-disciplinary Team',
-      description: 'Embedded systems experts, PCB designers, firmware engineers, and manufacturing specialists working in perfect harmony.',
+      title: "Multi-disciplinary Team",
+      description:
+        "Embedded systems experts, PCB designers, firmware engineers, and manufacturing specialists working in perfect harmony.",
     },
     {
       icon: Zap,
-      title: 'Stringent Process',
-      description: 'ISO-certified processes, rigorous quality checks, and industry best practices ensure reliability and compliance.',
+      title: "Stringent Process",
+      description:
+        "ISO-certified processes, rigorous quality checks, and industry best practices ensure reliability and compliance.",
     },
     {
       icon: Rocket,
-      title: 'Faster Time-to-Market',
-      description: 'Agile methodology and parallel workflows compress development cycles without compromising quality.',
+      title: "Faster Time-to-Market",
+      description:
+        "Agile methodology and parallel workflows compress development cycles without compromising quality.",
     },
     {
       icon: Layers,
-      title: 'End-to-End Engineering',
-      description: 'From concept and design through manufacturing support and field support — we handle the entire lifecycle.',
+      title: "End-to-End Engineering",
+      description:
+        "From concept and design through manufacturing support and field support — we handle the entire lifecycle.",
     },
   ];
 
@@ -31,7 +35,7 @@ export default function WhyQmax() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="mb-4">
-            <span className="text-black">Why</span>{' '}
+            <span className="text-black">Why Choose</span>{" "}
             <span className="text-red-500">Qmax</span>
           </h2>
           {/* <div className="flex justify-center">
@@ -45,15 +49,11 @@ export default function WhyQmax() {
             return (
               <div
                 key={idx}
-                className="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-2xl p-8 hover:border-red-500/50 transition-colors group"
+                className="bg-gradient-to-br from-white to-gray-50 border border-gray-200 rounded-2xl p-8 hover:border-red-500/50 transition-colors"
               >
                 <div className="flex items-center gap-4 mb-3">
-                  <div className="bg-red-500/20 w-12 h-12 rounded-lg flex shrink-0 items-center justify-center group-hover:bg-red-500/30 transition-colors">
-                    <IconComponent className="text-red-500" size={24} />
-                  </div>
-                  <h3 className="text-2xl text-black">
-                    {reason.title}
-                  </h3>
+                  <IconComponent className="text-red-500 shrink-0" size={24} />
+                  <h3 className="text-2xl text-black">{reason.title}</h3>
                 </div>
                 <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                   {reason.description}

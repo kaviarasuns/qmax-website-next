@@ -48,6 +48,9 @@
        never sits under the nav. Keep in sync with Navigation's `h-16`. */
     --nav-h: 4rem;
 
+    /* Brand neutrals */
+    --qmax-grey: #f8f8f8;
+
     /* --sidebar: oklch(0.99 0 0);
     --sidebar-foreground: oklch(0.15 0.01 240);
     --sidebar-primary: oklch(0.45 0.12 250);

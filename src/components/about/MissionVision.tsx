@@ -10,9 +10,7 @@ export default function MissionVision() {
           {/* Mission Card */}
           <div className="bg-white border border-gray-200 rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3 mb-6">
-              <div className="bg-red-500/20 p-3 rounded-lg">
-                <Target className="text-red-500" size={28} />
-              </div>
+              <Target className="text-red-500 shrink-0" size={28} />
               <h3 className="text-black">
                 Our Mission
               </h3>
@@ -26,9 +24,7 @@ export default function MissionVision() {
           {/* Vision Card */}
           <div className="bg-white border border-gray-200 rounded-2xl p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3 mb-6">
-              <div className="bg-red-500/20 p-3 rounded-lg">
-                <Lightbulb className="text-red-500" size={28} />
-              </div>
+              <Lightbulb className="text-red-500 shrink-0" size={28} />
               <h3 className="text-black">
                 Our Vision
               </h3>
