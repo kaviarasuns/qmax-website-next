@@ -10,9 +10,9 @@ const PCBCaseStudyCard: React.FC<CaseStudyCardProps> = ({
   summary,
 }) => {
   return (
-    <div className={`group relative ${category}`}>
-        <article className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_24px_55px_-28px_rgba(15,23,42,0.5)]">
-          <div className="relative h-[70%] overflow-hidden bg-gradient-to-br from-zinc-50 via-white to-zinc-100/70">
+    <div className={`group relative h-full ${category}`}>
+        <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_24px_55px_-28px_rgba(15,23,42,0.5)]">
+          <div className="relative aspect-[3/2.8] w-full overflow-hidden bg-gradient-to-br from-zinc-50 via-white to-zinc-100/70">
             <Image
               src={image}
               alt={title}
@@ -22,18 +22,18 @@ const PCBCaseStudyCard: React.FC<CaseStudyCardProps> = ({
             />
           </div>
 
-          <div className="flex h-[30%] flex-col justify-between bg-white px-5 py-4">
+          <div className="flex flex-1 flex-col justify-between gap-3 bg-white px-5 py-4">
             <h3 className="text-base md:text-lg font-semibold text-zinc-950 leading-tight">
               {title}
             </h3>
 
             {summary && (
-              <p className="mt-2 text-[13px] text-zinc-600 line-clamp-2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
+              <p className="text-[13px] text-zinc-600 line-clamp-2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
                 {summary}
               </p>
             )}
 
-            <a href={link} className="flex items-center justify-between mt-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F33117]/60 focus-visible:ring-offset-2 rounded" aria-label={title}>
+            <a href={link} className="flex items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F33117]/60 focus-visible:ring-offset-2 rounded" aria-label={title}>
               <span className="text-[11px] font-semibold tracking-[0.18em] text-zinc-500 uppercase">
                 View Case
               </span>
