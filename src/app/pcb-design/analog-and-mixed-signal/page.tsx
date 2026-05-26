@@ -23,11 +23,17 @@ const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
   imageRotation: caseStudy.rotatedImages?.[0],
 }));
 
+type ProjectExperienceEntryOptions = {
+  description?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+};
+
 function projectExperienceEntry(
   id: string,
   listTitle: string,
   caseStudyId: string,
-  description?: string,
+  descriptionOrOptions?: string | ProjectExperienceEntryOptions,
 ): ProjectExperienceItem {
   const study = allCaseStudiesData.find(
     (caseStudy) => caseStudy.id === caseStudyId,
@@ -36,13 +42,18 @@ function projectExperienceEntry(
     throw new Error(`Case study not found: ${caseStudyId}`);
   }
 
+  const options =
+    typeof descriptionOrOptions === "string"
+      ? { description: descriptionOrOptions }
+      : descriptionOrOptions;
+
   return {
     id,
     listTitle,
     captionTitle: study.title,
-    description: description ?? study.summary,
-    imageSrc: getCaseStudyCardImage(caseStudyId),
-    imageAlt: study.title,
+    description: options?.description ?? study.summary,
+    imageSrc: options?.imageSrc ?? getCaseStudyCardImage(caseStudyId),
+    imageAlt: options?.imageAlt ?? study.title,
   };
 }
 
@@ -211,6 +222,10 @@ const projectExperience: ProjectExperienceItem[] = [
     "precision-analog-layout",
     "Precision Analog PCB Layout",
     "high-speed-analog-board",
+    {
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_analog_board/BCW_TOP_S14.svg",
+    },
   ),
   projectExperienceEntry(
     "low-noise-signal-routing",
@@ -222,22 +237,38 @@ const projectExperience: ProjectExperienceItem[] = [
     "power-ground-plane",
     "Power & Ground Plane Optimization",
     "poe-power-injector",
+    {
+      imageSrc: "https://dev.qmaxsys.com/case-studies/POE/2.1.svg",
+    },
   ),
   projectExperienceEntry(
     "mixed-signal-design",
     "Mixed-Signal PCB Design",
     "high-speed-analog-mux",
+    {
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/typheon/Typhoon_SIG78.png",
+    },
   ),
   projectExperienceEntry(
     "emi-emc-reduction",
     "EMI/EMC Reduction Techniques",
     "high-speed-camera-interface",
-    "EMI-hardened layout for a high-speed camera interface board, with controlled return paths, shielding discipline, and noise isolation between sensitive analog front-ends and high-speed digital processing.",
+    {
+      description:
+        "EMI-hardened layout for a high-speed camera interface board, with controlled return paths, shielding discipline, and noise isolation between sensitive analog front-ends and high-speed digital processing.",
+      imageSrc:
+        "https://dev.qmaxsys.com/case-studies/embedded/HIPPACK1/2.2.svg",
+    },
   ),
   projectExperienceEntry(
     "thermal-component-placement",
     "Thermal & Component Placement Optimization",
     "ultra-low-cost-bldc-motor-controller-for-evs",
+    {
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/1.png",
+    },
   ),
 ];
 

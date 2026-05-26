@@ -15,11 +15,17 @@ import { ServiceCaseStudy } from "@/data/service-case-studies";
 import { allCaseStudiesData, getCaseStudyCardImage } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
+type ProjectExperienceEntryOptions = {
+  description?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+};
+
 function projectExperienceEntry(
   id: string,
   listTitle: string,
   caseStudyId: string,
-  description?: string,
+  descriptionOrOptions?: string | ProjectExperienceEntryOptions,
 ): ProjectExperienceItem {
   const study = allCaseStudiesData.find(
     (caseStudy) => caseStudy.id === caseStudyId,
@@ -28,13 +34,18 @@ function projectExperienceEntry(
     throw new Error(`Case study not found: ${caseStudyId}`);
   }
 
+  const options =
+    typeof descriptionOrOptions === "string"
+      ? { description: descriptionOrOptions }
+      : descriptionOrOptions;
+
   return {
     id,
     listTitle,
     captionTitle: study.title,
-    description: description ?? study.summary,
-    imageSrc: getCaseStudyCardImage(caseStudyId),
-    imageAlt: study.title,
+    description: options?.description ?? study.summary,
+    imageSrc: options?.imageSrc ?? getCaseStudyCardImage(caseStudyId),
+    imageAlt: options?.imageAlt ?? study.title,
   };
 }
 
@@ -196,6 +207,10 @@ const projectExperience: ProjectExperienceItem[] = [
     "smps-power-converter",
     "SMPS & Power Converter PCB Development",
     "stellar-power-board",
+    {
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG136.svg",
+    },
   ),
   projectExperienceEntry(
     "thermal-management",

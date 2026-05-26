@@ -15,11 +15,17 @@ import { ServiceCaseStudy } from "@/data/service-case-studies";
 import { allCaseStudiesData, getCaseStudyCardImage } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
+type ProjectExperienceEntryOptions = {
+  description?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+};
+
 function projectExperienceEntry(
   id: string,
   listTitle: string,
   caseStudyId: string,
-  description?: string,
+  descriptionOrOptions?: string | ProjectExperienceEntryOptions,
 ): ProjectExperienceItem {
   const study = allCaseStudiesData.find(
     (caseStudy) => caseStudy.id === caseStudyId,
@@ -28,13 +34,18 @@ function projectExperienceEntry(
     throw new Error(`Case study not found: ${caseStudyId}`);
   }
 
+  const options =
+    typeof descriptionOrOptions === "string"
+      ? { description: descriptionOrOptions }
+      : descriptionOrOptions;
+
   return {
     id,
     listTitle,
     captionTitle: study.title,
-    description: description ?? study.summary,
-    imageSrc: getCaseStudyCardImage(caseStudyId),
-    imageAlt: study.title,
+    description: options?.description ?? study.summary,
+    imageSrc: options?.imageSrc ?? getCaseStudyCardImage(caseStudyId),
+    imageAlt: options?.imageAlt ?? study.title,
   };
 }
 
@@ -196,13 +207,23 @@ const projectExperience: ProjectExperienceItem[] = [
     "rf-multilayer-layout",
     "RF Multilayer PCB Layout",
     "high-speed-analog-board",
-    "Multi-layer RF PCB layout with high-frequency signal integrity support, precision routing, and thermally optimized stack design for reliable microwave operation.",
+    {
+      description:
+        "Multi-layer RF PCB layout with high-frequency signal integrity support, precision routing, and thermally optimized stack design for reliable microwave operation.",
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_analog_board/BCW_TOP_S14.svg",
+    },
   ),
   projectExperienceEntry(
     "controlled-impedance-rf",
     "Controlled Impedance RF Routing",
     "wifi6-triband-router",
-    "Controlled 50 Ω microstrip and differential RF routing on a WiFi 6 triband router platform, with stackup-tuned impedance targets across 2.4, 5, and 6 GHz bands.",
+    {
+      description:
+        "Controlled 50 Ω microstrip and differential RF routing on a WiFi 6 triband router platform, with stackup-tuned impedance targets across 2.4, 5, and 6 GHz bands.",
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.9.png",
+    },
   ),
   projectExperienceEntry(
     "antenna-pcb-integration",
@@ -213,13 +234,23 @@ const projectExperience: ProjectExperienceItem[] = [
     "microwave-transmission-line",
     "Microwave Transmission Line Design",
     "wifi-6e-router",
-    "Microwave transmission line design for a WiFi 6E router, with multi-band microstrip routing, low-loss interconnect, and impedance-matched RF paths for 6 GHz operation.",
+    {
+      description:
+        "Microwave transmission line design for a WiFi 6E router, with multi-band microstrip routing, low-loss interconnect, and impedance-matched RF paths for 6 GHz operation.",
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/1.png",
+    },
   ),
   projectExperienceEntry(
     "rf-shielding-emi",
     "RF Shielding & EMI Reduction",
     "wifi6-triband-router",
-    "RF shielding and EMI reduction layout on a WiFi 6 triband router, with grounded coplanar structures, isolation between RF chains, and containment of radiated emissions.",
+    {
+      description:
+        "RF shielding and EMI reduction layout on a WiFi 6 triband router, with grounded coplanar structures, isolation between RF chains, and containment of radiated emissions.",
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.1.png",
+    },
   ),
   projectExperienceEntry(
     "hf-material-optimization",
