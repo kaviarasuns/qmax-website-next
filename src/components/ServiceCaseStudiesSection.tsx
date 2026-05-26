@@ -17,7 +17,7 @@ interface ServiceCaseStudiesSectionProps {
 
 export default function ServiceCaseStudiesSection({
   title = "Case Studies",
-  eyebrow = "Selected Work",
+  // eyebrow = "Selected Work",
   studies,
   moreHref = "/case-studies",
   moreLabel = "More Case Studies",
