@@ -148,7 +148,7 @@ export function PCBIndustriesSection({
                       className="block h-full rounded-2xl text-inherit no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F33117]/60 focus-visible:ring-offset-2 hover:no-underline"
                     >
                       <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)]">
-                        <div className="relative aspect-[3/2.8] w-full overflow-hidden bg-[#e5e5e5]">
+                        <div className="relative aspect-[3/2.8] w-full overflow-hidden bg-qmax-dark-grey">
                           {cs.image ? (
                             <div
                               className="absolute inset-0"

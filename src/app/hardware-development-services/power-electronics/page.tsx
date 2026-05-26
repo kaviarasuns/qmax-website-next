@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import FAQSection from "@/components/FAQSection";
+
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
@@ -19,6 +19,7 @@ import {
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
 import { getCaseStudyCardImage } from "@/store/case-studies";
+import { FAQSection } from "@/components/services-cmp/FAQSection";
 
 function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {
@@ -510,7 +511,7 @@ export default function PowerElectronicsPage() {
         columns="two"
         sectionHeadingId="technical-advantage-power-heading"
       />
-      <FAQSection faqs={faqs} hideTopBorder />
+      <FAQSection faqItems={faqs} />
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our Power Electronics Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."

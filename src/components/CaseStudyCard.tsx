@@ -20,7 +20,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   image,
   link,
   category,
-  imageBackgroundClassName = "bg-[#e5e5e5]",
+  imageBackgroundClassName = "bg-qmax-dark-grey",
   imageClassName = "object-contain px-8 py-5",
   imageRotation,
 }) => {

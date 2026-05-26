@@ -50,6 +50,7 @@
 
     /* Brand neutrals */
     --qmax-grey: #f8f8f8;
+    --qmax-dark-grey: #e5e5e5;
 
     /* --sidebar: oklch(0.99 0 0);
     --sidebar-foreground: oklch(0.15 0.01 240);

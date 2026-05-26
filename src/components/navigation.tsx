@@ -86,7 +86,7 @@ export function Navigation() {
                                   <NavigationMenuLink asChild>
                                     <Link
                                       href={subItem.href}
-                                      className="block select-none space-y-1 leading-none no-underline outline-none"
+                                      className="block select-none space-y-1 text-left leading-none no-underline outline-none"
                                       onClick={() => setMenuValue("")}
                                     >
                                       <div className="relative w-full h-24 mb-2 rounded-md overflow-hidden bg-muted">
@@ -97,11 +97,11 @@ export function Navigation() {
                                           className="object-cover transition-transform group-hover:scale-105"
                                         />
                                       </div>
-                                      <div className="text-sm font-normal tracking-[0.04em] leading-snug text-foreground">
+                                      <div className="text-left text-sm font-normal tracking-[0.04em] leading-snug text-foreground">
                                         {subItem.title}
                                       </div>
                                       {subItem.description && (
-                                        <p className="line-clamp-2 text-xs font-light leading-snug text-muted-foreground tracking-[0.03em]">
+                                        <p className="line-clamp-2 text-left text-xs font-light leading-snug text-muted-foreground tracking-[0.03em]">
                                           {subItem.description}
                                         </p>
                                       )}

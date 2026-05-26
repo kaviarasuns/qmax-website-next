@@ -31,7 +31,7 @@ export function ModularFirmwareFrameworksSection({
           <h2 className="mb-6 text-4xl font-light tracking-wide text-black md:text-5xl">
             {title} <span className="text-brand-500">{titleHighlight}</span>
           </h2>
-          <p className="w-full text-[#383838]">{description}</p>
+          <p className="w-full !text-left text-[#383838]">{description}</p>
         </div>
 
         <div className="grid grid-cols-4 gap-4 max-[1100px]:grid-cols-2 max-[640px]:grid-cols-1">
@@ -48,7 +48,7 @@ export function ModularFirmwareFrameworksSection({
                   {framework.title}
                 </h3>
               </div>
-              <p className="mb-3 text-[13px] font-medium text-[#5a6878]">
+              <p className="mb-3 !text-left text-[13px] font-medium text-[#5a6878]">
                 {framework.subtitle}
               </p>
               <ul className="m-0 list-disc pl-[18px] text-[13.5px] text-[#15202b] marker:text-brand-500">

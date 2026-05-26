@@ -36,7 +36,7 @@ export default function ServiceCaseStudiesSection({
       )}
     >
       <div className="mx-auto w-full max-w-[1600px] px-4 md:px-6 lg:px-8">
-        <div className="mb-12 border-b border-zinc-200/80 pb-6 dark:border-zinc-800/80">
+        <div className="mb-12 pb-6">
           <div className="relative flex flex-col items-center gap-6 md:block">
             <div className="w-full text-center">
               {/* <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.38em] text-[#F33117]">

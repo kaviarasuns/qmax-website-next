@@ -846,7 +846,7 @@ function ViewCaseLink({ href }: { href: string }) {
 function PortfolioGridCard({ item }: { item: PortfolioItem }) {
   return (
     <article className="group relative h-[380px] overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.04)] transition-[box-shadow,border-color] duration-300 motion-reduce:transition-none hover:border-brand-500 hover:shadow-[0_2px_6px_rgba(243,49,23,0.12),0_16px_40px_rgba(16,24,40,0.08)] focus-within:border-brand-500">
-      <div className="absolute inset-x-0 top-0 bottom-[88px] overflow-hidden bg-gradient-to-br from-zinc-50 via-white to-zinc-100">
+      <div className="absolute inset-x-0 top-0 bottom-[88px] overflow-hidden bg-qmax-dark-grey">
         <Image
           src={item.image}
           alt={item.title}
@@ -863,14 +863,9 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
       </div>
 
       <div
-        className="absolute inset-0 z-20 flex translate-y-full transform-gpu flex-col justify-start bg-white px-7 pb-12 pt-7 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:translate-y-0 group-focus-within:translate-y-0"
+        className="absolute inset-0 z-20 flex translate-y-full transform-gpu flex-col justify-start bg-white px-6 pb-12 pt-11 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:translate-y-0 group-focus-within:translate-y-0"
         aria-hidden
       >
-        {item.label ? (
-          <p className="mb-2 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
-            {item.label}
-          </p>
-        ) : null}
         <h4 className="text-[17px] font-semibold leading-snug tracking-[-0.2px] text-zinc-900">
           {item.title}
         </h4>
@@ -882,6 +877,15 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
           <ChevronRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
         </span>
       </div>
+
+      {item.label ? (
+        <p
+          className="pointer-events-none absolute left-0 top-0 z-[25] px-6 pt-5 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500"
+          aria-hidden
+        >
+          {item.label}
+        </p>
+      ) : null}
 
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 z-[25] h-[32px] bg-white px-6 pt-1"

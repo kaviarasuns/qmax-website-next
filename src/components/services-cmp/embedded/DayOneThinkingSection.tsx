@@ -202,6 +202,7 @@ export function DayOneThinkingSection({
           color: #5a6878;
           margin: 0;
           line-height: 1.45;
+          text-align: left;
         }
 
         .fw-d1-more {

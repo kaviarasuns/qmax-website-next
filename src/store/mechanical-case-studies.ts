@@ -1268,6 +1268,93 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "Manufacturing Support",
     ],
   },
+  {
+    id: "pdu-mechanical",
+    title: "PDU C13/C19 Assembly",
+    category: "Mechanical Design",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/PDU_C13_C19_ASSM_RENDER_3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/PDU_C13_C19_RENDER_1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/PDU_C13_C19_RENDER_1.71.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/PDU_C19_RENDER_1.3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/PDU_C19_RENDER_1.4.png",
+    ],
+    rotatedImages: {},
+    features: [
+      "Rack-mounted PDU mechanical enclosure",
+      "C13 and C19 socket integration",
+      "Industrial-grade structural assembly",
+      "Efficient cable management layout",
+      "Compact rack-optimized architecture",
+      "Durable metal enclosure construction",
+    ],
+    summary:
+      "A mechanically engineered rack-mounted PDU assembly designed for reliable power distribution, compact rack integration, and industrial-grade durability.",
+    importantParts: [
+      "PDU enclosure body",
+      "C13 and C19 socket mounts",
+      "Internal support framework",
+      "Cable routing structure",
+      "Rack mounting brackets",
+      "Protective outer casing",
+    ],
+    salientFeatures: [
+      "Rack-ready compact mechanical design",
+      "Reliable industrial enclosure construction",
+      "Efficient cable and connector integration",
+      "Durable power distribution assembly",
+    ],
+    scopeOfWork: [
+      "Mechanical Product Design",
+      "Industrial CAD Modeling",
+      "Enclosure Development",
+      "Prototype Validation",
+      "Manufacturing Support",
+    ],
+  },
+  {
+    id: "pdu-data-center",
+    title: "Data Center PDU",
+    category: "Mechanical Design",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/pdu_data_center/4X6U_2X10U_1.203.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/pdu_data_center/4X6U_2X10U_2.204.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/pdu_data_center/6U-10U_1.201.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/pdu_data_center/6U-10U_1.202.png",
+    ],
+    rotatedImages: {},
+    features: [
+      "Data center rack PDU enclosure design",
+      "High-density power distribution architecture",
+      "Rack-optimized modular assembly",
+      "Industrial-grade structural construction",
+      "Efficient thermal airflow considerations",
+      "Scalable server rack integration",
+    ],
+    summary:
+      "A data center PDU mechanical platform designed for high-density rack integration, reliable power distribution support, and industrial-grade deployment.",
+    importantParts: [
+      "Rack-mounted enclosure frame",
+      "Power distribution housing",
+      "Mounting bracket assemblies",
+      "Cable routing structures",
+      "Ventilation and airflow sections",
+      "Protective structural casing",
+    ],
+    salientFeatures: [
+      "High-density rack-compatible architecture",
+      "Reliable industrial mechanical construction",
+      "Efficient airflow and cable management",
+      "Scalable data center deployment support",
+    ],
+    scopeOfWork: [
+      "Mechanical Product Design",
+      "Industrial CAD Modeling",
+      "Rack Integration Design",
+      "Prototype Validation",
+      "Manufacturing Support",
+    ],
+  },
 ];
 
 // {

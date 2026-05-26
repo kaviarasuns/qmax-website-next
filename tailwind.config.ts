@@ -16,6 +16,7 @@ export default {
       colors: {
         "brand-red": "#F33117",
         "qmax-grey": "var(--qmax-grey)",
+        "qmax-dark-grey": "var(--qmax-dark-grey)",
         brand: {
           500: "#F33117",
         },
