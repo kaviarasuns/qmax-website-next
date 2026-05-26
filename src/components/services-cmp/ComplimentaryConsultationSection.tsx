@@ -27,12 +27,14 @@ const VARIANTS = {
 
 export type ComplimentaryConsultationSectionProps = {
   variant?: keyof typeof VARIANTS;
+  title?: string;
   subtitleSuffix?: string;
   className?: string;
 };
 
 export function ComplimentaryConsultationSection({
   variant = "hardware",
+  title,
   subtitleSuffix = "",
   className,
 }: ComplimentaryConsultationSectionProps) {
@@ -43,7 +45,9 @@ export function ComplimentaryConsultationSection({
     <section className={cn("bg-white px-6 pb-16 md:px-8 md:pb-20", className)}>
       <div className="mx-auto flex max-w-[1080px] flex-col items-center justify-between gap-10 rounded-2xl bg-[#f3f4f6] px-8 py-10 md:flex-row md:gap-12 md:px-14 md:py-[52px] max-[800px]:px-8 max-[800px]:py-10">
         <div className="w-full max-w-[480px]">
-          <h3 className="text-[28px] uppercase md:text-4xl">{content.title}</h3>
+          <h3 className="text-[28px] uppercase md:text-4xl">
+            {title ?? content.title}
+          </h3>
           <p className="mt-3.5 text-[15px] leading-relaxed text-[#555]">
             {content.subtitle}
             {subtitleSuffix}

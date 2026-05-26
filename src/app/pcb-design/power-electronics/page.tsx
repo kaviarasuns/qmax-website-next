@@ -508,7 +508,10 @@ export default function PowerElectronicsPage() {
         titleHighlight="Power Electronics PCB Design"
         subtitle="Every power electronics engagement includes a complimentary schematic review to identify architectural risks before layout begins."
       /> */}
-      <ComplimentaryConsultationSection variant="pcb" />
+      <ComplimentaryConsultationSection
+        variant="pcb"
+        title="Get a Complimentary Consultation with Our Power Electronics Experts"
+      />
       <FAQSection faqItems={FAQ_ITEMS} />
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"

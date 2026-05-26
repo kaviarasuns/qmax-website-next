@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
@@ -19,6 +18,7 @@ import {
   ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
 import { getCaseStudyCardImage } from "@/store/case-studies";
+import { FAQSection } from "@/components/services-cmp/FAQSection";
 
 function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {
@@ -513,12 +513,13 @@ export default function AnalogDesignPage() {
       <HardwareServiceHeroSection
         imageSrc="/hw-main/hw-sub/image1.jpg"
         imageAlt="Analog and Mixed-Signal Design — Qmax Systems"
-        title={
-          <>
-            Analog &amp; Mixed-Signal Design Services: Precision Engineering for
-            Complex Signal Chains
-          </>
-        }
+        // title={
+        //   <>
+        //     Analog &amp; Mixed-Signal Design Services: Precision Engineering for
+        //     Complex Signal Chains
+        //   </>
+        // }
+        title="Analog Design Services"
         description={
           <p>
             In an increasingly digital world, the interface between the physical
@@ -554,9 +555,9 @@ export default function AnalogDesignPage() {
         columns="three"
         sectionHeadingId="technical-advantage-analog-heading"
       />
-      <FAQSection faqs={faqs} hideTopBorder />
+      <FAQSection faqItems={faqs} />
       <ConsultationCtaBar
-        heading="Get a complimentary consultation with our analog & mixed-signal experts."
+        heading="Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
         ctaHref="/hardware-development-services/contact"
       />

@@ -39,9 +39,9 @@ export default function ServiceCaseStudiesSection({
         <div className="mb-12 border-b border-zinc-200/80 pb-6 dark:border-zinc-800/80">
           <div className="relative flex flex-col items-center gap-6 md:block">
             <div className="w-full text-center">
-              <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.38em] text-[#F33117]">
+              {/* <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.38em] text-[#F33117]">
                 {eyebrow}
-              </span>
+              </span> */}
               <h2 className="text-4xl font-light tracking-tight md:text-5xl">
                 {title.split(" ").map((word, index) => (
                   <span

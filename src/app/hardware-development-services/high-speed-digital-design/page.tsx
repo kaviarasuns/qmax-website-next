@@ -347,7 +347,8 @@ export default function HighSpeedDigitalDesignPage() {
       <HardwareServiceHeroSection
         imageSrc="/hw-main/HW-High-Speed-Digital-Design/image1.jpg"
         imageAlt="High-Performance Digital Systems — Qmax Systems"
-        title="High-Performance Digital Systems Development"
+        // title="High-Performance Digital Systems Development"
+        title="High Speed Digital Design Services"
         description={
           <p>
             At Qmax Systems, we bridge the gap between complex conceptual
@@ -379,7 +380,7 @@ export default function HighSpeedDigitalDesignPage() {
       <div className="pb-28"></div>
 
       <ConsultationCtaBar
-        heading="Get a complimentary consultation with our digital hardware experts."
+        heading="Get A Complimentary Consultation With Our Digital Hardware Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
         ctaHref="/hardware-development-services/contact"
       />

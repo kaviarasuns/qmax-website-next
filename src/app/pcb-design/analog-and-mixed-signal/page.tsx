@@ -531,7 +531,10 @@ export default function AnalogAndMixedSignalPage() {
         titleHighlight="Analog & Mixed-Signal PCB Design"
         subtitle="Every PCB layout engagement at Qmax Systems includes a complimentary schematic review. Before a single trace is routed, our engineers analyze:"
       /> */}
-      <ComplimentaryConsultationSection variant="pcb" />
+      <ComplimentaryConsultationSection
+        variant="pcb"
+        title="Get a Complimentary Consultation with Our Analog And Mixed Signal Experts"
+      />
 
       <FAQSection faqItems={FAQ_ITEMS} />
 

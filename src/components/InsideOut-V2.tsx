@@ -151,7 +151,7 @@ export default function InsideOutV2() {
             {reasons.map((reason, index) => (
               <div
                 key={index}
-                className="border-t border-zinc-200 py-1 transition-all"
+                className="border-t border-zinc-200 first:border-t-0 py-1 transition-all"
               >
                 <button
                   onClick={() => toggleItem(index)}

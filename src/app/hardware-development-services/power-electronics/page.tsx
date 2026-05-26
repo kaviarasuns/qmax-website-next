@@ -74,7 +74,9 @@ const projectExperience: ProjectExperienceItem[] = [
     captionTitle: "ASIL-D Functional Safety",
     description:
       "50kW motor drive with liquid cooling and ASIL-D functional safety compliance.",
-    imageSrc: getCaseStudyCardImage("ultra-low-cost-bldc-motor-controller-for-evs"),
+    imageSrc: getCaseStudyCardImage(
+      "ultra-low-cost-bldc-motor-controller-for-evs",
+    ),
     imageAlt: "Industrial PMSM Controller",
   },
   {
@@ -464,12 +466,13 @@ export default function PowerElectronicsPage() {
       <HardwareServiceHeroSection
         imageSrc="/hw-main/image2.png"
         imageAlt="Power Electronics Design — Qmax Systems"
-        title={
-          <>
-            Power Electronics Design Services: Efficient, Stable, and Scalable
-            Power for Mission-Critical Hardware
-          </>
-        }
+        // title={
+        //   <>
+        //     Power Electronics Design Services: Efficient, Stable, and Scalable
+        //     Power for Mission-Critical Hardware
+        //   </>
+        // }
+        title="Power Electronics Services"
         description={
           <>
             <p>
@@ -509,7 +512,7 @@ export default function PowerElectronicsPage() {
       />
       <FAQSection faqs={faqs} hideTopBorder />
       <ConsultationCtaBar
-        heading="Get a complimentary consultation with our power electronics experts."
+        heading="Get A Complimentary Consultation With Our Power Electronics Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
         ctaHref="/hardware-development-services/contact"
       />

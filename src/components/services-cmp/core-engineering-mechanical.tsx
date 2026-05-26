@@ -845,45 +845,56 @@ function ViewCaseLink({ href }: { href: string }) {
 
 function PortfolioGridCard({ item }: { item: PortfolioItem }) {
   return (
-    <article className="group relative h-[380px] overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.04)] transition-[box-shadow,border-color] duration-500 motion-reduce:transition-none hover:border-brand-500 hover:shadow-[0_2px_6px_rgba(243,49,23,0.12),0_16px_40px_rgba(16,24,40,0.08)] focus-within:border-brand-500">
-      <div className="absolute inset-x-0 top-0 bottom-[42%] overflow-hidden bg-gradient-to-br from-zinc-50 via-white to-zinc-100 transition-[bottom,opacity] duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:bottom-0 motion-reduce:opacity-0 group-hover:bottom-0 group-hover:opacity-0 group-focus-within:bottom-0 group-focus-within:opacity-0">
+    <article className="group relative h-[380px] overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.04)] transition-[box-shadow,border-color] duration-300 motion-reduce:transition-none hover:border-brand-500 hover:shadow-[0_2px_6px_rgba(243,49,23,0.12),0_16px_40px_rgba(16,24,40,0.08)] focus-within:border-brand-500">
+      <div className="absolute inset-x-0 top-0 bottom-[88px] overflow-hidden bg-gradient-to-br from-zinc-50 via-white to-zinc-100">
         <Image
           src={item.image}
           alt={item.title}
           fill
-          className="object-contain p-5 transition-transform duration-700 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:scale-[1.02]"
+          className="object-contain p-5 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:scale-[1.03] group-focus-within:scale-[1.03]"
           sizes="(max-width: 640px) 100vw, 50vw"
         />
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 top-[58%] z-10 flex flex-col bg-white transition-[top,background-color] duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:top-0 motion-reduce:transition-none group-hover:top-0 group-hover:bg-gradient-to-b group-hover:from-white/95 group-hover:via-white group-hover:to-white/90 group-focus-within:top-0">
-        <div className="flex flex-1 flex-col px-6 pb-5 pt-5 group-hover:justify-center group-hover:px-7 group-hover:py-8">
-          {item.label ? (
-            <p className="mb-2 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
-              {item.label}
-            </p>
-          ) : null}
-          <h4 className="text-[17px] font-semibold leading-snug tracking-[-0.2px] text-zinc-900">
-            {item.title}
-          </h4>
+      <div className="absolute inset-x-0 bottom-[32px] z-10 flex h-[56px] flex-col justify-end bg-white px-6">
+        <h4 className="line-clamp-2 text-[15px] font-semibold leading-snug tracking-[-0.2px] text-zinc-900">
+          {item.title}
+        </h4>
+      </div>
 
-          <div className="mt-0 max-h-0 overflow-hidden opacity-0 transition-all duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:mt-4 motion-reduce:max-h-48 motion-reduce:opacity-100 group-hover:mt-4 group-hover:max-h-48 group-hover:opacity-100 group-focus-within:mt-4 group-focus-within:max-h-48 group-focus-within:opacity-100">
-            <p className="text-[14px] leading-[21px] text-zinc-600">
-              {item.description}
-            </p>
-            <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-500 transition-transform duration-300 group-hover:translate-x-0.5">
-              Read case study
-              <ChevronRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
-            </span>
-          </div>
+      <div
+        className="absolute inset-0 z-20 flex translate-y-full transform-gpu flex-col justify-start bg-white px-7 pb-12 pt-7 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:translate-y-0 group-focus-within:translate-y-0"
+        aria-hidden
+      >
+        {item.label ? (
+          <p className="mb-2 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
+            {item.label}
+          </p>
+        ) : null}
+        <h4 className="text-[17px] font-semibold leading-snug tracking-[-0.2px] text-zinc-900">
+          {item.title}
+        </h4>
+        <p className="mt-3 line-clamp-4 text-[14px] leading-[21px] text-zinc-600">
+          {item.description}
+        </p>
+        <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-500">
+          Read case study
+          <ChevronRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
+        </span>
+      </div>
 
-          <p className="mt-auto pt-3 text-[12px] text-zinc-500">Case study</p>
-        </div>
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[25] h-[32px] bg-white px-6 pt-1"
+        aria-hidden
+      >
+        <p className="text-[11.5px] font-medium uppercase tracking-[0.4px] text-zinc-500">
+          Case study
+        </p>
       </div>
 
       <Link
         href={item.href}
-        className="absolute inset-0 z-20 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/60 focus-visible:ring-offset-2"
+        className="absolute inset-0 z-30 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/60 focus-visible:ring-offset-2"
         aria-label={`Read case study: ${item.title}`}
       />
     </article>

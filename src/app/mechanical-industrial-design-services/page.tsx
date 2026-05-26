@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import FAQSection from "@/components/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { mechanicalCaseStudiesData } from "@/store/mechanical-case-studies";
 import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
@@ -8,6 +7,7 @@ import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSecti
 import { MechanicalIndustrialHero } from "@/components/services-cmp/MechanicalIndustrialHero";
 import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
 import { MECHANICAL_INDUSTRIES } from "@/store/mechanical-industries";
+import { FAQSection } from "@/components/services-cmp/FAQSection";
 
 const CAPABILITIES = [
   {
@@ -358,7 +358,7 @@ export default function MechanicalIndustrialDesignPage() {
       />
 
       <FAQSection
-        faqs={[
+        faqItems={[
           {
             q: "How do you manage heat dissipation in sealed IP67 enclosures?",
             a: "We utilize thermal simulation (CFD) to design internal heat spreaders and utilize the enclosure's external surface area as a heat sink, often employing thermally conductive plastics or metal chassis.",

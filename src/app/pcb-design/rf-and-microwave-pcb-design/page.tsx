@@ -618,6 +618,7 @@ export default function RFMicrowavePCBDesignPage() {
       /> */}
       <ComplimentaryConsultationSection
         variant="pcb"
+        title="Get a Complimentary Consultation with Our RF and Microwave Experts"
         subtitleSuffix=" This early validation prevents costly PCB re-spins and RF tuning delays."
       />
       <FAQSection faqItems={FAQ_ITEMS} />
