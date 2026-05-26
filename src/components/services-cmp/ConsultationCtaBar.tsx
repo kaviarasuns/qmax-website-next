@@ -21,11 +21,13 @@ export function ConsultationCtaBar({
         <span className="cta-square cta-square-tl" aria-hidden="true" />
         <span className="cta-square cta-square-br" aria-hidden="true" />
         <div className="cta-banner-panel">
-          <div className="cta-banner-copy">
-            <h2 className="text-3xl font-light tracking-wide md:text-4xl">
+          <div className="grid min-w-0 flex-1 grid-cols-1">
+            <h2 className="col-span-full m-0 mb-2.5 w-full text-pretty text-3xl font-light tracking-wide text-white md:text-4xl">
               {heading}
             </h2>
-            <p>{subtitle}</p>
+            <p className="col-span-full m-0 w-full text-left text-white/70">
+              {subtitle}
+            </p>
           </div>
           <Link href={ctaHref} className="cta-banner-btn">
             <span>{ctaLabel}</span>

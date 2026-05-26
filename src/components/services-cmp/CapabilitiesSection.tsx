@@ -35,8 +35,7 @@ export function CapabilitiesSection({
         <div className="mx-auto max-w-7xl">
           <div className="m-0 p-0">
             <h2 className="text-center text-3xl font-light tracking-tight text-black md:text-5xl">
-              Core Engineering{" "}
-              <span className="text-[#F33117]">Capabilities</span>
+              Hardware <span className="text-[#F33117]">Capabilities</span>
             </h2>
             {/* <p>We deliver high-performance designs validated by decades of experience. Our HW engineering stack covers:</p> */}
           </div>

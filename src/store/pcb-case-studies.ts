@@ -885,4 +885,43 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "Manufacturing Validation",
     ],
   },
+
+  {
+    id: "value-added-service",
+    title: "Value Added Service",
+    category: "Value Added Service",
+    images: ["/case-studies/image_vacationing.png"],
+    features: [
+      "Design for manufacturability (DFM) review",
+      "Design for test (DFT) validation",
+      "Custom test jig development",
+      "Pre-compliance EMC/EMI testing support",
+      "Prototype build and bring-up",
+      "Production handover documentation",
+    ],
+    summary:
+      "End-to-end value-added engineering support spanning DFM/DFT reviews, test jig development, pre-compliance validation, and prototype-to-production handover.",
+    importantParts: [
+      "DFM/DFT review deliverables",
+      "Functional and boundary-scan test fixtures",
+      "Pre-compliance test reports",
+      "Prototype validation logs",
+      "Gerber and assembly documentation packages",
+      "Certification readiness checklists",
+    ],
+    salientFeatures: [
+      "Production-ready DFM and DFT validation.",
+      "Custom test jig design for manufacturing yield.",
+      "Pre-compliance testing to reduce certification risk.",
+      "Structured prototype-to-production handover.",
+    ],
+    scopeOfWork: [
+      "DFM/DFT Review",
+      "Test Jig Development",
+      "Pre-compliance Testing",
+      "Prototype Build Support",
+      "Certification Readiness",
+      "Production Handover",
+    ],
+  },
 ];
