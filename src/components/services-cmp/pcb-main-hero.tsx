@@ -34,7 +34,7 @@ export function PcbMainHero({
   return (
     <section
       id="hero"
-      className="relative mt-[var(--nav-h)] flex w-full items-center overflow-hidden bg-[#080e16] min-h-[520px] max-h-[calc(100dvh-var(--nav-h))] h-[calc(100svh-var(--nav-h))]"
+      className="relative mt-[var(--nav-h)] flex w-full items-center overflow-hidden bg-[#080e16] min-h-[max(520px,calc(100svh-var(--nav-h)))]"
       aria-labelledby="pcb-main-hero-title"
     >
       <video
@@ -55,7 +55,7 @@ export function PcbMainHero({
         style={{ background: HERO_GRADIENT }}
       />
 
-      <div className="relative z-[2] box-border max-h-full w-full overflow-hidden p-6 py-16 sm:p-10 md:w-1/2 md:p-16 md:py-[clamp(28px,4vh,64px)]">
+      <div className="relative z-[2] box-border w-full p-6 py-16 sm:p-10 md:w-3/5 md:p-16 md:py-[clamp(28px,4vh,64px)]">
         <div className="max-w-full">
           <h1
             id="pcb-main-hero-title"

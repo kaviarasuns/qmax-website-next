@@ -46,7 +46,7 @@ export function HardwareServiceHeroSection({
         style={{ background: HERO_OVERLAY }}
       />
       <div className="relative z-10 w-full px-7 py-16 sm:px-10 md:px-[72px] md:py-20">
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-3/5">
           <h1 className="w-full text-white mb-6 font-bold leading-[1.1] tracking-[-0.01em] [font-size:clamp(32px,4.4vw,56px)]">
             {title}
           </h1>
