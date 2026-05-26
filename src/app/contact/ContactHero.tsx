@@ -155,53 +155,30 @@ const ContactHero = () => {
   });
   const [showThankYou, setShowThankYou] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
-  const baseUrl = "https://pmdash.v2.qmaxsys.com";
-  // const baseUrl = "http://localhost:8080";
-
-  const submitContactForm = async (data: {
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
-  }) => {
-    const response = await fetch(`${baseUrl}/api/email/contact`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      emailError: "",
+      phone: "",
+      message: "",
     });
-    return response.json();
+    setFocusedField(null);
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setShowThankYou(false);
-    setError(null);
 
-    try {
-      const response = await submitContactForm({
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        message: formData.message,
-      });
-      if (response.error) {
-        throw new Error(response.error);
-      }
-      setShowThankYou(true);
-    } catch (err) {
-      console.error("Failed to send message:", err);
-      setError(
-        "We couldn't send your message. Please check your connection and try again.",
-      );
-    } finally {
-      setLoading(false);
-    }
+    // Dummy submission — replace with real API call when backend is ready
+    await new Promise((resolve) => setTimeout(resolve, 800));
+
+    resetForm();
+    setShowThankYou(true);
+    setLoading(false);
   };
 
   const handleChange = (
@@ -276,7 +253,10 @@ const ContactHero = () => {
                     studies.
                   </p>
                   <button
-                    onClick={() => setShowThankYou(false)}
+                    onClick={() => {
+                      setShowThankYou(false);
+                      resetForm();
+                    }}
                     className="mt-6 text-brand-red font-medium hover:underline inline-flex items-center gap-2 group"
                   >
                     Send another message
@@ -325,12 +305,6 @@ const ContactHero = () => {
                     onFocus={() => setFocusedField("message")}
                     onBlur={() => setFocusedField(null)}
                   />
-
-                  {error ? (
-                    <p className="mt-4 text-sm text-red-600" role="alert">
-                      {error}
-                    </p>
-                  ) : null}
 
                   <div className="pt-6">
                     <button
