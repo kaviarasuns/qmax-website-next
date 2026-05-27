@@ -33,7 +33,7 @@ export function IndustriesWeServeV3() {
     <section className="flex min-h-screen items-center justify-center bg-white px-3 py-16 sm:px-4 sm:py-20 lg:px-6 lg:py-24">
       <div className="mx-auto w-full max-w-[1260px]">
         <div className="mb-8 text-center md:mb-9">
-          <h2 className="text-center text-4xl font-light tracking-normal text-zinc-950 md:text-5xl lg:text-6xl">
+          <h2 className="text-center text-4xl font-light tracking-normal md:text-5xl lg:text-6xl">
             Industries <span className="text-red-500">We Serve</span>
           </h2>
         </div>

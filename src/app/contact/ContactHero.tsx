@@ -216,7 +216,7 @@ const ContactHero = () => {
             <p className="text-red-500 font-medium tracking-widest text-xs uppercase mb-2">
               Get in Touch
             </p>
-            <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl text-gray-900 leading-[1.1] tracking-tight">
+            <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl leading-[1.1] tracking-tight">
               Let&apos;s Engineer{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-600">
                 Your Next Product
@@ -224,10 +224,10 @@ const ContactHero = () => {
             </h1>
 
             <div className="bg-white rounded-xl p-6 lg:p-8 shadow-xl border border-gray-100">
-              <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-1">
+              <h2 className="text-lg md:text-xl font-bold mb-1">
                 Send us a message
               </h2>
-              <p className="text-gray-500 text-sm mb-4">
+              <p className="text-sm mb-4 text-muted-foreground">
                 Fill out the form below and we&apos;ll get back to you within 24
                 hours.
               </p>
@@ -239,15 +239,15 @@ const ContactHero = () => {
                       <CheckCircle className="w-6 h-6 text-green-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900">
+                      <h3 className="text-xl font-semibold">
                         Message Sent!
                       </h3>
-                      <p className="text-gray-600">
+                      <p className="text-muted-foreground">
                         Thank you for reaching out.
                       </p>
                     </div>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="leading-relaxed text-muted-foreground">
                     We&apos;ve received your message and will get back to you
                     shortly. In the meantime, feel free to explore our case
                     studies.
@@ -359,7 +359,7 @@ const ContactHero = () => {
 
           {/* Right Column - Contact Us Section */}
           <div className="lg:flex lg:flex-col lg:h-full">
-            <h2 className="text-lg font-semibold mb-3 text-gray-900 tracking-wide">
+            <h2 className="text-lg font-semibold mb-3 tracking-wide">
               CONTACT US
             </h2>
 

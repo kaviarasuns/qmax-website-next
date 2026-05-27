@@ -28,7 +28,7 @@ export function ModularFirmwareFrameworksSection({
     >
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-14 flex w-full flex-col items-center text-center max-[900px]:mb-10">
-          <h2 className="mb-6 text-4xl font-light tracking-wide text-black md:text-5xl">
+          <h2 className="mb-6 text-4xl font-light tracking-wide md:text-5xl">
             {title} <span className="text-brand-500">{titleHighlight}</span>
           </h2>
           <p className="w-full !text-left text-[#383838]">{description}</p>
@@ -44,7 +44,7 @@ export function ModularFirmwareFrameworksSection({
                 <div className="inline-flex h-[52px] w-[52px] flex-shrink-0 items-center justify-center text-brand-500 [&>svg]:h-8 [&>svg]:w-8 [&>svg_[stroke]:not([stroke='none'])]:stroke-brand-500 [&>svg_[fill]:not([fill='none'])]:fill-brand-500">
                   {framework.icon}
                 </div>
-                <h3 className="m-0 min-w-0 flex-1 text-[17px] leading-tight text-[#0a1929] !font-medium">
+                <h3 className="m-0 min-w-0 flex-1 text-[17px] leading-tight !font-medium">
                   {framework.title}
                 </h3>
               </div>

@@ -35,7 +35,7 @@ export default function OurStory() {
             <div className="space-y-6">
               <div className="inline-block">
                 <h2>
-                  <span className="text-black">Our</span>{' '}
+                  Our 
                   <span className="text-red-500">Story</span>
                 </h2>
               </div>

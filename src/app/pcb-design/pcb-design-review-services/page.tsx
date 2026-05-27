@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function PCBDesignReviewServicesPage() {
   return (
-    <main className="bg-[#fcfcfc] text-zinc-900">
+    <main className="bg-[#fcfcfc]">
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-14 pb-12 lg:pt-20 lg:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(243,49,23,0.02),transparent_40%)]" />
@@ -42,7 +42,7 @@ export default function PCBDesignReviewServicesPage() {
               <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-6">
                 PCB DESIGN SERVICES
               </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+              <h1 className="text-4xl font-light leading-[1.1] md:text-6xl lg:text-7xl tracking-tight">
                 Design Review
                 <br className="hidden md:block" />
                 Services.
@@ -58,7 +58,7 @@ export default function PCBDesignReviewServicesPage() {
               </h2>
             </div>
             <div className="space-y-12 text-xl leading-[1.6] text-zinc-600 font-light max-w-3xl">
-              <p className="text-zinc-950 font-normal text-2xl md:text-3xl leading-snug">
+              <p className="font-normal text-2xl md:text-3xl leading-snug">
                 Electronic product development rarely proceeds from first-pass
                 design to production without defects. Schematic errors, layout
                 violations, obsolete components, and regulatory gaps are among
@@ -79,11 +79,11 @@ export default function PCBDesignReviewServicesPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
             <div className="space-y-12">
-              <h2 className="text-4xl font-light text-zinc-950 md:text-6xl tracking-tighter">
+              <h2 className="text-4xl font-light md:text-6xl tracking-tighter">
                 Actionable <br /> Findings.
               </h2>
               <div className="h-1 w-24 bg-[#F33117]" />
-              <p className="text-xl leading-relaxed text-zinc-600 font-light">
+              <p className="text-xl leading-relaxed font-light text-muted-foreground">
                 Our review process is grounded in decades of industrial
                 electronics engineering experience across power electronics,
                 embedded systems, high-speed digital design, RF, and
@@ -92,12 +92,12 @@ export default function PCBDesignReviewServicesPage() {
             </div>
             <div className="space-y-12 pt-4">
               <div className="border-l-2 border-zinc-200 pl-8 space-y-8">
-                <p className="text-lg text-zinc-700 font-light leading-relaxed">
+                <p className="text-lg font-light leading-relaxed text-muted-foreground">
                   We apply IPC standards, IEC requirements, and OEM-specific
                   design rules to every engagement, delivering actionable
                   findings — not just observations.
                 </p>
-                <p className="text-lg text-zinc-500 font-light leading-relaxed">
+                <p className="text-lg font-light leading-relaxed text-muted-foreground">
                   Whether you are launching a first IoT product, revising a
                   legacy industrial controller, or migrating a platform to a new
                   processor family, our engineers apply the same rigorous
@@ -152,19 +152,19 @@ export default function PCBDesignReviewServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.1 / SCHEMATIC REVIEW
             </span>
-            <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
+            <h2 className="text-4xl font-light md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
               Circuit Correctness, Protection & Functional Verification.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-32 items-start">
             <div className="space-y-8">
-              <p className="text-xl leading-relaxed text-zinc-700 font-light">
+              <p className="text-xl leading-relaxed font-light text-muted-foreground">
                 A schematic is the definitive electrical specification of a
                 product. Errors at this stage propagate through every downstream
                 activity.
               </p>
-              <p className="text-lg leading-relaxed text-zinc-500 font-light">
+              <p className="text-lg leading-relaxed font-light text-muted-foreground">
                 Our schematic review service provides a systematic audit of
                 circuit correctness, component selection, and protective
                 circuitry.
@@ -239,10 +239,10 @@ export default function PCBDesignReviewServicesPage() {
                       key={idx}
                       className="group border-b border-zinc-100 pb-8 hover:border-zinc-300 transition-colors"
                     >
-                      <h4 className="text-zinc-900 text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
+                      <h4 className="text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
                         {item.t}
                       </h4>
-                      <p className="text-sm text-zinc-500 leading-relaxed font-light">
+                      <p className="text-sm leading-relaxed font-light text-muted-foreground">
                         {item.d}
                       </p>
                     </div>
@@ -261,14 +261,14 @@ export default function PCBDesignReviewServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.2 / PCB DESIGN REVIEW
             </span>
-            <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
+            <h2 className="text-4xl font-light md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
               Functionality, DFM, DFA & DFx.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-16 lg:gap-32 items-start">
             <div className="space-y-12">
-              <p className="text-xl leading-relaxed text-zinc-700 font-light max-w-2xl">
+              <p className="text-xl leading-relaxed font-light max-w-2xl text-muted-foreground">
                 A verified schematic does not guarantee a manufacturable or
                 reliable PCB. Our layout review applies IPC-2221/2222 standards
                 alongside manufacturer-specific DFM rule sets.
@@ -308,7 +308,7 @@ export default function PCBDesignReviewServicesPage() {
                     <h4 className="text-red-500 text-sm font-black uppercase tracking-widest">
                       {item.s}
                     </h4>
-                    <p className="text-zinc-600 font-light leading-relaxed">
+                    <p className="font-light leading-relaxed text-muted-foreground">
                       {item.d}
                     </p>
                   </div>
@@ -329,7 +329,7 @@ export default function PCBDesignReviewServicesPage() {
                 <h3 className="text-xs font-black uppercase tracking-[0.4em] text-zinc-500 mb-6">
                   / Standards Applied
                 </h3>
-                <p className="text-sm text-zinc-500 font-light leading-relaxed">
+                <p className="text-sm font-light leading-relaxed text-muted-foreground">
                   We evaluate boards against IPC-2221, IPC-2222, and
                   IPC-7711/7721 class standards to evaluate fabrication yield,
                   assembly quality, and field reliability.
@@ -347,7 +347,7 @@ export default function PCBDesignReviewServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.3 / REVERSE ENGINEERING
             </span>
-            <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
+            <h2 className="text-4xl font-light md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
               PCBA to CAD and <br /> Schematics.
             </h2>
           </div>
@@ -381,7 +381,7 @@ export default function PCBDesignReviewServicesPage() {
                       <span className="text-red-500 font-mono text-[10px] pt-1">
                         0{idx + 1}
                       </span>
-                      <p className="text-lg text-zinc-600 font-light group-hover:text-zinc-950 transition-colors">
+                      <p className="text-lg font-light group-hover:text-zinc-950 transition-colors text-muted-foreground">
                         {cap}
                       </p>
                     </div>
@@ -390,7 +390,7 @@ export default function PCBDesignReviewServicesPage() {
               </div>
 
               <div className="mt-12 bg-zinc-100/40 p-8 border border-zinc-200">
-                <p className="text-sm text-zinc-400 italic mb-6">
+                <p className="text-sm italic mb-6 text-muted-foreground">
                   Design data is reconstructed for legally permissible
                   applications only.
                 </p>
@@ -431,7 +431,7 @@ export default function PCBDesignReviewServicesPage() {
                 <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 mb-6 block">
                   FULL DOCUMENTATION PACKAGE
                 </span>
-                <p className="text-xl text-zinc-950 font-light leading-relaxed">
+                <p className="text-xl font-light leading-relaxed">
                   Deliverables include the BOM, full Schematics, high-fidelity
                   PCB Layout files, and detailed Mechanical Drawings.
                 </p>
@@ -448,7 +448,7 @@ export default function PCBDesignReviewServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.4 / CONVERSION SERVICES
             </span>
-            <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
+            <h2 className="text-4xl font-light md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
               PDF, Scanned & <br /> Gerber to CAD.
             </h2>
           </div>
@@ -492,10 +492,10 @@ export default function PCBDesignReviewServicesPage() {
                     key={idx}
                     className="group border-b border-zinc-100 pb-8 hover:border-zinc-300 transition-colors"
                   >
-                    <h4 className="text-zinc-900 text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
+                    <h4 className="text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
                       {item.t}
                     </h4>
-                    <p className="text-sm text-zinc-500 leading-relaxed font-light">
+                    <p className="text-sm leading-relaxed font-light text-muted-foreground">
                       {item.d}
                     </p>
                   </div>
@@ -506,7 +506,7 @@ export default function PCBDesignReviewServicesPage() {
                 <span className="text-[10px] font-black tracking-[0.4em] text-red-500 block mb-4 uppercase">
                   VALIDATION POLICY
                 </span>
-                <p className="text-zinc-700 font-light text-lg">
+                <p className="font-light text-lg text-muted-foreground">
                   Deliverable includes the EDA source files and a comprehensive
                   conversion accuracy report verifying net-list accuracy and DRC
                   compliance.
@@ -535,14 +535,14 @@ export default function PCBDesignReviewServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.5 / TOOLCHAIN MIGRATION
             </span>
-            <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
+            <h2 className="text-4xl font-light md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
               CAD Tool Translation & <br /> Platform Migration.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-32 items-start">
             <div className="space-y-12">
-              <p className="text-xl leading-relaxed text-zinc-600 font-light">
+              <p className="text-xl leading-relaxed font-light text-muted-foreground">
                 Enterprise EDA toolchain consolidations or licensing transitions
                 require reliable translation of design databases. We eliminate
                 subtle errors like net connectivity breaks and lost design
@@ -607,7 +607,7 @@ export default function PCBDesignReviewServicesPage() {
                 <h3 className="text-xs font-black uppercase tracking-[0.4em] text-zinc-400">
                   / Translation Strategy
                 </h3>
-                <p className="text-zinc-500 font-light leading-relaxed">
+                <p className="font-light leading-relaxed text-muted-foreground">
                   Our process migrates stack-up configurations, impedance
                   profiles, and constraint sets directly into the target
                   environment, followed by exhaustive net-list cross-validation.
@@ -628,10 +628,10 @@ export default function PCBDesignReviewServicesPage() {
                 <span className="text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8 block">
                   PHASE 1.6 / BoM OPTIMIZATION
                 </span>
-                <h2 className="text-4xl font-light text-zinc-950 tracking-tighter mb-8 leading-tight">
+                <h2 className="text-4xl font-light tracking-tighter mb-8 leading-tight">
                   Cost Reduction & <br /> Obsolescence.
                 </h2>
-                <p className="text-zinc-500 font-light leading-relaxed mb-12">
+                <p className="font-light leading-relaxed mb-12 text-muted-foreground">
                   Component volatility directly impacts program schedule. A BoM
                   with single-source dependencies or EOL parts carries
                   unacceptable supply chain risk.
@@ -654,10 +654,10 @@ export default function PCBDesignReviewServicesPage() {
                   ))}
                 </div>
                 <div className="mt-12 bg-zinc-100/50 p-6 border border-zinc-200">
-                  <p className="text-xs text-zinc-400 uppercase tracking-widest mb-2 font-black">
+                  <p className="text-xs uppercase tracking-widest mb-2 font-black text-muted-foreground">
                     DELIVERABLE
                   </p>
-                  <p className="text-sm text-zinc-600 font-light">
+                  <p className="text-sm font-light text-muted-foreground">
                     Redlined BoM with lifecycle status, alternates, and cost
                     delta analysis.
                   </p>
@@ -671,10 +671,10 @@ export default function PCBDesignReviewServicesPage() {
                 <span className="text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8 block">
                   PHASE 1.7 / DESIGN VALIDATION
                 </span>
-                <h2 className="text-4xl font-light text-zinc-950 tracking-tighter mb-8 leading-tight">
+                <h2 className="text-4xl font-light tracking-tighter mb-8 leading-tight">
                   DVT Planning & <br /> Execution.
                 </h2>
-                <p className="text-zinc-500 font-light leading-relaxed mb-12">
+                <p className="font-light leading-relaxed mb-12 text-muted-foreground">
                   Passing design review does not confirm performance under real
                   conditions. We verify hardware meets functional and
                   reliability requirements.
@@ -697,10 +697,10 @@ export default function PCBDesignReviewServicesPage() {
                   ))}
                 </div>
                 <div className="mt-12 bg-zinc-100/50 p-6 border border-zinc-200">
-                  <p className="text-xs text-zinc-400 uppercase tracking-widest mb-2 font-black">
+                  <p className="text-xs uppercase tracking-widest mb-2 font-black text-muted-foreground">
                     DELIVERABLE
                   </p>
-                  <p className="text-sm text-zinc-600 font-light">
+                  <p className="text-sm font-light text-muted-foreground">
                     Comprehensive DVT report with pass/fail status and
                     corrective tracking.
                   </p>
@@ -718,14 +718,14 @@ export default function PCBDesignReviewServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.8 / COMPLIANCE REMEDIATION
             </span>
-            <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
+            <h2 className="text-4xl font-light md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
               Compliance Test <br /> Failure Resolution.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-16 lg:gap-32 items-start">
             <div className="space-y-12">
-              <p className="text-xl leading-relaxed text-zinc-700 font-light max-w-3xl">
+              <p className="text-xl leading-relaxed font-light max-w-3xl text-muted-foreground">
                 Failures at certification labs are disruptive and expensive. We
                 provide systematic root cause analysis and design correction for
                 EMI, EMC, and electrical safety failures.
@@ -784,7 +784,7 @@ export default function PCBDesignReviewServicesPage() {
                   className="object-cover"
                 />
               </div>
-              <p className="text-sm text-zinc-500 font-light italic text-center">
+              <p className="text-sm font-light italic text-center text-muted-foreground">
                 Qmax delivers corrected design files and a full pre-submission
                 test report to ensure formal pass.
               </p>
@@ -800,20 +800,20 @@ export default function PCBDesignReviewServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.9 / REGULATORY UPDATES
             </span>
-            <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
+            <h2 className="text-4xl font-light md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
               Design for Evolution & <br /> Compliance Updates.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-32 items-start">
             <div className="space-y-12">
-              <p className="text-xl leading-relaxed text-zinc-700 font-light max-w-2xl">
+              <p className="text-xl leading-relaxed font-light max-w-2xl text-muted-foreground">
                 Regulatory requirements for electronic products continue to
                 evolve. Cybersecurity mandates and energy efficiency standards
                 require periodic design updates to maintain market access.
               </p>
               <div className="bg-[#F33117]/5 p-8 border-l-2 border-[#F33117]">
-                <p className="text-sm text-zinc-500 font-light leading-relaxed">
+                <p className="text-sm font-light leading-relaxed text-muted-foreground">
                   We help you navigate the EU Cyber Resilience Act (CRA), RED
                   (ETSI EN 303 645), and the transition to UKCA from CE marking.
                 </p>
@@ -851,7 +851,7 @@ export default function PCBDesignReviewServicesPage() {
                   <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest mb-4">
                     {item.t}
                   </h3>
-                  <p className="text-zinc-500 text-sm font-light leading-relaxed hover:text-zinc-950 transition-colors">
+                  <p className="text-sm font-light leading-relaxed hover:text-zinc-950 transition-colors text-muted-foreground">
                     {item.d}
                   </p>
                 </div>
@@ -868,14 +868,14 @@ export default function PCBDesignReviewServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.10 / TEARDOWN ANALYSIS
             </span>
-            <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
+            <h2 className="text-4xl font-light md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
               Engineering-Grade <br /> Teardown Analysis.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-16 lg:gap-32 items-start">
             <div className="space-y-12">
-              <p className="text-xl leading-relaxed text-zinc-700 font-light max-w-3xl">
+              <p className="text-xl leading-relaxed font-light max-w-3xl text-muted-foreground">
                 Competitive intelligence, failure investigation, and
                 manufacturing process benchmarking require a structured teardown
                 analysis. We deliver findings at the component, subsystem, and
@@ -913,10 +913,10 @@ export default function PCBDesignReviewServicesPage() {
                     key={idx}
                     className="group border-b border-zinc-100 pb-8 hover:border-zinc-300 transition-colors"
                   >
-                    <h4 className="text-zinc-900 text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
+                    <h4 className="text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
                       {item.t}
                     </h4>
-                    <p className="text-sm text-zinc-500 leading-relaxed font-light">
+                    <p className="text-sm leading-relaxed font-light text-muted-foreground">
                       {item.d}
                     </p>
                   </div>
@@ -930,14 +930,14 @@ export default function PCBDesignReviewServicesPage() {
                   <h3 className="text-xs font-black uppercase tracking-[0.4em] text-zinc-500 mb-6">
                     / BENCHMARKING REPORT
                   </h3>
-                  <p className="text-zinc-600 font-light leading-relaxed">
+                  <p className="font-light leading-relaxed text-muted-foreground">
                     Our deliverables include a comprehensive competitive
                     benchmarking report against reference design metrics and
                     industry standards.
                   </p>
                 </div>
                 <div className="h-[1px] w-full bg-zinc-900" />
-                <p className="text-sm text-zinc-500 italic">
+                <p className="text-sm italic text-muted-foreground">
                   Critical for IP due diligence and competitive manufacturing
                   intelligence.
                 </p>
@@ -954,14 +954,14 @@ export default function PCBDesignReviewServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.11 / PLATFORM MIGRATION
             </span>
-            <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
+            <h2 className="text-4xl font-light md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
               Legacy Systems to <br /> New Platforms.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-32 items-start">
             <div className="space-y-12">
-              <p className="text-xl leading-relaxed text-zinc-700 font-light max-w-2xl">
+              <p className="text-xl leading-relaxed font-light max-w-2xl text-muted-foreground">
                 Industrial and embedded systems frequently remain in production
                 long after the silicon depends on reaches end-of-life. We
                 re-evaluate and migrate entire stacks to supported platforms.
@@ -1003,10 +1003,10 @@ export default function PCBDesignReviewServicesPage() {
                         /
                       </span>
                       <div>
-                        <h4 className="text-zinc-900 font-medium mb-1 group-hover:text-red-500 transition-colors">
+                        <h4 className="font-medium mb-1 group-hover:text-red-500 transition-colors">
                           {step.t}
                         </h4>
-                        <p className="text-sm text-zinc-500 font-light">
+                        <p className="text-sm font-light text-muted-foreground">
                           {step.d}
                         </p>
                       </div>
@@ -1019,7 +1019,7 @@ export default function PCBDesignReviewServicesPage() {
                 <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
                   Common Scenarios
                 </span>
-                <p className="text-zinc-400 font-light leading-relaxed">
+                <p className="font-light leading-relaxed text-muted-foreground">
                   8-bit MCU to ARM Cortex-M, legacy FPGA (Xilinx Spartan-3,
                   Altera Cyclone-II) to current-gen, and EOL single-board
                   computer platforms.
@@ -1048,14 +1048,14 @@ export default function PCBDesignReviewServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.12 / FIRMWARE PORTING
             </span>
-            <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
+            <h2 className="text-4xl font-light md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
               Software & Firmware <br /> Porting Services.
             </h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
             <div className="space-y-12">
-              <p className="text-xl leading-relaxed text-zinc-700 font-light max-w-2xl">
+              <p className="text-xl leading-relaxed font-light max-w-2xl text-muted-foreground">
                 Firmware and embedded software tightly coupled to specific
                 silicon architectures present significant migration challenges.
                 We provide structured porting services that transfer functional
@@ -1093,10 +1093,10 @@ export default function PCBDesignReviewServicesPage() {
                     key={idx}
                     className="group border-b border-zinc-100 pb-8 hover:border-zinc-300 transition-colors"
                   >
-                    <h4 className="text-zinc-900 text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
+                    <h4 className="text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
                       {item.t}
                     </h4>
-                    <p className="text-sm text-zinc-500 leading-relaxed font-light">
+                    <p className="text-sm leading-relaxed font-light text-muted-foreground">
                       {item.d}
                     </p>
                   </div>
@@ -1110,7 +1110,7 @@ export default function PCBDesignReviewServicesPage() {
                   <h3 className="text-xs font-black uppercase tracking-[0.4em] text-zinc-500 mb-6">
                     / COMPILER & ANALYSIS
                   </h3>
-                  <p className="text-zinc-400 font-light leading-relaxed">
+                  <p className="font-light leading-relaxed text-muted-foreground">
                     Our porting process includes full compiler toolchain
                     migration (GCC, IAR, Keil, LLVM) and rigorous static
                     analysis to ensure code quality post-migration.
@@ -1145,11 +1145,11 @@ export default function PCBDesignReviewServicesPage() {
               <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500">
                 PHASE 2 / WHY QMAX SYSTEMS
               </span>
-              <h2 className="text-4xl font-light text-zinc-950 md:text-6xl tracking-tighter leading-tight">
+              <h2 className="text-4xl font-light md:text-6xl tracking-tighter leading-tight">
                 Methodical. <br /> Defensible. <br /> Proven.
               </h2>
               <div className="bg-zinc-100 p-8 border border-zinc-200">
-                <p className="text-sm font-light text-zinc-600 leading-relaxed">
+                <p className="text-sm font-light leading-relaxed text-muted-foreground">
                   Our review methodology is structured to detect
                   high-consequence failure modes that automated DRC/LVS tools
                   routinely miss.
@@ -1179,7 +1179,7 @@ export default function PCBDesignReviewServicesPage() {
               <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.2 / Breadth Across the Stack
               </h3>
-              <p className="text-zinc-600 font-light leading-relaxed">
+              <p className="font-light leading-relaxed text-muted-foreground">
                 We assemble multi-discipline review teams matched to the
                 specific complexity profile of each engagement—covering
                 mechanical, power, digital, RF, and firmware.
@@ -1192,7 +1192,7 @@ export default function PCBDesignReviewServicesPage() {
                 2.3 / Standards-Grounded Methodology
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <p className="text-zinc-600 font-light leading-relaxed">
+                <p className="font-light leading-relaxed text-muted-foreground">
                   Every finding is documented against published IPC, IEC, IEEE,
                   and JEDEC clauses, providing defensible records for regulatory
                   submissions and internal quality audits.
@@ -1224,7 +1224,7 @@ export default function PCBDesignReviewServicesPage() {
               <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.4 / Actionable Deliverables
               </h3>
-              <p className="text-zinc-600 text-sm font-light leading-relaxed">
+              <p className="text-sm font-light leading-relaxed text-muted-foreground">
                 Every report includes implementable corrective recommendations.
                 Our engineers support the design team through the entire
                 correction and re-verification cycle.
@@ -1236,7 +1236,7 @@ export default function PCBDesignReviewServicesPage() {
               <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.5 / Confidentiality & IP
               </h3>
-              <p className="text-zinc-600 text-sm font-light leading-relaxed">
+              <p className="text-sm font-light leading-relaxed text-muted-foreground">
                 We operate under strict NDA for every engagement. Design data is
                 treated as strictly confidential and is not retained beyond the
                 agreed engagement period.
@@ -1248,7 +1248,7 @@ export default function PCBDesignReviewServicesPage() {
               <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.6 / Rapid Turnaround
               </h3>
-              <p className="text-zinc-600 text-sm font-light leading-relaxed">
+              <p className="text-sm font-light leading-relaxed text-muted-foreground">
                 We provide defined turnaround commitments: 5 business days for
                 schematic reviews and 7 business days for full PCB layout
                 reviews.
@@ -1260,7 +1260,7 @@ export default function PCBDesignReviewServicesPage() {
               <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.7 / Scalable Engagement
               </h3>
-              <p className="text-zinc-600 text-sm font-light leading-relaxed">
+              <p className="text-sm font-light leading-relaxed text-muted-foreground">
                 Whether for a concept prototype or pre-production qualification
                 for Fortune 500s, we structure our engagements to fit the
                 program stage and budget.
@@ -1272,7 +1272,7 @@ export default function PCBDesignReviewServicesPage() {
               <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.8 / Proven Track Record
               </h3>
-              <p className="text-zinc-600 text-sm font-light leading-relaxed">
+              <p className="text-sm font-light leading-relaxed text-muted-foreground">
                 Our expertise spans industrial automation, medical, consumer
                 IoT, and aerospace ground support across simple and complex
                 multi-board systems.
@@ -1289,10 +1289,10 @@ export default function PCBDesignReviewServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 3 / CONSULTATION
             </span>
-            <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
+            <h2 className="text-4xl font-light md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
               1-Hour Engineering <br /> Consultation.
             </h2>
-            <p className="mt-8 text-xl text-zinc-600 font-light max-w-2xl leading-relaxed">
+            <p className="mt-8 text-xl font-light max-w-2xl leading-relaxed text-muted-foreground">
               No sales pitch. No commitment. A technical working session with a
               Qmax senior engineer on your specific design challenge.
             </p>
@@ -1353,7 +1353,7 @@ export default function PCBDesignReviewServicesPage() {
                 <h3 className="text-xs font-black uppercase tracking-[0.4em] text-zinc-400 mb-8">
                   How to Schedule
                 </h3>
-                <p className="text-zinc-600 font-light leading-relaxed mb-8">
+                <p className="font-light leading-relaxed mb-8 text-muted-foreground">
                   Submit a brief project description through the consultation
                   request form. A Qmax engineer will confirm the session within
                   one business day. Sessions are conducted via video conference.
@@ -1446,10 +1446,10 @@ export default function PCBDesignReviewServicesPage() {
                 <span className="text-xs font-black text-red-500 tracking-[0.4em] mb-6 block">
                   0{idx + 1}
                 </span>
-                <h3 className="text-2xl font-light text-zinc-950 mb-6 group-hover:text-red-500 transition-colors">
+                <h3 className="text-2xl font-light mb-6 group-hover:text-red-500 transition-colors">
                   {audience.type}
                 </h3>
-                <p className="text-zinc-500 font-light leading-relaxed">
+                <p className="font-light leading-relaxed text-muted-foreground">
                   {audience.desc}
                 </p>
               </div>

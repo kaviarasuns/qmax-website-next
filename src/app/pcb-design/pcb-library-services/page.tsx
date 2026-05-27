@@ -207,7 +207,7 @@ function StandardsTable({
 
 export default function PCBLibraryServicesPage() {
   return (
-    <main className="bg-[#fcfcfc] text-zinc-900">
+    <main className="bg-[#fcfcfc]">
       <section className="relative overflow-hidden pt-14 pb-12 lg:pt-20 lg:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(243,49,23,0.02),transparent_40%)]" />
 
@@ -226,7 +226,7 @@ export default function PCBLibraryServicesPage() {
               <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-6">
                 PCB DESIGN SERVICES
               </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+              <h1 className="text-4xl font-light leading-[1.1] md:text-6xl lg:text-7xl tracking-tight">
                 PCB Library
                 <br className="hidden md:block" />
                 Services.
@@ -241,7 +241,7 @@ export default function PCBLibraryServicesPage() {
               </h2>
             </div>
             <div className="space-y-12 text-xl leading-[1.6] text-zinc-600 font-light max-w-3xl">
-              <p className="text-zinc-950 font-normal text-2xl md:text-3xl leading-snug">
+              <p className="font-normal text-2xl md:text-3xl leading-snug">
                 Every PCB design chain is only as reliable as its component
                 library. A symbol with an incorrect pin assignment propagates
                 silently through logic capture, layout, and fabrication. A
@@ -271,7 +271,7 @@ export default function PCBLibraryServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               1.1 / WHY LIBRARY QUALITY DETERMINES DESIGN SUCCESS
             </span>
-            <p className="mt-8 text-xl leading-relaxed text-zinc-600 font-light max-w-3xl">
+            <p className="mt-8 text-xl leading-relaxed font-light max-w-3xl text-muted-foreground">
               Library errors are structural — baked into the netlist, layout,
               and fabrication outputs. Detection at bring-up means a re-spin;
               detection in production means a field return. Common failure modes
@@ -285,10 +285,10 @@ export default function PCBLibraryServicesPage() {
                 key={item.title}
                 className="border-t border-zinc-200 pt-8 group hover:bg-zinc-50 px-4 transition-colors"
               >
-                <h3 className="text-lg font-light text-zinc-950 mb-3 group-hover:text-red-500 transition-colors">
+                <h3 className="text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
                   {item.title}:
                 </h3>
-                <p className="text-sm text-zinc-500 font-light leading-relaxed">
+                <p className="text-sm font-light leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
               </div>
@@ -303,7 +303,7 @@ export default function PCBLibraryServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               1.2 / QMAX LIBRARY ENGINEERING STANDARDS
             </span>
-            <p className="mt-8 text-xl leading-relaxed text-zinc-600 font-light max-w-3xl">
+            <p className="mt-8 text-xl leading-relaxed font-light max-w-3xl text-muted-foreground">
               Every deliverable is subject to independent QC review before
               release. Core standards include:
             </p>
@@ -325,7 +325,7 @@ export default function PCBLibraryServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               2 / SCHEMATIC SYMBOLS
             </span>
-            <p className="mt-8 text-xl leading-relaxed text-zinc-600 font-light max-w-3xl">
+            <p className="mt-8 text-xl leading-relaxed font-light max-w-3xl text-muted-foreground">
               Qmax schematic symbols are complete, accurate, and
               production-ready from first use. Built to IPC and EDA-tool native
               conventions — or to customer-specific schemas on request — every
@@ -341,7 +341,7 @@ export default function PCBLibraryServicesPage() {
                 <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 mb-6">
                   2.1 / Pin Definition
                 </h3>
-                <p className="text-lg font-light leading-relaxed text-zinc-600">
+                <p className="text-lg font-light leading-relaxed text-muted-foreground">
                   Every pin — without exception — is defined with exact name,
                   physical number, electrical type (Input, Output,
                   Bidirectional, Power, Ground, etc.), swap groups where
@@ -354,7 +354,7 @@ export default function PCBLibraryServicesPage() {
                 <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 mb-6">
                   2.3 / Symbol Construction
                 </h3>
-                <p className="text-lg font-light leading-relaxed text-zinc-600">
+                <p className="text-lg font-light leading-relaxed text-muted-foreground">
                   Symbols are grouped by function — not physical pin order — for
                   readability in dense schematic sheets. For large devices
                   (FPGAs, SoCs), multi-part symbols are created per functional
@@ -368,7 +368,7 @@ export default function PCBLibraryServicesPage() {
               <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400">
                 2.2 / BoM Property Population
               </h3>
-              <p className="text-lg font-light leading-relaxed text-zinc-600">
+              <p className="text-lg font-light leading-relaxed text-muted-foreground">
                 Every symbol property field is populated from verified primary
                 sources, enabling fully automated BOM generation with no manual
                 data entry:
@@ -391,7 +391,7 @@ export default function PCBLibraryServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               3 / PCB FOOTPRINTS
             </span>
-            <p className="mt-8 text-xl leading-relaxed text-zinc-600 font-light max-w-3xl">
+            <p className="mt-8 text-xl leading-relaxed font-light max-w-3xl text-muted-foreground">
               Qmax creates PCB footprints to IPC-7351C standards across all
               three density levels — Most (M), Nominal (N), and Least (L) —
               selected to match the customer&apos;s assembly process, not
@@ -426,7 +426,7 @@ export default function PCBLibraryServicesPage() {
                 <h3 className="text-red-500 text-sm font-black uppercase tracking-widest">
                   {item.id} / {item.title}
                 </h3>
-                <p className="text-zinc-600 font-light leading-relaxed">
+                <p className="font-light leading-relaxed text-muted-foreground">
                   {item.body}
                 </p>
               </div>
@@ -441,7 +441,7 @@ export default function PCBLibraryServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               4 / 3D MODELS
             </span>
-            <p className="mt-8 text-xl leading-relaxed text-zinc-600 font-light max-w-3xl">
+            <p className="mt-8 text-xl leading-relaxed font-light max-w-3xl text-muted-foreground">
               Qmax 3D models are constructed from manufacturer mechanical
               drawings — not approximated from package templates. Every model
               reflects exact external geometry, tolerance envelope, and fiducial
@@ -456,7 +456,7 @@ export default function PCBLibraryServicesPage() {
               <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 mb-6">
                 4.1 / Model Construction Standard
               </h3>
-              <p className="text-lg font-light leading-relaxed text-zinc-600">
+              <p className="text-lg font-light leading-relaxed text-muted-foreground">
                 All models are built from the manufacturer&apos;s official
                 mechanical drawing. Nominal dimensions are used for primary
                 geometry; worst-case maximum is used for height properties.
@@ -470,7 +470,7 @@ export default function PCBLibraryServicesPage() {
               <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 mb-6">
                 4.2 / Thermal Simulation Grade Models
               </h3>
-              <p className="text-lg font-light leading-relaxed text-zinc-600">
+              <p className="text-lg font-light leading-relaxed text-muted-foreground">
                 For thermally critical components (power ICs, CPUs, GPUs, GaN
                 transistors, RF amplifiers), Qmax delivers thermally accurate
                 models including die location, thermal resistance metadata (θja,
@@ -485,7 +485,7 @@ export default function PCBLibraryServicesPage() {
             <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 mb-6">
               4.3 / Supported Output Formats
             </h3>
-            <p className="text-lg font-light leading-relaxed text-zinc-600 mb-8 max-w-3xl">
+            <p className="text-lg font-light leading-relaxed mb-8 max-w-3xl text-muted-foreground">
               Qmax delivers 3D models in all formats required by the
               customer&apos;s design environment. Multi-format delivery carries
               no surcharge.
@@ -508,7 +508,7 @@ export default function PCBLibraryServicesPage() {
               5 / ZERO DEFECT LIBRARY PHILOSOPHY
             </span>
           </div>
-          <p className="text-xl leading-relaxed text-zinc-600 font-light max-w-4xl">
+          <p className="text-xl leading-relaxed font-light max-w-4xl text-muted-foreground">
             A defect in a PCB library propagates through every design using the
             affected component. The cost of library quality is negligible
             compared to the cost of errors at scale. Qmax applies a 7-stage
@@ -535,11 +535,11 @@ export default function PCBLibraryServicesPage() {
             <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               6 / CONSULTATION
             </span>
-            <h2 className="text-4xl font-light text-zinc-950 md:text-5xl lg:text-6xl tracking-tighter max-w-4xl">
+            <h2 className="text-4xl font-light md:text-5xl lg:text-6xl tracking-tighter max-w-4xl">
               Schedule Your 1-Hour Complimentary PCB Library Technical
               Consultation
             </h2>
-            <p className="mt-8 text-xl text-zinc-600 font-light max-w-2xl leading-relaxed">
+            <p className="mt-8 text-xl font-light max-w-2xl leading-relaxed text-muted-foreground">
               Speak directly with a senior Qmax library engineer. We will review
               your existing library, identify structural risks, and provide an
               honest assessment of what needs to be fixed.
@@ -575,7 +575,7 @@ export default function PCBLibraryServicesPage() {
       <section className="bg-[#fcfcfc] py-24 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="text-4xl font-light text-zinc-950 md:text-5xl tracking-tighter">
+            <h2 className="text-4xl font-light md:text-5xl tracking-tighter">
               Start Your PCB Library Project
             </h2>
           </div>
@@ -653,7 +653,7 @@ export default function PCBLibraryServicesPage() {
                 SI/PI Analysis
               </Link>
             </div>
-            <p className="mt-8 px-8 text-sm text-zinc-500 font-light">
+            <p className="mt-8 px-8 text-sm font-light text-muted-foreground">
               All projects commence under NDA. Library IP belongs to the
               customer.
             </p>

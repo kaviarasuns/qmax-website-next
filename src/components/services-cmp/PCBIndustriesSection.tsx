@@ -60,7 +60,7 @@ export function PCBIndustriesSection({
       <div className="mx-auto max-w-[1200px]">
         {/* Heading */}
         <div className="mb-12 text-center">
-          <h2 className="m-0 text-center text-4xl md:text-5xl font-light tracking-wide text-black">
+          <h2 className="m-0 text-center text-4xl md:text-5xl font-light tracking-wide">
             {headingPrefix} Across{" "}
             <span className="text-brand-500">Industries</span>
           </h2>
@@ -103,13 +103,13 @@ export function PCBIndustriesSection({
         <div className="grid grid-cols-3 items-stretch gap-6 max-[900px]:grid-cols-1 max-[900px]:gap-4">
           {/* LEFT — copy + CTA */}
           <div className="flex flex-col gap-3 rounded-2xl bg-qmax-grey p-8">
-            <h3 className="m-0 mb-4 text-2xl font-bold tracking-tight text-black">
+            <h3 className="m-0 mb-4 text-2xl font-bold tracking-tight">
               {active.title}
             </h3>
-            <p className="m-0 mb-4 text-[15px] leading-[1.65] text-gray-600">
+            <p className="m-0 mb-4 text-[15px] leading-[1.65] text-muted-foreground">
               {active.description}
             </p>
-            <p className="m-0 mb-4 text-[15px] leading-[1.65] text-gray-600">
+            <p className="m-0 mb-4 text-[15px] leading-[1.65] text-muted-foreground">
               {active.subDescription}
             </p>
             <a
@@ -169,7 +169,7 @@ export function PCBIndustriesSection({
                           ) : null}
                         </div>
                         <div className="flex flex-1 flex-col justify-between gap-3 bg-white px-5 py-4">
-                          <h5 className="m-0 text-base font-semibold leading-tight tracking-wide text-zinc-950 md:text-lg">
+                          <h5 className="m-0 text-base font-semibold leading-tight tracking-wide md:text-lg">
                             {cs.title}
                           </h5>
                           <div className="flex items-center justify-between">

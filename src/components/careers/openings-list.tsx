@@ -74,10 +74,10 @@ export function OpeningsList() {
           <Badge className="mb-4 rounded-full border border-zinc-200 bg-white px-4 py-1.5 text-sm font-medium text-zinc-700 shadow-sm hover:bg-zinc-50">
             {allRoles.length} Open Roles
           </Badge>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-zinc-900 md:text-5xl">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl">
             Current Openings
           </h2>
-          <p className="text-base text-zinc-600 md:text-lg">
+          <p className="text-base md:text-lg text-muted-foreground">
             Explore full-time opportunities across engineering, software, and business teams.
           </p>
         </div>

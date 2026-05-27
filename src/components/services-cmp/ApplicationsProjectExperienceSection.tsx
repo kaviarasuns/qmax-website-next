@@ -64,7 +64,7 @@ export function ApplicationsProjectExperienceSection({
             {title}
             <span className="text-[#F33117]">{titleHighlight}</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-slate-500">
+          <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-muted-foreground">
             {subtitle}
           </p>
         </div>
@@ -169,10 +169,10 @@ export function ApplicationsProjectExperienceSection({
                       )}
                     </div>
                     <div className="border-t border-[#e4e0d8] bg-white px-6 py-5 md:px-7">
-                      <p className="text-[15px] font-bold tracking-tight text-slate-800">
+                      <p className="text-[15px] font-bold tracking-tight">
                         {project.captionTitle}
                       </p>
-                      <p className="mt-1 text-xs leading-relaxed text-slate-500 md:text-[12px]">
+                      <p className="mt-1 text-xs leading-relaxed md:text-[12px] text-muted-foreground">
                         {project.description}
                       </p>
                     </div>

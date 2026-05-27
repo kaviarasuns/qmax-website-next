@@ -75,11 +75,11 @@ const ServiceCard = React.memo(({ service, index }: { service: typeof services[0
         </div>
 
         <div className="flex-1 flex flex-col p-3 pt-2">
-          <h3 className="text-sm md:text-base font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-300 mb-0.5 line-clamp-1">
+          <h3 className="text-sm md:text-base font-bold group-hover:text-red-600 transition-colors duration-300 mb-0.5 line-clamp-1">
             {service.topic}
           </h3>
 
-          <p className="text-gray-500 text-[11px] md:text-xs leading-tight line-clamp-2 mb-2">
+          <p className="text-[11px] md:text-xs leading-tight line-clamp-2 mb-2 text-muted-foreground">
             {service.description}
           </p>
 
@@ -114,7 +114,7 @@ const ServicesV3 = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-gray-900 mb-1 tracking-tight">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold mb-1 tracking-tight">
               Our <span className="text-red-600">Services</span>
             </h2>
             <div className="h-0.5 w-12 bg-red-600 mx-auto rounded-full mb-2" />

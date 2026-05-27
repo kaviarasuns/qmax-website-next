@@ -99,7 +99,7 @@ const ServicesV2 = () => {
         <div className="mb-10 flex flex-col items-center text-center lg:mb-14">
           <h2
             id="services-v2-heading"
-            className="text-3xl md:text-5xl font-light tracking-wide text-center text-black tracking-wide"
+            className="text-3xl md:text-5xl font-light tracking-wide text-center tracking-wide"
           >
             Our <span className="text-red-500">Services</span>
           </h2>

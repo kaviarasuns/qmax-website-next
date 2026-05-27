@@ -537,7 +537,7 @@ export default function ScrollCardsAnimation() {
               ))}
             </div>
             {isMobile && (
-              <p className="text-gray-400 text-xs text-center mt-2">
+              <p className="text-xs text-center mt-2 text-muted-foreground">
                 Swipe or tap dots to navigate
               </p>
             )}

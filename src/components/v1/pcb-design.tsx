@@ -39,7 +39,7 @@ const PCBDesignSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Image Section */}
                     <div className="wow fadeInLeft animated">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-6 md:hidden">
+                        <h2 className="text-3xl font-bold mb-6 md:hidden">
                             PCB Design Services
                         </h2>
                         <Image
@@ -54,10 +54,10 @@ const PCBDesignSection = () => {
                     {/* Content Section */}
                     <div className="wow fadeInRight animated">
                         <div className="prose max-w-none">
-                            <h2 className="text-3xl font-bold text-gray-900 mb-6 hidden md:block">
+                            <h2 className="text-3xl font-bold mb-6 hidden md:block">
                                 PCB Design Services
                             </h2>
-                            <p className="text-gray-700 mb-6">
+                            <p className="mb-6 text-muted-foreground">
                                 Qmax Systems has over 25 years of experience in designing PCBs.
                                 We have worked across different domains for Top OEMs. With our
                                 in-depth understanding of the materials and manufacturing
@@ -67,7 +67,7 @@ const PCBDesignSection = () => {
                                 successful, and you have a high-quality PCB.
                             </p>
 
-                            <p className="text-gray-700">
+                            <p className="text-muted-foreground">
                                 We provide schematic entry and PCB layout services or just
                                 layout design from the schematics you already have. Qmax has
                                 worked on high density and highly complex PCBs for the most

@@ -67,7 +67,7 @@ export default function MechanicalDesignServicesPageV2() {
                         <span className="text-zinc-500 italic font-serif lowercase">mechanical</span> <br className="hidden md:block" />
                         Engineering
                     </h1>
-                    <p className="max-w-2xl text-xl md:text-2xl text-zinc-400 font-light leading-relaxed border-l border-zinc-700 pl-6 ml-2">
+                    <p className="max-w-2xl text-xl md:text-2xl font-light leading-relaxed border-l border-zinc-700 pl-6 ml-2 text-muted-foreground">
                         For electronics products.
                     </p>
                 </div>
@@ -92,7 +92,7 @@ export default function MechanicalDesignServicesPageV2() {
                                 </p>
                             </div>
 
-                            <p className="text-lg text-zinc-400">
+                            <p className="text-lg text-muted-foreground">
                                 All test facilities required — IP ingress testing, vibration and shock testing to MIL-STD-810, and radiated emission testing — are available within a <span className="text-emerald-400 font-medium">30 km radius</span> of our facility.
                             </p>
                         </div>
@@ -126,12 +126,12 @@ export default function MechanicalDesignServicesPageV2() {
                             <div className="p-8 border border-zinc-800 bg-zinc-900/30 flex flex-col gap-3 group hover:border-emerald-500/30 transition-colors">
                                 <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-[0.2em]">Tolerance Capability</span>
                                 <span className="text-3xl text-zinc-200 font-light tracking-tighter">±0.01<span className="text-zinc-500 text-sm ml-1">mm</span></span>
-                                <p className="text-xs text-zinc-500 leading-relaxed font-light">High-precision solid modeling for tight-tolerance assemblies.</p>
+                                <p className="text-xs leading-relaxed font-light text-muted-foreground">High-precision solid modeling for tight-tolerance assemblies.</p>
                             </div>
                             <div className="p-8 border border-zinc-800 bg-zinc-900/30 flex flex-col gap-3 group hover:border-emerald-500/30 transition-colors">
                                 <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-[0.2em]">Deployment Standard</span>
                                 <span className="text-3xl text-zinc-200 font-light tracking-tighter uppercase">MIL-STD</span>
-                                <p className="text-xs text-zinc-500 leading-relaxed font-light">810 Qualified designs for vibration, shock, and thermal extremes.</p>
+                                <p className="text-xs leading-relaxed font-light text-muted-foreground">810 Qualified designs for vibration, shock, and thermal extremes.</p>
                             </div>
                         </div>
 
@@ -173,7 +173,7 @@ export default function MechanicalDesignServicesPageV2() {
                                     <span className="w-1.5 h-1.5 bg-emerald-500 rounded-sm" />
                                     Design Considerations Addressed
                                 </h3>
-                                <p className="text-zinc-400 leading-relaxed font-light">
+                                <p className="leading-relaxed font-light text-muted-foreground">
                                     Our enclosure design process covers draft angles, parting line placement, wall thickness uniformity, rib and boss geometry, snap-fit and living hinge design, insert moulding for threaded interfaces, and EMI gasket seating. For RF-transparent products (Wi-Fi, 4G, GPS), we analyse dielectric properties and wall thickness effects on signal attenuation. Surface finish options — texture, gloss, painting, soft-touch coating, pad printing, in-mould labelling — are specified during the design phase.
                                 </p>
                             </div>
@@ -438,7 +438,7 @@ export default function MechanicalDesignServicesPageV2() {
                             <div className="group relative bg-[#0e0e0e] border border-zinc-800 p-8 hover:border-emerald-500/50 transition-colors duration-500">
                                 <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-zinc-600">ID: PRJ-MIL-03</div>
                                 <h3 className="text-xl text-white font-medium mb-4 pr-12 text-zinc-200">Manpack Communication Equipment</h3>
-                                <p className="text-zinc-400 font-light text-sm leading-relaxed mb-6">
+                                <p className="font-light text-sm leading-relaxed mb-6 text-muted-foreground">
                                     Ultra-lightweight Al-alloy manpack for defence application. MIL-STD-810 qualified for vibration, shock, temperature, and humidity.
                                 </p>
                                 <ul className="space-y-3 text-sm font-light text-zinc-400 border-l border-emerald-900/50 pl-4 font-mono uppercase tracking-tight text-[11px]">
@@ -532,7 +532,7 @@ export default function MechanicalDesignServicesPageV2() {
                                 <p>
                                     We specify O-ring cross-section, durometer, and groove geometry per standard engineering practice. Gasket materials — <span className="text-white">silicone, EPDM, Viton</span> — are selected based on temperature range, chemical exposure, and compression set requirements.
                                 </p>
-                                <p className="text-sm font-mono text-zinc-500 border-l border-zinc-800 pl-4 uppercase">
+                                <p className="text-sm font-mono border-l border-zinc-800 pl-4 uppercase text-muted-foreground">
                                     All IP-rated designs are validated at the nearest accredited test facility before production release.
                                 </p>
                             </div>
@@ -550,7 +550,7 @@ export default function MechanicalDesignServicesPageV2() {
                             <div className="group relative bg-[#0e0e0e] border border-zinc-800 p-8 hover:border-emerald-500/50 transition-colors duration-500">
                                 <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-zinc-600">ID: PRJ-MAR-04</div>
                                 <h3 className="text-xl text-white font-medium mb-4 pr-12 text-zinc-200">Satellite Antenna Stabiliser</h3>
-                                <p className="text-zinc-400 font-light text-sm leading-relaxed mb-6">
+                                <p className="font-light text-sm leading-relaxed mb-6 text-muted-foreground">
                                     Shipborne system maintaining antenna pointing towards a geostationary satellite while the vessel moves, rolls, and turns.
                                 </p>
                                 <ul className="space-y-3 text-sm font-light text-zinc-400 border-l border-emerald-900/50 pl-4 font-mono uppercase tracking-tight text-[11px]">
@@ -599,22 +599,22 @@ export default function MechanicalDesignServicesPageV2() {
                             <div className="p-6 border border-zinc-800 bg-zinc-900/40 font-mono text-sm space-y-4 group">
                                 <div className="text-emerald-500 font-mono uppercase tracking-widest text-[10px] mb-2">Capability // 01</div>
                                 <h4 className="text-white font-medium transition-colors group-hover:text-emerald-400">Mechanism Design & Kinematics</h4>
-                                <p className="text-zinc-400 font-light text-xs leading-relaxed">Linkage geometry, cam and follower, pivot and hinge design, actuation force analysis, and travel limits.</p>
+                                <p className="font-light text-xs leading-relaxed text-muted-foreground">Linkage geometry, cam and follower, pivot and hinge design, actuation force analysis, and travel limits.</p>
                             </div>
                             <div className="p-6 border border-zinc-800 bg-zinc-900/40 font-mono text-sm space-y-4 group">
                                 <div className="text-emerald-500 font-mono uppercase tracking-widest text-[10px] mb-2">Capability // 02</div>
                                 <h4 className="text-white font-medium transition-colors group-hover:text-emerald-400">Electromechanical Integration</h4>
-                                <p className="text-zinc-400 font-light text-xs leading-relaxed">Motor and actuator mounting, encoder alignment, and precision harness routing within mechanical sub-systems.</p>
+                                <p className="font-light text-xs leading-relaxed text-muted-foreground">Motor and actuator mounting, encoder alignment, and precision harness routing within mechanical sub-systems.</p>
                             </div>
                             <div className="p-6 border border-zinc-800 bg-zinc-900/40 font-mono text-sm space-y-4 group">
                                 <div className="text-emerald-500 font-mono uppercase tracking-widest text-[10px] mb-2">Capability // 03</div>
                                 <h4 className="text-white font-medium transition-colors group-hover:text-emerald-400">Optical and Sensor Systems</h4>
-                                <p className="text-zinc-400 font-light text-xs leading-relaxed">Mechanical design of high-precision optical assemblies and rigid mounting structures for sensitive sensor payloads.</p>
+                                <p className="font-light text-xs leading-relaxed text-muted-foreground">Mechanical design of high-precision optical assemblies and rigid mounting structures for sensitive sensor payloads.</p>
                             </div>
                             <div className="p-6 border border-zinc-800 bg-zinc-900/40 font-mono text-sm space-y-4 group">
                                 <div className="text-emerald-500 font-mono uppercase tracking-widest text-[10px] mb-2">Capability // 04</div>
                                 <h4 className="text-white font-medium transition-colors group-hover:text-emerald-400">Cable Management</h4>
-                                <p className="text-zinc-400 font-light text-xs leading-relaxed">EMI-segregated routing, custom strain relief design, and bend radius compliance for high-reliability harness sets.</p>
+                                <p className="font-light text-xs leading-relaxed text-muted-foreground">EMI-segregated routing, custom strain relief design, and bend radius compliance for high-reliability harness sets.</p>
                             </div>
                         </div>
 
@@ -628,7 +628,7 @@ export default function MechanicalDesignServicesPageV2() {
                                 <div className="group relative bg-[#0e0e0e] border border-zinc-800 p-8 hover:border-emerald-500/50 transition-colors duration-500">
                                     <div className="absolute top-0 right-0 p-4 font-mono text-[10px] text-zinc-600">ID: PRJ-MED-05</div>
                                     <h3 className="text-xl text-white font-medium mb-4 pr-12 text-zinc-200">Foot Switch for Ophthalmic Surgery</h3>
-                                    <p className="text-zinc-400 font-light text-sm leading-relaxed mb-6">
+                                    <p className="font-light text-sm leading-relaxed mb-6 text-muted-foreground">
                                         Ergonomic, ultra-high-precision foot switch for eye cataract surgery equipment with calibrated actuation force and travel.
                                     </p>
                                     <ul className="space-y-3 text-sm font-light text-zinc-400 border-l border-emerald-900/50 pl-4 font-mono uppercase tracking-tight text-[11px]">
@@ -756,7 +756,7 @@ export default function MechanicalDesignServicesPageV2() {
                                     </div>
                                     <h3 className="text-2xl text-white font-medium">Thermal Analysis & CFD</h3>
                                 </div>
-                                <p className="text-zinc-400 font-light leading-relaxed italic">
+                                <p className="font-light leading-relaxed italic text-muted-foreground">
                                     We perform steady-state and transient thermal analysis of electronics enclosures and sub-systems, including natural convection, forced convection, and conduction-cooled assemblies.
                                 </p>
                                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -893,7 +893,7 @@ export default function MechanicalDesignServicesPageV2() {
                         <h2 className="text-4xl md:text-5xl font-light text-white tracking-tight uppercase">
                             Reference <span className="text-zinc-500 italic font-serif lowercase">Products</span>
                         </h2>
-                        <p className="text-zinc-400 font-light mt-4 max-w-2xl">
+                        <p className="font-light mt-4 max-w-2xl text-muted-foreground">
                             Qmax Systems has designed mechanical systems for leading automotive, defence, and medical electronics companies.
                         </p>
                     </div>
@@ -933,7 +933,7 @@ export default function MechanicalDesignServicesPageV2() {
                             <h2 className="text-4xl md:text-5xl font-light text-white tracking-tight uppercase">
                                 Frequently Asked <span className="text-zinc-500 italic font-serif lowercase">Questions</span>
                             </h2>
-                            <p className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.2em] max-w-2xl">
+                            <p className="font-mono text-[10px] uppercase tracking-[0.2em] max-w-2xl text-muted-foreground">
                                 Structured for schema markup and AI search engine indexing
                             </p>
                         </div>
@@ -962,7 +962,7 @@ export default function MechanicalDesignServicesPageV2() {
                                         <h4 className="text-white font-medium text-lg leading-snug group-hover:text-emerald-400 transition-colors">
                                             {faq.q}
                                         </h4>
-                                        <p className="text-zinc-400 font-light leading-relaxed text-sm">
+                                        <p className="font-light leading-relaxed text-sm text-muted-foreground">
                                             {faq.a}
                                         </p>
                                     </div>
@@ -1012,7 +1012,7 @@ export default function MechanicalDesignServicesPageV2() {
                             <h2 className="text-4xl md:text-5xl font-light text-white tracking-tight uppercase leading-tight">
                                 Start a <span className="text-zinc-500 italic font-serif lowercase">Mechanical Design</span> <br /> Engagement
                             </h2>
-                            <p className="text-xl text-zinc-400 font-light leading-relaxed max-w-xl">
+                            <p className="text-xl font-light leading-relaxed max-w-xl text-muted-foreground">
                                 Whether you have a full specification or an early-stage concept, the right time to engage a mechanical design team is before the electronics layout is frozen — not after.
                             </p>
                         </div>
@@ -1021,7 +1021,7 @@ export default function MechanicalDesignServicesPageV2() {
                             <button className="w-full py-4 bg-white text-black font-medium tracking-widest hover:bg-emerald-500 hover:text-white transition-all uppercase text-sm rounded-none border border-white active:scale-95 transition-duration-300">
                                 Begin Technical Brief
                             </button>
-                            <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest text-center">Reference: MECH_SERV_2026</p>
+                            <p className="text-[10px] font-mono uppercase tracking-widest text-center text-muted-foreground">Reference: MECH_SERV_2026</p>
                         </div>
                     </div>
                 </footer>

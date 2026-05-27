@@ -137,9 +137,9 @@ body {
     line-height: 1.15;
   }
 
-  /* Body text: regular weight, slight spacing for readability */
+  /* Body text: regular weight, inherits --foreground; use text-muted-foreground for secondary copy */
   p {
-    @apply text-justify;
+    @apply text-justify text-foreground;
     font-weight: 400;
     letter-spacing: 0.015em;
     line-height: 1.6;

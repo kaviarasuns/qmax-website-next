@@ -48,7 +48,7 @@ export function CoreServiceOfferingsSection({
   return (
     <section className="px-6 py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-center text-3xl font-light tracking-tight text-black md:text-5xl">
+        <h2 className="text-center text-3xl font-light tracking-tight md:text-5xl">
           {title}
           <span className="text-[#F33117]">{titleHighlight}</span>
         </h2>
@@ -62,7 +62,7 @@ export function CoreServiceOfferingsSection({
 
         <ConnectedTabPanel className="grid gap-10 py-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
           <div>
-            <h3 className="max-w-xl text-2xl font-light leading-tight tracking-tight text-black md:text-4xl">
+            <h3 className="max-w-xl text-2xl font-light leading-tight tracking-tight md:text-4xl">
               {activeOffering.headline}
             </h3>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -82,8 +82,8 @@ export function CoreServiceOfferingsSection({
           </div>
 
           <div>
-            <h4 className="text-xl font-medium text-black">What we deliver</h4>
-            <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+            <h4 className="text-xl font-medium">What we deliver</h4>
+            <p className="mt-4 text-sm leading-7 md:text-base text-muted-foreground">
               {activeOffering.intro}
             </p>
             <ul className="mt-6 space-y-4">
@@ -104,7 +104,7 @@ export function CoreServiceOfferingsSection({
                 </li>
               ))}
             </ul>
-            <p className="mt-6 border-t border-slate-200 pt-5 text-sm leading-7 text-slate-500 md:text-[15px]">
+            <p className="mt-6 border-t border-slate-200 pt-5 text-sm leading-7 md:text-[15px] text-muted-foreground">
               <span className="font-semibold text-slate-900">
                 Typical applications:
               </span>{" "}

@@ -294,7 +294,7 @@ export const metadata: Metadata = {
 
 export default function MechanicalIndustrialDesignPage() {
   return (
-    <main className="text-zinc-900">
+    <main>
       <MechanicalIndustrialHero
         videoSrc={MECHANICAL_INDUSTRIAL_HERO.videoSrc}
         title={MECHANICAL_INDUSTRIAL_HERO.title}

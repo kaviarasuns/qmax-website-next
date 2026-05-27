@@ -36,14 +36,14 @@ export const EmbeddedCaseStudyCard: React.FC<CaseStudyCardProps> = ({
         {/* Content area */}
         <div className="flex-1 flex flex-col min-h-0 min-w-0 px-5 pb-5 pt-3.5">
           <h3
-            className="text-[17px] font-bold text-zinc-900 leading-snug transition-colors duration-300 motion-reduce:transition-none group-hover:text-brand-red"
+            className="text-[17px] font-bold leading-snug transition-colors duration-300 motion-reduce:transition-none group-hover:text-brand-red"
             style={{ textWrap: "balance" }}
           >
             {title}
           </h3>
 
           {summary && (
-            <p className="text-[13.5px] text-zinc-500 leading-[1.6] mt-2 line-clamp-2 transition-colors duration-300 motion-reduce:transition-none group-hover:line-clamp-4 group-hover:text-zinc-600">
+            <p className="text-[13.5px] leading-[1.6] mt-2 line-clamp-2 text-muted-foreground transition-colors duration-300 motion-reduce:transition-none group-hover:line-clamp-4 group-hover:text-foreground">
               {summary}
             </p>
           )}

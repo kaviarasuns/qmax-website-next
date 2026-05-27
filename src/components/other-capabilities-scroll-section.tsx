@@ -21,7 +21,7 @@ export function OtherCapabilitiesScrollSection({
       <div className="w-full px-8 md:px-12">
         <div className="mx-auto w-fit">
           <div className="mb-10 relative flex items-center justify-center">
-            <h2 className="text-3xl font-light tracking-wide text-foreground text-center md:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-light tracking-wide text-center md:text-4xl lg:text-5xl">
               Our Other Engineering{" "}
               <span className="text-red-500">Capabilities</span>
             </h2>
@@ -84,12 +84,12 @@ export function OtherCapabilitiesScrollSection({
                         </div>
 
                         <div className="flex flex-1 flex-col justify-between gap-3 bg-white px-5 py-4">
-                          <h3 className="text-base md:text-lg font-semibold text-zinc-950 leading-tight tracking-wide">
+                          <h3 className="text-base md:text-lg font-semibold leading-tight tracking-wide">
                             {title}
                           </h3>
 
                           {summary && (
-                            <p className="text-[13px] text-zinc-600 line-clamp-2 tracking-wide">
+                            <p className="text-[13px] line-clamp-2 tracking-wide text-muted-foreground">
                               {summary}
                             </p>
                           )}

@@ -71,7 +71,7 @@ export default function MeetTheTeam() {
             Our Leadership <span className="text-red-500">Team</span>
           </h1>
           {/* <div className="mt-5 h-1 w-16 rounded-full bg-red-500" /> */}
-          {/* <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
+          {/* <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
             Decades of combined expertise in hardware, embedded systems, and
             engineering execution — driving QMax Systems forward.
           </p> */}
@@ -131,7 +131,7 @@ export default function MeetTheTeam() {
               </div>
 
               <div className="md:w-3/5 lg:w-2/3">
-                <p className="text-[15px] leading-7 text-slate-700">{member.bio}</p>
+                <p className="text-[15px] leading-7 text-muted-foreground">{member.bio}</p>
               </div>
             </article>
           ))}

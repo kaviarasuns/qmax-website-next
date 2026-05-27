@@ -168,7 +168,7 @@ export function TechnicalAdvantageSection({
           Our Technical Strengths in{" "}
           <span className="text-brand-500">{headingHighlight}</span>
         </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-7 text-slate-600 md:text-base md:leading-relaxed">
+        <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-7 md:text-base md:leading-relaxed text-muted-foreground">
           {lede}
         </p>
 
@@ -186,7 +186,7 @@ export function TechnicalAdvantageSection({
                   {card.title}
                 </h3>
               </header>
-              <p className="text-[15px] leading-relaxed text-slate-600 md:text-base">
+              <p className="text-[15px] leading-relaxed md:text-base text-muted-foreground">
                 {card.body}
               </p>
             </article>

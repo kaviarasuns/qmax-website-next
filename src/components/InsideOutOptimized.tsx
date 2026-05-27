@@ -129,7 +129,7 @@ export default function InsideOutOptimized() {
       <div className="w-full min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-500 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading animation...</p>
+          <p className="text-muted-foreground">Loading animation...</p>
         </div>
       </div>
     );
@@ -183,7 +183,7 @@ export default function InsideOutOptimized() {
           <h2 className="text-3xl font-bold mb-4 text-gray-800">
             Built from the inside out.
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          <p className="text-lg leading-relaxed mb-6 text-muted-foreground">
             Every element is considered.
             <br />
             Every connection, deliberate.

@@ -42,7 +42,7 @@ export function CapabilitiesDeliverablesCard({
             }
           >
             {capability.deliverablesAriaLabel && (
-              <h3 className="mb-8 text-xl font-light tracking-wide text-black md:text-2xl">
+              <h3 className="mb-8 text-xl font-light tracking-wide md:text-2xl">
                 {capability.deliverablesAriaLabel}
               </h3>
             )}

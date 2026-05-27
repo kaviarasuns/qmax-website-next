@@ -32,7 +32,7 @@ export default function ImpactStats() {
               <div className="text-5xl md:text-6xl font-extrabold text-red-500 mb-3">
                 {stat.number}
               </div>
-              <p className="text-gray-700 text-lg font-medium text-center">
+              <p className="text-lg font-medium text-center text-muted-foreground">
                 {stat.label}
               </p>
             </div>

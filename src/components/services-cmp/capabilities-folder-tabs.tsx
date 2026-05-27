@@ -92,7 +92,7 @@ export function CapabilitiesFolderTabs({
         <div className="mb-[52px]">
           <h2
             id={`${baseId}-heading`}
-            className="text-center text-3xl font-light tracking-wide text-black md:text-5xl"
+            className="text-center text-3xl font-light tracking-wide md:text-5xl"
           >
             {heading}{" "}
             <span className="text-red-500">{headingHighlight}</span>
@@ -122,7 +122,7 @@ export function CapabilitiesFolderTabs({
                   isActive && "animate-[folder-tab-panel-in_0.35s_ease]",
                 )}
               >
-                <p className="mx-auto mb-9 max-w-[640px] text-base leading-[1.8] text-zinc-500">
+                <p className="mx-auto mb-9 max-w-[640px] text-base leading-[1.8] text-muted-foreground">
                   {cap.description}
                 </p>
                 <div className="relative mx-auto aspect-video max-w-[880px] overflow-hidden rounded-2xl shadow-[0_12px_48px_rgba(0,0,0,0.08)]">

@@ -114,7 +114,7 @@ export function NavigationV2() {
                                         {subItem.title}
                                       </div>
                                       {subItem.description && (
-                                        <p className="line-clamp-2 text-sm leading-relaxed text-gray-500 pl-3.5 border-l-2 border-gray-100 group-hover/item:border-brand-red/30 transition-colors">
+                                        <p className="line-clamp-2 text-sm leading-relaxed pl-3.5 border-l-2 border-gray-100 group-hover/item:border-brand-red/30 transition-colors text-muted-foreground">
                                           {subItem.description}
                                         </p>
                                       )}
@@ -229,7 +229,7 @@ export function NavigationV2() {
                                 {subItem.title}
                               </div>
                               {subItem.description && (
-                                <p className="text-xs text-gray-500 line-clamp-1 mt-0.5">
+                                <p className="text-xs line-clamp-1 mt-0.5 text-muted-foreground">
                                   {subItem.description}
                                 </p>
                               )}

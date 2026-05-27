@@ -53,11 +53,11 @@ export default function OurValues() {
               >
                 <div className="flex items-center gap-4 mb-3">
                   <IconComponent className="text-red-500 shrink-0" size={28} />
-                  <h3 className="text-2xl text-black">
+                  <h3 className="text-2xl">
                     {value.title}
                   </h3>
                 </div>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="leading-relaxed text-muted-foreground">
                   {value.description}
                 </p>
               </div>

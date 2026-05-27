@@ -77,7 +77,7 @@ export default async function CaseStudyPage({
                 <span className="mb-1 block text-[10px] font-black uppercase tracking-[0.3em] text-red-500">
                   Explore More
                 </span>
-                <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
+                <h2 className="text-2xl font-bold md:text-3xl">
                   More Case Studies
                 </h2>
               </div>
@@ -125,7 +125,7 @@ export default async function CaseStudyPage({
               <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-red-500">
                 Previous
               </p>
-              <p className="max-w-[160px] text-[12px] font-medium leading-tight text-zinc-700 line-clamp-2">
+              <p className="max-w-[160px] text-[12px] font-medium leading-tight line-clamp-2 text-muted-foreground">
                 {prevStudy.title}
               </p>
             </div>
@@ -151,7 +151,7 @@ export default async function CaseStudyPage({
               <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-red-500">
                 Next
               </p>
-              <p className="max-w-[160px] text-[12px] font-medium leading-tight text-zinc-700 line-clamp-2">
+              <p className="max-w-[160px] text-[12px] font-medium leading-tight line-clamp-2 text-muted-foreground">
                 {nextStudy.title}
               </p>
             </div>

@@ -522,7 +522,7 @@ export default function AnalogAndMixedSignalPage() {
             <h3 className="text-lg font-semibold text-slate-800">
               Compliance-Ready Layout
             </h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-slate-500">
+            <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
               We focus on compliance from Day 1 for CE, FCC, and UL
               certification. Our goal is to deliver production-ready PCB designs
               that function correctly on the first prototype build.

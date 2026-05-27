@@ -342,7 +342,7 @@ export default function RfAndMicrowavePage() {
               <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-6">
                 HARDWARE DEVELOPMENT
               </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+              <h1 className="text-4xl font-light leading-[1.1] md:text-6xl lg:text-7xl tracking-tight">
                 RF and Microwave
                 <br className="hidden md:block" />
                 Engineering Services.
@@ -366,7 +366,7 @@ export default function RfAndMicrowavePage() {
         <h2 className="text-left text-3xl text-slate-900">
           Our RF and Microwave Expertise
         </h2>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+        <p className="mt-4 max-w-4xl text-sm leading-7 md:text-base text-muted-foreground">
           We provide end-to-end design services for modern wireless protocols,
           focusing on link budget optimization and coexistence in crowded
           spectrums.
@@ -397,7 +397,7 @@ export default function RfAndMicrowavePage() {
           <h3 className="text-left text-2xl text-slate-900">
             High-Power RF and Industrial Applications
           </h3>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+          <p className="mt-4 max-w-4xl text-sm leading-7 md:text-base text-muted-foreground">
             Beyond communications, we engineer robust RF solutions for
             industrial and plasma environments.
           </p>
@@ -428,7 +428,7 @@ export default function RfAndMicrowavePage() {
           <h3 className="text-left text-2xl text-slate-900">
             Advanced Hardware and PCB Engineering
           </h3>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+          <p className="mt-4 max-w-4xl text-sm leading-7 md:text-base text-muted-foreground">
             The physics of the PCB substrate is foundational to RF performance.
             We move beyond standard FR-4 to manage the dielectric challenges of
             high-frequency designs.
@@ -460,7 +460,7 @@ export default function RfAndMicrowavePage() {
           <h3 className="text-left text-2xl text-slate-900">
             Technical Differentiators: Engineering-First Approach
           </h3>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+          <p className="mt-4 max-w-4xl text-sm leading-7 md:text-base text-muted-foreground">
             We solve the invisible problems that cause field failures and
             compliance rejections.
           </p>
@@ -490,7 +490,7 @@ export default function RfAndMicrowavePage() {
         <h2 className="text-left text-3xl text-slate-900">
           Core Service Offerings
         </h2>
-        <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+        <p className="mt-4 max-w-4xl text-sm leading-7 md:text-base text-muted-foreground">
           We provide a vertical suite of engineering services tailored to modern
           communication and industrial RF needs.
         </p>
@@ -564,7 +564,7 @@ export default function RfAndMicrowavePage() {
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <h2 className="text-left text-3xl text-slate-900">Case studies</h2>
-        <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+        <p className="mt-4 text-sm leading-7 md:text-base text-muted-foreground">
           More case studies after NDA
         </p>
       </section>
@@ -574,7 +574,7 @@ export default function RfAndMicrowavePage() {
           <h2 className="text-left text-3xl text-slate-900">
             Why Choose Qmax Systems
           </h2>
-          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-700 md:text-base">
+          <p className="mt-4 max-w-4xl text-sm leading-7 md:text-base text-muted-foreground">
             Qmax Systems distinguishes itself through a rigorous focus on the
             physics of high-frequency signals.
           </p>
@@ -635,7 +635,7 @@ export default function RfAndMicrowavePage() {
           <h2 className="text-left text-3xl text-slate-900">
             Complimentary Consultation
           </h2>
-          <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+          <p className="mt-4 text-sm leading-7 md:text-base text-muted-foreground">
             Discuss your RF architecture challenges with our senior engineering
             team. Whether you are migrating to WiFi 7 or developing a custom
             mmWave sensor, we provide the technical depth required to succeed.{" "}

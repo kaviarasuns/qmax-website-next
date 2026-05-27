@@ -646,7 +646,7 @@ function TablerPackageIcon({ className }: { className?: string }) {
 
 function SectionTitle({ children }: { children: ReactNode }) {
   return (
-    <div className="mb-[18px] flex items-center gap-3">
+    <div className="section-title flex items-center gap-3 py-6">
       <span className="shrink-0 text-[11.5px] font-bold uppercase tracking-[0.5px] text-black">
         {children}
       </span>
@@ -657,7 +657,7 @@ function SectionTitle({ children }: { children: ReactNode }) {
 
 function SmallCards({ items }: { items: SmallCard[] }) {
   return (
-    <div className="mb-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
       {items.map((item) => (
         <div
           key={item.title}
@@ -669,7 +669,7 @@ function SmallCards({ items }: { items: SmallCard[] }) {
                 {item.icon}
               </div>
             ) : null}
-            <h4 className="text-base font-semibold leading-snug tracking-[-0.3px] text-[#0f172a]">
+            <h4 className="text-base font-semibold leading-snug tracking-[-0.3px]">
               {item.title}
             </h4>
           </div>
@@ -684,7 +684,7 @@ function SmallCards({ items }: { items: SmallCard[] }) {
 
 function CheckGrid({ items }: { items: CheckItem[] }) {
   return (
-    <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {items.map((item) => (
         <div
           key={item}
@@ -706,7 +706,7 @@ function CheckGrid({ items }: { items: CheckItem[] }) {
 
 function DataTable({ headers, rows }: { headers: string[]; rows: TableRow[] }) {
   return (
-    <div className="mb-9 overflow-hidden rounded-lg border border-zinc-200">
+    <div className="overflow-hidden rounded-lg border border-zinc-200">
       <table className="w-full border-collapse text-left">
         <thead>
           <tr className="bg-zinc-900">
@@ -756,24 +756,24 @@ function MaterialCards({
   footnote?: string;
 }) {
   return (
-    <div className="mb-8">
+    <div>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
         {items.map((item) => (
           <div
             key={item.title}
             className="rounded-xl border border-zinc-200 bg-white p-5"
           >
-            <h4 className="mb-3 text-[11.5px] font-bold uppercase tracking-[0.5px] text-black">
+            <h4 className="mb-3 text-[11.5px] font-bold uppercase tracking-[0.5px]">
               {item.title}
             </h4>
-            <p className="text-[13.5px] leading-[21px] text-black">
+            <p className="text-[13.5px] leading-[21px]">
               {item.description}
             </p>
           </div>
         ))}
       </div>
       {footnote ? (
-        <p className="mt-6 text-center text-[11.5px] font-bold uppercase tracking-[0.5px] text-black">
+        <p className="mt-6 text-center text-[11.5px] font-bold uppercase tracking-[0.5px]">
           {footnote}
         </p>
       ) : null}
@@ -801,7 +801,7 @@ function splitIpDescription(description: string) {
 
 function IpCards({ items }: { items: IpCard[] }) {
   return (
-    <div className="mb-8 grid grid-cols-1 gap-[14px] sm:grid-cols-3">
+    <div className="grid grid-cols-1 gap-[14px] sm:grid-cols-3">
       {items.map((item) => {
         const { specs, applications } = splitIpDescription(item.description);
         const cardStyle =
@@ -815,7 +815,7 @@ function IpCards({ items }: { items: IpCard[] }) {
             <div className="text-[28px] font-bold tracking-[-0.02em] text-black">
               {item.rating}
             </div>
-            <p className="mt-2 text-center text-[13.5px] leading-5 text-black">
+            <p className="mt-2 text-center text-[13.5px] leading-5">
               {specs}
               {applications ? (
                 <>
@@ -856,43 +856,45 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
         />
       </div>
 
-      <div className="absolute inset-x-0 bottom-[32px] z-10 flex h-[80px] flex-col justify-end bg-white px-6 pb-3">
+      <div className="absolute inset-x-0 bottom-[32px] z-10 flex h-[80px] flex-col justify-center gap-1 bg-white px-6 pt-4 pb-1">
         {item.label ? (
-          <p className="mb-1 line-clamp-1 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
+          <p className="line-clamp-1 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
             {item.label}
           </p>
         ) : null}
-        <h4 className="line-clamp-2 text-[15px] font-semibold leading-snug tracking-[-0.2px] text-zinc-900">
+        <h4 className="line-clamp-2 text-[15px] font-semibold leading-snug tracking-[-0.2px]">
           {item.title}
         </h4>
       </div>
 
       <div
-        className="absolute inset-0 z-20 flex translate-y-full transform-gpu flex-col justify-start bg-white px-6 pb-12 pt-6 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:translate-y-0 group-focus-within:translate-y-0"
+        className="absolute inset-x-0 top-0 bottom-[32px] z-20 flex translate-y-full transform-gpu flex-col bg-white px-6 py-6 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:translate-y-0 group-focus-within:translate-y-0"
         aria-hidden
       >
         {item.label ? (
-          <p className="mb-2 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
+          <p className="text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
             {item.label}
           </p>
         ) : null}
-        <h4 className="text-[17px] font-semibold leading-snug tracking-[-0.2px] text-zinc-900">
-          {item.title}
-        </h4>
-        <p className="mt-3 line-clamp-4 text-[14px] leading-[21px] text-zinc-600">
-          {item.description}
-        </p>
-        <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-500">
-          Read case study
-          <ChevronRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
-        </span>
+        <div className="flex flex-col gap-3 py-4">
+          <h4 className="text-[17px] font-semibold leading-snug tracking-[-0.2px]">
+            {item.title}
+          </h4>
+          <p className="line-clamp-4 text-[14px] leading-[21px] text-muted-foreground">
+            {item.description}
+          </p>
+          <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-500">
+            Read case study
+            <ChevronRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden />
+          </span>
+        </div>
       </div>
 
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-[25] h-[32px] bg-white px-6 pt-1"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[25] flex h-[32px] items-start bg-white px-6"
         aria-hidden
       >
-        <p className="text-[11.5px] font-medium uppercase tracking-[0.4px] text-zinc-500">
+        <p className="text-[11.5px] font-medium uppercase tracking-[0.4px] text-muted-foreground">
           Case study
         </p>
       </div>
@@ -959,7 +961,7 @@ function PortfolioCards({
   }
 
   return (
-    <div className="mb-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
       {items.map((item) => (
         <PortfolioGridCard key={item.title} item={item} />
       ))}
@@ -1024,11 +1026,11 @@ function DocCards({ items }: { items: SmallCard[] }) {
                 {item.icon}
               </div>
             ) : null}
-            <h4 className="text-[11.5px] font-bold uppercase tracking-[0.5px] text-black">
+            <h4 className="text-[11.5px] font-bold uppercase tracking-[0.5px]">
               {item.title}
             </h4>
           </div>
-          <p className="text-[13.5px] leading-[21px] text-black">
+          <p className="text-[13.5px] leading-[21px]">
             {item.description}
           </p>
         </div>
@@ -1107,14 +1109,14 @@ function ServiceBlock({ service }: { service: MechanicalService }) {
       className="grid grid-cols-1 items-start max-[960px]:grid-cols-1 min-[960px]:grid-cols-[35%_65%]"
     >
       <div className="bg-white px-5 py-12 max-[640px]:px-5 min-[640px]:px-8 min-[960px]:sticky min-[960px]:top-[calc(var(--nav-h)+8px)] min-[960px]:self-start min-[960px]:px-[52px] min-[960px]:py-[72px] min-[960px]:pl-[max(1.5rem,var(--page-pad,4rem))]">
-        <h2 className="mb-3 font-light leading-[1.1] tracking-[-0.02em] text-black [font-size:clamp(28px,3.2vw,42px)]">
+        <h2 className="mb-3 font-light leading-[1.1] tracking-[-0.02em] [font-size:clamp(28px,3.2vw,42px)]">
           {service.titleBefore}{" "}
           <span className="text-brand-500">{service.titleAccent}</span>
         </h2>
-        <p className="mb-5 text-[11.5px] font-bold uppercase tracking-[0.5px] text-black">
+        <p className="mb-5 text-[11.5px] font-bold uppercase tracking-[0.5px]">
           {service.subtitle}
         </p>
-        <p className="mb-7 border-l-[3px] border-brand-500 pl-[18px] text-[15px] leading-[22.5px] text-black text-justify">
+        <p className="mb-7 border-l-[3px] border-brand-500 pl-[18px] text-[15px] leading-[22.5px] text-justify">
           {service.description}
         </p>
         <div className="flex flex-wrap gap-1.5">
@@ -1129,7 +1131,7 @@ function ServiceBlock({ service }: { service: MechanicalService }) {
         </div>
       </div>
 
-      <div className="px-5 py-12 max-[640px]:px-5 min-[640px]:px-8 min-[960px]:px-[max(1.5rem,var(--page-pad,4rem))] min-[960px]:py-[72px] min-[960px]:pl-[52px]">
+      <div className="px-5 py-12 max-[640px]:px-5 min-[640px]:px-8 min-[960px]:px-[max(1.5rem,var(--page-pad,4rem))] min-[960px]:py-[72px] min-[960px]:pl-[52px] [&>div:first-child_.section-title]:pt-0">
         {service.sections.map((section) => (
           <SectionContent key={section.title} section={section} />
         ))}
@@ -1150,12 +1152,12 @@ export function CoreEngineeringMechanical() {
         <div className="mx-auto max-w-[1200px]">
           <h2
             id="core-engineering-capabilities-heading"
-            className="mb-7 font-light leading-[1.15] tracking-[-0.01em] text-black [font-size:clamp(32px,4vw,48px)]"
+            className="mb-7 font-light leading-[1.15] tracking-[-0.01em] [font-size:clamp(32px,4vw,48px)]"
           >
             Our Core Engineering{" "}
             <span className="text-brand-500">Capabilities</span>
           </h2>
-          <p className="mx-auto max-w-[820px] text-[15px] leading-[22.5px] text-black">
+          <p className="mx-auto max-w-[820px] text-[15px] leading-[22.5px]">
             Qmax Systems delivers precision mechanical engineering across seven
             specialist disciplines — from injection-moulded plastic enclosures
             for consumer IoT products to MIL-STD-810H-qualified rugged systems

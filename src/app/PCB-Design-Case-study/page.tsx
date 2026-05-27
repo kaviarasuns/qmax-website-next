@@ -144,7 +144,7 @@ const PCBCaseStudyGrid = () => {
             <span className="inline-block text-[10px] font-black tracking-[0.38em] text-red-500 uppercase mb-3">
               PCB Portfolio
             </span>
-            <h1 className="text-4xl md:text-5xl font-light tracking-tight text-zinc-950">
+            <h1 className="text-4xl md:text-5xl font-light tracking-tight">
               Case Studies.
             </h1>
           </div>

@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="text-white">QMAX</span>
               <span className="text-red-500"> SYSTEMS</span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-sm leading-relaxed text-muted-foreground">
               Electronics Engineering & R&D Services Specialist. Embedded Systems & PCB Design.
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
+            <p className="text-sm text-muted-foreground">
               &copy; 1997-2024 Qmax Systems. All rights reserved.
             </p>
             

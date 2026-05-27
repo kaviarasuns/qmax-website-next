@@ -279,7 +279,7 @@ export default function ScrollCardsAnimationV4({
                   <CardContent className="p-4">
                     {/* Card Title */}
                     <div className="text-center mb-3">
-                      <h3 className="text-black text-sm tracking-wide leading-tight">
+                      <h3 className="text-sm tracking-wide leading-tight">
                         {cards[activeCard].title}
                       </h3>
                     </div>
@@ -362,7 +362,7 @@ export default function ScrollCardsAnimationV4({
         /* Desktop: 7 Cards Visible with Enhanced Visual Appeal */
         <div className="w-full px-4 flex flex-col items-center justify-center">
           <div className="relative top-8">
-            <h1 className="text-3xl md:text-5xl font-light tracking-wide text-center text-black tracking-wide">
+            <h1 className="text-3xl md:text-5xl font-light tracking-wide text-center tracking-wide">
               Design To <span className="text-red-500">Manufacturing</span>
             </h1>
           </div>

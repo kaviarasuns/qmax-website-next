@@ -9,7 +9,7 @@ export function JobDetails() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-12">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">Featured Role: Firmware Development Engineer</h2>
-          <p className="text-lg text-foreground/70">
+          <p className="text-lg">
             Learn more about one of our key engineering positions
           </p>
         </div>
@@ -24,8 +24,8 @@ export function JobDetails() {
 
           <TabsContent value="overview" className="space-y-4">
             <Card className="p-8">
-              <h3 className="mb-4 text-2xl font-semibold text-foreground">Role Summary</h3>
-              <p className="text-foreground/70 leading-relaxed">
+              <h3 className="mb-4 text-2xl font-semibold">Role Summary</h3>
+              <p className="leading-relaxed">
                 Develop reliable, maintainable firmware for MCU/MPU-based embedded systems. Work on full-cycle product development from concept to deployment, collaborating with hardware engineers and gaining hands-on experience with cutting-edge technology.
               </p>
             </Card>
@@ -33,7 +33,7 @@ export function JobDetails() {
 
           <TabsContent value="responsibilities" className="space-y-4">
             <Card className="p-8">
-              <h3 className="mb-6 text-2xl font-semibold text-foreground">Key Responsibilities</h3>
+              <h3 className="mb-6 text-2xl font-semibold">Key Responsibilities</h3>
               <ul className="space-y-3">
                 {[
                   'Firmware architecture and module-level design',
@@ -54,7 +54,7 @@ export function JobDetails() {
 
           <TabsContent value="skills" className="space-y-4">
             <Card className="p-8">
-              <h3 className="mb-6 text-2xl font-semibold text-foreground">Required Skills</h3>
+              <h3 className="mb-6 text-2xl font-semibold">Required Skills</h3>
               <div className="grid gap-4">
                 {[
                   { skill: 'Strong C programming', importance: 'Mandatory' },
@@ -75,7 +75,7 @@ export function JobDetails() {
 
           <TabsContent value="qualifications" className="space-y-4">
             <Card className="p-8">
-              <h3 className="mb-6 text-2xl font-semibold text-foreground">Educational Qualifications</h3>
+              <h3 className="mb-6 text-2xl font-semibold">Educational Qualifications</h3>
               <ul className="space-y-3">
                 {[
                   'BE / BTech in ECE, CSE, Embedded Systems, or Electrical Engineering',

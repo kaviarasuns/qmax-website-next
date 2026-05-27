@@ -442,7 +442,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
 
         <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-20 lg:px-8">
           <div>
-            <p className="inline-flex rounded-full border border-slate-200 bg-white/90 px-4 py-1 text-xs uppercase tracking-[0.16em] text-slate-600">
+            <p className="inline-flex rounded-full border border-slate-200 bg-white/90 px-4 py-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
               Hardware Development Services
             </p>
             <h1 className="mt-6 text-4xl leading-tight text-slate-900 md:text-5xl">
@@ -499,7 +499,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
                 Step {index + 1}
               </p>
               <h3 className="mt-2 text-base text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-700">
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">
                 {item.description}
               </p>
             </article>
@@ -517,7 +517,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
             <h2 className="mt-3 text-3xl text-slate-900 md:text-4xl">
               Core Engineering Capabilities
             </h2>
-            <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-700 md:text-base">
+            <p className="mt-3 max-w-3xl text-sm leading-7 md:text-base text-muted-foreground">
               We deliver high-performance designs validated by decades of
               experience across four critical engineering domains.
             </p>
@@ -532,7 +532,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
                   {cap.icon}
                 </div>
                 <h3 className="text-lg text-slate-900">{cap.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-700">
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">
                   {cap.description}
                 </p>
                 <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
@@ -576,7 +576,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
               <h3 className="text-xl text-slate-900">
                 Labs &amp; Engineering Infrastructure
               </h3>
-              <p className="mt-3 text-sm leading-6 text-slate-700">
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
                 In-house electronics and environmental laboratories for rapid
                 debug, prototype assembly, and validation — reducing dependency
                 on external facilities during development.
@@ -592,7 +592,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
               <h3 className="text-xl text-slate-900">
                 Compliance, Certification &amp; Quality
               </h3>
-              <p className="mt-3 text-sm leading-6 text-slate-700">
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
                 We design for compliance from day one — partnering with
                 NABL-certified labs and operating under ISO 9001 and ISO 13485
                 quality systems for traceable, audit-ready delivery.
@@ -618,7 +618,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
             <h2 className="mt-3 text-3xl text-slate-900 md:text-4xl">
               Industries We Serve
             </h2>
-            <p className="mx-auto mt-3 max-w-3xl text-sm leading-7 text-slate-700 md:text-base">
+            <p className="mx-auto mt-3 max-w-3xl text-sm leading-7 md:text-base text-muted-foreground">
               Multi-domain hardware development with design rigor and
               documentation depth calibrated to each industry&apos;s regulatory
               and reliability bar.
@@ -644,7 +644,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
                   </h3>
                 </div>
                 <div className="p-4">
-                  <p className="text-sm leading-6 text-slate-700">
+                  <p className="text-sm leading-6 text-muted-foreground">
                     {ind.description}
                   </p>
                 </div>
@@ -660,7 +660,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
           <h2 className="text-3xl text-slate-900">
             Ready to Build Your Hardware?
           </h2>
-          <p className="mt-4 text-sm leading-7 text-slate-700 md:text-base">
+          <p className="mt-4 text-sm leading-7 md:text-base text-muted-foreground">
             <span className="text-slate-900">
               Free 1-Hour Hardware Consulting
             </span>{" "}
@@ -719,13 +719,13 @@ export default function HardwareDevelopmentServicesComponentV1() {
                 <div className="aspect-[4/3] overflow-hidden rounded-lg bg-slate-100">
                   {article.thumb}
                 </div>
-                <p className="mt-4 text-xs uppercase tracking-[0.16em] text-slate-500">
+                <p className="mt-4 text-xs uppercase tracking-[0.16em] text-muted-foreground">
                   Article · {article.category}
                 </p>
                 <h3 className="mt-2 text-lg leading-snug text-slate-900 transition-colors group-hover:text-sky-700">
                   {article.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-slate-700">
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   {article.excerpt}
                 </p>
                 <Link

@@ -43,7 +43,7 @@ export function EmbeddedSoftwareCapabilitiesSection({
       >
         <div className="mx-auto max-w-7xl">
           <div className="flex w-full flex-col items-center text-center">
-            <h2 className="mb-6 text-center text-3xl font-light tracking-tight text-black md:text-5xl">
+            <h2 className="mb-6 text-center text-3xl font-light tracking-tight md:text-5xl">
               {title}{" "}
               <span className="text-[#F33117]">{titleHighlight}</span>
             </h2>
@@ -73,7 +73,7 @@ export function EmbeddedSoftwareCapabilitiesSection({
                 >
                   <div className="grid grid-cols-[1fr_1.4fr] items-start gap-24 max-[900px]:grid-cols-1 max-[900px]:gap-8">
                     <div>
-                      <h3 className="mb-8 max-w-[480px] text-2xl font-light tracking-wide text-black md:text-3xl">
+                      <h3 className="mb-8 max-w-[480px] text-2xl font-light tracking-wide md:text-3xl">
                         {cap.headline}
                       </h3>
                       <div className="flex flex-wrap items-center gap-3">
@@ -99,7 +99,7 @@ export function EmbeddedSoftwareCapabilitiesSection({
                       <div className="grid grid-cols-2 gap-12 max-[900px]:grid-cols-1 max-[900px]:gap-7">
                         {cap.bullets.map((group) => (
                           <div key={group.title}>
-                            <h4 className="mb-[18px] text-lg font-light tracking-wide text-[#383838] md:text-xl">
+                            <h4 className="mb-[18px] text-lg font-light tracking-wide md:text-xl">
                               {group.title}
                             </h4>
                             <ul className="m-0 flex list-none flex-col gap-3.5 p-0">

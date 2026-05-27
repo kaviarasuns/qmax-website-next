@@ -35,7 +35,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
           <h2 className="text-4xl md:text-5xl font-light tracking-wide mb-3">
             Customer Success <span className="text-brand-500">Stories</span>
           </h2>
-          {/* <p className="mb-10 text-base text-gray-500">
+          {/* <p className="mb-10 text-base text-muted-foreground">
               Real outcomes from real engineering teams &mdash; names withheld under NDA.
             </p> */}
         </div>
@@ -68,7 +68,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
                   {getIndustryIcon(t.caseTag)}
                   {t.caseTag}
                 </div>
-                <p className="text-lg md:text-xl !font-medium tracking-wide m-0 border-l-[3px] border-[#E63329] pl-5 text-lg md:text-xl font-medium leading-relaxed text-gray-800 tracking-wide">
+                <p className="text-lg md:text-xl !font-medium tracking-wide m-0 border-l-[3px] border-[#E63329] pl-5 text-lg md:text-xl font-medium leading-relaxed tracking-wide text-muted-foreground">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="mt-1 flex flex-wrap items-center gap-4 border-t border-gray-200 pt-5">
@@ -82,7 +82,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
                     <p className="m-0 font-semibold text-[#1a1a1a]">
                       {t.authorName}
                     </p>
-                    <p className="m-0 text-sm text-gray-500">{t.authorRole}</p>
+                    <p className="m-0 text-sm text-muted-foreground">{t.authorRole}</p>
                   </div>
                   <div className="inline-flex items-center gap-1.5 rounded border border-gray-200 bg-gray-100 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-gray-600">
                     <svg
@@ -101,7 +101,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
                 {/* <span className="text-xs font-bold uppercase tracking-[2px] text-[#E63329]">
                     {t.caseTag}
                   </span> */}
-                <h3 className="!font-semibold text-xl md:text-2xl leading-tight tracking-wide text-[#1a1a1a]">
+                <h3 className="!font-semibold text-xl md:text-2xl leading-tight tracking-wide">
                   {t.caseTitle}
                 </h3>
                 <div
@@ -123,7 +123,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
                     sizes="(max-width: 900px) 100vw, 50vw"
                   />
                 </div>
-                <p className="m-0 text-sm leading-relaxed text-gray-600">
+                <p className="m-0 text-sm leading-relaxed text-muted-foreground">
                   {t.caseDesc}
                 </p>
                 <a

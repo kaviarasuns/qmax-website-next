@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function SIPIAnalysisServicesPage() {
   return (
-    <main className="bg-zinc-100 text-justify text-zinc-900">
+    <main className="bg-zinc-100 text-justify">
       <section className="relative overflow-hidden pt-14 pb-12 border-b border-zinc-200 lg:pt-20 lg:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(24,24,27,0.08),transparent_45%),radial-gradient(circle_at_85%_10%,rgba(82,82,91,0.08),transparent_40%)]" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -41,7 +41,7 @@ export default function SIPIAnalysisServicesPage() {
               <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-6">
                 PCB DESIGN SERVICES
               </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+              <h1 className="text-4xl font-light leading-[1.1] md:text-6xl lg:text-7xl tracking-tight">
                 SI &amp; PI Analysis
                 <br className="hidden md:block" />
                 Services.
@@ -49,7 +49,7 @@ export default function SIPIAnalysisServicesPage() {
             </div>
           </div>
           <div className="mt-10 max-w-4xl space-y-6 text-sm leading-8 text-zinc-700 md:text-base lg:text-lg">
-            <p className="text-sm font-medium tracking-wide text-zinc-800 md:text-base lg:text-lg">
+            <p className="text-sm font-medium tracking-wide md:text-base lg:text-lg text-muted-foreground">
               Predictive simulation and optimization for high-speed digital and
               high-frequency communication protocols.
             </p>
@@ -85,7 +85,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-b border-zinc-200">
         <div className="mx-auto max-w-4xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             1. Introduction to SI/PI Analysis
           </h2>
           <div className="mt-6 flex flex-col gap-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
@@ -120,10 +120,10 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-b border-zinc-200">
         <div className="mx-auto max-w-4xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             1.1 Signal Integrity — Engineering Scope
           </h2>
-          <p className="mt-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
+          <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
             Signal Integrity analysis ensures that digital signals arrive at
             their destination with sufficient voltage margin, timing margin, and
             noise immunity to meet the BER (Bit Error Rate) specification of the
@@ -214,10 +214,10 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             1.2 Power Integrity — Engineering Scope
           </h2>
-          <p className="mt-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
+          <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
             Power Integrity analysis ensures the PDN (Power Distribution
             Network) delivers stable, low-impedance supply voltage to every
             device across the full operating frequency range — from DC through
@@ -295,7 +295,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             1.3 Why Choose Qmax Systems
           </h2>
           <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
@@ -393,10 +393,10 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             1.4 Complimentary SI/PI Review — Included with PCB Layout Services
           </h2>
-          <p className="mt-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
+          <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
             Every PCB layout engagement at Qmax Systems includes a complimentary
             SI/PI review conducted before routing begins. This is a structured
             engineering review that covers stackup feasibility against target
@@ -435,10 +435,10 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-[80rem] text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             2. High-Speed Interface Coverage
           </h2>
-          <p className="mt-6 max-w-5xl text-base leading-8 text-zinc-700 md:text-lg text-justify">
+          <p className="mt-6 max-w-5xl text-base leading-8 md:text-lg text-justify text-muted-foreground">
             Qmax Systems provides SI analysis across the current and emerging
             generations of high-speed digital interconnect standards. The table
             below lists the primary interfaces. Where multiple generations exist
@@ -587,7 +587,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             2.1 NRZ vs. PAM4 — Engineering Implications
           </h2>
           <div className="mt-6 flex flex-col gap-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
@@ -621,7 +621,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             3. PCB Material Selection for SI/PI Performance
           </h2>
           <div className="mt-6 flex flex-col gap-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
@@ -642,7 +642,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-[80rem] text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             3.1 Laminate Properties and Their SI Significance
           </h2>
           <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
@@ -859,7 +859,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-[80rem] text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             3.2 Material Selection by Interface Speed
           </h2>
           <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
@@ -954,7 +954,7 @@ export default function SIPIAnalysisServicesPage() {
             </div>
           </div>
         </div>
-        <p className="mx-auto mt-8 max-w-[80rem] text-sm leading-7 text-zinc-600 md:text-base italic">
+        <p className="mx-auto mt-8 max-w-[80rem] text-sm leading-7 md:text-base italic text-muted-foreground">
           For every design above 25Gbps per lane, Qmax specifies fiber weave
           direction, glass style per layer, copper foil type, and resin content
           in the fabrication notes. These are transmitted to the PCB fabricator
@@ -965,10 +965,10 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-[80rem] text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             4. SI/PI Simulation Methodology &amp; Tools
           </h2>
-          <p className="mt-6 max-w-5xl text-base leading-8 text-zinc-700 md:text-lg text-justify">
+          <p className="mt-6 max-w-5xl text-base leading-8 md:text-lg text-justify text-muted-foreground">
             Qmax applies a layered simulation methodology, selecting the
             appropriate tool and model depth based on interface speed, channel
             complexity, and project phase. The methodology progresses from
@@ -1109,10 +1109,10 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             5. Representative SI Analysis Results — Actual Qmax Project Data
           </h2>
-          <p className="mt-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
+          <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
             The following simulation outputs are from production SI analysis
             engagements conducted by Qmax Systems. They represent the type of
             analysis artefacts delivered to customers as standard project
@@ -1120,10 +1120,10 @@ export default function SIPIAnalysisServicesPage() {
           </p>
 
           <div className="mt-16">
-            <h3 className="text-2xl tracking-tight text-zinc-900 sm:text-3xl text-left">
+            <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
               5.1 PAM4 Eye Diagram — Worst-Case Eye Margin
             </h3>
-            <p className="mt-4 text-base leading-8 text-zinc-700 md:text-lg text-justify">
+            <p className="mt-4 text-base leading-8 md:text-lg text-justify text-muted-foreground">
               Ansys QuickEye IBIS-AMI statistical eye simulation. End-to-end
               PAM4 channel with TX FFE equalization and RX CTLE/DFE. Result:
               inner eye height 104.6mV, eye width 34.7ps. The three superimposed
@@ -1145,11 +1145,11 @@ export default function SIPIAnalysisServicesPage() {
           </div>
 
           <div className="mt-24">
-            <h3 className="text-2xl tracking-tight text-zinc-900 sm:text-3xl text-left">
+            <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
               5.2 Board TDR Analysis — Via Impedance Discontinuity
               Identification
             </h3>
-            <p className="mt-4 text-base leading-8 text-zinc-700 md:text-lg text-justify">
+            <p className="mt-4 text-base leading-8 md:text-lg text-justify text-muted-foreground">
               Ansys SIwave / HFSS transient impedance simulation for a Broadcom
               SoC differential pair channel. The plot identifies three impedance
               discontinuities in the BGA fanout and via transition zone: a BGA
@@ -1173,10 +1173,10 @@ export default function SIPIAnalysisServicesPage() {
           </div>
 
           <div className="mt-24">
-            <h3 className="text-2xl tracking-tight text-zinc-900 sm:text-3xl text-left">
+            <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
               5.3 Differential Insertion Loss &amp; Return Loss (SDD21 / SDD11)
             </h3>
-            <p className="mt-4 text-base leading-8 text-zinc-700 md:text-lg text-justify">
+            <p className="mt-4 text-base leading-8 md:text-lg text-justify text-muted-foreground">
               Ansys HFSS mixed-mode S-parameter extraction for multiple
               differential pairs from DC to 25GHz. SDD21 (differential insertion
               loss) and SDD11 (differential return loss) are plotted for all
@@ -1199,11 +1199,11 @@ export default function SIPIAnalysisServicesPage() {
           </div>
 
           <div className="mt-24">
-            <h3 className="text-2xl tracking-tight text-zinc-900 sm:text-3xl text-left">
+            <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
               5.4 NEXT Analysis — Near-End Crosstalk Across All Lane
               Combinations
             </h3>
-            <p className="mt-4 text-base leading-8 text-zinc-700 md:text-lg text-justify">
+            <p className="mt-4 text-base leading-8 md:text-lg text-justify text-muted-foreground">
               Ansys SIwave / HFSS NEXT extraction for all aggressor-victim
               differential pair combinations in a multi-lane interface.
               Worst-case NEXT at 8GHz: &minus;38.12dB; best-case:
@@ -1231,10 +1231,10 @@ export default function SIPIAnalysisServicesPage() {
         <div className="mx-auto max-w-[80rem] text-zinc-800">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div className="max-w-3xl">
-              <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+              <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
                 6. Applications &amp; Real Project Experience
               </h2>
-              <p className="mt-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
+              <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
                 Qmax Systems has delivered production-qualified SI/PI analysis
                 across the following interfaces and power delivery categories.
                 Each represents multiple customer programs, not isolated
@@ -1251,10 +1251,10 @@ export default function SIPIAnalysisServicesPage() {
 
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
             <div className="flex flex-col rounded-3xl border border-zinc-200 bg-zinc-50/50 p-8 sm:p-10 transition-shadow hover:shadow-md">
-              <h3 className="text-xl text-zinc-900">
+              <h3 className="text-xl">
                 6.1 Ethernet &mdash; 10Gbps through 100Gbps
               </h3>
-              <p className="mt-4 text-base leading-7 text-zinc-600">
+              <p className="mt-4 text-base leading-7 text-muted-foreground">
                 10GBASE-KR / 25GBASE-KR through 100GBASE-KR4 and 100GBASE-KP4
                 PAM4 backplane and host-board channels. Full SDD21/SDD11
                 analysis, IBIS-AMI receiver equalization simulation per IEEE
@@ -1266,8 +1266,8 @@ export default function SIPIAnalysisServicesPage() {
             </div>
 
             <div className="flex flex-col rounded-3xl border border-zinc-200 bg-zinc-50/50 p-8 sm:p-10 transition-shadow hover:shadow-md">
-              <h3 className="text-xl text-zinc-900">6.2 PCIe Gen6 / CXL 3.x</h3>
-              <p className="mt-4 text-base leading-7 text-zinc-600">
+              <h3 className="text-xl">6.2 PCIe Gen6 / CXL 3.x</h3>
+              <p className="mt-4 text-base leading-7 text-muted-foreground">
                 64GT/s PAM4 end-to-end channel COM analysis from CPU/GPU die pad
                 through package, PCB trace, connector, and endpoint. Via stub
                 resonance analysis and back-drill depth specification for
@@ -1282,10 +1282,10 @@ export default function SIPIAnalysisServicesPage() {
             </div>
 
             <div className="flex flex-col rounded-3xl border border-zinc-200 bg-zinc-50/50 p-8 sm:p-10 transition-shadow hover:shadow-md">
-              <h3 className="text-xl text-zinc-900">
+              <h3 className="text-xl">
                 6.3 MIPI CSI-2 (D-PHY &amp; C-PHY)
               </h3>
-              <p className="mt-4 text-base leading-7 text-zinc-600">
+              <p className="mt-4 text-base leading-7 text-muted-foreground">
                 MIPI D-PHY v2.5 at 4.5Gbps and C-PHY v2.1 at 4.5Gsps for camera
                 sensor and display interfaces. Differential pair and trio
                 impedance control on thin HDI substrates. Intra-pair skew
@@ -1297,10 +1297,10 @@ export default function SIPIAnalysisServicesPage() {
             </div>
 
             <div className="flex flex-col rounded-3xl border border-zinc-200 bg-zinc-50/50 p-8 sm:p-10 transition-shadow hover:shadow-md">
-              <h3 className="text-xl text-zinc-900">
+              <h3 className="text-xl">
                 6.4 DDR4 &amp; DDR5 Memory Subsystems
               </h3>
-              <p className="mt-4 text-base leading-7 text-zinc-600">
+              <p className="mt-4 text-base leading-7 text-muted-foreground">
                 DDR4-3200 through DDR5-8400 and LPDDR5X at 8533 MT/s. Fly-by
                 command/address topology simulation, per-pin DQ eye analysis
                 with DFE-assisted receiver margin, ODT sweep optimisation, VDDQ
@@ -1312,10 +1312,10 @@ export default function SIPIAnalysisServicesPage() {
             </div>
 
             <div className="flex flex-col rounded-3xl border border-zinc-200 bg-zinc-50/50 p-8 sm:p-10 transition-shadow hover:shadow-md">
-              <h3 className="text-xl text-zinc-900">
+              <h3 className="text-xl">
                 6.5 High-Current Power Supply PI Analysis
               </h3>
-              <p className="mt-4 text-base leading-7 text-zinc-600">
+              <p className="mt-4 text-base leading-7 text-muted-foreground">
                 Multi-phase VRM output PDN analysis for 100A&ndash;500A CPU,
                 GPU, and ASIC power rails. DC IR drop with copper thickness
                 selection per IPC-2152. AC PDN impedance from 100Hz to 500MHz,
@@ -1327,10 +1327,10 @@ export default function SIPIAnalysisServicesPage() {
             </div>
 
             <div className="flex flex-col rounded-3xl border border-zinc-200 bg-zinc-50/50 p-8 sm:p-10 transition-shadow hover:shadow-md">
-              <h3 className="text-xl text-zinc-900">
+              <h3 className="text-xl">
                 6.6 Multi-CPU Board PI Analysis
               </h3>
-              <p className="mt-4 text-base leading-7 text-zinc-600">
+              <p className="mt-4 text-base leading-7 text-muted-foreground">
                 Dual and quad-socket server PDN co-simulation: per-socket VRM
                 co-design, cross-socket reference plane coupling analysis, bulk
                 capacitor placement optimisation for each socket power delivery
@@ -1341,10 +1341,10 @@ export default function SIPIAnalysisServicesPage() {
             </div>
 
             <div className="flex flex-col rounded-3xl border border-zinc-200 bg-zinc-50/50 p-8 sm:p-10 transition-shadow hover:shadow-md md:col-span-2">
-              <h3 className="text-xl text-zinc-900">
+              <h3 className="text-xl">
                 6.7 AI Accelerator &mdash; PCIe Gen6 Switch SI &amp; PI
               </h3>
-              <p className="mt-4 text-base leading-7 text-zinc-600 max-w-4xl">
+              <p className="mt-4 text-base leading-7 max-w-4xl text-muted-foreground">
                 PCIe Gen6 / CXL 3.x switch fabric COM analysis for 128+ lane
                 PAM4 topologies. Full-board PDN for GPU accelerator platforms at
                 700W+ per device: sub-milliohm Ztarget PDN design, 300A load
@@ -1360,7 +1360,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             7. Silicon Vendor &amp; PCB Fabricator Coordination
           </h2>
           <div className="mt-6 flex flex-col gap-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
@@ -1376,7 +1376,7 @@ export default function SIPIAnalysisServicesPage() {
           </div>
 
           <div className="mt-16">
-            <h3 className="text-2xl tracking-tight text-zinc-900 sm:text-3xl text-left">
+            <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
               7.1 Silicon Vendor Collaboration
             </h3>
             <div className="mt-8 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
@@ -1476,10 +1476,10 @@ export default function SIPIAnalysisServicesPage() {
           </div>
 
           <div className="mt-16">
-            <h3 className="text-2xl tracking-tight text-zinc-900 sm:text-3xl text-left">
+            <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
               7.2 PCB Fabricator Coordination
             </h3>
-            <p className="mt-4 text-base leading-8 text-zinc-700 md:text-lg text-justify">
+            <p className="mt-4 text-base leading-8 md:text-lg text-justify text-muted-foreground">
               For every SI-critical design, our fabricator engagement includes
               obtaining fabricator-measured Dk/Df data at operating frequency
               from the specific material lot to be used; requesting impedance
@@ -1501,10 +1501,10 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             8. Complimentary SI/PI Schematic Review
           </h2>
-          <p className="mt-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
+          <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
             All PCB layout engagements at Qmax Systems include a complimentary
             SI/PI-focused schematic review prior to layout commencement. For
             standalone SI/PI analysis engagements, an equivalent review is
@@ -1548,7 +1548,7 @@ export default function SIPIAnalysisServicesPage() {
               critical SI paths checked against EOL and allocation risk
             </li>
           </ul>
-          <p className="mt-8 text-base leading-8 text-zinc-700 md:text-lg text-justify italic">
+          <p className="mt-8 text-base leading-8 md:text-lg text-justify italic text-muted-foreground">
             The schematic review is delivered as a written findings report with
             change recommendations referenced to schematic sheet and component
             reference designator.
@@ -1558,10 +1558,10 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             9. 1-Hour Complimentary Engineering Consultation
           </h2>
-          <p className="mt-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
+          <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
             Qmax Systems offers a no-obligation, 1-hour technical consultation
             with senior SI/PI engineers. This is an engineering session &mdash;
             not a sales presentation. We review your specific interface
@@ -1614,7 +1614,7 @@ export default function SIPIAnalysisServicesPage() {
             >
               Schedule Your 1-Hour SI/PI Consultation
             </Link>
-            <p className="text-sm font-medium text-zinc-500 md:text-base">
+            <p className="text-sm font-medium md:text-base text-muted-foreground">
               Available for new designs, designs-in-progress, or existing
               designs with SI/PI issues. No project commitment required.
             </p>
@@ -1624,7 +1624,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-[80rem] text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl text-left">
+          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
             10. SI/PI Analysis Deliverables
           </h2>
           <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
@@ -1734,10 +1734,10 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-4xl text-center text-zinc-800">
-          <h2 className="text-3xl tracking-tight text-zinc-900 sm:text-4xl">
+          <h2 className="text-3xl tracking-tight sm:text-4xl">
             Start Your SI/PI Engagement
           </h2>
-          <p className="mt-6 text-base leading-8 text-zinc-700 md:text-lg">
+          <p className="mt-6 text-base leading-8 md:text-lg text-muted-foreground">
             Whether you are developing a PCIe Gen6 AI accelerator fabric, a DDR5
             server memory subsystem, a 100Gbps data centre switch, or need an
             independent SI/PI review of an existing design before fabrication,

@@ -38,7 +38,7 @@ export function WorkflowSection({
 
   return (
     <section className="relative bg-white px-6 py-16 min-[900px]:px-16 min-[900px]:py-24">
-      <h2 className="mx-auto mb-20 max-w-[1200px] text-center text-4xl font-light tracking-wide text-black md:text-5xl">
+      <h2 className="mx-auto mb-20 max-w-[1200px] text-center text-4xl font-light tracking-wide md:text-5xl">
         {title} <span className="text-brand-500"> {titleHighlight}</span>
       </h2>
       <div className="relative mx-auto max-w-[1100px]">
@@ -64,10 +64,10 @@ export function WorkflowSection({
                     : "min-[900px]:pr-0 min-[900px]:text-left"
                 }`}
               >
-                <h3 className="mb-4 text-2xl tracking-wide text-black md:text-3xl">
+                <h3 className="mb-4 text-2xl tracking-wide md:text-3xl">
                   {step.title}
                 </h3>
-                <p className="m-0 text-zinc-700">{step.description}</p>
+                <p className="m-0 text-muted-foreground">{step.description}</p>
               </div>
               <div className="absolute left-0 z-[2] flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-brand-500 text-white min-[900px]:relative min-[900px]:left-auto min-[900px]:-mx-6">
                 {step.number}

@@ -209,11 +209,11 @@ export default function HamburgerNavigation() {
                                   />
                                 </div>
                                 <div className="flex-1">
-                                  <h3 className="font-medium text-gray-900 text-sm">
+                                  <h3 className="font-medium text-sm">
                                     {subItem.title}
                                   </h3>
                                   {subItem.description && (
-                                    <p className="text-xs text-gray-500 mt-1">
+                                    <p className="text-xs mt-1 text-muted-foreground">
                                       {subItem.description}
                                     </p>
                                   )}

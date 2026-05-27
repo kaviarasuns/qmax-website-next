@@ -79,10 +79,9 @@ export default function OurServices() {
         {/* Heading */}
         <div className="text-center mb-7">
           <h2 id="our-services-heading">
-            <span className="text-black">Our</span>{" "}
-            <span className="text-red-500">Services</span>
+            Our <span className="text-red-500">Services</span>
           </h2>
-          {/* <p className="mt-4 text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          {/* <p className="mt-4 text-base md:text-lg max-w-2xl mx-auto text-muted-foreground">
             End-to-end electronics engineering — from concept through hardware,
             firmware, PCB, and enclosure to a production-ready product.
           </p> */}
@@ -105,10 +104,10 @@ export default function OurServices() {
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div className="flex-1 min-w-0 min-h-[4.75rem]">
-                    <h3 className="text-lg md:text-xl font-semibold text-black tracking-tight leading-tight">
+                    <h3 className="text-lg md:text-xl font-semibold tracking-tight leading-tight">
                       {service.title}
                     </h3>
-                    <p className="mt-1 text-sm text-gray-600 leading-relaxed">
+                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                       {service.blurb}
                     </p>
                   </div>

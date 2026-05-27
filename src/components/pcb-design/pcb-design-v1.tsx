@@ -108,17 +108,17 @@ export default function PCBDesignPageV1() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-stretch">
             <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
               <div className="bg-gray-50 rounded-2xl border border-gray-100 p-8 md:p-12 h-full flex flex-col justify-center">
-                <h2 className="text-3xl md:text-5xl text-gray-900 leading-tight mb-8">
+                <h2 className="text-3xl md:text-5xl leading-tight mb-8">
                   Engineering <br />
                   <span className="text-red-600">Beyond Connectivity</span>
                 </h2>
                 <div className="w-20 h-1.5 bg-red-600 mb-8" />
-                <p className="text-xl text-gray-800 font-medium leading-relaxed mb-6">
+                <p className="text-xl font-medium leading-relaxed mb-6 text-muted-foreground">
                   At Qmax Systems, we view PCB Design Services not merely as an
                   interconnect task, but as a complex multi-physics engineering
                   challenge.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed text-justify">
+                <p className="text-lg leading-relaxed text-justify text-muted-foreground">
                   In modern electronics, the physical layout is a critical
                   component of the circuit itself. Our engineering team
                   specializes in first-time-right PCB design.
@@ -131,7 +131,7 @@ export default function PCBDesignPageV1() {
                 <div className="absolute top-0 right-0 p-8">
                   <Cpu className="w-12 h-12 text-gray-100 group-hover:text-red-100 transition-colors" />
                 </div>
-                <p className="text-lg text-gray-700 leading-relaxed text-justify mb-8 relative z-10">
+                <p className="text-lg leading-relaxed text-justify mb-8 relative z-10 text-muted-foreground">
                   By prioritizing early risk identification and disciplined
                   design methodology, we deliver production-ready PCB designs
                   that bridge complex conceptual requirements and market-ready
@@ -143,13 +143,13 @@ export default function PCBDesignPageV1() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-gray-200">
                   <div className="flex items-start gap-4">
                     <div className="mt-1 w-2 h-2 rounded-full bg-red-600 shrink-0" />
-                    <p className="text-sm text-gray-900 uppercase tracking-wider">
+                    <p className="text-sm uppercase tracking-wider">
                       Signal & Power Integrity
                     </p>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="mt-1 w-2 h-2 rounded-full bg-red-600 shrink-0" />
-                    <p className="text-sm text-gray-900 uppercase tracking-wider">
+                    <p className="text-sm uppercase tracking-wider">
                       EMI & Thermal Management
                     </p>
                   </div>
@@ -177,10 +177,10 @@ export default function PCBDesignPageV1() {
       <section className="py-24 bg-gray-50/50 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-3xl md:text-5xl text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-5xl mb-6">
               Our PCB Design Specialisations
             </h2>
-            <p className="text-lg text-gray-600 max-w-4xl leading-relaxed text-justify">
+            <p className="text-lg max-w-4xl leading-relaxed text-justify text-muted-foreground">
               Qmax Systems provides specialized PCB design engineering across
               seven practice areas. Each discipline is staffed by engineers with
               experience, supported by well-documented component libraries built
@@ -251,10 +251,10 @@ export default function PCBDesignPageV1() {
                   <div className="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 mb-8 group-hover:bg-white group-hover:scale-110 transition-all duration-500">
                     {spec.icon}
                   </div>
-                  <h3 className="text-2xl text-gray-900 mb-4 group-hover:text-red-700 transition-colors">
+                  <h3 className="text-2xl mb-4 group-hover:text-red-700 transition-colors">
                     {spec.title}
                   </h3>
-                  <p className="text-gray-600 mb-8 leading-relaxed text-justify text-base group-hover:text-gray-900 transition-colors">
+                  <p className="mb-8 leading-relaxed text-justify text-base group-hover:text-gray-900 transition-colors text-muted-foreground">
                     {spec.description}
                   </p>
                   <Link

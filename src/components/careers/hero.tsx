@@ -21,7 +21,7 @@ export function Hero() {
         <div className="w-full flex flex-col sm:flex-row items-start sm:items-end justify-between gap-3 md:gap-6">
           {/* Title */}
           <div className="max-w-[300px] sm:max-w-md lg:max-w-xl">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.75rem] font-bold tracking-tight text-zinc-900 leading-tight">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.75rem] font-bold tracking-tight leading-tight">
               Design, Develop, and Deploy Cutting-Edge Products
             </h1>
           </div>
@@ -29,7 +29,7 @@ export function Hero() {
 
         {/* Description */}
         <div className="max-w-3xl">
-          <p className="text-sm sm:text-base md:text-lg text-zinc-700 leading-relaxed text-justify">
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-justify text-muted-foreground">
             We are looking for engineering enthusiasts ready to dive into
             cutting-edge technology. From Hardware and AI to Industrial Design,
             you will gain hands-on experience in full-cycle product development.

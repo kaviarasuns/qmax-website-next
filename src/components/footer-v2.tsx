@@ -84,7 +84,7 @@ export default function FooterV2() {
                 <h3 className="text-xl font-semibold mb-4 mt-8">
                   Social Media
                 </h3>
-                <p className="mb-4">Get in touch with us on social media.</p>
+                <p className="mb-4 text-white">Get in touch with us on social media.</p>
                 <div className="flex gap-6">
                   <Link
                     href="https://www.facebook.com/QMAXSystems/"
@@ -225,13 +225,13 @@ export default function FooterV2() {
                         {country}
                       </div>
                       <div className="p-3 text-sm text-gray-300 bg-zinc-800">
-                        <p className="font-semibold">
+                        <p className="font-semibold text-gray-300">
                           {addresses[country].name}
                         </p>
                         {addresses[country].address.map((line, index) => (
-                          <p key={index}>{line}</p>
+                          <p key={index} className="text-gray-300">{line}</p>
                         ))}
-                        <p className="mt-2">{addresses[country].phone}</p>
+                        <p className="mt-2 text-gray-300">{addresses[country].phone}</p>
                         <button
                           onClick={() => {
                             const timestamp = Date.now();
@@ -273,7 +273,7 @@ export default function FooterV2() {
                 width={700}
               /> */}
               <div className="text-center">
-                <p className="mb-4">
+                <p className="mb-4 text-white">
                   Copyright © 2025 Qmax Systems India Pvt. Ltd.
                 </p>
                 <div className="flex justify-center gap-6 text-sm text-zinc-400">

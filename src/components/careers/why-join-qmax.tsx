@@ -46,7 +46,7 @@ export function WhyJoinQmax() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">Why Join Qmax?</h2>
-          <p className="mx-auto max-w-2xl text-lg text-foreground/70">
+          <p className="mx-auto max-w-2xl text-lg">
             We&apos;re building a culture of innovation where your contribution matters and your growth is our priority.
           </p>
         </div>
@@ -59,10 +59,10 @@ export function WhyJoinQmax() {
                 <div className="mb-4 inline-block rounded-lg bg-primary/10 p-3 group-hover:bg-primary/20 transition-colors">
                   <Icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
+                <h3 className="mb-2 text-lg font-semibold">
                   {benefit.title}
                 </h3>
-                <p className="text-foreground/70">
+                <p className="">
                   {benefit.description}
                 </p>
               </Card>

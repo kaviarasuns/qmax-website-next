@@ -31,7 +31,7 @@ export function ComplimentarySchematicReviewSection({
           <br />
           <span className="text-[#F33117]">{titleHighlight}</span>
         </h2>
-        <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-slate-500">
+        <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-muted-foreground">
           {subtitle}
         </p>
 
@@ -52,7 +52,7 @@ export function ComplimentarySchematicReviewSection({
                 ) : null}
                 {item.title}
               </h3>
-              <p className="mt-4 text-[15px] leading-relaxed text-slate-500">
+              <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
                 {item.description}
               </p>
             </article>

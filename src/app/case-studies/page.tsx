@@ -250,7 +250,7 @@ export default function CaseStudiesPage() {
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 01</span> */}
-                <h2 className="text-3xl font-bold text-zinc-900">
+                <h2 className="text-3xl font-bold">
                   Embedded Systems
                 </h2>
               </div>
@@ -276,7 +276,7 @@ export default function CaseStudiesPage() {
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 02</span> */}
-                <h2 className="text-3xl font-bold text-zinc-900">PCB Design</h2>
+                <h2 className="text-3xl font-bold">PCB Design</h2>
               </div>
               <span className="text-sm text-zinc-500 font-medium mb-1">
                 {pcbCaseStudies.length} Projects
@@ -300,7 +300,7 @@ export default function CaseStudiesPage() {
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 03</span> */}
-                <h2 className="text-3xl font-bold text-zinc-900">
+                <h2 className="text-3xl font-bold">
                   Mechanical Design
                 </h2>
               </div>
@@ -323,7 +323,7 @@ export default function CaseStudiesPage() {
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 04</span> */}
-                <h2 className="text-3xl font-bold text-zinc-900">
+                <h2 className="text-3xl font-bold">
                   Industrial Design
                 </h2>
               </div>

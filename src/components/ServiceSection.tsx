@@ -44,7 +44,7 @@ const ServiceSection = () => {
                   <h2 className="text-2xl font-semibold text-gray-800 mb-4">
                     {service.title}
                   </h2>
-                  <p className="text-lg leading-relaxed text-gray-600 mb-6 max-w-md mx-auto">
+                  <p className="text-lg leading-relaxed mb-6 max-w-md mx-auto text-muted-foreground">
                     {service.description}
                   </p>
                   <span className="inline-block font-bold text-brand-red hover:text-[#FF1111] text-base">

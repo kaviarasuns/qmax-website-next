@@ -120,7 +120,7 @@ export default function StackReveal({
       {/* <div className="mb-3 flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.18em] text-[#E94B3C]">
         {eyebrow}
       </div> */}
-      <h1 className="text-3xl md:text-5xl font-light tracking-wide text-center text-black tracking-wide">
+      <h1 className="text-center text-3xl font-light tracking-wide md:text-5xl">
         Design To <span className="text-red-500">Manufacturing</span>
       </h1>
       <div className="py-9"></div>

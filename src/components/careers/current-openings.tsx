@@ -469,7 +469,7 @@ function SectionAccordion({
           showChevron ? "cursor-pointer" : "cursor-default"
         }`}
       >
-        <h4 className="text-xs sm:text-sm font-bold text-zinc-800 tracking-wide group-hover:text-zinc-900 transition-colors">
+        <h4 className="text-xs sm:text-sm font-bold tracking-wide transition-colors">
           {title}
         </h4>
         {showChevron && (
@@ -538,7 +538,7 @@ function JobCard({ position, index }: { position: Position; index: number }) {
         className={`p-8 sm:p-10 md:p-14 flex flex-col ${isReversed ? "lg:order-1" : ""}`}
       >
         {/* Title */}
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-zinc-900 pb-3 border-b-2 border-zinc-400 mb-4">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold pb-3 border-b-2 border-zinc-400 mb-4">
           {position.title}
         </h3>
 
@@ -609,7 +609,7 @@ function SideNav({
   return (
     <aside className="hidden lg:block w-64 flex-shrink-0 self-start sticky top-20">
       <div className="max-h-[calc(100vh-10rem)] overflow-y-auto">
-        {/* <p className="text-[10px] font-semibold text-zinc-400 uppercase tracking-widest mb-3 pl-2">
+        {/* <p className="text-[10px] font-semibold uppercase tracking-widest mb-3 pl-2 text-muted-foreground">
           Jump to
         </p> */}
         <nav className="space-y-5">
@@ -624,7 +624,7 @@ function SideNav({
             if (group.length === 0) return null;
             return (
               <div key={type}>
-                <p className="text-xs font-semibold text-black uppercase tracking-widest mb-1.5 pl-2">
+                <p className="text-xs font-semibold uppercase tracking-widest mb-1.5 pl-2">
                   {label}
                 </p>
                 <ul className="space-y-0.5">

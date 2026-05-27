@@ -8,13 +8,13 @@ export default function FinalCTA() {
     <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center space-y-8">
-        <h1 className="mb-4 lg:mb-6 text-gray-900 leading-[1.1] tracking-tight">
+        <h1 className="mb-4 lg:mb-6 leading-[1.1] tracking-tight">
               Let&apos;s Engineer{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-600">
                 Your Next Product
               </span>
             </h1>
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto text-muted-foreground">
             Partner with Qmax to engineer your next breakthrough product. Whether you need embedded systems design, PCB design, or full-cycle product development, we&apos;re ready to deliver.
           </p>
 

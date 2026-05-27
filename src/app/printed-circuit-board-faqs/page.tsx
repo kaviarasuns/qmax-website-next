@@ -132,7 +132,7 @@ const FAQSection = () => {
             <span className="text-red-500 hover:text-red-500/90 transition-colors">
               Frequently Asked
             </span>
-            <span className="text-black"> Questions</span>
+             Questions
           </h1>
         </div>
 

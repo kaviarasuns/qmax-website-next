@@ -8,13 +8,13 @@ export function WhyChooseQmaxMechanical() {
         <div className="mb-7">
           <h2
             id="why-choose-qmax-heading"
-            className="font-light leading-[1.15] tracking-[-0.01em] text-zinc-900 [font-size:clamp(32px,4vw,48px)]"
+            className="font-light leading-[1.15] tracking-[-0.01em] [font-size:clamp(32px,4vw,48px)]"
           >
             Why Choose Qmax{" "}
             <span className="text-brand-500">Systems</span>
           </h2>
         </div>
-        <p className="mx-auto text-left text-[17px] leading-[1.7] text-zinc-600 text-justify">
+        <p className="mx-auto text-left text-[17px] leading-[1.7] text-justify text-muted-foreground">
           We maintain active working relationships with sheet metal fabricators,
           CNC machining houses, and plastic injection moulding companies across
           India, Europe, and Southeast Asia. Whether you require prototype or

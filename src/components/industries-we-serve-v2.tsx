@@ -125,7 +125,7 @@ export function IndustriesWeServeV2() {
         {/* Original Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl">
-            <span className="text-black">Industries</span>{" "}
+            Industries 
             <span className="text-red-500">We Serve</span>
           </h2>
         </div>
@@ -159,15 +159,15 @@ export function IndustriesWeServeV2() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column - Cream/Beige Card */}
           <div className="bg-qmax-grey rounded-2xl p-8 flex flex-col">
-            <h3 className="text-2xl font-bold text-black mb-4">
+            <h3 className="text-2xl font-bold mb-4">
               {selected.title}
             </h3>
 
-            <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
               {selected.description}
             </p>
 
-            <p className="text-gray-600 mb-6 text-sm leading-relaxed flex-1">
+            <p className="mb-6 text-sm leading-relaxed flex-1 text-muted-foreground">
               {selected.subDescription}
             </p>
 

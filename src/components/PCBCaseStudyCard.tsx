@@ -23,12 +23,12 @@ const PCBCaseStudyCard: React.FC<CaseStudyCardProps> = ({
           </div>
 
           <div className="flex flex-1 flex-col justify-between gap-3 bg-white px-5 py-4">
-            <h3 className="text-base md:text-lg font-semibold text-zinc-950 leading-tight">
+            <h3 className="text-base md:text-lg font-semibold leading-tight">
               {title}
             </h3>
 
             {summary && (
-              <p className="text-[13px] text-zinc-600 line-clamp-2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
+              <p className="text-[13px] line-clamp-2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 text-muted-foreground">
                 {summary}
               </p>
             )}

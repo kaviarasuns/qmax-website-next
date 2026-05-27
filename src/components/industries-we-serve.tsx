@@ -237,10 +237,10 @@ export function IndustriesWeServe() {
       <div className="max-w-screen-xl mx-auto px-4 lg:px-5">
         {/* Header */}
         <div className="mb-6 lg:mb-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-4 lg:mb-9 text-foreground">
+          <h2 className="text-3xl md:text-5xl font-light tracking-wide mb-4 lg:mb-9">
             Industries <span className="text-[#e44332]">We Serve</span>
           </h2>
-          <p className="mt-2 lg:mt-[35px] text-sm lg:text-lg leading-[150%] font-normal text-foreground max-w-2xl mx-auto">
+          <p className="mt-2 lg:mt-[35px] text-sm lg:text-lg leading-[150%] font-normal max-w-2xl mx-auto">
             We engineer precision solutions for mission-critical industries. Our
             deep domain expertise and technical excellence deliver measurable
             impact across sectors where performance, reliability, and innovation
@@ -292,21 +292,21 @@ export function IndustriesWeServe() {
 
               {/* Content */}
               <div className="flex flex-col justify-center md:order-1">
-                <h3 className="font-bold text-xl lg:text-2xl text-gray-900 mb-2 lg:mb-3">
+                <h3 className="font-bold text-xl lg:text-2xl mb-2 lg:mb-3">
                   {selected.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed text-gray-700 mb-1.5 lg:mb-2 font-sans">
+                <p className="text-sm leading-relaxed mb-1.5 lg:mb-2 font-sans text-muted-foreground">
                   {selected.description}
                 </p>
 
-                <p className="text-sm leading-relaxed text-gray-700 mb-3 lg:mb-4 font-sans">
+                <p className="text-sm leading-relaxed mb-3 lg:mb-4 font-sans text-muted-foreground">
                   {selected.additionalContent}
                 </p>
 
                 {/* Related Case Studies */}
                 <div className="mb-3 lg:mb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-1.5">
+                  <h4 className="text-sm font-semibold mb-1.5">
                     Related Case Studies
                   </h4>
                   <div className="flex flex-wrap gap-1.5">

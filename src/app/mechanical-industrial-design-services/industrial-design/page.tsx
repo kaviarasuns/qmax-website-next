@@ -181,7 +181,7 @@ const industrialDesignCaseStudies = industrialCaseStudiesData
 
 export default function IndustrialDesignServicesPage() {
   return (
-    <main className="relative bg-[#fcfcfc] text-zinc-900">
+    <main className="relative bg-[#fcfcfc]">
       <ServiceVideoHero {...HERO} />
 
       {/* Core Introduction */}
@@ -239,7 +239,7 @@ export default function IndustrialDesignServicesPage() {
             <h2 className="text-4xl font-light text-zinc-500 dark:text-zinc-400 md:text-6xl tracking-tighter">
               The Process.
             </h2>
-            <p className="max-w-md text-zinc-500 dark:text-zinc-400 font-light text-lg">
+            <p className="max-w-md font-light text-lg text-muted-foreground">
               A structured four-phase engine moving from narrative to
               production-ready documentation.
             </p>
@@ -284,10 +284,10 @@ export default function IndustrialDesignServicesPage() {
                     {step.id}
                   </span>
                 </div>
-                <h3 className="text-3xl font-light text-zinc-950 dark:text-zinc-100 mb-8 group-hover:underline decoration-[#F33117] underline-offset-8 transition-all">
+                <h3 className="text-3xl font-light dark:text-zinc-100 mb-8 group-hover:underline decoration-[#F33117] underline-offset-8 transition-all">
                   {step.title}
                 </h3>
-                <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed font-light mt-auto">
+                <p className="leading-relaxed font-light mt-auto text-muted-foreground">
                   {step.desc}
                 </p>
               </div>
@@ -311,7 +311,7 @@ export default function IndustrialDesignServicesPage() {
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 dark:text-zinc-500 mb-8 block">
                 / PARTNERSHIP
               </span>
-              <h2 className="text-4xl font-light text-zinc-950 dark:text-zinc-100 md:text-6xl tracking-tighter mb-12">
+              <h2 className="text-4xl font-light dark:text-zinc-100 md:text-6xl tracking-tighter mb-12">
                 Why Qmax <br className="hidden lg:block" /> Systems.
               </h2>
               <div className="h-1 w-24 bg-[#F33117]" />
@@ -339,7 +339,7 @@ export default function IndustrialDesignServicesPage() {
                   <h3 className="text-xl uppercase tracking-widest text-red-500 border-b border-zinc-200 dark:border-zinc-800 pb-4">
                     {item.title}
                   </h3>
-                  <p className="text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">
+                  <p className="font-light leading-relaxed text-muted-foreground">
                     {item.desc}
                   </p>
                 </div>

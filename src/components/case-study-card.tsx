@@ -92,7 +92,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
         {/* ── Header ── */}
         <header className="pt-4">
           <h1
-            className="text-2xl font-bold leading-tight tracking-tight text-zinc-950 md:text-3xl"
+            className="text-2xl font-bold leading-tight tracking-tight md:text-3xl"
             style={{ textWrap: "balance" }}
           >
             {caseStudy.title}
@@ -135,7 +135,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
           <div className="rounded-2xl border border-zinc-200/70 bg-zinc-50 p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] md:p-8">
             <SectionLabel index="02" label="Project Overview" />
             <div className="relative pl-5 border-l-2 border-brand-red/20">
-              <p className="text-[15.5px] leading-[1.75] text-zinc-600">
+              <p className="text-[15.5px] leading-[1.75] text-muted-foreground">
                 {caseStudy.summary}
               </p>
             </div>

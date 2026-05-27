@@ -110,7 +110,7 @@ export default function InsideOutV2() {
         ref={sectionRef}
         className="bg-white w-full max-w-7xl rounded-2xl overflow-hidden"
       >
-      <h2 className="text-center text-3xl md:text-5xl font-light tracking-wide px-6 pt-8 pb-4 lg:pt-10 lg:pb-6">
+      <h2 className="text-center text-3xl font-light tracking-wide px-6 pt-8 pb-4 md:text-5xl lg:pt-10 lg:pb-6">
         Why Qmax <span className="text-red-500">Systems</span>
       </h2>
       {/*Main Section*/}
@@ -211,11 +211,11 @@ export default function InsideOutV2() {
             <TrendingUp size={28} className="text-red-500 mb-2" />
             <p
               ref={years.ref}
-              className="text-4xl md:text-5xl font-bold text-zinc-900"
+              className="text-4xl md:text-5xl font-bold"
             >
               {years.count}+
             </p>
-            <p className="text-gray-500 text-sm md:text-base font-normal mt-1">
+            <p className="text-sm md:text-base font-normal mt-1 text-muted-foreground">
               Years of Industry Experience
             </p>
           </div>
@@ -224,11 +224,11 @@ export default function InsideOutV2() {
             <Users size={28} className="text-red-500 mb-2" />
             <p
               ref={engineers.ref}
-              className="text-4xl md:text-5xl font-bold text-zinc-900"
+              className="text-4xl md:text-5xl font-bold"
             >
               {engineers.count}+
             </p>
-            <p className="text-gray-500 text-sm md:text-base font-normal mt-1">
+            <p className="text-sm md:text-base font-normal mt-1 text-muted-foreground">
               Professional Engineers
             </p>
           </div>
@@ -237,11 +237,11 @@ export default function InsideOutV2() {
             <CheckSquare size={28} className="text-red-500 mb-2" />
             <p
               ref={projects.ref}
-              className="text-4xl md:text-5xl font-bold text-zinc-900"
+              className="text-4xl md:text-5xl font-bold"
             >
               {projects.count}+
             </p>
-            <p className="text-gray-500 text-sm md:text-base font-normal mt-1">
+            <p className="text-sm md:text-base font-normal mt-1 text-muted-foreground">
               Successful Projects Delivered
             </p>
           </div>

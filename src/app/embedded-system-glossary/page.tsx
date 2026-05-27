@@ -10,7 +10,7 @@ const GlossaryList = () => {
             <h3 className="text-xl font-bold text-red-500 mb-2">
               {item.term}
             </h3>
-            <p className="text-gray-700 text-justify leading-relaxed">
+            <p className="text-justify leading-relaxed text-muted-foreground">
               {item.definition}
             </p>
           </div>

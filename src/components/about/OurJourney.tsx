@@ -39,7 +39,7 @@ export default function OurJourney() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="mb-2">
-            <span className="text-black">Our</span>{' '}
+            Our 
             <span className="text-red-500">Journey</span>
           </h2>
         </div>
@@ -59,10 +59,10 @@ export default function OurJourney() {
                       <div className="text-2xl md:text-3xl font-extrabold text-red-500 mb-2">
                         {item.year}
                       </div>
-                      <h3 className="text-black mb-3">
+                      <h3 className="mb-3">
                         {item.title}
                       </h3>
-                      <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                      <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
                         {item.description}
                       </p>
                     </div>
@@ -81,10 +81,10 @@ export default function OurJourney() {
                       <div className="text-2xl md:text-3xl font-extrabold text-red-500 mb-2">
                         {item.year}
                       </div>
-                      <h3 className="text-black mb-3">
+                      <h3 className="mb-3">
                         {item.title}
                       </h3>
-                      <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                      <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
                         {item.description}
                       </p>
                     </div>

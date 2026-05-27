@@ -85,7 +85,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 md:mb-4">
             Case Studies
           </h1>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4 mb-4 md:mb-6">
+          <p className="text-base md:text-lg max-w-2xl mx-auto px-4 mb-4 md:mb-6 text-muted-foreground">
             Explore our comprehensive solutions and successful project
             implementations
           </p>

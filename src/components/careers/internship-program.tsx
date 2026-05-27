@@ -43,19 +43,19 @@ export function InternshipProgram() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-12">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">Internship Program</h2>
-          <p className="text-lg text-foreground/70">
+          <p className="text-lg">
             Bridge the gap between academic theory and industrial application. Join our rigorous, technical internship program designed for engineering enthusiasts.
           </p>
         </div>
 
         {/* Available Domains */}
         <div className="mb-16">
-          <h3 className="mb-6 text-2xl font-semibold text-foreground">Available Internship Domains</h3>
+          <h3 className="mb-6 text-2xl font-semibold">Available Internship Domains</h3>
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {internshipDomains.map((domain, i) => (
               <Card key={i} className="p-4">
                 <div className="flex items-center justify-between">
-                  <h4 className="font-medium text-foreground">{domain.name}</h4>
+                  <h4 className="font-medium">{domain.name}</h4>
                   <Badge className="bg-primary text-primary-foreground">{domain.slots} slot{domain.slots > 1 ? 's' : ''}</Badge>
                 </div>
               </Card>
@@ -65,7 +65,7 @@ export function InternshipProgram() {
 
         {/* Internship Benefits */}
         <div className="mb-16">
-          <h3 className="mb-6 text-2xl font-semibold text-foreground">Why Intern at Qmax?</h3>
+          <h3 className="mb-6 text-2xl font-semibold">Why Intern at Qmax?</h3>
           <div className="grid gap-4 md:grid-cols-2">
             {internshipBenefits.map((benefit, i) => {
               const Icon = benefit.icon
@@ -74,8 +74,8 @@ export function InternshipProgram() {
                   <div className="mb-4 inline-block rounded-lg bg-primary/10 p-2">
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
-                  <h4 className="mb-2 font-semibold text-foreground">{benefit.title}</h4>
-                  <p className="text-sm text-foreground/70">{benefit.description}</p>
+                  <h4 className="mb-2 font-semibold">{benefit.title}</h4>
+                  <p className="text-sm">{benefit.description}</p>
                 </Card>
               )
             })}
@@ -85,7 +85,7 @@ export function InternshipProgram() {
         {/* Eligibility & Process */}
         <div className="grid gap-8 md:grid-cols-2">
           <Card className="p-8">
-            <h3 className="mb-6 text-xl font-semibold text-foreground">Eligibility Criteria</h3>
+            <h3 className="mb-6 text-xl font-semibold">Eligibility Criteria</h3>
             <ul className="space-y-3">
               {[
                 'BE / BTech / ME / MTech in ECE, EEE, CSE, IT, Mechanical, or Instrumentation',
@@ -103,7 +103,7 @@ export function InternshipProgram() {
           </Card>
 
           <Card className="p-8">
-            <h3 className="mb-6 text-xl font-semibold text-foreground">Selection Process</h3>
+            <h3 className="mb-6 text-xl font-semibold">Selection Process</h3>
             <div className="space-y-4">
               {[
                 { step: '1', title: 'Application', desc: 'Submit resume and portfolio' },
@@ -117,8 +117,8 @@ export function InternshipProgram() {
                     <span className="text-sm font-semibold text-primary">{item.step}</span>
                   </div>
                   <div>
-                    <h4 className="font-medium text-foreground">{item.title}</h4>
-                    <p className="text-sm text-foreground/70">{item.desc}</p>
+                    <h4 className="font-medium">{item.title}</h4>
+                    <p className="text-sm">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -128,7 +128,7 @@ export function InternshipProgram() {
 
         <div className="mt-8">
           <Card className="p-8">
-            <h3 className="mb-6 text-xl font-semibold text-foreground">Internship Terms</h3>
+            <h3 className="mb-6 text-xl font-semibold">Internship Terms</h3>
             <ul className="space-y-3">
               {[
                 'Strict adherence to office hours and professional conduct is expected',
@@ -147,8 +147,8 @@ export function InternshipProgram() {
 
         {/* Location and CTA */}
         <div className="mt-12 rounded-lg border border-primary/20 bg-primary/5 p-8 text-center">
-          <p className="mb-4 text-lg font-semibold text-foreground">Primary Location: Chennai</p>
-          <p className="mb-6 text-foreground/70">
+          <p className="mb-4 text-lg font-semibold">Primary Location: Chennai</p>
+          <p className="mb-6">
             Join our R&D center to work on cutting-edge technology and gain hands-on experience in full-cycle product development.
           </p>
           <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">

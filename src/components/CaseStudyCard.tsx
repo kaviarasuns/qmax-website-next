@@ -54,12 +54,12 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
           </div>
 
           <div className="flex flex-1 flex-col justify-between gap-3 bg-white px-5 py-4">
-            <h3 className="text-base md:text-lg font-semibold text-zinc-950 leading-tight tracking-wide">
+            <h3 className="text-base md:text-lg font-semibold leading-tight tracking-wide">
               {title}
             </h3>
 
             {/* {summary && (
-              <p className="mt-2 text-[13px] text-zinc-600 line-clamp-1 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 tracking-wide">
+              <p className="mt-2 text-[13px] line-clamp-1 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 tracking-wide text-muted-foreground">
                 {summary}
               </p>
             )} */}
