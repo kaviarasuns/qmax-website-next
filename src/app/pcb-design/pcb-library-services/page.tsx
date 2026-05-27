@@ -177,10 +177,10 @@ function StandardsTable({
       <table className="w-full min-w-[520px] text-left">
         <thead>
           <tr className="border-b border-zinc-200 bg-zinc-50">
-            <th className="px-6 py-4 text-[10px] font-black uppercase tracking-[0.3em] text-[#F33117]">
+            <th className="px-6 py-4 text-[10px] font-black uppercase tracking-[0.3em] text-red-500">
               {headers[0]}
             </th>
-            <th className="px-6 py-4 text-[10px] font-black uppercase tracking-[0.3em] text-[#F33117]">
+            <th className="px-6 py-4 text-[10px] font-black uppercase tracking-[0.3em] text-red-500">
               {headers[1]}
             </th>
           </tr>
@@ -223,7 +223,7 @@ export default function PCBLibraryServicesPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#fcfcfc]/60 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
-              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
+              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-6">
                 PCB DESIGN SERVICES
               </span>
               <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
@@ -268,7 +268,7 @@ export default function PCBLibraryServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               1.1 / WHY LIBRARY QUALITY DETERMINES DESIGN SUCCESS
             </span>
             <p className="mt-8 text-xl leading-relaxed text-zinc-600 font-light max-w-3xl">
@@ -285,7 +285,7 @@ export default function PCBLibraryServicesPage() {
                 key={item.title}
                 className="border-t border-zinc-200 pt-8 group hover:bg-zinc-50 px-4 transition-colors"
               >
-                <h3 className="text-lg font-light text-zinc-950 mb-3 group-hover:text-[#F33117] transition-colors">
+                <h3 className="text-lg font-light text-zinc-950 mb-3 group-hover:text-red-500 transition-colors">
                   {item.title}:
                 </h3>
                 <p className="text-sm text-zinc-500 font-light leading-relaxed">
@@ -300,7 +300,7 @@ export default function PCBLibraryServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               1.2 / QMAX LIBRARY ENGINEERING STANDARDS
             </span>
             <p className="mt-8 text-xl leading-relaxed text-zinc-600 font-light max-w-3xl">
@@ -322,7 +322,7 @@ export default function PCBLibraryServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               2 / SCHEMATIC SYMBOLS
             </span>
             <p className="mt-8 text-xl leading-relaxed text-zinc-600 font-light max-w-3xl">
@@ -388,7 +388,7 @@ export default function PCBLibraryServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               3 / PCB FOOTPRINTS
             </span>
             <p className="mt-8 text-xl leading-relaxed text-zinc-600 font-light max-w-3xl">
@@ -423,7 +423,7 @@ export default function PCBLibraryServicesPage() {
                 key={item.id}
                 className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 py-8 border-t border-zinc-100 hover:bg-zinc-50 transition-colors px-4"
               >
-                <h3 className="text-[#F33117] text-sm font-black uppercase tracking-widest">
+                <h3 className="text-red-500 text-sm font-black uppercase tracking-widest">
                   {item.id} / {item.title}
                 </h3>
                 <p className="text-zinc-600 font-light leading-relaxed">
@@ -438,7 +438,7 @@ export default function PCBLibraryServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-16">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               4 / 3D MODELS
             </span>
             <p className="mt-8 text-xl leading-relaxed text-zinc-600 font-light max-w-3xl">
@@ -504,7 +504,7 @@ export default function PCBLibraryServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               5 / ZERO DEFECT LIBRARY PHILOSOPHY
             </span>
           </div>
@@ -532,7 +532,7 @@ export default function PCBLibraryServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
           <div className="mb-12">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               6 / CONSULTATION
             </span>
             <h2 className="text-4xl font-light text-zinc-950 md:text-5xl lg:text-6xl tracking-tighter max-w-4xl">
@@ -548,7 +548,7 @@ export default function PCBLibraryServicesPage() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 text-[#F33117] group uppercase text-[10px] font-black tracking-widest border-b border-[#F33117] pb-2 hover:text-zinc-950 hover:border-zinc-950 transition-all"
+            className="inline-flex items-center gap-2 text-red-500 group uppercase text-[10px] font-black tracking-widest border-b border-[#F33117] pb-2 hover:text-zinc-950 hover:border-zinc-950 transition-all"
           >
             Contact Qmax Systems
             <svg
@@ -634,21 +634,21 @@ export default function PCBLibraryServicesPage() {
             <div className="mt-8 flex flex-wrap gap-6 text-[10px] font-black uppercase tracking-widest text-zinc-500 px-8">
               <Link
                 href="/contact"
-                className="hover:text-[#F33117] transition-colors"
+                className="hover:text-red-500 transition-colors"
               >
                 Contact Us
               </Link>
               <span aria-hidden="true">|</span>
               <Link
                 href="/pcb-design"
-                className="hover:text-[#F33117] transition-colors"
+                className="hover:text-red-500 transition-colors"
               >
                 PCB Design Services
               </Link>
               <span aria-hidden="true">|</span>
               <Link
                 href="/pcb-design/si-pi-analysis"
-                className="hover:text-[#F33117] transition-colors"
+                className="hover:text-red-500 transition-colors"
               >
                 SI/PI Analysis
               </Link>

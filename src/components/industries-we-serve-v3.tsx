@@ -34,7 +34,7 @@ export function IndustriesWeServeV3() {
       <div className="mx-auto w-full max-w-[1260px]">
         <div className="mb-8 text-center md:mb-9">
           <h2 className="text-center text-4xl font-light tracking-normal text-zinc-950 md:text-5xl lg:text-6xl">
-            Industries <span className="text-brand-red">We Serve</span>
+            Industries <span className="text-red-500">We Serve</span>
           </h2>
         </div>
 

@@ -43,7 +43,7 @@ export default function MechanicalCaseStudyPage() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-10 border-b border-zinc-300/70 pb-6">
-          <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.38em] text-[#F33117]">
+          <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.38em] text-red-500">
             Mechanical Portfolio
           </span>
           <h1 className="text-4xl font-light tracking-tight text-zinc-950 md:text-5xl">

@@ -141,7 +141,7 @@ const PCBCaseStudyGrid = () => {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mb-10 border-b border-zinc-300/70 pb-6">
           <div>
-            <span className="inline-block text-[10px] font-black tracking-[0.38em] text-[#F33117] uppercase mb-3">
+            <span className="inline-block text-[10px] font-black tracking-[0.38em] text-red-500 uppercase mb-3">
               PCB Portfolio
             </span>
             <h1 className="text-4xl md:text-5xl font-light tracking-tight text-zinc-950">

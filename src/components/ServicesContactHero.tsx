@@ -262,7 +262,7 @@ export default function ServicesContactHero({
         </div>
 
         {/* Stats + form grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_460px] gap-0 lg:gap-12 items-start lg:items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_480px] gap-0 lg:gap-12 items-start lg:items-stretch">
           {/* LEFT — stats */}
           <div className="flex flex-col w-full max-w-[560px] lg:max-w-none mx-auto lg:mx-0 lg:h-full lg:min-h-0">
             <div className="flex flex-col gap-7 flex-1 lg:min-h-0">

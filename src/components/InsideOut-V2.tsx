@@ -167,11 +167,11 @@ export default function InsideOutV2() {
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#F33117"
+                      stroke="currentColor"
                       strokeWidth="1"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className={`transition-transform duration-300 ${expandedIndex === index ? "rotate-180" : ""}`}
+                      className={`text-red-500 transition-transform duration-300 ${expandedIndex === index ? "rotate-180" : ""}`}
                     >
                       <path d="M12 5v14M19 12l-7 7-7-7" />
                     </svg>

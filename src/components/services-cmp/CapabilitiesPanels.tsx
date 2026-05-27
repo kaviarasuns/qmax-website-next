@@ -1,16 +1,9 @@
-import {
-  CapabilitiesStrip,
-  type CapabilitiesStripItem,
-} from "./CapabilitiesStripSection";
-
 interface PanelsCapability {
   id: string;
   headline: string;
   intro: string;
   learnMoreHref: string;
   bullets: { title: string; items: string[] }[];
-  deliverables?: CapabilitiesStripItem[];
-  deliverablesAriaLabel?: string;
 }
 
 interface CapabilitiesPanelsProps {
@@ -75,13 +68,6 @@ export function CapabilitiesPanels({
               </div>
             </div>
           </div>
-          {cap.deliverables && cap.deliverables.length > 0 && (
-            <CapabilitiesStrip
-              items={cap.deliverables}
-              className="mt-12"
-              ariaLabel={cap.deliverablesAriaLabel}
-            />
-          )}
         </div>
       ))}
     </>

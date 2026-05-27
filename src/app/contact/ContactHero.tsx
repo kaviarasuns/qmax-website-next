@@ -61,7 +61,7 @@ const InputField = ({
   const labelClasses = `
     absolute left-0 transition-all duration-300 ease-out pointer-events-none
     ${isActive ? "top-0 text-xs font-medium" : "top-3.5 text-base"}
-    ${isFocused ? "text-brand-red" : "text-gray-500"}
+    ${isFocused ? "text-red-500" : "text-gray-500"}
   `;
 
   if (isTextarea) {
@@ -213,7 +213,7 @@ const ContactHero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start lg:items-stretch">
           {/* Left Column - Contact Form */}
           <div>
-            <p className="text-brand-red font-medium tracking-widest text-xs uppercase mb-2">
+            <p className="text-red-500 font-medium tracking-widest text-xs uppercase mb-2">
               Get in Touch
             </p>
             <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl text-gray-900 leading-[1.1] tracking-tight">
@@ -257,7 +257,7 @@ const ContactHero = () => {
                       setShowThankYou(false);
                       resetForm();
                     }}
-                    className="mt-6 text-brand-red font-medium hover:underline inline-flex items-center gap-2 group"
+                    className="mt-6 text-red-500 font-medium hover:underline inline-flex items-center gap-2 group"
                   >
                     Send another message
                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
@@ -390,7 +390,7 @@ const ContactHero = () => {
                       href={`tel:${addresses[country].phone.replace(/\s/g, "")}`}
                       className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-2"
                     >
-                      <Phone className="w-3.5 h-3.5 text-brand-red" />
+                      <Phone className="w-3.5 h-3.5 text-red-500" />
                       {addresses[country].phone}
                     </a>
                     <button
@@ -409,7 +409,7 @@ const ContactHero = () => {
                           window.open(mailtoUrl, "_blank");
                         }, 100);
                       }}
-                      className="flex items-center gap-3 text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left transition-colors text-lg tracking-wide"
+                      className="flex items-center gap-3 text-red-500 hover:text-red-500 cursor-pointer bg-transparent border-none p-0 text-left transition-colors text-lg tracking-wide"
                     >
                       <Mail className="w-4 h-4" />
                       {addresses[country].email}
@@ -441,7 +441,7 @@ const ContactHero = () => {
                       href={`tel:${jobs[key].phone.replace(/\s/g, "")}`}
                       className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-2"
                     >
-                      <Phone className="w-3.5 h-3.5 text-brand-red" />
+                      <Phone className="w-3.5 h-3.5 text-red-500" />
                       {jobs[key].phone}
                     </a>
                     <button
@@ -462,7 +462,7 @@ const ContactHero = () => {
                           window.open(mailtoUrl, "_blank");
                         }, 100);
                       }}
-                      className="flex items-center gap-3 text-brand-red hover:text-[#FF1111] cursor-pointer bg-transparent border-none p-0 text-left transition-colors text-lg tracking-wide"
+                      className="flex items-center gap-3 text-red-500 hover:text-red-500 cursor-pointer bg-transparent border-none p-0 text-left transition-colors text-lg tracking-wide"
                     >
                       <Mail className="w-4 h-4" />
                       {jobs[key].email}

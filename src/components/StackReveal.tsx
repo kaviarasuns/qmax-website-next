@@ -161,16 +161,16 @@ export default function StackReveal({
             />
 
             <div className="relative z-[2] flex flex-col items-start">
-              <div className="mb-0 max-h-0 overflow-hidden font-mono text-[11px] font-medium tracking-[0.3em] text-[#ff7a6b] opacity-0 transition-[max-height,opacity,margin] duration-500 group-hover:mb-2 group-hover:max-h-6 group-hover:opacity-100 group-focus-within:mb-2 group-focus-within:max-h-6 group-focus-within:opacity-100 group-[.is-auto-expanded]:mb-2 group-[.is-auto-expanded]:max-h-6 group-[.is-auto-expanded]:opacity-100">
+              <div className="mb-0 max-h-0 overflow-hidden font-mono text-[11px] font-medium tracking-[0.3em] text-red-500 opacity-0 transition-[max-height,opacity,margin] duration-500 group-hover:mb-2 group-hover:max-h-6 group-hover:opacity-100 group-focus-within:mb-2 group-focus-within:max-h-6 group-focus-within:opacity-100 group-[.is-auto-expanded]:mb-2 group-[.is-auto-expanded]:max-h-6 group-[.is-auto-expanded]:opacity-100">
                 {item.step}
               </div>
               <h3 className="ml-3 mt-1 flex items-end gap-2 whitespace-nowrap text-lg font-extrabold tracking-[-0.02em] [transform-origin:0%_100%] -rotate-90 translate-y-[35%] transition-[transform,font-size,margin] duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:ml-0 group-hover:text-3xl group-hover:rotate-0 group-hover:translate-y-0 group-focus-within:ml-0 group-focus-within:text-3xl group-focus-within:rotate-0 group-focus-within:translate-y-0 group-[.is-auto-expanded]:ml-0 group-[.is-auto-expanded]:text-3xl group-[.is-auto-expanded]:rotate-0 group-[.is-auto-expanded]:translate-y-0 max-[1100px]:text-lg max-[1100px]:rotate-0 max-[1100px]:translate-y-0">
                 <span>{item.title}</span>
-                <span className="mb-0.5 font-mono text-[11px] font-medium tracking-[0.3em] text-[#ff7a6b] transition-[letter-spacing,opacity] duration-500 group-hover:opacity-0 group-focus-within:opacity-0 group-hover:tracking-[0.15em] group-focus-within:tracking-[0.15em] group-[.is-auto-expanded]:opacity-0 group-[.is-auto-expanded]:tracking-[0.15em]">
+                <span className="mb-0.5 font-mono text-[11px] font-medium tracking-[0.3em] text-red-500 transition-[letter-spacing,opacity] duration-500 group-hover:opacity-0 group-focus-within:opacity-0 group-hover:tracking-[0.15em] group-focus-within:tracking-[0.15em] group-[.is-auto-expanded]:opacity-0 group-[.is-auto-expanded]:tracking-[0.15em]">
                   {item.step}
                 </span>
               </h3>
-              <p className="max-h-0 overflow-hidden text-sm leading-relaxed text-white/85 opacity-0 transition-[max-height,opacity,margin] duration-500 group-hover:mt-3.5 group-hover:max-h-[200px] group-hover:opacity-100 group-focus-within:mt-3.5 group-focus-within:max-h-[200px] group-focus-within:opacity-100 group-[.is-auto-expanded]:mt-3.5 group-[.is-auto-expanded]:max-h-[200px] group-[.is-auto-expanded]:opacity-100">
+              <p className="max-h-0 w-full overflow-hidden text-left text-sm leading-relaxed text-white/85 opacity-0 transition-[max-height,opacity,margin] duration-500 group-hover:mt-3.5 group-hover:max-h-[200px] group-hover:opacity-100 group-focus-within:mt-3.5 group-focus-within:max-h-[200px] group-focus-within:opacity-100 group-[.is-auto-expanded]:mt-3.5 group-[.is-auto-expanded]:max-h-[200px] group-[.is-auto-expanded]:opacity-100">
                 {item.description}
               </p>
             </div>

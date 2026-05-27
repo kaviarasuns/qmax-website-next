@@ -52,8 +52,8 @@ export function Navigation() {
                     <NavigationMenuLink
                       className={`inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-[17px] font-normal tracking-[0.08em] transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-ring/50
                         ${pathname === "/"
-                          ? "text-brand-red"
-                          : "text-foreground/70 hover:text-brand-red hover:bg-accent"
+                          ? "text-red-500"
+                          : "text-foreground/70 hover:text-red-500 hover:bg-accent"
                         }`}
                     >
                       Home
@@ -72,8 +72,8 @@ export function Navigation() {
                         <NavigationMenuTrigger
                           className={`bg-transparent text-[17px] font-normal tracking-[0.08em] transition-all duration-200
                             ${isSubItemActive(item.subItems)
-                              ? "text-brand-red"
-                              : "text-foreground/70 hover:text-brand-red"
+                              ? "text-red-500"
+                              : "text-foreground/70 hover:text-red-500"
                             }`}
                         >
                           {item.title}
@@ -113,7 +113,7 @@ export function Navigation() {
                                         <Link
                                           key={childItem.title}
                                           href={childItem.href}
-                                          className="block rounded px-2 py-1 text-xs font-normal tracking-[0.04em] text-muted-foreground transition-all duration-200 hover:bg-background hover:text-brand-red"
+                                          className="block rounded px-2 py-1 text-xs font-normal tracking-[0.04em] text-muted-foreground transition-all duration-200 hover:bg-background hover:text-red-500"
                                           onClick={() => setMenuValue("")}
                                         >
                                           {childItem.title}
@@ -132,8 +132,8 @@ export function Navigation() {
                         <NavigationMenuLink
                           className={`inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-[17px] font-normal tracking-[0.08em] transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-ring/50
                             ${pathname === item.href
-                              ? "text-brand-red"
-                              : "text-foreground/70 hover:text-brand-red hover:bg-accent"
+                              ? "text-red-500"
+                              : "text-foreground/70 hover:text-red-500 hover:bg-accent"
                             }`}
                         >
                           {item.title}
@@ -174,8 +174,8 @@ export function Navigation() {
               href="/"
               className={`block py-2 px-3 text-base font-normal tracking-[0.06em] rounded-md transition-all duration-200
                 ${pathname === "/"
-                  ? "text-brand-red bg-accent"
-                  : "text-muted-foreground hover:text-brand-red hover:bg-accent"
+                  ? "text-red-500 bg-accent"
+                  : "text-muted-foreground hover:text-red-500 hover:bg-accent"
                 }`}
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -196,8 +196,8 @@ export function Navigation() {
                             href={subItem.href}
                             className={`flex items-center gap-3 py-2 px-3 rounded-md transition-all duration-200
                               ${pathname === subItem.href
-                                ? "text-brand-red bg-accent"
-                                : "text-muted-foreground hover:text-brand-red hover:bg-accent"
+                                ? "text-red-500 bg-accent"
+                                : "text-muted-foreground hover:text-red-500 hover:bg-accent"
                               }`}
                             onClick={() => setMobileMenuOpen(false)}
                           >
@@ -226,7 +226,7 @@ export function Navigation() {
                                 <Link
                                   key={childItem.title}
                                   href={childItem.href}
-                                  className="block rounded-md py-1 px-2 text-xs font-normal tracking-[0.04em] text-muted-foreground transition-all duration-200 hover:text-brand-red hover:bg-accent"
+                                  className="block rounded-md py-1 px-2 text-xs font-normal tracking-[0.04em] text-muted-foreground transition-all duration-200 hover:text-red-500 hover:bg-accent"
                                   onClick={() => setMobileMenuOpen(false)}
                                 >
                                   {childItem.title}
@@ -243,8 +243,8 @@ export function Navigation() {
                     href={item.href || "#"}
                     className={`block py-2 px-3 text-base font-normal tracking-[0.06em] rounded-md transition-all duration-200
                       ${pathname === item.href
-                        ? "text-brand-red bg-accent"
-                        : "text-muted-foreground hover:text-brand-red hover:bg-accent"
+                        ? "text-red-500 bg-accent"
+                        : "text-muted-foreground hover:text-red-500 hover:bg-accent"
                       }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >

@@ -804,7 +804,10 @@ export default function EmbeddedDesignServicesPage() {
       />
 
       {/* CTA BANNER */}
-      <CTABannerSection href="/embedded-design-services/contact" />
+      <CTABannerSection
+        href="/embedded-design-services/contact"
+        heading="Ready To Bring Your Embedded Design Project To Life?"
+      />
 
       {/* FAQ */}
       <FAQSection faqItems={FAQ_ITEMS} />

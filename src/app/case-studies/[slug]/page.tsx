@@ -74,7 +74,7 @@ export default async function CaseStudyPage({
             {/* Heading */}
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
-                <span className="mb-1 block text-[10px] font-black uppercase tracking-[0.3em] text-[#E31E24]">
+                <span className="mb-1 block text-[10px] font-black uppercase tracking-[0.3em] text-red-500">
                   Explore More
                 </span>
                 <h2 className="text-2xl font-bold text-zinc-900 md:text-3xl">
@@ -83,7 +83,7 @@ export default async function CaseStudyPage({
               </div>
               <Link
                 href="/case-studies"
-                className="text-sm font-semibold text-zinc-500 hover:text-[#E31E24] transition-colors duration-200"
+                className="text-sm font-semibold text-zinc-500 hover:text-red-500 transition-colors duration-200"
               >
                 View all →
               </Link>
@@ -122,7 +122,7 @@ export default async function CaseStudyPage({
           {/* Hover tooltip — hidden on mobile */}
           <div className="pointer-events-none hidden opacity-0 transition-opacity duration-200 peer-hover:opacity-100 md:block">
             <div className="rounded-xl border border-zinc-200 bg-white/95 px-3 py-2 shadow-md backdrop-blur-sm">
-              <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#E31E24]">
+              <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-red-500">
                 Previous
               </p>
               <p className="max-w-[160px] text-[12px] font-medium leading-tight text-zinc-700 line-clamp-2">
@@ -148,7 +148,7 @@ export default async function CaseStudyPage({
           {/* Hover tooltip — hidden on mobile */}
           <div className="pointer-events-none hidden opacity-0 transition-opacity duration-200 peer-hover:opacity-100 md:block">
             <div className="rounded-xl border border-zinc-200 bg-white/95 px-3 py-2 shadow-md backdrop-blur-sm text-right">
-              <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#E31E24]">
+              <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-red-500">
                 Next
               </p>
               <p className="max-w-[160px] text-[12px] font-medium leading-tight text-zinc-700 line-clamp-2">

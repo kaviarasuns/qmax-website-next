@@ -277,7 +277,7 @@ export default function IndustrialDesignServicesPage() {
                 className="p-12 border-r border-b border-zinc-200 dark:border-zinc-800 flex flex-col min-h-[400px] group hover:bg-zinc-50 dark:hover:bg-zinc-900/70 transition-colors"
               >
                 <div className="flex justify-between items-center mb-16">
-                  <span className="text-[10px] font-black tracking-[0.4em] text-[#F33117] group-hover:translate-x-1 transition-transform">
+                  <span className="text-[10px] font-black tracking-[0.4em] text-red-500 group-hover:translate-x-1 transition-transform">
                     {step.label}
                   </span>
                   <span className="text-zinc-400 dark:text-zinc-500 font-mono text-xs">
@@ -336,7 +336,7 @@ export default function IndustrialDesignServicesPage() {
                 },
               ].map((item, idx) => (
                 <div key={idx} className="space-y-6">
-                  <h3 className="text-xl uppercase tracking-widest text-[#F33117] border-b border-zinc-200 dark:border-zinc-800 pb-4">
+                  <h3 className="text-xl uppercase tracking-widest text-red-500 border-b border-zinc-200 dark:border-zinc-800 pb-4">
                     {item.title}
                   </h3>
                   <p className="text-zinc-500 dark:text-zinc-400 font-light leading-relaxed">

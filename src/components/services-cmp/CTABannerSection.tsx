@@ -2,10 +2,15 @@ import "./CTABannerSection.css";
 
 type CTABannerSectionProps = {
   href?: string;
+  heading?: string;
 };
+
+const DEFAULT_HEADING =
+  "Ready To Bring Your Hardware Design Project To Life?";
 
 export function CTABannerSection({
   href = "/hardware-development-services/contact",
+  heading = DEFAULT_HEADING,
 }: CTABannerSectionProps) {
   return (
     <section className="cta-banner" id="cta-banner-section">
@@ -15,7 +20,7 @@ export function CTABannerSection({
         <div className="cta-banner-panel">
           <div className="cta-banner-copy">
             <h2 className="text-3xl md:text-4xl font-light tracking-wide">
-              Ready To Bring Your Hardware Design Project To Life?
+              {heading}
             </h2>
             <p>Contact Us Today To Get Started.</p>
           </div>

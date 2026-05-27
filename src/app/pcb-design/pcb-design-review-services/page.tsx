@@ -39,7 +39,7 @@ export default function PCBDesignReviewServicesPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#fcfcfc]/60 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 md:p-12 lg:p-16 max-w-5xl">
-              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
+              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-6">
                 PCB DESIGN SERVICES
               </span>
               <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
@@ -124,7 +124,7 @@ export default function PCBDesignReviewServicesPage() {
                   },
                 ].map((category, idx) => (
                   <div key={idx} className="space-y-4">
-                    <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117]">
+                    <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-red-500">
                       {category.title}
                     </h3>
                     <ul className="space-y-2">
@@ -149,7 +149,7 @@ export default function PCBDesignReviewServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24 text-left">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.1 / SCHEMATIC REVIEW
             </span>
             <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
@@ -174,7 +174,7 @@ export default function PCBDesignReviewServicesPage() {
                 <span className="text-[10px] font-black tracking-[0.4em] text-zinc-400 block mb-4 uppercase">
                   DELIVERABLE
                 </span>
-                <p className="text-[#F33117] font-light text-lg">
+                <p className="text-red-500 font-light text-lg">
                   Redlined schematic PDF with itemized findings, severity
                   classification (Critical / Major / Minor), and corrective
                   recommendations.
@@ -239,7 +239,7 @@ export default function PCBDesignReviewServicesPage() {
                       key={idx}
                       className="group border-b border-zinc-100 pb-8 hover:border-zinc-300 transition-colors"
                     >
-                      <h4 className="text-zinc-900 text-lg font-light mb-3 group-hover:text-[#F33117] transition-colors">
+                      <h4 className="text-zinc-900 text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
                         {item.t}
                       </h4>
                       <p className="text-sm text-zinc-500 leading-relaxed font-light">
@@ -258,7 +258,7 @@ export default function PCBDesignReviewServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24 text-left">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.2 / PCB DESIGN REVIEW
             </span>
             <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
@@ -305,7 +305,7 @@ export default function PCBDesignReviewServicesPage() {
                     key={idx}
                     className="group grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 py-8 border-t border-zinc-100 hover:bg-zinc-50 transition-colors px-4"
                   >
-                    <h4 className="text-[#F33117] text-sm font-black uppercase tracking-widest">
+                    <h4 className="text-red-500 text-sm font-black uppercase tracking-widest">
                       {item.s}
                     </h4>
                     <p className="text-zinc-600 font-light leading-relaxed">
@@ -344,7 +344,7 @@ export default function PCBDesignReviewServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200 border-b">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.3 / REVERSE ENGINEERING
             </span>
             <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
@@ -378,7 +378,7 @@ export default function PCBDesignReviewServicesPage() {
                       key={idx}
                       className="flex items-start gap-6 border-t border-zinc-100 py-6 group hover:bg-zinc-50 px-4 transition-colors"
                     >
-                      <span className="text-[#F33117] font-mono text-[10px] pt-1">
+                      <span className="text-red-500 font-mono text-[10px] pt-1">
                         0{idx + 1}
                       </span>
                       <p className="text-lg text-zinc-600 font-light group-hover:text-zinc-950 transition-colors">
@@ -396,7 +396,7 @@ export default function PCBDesignReviewServicesPage() {
                 </p>
                 <a
                   href="/pcb-design"
-                  className="inline-flex items-center gap-2 text-[#F33117] group uppercase text-[10px] font-black tracking-widest border-b border-[#F33117] pb-2 hover:text-zinc-950 hover:border-zinc-950 transition-all"
+                  className="inline-flex items-center gap-2 text-red-500 group uppercase text-[10px] font-black tracking-widest border-b border-[#F33117] pb-2 hover:text-zinc-950 hover:border-zinc-950 transition-all"
                 >
                   SEE OUR PCBS DESIGN SERVICES
                   <svg
@@ -445,7 +445,7 @@ export default function PCBDesignReviewServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200 border-b">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.4 / CONVERSION SERVICES
             </span>
             <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
@@ -492,7 +492,7 @@ export default function PCBDesignReviewServicesPage() {
                     key={idx}
                     className="group border-b border-zinc-100 pb-8 hover:border-zinc-300 transition-colors"
                   >
-                    <h4 className="text-zinc-900 text-lg font-light mb-3 group-hover:text-[#F33117] transition-colors">
+                    <h4 className="text-zinc-900 text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
                       {item.t}
                     </h4>
                     <p className="text-sm text-zinc-500 leading-relaxed font-light">
@@ -503,7 +503,7 @@ export default function PCBDesignReviewServicesPage() {
               </div>
 
               <div className="mt-12 bg-[#F33117]/5 p-8 border border-[#F33117]/10">
-                <span className="text-[10px] font-black tracking-[0.4em] text-[#F33117] block mb-4 uppercase">
+                <span className="text-[10px] font-black tracking-[0.4em] text-red-500 block mb-4 uppercase">
                   VALIDATION POLICY
                 </span>
                 <p className="text-zinc-700 font-light text-lg">
@@ -532,7 +532,7 @@ export default function PCBDesignReviewServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200 border-b">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.5 / TOOLCHAIN MIGRATION
             </span>
             <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
@@ -572,7 +572,7 @@ export default function PCBDesignReviewServicesPage() {
               <div className="mt-12">
                 <a
                   href="/pcb-design"
-                  className="inline-flex items-center gap-2 text-[#F33117] group uppercase text-[10px] font-black tracking-widest border-b border-[#F33117] pb-2 hover:text-zinc-950 hover:border-zinc-950 transition-all"
+                  className="inline-flex items-center gap-2 text-red-500 group uppercase text-[10px] font-black tracking-widest border-b border-[#F33117] pb-2 hover:text-zinc-950 hover:border-zinc-950 transition-all"
                 >
                   FULL PCB DESIGN SERVICES OVERVIEW
                   <svg
@@ -625,7 +625,7 @@ export default function PCBDesignReviewServicesPage() {
             {/* BoM Optimization (1.6) */}
             <div className="space-y-12">
               <div>
-                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8 block">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8 block">
                   PHASE 1.6 / BoM OPTIMIZATION
                 </span>
                 <h2 className="text-4xl font-light text-zinc-950 tracking-tighter mb-8 leading-tight">
@@ -668,7 +668,7 @@ export default function PCBDesignReviewServicesPage() {
             {/* Design Validation (1.7) */}
             <div className="space-y-12 border-l border-zinc-100 pl-4 lg:pl-12">
               <div>
-                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8 block">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8 block">
                   PHASE 1.7 / DESIGN VALIDATION
                 </span>
                 <h2 className="text-4xl font-light text-zinc-950 tracking-tighter mb-8 leading-tight">
@@ -715,7 +715,7 @@ export default function PCBDesignReviewServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200 border-b">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.8 / COMPLIANCE REMEDIATION
             </span>
             <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
@@ -733,7 +733,7 @@ export default function PCBDesignReviewServicesPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-zinc-200 pt-12">
                 <div className="space-y-6">
-                  <h3 className="text-sm font-black text-[#F33117] uppercase tracking-widest">
+                  <h3 className="text-sm font-black text-red-500 uppercase tracking-widest">
                     Domains Supported
                   </h3>
                   <ul className="space-y-4">
@@ -753,7 +753,7 @@ export default function PCBDesignReviewServicesPage() {
                   </ul>
                 </div>
                 <div className="space-y-6">
-                  <h3 className="text-sm font-black text-[#F33117] uppercase tracking-widest">
+                  <h3 className="text-sm font-black text-red-500 uppercase tracking-widest">
                     Remediation Types
                   </h3>
                   <ul className="space-y-4">
@@ -797,7 +797,7 @@ export default function PCBDesignReviewServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200 border-b">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.9 / REGULATORY UPDATES
             </span>
             <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
@@ -848,7 +848,7 @@ export default function PCBDesignReviewServicesPage() {
                 },
               ].map((item, idx) => (
                 <div key={idx} className="border-t border-zinc-200 pt-8 group">
-                  <h3 className="text-[#F33117] text-[10px] font-black uppercase tracking-widest mb-4">
+                  <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest mb-4">
                     {item.t}
                   </h3>
                   <p className="text-zinc-500 text-sm font-light leading-relaxed hover:text-zinc-950 transition-colors">
@@ -865,7 +865,7 @@ export default function PCBDesignReviewServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200 border-b">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.10 / TEARDOWN ANALYSIS
             </span>
             <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
@@ -913,7 +913,7 @@ export default function PCBDesignReviewServicesPage() {
                     key={idx}
                     className="group border-b border-zinc-100 pb-8 hover:border-zinc-300 transition-colors"
                   >
-                    <h4 className="text-zinc-900 text-lg font-light mb-3 group-hover:text-[#F33117] transition-colors">
+                    <h4 className="text-zinc-900 text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
                       {item.t}
                     </h4>
                     <p className="text-sm text-zinc-500 leading-relaxed font-light">
@@ -951,7 +951,7 @@ export default function PCBDesignReviewServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200 border-b">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.11 / PLATFORM MIGRATION
             </span>
             <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
@@ -999,11 +999,11 @@ export default function PCBDesignReviewServicesPage() {
                     },
                   ].map((step, idx) => (
                     <div key={idx} className="flex gap-4 group">
-                      <span className="text-[#F33117] text-xs font-black pt-1">
+                      <span className="text-red-500 text-xs font-black pt-1">
                         /
                       </span>
                       <div>
-                        <h4 className="text-zinc-900 font-medium mb-1 group-hover:text-[#F33117] transition-colors">
+                        <h4 className="text-zinc-900 font-medium mb-1 group-hover:text-red-500 transition-colors">
                           {step.t}
                         </h4>
                         <p className="text-sm text-zinc-500 font-light">
@@ -1045,7 +1045,7 @@ export default function PCBDesignReviewServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200 border-b">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-24">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 1.12 / FIRMWARE PORTING
             </span>
             <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
@@ -1093,7 +1093,7 @@ export default function PCBDesignReviewServicesPage() {
                     key={idx}
                     className="group border-b border-zinc-100 pb-8 hover:border-zinc-300 transition-colors"
                   >
-                    <h4 className="text-zinc-900 text-lg font-light mb-3 group-hover:text-[#F33117] transition-colors">
+                    <h4 className="text-zinc-900 text-lg font-light mb-3 group-hover:text-red-500 transition-colors">
                       {item.t}
                     </h4>
                     <p className="text-sm text-zinc-500 leading-relaxed font-light">
@@ -1125,7 +1125,7 @@ export default function PCBDesignReviewServicesPage() {
                   ].map((t, i) => (
                     <div
                       key={i}
-                      className="bg-zinc-100/50 p-4 border border-zinc-200 text-center text-[10px] font-black uppercase tracking-widest text-zinc-400 group hover:text-[#F33117] hover:border-[#F33117] transition-all"
+                      className="bg-zinc-100/50 p-4 border border-zinc-200 text-center text-[10px] font-black uppercase tracking-widest text-zinc-400 group hover:text-red-500 hover:border-[#F33117] transition-all"
                     >
                       {t}
                     </div>
@@ -1142,7 +1142,7 @@ export default function PCBDesignReviewServicesPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-24">
             <div className="space-y-12">
-              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117]">
+              <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500">
                 PHASE 2 / WHY QMAX SYSTEMS
               </span>
               <h2 className="text-4xl font-light text-zinc-950 md:text-6xl tracking-tighter leading-tight">
@@ -1165,7 +1165,7 @@ export default function PCBDesignReviewServicesPage() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#fcfcfc]/50 to-transparent flex items-end p-8">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#F33117]">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-red-500">
                     BEYOND AUTOMATED CHECKLISTS
                   </span>
                 </div>
@@ -1176,7 +1176,7 @@ export default function PCBDesignReviewServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 pt-24 border-t border-zinc-200">
             {/* Breadth (2.2) */}
             <div className="space-y-6">
-              <h3 className="text-[#F33117] text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
+              <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.2 / Breadth Across the Stack
               </h3>
               <p className="text-zinc-600 font-light leading-relaxed">
@@ -1188,7 +1188,7 @@ export default function PCBDesignReviewServicesPage() {
 
             {/* Standards (2.3) */}
             <div className="space-y-6 lg:col-span-2">
-              <h3 className="text-[#F33117] text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
+              <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.3 / Standards-Grounded Methodology
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -1221,7 +1221,7 @@ export default function PCBDesignReviewServicesPage() {
 
             {/* Actionable (2.4) */}
             <div className="space-y-6">
-              <h3 className="text-[#F33117] text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
+              <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.4 / Actionable Deliverables
               </h3>
               <p className="text-zinc-600 text-sm font-light leading-relaxed">
@@ -1233,7 +1233,7 @@ export default function PCBDesignReviewServicesPage() {
 
             {/* IP Protection (2.5) */}
             <div className="space-y-6">
-              <h3 className="text-[#F33117] text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
+              <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.5 / Confidentiality & IP
               </h3>
               <p className="text-zinc-600 text-sm font-light leading-relaxed">
@@ -1245,7 +1245,7 @@ export default function PCBDesignReviewServicesPage() {
 
             {/* Turnaround (2.6) */}
             <div className="space-y-6">
-              <h3 className="text-[#F33117] text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
+              <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.6 / Rapid Turnaround
               </h3>
               <p className="text-zinc-600 text-sm font-light leading-relaxed">
@@ -1257,7 +1257,7 @@ export default function PCBDesignReviewServicesPage() {
 
             {/* Scalable (2.7) */}
             <div className="space-y-6">
-              <h3 className="text-[#F33117] text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
+              <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.7 / Scalable Engagement
               </h3>
               <p className="text-zinc-600 text-sm font-light leading-relaxed">
@@ -1269,7 +1269,7 @@ export default function PCBDesignReviewServicesPage() {
 
             {/* Track Record (2.8) */}
             <div className="space-y-6">
-              <h3 className="text-[#F33117] text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
+              <h3 className="text-red-500 text-[10px] font-black uppercase tracking-widest pb-4 border-b border-zinc-200">
                 2.8 / Proven Track Record
               </h3>
               <p className="text-zinc-600 text-sm font-light leading-relaxed">
@@ -1286,7 +1286,7 @@ export default function PCBDesignReviewServicesPage() {
       <section className="bg-[#fcfcfc] py-32 border-t border-zinc-200 border-b relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
           <div className="mb-24">
-            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-8">
+            <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-8">
               PHASE 3 / CONSULTATION
             </span>
             <h2 className="text-4xl font-light text-zinc-950 md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
@@ -1319,7 +1319,7 @@ export default function PCBDesignReviewServicesPage() {
                         key={i}
                         className="flex gap-4 text-zinc-600 font-light text-sm"
                       >
-                        <span className="text-[#F33117]">/</span> {item}
+                        <span className="text-red-500">/</span> {item}
                       </li>
                     ))}
                   </ul>
@@ -1342,7 +1342,7 @@ export default function PCBDesignReviewServicesPage() {
                         key={i}
                         className="flex gap-4 text-zinc-600 font-light text-sm"
                       >
-                        <span className="text-[#F33117]">/</span> {item}
+                        <span className="text-red-500">/</span> {item}
                       </li>
                     ))}
                   </ul>
@@ -1358,7 +1358,7 @@ export default function PCBDesignReviewServicesPage() {
                   request form. A Qmax engineer will confirm the session within
                   one business day. Sessions are conducted via video conference.
                 </p>
-                <div className="flex flex-wrap gap-8 text-[10px] font-black uppercase tracking-widest text-[#F33117]">
+                <div className="flex flex-wrap gap-8 text-[10px] font-black uppercase tracking-widest text-red-500">
                   <span className="flex items-center gap-2">
                     <div className="h-1 w-1 bg-[#F33117]" />
                     RESPONSE WITHIN 24H
@@ -1386,7 +1386,7 @@ export default function PCBDesignReviewServicesPage() {
                   href="/contact"
                   className="bg-[#fcfcfc] block p-8 hover:bg-[#F33117] transition-colors group-hover:text-white"
                 >
-                  <span className="text-xs font-black uppercase tracking-widest text-[#F33117] group-hover:text-white">
+                  <span className="text-xs font-black uppercase tracking-widest text-red-500 group-hover:text-white">
                     REQUEST SESSION
                   </span>
                   <div className="flex items-center justify-between mt-4">
@@ -1403,7 +1403,7 @@ export default function PCBDesignReviewServicesPage() {
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="group-hover:translate-x-2 transition-transform text-[#F33117] group-hover:text-white"
+                      className="group-hover:translate-x-2 transition-transform text-red-500 group-hover:text-white"
                     >
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
@@ -1443,10 +1443,10 @@ export default function PCBDesignReviewServicesPage() {
                 key={idx}
                 className="group border-t border-zinc-200 pt-12 hover:bg-zinc-50 p-8 transition-colors"
               >
-                <span className="text-xs font-black text-[#F33117] tracking-[0.4em] mb-6 block">
+                <span className="text-xs font-black text-red-500 tracking-[0.4em] mb-6 block">
                   0{idx + 1}
                 </span>
-                <h3 className="text-2xl font-light text-zinc-950 mb-6 group-hover:text-[#F33117] transition-colors">
+                <h3 className="text-2xl font-light text-zinc-950 mb-6 group-hover:text-red-500 transition-colors">
                   {audience.type}
                 </h3>
                 <p className="text-zinc-500 font-light leading-relaxed">

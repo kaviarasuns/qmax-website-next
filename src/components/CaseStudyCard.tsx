@@ -68,7 +68,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
               <span className="text-[11px] font-semibold tracking-[0.18em] text-zinc-500 uppercase">
                 View Case
               </span>
-              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300 text-zinc-700 transition-all duration-300 group-hover:border-[#F33117] group-hover:text-[#F33117] group-hover:translate-x-0.5">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300 text-zinc-700 transition-all duration-300 group-hover:border-red-500 group-hover:text-red-500 group-hover:translate-x-0.5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"

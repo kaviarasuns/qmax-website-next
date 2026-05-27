@@ -116,8 +116,26 @@ const CAPABILITIES = [
     ],
     deliverables: [
       {
-        title: "Coming Soon",
-        description: "Industrial Design deliverables to be added.",
+        title: "3D CAD Models",
+        description:
+          "Native files (SolidWorks/Creo) and neutral formats (STEP/IGES).",
+      },
+      {
+        title: "2D Technical Drawings",
+        description: "Fully dimensioned GD&T drawings for manufacturing.",
+      },
+      {
+        title: "BOM Documentation",
+        description:
+          "Complete Bill of Materials including hardware and finishing specs.",
+      },
+      {
+        title: "Thermal/Structural Reports",
+        description: "Detailed simulation data and optimization results.",
+      },
+      {
+        title: "Prototype Units",
+        description: "Functional assemblies for EVT/DVT testing.",
       },
     ],
     deliverablesAriaLabel: "Industrial Design Deliverables",

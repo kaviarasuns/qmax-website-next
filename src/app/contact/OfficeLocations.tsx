@@ -78,7 +78,7 @@ const OfficeLocations = () => {
                 {/* Country badge */}
                 <div className="absolute top-4 right-4 px-4 py-2 bg-white/95 backdrop-blur-sm rounded-full shadow-lg">
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-brand-red" />
+                    <MapPin className="w-4 h-4 text-red-500" />
                     <span className="font-semibold text-gray-900">
                       {office.country}
                     </span>
@@ -106,7 +106,7 @@ const OfficeLocations = () => {
                   {/* Phone */}
                   <a
                     href={`tel:${office.phone.replace(/\s/g, "")}`}
-                    className="flex items-center gap-3 hover:text-brand-red transition-colors"
+                    className="flex items-center gap-3 hover:text-red-500 transition-colors"
                   >
                     <Phone className="w-5 h-5 text-gray-400" />
                     <span>{office.phone}</span>
@@ -115,7 +115,7 @@ const OfficeLocations = () => {
                   {/* Email */}
                   <a
                     href={`mailto:${office.email}`}
-                    className="flex items-center gap-3 hover:text-brand-red transition-colors"
+                    className="flex items-center gap-3 hover:text-red-500 transition-colors"
                   >
                     <Mail className="w-5 h-5 text-gray-400" />
                     <span>{office.email}</span>
@@ -127,7 +127,7 @@ const OfficeLocations = () => {
                   href={getLocationUrl(office)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-brand-red font-medium text-sm hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 mt-4 text-red-500 font-medium text-sm hover:gap-3 transition-all"
                 >
                   Get Directions
                   <ArrowRight className="w-4 h-4" />

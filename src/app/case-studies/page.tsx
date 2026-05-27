@@ -200,7 +200,7 @@ export default function CaseStudiesPage() {
                     <span
                       className={`text-lg font-semibold transition-colors duration-300 leading-tight ${
                         isActive
-                          ? "text-[#E31E24]"
+                          ? "text-red-500"
                           : "text-gray-600 group-hover:text-gray-900"
                       }`}
                     >
@@ -210,7 +210,7 @@ export default function CaseStudiesPage() {
                       <span
                         className={`text-xs font-medium tabular-nums px-2 py-0.5 rounded-full transition-all duration-300 ${
                           isActive
-                            ? "bg-[#E31E24]/10 text-[#E31E24]"
+                            ? "bg-[#E31E24]/10 text-red-500"
                             : "bg-gray-100 text-gray-400 group-hover:bg-gray-200 group-hover:text-gray-600"
                         }`}
                       >

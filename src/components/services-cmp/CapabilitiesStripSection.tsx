@@ -7,6 +7,7 @@ interface CapabilitiesStripProps {
   items: CapabilitiesStripItem[];
   className?: string;
   ariaLabel?: string;
+  variant?: "strip" | "cards";
 }
 
 function deliverablesGridClass(count: number): string {
@@ -15,12 +16,44 @@ function deliverablesGridClass(count: number): string {
   return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-5";
 }
 
+function DeliverableItemContent({ item }: { item: CapabilitiesStripItem }) {
+  return (
+    <>
+      <h5 className="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.5px] text-[#F33117]">
+        {item.title}
+      </h5>
+      <p className="m-0 text-left text-[13.5px] leading-5 text-[rgb(51,65,85)]">
+        {item.description}
+      </p>
+    </>
+  );
+}
+
 export function CapabilitiesStrip({
   items,
   className = "",
   ariaLabel = "Engineering Deliverables",
+  variant = "strip",
 }: CapabilitiesStripProps) {
   if (items.length === 0) return null;
+
+  if (variant === "cards") {
+    return (
+      <div
+        className={`grid gap-4 ${deliverablesGridClass(items.length)} ${className}`}
+        aria-label={ariaLabel}
+      >
+        {items.map((item) => (
+          <article
+            key={item.title}
+            className="rounded-xl border border-zinc-200 bg-white p-6 shadow-[0_4px_20px_rgba(24,24,27,0.05)]"
+          >
+            <DeliverableItemContent item={item} />
+          </article>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div
@@ -29,12 +62,7 @@ export function CapabilitiesStrip({
     >
       {items.map((item) => (
         <div key={item.title}>
-          <h5 className="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.5px] text-[#F33117]">
-            {item.title}
-          </h5>
-          <p className="m-0 text-left text-[13.5px] leading-5 text-[rgb(51,65,85)]">
-            {item.description}
-          </p>
+          <DeliverableItemContent item={item} />
         </div>
       ))}
     </div>

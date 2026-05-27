@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CapabilitiesDeliverablesCard } from "./CapabilitiesDeliverablesCard";
 import { CapabilitiesPanels } from "./CapabilitiesPanels";
 import { CapabilitiesTabs } from "./CapabilitiesTabs";
 import { ConnectedTabPanel } from "./ConnectedTabPanel";
@@ -53,6 +54,10 @@ export function CapabilitiesSection({
               getInTouchHref={getInTouchHref}
             />
           </ConnectedTabPanel>
+          <CapabilitiesDeliverablesCard
+            capabilities={capabilities}
+            activeIdx={activeIdx}
+          />
         </div>
       </section>
       <style jsx>{`
