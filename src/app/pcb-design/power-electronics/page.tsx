@@ -201,7 +201,11 @@ const projectExperience: ProjectExperienceItem[] = [
     "high-current-layout",
     "High-Current PCB Layout Design",
     "bms-controller",
-    "BMS controller PCB with high-current power distribution, heavy copper routing, and thermal-aware layout for battery pack monitoring and cell balancing under sustained load.",
+    {
+      description:
+        "BMS controller PCB with high-current power distribution, heavy copper routing, and thermal-aware layout for battery pack monitoring and cell balancing under sustained load.",
+      imageSrc: "/case-studies/MICROSCOPIC CAMERA/4.png",
+    },
   ),
   projectExperienceEntry(
     "smps-power-converter",
@@ -216,6 +220,10 @@ const projectExperience: ProjectExperienceItem[] = [
     "thermal-management",
     "Thermal Management & Heat Dissipation",
     "thermal-management-system",
+    {
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/thermal_analysis_and_management/1.4.png",
+    },
   ),
   projectExperienceEntry(
     "power-integrity-grounding",
@@ -227,7 +235,12 @@ const projectExperience: ProjectExperienceItem[] = [
     "emi-emc-power-pcb",
     "EMI/EMC Compliant Power PCB Design",
     "connected-car-demonstration-unit",
-    "Power PCB layout for a connected car demonstration unit with disciplined switching-node placement, filtered power rails, and EMI containment for automotive EMC compliance.",
+    {
+      description:
+        "Power PCB layout for a connected car demonstration unit with disciplined switching-node placement, filtered power rails, and EMI containment for automotive EMC compliance.",
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/TEK_OTT_REV1P0_BRD_PR3.svg",
+    },
   ),
   projectExperienceEntry(
     "hv-isolation-safety",
