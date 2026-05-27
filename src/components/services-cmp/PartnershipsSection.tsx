@@ -32,7 +32,7 @@ export function PartnershipsSection({
 }: PartnershipsSectionProps) {
   return (
     <section
-      className="relative overflow-hidden bg-white px-8 py-24 text-[#1C2A3A] max-[900px]:px-6 max-[900px]:py-16"
+      className="relative overflow-hidden bg-white px-8 py-24 max-[900px]:px-6 max-[900px]:py-16"
       id="partnerships-section"
     >
       <div className="mx-auto max-w-[1280px]">
@@ -46,7 +46,7 @@ export function PartnershipsSection({
               </>
             ) : null}
           </h2>
-          <p className="w-full text-[#5A6778]">{paragraph}</p>
+          <p className="w-full text-muted-foreground">{paragraph}</p>
         </div>
         <div className="grid grid-cols-5 gap-4 max-[900px]:grid-cols-2 max-[900px]:gap-3">
           {PARTNER_LOGOS.map(({ name, file }, index) => (

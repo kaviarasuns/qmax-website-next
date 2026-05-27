@@ -117,7 +117,7 @@ export default function HeroSection() {
           <div className="absolute bottom-4 left-4 sm:bottom-16 sm:left-16 text-white text-xl sm:text-3xl md:text-4xl font-bold z-10 animate-fade-in">
             Electronics Engineering Services
             <div className="text-base sm:text-xl md:text-2xl font-medium mt-2">
-              <p>From Concept to Production</p>
+              <p className="text-white">From Concept to Production</p>
             </div>
             <Link
               href="/contact"

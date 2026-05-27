@@ -662,6 +662,18 @@ const PHASES: Phase[] = [
   },
 ];
 
+const PHASE_HEADER_BG: Record<number, string> = {
+  1: "bg-gradient-to-b from-[#4fa0d3] to-[#3e8ec2]",
+  2: "bg-gradient-to-b from-[#4dbeb8] to-[#3faba5]",
+  3: "bg-gradient-to-b from-[#6fc36c] to-[#5fb35c]",
+  4: "bg-gradient-to-b from-[#f0cb45] to-[#e6bf33]",
+  5: "bg-gradient-to-b from-[#f2a150] to-[#e5933f]",
+  6: "bg-gradient-to-b from-[#ec7e66] to-[#e36f55]",
+};
+
+const LIFECYCLE_HEADING_CLASS =
+  "w-full text-center text-[clamp(32px,4vw,48px)] font-light leading-[1.15] tracking-[1.2px]";
+
 export type HeroConceptToSiliconProps = {
   title?: ReactNode;
   description?: ReactNode;
@@ -753,13 +765,13 @@ export function HeroConceptToSilicon({
       </div>
 
       <div className="cts-hero-lifecycle">
-        <div className="cts-hero-lifecycle-head">
-          <h2 className="cts-hero-lifecycle-title">{lifecycleTitle}</h2>
-          <p className="cts-hero-lifecycle-sub">
+        <div className="mx-auto mb-10 flex w-full flex-col items-center text-center">
+          <h2 className={`m-0 mb-3 ${LIFECYCLE_HEADING_CLASS}`}>
+            {lifecycleTitle}
+          </h2>
+          <p className={`m-0 font-readable ${LIFECYCLE_HEADING_CLASS}`}>
             From{" "}
-            <span className="cts-hero-lifecycle-accent">
-              {lifecycleSubtitleHighlight}
-            </span>
+            <span className="text-brand-500">{lifecycleSubtitleHighlight}</span>
           </p>
         </div>
         <div className="cts-flow" ref={flowRef}>
@@ -827,38 +839,6 @@ export function HeroConceptToSilicon({
           max-width: 1440px;
           margin: 0 auto;
           padding: 8px 16px 0;
-        }
-        .cts-hero-lifecycle-head {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 100%;
-          margin: 0 auto 40px;
-          text-align: center;
-        }
-        .cts-hero-lifecycle-title {
-          width: 100%;
-          font-size: clamp(32px, 4vw, 48px);
-          font-weight: 300;
-          letter-spacing: 1.2px;
-          color: #1c2a3a;
-          margin: 0 0 12px;
-          line-height: 1.15;
-          text-align: center;
-        }
-        .cts-hero-lifecycle-sub {
-          width: 100%;
-          font-family: var(--font-readable-family);
-          font-size: clamp(32px, 4vw, 48px);
-          font-weight: 300;
-          letter-spacing: 1.2px;
-          color: #1c2a3a;
-          margin: 0;
-          line-height: 1.15;
-          text-align: center;
-        }
-        .cts-hero-lifecycle-accent {
-          color: #e63329;
         }
 
         .cts-flow {
@@ -1015,45 +995,6 @@ export function HeroConceptToSilicon({
         .cts-phase[data-p="6"] {
           background: rgba(236, 126, 102, 0.34);
           border-color: rgba(236, 126, 102, 0.5);
-        }
-        .cts-phase-header {
-          border-radius: 10px;
-          padding: 11px 10px;
-          text-align: center;
-          color: #fff;
-          margin-bottom: 8px;
-          position: relative;
-        }
-        .cts-phase[data-p="1"] .cts-phase-header {
-          background: linear-gradient(180deg, #4fa0d3 0%, #3e8ec2 100%);
-        }
-        .cts-phase[data-p="2"] .cts-phase-header {
-          background: linear-gradient(180deg, #4dbeb8 0%, #3faba5 100%);
-        }
-        .cts-phase[data-p="3"] .cts-phase-header {
-          background: linear-gradient(180deg, #6fc36c 0%, #5fb35c 100%);
-        }
-        .cts-phase[data-p="4"] .cts-phase-header {
-          background: linear-gradient(180deg, #f0cb45 0%, #e6bf33 100%);
-        }
-        .cts-phase[data-p="5"] .cts-phase-header {
-          background: linear-gradient(180deg, #f2a150 0%, #e5933f 100%);
-        }
-        .cts-phase[data-p="6"] .cts-phase-header {
-          background: linear-gradient(180deg, #ec7e66 0%, #e36f55 100%);
-        }
-        .cts-phase-header-num {
-          font-size: 13px;
-          font-weight: 700;
-          line-height: 1.2;
-          opacity: 0.9;
-        }
-        .cts-phase-header-name {
-          font-size: 18px;
-          font-weight: 800;
-          letter-spacing: -0.01em;
-          line-height: 1.2;
-          margin-top: 2px;
         }
         .cts-phase-body {
           flex: 1;
@@ -1252,9 +1193,15 @@ function PhaseAndChevron({
     <>
       {showChevronBefore && <div className="cts-chevron">{CHEVRON_SVG}</div>}
       <div className="cts-phase" data-p={phase.num}>
-        <div className="cts-phase-header">
-          <div className="cts-phase-header-num">Phase {phase.num}:</div>
-          <div className="cts-phase-header-name">{phase.name}</div>
+        <div
+          className={`relative mb-2 rounded-[10px] px-2.5 py-[11px] text-center text-white ${PHASE_HEADER_BG[phase.num]}`}
+        >
+          <div className="text-[13px] font-bold leading-[1.2] opacity-90">
+            Phase {phase.num}:
+          </div>
+          <div className="mt-0.5 text-lg font-extrabold leading-[1.2] tracking-[-0.01em]">
+            {phase.name}
+          </div>
         </div>
         <div className="cts-phase-body">
           {phase.rows.map((row, rowIdx) => (

@@ -54,7 +54,7 @@ export function PCBIndustriesSection({
 
   return (
     <section
-      className="relative overflow-hidden bg-white px-16 py-24 text-[#1C2A3A] max-[900px]:px-6 max-[900px]:py-16"
+      className="relative overflow-hidden bg-white px-16 py-24 max-[900px]:px-6 max-[900px]:py-16"
       id="pcb-industries-section"
     >
       <div className="mx-auto max-w-[1200px]">
