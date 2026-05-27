@@ -647,7 +647,9 @@ export default function RFMicrowavePCBDesignPage() {
         title="RF PCB Engineering "
         titleHighlight="Approach"
       />
-      <ApplicationsProjectExperienceSection projects={projectExperience} />
+      <ApplicationsProjectExperienceSection
+        projects={projectExperience}
+      />
       <WhySection
         whyCards={WHY_CARDS}
         title="Why Choose Qmax Systems for"
@@ -665,7 +667,9 @@ export default function RFMicrowavePCBDesignPage() {
         title="Get a Complimentary Consultation with Our RF and Microwave Experts"
         subtitleSuffix=" This early validation prevents costly PCB re-spins and RF tuning delays."
       />
-      <FAQSection faqItems={FAQ_ITEMS} />
+      <FAQSection
+        faqItems={FAQ_ITEMS}
+      />
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={rfMicrowaveCaseStudies}

@@ -489,10 +489,10 @@ export default function ServicesContactHero({
 
               {/* Submit */}
               <button
-                className={`col-span-full mt-3 w-full p-0 h-[46px] text-white border-0 text-[15px] font-bold tracking-[0.08em] cursor-pointer transition-colors duration-150 active:bg-[#b91c1c] disabled:cursor-default ${
+                className={`col-span-full mt-3 w-full p-0 h-[46px] text-white border-0 text-[15px] font-bold tracking-[0.08em] cursor-pointer transition-colors duration-150 active:bg-red-700 disabled:cursor-default ${
                   status === "success"
                     ? "bg-[#1f8a5b] hover:bg-[#1f8a5b]"
-                    : "bg-[#ef4444] hover:bg-[#dc2626]"
+                    : "bg-red-500 hover:bg-red-600"
                 }`}
                 type="submit"
                 disabled={status !== "idle"}

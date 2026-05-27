@@ -39,7 +39,8 @@ export function WorkflowSection({
   return (
     <section className="relative bg-white px-6 py-16 min-[900px]:px-16 min-[900px]:py-24">
       <h2 className="mx-auto mb-20 max-w-[1200px] text-center text-4xl font-light tracking-wide md:text-5xl">
-        {title} <span className="text-brand-500"> {titleHighlight}</span>
+        {title}{" "}
+        <span className="text-red-500">{titleHighlight}</span>
       </h2>
       <div className="relative mx-auto max-w-[1100px]">
         <div className="absolute bottom-0 left-6 top-0 w-1 bg-brand-500 min-[900px]:left-1/2 min-[900px]:-translate-x-1/2" />

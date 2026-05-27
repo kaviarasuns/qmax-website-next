@@ -581,7 +581,9 @@ export default function HighSpeedDigitalPCBDesignPage() {
         title="Technical Capabilities: "
         titleHighlight="Pushing the Limits of Physics"
       />
-      <ApplicationsProjectExperienceSection projects={projectExperience} />
+      <ApplicationsProjectExperienceSection
+        projects={projectExperience}
+      />
       <WhySection
         whyCards={WHY_CARDS}
         title="Why Choose Qmax"
@@ -592,7 +594,9 @@ export default function HighSpeedDigitalPCBDesignPage() {
       {/* <ComplimentarySchematicReviewSection items={schematicReviewItems} /> */}
       <ComplimentaryConsultationSection variant="pcb" />
 
-      <FAQSection faqItems={FAQ_ITEMS} />
+      <FAQSection
+        faqItems={FAQ_ITEMS}
+      />
 
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"

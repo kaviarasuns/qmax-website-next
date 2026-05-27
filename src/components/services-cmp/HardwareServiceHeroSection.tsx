@@ -55,7 +55,7 @@ export function HardwareServiceHeroSection({
           </div>
           <Link
             href={ctaHref}
-            className="group inline-flex items-center gap-2.5 rounded-sm bg-[#e52222] px-9 py-[15px] text-[12.5px] font-bold uppercase tracking-[1.3px] text-white transition-colors hover:bg-[#c21818]"
+            className="group inline-flex items-center gap-2.5 rounded-sm bg-red-500 px-9 py-[15px] text-[12.5px] font-bold uppercase tracking-[1.3px] text-white transition-colors hover:bg-red-600"
           >
             {ctaLabel}{" "}
             <span

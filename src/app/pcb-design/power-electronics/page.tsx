@@ -490,7 +490,9 @@ export default function PowerElectronicsPage() {
         title="Introduction to Power Electronics "
         titleHighlight="PCB Engineering"
       />
-      <ApplicationsProjectExperienceSection projects={projectExperience} />
+      <ApplicationsProjectExperienceSection
+        projects={projectExperience}
+      />
       <WhySection
         whyCards={WHY_CARDS}
         title="Why Choose Qmax"
@@ -507,7 +509,9 @@ export default function PowerElectronicsPage() {
         variant="pcb"
         title="Get a Complimentary Consultation with Our Power Electronics Experts"
       />
-      <FAQSection faqItems={FAQ_ITEMS} />
+      <FAQSection
+        faqItems={FAQ_ITEMS}
+      />
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={powerElectronicsCaseStudies}

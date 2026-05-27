@@ -32,13 +32,13 @@ export function CapabilitiesPanels({
               </h3>
               <div className="flex flex-wrap items-center gap-3">
                 <a
-                  className="inline-block rounded-md border-[1.5px] border-slate-900 bg-transparent px-7 py-[7px] text-slate-900 no-underline transition-colors duration-200 hover:bg-slate-900 hover:text-white hover:no-underline"
+                  className="inline-block rounded-md border-[1.5px] border-foreground bg-transparent px-7 py-[7px] text-foreground no-underline transition-colors duration-200 hover:bg-foreground hover:text-white hover:no-underline"
                   href={cap.learnMoreHref}
                 >
                   Learn more
                 </a>
                 <a
-                  className="inline-block rounded-md bg-[#E63329] px-7 py-[7px] text-white no-underline transition-colors duration-200 hover:bg-[#C72A21] hover:text-white hover:no-underline"
+                  className="inline-block rounded-md bg-red-500 px-7 py-[7px] text-white no-underline transition-colors duration-200 hover:bg-red-600 hover:text-white hover:no-underline"
                   href={getInTouchHref}
                 >
                   Get in Touch

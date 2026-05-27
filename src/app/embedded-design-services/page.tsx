@@ -733,13 +733,19 @@ export default function EmbeddedDesignServicesPage() {
   return (
     <>
       <ServiceVideoHero {...HERO} />
-      <FirmwareLifecycleSection {...FIRMWARE_LIFECYCLE} />
-      <DayOneThinkingSection {...DAY_ONE_THINKING} />
+      <FirmwareLifecycleSection
+        {...FIRMWARE_LIFECYCLE}
+      />
+      <DayOneThinkingSection
+        {...DAY_ONE_THINKING}
+      />
       <EmbeddedSoftwareCapabilitiesSection
         {...EMBEDDED_SOFTWARE}
         getInTouchHref="/embedded-design-services/contact"
       />
-      <ModularFirmwareFrameworksSection {...MODULAR_FIRMWARE} />
+      <ModularFirmwareFrameworksSection
+        {...MODULAR_FIRMWARE}
+      />
       <PCBIndustriesSection
         industries={HARDWARE_INDUSTRIES.map((industry) => ({
           ...industry,
@@ -810,7 +816,9 @@ export default function EmbeddedDesignServicesPage() {
       />
 
       {/* FAQ */}
-      <FAQSection faqItems={FAQ_ITEMS} />
+      <FAQSection
+        faqItems={FAQ_ITEMS}
+      />
       <div className="pb-28"></div>
     </>
   );

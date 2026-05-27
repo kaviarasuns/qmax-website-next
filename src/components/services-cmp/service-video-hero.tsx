@@ -51,12 +51,12 @@ export function ServiceVideoHero({
           >
             {title}
           </h1>
-          <p className="mb-[clamp(20px,3vh,36px)] max-w-full text-justify font-normal leading-[1.55] text-white/[0.92] [font-size:clamp(15px,1.6vw,19px)]">
+          <p className="mb-[clamp(20px,3vh,36px)] max-w-full text-justify font-normal leading-[1.55] text-white [font-size:clamp(15px,1.6vw,19px)]">
             {description}
           </p>
           <Link
             href={ctaHref}
-            className="inline-block cursor-pointer rounded-md bg-[#E63329] px-8 py-[14px] text-base font-semibold uppercase tracking-[0.04em] text-white no-underline transition-colors duration-150 hover:bg-[#C72A21] hover:text-white hover:no-underline"
+            className="inline-block cursor-pointer rounded-md bg-red-500 px-8 py-[14px] text-base font-semibold uppercase tracking-[0.04em] text-white no-underline transition-colors duration-150 hover:bg-red-600 hover:text-white hover:no-underline"
           >
             {ctaLabel}
           </Link>

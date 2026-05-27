@@ -62,7 +62,7 @@ export function PCBIndustriesSection({
         <div className="mb-12 text-center">
           <h2 className="m-0 text-center text-4xl md:text-5xl font-light tracking-wide">
             {headingPrefix} Across{" "}
-            <span className="text-brand-500">Industries</span>
+            <span className="text-red-500">Industries</span>
           </h2>
         </div>
 

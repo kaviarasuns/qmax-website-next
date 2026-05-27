@@ -73,7 +73,8 @@ export function FirmwareLifecycleSection({
         <div className="fw-lifecycle-head">
           <h2>{title}</h2>
           <p className="fw-lifecycle-head-sub">
-            From <span className="fw-lifecycle-accent">{subtitleHighlight}</span>
+            From{" "}
+            <span className="text-red-500">{subtitleHighlight}</span>
           </p>
         </div>
 
@@ -112,11 +113,9 @@ export function FirmwareLifecycleSection({
           --qmax-blue-600: #0a548f;
           --qmax-blue-700: #084a7d;
           --qmax-red-500: #e63329;
-          --qmax-ink: #1c2a3a;
           --ease-std: cubic-bezier(0.4, 0, 0.2, 1);
           background: #ffffff;
           padding: 96px clamp(24px, 5vw, 64px);
-          color: var(--qmax-ink);
           position: relative;
           overflow: hidden;
         }
@@ -137,8 +136,7 @@ export function FirmwareLifecycleSection({
         .fw-lifecycle-head h2 {
           font-size: clamp(32px, 4vw, 48px);
           font-weight: 300;
-          letter-spacing: 1.2px;
-          color: var(--qmax-ink);
+          letter-spacing: -0.025em;
           margin: 0 0 12px;
           line-height: 1.15;
           text-align: center;
@@ -148,8 +146,7 @@ export function FirmwareLifecycleSection({
         .fw-lifecycle-head-sub {
           font-size: clamp(32px, 4vw, 48px);
           font-weight: 300;
-          letter-spacing: 1.2px;
-          color: var(--qmax-ink);
+          letter-spacing: -0.025em;
           margin: 0;
           line-height: 1.15;
           text-align: center;

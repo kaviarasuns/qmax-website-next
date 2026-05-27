@@ -492,7 +492,9 @@ export default function HardwareDevelopmentServicesPage() {
       />
 
       {/* WHY CHOOSE QMAX */}
-      <WhySection whyCards={WHY_CARDS} />
+      <WhySection
+        whyCards={WHY_CARDS}
+      />
 
       <div className="pb-12"></div>
       {/* PARTNERSHIPS */}
@@ -518,7 +520,9 @@ export default function HardwareDevelopmentServicesPage() {
       {/* <FeaturedArticlesSection /> */}
 
       {/* FAQ */}
-      <FAQSection faqItems={FAQ_ITEMS} />
+      <FAQSection
+        faqItems={FAQ_ITEMS}
+      />
       <div className="pb-28"></div>
 
       {/* OTHER CAPABILITIES */}

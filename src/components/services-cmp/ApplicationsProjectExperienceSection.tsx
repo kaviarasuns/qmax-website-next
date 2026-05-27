@@ -60,9 +60,9 @@ export function ApplicationsProjectExperienceSection({
     <section className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-[1320px] px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-base tracking-wide text-slate-800 md:text-[42px] md:leading-tight">
+          <h2 className="text-center font-light tracking-tight">
             {title}
-            <span className="text-[#F33117]">{titleHighlight}</span>
+            <span className="text-red-500">{titleHighlight}</span>
           </h2>
           <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-muted-foreground">
             {subtitle}

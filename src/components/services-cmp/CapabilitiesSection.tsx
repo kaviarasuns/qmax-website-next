@@ -41,7 +41,7 @@ export function CapabilitiesSection({
           <div className="m-0 p-0">
             <h2 className="text-center text-3xl font-light tracking-tight md:text-5xl">
               {title}{" "}
-              <span className="text-[#F33117]">{titleHighlight}</span>
+              <span className="text-red-500">{titleHighlight}</span>
             </h2>
             {/* <p>We deliver high-performance designs validated by decades of experience. Our HW engineering stack covers:</p> */}
           </div>

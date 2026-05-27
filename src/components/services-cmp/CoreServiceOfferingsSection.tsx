@@ -50,7 +50,7 @@ export function CoreServiceOfferingsSection({
       <div className="mx-auto max-w-7xl">
         <h2 className="text-center text-3xl font-light tracking-tight md:text-5xl">
           {title}
-          <span className="text-[#F33117]">{titleHighlight}</span>
+          <span className="text-red-500">{titleHighlight}</span>
         </h2>
 
         <CapabilitiesTabs
@@ -74,7 +74,7 @@ export function CoreServiceOfferingsSection({
               </a>
               <a
                 href="/hardware-development-services/contact"
-                className="rounded-md border border-[#F33117] bg-[#F33117] px-6 py-2.5 text-sm font-medium text-white transition hover:border-[#d42b13] hover:bg-[#d42b13]"
+                className="rounded-md border border-red-500 bg-red-500 px-6 py-2.5 text-sm font-medium text-white transition hover:border-red-600 hover:bg-red-600"
               >
                 Get in Touch
               </a>

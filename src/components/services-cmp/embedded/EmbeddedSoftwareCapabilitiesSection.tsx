@@ -45,7 +45,7 @@ export function EmbeddedSoftwareCapabilitiesSection({
           <div className="flex w-full flex-col items-center text-center">
             <h2 className="mb-6 text-center text-3xl font-light tracking-tight md:text-5xl">
               {title}{" "}
-              <span className="text-[#F33117]">{titleHighlight}</span>
+              <span className="text-red-500">{titleHighlight}</span>
             </h2>
             <p className="w-full text-[#383838]">{description}</p>
           </div>

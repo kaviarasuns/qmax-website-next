@@ -1111,7 +1111,7 @@ function ServiceBlock({ service }: { service: MechanicalService }) {
       <div className="bg-white px-5 py-12 max-[640px]:px-5 min-[640px]:px-8 min-[960px]:sticky min-[960px]:top-[calc(var(--nav-h)+8px)] min-[960px]:self-start min-[960px]:px-[52px] min-[960px]:py-[72px] min-[960px]:pl-[max(1.5rem,var(--page-pad,4rem))]">
         <h2 className="mb-3 font-light leading-[1.1] tracking-[-0.02em] [font-size:clamp(28px,3.2vw,42px)]">
           {service.titleBefore}{" "}
-          <span className="text-brand-500">{service.titleAccent}</span>
+          <span className="text-red-500">{service.titleAccent}</span>
         </h2>
         <p className="mb-5 text-[11.5px] font-bold uppercase tracking-[0.5px]">
           {service.subtitle}
@@ -1155,7 +1155,7 @@ export function CoreEngineeringMechanical() {
             className="mb-7 font-light leading-[1.15] tracking-[-0.01em] [font-size:clamp(32px,4vw,48px)]"
           >
             Our Core Engineering{" "}
-            <span className="text-brand-500">Capabilities</span>
+            <span className="text-red-500">Capabilities</span>
           </h2>
           <p className="mx-auto max-w-[820px] text-[15px] leading-[22.5px]">
             Qmax Systems delivers precision mechanical engineering across seven

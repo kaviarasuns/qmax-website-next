@@ -531,7 +531,7 @@ style={{
     <h1 className="text-white mb-6 font-bold leading-[1.1] tracking-[-0.01em] text-balance text-[clamp(36px,5vw,60px)]">
       PCB Design Services: A Multi-Physics Engineering Discipline
     </h1>
-    <p className="text-white/[0.92] text-xl leading-[1.6] font-normal mb-10 max-w-[720px]">
+    <p className="text-white text-xl leading-[1.6] font-normal mb-10 max-w-[720px]">
       <strong>Engineering Beyond Connectivity.</strong> Qmax Systems
       treats PCB design as a critical engineering discipline, not just
       interconnection. Our experts deliver reliable, first-time-right

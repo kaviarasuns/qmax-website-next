@@ -77,7 +77,9 @@ export default function MechanicalDesignServicesPage() {
       <ServiceVideoHero {...HERO} />
       <CoreEngineeringMechanical />
       <WhyChooseQmaxMechanical />
-      <FAQSection faqItems={FAQ_ITEMS} />
+      <FAQSection
+        faqItems={FAQ_ITEMS}
+      />
       <ServiceCaseStudiesSection
         studies={MECHANICAL_CASE_STUDIES}
         moreHref="/case-studies?category=mechanical"

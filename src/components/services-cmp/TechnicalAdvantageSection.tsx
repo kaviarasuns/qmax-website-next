@@ -163,10 +163,10 @@ export function TechnicalAdvantageSection({
       <div className="mx-auto max-w-7xl">
         <h2
           id={sectionHeadingId}
-          className="text-center text-3xl font-light tracking-tight text-slate-900 md:text-5xl"
+          className="text-center text-3xl font-light tracking-tight md:text-5xl"
         >
           Our Technical Strengths in{" "}
-          <span className="text-brand-500">{headingHighlight}</span>
+          <span className="text-red-500">{headingHighlight}</span>
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-7 md:text-base md:leading-relaxed text-muted-foreground">
           {lede}

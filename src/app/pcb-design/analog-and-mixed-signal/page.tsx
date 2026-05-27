@@ -506,7 +506,9 @@ export default function AnalogAndMixedSignalPage() {
         title="Introduction to Analog & Mixed Signal "
         titleHighlight="PCB Engineering"
       />
-      <ApplicationsProjectExperienceSection projects={projectExperience} />
+      <ApplicationsProjectExperienceSection
+        projects={projectExperience}
+      />
 
       <WhySection
         whyCards={WHY_CARDS}
@@ -541,7 +543,9 @@ export default function AnalogAndMixedSignalPage() {
         title="Get a Complimentary Consultation with Our Analog And Mixed Signal Experts"
       />
 
-      <FAQSection faqItems={FAQ_ITEMS} />
+      <FAQSection
+        faqItems={FAQ_ITEMS}
+      />
 
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"

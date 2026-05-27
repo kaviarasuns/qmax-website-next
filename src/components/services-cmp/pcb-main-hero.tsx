@@ -63,7 +63,7 @@ export function PcbMainHero({
           >
             {title}
           </h1>
-          <p className="mb-[clamp(20px,3vh,36px)] max-w-full text-left font-normal leading-[1.55] text-white/[0.92] [font-size:clamp(15px,1.6vw,19px)]">
+          <p className="mb-[clamp(20px,3vh,36px)] max-w-full text-left font-normal leading-[1.55] text-white [font-size:clamp(15px,1.6vw,19px)]">
             {description}
           </p>
           <Link

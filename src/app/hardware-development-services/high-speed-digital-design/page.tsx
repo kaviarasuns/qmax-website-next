@@ -366,7 +366,9 @@ export default function HighSpeedDigitalDesignPage() {
         ctaLabel="Talk to Our Engineers"
       />
 
-      <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
+      <CoreServiceOfferingsSection
+        offerings={coreServiceOfferings}
+      />
       <ApplicationsProjectExperienceSection
         projects={projectExperience}
         subtitle="We have successfully delivered hundreds of advanced digital hardware platforms, including:"
@@ -378,7 +380,9 @@ export default function HighSpeedDigitalDesignPage() {
 
       <DigitalHardwareTechnicalAdvantageSection />
 
-      <FAQSection faqItems={faqs} />
+      <FAQSection
+        faqItems={faqs}
+      />
       <div className="pb-28"></div>
 
       <ConsultationCtaBar

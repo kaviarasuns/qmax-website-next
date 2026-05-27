@@ -37,7 +37,7 @@ export function WhySection({
         <div className="mb-14">
           <h2 className="text-4xl md:text-5xl font-light tracking-wide text-center">
             {title}{" "}
-            <span className="text-brand-500">{titleHighlight}</span>
+            <span className="text-red-500">{titleHighlight}</span>
           </h2>
           {description ? (
             <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-muted-foreground">

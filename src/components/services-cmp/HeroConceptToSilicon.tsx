@@ -755,7 +755,7 @@ export function HeroConceptToSilicon({
               {description}
             </h1>
             <Link
-              className="inline-block rounded-md bg-red-600 px-8 py-3.5 text-base font-semibold uppercase tracking-[0.04em] text-white no-underline transition duration-150 ease-in-out hover:-translate-y-0.5 hover:bg-red-700"
+              className="inline-block rounded-md bg-red-500 px-8 py-3.5 text-base font-semibold uppercase tracking-[0.04em] text-white no-underline transition duration-150 ease-in-out hover:-translate-y-0.5 hover:bg-red-600"
               href={ctaHref}
             >
               {ctaLabel}
@@ -771,7 +771,7 @@ export function HeroConceptToSilicon({
           </h2>
           <p className={`m-0 font-readable ${LIFECYCLE_HEADING_CLASS}`}>
             From{" "}
-            <span className="text-brand-500">{lifecycleSubtitleHighlight}</span>
+            <span className="text-red-500">{lifecycleSubtitleHighlight}</span>
           </p>
         </div>
         <div className="cts-flow" ref={flowRef}>

@@ -37,12 +37,12 @@ export function PartnershipsSection({
     >
       <div className="mx-auto max-w-[1280px]">
         <div className="mb-14 flex w-full flex-col items-center text-center">
-          <h2 className="mb-6 text-4xl md:text-5xl font-light tracking-wide">
+          <h2 className="mb-6 text-center font-light tracking-tight">
             {heading}
             {headingHighlight ? (
               <>
                 {" "}
-                <span className="text-brand-500">{headingHighlight}</span>
+                <span className="text-red-500">{headingHighlight}</span>
               </>
             ) : null}
           </h2>

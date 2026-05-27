@@ -350,7 +350,9 @@ export default function IndustrialDesignServicesPage() {
       </section> */}
 
       {/* FAQ Section */}
-      <FAQSection faqItems={industrialDesignFAQs} />
+      <FAQSection
+        faqItems={industrialDesignFAQs}
+      />
 
       {/* Our Work Section */}
       <ServiceCaseStudiesSection

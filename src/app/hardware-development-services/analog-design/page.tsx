@@ -540,7 +540,9 @@ export default function AnalogDesignPage() {
         ctaLabel="Talk to our engineers"
       />
 
-      <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
+      <CoreServiceOfferingsSection
+        offerings={coreServiceOfferings}
+      />
 
       <ApplicationsProjectExperienceSection
         projects={projectExperience}
@@ -557,7 +559,9 @@ export default function AnalogDesignPage() {
         columns="three"
         sectionHeadingId="technical-advantage-analog-heading"
       />
-      <FAQSection faqItems={faqs} />
+      <FAQSection
+        faqItems={faqs}
+      />
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."

@@ -110,86 +110,86 @@ export default function InsideOutV2() {
         ref={sectionRef}
         className="bg-white w-full max-w-7xl rounded-2xl overflow-hidden"
       >
-      <h2 className="text-center text-3xl font-light tracking-wide px-6 pt-8 pb-4 md:text-5xl lg:pt-10 lg:pb-6">
-        Why Qmax <span className="text-red-500">Systems</span>
-      </h2>
-      {/*Main Section*/}
-      <div className="flex flex-col lg:flex-row lg:items-center items-stretch gap-0 z-[1]">
-        <div className="w-full lg:w-[60%] flex flex-col items-center justify-center px-6 lg:pl-12 lg:pr-2 py-8 lg:py-10">
-          <div
-            className="relative w-full lg:-translate-x-12 xl:-translate-x-20"
-            style={{ maxWidth: "100%" }}
-          >
-            <video
-              ref={videoRef}
-              className="block h-auto w-full lg:scale-110 xl:scale-[1.15] origin-center"
-              width={765}
-              height={876}
-              preload="auto"
-              muted
-              playsInline
+        <h2 className="text-center text-3xl font-light tracking-wide px-6 pt-8 pb-4 md:text-5xl lg:pt-10 lg:pb-6">
+          Why Qmax <span className="text-red-500">Systems</span>
+        </h2>
+        {/*Main Section*/}
+        <div className="flex flex-col lg:flex-row lg:items-center items-stretch gap-0 z-[1]">
+          <div className="w-full lg:w-[60%] flex flex-col items-center justify-center px-6 lg:pl-12 lg:pr-2 py-8 lg:py-10">
+            <div
+              className="relative w-full lg:-translate-x-12 xl:-translate-x-20"
+              style={{ maxWidth: "100%" }}
             >
-              <source
-                src="https://d1yetprhniwywz.cloudfront.net/inside_out_V2.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          {showReplay && (
-            <button
-              type="button"
-              onClick={handleReplay}
-              className="relative z-10 mt-3 lg:mt-12 xl:mt-16 rounded-full border border-[#222] bg-white px-3 py-1 text-xs font-medium text-[#222] transition hover:bg-[#222] hover:text-white"
-            >
-              Replay
-            </button>
-          )}
-        </div>
-        <div className="relative z-10 w-full lg:w-[40%] flex flex-col justify-center px-6 lg:pl-2 lg:pr-12 py-6 lg:py-8 lg:-ml-16 xl:-ml-24 bg-white lg:bg-transparent">
-          <div className="grid w-full max-w-lg mx-auto gap-0">
-            {reasons.map((reason, index) => (
-              <div
-                key={index}
-                className="border-t border-zinc-200 first:border-t-0 py-1 transition-all"
+              <video
+                ref={videoRef}
+                className="block h-auto w-full lg:scale-110 xl:scale-[1.15] origin-center"
+                width={765}
+                height={876}
+                preload="auto"
+                muted
+                playsInline
               >
-                <button
-                  onClick={() => toggleItem(index)}
-                  className="w-full flex cursor-pointer items-center justify-between gap-4 text-left"
-                >
-                  <span className="flex-1 text-lg font-light leading-relaxed text-zinc-900 md:text-2xl tracking-tight">
-                    {reason.title}
-                  </span>
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className={`text-red-500 transition-transform duration-300 ${expandedIndex === index ? "rotate-180" : ""}`}
-                    >
-                      <path d="M12 5v14M19 12l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </button>
-
-                {expandedIndex === index && (
-                  <div className="mt-2 max-w-4xl">
-                    <p className="text-base leading-relaxed font-light">
-                      {reason.description}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
+                <source
+                  src="https://d1yetprhniwywz.cloudfront.net/inside_out_V2.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            {showReplay && (
+              <button
+                type="button"
+                onClick={handleReplay}
+                className="relative z-10 mt-3 lg:mt-12 xl:mt-16 rounded-full border border-[#222] bg-white px-3 py-1 text-xs font-medium text-[#222] transition hover:bg-[#222] hover:text-white"
+              >
+                Replay
+              </button>
+            )}
           </div>
+          <div className="relative z-10 w-full lg:w-[40%] flex flex-col justify-center px-6 lg:pl-2 lg:pr-12 py-6 lg:py-8 lg:-ml-16 xl:-ml-24 bg-white lg:bg-transparent">
+            <div className="grid w-full max-w-lg mx-auto gap-0">
+              {reasons.map((reason, index) => (
+                <div
+                  key={index}
+                  className="border-t border-zinc-200 first:border-t-0 py-1 transition-all"
+                >
+                  <button
+                    onClick={() => toggleItem(index)}
+                    className="w-full flex cursor-pointer items-center justify-between gap-4 text-left"
+                  >
+                    <span className="flex-1 text-lg font-light leading-relaxed text-foreground md:text-2xl tracking-tight">
+                      {reason.title}
+                    </span>
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className={`text-red-500 transition-transform duration-300 ${expandedIndex === index ? "rotate-180" : ""}`}
+                      >
+                        <path d="M12 5v14M19 12l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </button>
 
-          {/* <div className="mt-8">
+                  {expandedIndex === index && (
+                    <div className="mt-2 max-w-4xl">
+                      <p className="text-base leading-relaxed font-light">
+                        {reason.description}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* <div className="mt-8">
             <a
               href="/mechanical-industrial-design-services/industrial-design"
               className="text-gray-900 font-semibold underline hover:text-red-500 transition-colors inline-flex items-center gap-2"
@@ -198,11 +198,11 @@ export default function InsideOutV2() {
               <span>→</span>
             </a>
           </div> */}
+          </div>
         </div>
-      </div>
 
-      {/* Stats Row - Full Width */}
-      {/* <div
+        {/* Stats Row - Full Width */}
+        {/* <div
         className="w-full max-w-6xl mx-auto mt-10 px-6"
         style={{ marginTop: "40px" }}
       >
@@ -248,8 +248,8 @@ export default function InsideOutV2() {
         </div>
       </div> */}
 
-      {/* Spacer after animation */}
-      {/* <div data-budge-target style={{ height: "6vh" }} /> */}
+        {/* Spacer after animation */}
+        {/* <div data-budge-target style={{ height: "6vh" }} /> */}
       </div>
     </div>
   );

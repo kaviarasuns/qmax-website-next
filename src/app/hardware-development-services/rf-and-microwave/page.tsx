@@ -638,14 +638,14 @@ export default function RfAndMicrowavePage() {
           <p className="mt-4 text-sm leading-7 md:text-base text-muted-foreground">
             Discuss your RF architecture challenges with our senior engineering
             team. Whether you are migrating to WiFi 7 or developing a custom
-            mmWave sensor, we provide the technical depth required to succeed.{" "}
-            <Link
-              href="/contact"
-              className="text-sky-700 underline decoration-sky-300 underline-offset-4 hover:text-sky-800"
-            >
-              Contact our RF Engineering Team
-            </Link>
+            mmWave sensor, we provide the technical depth required to succeed.
           </p>
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex items-center rounded-md bg-red-500 px-6 py-2.5 text-sm font-medium text-white no-underline transition hover:bg-red-600 hover:text-white hover:no-underline"
+          >
+            Contact our RF Engineering Team
+          </Link>
         </div>
       </section>
 

@@ -504,7 +504,9 @@ export default function PowerElectronicsPage() {
         ctaLabel="Talk to Our Engineers"
       />
 
-      <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
+      <CoreServiceOfferingsSection
+        offerings={coreServiceOfferings}
+      />
       <ApplicationsProjectExperienceSection
         projects={projectExperience}
         subtitle="Our portfolio includes hundreds of advanced power platforms delivered to regulated industries:"
@@ -520,7 +522,9 @@ export default function PowerElectronicsPage() {
         columns="two"
         sectionHeadingId="technical-advantage-power-heading"
       />
-      <FAQSection faqItems={faqs} />
+      <FAQSection
+        faqItems={faqs}
+      />
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our Power Electronics Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."

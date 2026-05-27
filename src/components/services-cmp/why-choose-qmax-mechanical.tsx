@@ -11,7 +11,7 @@ export function WhyChooseQmaxMechanical() {
             className="font-light leading-[1.15] tracking-[-0.01em] [font-size:clamp(32px,4vw,48px)]"
           >
             Why Choose Qmax{" "}
-            <span className="text-brand-500">Systems</span>
+            <span className="text-red-500">Systems</span>
           </h2>
         </div>
         <p className="mx-auto text-left text-[17px] leading-[1.7] text-justify text-muted-foreground">

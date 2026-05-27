@@ -33,8 +33,9 @@ export function DayOneThinkingSection({
     >
       <div className="fw-d1-container">
         <div className="fw-d1-section-head">
-          <h2>
-            {title} <span className="fw-d1-accent">{titleHighlight}</span>
+          <h2 className="mb-4 text-center text-3xl font-light tracking-tight md:text-5xl">
+            {title}{" "}
+            <span className="text-red-500">{titleHighlight}</span>
           </h2>
           <p>{description}</p>
         </div>
@@ -94,19 +95,6 @@ export function DayOneThinkingSection({
           max-width: 880px;
           margin: 0 auto 32px;
           text-align: center;
-        }
-
-        .fw-d1-section-head h2 {
-          font-size: clamp(32px, 4vw, 48px);
-          font-weight: 300;
-          letter-spacing: 1.2px;
-          color: #000;
-          margin: 0 0 16px;
-          line-height: 1.15;
-        }
-
-        .fw-d1-accent {
-          color: var(--qmax-red-500);
         }
 
         .fw-d1-section-head p {

@@ -24,6 +24,10 @@ export default function ServiceCaseStudiesSection({
   className,
   hideTopBorder,
 }: ServiceCaseStudiesSectionProps) {
+  const words = title.trim().split(/\s+/);
+  const highlight = words.pop() ?? "";
+  const leading = words.join(" ");
+
   return (
     <section
       className={cn(
@@ -42,22 +46,9 @@ export default function ServiceCaseStudiesSection({
               {/* <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.38em] text-[#F33117]">
                 {eyebrow}
               </span> */}
-              <h2 className="text-4xl font-light tracking-tight md:text-5xl">
-                {title.split(" ").map((word, index) => (
-                  <span
-                    key={index}
-                    className={
-                      index === 0
-                        ? "text-black dark:text-black"
-                        : index === 1
-                          ? "text-red-500 dark:text-red-500"
-                          : ""
-                    }
-                  >
-                    {word}
-                    {index < title.split(" ").length - 1 ? " " : ""}
-                  </span>
-                ))}
+              <h2 className="text-center text-3xl font-light tracking-tight md:text-5xl">
+                {leading ? `${leading} ` : null}
+                <span className="text-red-500">{highlight}</span>
               </h2>
             </div>
             <Link
