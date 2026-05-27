@@ -15,7 +15,33 @@ import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
-import { getCaseStudyCardImage } from "@/store/case-studies";
+import {
+  allCaseStudiesData,
+  getCaseStudyCardImage,
+} from "@/store/case-studies";
+
+function highSpeedProjectExperienceEntry(
+  id: string,
+  listTitle: string,
+  caseStudyId: string,
+  description: string,
+): ProjectExperienceItem {
+  const study = allCaseStudiesData.find(
+    (caseStudy) => caseStudy.id === caseStudyId,
+  );
+  if (!study) {
+    throw new Error(`Case study not found: ${caseStudyId}`);
+  }
+
+  return {
+    id,
+    listTitle,
+    captionTitle: study.title,
+    description,
+    imageSrc: getCaseStudyCardImage(caseStudyId),
+    imageAlt: study.title,
+  };
+}
 
 function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {
@@ -48,60 +74,36 @@ const highSpeedCaseStudies: ServiceCaseStudy[] = industrialServiceCaseStudies([
 ]);
 
 const projectExperience: ProjectExperienceItem[] = [
-  {
-    id: "ai-compute-servers",
-    listTitle: "AI Compute Servers",
-    captionTitle: "High-Density GPU Infrastructure",
-    description:
-      "Custom hardware engineering for AI training and inference workloads, with robust power delivery networks and advanced thermal management for high-TDP NVIDIA and AMD GPU clusters.",
-    imageSrc: getCaseStudyCardImage("capserve"),
-    imageAlt: "AI Compute Servers",
-  },
-  {
-    id: "oran-du-systems",
-    listTitle: "O-RAN DU Systems",
-    captionTitle: "Open RAN Infrastructure",
-    description:
-      "Specialized hardware development for Open RAN Distributed Units, enabling scalable 4G and 5G rollouts with synchronized timing and high-integrity digital signal routing.",
-    imageSrc: getCaseStudyCardImage("stellar-main-board"),
-    imageAlt: "O-RAN DU Systems",
-  },
-  {
-    id: "fpga-accelerators",
-    listTitle: "FPGA Accelerators",
-    captionTitle: "Hardware Acceleration Platforms",
-    description:
-      "Custom FPGA-based platforms on Xilinx and Intel devices for real-time signal processing, parallel I/O, and flexible high-speed acceleration at the edge.",
-    imageSrc: getCaseStudyCardImage("multi-io-card-for-ate"),
-    imageAlt: "FPGA Accelerators",
-  },
-  {
-    id: "server-motherboards",
-    listTitle: "Server Motherboards",
-    captionTitle: "Enterprise-Grade Compute",
-    description:
-      "Tailor-made server motherboard designs spanning Intel Xeon, AMD EPYC, and Ampere Altra architectures, validated for power integrity and signal integrity in data center deployments.",
-    imageSrc: getCaseStudyCardImage("bluebinaries"),
-    imageAlt: "Server Motherboards",
-  },
-  {
-    id: "high-speed-nics",
-    listTitle: "High-Speed NICs",
-    captionTitle: "Ultra-High-Bandwidth Connectivity",
-    description:
-      "100 Gbps Network Interface Cards for blade server environments, delivering maximum bandwidth and minimal latency with QSFP-DD and high-speed SerDes lanes.",
-    imageSrc: getCaseStudyCardImage("wifi-6e-router"),
-    imageAlt: "High-Speed NICs",
-  },
-  {
-    id: "embedded-controllers",
-    listTitle: "Embedded Controllers",
-    captionTitle: "Industrial Edge Platforms",
-    description:
-      "Robust, power-optimized embedded controller designs using ARM, ESP32, and PIC architectures for Industrial IoT, edge compute, and connected field devices.",
-    imageSrc: getCaseStudyCardImage("industrial-iot-gateway-with-poe"),
-    imageAlt: "Embedded Controllers",
-  },
+  highSpeedProjectExperienceEntry(
+    "high-speed-pcb",
+    "High-Speed PCB",
+    "wifi6-triband-router",
+    "Multi-layer high-speed PCB design for a Qualcomm WiFi 6 triband router platform, with controlled impedance routing, HDI stack-up, and high pin-count BGA escape planning across concurrent 2.4, 5, and 6 GHz bands.",
+  ),
+  highSpeedProjectExperienceEntry(
+    "signal-integrity-timing-analysis",
+    "Signal Integrity & Timing Analysis",
+    "wifi-6e-router",
+    "Pre- and post-layout signal integrity and timing analysis for a Wi-Fi 6E router, including eye diagram validation, skew matching, and crosstalk mitigation across multi-gigabit SerDes and high-speed memory interfaces.",
+  ),
+  highSpeedProjectExperienceEntry(
+    "fpga-high-speed-interface",
+    "FPGA & High-Speed Interface Development",
+    "high-speed-camera-interface",
+    "FPGA-based high-speed camera interface with LVDS and MIPI CSI-2 routing, real-time data paths, and precision phase matching for industrial vision and process control applications.",
+  ),
+  highSpeedProjectExperienceEntry(
+    "multi-gigabit-design",
+    "Multi-Gigabit Design",
+    "gigabit-ethernet-switch-module",
+    "Multi-gigabit Ethernet switch module design with high-speed backplane routing, controlled differential pairs, and low-loss laminates for data center and industrial networking applications.",
+  ),
+  highSpeedProjectExperienceEntry(
+    "power-integrity-emc-emi",
+    "Power Integrity & EMC/EMI Optimization",
+    "rugged-industrial-io-board",
+    "Power integrity and EMC/EMI-hardened industrial IO board with target-impedance PDN design, surge protection, and shielding strategies validated for harsh factory-floor environments.",
+  ),
 ];
 
 const faqs = [

@@ -18,8 +18,34 @@ import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
-import { getCaseStudyCardImage } from "@/store/case-studies";
+import {
+  allCaseStudiesData,
+  getCaseStudyCardImage,
+} from "@/store/case-studies";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
+
+function powerElectronicsProjectExperienceEntry(
+  id: string,
+  listTitle: string,
+  caseStudyId: string,
+  description: string,
+): ProjectExperienceItem {
+  const study = allCaseStudiesData.find(
+    (caseStudy) => caseStudy.id === caseStudyId,
+  );
+  if (!study) {
+    throw new Error(`Case study not found: ${caseStudyId}`);
+  }
+
+  return {
+    id,
+    listTitle,
+    captionTitle: study.title,
+    description,
+    imageSrc: getCaseStudyCardImage(caseStudyId),
+    imageAlt: study.title,
+  };
+}
 
 function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {
@@ -51,53 +77,36 @@ const powerElectronicsCaseStudies: ServiceCaseStudy[] =
   ]);
 
 const projectExperience: ProjectExperienceItem[] = [
-  {
-    id: "3-phase-obc",
-    listTitle: "3-Phase 11kW On-Board Charger",
-    captionTitle: "SiC MOSFETs & Bidirectional V2G",
-    description:
-      "Featuring SiC MOSFETs and bidirectional power flow for V2G (Vehicle-to-Grid) applications.",
-    imageSrc: getCaseStudyCardImage("stellar-power-board"),
-    imageAlt: "3-Phase 11kW On-Board Charger",
-  },
-  {
-    id: "high-density-server-pdu",
-    listTitle: "High-Density Server PDU",
-    captionTitle: "48V DC AI GPU Distribution",
-    description:
-      "48V DC distribution system for AI GPU clusters with integrated Power Integrity (PI) analysis.",
-    imageSrc: getCaseStudyCardImage("rack-pdu"),
-    imageAlt: "High-Density Server PDU",
-  },
-  {
-    id: "industrial-pmsm-controller",
-    listTitle: "Industrial PMSM Controller",
-    captionTitle: "ASIL-D Functional Safety",
-    description:
-      "50kW motor drive with liquid cooling and ASIL-D functional safety compliance.",
-    imageSrc: getCaseStudyCardImage(
-      "ultra-low-cost-bldc-motor-controller-for-evs",
-    ),
-    imageAlt: "Industrial PMSM Controller",
-  },
-  {
-    id: "multi-cell-bms",
-    listTitle: "Multi-Cell BMS",
-    captionTitle: "Aerospace Energy Storage",
-    description:
-      "800V battery management system with active cell balancing for aerospace energy storage.",
-    imageSrc: getCaseStudyCardImage("bms-controller"),
-    imageAlt: "Multi-Cell BMS",
-  },
-  {
-    id: "precision-rf-generator",
-    listTitle: "Precision 1kW RF Generator",
-    captionTitle: "Plasma Etching & Medical Ablation",
-    description:
-      "High-frequency power source for industrial plasma etching and medical ablation.",
-    imageSrc: getCaseStudyCardImage("rf-power-processor"),
-    imageAlt: "Precision 1kW RF Generator",
-  },
+  powerElectronicsProjectExperienceEntry(
+    "ac-dc-dc-dc-converter-design",
+    "AC-DC & DC-DC Converter Design",
+    "stellar-power-board",
+    "Multi-rail AC-DC and DC-DC converter design for a portable EV charger platform, with efficient power distribution, thermal-optimized layout, and robust protection and filtering circuits.",
+  ),
+  powerElectronicsProjectExperienceEntry(
+    "motor-drive-inverter-development",
+    "Motor Drive & Inverter Development",
+    "ultra-low-cost-bldc-motor-controller-for-evs",
+    "Ultra low-cost BLDC motor drive and inverter development for electric vehicles, with high-current MOSFET stages, current sensing, and thermal-aware power electronics layout.",
+  ),
+  powerElectronicsProjectExperienceEntry(
+    "bms-design",
+    "Battery Management System (BMS) Design",
+    "bms-controller",
+    "Battery management system design with cell monitoring, balancing, and protection circuitry for safe charge and discharge control across multi-cell energy storage applications.",
+  ),
+  powerElectronicsProjectExperienceEntry(
+    "power-supply-smps-development",
+    "Power Supply & SMPS Development",
+    "poe-power-injector",
+    "Multi-port PoE power injector with switched-mode power supply architecture, supporting 802.3af/at/bt standards with per-port power metering and high-efficiency isolated DC-DC conversion.",
+  ),
+  powerElectronicsProjectExperienceEntry(
+    "thermal-management-protection-circuits",
+    "Thermal Management & Protection Circuits",
+    "thermal-management-system",
+    "Industrial thermal management system with multi-zone temperature sensing, automated cooling control, and protection circuits for predictive overheating alerts and long-term reliability.",
+  ),
 ];
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [

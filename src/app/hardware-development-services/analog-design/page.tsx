@@ -17,8 +17,34 @@ import {
   ApplicationsProjectExperienceSection,
   ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
-import { getCaseStudyCardImage } from "@/store/case-studies";
+import {
+  allCaseStudiesData,
+  getCaseStudyCardImage,
+} from "@/store/case-studies";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
+
+function analogProjectExperienceEntry(
+  id: string,
+  listTitle: string,
+  caseStudyId: string,
+  description: string,
+): ProjectExperienceItem {
+  const study = allCaseStudiesData.find(
+    (caseStudy) => caseStudy.id === caseStudyId,
+  );
+  if (!study) {
+    throw new Error(`Case study not found: ${caseStudyId}`);
+  }
+
+  return {
+    id,
+    listTitle,
+    captionTitle: study.title,
+    description,
+    imageSrc: getCaseStudyCardImage(caseStudyId),
+    imageAlt: study.title,
+  };
+}
 
 function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {
@@ -49,60 +75,36 @@ const analogCaseStudies: ServiceCaseStudy[] = industrialServiceCaseStudies([
 ]);
 
 const projectExperience: ProjectExperienceItem[] = [
-  {
-    id: "aerospace-shm",
-    listTitle: "Aerospace Structural Health Monitoring",
-    captionTitle: "High-EMI Environments",
-    description:
-      "Developed ruggedized sensing nodes for commercial aircraft, capable of high-precision strain and vibration analysis in high-EMI environments.",
-    imageSrc: getCaseStudyCardImage("high-speed-analog-board"),
-    imageAlt: "Aerospace Structural Health Monitoring",
-  },
-  {
-    id: "32-channel-daq",
-    listTitle: "32-Channel High-Speed DAQ",
-    captionTitle: "FPGA-Based Real-Time Capture",
-    description:
-      "Engineering a simultaneous sampling system for industrial physics applications, utilizing FPGA-based real-time data capture.",
-    imageSrc: getCaseStudyCardImage("multi-io-card-for-ate"),
-    imageAlt: "32-Channel High-Speed DAQ",
-  },
-  {
-    id: "medical-acoustic-sensing",
-    listTitle: "Medical Acoustic Sensing",
-    captionTitle: "Clinical-Grade Diagnostic Audio",
-    description:
-      "Designed a wearable lung sound recorder featuring a low-noise analog front-end for clinical-grade diagnostic audio.",
-    imageSrc: getCaseStudyCardImage("lung-sound-recorder"),
-    imageAlt: "Medical Acoustic Sensing",
-  },
-  {
-    id: "femto-farad-capacitance",
-    listTitle: "Femto-Farad Capacitance Measurement",
-    captionTitle: "Industrial Proximity & Material Analysis",
-    description:
-      "Implementation of ultra-high sensitivity measurement systems for specialized industrial proximity and material analysis.",
-    imageSrc: getCaseStudyCardImage("capserve"),
-    imageAlt: "Femto-Farad Capacitance Measurement",
-  },
-  {
-    id: "aerospace-cable-tension",
-    listTitle: "Aerospace Cable Tension Meters",
-    captionTitle: "Flight-Critical Force Measurement",
-    description:
-      "High-reliability force measurement systems with calibrated analog outputs for flight-critical applications.",
-    imageSrc: getCaseStudyCardImage("600kg-cable-tension-measurement-system"),
-    imageAlt: "Aerospace Cable Tension Meters",
-  },
-  {
-    id: "ultra-low-cost-hearing-aid",
-    listTitle: "Ultra-Low-Cost Hearing Aid",
-    captionTitle: "Mass-Market Accessibility",
-    description:
-      "Engineering a low-power, high-gain analog signal path optimized for mass-market accessibility and long battery life.",
-    imageSrc: getCaseStudyCardImage("ultra-low-noise-adc-board"),
-    imageAlt: "Ultra-Low-Cost Hearing Aid",
-  },
+  analogProjectExperienceEntry(
+    "analog-circuit-design",
+    "Analog Circuit Design",
+    "industrial-defect-monitoring-system",
+    "High-precision analog sensing and control circuits for an industrial defect monitoring system, with low-noise front-end design and calibrated measurement paths for production-line quality assurance.",
+  ),
+  analogProjectExperienceEntry(
+    "power-supply-voltage-regulation",
+    "Power Supply & Voltage Regulation Design",
+    "poe-control-unit",
+    "IEEE 802.3af/at PoE+ power supply and voltage regulation design with per-port power budgeting, fault isolation, and regulated rails for reliable multi-device power delivery in access control and building automation.",
+  ),
+  analogProjectExperienceEntry(
+    "signal-conditioning-amplifier-design",
+    "Signal Conditioning & Amplifier Design",
+    "high-speed-analog-board",
+    "High-speed analog signal conditioning and amplifier design with low-noise routing, precision gain stages, and ground isolation for high-frequency measurement integrity.",
+  ),
+  analogProjectExperienceEntry(
+    "mixed-signal-hardware-development",
+    "Mixed-Signal Hardware Development",
+    "industrial-iot-gateway-with-poe",
+    "Mixed-signal industrial IoT gateway combining analog sensor interfaces, PoE+ power architecture, and digital communication paths for LoRa, BLE, and CAN field connectivity.",
+  ),
+  analogProjectExperienceEntry(
+    "analog-pcb-layout-noise-optimization",
+    "Analog PCB Layout & Noise Optimization",
+    "high-speed-analog-mux",
+    "Analog PCB layout optimized for noise immunity with shielded routing, dedicated analog ground planes, and mux signal path isolation for reliable multi-channel industrial acquisition.",
+  ),
 ];
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [

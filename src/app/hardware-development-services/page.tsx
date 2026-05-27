@@ -467,7 +467,8 @@ const HERO = {
     "We provide full hardware lifecycle ownership, taking your product from early requirement analysis to production handover. Our lifecycle-driven approach minimizes risk, shortens development cycles, and ensures compliance readiness from day one.",
   ctaLabel: "Talk to our engineers",
   ctaHref: "/hardware-development-services/contact",
-  videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/hardware_hero_bg.mp4",
+  videoSrc:
+    "https://d1yetprhniwywz.cloudfront.net/v2/services_video/hardware_hero_bg_cropped.mp4",
 };
 
 export default function HardwareDevelopmentServicesPage() {

@@ -8,8 +8,34 @@ import {
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
-import { getCaseStudyCardImage } from "@/store/case-studies";
+import {
+  allCaseStudiesData,
+  getCaseStudyCardImage,
+} from "@/store/case-studies";
 import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
+
+function rfMicrowaveProjectExperienceEntry(
+  id: string,
+  listTitle: string,
+  caseStudyId: string,
+  description: string,
+): ProjectExperienceItem {
+  const study = allCaseStudiesData.find(
+    (caseStudy) => caseStudy.id === caseStudyId,
+  );
+  if (!study) {
+    throw new Error(`Case study not found: ${caseStudyId}`);
+  }
+
+  return {
+    id,
+    listTitle,
+    captionTitle: study.title,
+    description,
+    imageSrc: getCaseStudyCardImage(caseStudyId),
+    imageAlt: study.title,
+  };
+}
 
 function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {
@@ -40,59 +66,36 @@ const rfCaseStudies: ServiceCaseStudy[] = industrialServiceCaseStudies([
 ]);
 
 const projectExperience: ProjectExperienceItem[] = [
-  {
-    id: "enterprise-wifi-6",
-    listTitle: "Enterprise WiFi 6 Solutions",
-    captionTitle: "4x4 MIMO Tri-Band Systems",
-    description:
-      "Developed 4x4 MIMO systems operating concurrently at 2.4GHz, 5.1GHz, and 5.8GHz using Qualcomm and MediaTek SoCs.",
-    imageSrc: getCaseStudyCardImage("wifi6-triband-router"),
-    imageAlt: "Enterprise WiFi 6 Solutions",
-  },
-  {
-    id: "industrial-rf-generation",
-    listTitle: "Industrial RF Generation",
-    captionTitle: "1KW HF & 500W LF Generators",
-    description:
-      "Engineered 1KW HF and 500W LF RF generators specifically for plasma generation applications.",
-    imageSrc: getCaseStudyCardImage("rf-power-processor"),
-    imageAlt: "Industrial RF Generation",
-  },
-  {
-    id: "ble-reference-designs",
-    listTitle: "BLE Reference Designs",
-    captionTitle: 'Ultra-Low Power "Mousefull" Platforms',
-    description:
-      'Created ultra-low power BLE "Mousefull" reference designs for global semiconductor leaders.',
-    imageSrc: getCaseStudyCardImage("ultra-low-power-ble-mouse"),
-    imageAlt: "BLE Reference Designs",
-  },
-  {
-    id: "telecom-infrastructure",
-    listTitle: "Telecommunications Infrastructure",
-    captionTitle: "4G Radio Front-End Design",
-    description: "Designed high-gain LNAs and PAs for 4G Radio units.",
-    imageSrc: getCaseStudyCardImage("wifi-6e-router"),
-    imageAlt: "Telecommunications Infrastructure",
-  },
-  {
-    id: "microwave-sensing",
-    listTitle: "Precision Microwave Sensing",
-    captionTitle: "Food Grain Moisture Analysis",
-    description:
-      "Implemented microwave-based moisture measurement systems for food grain analysis.",
-    imageSrc: getCaseStudyCardImage("inline-moisture-meter"),
-    imageAlt: "Precision Microwave Sensing",
-  },
-  {
-    id: "iot-ecosystems",
-    listTitle: "IoT Ecosystems",
-    captionTitle: "Multi-Protocol Industrial IoT",
-    description:
-      "Deployed numerous LoRa, BLE, and WiFi-based industrial IoT devices with optimized PCB antennas.",
-    imageSrc: getCaseStudyCardImage("industrial-iot-gateway-with-poe"),
-    imageAlt: "IoT Ecosystems",
-  },
+  rfMicrowaveProjectExperienceEntry(
+    "antenna-matching-network-design",
+    "Antenna & Matching Network Design",
+    "capserve",
+    "Antenna and matching network design for the Capserve embedded platform, with tuned impedance matching, RF front-end integration, and optimized PCB antenna placement for reliable wireless performance.",
+  ),
+  rfMicrowaveProjectExperienceEntry(
+    "rf-transceiver-system-design",
+    "RF Transceiver System Design",
+    "ultra-low-power-ble-mouse",
+    "Ultra low-power BLE transceiver system design for a wireless mouse reference platform, with optimized RF link budget, multi-device switching, and extended battery life across 2.4 GHz operation.",
+  ),
+  rfMicrowaveProjectExperienceEntry(
+    "lna-design",
+    "Low Noise Amplifier (LNA) Design",
+    "ir-ble-ac-controller",
+    "Low-noise amplifier and RF front-end design for an IR BLE AC controller, with sensitive receive paths, BLE mesh connectivity, and low-power wireless control for smart home automation.",
+  ),
+  rfMicrowaveProjectExperienceEntry(
+    "signal-integrity-rf-shielding",
+    "Signal Integrity & RF Shielding",
+    "wifi6-triband-router",
+    "WiFi 6 triband router with signal integrity and RF shielding across concurrent 2.4, 5, and 6 GHz bands, including compartmentalized RF sections, ground plane integrity, and EMI containment for multi-radio coexistence.",
+  ),
+  rfMicrowaveProjectExperienceEntry(
+    "rf-testing-compliance-validation",
+    "RF Testing & Compliance Validation",
+    "smart-obd2",
+    "RF testing and compliance validation for a Smart OBD2 automotive diagnostics platform, with EMC-hardened automotive RF design, vehicle communication interface verification, and regulatory-ready validation workflows.",
+  ),
 ];
 
 export const metadata: Metadata = {
