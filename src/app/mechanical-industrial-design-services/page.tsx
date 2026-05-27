@@ -354,7 +354,7 @@ export default function MechanicalIndustrialDesignPage() {
       {/* CORE CAPABILITIES */}
       <CapabilitiesSection
         capabilities={CAPABILITIES}
-        title="Mechanical"
+        title="Mechanical & Industrial Design"
         titleHighlight="Capabilities"
         getInTouchHref="/mechanical-industrial-design-services/contact"
       />

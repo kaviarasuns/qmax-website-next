@@ -470,7 +470,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
       {/* CORE CAPABILITIES */}
       <CapabilitiesSection
         capabilities={CAPABILITIES}
-        title="PCB"
+        title="PCB Design"
         titleHighlight="Capabilities"
       />
 
