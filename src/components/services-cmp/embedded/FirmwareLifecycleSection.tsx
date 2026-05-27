@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export type FirmwareLifecyclePhase = {
   phase: number;
@@ -19,7 +19,9 @@ export function FirmwareLifecycleSection({
   subtitleHighlight = "requirement to production",
   phases,
 }: FirmwareLifecycleSectionProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const [visibleCount, setVisibleCount] = useState(0);
+  const gridRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (phases.length === 0) return;
@@ -29,6 +31,40 @@ export function FirmwareLifecycleSection({
     }, 3000);
 
     return () => window.clearInterval(interval);
+  }, [phases.length]);
+
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid || phases.length === 0) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVisibleCount(phases.length);
+      return;
+    }
+
+    const timeouts: number[] = [];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          for (let i = 0; i < phases.length; i += 1) {
+            timeouts.push(
+              window.setTimeout(
+                () => setVisibleCount((count) => Math.max(count, i + 1)),
+                i * 120,
+              ),
+            );
+          }
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 },
+    );
+    observer.observe(grid);
+
+    return () => {
+      observer.disconnect();
+      timeouts.forEach((id) => window.clearTimeout(id));
+    };
   }, [phases.length]);
 
   return (
@@ -41,7 +77,7 @@ export function FirmwareLifecycleSection({
           </p>
         </div>
 
-        <div className="fw-lifecycle-grid">
+        <div className="fw-lifecycle-grid" ref={gridRef}>
           <span className="fw-energy-track" aria-hidden="true" />
           <span className="fw-energy-trail" aria-hidden="true" />
           <span className="fw-energy-particle" aria-hidden="true" />
@@ -49,7 +85,9 @@ export function FirmwareLifecycleSection({
           {phases.map((phase, index) => (
             <article
               key={phase.phase}
-              className={`fw-lc-card${activeIndex === index ? " fw-lc-active" : ""}`}
+              className={`fw-lc-card${index < visibleCount ? " fw-in" : ""}${
+                activeIndex === index ? " fw-lc-active" : ""
+              }`}
               data-p={phase.phase}
             >
               <span className="fw-lc-card-dot" aria-hidden="true" />
@@ -213,12 +251,20 @@ export function FirmwareLifecycleSection({
           flex-direction: column;
           gap: 16px;
           min-width: 0;
+          opacity: 0;
+          transform: translateY(24px);
           transition:
+            opacity 0.6s var(--ease-std),
             border-color 0.3s var(--ease-std),
             transform 0.3s var(--ease-std),
             box-shadow 0.3s var(--ease-std);
           backdrop-filter: blur(4px);
           -webkit-backdrop-filter: blur(4px);
+        }
+
+        .fw-lc-card.fw-in {
+          opacity: 1;
+          transform: translateY(0);
         }
 
         .fw-lc-card:hover,
@@ -323,6 +369,14 @@ export function FirmwareLifecycleSection({
           .fw-energy-particle,
           .fw-energy-trail {
             animation: none;
+          }
+
+          .fw-lc-card {
+            opacity: 1;
+            transform: none;
+            transition:
+              border-color 0.3s var(--ease-std),
+              box-shadow 0.3s var(--ease-std);
           }
         }
       `}</style>
