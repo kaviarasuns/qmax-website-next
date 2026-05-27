@@ -30,6 +30,21 @@ const sectionCounts: { [key: string]: number } = {
   industrial: industrialCaseStudies.length,
 };
 
+// Temporary: global card index offsets per section (remove when numbering is dropped)
+const pcbCardOffset = embeddedCaseStudies.length;
+const mechanicalCardOffset = pcbCardOffset + pcbCaseStudies.length;
+const industrialCardOffset = mechanicalCardOffset + mechanicalCaseStudies.length;
+
+function CaseStudyCardNumber({ number }: { number: number }) {
+  return (
+    <span
+      aria-hidden
+      className="absolute top-3 left-3 z-10 flex h-8 min-w-8 items-center justify-center rounded-full bg-zinc-900/90 px-2 text-sm font-bold tabular-nums text-white shadow-md"
+    >
+      {number}
+    </span>
+  );
+}
 
 const SCROLL_OFFSET = 120;
 
@@ -244,12 +259,14 @@ export default function CaseStudiesPage() {
               </span>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {embeddedCaseStudies.map((study) => (
-                <CaseStudyCard
-                  key={`estudy-${study.id}`}
-                  {...study}
-                  // imageBackgroundClassName="bg-blue-200"
-                />
+              {embeddedCaseStudies.map((study, index) => (
+                <div key={`estudy-${study.id}`} className="relative">
+                  <CaseStudyCardNumber number={index + 1} />
+                  <CaseStudyCard
+                    {...study}
+                    // imageBackgroundClassName="bg-blue-200"
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -266,12 +283,14 @@ export default function CaseStudiesPage() {
               </span>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {pcbCaseStudies.map((study) => (
-                <CaseStudyCard
-                  key={`pstudy-${study.id}`}
-                  {...study}
-                  imageClassName="object-contain px-14 py-5"
-                />
+              {pcbCaseStudies.map((study, index) => (
+                <div key={`pstudy-${study.id}`} className="relative">
+                  <CaseStudyCardNumber number={pcbCardOffset + index + 1} />
+                  <CaseStudyCard
+                    {...study}
+                    imageClassName="object-contain px-14 py-5"
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -290,8 +309,11 @@ export default function CaseStudiesPage() {
               </span>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {mechanicalCaseStudies.map((study) => (
-                <CaseStudyCard key={`mstudy-${study.id}`} {...study} />
+              {mechanicalCaseStudies.map((study, index) => (
+                <div key={`mstudy-${study.id}`} className="relative">
+                  <CaseStudyCardNumber number={mechanicalCardOffset + index + 1} />
+                  <CaseStudyCard {...study} />
+                </div>
               ))}
             </div>
           </div>
@@ -310,12 +332,14 @@ export default function CaseStudiesPage() {
               </span>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {industrialCaseStudies.map((study) => (
-                <CaseStudyCard
-                  key={`istudy-${study.id}`}
-                  {...study}
-                  // imageBackgroundClassName="bg-blue-200"
-                />
+              {industrialCaseStudies.map((study, index) => (
+                <div key={`istudy-${study.id}`} className="relative">
+                  <CaseStudyCardNumber number={industrialCardOffset + index + 1} />
+                  <CaseStudyCard
+                    {...study}
+                    // imageBackgroundClassName="bg-blue-200"
+                  />
+                </div>
               ))}
             </div>
           </div>

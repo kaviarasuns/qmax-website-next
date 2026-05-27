@@ -1094,6 +1094,8 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     title: "Digital Lock",
     category: "Mechanical Design",
     images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/digital_lock/4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/digital_lock/5.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/digital_lock/1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/digital_lock/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/digital_lock/3.png",

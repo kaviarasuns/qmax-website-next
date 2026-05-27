@@ -468,7 +468,11 @@ export default function HardwareDevelopmentServicesComponentV2() {
       <ServiceVideoHero {...HERO} />
 
       {/* CORE CAPABILITIES */}
-      <CapabilitiesSection capabilities={CAPABILITIES} />
+      <CapabilitiesSection
+        capabilities={CAPABILITIES}
+        title="PCB"
+        titleHighlight="Capabilities"
+      />
 
       {/* PCB CAPABILITIES STRIP — Design Tools, Stack-Up, Materials, Fab Partners */}
       {/* <CapabilitiesStripSection items={PCB_CAPABILITIES_STRIP} /> */}

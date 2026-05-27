@@ -21,11 +21,15 @@ interface Capability {
 
 interface CapabilitiesSectionProps {
   capabilities: Capability[];
+  title?: string;
+  titleHighlight?: string;
   getInTouchHref?: string;
 }
 
 export function CapabilitiesSection({
   capabilities,
+  title = "Hardware",
+  titleHighlight = "Capabilities",
   getInTouchHref = "/pcb-design/contact",
 }: CapabilitiesSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -36,7 +40,8 @@ export function CapabilitiesSection({
         <div className="mx-auto max-w-7xl">
           <div className="m-0 p-0">
             <h2 className="text-center text-3xl font-light tracking-tight text-black md:text-5xl">
-              Hardware <span className="text-[#F33117]">Capabilities</span>
+              {title}{" "}
+              <span className="text-[#F33117]">{titleHighlight}</span>
             </h2>
             {/* <p>We deliver high-performance designs validated by decades of experience. Our HW engineering stack covers:</p> */}
           </div>

@@ -251,6 +251,7 @@ export const industrialCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/5.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/6.png",
     ],
     features: [
       "Robust pressure gauge enclosure design",
