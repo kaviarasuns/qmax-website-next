@@ -84,7 +84,7 @@ export function EmbeddedSoftwareCapabilitiesSection({
                         ) : null}
                         <a
                           href={getInTouchHref}
-                          className="inline-block rounded-md bg-[#E63329] px-7 py-[7px] text-white no-underline transition-colors duration-200 hover:bg-[#C72A21] hover:text-white hover:no-underline"
+                          className="inline-block rounded-md bg-red-500 px-7 py-[7px] text-white no-underline transition-colors duration-200 hover:bg-red-600 hover:text-white hover:no-underline"
                         >
                           Get in Touch
                         </a>

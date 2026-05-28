@@ -14,7 +14,7 @@ import WhyQmax from "@/components/about/WhyQmax";
 
 export default function AboutUsPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-white pt-24">
+    <main className="min-h-screen bg-white">
       <Hero/>
       <OurStory/>
       <ImpactStats />

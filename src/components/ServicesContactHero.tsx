@@ -73,10 +73,10 @@ const flagSrc = (code: string) =>
 type SubmitStatus = "idle" | "sending" | "success";
 
 const FIELD_INPUT =
-  "border-0 border-b border-[#2a2a2a] py-2 text-[0.95rem] text-[#2a2a2a] bg-transparent outline-none transition-colors duration-150 w-full h-11 rounded-none focus:border-b-[#ef4444]";
+  "border-0 border-b border-[#2a2a2a] py-2 text-[0.95rem] text-foreground bg-transparent outline-none transition-colors duration-150 w-full h-11 rounded-none focus:border-b-[#ef4444]";
 
 const FIELD_LABEL =
-  "text-[0.8rem] text-[#2a2a2a] font-normal mb-[6px] transition-colors duration-150";
+  "text-[0.8rem] text-foreground font-normal mb-[6px] transition-colors duration-150";
 
 const STAT_NUM =
   "font-extrabold text-[2.5rem] lg:text-[3.25rem] leading-none text-white tracking-[-0.02em] m-0";
@@ -418,7 +418,7 @@ export default function ServicesContactHero({
                     onClick={() => setCountryOpen((v) => !v)}
                     className={`appearance-none pr-6 cursor-pointer border-0 border-b border-[#2a2a2a] py-2 text-[0.95rem] bg-transparent outline-none transition-colors duration-150 w-full h-11 rounded-none focus:border-b-[#ef4444] text-left truncate ${
                       form.country
-                        ? "font-semibold text-[#2a2a2a]"
+                        ? "font-semibold text-foreground"
                         : "font-bold text-[#9aa0a6]"
                     }`}
                   >
@@ -435,8 +435,8 @@ export default function ServicesContactHero({
                             onClick={() => selectCountry(c)}
                             className={`flex items-center w-full px-3 py-2 hover:bg-[#f5f5f5] cursor-pointer text-[0.9rem] text-left ${
                               selected
-                                ? "bg-[#fafafa] font-semibold text-[#2a2a2a]"
-                                : "text-[#2a2a2a]"
+                                ? "bg-[#fafafa] font-semibold text-foreground"
+                                : "text-foreground"
                             }`}
                           >
                             {c}
@@ -477,7 +477,7 @@ export default function ServicesContactHero({
                   placeholder="Provide ALL project details for the best Qmax response."
                   value={form.message}
                   onChange={handleChange}
-                  className="border-0 border-b border-[#2a2a2a] pt-2 pb-0 text-[0.95rem] text-[#2a2a2a] bg-transparent outline-none transition-colors duration-150 w-full rounded-none focus:border-b-[#ef4444] h-auto resize-vertical min-h-[40px] leading-[1.45] placeholder:text-[#9aa0a6] placeholder:font-normal placeholder:text-[0.9rem]"
+                  className="border-0 border-b border-[#2a2a2a] pt-2 pb-0 text-[0.95rem] text-foreground bg-transparent outline-none transition-colors duration-150 w-full rounded-none focus:border-b-[#ef4444] h-auto resize-vertical min-h-[40px] leading-[1.45] placeholder:text-[#9aa0a6] placeholder:font-normal placeholder:text-[0.9rem]"
                 />
               </div>
 

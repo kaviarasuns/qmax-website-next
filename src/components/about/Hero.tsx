@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="bg-white relative overflow-hidden pt-20 pb-16 md:pb-24">
+    <section className="bg-white relative overflow-hidden pt-28 md:pt-32 pb-16 md:pb-24">
       {/* Subtle radial gradient background */}
       <div className="absolute inset-0 bg-gradient-radial from-red-500/5 to-transparent opacity-40"></div>
 
@@ -13,7 +13,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <h1 className="leading-tight text-foreground">
+            <h1 className="text-6xl leading-tight text-foreground">
               About Qmax <span className="text-red-500">Systems</span>
             </h1>
 

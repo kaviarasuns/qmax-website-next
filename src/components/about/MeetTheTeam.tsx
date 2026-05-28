@@ -63,7 +63,7 @@ export default function MeetTheTeam() {
   return (
     <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <header className="mb-12 text-left">
+        <header className="mb-12 text-center">
           {/* <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-red-500">
             Meet our team
           </p> */}
