@@ -43,10 +43,10 @@ export default function FooterV2() {
       <footer className="bg-zinc-900 text-white min-h-screen flex flex-col [&>*]:tracking-wider">
         <div className="mx-auto w-full flex flex-col flex-1 px-4 md:px-0">
           <div className="flex-1 flex flex-col justify-center w-full">
-            <div className="container mx-auto flex flex-col md:flex-row justify-around gap-12 md:items-start items-center mt-12">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:items-start items-center mt-12">
               {/* About Us Section */}
-              <div className="flex-1">
-                <h2 className="text-xl font-semibold mb-4">ABOUT US</h2>
+              <div className="min-w-0">
+                <div className="text-xl font-semibold mb-4">ABOUT US</div>
                 <p className="text-white text-sm leading-relaxed">
                   Qmax Systems is an Electronics Engineering and R&D Services
                   company based in San Jose, California and having development
@@ -63,8 +63,8 @@ export default function FooterV2() {
               </div>
 
               {/* Social Media Section */}
-              <div className="flex-1">
-                <h2 className="text-xl font-semibold mb-4">PRESENTATION</h2>
+              <div className="min-w-0">
+                <div className="text-xl font-semibold mb-4">PRESENTATION</div>
                 <p className="text-white mb-4">
                   Click here to download our company presentation.
                 </p>
@@ -81,9 +81,9 @@ export default function FooterV2() {
                   </Button>
                 </Link>
                 {/* Space before Social Media subsection */}
-                <h3 className="text-xl font-semibold mb-4 mt-8">
+                <div className="text-xl font-semibold mb-4 mt-8">
                   Social Media
-                </h3>
+                </div>
                 <p className="mb-4 text-white">
                   Get in touch with us on social media.
                 </p>
@@ -120,8 +120,8 @@ export default function FooterV2() {
               </div>
 
               {/* Quick Links Section */}
-              <div className="flex-1 w-full mt-16 md:mt-0">
-                <h2 className="text-xl font-semibold mb-4">QUICK LINKS</h2>
+              <div className="min-w-0 w-full mt-16 md:mt-0 md:flex md:flex-col md:items-center">
+                <div className="text-xl font-semibold mb-4">QUICK LINKS</div>
                 <ul className="space-y-3">
                   <li>
                     <Link
@@ -167,8 +167,8 @@ export default function FooterV2() {
               </div>
 
               {/* Contact Us Section (replacing Social Media) */}
-              <div className="flex-1 w-full mt-16 md:mt-0">
-                <h2 className="text-xl font-semibold mb-4">CONTACT US</h2>
+              <div className="min-w-0 w-full mt-16 md:mt-0">
+                <div className="text-xl font-semibold mb-4">CONTACT US</div>
                 <div className="space-y-4 w-full">
                   {(Object.keys(addresses) as CountryKey[]).map((country) => (
                     <div
