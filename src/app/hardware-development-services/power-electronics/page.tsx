@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
-import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 import {
   CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
@@ -47,12 +46,12 @@ function powerElectronicsProjectExperienceEntry(
   };
 }
 
-function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+function serviceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {
-    const study = industrialCaseStudiesData.find((c) => c.id === id);
-    const image = study?.images[0];
+    const study = allCaseStudiesData.find((c) => c.id === id);
+    const image = getCaseStudyCardImage(id);
     if (!study || !image) {
-      throw new Error(`Industrial case study missing or has no image: ${id}`);
+      throw new Error(`Case study missing or has no image: ${id}`);
     }
     const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
     const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
@@ -64,17 +63,17 @@ function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
       link: `/case-studies/${study.id}`,
       category: "hardware",
       summary,
+      imageRotation: study.rotatedImages?.[study.cardImageIndex ?? 0],
     };
   });
 }
 
-const powerElectronicsCaseStudies: ServiceCaseStudy[] =
-  industrialServiceCaseStudies([
-    "oxygen-generator",
-    "uv-disinfection-system",
-    "warehouse-camera-controller-unit",
-    "smart-tap",
-  ]);
+const powerElectronicsCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
+  "high-speed-camera-interface",
+  "ultra-low-noise-adc-board",
+  "bms-controller",
+  "rf-power-processor",
+]);
 
 const projectExperience: ProjectExperienceItem[] = [
   powerElectronicsProjectExperienceEntry(

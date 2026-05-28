@@ -1,4 +1,5 @@
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,
@@ -17,14 +18,34 @@ import {
 } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
-const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
-  title: caseStudy.title,
-  image: caseStudy.images[0],
-  link: `/case-studies/${caseStudy.id}`,
-  category: "development",
-  summary: caseStudy.summary,
-  imageRotation: caseStudy.rotatedImages?.[0],
-}));
+function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = pcbCaseStudiesData.find((c) => c.id === id);
+    const image = study?.images[0];
+    if (!study || !image) {
+      throw new Error(`PCB case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "development",
+      summary,
+      imageRotation: study.rotatedImages?.[0],
+    };
+  });
+}
+
+const pcbCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
+  "smart-obd2-device",
+  "qualcomm-wifi-6-triband-router",
+  "animal-tracker",
+  "video-processor-pcb",
+]);
 
 type ProjectExperienceEntryOptions = {
   description?: string;

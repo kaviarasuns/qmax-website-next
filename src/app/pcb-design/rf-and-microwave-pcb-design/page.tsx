@@ -608,9 +608,9 @@ function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
 }
 
 const rfMicrowaveCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
-  "ai-gpu-expansion-chassis-motherboard",
-  "iot-gateway-pcb",
-  "pcie-gen5-cpo-board",
+  "100gbe-high-speed-networking-board",
+  "typheon",
+  "mx1",
   "ultra-low-cost-bldc-motor-controller",
 ]);
 

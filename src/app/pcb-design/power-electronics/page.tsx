@@ -449,10 +449,10 @@ function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
 }
 
 const powerElectronicsCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
-  "ai-gpu-expansion-chassis-motherboard",
-  "iot-gateway-pcb",
-  "pcie-gen5-cpo-board",
-  "ultra-low-cost-bldc-motor-controller",
+  "lbm",
+  "fedarant-pcb-top-layer",
+  "qualcomm-wifi4-routers",
+  "arc-detector",
 ]);
 
 export default function PowerElectronicsPage() {

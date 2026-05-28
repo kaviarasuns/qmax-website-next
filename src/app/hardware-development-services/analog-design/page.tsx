@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
-import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 import {
   CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
@@ -46,12 +45,12 @@ function analogProjectExperienceEntry(
   };
 }
 
-function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+function serviceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {
-    const study = industrialCaseStudiesData.find((c) => c.id === id);
-    const image = study?.images[0];
+    const study = allCaseStudiesData.find((c) => c.id === id);
+    const image = getCaseStudyCardImage(id);
     if (!study || !image) {
-      throw new Error(`Industrial case study missing or has no image: ${id}`);
+      throw new Error(`Case study missing or has no image: ${id}`);
     }
     const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
     const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
@@ -63,15 +62,16 @@ function industrialServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
       link: `/case-studies/${study.id}`,
       category: "hardware",
       summary,
+      imageRotation: study.rotatedImages?.[study.cardImageIndex ?? 0],
     };
   });
 }
 
-const analogCaseStudies: ServiceCaseStudy[] = industrialServiceCaseStudies([
-  "medical-diagnostic-system",
-  "medical-recording-device",
-  "smart-wifi-stethoscope",
-  "oxygen-generator",
+const analogCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
+  "multi-io-card-for-ate",
+  "security-system-controller",
+  "robotics-motion-controller",
+  "poe-power-injector",
 ]);
 
 const projectExperience: ProjectExperienceItem[] = [
