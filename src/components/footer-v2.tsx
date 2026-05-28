@@ -40,10 +40,10 @@ export default function FooterV2() {
   return (
     <>
       {" "}
-      <footer className="bg-zinc-900 text-white min-h-screen flex flex-col [&>*]:tracking-wider">
+      <footer className="bg-zinc-900 text-white min-h-screen md:h-[100svh] md:overflow-hidden flex flex-col md:pt-[var(--nav-h)] [&>*]:tracking-wider">
         <div className="mx-auto w-full flex flex-col flex-1 px-4 sm:px-6 lg:px-8">
           <div className="flex-1 flex flex-col justify-center w-full">
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:items-start items-center mt-12">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 md:items-start items-center mt-12 md:mt-0">
               {/* About Us Section */}
               <div className="min-w-0">
                 <div className="text-xl font-semibold mb-4">ABOUT US</div>
@@ -232,7 +232,7 @@ export default function FooterV2() {
               /> */}
               <div className="w-full text-center">
                 <p className="mb-4 text-white text-center">
-                  Copyright © 2025 Qmax Systems India Pvt. Ltd.
+                  Copyright © 2026 Qmax Systems India Pvt. Ltd.
                 </p>
                 <div className="flex flex-wrap justify-center gap-6 text-sm text-white text-center">
                   <Link href="#" className="hover:text-white transition-colors">
