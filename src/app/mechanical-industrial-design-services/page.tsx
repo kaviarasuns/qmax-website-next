@@ -363,6 +363,7 @@ export default function MechanicalIndustrialDesignPage() {
         industries={MECHANICAL_INDUSTRIES}
         headingPrefix="Mechanical Development"
         ctaLabel="Get a Mechanical Design Quote"
+        ctaHref="/mechanical-industrial-design-services/contact"
       />
 
       <WorkflowSection

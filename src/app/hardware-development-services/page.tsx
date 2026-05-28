@@ -489,6 +489,7 @@ export default function HardwareDevelopmentServicesPage() {
         industries={HARDWARE_INDUSTRIES}
         headingPrefix="Hardware Development"
         ctaLabel="Get a Hardware Design Quote"
+        ctaHref="/hardware-development-services/contact"
       />
 
       {/* WHY CHOOSE QMAX */}

@@ -26,12 +26,14 @@ interface PCBIndustriesSectionProps {
   industries: PCBIndustry[];
   headingPrefix?: string;
   ctaLabel?: string;
+  ctaHref?: string;
 }
 
 export function PCBIndustriesSection({
   industries,
   headingPrefix = "PCB Design",
   ctaLabel = "Learn more",
+  ctaHref = "/pcb-design/contact",
 }: PCBIndustriesSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
   const [caseIdx, setCaseIdx] = useState(0);
@@ -113,7 +115,7 @@ export function PCBIndustriesSection({
               {active.subDescription}
             </p>
             <a
-              href={active.ctaHref ?? "/pcb-design/contact"}
+              href={active.ctaHref ?? ctaHref}
               className="mt-auto inline-block self-start rounded-full border border-foreground bg-transparent px-[18px] py-2 text-[12px] font-bold tracking-wide text-foreground no-underline transition-colors duration-200 hover:border-red-500 hover:bg-red-500 hover:text-white hover:no-underline"
             >
               {ctaLabel}
