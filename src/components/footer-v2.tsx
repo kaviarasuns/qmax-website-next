@@ -41,7 +41,7 @@ export default function FooterV2() {
     <>
       {" "}
       <footer className="bg-zinc-900 text-white min-h-screen flex flex-col [&>*]:tracking-wider">
-        <div className="mx-auto w-full flex flex-col flex-1 px-4 md:px-0">
+        <div className="mx-auto w-full flex flex-col flex-1 px-4 sm:px-6 lg:px-8">
           <div className="flex-1 flex flex-col justify-center w-full">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 md:items-start items-center mt-12">
               {/* About Us Section */}
