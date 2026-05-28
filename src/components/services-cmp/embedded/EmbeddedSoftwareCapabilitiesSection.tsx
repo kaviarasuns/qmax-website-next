@@ -92,7 +92,7 @@ export function EmbeddedSoftwareCapabilitiesSection({
                     </div>
 
                     <div>
-                      <p className="mb-9 text-[#383838]">{cap.intro}</p>
+                      <p className="mb-9 text-foreground">{cap.intro}</p>
                       <div className="grid grid-cols-2 gap-12 max-[900px]:grid-cols-1 max-[900px]:gap-7">
                         {cap.bullets.map((group) => (
                           <div key={group.title}>

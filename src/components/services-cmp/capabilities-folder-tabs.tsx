@@ -122,7 +122,7 @@ export function CapabilitiesFolderTabs({
                   isActive && "animate-[folder-tab-panel-in_0.35s_ease]",
                 )}
               >
-                <p className="mx-auto mb-9 max-w-[640px] text-base leading-[1.8] text-muted-foreground">
+                <p className="mx-auto mb-9 max-w-[640px] text-base leading-[1.8] text-foreground">
                   {cap.description}
                 </p>
                 <div className="relative mx-auto aspect-video max-w-[880px] overflow-hidden rounded-2xl shadow-[0_12px_48px_rgba(0,0,0,0.08)]">

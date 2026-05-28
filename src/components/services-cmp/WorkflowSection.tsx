@@ -43,7 +43,7 @@ export function WorkflowSection({
         <span className="text-red-500">{titleHighlight}</span>
       </h2>
       <div className="relative mx-auto max-w-[1100px]">
-        <div className="absolute bottom-0 left-6 top-0 w-1 bg-brand-500 min-[900px]:left-1/2 min-[900px]:-translate-x-1/2" />
+        <div className="absolute bottom-0 left-6 top-0 w-1 bg-red-500 min-[900px]:left-1/2 min-[900px]:-translate-x-1/2" />
         {steps.map((step, i) => {
           const isRight = i % 2 === 0;
           return (
@@ -68,7 +68,7 @@ export function WorkflowSection({
                 <h3 className="mb-4 text-2xl tracking-wide md:text-3xl">
                   {step.title}
                 </h3>
-                <p className="m-0 text-muted-foreground">{step.description}</p>
+                <p className="m-0 text-foreground">{step.description}</p>
               </div>
               <div
                 data-budge-target

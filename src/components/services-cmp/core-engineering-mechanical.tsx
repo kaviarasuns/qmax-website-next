@@ -647,7 +647,7 @@ function TablerPackageIcon({ className }: { className?: string }) {
 function SectionTitle({ children }: { children: ReactNode }) {
   return (
     <div className="section-title flex items-center gap-3 py-6">
-      <span className="shrink-0 text-[11.5px] font-bold uppercase tracking-[0.5px] text-black">
+      <span className="shrink-0 text-[11.5px] font-bold uppercase tracking-[0.5px] text-foreground">
         {children}
       </span>
       <span className="h-px flex-1 bg-zinc-200" aria-hidden />
@@ -669,11 +669,11 @@ function SmallCards({ items }: { items: SmallCard[] }) {
                 {item.icon}
               </div>
             ) : null}
-            <h4 className="text-base font-semibold leading-snug tracking-[-0.3px]">
+            <h4 className="text-base font-semibold leading-snug tracking-[-0.3px] text-foreground">
               {item.title}
             </h4>
           </div>
-          <p className="text-[14px] leading-[22px] text-[#4b5563]">
+          <p className="text-[14px] leading-[22px] text-foreground">
             {item.description}
           </p>
         </div>
@@ -695,7 +695,7 @@ function CheckGrid({ items }: { items: CheckItem[] }) {
             strokeWidth={2}
             aria-hidden
           />
-          <span className="text-[13.5px] leading-[21px] text-black">
+          <span className="text-[13.5px] leading-[21px] text-foreground">
             {item}
           </span>
         </div>
@@ -729,9 +729,9 @@ function DataTable({ headers, rows }: { headers: string[]; rows: TableRow[] }) {
               {row.map((cell, cellIdx) => (
                 <td
                   key={cellIdx}
-                  className={`px-5 py-3.5 text-[13.5px] leading-[21px] text-black ${
+                  className={`px-5 py-3.5 text-[13.5px] leading-[21px] text-foreground ${
                     cellIdx === 0
-                      ? "border-r border-zinc-100 font-semibold text-black"
+                      ? "border-r border-zinc-100 font-semibold text-foreground"
                       : cellIdx < row.length - 1
                         ? "border-r border-zinc-100"
                         : ""
@@ -763,17 +763,17 @@ function MaterialCards({
             key={item.title}
             className="rounded-xl border border-zinc-200 bg-white p-5"
           >
-            <h4 className="mb-3 text-[11.5px] font-bold uppercase tracking-[0.5px]">
+            <h4 className="mb-3 text-[11.5px] font-bold uppercase tracking-[0.5px] text-foreground">
               {item.title}
             </h4>
-            <p className="text-[13.5px] leading-[21px]">
+            <p className="text-[13.5px] leading-[21px] text-foreground">
               {item.description}
             </p>
           </div>
         ))}
       </div>
       {footnote ? (
-        <p className="mt-6 text-center text-[11.5px] font-bold uppercase tracking-[0.5px]">
+        <p className="mt-6 text-center text-[11.5px] font-bold uppercase tracking-[0.5px] text-foreground">
           {footnote}
         </p>
       ) : null}
@@ -812,10 +812,10 @@ function IpCards({ items }: { items: IpCard[] }) {
             key={item.rating}
             className={`rounded-lg border-2 p-[22px] text-center ${cardStyle}`}
           >
-            <div className="text-[28px] font-bold tracking-[-0.02em] text-black">
+            <div className="text-[28px] font-bold tracking-[-0.02em] text-foreground">
               {item.rating}
             </div>
-            <p className="mt-2 text-center text-[13.5px] leading-5">
+            <p className="mt-2 text-center text-[13.5px] leading-5 text-foreground">
               {specs}
               {applications ? (
                 <>
@@ -862,7 +862,7 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
             {item.label}
           </p>
         ) : null}
-        <h4 className="line-clamp-2 text-[15px] font-semibold leading-snug tracking-[-0.2px]">
+        <h4 className="line-clamp-2 text-[15px] font-semibold leading-snug tracking-[-0.2px] text-foreground">
           {item.title}
         </h4>
       </div>
@@ -877,10 +877,10 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
           </p>
         ) : null}
         <div className="flex flex-col gap-3 py-4">
-          <h4 className="text-[17px] font-semibold leading-snug tracking-[-0.2px]">
+          <h4 className="text-[17px] font-semibold leading-snug tracking-[-0.2px] text-foreground">
             {item.title}
           </h4>
-          <p className="line-clamp-4 text-[14px] leading-[21px] text-muted-foreground">
+          <p className="line-clamp-4 text-[14px] leading-[21px] text-foreground">
             {item.description}
           </p>
           <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-500">
@@ -894,7 +894,7 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
         className="pointer-events-none absolute inset-x-0 bottom-0 z-[25] flex h-[32px] items-start bg-white px-6"
         aria-hidden
       >
-        <p className="text-[11.5px] font-medium uppercase tracking-[0.4px] text-muted-foreground">
+        <p className="text-[11.5px] font-medium uppercase tracking-[0.4px] text-foreground">
           Case study
         </p>
       </div>
@@ -988,20 +988,20 @@ function AnalysisTable({ rows }: { rows: AnalysisRow[] }) {
           key={row.type}
           className="grid grid-cols-1 border-b border-zinc-100 transition-colors last:border-b-0 hover:bg-[#fdfcfa] min-[720px]:grid-cols-[156px_186px_1fr]"
         >
-          <div className="border-b border-zinc-100 px-4 py-3.5 text-[13.5px] font-semibold text-black min-[720px]:border-b-0 min-[720px]:border-r min-[720px]:border-zinc-100">
-            <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-black min-[720px]:hidden">
+          <div className="border-b border-zinc-100 px-4 py-3.5 text-[13.5px] font-semibold text-foreground min-[720px]:border-b-0 min-[720px]:border-r min-[720px]:border-zinc-100">
+            <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-foreground min-[720px]:hidden">
               Analysis Type
             </span>
             {row.type}
           </div>
-          <div className="border-b border-zinc-100 px-4 py-3.5 text-[13.5px] leading-[21px] text-black min-[720px]:border-b-0 min-[720px]:border-r min-[720px]:border-zinc-100">
-            <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-black min-[720px]:hidden">
+          <div className="border-b border-zinc-100 px-4 py-3.5 text-[13.5px] leading-[21px] text-foreground min-[720px]:border-b-0 min-[720px]:border-r min-[720px]:border-zinc-100">
+            <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-foreground min-[720px]:hidden">
               Standard
             </span>
             {row.standard}
           </div>
-          <div className="px-4 py-3.5 text-[13.5px] leading-[21px] text-black">
-            <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-black min-[720px]:hidden">
+          <div className="px-4 py-3.5 text-[13.5px] leading-[21px] text-foreground">
+            <span className="mb-1 block text-[10px] font-bold uppercase tracking-[0.5px] text-foreground min-[720px]:hidden">
               Expected Output
             </span>
             {row.output}
@@ -1026,11 +1026,11 @@ function DocCards({ items }: { items: SmallCard[] }) {
                 {item.icon}
               </div>
             ) : null}
-            <h4 className="text-[11.5px] font-bold uppercase tracking-[0.5px]">
+            <h4 className="text-[11.5px] font-bold uppercase tracking-[0.5px] text-foreground">
               {item.title}
             </h4>
           </div>
-          <p className="text-[13.5px] leading-[21px]">
+          <p className="text-[13.5px] leading-[21px] text-foreground">
             {item.description}
           </p>
         </div>
@@ -1109,21 +1109,21 @@ function ServiceBlock({ service }: { service: MechanicalService }) {
       className="grid grid-cols-1 items-start max-[960px]:grid-cols-1 min-[960px]:grid-cols-[35%_65%]"
     >
       <div className="bg-white px-5 py-12 max-[640px]:px-5 min-[640px]:px-8 min-[960px]:sticky min-[960px]:top-[calc(var(--nav-h)+8px)] min-[960px]:self-start min-[960px]:px-[52px] min-[960px]:py-[72px] min-[960px]:pl-[max(1.5rem,var(--page-pad,4rem))]">
-        <h2 className="mb-3 font-light leading-[1.1] tracking-[-0.02em] [font-size:clamp(28px,3.2vw,42px)]">
+        <h2 className="mb-3 font-light leading-[1.1] tracking-[-0.02em] text-foreground [font-size:clamp(28px,3.2vw,42px)]">
           {service.titleBefore}{" "}
           <span className="text-red-500">{service.titleAccent}</span>
         </h2>
-        <p className="mb-5 text-[11.5px] font-bold uppercase tracking-[0.5px]">
+        <p className="mb-5 text-[11.5px] font-bold uppercase tracking-[0.5px] text-foreground">
           {service.subtitle}
         </p>
-        <p className="mb-7 border-l-[3px] border-brand-500 pl-[18px] text-[15px] leading-[22.5px] text-justify">
+        <p className="mb-7 border-l-[3px] border-brand-500 pl-[18px] text-[15px] leading-[22.5px] text-justify text-foreground">
           {service.description}
         </p>
         <div className="flex flex-wrap gap-1.5">
           {service.chips.map((chip) => (
             <span
               key={chip}
-              className="whitespace-nowrap rounded-[3px] border border-[#e8e4de] bg-[#f5f3ef] px-2.5 py-1 text-[11.5px] font-bold uppercase tracking-[0.5px] text-black"
+              className="whitespace-nowrap rounded-[3px] border border-[#e8e4de] bg-[#f5f3ef] px-2.5 py-1 text-[11.5px] font-bold uppercase tracking-[0.5px] text-foreground"
             >
               {chip}
             </span>
@@ -1152,12 +1152,12 @@ export function CoreEngineeringMechanical() {
         <div className="mx-auto max-w-[1200px]">
           <h2
             id="core-engineering-capabilities-heading"
-            className="mb-7 font-light leading-[1.15] tracking-[-0.01em] [font-size:clamp(32px,4vw,48px)]"
+            className="mb-7 font-light leading-[1.15] tracking-[-0.01em] text-foreground [font-size:clamp(32px,4vw,48px)]"
           >
             Our Core Engineering{" "}
             <span className="text-red-500">Capabilities</span>
           </h2>
-          <p className="mx-auto max-w-[820px] text-[15px] leading-[22.5px]">
+          <p className="mx-auto max-w-[820px] text-[15px] leading-[22.5px] text-foreground">
             Qmax Systems delivers precision mechanical engineering across seven
             specialist disciplines — from injection-moulded plastic enclosures
             for consumer IoT products to MIL-STD-810H-qualified rugged systems
