@@ -7,8 +7,8 @@ export default function GlobalPresence() {
     {
       location: "United States",
       company: "Qmax Systems LLC",
-      address: "14105 Willow Tank Drive",
-      city: "Austin, TX 78717",
+      address: "539 W Commerce St # 7953",
+      city: "Dallas, TX 75208 - 1953",
       phone: "+1 412 265 2314",
       email: "info@qmaxsys.com",
     },
@@ -30,7 +30,7 @@ export default function GlobalPresence() {
             Global <span className="text-red-500">Presence</span>
           </h2>
           <p className="text-lg mt-6 max-w-2xl mx-auto text-foreground">
-            With offices in Austin, Texas and Chennai, India, we provide 24/7
+            With offices in Dallas, Texas and Chennai, India, we provide 24/7
             engineering support and rapid prototyping capabilities to clients
             worldwide.
           </p>

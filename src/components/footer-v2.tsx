@@ -141,26 +141,10 @@ export default function FooterV2() {
                   </li>
                   <li>
                     <Link
-                      href="http://blog.qmaxsys.com/"
+                      href="/case-studies"
                       className="text-white hover:text-white transition-colors"
                     >
-                      Blog
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/services"
-                      className="text-white hover:text-white transition-colors"
-                    >
-                      Services
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/projects"
-                      className="text-white hover:text-white transition-colors"
-                    >
-                      Projects
+                      Case Studies
                     </Link>
                   </li>
                   <li>
@@ -177,38 +161,6 @@ export default function FooterV2() {
                       className="text-white hover:text-white transition-colors"
                     >
                       Contact Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/PCB-design-resources"
-                      className="text-white hover:text-white transition-colors"
-                    >
-                      PCB Design Resources
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/embedded-system-glossary"
-                      className="text-white hover:text-white transition-colors"
-                    >
-                      Embedded Systems Glossary
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/pcb-design-glossary"
-                      className="text-white hover:text-white transition-colors"
-                    >
-                      PCB Design Glossary
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/printed-circuit-board-faqs"
-                      className="text-white hover:text-white transition-colors"
-                    >
-                      FAQs
                     </Link>
                   </li>
                 </ul>
