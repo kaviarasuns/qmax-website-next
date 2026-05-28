@@ -40,7 +40,7 @@ export function WhySection({
             <span className="text-red-500">{titleHighlight}</span>
           </h2>
           {description ? (
-            <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-muted-foreground">
+            <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-foreground">
               {description}
             </p>
           ) : null}
@@ -59,7 +59,7 @@ export function WhySection({
                   {card.title}
                 </h3>
               </div>
-              <p className="text-base text-muted-foreground">{card.desc}</p>
+              <p className="text-base text-foreground">{card.desc}</p>
             </article>
           ))}
           {/* Founder CTA tile — baked PNG */}

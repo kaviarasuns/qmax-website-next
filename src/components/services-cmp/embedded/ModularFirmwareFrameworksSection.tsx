@@ -29,10 +29,9 @@ export function ModularFirmwareFrameworksSection({
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-14 flex w-full flex-col items-center text-center max-[900px]:mb-10">
           <h2 className="mb-6 text-center text-3xl font-light tracking-tight capitalize md:text-5xl">
-            {title}{" "}
-            <span className="text-red-500">{titleHighlight}</span>
+            {title} <span className="text-red-500">{titleHighlight}</span>
           </h2>
-          <p className="w-full !text-left text-[#383838]">{description}</p>
+          <p className="w-full !text-left">{description}</p>
         </div>
 
         <div className="grid grid-cols-4 gap-4 max-[1100px]:grid-cols-2 max-[640px]:grid-cols-1">
@@ -49,10 +48,10 @@ export function ModularFirmwareFrameworksSection({
                   {framework.title}
                 </h3>
               </div>
-              <p className="mb-3 !text-left text-[13px] font-medium text-[#5a6878]">
+              <p className="mb-3 !text-left text-[13px] font-medium">
                 {framework.subtitle}
               </p>
-              <ul className="m-0 list-disc pl-[18px] text-[13.5px] text-[#15202b] marker:text-brand-500">
+              <ul className="m-0 list-disc pl-[18px] text-[13.5px] marker:text-brand-500">
                 {framework.items.map((item) => (
                   <li key={item} className="mb-1.5 last:mb-0">
                     {item}

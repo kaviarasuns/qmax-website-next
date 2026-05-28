@@ -77,7 +77,7 @@ export default async function CaseStudyPage({
                 <span className="mb-1 block text-[10px] font-black uppercase tracking-[0.3em] text-red-500">
                   Explore More
                 </span>
-                <h2 className="text-2xl font-bold md:text-3xl">
+                <h2 className="text-2xl font-bold text-foreground md:text-3xl">
                   More Case Studies
                 </h2>
               </div>
@@ -115,7 +115,7 @@ export default async function CaseStudyPage({
           className="fixed left-3 top-1/2 -translate-y-1/2 z-50 flex items-center gap-3"
         >
           {/* Circle button */}
-          <div className="group peer flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-zinc-200/80 bg-white/90 shadow-md backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:border-[#E31E24] hover:bg-[#E31E24] hover:shadow-lg">
+          <div className="group peer flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-zinc-200/80 bg-white/90 shadow-md backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:border-red-500 hover:bg-red-500 hover:shadow-lg">
             <ChevronLeft className="h-5 w-5 text-zinc-500 transition-colors duration-200 group-hover:text-white" />
           </div>
 
@@ -125,7 +125,7 @@ export default async function CaseStudyPage({
               <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-red-500">
                 Previous
               </p>
-              <p className="max-w-[160px] text-[12px] font-medium leading-tight line-clamp-2 text-muted-foreground">
+              <p className="max-w-[160px] text-[12px] font-medium leading-tight line-clamp-2 text-foreground">
                 {prevStudy.title}
               </p>
             </div>
@@ -141,7 +141,7 @@ export default async function CaseStudyPage({
           className="fixed right-3 top-1/2 -translate-y-1/2 z-50 flex flex-row-reverse items-center gap-3"
         >
           {/* Circle button */}
-          <div className="group peer flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-zinc-200/80 bg-white/90 shadow-md backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:border-[#E31E24] hover:bg-[#E31E24] hover:shadow-lg">
+          <div className="group peer flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-zinc-200/80 bg-white/90 shadow-md backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:border-red-500 hover:bg-red-500 hover:shadow-lg">
             <ChevronRight className="h-5 w-5 text-zinc-500 transition-colors duration-200 group-hover:text-white" />
           </div>
 
@@ -151,7 +151,7 @@ export default async function CaseStudyPage({
               <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-red-500">
                 Next
               </p>
-              <p className="max-w-[160px] text-[12px] font-medium leading-tight line-clamp-2 text-muted-foreground">
+              <p className="max-w-[160px] text-[12px] font-medium leading-tight line-clamp-2 text-foreground">
                 {nextStudy.title}
               </p>
             </div>

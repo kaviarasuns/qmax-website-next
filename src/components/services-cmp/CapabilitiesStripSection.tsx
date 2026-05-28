@@ -19,10 +19,10 @@ function deliverablesGridClass(count: number): string {
 function DeliverableItemContent({ item }: { item: CapabilitiesStripItem }) {
   return (
     <>
-      <h5 className="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.5px] text-[#F33117]">
+      <h5 className="mb-2.5 text-[11.5px] font-bold uppercase tracking-[0.5px] text-red-500">
         {item.title}
       </h5>
-      <p className="m-0 text-left text-[13.5px] leading-5 text-[rgb(51,65,85)]">
+      <p className="m-0 text-left text-[13.5px] leading-5">
         {item.description}
       </p>
     </>

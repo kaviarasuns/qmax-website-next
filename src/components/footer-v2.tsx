@@ -65,7 +65,7 @@ export default function FooterV2() {
               {/* Social Media Section */}
               <div className="flex-1">
                 <h2 className="text-xl font-semibold mb-4">PRESENTATION</h2>
-                <p className="text-gray-300 mb-4">
+                <p className="text-white mb-4">
                   Click here to download our company presentation.
                 </p>
                 <Link
@@ -84,33 +84,35 @@ export default function FooterV2() {
                 <h3 className="text-xl font-semibold mb-4 mt-8">
                   Social Media
                 </h3>
-                <p className="mb-4 text-white">Get in touch with us on social media.</p>
+                <p className="mb-4 text-white">
+                  Get in touch with us on social media.
+                </p>
                 <div className="flex gap-6">
                   <Link
                     href="https://www.facebook.com/QMAXSystems/"
                     target="_blank"
-                    className="p-2 border border-white rounded hover:text-zinc-400 hover:border-zinc-400 transition-colors"
+                    className="p-2 border border-white rounded hover:text-white hover:border-white transition-colors"
                   >
                     <Facebook size={24} />
                   </Link>
                   <Link
                     href="https://x.com/QmaxSystems"
                     target="_blank"
-                    className="p-2 border border-white rounded hover:text-zinc-400 hover:border-zinc-400 transition-colors"
+                    className="p-2 border border-white rounded hover:text-white hover:border-white transition-colors"
                   >
                     <Twitter size={24} />
                   </Link>
                   <Link
                     href="https://www.linkedin.com/company/qmax-systems-inc/about/"
                     target="_blank"
-                    className="p-2 border border-white rounded hover:text-zinc-400 hover:border-zinc-400 transition-colors"
+                    className="p-2 border border-white rounded hover:text-white hover:border-white transition-colors"
                   >
                     <Linkedin size={24} />
                   </Link>
                   <Link
                     href="https://www.youtube.com/watch?v=Ls5EVCXfQI8"
                     target="_blank"
-                    className="p-2 border border-white rounded hover:text-zinc-400 hover:border-zinc-400 transition-colors"
+                    className="p-2 border border-white rounded hover:text-white hover:border-white transition-colors"
                   >
                     <Youtube size={24} />
                   </Link>
@@ -124,7 +126,7 @@ export default function FooterV2() {
                   <li>
                     <Link
                       href="/"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-white hover:text-white transition-colors"
                     >
                       Home
                     </Link>
@@ -132,7 +134,7 @@ export default function FooterV2() {
                   <li>
                     <Link
                       href="/about-us"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-white hover:text-white transition-colors"
                     >
                       About Us
                     </Link>
@@ -140,7 +142,7 @@ export default function FooterV2() {
                   <li>
                     <Link
                       href="http://blog.qmaxsys.com/"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-white hover:text-white transition-colors"
                     >
                       Blog
                     </Link>
@@ -148,7 +150,7 @@ export default function FooterV2() {
                   <li>
                     <Link
                       href="/services"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-white hover:text-white transition-colors"
                     >
                       Services
                     </Link>
@@ -156,7 +158,7 @@ export default function FooterV2() {
                   <li>
                     <Link
                       href="/projects"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-white hover:text-white transition-colors"
                     >
                       Projects
                     </Link>
@@ -164,7 +166,7 @@ export default function FooterV2() {
                   <li>
                     <Link
                       href="/careers"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-white hover:text-white transition-colors"
                     >
                       Careers
                     </Link>
@@ -172,7 +174,7 @@ export default function FooterV2() {
                   <li>
                     <Link
                       href="/contact"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-white hover:text-white transition-colors"
                     >
                       Contact Us
                     </Link>
@@ -180,7 +182,7 @@ export default function FooterV2() {
                   <li>
                     <Link
                       href="/PCB-design-resources"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-white hover:text-white transition-colors"
                     >
                       PCB Design Resources
                     </Link>
@@ -188,7 +190,7 @@ export default function FooterV2() {
                   <li>
                     <Link
                       href="/embedded-system-glossary"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-white hover:text-white transition-colors"
                     >
                       Embedded Systems Glossary
                     </Link>
@@ -196,7 +198,7 @@ export default function FooterV2() {
                   <li>
                     <Link
                       href="/pcb-design-glossary"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-white hover:text-white transition-colors"
                     >
                       PCB Design Glossary
                     </Link>
@@ -204,7 +206,7 @@ export default function FooterV2() {
                   <li>
                     <Link
                       href="/printed-circuit-board-faqs"
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-white hover:text-white transition-colors"
                     >
                       FAQs
                     </Link>
@@ -224,14 +226,18 @@ export default function FooterV2() {
                       <div className="w-full font-bold text-left p-2 text-sm bg-gray-500 text-white">
                         {country}
                       </div>
-                      <div className="p-3 text-sm text-gray-300 bg-zinc-800">
-                        <p className="font-semibold text-gray-300">
+                      <div className="p-3 text-sm text-white bg-zinc-800">
+                        <p className="font-semibold text-white">
                           {addresses[country].name}
                         </p>
                         {addresses[country].address.map((line, index) => (
-                          <p key={index} className="text-gray-300">{line}</p>
+                          <p key={index} className="text-white">
+                            {line}
+                          </p>
                         ))}
-                        <p className="mt-2 text-gray-300">{addresses[country].phone}</p>
+                        <p className="mt-2 text-white">
+                          {addresses[country].phone}
+                        </p>
                         <button
                           onClick={() => {
                             const timestamp = Date.now();
@@ -250,7 +256,7 @@ export default function FooterV2() {
                               window.open(mailtoUrl, "_blank");
                             }, 100);
                           }}
-                          className="text-gray-500 hover:text-gray-300 cursor-pointer bg-transparent border-none p-0 text-left"
+                          className="text-white hover:text-white cursor-pointer bg-transparent border-none p-0 text-left"
                         >
                           {addresses[country].email}
                         </button>
@@ -263,8 +269,8 @@ export default function FooterV2() {
           </div>
 
           {/* Logo and Copyright Section */}
-          <div className="pb-6 w-full mt-auto">
-            <div className="flex flex-col items-center gap-6">
+          <div className="pb-6 w-full mt-auto text-center">
+            <div className="container mx-auto flex flex-col items-center gap-6">
               {/* <Image
                 src="/qmax-logo.svg"
                 alt="Qmax Systems Logo"
@@ -272,11 +278,11 @@ export default function FooterV2() {
                 height={400}
                 width={700}
               /> */}
-              <div className="text-center">
-                <p className="mb-4 text-white">
+              <div className="w-full text-center">
+                <p className="mb-4 text-white text-center">
                   Copyright © 2025 Qmax Systems India Pvt. Ltd.
                 </p>
-                <div className="flex justify-center gap-6 text-sm text-zinc-400">
+                <div className="flex flex-wrap justify-center gap-6 text-sm text-white text-center">
                   <Link href="#" className="hover:text-white transition-colors">
                     Terms of Use
                   </Link>

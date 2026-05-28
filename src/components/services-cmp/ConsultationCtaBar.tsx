@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import "./CTABannerSection.css";
-
 export interface ConsultationCtaBarProps {
   heading: string;
   subtitle: string;
@@ -16,20 +14,30 @@ export function ConsultationCtaBar({
   ctaLabel = "Schedule Consultation",
 }: ConsultationCtaBarProps) {
   return (
-    <section className="cta-banner" id="consultation-cta-bar">
-      <div className="cta-banner-inner">
-        <span className="cta-square cta-square-tl" aria-hidden="true" />
-        <span className="cta-square cta-square-br" aria-hidden="true" />
-        <div className="cta-banner-panel">
-          <div className="grid min-w-0 flex-1 grid-cols-1">
-            <h2 className="col-span-full m-0 mb-2.5 w-full text-pretty text-3xl font-light tracking-wide text-white md:text-4xl">
+    <section
+      id="consultation-cta-bar"
+      className="relative bg-white px-8 py-24 max-[900px]:px-6 max-[900px]:py-16"
+    >
+      <div className="relative mx-auto max-w-[1200px]">
+        <span
+          className="pointer-events-none absolute -top-4 right-[8%] z-[1] h-[26px] w-[26px] bg-[#E63329]"
+          aria-hidden="true"
+        />
+        <span
+          className="pointer-events-none absolute -bottom-2.5 left-[5%] z-[1] h-[26px] w-[26px] bg-[#E63329]"
+          aria-hidden="true"
+        />
+        <div className="relative z-[2] flex items-center justify-between gap-10 rounded-md bg-[#2A2F36] px-14 py-11 shadow-[0_14px_36px_-18px_rgba(16,24,40,0.30)] max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-6 max-[900px]:px-7 max-[900px]:py-8">
+          <div className="min-w-0 basis-[70%] max-[900px]:basis-auto">
+            <h2 className="m-0 mb-2.5 text-3xl font-light tracking-wide text-white md:text-4xl">
               {heading}
             </h2>
-            <p className="col-span-full m-0 w-full text-left text-white/70">
-              {subtitle}
-            </p>
+            <p className="m-0 text-left text-white">{subtitle}</p>
           </div>
-          <Link href={ctaHref} className="cta-banner-btn">
+          <Link
+            href={ctaHref}
+            className="inline-flex shrink-0 items-center gap-2.5 rounded border-[1.5px] border-red-500 bg-red-500 px-[26px] py-3.5 uppercase text-white no-underline transition-[background,border-color,color,transform] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-px hover:border-red-600 hover:bg-red-600 hover:text-white hover:no-underline"
+          >
             <span>{ctaLabel}</span>
             <svg
               viewBox="0 0 24 24"
@@ -39,7 +47,7 @@ export function ConsultationCtaBar({
               strokeLinecap="round"
               strokeLinejoin="round"
               aria-hidden="true"
-              style={{ width: 14, height: 14 }}
+              className="h-3.5 w-3.5"
             >
               <path d="M5 12h14M13 5l7 7-7 7" />
             </svg>

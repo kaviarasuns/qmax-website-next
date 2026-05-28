@@ -206,7 +206,7 @@ export default function CaseStudiesPage() {
                   <div
                     className={`absolute left-0 top-3 bottom-3 w-[2px] rounded-full transition-all duration-300 ${
                       isActive
-                        ? "bg-[#E31E24] scale-y-100"
+                        ? "bg-red-500 scale-y-100"
                         : "bg-transparent scale-y-0 group-hover:bg-gray-400 group-hover:scale-y-100"
                     }`}
                   />
@@ -214,9 +214,7 @@ export default function CaseStudiesPage() {
                   <div className="flex items-center justify-between">
                     <span
                       className={`text-lg font-semibold transition-colors duration-300 leading-tight ${
-                        isActive
-                          ? "text-red-500"
-                          : "text-gray-600 group-hover:text-gray-900"
+                        isActive ? "text-red-500" : "text-foreground"
                       }`}
                     >
                       {section.label}
@@ -225,8 +223,8 @@ export default function CaseStudiesPage() {
                       <span
                         className={`text-xs font-medium tabular-nums px-2 py-0.5 rounded-full transition-all duration-300 ${
                           isActive
-                            ? "bg-[#E31E24]/10 text-red-500"
-                            : "bg-gray-100 text-gray-400 group-hover:bg-gray-200 group-hover:text-gray-600"
+                            ? "bg-red-500/10 text-red-500"
+                            : "bg-gray-100 text-muted-foreground group-hover:bg-gray-200 group-hover:text-foreground"
                         }`}
                       >
                         {sectionCounts[section.id]}
@@ -250,7 +248,7 @@ export default function CaseStudiesPage() {
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 01</span> */}
-                <h2 className="text-3xl font-bold">
+                <h2 className="text-3xl font-bold text-foreground">
                   Embedded Systems
                 </h2>
               </div>
@@ -276,7 +274,7 @@ export default function CaseStudiesPage() {
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 02</span> */}
-                <h2 className="text-3xl font-bold">PCB Design</h2>
+                <h2 className="text-3xl font-bold text-foreground">PCB Design</h2>
               </div>
               <span className="text-sm text-zinc-500 font-medium mb-1">
                 {pcbCaseStudies.length} Projects
@@ -300,7 +298,7 @@ export default function CaseStudiesPage() {
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 03</span> */}
-                <h2 className="text-3xl font-bold">
+                <h2 className="text-3xl font-bold text-foreground">
                   Mechanical Design
                 </h2>
               </div>
@@ -323,7 +321,7 @@ export default function CaseStudiesPage() {
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 04</span> */}
-                <h2 className="text-3xl font-bold">
+                <h2 className="text-3xl font-bold text-foreground">
                   Industrial Design
                 </h2>
               </div>

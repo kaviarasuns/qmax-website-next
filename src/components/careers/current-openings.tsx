@@ -469,7 +469,7 @@ function SectionAccordion({
           showChevron ? "cursor-pointer" : "cursor-default"
         }`}
       >
-        <h4 className="text-xs sm:text-sm font-bold tracking-wide transition-colors">
+        <h4 className="text-xs sm:text-sm font-bold tracking-wide transition-colors text-foreground">
           {title}
         </h4>
         {showChevron && (
@@ -496,7 +496,7 @@ function SectionAccordion({
           {items.map((item, idx) => (
             <li
               key={idx}
-              className="flex gap-2 text-xs sm:text-sm text-zinc-700"
+              className="flex gap-2 text-xs sm:text-sm text-foreground"
             >
               <span className="text-zinc-400 flex-shrink-0 leading-5">
                 &bull;
@@ -538,7 +538,7 @@ function JobCard({ position, index }: { position: Position; index: number }) {
         className={`p-8 sm:p-10 md:p-14 flex flex-col ${isReversed ? "lg:order-1" : ""}`}
       >
         {/* Title */}
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold pb-3 border-b-2 border-zinc-400 mb-4">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold pb-3 border-b-2 border-zinc-400 mb-4 text-foreground">
           {position.title}
         </h3>
 
@@ -624,7 +624,7 @@ function SideNav({
             if (group.length === 0) return null;
             return (
               <div key={type}>
-                <p className="text-xs font-semibold uppercase tracking-widest mb-1.5 pl-2">
+                <p className="text-xs font-semibold uppercase tracking-widest mb-1.5 pl-2 text-foreground">
                   {label}
                 </p>
                 <ul className="space-y-0.5">
@@ -639,7 +639,7 @@ function SideNav({
                           className={`w-full text-left text-sm px-3 py-2 rounded-md transition-colors cursor-pointer leading-snug ${
                             isActive
                               ? "text-red-500 font-semibold"
-                              : "text-black hover:bg-zinc-50"
+                              : "text-foreground hover:bg-zinc-50"
                           }`}
                         >
                           {pos.title}

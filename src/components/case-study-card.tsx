@@ -8,7 +8,7 @@ interface CaseStudyCardProps {
 function SectionLabel({ index, label }: { index: string; label: string }) {
   return (
     <div className="flex items-center gap-3 mb-5">
-      <span className="text-[11px] font-bold tabular-nums tracking-[0.08em] text-brand-red">
+      <span className="text-[11px] font-bold tabular-nums tracking-[0.08em] text-red-500">
         {index}
       </span>
       <span className="h-px flex-1 bg-zinc-200/80" aria-hidden="true" />
@@ -41,7 +41,7 @@ function DetailSection({
           {items.map((item, i) => (
             <span
               key={i}
-              className="inline-flex items-center rounded-lg border border-zinc-200/80 bg-zinc-50 px-3 py-1.5 text-[13px] text-zinc-700 leading-snug"
+              className="inline-flex items-center rounded-lg border border-zinc-200/80 bg-zinc-50 px-3 py-1.5 text-[13px] leading-snug text-foreground"
             >
               {item}
             </span>
@@ -52,7 +52,7 @@ function DetailSection({
           {items.map((item, i) => (
             <li
               key={i}
-              className="flex items-start gap-3 text-[14.5px] text-zinc-700 leading-relaxed"
+              className="flex items-start gap-3 text-[14.5px] leading-relaxed text-foreground"
             >
               {variant === "numbered" ? (
                 <span className="mt-px flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-zinc-100 text-[10px] font-bold tabular-nums text-zinc-500">
@@ -60,7 +60,7 @@ function DetailSection({
                 </span>
               ) : (
                 <span
-                  className="mt-[9px] h-1 w-1 flex-shrink-0 rounded-full bg-brand-red"
+                  className="mt-[9px] h-1 w-1 flex-shrink-0 rounded-full bg-red-500"
                   aria-hidden="true"
                 />
               )}
@@ -91,10 +91,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
       <div className="relative mx-auto max-w-7xl space-y-8 px-6 lg:px-8">
         {/* ── Header ── */}
         <header className="pt-4">
-          <h1
-            className="text-2xl font-bold leading-tight tracking-tight md:text-3xl"
-            style={{ textWrap: "balance" }}
-          >
+          <h1 className="text-2xl font-bold leading-tight tracking-tight text-foreground text-balance md:text-3xl">
             {caseStudy.title}
           </h1>
         </header>
@@ -117,10 +114,10 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
               {caseStudy.features.map((feature, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-3 text-[14.5px] text-zinc-700 leading-relaxed"
+                  className="flex items-start gap-3 text-[14.5px] leading-relaxed text-foreground"
                 >
                   <span
-                    className="mt-[9px] h-1 w-1 flex-shrink-0 rounded-full bg-brand-red"
+                    className="mt-[9px] h-1 w-1 flex-shrink-0 rounded-full bg-red-500"
                     aria-hidden="true"
                   />
                   <span>{feature}</span>
@@ -134,8 +131,8 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
         {hasSummary && (
           <div className="rounded-2xl border border-zinc-200/70 bg-zinc-50 p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] md:p-8">
             <SectionLabel index="02" label="Project Overview" />
-            <div className="relative pl-5 border-l-2 border-brand-red/20">
-              <p className="text-[15.5px] leading-[1.75] text-muted-foreground">
+            <div className="relative pl-5 border-l-2 border-red-500/20">
+              <p className="text-[15.5px] leading-[1.75] text-foreground">
                 {caseStudy.summary}
               </p>
             </div>
@@ -165,10 +162,10 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
                     key={i}
                     className="flex items-center gap-3 rounded-xl border border-zinc-100 bg-zinc-50/60 px-4 py-3"
                   >
-                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md bg-brand-red/8 text-[10px] font-bold tabular-nums text-brand-red">
+                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center text-[10px] font-bold tabular-nums text-red-500">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-[13.5px] font-medium text-zinc-700 leading-snug">
+                    <span className="text-[13.5px] font-medium leading-snug text-foreground">
                       {item}
                     </span>
                   </div>

@@ -13,8 +13,7 @@ export function FAQSection({ faqItems }: FAQSectionProps) {
       <div className="mx-auto max-w-[960px]">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-light text-center">
-            Frequently Asked{" "}
-            <span className="text-red-500">Questions</span>
+            Frequently Asked <span className="text-red-500">Questions</span>
           </h2>
         </div>
         <div className="flex flex-col">
@@ -23,7 +22,7 @@ export function FAQSection({ faqItems }: FAQSectionProps) {
               key={item.q}
               className="border-b border-gray-200 py-6 group"
             >
-              <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer flex justify-between items-center gap-4 text-lg md:text-2xl font-light leading-relaxed tracking-tight text-gray-700 hover:text-gray-900 transition-colors duration-200">
+              <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer flex justify-between items-center gap-4 text-lg md:text-2xl font-light leading-relaxed tracking-tight text-foreground transition-colors duration-200">
                 {item.q}
                 <svg
                   className="flex-shrink-0 w-6 h-6 text-red-600 transition-transform duration-300 group-open:rotate-180"
@@ -37,7 +36,7 @@ export function FAQSection({ faqItems }: FAQSectionProps) {
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </summary>
-              <div className="mt-4 text-base font-light leading-relaxed">
+              <div className="mt-4 text-base font-light leading-relaxed text-foreground">
                 {item.a}
               </div>
             </details>

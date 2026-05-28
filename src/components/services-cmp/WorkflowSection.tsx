@@ -70,7 +70,11 @@ export function WorkflowSection({
                 </h3>
                 <p className="m-0 text-muted-foreground">{step.description}</p>
               </div>
-              <div className="absolute left-0 z-[2] flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-brand-500 text-white min-[900px]:relative min-[900px]:left-auto min-[900px]:-mx-6">
+              <div
+                data-budge-target
+                className="absolute left-0 z-[2] flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-500 text-white min-[900px]:relative min-[900px]:left-auto min-[900px]:-mx-6"
+                style={{ backgroundColor: "#ef4444" }}
+              >
                 {step.number}
               </div>
               <div className="hidden flex-1 min-[900px]:block" />

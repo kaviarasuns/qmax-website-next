@@ -26,11 +26,10 @@ export default function GlobalPresence() {
     <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="mb-2">
-            Global 
-            <span className="text-red-500">Presence</span>
+          <h2 className="mb-2 text-foreground">
+            Global <span className="text-red-500">Presence</span>
           </h2>
-          <p className="text-lg mt-6 max-w-2xl mx-auto text-muted-foreground">
+          <p className="text-lg mt-6 max-w-2xl mx-auto text-foreground">
             With offices in Austin, Texas and Chennai, India, we provide 24/7
             engineering support and rapid prototyping capabilities to clients
             worldwide.
@@ -45,19 +44,19 @@ export default function GlobalPresence() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <MapPin className="text-red-500 shrink-0" size={24} />
-                <h3 className="">{office.location}</h3>
+                <h3 className="text-foreground">{office.location}</h3>
               </div>
 
               <div className="space-y-4">
                 <div>
-                  <p className="text-lg font-semibold">
+                  <p className="text-lg font-semibold text-foreground">
                     {office.company}
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-base text-muted-foreground">{office.address}</p>
-                  <p className="text-base text-muted-foreground">{office.city}</p>
+                  <p className="text-base text-foreground">{office.address}</p>
+                  <p className="text-base text-foreground">{office.city}</p>
                 </div>
 
                 <div className="border-t border-gray-200 pt-4 space-y-3">

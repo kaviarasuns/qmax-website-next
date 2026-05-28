@@ -68,7 +68,7 @@ export function CoreServiceOfferingsSection({
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="/hardware-development-services"
-                className="rounded-md border border-slate-900 px-6 py-2.5 text-sm font-medium text-slate-900 transition hover:bg-slate-900 hover:text-white"
+                className="rounded-md border border-slate-900 px-6 py-2.5 text-sm font-medium text-foreground transition hover:bg-slate-900 hover:text-white"
               >
                 Learn more
               </a>
@@ -83,29 +83,31 @@ export function CoreServiceOfferingsSection({
 
           <div>
             <h4 className="text-xl font-medium">What we deliver</h4>
-            <p className="mt-4 text-sm leading-7 md:text-base text-muted-foreground">
+            <p className="mt-4 text-sm leading-7 text-foreground md:text-base">
               {activeOffering.intro}
             </p>
             <ul className="mt-6 space-y-4">
               {activeOffering.points.map((point, index) => (
                 <li
                   key={`${activeOffering.id}-${index}`}
-                  className="relative pl-6 text-sm leading-7 text-slate-700 md:text-base"
+                  className="relative pl-6 text-sm leading-7 text-foreground md:text-base"
                 >
                   <span className="absolute left-0 top-3 h-2 w-2 rounded-full bg-[#F33117]" />
                   {typeof point === "string" ? (
                     point
                   ) : (
                     <>
-                      <span className="font-bold">{point.boldLead}</span>
+                      <span className="font-bold text-foreground">
+                        {point.boldLead}
+                      </span>
                       {point.rest}
                     </>
                   )}
                 </li>
               ))}
             </ul>
-            <p className="mt-6 border-t border-slate-200 pt-5 text-sm leading-7 md:text-[15px] text-muted-foreground">
-              <span className="font-semibold text-slate-900">
+            <p className="mt-6 border-t border-slate-200 pt-5 text-sm leading-7 text-foreground md:text-[15px]">
+              <span className="font-semibold text-foreground">
                 Typical applications:
               </span>{" "}
               {activeOffering.applications}

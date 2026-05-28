@@ -46,7 +46,7 @@ export function CapabilitiesPanels({
               </div>
             </div>
             <div>
-              <p className="mb-9 text-muted-foreground">{cap.intro}</p>
+              <p className="mb-9">{cap.intro}</p>
               <div className="grid grid-cols-2 gap-12 max-[900px]:grid-cols-1 max-[900px]:gap-7">
                 {cap.bullets.map((b) => (
                   <div key={b.title}>
@@ -57,7 +57,7 @@ export function CapabilitiesPanels({
                       {b.items.map((item) => (
                         <li
                           key={item}
-                          className="relative pl-[22px] text-muted-foreground before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-red-500"
+                          className="relative pl-[22px] before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-red-500"
                         >
                           {item}
                         </li>

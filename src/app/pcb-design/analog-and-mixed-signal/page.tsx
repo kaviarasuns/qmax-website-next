@@ -11,7 +11,10 @@ import {
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
-import { getCaseStudyCardImage, allCaseStudiesData } from "@/store/case-studies";
+import {
+  getCaseStudyCardImage,
+  allCaseStudiesData,
+} from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
@@ -506,9 +509,7 @@ export default function AnalogAndMixedSignalPage() {
         title="Introduction to Analog & Mixed Signal "
         titleHighlight="PCB Engineering"
       />
-      <ApplicationsProjectExperienceSection
-        projects={projectExperience}
-      />
+      <ApplicationsProjectExperienceSection projects={projectExperience} />
 
       <WhySection
         whyCards={WHY_CARDS}
@@ -521,10 +522,8 @@ export default function AnalogAndMixedSignalPage() {
       <section className="bg-white px-16 pb-24 max-[900px]:px-6 max-[900px]:pb-16">
         <div className="mx-auto max-w-[1200px]">
           <div className="rounded-xl border border-slate-200 border-l-4 border-l-[#F33117] bg-white px-7 py-7 md:px-8">
-            <h3 className="text-lg font-semibold text-slate-800">
-              Compliance-Ready Layout
-            </h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
+            <h3 className="text-lg font-semibold">Compliance-Ready Layout</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-foreground">
               We focus on compliance from Day 1 for CE, FCC, and UL
               certification. Our goal is to deliver production-ready PCB designs
               that function correctly on the first prototype build.
@@ -543,9 +542,7 @@ export default function AnalogAndMixedSignalPage() {
         title="Get a Complimentary Consultation with Our Analog And Mixed Signal Experts"
       />
 
-      <FAQSection
-        faqItems={FAQ_ITEMS}
-      />
+      <FAQSection faqItems={FAQ_ITEMS} />
 
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"

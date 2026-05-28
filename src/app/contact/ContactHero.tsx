@@ -218,7 +218,7 @@ const ContactHero = () => {
             </p>
             <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl leading-[1.1] tracking-tight">
               Let&apos;s Engineer{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-600">
+              <span className="text-red-500">
                 Your Next Product
               </span>
             </h1>
@@ -227,7 +227,7 @@ const ContactHero = () => {
               <h2 className="text-lg md:text-xl font-bold mb-1">
                 Send us a message
               </h2>
-              <p className="text-sm mb-4 text-muted-foreground">
+              <p className="text-sm mb-4 text-foreground">
                 Fill out the form below and we&apos;ll get back to you within 24
                 hours.
               </p>
@@ -239,9 +239,7 @@ const ContactHero = () => {
                       <CheckCircle className="w-6 h-6 text-green-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold">
-                        Message Sent!
-                      </h3>
+                      <h3 className="text-xl font-semibold">Message Sent!</h3>
                       <p className="text-muted-foreground">
                         Thank you for reaching out.
                       </p>
@@ -312,10 +310,10 @@ const ContactHero = () => {
                       disabled={loading}
                       className={`
                         w-full md:w-max flex items-center justify-center gap-3
-                        px-8 py-3.5 bg-[#0F111A] text-white
+                        px-8 py-3.5 bg-foreground text-background
                         rounded-full font-medium text-base
                         transition-all duration-300 ease-out
-                        hover:bg-[#1A1D29] hover:shadow-xl hover:shadow-[#0F111A]/10
+                        hover:bg-foreground/90 hover:shadow-xl hover:shadow-foreground/10
                         active:scale-[0.98]
                         disabled:bg-gray-300 disabled:cursor-not-allowed disabled:shadow-none
                       `}
@@ -381,9 +379,9 @@ const ContactHero = () => {
                     <p className="font-semibold text-white mb-2">
                       {addresses[country].name}
                     </p>
-                    <div className="text-gray-400 space-y-0.5 mb-3">
+                    <div className="space-y-0.5 mb-3">
                       {addresses[country].address.map((line, index) => (
-                        <p key={index}>{line}</p>
+                        <p key={index} className="text-white">{line}</p>
                       ))}
                     </div>
                     <a
@@ -432,9 +430,9 @@ const ContactHero = () => {
                     <p className="font-semibold text-white mb-2">
                       {jobs[key].name}
                     </p>
-                    <div className="text-gray-400 space-y-0.5 mb-3">
+                    <div className="space-y-0.5 mb-3">
                       {jobs[key].address.map((line, index) => (
-                        <p key={index}>{line}</p>
+                        <p key={index} className="text-white">{line}</p>
                       ))}
                     </div>
                     <a

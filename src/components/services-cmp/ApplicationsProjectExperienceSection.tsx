@@ -64,7 +64,7 @@ export function ApplicationsProjectExperienceSection({
             {title}
             <span className="text-red-500">{titleHighlight}</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-foreground">
             {subtitle}
           </p>
         </div>
@@ -100,7 +100,7 @@ export function ApplicationsProjectExperienceSection({
                     <span
                       className={cn(
                         "text-sm tracking-tight md:text-base",
-                        isActive ? "text-red-500" : "text-slate-800",
+                        isActive ? "text-red-500" : "text-foreground",
                       )}
                     >
                       {project.listTitle}
@@ -172,7 +172,7 @@ export function ApplicationsProjectExperienceSection({
                       <p className="text-[15px] font-bold tracking-tight">
                         {project.captionTitle}
                       </p>
-                      <p className="mt-1 text-xs leading-relaxed md:text-[12px] text-muted-foreground">
+                      <p className="mt-1 text-xs leading-relaxed text-foreground md:text-[12px]">
                         {project.description}
                       </p>
                     </div>

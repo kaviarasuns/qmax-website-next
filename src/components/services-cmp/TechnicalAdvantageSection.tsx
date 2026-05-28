@@ -163,12 +163,12 @@ export function TechnicalAdvantageSection({
       <div className="mx-auto max-w-7xl">
         <h2
           id={sectionHeadingId}
-          className="text-center text-3xl font-light tracking-tight md:text-5xl"
+          className="text-center text-3xl font-light tracking-wide text-foreground md:text-5xl"
         >
           Our Technical Strengths in{" "}
           <span className="text-red-500">{headingHighlight}</span>
         </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-7 md:text-base md:leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-7 text-foreground md:text-base md:leading-relaxed">
           {lede}
         </p>
 
@@ -182,11 +182,11 @@ export function TechnicalAdvantageSection({
                 <span className="flex h-7 w-7 shrink-0 text-brand-500">
                   {card.icon}
                 </span>
-                <h3 className="text-lg font-semibold tracking-tight text-slate-900 md:text-xl">
+                <h3 className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
                   {card.title}
                 </h3>
               </header>
-              <p className="text-[15px] leading-relaxed md:text-base text-muted-foreground">
+              <p className="text-[15px] leading-relaxed text-foreground md:text-base">
                 {card.body}
               </p>
             </article>

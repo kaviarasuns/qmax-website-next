@@ -44,10 +44,9 @@ export function EmbeddedSoftwareCapabilitiesSection({
         <div className="mx-auto max-w-7xl">
           <div className="flex w-full flex-col items-center text-center">
             <h2 className="mb-6 text-center text-3xl font-light tracking-tight md:text-5xl">
-              {title}{" "}
-              <span className="text-red-500">{titleHighlight}</span>
+              {title} <span className="text-red-500">{titleHighlight}</span>
             </h2>
-            <p className="w-full text-[#383838]">{description}</p>
+            <p className="w-full text-foreground">{description}</p>
           </div>
 
           <CapabilitiesTabs
@@ -66,9 +65,7 @@ export function EmbeddedSoftwareCapabilitiesSection({
                   key={cap.id}
                   role="tabpanel"
                   className={
-                    isActive
-                      ? "block [animation:panelIn_460ms_ease]"
-                      : "hidden"
+                    isActive ? "block [animation:panelIn_460ms_ease]" : "hidden"
                   }
                 >
                   <div className="grid grid-cols-[1fr_1.4fr] items-start gap-24 max-[900px]:grid-cols-1 max-[900px]:gap-8">
@@ -106,7 +103,7 @@ export function EmbeddedSoftwareCapabilitiesSection({
                               {group.items.map((item) => (
                                 <li
                                   key={item}
-                                  className="relative pl-[22px] text-[#383838] before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-red-500"
+                                  className="relative pl-[22px] before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-red-500"
                                 >
                                   {item}
                                 </li>

@@ -46,7 +46,7 @@ export function PartnershipsSection({
               </>
             ) : null}
           </h2>
-          <p className="w-full text-muted-foreground">{paragraph}</p>
+          <p className="w-full">{paragraph}</p>
         </div>
         <div className="grid grid-cols-5 gap-4 max-[900px]:grid-cols-2 max-[900px]:gap-3">
           {PARTNER_LOGOS.map(({ name, file }, index) => (

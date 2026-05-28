@@ -135,7 +135,7 @@ export function MechanicalIndustrialHero({
           </h1>
           <p
             ref={subRef}
-            className="mt-6 max-w-[840px] text-pretty font-bold leading-[1.62] text-white/90 opacity-0 will-change-[transform,opacity] [font-size:clamp(14px,1.3vw,17px)] pointer-events-none"
+            className="mt-6 max-w-[840px] text-pretty font-bold leading-[1.62] text-white opacity-0 will-change-[transform,opacity] [font-size:clamp(14px,1.3vw,17px)] pointer-events-none"
             style={{ transform: "translateY(28px)" }}
           >
             {subtitle}

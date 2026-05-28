@@ -3,298 +3,91 @@
 import type { ReactNode } from "react";
 
 export type DayOneInsight = {
-  title: string;
-  description: string;
-  icon: ReactNode;
+    title: string;
+    description: string;
+    icon: ReactNode;
 };
 
 export type DayOneThinkingSectionProps = {
-  title?: string;
-  titleHighlight?: string;
-  description: ReactNode;
-  insights: DayOneInsight[];
-  calloutTitle: string;
-  calloutDescription: string;
+    title?: string;
+    titleHighlight?: string;
+    description: ReactNode;
+    insights: DayOneInsight[];
+    calloutTitle: string;
+    calloutDescription: string;
 };
 
 export function DayOneThinkingSection({
-  title = "Day‑1 Thinking For",
-  titleHighlight = "Real‑World Deployment",
-  description,
-  insights,
-  calloutTitle,
-  calloutDescription,
+    title = "Day‑1 Thinking For",
+    titleHighlight = "Real‑World Deployment",
+    description,
+    insights,
+    calloutTitle,
+    calloutDescription,
 }: DayOneThinkingSectionProps) {
-  return (
-    <section
-      className="fw-d1-thinking"
-      id="day-one-thinking"
-      aria-label="Day-1 thinking for real-world deployment"
-    >
-      <div className="fw-d1-container">
-        <div className="fw-d1-section-head">
-          <h2 className="mb-4 text-center text-3xl font-light tracking-tight md:text-5xl">
-            {title}{" "}
-            <span className="text-red-500">{titleHighlight}</span>
-          </h2>
-          <p>{description}</p>
-        </div>
+    return (
+        <section
+            className="bg-white px-16 py-24 max-[1100px]:px-8 max-[900px]:px-6 max-[900px]:py-16 max-[640px]:px-5"
+            id="day-one-thinking"
+            aria-label="Day-1 thinking for real-world deployment"
+        >
+            <div className="mx-auto max-w-[1200px]">
+                <div className="mx-auto mb-8 flex max-w-[880px] flex-col items-center text-center">
+                    <h2 className="mb-4 text-center text-3xl font-light tracking-tight md:text-5xl">
+                        {title} <span className="text-red-500">{titleHighlight}</span>
+                    </h2>
+                    <p className="m-0 text-[15px] leading-[1.6] text-foreground">
+                        {description}
+                    </p>
+                </div>
 
-        <div className="fw-d1-grid">
-          {insights.map((insight) => (
-            <article key={insight.title} className="fw-d1-card">
-              <div className="fw-d1-card-head">
-                <div className="fw-d1-card-icon">{insight.icon}</div>
-                <h3 className="!font-medium">{insight.title}</h3>
-              </div>
-              <p>{insight.description}</p>
-            </article>
-          ))}
-        </div>
+                <div className="grid grid-cols-4 gap-3.5 max-[1100px]:grid-cols-2 max-[640px]:grid-cols-1">
+                    {insights.map((insight) => (
+                        <article
+                            key={insight.title}
+                            className="relative overflow-hidden rounded-[14px] border border-[#e3e8ef] bg-white p-[18px] shadow-[0_6px_22px_rgba(10,25,41,0.07)] transition-[transform,box-shadow,border-color] duration-150 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-[linear-gradient(90deg,#e63329,#c72a21)] before:content-[''] hover:-translate-y-[3px] hover:border-[#e63329] hover:shadow-[0_12px_30px_rgba(230,51,41,0.12)]"
+                        >
+                            <div className="mb-2 flex flex-row flex-nowrap items-center gap-3">
+                                <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center text-[#e63329] [&_svg]:h-8 [&_svg]:w-8">
+                                    {insight.icon}
+                                </div>
+                                <h3 className="m-0 min-w-0 flex-auto text-[15px] !font-medium leading-[1.3]">
+                                    {insight.title}
+                                </h3>
+                            </div>
+                            <p className="m-0 text-left text-[13.5px] leading-[1.45] text-foreground">
+                                {insight.description}
+                            </p>
+                        </article>
+                    ))}
+                </div>
 
-        <div className="fw-d1-more">
-          <div className="fw-d1-more-head">
-            <div className="fw-d1-more-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="9" />
-                <line x1="8" y1="12" x2="16" y2="12" />
-                <line x1="12" y1="8" x2="12" y2="16" />
-              </svg>
+                <div className="relative mt-[18px] overflow-hidden rounded-[14px] border border-[#e3e8ef] bg-white px-[30px] py-[26px] shadow-[0_6px_22px_rgba(10,25,41,0.07)] transition-[transform,box-shadow,border-color] duration-150 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-[linear-gradient(90deg,#e63329,#c72a21)] before:content-[''] hover:-translate-y-[3px] hover:border-[#e63329] hover:shadow-[0_12px_30px_rgba(230,51,41,0.12)]">
+                    <div className="mb-2 flex flex-row flex-nowrap items-center gap-3.5">
+                        <div className="inline-flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-[12px] bg-[rgba(230,51,41,0.1)] text-[#e63329] [&_svg]:h-7 [&_svg]:w-7">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.8"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                aria-hidden="true"
+                            >
+                                <circle cx="12" cy="12" r="9" />
+                                <line x1="8" y1="12" x2="16" y2="12" />
+                                <line x1="12" y1="8" x2="12" y2="16" />
+                            </svg>
+                        </div>
+                        <h3 className="m-0 min-w-0 flex-auto text-[15px] !font-medium leading-[1.3]">
+                            {calloutTitle}
+                        </h3>
+                    </div>
+                    <p className="m-0 text-[14.5px] leading-[1.55] text-foreground">
+                        {calloutDescription}
+                    </p>
+                </div>
             </div>
-            <h3 className="!font-medium">{calloutTitle}</h3>
-          </div>
-          <p>{calloutDescription}</p>
-        </div>
-      </div>
-
-      <style jsx>{`
-        .fw-d1-thinking {
-          --qmax-red-500: #e63329;
-          --qmax-red-600: #c72a21;
-          background: #ffffff;
-          padding: 96px 64px;
-        }
-
-        .fw-d1-container {
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-
-        .fw-d1-section-head {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          max-width: 880px;
-          margin: 0 auto 32px;
-          text-align: center;
-        }
-
-        .fw-d1-section-head p {
-          font-size: 15px;
-          color: #5a6878;
-          line-height: 1.6;
-          margin: 0;
-        }
-
-        .fw-d1-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 14px;
-        }
-
-        .fw-d1-card {
-          --ic-acc: #e63329;
-          --ic-acc-2: #c72a21;
-          background: #fff;
-          border: 1px solid #e3e8ef;
-          border-radius: 14px;
-          padding: 18px;
-          box-shadow: 0 6px 22px rgba(10, 25, 41, 0.07);
-          position: relative;
-          overflow: hidden;
-          transition:
-            transform 0.15s,
-            box-shadow 0.15s,
-            border-color 0.15s;
-        }
-
-        .fw-d1-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, var(--ic-acc), var(--ic-acc-2));
-        }
-
-        .fw-d1-card:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 12px 30px rgba(230, 51, 41, 0.12);
-          border-color: var(--qmax-red-500);
-        }
-
-        .fw-d1-card-head {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          align-items: center;
-          gap: 12px;
-          margin-bottom: 8px;
-        }
-
-        .fw-d1-card-icon {
-          width: 44px;
-          height: 44px;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          color: #e63329;
-        }
-
-        .fw-d1-card-icon :global(svg) {
-          width: 32px;
-          height: 32px;
-          color: #e63329;
-        }
-
-        .fw-d1-card-icon :global(svg [stroke]:not([stroke="none"])) {
-          stroke: #e63329;
-        }
-
-        .fw-d1-card-icon :global(svg [fill]:not([fill="none"])) {
-          fill: #e63329;
-        }
-
-        .fw-d1-card h3 {
-          font-size: 15px;
-          font-weight: 600;
-          color: #0a1929;
-          margin: 0;
-          line-height: 1.3;
-          min-width: 0;
-          flex: 1 1 auto;
-        }
-
-        .fw-d1-card p {
-          font-size: 13.5px;
-          color: #5a6878;
-          margin: 0;
-          line-height: 1.45;
-          text-align: left;
-        }
-
-        .fw-d1-more {
-          margin-top: 18px;
-          background: #fff;
-          border: 1px solid #e3e8ef;
-          border-radius: 14px;
-          padding: 26px 30px;
-          box-shadow: 0 6px 22px rgba(10, 25, 41, 0.07);
-          position: relative;
-          overflow: hidden;
-          transition:
-            transform 0.15s,
-            box-shadow 0.15s,
-            border-color 0.15s;
-        }
-
-        .fw-d1-more-head {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          align-items: center;
-          gap: 14px;
-          margin-bottom: 8px;
-        }
-
-        .fw-d1-more::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: linear-gradient(90deg, #e63329, #c72a21);
-        }
-
-        .fw-d1-more:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 12px 30px rgba(230, 51, 41, 0.12);
-          border-color: #e63329;
-        }
-
-        .fw-d1-more-icon {
-          width: 52px;
-          height: 52px;
-          border-radius: 12px;
-          flex-shrink: 0;
-          background: rgba(230, 51, 41, 0.1);
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          color: #e63329;
-        }
-
-        .fw-d1-more-icon :global(svg) {
-          width: 28px;
-          height: 28px;
-          stroke: #e63329;
-          fill: none;
-        }
-
-        .fw-d1-more-head h3 {
-          font-size: 15px;
-          font-weight: 600;
-          color: #0a1929;
-          margin: 0;
-          line-height: 1.3;
-          min-width: 0;
-          flex: 1 1 auto;
-        }
-
-        .fw-d1-more > p {
-          color: #5a6878;
-          margin: 0;
-          font-size: 14.5px;
-          line-height: 1.55;
-        }
-
-        @media (max-width: 1100px) {
-          .fw-d1-thinking {
-            padding: 96px 32px;
-          }
-
-          .fw-d1-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-
-        @media (max-width: 900px) {
-          .fw-d1-thinking {
-            padding: 64px 24px;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .fw-d1-thinking {
-            padding: 64px 20px;
-          }
-
-          .fw-d1-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
-    </section>
-  );
+        </section>
+    );
 }

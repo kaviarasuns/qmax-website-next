@@ -34,9 +34,8 @@ export default function WhyQmax() {
     <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="mb-4">
-            Why Choose 
-            <span className="text-red-500">Qmax</span>
+          <h2 className="mb-4 text-foreground">
+            Why Choose <span className="text-red-500">Qmax</span>
           </h2>
           {/* <div className="flex justify-center">
             <div className="h-1 w-12 bg-red-500"></div>
@@ -53,9 +52,9 @@ export default function WhyQmax() {
               >
                 <div className="flex items-center gap-4 mb-3">
                   <IconComponent className="text-red-500 shrink-0" size={24} />
-                  <h3 className="text-2xl">{reason.title}</h3>
+                  <h3 className="text-2xl text-foreground">{reason.title}</h3>
                 </div>
-                <p className="leading-relaxed text-sm md:text-base text-muted-foreground">
+                <p className="leading-relaxed text-sm md:text-base text-foreground">
                   {reason.description}
                 </p>
               </div>

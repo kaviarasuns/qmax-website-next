@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export type FirmwareLifecyclePhase = {
   phase: number;
@@ -13,6 +14,9 @@ export type FirmwareLifecycleSectionProps = {
   subtitleHighlight?: string;
   phases: FirmwareLifecyclePhase[];
 };
+
+const CARD_HOVER_SHADOW =
+  "shadow-[0_12px_32px_-8px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.04),0_0_24px_-4px_rgba(230,51,41,0.3)]";
 
 export function FirmwareLifecycleSection({
   title = "Firmware Lifecycle",
@@ -68,315 +72,82 @@ export function FirmwareLifecycleSection({
   }, [phases.length]);
 
   return (
-    <section className="fw-lifecycle" id="lifecycle" aria-label="Firmware lifecycle">
-      <div className="fw-lifecycle-inner">
-        <div className="fw-lifecycle-head">
-          <h2>{title}</h2>
-          <p className="fw-lifecycle-head-sub">
+    <section
+      className="relative overflow-hidden bg-white px-[clamp(24px,5vw,64px)] py-24 max-[900px]:px-6 max-[900px]:py-16 max-[640px]:px-5"
+      id="lifecycle"
+      aria-label="Firmware lifecycle"
+    >
+      <div className="relative z-[2] mx-auto max-w-[1400px]">
+        <div className="mx-auto mb-14 max-w-none text-center">
+          <h2 className="mb-3 text-center text-[clamp(32px,4vw,48px)] font-light capitalize leading-[1.15] tracking-[-0.025em]">
+            {title}
+          </h2>
+          <p className="m-0 text-center text-[clamp(32px,4vw,48px)] font-light capitalize leading-[1.15] tracking-[-0.025em]">
             From{" "}
             <span className="text-red-500">{subtitleHighlight}</span>
           </p>
         </div>
 
-        <div className="fw-lifecycle-grid" ref={gridRef}>
-          <span className="fw-energy-track" aria-hidden="true" />
-          <span className="fw-energy-trail" aria-hidden="true" />
-          <span className="fw-energy-particle" aria-hidden="true" />
+        <div
+          className="relative grid grid-cols-7 gap-3.5 max-[1180px]:grid-cols-4 max-[900px]:grid-cols-3 max-[640px]:grid-cols-2 max-[420px]:grid-cols-1"
+          ref={gridRef}
+        >
+          <span
+            className="pointer-events-none absolute inset-x-0 top-1/2 z-0 h-0.5 -translate-y-1/2 bg-[linear-gradient(to_right,rgba(155,192,233,0)_0%,#9bc0e9_6%,#5e97d5_22%,#3d7fbf_38%,#0b5fa5_54%,#0a548f_70%,#084a7d_84%,#e63329_96%,rgba(230,51,41,0)_100%)] shadow-[0_0_12px_rgba(11,95,165,0.35)]"
+            aria-hidden="true"
+          />
+          <span
+            className="pointer-events-none absolute top-1/2 left-[2%] z-0 -mt-[3px] -ml-[90px] h-1.5 w-[90px] animate-fw-energy-travel rounded bg-[linear-gradient(to_right,rgba(255,255,255,0)_0%,rgba(94,151,213,0)_10%,rgba(94,151,213,0.45)_60%,rgba(255,255,255,0.85)_100%)] blur-sm motion-reduce:animate-none"
+            aria-hidden="true"
+          />
+          <span
+            className="pointer-events-none absolute top-1/2 left-[2%] z-0 -mt-2 -ml-2 h-4 w-4 animate-fw-energy-travel rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.95),0_0_20px_rgba(94,151,213,0.85),0_0_38px_rgba(11,95,165,0.55)] motion-reduce:animate-none"
+            aria-hidden="true"
+          />
 
-          {phases.map((phase, index) => (
-            <article
-              key={phase.phase}
-              className={`fw-lc-card${index < visibleCount ? " fw-in" : ""}${
-                activeIndex === index ? " fw-lc-active" : ""
-              }`}
-              data-p={phase.phase}
-            >
-              <span className="fw-lc-card-dot" aria-hidden="true" />
-              <span className="fw-lc-card-num">Phase {phase.phase}</span>
-              <h3 className="fw-lc-card-title">{phase.title}</h3>
-              <ul className="fw-lc-card-list">
-                {phase.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
+          {phases.map((phase, index) => {
+            const isVisible = index < visibleCount;
+            const isActive = activeIndex === index && isVisible;
+
+            return (
+              <article
+                key={phase.phase}
+                className={cn(
+                  "relative z-[1] flex min-w-0 flex-col gap-4 rounded-[14px] border border-slate-400/20 bg-[#0f172a] px-4 pb-5 pt-[22px] backdrop-blur-sm [transition:opacity_0.6s_cubic-bezier(0.4,0,0.2,1),border-color_0.3s_cubic-bezier(0.4,0,0.2,1),transform_0.3s_cubic-bezier(0.4,0,0.2,1),box-shadow_0.3s_cubic-bezier(0.4,0,0.2,1)] motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:[transition:border-color_0.3s_cubic-bezier(0.4,0,0.2,1),box-shadow_0.3s_cubic-bezier(0.4,0,0.2,1)]",
+                  isVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-6 opacity-0",
+                  isActive
+                    ? cn("border-red-500 -translate-y-1", CARD_HOVER_SHADOW)
+                    : "hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.04),0_0_24px_-4px_rgba(230,51,41,0.3)]",
+                )}
+                data-p={phase.phase}
+              >
+                <span
+                  className="absolute right-4 top-4 h-2.5 w-2.5 rounded-full bg-red-500 shadow-[0_0_12px_#e63329]"
+                  aria-hidden="true"
+                />
+                <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-red-500">
+                  Phase {phase.phase}
+                </span>
+                <h3 className="mt-1.5 mb-0 text-[19px] !font-bold leading-tight tracking-[-0.01em] !text-white">
+                  {phase.title}
+                </h3>
+                <ul className="m-0 flex list-none flex-col gap-2.5 p-0">
+                  {phase.items.map((item) => (
+                    <li
+                      key={item}
+                      className="relative pl-[18px] text-sm leading-[1.45] text-white/[0.82] before:absolute before:left-0 before:top-[7px] before:h-2 before:w-2 before:rounded-full before:bg-red-500"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            );
+          })}
         </div>
       </div>
-
-      <style jsx>{`
-        .fw-lifecycle {
-          --qmax-blue-200: #9bc0e9;
-          --qmax-blue-300: #5e97d5;
-          --qmax-blue-400: #3d7fbf;
-          --qmax-blue-500: #0b5fa5;
-          --qmax-blue-600: #0a548f;
-          --qmax-blue-700: #084a7d;
-          --qmax-red-500: #e63329;
-          --ease-std: cubic-bezier(0.4, 0, 0.2, 1);
-          background: #ffffff;
-          padding: 96px clamp(24px, 5vw, 64px);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .fw-lifecycle-inner {
-          max-width: 1400px;
-          margin: 0 auto;
-          position: relative;
-          z-index: 2;
-        }
-
-        .fw-lifecycle-head {
-          max-width: none;
-          margin: 0 auto 56px;
-          text-align: center;
-        }
-
-        .fw-lifecycle-head h2 {
-          font-size: clamp(32px, 4vw, 48px);
-          font-weight: 300;
-          letter-spacing: -0.025em;
-          margin: 0 0 12px;
-          line-height: 1.15;
-          text-align: center;
-          text-transform: capitalize;
-        }
-
-        .fw-lifecycle-head-sub {
-          font-size: clamp(32px, 4vw, 48px);
-          font-weight: 300;
-          letter-spacing: -0.025em;
-          margin: 0;
-          line-height: 1.15;
-          text-align: center;
-          text-transform: capitalize;
-        }
-
-        .fw-lifecycle-accent {
-          color: var(--qmax-red-500);
-        }
-
-        .fw-lifecycle-grid {
-          display: grid;
-          grid-template-columns: repeat(7, minmax(0, 1fr));
-          gap: 14px;
-          position: relative;
-        }
-
-        .fw-energy-track {
-          position: absolute;
-          top: 50%;
-          left: 0;
-          right: 0;
-          height: 2px;
-          transform: translateY(-50%);
-          background: linear-gradient(
-            to right,
-            rgba(155, 192, 233, 0) 0%,
-            var(--qmax-blue-200) 6%,
-            var(--qmax-blue-300) 22%,
-            var(--qmax-blue-400) 38%,
-            var(--qmax-blue-500) 54%,
-            var(--qmax-blue-600) 70%,
-            var(--qmax-blue-700) 84%,
-            var(--qmax-red-500) 96%,
-            rgba(230, 51, 41, 0) 100%
-          );
-          box-shadow: 0 0 12px rgba(11, 95, 165, 0.35);
-          z-index: 0;
-          pointer-events: none;
-        }
-
-        .fw-energy-particle {
-          position: absolute;
-          top: 50%;
-          left: 2%;
-          width: 16px;
-          height: 16px;
-          margin: -8px 0 0 -8px;
-          border-radius: 50%;
-          background: #ffffff;
-          box-shadow:
-            0 0 8px rgba(255, 255, 255, 0.95),
-            0 0 20px rgba(94, 151, 213, 0.85),
-            0 0 38px rgba(11, 95, 165, 0.55);
-          z-index: 0;
-          pointer-events: none;
-          animation: fw-energy-travel 16s linear infinite;
-        }
-
-        .fw-energy-trail {
-          position: absolute;
-          top: 50%;
-          left: 2%;
-          width: 90px;
-          height: 6px;
-          margin: -3px 0 0 -90px;
-          border-radius: 4px;
-          background: linear-gradient(
-            to right,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(94, 151, 213, 0) 10%,
-            rgba(94, 151, 213, 0.45) 60%,
-            rgba(255, 255, 255, 0.85) 100%
-          );
-          filter: blur(4px);
-          z-index: 0;
-          pointer-events: none;
-          animation: fw-energy-travel 16s linear infinite;
-        }
-
-        @keyframes fw-energy-travel {
-          0% {
-            left: 2%;
-          }
-          100% {
-            left: 98%;
-          }
-        }
-
-        .fw-lc-card {
-          --accent: var(--qmax-red-500);
-          position: relative;
-          z-index: 1;
-          background: #0f172a;
-          border: 1px solid rgba(148, 163, 184, 0.18);
-          border-radius: 14px;
-          padding: 22px 16px 20px;
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-          min-width: 0;
-          opacity: 0;
-          transform: translateY(24px);
-          transition:
-            opacity 0.6s var(--ease-std),
-            border-color 0.3s var(--ease-std),
-            transform 0.3s var(--ease-std),
-            box-shadow 0.3s var(--ease-std);
-          backdrop-filter: blur(4px);
-          -webkit-backdrop-filter: blur(4px);
-        }
-
-        .fw-lc-card.fw-in {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .fw-lc-card:hover,
-        .fw-lc-card.fw-lc-active {
-          border-color: var(--accent);
-          transform: translateY(-4px);
-          box-shadow:
-            0 12px 32px -8px rgba(0, 0, 0, 0.45),
-            0 0 0 1px rgba(255, 255, 255, 0.04),
-            0 0 24px -4px color-mix(in oklab, var(--accent) 30%, transparent);
-        }
-
-        .fw-lc-card-dot {
-          position: absolute;
-          top: 16px;
-          right: 16px;
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background: var(--accent);
-          box-shadow: 0 0 12px var(--accent);
-        }
-
-        .fw-lc-card-num {
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.22em;
-          color: var(--accent);
-          text-transform: uppercase;
-        }
-
-        .fw-lc-card-title {
-          font-size: 19px;
-          font-weight: 700;
-          letter-spacing: -0.01em;
-          color: #fff;
-          margin: 6px 0 0;
-          line-height: 1.2;
-        }
-
-        .fw-lc-card-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .fw-lc-card-list li {
-          position: relative;
-          padding-left: 18px;
-          font-size: 14px;
-          line-height: 1.45;
-          color: rgba(255, 255, 255, 0.82);
-        }
-
-        .fw-lc-card-list li::before {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 7px;
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background: var(--accent);
-        }
-
-        @media (max-width: 1180px) {
-          .fw-lifecycle-grid {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-          }
-        }
-
-        @media (max-width: 900px) {
-          .fw-lifecycle-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-          }
-
-          .fw-lifecycle {
-            padding: 64px 24px;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .fw-lifecycle-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-
-          .fw-lifecycle {
-            padding: 64px 20px;
-          }
-        }
-
-        @media (max-width: 420px) {
-          .fw-lifecycle-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .fw-energy-particle,
-          .fw-energy-trail {
-            animation: none;
-          }
-
-          .fw-lc-card {
-            opacity: 1;
-            transform: none;
-            transition:
-              border-color 0.3s var(--ease-std),
-              box-shadow 0.3s var(--ease-std);
-          }
-        }
-      `}</style>
     </section>
   );
 }

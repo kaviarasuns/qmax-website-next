@@ -48,13 +48,13 @@ export function ComplimentaryConsultationSection({
           <h3 className="text-[28px] uppercase md:text-4xl">
             {title ?? content.title}
           </h3>
-          <p className="mt-3.5 text-[15px] leading-relaxed text-[#555]">
+          <p className="mt-3.5 text-[15px] leading-relaxed text-foreground">
             {content.subtitle}
             {subtitleSuffix}
           </p>
           <Link
             href={content.ctaHref}
-            className="group relative mt-7 inline-flex items-center gap-2.5 overflow-hidden rounded-lg bg-[#e52222] px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#c92a36] hover:shadow-[0_10px_28px_rgba(229,34,34,0.3)]"
+            className="group relative mt-7 inline-flex items-center gap-2.5 overflow-hidden rounded-lg bg-red-500 px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#c92a36] hover:shadow-[0_10px_28px_rgba(229,34,34,0.3)]"
           >
             <span className="relative z-[1]">Schedule Consultation</span>
             <span
@@ -74,12 +74,12 @@ export function ComplimentaryConsultationSection({
           {benefits.map((benefit) => (
             <li key={benefit} className="flex items-center gap-3">
               <span
-                className="flex h-5 w-5 shrink-0 items-center justify-center text-[15px] font-bold text-[#e52222]"
+                className="flex h-5 w-5 shrink-0 items-center justify-center text-[15px] font-bold text-red-500"
                 aria-hidden
               >
                 ✓
               </span>
-              <span className="text-[15px] font-semibold text-[#1a1a1a]">
+              <span className="text-[15px] font-semibold text-foreground">
                 {benefit}
               </span>
             </li>

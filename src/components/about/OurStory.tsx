@@ -34,18 +34,17 @@ export default function OurStory() {
             {/* Right - Story */}
             <div className="space-y-6">
               <div className="inline-block">
-                <h2>
-                  Our 
-                  <span className="text-red-500">Story</span>
+                <h2 className="text-foreground">
+                  Our <span className="text-red-500">Story</span>
                 </h2>
               </div>
 
-              <div className="space-y-4 text-gray-700">
-                <p className="text-lg leading-relaxed">
+              <div className="space-y-4 text-foreground">
+                <p className="text-lg leading-relaxed text-foreground">
                   Founded in 1997 in San Jose, California, Qmax Systems began with a simple mission: to deliver exceptional electronics engineering and R&D services to innovators and enterprises worldwide. What started as a small team of passionate engineers has grown into a global powerhouse in embedded systems design and PCB design services.
                 </p>
 
-                <p className="text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed text-foreground">
                   Over the past 25+ years, we&apos;ve built expertise across diverse industries—from consumer electronics and IoT devices to industrial automation, aerospace, and medical devices. Our commitment to quality, innovation, and customer success has made us a trusted partner for over 100 global clients, delivering 500+ projects with a 98% on-time delivery rate.
                 </p>
               </div>

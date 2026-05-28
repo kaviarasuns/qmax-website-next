@@ -67,7 +67,7 @@ export default function MeetTheTeam() {
           {/* <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-red-500">
             Meet our team
           </p> */}
-          <h1 className="text-slate-900 sm:text-5xl">
+          <h1 className="text-foreground sm:text-5xl">
             Our Leadership <span className="text-red-500">Team</span>
           </h1>
           {/* <div className="mt-5 h-1 w-16 rounded-full bg-red-500" /> */}
@@ -102,7 +102,7 @@ export default function MeetTheTeam() {
                 <div className="min-w-0">
                   <h2
                     id={`member-${index}`}
-                    className="text-lg font-bold leading-tight text-slate-900"
+                    className="text-lg font-bold leading-tight text-foreground"
                   >
                     {member.name}
                   </h2>
@@ -131,7 +131,7 @@ export default function MeetTheTeam() {
               </div>
 
               <div className="md:w-3/5 lg:w-2/3">
-                <p className="text-[15px] leading-7 text-muted-foreground">{member.bio}</p>
+                <p className="text-[15px] leading-7 text-foreground">{member.bio}</p>
               </div>
             </article>
           ))}

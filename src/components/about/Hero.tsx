@@ -13,15 +13,15 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <h1 className="leading-tight">
+            <h1 className="leading-tight text-foreground">
               About Qmax <span className="text-red-500">Systems</span>
             </h1>
 
-            <p className="text-left text-lg md:text-xl leading-relaxed max-w-xl text-muted-foreground">
+            <p className="text-left text-lg md:text-xl leading-relaxed max-w-xl text-foreground">
               Engineering Innovation Since 1997 — From Concept to Manufacturing
             </p>
 
-            <p className="text-base md:text-lg leading-relaxed max-w-lg text-muted-foreground">
+            <p className="text-base md:text-lg leading-relaxed max-w-lg text-foreground">
               Qmax Systems is a trusted partner for electronics engineering and
               R&D services, specializing in embedded systems design and PCB
               design services. With 25+ years of experience, we&apos;ve helped
@@ -34,7 +34,7 @@ export default function Hero() {
                 Explore Our Services
                 <ArrowRight size={18} />
               </button>
-              <button className="border-2 border-black text-black hover:bg-black/10 font-semibold px-8 py-3 rounded-md transition-colors flex items-center justify-center gap-2">
+              <button className="border-2 border-black hover:bg-black/10 font-semibold px-8 py-3 rounded-md transition-colors flex items-center justify-center gap-2">
                 <Phone size={18} />
                 Talk to an Engineer
               </button>

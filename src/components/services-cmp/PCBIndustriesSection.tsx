@@ -82,13 +82,13 @@ export function PCBIndustriesSection({
                 onClick={() => setActiveIdx(i)}
                 className={`inline-flex shrink-0 cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border px-3 py-2 text-[13px] font-bold transition-colors duration-200 ${
                   isActive
-                    ? "border-brand-500 bg-[#fff5f5] text-brand-500"
-                    : "border-transparent bg-transparent text-[#2a2a2a] hover:bg-gray-100"
+                    ? "border-red-500 bg-[#fff5f5] text-red-500"
+                    : "border-transparent bg-transparent text-foreground hover:bg-gray-100"
                 }`}
               >
                 <span
                   className={`flex h-4 w-4 shrink-0 items-center justify-center [&>svg]:h-full [&>svg]:w-full ${
-                    isActive ? "text-brand-500" : ""
+                    isActive ? "text-red-500" : ""
                   }`}
                 >
                   {ind.icon}
@@ -106,15 +106,15 @@ export function PCBIndustriesSection({
             <h3 className="m-0 mb-4 text-2xl font-bold tracking-tight">
               {active.title}
             </h3>
-            <p className="m-0 mb-4 text-[15px] leading-[1.65] text-muted-foreground">
+            <p className="m-0 mb-4 text-[15px] leading-[1.65]">
               {active.description}
             </p>
-            <p className="m-0 mb-4 text-[15px] leading-[1.65] text-muted-foreground">
+            <p className="m-0 mb-4 text-[15px] leading-[1.65]">
               {active.subDescription}
             </p>
             <a
               href={active.ctaHref ?? "/pcb-design/contact"}
-              className="mt-auto inline-block self-start rounded-full border border-black bg-transparent px-[18px] py-2 text-[12px] font-bold tracking-wide text-black no-underline transition-colors duration-200 hover:border-red-500 hover:bg-red-500 hover:text-white hover:no-underline"
+              className="mt-auto inline-block self-start rounded-full border border-foreground bg-transparent px-[18px] py-2 text-[12px] font-bold tracking-wide text-foreground no-underline transition-colors duration-200 hover:border-red-500 hover:bg-red-500 hover:text-white hover:no-underline"
             >
               {ctaLabel}
             </a>
@@ -173,10 +173,10 @@ export function PCBIndustriesSection({
                             {cs.title}
                           </h5>
                           <div className="flex items-center justify-between">
-                            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+                            <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
                               View Case
                             </span>
-                            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300 text-zinc-700">
+                            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"

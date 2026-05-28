@@ -39,14 +39,14 @@ export default function HowWeWorkInternational() {
       <div className="container mx-auto px-4 md:px-8">
         {/* Section Heading with Red Underline */}
         <div className="mb-12 text-center">
-          <h2 className="mb-2">
-            How We Work With 
-            <span className="text-[#EF3E42]">International Clients</span>
+          <h2 className="mb-2 text-foreground">
+            How We Work With{" "}
+            <span className="text-red-500">International Clients</span>
           </h2>
         </div>
 
         {/* Intro Paragraph */}
-        <p className="text-lg mb-12 max-w-3xl leading-relaxed mx-auto text-center text-muted-foreground">
+        <p className="text-lg mb-12 max-w-3xl leading-relaxed mx-auto text-center text-foreground">
           Qmax is built for global collaboration. From our US offices in Austin to our engineering centers in Chennai, we operate as a single team across time zones — combining American client-side responsiveness with deep Indian engineering bench strength. Here is exactly how we work with clients in the US, EU, UK, Asia-Pacific, and beyond.
         </p>
 
@@ -63,11 +63,11 @@ export default function HowWeWorkInternational() {
                   <div className="shrink-0">
                     <Icon className="w-8 h-8 text-[#EF3E42]" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-2xl">{card.title}</h3>
+                  <h3 className="text-2xl text-foreground">{card.title}</h3>
                 </div>
 
                 {/* Card Body */}
-                <p className="leading-relaxed text-sm text-muted-foreground">{card.body}</p>
+                <p className="leading-relaxed text-sm text-foreground">{card.body}</p>
               </div>
             );
           })}

@@ -17,6 +17,18 @@ interface CapabilitiesDeliverablesCardProps {
 const deliverablesCardClasses =
   "mt-6 rounded-[15px] bg-qmax-grey px-6 py-8 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] min-[901px]:px-10 min-[901px]:py-10";
 
+function DeliverablesSectionHeading({ label }: { label: string }) {
+  const lastSpace = label.lastIndexOf(" ");
+  if (lastSpace === -1) return label;
+
+  return (
+    <>
+      {label.slice(0, lastSpace)}{" "}
+      <span className="text-red-500">{label.slice(lastSpace + 1)}</span>
+    </>
+  );
+}
+
 export function CapabilitiesDeliverablesCard({
   capabilities,
   activeIdx,
@@ -43,7 +55,9 @@ export function CapabilitiesDeliverablesCard({
           >
             {capability.deliverablesAriaLabel && (
               <h3 className="mb-8 text-xl font-light tracking-wide md:text-2xl">
-                {capability.deliverablesAriaLabel}
+                <DeliverablesSectionHeading
+                  label={capability.deliverablesAriaLabel}
+                />
               </h3>
             )}
             <CapabilitiesStrip
