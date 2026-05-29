@@ -267,7 +267,7 @@ const WHY_CARDS = [
 
 const MECHANICAL_INDUSTRIAL_HERO = {
   videoSrc:
-    "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_&_Mechnical.mp4",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/smart_Wi-Fi_stethoscope/wifi_stethoscope_presentation.mp4",
   title: "Mechanical & Industrial Design Services.",
   subtitle:
     "At Qmax Systems, our mechanical and industrial design services are specifically tailored for high-stakes electronics, moving beyond generic CAD modeling to provide deep integration between hardware, thermal physics, and manufacturing realities.",
