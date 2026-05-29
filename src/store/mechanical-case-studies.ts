@@ -1278,14 +1278,16 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "pdu-mechanical",
-    title: "PDU C13/C19 Assembly",
+    id: "pdu-data-center",
+    title: "Data center PDU",
     category: "Mechanical Design",
     images: [
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/PDU_RENDER_2.2.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/PDU_RENDER_2.4.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/PDU_RENDER_3.3.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/PDU_RENDER_3.15.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/5.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/6.png",
     ],
     rotatedImages: {},
     features: [
@@ -1321,8 +1323,8 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     ],
   },
   {
-    id: "pdu-data-center",
-    title: "Data Center PDU",
+    id: "pdu-rack",
+    title: "PDU Rack",
     category: "Mechanical Design",
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/pdu_data_center/1.png",
