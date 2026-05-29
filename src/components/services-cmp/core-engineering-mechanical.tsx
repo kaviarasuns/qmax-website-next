@@ -844,42 +844,38 @@ function ViewCaseLink({ href }: { href: string }) {
 }
 
 function PortfolioGridCard({ item }: { item: PortfolioItem }) {
+  const panelMotion =
+    "duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none";
+  const detailMotion =
+    "opacity-0 transition-opacity duration-[450ms] ease-in motion-reduce:transition-none group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300 group-hover:ease-out group-focus-within:opacity-100 group-focus-within:delay-200 group-focus-within:duration-300 group-focus-within:ease-out";
+
   return (
-    <article className="group relative h-[380px] overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.04)] transform-gpu transition-[box-shadow,border-color,transform] duration-700 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none motion-reduce:transform-none hover:-translate-y-1.5 hover:border-brand-500 hover:shadow-[0_2px_6px_rgba(243,49,23,0.12),0_16px_40px_rgba(16,24,40,0.08)] focus-within:-translate-y-1.5 focus-within:border-brand-500">
-      <div className="absolute inset-x-0 top-0 bottom-[112px] overflow-hidden bg-qmax-dark-grey">
+    <article
+      className={`group relative grid h-[380px] grid-rows-[268px_80px_32px] overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.04)] transition-[grid-template-rows,box-shadow,border-color] ${panelMotion} hover:grid-rows-[140px_208px_32px] hover:border-brand-500 hover:shadow-[0_2px_6px_rgba(243,49,23,0.12),0_16px_40px_rgba(16,24,40,0.08)] focus-within:grid-rows-[140px_208px_32px] focus-within:border-brand-500`}
+    >
+      <div className="relative min-h-0 overflow-hidden bg-qmax-dark-grey">
         <Image
           src={item.image}
           alt={item.title}
           fill
-          className="object-contain p-5 transition-transform duration-700 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:scale-[1.03] group-focus-within:scale-[1.03]"
+          className="object-contain p-5"
           sizes="(max-width: 640px) 100vw, 50vw"
         />
       </div>
 
-      <div className="absolute inset-x-0 bottom-[32px] z-10 flex h-[80px] flex-col justify-center gap-1 bg-white px-6 pt-4 pb-1">
-        {item.label ? (
-          <p className="line-clamp-1 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
-            {item.label}
-          </p>
-        ) : null}
-        <h4 className="line-clamp-2 text-[15px] font-semibold leading-snug tracking-[-0.2px] text-foreground">
-          {item.title}
-        </h4>
-      </div>
-
-      <div
-        className="absolute inset-x-0 top-0 bottom-[32px] z-20 flex translate-y-full transform-gpu flex-col bg-white px-6 py-6 transition-transform duration-700 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:translate-y-0 group-focus-within:translate-y-0"
-        aria-hidden
-      >
-        {item.label ? (
-          <p className="text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
-            {item.label}
-          </p>
-        ) : null}
-        <div className="flex flex-col gap-3 py-4">
-          <h4 className="text-[17px] font-semibold leading-snug tracking-[-0.2px] text-foreground">
+      <div className="relative z-10 flex min-h-0 flex-col overflow-hidden bg-white px-6 pt-4">
+        <div className="shrink-0">
+          {item.label ? (
+            <p className="line-clamp-1 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
+              {item.label}
+            </p>
+          ) : null}
+          <h4 className="line-clamp-2 text-[15px] font-semibold leading-snug tracking-[-0.2px] text-foreground">
             {item.title}
           </h4>
+        </div>
+
+        <div className={`mt-3 flex min-h-0 flex-col gap-3 ${detailMotion}`}>
           <p className="line-clamp-4 text-[14px] leading-[21px] text-foreground">
             {item.description}
           </p>
@@ -890,10 +886,7 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
         </div>
       </div>
 
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-[25] flex h-[32px] items-start bg-white px-6"
-        aria-hidden
-      >
+      <div className="z-10 flex h-[32px] items-start bg-white px-6">
         <p className="text-[11.5px] font-medium uppercase tracking-[0.4px] text-foreground">
           Case study
         </p>
