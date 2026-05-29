@@ -845,13 +845,13 @@ function ViewCaseLink({ href }: { href: string }) {
 
 function PortfolioGridCard({ item }: { item: PortfolioItem }) {
   return (
-    <article className="group relative h-[380px] overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.04)] transition-[box-shadow,border-color] duration-300 motion-reduce:transition-none hover:border-brand-500 hover:shadow-[0_2px_6px_rgba(243,49,23,0.12),0_16px_40px_rgba(16,24,40,0.08)] focus-within:border-brand-500">
+    <article className="group relative h-[380px] overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.04)] transform-gpu transition-[box-shadow,border-color,transform] duration-700 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none motion-reduce:transform-none hover:-translate-y-1.5 hover:border-brand-500 hover:shadow-[0_2px_6px_rgba(243,49,23,0.12),0_16px_40px_rgba(16,24,40,0.08)] focus-within:-translate-y-1.5 focus-within:border-brand-500">
       <div className="absolute inset-x-0 top-0 bottom-[112px] overflow-hidden bg-qmax-dark-grey">
         <Image
           src={item.image}
           alt={item.title}
           fill
-          className="object-contain p-5 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:scale-[1.03] group-focus-within:scale-[1.03]"
+          className="object-contain p-5 transition-transform duration-700 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:scale-[1.03] group-focus-within:scale-[1.03]"
           sizes="(max-width: 640px) 100vw, 50vw"
         />
       </div>
@@ -868,7 +868,7 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
       </div>
 
       <div
-        className="absolute inset-x-0 top-0 bottom-[32px] z-20 flex translate-y-full transform-gpu flex-col bg-white px-6 py-6 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:translate-y-0 group-focus-within:translate-y-0"
+        className="absolute inset-x-0 top-0 bottom-[32px] z-20 flex translate-y-full transform-gpu flex-col bg-white px-6 py-6 transition-transform duration-700 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none group-hover:translate-y-0 group-focus-within:translate-y-0"
         aria-hidden
       >
         {item.label ? (
