@@ -66,7 +66,7 @@ export default function HowWeWorkInternational() {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="shrink-0">
                     <Icon
-                      className="w-8 h-8 text-[#EF3E42]"
+                      className="w-8 h-8 text-red-500"
                       strokeWidth={1.5}
                     />
                   </div>

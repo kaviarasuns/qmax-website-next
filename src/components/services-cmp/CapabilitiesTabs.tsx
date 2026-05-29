@@ -262,7 +262,7 @@ export function CapabilitiesTabs({
               type="button"
               role="tab"
               aria-selected={activeIdx === i}
-              className={`group relative flex cursor-pointer items-center gap-[10px] whitespace-nowrap bg-transparent px-4 pb-[17px] pt-[15px] text-[14px] font-medium leading-[1.35] text-foreground transition-colors duration-200 hover:text-[#F33117] ${
+              className={`group relative flex cursor-pointer items-center gap-[10px] whitespace-nowrap bg-transparent px-4 pb-[17px] pt-[15px] text-[14px] font-medium leading-[1.35] text-foreground transition-colors duration-200 hover:text-brand-red ${
                 activeIdx === i ? "font-bold" : ""
               } ${
                 connectedCard
@@ -275,8 +275,8 @@ export function CapabilitiesTabs({
                 <span
                   className={`h-[18px] w-[18px] shrink-0 transition-colors duration-200 ${
                     activeIdx === i
-                      ? "text-[#F33117]"
-                      : "text-foreground group-hover:text-[#F33117]"
+                      ? "text-brand-red"
+                      : "text-foreground group-hover:text-brand-red"
                   }`}
                 >
                   {cap.tabIcon}
@@ -297,7 +297,7 @@ export function CapabilitiesTabs({
           <path
             ref={pathRef}
             fill="none"
-            stroke="#F33117"
+            className="stroke-brand-red"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"

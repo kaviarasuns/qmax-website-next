@@ -17,7 +17,7 @@ export function CTA() {
             href="https://careers.qmaxsys.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center bg-zinc-900 text-white px-8 py-3 text-sm font-semibold hover:bg-zinc-800 transition-colors"
+            className="inline-flex items-center bg-zinc-950 text-white px-8 py-3 text-sm font-semibold hover:bg-zinc-900 transition-colors"
           >
             Apply Now
           </a>

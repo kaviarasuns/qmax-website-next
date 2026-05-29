@@ -16,7 +16,7 @@ export type FirmwareLifecycleSectionProps = {
 };
 
 const CARD_HOVER_SHADOW =
-  "shadow-[0_12px_32px_-8px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.04),0_0_24px_-4px_rgba(230,51,41,0.3)]";
+  "shadow-[0_12px_32px_-8px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.04),0_0_24px_-4px_rgba(239,68,68,0.3)]";
 
 export function FirmwareLifecycleSection({
   title = "Firmware Lifecycle",
@@ -93,7 +93,7 @@ export function FirmwareLifecycleSection({
           ref={gridRef}
         >
           <span
-            className="pointer-events-none absolute inset-x-0 top-1/2 z-0 h-0.5 -translate-y-1/2 bg-[linear-gradient(to_right,rgba(155,192,233,0)_0%,#9bc0e9_6%,#5e97d5_22%,#3d7fbf_38%,#0b5fa5_54%,#0a548f_70%,#084a7d_84%,#e63329_96%,rgba(230,51,41,0)_100%)] shadow-[0_0_12px_rgba(11,95,165,0.35)]"
+            className="pointer-events-none absolute inset-x-0 top-1/2 z-0 h-0.5 -translate-y-1/2 bg-[linear-gradient(to_right,rgba(155,192,233,0)_0%,#9bc0e9_6%,#5e97d5_22%,#3d7fbf_38%,#0b5fa5_54%,#0a548f_70%,#084a7d_84%,#ef4444_96%,rgba(239,68,68,0)_100%)] shadow-[0_0_12px_rgba(11,95,165,0.35)]"
             aria-hidden="true"
           />
           <span
@@ -119,12 +119,12 @@ export function FirmwareLifecycleSection({
                     : "translate-y-6 opacity-0",
                   isActive
                     ? cn("border-red-500 -translate-y-1", CARD_HOVER_SHADOW)
-                    : "hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.04),0_0_24px_-4px_rgba(230,51,41,0.3)]",
+                    : "hover:border-red-500 hover:-translate-y-1 hover:shadow-[0_12px_32px_-8px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.04),0_0_24px_-4px_rgba(239,68,68,0.3)]",
                 )}
                 data-p={phase.phase}
               >
                 <span
-                  className="absolute right-4 top-4 h-2.5 w-2.5 rounded-full bg-red-500 shadow-[0_0_12px_#e63329]"
+                  className="absolute right-4 top-4 h-2.5 w-2.5 rounded-full bg-red-500 shadow-[0_0_12px_#ef4444]"
                   aria-hidden="true"
                 />
                 <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-red-500">

@@ -92,7 +92,7 @@ export function CoreServiceOfferingsSection({
                   key={`${activeOffering.id}-${index}`}
                   className="relative pl-6 text-sm leading-7 text-foreground md:text-base"
                 >
-                  <span className="absolute left-0 top-3 h-2 w-2 rounded-full bg-[#F33117]" />
+                  <span className="absolute left-0 top-3 h-2 w-2 rounded-full bg-brand-red" />
                   {typeof point === "string" ? (
                     point
                   ) : (

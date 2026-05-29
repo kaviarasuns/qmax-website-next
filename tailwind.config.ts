@@ -14,11 +14,11 @@ export default {
         readable: ["Roboto", "Arial", "Helvetica", "sans-serif"],
       },
       colors: {
-        "brand-red": "#F33117",
+        "brand-red": "#EF4444",
         "qmax-grey": "var(--qmax-grey)",
         "qmax-dark-grey": "var(--qmax-dark-grey)",
         brand: {
-          500: "#F33117",
+          500: "#EF4444",
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

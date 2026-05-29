@@ -79,7 +79,7 @@ const OfficeLocations = () => {
                 <div className="absolute top-4 right-4 px-4 py-2 bg-white/95 backdrop-blur-sm rounded-full shadow-lg">
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-red-500" />
-                    <span className="font-semibold text-gray-900">
+                    <span className="font-semibold text-foreground">
                       {office.country}
                     </span>
                   </div>

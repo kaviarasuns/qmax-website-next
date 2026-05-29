@@ -89,12 +89,12 @@ export function ApplicationsProjectExperienceSection({
                     onClick={() => setActiveIdx(index)}
                     className={cn(
                       "relative grid w-full cursor-pointer grid-cols-[44px_1fr_28px] items-center gap-3.5 border-b border-[#e4e0d8] py-5 text-left transition-[padding-left,color] duration-200 last:border-b-0",
-                      "before:absolute before:bottom-0 before:left-[-24px] before:top-0 before:w-[3px] before:bg-[#F33117] before:opacity-0 before:transition-opacity before:duration-200 md:before:left-[-48px]",
+                      "before:absolute before:bottom-0 before:left-[-24px] before:top-0 before:w-[3px] before:bg-brand-red before:opacity-0 before:transition-opacity before:duration-200 md:before:left-[-48px]",
                       isActive && "pl-1 before:opacity-100",
                       !isActive && "hover:pl-1",
                     )}
                   >
-                    <span className="font-mono text-[10px] tracking-[0.12em] text-[#F33117]">
+                    <span className="font-mono text-[10px] tracking-[0.12em] text-brand-red">
                       {formatItemNumber(index)}
                     </span>
                     <span
@@ -109,7 +109,7 @@ export function ApplicationsProjectExperienceSection({
                       className={cn(
                         "ml-auto flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full border transition-all duration-200",
                         isActive
-                          ? "border-[#F33117] bg-[#F33117] text-white"
+                          ? "border-brand-red bg-brand-red text-white"
                           : "border-[#e4e0d8] text-[#ccc]",
                       )}
                     >

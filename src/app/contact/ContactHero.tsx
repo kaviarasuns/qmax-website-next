@@ -12,6 +12,9 @@ import {
 type CountryKey = "United States" | "India";
 type JobKey = "Careers  ( Jobs / Intern )" | "Suppliers / Vendors";
 
+const CONTACT_EMAIL_BUTTON_CLASS =
+  "flex w-full min-w-0 items-start gap-3 text-red-500 hover:text-red-500 cursor-pointer bg-transparent border-none p-0 text-left transition-colors text-sm";
+
 interface AddressData {
   name: string;
   address: string[];
@@ -379,9 +382,11 @@ const ContactHero = () => {
                     <p className="font-semibold text-white mb-2">
                       {addresses[country].name}
                     </p>
-                    <div className="space-y-0.5 mb-3">
+                    <div className="mb-3 space-y-0.5 text-left">
                       {addresses[country].address.map((line, index) => (
-                        <p key={index} className="text-white">{line}</p>
+                        <p key={index} className="text-left text-white">
+                          {line}
+                        </p>
                       ))}
                     </div>
                     <a
@@ -407,10 +412,12 @@ const ContactHero = () => {
                           window.open(mailtoUrl, "_blank");
                         }, 100);
                       }}
-                      className="flex items-center gap-3 text-red-500 hover:text-red-500 cursor-pointer bg-transparent border-none p-0 text-left transition-colors text-lg tracking-wide"
+                      className={CONTACT_EMAIL_BUTTON_CLASS}
                     >
-                      <Mail className="w-4 h-4" />
-                      {addresses[country].email}
+                      <Mail className="mt-0.5 h-4 w-4 shrink-0" />
+                      <span className="min-w-0 flex-1 break-all">
+                        {addresses[country].email}
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -430,9 +437,11 @@ const ContactHero = () => {
                     <p className="font-semibold text-white mb-2">
                       {jobs[key].name}
                     </p>
-                    <div className="space-y-0.5 mb-3">
+                    <div className="mb-3 space-y-0.5 text-left">
                       {jobs[key].address.map((line, index) => (
-                        <p key={index} className="text-white">{line}</p>
+                        <p key={index} className="text-left text-white">
+                          {line}
+                        </p>
                       ))}
                     </div>
                     <a
@@ -460,10 +469,12 @@ const ContactHero = () => {
                           window.open(mailtoUrl, "_blank");
                         }, 100);
                       }}
-                      className="flex items-center gap-3 text-red-500 hover:text-red-500 cursor-pointer bg-transparent border-none p-0 text-left transition-colors text-lg tracking-wide"
+                      className={CONTACT_EMAIL_BUTTON_CLASS}
                     >
-                      <Mail className="w-4 h-4" />
-                      {jobs[key].email}
+                      <Mail className="mt-0.5 h-4 w-4 shrink-0" />
+                      <span className="min-w-0 flex-1 break-all">
+                        {jobs[key].email}
+                      </span>
                     </button>
                   </div>
                 </div>

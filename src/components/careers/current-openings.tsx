@@ -571,7 +571,7 @@ function JobCard({ position, index }: { position: Position; index: number }) {
             href="https://careers.qmaxsys.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-zinc-900 text-white px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold hover:bg-zinc-800 transition-colors inline-flex items-center"
+            className="bg-zinc-950 text-white px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold hover:bg-zinc-900 transition-colors inline-flex items-center"
           >
             Apply Now
           </a>

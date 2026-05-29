@@ -25,7 +25,7 @@ export function FAQSection({ faqItems }: FAQSectionProps) {
               <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer flex justify-between items-center gap-4 text-lg md:text-2xl font-light leading-relaxed tracking-tight text-foreground transition-colors duration-200">
                 {item.q}
                 <svg
-                  className="flex-shrink-0 w-6 h-6 text-red-600 transition-transform duration-300 group-open:rotate-180"
+                  className="flex-shrink-0 w-6 h-6 text-red-500 transition-transform duration-300 group-open:rotate-180"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"

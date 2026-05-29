@@ -45,10 +45,10 @@ export function DayOneThinkingSection({
                     {insights.map((insight) => (
                         <article
                             key={insight.title}
-                            className="relative overflow-hidden rounded-[14px] border border-[#e3e8ef] bg-white p-[18px] shadow-[0_6px_22px_rgba(10,25,41,0.07)] transition-[transform,box-shadow,border-color] duration-150 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-[linear-gradient(90deg,#e63329,#c72a21)] before:content-[''] hover:-translate-y-[3px] hover:border-[#e63329] hover:shadow-[0_12px_30px_rgba(230,51,41,0.12)]"
+                            className="relative overflow-hidden rounded-[14px] border border-[#e3e8ef] bg-white p-[18px] shadow-[0_6px_22px_rgba(10,25,41,0.07)] transition-[transform,box-shadow,border-color] duration-150 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-red-500 before:to-red-600 before:content-[''] hover:-translate-y-[3px] hover:border-red-500 hover:shadow-[0_12px_30px_rgba(239,68,68,0.12)]"
                         >
                             <div className="mb-2 flex flex-row flex-nowrap items-center gap-3">
-                                <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center text-[#e63329] [&_svg]:h-8 [&_svg]:w-8">
+                                <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center text-red-500 [&_svg]:h-8 [&_svg]:w-8">
                                     {insight.icon}
                                 </div>
                                 <h3 className="m-0 min-w-0 flex-auto text-[15px] !font-medium leading-[1.3]">
@@ -62,9 +62,9 @@ export function DayOneThinkingSection({
                     ))}
                 </div>
 
-                <div className="relative mt-[18px] overflow-hidden rounded-[14px] border border-[#e3e8ef] bg-white px-[30px] py-[26px] shadow-[0_6px_22px_rgba(10,25,41,0.07)] transition-[transform,box-shadow,border-color] duration-150 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-[linear-gradient(90deg,#e63329,#c72a21)] before:content-[''] hover:-translate-y-[3px] hover:border-[#e63329] hover:shadow-[0_12px_30px_rgba(230,51,41,0.12)]">
+                <div className="relative mt-[18px] overflow-hidden rounded-[14px] border border-[#e3e8ef] bg-white px-[30px] py-[26px] shadow-[0_6px_22px_rgba(10,25,41,0.07)] transition-[transform,box-shadow,border-color] duration-150 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-red-500 before:to-red-600 before:content-[''] hover:-translate-y-[3px] hover:border-red-500 hover:shadow-[0_12px_30px_rgba(239,68,68,0.12)]">
                     <div className="mb-2 flex flex-row flex-nowrap items-center gap-3.5">
-                        <div className="inline-flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-[12px] bg-[rgba(230,51,41,0.1)] text-[#e63329] [&_svg]:h-7 [&_svg]:w-7">
+                        <div className="inline-flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-[12px] bg-red-500/10 text-red-500 [&_svg]:h-7 [&_svg]:w-7">
                             <svg
                                 viewBox="0 0 24 24"
                                 fill="none"

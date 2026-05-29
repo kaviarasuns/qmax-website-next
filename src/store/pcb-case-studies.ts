@@ -891,7 +891,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
     title: "Value Added Services",
     category: "Industrial Services",
     images: [
-      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/value_added_services/20230829_184901.heic",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/value_added_services/1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/value_added_services/20231130_185415.jpg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/value_added_services/20231130_185424%20-%20Trim.mp4",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/value_added_services/20231130_185716%20-%20Trim.mp4",

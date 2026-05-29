@@ -38,7 +38,7 @@ export function ModularFirmwareFrameworksSection({
           {frameworks.map((framework) => (
             <article
               key={framework.title}
-              className="group relative overflow-hidden rounded-[14px] border border-[#e3e8ef] bg-white px-5 py-[22px] shadow-[0_6px_22px_rgba(10,25,41,0.07)] transition-[transform,box-shadow,border-color] duration-150 hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-[0_14px_32px_rgba(230,51,41,0.12)] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-brand-500 before:to-[#C72A21]"
+              className="group relative overflow-hidden rounded-[14px] border border-[#e3e8ef] bg-white px-5 py-[22px] shadow-[0_6px_22px_rgba(10,25,41,0.07)] transition-[transform,box-shadow,border-color] duration-150 hover:-translate-y-0.5 hover:border-red-500 hover:shadow-[0_14px_32px_rgba(239,68,68,0.12)] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-gradient-to-r before:from-red-500 before:to-red-600"
             >
               <div className="mb-2 flex flex-row flex-nowrap items-center gap-3">
                 <div className="inline-flex h-[52px] w-[52px] flex-shrink-0 items-center justify-center text-brand-500 [&>svg]:h-8 [&>svg]:w-8 [&>svg_[stroke]:not([stroke='none'])]:stroke-brand-500 [&>svg_[fill]:not([fill='none'])]:fill-brand-500">
