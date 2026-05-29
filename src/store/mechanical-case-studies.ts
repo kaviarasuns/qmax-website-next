@@ -373,6 +373,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/hydronet/1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/hydronet/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/hydronet/3.jpg",
     ],
     features: [
       "Compact multi-sensor enclosure",
@@ -415,6 +416,8 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/hydronet-2/1.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/hydronet-2/1.2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/hydronet-2/2.jpg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/hydronet-2/3.jpg",
     ],
     features: [
       "Wall-mounted smart meter enclosure",
@@ -652,6 +655,8 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/tensionmeter/TM450LB_RENDERING_28_MAR_2025_S1.1png.7.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/tensionmeter/TM450LB_RENDERING_28_MAR_2025_S1.1png.9.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/tensionmeter/TM450LB_RENDERING_28_MAR_2025_S1.1png.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/tensionmeter/1.jpg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/tensionmeter/2.jpg",
     ],
     features: [
       "Industrial tension measurement device",
@@ -920,6 +925,8 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.5.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/PADDY_S1.6.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/1.jpg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/paddy_moisture/2.jpg",
     ],
     features: [
       "IP67 and MIL-STD-810G rated enclosure",
@@ -1358,6 +1365,98 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "Rack Integration Design",
       "Prototype Validation",
       "Manufacturing Support",
+    ],
+  },
+  {
+    id: "obd-device",
+    title: "OBD Device",
+    category: "Mechanical Design",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021022.jpg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021023.jpg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021024.jpg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021025.jpg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021026.jpg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021027.jpg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021028.jpg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021029.jpg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021030.jpg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021031.jpg",
+    ],
+    rotatedImages: {},
+    features: [
+      "Compact automotive enclosure design",
+      "OBD port compatible mechanical architecture",
+      "Injection mold-ready product design",
+      "Ergonomic installation form factor",
+      "Durable automotive-grade housing",
+      "Optimized internal component packaging",
+    ],
+    summary:
+      "A compact OBD device enclosure engineered for automotive applications, featuring robust construction, ergonomic installation, and optimized packaging for embedded electronics.",
+    importantParts: [
+      "OBD connector housing",
+      "Protective enclosure shell",
+      "Internal PCB mounting structure",
+      "Snap-fit assembly features",
+      "Cable and connector interfaces",
+      "Automotive-grade outer casing",
+    ],
+    salientFeatures: [
+      "Compact plug-and-play design",
+      "Automotive-grade mechanical durability",
+      "Optimized internal space utilization",
+      "Manufacturing-ready enclosure architecture",
+    ],
+    scopeOfWork: [
+      "Industrial Design",
+      "Mechanical Product Design",
+      "3D CAD Modeling",
+      "DFM (Design for Manufacturing)",
+      "Prototype Development",
+    ],
+  },
+  {
+    serialNumber: 19,
+    id: "warehouse-camera-controller-unit-mechanical",
+    title: "Warehouse Camera Controller Unit",
+    category: "Mechanical Design",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/frizb_ai_box/6.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/frizb_ai_box/7.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/frizb_ai_box/8.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/frizb_ai_box/9.png",
+    ],
+    features: [
+      "AI-enabled industrial enclosure",
+      "Compact system packaging",
+      "Thermal airflow optimization",
+      "Structural rigidity design",
+      "Cable routing support",
+      "Field-ready robust construction",
+    ],
+    summary:
+      "A compact AI box enclosure designed for embedded intelligence systems with optimized thermal management and rugged deployment readiness.",
+    importantParts: [
+      "Main enclosure body",
+      "Ventilation channels",
+      "Mounting brackets",
+      "Connector access panels",
+      "Cooling support structure",
+      "Cable management frame",
+    ],
+    salientFeatures: [
+      "Compact high-density enclosure",
+      "Efficient thermal airflow path",
+      "Strong structural protection",
+      "Service-friendly access design",
+    ],
+    scopeOfWork: [
+      "Industrial Design",
+      "Mechanical CAD Development",
+      "Thermal Optimization",
+      "Prototype Validation",
+      "DFM Support",
     ],
   },
 ];
