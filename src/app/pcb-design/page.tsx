@@ -500,10 +500,10 @@ export default function HardwareDevelopmentServicesComponentV2() {
       {/* <TestimonialsSection testimonials={TESTIMONIALS} /> */}
 
       {/* CTA BANNER */}
-      <CTABannerSection
+      {/* <CTABannerSection
         href="/pcb-design/contact"
         heading="Ready To Bring Your PCB Design Project To Life?"
-      />
+      /> */}
 
       {/* FEATURED ARTICLES */}
       {/* <FeaturedArticlesSection /> */}
