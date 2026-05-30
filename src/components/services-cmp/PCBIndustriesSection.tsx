@@ -135,21 +135,23 @@ export function PCBIndustriesSection({
           </div>
 
           {/* RIGHT — related case studies (auto-scrolling) */}
-          <div className="flex flex-col gap-3 rounded-2xl overflow-hidden">
-            <div className="relative flex-1 overflow-hidden rounded-2xl">
+          <div className="flex flex-col gap-3 rounded-2xl">
+            <div className="relative flex-1 overflow-x-clip [overflow-clip-margin:2rem]">
               {active.relatedCaseStudies.map((cs, i) => (
                 <div
                   key={cs.href + i}
                   className="absolute inset-0 transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(${(i - caseIdx) * 100}%)` }}
+                  style={{
+                    transform: `translateX(calc(${i - caseIdx} * (100% + 4rem)))`,
+                  }}
                 >
-                  <div className="relative h-full">
+                  <div className="group relative h-full">
                     <a
                       href={cs.href}
                       aria-label={cs.title}
                       className="block h-full rounded-2xl text-inherit no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F33117]/60 focus-visible:ring-offset-2 hover:no-underline"
                     >
-                      <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)]">
+                      <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200/80 bg-white shadow-[0_14px_40px_-30px_rgba(15,23,42,0.45)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-[0_24px_55px_-28px_rgba(15,23,42,0.5)]">
                         <div className="relative aspect-[3/2.8] w-full overflow-hidden bg-qmax-dark-grey">
                           {cs.image ? (
                             <div
@@ -165,7 +167,7 @@ export function PCBIndustriesSection({
                                 alt={cs.title}
                                 fill
                                 sizes="(max-width: 900px) 100vw, 33vw"
-                                className="object-contain px-8 py-5"
+                                className="object-contain px-8 py-5 transition-transform duration-700 group-hover:scale-[1.03]"
                               />
                             </div>
                           ) : null}
@@ -175,10 +177,10 @@ export function PCBIndustriesSection({
                             {cs.title}
                           </h5>
                           <div className="flex items-center justify-between">
-                            <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
+                            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
                               View Case
                             </span>
-                            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300">
+                            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300 text-zinc-700 transition-all duration-300 group-hover:translate-x-0.5 group-hover:border-red-500 group-hover:text-red-500">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -195,7 +197,7 @@ export function PCBIndustriesSection({
                             </span>
                           </div>
                         </div>
-                        <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-zinc-200/70" />
+                        <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-zinc-200/70 transition-colors duration-300 group-hover:ring-zinc-300" />
                       </article>
                     </a>
                   </div>
