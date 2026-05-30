@@ -4,7 +4,7 @@ import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
-import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
+import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import {
   CoreServiceOfferingsSection,
   HighSpeedCoreOffering,
@@ -558,12 +558,13 @@ export default function AnalogAndMixedSignalPage() {
         titleHighlight="Analog & Mixed-Signal PCB Design"
         subtitle="Every PCB layout engagement at Qmax Systems includes a complimentary schematic review. Before a single trace is routed, our engineers analyze:"
       /> */}
-      <ComplimentaryConsultationSection
-        variant="pcb"
-        title="Get a Complimentary Consultation with Our Analog And Mixed Signal Experts"
-      />
 
       <FAQSection faqItems={FAQ_ITEMS} />
+      <ConsultationCtaBar
+        heading="Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/pcb-design/contact"
+      />
 
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"

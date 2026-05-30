@@ -3,7 +3,7 @@ import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
-import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
+import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import {
   CoreServiceOfferingsSection,
   HighSpeedCoreOffering,
@@ -592,10 +592,14 @@ export default function HighSpeedDigitalPCBDesignPage() {
         className="pb-8 max-[900px]:pb-8"
       />
       {/* <ComplimentarySchematicReviewSection items={schematicReviewItems} /> */}
-      <ComplimentaryConsultationSection variant="pcb" />
 
       <FAQSection
         faqItems={FAQ_ITEMS}
+      />
+      <ConsultationCtaBar
+        heading="Get A Complimentary Consultation With Our High-Speed Digital PCB Experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/pcb-design/contact"
       />
 
       <ServiceCaseStudiesSection

@@ -3,6 +3,7 @@
 import "../../components/hardware-design.css";
 import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
 import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
+import { CTABannerSection } from "@/components/services-cmp/CTABannerSection";
 import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
@@ -498,8 +499,11 @@ export default function HardwareDevelopmentServicesComponentV2() {
       {/* CUSTOMER SUCCESS STORIES */}
       {/* <TestimonialsSection testimonials={TESTIMONIALS} /> */}
 
-      {/* CTA BANNER update con*/}
-      {/* <CTABannerSection /> */}
+      {/* CTA BANNER */}
+      <CTABannerSection
+        href="/pcb-design/contact"
+        heading="Ready To Bring Your PCB Design Project To Life?"
+      />
 
       {/* FEATURED ARTICLES */}
       {/* <FeaturedArticlesSection /> */}

@@ -3,7 +3,7 @@ import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
-import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
+import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import {
   CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
@@ -505,12 +505,13 @@ export default function PowerElectronicsPage() {
         titleHighlight="Power Electronics PCB Design"
         subtitle="Every power electronics engagement includes a complimentary schematic review to identify architectural risks before layout begins."
       /> */}
-      <ComplimentaryConsultationSection
-        variant="pcb"
-        title="Get a Complimentary Consultation with Our Power Electronics Experts"
-      />
       <FAQSection
         faqItems={FAQ_ITEMS}
+      />
+      <ConsultationCtaBar
+        heading="Get A Complimentary Consultation With Our Power Electronics Experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/pcb-design/contact"
       />
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
