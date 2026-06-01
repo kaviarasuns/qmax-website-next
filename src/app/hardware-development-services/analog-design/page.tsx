@@ -21,6 +21,7 @@ import {
   getCaseStudyCardImage,
 } from "@/store/case-studies";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
+import { ComplianceStandardsSection } from "@/components/services-cmp/ComplianceStandardSection";
 
 function analogProjectExperienceEntry(
   id: string,
@@ -524,33 +525,24 @@ export default function AnalogDesignPage() {
         title="Analog Design Services"
         description={
           <p>
-            In an increasingly digital world, the interface between the physical
-            and digital domains remains the most critical bottleneck in
-            high-performance electronics. Qmax Systems provides comprehensive
-            analog and mixed-signal development services, specializing in
-            high-fidelity signal acquisition, precision conditioning, and
-            ultra-low-noise environments. From femto-farad capacitance sensing
-            to giga-sample data converters, our engineering team addresses the
-            fundamental challenges of electromagnetic interference, signal
-            integrity, and thermal stability to ensure laboratory-grade accuracy
-            in field-deployed hardware.
+            Qmax Systems designs analog and mixed-signal hardware for the
+            physical-to-digital interface, the most critical bottleneck in
+            high-performance electronics. From femto-farad capacitance sensing
+            to giga-sample data converters, Qmax Systems delivers high-fidelity
+            signal acquisition, precision conditioning, and ultra-low-noise
+            design that holds laboratory-grade accuracy in field-deployed
+            hardware.
           </p>
         }
         ctaHref="/hardware-development-services/contact"
         ctaLabel="Talk to our engineers"
       />
 
-      <CoreServiceOfferingsSection
-        offerings={coreServiceOfferings}
-      />
+      <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
 
       <ApplicationsProjectExperienceSection
         projects={projectExperience}
         subtitle="Our portfolio includes hundreds of precision analog and mixed-signal platforms delivered to regulated industries, including:"
-      />
-      <WhySection
-        whyCards={WHY_CARDS}
-        titleHighlight="Analog & Mixed-Signal Design?"
       />
       <TechnicalAdvantageSection
         headingHighlight="Analog & Mixed-Signal"
@@ -559,19 +551,25 @@ export default function AnalogDesignPage() {
         columns="three"
         sectionHeadingId="technical-advantage-analog-heading"
       />
-      <FAQSection
-        faqItems={faqs}
+      <WhySection
+        whyCards={WHY_CARDS}
+        titleHighlight="Analog & Mixed-Signal Design?"
       />
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
         ctaHref="/hardware-development-services/contact"
       />
+      <ComplianceStandardsSection />
+
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={analogCaseStudies}
         hideTopBorder
       />
+
+      <FAQSection faqItems={faqs} />
+      <div className="pb-28"></div>
     </>
   );
 }

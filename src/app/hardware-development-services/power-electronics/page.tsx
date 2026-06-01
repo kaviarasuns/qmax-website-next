@@ -503,17 +503,12 @@ export default function PowerElectronicsPage() {
         ctaLabel="Talk to Our Engineers"
       />
 
-      <CoreServiceOfferingsSection
-        offerings={coreServiceOfferings}
-      />
+      <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
       <ApplicationsProjectExperienceSection
         projects={projectExperience}
         subtitle="Our portfolio includes hundreds of advanced power platforms delivered to regulated industries:"
       />
-      <WhySection
-        whyCards={WHY_CARDS}
-        titleHighlight="Power Electronics Design?"
-      />
+
       <TechnicalAdvantageSection
         headingHighlight="Power Electronics"
         lede="Qmax Systems combines architecture planning, simulation-driven design, and hardware validation to deliver resilient power systems for demanding applications."
@@ -521,9 +516,12 @@ export default function PowerElectronicsPage() {
         columns="two"
         sectionHeadingId="technical-advantage-power-heading"
       />
-      <FAQSection
-        faqItems={faqs}
+
+      <WhySection
+        whyCards={WHY_CARDS}
+        titleHighlight="Power Electronics Design?"
       />
+
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our Power Electronics Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
@@ -534,6 +532,10 @@ export default function PowerElectronicsPage() {
         studies={powerElectronicsCaseStudies}
         hideTopBorder
       />
+
+      <FAQSection faqItems={faqs} />
+
+      <div className="pb-28"></div>
     </>
   );
 }

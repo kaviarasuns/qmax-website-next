@@ -351,37 +351,30 @@ export default function HighSpeedDigitalDesignPage() {
         title="High Speed Digital Design Services"
         description={
           <p>
-            At Qmax Systems, we bridge the gap between complex conceptual
-            requirements and market-ready hardware. In an era where AI
-            computing, telecom infrastructure, edge servers, and data-intensive
-            applications demand unprecedented speed and reliability, our
-            Hardware Engineering Team delivers robust, scalable, and
-            high-integrity systems tailored for next-generation digital
-            infrastructure.
+            Qmax Systems designs high-performance digital hardware for AI
+            computing, telecom, edge servers, and data-intensive infrastructure.
+            Qmax Systems engineers high-speed, high-density, high-reliability
+            systems around signal integrity (SI) and power integrity (PI) — from
+            DDR5 and PCIe Gen6 to 112G SerDes and 30+ layer HDI PCBs —
+            delivering production-ready platforms, not just prototypes.
           </p>
         }
         ctaHref="/hardware-development-services/contact"
         ctaLabel="Talk to Our Engineers"
       />
 
-      <CoreServiceOfferingsSection
-        offerings={coreServiceOfferings}
-      />
+      <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
       <ApplicationsProjectExperienceSection
         projects={projectExperience}
         subtitle="We have successfully delivered hundreds of advanced digital hardware platforms, including:"
       />
+
+      <DigitalHardwareTechnicalAdvantageSection />
+
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Digital Hardware Design?"
       />
-
-      <DigitalHardwareTechnicalAdvantageSection />
-
-      <FAQSection
-        faqItems={faqs}
-      />
-      <div className="pb-28"></div>
 
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our Digital Hardware Experts."
@@ -394,6 +387,9 @@ export default function HighSpeedDigitalDesignPage() {
         studies={highSpeedCaseStudies}
         hideTopBorder
       />
+
+      <FAQSection faqItems={faqs} />
+      <div className="pb-28"></div>
     </>
   );
 }
