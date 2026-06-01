@@ -742,7 +742,7 @@ export default function EmbeddedDesignServicesPage() {
       {/* WHY CHOOSE QMAX */}
       <WhySection
         whyCards={WHY_CARDS}
-        titleHighlight="Embedded Design?"
+        titleHighlight="Embedded Firmware?"
         className="pb-0 max-[900px]:pb-0"
       />
 
@@ -791,7 +791,7 @@ export default function EmbeddedDesignServicesPage() {
       <PartnershipsSection
         heading="Silicon Platforms"
         headingHighlight="We Build On"
-        paragraph="Across hundreds of programs, our firmware engineers have shipped production code on the silicon below. We carry hands-on experience with their toolchains, SDKs, errata sheets, and reference designs — so your project starts from working ground, not from scratch."
+        paragraph="Across hundreds of programs, Qmax Systems firmware engineers have shipped production code on the silicon below — carrying hands-on experience with toolchains, SDKs, errata sheets, and reference designs so every project starts from working ground, not from scratch."
       />
 
       {/* CTA BANNER */}

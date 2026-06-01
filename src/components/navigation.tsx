@@ -70,6 +70,8 @@ export function Navigation() {
                     {item.subItems ? (
                       <>
                         <NavigationMenuTrigger
+                          onPointerDown={(e) => e.preventDefault()}
+                          onClick={(e) => e.preventDefault()}
                           className={`bg-transparent text-[17px] font-normal tracking-[0.08em] transition-all duration-200
                             ${isSubItemActive(item.subItems)
                               ? "text-red-500"
