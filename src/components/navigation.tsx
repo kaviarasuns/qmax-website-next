@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
@@ -19,10 +19,21 @@ import { menuData } from "@/lib/menu-data";
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [menuValue, setMenuValue] = useState("");
+  const openedAtRef = useRef(0);
   const pathname = usePathname();
 
   const isSubItemActive = (subItems: { href: string }[]) =>
     subItems.some((s) => pathname.startsWith(s.href));
+
+  const handleMenuValueChange = (value: string) => {
+    if (value) openedAtRef.current = Date.now();
+    setMenuValue(value);
+  };
+
+  const handleTriggerClick = (e: React.MouseEvent) => {
+    // Ignore the click if the menu just opened via hover (Radix would otherwise toggle it closed).
+    if (Date.now() - openedAtRef.current < 300) e.preventDefault();
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-white/20 transition-all duration-300">
@@ -45,7 +56,7 @@ export function Navigation() {
 
           {/* Desktop Navigation with Dropdowns */}
           <div className="hidden lg:flex items-center">
-            <NavigationMenu value={menuValue} onValueChange={setMenuValue}>
+            <NavigationMenu value={menuValue} onValueChange={handleMenuValueChange}>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link href="/" legacyBehavior passHref>
@@ -70,8 +81,7 @@ export function Navigation() {
                     {item.subItems ? (
                       <>
                         <NavigationMenuTrigger
-                          onPointerDown={(e) => e.preventDefault()}
-                          onClick={(e) => e.preventDefault()}
+                          onClick={handleTriggerClick}
                           className={`bg-transparent text-[17px] font-normal tracking-[0.08em] transition-all duration-200
                             ${isSubItemActive(item.subItems)
                               ? "text-red-500"
