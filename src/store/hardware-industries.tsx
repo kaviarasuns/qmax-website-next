@@ -20,9 +20,9 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Designing automotive PCBs for ECUs, infotainment, ADAS, and EV powertrain systems built to meet AEC-Q100 and IATF 16949 standards. Our layouts are engineered to handle harsh thermal cycling, severe vibration, and aggressive EMI across every cabin, chassis, and under-the-hood application.",
+      "Qmax Systems designs automotive firmware for ECUs, infotainment, ADAS, and EV powertrain systems built to AEC-Q100 and IATF 16949 standards. Qmax Systems engineers write firmware that handles harsh thermal cycling, severe vibration, and aggressive EMI across cabin, chassis, and under-the-hood applications.",
     subDescription:
-      "From multi-layer ECU boards to high-current EV battery management PCBs, we deliver designs that meet zero-defect quality and full automotive traceability.",
+      "From multi-layer ECU boards to high-current EV battery management systems, Qmax Systems delivers firmware designs that meet zero-defect quality and full automotive traceability.",
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/automotive.png",
     relatedCaseStudies: [
@@ -63,9 +63,9 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Designing PCBs for medical devices, diagnostics, imaging, and life-critical patient systems. From wearable monitors to surgical and implantable equipment, our layouts meet IPC-6012 Class 3 standards, ISO 13485 design controls, and the strict isolation, creepage, and clearance requirements of regulated healthcare environments.",
+      "Qmax Systems develops firmware for Class II and Class III medical devices built to IEC 62304 software life-cycle requirements. Qmax Systems engineers deliver safety-critical embedded software with full traceability, risk management alignment to ISO 14971, and certification-ready documentation packages.",
     subDescription:
-      "We engineer leakage-current-safe routing, reinforced isolation barriers, and long-life stack-ups built for sterilization, longevity, and clinical reliability.",
+      "From vital-signs monitoring to infusion pump control, Qmax Systems engineers understand the regulatory landscape and design to it from the first sprint.",
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/medical.png",
     relatedCaseStudies: [
@@ -106,9 +106,9 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Designing PCBs for avionics, satellite payloads, defense electronics, and flight-critical and safety-critical aerospace systems where failure is not an option. Our layouts conform to IPC-6012 Class 3/A, support DO-254 design assurance, and survive extreme thermal, vibration, radiation, and altitude environments.",
+      "Qmax Systems develops DO-178C compliant firmware for avionics systems, applying structured development processes, rigorous verification and validation, and full requirements-through-test traceability. Qmax Systems engineers deliver designs built to survive the harsh demands of aerospace environments.",
     subDescription:
-      "From rigid-flex avionics boards to high-reliability digital backbones, we deliver PCBs proven to withstand the harshest aerospace mission profiles.",
+      "From flight control software to communication avionics, Qmax Systems applies DO-178C development assurance levels appropriate to each system's criticality classification.",
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/aerospace.png",
     relatedCaseStudies: [
@@ -149,9 +149,9 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Designing power-dense PCBs for EV charging, battery management, solar inverters, and grid-scale energy storage systems. Our layouts handle high voltages, heavy currents, and aggressive electromagnetic and thermal loads using thick-copper stack-ups, GaN/SiC topologies, and meticulously routed commutation loops.",
+      "Qmax Systems develops firmware for battery management systems, EV chargers, power conversion, and grid-edge devices — handling real-time control loops, safety interlocks, and communication stacks that energy applications demand.",
     subDescription:
-      "We deliver layouts that minimize parasitics, maximize efficiency, and survive the demanding duty cycles of modern electrification and renewable platforms.",
+      "Qmax Systems designs to IEC 61508 functional safety requirements with full ASIL decomposition documentation where required by the application.",
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/ev and power.png",
     relatedCaseStudies: [
@@ -192,9 +192,9 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Designing high-frequency PCBs for 5G infrastructure, satellite communication, IoT gateways, and broadband networking equipment. Our RF, mixed-signal, and high-speed digital layouts deliver controlled impedance, low-loss laminates, and tight signal integrity from sub-GHz applications through to mmWave.",
+      "Qmax Systems delivers firmware for wireless base stations, access points, gateways, and edge networking devices. From OpenWrt-based router platforms to custom LPWAN firmware, Qmax Systems engineers deliver the full connectivity stack.",
     subDescription:
-      "We optimize antenna routing, ground plane integrity, and EMI containment to ensure reliable, low-noise performance across complex multi-layer boards.",
+      "Wi-Fi 6/6E, BLE, LTE-M, NB-IoT, LoRa — Qmax Systems covers the protocol stack end to end with carrier-grade reliability requirements across all deployment environments.",
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/communication.png",
     relatedCaseStudies: [
@@ -234,9 +234,9 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Designing PCBs for PLCs, servo drives, motor controllers, factory IoT, robotics, and process automation equipment. Our high-reliability layouts handle heavy electrical noise, wide temperature ranges, and the long operational lifespans demanded by 24/7 factory floors and mission-critical industrial control environments.",
+      "Qmax Systems engineers OPC-UA deterministic firmware for PLCs, industrial controllers, and IIoT edge gateways — delivering real-time control firmware with deterministic latency, functional safety hooks, and secure remote management.",
     subDescription:
-      "Heavy-copper power planes, isolated I/O zones, and EMI-hardened layouts deliver the reliability and durability that industrial deployments require.",
+      "Qmax Systems designs meet IEC 61131 and IEC 62443 security standards, with modular firmware architectures that simplify reconfiguration across production lines.",
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/industry.png",
     relatedCaseStudies: [

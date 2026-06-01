@@ -46,7 +46,9 @@ export function EmbeddedSoftwareCapabilitiesSection({
             <h2 className="mb-6 text-center text-3xl font-light tracking-tight md:text-5xl">
               {title} <span className="text-red-500">{titleHighlight}</span>
             </h2>
-            <p className="w-full text-foreground">{description}</p>
+            <p className="mx-auto w-full max-w-[1100px] text-justify text-foreground [text-align-last:center]">
+              {description}
+            </p>
           </div>
 
           <CapabilitiesTabs

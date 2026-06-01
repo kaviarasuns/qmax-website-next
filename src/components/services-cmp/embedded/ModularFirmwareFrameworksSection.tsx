@@ -31,7 +31,9 @@ export function ModularFirmwareFrameworksSection({
           <h2 className="mb-6 text-center text-3xl font-light tracking-tight capitalize md:text-5xl">
             {title} <span className="text-red-500">{titleHighlight}</span>
           </h2>
-          <p className="w-full !text-left">{description}</p>
+          <p className="mx-auto w-full max-w-[1100px] text-justify [text-align-last:center]">
+            {description}
+          </p>
         </div>
 
         <div className="grid grid-cols-4 gap-4 max-[1100px]:grid-cols-2 max-[640px]:grid-cols-1">
