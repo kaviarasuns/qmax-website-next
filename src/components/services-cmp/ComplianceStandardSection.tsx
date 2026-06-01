@@ -53,7 +53,6 @@ const DEFAULT_CATEGORIES: ComplianceCategory[] = [
 ];
 
 export type ComplianceStandardsSectionProps = {
-  eyebrow?: string;
   title?: string;
   description?: string;
   categories?: ComplianceCategory[];
@@ -61,7 +60,6 @@ export type ComplianceStandardsSectionProps = {
 };
 
 export function ComplianceStandardsSection({
-  eyebrow = "Compliance & Standards",
   title = "Built for regulated industries",
   description = "Qmax Systems designs to stringent global standards so hardware holds up under medical, aerospace, and industrial certification.",
   categories = DEFAULT_CATEGORIES,
@@ -74,9 +72,6 @@ export function ComplianceStandardsSection({
     >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-12 max-w-[820px]">
-          {/* <p className="mb-3.5 text-sm font-bold uppercase tracking-[0.15em] text-red-500">
-            {eyebrow}
-          </p> */}
           <h2
             id={sectionHeadingId}
             className="text-center text-3xl font-light tracking-tight text-white md:text-[45px] md:leading-[1.1] md:tracking-[-0.03em]"
