@@ -551,6 +551,8 @@ export default function AnalogDesignPage() {
         columns="three"
         sectionHeadingId="technical-advantage-analog-heading"
       />
+
+      <ComplianceStandardsSection />
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Analog & Mixed-Signal Design?"
@@ -560,7 +562,6 @@ export default function AnalogDesignPage() {
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
         ctaHref="/hardware-development-services/contact"
       />
-      <ComplianceStandardsSection />
 
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
