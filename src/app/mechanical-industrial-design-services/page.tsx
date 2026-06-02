@@ -379,6 +379,12 @@ export default function MechanicalIndustrialDesignPage() {
         ctaHref="/mechanical-industrial-design-services/contact"
       />
 
+      <ServiceCaseStudiesSection
+        eyebrow="Mechanical Portfolio"
+        studies={mechanicalIndustrialCaseStudies}
+        hideTopBorder
+      />
+
       <FAQSection
         faqItems={[
           {
@@ -423,12 +429,7 @@ export default function MechanicalIndustrialDesignPage() {
           },
         ]}
       />
-
-      <ServiceCaseStudiesSection
-        eyebrow="Mechanical Portfolio"
-        studies={mechanicalIndustrialCaseStudies}
-        hideTopBorder
-      />
+      <div className="pb-28"></div>
     </main>
   );
 }

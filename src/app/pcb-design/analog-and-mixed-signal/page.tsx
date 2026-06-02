@@ -560,19 +560,19 @@ export default function AnalogAndMixedSignalPage() {
         subtitle="Every PCB layout engagement at Qmax Systems includes a complimentary schematic review. Before a single trace is routed, our engineers analyze:"
       /> */}
 
-      <FAQSection faqItems={FAQ_ITEMS} />
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/pcb-design/contact"
-      />
-
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}
         hideTopBorder
       />
 
+      <ConsultationCtaBar
+        heading="Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/pcb-design/contact"
+      />
+
+      <FAQSection faqItems={FAQ_ITEMS} />
       <div className="pb-28"></div>
     </>
   );

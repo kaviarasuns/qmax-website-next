@@ -522,15 +522,16 @@ export default function PowerElectronicsPage() {
         titleHighlight="Power Electronics Design?"
       />
 
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our Power Electronics Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/hardware-development-services/contact"
-      />
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={powerElectronicsCaseStudies}
         hideTopBorder
+      />
+
+      <ConsultationCtaBar
+        heading="Get A Complimentary Consultation With Our Power Electronics Experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/hardware-development-services/contact"
       />
 
       <FAQSection faqItems={faqs} />

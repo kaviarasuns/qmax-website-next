@@ -506,17 +506,20 @@ export default function PowerElectronicsPage() {
         titleHighlight="Power Electronics PCB Design"
         subtitle="Every power electronics engagement includes a complimentary schematic review to identify architectural risks before layout begins."
       /> */}
-      <FAQSection faqItems={FAQ_ITEMS} />
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our Power Electronics Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/pcb-design/contact"
-      />
+
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={powerElectronicsCaseStudies}
         hideTopBorder
       />
+
+      <ConsultationCtaBar
+        heading="Get A Complimentary Consultation With Our Power Electronics Experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/pcb-design/contact"
+      />
+
+      <FAQSection faqItems={FAQ_ITEMS} />
       <div className="pb-28" />
     </>
   );

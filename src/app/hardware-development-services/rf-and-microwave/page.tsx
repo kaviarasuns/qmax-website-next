@@ -790,16 +790,17 @@ export default function RfAndMicrowavePage() {
         titleHighlight="Systems"
         description="Qmax Systems distinguishes itself through a rigorous focus on the physics of high-frequency signals."
       />
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our RF & Microwave Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/hardware-development-services/contact"
-      />
 
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={rfCaseStudies}
         hideTopBorder
+      />
+
+      <ConsultationCtaBar
+        heading="Get A Complimentary Consultation With Our RF & Microwave Experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/hardware-development-services/contact"
       />
 
       <FAQSection faqItems={faqs} />

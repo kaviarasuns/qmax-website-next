@@ -349,11 +349,6 @@ export default function IndustrialDesignServicesPage() {
         </div>
       </section> */}
 
-      {/* FAQ Section */}
-      <FAQSection
-        faqItems={industrialDesignFAQs}
-      />
-
       {/* Our Work Section */}
       <ServiceCaseStudiesSection
         eyebrow="Industrial Portfolio"
@@ -361,6 +356,10 @@ export default function IndustrialDesignServicesPage() {
         className="bg-[#fcfcfc] dark:bg-zinc-950"
         hideTopBorder
       />
+
+      {/* FAQ Section */}
+      <FAQSection faqItems={industrialDesignFAQs} />
+      <div className="pb-28"></div>
     </main>
   );
 }

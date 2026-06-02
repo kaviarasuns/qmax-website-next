@@ -663,17 +663,20 @@ export default function RFMicrowavePCBDesignPage() {
         titleHighlight="RF & Microwave PCB Design"
         subtitle="When customers engage Qmax Systems for RF PCB layout services, we perform a complimentary schematic review before layout begins. The review covers:"
       /> */}
-      <FAQSection faqItems={FAQ_ITEMS} />
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our RF & Microwave Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/pcb-design/contact"
-      />
+
       <ServiceCaseStudiesSection
         eyebrow="PCB Programs"
         studies={rfMicrowaveCaseStudies}
         hideTopBorder
       />
+
+      <ConsultationCtaBar
+        heading="Get A Complimentary Consultation With Our RF & Microwave Experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/pcb-design/contact"
+      />
+
+      <FAQSection faqItems={FAQ_ITEMS} />
       <div className="pb-28" />
     </>
   );

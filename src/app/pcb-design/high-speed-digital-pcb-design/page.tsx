@@ -594,18 +594,20 @@ export default function HighSpeedDigitalPCBDesignPage() {
       />
       {/* <ComplimentarySchematicReviewSection items={schematicReviewItems} /> */}
 
-      <FAQSection faqItems={FAQ_ITEMS} />
+      <ServiceCaseStudiesSection
+        eyebrow="PCB Programs"
+        studies={pcbCaseStudies}
+        hideTopBorder
+      />
+
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our High-Speed Digital PCB Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
         ctaHref="/pcb-design/contact"
       />
 
-      <ServiceCaseStudiesSection
-        eyebrow="PCB Programs"
-        studies={pcbCaseStudies}
-        hideTopBorder
-      />
+      <FAQSection faqItems={FAQ_ITEMS} />
+
       <div className="pb-28"></div>
     </>
   );
