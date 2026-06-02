@@ -74,9 +74,15 @@ export function ComplianceStandardsSection({
         <div className="mx-auto mb-12 max-w-[820px]">
           <h2
             id={sectionHeadingId}
-            className="text-center text-3xl font-light tracking-tight text-white md:text-[45px] md:leading-[1.1] md:tracking-[-0.03em]"
+            className="text-center text-3xl font-light tracking-tight text-white capitalize md:text-[45px] md:leading-[1.1] md:tracking-[-0.03em]"
           >
-            {title}
+            {title === "Built for regulated industries" ? (
+              <>
+                Built for regulated <span className="text-red-500">industries</span>
+              </>
+            ) : (
+              title
+            )}
           </h2>
           <p className="mt-4 text-center text-base leading-relaxed text-zinc-400 md:text-lg md:leading-7">
             {description}
@@ -87,16 +93,16 @@ export function ComplianceStandardsSection({
           {categories.map((category) => (
             <article
               key={category.title}
-              className="rounded-lg border border-zinc-800 bg-[#111114] p-8"
+              className="group rounded-lg border border-zinc-800 bg-[#111114] p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-red-500 hover:shadow-[0_0_0_1px_rgba(239,68,68,0.4),0_20px_40px_-15px_rgba(239,68,68,0.35)]"
             >
-              <h3 className="text-[22px] font-bold tracking-tight text-white">
+              <h3 className="text-[22px] font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-red-500">
                 {category.title}
               </h3>
               <ul className="mt-4 list-none">
                 {category.items.map((item) => (
                   <li
                     key={item.code}
-                    className="border-t border-zinc-800 py-2.5 text-base leading-relaxed text-zinc-300"
+                    className="border-t border-zinc-800 py-2.5 text-base leading-relaxed text-zinc-300 transition-colors duration-300 group-hover:border-red-500/30"
                   >
                     <span className="font-bold text-white">{item.code}</span>
                     {" — "}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import "../../components/hardware-design.css";
 import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
 import { ComplimentaryConsultationSection } from "@/components/services-cmp/ComplimentaryConsultationSection";
@@ -416,23 +417,23 @@ const WHY_CARDS = [
       </svg>
     ),
   },
-  {
-    title: "Engineering Depth Over Surface-Level Layout",
-    desc: "Engineers understand the full signal chain. Every layer decision is driven by electrical, thermal, and mechanical constraints, not routing convenience.",
-    icon: (
-      <svg
-        viewBox="0 0 48 48"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M14 6 L34 6 L34 18 L42 26 L34 34 L34 42 L14 42 L14 34 L6 26 L14 18 Z" />
-        <circle cx="24" cy="24" r="4" />
-      </svg>
-    ),
-  },
+  // {
+  //   title: "Engineering Depth Over Surface-Level Layout",
+  //   desc: "Engineers understand the full signal chain. Every layer decision is driven by electrical, thermal, and mechanical constraints, not routing convenience.",
+  //   icon: (
+  //     <svg
+  //       viewBox="0 0 48 48"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="2.2"
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //     >
+  //       <path d="M14 6 L34 6 L34 18 L42 26 L34 34 L34 42 L14 42 L14 34 L6 26 L14 18 Z" />
+  //       <circle cx="24" cy="24" r="4" />
+  //     </svg>
+  //   ),
+  // },
 ];
 
 const FAQ_ITEMS = [
@@ -488,7 +489,49 @@ export default function HardwareDevelopmentServicesComponentV2() {
         whyCards={WHY_CARDS}
         titleHighlight="PCB Design?"
         ctaHref="/pcb-design/contact"
+        className="pb-0 max-[900px]:pb-0"
       />
+
+      <section
+        className="bg-white px-16 pt-0 pb-24 max-[900px]:px-6 max-[900px]:pb-16"
+        aria-label="Contact founder"
+      >
+        <div className="mx-auto max-w-[1200px]">
+          <a
+            className="relative block aspect-[2396/520] w-full cursor-pointer overflow-hidden rounded-xl bg-black no-underline shadow-[0_1px_2px_rgba(16,24,40,0.06)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_6px_16px_rgba(16,24,40,0.10)]"
+            href="/pcb-design/contact"
+            aria-label="Have your questions answered — contact Saravanaperumal Annamalai, VP - SWE Engineering"
+          >
+            <Image
+              src="https://d1yetprhniwywz.cloudfront.net/v2/Q.png"
+              alt=""
+              fill
+              sizes="(max-width: 900px) 100vw, 1200px"
+              className="object-cover object-center"
+              aria-hidden
+            />
+            <div className="pointer-events-none absolute inset-0 z-[2] flex items-center justify-between px-[5%] py-6 max-[900px]:px-5 max-[900px]:py-4">
+              <div className="flex max-w-[54%] flex-col gap-3 max-[900px]:max-w-[62%] max-[900px]:gap-2">
+                <h2 className="text-[clamp(1rem,2.8vw,2.35rem)] font-semibold leading-[1.12] tracking-[0.2px] text-white [text-shadow:_0_1px_4px_rgba(0,0,0,0.45)]">
+                  Have Your Questions Answered!
+                </h2>
+                <p className="text-[clamp(0.5rem,1.15vw,0.9rem)] uppercase leading-[1.35] tracking-[0.1em] text-white/95 [text-shadow:_0_1px_3px_rgba(0,0,0,0.4)]">
+                  Send your requirements and get an assessment
+                </p>
+                <span className="mt-0.5 inline-flex w-fit rounded-md bg-white px-5 py-2.5 text-[clamp(0.7rem,1.25vw,1.05rem)] font-bold tracking-[0.2px] text-[#0a0a0a] shadow-[0_2px_8px_rgba(0,0,0,0.18)] max-[900px]:px-4 max-[900px]:py-2">
+                  Ask a Question
+                </span>
+              </div>
+              <div className="absolute bottom-4 right-[5%] shrink-0 text-right text-[clamp(0.7rem,1.35vw,1.125rem)] font-semibold leading-[1.3] tracking-[0.2px] text-white [text-shadow:_0_1px_4px_rgba(0,0,0,0.45)] max-[900px]:right-5">
+                <span className="block font-bold">
+                  Saravanabhavan Chandrasekar
+                </span>
+                <span className="block font-normal">CEO</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
 
       {/* PARTNERSHIPS */}
       {/* <PartnershipsSection /> */}
@@ -508,7 +551,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
       {/* <FeaturedArticlesSection /> */}
 
       {/* FAQ */}
-      <ComplimentaryConsultationSection variant="pcb" />
+      {/* <ComplimentaryConsultationSection variant="pcb" /> */}
       <FAQSection faqItems={FAQ_ITEMS} />
       <div className="pb-28"></div>
 

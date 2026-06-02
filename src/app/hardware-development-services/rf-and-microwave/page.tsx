@@ -127,7 +127,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Precision PCB layout engineered for high-frequency performance, controlled impedance, and RF/digital isolation across complex multi-layer stackups.",
     intro:
-      "We provide a vertical suite of engineering services tailored to modern communication and industrial RF needs — from stackup definition through validated layout release.",
+      "Qmax Systems provides a vertical suite of engineering services tailored to modern communication and industrial RF needs — from stackup definition through validated layout release. Qmax Systems designs RF PCBs with controlled impedance — 50 Ohm single-ended and 100 Ohm differential — on high-frequency substrates including Rogers 4350B, Taconic, and Panasonic Megtron 6. Qmax Systems engineers optimize multi-layer stackups and apply microstrip, stripline, and coplanar waveguide (CPW) routing with strict RF-to-digital isolation, from stackup definition through validated layout release.",
     points: [
       "Multi-layer stackup optimization for controlled impedance (50 Ohm single-ended, 100 Ohm differential).",
       "Utilization of high-frequency substrates (Rogers, Taconic, Megtron 6).",
@@ -156,7 +156,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Complete RF front-end design from low-noise amplifiers to power amplifiers and precision filter integration.",
     intro:
-      "End-to-end RFFE engineering covering amplification, filtering, and impedance matching for 4G/5G and beyond.",
+      "Qmax Systems designs complete RF front-ends covering Low Noise Amplifiers (LNAs) and Power Amplifiers (PAs) for 4G LTE and 5G NR infrastructure. Qmax Systems integrates SAW, BAW, and discrete LC filters for harmonic suppression and uses Smith chart-based matching networks to maximize power transfer, holding VSWR below 1.5:1 across the operating band for private 5G and IoT radios.",
     points: [
       {
         boldLead: "LNA and PA Design",
@@ -193,7 +193,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Full-wave 3D electromagnetic simulation and link budget analysis driving every design decision.",
     intro:
-      "Simulation-first methodology ensuring RF performance is validated before a single trace is routed.",
+      "Qmax Systems runs a simulation-first methodology, validating RF performance with full-wave 3D electromagnetic simulation before the first trace is routed. Qmax Systems engineers perform link budget analysis with range estimation and thermal modeling for high-power RF components, feeding exact routing constraints into layout so designs meet signal-integrity and regulatory targets on first build.",
     points: [
       "Full-wave 3D electromagnetic simulation.",
       "Link budget analysis and range estimation.",
@@ -207,7 +207,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 const WHY_CARDS = [
   {
     title: "Manufacturing Readiness",
-    desc: "Our designs are optimized for DFM (Design for Manufacturing) and DFT (Design for Test).",
+    desc: "Qmax Systems optimizes designs for DFM (Design for Manufacturing) and DFT (Design for Test).",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -224,7 +224,7 @@ const WHY_CARDS = [
   },
   {
     title: "EMI/EMC Mitigation",
-    desc: "Proactive design for Radiated Emissions (RE) and Conducted Emissions (CE) optimization.",
+    desc: "Qmax Systems designs proactively for Radiated Emissions (RE) and Conducted Emissions (CE) optimization.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -241,7 +241,7 @@ const WHY_CARDS = [
   },
   {
     title: "Reduced Time-to-Market",
-    desc: "Proven reference designs and modular blocks accelerate the development cycle — backed by RF, high-performance PCB vendor relationships, and silicon vendor partnerships.",
+    desc: "Qmax Systems accelerates the development cycle with proven reference designs and modular blocks - backed by high-performance PCB vendor relationships and silicon vendor partnerships.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -258,7 +258,7 @@ const WHY_CARDS = [
   },
   {
     title: "In-House Validation",
-    desc: "Utilization of advanced instrumentation, including the Rohde & Schwarz CMW500, high-bandwidth oscilloscopes, and spectrum analyzers.",
+    desc: "Qmax Systems validates designs on advanced instrumentation, including the Rohde & Schwarz CMW500, high-bandwidth oscilloscopes, and spectrum analyzers.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -275,7 +275,7 @@ const WHY_CARDS = [
   },
   {
     title: "Ground Loop Elimination",
-    desc: "Strategic partitioning of analog, digital, and RF grounds to prevent parasitic interference.",
+    desc: "Qmax Systems partitions analog, digital, and RF grounds to prevent parasitic interference.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -294,7 +294,7 @@ const WHY_CARDS = [
   },
   {
     title: "Platform Versatility",
-    desc: "Deep experience with Qualcomm, MediaTek, Nordic, and TI wireless platforms.",
+    desc: "Qmax Systems has deep experience with Qualcomm, MediaTek, Nordic, and TI wireless platforms.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -310,12 +310,46 @@ const WHY_CARDS = [
       </svg>
     ),
   },
+  {
+    title: "Noise Reduction & Signal Conditioning",
+    desc: "Qmax Systems applies advanced techniques for lowering the noise floor in sensitive receiver chains, with strategic domain partitioning to prevent cross-talk and desensitization.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M8 24h8l4-10 8 20 4-10h8" />
+      </svg>
+    ),
+  },
+  {
+    title: "Domain Expertise",
+    desc: "With decades of experience in high-speed digital and RF co-existence, Qmax Systems engineers bring deep, proven knowledge to every design challenge across commercial, industrial, medical, and defense applications.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M24 6l16 8v12c0 10-7 14-16 16C15 40 8 36 8 26V14l16-8z" />
+        <path d="M24 18v12" />
+        <path d="M18 24h12" />
+      </svg>
+    ),
+  },
 ];
 
 const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   {
     title: "Signal Integrity (SI)",
-    body: "Mitigation of skin effect losses, copper roughness impact, and via-stub resonance at frequencies exceeding 24 GHz.",
+    body: "Qmax Systems mitigates skin-effect losses, copper-roughness impact, and via-stub resonance at frequencies exceeding 24 GHz.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -332,7 +366,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Noise Floor Reduction",
-    body: "Strategic partitioning of analog, digital, power, and RF domains to prevent cross-talk and desensitization.",
+    body: "Qmax Systems partitions analog, digital, power, and RF domains to prevent cross-talk and receiver desensitization.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -349,7 +383,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "RF Generators",
-    body: "Design of high-power HF/LF generators (up to 1 kW) for plasma etching, thin-film deposition, and medical ablation.",
+    body: "Qmax Systems designs high-power RF generators - including 1 kW HF and 500W LF configurations - for plasma etching, thin-film deposition, and medical ablation.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -366,7 +400,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "WiFi 6/6E and WiFi 7",
-    body: "Implementation of High-Efficiency (HE) and Extremely High Throughput (EHT) standards. Expertise in 4×4 and 8×8 MU-MIMO antenna configurations and OFDMA sub-carrier mapping.",
+    body: "Qmax Systems implements High-Efficiency (HE) and Extremely High Throughput (EHT) standards, with 4x4 and 8x8 MU-MIMO antenna configurations and OFDMA sub-carrier mapping.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -385,7 +419,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Cellular (4G LTE / 5G NR)",
-    body: "Design of RFFE involving Low Noise Amplifiers (LNA) and Power Amplifiers (PA). We manage complex carrier aggregation and beamforming architectures for sub-6 GHz and mmWave bands.",
+    body: "Qmax Systems designs RFFE with Low Noise Amplifiers (LNA) and Power Amplifiers (PA), managing carrier aggregation and beamforming architectures for sub-6 GHz and mmWave bands.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -403,7 +437,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "LPWAN and Short Range",
-    body: "Specialized low-power optimization for LoRaWAN, Sigfox, and BLE 5.4. We focus on maximizing battery life through rigorous sleep-current profiling and impedance matching at the antenna feed point.",
+    body: "Qmax Systems optimizes LoRaWAN, Sigfox, and BLE 5.4 for low power, maximizing battery life through sleep-current profiling and impedance matching at the antenna feed point.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -420,7 +454,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Industrial Sensing",
-    body: "Development of microwave-based sensors for non-destructive testing (NDT), including high-accuracy moisture measurement and material density analysis using phase-shift detection.",
+    body: "Qmax Systems develops microwave-based sensors for non-destructive testing (NDT), including high-accuracy moisture measurement and material-density analysis using phase-shift detection.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -438,7 +472,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Substrate Selection",
-    body: "Expert utilization of low-loss materials including Rogers 4350B/3003, Panasonic Megtron 6, and Tachyon 100G to minimize dissipation factors — with surface finish and skin-effect analysis for minimal I²R losses.",
+    body: "Qmax Systems applies expert utilization of low-loss materials including Rogers 4350B/3003, Panasonic Megtron 6, and Tachyon 100G to minimize dissipation factor - with surface-finish selection, precise surface-roughness calculations, and skin-effect analysis to ensure minimal I2R losses.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -457,7 +491,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "EMI/EMC Pre-compliance",
-    body: "Early-stage simulation and internal testing to address Radiated Emissions (RE) and Conducted Emissions (CE). We specialize in ground loop elimination and common-mode choke selection.",
+    body: "Qmax Systems runs early-stage simulation and internal testing for Radiated Emissions (RE) and Conducted Emissions (CE), specializing in ground-loop elimination and common-mode choke selection.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -474,7 +508,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Power Electronics Integration",
-    body: "Managing thermal dissipation and EMI shielding in high-density power RF modules.",
+    body: "Qmax Systems manages thermal dissipation and EMI shielding in high-density power RF modules.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -492,7 +526,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Impedance Matching",
-    body: "Utilization of Smith Charts for complex conjugate matching, ensuring VSWR < 1.5:1 across operational bandwidths.",
+    body: "Qmax Systems uses Smith Charts for complex conjugate matching, holding VSWR < 1.5:1 across operational bandwidths.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -510,7 +544,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Precision Layout",
-    body: "Implementation of controlled impedance traces with strict adherence to phase matching and propagation delay requirements.",
+    body: "Qmax Systems implements controlled-impedance traces with strict adherence to phase matching and propagation-delay requirements.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -529,184 +563,172 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
 
 const faqs = [
   {
-    q: "What frequency ranges do your RF services cover?",
-    a: "We cover the spectrum from Low Frequency (LF) and High Frequency (HF) up to Millimeter Wave (mmWave) bands (24GHz to 77GHz+).",
+    q: "What frequency ranges do Qmax Systems RF services cover?",
+    a: "Qmax Systems covers RF and microwave design from Low Frequency (LF) and High Frequency (HF) bands through Millimeter Wave (mmWave) from 24 GHz to 77 GHz and above. This range spans sub-GHz LPWAN, 2.4/5/6 GHz WiFi, sub-6 GHz 5G NR, and automotive 77 GHz radar. Qmax Systems selects substrates and stackups for each band, using FR-4 below 1 GHz and Rogers 4350B or Megtron 6 above it.",
   },
   {
-    q: "Can you assist with WiFi 6/6E and WiFi 7 transitions?",
-    a: "Yes. We have extensive experience with 4x4 MIMO configurations and the latest tri-band architectures using advanced SoCs.",
+    q: "Can Qmax Systems assist with WiFi 6/6E and WiFi 7 transitions?",
+    a: "Yes. Qmax Systems designs WiFi 6, 6E, and WiFi 7 hardware, including 4x4 and 8x8 MU-MIMO configurations and concurrent tri-band (2.4/5/6 GHz) architectures. Qmax Systems implements 320 MHz channels, 4096-QAM, and Multi-Link Operation (MLO) on current Qualcomm and MediaTek SoCs, managing OFDMA sub-carrier mapping and RF isolation between radios to sustain throughput in dense deployments.",
   },
   {
-    q: "How do you handle EMI/EMC issues in compact designs?",
-    a: "We utilize specialized shielding, component partitioning, and multi-layer PCB stackups to mitigate electromagnetic interference at the source.",
+    q: "How does Qmax Systems handle EMI/EMC issues in compact designs?",
+    a: "Qmax Systems controls EMI/EMC at the source through board-level shielding cans, analog/digital/RF domain partitioning, and multi-layer stackups with continuous ground reference planes. Qmax Systems engineers run pre-compliance scans with near-field probes to locate radiated and conducted emission hotspots early, then add common-mode chokes and filtering before formal FCC Part 15 or CE testing.",
   },
   {
-    q: "Do you provide antenna design and tuning services?",
-    a: "We offer custom PCB antenna design, antenna selection, and impedance matching to ensure optimal radiation patterns and efficiency.",
+    q: "Does Qmax Systems provide antenna design and tuning services?",
+    a: "Yes. Qmax Systems designs custom PCB antennas, selects chip and external antennas, and tunes impedance matching networks for optimal radiation pattern and efficiency. Qmax Systems engineers use Smith chart-based L, Pi, and T matching to hold VSWR below 1.5:1 at the antenna feed point and validate radiation performance on a vector network analyzer (VNA) against S11 targets.",
   },
   {
-    q: "What tools do you use for RF simulation?",
-    a: "We utilize industry-standard EDA tools for schematic capture, layout, and 3D electromagnetic field simulation.",
+    q: "What tools does Qmax Systems use for RF simulation?",
+    a: "Qmax Systems runs RF simulation using full-wave 3D electromagnetic solvers including HFSS, alongside circuit/EDA tools for schematic capture, controlled-impedance layout, and link-budget analysis. Qmax Systems engineers use these tools to simulate trace geometry, matching networks, and antenna structures before routing - establishing exact width, gap, and length-matching constraints so first-build hardware meets signal-integrity and VSWR targets without iterative respins.",
   },
   {
     q: "Can Qmax Systems help with 4G/5G private network hardware?",
-    a: "Yes, we design RF front-ends, including LNAs and Power Amplifiers, specifically for cellular infrastructure.",
+    a: "Yes. Qmax Systems designs RF front-ends - including Low Noise Amplifiers (LNAs) and Power Amplifiers (PAs) - for 4G LTE and private 5G NR network hardware. Qmax Systems handles sub-6 GHz and mmWave bands, carrier aggregation, and beamforming front-ends, integrating SAW/BAW filtering and Smith chart matching to meet sensitivity and linearity targets for small-cell and CBRS deployments.",
   },
   {
-    q: "What is your experience with high-power RF?",
-    a: "We have successfully developed RF generators up to 1KW for industrial plasma applications, focusing on thermal management and power stability.",
+    q: "What is Qmax Systems' experience with high-power RF?",
+    a: "Qmax Systems has engineered RF generators in both 1 kW HF and 500W LF configurations for industrial plasma applications including etching, thin-film deposition, and medical ablation. Qmax Systems engineers focus on 13.56 MHz ISM-band power delivery, automatic impedance matching to dynamic plasma loads, thermal management, and high-VSWR protection using directional couplers and foldback circuitry to safeguard the power amplifier.",
   },
   {
-    q: "Do you support LoRa and other Long Range LPWAN protocols?",
-    a: "Yes, we have designed several LoRa-based devices for industrial and agricultural sensing.",
+    q: "Does Qmax Systems support LoRa and other Long Range LPWAN protocols?",
+    a: "Yes. Qmax Systems designs LoRaWAN, Sigfox, and other LPWAN devices for industrial and agricultural sensing. Qmax Systems engineers tune spreading factor against receiver sensitivity and select high-gain antennas to achieve typical urban link ranges of 2-5 km, while profiling sleep current and matching the antenna feed point to maximize multi-year battery life.",
   },
   {
-    q: "How do you ensure ground loop elimination?",
-    a: "We implement star-grounding, split planes, and differential signaling where appropriate to prevent common-mode noise.",
+    q: "How does Qmax Systems ensure ground loop elimination?",
+    a: "Qmax Systems eliminates ground loops with star-grounding, controlled split planes, and differential signaling between circuit domains. Qmax Systems engineers partition analog, digital, power, and RF grounds with single-point connections to block common-mode noise coupling, and validate the strategy in pre-compliance testing to confirm low conducted emissions before formal certification.",
   },
   {
-    q: "What in-house testing capabilities do you have?",
-    a: "Our lab is equipped with the R&S CMW500, spectrum analyzers, and high-speed oscilloscopes for comprehensive signal characterization.",
+    q: "What in-house testing capabilities does Qmax Systems have?",
+    a: "Qmax Systems operates an in-house RF lab equipped with the Rohde & Schwarz CMW500 radio communication tester, spectrum analyzers, vector network analyzers, and high-bandwidth oscilloscopes. Qmax Systems engineers run RF conformance, signal-integrity, and EMI/EMC pre-compliance validation on this equipment, measuring EVM, S-parameters, and emissions before designs proceed to accredited certification testing.",
   },
   {
-    q: "Can you optimize a design for low power consumption?",
-    a: "Our work on BLE reference designs for semiconductor companies demonstrates our ability to maximize battery life through hardware and firmware optimization.",
+    q: "Can Qmax Systems optimize a design for low power consumption?",
+    a: "Yes. Qmax Systems optimizes wireless designs for low power consumption through hardware and firmware co-design, demonstrated in ultra-low-power BLE reference designs created for global semiconductor leaders. Qmax Systems engineers profile sleep and active current, tune duty cycling and RF output power, and match the antenna feed point to extend battery life in BLE 5.4 and LPWAN devices.",
   },
   {
-    q: "Do you handle mmWave sensor integration?",
-    a: "Yes, we have implemented several mmWave sensors for proximity and velocity detection in industrial environments.",
+    q: "Does Qmax Systems handle mmWave sensor integration?",
+    a: "Yes. Qmax Systems integrates mmWave sensors for proximity, velocity, and presence detection in industrial environments, operating in the 24 GHz to 77 GHz+ range. Qmax Systems engineers manage extreme trace-geometry sensitivity on low-loss substrates such as Rogers 4350B, where minor width variation causes impedance discontinuity, and validate radiation and detection performance before release.",
   },
   {
-    q: "What materials do you recommend for Microwave PCBs?",
-    a: "Depending on the frequency and loss budget, we typically specify Rogers, Taconic, or Panasonic Megtron series materials.",
+    q: "What materials does Qmax Systems recommend for Microwave PCBs?",
+    a: "Qmax Systems specifies microwave PCB substrates by frequency and loss budget. Below 1 GHz, FR-4 is adequate; above it, Qmax Systems engineers select low-loss laminates such as Rogers 4350B/3003, Panasonic Megtron 6, Taconic, or Tachyon 100G for their low dissipation factor (tan delta). Material choice is paired with surface-finish and skin-effect analysis to minimize I2R loss at high frequency.",
   },
   {
-    q: "Can you help with FCC/CE certification?",
-    a: "While we are a design house, we perform extensive pre-compliance testing to help ensure your product passes official certification on the first attempt.",
+    q: "Can Qmax Systems help with FCC/CE certification?",
+    a: "Qmax Systems is a design house that performs extensive in-house pre-compliance testing to help products pass FCC Part 15 and CE certification on the first attempt. Qmax Systems engineers measure radiated and conducted emissions with near-field probes and spectrum analyzers, fixing emission sources before accredited lab testing - though final certification is issued by an accredited test house.",
   },
   {
-    q: "What information is needed to start an RF project?",
-    a: "Ideally, we require the link budget, required frequency bands, power output targets, and any mechanical constraints regarding PCB size or enclosure.",
+    q: "What information does Qmax Systems need to start an RF project?",
+    a: "To start an RF project, Qmax Systems needs the target frequency bands, link budget, power output targets, and any mechanical constraints on PCB size or enclosure. With these inputs, Qmax Systems engineers define the stackup, substrate, and matching strategy up front, then validate the approach in simulation before layout to reduce respins and protect the schedule.",
   },
   {
-    q: "How does WiFi 7 improve throughput compared to WiFi 6?",
-    a: "WiFi 7 achieves speeds up to 46 Gbps by utilizing 320 MHz channels and 4096-QAM. WiFi 6 is limited to 160 MHz and 1024-QAM. WiFi 7 also introduces Multi-Link Operation (MLO), allowing devices to transmit data across 2.4, 5, and 6 GHz simultaneously to reduce latency and congestion.",
+    q: "Does Qmax Systems help with component sourcing and BOM optimization?",
+    a: "Yes. Qmax Systems optimizes the bill of materials (BOM) by balancing RF performance, cost, and lifecycle availability. Qmax Systems engineers proactively identify second-source options for critical RF components such as amplifiers, SAW/BAW filters, and SoCs, reducing supply risk and end-of-life exposure while holding the design to its signal-integrity and compliance targets.",
   },
   {
-    q: "What are the primary challenges in 5G mmWave PCB design?",
-    a: "High atmospheric attenuation and extreme sensitivity to trace geometry are the critical hurdles. At mmWave frequencies (24GHz+), even a 0.1mm deviation in trace width can cause impedance mismatches. We use low-loss substrates and 3D EM simulation to mitigate these parasitic effects.",
+    q: "How does Qmax Systems approach RF design for medical vs military applications?",
+    a: "Qmax Systems tailors RF design to each domain's governing standards. For medical devices (IEC 60601), Qmax Systems engineers prioritize wireless coexistence and patient safety; for defense electronics (MIL-STD-461), they prioritize robustness and interference resilience. Qmax Systems adapts shielding, redundancy, and validation strategy to the target environment and certification regime rather than applying a single fixed approach.",
   },
   {
-    q: "How do you prevent desensitization (Desense) in multi-radio IoT devices?",
-    a: "We reduce Desense through high-rejection BAW filters and strategic spatial isolation. By partitioning the RF front-end and optimizing the PDN, we prevent harmonics from digital clocks or LTE transmitters from raising the noise floor of sensitive WiFi or GPS receivers.",
+    q: "How does Qmax Systems leverage WiFi 7 to improve throughput over WiFi 6?",
+    a: "Qmax Systems builds WiFi 7 hardware that reaches up to 46 Gbps using 320 MHz channels and 4096-QAM, versus WiFi 6's 160 MHz and 1024-QAM ceiling. Qmax Systems also implements Multi-Link Operation (MLO) for simultaneous multi-band transmission, designing the RF isolation and stackup needed to sustain these rates across concurrent 2.4/5/6 GHz radios.",
   },
   {
-    q: "Why is MU-MIMO essential for enterprise WiFi networks?",
-    a: "MU-MIMO allows an access point to communicate with multiple clients simultaneously rather than sequentially. In high-density environments, this reduces airtime fairness issues. We optimize antenna arrays for low Envelope Correlation Coefficient (ECC) to maintain distinct spatial streams.",
+    q: "What are the primary challenges Qmax Systems addresses in 5G mmWave PCB design?",
+    a: "Qmax Systems addresses two primary 5G mmWave PCB challenges: high atmospheric attenuation and extreme sensitivity to trace geometry. At mmWave frequencies, Qmax Systems engineers note that even minor trace-width variation causes significant impedance discontinuity, so designs use low-loss substrates such as Rogers 4350B, tight etch tolerance, and full-wave EM simulation to control loss and matching.",
   },
   {
-    q: "What is the maximum range of a LoRaWAN link in an urban environment?",
-    a: "Typical urban range is 2-5 km, depending on link budget and building density. We optimize range by selecting high-gain antennas and tuning spreading factor to balance data rate against receiver sensitivity.",
+    q: "How does Qmax Systems prevent desensitization (Desense) in multi-radio IoT devices?",
+    a: "Qmax Systems reduces desensitization (Desense) in multi-radio IoT devices with high-rejection BAW filters and strategic spatial isolation between antennas. Qmax Systems engineers partition RF sections and manage frequency planning so harmonics and spurs from one radio fall outside the receive band of another, minimizing inter-radio interference in dense WiFi/BLE/cellular coexistence.",
   },
   {
-    q: "How do you protect a 1kW RF generator from high VSWR?",
-    a: "We implement high-speed directional couplers and foldback circuitry. When plasma loads become unmatched, reflected power can damage the PA. Our designs detect these shifts quickly and reduce output power until impedance is stabilized.",
+    q: "Why does Qmax Systems use MU-MIMO for enterprise WiFi networks?",
+    a: "Qmax Systems uses MU-MIMO in enterprise WiFi designs because it lets an access point serve multiple clients simultaneously instead of sequentially, sharply raising capacity in high-density environments. Qmax Systems engineers implement 4x4 and 8x8 MU-MIMO with careful antenna spacing and RF isolation so beamformed streams stay separable under heavy client load.",
   },
   {
-    q: "Why is 13.56 MHz a standard frequency for industrial plasma generators?",
-    a: "13.56 MHz is an assigned ISM band that offers a practical balance between ion energy and plasma density. It enables efficient power delivery while keeping interference manageable when the matching network is tuned for chamber impedance.",
+    q: "What LoRaWAN link range does Qmax Systems achieve in an urban environment?",
+    a: "Qmax Systems achieves typical urban LoRaWAN link ranges of 2-5 km, depending on link budget and building density. Qmax Systems engineers extend range by selecting high-gain antennas and tuning the spreading factor to balance data rate against receiver sensitivity, while matching the antenna feed point to preserve link margin in cluttered RF environments.",
   },
   {
-    q: "What is the best PCB substrate for high-power RF applications?",
-    a: "Rogers 4350B and Megtron 6 are common standards due to low dissipation factor (tan delta). Standard FR-4 absorbs more RF energy, causing dielectric heating and higher signal loss.",
+    q: "How does Qmax Systems protect a 1 kW RF generator from high VSWR?",
+    a: "Qmax Systems protects 1 kW RF generators from high VSWR with high-speed directional couplers and foldback circuitry. When plasma loads become unmatched, reflected power can damage the power amplifier; Qmax Systems engineers detect these impedance shifts in real time and reduce output power until the matching network re-stabilizes the load, preventing PA failure during process transients.",
   },
   {
-    q: "How do you manage thermal dissipation in GaN-on-SiC power amplifiers?",
-    a: "We use copper-filled thermal vias and embedded coins to pull heat directly from the die. GaN devices operate at high power density, so low-resistance thermal paths to a heatsink are essential for safe junction temperatures.",
+    q: "Why does Qmax Systems use 13.56 MHz for industrial plasma generators?",
+    a: "Qmax Systems designs industrial plasma generators at 13.56 MHz because it is an assigned ISM band that balances ion energy and plasma density. Qmax Systems engineers use this frequency for efficient power delivery while keeping interference manageable, provided the matching network is tuned to the chamber impedance - the basis of stable etch and deposition processes.",
   },
   {
-    q: "What is the role of a matching network in an RF system?",
-    a: "A matching network maximizes power transfer by aligning source and load impedance to 50 Ohm. Using Smith chart synthesis, we design LC or microstrip networks to reduce reflections and improve efficiency.",
+    q: "What PCB substrate does Qmax Systems use for high-power RF applications?",
+    a: "Qmax Systems specifies Rogers 4350B and Panasonic Megtron 6 for high-power RF applications because of their low dissipation factor (tan delta). Standard FR-4 has too high a loss tangent above 1 GHz for efficient power transfer, so Qmax Systems engineers reserve it for sub-1 GHz sections and route high-power, high-frequency paths on low-loss laminate.",
   },
   {
-    q: "Why did my product fail FCC Part 15 Radiated Emissions?",
-    a: "Failures are often caused by unintended antennas such as unshielded cables or poorly bypassed traces. We use near-field probes to identify leakage and apply common-mode chokes or shielding to suppress offending harmonics.",
+    q: "How does Qmax Systems manage thermal dissipation in GaN-on-SiC power amplifiers?",
+    a: "Qmax Systems manages GaN-on-SiC power amplifier heat with copper-filled thermal vias and embedded copper coins that pull heat directly from the die. Because GaN devices run at high junction temperatures, Qmax Systems engineers treat die-to-heatsink thermal resistance as a primary design constraint, modeling it alongside the RF path to keep junction temperature within reliable limits.",
   },
   {
-    q: "What is the difference between pre-compliance and full certification?",
-    a: "Pre-compliance is an engineering phase used to find and fix issues early. Full certification is the final formal testing required for market access. We use pre-compliance to reduce risk before accredited testing.",
+    q: "How does Qmax Systems use a matching network in an RF system?",
+    a: "Qmax Systems uses a matching network to maximize power transfer by aligning source and load impedance to 50 Ohm. Using Smith Charts, Qmax Systems engineers design L, Pi, or T networks that hold VSWR below 1.5:1 across the operating bandwidth, reducing reflected power and protecting amplifier output in both communication and high-power RF systems.",
   },
   {
-    q: "How can I reduce Conducted Emissions (CE) in a switching power supply?",
-    a: "A tuned Pi-filter at the power input is typically effective. We also apply ground-loop control and snubbers on switching FETs to reduce high-frequency ringing that couples into power lines.",
+    q: "Why do products fail FCC Part 15 Radiated Emissions, and how does Qmax Systems prevent it?",
+    a: "Qmax Systems finds that FCC Part 15 radiated-emission failures are usually caused by unintended antennas - unshielded cables or poorly bypassed traces that radiate. Qmax Systems engineers run pre-compliance testing with near-field probes to locate emission sources before formal testing, then add shielding, filtering, and bypassing to bring the design under the Part 15 limit on the first official attempt.",
   },
   {
-    q: "What are FCC requirements for modular approval vs full integration?",
-    a: "Modular approval can use a pre-certified radio, but products still require unintentional radiator testing. Full on-board radio integration requires stricter intentional radiator certification.",
+    q: "What is the difference between pre-compliance and full certification at Qmax Systems?",
+    a: "Qmax Systems treats pre-compliance as the engineering phase that finds and fixes EMI/EMC issues early, while full certification is the final formal testing required for market access. Qmax Systems engineers run pre-compliance in-house with spectrum analyzers and near-field probes to reduce risk and cost before designs reach an accredited test house for FCC or CE certification.",
   },
   {
-    q: "How do you shield sensitive analog signals from RF interference?",
-    a: "We use Faraday shielding, differential signaling, and internal stripline routing between ground planes to isolate sensitive traces from high-power RF fields.",
+    q: "How does Qmax Systems reduce Conducted Emissions (CE) in a switching power supply?",
+    a: "Qmax Systems reduces conducted emissions (CE) in switching power supplies with a tuned Pi-filter at the power input. Qmax Systems engineers also apply ground-loop control and add snubbers across switching FETs to damp high-frequency ringing that would otherwise couple onto power lines, validating the result in pre-compliance before formal CE testing.",
   },
   {
-    q: "What is controlled impedance and why is it critical for RF?",
-    a: "Controlled impedance maintains target line impedance, typically 50 Ohm, to reduce reflections. Changes in trace geometry or stubs cause VSWR spikes, lower signal quality, and potential component stress.",
+    q: "What is controlled impedance, and why does Qmax Systems treat it as critical for RF?",
+    a: "Controlled impedance maintains a target line impedance, typically 50 Ohm, to minimize reflections. Qmax Systems treats it as critical because impedance changes cause signal reflections that degrade receiver sensitivity and raise emissions. Qmax Systems engineers achieve it through defined trace width, dielectric height, and stackup control, verified against the substrate's dielectric constant during layout.",
   },
   {
-    q: "How does skin effect impact RF PCB layout?",
-    a: "At higher frequencies, current crowding near the copper surface increases effective resistance. We address this with suitable trace geometry and surface finish choices to reduce loss.",
+    q: "How does Qmax Systems account for skin effect in RF PCB layout?",
+    a: "Qmax Systems accounts for skin effect, where high-frequency current crowds near the copper surface and raises effective resistance. Qmax Systems engineers specify surface finish, conductor roughness, and trace geometry to minimize I2R loss, choosing smoother copper and low-loss laminate such as Megtron 6 on high-frequency paths where roughness-driven loss would otherwise dominate.",
   },
   {
-    q: "What is the fiber weave effect in high-speed RF boards?",
-    a: "Fiber weave can create differential timing skew because one trace may travel over resin while the other travels over glass. We mitigate this using routing strategies and spread-weave materials.",
+    q: "What does Qmax Systems use a VNA (Vector Network Analyzer) for?",
+    a: "Qmax Systems uses a vector network analyzer (VNA) to measure S-parameters that characterize impedance match and transmission behavior. Qmax Systems engineers read S11 to quantify reflected power and S21 to quantify transmitted power, using these measurements to verify matching networks, filters, and antennas against VSWR and insertion-loss targets during validation.",
   },
   {
-    q: "Why should I avoid via stubs in high-frequency designs?",
-    a: "Via stubs can behave as resonant discontinuities and reflect energy. For high-frequency channels, we specify back-drilling or blind/buried vias to remove unused stub length.",
+    q: "What is EVM (Error Vector Magnitude), and why does Qmax Systems track it for WiFi?",
+    a: "EVM (Error Vector Magnitude) is a measure of modulation quality, and Qmax Systems tracks it because higher EVM means noisier constellation points. Qmax Systems engineers monitor EVM on the CMW500 because degraded EVM forces lower modulation schemes - dropping from 4096-QAM toward 1024-QAM - which reduces WiFi throughput. Tight EVM keeps high-order modulation and peak data rates intact.",
   },
   {
-    q: "How do you calculate the link budget for a wireless product?",
-    a: "Link budget equals transmit power plus antenna gain minus path loss minus fade margin. We use this to estimate real-world range and verify receiver sensitivity margins.",
+    q: "What is the difference between FCC Modular Approval and Full Integration?",
+    a: "FCC Modular Approval lets a product use a pre-certified radio module, but the host device still requires testing for unintentional radiation. Full Integration - where the radio is designed on-board - requires the stricter Intentional Radiator certification under FCC Part 15C. Qmax Systems engineers design for both paths, selecting the appropriate certification strategy based on the product's radio architecture, schedule, and cost constraints.",
   },
   {
-    q: "What is a VNA (Vector Network Analyzer) used for?",
-    a: "A VNA measures S-parameters for impedance match and transmission behavior. It quantifies how much power is reflected (S11) versus transmitted (S21).",
+    q: "What is the Fiber Weave Effect and how does Qmax Systems address it?",
+    a: "The Fiber Weave Effect is a timing skew caused by uneven glass fiber distribution in a PCB substrate. If one trace sits on a fiber bundle and its pair sits on resin, they travel at different speeds, causing impedance variation and signal skew. Qmax Systems engineers address this using zig-zag routing, spread-weave glass fabrics, or low-Dk filled laminates on high-frequency differential pairs to equalize propagation delay and maintain controlled impedance.",
   },
   {
-    q: "What is EVM (Error Vector Magnitude) and why does it matter for WiFi?",
-    a: "EVM is a metric of modulation quality. Higher EVM indicates noisier constellation points, which can force lower modulation schemes and reduce throughput.",
+    q: "Why should via stubs be avoided in high-frequency RF designs?",
+    a: "Via stubs act as resonant stubs that trap and reflect RF energy at specific frequencies, causing impedance discontinuities and signal loss. In designs above 10 GHz, Qmax Systems engineers eliminate via stubs using back-drilling to remove the unused barrel portion, or by specifying blind and buried vias - ensuring a clean, low-reflection signal path across mmWave and high-speed digital layers.",
   },
   {
-    q: "How do you perform RF near-field vs far-field testing?",
-    a: "Near-field probing helps identify local PCB noise sources. Far-field testing, typically in an anechoic environment, measures actual radiation behavior and patterns.",
+    q: "How does Qmax Systems perform RF near-field versus far-field testing?",
+    a: "Qmax Systems uses near-field probing in its in-house lab to locate specific PCB noise sources - identifying radiating traces, unshielded cables, or coupling paths at the board level. Far-field testing, conducted in an anechoic chamber at an accredited test house, measures the actual radiation pattern and power of the finished device as it will behave in the real world, providing the data required for FCC and CE certification.",
   },
   {
-    q: "Can you simulate an antenna's performance before building the PCB?",
-    a: "Yes. We use 3D EM simulation to model gain, bandwidth, matching, and radiation patterns before physical prototyping.",
+    q: "What is TRP (Total Radiated Power) and why does it matter for device testing?",
+    a: "TRP (Total Radiated Power) measures total power emitted by an antenna across all directions. Unlike a simple conducted cable test, TRP captures both antenna efficiency and the impact of the device enclosure on signal strength - making it the accurate measure of real-world transmit performance. Qmax Systems engineers account for TRP targets during antenna design to ensure conducted output power translates into sufficient radiated power at the device level.",
   },
   {
-    q: "What is TRP (Total Radiated Power) in mobile device testing?",
-    a: "TRP measures total emitted antenna power across all directions. It captures both antenna efficiency and enclosure effects that are not visible in simple conducted cable tests.",
+    q: "What is the typical cost of an RF design re-spin, and how does Qmax Systems prevent it?",
+    a: "A single RF design re-spin can cost $5,000 to $50,000 in PCB fabrication, assembly, and re-testing - plus weeks or months of market delay. Qmax Systems prevents re-spins through a simulation-first methodology: full-wave 3D EM simulation and pre-compliance testing identify signal-integrity and emission issues before the first board is built, targeting first-time-right designs that avoid these expenses entirely.",
   },
   {
-    q: "What is the typical cost of an RF design re-spin?",
-    a: "A re-spin can cost thousands to tens of thousands of dollars in fabrication and testing, plus schedule delay. We prioritize simulation and pre-compliance to reduce this risk.",
+    q: "How does Qmax Systems ensure unit-to-unit RF consistency in mass production?",
+    a: "Qmax Systems specifies controlled-impedance test coupons on every PCB panel to verify that the fabricated stackup matches the design target, and designs automated RF functional test (FCT) coverage into the manufacturing flow. This ensures that the 10,000th unit off the production line performs identically to the prototype validated in the lab - with documented impedance, VSWR, and emissions data tied to each production lot.",
   },
   {
-    q: "How do you ensure unit-to-unit consistency in mass production?",
-    a: "We specify controlled-impedance coupons per panel and use production test strategies to verify RF behavior, helping ensure repeatability from pilot builds to volume manufacturing.",
-  },
-  {
-    q: "Does Qmax help with component sourcing and BOM optimization?",
-    a: "Yes. We balance performance, cost, and lifecycle availability, and proactively identify second-source options for critical components.",
-  },
-  {
-    q: "What is phase noise and how does it impact high-speed data?",
-    a: "Phase noise is frequency-domain instability in oscillators. For high-order modulation schemes, excess phase noise degrades demodulation margin and data integrity.",
-  },
-  {
-    q: "How do you approach RF design for medical vs military applications?",
-    a: "Medical designs emphasize coexistence and patient safety, while military designs emphasize robustness and interference resilience. We adapt design and validation strategy to target standards and use environments.",
+    q: "What is Phase Noise and how does it impact WiFi 7's 4096-QAM?",
+    a: "Phase noise is jitter in a radio's frequency source that causes the signal's phase to wander, making constellation points ambiguous. For WiFi 7's 4096-QAM, even small phase noise forces the link to drop to a lower, slower modulation rate or fail entirely. Qmax Systems engineers specify low phase-noise oscillators and PLLs, and validate EVM on the Rohde & Schwarz CMW500 to confirm the radio sustains high-order modulation under real operating conditions.",
   },
 ];
 
@@ -727,10 +749,14 @@ export default function RfAndMicrowavePage() {
           <p>
             Qmax Systems provides comprehensive RF and Microwave Engineering
             services, bridging the gap between theoretical electromagnetics and
-            robust, manufacturable hardware. From sub-GHz IoT modules to
-            high-power plasma generators and mmWave sensor arrays, we deliver
-            end-to-end design, simulation, and validation services that ensure
-            optimal signal integrity and regulatory compliance.
+            robust, manufacturable hardware. From sub-GHz IoT modules to mmWave
+            sensor arrays and 1 kW industrial plasma generators, Qmax Systems
+            delivers end-to-end RF PCB design, RF front-end (RFFE)
+            engineering, full-wave electromagnetic simulation, and EMI/EMC
+            pre-compliance validation - covering LF/HF through 77 GHz+ mmWave
+            bands with controlled-impedance layout on Rogers and Megtron 6
+            substrates - ensuring optimal signal integrity and regulatory
+            compliance on first build.
           </p>
         }
         ctaHref="/hardware-development-services/contact"
@@ -766,7 +792,7 @@ export default function RfAndMicrowavePage() {
       />
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our RF & Microwave Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        subtitle="Discuss your RF architecture challenges - whether you are migrating to WiFi 7, developing a custom mmWave sensor, or hardening a design for FCC compliance - with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch."
         ctaHref="/hardware-development-services/contact"
       />
 
