@@ -12,7 +12,10 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
-import { allCaseStudiesData, getCaseStudyCardImage } from "@/store/case-studies";
+import {
+  allCaseStudiesData,
+  getCaseStudyCardImage,
+} from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 type ProjectExperienceEntryOptions = {
@@ -68,7 +71,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Heavy copper and busbar integration for extreme current demands.",
     intro:
-      "Power circuits operate in environments where parasitic inductance and thermal bottlenecks can compromise the entire system. Our PCB designs handle the most demanding current distribution challenges.",
+      "Qmax Systems designs power circuits for environments where parasitic inductance and thermal bottlenecks can compromise the entire system. Qmax Systems engineers build heavy-copper stackups (4oz–14oz+), embedded and laminated busbar structures, and balanced parallel-MOSFET routing to carry 1000A+ DC without hotspots. Typical applications: EV inverters, industrial motor drives, DC-DC converters, welding equipment, and UPS systems.",
     points: [
       {
         boldLead: "Heavy Copper PCBs (4oz to 14oz+)",
@@ -104,7 +107,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "High-voltage isolation designed for safety certification from day one.",
     intro:
-      "Adhering to IEC 60601, UL 62368-1, and IPC-2221 standards for high-voltage isolation up to 1500VDC. We design creepage and clearance into the board from the start — not as a late-stage correction.",
+      "Qmax Systems designs high-voltage isolation to IEC 60601, UL 62368-1, and IPC-2221 for working voltages up to 1500VDC, building creepage and clearance into the board from the schematic — not as a late-stage correction. Qmax Systems engineers add slot cuts, routed channels, reinforced isolation zones, and pollution-degree/CTI-based spacing. Typical applications: medical power supplies, EV battery management, solar inverters, and industrial HV controllers.",
     points: [
       {
         boldLead: "Safety Standard Compliance",
@@ -140,7 +143,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Reducing conducted and radiated emissions in high-frequency switching designs.",
     intro:
-      "High-frequency SiC and GaN MOSFETs switch at slew rates that turn every trace into an antenna. Our layouts are designed to contain EMI at the source.",
+      "Qmax Systems contains EMI at the source in high-frequency SiC and GaN designs, where MOSFET slew rates turn every trace into an antenna. Qmax Systems engineers minimize gate-loop and power-loop parasitic inductance, tightly couple DC-bus capacitors to switching devices, and place CM chokes, Pi-filters, and snubbers for CISPR 32 and CE/RE compliance. Typical applications: GaN/SiC converters, high-frequency DC-DC, telecom rectifiers, and plasma generators.",
     points: [
       {
         boldLead: "Gate Driver Loop Optimization",
@@ -176,7 +179,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Thermal management engineered into the PCB — not bolted on after.",
     intro:
-      "Utilizing metal substrates (IMS), thermal via arrays, and specialized cooling interfaces to prevent junction temperature violations under sustained load.",
+      "Qmax Systems engineers thermal management into the PCB rather than bolting it on afterward, using insulated metal substrates (IMS), thermal via arrays, and specialized cooling interfaces to prevent junction-temperature violations under sustained load. Qmax Systems coordinates copper pours and stackup with thermal simulation results. Typical applications: LED drivers, motor controllers, battery chargers, induction heating, and high-power RF amplifiers.",
     points: [
       {
         boldLead: "Thermal Via Arrays",
@@ -253,7 +256,7 @@ const projectExperience: ProjectExperienceItem[] = [
 const WHY_CARDS = [
   {
     title: "Engineering-Led Design",
-    desc: "All PCB designers at Qmax are Electrical Engineers capable of understanding circuit functionality and performing circuit analysis.",
+    desc: "All our PCB designers are Electrical Engineers capable of understanding circuit functionality and performing circuit analysis.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -272,7 +275,7 @@ const WHY_CARDS = [
   },
   {
     title: "First-Time-Right Philosophy",
-    desc: "A structured, 25-year evolved process with checklists covering HV safety, EMI, thermal, and manufacturability.",
+    desc: "Qmax Systems follows a structured, 25-year evolved process with checklists covering HV safety, EMI, thermal, and manufacturability.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -386,43 +389,43 @@ const WHY_CARDS = [
 const FAQ_ITEMS = [
   {
     q: "How do you handle high-current requirements in small form factors?",
-    a: "We utilize heavy copper PCBs (up to 14oz+), busbar integration, and thermal via arrays to maximize current-carrying capacity while maintaining a compact footprint.",
+    a: "Qmax Systems uses heavy copper PCBs (up to 14oz+), busbar integration, and thermal via arrays to maximize current-carrying capacity while maintaining a compact footprint, supporting 1000A+ DC sources.",
   },
   {
     q: "What standards do you follow for high-voltage isolation?",
-    a: "We strictly adhere to IPC-2221B for generic design and IEC 60601 (Medical) or UL 62368-1 for specific safety clearances and creepage distances.",
+    a: "We adhere to IPC-2221B for generic design and IEC 60601 (medical) or UL 62368-1 (IT/AV) for specific safety clearances and creepage distances, up to 1500VDC working voltage.",
   },
   {
     q: "How do you mitigate switching noise in SiC or GaN designs?",
-    a: "By minimizing loop inductance in the gate drive and power loops, implementing Pi-filters, and using 3D EM simulation to identify and suppress high-frequency harmonics.",
+    a: "We minimize loop inductance in the gate-drive and power loops, place Pi-filters and snubbers, and use 3D EM simulation to identify and suppress high-frequency harmonics for CISPR 32 compliance.",
   },
   {
     q: "Do you design custom magnetics for power converters?",
-    a: "Yes. We specify core materials, winding geometries, and litz wire for custom inductors and transformers to optimize efficiency and thermal performance.",
+    a: "Yes. Qmax Systems specifies core materials, winding geometries, and litz wire for custom inductors and transformers to optimize efficiency and thermal performance in power converters.",
   },
   {
-    q: "How is thermal management validated?",
-    a: "We perform 3D Thermal Analysis to identify hotspots and optimize the interface between the PCB, components, and heatsinks or enclosures.",
+    q: "How do you validate thermal management?",
+    a: "We perform 3D thermal analysis to identify hotspots and optimize the interface between the PCB, power components, and heatsinks or enclosures, preventing junction-temperature violations.",
   },
   {
     q: "Can you assist with boards that failed EMI (CE/RE) testing?",
-    a: 'Yes. We provide "rescue" services, using near-field probes to locate noise sources and redesigning layouts to ensure compliance with CE/FCC standards.',
+    a: "Yes. Qmax Systems provides rescue services, using near-field probes to locate noise sources and redesigning layouts to meet CE and FCC compliance.",
   },
   {
     q: "Do you support busbar-to-PCB integration?",
-    a: "Absolutely. We design the mechanical and electrical interfaces for high-current busbars, ensuring reliable connections for industrial PDUs and motor drives.",
+    a: "Yes. We design the mechanical and electrical interfaces for high-current busbars, ensuring reliable connections for industrial PDUs and motor drives.",
   },
   {
-    q: "What materials are recommended for high-power applications?",
-    a: "Beyond standard FR-4, we utilize metal-clad substrates (IMS) for heat dissipation or high-Tg materials for high-temperature environments.",
+    q: "What materials do you recommend for high-power applications?",
+    a: "Qmax Systems uses standard FR-4 where suitable, metal-clad substrates (IMS) for heat dissipation, and high-Tg materials for high-temperature environments.",
   },
   {
     q: "How do you manage THD in PFC controllers?",
-    a: "We focus on precision current sensing layout and low-impedance feedback paths to ensure the controller maintains high power factor and low Total Harmonic Distortion.",
+    a: "We focus on precision current-sensing layout and low-impedance feedback paths so PFC controllers maintain high power factor and low Total Harmonic Distortion (THD).",
   },
   {
     q: "Do you provide fabrication support?",
-    a: "Yes. We act as a direct technical liaison with fabrication houses to resolve stackup, material queries, and DFM issues before production.",
+    a: "Yes. Qmax Systems acts as a direct technical liaison with fabrication houses, resolving stackup, material, and DFM issues before production.",
   },
 ];
 
@@ -468,17 +471,17 @@ export default function PowerElectronicsPage() {
               Modern power electronics systems demand more than simple
               interconnects; they require a holistic electromagnetic and thermal
               engineering strategy where the PCB is a functional element of the
-              circuit. At Qmax Systems, we treat power electronics PCB design as
-              a discipline of balancing high-current density, extreme voltage
+              circuit. Qmax Systems treats power electronics PCB design as a
+              discipline of balancing high-current density, extreme voltage
               gradients, and rapid switching transients (di/dt and dv/dt).
             </p>
             <p>
-              Our engineering team specializes in First-Time-Right PCB design,
+              Qmax Systems specializes in First-Time-Right PCB design,
               prioritizing early risk identification to eliminate the costly
-              re-spins often associated with high-power R&amp;D. Whether your
+              re-spins often associated with high-power R&amp;D. Whether a
               project involves 800V EV architectures or kW-level plasma
-              generators, our designs are optimized for reliability, safety, and
-              manufacturability from day one.
+              generators, Qmax Systems optimizes every design for reliability,
+              safety, and manufacturability from day one.
             </p>
           </>
         }
@@ -490,9 +493,7 @@ export default function PowerElectronicsPage() {
         title="Introduction to Power Electronics "
         titleHighlight="PCB Engineering"
       />
-      <ApplicationsProjectExperienceSection
-        projects={projectExperience}
-      />
+      <ApplicationsProjectExperienceSection projects={projectExperience} />
       <WhySection
         whyCards={WHY_CARDS}
         title="Why Choose Qmax"
@@ -505,9 +506,7 @@ export default function PowerElectronicsPage() {
         titleHighlight="Power Electronics PCB Design"
         subtitle="Every power electronics engagement includes a complimentary schematic review to identify architectural risks before layout begins."
       /> */}
-      <FAQSection
-        faqItems={FAQ_ITEMS}
-      />
+      <FAQSection faqItems={FAQ_ITEMS} />
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our Power Electronics Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."

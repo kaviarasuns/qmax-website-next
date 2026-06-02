@@ -29,7 +29,9 @@ function pcbProjectExperienceEntry(
   caseStudyId: string,
   description?: string,
 ): ProjectExperienceItem {
-  const study = pcbCaseStudiesData.find((caseStudy) => caseStudy.id === caseStudyId);
+  const study = pcbCaseStudiesData.find(
+    (caseStudy) => caseStudy.id === caseStudyId,
+  );
   if (!study) {
     throw new Error(`PCB case study not found: ${caseStudyId}`);
   }
@@ -103,11 +105,11 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "High-speed memory and serial interfaces routed at the edge of physics.",
     intro:
-      "Our design team operates at the leading edge of digital signaling standards, delivering PCB layouts validated against the tightest timing and loss budgets in the industry.",
+      "Qmax Systems operates at the leading edge of digital signaling standards — DDR5/LPDDR5, PCIe Gen5/Gen6, and 112G SerDes — delivering PCB layouts validated against the tightest timing and loss budgets in the industry. Qmax Systems engineers route every interface against simulation-derived constraints in Cadence Sigrity and Ansys SIwave before the first net is placed. Typical applications: AI GPU chassis, O-RAN distributed units, server motherboards, and 100G network interface cards.",
     points: [
       {
         boldLead: "DDR5 & LPDDR5",
-        rest: " — implementation of Decision Feedback Equalization (DFE), CA parity, and CRC. We manage ultra-tight timing margins and address the complexities of on-DIMM PMICs.",
+        rest: " — implementation of Decision Feedback Equalization (DFE), CA parity, and CRC. Qmax Systems manages ultra-tight timing margins and addresses the complexities of on-DIMM PMICs.",
       },
       {
         boldLead: "PCIe Gen5 & Gen6",
@@ -115,7 +117,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
       },
       {
         boldLead: "112G SerDes",
-        rest: " — advanced routing for 112 Gbps per lane, utilizing state-of-the-art simulation to minimize reflections and crosstalk.",
+        rest: " — advanced routing for 112 Gbps per lane, utilizing full-wave simulation to minimize reflections and crosstalk.",
       },
     ],
     applications:
@@ -142,7 +144,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Complex interconnect structures for the densest digital designs.",
     intro:
-      "Mastery of advanced HDI fabrication techniques that enable maximum routing density while maintaining signal integrity and manufacturability.",
+      "Qmax Systems masters advanced HDI fabrication techniques — Type I, II, and III structures with stacked and staggered microvias, via-in-pad, and ELIC — enabling maximum routing density while preserving signal integrity and manufacturability. Qmax Systems regularly delivers 30+ layer HDI boards. Typical applications: high-density server boards, multi-chip module substrates, and advanced networking equipment.",
     points: [
       {
         boldLead: "30-Layer HDI PCB Design",
@@ -176,7 +178,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Rigorous stackup optimization balancing electrical performance with fabrication yield.",
     intro:
-      "A robust high-speed design begins with the substrate. We perform rigorous stackup optimization to balance electrical performance with fabrication yield.",
+      "A robust high-speed design begins with the substrate, and Qmax Systems performs rigorous stackup optimization to balance electrical performance against fabrication yield. Qmax Systems engineers select ultra-low-loss laminates such as Megtron 6/7/8, Tachyon 100G, and Rogers hybrids, model single-ended (50 Ω) and differential (85/90/100 Ω) impedance, and apply spread-glass fabrics to eliminate fiber-weave skew. Typical applications: 28+ layer PCBs, controlled-impedance backplanes, and mixed-dielectric hybrid stackups.",
     points: [
       {
         boldLead: "Material Expertise",
@@ -209,9 +211,10 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
       </svg>
     ),
-    headline: 'Simulation-driven workflow — we do not "guess and check."',
+    headline:
+      'Simulation-driven workflow — Qmax Systems does not "guess and check."',
     intro:
-      "Every high-speed design is backed by pre- and post-layout simulation covering signal integrity, power delivery, and electromagnetic compliance.",
+      "Qmax Systems runs a simulation-driven workflow — never guess-and-check. Every high-speed design is backed by pre- and post-layout simulation in Cadence Sigrity and Ansys SIwave covering signal integrity, power delivery, and electromagnetic compliance. Qmax Systems verifies eye diagrams, BER, and TDR through full-wave extraction before the prototype stage. Typical applications: PCIe Gen6, DDR5, and 112G SerDes platforms validated against compliance margin.",
     points: [
       {
         boldLead: "Pre-Layout Analysis",
@@ -318,7 +321,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 const WHY_CARDS = [
   {
     title: "First-Time-Right Philosophy",
-    desc: "Architecture-first engineering with simulation-driven constraints defined before layout begins.",
+    desc: "Qmax Systems applies architecture-first engineering with simulation-driven constraints defined before layout begins — over 95% of designs reach production without a second spin.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -337,7 +340,7 @@ const WHY_CARDS = [
   },
   {
     title: "Engineering-Led Design",
-    desc: "All Qmax PCB designers are Electrical Engineers capable of performing complex circuit and noise analysis.",
+    desc: "All our PCB designers are Electrical Engineers capable of performing complex circuit and noise analysis.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -356,7 +359,7 @@ const WHY_CARDS = [
   },
   {
     title: "DFM/DFT Validation",
-    desc: "Production-ready DFM/DFT-verified files for high first-time-right yields tailored to each fabrication house's specific capabilities.",
+    desc: "We deliver production-ready, DFM/DFT-verified files for high first-time-right yields, tailored to each fabrication house's specific capabilities.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -373,7 +376,7 @@ const WHY_CARDS = [
   },
   {
     title: "IP Ownership",
-    desc: "100% customer ownership of all schematics, layout files, and simulation data remain the sole property of the customer.",
+    desc: "100% customer ownership — all schematics, layout files, and simulation data remain the sole property of the customer; we retain no rights.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -390,7 +393,7 @@ const WHY_CARDS = [
   },
   {
     title: "Manufacturing Alignment",
-    desc: "Direct coordination with Tier-1 fabrication and assembly houses for stackup and impedance alignment.",
+    desc: "Qmax Systems coordinates directly with Tier-1 fabrication and assembly houses for stackup and impedance alignment.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -406,7 +409,7 @@ const WHY_CARDS = [
   },
   {
     title: "Compliance-Ready",
-    desc: "Designed for EMI/EMC (CISPR 32) and Safety (UL 62368-1) from day one.",
+    desc: "We design for EMI/EMC (CISPR 32) and safety (UL 62368-1) from day one.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -426,123 +429,123 @@ const WHY_CARDS = [
 const FAQ_ITEMS = [
   {
     q: "What data rates do you support?",
-    a: "We design for data rates ranging from DDR5-6400 (9.6 GT/s) to PCIe Gen6 (64 GT/s) and 112G SerDes (112 Gbps per lane). Our expertise spans NRZ, PAM4, and equalization technologies required for modern high-speed serial interfaces.",
+    a: "Qmax Systems designs for data rates from DDR5-6400 (9.6 GT/s) to PCIe Gen6 (64 GT/s) and 112G SerDes (112 Gbps per lane). Our engineers cover NRZ, PAM4, and the equalization technologies required for modern high-speed serial interfaces.",
   },
   {
-    q: "Do you support PCIe Gen6 PCB layout?",
-    a: "Yes, we are experts in PCIe Gen6 layout, specifically managing the transition to PAM4 signaling and tight loss budgets.",
+    q: "Does Qmax Systems support PCIe Gen6 PCB layout?",
+    a: "Yes. We design PCIe Gen6 layouts, managing the transition to PAM4 signaling and tight loss budgets, with via-stub back-drilling and pad-stack optimization to hold compliance margin.",
   },
   {
-    q: "Can you handle 30-layer HDI PCB designs?",
-    a: "Absolutely. We regularly design 30+ layer boards with complex microvia structures and ELIC.",
+    q: "Can you design 30-layer HDI PCBs?",
+    a: "Yes. We regularly design 30+ layer boards with complex stacked and staggered microvia structures and ELIC (Every Layer Interconnect).",
   },
   {
     q: "Do you provide SI/PI simulation services separately?",
-    a: "Yes, we offer standalone SI/PI analysis or integrated simulation within the layout process.",
+    a: "Yes. Qmax Systems offers standalone SI/PI analysis or simulation integrated within the layout process, using Cadence Sigrity and Ansys SIwave.",
   },
   {
     q: "How do you mitigate crosstalk in high-density designs?",
-    a: "Through rigorous 3D EM modeling and implementing specific 3W/5W spacing rules and guard traces.",
+    a: "We mitigate crosstalk through rigorous 3D EM modeling and enforced 3W/5W spacing rules and guard traces, validated by full-wave extraction before fabrication.",
   },
   {
     q: "Which EDA tools do you use?",
-    a: "We primarily utilize Cadence Allegro/Orcad, Altium Designer, and Mentor Xpedition.",
+    a: "Qmax Systems primarily uses Cadence Allegro/OrCAD, Altium Designer, and Mentor Xpedition, with Cadence Sigrity and Ansys SIwave for SI/PI simulation.",
   },
   {
-    q: 'What is a "Simulation-driven" constraint?',
-    a: "It means we run SI simulations to determine the exact routing rules (width, gap, length) before the layout starts.",
+    q: 'What is a "simulation-driven" constraint?',
+    a: "A simulation-driven constraint means we run SI simulations to determine the exact routing rules — trace width, gap, and length — before layout begins, rather than guessing and checking.",
   },
   {
     q: "Do you provide DFM reports?",
-    a: "Yes, every design undergoes a comprehensive DFM/DFT check to ensure high manufacturing yields.",
+    a: "Yes. We run a comprehensive DFM/DFT check on every design to ensure high manufacturing yields and production-ready output.",
   },
   {
     q: "Can you help with component obsolescence?",
-    a: "Yes, during schematic review, we identify at-risk parts and suggest pin-compatible or functional alternatives.",
+    a: "Yes. During schematic review, Qmax Systems engineers identify at-risk parts and recommend pin-compatible or functional alternatives, screening for EOL across long-lifecycle programs.",
   },
   {
     q: "What is your experience with 112G SerDes?",
-    a: "We have designed interfaces for 112G PAM4, focusing on via stub removal (back-drilling) and pad stack optimization.",
+    a: "We have designed 112G PAM4 interfaces, focusing on via-stub removal (back-drilling) and pad-stack optimization to minimize reflections at 112 Gbps per lane.",
   },
   {
     q: "Do you support 100G Ethernet NIC design?",
-    a: "Yes, we have experience with multi-port 100G NICs and QSFP-DD/OSFP form factors.",
+    a: "Yes. We have designed multi-port 100G NICs in QSFP-DD and OSFP form factors.",
   },
   {
     q: "What materials do you recommend for high-speed digital PCBs?",
-    a: "Typically Megtron 6/7, Isola I-Tera, or Rogers 4350B/4003C depending on the frequency and budget.",
+    a: "We typically specify Megtron 6/7, Isola I-Tera, or Rogers 4350B/4003C, selected by operating frequency and budget.",
   },
   {
     q: "How do you handle high-current PDNs?",
-    a: "We use PI simulation to map DC IR drop and ensure copper density is sufficient for thermal and electrical requirements.",
+    a: "We use PI simulation to map DC IR drop and confirm copper density meets thermal and electrical requirements across the power delivery network.",
   },
   {
-    q: "Is Qmax an Indian PCB design company?",
-    a: "Yes, Qmax Systems is a leading high-speed digital PCB design services provider in India, serving global clients.",
+    q: "Is Qmax Systems an Indian PCB design company?",
+    a: "Yes. Qmax Systems is a leading high-speed digital PCB design services provider based in India, serving global clients.",
   },
   {
     q: "Do you design server motherboards?",
-    a: "Yes, we design multi-processor server motherboards for Intel, AMD, and ARM architectures.",
+    a: "Yes. We design multi-processor server motherboards for Intel, AMD, and ARM architectures.",
   },
   {
     q: "What is your first-time-right ratio?",
     a: "Over 95% of our high-speed designs move to production without requiring a second spin for electrical issues.",
   },
   {
-    q: "Can you design for O-RAN hardware?",
-    a: "Yes, we have specific experience with O-RAN Radio Units (RU) and Distributed Units (DU).",
+    q: "Can you design O-RAN hardware?",
+    a: "Yes. We have specific experience designing O-RAN Radio Units (RU) and Distributed Units (DU).",
   },
   {
     q: "Do you manage the fabrication process?",
-    a: "We coordinate directly with your preferred fab house or recommend one from our audited partner list.",
+    a: "Qmax Systems coordinates directly with your preferred fab house or recommends one from our audited Tier-1 partner list, aligning stackup and impedance targets.",
   },
   {
-    q: "What is back-drilling, and when is it used?",
-    a: "It is the removal of unused via stubs to prevent signal reflections, critical for signals above 10Gbps.",
+    q: "What is back-drilling, and when do you use it?",
+    a: "Back-drilling removes unused via stubs to prevent signal reflections. We apply it to signals above 10 Gbps, including PCIe Gen6 and 112G SerDes routing.",
   },
   {
     q: "Do you support USB4 design?",
-    a: "Yes, including routing for 40Gbps throughput and Type-C PD integration.",
+    a: "Yes. We design USB4 routing for 40 Gbps throughput with Type-C Power Delivery (PD) integration.",
   },
   {
     q: "How do you minimize EMI?",
-    a: "Through proper ground plane referencing, shielding, and minimizing common-mode noise via balanced routing.",
+    a: "We minimize EMI through disciplined ground-plane referencing, shielding, and balanced routing to suppress common-mode noise, validated against CISPR 32.",
   },
   {
-    q: "What is ELIC?",
-    a: "Every Layer Interconnect — an HDI technology where any layer can be connected to any other layer using stacked copper-filled microvias.",
+    q: "What is ELIC, and do you use it?",
+    a: "ELIC (Every Layer Interconnect) is an HDI technology where any layer connects to any other using stacked copper-filled microvias. We use ELIC in our 30+ layer HDI designs.",
   },
   {
-    q: "Do you provide the source files?",
-    a: "Yes, all design IP, including source schematics, layout files, and simulation models, belongs to the customer.",
+    q: "Does Qmax Systems provide the source files?",
+    a: "Yes. All design IP — source schematics, layout files, and simulation models — belongs to the customer; Qmax Systems retains no ownership.",
   },
   {
     q: "How do you handle differential pair skew?",
-    a: "We implement serpentine trace compensation and phase-matching at the point of mismatch.",
+    a: "We apply serpentine trace compensation and phase-matching at the point of mismatch, plus spread-glass fabrics to mitigate fiber-weave skew.",
   },
   {
     q: "Can you design AI GPU chassis PCBs?",
-    a: "Yes, we specialize in the high-speed backplanes and switch boards required for AI clusters.",
+    a: "Yes. We specialize in the high-speed backplanes and switch boards required for AI GPU clusters, including PCIe Gen6-class fabrics.",
   },
   {
-    q: "What is a PDN impedance profile?",
-    a: "It is a plot of the power network's impedance vs. frequency, ensuring it stays below the target impedance to prevent noise.",
+    q: "What is a PDN impedance profile, and how do you use it?",
+    a: "A PDN impedance profile plots the power network's impedance versus frequency. We design the PDN to stay below target impedance across the band to prevent noise.",
   },
   {
     q: "Do you support NXP i.MX8 designs?",
-    a: "Yes, we have extensive experience with the i.MX8 family and its LPDDR4 memory requirements.",
+    a: "Yes. Qmax Systems has extensive experience with the NXP i.MX8 family and its LPDDR4 memory routing requirements.",
   },
   {
-    q: "What are fiber weave effects?",
-    a: "Variations in the dielectric constant caused by the resin/glass pattern. We mitigate this with angled routing or specific glass styles.",
+    q: "What are fiber weave effects, and how do you mitigate them?",
+    a: "Fiber weave effects are dielectric-constant variations caused by the glass/resin pattern. We mitigate them with angled (zig-zag) routing and spread-glass fabric styles.",
   },
   {
     q: "Do you offer thermal simulation?",
-    a: "Yes, we can perform thermal analysis to identify hotspots and optimize heatsink/fan placement.",
+    a: "Yes. We perform thermal analysis to identify hotspots and optimize heatsink and fan placement.",
   },
   {
     q: "How do I get started?",
-    a: "You can book a 1-hour complimentary engineering consultation via our website.",
+    a: "Book a 1-hour complimentary engineering consultation with a Qmax Systems Senior Hardware Architect via our website.",
   },
 ];
 
@@ -564,12 +567,12 @@ export default function HighSpeedDigitalPCBDesignPage() {
               production-ready hardware.
             </p>
             <p>
-              Our engineering-first approach prioritizes Signal Integrity (SI)
-              and Power Integrity (PI) simulation long before a single trace is
-              routed. By implementing a simulation-driven constraint
-              methodology, we ensure your high-complexity boards — from AI GPU
-              chassis to O-RAN Distributed Units — achieve first-time-right
-              success.
+              Qmax Systems prioritizes Signal Integrity (SI) and Power Integrity
+              (PI) simulation long before a single trace is routed. By
+              implementing a simulation-driven constraint methodology, Qmax
+              Systems ensures high-complexity boards — from AI GPU chassis to
+              O-RAN Distributed Units — achieve first-time-right success, with
+              over 95% moving to production without a second spin.
             </p>
           </>
         }
@@ -581,9 +584,7 @@ export default function HighSpeedDigitalPCBDesignPage() {
         title="Technical Capabilities: "
         titleHighlight="Pushing the Limits of Physics"
       />
-      <ApplicationsProjectExperienceSection
-        projects={projectExperience}
-      />
+      <ApplicationsProjectExperienceSection projects={projectExperience} />
       <WhySection
         whyCards={WHY_CARDS}
         title="Why Choose Qmax"
@@ -593,9 +594,7 @@ export default function HighSpeedDigitalPCBDesignPage() {
       />
       {/* <ComplimentarySchematicReviewSection items={schematicReviewItems} /> */}
 
-      <FAQSection
-        faqItems={FAQ_ITEMS}
-      />
+      <FAQSection faqItems={FAQ_ITEMS} />
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our High-Speed Digital PCB Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."

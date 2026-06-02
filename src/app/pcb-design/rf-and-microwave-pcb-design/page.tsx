@@ -12,7 +12,10 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
-import { allCaseStudiesData, getCaseStudyCardImage } from "@/store/case-studies";
+import {
+  allCaseStudiesData,
+  getCaseStudyCardImage,
+} from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 type ProjectExperienceEntryOptions = {
@@ -68,7 +71,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     ),
     headline: "Comprehensive RF and microwave PCB design from MHz to 80 GHz.",
     intro:
-      "RF PCB layout is fundamentally an electromagnetic design problem. At frequencies above a few hundred MHz, traditional digital PCB practices become insufficient. Our services cover the full RF design spectrum.",
+      "Qmax Systems treats RF PCB layout as fundamentally an electromagnetic design problem — above a few hundred MHz, traditional digital PCB practices become insufficient. Qmax Systems covers the full RF spectrum, from controlled-impedance RF layout to microwave engineering and millimeter-wave design from 24 GHz to 80 GHz, plus antenna and RF front-end integration. Typical applications: 5G wireless, radar sensors, RF instrumentation, industrial RF generators, and satellite communications.",
     points: [
       {
         boldLead: "RF PCB Layout Services",
@@ -108,7 +111,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Precision transmission line modeling and RF-optimized stackup engineering.",
     intro:
-      "We work closely with fabrication partners using Rogers, Taconic, Isola, Megtron and hybrid stackups to achieve controlled impedance, low loss, and repeatable manufacturing yields.",
+      "Qmax Systems engineers RF-optimized stackups in partnership with fabrication houses, using Rogers, Taconic, Isola, Megtron, and hybrid FR-4/PTFE builds to achieve controlled impedance, low loss, and repeatable yields. Qmax Systems models microstrip, stripline, coplanar-waveguide, and GCPW structures to meet target impedance and insertion-loss budgets. Typical materials: Rogers 4350B/4003C, Taconic TLY, Isola Astra, and hybrid FR-4/PTFE stackups.",
     points: [
       {
         boldLead: "Transmission Line Modeling",
@@ -144,7 +147,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     ),
     headline: "Full-wave EM simulation driving constraint-based RF layout.",
     intro:
-      "At Qmax Systems, we apply a structured RF engineering workflow where simulation drives every layout decision — ensuring first-pass RF performance without iterative tuning.",
+      "Qmax Systems applies a structured RF engineering workflow where full-wave EM simulation drives every layout decision, achieving first-pass RF performance without iterative tuning. Qmax Systems engineers review the RF signal chain, simulate critical transitions, matching networks, and filters, then derive routing rules that hold every trace to its insertion-loss and VSWR targets. Typical flow: architecture review → EM simulation → constraint generation → layout → post-layout verification.",
     points: [
       {
         boldLead: "Architecture Analysis",
@@ -182,7 +185,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Production-ready deliverables aligned with fabrication and certification.",
     intro:
-      "This workflow ensures the design is production-ready and compliance-ready before the PCB is fabricated. Direct coordination with fabrication partners for impedance accuracy and yield.",
+      "Qmax Systems delivers production-ready, compliance-ready RF designs before fabrication, coordinating directly with fabrication partners for impedance accuracy and yield. Qmax Systems engineers apply EMI-by-design shielding, grounding, and filtering for FCC and CE certification, and hand off DFM/DFT-validated Gerbers, ODB++, impedance reports, and assembly documentation. Typical deliverables: Gerbers, ODB++, impedance reports, DFM/DFT validation, and assembly drawings.",
     points: [
       {
         boldLead: "Manufacturing Alignment",
@@ -263,7 +266,7 @@ const projectExperience: ProjectExperienceItem[] = [
 const WHY_CARDS = [
   {
     title: "Architecture-First Engineering",
-    desc: "RF architecture validated before layout begins, preventing late-stage rework.",
+    desc: "Qmax Systems validates RF architecture before layout begins, preventing late-stage rework.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -296,7 +299,7 @@ const WHY_CARDS = [
   },
   {
     title: "RF Measurement Expertise",
-    desc: "Familiarity with RF test workflows including CMW500, spectrum analyzers, and VNAs.",
+    desc: "Our team has deep familiarity with RF test workflows including CMW500, spectrum analyzers, and VNAs.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -312,7 +315,7 @@ const WHY_CARDS = [
   },
   {
     title: "Manufacturing Alignment",
-    desc: "Direct coordination with PCB fabrication houses for low-loss substrate and impedance accuracy.",
+    desc: "Qmax Systems coordinates directly with PCB fabrication houses for low-loss substrate and impedance accuracy.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -331,7 +334,7 @@ const WHY_CARDS = [
   },
   {
     title: "Compliance Readiness",
-    desc: "Designs prepared for FCC and CE certification through EMI-by-design layout.",
+    desc: "We prepare designs for FCC and CE certification through EMI-by-design layout.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -348,7 +351,7 @@ const WHY_CARDS = [
   },
   {
     title: "Production-Ready Deliverables",
-    desc: "DFM/DFT-validated Gerbers, ODB++, and impedance reports ready for handoff.",
+    desc: "DFM/DFT-validated Gerbers, ODB++, and impedance reports are delivered production-ready for handoff.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -464,124 +467,124 @@ const WHY_CARDS = [
 
 const FAQ_ITEMS = [
   {
-    q: "What frequency range do you support?",
-    a: "We design RF PCBs from sub-GHz to millimeter-wave frequencies up to 80 GHz.",
+    q: "What frequency range do you support for RF PCB design?",
+    a: "Qmax Systems designs RF PCBs from sub-GHz through millimeter-wave frequencies up to 80 GHz, covering single- and multi-band wireless, radar, and instrumentation platforms.",
   },
   {
     q: "Do you design microwave PCBs?",
-    a: "Yes. We support microwave PCB designs using low-loss laminates and transmission line modeling.",
+    a: "Yes. We design microwave PCBs using low-loss laminates such as Rogers and Taconic, with microstrip, stripline, and coplanar-waveguide transmission-line modeling.",
   },
   {
     q: "Do you design WiFi RF boards?",
-    a: "Yes. We have designed WiFi 5 and WiFi 6 RF PCBs with multiple MIMO chains.",
+    a: "Yes. Qmax Systems has designed WiFi 5 and WiFi 6 RF PCBs with multiple MIMO chains and controlled 50 Ω impedance across the 2.4, 5, and 6 GHz bands.",
   },
   {
     q: "Do you support antenna integration?",
-    a: "Yes. We design antenna feedlines, matching networks, and RF isolation structures.",
+    a: "Yes. We design antenna feedlines, matching networks, and RF isolation structures, co-locating the antenna and RF front-end on a single PCB.",
   },
   {
     q: "Do you perform RF simulations?",
-    a: "Yes. SI, PI, and EM simulations are performed before layout completion.",
+    a: "Yes. Qmax Systems performs SI, PI, and full-wave EM simulation before layout completion, deriving routing constraints from simulation rather than rules-of-thumb.",
   },
   {
     q: "Do you support mmWave PCB designs?",
-    a: "Yes. We have experience with 60 GHz radar-based sensing systems.",
+    a: "Yes. We design millimeter-wave PCBs from 24 GHz to 80 GHz and have experience with 60 GHz radar-based sensing systems.",
   },
   {
-    q: "What materials are used for RF PCBs?",
-    a: "Common materials include Rogers, Taconic, Isola Astra, and hybrid RF-FR4 stackups.",
+    q: "What materials do you use for RF PCBs?",
+    a: "Qmax Systems uses low-loss RF materials including Rogers, Taconic, and Isola Astra, plus hybrid RF/FR-4 stackups selected by frequency and loss budget.",
   },
   {
     q: "Do you coordinate with PCB fabrication houses?",
-    a: "Yes. Stackups and impedance targets are aligned with the chosen manufacturer.",
+    a: "Yes. We align stackups and impedance targets directly with the chosen manufacturer, including controlled-impedance test coupons for yield.",
   },
   {
     q: "Can you redesign RF boards that failed FCC testing?",
-    a: "Yes. We provide RF layout troubleshooting and redesign services.",
+    a: "Yes. Qmax Systems provides RF layout troubleshooting and redesign services to bring boards into FCC and CE compliance through EMI-by-design corrections.",
   },
   {
     q: "Do you support RF power amplifier boards?",
-    a: "Yes. We have designed 1 kW RF PA systems.",
+    a: "Yes. We have designed RF power amplifier systems up to 1 kW, including bias networks and thermal management for the PA stage.",
   },
   {
     q: "Can you design LoRa RF boards?",
-    a: "Yes. LoRa transceiver boards with antenna tuning networks are supported.",
+    a: "Yes. Qmax Systems designs LoRa transceiver boards with antenna tuning networks and RF matching.",
   },
   {
     q: "Do you support BLE RF designs?",
-    a: "Yes. BLE modules with RF filtering and antenna matching are designed.",
+    a: "Yes. We design BLE modules with RF filtering and antenna matching.",
   },
   {
     q: "Do you support SDR hardware?",
-    a: "Yes. SDR RF front-ends and RF amplifier chains.",
+    a: "Yes. We design SDR RF front-ends and RF amplifier chains.",
   },
   {
     q: "Can you design RF front-end modules?",
-    a: "Yes. Including LNAs, mixers, filters, and PAs.",
+    a: "Yes. We design RF front-end modules including LNAs, mixers, filters, and power amplifiers.",
   },
   {
     q: "Do you provide RF tuning support?",
-    a: "Yes. We support RF bring-up and calibration.",
+    a: "Yes. Qmax Systems supports RF bring-up and calibration during prototype validation.",
   },
   {
-    q: "What tools are used for RF simulation?",
-    a: "HFSS, HyperLynx, and other EM modeling tools.",
+    q: "What tools do you use for RF simulation?",
+    a: "Qmax Systems uses Ansys HFSS, Mentor HyperLynx, and other full-wave EM modeling tools for RF simulation.",
   },
   {
     q: "Can you design RF filters on PCB?",
-    a: "Yes. Microstrip and distributed RF filters.",
+    a: "Yes. We design microstrip and distributed RF filters validated by full-wave EM simulation.",
   },
   {
     q: "Do you provide DFM review?",
-    a: "Yes. All designs undergo DFM validation.",
+    a: "Yes. Every Qmax Systems design undergoes DFM/DFT validation before production handoff.",
   },
   {
     q: "Do you support mmWave antenna feeds?",
-    a: "Yes. Controlled impedance CPW and microstrip lines.",
+    a: "Yes. We design controlled-impedance coplanar-waveguide (CPW) and microstrip antenna feeds for millimeter-wave bands.",
   },
   {
     q: "Can you design RF test equipment PCBs?",
-    a: "Yes.",
+    a: "Yes. We design RF test and instrumentation PCBs with controlled impedance and low-loss laminates.",
   },
   {
     q: "What deliverables do you provide?",
-    a: "Gerbers, ODB++, impedance reports, and assembly documentation.",
+    a: "Qmax Systems provides DFM/DFT-validated Gerbers, ODB++, impedance reports, and assembly documentation ready for production handoff.",
   },
   {
     q: "Do you handle RF shielding design?",
-    a: "Yes. Shield cans and RF compartments.",
+    a: "Yes. We design shield cans and RF compartments with grounding and isolation between RF chains.",
   },
   {
     q: "Do you design high-power RF boards?",
-    a: "Yes.",
+    a: "Yes. We design high-power RF boards, including PA systems up to 1 kW with dedicated thermal management.",
   },
   {
     q: "What RF test equipment are you familiar with?",
-    a: "CMW500, spectrum analyzers, vector network analyzers.",
+    a: "Qmax Systems engineers work with the R&S CMW500, spectrum analyzers, and vector network analyzers (VNAs) for RF bring-up and characterization.",
   },
   {
     q: "Do you design microwave sensors?",
-    a: "Yes.",
+    a: "Yes. We design microwave sensor PCBs, including radar-based sensing up to 60 GHz.",
   },
   {
     q: "Do you support FCC compliance preparation?",
-    a: "Yes.",
+    a: "Yes. We prepare RF designs for FCC certification through EMI-by-design shielding, grounding, and filtering.",
   },
   {
     q: "Do you support CE compliance preparation?",
-    a: "Yes.",
+    a: "Yes. Qmax Systems prepares RF designs for CE certification through EMI-by-design layout.",
   },
   {
     q: "Who owns the design IP?",
-    a: "The customer owns all design IP.",
+    a: "The customer owns 100% of all design IP. Qmax Systems retains no rights to schematics, layouts, or simulation data.",
   },
   {
     q: "Do you support prototype bring-up?",
-    a: "Yes.",
+    a: "Yes. We support prototype bring-up, RF tuning, and calibration.",
   },
   {
     q: "Can you support production transfer?",
-    a: "Yes.",
+    a: "Yes. Qmax Systems supports production transfer with manufacturing alignment and production-ready deliverables.",
   },
 ];
 
@@ -625,9 +628,9 @@ export default function RFMicrowavePCBDesignPage() {
           <>
             <p>
               Modern RF and microwave systems demand far more than conventional
-              PCB routing. At frequencies from hundreds of MHz to
-              millimeter-wave bands, the PCB becomes part of the RF circuit
-              itself. Trace geometry, dielectric loss, via transitions,
+              PCB routing. Qmax Systems designs at frequencies from hundreds of
+              MHz to millimeter-wave bands, where the PCB becomes part of the RF
+              circuit itself — trace geometry, dielectric loss, via transitions,
               grounding topology, shielding strategy, and impedance
               discontinuities directly influence insertion loss, phase
               stability, noise floor, and EMI compliance.
@@ -647,9 +650,7 @@ export default function RFMicrowavePCBDesignPage() {
         title="RF PCB Engineering "
         titleHighlight="Approach"
       />
-      <ApplicationsProjectExperienceSection
-        projects={projectExperience}
-      />
+      <ApplicationsProjectExperienceSection projects={projectExperience} />
       <WhySection
         whyCards={WHY_CARDS}
         title="Why Choose Qmax Systems for"
@@ -662,9 +663,7 @@ export default function RFMicrowavePCBDesignPage() {
         titleHighlight="RF & Microwave PCB Design"
         subtitle="When customers engage Qmax Systems for RF PCB layout services, we perform a complimentary schematic review before layout begins. The review covers:"
       /> */}
-      <FAQSection
-        faqItems={FAQ_ITEMS}
-      />
+      <FAQSection faqItems={FAQ_ITEMS} />
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our RF & Microwave Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
