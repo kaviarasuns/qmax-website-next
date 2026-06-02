@@ -207,7 +207,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 const WHY_CARDS = [
   {
     title: "Manufacturing Readiness",
-    desc: "Qmax Systems optimizes designs for DFM (Design for Manufacturing) and DFT (Design for Test).",
+    desc: "Every design is optimized for DFM (Design for Manufacturing) and DFT (Design for Test) before production release.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -224,7 +224,7 @@ const WHY_CARDS = [
   },
   {
     title: "EMI/EMC Mitigation",
-    desc: "Qmax Systems designs proactively for Radiated Emissions (RE) and Conducted Emissions (CE) optimization.",
+    desc: "Our designs proactively for Radiated Emissions (RE) and Conducted Emissions (CE) optimization.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -241,7 +241,7 @@ const WHY_CARDS = [
   },
   {
     title: "Reduced Time-to-Market",
-    desc: "Qmax Systems accelerates the development cycle with proven reference designs and modular blocks - backed by high-performance PCB vendor relationships and silicon vendor partnerships.",
+    desc: "We accelerate the development cycle with proven reference designs and modular blocks - backed by high-performance PCB vendor relationships and silicon vendor partnerships.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -258,7 +258,7 @@ const WHY_CARDS = [
   },
   {
     title: "In-House Validation",
-    desc: "Qmax Systems validates designs on advanced instrumentation, including the Rohde & Schwarz CMW500, high-bandwidth oscilloscopes, and spectrum analyzers.",
+    desc: "Our engineers validate designs on advanced instrumentation, including the Rohde & Schwarz CMW500, high-bandwidth oscilloscopes, and spectrum analyzers.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -275,7 +275,7 @@ const WHY_CARDS = [
   },
   {
     title: "Ground Loop Elimination",
-    desc: "Qmax Systems partitions analog, digital, and RF grounds to prevent parasitic interference.",
+    desc: "We  partition analog, digital, and RF grounds to prevent parasitic interference.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -294,7 +294,7 @@ const WHY_CARDS = [
   },
   {
     title: "Platform Versatility",
-    desc: "Qmax Systems has deep experience with Qualcomm, MediaTek, Nordic, and TI wireless platforms.",
+    desc: "We have extensive experience with Qualcomm, MediaTek, Nordic, and TI wireless platforms.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -312,7 +312,7 @@ const WHY_CARDS = [
   },
   {
     title: "Noise Reduction & Signal Conditioning",
-    desc: "Qmax Systems applies advanced techniques for lowering the noise floor in sensitive receiver chains, with strategic domain partitioning to prevent cross-talk and desensitization.",
+    desc: "We apply advanced techniques for lowering the noise floor in sensitive receiver chains, with strategic domain partitioning to prevent cross-talk and desensitization.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -349,7 +349,7 @@ const WHY_CARDS = [
 const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   {
     title: "Signal Integrity (SI)",
-    body: "Qmax Systems mitigates skin-effect losses, copper-roughness impact, and via-stub resonance at frequencies exceeding 24 GHz.",
+    body: "Our engineers mitigate skin-effect losses, copper-roughness impact, and via-stub resonance at frequencies exceeding 24 GHz.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -366,7 +366,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Noise Floor Reduction",
-    body: "Qmax Systems partitions analog, digital, power, and RF domains to prevent cross-talk and receiver desensitization.",
+    body: "We partition analog, digital, power, and RF domains to prevent cross-talk and receiver desensitization.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -383,7 +383,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "RF Generators",
-    body: "Qmax Systems designs high-power RF generators - including 1 kW HF and 500W LF configurations - for plasma etching, thin-film deposition, and medical ablation.",
+    body: "Our team designs high-power RF generators - including 1 kW HF and 500W LF configurations - for plasma etching, thin-film deposition, and medical ablation.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -400,7 +400,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "WiFi 6/6E and WiFi 7",
-    body: "Qmax Systems implements High-Efficiency (HE) and Extremely High Throughput (EHT) standards, with 4x4 and 8x8 MU-MIMO antenna configurations and OFDMA sub-carrier mapping.",
+    body: "We implement High-Efficiency (HE) and Extremely High Throughput (EHT) standards, with 4x4 and 8x8 MU-MIMO antenna configurations and OFDMA sub-carrier mapping.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -419,7 +419,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Cellular (4G LTE / 5G NR)",
-    body: "Qmax Systems designs RFFE with Low Noise Amplifiers (LNA) and Power Amplifiers (PA), managing carrier aggregation and beamforming architectures for sub-6 GHz and mmWave bands.",
+    body: "Our experts design RFFE with Low Noise Amplifiers (LNA) and Power Amplifiers (PA), managing carrier aggregation and beamforming architectures for sub-6 GHz and mmWave bands.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -437,7 +437,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "LPWAN and Short Range",
-    body: "Qmax Systems optimizes LoRaWAN, Sigfox, and BLE 5.4 for low power, maximizing battery life through sleep-current profiling and impedance matching at the antenna feed point.",
+    body: "We optimize LoRaWAN, Sigfox, and BLE 5.4 for low power, maximizing battery life through sleep-current profiling and impedance matching at the antenna feed point.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -454,7 +454,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Industrial Sensing",
-    body: "Qmax Systems develops microwave-based sensors for non-destructive testing (NDT), including high-accuracy moisture measurement and material-density analysis using phase-shift detection.",
+    body: "Our engineers develop microwave-based sensors for non-destructive testing (NDT), including high-accuracy moisture measurement and material-density analysis using phase-shift detection.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -472,7 +472,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Substrate Selection",
-    body: "Qmax Systems applies expert utilization of low-loss materials including Rogers 4350B/3003, Panasonic Megtron 6, and Tachyon 100G to minimize dissipation factor - with surface-finish selection, precise surface-roughness calculations, and skin-effect analysis to ensure minimal I2R losses.",
+    body: "We utilize low-loss materials including Rogers 4350B/3003, Panasonic Megtron 6, and Tachyon 100G to minimize dissipation factor - with surface-finish selection, precise surface-roughness calculations, and skin-effect analysis to ensure minimal I2R losses.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -491,7 +491,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "EMI/EMC Pre-compliance",
-    body: "Qmax Systems runs early-stage simulation and internal testing for Radiated Emissions (RE) and Conducted Emissions (CE), specializing in ground-loop elimination and common-mode choke selection.",
+    body: "Our team runs early-stage simulation and internal testing for Radiated Emissions (RE) and Conducted Emissions (CE), specializing in ground-loop elimination and common-mode choke selection.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -508,7 +508,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Power Electronics Integration",
-    body: "Qmax Systems manages thermal dissipation and EMI shielding in high-density power RF modules.",
+    body: "We manage thermal dissipation and EMI shielding in high-density power RF modules.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -526,7 +526,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Impedance Matching",
-    body: "Qmax Systems uses Smith Charts for complex conjugate matching, holding VSWR < 1.5:1 across operational bandwidths.",
+    body: "Our engineers use Smith Charts for complex conjugate matching, holding VSWR < 1.5:1 across operational bandwidths.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -544,7 +544,7 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Precision Layout",
-    body: "Qmax Systems implements controlled-impedance traces with strict adherence to phase matching and propagation-delay requirements.",
+    body: "We implement controlled-impedance traces with strict adherence to phase matching and propagation-delay requirements.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -751,12 +751,12 @@ export default function RfAndMicrowavePage() {
             services, bridging the gap between theoretical electromagnetics and
             robust, manufacturable hardware. From sub-GHz IoT modules to mmWave
             sensor arrays and 1 kW industrial plasma generators, Qmax Systems
-            delivers end-to-end RF PCB design, RF front-end (RFFE)
-            engineering, full-wave electromagnetic simulation, and EMI/EMC
-            pre-compliance validation - covering LF/HF through 77 GHz+ mmWave
-            bands with controlled-impedance layout on Rogers and Megtron 6
-            substrates - ensuring optimal signal integrity and regulatory
-            compliance on first build.
+            delivers end-to-end RF PCB design, RF front-end (RFFE) engineering,
+            full-wave electromagnetic simulation, and EMI/EMC pre-compliance
+            validation - covering LF/HF through 77 GHz+ mmWave bands with
+            controlled-impedance layout on Rogers and Megtron 6 substrates -
+            ensuring optimal signal integrity and regulatory compliance on first
+            build.
           </p>
         }
         ctaHref="/hardware-development-services/contact"
@@ -792,7 +792,7 @@ export default function RfAndMicrowavePage() {
       />
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our RF & Microwave Experts."
-        subtitle="Discuss your RF architecture challenges - whether you are migrating to WiFi 7, developing a custom mmWave sensor, or hardening a design for FCC compliance - with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
         ctaHref="/hardware-development-services/contact"
       />
 
