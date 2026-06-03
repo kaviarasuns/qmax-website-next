@@ -10,6 +10,65 @@ export type ComplianceCategory = {
   items: ComplianceStandardItem[];
 };
 
+export const POWER_ELECTRONICS_COMPLIANCE_CATEGORIES: ComplianceCategory[] = [
+  {
+    title: "Automotive",
+    items: [
+      {
+        code: "ISO 26262",
+        description: "functional safety (ASIL)",
+      },
+      {
+        code: "AEC-Q100",
+        description: "component qualification",
+      },
+      {
+        code: "CISPR 25",
+        description: "vehicle EMC limits",
+      },
+    ],
+  },
+  {
+    title: "Medical",
+    items: [
+      {
+        code: "IEC 60601-1",
+        description: "patient safety and isolation",
+      },
+      {
+        code: "ISO 13485",
+        description: "quality management",
+      },
+    ],
+  },
+  {
+    title: "Industrial",
+    items: [
+      {
+        code: "IEC 61000",
+        description: "electromagnetic immunity",
+      },
+      {
+        code: "UL 60950 / 62368-1",
+        description: "equipment safety",
+      },
+    ],
+  },
+  {
+    title: "Aerospace",
+    items: [
+      {
+        code: "MIL-STD-461",
+        description: "EMI control",
+      },
+      {
+        code: "DO-160",
+        description: "environmental conditions",
+      },
+    ],
+  },
+];
+
 const DEFAULT_CATEGORIES: ComplianceCategory[] = [
   {
     title: "Medical",
@@ -56,6 +115,8 @@ export type ComplianceStandardsSectionProps = {
   title?: string;
   description?: string;
   categories?: ComplianceCategory[];
+  /** Four-up grid for power electronics; default uses responsive 3-column layout */
+  columns?: 3 | 4;
   sectionHeadingId?: string;
 };
 
@@ -63,8 +124,13 @@ export function ComplianceStandardsSection({
   title = "Built for regulated industries",
   description = "Qmax Systems designs to stringent global standards so hardware holds up under medical, aerospace, and industrial certification.",
   categories = DEFAULT_CATEGORIES,
+  columns = 3,
   sectionHeadingId = "compliance-standards-heading",
 }: ComplianceStandardsSectionProps) {
+  const gridClassName =
+    columns === 4
+      ? "grid grid-cols-4 gap-6"
+      : "grid gap-6 md:grid-cols-2 lg:grid-cols-3";
   return (
     <section
       className="bg-[#09090B] px-6 py-16 text-white lg:px-8 lg:py-20"
@@ -89,7 +155,7 @@ export function ComplianceStandardsSection({
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className={gridClassName}>
           {categories.map((category) => (
             <article
               key={category.title}

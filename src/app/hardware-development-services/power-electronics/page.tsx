@@ -22,6 +22,10 @@ import {
   getCaseStudyCardImage,
 } from "@/store/case-studies";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
+import {
+  ComplianceStandardsSection,
+  POWER_ELECTRONICS_COMPLIANCE_CATEGORIES,
+} from "@/components/services-cmp/ComplianceStandardSection";
 
 function powerElectronicsProjectExperienceEntry(
   id: string,
@@ -110,8 +114,8 @@ const projectExperience: ProjectExperienceItem[] = [
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
-    id: "psu",
-    tab: "AC-DC & DC-DC Supplies",
+    id: "ev-e-mobility",
+    tab: "EV & E-Mobility",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -127,29 +131,29 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
       </svg>
     ),
     headline:
-      "AC-DC and DC-DC power supply design built for efficiency, ripple, and global compliance.",
+      "Electric Vehicle (EV) and E-Mobility power electronics with chargers, motor control, and scalable BMS.",
     intro:
-      "Qmax Systems designs custom switched-mode and linear power architectures — buck, boost, flyback, LLC, and LDO topologies — tailored for industrial automation, telecom infrastructure, and embedded platforms. Our supplies are engineered for low ripple, robust startup, and high-load transient response with CE, FCC, UL, and IEC compliance baked in from day one.",
+      "Qmax Systems designs electric-vehicle and e-mobility power electronics, including 1-phase and 3-phase On-Board Chargers (OBC) with integrated Power Factor Correction (PFC) for global grid compatibility. Qmax Systems develops high-performance motor controllers for PMSM and BLDC motors using Field-Oriented Control (FOC) algorithms. Qmax Systems also builds scalable Battery Management Systems (BMS) with active and passive balancing, high-accuracy cell monitoring, State-of-Charge (SoC) estimation, and multi-stage protection.",
     points: [
       {
-        boldLead: "Switched-Mode Power Architectures",
-        rest: " — buck, boost, flyback, and LLC resonant converters optimized for efficiency, power density, and load regulation.",
+        boldLead: "On-Board Chargers (OBC)",
+        rest: " — 1-phase and 3-phase chargers with integrated PFC for global grid compatibility.",
       },
       {
-        boldLead: "Linear & Hybrid Regulation",
-        rest: " — LDO and post-regulator stages for low-noise rails feeding sensitive analog, RF, and precision converter loads.",
+        boldLead: "Motor Controllers",
+        rest: " — PMSM and BLDC drive electronics using Field-Oriented Control (FOC) algorithms.",
       },
       {
-        boldLead: "Global Compliance by Design",
-        rest: " — EMI filter planning, creepage and clearance, and isolation design pre-engineered for CE, FCC, UL, and IEC certification.",
+        boldLead: "BMS with active/passive balancing",
+        rest: " — high-accuracy cell monitoring, SoC estimation, and multi-stage protection.",
       },
     ],
     applications:
-      "Industrial automation · Telecom infrastructure · Embedded platforms · Medical power supplies · Test & measurement",
+      "Electric vehicles · E-mobility · Vehicle-to-Grid (V2G) · EV charging · Automotive powertrain",
   },
   {
-    id: "pdn",
-    tab: "PDN Engineering",
+    id: "datacenter-infrastructure",
+    tab: "Datacenter & Infrastructure",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -163,29 +167,25 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
       </svg>
     ),
     headline:
-      "Power Delivery Network engineering that keeps modern AI accelerators, GPUs, and FPGAs alive at their advertised performance.",
+      "Datacenter and infrastructure power hardware for hyperscale workloads and high-efficiency conversion.",
     intro:
-      "Qmax Systems delivers structured Power Delivery Network (PDN) engineering with end-to-end rail planning from source to point-of-load, simulation-led decoupling, and target-impedance control. Our PDN designs support modern multi-core CPUs, large FPGAs, GPUs, and AI accelerators — where rail noise and impedance excursions translate directly into compute errors and thermal events.",
+      "Qmax Systems designs datacenter and infrastructure power hardware, including high-current intelligent Power Distribution Units (PDUs) for hyperscale environments with real-time telemetry and remote load management. Qmax Systems engineers high-efficiency AC-DC and DC-DC power supplies with high-frequency switching, minimizing footprint while maintaining greater than 96% efficiency.",
     points: [
       {
-        boldLead: "End-to-End Rail Planning",
-        rest: " — source-to-load topology, VRM placement, point-of-load conversion, and current density planning across the full board.",
+        boldLead: "Intelligent PDUs",
+        rest: " — high-current distribution for hyperscale environments, with real-time telemetry and remote load management.",
       },
       {
-        boldLead: "Target-Impedance PDN Design",
-        rest: " — frequency-domain impedance specifications matched to load dI/dt requirements, validated with full-board PI simulation.",
-      },
-      {
-        boldLead: "Simulation-Led Decoupling",
-        rest: " — capacitor selection, placement, and ESR/ESL trade-offs optimized in simulation before layout commit.",
+        boldLead: "High-Efficiency AC-DC and DC-DC",
+        rest: " — high-frequency switching delivering >96% efficiency in a minimal footprint.",
       },
     ],
     applications:
-      "AI accelerator boards · Server motherboards · High-end FPGA platforms · GPU compute · HPC systems",
+      "Hyperscale data centers · AI GPU clusters · 48V DC distribution · Telecom power · Enterprise infrastructure",
   },
   {
-    id: "bms",
-    tab: "BMS & Energy Storage",
+    id: "precision-embedded-control",
+    tab: "Precision Embedded Control",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -203,69 +203,28 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
       </svg>
     ),
     headline:
-      "Battery Management System and energy storage electronics for EV, ESS, UPS, and portable platforms.",
+      "Precision embedded control for high-performance power systems in noisy, high-voltage environments.",
     intro:
-      "Qmax Systems designs Battery Management Systems (BMS) and energy storage hardware including pack monitoring, active and passive cell balancing, safety interlocks, and State-of-Charge (SoC) and State-of-Health (SoH) estimation. Our designs span Li-ion, LFP, and other chemistries for electric vehicles, energy storage systems, UPS, and portable products.",
+      "Qmax Systems designs precision embedded control for power systems, integrating ARM Cortex-M and FPGA-based controllers for microsecond-level loop response and fault detection. Qmax Systems implements high-CMRR isolated gate drivers to ensure robust switching in high-noise, high-voltage environments.",
     points: [
       {
-        boldLead: "Pack Monitoring & Cell Balancing",
-        rest: " — high-accuracy voltage and current sensing with active or passive balancing optimized for chemistry and use profile.",
+        boldLead: "Real-Time Signal Processing",
+        rest: " — ARM Cortex-M and FPGA controllers for microsecond-level loop response and fault detection.",
       },
       {
-        boldLead: "Safety Interlocks & Protection",
-        rest: " — OVP, UVP, OCP, and thermal cutoff circuitry designed for functional safety standards in EV and stationary storage.",
-      },
-      {
-        boldLead: "SoC and SoH Estimation",
-        rest: " — coulomb-counting, model-based, and Kalman-filter approaches integrated with the BMS firmware stack.",
+        boldLead: "Isolated Gate-Drive Design",
+        rest: " — high-CMRR isolated gate drivers for robust switching in high-noise environments.",
       },
     ],
     applications:
-      "Electric vehicles (EV) · Energy storage systems (ESS) · UPS · Portable medical devices · Industrial battery packs",
-  },
-  {
-    id: "thermal",
-    tab: "Thermal & Reliability",
-    tabIcon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
-        <line x1="11.5" y1="14" x2="11.5" y2="6" />
-      </svg>
-    ),
-    headline:
-      "Joint electrical-thermal co-design that delivers long-term field reliability — not just bench-tested prototypes.",
-    intro:
-      "Qmax Systems combines electrical and thermal engineering from day one — using component derating, loss analysis, and cooling strategy optimization (passive heatsinking, forced-air, and liquid cooling) to maintain long-term field reliability of power electronics for industrial, telecom, automotive, and aerospace environments.",
-    points: [
-      {
-        boldLead: "Loss Budget & Derating Analysis",
-        rest: " — component-level loss accounting and derating against junction temperature, voltage stress, and lifetime targets.",
-      },
-      {
-        boldLead: "Cooling Strategy Selection",
-        rest: " — passive heatsinking, forced air, cold plates, and direct liquid cooling matched to power density and ambient envelope.",
-      },
-      {
-        boldLead: "Reliability Modeling",
-        rest: " — MTBF projection, MIL-HDBK-217 / Telcordia analysis, and accelerated-life test planning for high-availability deployments.",
-      },
-    ],
-    applications:
-      "Industrial power systems · Telecom power · Automotive electrification · Aerospace power · Defense systems",
+      "Digital power control · Fault detection · High-voltage switching · Motor control loops · Telemetry",
   },
 ];
 
 const WHY_CARDS = [
   {
-    title: "Transparent & Supervised Process",
-    desc: "You see every milestone, design review, and risk register as it happens. Qmax Systems program managers run a weekly cadence with traceable deliverables, on-time builds, and zero hidden surprises at handover.",
+    title: "HV Clearance & Creepage Mastery",
+    desc: "Qmax Systems adheres strictly to IPC-2221 and IEC 60601 standards for high-voltage isolation, using 3D modeling to validate safety distances in compact enclosures.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -285,8 +244,8 @@ const WHY_CARDS = [
     ),
   },
   {
-    title: "Power Systems Built from Scratch",
-    desc: "Every power electronics program starts with R&D and a proof-of-concept build to retire architectural risk early. We confirm feasibility, lock the BoM, validate magnetics and thermals, and prove critical assumptions before a single production layer is committed.",
+    title: "EMI/EMC Mitigation at Source",
+    desc: "Qmax Systems uses pre-compliance simulation to address Radiated (RE) and Conducted Emissions (CE) through proper Pi-filter tuning and snubber design.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -304,8 +263,8 @@ const WHY_CARDS = [
     ),
   },
   {
-    title: "Smooth Hardware-Software Integration",
-    desc: "We select power stages, gate drivers, MCUs, and toolchains that fit your existing stack rather than forcing a re-platform. The result is firmware that brings up cleanly, BMS controllers that drop into your platform, and lower long-term maintenance cost.",
+    title: "Ground Loop Elimination",
+    desc: "Qmax Systems strategically partitions power and signal grounds to prevent common-mode noise injection in sensitive analog feedback loops.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -324,8 +283,8 @@ const WHY_CARDS = [
     ),
   },
   {
-    title: "Expert Power Electronics Engineers",
-    desc: "Qmax Systems power electronics engineers average 12+ years across electric vehicles, energy storage systems, industrial automation, telecom power, and aerospace power. Only senior engineers touch your design — no junior hand-offs, no learning on your timeline.",
+    title: "Advanced PCB Topology",
+    desc: "Qmax Systems masters high-current heavy-copper PCBs (up to 6 oz) and multi-layer HDI stacks with optimized thermal-via arrays.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -345,8 +304,8 @@ const WHY_CARDS = [
 
 const POWER_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   {
-    title: "High-Efficiency Power Conversion",
-    body: "Design of AC-DC, DC-DC, and isolated converter topologies (buck, boost, flyback, LLC) engineered for efficiency, power density, and long-term reliability across industrial, telecom, and embedded loads.",
+    title: "Advanced Topology Implementation",
+    body: "Qmax Systems implements Resonant LLC converters, Phase-Shifted Full Bridge (PSFB), and multi-phase interleaved topologies for optimized efficiency.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -363,8 +322,8 @@ const POWER_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
     ),
   },
   {
-    title: "Battery & Charging Systems",
-    body: "Multi-cell battery management, charging control, protection circuitry, cell-balancing, and runtime optimization for Li-ion, LFP, and other chemistries used in EV, ESS, UPS, and portable applications.",
+    title: "Wide-Bandgap Integration",
+    body: "Qmax Systems designs with Silicon Carbide (SiC) and Gallium Nitride (GaN) FETs to achieve higher switching frequencies and power densities.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -385,8 +344,8 @@ const POWER_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
     ),
   },
   {
-    title: "Motor Drive Electronics",
-    body: "Power stages and control electronics for BLDC, PMSM, and industrial motor applications — including gate-driver design, current sensing, FOC control loops, and protection for high-reliability motion systems.",
+    title: "Thermal & Fluid Dynamics",
+    body: "Qmax Systems designs advanced cooling, including liquid-cooled cold plates and optimized forced-air heat-sink geometries.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -408,8 +367,8 @@ const POWER_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
     ),
   },
   {
-    title: "Power Integrity & EMI/EMC",
-    body: "PI-driven layout, filtering, grounding, and shielding strategies for stable, compliant systems. Pre-designed for EMI/EMC, CE, FCC, UL, and IEC certification — reducing rework and accelerating time-to-compliance.",
+    title: "Magnetics Design",
+    body: "Qmax Systems designs custom inductors and transformers, minimizing core loss and controlling leakage inductance.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -430,36 +389,36 @@ const POWER_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
 
 const faqs = [
   {
-    q: "What power supply topologies does Qmax Systems design?",
-    a: "Qmax Systems designs the full range of AC-DC and DC-DC topologies — buck, boost, flyback, LLC resonant converters, and LDO and post-regulator stages — tailored for industrial automation, telecom infrastructure, embedded platforms, and medical power supplies. Every design is engineered for low ripple, robust startup, high-load transient response, and global compliance.",
+    q: "How does Qmax Systems manage thermal dissipation in high-density power modules?",
+    a: "Qmax Systems manages thermal dissipation using heavy-copper traces, thermal-via arrays, and specialized substrates such as Insulated Metal Substrate (IMS) and high-Tg FR-4. For extreme power densities, Qmax Systems designs custom liquid-cooling systems and integrated cold plates. Qmax Systems validates every thermal design in simulation before prototyping to keep junction temperatures within derated limits.",
   },
   {
-    q: "Does Qmax Systems handle Power Delivery Network (PDN) design for high-current loads like AI accelerators?",
-    a: "Yes. Qmax Systems delivers structured PDN engineering with end-to-end rail planning, target-impedance control, and simulation-led decoupling — supporting multi-core CPUs, large FPGAs, GPUs, and AI accelerators where rail noise and impedance excursions translate directly into compute errors.",
+    q: "What experience does Qmax Systems have with wide-bandgap (SiC/GaN) semiconductors?",
+    a: "Qmax Systems designs with Silicon Carbide (SiC) and Gallium Nitride (GaN) FETs in high-frequency converters to reduce magnetics size and increase efficiency. Qmax Systems focuses specifically on managing the high dv/dt and di/dt of wide-bandgap devices to prevent EMI issues, through careful gate-drive, layout, and snubber design.",
   },
   {
-    q: "Can Qmax Systems design Battery Management Systems (BMS) for EV and energy storage applications?",
-    a: "Absolutely. Qmax Systems designs BMS and energy storage hardware — pack monitoring, active and passive cell balancing, safety interlocks, SoC and SoH estimation — for Li-ion, LFP, and other chemistries used in electric vehicles, energy storage systems, UPS, and portable products.",
+    q: "How does Qmax Systems ensure safety in high-voltage (800V+) designs?",
+    a: "Qmax Systems ensures high-voltage safety through rigorous clearance and creepage analysis per IEC standards, galvanic isolation of control circuitry, and active-discharge circuits. Qmax Systems validates safety distances with 3D modeling in compact enclosures, adhering to IPC-2221 and IEC 60601 high-voltage isolation requirements.",
   },
   {
-    q: "What battery chemistries does Qmax Systems support for BMS design?",
-    a: "Qmax Systems designs BMS hardware for Li-ion, LFP, NMC, and other modern battery chemistries. We handle high-accuracy voltage and current sensing, active/passive balancing, OVP/UVP/OCP protection, and SoC/SoH estimation via coulomb-counting, model-based, and Kalman-filter approaches.",
+    q: "How does Qmax Systems achieve high efficiency in AC-DC converters?",
+    a: "Qmax Systems achieves high efficiency in AC-DC converters using Bridgeless Totem-Pole PFC topologies and synchronous rectification to minimize conduction losses. Qmax Systems regularly designs power supplies that reach 80 PLUS Titanium efficiency levels, using high-frequency switching that also reduces the converter footprint.",
   },
   {
-    q: "How does Qmax Systems ensure thermal reliability in high-power designs?",
-    a: "Qmax Systems uses joint electrical-thermal co-design from day one — including component-level loss analysis, junction-temperature derating, cooling strategy selection (passive heatsinking, forced air, cold plates, or liquid cooling), and MTBF projection via MIL-HDBK-217 and Telcordia methodologies.",
+    q: "Does Qmax Systems support Battery Management System (BMS) development?",
+    a: "Yes. Qmax Systems develops Battery Management Systems for Lithium-ion and LiFePO4 chemistries, including active and passive cell balancing, fuel gauging, and State-of-Charge estimation. Qmax Systems integrates communication protocols such as CANbus and RS-485, with multi-stage protection for scalable, high-voltage battery packs.",
   },
   {
-    q: "What is included in the 1-hour complimentary consulting session?",
-    a: "During this session, you will speak directly with a Senior Hardware Architect from Qmax Systems. We can review your power architecture, discuss PDN topology, thermal envelope, or BMS design questions, or help refine your power electronics roadmap. We can sign an NDA if required.",
+    q: "Does Qmax Systems design custom magnetic components?",
+    a: "Yes. Qmax Systems designs custom magnetic components, specifying core materials, winding geometries, and litz-wire gauges to optimize inductors and transformers for specific switching frequencies and ripple requirements. Qmax Systems minimizes core loss and controls leakage inductance for high-efficiency power conversion.",
+  },
+  {
+    q: "What is included in the 1-hour complimentary consulting session with Qmax Systems?",
+    a: "During this session, you will speak directly with a Senior Hardware Architect from Qmax Systems. The team can review your block diagrams, discuss thermal, signal integrity, or noise challenges, provide high-level architecture validation, or help refine your hardware roadmap to reduce time-to-market. An NDA can be signed before the session if required.",
   },
   {
     q: "How does Qmax Systems protect customer design data and intellectual property?",
-    a: "Qmax Systems treats every engagement under strict IP protection: NDAs signed before any technical discussion, dedicated secure project workspaces, role-based access control to design files, and customer-owned IP at every milestone — schematics, layouts, BoMs, and firmware. Qmax Systems engineers never reuse or repurpose customer IP across other client engagements.",
-  },
-  {
-    q: "How does Qmax Systems ensure EMI/EMC and global certification compliance?",
-    a: "Qmax Systems pre-engineers EMI filter design, creepage and clearance, isolation barriers, and grounding strategy for CE, FCC, UL, and IEC compliance from the schematic stage forward — reducing certification rework and accelerating time to global market.",
+    a: "Qmax Systems treats every engagement under strict IP protection: NDAs are signed before any technical discussion, dedicated secure project workspaces are maintained, and role-based access controls are applied to all design files. Customers own all IP at every milestone — schematics, layouts, BoMs, and firmware. Qmax Systems engineers never reuse or repurpose customer IP across other client engagements.",
   },
 ];
 
@@ -485,17 +444,14 @@ export default function PowerElectronicsPage() {
         description={
           <>
             <p>
-              Qmax Systems delivers end-to-end power electronics engineering for
-              products that demand high efficiency, robust operation, and
-              long-term reliability. We design complete power subsystems, from
-              input protection and conversion stages to point-of-load regulation
-              and system-level validation.
-            </p>
-            <p>
-              Whether you are building edge AI devices, telecom infrastructure,
-              industrial controls, or battery-based products, our team focuses
-              on practical architecture decisions that reduce field failures and
-              improve performance under real operating conditions.
+              Qmax Systems delivers end-to-end power electronics development -
+              high-density, high-efficiency power conversion and energy
+              management for electrified transport, hyperscale data centers, and
+              industrial automation. Qmax Systems bridges wide-bandgap (GaN/SiC)
+              semiconductor capability and rugged, market-ready hardware,
+              engineering thermal management, EMI/EMC mitigation, and
+              high-voltage safety from kilowatt-scale PDUs to precision Battery
+              Management Systems.
             </p>
           </>
         }
@@ -511,15 +467,24 @@ export default function PowerElectronicsPage() {
 
       <TechnicalAdvantageSection
         headingHighlight="Power Electronics"
-        lede="Qmax Systems combines architecture planning, simulation-driven design, and hardware validation to deliver resilient power systems for demanding applications."
+        lede="Engineering high-power systems requires a rigorous understanding of magnetics, control theory, and physical PCB topology. Qmax Systems expertise covers the full spectrum of modern power conversion."
         cards={POWER_TECHNICAL_CARDS}
         columns="two"
         sectionHeadingId="technical-advantage-power-heading"
       />
 
+      <ComplianceStandardsSection
+        title="Designed for the world's most stringent regulators"
+        description="Qmax Systems designs power electronics to the strictest automotive, medical, industrial, and aerospace standards."
+        categories={POWER_ELECTRONICS_COMPLIANCE_CATEGORIES}
+        columns={4}
+      />
+
       <WhySection
         whyCards={WHY_CARDS}
-        titleHighlight="Power Electronics Design?"
+        title="The Qmax Advantage"
+        titleHighlight=""
+        description="Qmax Systems solves the physics-based problems that lead to field failures in high-voltage systems, before they reach the prototype."
       />
 
       <ServiceCaseStudiesSection
