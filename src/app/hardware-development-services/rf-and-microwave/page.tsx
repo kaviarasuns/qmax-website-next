@@ -786,21 +786,21 @@ export default function RfAndMicrowavePage() {
 
       <WhySection
         whyCards={WHY_CARDS}
-        title="Why Choose Qmax "
-        titleHighlight="Systems"
+        titleHighlight=" RF and Microwave?"
         description="Qmax Systems distinguishes itself through a rigorous focus on the physics of high-frequency signals."
-      />
-
-      <ServiceCaseStudiesSection
-        eyebrow="Hardware Programs"
-        studies={rfCaseStudies}
-        hideTopBorder
+        className="pb-2 max-[900px]:pb-2"
       />
 
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our RF & Microwave Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
         ctaHref="/hardware-development-services/contact"
+      />
+
+      <ServiceCaseStudiesSection
+        eyebrow="Hardware Programs"
+        studies={rfCaseStudies}
+        hideTopBorder
       />
 
       <FAQSection faqItems={faqs} />

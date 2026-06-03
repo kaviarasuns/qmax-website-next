@@ -474,17 +474,22 @@ export default function PowerElectronicsPage() {
       />
 
       <ComplianceStandardsSection
-        title="Designed for the world's most stringent regulators"
-        description="Qmax Systems designs power electronics to the strictest automotive, medical, industrial, and aerospace standards."
+        title="Compliance & Standards"
+        description="Qmax Systems designs for the world's most stringent regulators, delivering high-reliability power electronics for the automotive, medical, and industrial sectors"
         categories={POWER_ELECTRONICS_COMPLIANCE_CATEGORIES}
-        columns={4}
       />
 
       <WhySection
         whyCards={WHY_CARDS}
-        title="The Qmax Advantage"
-        titleHighlight=""
+        titleHighlight="Power Electronics Design?"
         description="Qmax Systems solves the physics-based problems that lead to field failures in high-voltage systems, before they reach the prototype."
+        className="pb-2 max-[900px]:pb-2"
+      />
+
+      <ConsultationCtaBar
+        heading="Get A Complimentary Consultation With Our Power Electronics Experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/hardware-development-services/contact"
       />
 
       <ServiceCaseStudiesSection
@@ -493,11 +498,11 @@ export default function PowerElectronicsPage() {
         hideTopBorder
       />
 
-      <ConsultationCtaBar
+      {/* <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our Power Electronics Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
         ctaHref="/hardware-development-services/contact"
-      />
+      /> */}
 
       <FAQSection faqItems={faqs} />
 

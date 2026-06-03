@@ -54,19 +54,19 @@ export const POWER_ELECTRONICS_COMPLIANCE_CATEGORIES: ComplianceCategory[] = [
       },
     ],
   },
-  {
-    title: "Aerospace",
-    items: [
-      {
-        code: "MIL-STD-461",
-        description: "EMI control",
-      },
-      {
-        code: "DO-160",
-        description: "environmental conditions",
-      },
-    ],
-  },
+  // {
+  //   title: "Aerospace",
+  //   items: [
+  //     {
+  //       code: "MIL-STD-461",
+  //       description: "EMI control",
+  //     },
+  //     {
+  //       code: "DO-160",
+  //       description: "environmental conditions",
+  //     },
+  //   ],
+  // },
 ];
 
 const DEFAULT_CATEGORIES: ComplianceCategory[] = [
@@ -115,10 +115,28 @@ export type ComplianceStandardsSectionProps = {
   title?: string;
   description?: string;
   categories?: ComplianceCategory[];
-  /** Four-up grid for power electronics; default uses responsive 3-column layout */
+  /** Max columns on large screens; actual columns follow `categories.length` */
   columns?: 3 | 4;
   sectionHeadingId?: string;
 };
+
+function getComplianceGridClassName(
+  count: number,
+  maxColumns: 3 | 4,
+): string {
+  const cols = Math.min(count, maxColumns);
+
+  switch (cols) {
+    case 4:
+      return "grid gap-6 sm:grid-cols-2 xl:grid-cols-4";
+    case 3:
+      return "grid gap-6 sm:grid-cols-2 lg:grid-cols-3";
+    case 2:
+      return "grid gap-6 sm:grid-cols-2";
+    default:
+      return "grid gap-6";
+  }
+}
 
 export function ComplianceStandardsSection({
   title = "Built for regulated industries",
@@ -127,30 +145,42 @@ export function ComplianceStandardsSection({
   columns = 3,
   sectionHeadingId = "compliance-standards-heading",
 }: ComplianceStandardsSectionProps) {
-  const gridClassName =
-    columns === 4
-      ? "grid grid-cols-4 gap-6"
-      : "grid gap-6 md:grid-cols-2 lg:grid-cols-3";
+  const gridClassName = getComplianceGridClassName(
+    categories.length,
+    columns,
+  );
   return (
     <section
-      className="bg-[#09090B] px-6 py-16 text-white lg:px-8 lg:py-20"
+      className="bg-zinc-900 px-6 py-16 text-white lg:px-8 lg:py-20"
       aria-labelledby={sectionHeadingId}
     >
       <div className="mx-auto max-w-7xl">
-        <div className="mx-auto mb-12 max-w-[820px]">
+        <div className="mx-auto mb-12">
           <h2
             id={sectionHeadingId}
-            className="text-center text-3xl font-light tracking-tight text-white capitalize md:text-[45px] md:leading-[1.1] md:tracking-[-0.03em]"
+            className="text-center text-2xl font-light tracking-tight text-white capitalize sm:text-3xl md:whitespace-nowrap md:text-[45px] md:leading-[1.1] md:tracking-[-0.03em]"
           >
             {title === "Built for regulated industries" ? (
               <>
-                Built for regulated <span className="text-red-500">industries</span>
+                Built for regulated{" "}
+                <span className="text-red-500">industries</span>
+              </>
+            ) : title ===
+              "Designed for the world's most stringent regulators" ? (
+              <>
+                Designed for the world&apos;s most{" "}
+                <span className="text-red-500">stringent regulators</span>
+              </>
+            ) : title === "Compliance & Standards" ? (
+              <>
+                Compliance &{" "}
+                <span className="text-red-500">Standards</span>
               </>
             ) : (
               title
             )}
           </h2>
-          <p className="mt-4 text-center text-base leading-relaxed text-zinc-400 md:text-lg md:leading-7">
+          <p className="mx-auto mt-4 max-w-[820px] text-center text-base leading-relaxed text-zinc-400 md:text-lg md:leading-7">
             {description}
           </p>
         </div>
@@ -159,7 +189,7 @@ export function ComplianceStandardsSection({
           {categories.map((category) => (
             <article
               key={category.title}
-              className="group rounded-lg border border-zinc-800 bg-[#111114] p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-red-500 hover:shadow-[0_0_0_1px_rgba(239,68,68,0.4),0_20px_40px_-15px_rgba(239,68,68,0.35)]"
+              className="group rounded-lg border border-zinc-800 bg-black p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-red-500 hover:shadow-[0_0_0_1px_rgba(239,68,68,0.4),0_20px_40px_-15px_rgba(239,68,68,0.35)]"
             >
               <h3 className="text-[22px] font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-red-500">
                 {category.title}

@@ -590,7 +590,13 @@ export default function HighSpeedDigitalPCBDesignPage() {
         title="Why Choose Qmax"
         titleHighlight="Systems?"
         description="Architecture-first engineering with simulation-driven constraints — delivering high-speed digital PCBs that work on the first build."
-        className="pb-8 max-[900px]:pb-8"
+        className="pb-2 max-[900px]:pb-2"
+      />
+
+      <ConsultationCtaBar
+        heading="Get A Complimentary Consultation With Our High-Speed Digital PCB Experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/pcb-design/contact"
       />
       {/* <ComplimentarySchematicReviewSection items={schematicReviewItems} /> */}
 
@@ -598,12 +604,6 @@ export default function HighSpeedDigitalPCBDesignPage() {
         eyebrow="PCB Programs"
         studies={pcbCaseStudies}
         hideTopBorder
-      />
-
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our High-Speed Digital PCB Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/pcb-design/contact"
       />
 
       <FAQSection faqItems={FAQ_ITEMS} />

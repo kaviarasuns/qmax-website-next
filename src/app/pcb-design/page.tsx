@@ -502,7 +502,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
             aria-label="Have your questions answered — contact Saravanaperumal Annamalai, VP - SWE Engineering"
           >
             <Image
-              src="https://d1yetprhniwywz.cloudfront.net/v2/Q.png"
+              src="https://d1yetprhniwywz.cloudfront.net/v2/csb_cta_v2.png"
               alt=""
               fill
               sizes="(max-width: 900px) 100vw, 1200px"

@@ -374,18 +374,19 @@ export default function HighSpeedDigitalDesignPage() {
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Digital Hardware Design?"
-      />
-
-      <ServiceCaseStudiesSection
-        eyebrow="Hardware Programs"
-        studies={highSpeedCaseStudies}
-        hideTopBorder
+        className="pb-2 max-[900px]:pb-2"
       />
 
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our Digital Hardware Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
         ctaHref="/hardware-development-services/contact"
+      />
+
+      <ServiceCaseStudiesSection
+        eyebrow="Hardware Programs"
+        studies={highSpeedCaseStudies}
+        hideTopBorder
       />
 
       <FAQSection faqItems={faqs} />

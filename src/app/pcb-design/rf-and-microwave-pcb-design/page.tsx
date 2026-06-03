@@ -656,8 +656,15 @@ export default function RFMicrowavePCBDesignPage() {
         title="Why Choose Qmax Systems for"
         titleHighlight="RF PCB Design"
         description="RF architecture validated before layout begins — backed by simulation-driven constraints and RF measurement expertise."
-        className="pb-8 max-[900px]:pb-8"
+        className="pb-2 max-[900px]:pb-2"
       />
+
+      <ConsultationCtaBar
+        heading="Get A Complimentary Consultation With Our RF & Microwave Experts."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        ctaHref="/pcb-design/contact"
+      />
+
       {/* <ComplimentarySchematicReviewSection
         items={schematicReviewItems}
         titleHighlight="RF & Microwave PCB Design"
@@ -668,12 +675,6 @@ export default function RFMicrowavePCBDesignPage() {
         eyebrow="PCB Programs"
         studies={rfMicrowaveCaseStudies}
         hideTopBorder
-      />
-
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our RF & Microwave Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/pcb-design/contact"
       />
 
       <FAQSection faqItems={FAQ_ITEMS} />

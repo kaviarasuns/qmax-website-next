@@ -1,10 +1,15 @@
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export interface ConsultationCtaBarProps {
   heading: string;
   subtitle: string;
   ctaHref: string;
   ctaLabel?: string;
+  /** Override section spacing (e.g. after TechnicalAdvantageSection) */
+  className?: string;
+  /** Override inner bar max-width */
+  containerClassName?: string;
 }
 
 export function ConsultationCtaBar({
@@ -12,13 +17,18 @@ export function ConsultationCtaBar({
   subtitle,
   ctaHref,
   ctaLabel = "Schedule Consultation",
+  className,
+  containerClassName = "max-w-[1200px]",
 }: ConsultationCtaBarProps) {
   return (
     <section
       id="consultation-cta-bar"
-      className="relative bg-white px-8 py-24 max-[900px]:px-6 max-[900px]:py-16"
+      className={cn(
+        "relative bg-white px-8 pt-2 pb-24 max-[900px]:px-6 max-[900px]:pt-2 max-[900px]:pb-16",
+        className,
+      )}
     >
-      <div className="relative mx-auto max-w-[1200px]">
+      <div className={cn("relative mx-auto", containerClassName)}>
         <span
           className="pointer-events-none absolute -top-4 right-[8%] z-[1] h-[26px] w-[26px] bg-[#E63329]"
           aria-hidden="true"

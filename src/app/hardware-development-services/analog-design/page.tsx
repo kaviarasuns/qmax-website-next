@@ -552,22 +552,26 @@ export default function AnalogDesignPage() {
         sectionHeadingId="technical-advantage-analog-heading"
       />
 
-      <ComplianceStandardsSection />
+      <ComplianceStandardsSection
+        title="Compliance & Standards"
+        description="Qmax Systems builds for regulated industries, designing to stringent global standards so hardware holds up under medical, aerospace, and industrial certification."
+      />
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Analog & Mixed-Signal Design?"
-      />
-
-      <ServiceCaseStudiesSection
-        eyebrow="Hardware Programs"
-        studies={analogCaseStudies}
-        hideTopBorder
+        className="pb-2 max-[900px]:pb-2"
       />
 
       <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
         ctaHref="/hardware-development-services/contact"
+      />
+
+      <ServiceCaseStudiesSection
+        eyebrow="Hardware Programs"
+        studies={analogCaseStudies}
+        hideTopBorder
       />
 
       <FAQSection faqItems={faqs} />

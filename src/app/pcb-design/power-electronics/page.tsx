@@ -495,12 +495,18 @@ export default function PowerElectronicsPage() {
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />
       <WhySection
-        whyCards={WHY_CARDS}
-        title="Why Choose Qmax"
-        titleHighlight="Systems?"
-        description="25 years of power electronics PCB expertise — from HV isolation to EMI-compliant production files."
-        className="pb-8 max-[900px]:pb-8"
-      />
+          whyCards={WHY_CARDS}
+          title="Why Choose Qmax"
+          titleHighlight="Systems?"
+          description="25 years of power electronics PCB expertise — from HV isolation to EMI-compliant production files."
+          className="pb-2 max-[900px]:pb-2"
+        />
+
+        <ConsultationCtaBar
+          heading="Get A Complimentary Consultation With Our Power Electronics Experts."
+          subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+          ctaHref="/pcb-design/contact"
+        />
       {/* <ComplimentarySchematicReviewSection
         items={schematicReviewItems}
         titleHighlight="Power Electronics PCB Design"
@@ -511,12 +517,6 @@ export default function PowerElectronicsPage() {
         eyebrow="PCB Programs"
         studies={powerElectronicsCaseStudies}
         hideTopBorder
-      />
-
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our Power Electronics Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/pcb-design/contact"
       />
 
       <FAQSection faqItems={FAQ_ITEMS} />

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 export type TechnicalAdvantageCard = {
   title: string;
@@ -141,6 +142,7 @@ export type TechnicalAdvantageSectionProps = {
   /** Power electronics preview uses a 2-column card grid; digital/analog use three-up on xl */
   columns?: "two" | "three";
   sectionHeadingId?: string;
+  className?: string;
 };
 
 export function TechnicalAdvantageSection({
@@ -149,6 +151,7 @@ export function TechnicalAdvantageSection({
   cards,
   columns = "three",
   sectionHeadingId = "technical-advantage-heading",
+  className,
 }: TechnicalAdvantageSectionProps) {
   const gridClassName =
     columns === "two"
@@ -157,7 +160,7 @@ export function TechnicalAdvantageSection({
 
   return (
     <section
-      className="px-6 py-16 lg:px-8 lg:py-20"
+      className={cn("px-6 py-16 lg:px-8 lg:py-20", className)}
       aria-labelledby={sectionHeadingId}
     >
       <div className="mx-auto max-w-7xl">
