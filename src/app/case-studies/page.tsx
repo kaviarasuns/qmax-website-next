@@ -347,7 +347,10 @@ export default function CaseStudiesPage() {
           </div>
 
           {/* Engineering Support Services Section */}
-          <div id="engineering-support-services" className="mb-10 scroll-mt-32">
+          <div
+            id="engineering-support-services"
+            className="mb-80 scroll-mt-32 xl:mb-96"
+          >
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 <h2 className="text-3xl font-bold text-foreground">
