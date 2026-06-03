@@ -4,6 +4,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import {
   embeddedCaseStudies,
+  engineeringSupportCaseStudies,
   industrialCaseStudies,
   mechanicalCaseStudies,
   pcbCaseStudies,
@@ -21,6 +22,7 @@ const sections = [
   { id: "pcb", label: "PCB Design" },
   { id: "mechanical", label: "Mechanical Design" },
   { id: "industrial", label: "Industrial Design" },
+  { id: "engineering-support-services", label: "Engineering Support Services" },
 ];
 
 const sectionCounts: { [key: string]: number } = {
@@ -28,12 +30,14 @@ const sectionCounts: { [key: string]: number } = {
   pcb: pcbCaseStudies.length,
   mechanical: mechanicalCaseStudies.length,
   industrial: industrialCaseStudies.length,
+  "engineering-support-services": engineeringSupportCaseStudies.length,
 };
 
 // Temporary: global card index offsets per section (remove when numbering is dropped)
 const pcbCardOffset = embeddedCaseStudies.length;
 const mechanicalCardOffset = pcbCardOffset + pcbCaseStudies.length;
 const industrialCardOffset = mechanicalCardOffset + mechanicalCaseStudies.length;
+const engineeringSupportCardOffset = industrialCardOffset + industrialCaseStudies.length;
 
 function CaseStudyCardNumber({ number }: { number: number }) {
   return (
@@ -337,6 +341,30 @@ export default function CaseStudiesPage() {
                     {...study}
                     // imageBackgroundClassName="bg-blue-200"
                   />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Engineering Support Services Section */}
+          <div id="engineering-support-services" className="mb-10 scroll-mt-32">
+            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+              <div>
+                <h2 className="text-3xl font-bold text-foreground">
+                  Engineering Support Services
+                </h2>
+              </div>
+              <span className="text-sm text-zinc-500 font-medium mb-1">
+                {engineeringSupportCaseStudies.length} Projects
+              </span>
+            </div>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+              {engineeringSupportCaseStudies.map((study, index) => (
+                <div key={`esstudy-${study.id}`} className="relative">
+                  <CaseStudyCardNumber
+                    number={engineeringSupportCardOffset + index + 1}
+                  />
+                  <CaseStudyCard {...study} />
                 </div>
               ))}
             </div>

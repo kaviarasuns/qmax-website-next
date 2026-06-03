@@ -1,5 +1,6 @@
 import type { CaseStudy } from "../../types/case-study";
 import { embeddedCaseStudiesData } from "./embedded-case-studies";
+import { engineeringSupportCaseStudiesData } from "./engineering-support-case-studies";
 import { industrialCaseStudiesData } from "./industrial-case-studies";
 import { mechanicalCaseStudiesData } from "./mechanical-case-studies";
 import { pcbCaseStudiesData } from "./pcb-case-studies";
@@ -10,6 +11,7 @@ export const allCaseStudiesData: CaseStudy[] = [
   ...pcbCaseStudiesData,
   ...mechanicalCaseStudiesData,
   ...industrialCaseStudiesData,
+  ...engineeringSupportCaseStudiesData,
 ];
 
 export type CaseStudyListItem = {
@@ -83,6 +85,10 @@ export const industrialCaseStudies = industrialCaseStudiesData.map(
   (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "industrial"),
 );
 
+export const engineeringSupportCaseStudies = engineeringSupportCaseStudiesData.map(
+  (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "services"),
+);
+
 const countPendingImages = (studies: CaseStudy[]): number => {
   return studies.filter(
     (study) =>
@@ -96,6 +102,7 @@ export const pendingImageCounts = {
   pcb: countPendingImages(pcbCaseStudiesData),
   mechanical: countPendingImages(mechanicalCaseStudiesData),
   industrial: countPendingImages(industrialCaseStudiesData),
+  engineeringSupport: countPendingImages(engineeringSupportCaseStudiesData),
 };
 
 export const caseStudiesData = allCaseStudiesData;
