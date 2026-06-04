@@ -161,7 +161,7 @@ export function CoreCapabilitiesSection({
             >
               <div className="group block w-full max-w-[1200px]">
                 <article className="isolate overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_24px_60px_-22px_rgba(15,23,42,0.35)]">
-                  <div className="grid h-[68vh] max-h-[640px] md:grid-cols-2">
+                  <div className="grid h-[68vh] max-h-[640px] md:grid-cols-[55fr_45fr]">
                     {/* Left: video (or icon fallback) */}
                     <div className="relative min-h-[240px] overflow-hidden md:min-h-full">
                       {cap.imageSrc ? (
@@ -205,15 +205,15 @@ export function CoreCapabilitiesSection({
                     </div>
 
                     {/* Right: content */}
-                    <div className="flex flex-col justify-start overflow-y-auto p-6 md:p-8">
-                      <div>
+                    <div className="flex w-full min-w-0 flex-col justify-start overflow-y-auto px-6 py-6 md:px-8 md:py-8">
+                      <div className="w-full">
                         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-red-500">
                           {cap.tabLabel}
                         </p>
                         <h3 className="mb-2 mt-2 text-2xl font-light tracking-wide md:text-3xl">
                           {cap.headline}
                         </h3>
-                        <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground md:text-base">
+                        <p className="mt-3 w-full text-sm leading-relaxed text-foreground md:text-base">
                           {cap.intro}
                         </p>
 

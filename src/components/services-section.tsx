@@ -51,17 +51,94 @@ const carouselItems: {
       "Multi-physics PCB design services focused on signal integrity, manufacturability, and first-pass success.",
     link: "/case-studies/oxygen-generator",
   },
-  // {
-  //   id: 5,
-  //   image: "/services/industrial-design.png",
-  //   title: "Industrial Design",
-  //   description: "Industrial Design & Mechanical Engineering",
-  //   url: "/case-studies/BLE-tag-with-Wireless-Charging",
-  // },
+  {
+    id: 5,
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/1.png",
+    title: "Wi-Fi 6E Router",
+    summary:
+      "High-performance Wi-Fi 6E router delivering ultra-fast multi-band connectivity, low latency communication, and secure networking for modern connected environments.",
+    link: "/case-studies/wifi-6e-router",
+  },
+  {
+    id: 6,
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_cost_bldc_motor_controller_for_evs/1.1.png",
+    title: "Ultra Low Cost BLDC Motor Controller for EVs",
+    summary:
+      "An ultra low-cost BLDC motor controller platform designed for electric vehicles, delivering efficient motor control, compact integration, and reliable embedded performance.",
+    link: "/case-studies/ultra-low-cost-bldc-motor-controller-for-evs",
+  },
+  {
+    id: 7,
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_pack/1.1.png",
+    title: "BMS Controller",
+    summary:
+      "High-speed data logging and real-time analytics platform for battery management systems with 100 kHz sampling across 32 parallel channels.",
+    link: "/case-studies/bms-controller",
+  },
+  {
+    id: 8,
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/GIMBAL/GIMBAL_4_AXIS.1.png",
+    title: "4-Axis Gimbal",
+    summary:
+      "A precision-engineered 4-axis gimbal system designed for smooth stabilization, dynamic balancing, and high-performance motion control applications.",
+    link: "/case-studies/gimbal",
+  },
+  {
+    id: 9,
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/frizb_ai_box/6.png",
+    title: "Warehouse Camera Controller Unit",
+    summary:
+      "A compact AI-enabled industrial enclosure engineered for embedded intelligence systems with optimized thermal management and rugged field deployment.",
+    link: "/case-studies/warehouse-camera-controller-unit-mechanical",
+  },
+  {
+    id: 10,
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD2/OBD_V4_RENDER_23_NOV_2024_MG2_2.1.png",
+    title: "OBD V4 Smart Diagnostic Unit",
+    summary:
+      "Advanced OBD V4 smart diagnostic unit designed for real-time vehicle health monitoring, fault detection, and connected fleet diagnostics with secure cloud integration.",
+    link: "/case-studies/obd-v4-system",
+  },
 ];
+
+const SCROLL_AMOUNT = 340;
 
 export function ServicesSection() {
   const scrollRef = React.useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
+  const [canScrollRight, setCanScrollRight] = React.useState(false);
+
+  const updateScrollState = React.useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 4);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
+  }, []);
+
+  React.useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    updateScrollState();
+    el.addEventListener("scroll", updateScrollState, { passive: true });
+    window.addEventListener("resize", updateScrollState);
+    return () => {
+      el.removeEventListener("scroll", updateScrollState);
+      window.removeEventListener("resize", updateScrollState);
+    };
+  }, [updateScrollState]);
+
+  const scroll = (direction: "left" | "right") => {
+    scrollRef.current?.scrollBy({
+      left: direction === "left" ? -SCROLL_AMOUNT : SCROLL_AMOUNT,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <section className="bg-background flex min-h-screen flex-col items-center justify-center py-16 sm:py-20 lg:py-24">
@@ -84,24 +161,70 @@ export function ServicesSection() {
             </Link>
           </div>
         </div>
-        <div
-          ref={scrollRef}
-          className="scrollbar-hide flex snap-x snap-mandatory gap-4 overflow-x-auto pb-8 md:gap-5 lg:grid lg:grid-cols-4 lg:snap-none lg:overflow-visible"
-        >
-          {carouselItems.map((item) => (
-            <div
-              key={item.id}
-              className="w-64 shrink-0 snap-start sm:w-72 md:w-80 lg:w-auto lg:shrink"
+
+        <div className="relative">
+          {canScrollLeft && (
+            <button
+              onClick={() => scroll("left")}
+              aria-label="Scroll left"
+              className="absolute left-0 top-[calc(50%-16px)] z-10 -translate-x-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full border border-zinc-200 bg-white shadow-md transition-all duration-200 hover:border-zinc-400 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/50"
             >
-              <CaseStudyCard
-                title={item.title}
-                image={item.image}
-                link={item.link}
-                summary={item.summary}
-                imageRotation={item.imageRotation}
-              />
-            </div>
-          ))}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-4 w-4 text-zinc-700"
+              >
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
+          )}
+
+          <div
+            ref={scrollRef}
+            className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-8 md:gap-5"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" } as React.CSSProperties}
+          >
+            {carouselItems.map((item) => (
+              <div
+                key={item.id}
+                className="w-[280px] shrink-0 snap-start sm:w-[300px] md:w-[320px] lg:w-[340px]"
+              >
+                <CaseStudyCard
+                  title={item.title}
+                  image={item.image}
+                  link={item.link}
+                  summary={item.summary}
+                  imageRotation={item.imageRotation}
+                />
+              </div>
+            ))}
+          </div>
+
+          {canScrollRight && (
+            <button
+              onClick={() => scroll("right")}
+              aria-label="Scroll right"
+              className="absolute right-0 top-[calc(50%-16px)] z-10 translate-x-1/2 -translate-y-1/2 flex h-11 w-11 items-center justify-center rounded-full border border-zinc-200 bg-white shadow-md transition-all duration-200 hover:border-zinc-400 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/50"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-4 w-4 text-zinc-700"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </button>
+          )}
         </div>
       </div>
     </section>
