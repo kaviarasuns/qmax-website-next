@@ -295,7 +295,6 @@ export default function IndustrialDesignServicesPage() {
         capabilities={INDUSTRIAL_DESIGN_CAPABILITIES}
         title="Core"
         titleHighlight="Capabilities"
-        description="From first sketch to factory-ready handover — five integrated disciplines that ground every industrial design decision in engineering and manufacturing reality."
         learnMoreHref="/mechanical-industrial-design-services/contact"
       />
 

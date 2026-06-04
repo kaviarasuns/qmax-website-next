@@ -32,7 +32,6 @@ interface CoreCapabilitiesSectionProps {
   capabilities: CoreCapability[];
   title?: string;
   titleHighlight?: string;
-  description?: string;
   learnMoreHref?: string;
 }
 
@@ -40,7 +39,6 @@ export function CoreCapabilitiesSection({
   capabilities,
   title = "Core",
   titleHighlight = "Capabilities",
-  description,
   learnMoreHref = "#contact",
 }: CoreCapabilitiesSectionProps) {
   const stackWrapperRef = useRef<HTMLDivElement | null>(null);
@@ -149,11 +147,6 @@ export function CoreCapabilitiesSection({
               </>
             ) : null}
           </h2>
-          {description ? (
-            <p className="-mt-14 mx-auto max-w-3xl text-sm leading-relaxed text-foreground/80 md:text-base">
-              {description}
-            </p>
-          ) : null}
         </div>
 
         {/* Stacked card layers */}
