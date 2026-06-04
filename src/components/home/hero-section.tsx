@@ -121,7 +121,7 @@ export default function HeroSection() {
             </div>
             <Link
               href="/contact"
-              className="mt-5 inline-block px-4 py-2.5 sm:px-5 sm:py-2.5 text-sm sm:text-base border border-white text-white bg-zinc-950 rounded-md transition hover:bg-zinc-900"
+              className="mt-5 inline-block px-4 py-2.5 sm:px-5 sm:py-2.5 text-sm sm:text-base border border-white text-white rounded-md transition hover:bg-white/10"
             >
               Let&apos;s Build
             </Link>

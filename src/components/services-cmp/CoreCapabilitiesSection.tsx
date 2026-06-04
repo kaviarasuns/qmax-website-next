@@ -135,10 +135,9 @@ export function CoreCapabilitiesSection({
         {/* Sticky title */}
         <div
           data-budge-target
-          className="pointer-events-none absolute inset-x-0 top-20 z-20 mx-auto max-w-6xl px-4 text-center sm:px-6 md:top-20 lg:px-8"
-          style={{ top: "120px" }}
+          className="pointer-events-none absolute inset-x-0 top-16 z-20 mx-auto max-w-6xl px-4 text-center sm:px-6 md:top-20 lg:px-8"
         >
-          <h2 className="mx-auto mb-20 max-w-[1200px] text-center text-4xl font-light tracking-wide md:text-5xl">
+          <h2 className="mx-auto max-w-[1200px] text-center text-4xl font-light tracking-wide md:text-5xl">
             {title}
             {titleHighlight ? (
               <>
@@ -158,11 +157,11 @@ export function CoreCapabilitiesSection({
               ref={(element) => {
                 cardRefs.current[index] = element;
               }}
-              className="absolute inset-0 flex items-center justify-center px-4 pt-32 will-change-transform sm:px-6 md:pt-40 lg:px-8"
+              className="absolute inset-0 flex items-start justify-center px-4 pt-28 pb-6 will-change-transform sm:px-6 md:items-center md:pt-36 lg:px-8"
             >
               <div className="group block w-full max-w-[1200px]">
                 <article className="isolate overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_24px_60px_-22px_rgba(15,23,42,0.35)]">
-                  <div className="grid h-[64vh] md:grid-cols-2">
+                  <div className="grid h-[68vh] max-h-[640px] md:grid-cols-2">
                     {/* Left: video (or icon fallback) */}
                     <div className="relative min-h-[240px] overflow-hidden md:min-h-full">
                       {cap.imageSrc ? (
@@ -206,26 +205,26 @@ export function CoreCapabilitiesSection({
                     </div>
 
                     {/* Right: content */}
-                    <div className="flex flex-col justify-center overflow-y-auto p-6 md:p-10">
+                    <div className="flex flex-col justify-start overflow-y-auto p-6 md:p-8">
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-red-500">
                           {cap.tabLabel}
                         </p>
-                        <h3 className="mb-3 mt-3 text-2xl font-light tracking-wide md:text-3xl">
+                        <h3 className="mb-2 mt-2 text-2xl font-light tracking-wide md:text-3xl">
                           {cap.headline}
                         </h3>
-                        <p className="mt-4 max-w-md text-sm leading-relaxed text-foreground md:text-base">
+                        <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground md:text-base">
                           {cap.intro}
                         </p>
 
                         {cap.bullets.length > 0 ? (
-                          <div className="mt-5 space-y-4">
+                          <div className="mt-4 space-y-3">
                             {cap.bullets.map((group) => (
                               <div key={group.title}>
                                 <p className="text-left text-xs font-semibold uppercase tracking-[0.12em] text-foreground">
                                   {group.title}
                                 </p>
-                                <ul className="mt-2 space-y-2">
+                                <ul className="mt-2 space-y-1.5">
                                   {group.items.map((item) => (
                                     <li
                                       key={item}
@@ -258,7 +257,7 @@ export function CoreCapabilitiesSection({
 
                       <Link
                         href={cardHref}
-                        className="group/cta mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-red-500 transition-all duration-300 hover:gap-3"
+                        className="group/cta mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-red-500 transition-all duration-300 hover:gap-3"
                       >
                         <span>Learn More</span>
                         <svg
