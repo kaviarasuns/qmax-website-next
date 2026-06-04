@@ -45,7 +45,9 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
     id: "cad-3d",
     tabLabel: "Engineering",
     tabIcon: FOLDER_TAB_ICONS.cad3d,
-    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4",
+    // videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4",
+    imageSrc:
+      "https://d1yetprhniwywz.cloudfront.net/v2/core-capabilites-ID.jpeg",
     headline: "CAD and 3D Modelling",
     intro:
       "Approved concept sketches are translated into precision parametric 3D models using industry-standard CAD platforms. Our models are construction-ready — built with tolerancing, draft angles, wall thickness constraints, and assembly logic incorporated from the outset. CAD deliverables are fully documented with manufacturing annotations, bill of materials structure, and revision control to support downstream mechanical engineering and tooling activities.",
