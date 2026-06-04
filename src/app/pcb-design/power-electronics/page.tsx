@@ -3,7 +3,6 @@ import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
-import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import {
   CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
@@ -499,13 +498,13 @@ export default function PowerElectronicsPage() {
           title="Why Choose Qmax"
           titleHighlight="Systems?"
           description="25 years of power electronics PCB expertise — from HV isolation to EMI-compliant production files."
-          className="pb-2 max-[900px]:pb-2"
-        />
-
-        <ConsultationCtaBar
-          heading="Get A Complimentary Consultation With Our Power Electronics Experts."
-          subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-          ctaHref="/pcb-design/contact"
+          consultationCta={{
+            heading:
+              "Get A Complimentary Consultation With Our Power Electronics Experts.",
+            subtitle:
+              "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+            ctaHref: "/pcb-design/contact",
+          }}
         />
       {/* <ComplimentarySchematicReviewSection
         items={schematicReviewItems}

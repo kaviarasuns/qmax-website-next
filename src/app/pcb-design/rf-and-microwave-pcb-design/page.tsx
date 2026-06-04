@@ -3,7 +3,6 @@ import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
-import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import {
   CoreServiceOfferingsSection,
   type HighSpeedCoreOffering,
@@ -656,13 +655,13 @@ export default function RFMicrowavePCBDesignPage() {
         title="Why Choose Qmax Systems for"
         titleHighlight="RF PCB Design"
         description="RF architecture validated before layout begins — backed by simulation-driven constraints and RF measurement expertise."
-        className="pb-2 max-[900px]:pb-2"
-      />
-
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our RF & Microwave Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/pcb-design/contact"
+        consultationCta={{
+          heading:
+            "Get A Complimentary Consultation With Our RF & Microwave Experts.",
+          subtitle:
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+          ctaHref: "/pcb-design/contact",
+        }}
       />
 
       {/* <ComplimentarySchematicReviewSection

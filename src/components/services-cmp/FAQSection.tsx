@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 interface FAQItem {
   q: string;
   a: string;
@@ -5,11 +7,17 @@ interface FAQItem {
 
 interface FAQSectionProps {
   faqItems: FAQItem[];
+  className?: string;
 }
 
-export function FAQSection({ faqItems }: FAQSectionProps) {
+export function FAQSection({ faqItems, className }: FAQSectionProps) {
   return (
-    <section className="bg-white pt-24 pb-0 px-16 max-[900px]:px-6 max-[900px]:pt-16 max-[900px]:pb-0">
+    <section
+      className={cn(
+        "bg-white pt-24 pb-0 px-16 max-[900px]:px-6 max-[900px]:pt-16 max-[900px]:pb-0",
+        className,
+      )}
+    >
       <div className="mx-auto max-w-[960px]">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-light text-center">

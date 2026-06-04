@@ -1,6 +1,10 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import {
+  ConsultationCtaBar,
+  type ConsultationCtaBarProps,
+} from "@/components/services-cmp/ConsultationCtaBar";
 
 interface WhyCard {
   title: string;
@@ -15,6 +19,8 @@ interface WhySectionProps {
   description?: ReactNode;
   ctaHref?: string;
   className?: string;
+  /** When provided, renders a Consultation CTA bar inside the section, below the cards grid */
+  consultationCta?: ConsultationCtaBarProps;
 }
 
 export function WhySection({
@@ -24,6 +30,7 @@ export function WhySection({
   description,
   ctaHref = "/hardware-development-services/contact",
   className,
+  consultationCta,
 }: WhySectionProps) {
   return (
     <section
@@ -93,6 +100,15 @@ export function WhySection({
             </span>
           </a>
         </div>
+        {consultationCta ? (
+          <div className="mt-4 max-[900px]:mt-4">
+            <ConsultationCtaBar
+              {...consultationCta}
+              className={cn("p-0 max-[900px]:p-0", consultationCta.className)}
+              containerClassName={consultationCta.containerClassName ?? "max-w-none"}
+            />
+          </div>
+        ) : null}
       </div>
     </section>
   );

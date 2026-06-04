@@ -10,7 +10,6 @@ import {
   TechnicalAdvantageSection,
   type TechnicalAdvantageCard,
 } from "@/components/services-cmp/TechnicalAdvantageSection";
-import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import {
   ApplicationsProjectExperienceSection,
@@ -559,22 +558,24 @@ export default function AnalogDesignPage() {
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Analog & Mixed-Signal Design?"
-        className="pb-2 max-[900px]:pb-2"
-      />
-
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/hardware-development-services/contact"
+        className="pt-16 pb-16 lg:pt-20 lg:pb-20"
+        consultationCta={{
+          heading:
+            "Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts.",
+          subtitle:
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+          ctaHref: "/hardware-development-services/contact",
+        }}
       />
 
       <ServiceCaseStudiesSection
         eyebrow="Hardware Programs"
         studies={analogCaseStudies}
         hideTopBorder
+        className="py-16 lg:py-20"
       />
 
-      <FAQSection faqItems={faqs} />
+      <FAQSection faqItems={faqs} className="pt-16 lg:pt-20" />
       <div className="pb-28"></div>
     </>
   );

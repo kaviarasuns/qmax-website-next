@@ -7,7 +7,6 @@ import {
 } from "@/components/services-cmp/CoreServiceOfferingsSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { DigitalHardwareTechnicalAdvantageSection } from "@/components/services-cmp/TechnicalAdvantageSection";
-import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import {
@@ -374,13 +373,13 @@ export default function HighSpeedDigitalDesignPage() {
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="Digital Hardware Design?"
-        className="pb-2 max-[900px]:pb-2"
-      />
-
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our Digital Hardware Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/hardware-development-services/contact"
+        consultationCta={{
+          heading:
+            "Get A Complimentary Consultation With Our Digital Hardware Experts.",
+          subtitle:
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+          ctaHref: "/hardware-development-services/contact",
+        }}
       />
 
       <ServiceCaseStudiesSection

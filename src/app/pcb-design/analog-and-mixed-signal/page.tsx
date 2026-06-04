@@ -4,7 +4,6 @@ import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,
 } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
-import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import {
   CoreServiceOfferingsSection,
   HighSpeedCoreOffering,
@@ -538,13 +537,13 @@ export default function AnalogAndMixedSignalPage() {
         title="Why Choose Qmax"
         titleHighlight="Systems?"
         description="Engineering-led analog and mixed-signal PCB design — built for first-time-right performance from schematic to production."
-        className="pb-2 max-[900px]:pb-2"
-      />
-
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/pcb-design/contact"
+        consultationCta={{
+          heading:
+            "Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts.",
+          subtitle:
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+          ctaHref: "/pcb-design/contact",
+        }}
       />
 
       <section className="bg-white px-16 pb-24 max-[900px]:px-6 max-[900px]:pb-16">

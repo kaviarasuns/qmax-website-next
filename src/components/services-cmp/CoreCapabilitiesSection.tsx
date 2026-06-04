@@ -158,7 +158,7 @@ export function CoreCapabilitiesSection({
               ref={(element) => {
                 cardRefs.current[index] = element;
               }}
-              className="absolute inset-0 flex items-center justify-center px-4 pt-20 will-change-transform sm:px-6 md:pt-24 lg:px-8"
+              className="absolute inset-0 flex items-center justify-center px-4 pt-32 will-change-transform sm:px-6 md:pt-40 lg:px-8"
             >
               <div className="group block w-full max-w-[1200px]">
                 <article className="isolate overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_24px_60px_-22px_rgba(15,23,42,0.35)]">

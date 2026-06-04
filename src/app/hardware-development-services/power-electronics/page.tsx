@@ -11,7 +11,6 @@ import {
   TechnicalAdvantageSection,
   type TechnicalAdvantageCard,
 } from "@/components/services-cmp/TechnicalAdvantageSection";
-import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import {
   ApplicationsProjectExperienceSection,
@@ -483,13 +482,13 @@ export default function PowerElectronicsPage() {
         whyCards={WHY_CARDS}
         titleHighlight="Power Electronics Design?"
         description="Qmax Systems solves the physics-based problems that lead to field failures in high-voltage systems, before they reach the prototype."
-        className="pb-2 max-[900px]:pb-2"
-      />
-
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our Power Electronics Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/hardware-development-services/contact"
+        consultationCta={{
+          heading:
+            "Get A Complimentary Consultation With Our Power Electronics Experts.",
+          subtitle:
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+          ctaHref: "/hardware-development-services/contact",
+        }}
       />
 
       <ServiceCaseStudiesSection

@@ -10,7 +10,6 @@ import {
   TechnicalAdvantageSection,
   type TechnicalAdvantageCard,
 } from "@/components/services-cmp/TechnicalAdvantageSection";
-import { ConsultationCtaBar } from "@/components/services-cmp/ConsultationCtaBar";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import {
   ApplicationsProjectExperienceSection,
@@ -788,13 +787,13 @@ export default function RfAndMicrowavePage() {
         whyCards={WHY_CARDS}
         titleHighlight=" RF and Microwave?"
         description="Qmax Systems distinguishes itself through a rigorous focus on the physics of high-frequency signals."
-        className="pb-2 max-[900px]:pb-2"
-      />
-
-      <ConsultationCtaBar
-        heading="Get A Complimentary Consultation With Our RF & Microwave Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/hardware-development-services/contact"
+        consultationCta={{
+          heading:
+            "Get A Complimentary Consultation With Our RF & Microwave Experts.",
+          subtitle:
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+          ctaHref: "/hardware-development-services/contact",
+        }}
       />
 
       <ServiceCaseStudiesSection
