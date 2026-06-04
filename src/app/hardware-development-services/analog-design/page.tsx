@@ -42,6 +42,7 @@ function analogProjectExperienceEntry(
     description,
     imageSrc: getCaseStudyCardImage(caseStudyId),
     imageAlt: study.title,
+    caseStudyHref: `/case-studies/${study.id}`,
   };
 }
 

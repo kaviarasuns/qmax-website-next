@@ -41,6 +41,7 @@ function rfMicrowaveProjectExperienceEntry(
     description,
     imageSrc: getCaseStudyCardImage(caseStudyId),
     imageAlt: listTitle,
+    caseStudyHref: `/case-studies/${study.id}`,
   };
 }
 

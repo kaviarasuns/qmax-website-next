@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -13,6 +14,8 @@ export type ProjectExperienceItem = {
   imageAlt?: string;
   /** CSS linear-gradient for placeholder when imageSrc is omitted */
   placeholderGradient?: string;
+  /** Link to the related case study; renders a "View case study" CTA when set */
+  caseStudyHref?: string;
 };
 
 export type ApplicationsProjectExperienceSectionProps = {
@@ -175,6 +178,15 @@ export function ApplicationsProjectExperienceSection({
                       <p className="mt-1 text-xs leading-relaxed text-foreground md:text-[12px]">
                         {project.description}
                       </p>
+                      {project.caseStudyHref ? (
+                        <Link
+                          href={project.caseStudyHref}
+                          className="group/cta mt-3 inline-flex items-center gap-1.5 text-xs font-semibold tracking-tight text-brand-red transition-colors hover:text-red-600 md:text-[13px]"
+                        >
+                          View case study
+                          <ChevronIcon className="h-3 w-3 transition-transform duration-200 group-hover/cta:translate-x-0.5" />
+                        </Link>
+                      ) : null}
                     </div>
                   </div>
                 );

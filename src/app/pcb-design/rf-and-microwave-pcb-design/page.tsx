@@ -48,6 +48,7 @@ function projectExperienceEntry(
     description: options?.description ?? study.summary,
     imageSrc: options?.imageSrc ?? getCaseStudyCardImage(caseStudyId),
     imageAlt: options?.imageAlt ?? study.title,
+    caseStudyHref: `/case-studies/${study.id}`,
   };
 }
 

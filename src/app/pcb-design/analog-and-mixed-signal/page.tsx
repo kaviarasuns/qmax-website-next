@@ -77,6 +77,7 @@ function projectExperienceEntry(
     description: options?.description ?? study.summary,
     imageSrc: options?.imageSrc ?? getCaseStudyCardImage(caseStudyId),
     imageAlt: options?.imageAlt ?? study.title,
+    caseStudyHref: `/case-studies/${study.id}`,
   };
 }
 
@@ -546,7 +547,7 @@ export default function AnalogAndMixedSignalPage() {
         }}
       />
 
-      <section className="bg-white px-16 pb-24 max-[900px]:px-6 max-[900px]:pb-16">
+      {/* <section className="bg-white px-16 pb-24 max-[900px]:px-6 max-[900px]:pb-16">
         <div className="mx-auto max-w-[1200px]">
           <div className="rounded-xl border border-slate-200 border-l-4 border-l-[#F33117] bg-white px-7 py-7 md:px-8">
             <h3 className="text-lg font-semibold">Compliance-Ready Layout</h3>
@@ -557,7 +558,7 @@ export default function AnalogAndMixedSignalPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <ComplimentarySchematicReviewSection
         items={schematicReviewItems}
