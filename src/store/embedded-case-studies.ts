@@ -2019,4 +2019,47 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "Prototype Validation",
     ],
   },
+  {
+    id: "energy-meter-industrial",
+    title: "Energy Meter",
+    category: "Industrial Design",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/energy_meter/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/energy_meter/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/energy_meter/3.png",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/energy_meter/4.mp4",
+    ],
+    rotatedImages: {},
+    features: [
+      "Industrial energy meter product design",
+      "Compact enclosure and interface development",
+      "User-friendly display integration",
+      "Industrial-grade housing construction",
+      "Optimized installation and maintenance access",
+      "Modern utility monitoring aesthetics",
+    ],
+    summary:
+      "An industrial energy meter product designed for reliable power monitoring, intuitive user interaction, and robust deployment in utility and industrial environments.",
+    importantParts: [
+      "Meter enclosure assembly",
+      "Display and user interface panel",
+      "Terminal connection section",
+      "Protective outer housing",
+      "Internal mounting structure",
+      "Installation support features",
+    ],
+    salientFeatures: [
+      "Industrial-grade enclosure design",
+      "Clear and intuitive user interface",
+      "Compact and installation-friendly form factor",
+      "Robust long-term deployment capability",
+    ],
+    scopeOfWork: [
+      "Industrial Design",
+      "Product Development",
+      "Mechanical CAD Modeling",
+      "Prototype Validation",
+      "Design for Manufacturing (DFM)",
+    ],
+  },
 ];
