@@ -2,14 +2,14 @@ import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 import { industrialDesignFAQs } from "@/data/service-faqs";
 import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
-import {
-  CapabilitiesFolderTabs,
-  FOLDER_TAB_ICONS,
-  type CapabilitiesFolderTabItem,
-} from "@/components/services-cmp/capabilities-folder-tabs";
+import { FOLDER_TAB_ICONS } from "@/components/services-cmp/capabilities-folder-tabs";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
+import {
+  CoreCapabilitiesSection,
+  type CoreCapability,
+} from "@/components/services-cmp/CoreCapabilitiesSection";
 
 const HERO = {
   videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_V2.mp4",
@@ -19,46 +19,111 @@ const HERO = {
   ctaHref: "/mechanical-industrial-design-services/contact",
   ctaLabel: "Talk to Our Engineers",
 };
-const INDUSTRIAL_DESIGN_CAPABILITIES: CapabilitiesFolderTabItem[] = [
+const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
   {
     id: "product-story",
-    tabLabel: "Product Story",
+    tabLabel: "Visualisation",
     tabIcon: FOLDER_TAB_ICONS.productStory,
-    description:
-      "Translation of requirements, brand values, and user needs into structured visual narratives through digital concept illustrations and visualisation boards that align all stakeholders early.",
-    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_1.mp4",
+    videoSrc:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/stellar_video.mp4",
+    headline: "Product Story",
+    intro:
+      "Every successful product begins with a clearly articulated concept. Our industrial designers work directly with clients to translate product requirements, brand values, and user needs into structured visual narratives. This phase includes hand sketches, digital concept illustrations, and annotated visualisation boards that communicate design intent to both technical and non-technical stakeholders.",
+    bullets: [
+      {
+        title: "Deliverables Include",
+        items: [
+          "Concept sketch sets (hand-drawn and digital).",
+          "Design direction boards (form language, aesthetic intent).",
+          "Annotated product story presentations.",
+          "2D product visualisation renderings.",
+        ],
+      },
+    ],
   },
   {
     id: "cad-3d",
-    tabLabel: "CAD & 3D",
+    tabLabel: "Engineering",
     tabIcon: FOLDER_TAB_ICONS.cad3d,
-    description:
-      "Parametric models built for construction — with tolerancing, draft angles, and wall thickness constraints using CATIA, SolidWorks, and Fusion 360 to match manufacturer requirements.",
     videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4",
+    headline: "CAD and 3D Modelling",
+    intro:
+      "Approved concept sketches are translated into precision parametric 3D models using industry-standard CAD platforms. Our models are construction-ready — built with tolerancing, draft angles, wall thickness constraints, and assembly logic incorporated from the outset. CAD deliverables are fully documented with manufacturing annotations, bill of materials structure, and revision control to support downstream mechanical engineering and tooling activities.",
+    bullets: [
+      {
+        title: "Typical Scope",
+        items: [
+          "Surface and solid 3D modelling (CATIA, SolidWorks, Fusion 360, Rhino).",
+          "Assembly and exploded view modelling.",
+          "DFM (Design for Manufacture) and DFA (Design for Assembly) review.",
+          "Detailed 2D engineering drawings (GD&T, ISO/ASME standards).",
+        ],
+      },
+    ],
   },
   {
     id: "ui-ux",
-    tabLabel: "UI & UX",
+    tabLabel: "Experience",
     tabIcon: FOLDER_TAB_ICONS.uiUx,
-    description:
-      "Complete user experience design for embedded displays and physical interfaces using human factors engineering and interaction logic that puts operators first.",
     videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ecl_ui_ux.mp4",
+    headline: "UI & UX Design",
+    intro:
+      "For products with embedded displays, touchscreens, or physical control interfaces, our team designs the complete user experience — from information architecture and interaction logic to visual interface design and usability validation. We apply human factors engineering principles to ensure every interface is intuitive, accessible, and aligned with the product's intended operating environment.",
+    bullets: [
+      {
+        title: "Typical Scope",
+        items: [
+          "User research and persona definition.",
+          "Wireframing and interaction flow design.",
+          "High-fidelity UI mockups and design systems.",
+          "Usability testing with real end-users.",
+          "Physical ergonomics analysis and control layout optimisation.",
+        ],
+      },
+    ],
   },
   {
     id: "renders",
-    tabLabel: "Renders",
+    tabLabel: "Imagery",
     tabIcon: FOLDER_TAB_ICONS.renders,
-    description:
-      "Studio-grade photorealistic renders and high-definition animations produced directly from industrial CAD data, ready for marketing campaigns and investor presentations.",
-    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4",
+    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_1.mp4",
+    headline: "Renders",
+    intro:
+      "Before committing to tooling or production, clients require presentation-quality visual assets for investor briefings, product launches, e-commerce listings, and regulatory submissions. Our rendering team produces studio-grade photorealistic images and high-definition product animation videos directly from CAD data.",
+    bullets: [
+      {
+        title: "Deliverables Include",
+        items: [
+          "Studio-quality static product renders (JPEG, PNG, TIFF).",
+          "360-degree product spin animations.",
+          "Exploded view and assembly sequence animations.",
+          "Lifestyle context renders (in-environment product visualisation).",
+          "CMF (Colour, Material, Finish) variant renders for marketing.",
+        ],
+      },
+    ],
   },
   {
     id: "prototyping",
-    tabLabel: "Prototyping",
+    tabLabel: "Validation",
     tabIcon: FOLDER_TAB_ICONS.prototyping,
-    description:
-      "Physical validation through CNC, FDM, SLA, and SLS — testing ergonomics, fitment, and functionality rigorously before committing to production tooling investment.",
-    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_1.mp4",
+    imageSrc: "https://d1yetprhniwywz.cloudfront.net/v2/id-service-image.jpeg",
+    headline: "Prototyping",
+    intro:
+      "Physical prototypes validate design intent, ergonomics, fitment, and functionality before production investment. Qmax Systems has direct access to prototype facilities and works with a vetted network of manufacturing partners to produce functional prototypes in the fastest possible timeframes.",
+    bullets: [
+      {
+        title:
+          "Prototyping Technologies Selected Based On Fidelity Requirements And Intended Use",
+        items: [
+          "CNC Machining: High-precision, functional components in production-equivalent materials (aluminium, stainless steel, engineering plastics).",
+          "FDM (Fused Deposition Modelling): Rapid iteration on form and fitment; low-cost, fast turnaround.",
+          "SLA (Stereolithography): High-resolution surface finish prototypes for design validation and investor presentation.",
+          "SLS (Selective Laser Sintering): Functional, complex geometry parts without support structures; suitable for mechanism testing.",
+          "Vacuum Casting: Small-batch bridge production in polyurethane resins; ideal for pre-production user trials and market testing.",
+        ],
+      },
+    ],
   },
 ];
 
@@ -224,7 +289,15 @@ export default function IndustrialDesignServicesPage() {
         </div>
       </section> */}
 
-      <CapabilitiesFolderTabs capabilities={INDUSTRIAL_DESIGN_CAPABILITIES} />
+      {/* <CapabilitiesFolderTabs capabilities={INDUSTRIAL_DESIGN_CAPABILITIES} /> */}
+
+      <CoreCapabilitiesSection
+        capabilities={INDUSTRIAL_DESIGN_CAPABILITIES}
+        title="Core"
+        titleHighlight="Capabilities"
+        description="From first sketch to factory-ready handover — five integrated disciplines that ground every industrial design decision in engineering and manufacturing reality."
+        learnMoreHref="/mechanical-industrial-design-services/contact"
+      />
 
       <WorkflowSection
         steps={WORKFLOW_STEPS}

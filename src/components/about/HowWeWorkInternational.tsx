@@ -7,7 +7,7 @@ export default function HowWeWorkInternational() {
     {
       title: "Time Zone Coverage & Overlap",
       icon: Globe,
-      body: "Our Austin, TX office gives US clients full same-day overlap, EU/UK clients 6–9 hours of live overlap, and full business-day handoff to APAC. With teams in both the US and India, we run a follow-the-sun model — engineering progress continues 20+ hours a day. Your US-based project lead handles all client-facing communication during your local business hours, so you never wait overnight for an answer.",
+      body: "Our Dallas, TX office gives US clients full same-day overlap, EU/UK clients 6–9 hours of live overlap, and full business-day handoff to APAC. With teams in both the US and India, we run a follow-the-sun model — engineering progress continues 20+ hours a day. Your US-based project lead handles all client-facing communication during your local business hours, so you never wait overnight for an answer.",
     },
     {
       title: "Project Management & Transparency",
@@ -65,10 +65,7 @@ export default function HowWeWorkInternational() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="shrink-0">
-                    <Icon
-                      className="w-8 h-8 text-red-500"
-                      strokeWidth={1.5}
-                    />
+                    <Icon className="w-8 h-8 text-red-500" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-2xl text-foreground">{card.title}</h3>
                 </div>
