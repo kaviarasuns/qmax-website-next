@@ -485,28 +485,29 @@ export default function PowerElectronicsPage() {
             </p>
           </>
         }
-        ctaHref="/hardware-development-services/contact"
+        ctaHref="/pcb-design/contact"
         ctaLabel="Talk to Our Engineers"
       />
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}
         title="Introduction to Power Electronics "
         titleHighlight="PCB Engineering"
+        contactHref="/pcb-design/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />
       <WhySection
-          whyCards={WHY_CARDS}
-          title="Why Choose Qmax"
-          titleHighlight="Systems?"
-          description="25 years of power electronics PCB expertise — from HV isolation to EMI-compliant production files."
-          consultationCta={{
-            heading:
-              "Get A Complimentary Consultation With Our Power Electronics Experts.",
-            subtitle:
-              "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
-            ctaHref: "/pcb-design/contact",
-          }}
-        />
+        whyCards={WHY_CARDS}
+        title="Why Choose Qmax"
+        titleHighlight="Systems?"
+        description="25 years of power electronics PCB expertise — from HV isolation to EMI-compliant production files."
+        consultationCta={{
+          heading:
+            "Get A Complimentary Consultation With Our Power Electronics Experts.",
+          subtitle:
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+          ctaHref: "/pcb-design/contact",
+        }}
+      />
       {/* <ComplimentarySchematicReviewSection
         items={schematicReviewItems}
         titleHighlight="Power Electronics PCB Design"

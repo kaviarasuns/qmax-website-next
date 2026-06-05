@@ -642,13 +642,14 @@ export default function RFMicrowavePCBDesignPage() {
             </p>
           </>
         }
-        ctaHref="/hardware-development-services/contact"
+        ctaHref="/pcb-design/contact"
         ctaLabel="Talk to Our Engineers"
       />
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}
         title="RF PCB Engineering "
         titleHighlight="Approach"
+        contactHref="/pcb-design/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />
       <WhySection

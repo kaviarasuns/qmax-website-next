@@ -21,12 +21,14 @@ interface CoreServiceOfferingsSectionProps {
   offerings: HighSpeedCoreOffering[];
   title?: string;
   titleHighlight?: string;
+  contactHref?: string;
 }
 
 export function CoreServiceOfferingsSection({
   offerings,
   title = "Our Core Service ",
   titleHighlight = "Offerings",
+  contactHref = "/hardware-development-services/contact",
 }: CoreServiceOfferingsSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
   const activeOffering = offerings[activeIdx] ?? offerings[0];
@@ -66,15 +68,15 @@ export function CoreServiceOfferingsSection({
               {activeOffering.headline}
             </h3>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
+              {/* <a
                 href="/hardware-development-services"
                 className="rounded-md border border-slate-900 px-6 py-2.5 text-sm font-medium text-foreground transition hover:bg-slate-900 hover:text-white"
               >
                 Learn more
-              </a>
+              </a> */}
               <a
-                href="/hardware-development-services/contact"
-                className="rounded-md border border-red-500 bg-red-500 px-6 py-2.5 text-sm font-medium text-white transition hover:border-red-600 hover:bg-red-600"
+                href={contactHref}
+                className="mt-6 rounded-md border border-red-500 bg-red-500 px-8 py-3.5 text-lg font-medium text-white transition hover:border-red-600 hover:bg-red-600"
               >
                 Get in Touch
               </a>

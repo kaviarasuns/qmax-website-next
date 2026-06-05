@@ -576,13 +576,14 @@ export default function HighSpeedDigitalPCBDesignPage() {
             </p>
           </>
         }
-        ctaHref="/hardware-development-services/contact"
+        ctaHref="/pcb-design/contact"
         ctaLabel="Talk to Our Engineers"
       />
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}
         title="Technical Capabilities: "
         titleHighlight="Pushing the Limits of Physics"
+        contactHref="/pcb-design/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />
       <WhySection

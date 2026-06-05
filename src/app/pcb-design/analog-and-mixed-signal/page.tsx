@@ -523,13 +523,14 @@ export default function AnalogAndMixedSignalPage() {
             </p>
           </>
         }
-        ctaHref="/hardware-development-services/contact"
+        ctaHref="/pcb-design/contact"
         ctaLabel="Talk to Our Engineers"
       />
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}
         title="Introduction to Analog & Mixed Signal "
         titleHighlight="PCB Engineering"
+        contactHref="/pcb-design/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />
 

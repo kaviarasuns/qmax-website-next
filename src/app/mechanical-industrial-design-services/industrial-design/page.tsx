@@ -112,17 +112,16 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
     imageSrc: "https://d1yetprhniwywz.cloudfront.net/v2/id-service-image.jpeg",
     headline: "Prototyping",
     intro:
-      "Physical prototypes validate design intent, ergonomics, fitment, and functionality before production investment. Qmax Systems has direct access to prototype facilities and works with a vetted network of manufacturing partners to produce functional prototypes in the fastest possible timeframes.",
+      "Qmax Systems has direct access to prototype facilities and works with a vetted network of manufacturing partners to produce functional prototypes in the fastest possible timeframes.",
     bullets: [
       {
-        title:
-          "Prototyping Technologies Selected Based On Fidelity Requirements And Intended Use",
+        title: "Prototype Technologies Chosen for Fidelity and Application",
         items: [
-          "CNC Machining: High-precision, functional components in production-equivalent materials (aluminium, stainless steel, engineering plastics).",
-          "FDM (Fused Deposition Modelling): Rapid iteration on form and fitment; low-cost, fast turnaround.",
-          "SLA (Stereolithography): High-resolution surface finish prototypes for design validation and investor presentation.",
-          "SLS (Selective Laser Sintering): Functional, complex geometry parts without support structures; suitable for mechanism testing.",
-          "Vacuum Casting: Small-batch bridge production in polyurethane resins; ideal for pre-production user trials and market testing.",
+          "CNC Machining: Precision parts cut from real production materials (aluminium, stainless steel, engineering plastics)",
+          "FDM (Fused Deposition Modelling): The fastest, lowest-cost way to check form and fit early in the design.",
+          "SLA (Stereolithography): Smooth, high-detail prototypes polished enough for design validation and investor demos.",
+          "SLS (Selective Laser Sintering): Strong, complex-geometry parts built without supports — ready for mechanism testing.",
+          "Vacuum Casting: Small polyurethane batches for pre-production user trials and market testing.",
         ],
       },
     ],
