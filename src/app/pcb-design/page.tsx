@@ -311,7 +311,7 @@ const CAPABILITIES = [
 const WHY_CARDS = [
   {
     title: "First-Time-Right Philosophy",
-    desc: "DRC, SI, and thermal simulations run before Gerbers leave the building. First fabricated board behaves as designed — no costly re-spins.",
+    desc: "Before Gerbers leave the building, Qmax Systems runs DRC, SI/PI, and thermal simulation, setting routing constraints up front so the first fabricated board behaves as designed - no costly re-spins.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -321,14 +321,18 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
+        {/* Bullseye / target — "right the first time" */}
         <circle cx="24" cy="24" r="18" />
-        <path d="M14 25 L21 32 L34 18" />
+        <circle cx="24" cy="24" r="11" />
+        <circle cx="24" cy="24" r="4" />
+        <path d="M36 12 L28 20" />
+        <path d="M40 8 L36 12 L40 16" />
       </svg>
     ),
   },
   {
     title: "30,000+ Verified Component Libraries",
-    desc: "Every symbol, footprint, and 3D model validated against manufacturer datasheets. No pad mismatches, no assembly surprises.",
+    desc: "Qmax Systems validates every symbol, footprint, and 3D model against manufacturer datasheets across 30,000+ verified components-eliminating pad mismatches and assembly surprises.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -338,33 +342,18 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <ellipse cx="24" cy="12" rx="16" ry="5" />
-        <path d="M8 12 V24 C8 26.8 15.2 29 24 29 C32.8 29 40 26.8 40 24 V12" />
-        <path d="M8 24 V36 C8 38.8 15.2 41 24 41 C32.8 41 40 38.8 40 36 V24" />
-      </svg>
-    ),
-  },
-  {
-    title: "Strict IP Protection",
-    desc: "Mutual NDA from day one. Files stored in an access-controlled vault, never on shared drives.",
-    icon: (
-      <svg
-        viewBox="0 0 48 48"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="10" y="22" width="28" height="20" rx="2" />
-        <path d="M16 22 V14 a8 8 0 0 1 16 0 V22" />
-        <circle cx="24" cy="32" r="2.5" />
+        {/* IC chip with pin legs — component libraries */}
+        <rect x="13" y="13" width="22" height="22" rx="2" />
+        <path d="M13 19 H7 M13 24 H7 M13 29 H7" />
+        <path d="M35 19 H41 M35 24 H41 M35 29 H41" />
+        <path d="M19 13 V7 M24 13 V7 M29 13 V7" />
+        <path d="M19 35 V41 M24 35 V41 M29 35 V41" />
       </svg>
     ),
   },
   {
     title: "Global Compliance Expertise",
-    desc: "CE, FCC, UL, and IPC requirements designed in at layout stage. Compliance testing is a confirmation, not a gamble.",
+    desc: "CE, FCC, UL, IPC, and MIL-STD-461 are designed in at the layout stage, because Qmax Systems treats compliance as a confirmation, not a gamble - via an EMC- by-design approach.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -374,15 +363,37 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <circle cx="24" cy="24" r="18" />
-        <path d="M6 24 H42" />
-        <path d="M24 6 C30 12 30 36 24 42 C18 36 18 12 24 6 Z" />
+        {/* Shield with globe meridians — global compliance / certification */}
+        <path d="M24 6 L40 12 V24 C40 34 32 40 24 42 C16 40 8 34 8 24 V12 Z" />
+        <path d="M8 24 H40" />
+        <path d="M24 6 C28 14 28 34 24 42 C20 34 20 14 24 6 Z" />
       </svg>
     ),
   },
+
+  {
+    title: "Production & Documentation Readiness",
+    desc: "Every design ships with 100% DFM-verified files to IPC-2221/2226; Qmax Systems delivers complete IPC-2581/ODB++ packages, controlled-impedance drill tables, and worst-case tolerance analysis.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {/* Stacked documents with text lines — production & documentation */}
+        <rect x="14" y="8" width="22" height="28" rx="2" />
+        <rect x="10" y="12" width="22" height="28" rx="2" />
+        <path d="M16 20 H26 M16 25 H26 M16 30 H22" />
+      </svg>
+    ),
+  },
+
   {
     title: "Fabrication Partner Network",
-    desc: "Qualified fabs and assembly houses with competitive lead times, controlled processes, and traceable material sourcing.",
+    desc: "Omax Systems works with qualified fabs and assembly houses with traceable sourcing, plus direct liaison to lock stackup and materials (FR-4, Megtron 6, Rogers 43508) and flag single-source parts early.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -392,14 +403,20 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M6 42 V22 L18 28 V22 L30 28 V14 L42 14 V42 Z" />
-        <path d="M12 36 H16 M22 36 H26 M34 36 H38" />
+        {/* Network topology — partner / supply chain network */}
+        <circle cx="24" cy="24" r="4" />
+        <circle cx="8" cy="12" r="3.5" />
+        <circle cx="40" cy="12" r="3.5" />
+        <circle cx="8" cy="36" r="3.5" />
+        <circle cx="40" cy="36" r="3.5" />
+        <path d="M11 13 L20 21 M37 13 L28 21 M11 35 L20 27 M37 35 L28 27" />
       </svg>
     ),
   },
+
   {
-    title: "Multi-Domain Systems Experience",
-    desc: "Cross-domain background across automotive, medical, aerospace, and industrial. Complex mixed-signal and safety-critical designs handled by experienced engineers.",
+    title: "Strict IP Protection",
+    desc: "A mutual NDA is signed from day one, and Qmax Systems stores all design files in an access-controlled vault, never on shared drives: Customers own all IP at every milestone.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -409,13 +426,33 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <rect x="6" y="6" width="15" height="15" rx="1.5" />
-        <rect x="27" y="6" width="15" height="15" rx="1.5" />
-        <rect x="6" y="27" width="15" height="15" rx="1.5" />
-        <rect x="27" y="27" width="15" height="15" rx="1.5" />
+        {/* Shield with padlock inside — IP security */}
+        <path d="M24 6 L40 12 V24 C40 34 32 40 24 42 C16 40 8 34 8 24 V12 Z" />
+        <rect x="17" y="21" width="14" height="11" rx="1.5" />
+        <path d="M20 21 V17 a4 4 0 0 1 8 0 V21" />
+        <circle cx="24" cy="27" r="1.5" />
       </svg>
     ),
   },
+  // {
+  //   title: "Multi-Domain Systems Experience",
+  //   desc: "Cross-domain background across automotive, medical, aerospace, and industrial. Complex mixed-signal and safety-critical designs handled by experienced engineers.",
+  //   icon: (
+  //     <svg
+  //       viewBox="0 0 48 48"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="2.2"
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //     >
+  //       <rect x="6" y="6" width="15" height="15" rx="1.5" />
+  //       <rect x="27" y="6" width="15" height="15" rx="1.5" />
+  //       <rect x="6" y="27" width="15" height="15" rx="1.5" />
+  //       <rect x="27" y="27" width="15" height="15" rx="1.5" />
+  //     </svg>
+  //   ),
+  // },
   // {
   //   title: "Engineering Depth Over Surface-Level Layout",
   //   desc: "Engineers understand the full signal chain. Every layer decision is driven by electrical, thermal, and mechanical constraints, not routing convenience.",

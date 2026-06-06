@@ -464,24 +464,17 @@ export default function PowerElectronicsPage() {
       <HardwareServiceHeroSection
         imageSrc="/pcb-design/Power-Electronics-PCB.png"
         imageAlt="Power Electronics PCB Design — Qmax Systems"
-        title="Power Electronics PCB Design."
+        title="Power Electronics PCB Design"
         description={
           <>
             <p>
-              Modern power electronics systems demand more than simple
-              interconnects; they require a holistic electromagnetic and thermal
-              engineering strategy where the PCB is a functional element of the
-              circuit. Qmax Systems treats power electronics PCB design as a
-              discipline of balancing high-current density, extreme voltage
-              gradients, and rapid switching transients (di/dt and dv/dt).
-            </p>
-            <p>
-              Qmax Systems specializes in First-Time-Right PCB design,
-              prioritizing early risk identification to eliminate the costly
-              re-spins often associated with high-power R&amp;D. Whether a
-              project involves 800V EV architectures or kW-level plasma
-              generators, Qmax Systems optimizes every design for reliability,
-              safety, and manufacturability from day one.
+              Qmax Systems designs power electronics PCBs as functional circuit
+              elements, balancing high-current density, extreme voltage
+              gradients, and rapid switching transients (di/dt and dv/dt). Qmax
+              Systems applies a First-Time-Right methodology — front-loading
+              electromagnetic and thermal risk analysis — to take 800V EV
+              architectures and kW-level plasma generators to production without
+              costly re-spins.
             </p>
           </>
         }

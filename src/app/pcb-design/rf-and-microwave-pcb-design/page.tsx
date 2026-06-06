@@ -623,22 +623,16 @@ export default function RFMicrowavePCBDesignPage() {
       <HardwareServiceHeroSection
         imageSrc="/pcb-design/images/rf-pcb-service.jpg"
         imageAlt="RF and Microwave PCB Design — Qmax Systems"
-        title="RF and Microwave PCB Design Services."
+        title="RF and Microwave PCB Design Services"
         description={
           <>
             <p>
-              Modern RF and microwave systems demand far more than conventional
-              PCB routing. Qmax Systems designs at frequencies from hundreds of
-              MHz to millimeter-wave bands, where the PCB becomes part of the RF
-              circuit itself — trace geometry, dielectric loss, via transitions,
-              grounding topology, shielding strategy, and impedance
-              discontinuities directly influence insertion loss, phase
-              stability, noise floor, and EMI compliance.
-            </p>
-            <p>
-              Qmax Systems provides advanced RF PCB design services for wireless
-              communication systems, RF instrumentation, radar sensors,
-              industrial RF generators, and microwave measurement platforms.
+              Qmax Systems designs RF and microwave PCBs from hundreds of MHz to
+              millimeter-wave bands, where the board is part of the RF circuit
+              itself. Qmax Systems controls trace geometry, dielectric loss, via
+              transitions, grounding, and shielding to hold insertion loss,
+              phase stability, noise floor, and EMI compliance — across radar
+              sensors, RF instrumentation, and wireless communication platforms.
             </p>
           </>
         }

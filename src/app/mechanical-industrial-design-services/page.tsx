@@ -268,9 +268,9 @@ const WHY_CARDS = [
 const MECHANICAL_INDUSTRIAL_HERO = {
   videoSrc:
     "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_&_Mechnical.mp4",
-  title: "Mechanical & Industrial Design Services.",
+  title: "Mechanical & Industrial Design Services",
   subtitle:
-    "At Qmax Systems, our mechanical and industrial design services are specifically tailored for high-stakes electronics, moving beyond generic CAD modeling to provide deep integration between hardware, thermal physics, and manufacturing realities.",
+    "Qmax Systems designs enclosures, thermal paths, and load-bearing structures that are engineered alongside the PCB from the schematic stage — not bolted on afterward. By optimizing for DFM and DFA from day one, Qmax Systems delivers ruggedized, certification-ready hardware for high-stakes electronics, from MIL-STD-810 tactical devices to thermally-dense power electronics.",
   ctaHref: "/mechanical-industrial-design-services/contact",
   ctaLabel: "Talk to Our Engineers",
 };
@@ -305,6 +305,9 @@ export default function MechanicalIndustrialDesignPage() {
 
       <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 className="mb-8 text-left text-3xl font-light md:text-5xl">
+            Overview
+          </h2>
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_minmax(280px,42%)] lg:items-stretch lg:gap-12">
             <div className="max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
               <p>
