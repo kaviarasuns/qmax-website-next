@@ -305,7 +305,7 @@ export default function MechanicalIndustrialDesignPage() {
 
       <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="mb-8 text-left text-3xl font-light md:text-5xl">
+          <h2 className="mb-8 text-center text-3xl font-light md:text-5xl">
             Overview
           </h2>
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_minmax(280px,42%)] lg:items-stretch lg:gap-12">
