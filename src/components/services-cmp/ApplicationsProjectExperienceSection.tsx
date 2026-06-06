@@ -72,7 +72,7 @@ export function ApplicationsProjectExperienceSection({
           </p>
         </div>
 
-        <div className="mt-10 px-0 pb-8 md:mt-14 md:px-6 md:pb-16">
+        <div className="mt-10 px-0 md:mt-14 md:px-6">
           <div className="overflow-hidden rounded-2xl bg-white shadow-[0_4px_16px_rgba(0,0,0,0.08)] lg:grid lg:grid-cols-2">
             <div
               className="flex flex-col px-6 py-8 md:px-10 md:py-12 lg:px-12"

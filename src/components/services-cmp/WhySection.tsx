@@ -35,7 +35,7 @@ export function WhySection({
   return (
     <section
       className={cn(
-        "bg-white px-16 pt-24 pb-24 max-[900px]:px-6 max-[900px]:pt-16 max-[900px]:pb-16",
+        "bg-white px-16 pt-16 pb-24 lg:pt-20 max-[900px]:px-6 max-[900px]:pb-16",
         className,
       )}
       id="why-section"
@@ -43,8 +43,7 @@ export function WhySection({
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-14">
           <h2 className="text-4xl md:text-5xl font-light tracking-wide text-center">
-            {title}{" "}
-            <span className="text-red-500">{titleHighlight}</span>
+            {title} <span className="text-red-500">{titleHighlight}</span>
           </h2>
           {description ? (
             <p className="mx-auto mt-4 max-w-[720px] text-center text-base leading-relaxed text-foreground">
@@ -105,7 +104,9 @@ export function WhySection({
             <ConsultationCtaBar
               {...consultationCta}
               className={cn("p-0 max-[900px]:p-0", consultationCta.className)}
-              containerClassName={consultationCta.containerClassName ?? "max-w-none"}
+              containerClassName={
+                consultationCta.containerClassName ?? "max-w-none"
+              }
             />
           </div>
         ) : null}

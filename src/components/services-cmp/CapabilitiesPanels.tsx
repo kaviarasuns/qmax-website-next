@@ -1,9 +1,28 @@
+import {
+  CapabilitiesStrip,
+  type CapabilitiesStripItem,
+} from "./CapabilitiesStripSection";
+
 interface PanelsCapability {
   id: string;
   headline: string;
   intro: string;
   learnMoreHref: string;
   bullets: { title: string; items: string[] }[];
+  deliverables?: CapabilitiesStripItem[];
+  deliverablesAriaLabel?: string;
+}
+
+function DeliverablesSectionHeading({ label }: { label: string }) {
+  const lastSpace = label.lastIndexOf(" ");
+  if (lastSpace === -1) return label;
+
+  return (
+    <>
+      {label.slice(0, lastSpace)}{" "}
+      <span className="text-red-500">{label.slice(lastSpace + 1)}</span>
+    </>
+  );
 }
 
 interface CapabilitiesPanelsProps {
@@ -68,6 +87,22 @@ export function CapabilitiesPanels({
               </div>
             </div>
           </div>
+          {cap.deliverables?.length ? (
+            <div className="mt-12 border-t border-zinc-200/70 pt-10">
+              {cap.deliverablesAriaLabel && (
+                <h3 className="mb-8 text-xl font-light tracking-wide md:text-2xl">
+                  <DeliverablesSectionHeading
+                    label={cap.deliverablesAriaLabel}
+                  />
+                </h3>
+              )}
+              <CapabilitiesStrip
+                items={cap.deliverables}
+                ariaLabel={cap.deliverablesAriaLabel}
+                variant="cards"
+              />
+            </div>
+          ) : null}
         </div>
       ))}
     </>

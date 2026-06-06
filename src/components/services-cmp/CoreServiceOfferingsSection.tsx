@@ -108,7 +108,7 @@ export function CoreServiceOfferingsSection({
                 </li>
               ))}
             </ul>
-            <p className="mt-6 border-t border-slate-200 pt-5 text-sm leading-7 text-foreground md:text-[15px]">
+            <p className="mt-6 border-t border-slate-200 pt-5 text-left text-sm leading-7 text-foreground md:text-[15px]">
               <span className="font-semibold text-foreground">
                 Typical applications:
               </span>{" "}
