@@ -395,7 +395,7 @@ export default function MechanicalIndustrialDesignPage() {
             aria-label="Have your questions answered — contact Saravanaperumal Annamalai, VP - SWE Engineering"
           >
             <Image
-              src="https://d1yetprhniwywz.cloudfront.net/v2/csb_cta_v2.png"
+              src="https://d1yetprhniwywz.cloudfront.net/v2/Asil_Cta_V2.png"
               alt=""
               fill
               sizes="(max-width: 900px) 100vw, 1200px"
@@ -415,10 +415,10 @@ export default function MechanicalIndustrialDesignPage() {
                 </span>
               </div>
               <div className="absolute bottom-4 right-[5%] shrink-0 text-right text-[clamp(0.7rem,1.35vw,1.125rem)] font-semibold leading-[1.3] tracking-[0.2px] text-white [text-shadow:_0_1px_4px_rgba(0,0,0,0.45)] max-[900px]:right-5">
-                <span className="block font-bold">
-                  Saravanabhavan Chandrasekar
+                <span className="block font-bold">Muhammed Asil</span>
+                <span className="block font-normal">
+                  VP - Business Development
                 </span>
-                <span className="block font-normal">CEO</span>
               </div>
             </div>
           </a>
