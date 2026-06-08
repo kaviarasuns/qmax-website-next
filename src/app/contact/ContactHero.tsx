@@ -109,7 +109,11 @@ const InputField = ({
 const addresses: Record<CountryKey, AddressData> = {
   "United States": {
     name: "Qmax Systems LLC",
-    address: ["14105, Willow Tank Drive", "Austin, TX 78717", "United States"],
+    address: [
+      "539 W Commerce St # 7953",
+      "Dallas, TX 75208 - 1953",
+      "United States",
+    ],
     phone: "+1 412 265 2314",
     email: "info@qmaxsys.com",
   },

@@ -20,7 +20,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Qmax Systems designs automotive PCBs for ECUs, infotainment, ADAS, and EV powertrain systems built to AEC-Q100 and IATF 16949 standards. Qmax Systems layouts handle harsh thermal cycling, severe vibration, and aggressive EMI across every cabin, chassis, and under-the-hood application.",
+      "Qmax Systems designs automotive PCBs for ECUs, infotainment, ADAS, and EV powertrain systems built to AEC-Q100 and IATF 16949 standards. These layouts handle harsh thermal cycling, severe vibration, and aggressive EMI across every cabin, chassis, and under-the-hood application.",
     subDescription:
       "From multi-layer ECU boards to high-current EV battery management PCBs, Qmax Systems delivers zero-defect quality and full automotive traceability.",
     image:
@@ -63,7 +63,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Qmax Systems designs PCBs for medical devices, diagnostics, imaging, and life-critical patient systems. From wearable monitors to surgical and implantable equipment, Qmax Systems layouts meet IPC-6012 Class 3, ISO 13485 design controls, and strict isolation, creepage, and clearance rules of regulated healthcare environments.",
+      "Qmax Systems designs PCBs for medical devices, diagnostics, imaging, and life-critical patient systems. From wearable monitors to surgical and implantable equipment, these layouts meet IPC-6012 Class 3, ISO 13485 design controls, and strict isolation, creepage, and clearance rules of regulated healthcare environments.",
     subDescription:
       "Qmax Systems builds leakage-current-safe routing, reinforced isolation barriers, and long-life stack-ups for sterilization and clinical reliability.",
     image:
@@ -107,7 +107,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Qmax Systems designs PCBs for avionics, satellite payloads, defense electronics, and flight-critical and safety-critical aerospace systems where failure is not an option. Qmax Systems layouts conform to IPC-6012 Class 3/A, support DO-254 design assurance, and survive extreme thermal, vibration, radiation, and altitude environments.",
+      "Qmax Systems designs PCBs for avionics, satellite payloads, defense electronics, and flight-critical and safety-critical aerospace systems where failure is not an option. These layouts conform to IPC-6012 Class 3/A, support DO-254 design assurance, and survive extreme thermal, vibration, radiation, and altitude environments.",
     subDescription:
       "From rigid-flex avionics boards to high-reliability digital backbones, Qmax Systems delivers PCBs that withstand harsh aerospace mission profiles.",
     image:
@@ -151,7 +151,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Qmax Systems designs power-dense PCBs for EV charging, battery management, solar inverters, and grid-scale energy storage. Qmax Systems layouts handle high voltages, heavy currents, and aggressive EMI and thermal loads using thick-copper stack-ups, GaN/SiC topologies, and tightly routed commutation loops.",
+      "Qmax Systems designs power-dense PCBs for EV charging, battery management, solar inverters, and grid-scale energy storage. These layouts handle high voltages, heavy currents, and aggressive EMI and thermal loads using thick-copper stack-ups, GaN/SiC topologies, and tightly routed commutation loops.",
     subDescription:
       "Qmax Systems delivers layouts that minimize parasitics, maximize efficiency, and survive demanding duty cycles of electrification and renewable platforms.",
     image:
@@ -196,7 +196,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Qmax Systems designs high-frequency PCBs for 5G infrastructure, satellite communication, IoT gateways, and broadband networking equipment. Qmax Systems RF, mixed-signal, and high-speed digital layouts deliver controlled impedance, low-loss laminates, and tight signal integrity from sub-GHz to mmWave.",
+      "Qmax Systems designs high-frequency PCBs for 5G infrastructure, satellite communication, IoT gateways, and broadband networking equipment. These RF, mixed-signal, and high-speed digital layouts deliver controlled impedance, low-loss laminates, and tight signal integrity from sub-GHz to mmWave.",
     subDescription:
       "Qmax Systems optimizes antenna routing, ground-plane integrity, and EMI containment for reliable, low-noise performance across multi-layer boards.",
     image:
@@ -238,7 +238,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Qmax Systems designs PCBs for PLCs, servo drives, motor controllers, factory IoT, robotics, and process automation equipment. Qmax Systems high-reliability layouts handle heavy electrical noise, wide temperature ranges, and the long lifespans demanded by 24/7 factory floors and mission-critical industrial control environments.",
+      "Qmax Systems designs PCBs for PLCs, servo drives, motor controllers, factory IoT, robotics, and process automation equipment. These high-reliability layouts handle heavy electrical noise, wide temperature ranges, and the long lifespans demanded by 24/7 factory floors and mission-critical industrial control environments.",
     subDescription:
       "Qmax Systems uses heavy-copper power planes, isolated I/O zones, and EMI-hardened layouts to deliver the reliability and durability industrial deployments require.",
     image:

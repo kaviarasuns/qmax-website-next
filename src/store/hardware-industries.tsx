@@ -20,7 +20,7 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Qmax Systems designs automotive firmware for ECUs, infotainment, ADAS, and EV powertrain systems built to AEC-Q100 and IATF 16949 standards. Qmax Systems engineers write firmware that handles harsh thermal cycling, severe vibration, and aggressive EMI across cabin, chassis, and under-the-hood applications.",
+      "Qmax Systems designs automotive firmware for ECUs, infotainment, ADAS, and EV powertrain systems built to AEC-Q100 and IATF 16949 standards. This firmware handles harsh thermal cycling, severe vibration, and aggressive EMI across cabin, chassis, and under-the-hood applications.",
     subDescription:
       "From multi-layer ECU boards to high-current EV battery management systems, Qmax Systems delivers firmware designs that meet zero-defect quality and full automotive traceability.",
     image:
@@ -63,7 +63,7 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Qmax Systems develops firmware for Class II and Class III medical devices built to IEC 62304 software life-cycle requirements. Qmax Systems engineers deliver safety-critical embedded software with full traceability, risk management alignment to ISO 14971, and certification-ready documentation packages.",
+      "Qmax Systems develops firmware for Class II and Class III medical devices built to IEC 62304 software life-cycle requirements. This firmware delivers safety-critical embedded software with full traceability, risk management alignment to ISO 14971, and certification-ready documentation packages.",
     subDescription:
       "From vital-signs monitoring to infusion pump control, Qmax Systems engineers understand the regulatory landscape and design to it from the first sprint.",
     image:
@@ -106,7 +106,7 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Qmax Systems develops DO-178C compliant firmware for avionics systems, applying structured development processes, rigorous verification and validation, and full requirements-through-test traceability. Qmax Systems engineers deliver designs built to survive the harsh demands of aerospace environments.",
+      "Qmax Systems develops DO-178C compliant firmware for avionics systems, applying structured development processes, rigorous verification and validation, and full requirements-through-test traceability. These designs are built to survive the harsh demands of aerospace environments.",
     subDescription:
       "From flight control software to communication avionics, Qmax Systems applies DO-178C development assurance levels appropriate to each system's criticality classification.",
     image:
@@ -149,7 +149,7 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Qmax Systems develops firmware for battery management systems, EV chargers, power conversion, and grid-edge devices — handling real-time control loops, safety interlocks, and communication stacks that energy applications demand.",
+      "Qmax Systems develops firmware for battery management systems, EV chargers, power conversion, and grid-edge devices. This firmware handles real-time control loops, safety interlocks, and communication stacks that energy applications demand.",
     subDescription:
       "Qmax Systems designs to IEC 61508 functional safety requirements with full ASIL decomposition documentation where required by the application.",
     image:
@@ -192,7 +192,7 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Qmax Systems delivers firmware for wireless base stations, access points, gateways, and edge networking devices. From OpenWrt-based router platforms to custom LPWAN firmware, Qmax Systems engineers deliver the full connectivity stack.",
+      "Qmax Systems delivers firmware for wireless base stations, access points, gateways, and edge networking devices. From OpenWrt-based router platforms to custom LPWAN firmware, this firmware delivers the full connectivity stack.",
     subDescription:
       "Wi-Fi 6/6E, BLE, LTE-M, NB-IoT, LoRa — Qmax Systems covers the protocol stack end to end with carrier-grade reliability requirements across all deployment environments.",
     image:
@@ -234,7 +234,7 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       </svg>
     ),
     description:
-      "Qmax Systems engineers OPC-UA deterministic firmware for PLCs, industrial controllers, and IIoT edge gateways — delivering real-time control firmware with deterministic latency, functional safety hooks, and secure remote management.",
+      "Qmax Systems engineers OPC-UA deterministic firmware for PLCs, industrial controllers, and IIoT edge gateways. This firmware delivers real-time control with deterministic latency, functional safety hooks, and secure remote management.",
     subDescription:
       "Qmax Systems designs meet IEC 61131 and IEC 62443 security standards, with modular firmware architectures that simplify reconfiguration across production lines.",
     image:

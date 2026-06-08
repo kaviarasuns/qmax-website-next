@@ -82,7 +82,7 @@ const CAPABILITIES = [
     headline:
       "High-performance digital electronics from MCU boards to multi-processor systems.",
     intro:
-      "Qmax Systems designs digital hardware that scales from single-MCU boards to multi-processor systems running real-time workloads. Qmax Systems engineers deliver schematic capture, constraint-driven high-speed PCB layout, and bring-up firmware across MCU, MPU, SoC, and FPGA platforms, validated against signal-integrity and power-integrity targets on interfaces including PCIe, USB 3.x, and DDR memory. Typical applications: AI compute boards, industrial controllers, and edge-compute systems.",
+      "Qmax Systems designs digital hardware that scales from single-MCU boards to multi-processor systems running real-time workloads. Schematic capture, constraint-driven high-speed PCB layout, and bring-up firmware are delivered across MCU, MPU, SoC, and FPGA platforms, validated against signal-integrity and power-integrity targets on interfaces including PCIe, USB 3.x, and DDR memory. Typical applications: AI compute boards, industrial controllers, and edge-compute systems.",
     bullets: [
       {
         title: "Platforms",
@@ -116,7 +116,7 @@ const CAPABILITIES = [
     headline:
       "RF designs validated in real-world conditions, not just simulations.",
     intro:
-      "Qmax Systems validates every RF link budget on real hardware in-lab, where simulation and reality diverge. Qmax Systems engineers handle RF front-end architecture (LNA, PA, filters, matching networks), antenna integration, and EMC-aware layout, qualified across ISM, Wi-Fi, BLE, LTE, and Sub-GHz bands. Typical applications: IoT sensor nodes, wireless gateways, and connected industrial devices.",
+      "Qmax Systems validates every RF link budget on real hardware in-lab, where simulation and reality diverge. RF front-end architecture (LNA, PA, filters, matching networks), antenna integration, and EMC-aware layout are qualified across ISM, Wi-Fi, BLE, LTE, and Sub-GHz bands. Typical applications: IoT sensor nodes, wireless gateways, and connected industrial devices.",
     bullets: [
       {
         title: "Components & Antennas",
@@ -153,7 +153,7 @@ const CAPABILITIES = [
     headline:
       "Precision analog and mixed-signal design for sensing, measurement, and control.",
     intro:
-      "Qmax Systems builds precision analog and mixed-signal front-ends that recover clean signal from noisy environments for sensing, measurement, and control. Qmax Systems engineers deliver low-noise sensor interfaces, ADC/DAC conditioning chains, and EMI-hardened layout with disciplined grounding, integrated into a single qualified board. Typical applications: biomedical instrumentation, pressure and vibration acquisition, and optical measurement systems.",
+      "Qmax Systems builds precision analog and mixed-signal front-ends that recover clean signal from noisy environments for sensing, measurement, and control. Low-noise sensor interfaces, ADC/DAC conditioning chains, and EMI-hardened layout with disciplined grounding are integrated into a single qualified board. Typical applications: biomedical instrumentation, pressure and vibration acquisition, and optical measurement systems.",
     bullets: [
       {
         title: "Sensing & Front-Ends",
@@ -190,7 +190,7 @@ const CAPABILITIES = [
     headline:
       "Robust power electronics for industrial, automotive, and energy applications.",
     intro:
-      "Qmax Systems designs power electronics for industrial, automotive, and energy systems where efficiency, isolation, and thermal margin are non-negotiable. Qmax Systems engineers build AC-DC and DC-DC converters, resonant LLC/CLLC and Class-D topologies, battery management systems (BMS), and HV/HC PCBs, each verified against derating and reliability targets before sign-off. Typical applications: EV chargers, grid-tied inverters, and industrial power supplies.",
+      "Qmax Systems designs power electronics for industrial, automotive, and energy systems where efficiency, isolation, and thermal margin are non-negotiable. AC-DC and DC-DC converters, resonant LLC/CLLC and Class-D topologies, battery management systems (BMS), and HV/HC PCBs are each verified against derating and reliability targets before sign-off. Typical applications: EV chargers, grid-tied inverters, and industrial power supplies.",
     bullets: [
       {
         title: "Conversion & Topologies",
@@ -337,7 +337,7 @@ const CAPABILITIES = [
 const WHY_CARDS = [
   {
     title: "Transparent & Supervised Process",
-    desc: "We show you every milestone, design review, and risk register as it happens. Qmax Systems program managers run a weekly cadence with traceable deliverables and on-time builds — no hidden surprises at handover.",
+    desc: "Every milestone, design review, and risk register is visible as it happens, because Qmax Systems program managers run a weekly cadence with traceable deliverables and on-time builds — no hidden surprises at handover.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -358,7 +358,7 @@ const WHY_CARDS = [
   },
   {
     title: "Hardware Development from Scratch",
-    desc: "Qmax Systems starts every program with R&D and a proof-of-concept build to retire architectural risk early. Our engineers confirm feasibility, lock the BoM, and validate critical assumptions before committing a single production layer.",
+    desc: "Qmax Systems starts every program with R&D and a proof-of-concept build to retire architectural risk early — confirming feasibility, locking the BoM, and validating critical assumptions before committing a single production layer.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -377,7 +377,7 @@ const WHY_CARDS = [
   },
   {
     title: "Smooth Hardware-Software Integration",
-    desc: "Qmax Systems selects components, interfaces, and toolchains that fit your existing stack rather than forcing a re-platform. We ensure the result is firmware that brings up cleanly, drivers that drop into your OS, and lower long-term maintenance cost.",
+    desc: "Rather than forcing a re-platform, Qmax Systems selects components, interfaces, and toolchains that fit your existing stack — the result is firmware that brings up cleanly, drivers that drop into your OS, and lower long-term maintenance cost.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -397,7 +397,7 @@ const WHY_CARDS = [
   },
   {
     title: "Expert Engineers",
-    desc: "Our engineers average 12+ years in hardware development across automotive, medical, aerospace, and industrial domains. Qmax Systems assigns only senior engineers to your design — no junior hand-offs, no learning on your timeline.",
+    desc: "Qmax Systems engineers average 12+ years in hardware development across automotive, medical, aerospace, and industrial domains, and only senior engineers are assigned to your design — no junior hand-offs, no learning on your timeline.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -417,7 +417,7 @@ const WHY_CARDS = [
   },
   {
     title: "Comprehensive Design Approach",
-    desc: "We treat schematic, layout, mechanical, thermal, and EMC as a single coupled problem from day one. Every sub-system is interconnected through a coherent architecture, which is why our boards survive certification on the first spin.",
+    desc: "Schematic, layout, mechanical, thermal, and EMC are treated as a single coupled problem from day one; that coherent architecture is why Qmax Systems boards survive certification on the first spin.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -434,7 +434,7 @@ const WHY_CARDS = [
   },
   {
     title: "Design for Manufacturing & Scale",
-    desc: "Qmax Systems designs for manufacturability from the first schematic, not as a late retrofit. Our engineers choose footprints, sourcing, and test points for volume production, so your boards move to the line without costly redesign spins.",
+    desc: "Qmax Systems designs for manufacturability from the first schematic, not as a late retrofit — choosing footprints, sourcing, and test points for volume production so boards move to the line without costly redesign spins.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -486,7 +486,7 @@ const HERO = {
   title:
     "Hardware Development Services: The Complete Hardware Product Lifecycle",
   description:
-    "Qmax Systems owns the full hardware product lifecycle — from requirement analysis and architecture through schematic design, PCB layout, EVT/DVT/PVT validation, and production handover. Our engineers run an architecture-first process across automotive, medical, aerospace, and industrial domains, cutting risk and shortening development cycles with compliance readiness from day one.",
+    "Qmax Systems owns the full hardware product lifecycle — from requirement analysis and architecture through schematic design, PCB layout, EVT/DVT/PVT validation, and production handover. This architecture-first process spans automotive, medical, aerospace, and industrial domains, cutting risk and shortening development cycles with compliance readiness from day one.",
   ctaLabel: "Talk to our engineers",
   ctaHref: "/hardware-development-services/contact",
   videoSrc:
@@ -565,7 +565,7 @@ export default function HardwareDevelopmentServicesPage() {
       {/* PARTNERSHIPS */}
       <PartnershipsSection
         heading="Partnerships"
-        paragraph="With a strong focus on new product development, Qmax Systems maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. Qmax Systems engineers gain early access to upcoming silicon, roadmap visibility, and training on the latest technologies — with reference modules and evaluation kits ready to kick-start your product development."
+        paragraph="With a strong focus on new product development, Qmax Systems maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. These partnerships bring early access to upcoming silicon, roadmap visibility, and training on the latest technologies — with reference modules and evaluation kits ready to kick-start your product development."
       />
 
       <div className="pb-12"></div>

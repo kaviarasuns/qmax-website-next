@@ -18,10 +18,9 @@ const HERO = {
   description: (
     <>
       <strong>Engineering Beyond Connectivity.</strong> Qmax Systems treats PCB
-      design as a critical engineering discipline, not just interconnection.
-      Qmax Systems engineers deliver reliable, first-time-right PCB layouts,
-      validated by SI/PI and thermal simulation for performance, compliance, and
-      manufacturability.
+      design as a critical engineering discipline, not just interconnection. The
+      result is reliable, first-time-right PCB layouts, validated by SI/PI and
+      thermal simulation for performance, compliance, and manufacturability.
     </>
   ),
   ctaHref: "/pcb-design/contact",
@@ -49,7 +48,7 @@ const CAPABILITIES = [
     headline:
       "High-speed PCB layout governed by signal-integrity and timing margins.",
     intro:
-      "Qmax Systems engineers high-speed digital boards where signal integrity, timing margin, and power delivery decide whether the board boots. Qmax Systems handles DDR4/DDR5 routing, PCIe Gen3/Gen4 channel design, and 10/25G SerDes lanes, validated through pre- and post-layout SI/PI simulation in Cadence Sigrity and Ansys SIwave. Typical applications: server compute, networking line cards, and FPGA data-acquisition boards.",
+      "Qmax Systems engineers high-speed digital boards where signal integrity, timing margin, and power delivery decide whether the board boots. DDR4/DDR5 routing, PCIe Gen3/Gen4 channel design, and 10/25G SerDes lanes are validated through pre- and post-layout SI/PI simulation in Cadence Sigrity and Ansys SIwave. Typical applications: server compute, networking line cards, and FPGA data-acquisition boards.",
     bullets: [
       {
         title: "Standards & Interfaces",
@@ -87,7 +86,7 @@ const CAPABILITIES = [
     headline:
       "RF designs validated in real-world conditions, not just simulations.",
     intro:
-      "RF and microwave design is where simulation and reality diverge, so Qmax Systems validates every link budget on real hardware in its labs. Qmax Systems handles front-end architecture, antenna integration, and EMC-aware layout, qualified across ISM, Wi-Fi, BLE, LTE, and Sub-GHz bands. Typical applications: IoT radios, industrial telemetry, and wireless medical devices.",
+      "RF and microwave design is where simulation and reality diverge, so Qmax Systems validates every link budget on real hardware in its labs. Front-end architecture, antenna integration, and EMC-aware layout are qualified across ISM, Wi-Fi, BLE, LTE, and Sub-GHz bands. Typical applications: IoT radios, industrial telemetry, and wireless medical devices.",
     bullets: [
       {
         title: "Components & Antennas",
@@ -124,7 +123,7 @@ const CAPABILITIES = [
     headline:
       "Precision analog and mixed-signal design for sensing, measurement, and control.",
     intro:
-      "Qmax Systems builds precision analog and mixed-signal front-ends that recover clean signal from noisy environments for sensing, measurement, and control. Qmax Systems engineers deliver low-noise sensor interfaces, ADC/DAC conditioning chains, and EMI-hardened layout, integrated into a single qualified board. Typical applications: biomedical instrumentation, industrial sensing, and optical acquisition.",
+      "Qmax Systems builds precision analog and mixed-signal front-ends that recover clean signal from noisy environments for sensing, measurement, and control. Low-noise sensor interfaces, ADC/DAC conditioning chains, and EMI-hardened layout are integrated into a single qualified board. Typical applications: biomedical instrumentation, industrial sensing, and optical acquisition.",
     bullets: [
       {
         title: "Sensing & Front-Ends",
@@ -161,7 +160,7 @@ const CAPABILITIES = [
     headline:
       "Robust power electronics for industrial, automotive, and energy applications.",
     intro:
-      "Qmax Systems designs power electronics for industrial, automotive, and energy systems where efficiency, isolation, and thermal margin are non-negotiable. Qmax Systems builds AC-DC and DC-DC converters, battery management systems, and HV/HC PCBs, each verified against derating and reliability targets before sign-off. Typical applications: EV charging, industrial drives, and grid-tied energy storage.",
+      "Qmax Systems designs power electronics for industrial, automotive, and energy systems where efficiency, isolation, and thermal margin are non-negotiable. AC-DC and DC-DC converters, battery management systems, and HV/HC PCBs are each verified against derating and reliability targets before sign-off. Typical applications: EV charging, industrial drives, and grid-tied energy storage.",
     bullets: [
       {
         title: "Conversion & Topologies",
@@ -198,7 +197,7 @@ const CAPABILITIES = [
     headline:
       "Pre- and post-layout signal & power integrity analysis before a single board is fabricated.",
     intro:
-      "Qmax Systems performs pre- and post-layout signal and power integrity analysis before a single board is fabricated, using Cadence Sigrity and Ansys SIwave. Qmax Systems engineers run transmission-line simulation, eye-diagram analysis, IBIS-based driver/receiver modeling, and PDN impedance analysis — offered standalone or integrated into any PCB layout engagement. Typical applications: DDR5, PCIe Gen4/5, and high-speed SerDes channels.",
+      "Qmax Systems performs pre- and post-layout signal and power integrity analysis before a single board is fabricated, using Cadence Sigrity and Ansys SIwave. Transmission-line simulation, eye-diagram analysis, IBIS-based driver/receiver modeling, and PDN impedance analysis are offered standalone or integrated into any PCB layout engagement. Typical applications: DDR5, PCIe Gen4/5, and high-speed SerDes channels.",
     bullets: [
       {
         title: "Simulation & Modeling",
@@ -232,7 +231,7 @@ const CAPABILITIES = [
     ),
     headline: "A PCB design is only as reliable as its component library.",
     intro:
-      "Over three decades, Qmax Systems has built a verified, well-documented library of schematic symbols, PCB footprints, and 3D STEP models across 30,000+ components. Qmax Systems validates every part against manufacturer datasheets and IPC-7351 land-pattern standards. Typical applications: new component creation, library migration, and footprint qualification for high-density designs.",
+      "Over three decades, Qmax Systems has built a verified, well-documented library of schematic symbols, PCB footprints, and 3D STEP models across 30,000+ components. Every part is validated against manufacturer datasheets and IPC-7351 land-pattern standards. Typical applications: new component creation, library migration, and footprint qualification for high-density designs.",
     bullets: [
       {
         title: "Library Standards",
@@ -268,7 +267,7 @@ const CAPABILITIES = [
     headline:
       "An independent PCB design review — identifying risks before you release to fabrication.",
     intro:
-      "Qmax Systems delivers an independent PCB design review that identifies risks before release to fabrication. Qmax Systems engineers audit your existing layout against a structured checklist covering layer stack-up, placement, routing, silkscreen, drill notes, and documentation, then deliver a formal technical report with prioritized SI, DFM, thermal, and compliance findings. Typical applications: pre-fab sign-off, second-opinion reviews, and inherited-design risk assessment.",
+      "Qmax Systems delivers an independent PCB design review that identifies risks before release to fabrication. The review audits your existing layout against a structured checklist covering layer stack-up, placement, routing, silkscreen, drill notes, and documentation, then delivers a formal technical report with prioritized SI, DFM, thermal, and compliance findings. Typical applications: pre-fab sign-off, second-opinion reviews, and inherited-design risk assessment.",
     bullets: [
       {
         title: "Review Coverage",

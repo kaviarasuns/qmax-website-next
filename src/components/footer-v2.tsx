@@ -54,10 +54,10 @@ export default function FooterV2() {
                   Systems Design and PCB Design Services.
                 </p>
                 <p className="text-white text-sm mt-4 leading-relaxed">
-                  Qmax has a Highly experienced, Multi-disciplinary team which
-                  can bring out the best solution for your requirement in the
-                  shortest time. Our stringent process and hands-on experience
-                  help avoid errors, reduces design costs and ensures faster
+                  Qmax Systems brings a highly experienced, multi-disciplinary
+                  team that delivers the best solution for your requirement in
+                  the shortest time. A stringent process and hands-on experience
+                  help avoid errors, reduce design costs, and ensure faster
                   time to market.
                 </p>
               </div>
