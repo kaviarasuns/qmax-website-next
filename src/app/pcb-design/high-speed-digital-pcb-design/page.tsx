@@ -561,7 +561,7 @@ export default function HighSpeedDigitalPCBDesignPage() {
             <p>
               Qmax Systems designs high-speed digital PCBs for 112G SerDes,
               DDR5, and PCIe Gen6 systems, where signal behavior is governed by
-              physics, not connectivity alone. Qmax's engineers run Signal
+              physics, not connectivity alone. Qmax&apos;s engineers run Signal
               Integrity (SI) and Power Integrity (PI) simulation before routing,
               achieving an over-95% first-time-right rate on boards from AI GPU
               chassis to O-RAN Distributed Units.

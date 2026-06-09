@@ -11,9 +11,6 @@ import { PCB_INDUSTRIES } from "@/store/pcb-industries";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
-import { ProjectExperienceItem } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
-import { getCaseStudyCardImage } from "@/store/case-studies";
-
 /* ============================================================
    DATA
    ============================================================ */
@@ -532,30 +529,6 @@ const pcbCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
   "digital-stethoscope",
   "ultra-low-cost-bldc-motor-controller",
 ]);
-
-function pcbProjectExperienceEntry(
-  id: string,
-  listTitle: string,
-  caseStudyId: string,
-  description?: string,
-): ProjectExperienceItem {
-  const study = pcbCaseStudiesData.find(
-    (caseStudy) => caseStudy.id === caseStudyId,
-  );
-  if (!study) {
-    throw new Error(`PCB case study not found: ${caseStudyId}`);
-  }
-
-  return {
-    id,
-    listTitle,
-    captionTitle: study.title,
-    description: description ?? study.summary,
-    imageSrc: getCaseStudyCardImage(caseStudyId),
-    imageAlt: study.title,
-    caseStudyHref: `/case-studies/${study.id}`,
-  };
-}
 
 export default function HardwareDevelopmentServicesComponentV2() {
   return (
