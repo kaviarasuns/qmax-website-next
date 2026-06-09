@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import {
@@ -335,11 +335,12 @@ const WHY_CARDS = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "High Speed Digital Design Services | Qmax",
+export const metadata = buildMetadata({
+  title: "High-Speed Digital Design | DDR4, PCIe & SerDes | QMax",
   description:
-    "High-Performance Digital Systems Development. At Qmax Systems, we bridge the gap between complex conceptual requirements and market-ready hardware.",
-};
+    "High-speed digital design — DDR4/5 topology, PCIe Gen 5 architecture, USB 3.x, HDMI 2.1, SerDes signal budget, and component selection. Schematic to bring-up.",
+  path: "/hardware-design-services/high-speed-digital-design",
+});
 
 export default function HighSpeedDigitalDesignPage() {
   return (

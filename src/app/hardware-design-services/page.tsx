@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { PartnershipsSection } from "@/components/services-cmp/PartnershipsSection";
@@ -17,11 +17,12 @@ import {
   getCaseStudyCardImage,
 } from "@/store/case-studies";
 
-export const metadata: Metadata = {
-  title: "Hardware Development Services | Qmax",
+export const metadata = buildMetadata({
+  title: "Hardware Design Services | High-Speed, RF & Analog | QMax",
   description:
-    "Hardware development services with complete lifecycle ownership from requirements to production handover.",
-};
+    "Schematic-level hardware design services — high-speed digital, RF/microwave, analog, and power electronics. From system architecture to board bring-up.",
+  path: "/hardware-design-services",
+});
 
 /* ============================================================
    DATA

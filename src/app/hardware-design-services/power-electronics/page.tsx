@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
@@ -422,11 +422,12 @@ const faqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "Power Electronics Services | Qmax",
+export const metadata = buildMetadata({
+  title: "Power Electronics Design | SMPS, DC-DC & Motor Drive | QMax",
   description:
-    "Power electronics design and development from converter architecture through validation — AC-DC, DC-DC, PDN, BMS, and thermal co-design.",
-};
+    "Power electronics design services — SMPS, DC-DC converters, motor drive, battery management, and thermal engineering. Schematic to board bring-up. USA & India.",
+  path: "/hardware-design-services/power-electronics",
+});
 
 export default function PowerElectronicsPage() {
   return (

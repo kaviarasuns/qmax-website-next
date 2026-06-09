@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import {
@@ -732,11 +732,12 @@ const faqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "RF and Microwave Engineering Services | Qmax",
+export const metadata = buildMetadata({
+  title: "RF & Microwave Design | Sub-GHz to Ka-Band | QMax Systems",
   description:
-    "RF and microwave engineering from sub-GHz IoT to mmWave — PCB layout, RFFE design, simulation, validation, and manufacturable wireless hardware.",
-};
+    "RF and microwave circuit design — LNA, PA, mixer circuits, transceiver architecture, antenna design, and PTFE substrate selection. Sub-GHz through Ka-band.",
+  path: "/hardware-design-services/rf-and-microwave",
+});
 
 export default function RfAndMicrowavePage() {
   return (

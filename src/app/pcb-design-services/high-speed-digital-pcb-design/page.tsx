@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/seo";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import {
   ApplicationsProjectExperienceSection,
@@ -12,6 +13,13 @@ import { WhySection } from "@/components/services-cmp/WhySection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { getCaseStudyCardImage } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+
+export const metadata = buildMetadata({
+  title: "High-Speed PCB Design | DDR4/5, PCIe Gen 5 & SerDes | QMax",
+  description:
+    "High-speed PCB layout — DDR4/5 trace routing, PCIe Gen 5, USB 3.x, SerDes to 32 Gbps. Impedance-controlled stack-ups and SI simulation. Altium & Cadence.",
+  path: "/pcb-design-services/high-speed-digital-pcb-design",
+});
 
 const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
   title: caseStudy.title,

@@ -5,8 +5,11 @@ import FooterWrapper from "@/components/FooterWrapper";
 import ContactUsButtonWrapper from "@/components/ContactUsButtonWrapper";
 import { Navigation } from "@/components/navigation";
 import ScrollToTop from "@/components/ScrollToTop";
+import { siteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
+  // Resolves relative canonical / Open Graph URLs to absolute ones.
+  metadataBase: new URL(siteUrl()),
   title: "QMax Systems",
   description:
     "Electronics Engineering Services | Embedded Systems | PCB Design",

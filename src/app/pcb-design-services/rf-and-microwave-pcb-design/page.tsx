@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/seo";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import {
   ApplicationsProjectExperienceSection,
@@ -16,6 +17,13 @@ import {
   getCaseStudyCardImage,
 } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+
+export const metadata = buildMetadata({
+  title: "RF & Microwave PCB Design | PTFE, Sub-GHz to Ka-Band | QMax",
+  description:
+    "RF and microwave PCB layout on PTFE and Rogers substrates — controlled impedance routing, coplanar waveguide, stripline, Sub-GHz to Ka-band. Altium & Cadence.",
+  path: "/pcb-design-services/rf-and-microwave-pcb-design",
+});
 
 type ProjectExperienceEntryOptions = {
   description?: string;

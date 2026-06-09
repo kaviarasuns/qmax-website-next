@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/seo";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { CoreEngineeringMechanical } from "@/components/services-cmp/core-engineering-mechanical";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
@@ -5,6 +6,13 @@ import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 import { WhyChooseQmaxMechanical } from "@/components/services-cmp/why-choose-qmax-mechanical";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import { mechanicalCaseStudiesData } from "@/store/mechanical-case-studies";
+
+export const metadata = buildMetadata({
+  title: "Mechanical Design Services | Enclosure, DFM & NPI | QMax",
+  description:
+    "Mechanical design services — enclosure design, DFM analysis, CMF specification, and NPI. SolidWorks deliverables from concept to contract manufacturing.",
+  path: "/mechanical-industrial-design-services/mechanical-design",
+});
 
 const FAQ_ITEMS = [
   {

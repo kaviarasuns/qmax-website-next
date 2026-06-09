@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/seo";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import {
@@ -16,6 +17,13 @@ import {
   allCaseStudiesData,
 } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+
+export const metadata = buildMetadata({
+  title: "Analog & Mixed-Signal PCB Design | ADC/DAC Layout | QMax",
+  description:
+    "Analog and mixed-signal PCB layout — ADC/DAC signal chain isolation, ground plane partitioning, low-noise routing, and EMC-compliant design. Altium & Cadence.",
+  path: "/pcb-design-services/analog-and-mixed-signal",
+});
 
 function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   return ids.map((id) => {

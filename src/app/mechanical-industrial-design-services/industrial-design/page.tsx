@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/seo";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
 import { industrialDesignFAQs } from "@/data/service-faqs";
@@ -239,11 +240,12 @@ const industrialDesignCaseStudies = industrialCaseStudiesData
     imageRotation: caseStudy.rotatedImages?.[0],
   }));
 
-// export const metadata: Metadata = {
-//   title: "Industrial Design Services | Qmax Systems",
-//   description:
-//     "At Qmax Systems, our Industrial Design practice integrates visual, ergonomic, and manufacturing considerations from the earliest stage of product development — ensuring that every design decision is grounded in engineering reality.",
-// };
+export const metadata = buildMetadata({
+  title: "Industrial Design Services | CMF, UI/UX & NPI | QMax",
+  description:
+    "B2B industrial design — CMF, UI/UX for hardware products, enclosure aesthetics, DFM analysis, and NPI. Engineering-led industrial design firm. USA & India.",
+  path: "/mechanical-industrial-design-services/industrial-design",
+});
 
 export default function IndustrialDesignServicesPage() {
   return (

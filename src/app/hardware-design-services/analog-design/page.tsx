@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import {
@@ -504,11 +504,12 @@ const faqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "Analog Design Services | Qmax",
+export const metadata = buildMetadata({
+  title: "Analog Circuit Design Services | Op-Amp & ADC/DAC | QMax",
   description:
-    "Analog and mixed-signal design — precision AFEs, high-resolution converters, RF interconnect, and ultra-low-power wearables.",
-};
+    "Analog circuit design — op-amp topology, ADC/DAC selection, low-noise amplifier design, sensor interface, and mixed-signal partitioning at schematic level.",
+  path: "/hardware-design-services/analog-design",
+});
 
 export default function AnalogDesignPage() {
   return (

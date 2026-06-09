@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { mechanicalCaseStudiesData } from "@/store/mechanical-case-studies";
 import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
@@ -287,11 +287,12 @@ const mechanicalIndustrialCaseStudies = mechanicalCaseStudiesData
     imageRotation: caseStudy.rotatedImages?.[0],
   }));
 
-export const metadata: Metadata = {
-  title: "Mechanical & Industrial Design Services | Qmax Systems",
+export const metadata = buildMetadata({
+  title: "Mechanical & Industrial Design Services | QMax Systems",
   description:
-    "At Qmax Systems, our mechanical and industrial design services are specifically tailored for high-stakes electronics, integrating hardware, thermal physics, and manufacturing.",
-};
+    "Mechanical and industrial design — enclosure design, DFM analysis, NPI, CMF specification, and hardware UI/UX. SolidWorks-level deliverables. Dallas TX & India.",
+  path: "/mechanical-industrial-design-services",
+});
 
 export default function MechanicalIndustrialDesignPage() {
   return (

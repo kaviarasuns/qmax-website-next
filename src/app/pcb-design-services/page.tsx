@@ -1,7 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import "../../components/hardware-design.css";
+import { buildMetadata } from "@/lib/seo";
 import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
 import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
@@ -11,6 +10,13 @@ import { PCB_INDUSTRIES } from "@/store/pcb-industries";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+
+export const metadata = buildMetadata({
+  title: "PCB Design Services | High-Speed, RF & SI/PI | QMax Systems",
+  description:
+    "First-time-right PCB design and layout — high-speed digital, RF/microwave, power electronics, HDI, and SI/PI analysis. Altium & Cadence. Dallas TX & India.",
+  path: "/pcb-design-services",
+});
 /* ============================================================
    DATA
    ============================================================ */

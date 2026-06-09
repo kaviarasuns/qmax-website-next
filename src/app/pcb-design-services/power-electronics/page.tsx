@@ -1,3 +1,4 @@
+import { buildMetadata } from "@/lib/seo";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import {
   ApplicationsProjectExperienceSection,
@@ -16,6 +17,13 @@ import {
   getCaseStudyCardImage,
 } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+
+export const metadata = buildMetadata({
+  title: "Power Electronics PCB Design | High-Current Layout | QMax",
+  description:
+    "Power electronics PCB layout — high-current trace routing, copper weight optimisation, thermal via arrays, and SMPS board design. IPC Class 2/3. Altium.",
+  path: "/pcb-design-services/power-electronics",
+});
 
 type ProjectExperienceEntryOptions = {
   description?: string;

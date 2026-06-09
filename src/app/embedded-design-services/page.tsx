@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { buildMetadata } from "@/lib/seo";
 import { DayOneThinkingSection } from "@/components/services-cmp/embedded/DayOneThinkingSection";
 import { EmbeddedSoftwareCapabilitiesSection } from "@/components/services-cmp/embedded/EmbeddedSoftwareCapabilitiesSection";
 import { FirmwareLifecycleSection } from "@/components/services-cmp/embedded/FirmwareLifecycleSection";
@@ -20,6 +21,13 @@ import {
   allCaseStudiesData,
   getCaseStudyCardImage,
 } from "@/store/case-studies";
+
+export const metadata = buildMetadata({
+  title: "Embedded Design Services | Firmware, BSP & FPGA | QMax",
+  description:
+    "Embedded design services — firmware development, BSP and driver development, FPGA design on Xilinx Zynq, RTOS integration, and cross-platform applications.",
+  path: "/embedded-design-services",
+});
 
 const HERO = {
   title:
