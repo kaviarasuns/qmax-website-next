@@ -100,7 +100,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Analog circuits are extremely sensitive to noise sources that digital designs can tolerate.",
     intro:
-      "Qmax Systems designs analog signal chains that operate in a continuous voltage domain, where circuits are far more sensitive to noise than digital logic running at discrete levels. Qmax Systems engineers identify and suppress the dominant coupling paths — digital switching transients, power-supply ripple on shared PDN rails, ground-return disturbances, and trace-to-trace crosstalk at high-impedance nodes — before layout begins. Typical applications: scientific instruments, industrial sensing, medical electronics, and measurement systems.",
+      "Qmax Systems designs analog signal chains that operate in a continuous voltage domain, where circuits are far more sensitive to noise than digital logic running at discrete levels. Qmax's engineers identify and suppress the dominant coupling paths — digital switching transients, power-supply ripple on shared PDN rails, ground-return disturbances, and trace-to-trace crosstalk at high-impedance nodes — before layout begins. These designs serve scientific instruments, industrial sensing, medical electronics, and measurement systems.",
     points: [
       {
         boldLead: "Digital Switching Transients",
@@ -108,15 +108,15 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
       },
       {
         boldLead: "Power Supply Ripple",
-        rest: " — switching regulator noise propagating through shared PDN rails to precision analog front-ends and ADC reference pins.",
+        rest: " — switching-regulator noise propagates through shared PDN rails to precision analog front-ends and ADC reference pins.",
       },
       {
         boldLead: "Ground Return Current Disturbances",
-        rest: " — return currents from digital loads flowing through analog ground regions, introducing voltage offsets.",
+        rest: " — return currents from digital loads flow through analog ground regions, introducing voltage offsets.",
       },
       {
         boldLead: "Crosstalk Between Signal Traces",
-        rest: " — electromagnetic coupling between adjacent traces, especially at high-impedance analog nodes.",
+        rest: " — electromagnetic coupling between adjacent traces rises at high-impedance analog nodes.",
       },
     ],
     applications:
@@ -142,19 +142,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "When analog and digital share a PCB, the layout determines the outcome.",
     intro:
-      "Qmax Systems treats mixed-signal layout as the decisive factor when sensitive analog and aggressive digital circuits must share a board, since poor placement introduces measurable performance degradation. Qmax Systems engineers manage the hardest cases — microvolt preamplifiers beside high-speed processors, 16-bit+ ADCs sharing real estate with DC-DC regulators, and precision measurement paths near RF and digital clocks. Typical risks controlled: raised noise floor, measurement drift, reduced ADC ENOB, and EMI compliance failures.",
+      "Qmax Systems treats mixed-signal layout as the decisive factor when sensitive analog and aggressive digital circuits must share a board, since poor placement introduces measurable performance degradation. The team manages the hardest cases — microvolt preamplifiers beside high-speed processors, 16-bit+ ADCs sharing real estate with DC-DC regulators, and precision measurement paths near RF and digital clocks. These designs control the typical risks: raised noise floor, measurement drift, reduced ADC ENOB, and EMI compliance failures.",
     points: [
       {
         boldLead: "Low-Noise Preamplifiers Near Digital Processors",
-        rest: " — analog front-ends operating microvolt signals within millimeters of high-speed digital switching.",
+        rest: " — analog front-ends operate microvolt signals within millimeters of high-speed digital switching.",
       },
       {
         boldLead: "High-Resolution ADCs with Noisy Switching Supplies",
-        rest: " — 16-bit+ converters sharing PCB real estate with DC-DC regulators generating broadband noise.",
+        rest: " — 16-bit+ converters share PCB real estate with DC-DC regulators that generate broadband noise.",
       },
       {
         boldLead: "Sensitive Measurement Circuits with RF/Digital Clocks",
-        rest: " — precision measurement paths coexisting with clock oscillators and high-speed serial interfaces.",
+        rest: " — precision measurement paths coexist with clock oscillators and high-speed serial interfaces.",
       },
     ],
     applications:
@@ -180,23 +180,23 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Structured layout techniques that prevent noise coupling at the source.",
     intro:
-      "Qmax Systems prevents noise coupling at the source by applying disciplined layout techniques rooted in electromagnetic first principles, not rules of thumb. Qmax Systems engineers use analog/digital partitioning, controlled ground-return paths with star and split-ground strategies, guard traces and shielding around high-impedance nodes, and dedicated low-noise power networks with LDO-filtered analog rails. Typical applications: scientific instruments, industrial sensing, medical electronics, and bio-potential monitoring.",
+      "Qmax Systems prevents noise coupling at the source by applying disciplined layout techniques rooted in electromagnetic first principles, not rules of thumb. Qmax's engineers use analog/digital partitioning, controlled ground-return paths with star and split-ground strategies, guard traces and shielding around high-impedance nodes, and dedicated low-noise power networks with LDO-filtered analog rails. These techniques serve scientific instruments, industrial sensing, medical electronics, and bio-potential monitoring.",
     points: [
       {
         boldLead: "Analog/Digital Partitioning",
-        rest: " — careful physical separation and zone definition between analog and digital domains with controlled boundary transitions.",
+        rest: " — Qmax physically separates analog and digital domains and defines zones with controlled boundary transitions.",
       },
       {
         boldLead: "Controlled Ground Return Paths",
-        rest: " — star grounding and split ground strategies to prevent digital return currents from flowing through analog regions.",
+        rest: " — Star and split-ground strategies keep digital return currents out of analog regions.",
       },
       {
         boldLead: "Guard Traces & Shielding",
-        rest: " — guard traces around high-impedance nodes, analog shielding, and dedicated ground planes for sensitive signal domains.",
+        rest: " — Qmax's engineers place guard traces around high-impedance nodes, add analog shielding, and dedicate ground planes to sensitive signal domains.",
       },
       {
         boldLead: "Dedicated Low-Noise Power Networks",
-        rest: " — isolated power supply networks with LDO filtering for precision analog rails, separated from digital power domains.",
+        rest: " — Isolated power networks with LDO filtering feed precision analog rails, separated from digital power domains.",
       },
     ],
     applications:
@@ -221,19 +221,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "PCB designs that are measurement-accurate, EMI-robust, and manufacturing-ready.",
     intro:
-      "Qmax Systems delivers analog and mixed-signal PCBs that are measurement-accurate, EMI-robust, and manufacturing-ready for scientific instruments, industrial sensing platforms, medical electronics, and measurement systems where microvolt-level signals must operate reliably in electrically noisy environments. Qmax Systems engineers — all Electrical Engineers — apply a first-time-right methodology with rigorous design reviews and validate every layout for noise floor, ENOB preservation, and thermal stability across the full operating range.",
+      "Qmax Systems delivers analog and mixed-signal PCBs that are measurement-accurate, EMI-robust, and manufacturing-ready for scientific instruments, industrial sensing platforms, medical electronics, and measurement systems where microvolt-level signals must operate reliably in electrically noisy environments. Qmax's engineers — all Electrical Engineers — apply a first-time-right methodology with rigorous design reviews and validate every layout for noise floor, ENOB preservation, and thermal stability across the full operating range.",
     points: [
       {
         boldLead: "First-Time-Right Engineering",
-        rest: " — a methodology supported by experienced PCB designers, rigorous design reviews, and production-ready validation processes.",
+        rest: " — Qmax's experienced PCB designers apply a first-time-right methodology with rigorous design reviews and production-ready validation.",
       },
       {
         boldLead: "All-Engineer Design Team",
-        rest: " — all PCB designers at Qmax Systems are Electrical Engineers with extensive experience in analog hardware design and mixed-signal PCB layout.",
+        rest: " — every PCB designer at Qmax Systems is an Electrical Engineer with extensive experience in analog hardware and mixed-signal layout.",
       },
       {
         boldLead: "Measurement-Grade Performance",
-        rest: " — layouts validated for noise floor, ENOB preservation, and thermal stability across the full operating range.",
+        rest: " — Each layout passes validation for noise floor, ENOB preservation, and thermal stability across the full operating range.",
       },
     ],
     applications:
@@ -503,16 +503,17 @@ export default function AnalogAndMixedSignalPage() {
       <HardwareServiceHeroSection
         imageSrc="/pcb-design/analog-and-mixed-signal.jpg"
         imageAlt="High-Performance Digital Systems — Qmax Systems"
-        title="Analog and Mixed Signal PCB Design Services"
+        title="Qmax Systems Designs Analog and Mixed-Signal PCBs"
         description={
           <>
             <p>
               Qmax Systems designs analog and mixed-signal PCBs that combine
               high-sensitivity analog signal chains with high-speed digital
-              processing on a single board. Qmax Systems treats the PCB layout
-              as part of the electrical system — controlling grounding topology,
-              shielding, and power filtering so signal integrity, noise floor,
-              and measurement accuracy hold under real operating conditions.
+              processing on a single board. Qmax's engineers treat the PCB
+              layout as part of the electrical system — controlling grounding
+              topology, shielding, and power filtering so signal integrity,
+              noise floor, and measurement accuracy hold under real operating
+              conditions.
             </p>
           </>
         }

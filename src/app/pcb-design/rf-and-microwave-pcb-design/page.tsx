@@ -71,23 +71,23 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     ),
     headline: "Comprehensive RF and microwave PCB design from MHz to 80 GHz.",
     intro:
-      "Qmax Systems treats RF PCB layout as fundamentally an electromagnetic design problem — above a few hundred MHz, traditional digital PCB practices become insufficient. Qmax Systems covers the full RF spectrum, from controlled-impedance RF layout to microwave engineering and millimeter-wave design from 24 GHz to 80 GHz, plus antenna and RF front-end integration. Typical applications: 5G wireless, radar sensors, RF instrumentation, industrial RF generators, and satellite communications.",
+      "Qmax Systems treats RF PCB layout as fundamentally an electromagnetic design problem — above a few hundred MHz, traditional digital PCB practices become insufficient. Qmax's RF engineers cover the full RF spectrum, from controlled-impedance RF layout to microwave engineering and millimeter-wave design from 24 GHz to 80 GHz, plus antenna and RF front-end integration. These designs serve 5G wireless, radar sensors, RF instrumentation, industrial RF generators, and satellite communications.",
     points: [
       {
         boldLead: "RF PCB Layout Services",
-        rest: " — precision layout for single- and multi-band RF systems with controlled impedance and shielding strategies.",
+        rest: " — Qmax delivers precision layout for single- and multi-band RF systems with controlled impedance and shielding strategies.",
       },
       {
         boldLead: "Microwave PCB Engineering",
-        rest: " — design for microwave frequencies requiring specialized substrate selection and transition management.",
+        rest: " — Microwave-frequency designs use specialized substrate selection and transition management.",
       },
       {
         boldLead: "mmWave PCB Design (24 GHz–80 GHz)",
-        rest: " — millimeter-wave layouts for 5G, radar, and imaging systems with ultra-tight tolerances.",
+        rest: " — Qmax's RF engineers build millimeter-wave layouts for 5G, radar, and imaging systems with ultra-tight tolerances.",
       },
       {
         boldLead: "Antenna Integration & RF Front-End Layout",
-        rest: " — co-design of antenna structures, matching networks, and RF front-end modules on a single PCB.",
+        rest: " — Antenna structures, matching networks, and RF front-end modules share a single PCB.",
       },
     ],
     applications:
@@ -111,19 +111,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Precision transmission line modeling and RF-optimized stackup engineering.",
     intro:
-      "Qmax Systems engineers RF-optimized stackups in partnership with fabrication houses, using Rogers, Taconic, Isola, Megtron, and hybrid FR-4/PTFE builds to achieve controlled impedance, low loss, and repeatable yields. Qmax Systems models microstrip, stripline, coplanar-waveguide, and GCPW structures to meet target impedance and insertion-loss budgets. Typical materials: Rogers 4350B/4003C, Taconic TLY, Isola Astra, and hybrid FR-4/PTFE stackups.",
+      "Qmax Systems engineers RF-optimized stackups in partnership with fabrication houses, using Rogers, Taconic, Isola, Megtron, and hybrid FR-4/PTFE builds to achieve controlled impedance, low loss, and repeatable yields. The team models microstrip, stripline, coplanar-waveguide, and GCPW structures to meet target impedance and insertion-loss budgets. These stackups draw on Rogers 4350B/4003C, Taconic TLY, Isola Astra, and hybrid FR-4/PTFE materials.",
     points: [
       {
         boldLead: "Transmission Line Modeling",
-        rest: " — precise modeling of microstrip, stripline, coplanar waveguide, and GCPW structures to meet target impedance and insertion loss budgets.",
+        rest: " — Qmax precisely models microstrip, stripline, coplanar-waveguide, and GCPW structures to meet target impedance and insertion-loss budgets.",
       },
       {
         boldLead: "Stackup Engineering",
-        rest: " — RF-optimized layer stackups balancing signal performance, isolation, and fabrication feasibility across mixed-dielectric builds.",
+        rest: " — RF-optimized layer stackups balance signal performance, isolation, and fabrication feasibility across mixed-dielectric builds.",
       },
       {
         boldLead: "Low-Loss Substrate Selection",
-        rest: " — material selection guidance for Rogers 4350B/4003C, Taconic TLY, Isola Astra, and hybrid FR-4/PTFE constructions.",
+        rest: " — Qmax's engineers guide material selection across Rogers 4350B/4003C, Taconic TLY, Isola Astra, and hybrid FR-4/PTFE constructions.",
       },
     ],
     applications:
@@ -147,19 +147,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     ),
     headline: "Full-wave EM simulation driving constraint-based RF layout.",
     intro:
-      "Qmax Systems applies a structured RF engineering workflow where full-wave EM simulation drives every layout decision, achieving first-pass RF performance without iterative tuning. Qmax Systems engineers review the RF signal chain, simulate critical transitions, matching networks, and filters, then derive routing rules that hold every trace to its insertion-loss and VSWR targets. Typical flow: architecture review → EM simulation → constraint generation → layout → post-layout verification.",
+      "Qmax Systems applies a structured RF engineering workflow where full-wave EM simulation drives every layout decision, achieving first-pass RF performance without iterative tuning. Qmax's engineers review the RF signal chain, simulate critical transitions, matching networks, and filters, then derive routing rules that hold every trace to its insertion-loss and VSWR targets. These projects follow a typical flow: architecture review → EM simulation → constraint generation → layout → post-layout verification.",
     points: [
       {
         boldLead: "Architecture Analysis",
-        rest: " — RF signal chain review covering gain stages, filter placement, and link-budget assumptions before layout begins.",
+        rest: " — Qmax reviews the RF signal chain — gain stages, filter placement, and link-budget assumptions — before layout begins.",
       },
       {
         boldLead: "EM Simulation",
-        rest: " — full-wave electromagnetic simulation of critical structures including transitions, matching networks, and filter responses.",
+        rest: " — Full-wave electromagnetic simulation covers critical structures, including transitions, matching networks, and filter responses.",
       },
       {
         boldLead: "Constraint-Driven Layout",
-        rest: " — routing rules derived from simulation results, not rules-of-thumb, ensuring every trace meets insertion loss and VSWR targets.",
+        rest: " — Routing rules derived from simulation hold every trace to insertion-loss and VSWR targets, not rules of thumb.",
       },
     ],
     applications:
@@ -185,19 +185,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Production-ready deliverables aligned with fabrication and certification.",
     intro:
-      "Qmax Systems delivers production-ready, compliance-ready RF designs before fabrication, coordinating directly with fabrication partners for impedance accuracy and yield. Qmax Systems engineers apply EMI-by-design shielding, grounding, and filtering for FCC and CE certification, and hand off DFM/DFT-validated Gerbers, ODB++, impedance reports, and assembly documentation. Typical deliverables: Gerbers, ODB++, impedance reports, DFM/DFT validation, and assembly drawings.",
+      "Qmax Systems delivers production-ready, compliance-ready RF designs before fabrication, coordinating directly with fabrication partners for impedance accuracy and yield. Qmax's engineers apply EMI-by-design shielding, grounding, and filtering for FCC and CE certification, and hand off DFM/DFT-validated Gerbers, ODB++, impedance reports, and assembly documentation. These deliverables include Gerbers, ODB++, impedance reports, DFM/DFT validation, and assembly drawings.",
     points: [
       {
         boldLead: "Manufacturing Alignment",
-        rest: " — direct coordination with PCB fabrication houses for low-loss substrate availability, impedance accuracy, and controlled-impedance test coupons.",
+        rest: " — Qmax coordinates directly with PCB fabrication houses for low-loss substrate availability, impedance accuracy, and controlled-impedance test coupons.",
       },
       {
         boldLead: "EMI-Ready Layout Strategy",
-        rest: " — shielding, grounding, and filtering designed for FCC and CE certification through EMI-by-design methodology.",
+        rest: " — Shielding, grounding, and filtering reach FCC and CE certification through an EMI-by-design methodology.",
       },
       {
         boldLead: "Production-Ready Deliverables",
-        rest: " — DFM/DFT-validated Gerbers, ODB++, impedance reports, and assembly documentation ready for handoff.",
+        rest: " — Qmax's engineers hand off DFM/DFT-validated Gerbers, ODB++, impedance reports, and assembly documentation.",
       },
     ],
     applications:
@@ -623,16 +623,17 @@ export default function RFMicrowavePCBDesignPage() {
       <HardwareServiceHeroSection
         imageSrc="/pcb-design/images/rf-pcb-service.jpg"
         imageAlt="RF and Microwave PCB Design — Qmax Systems"
-        title="RF and Microwave PCB Design Services"
+        title="Qmax Systems Designs RF and Microwave PCBs"
         description={
           <>
             <p>
               Qmax Systems designs RF and microwave PCBs from hundreds of MHz to
               millimeter-wave bands, where the board is part of the RF circuit
-              itself. Qmax Systems controls trace geometry, dielectric loss, via
-              transitions, grounding, and shielding to hold insertion loss,
-              phase stability, noise floor, and EMI compliance — across radar
-              sensors, RF instrumentation, and wireless communication platforms.
+              itself. Qmax's RF engineers control trace geometry, dielectric
+              loss, via transitions, grounding, and shielding to hold insertion
+              loss, phase stability, noise floor, and EMI compliance — across
+              radar sensors, RF instrumentation, and wireless communication
+              platforms.
             </p>
           </>
         }

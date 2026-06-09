@@ -71,19 +71,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Heavy copper and busbar integration for extreme current demands.",
     intro:
-      "Qmax Systems designs power circuits for environments where parasitic inductance and thermal bottlenecks can compromise the entire system. Qmax Systems engineers build heavy-copper stackups (4oz–14oz+), embedded and laminated busbar structures, and balanced parallel-MOSFET routing to carry 1000A+ DC without hotspots. Typical applications: EV inverters, industrial motor drives, DC-DC converters, welding equipment, and UPS systems.",
+      "Qmax Systems designs power circuits for environments where parasitic inductance and thermal bottlenecks can compromise the entire system. Qmax's engineers build heavy-copper stackups (4oz–14oz+), embedded and laminated busbar structures, and balanced parallel-MOSFET routing to carry 1000A+ DC without hotspots. These designs go into EV inverters, industrial motor drives, DC-DC converters, welding equipment, and UPS systems.",
     points: [
       {
         boldLead: "Heavy Copper PCBs (4oz to 14oz+)",
-        rest: " — purpose-built stackups for high-current bus bars and power planes handling 1000A+ DC sources.",
+        rest: " — Qmax builds purpose-built stackups for high-current bus bars and power planes handling 1000A+ DC sources.",
       },
       {
         boldLead: "Busbar Integration",
-        rest: " — embedded and laminated busbar structures for ultra-low-inductance current paths in inverter and converter stages.",
+        rest: " — Embedded and laminated busbar structures form ultra-low-inductance current paths in inverter and converter stages.",
       },
       {
         boldLead: "Current Sharing & Balancing",
-        rest: " — symmetric trace routing and copper balancing techniques to prevent hotspots in parallel MOSFET configurations.",
+        rest: " — Symmetric trace routing and copper balancing prevent hotspots in parallel-MOSFET configurations.",
       },
     ],
     applications:
@@ -107,19 +107,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "High-voltage isolation designed for safety certification from day one.",
     intro:
-      "Qmax Systems designs high-voltage isolation to IEC 60601, UL 62368-1, and IPC-2221 for working voltages up to 1500VDC, building creepage and clearance into the board from the schematic — not as a late-stage correction. Qmax Systems engineers add slot cuts, routed channels, reinforced isolation zones, and pollution-degree/CTI-based spacing. Typical applications: medical power supplies, EV battery management, solar inverters, and industrial HV controllers.",
+      "Qmax Systems designs high-voltage isolation to IEC 60601, UL 62368-1, and IPC-2221 for working voltages up to 1500VDC, building creepage and clearance into the board from the schematic — not as a late-stage correction. The team adds slot cuts, routed channels, reinforced isolation zones, and pollution-degree/CTI-based spacing. These designs serve medical power supplies, EV battery management, solar inverters, and industrial HV controllers.",
     points: [
       {
         boldLead: "Safety Standard Compliance",
-        rest: " — creepage/clearance rules mapped to IEC 60601 (medical), UL 62368-1 (IT/AV), and IPC-2221 from schematic through layout.",
+        rest: " — Qmax maps creepage/clearance rules to IEC 60601 (medical), UL 62368-1 (IT/AV), and IPC-2221 from schematic through layout.",
       },
       {
         boldLead: "Isolation Barrier Design",
-        rest: " — slot cuts, routed channels, and reinforced isolation zones for primary-to-secondary boundaries up to 1500VDC.",
+        rest: " — Slot cuts, routed channels, and reinforced isolation zones hold primary-to-secondary boundaries up to 1500VDC.",
       },
       {
         boldLead: "Pollution Degree & CTI Analysis",
-        rest: " — material and spacing selection based on operating environment, altitude, and Comparative Tracking Index requirements.",
+        rest: " — Qmax's engineers select materials and spacing based on operating environment, altitude, and Comparative Tracking Index (CTI) requirements.",
       },
     ],
     applications:
@@ -143,19 +143,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Reducing conducted and radiated emissions in high-frequency switching designs.",
     intro:
-      "Qmax Systems contains EMI at the source in high-frequency SiC and GaN designs, where MOSFET slew rates turn every trace into an antenna. Qmax Systems engineers minimize gate-loop and power-loop parasitic inductance, tightly couple DC-bus capacitors to switching devices, and place CM chokes, Pi-filters, and snubbers for CISPR 32 and CE/RE compliance. Typical applications: GaN/SiC converters, high-frequency DC-DC, telecom rectifiers, and plasma generators.",
+      "Qmax Systems contains EMI at the source in high-frequency SiC and GaN designs, where MOSFET slew rates turn every trace into an antenna. Qmax's engineers minimize gate-loop and power-loop parasitic inductance, tightly couple DC-bus capacitors to switching devices, and place CM chokes, Pi-filters, and snubbers for CISPR 32 and CE/RE compliance. These designs serve GaN/SiC converters, high-frequency DC-DC, telecom rectifiers, and plasma generators.",
     points: [
       {
         boldLead: "Gate Driver Loop Optimization",
-        rest: " — minimizing parasitic inductance in gate-source loops to control ringing and overshoot in SiC/GaN circuits.",
+        rest: " — Qmax minimizes parasitic inductance in gate-source loops to control ringing and overshoot in SiC/GaN circuits.",
       },
       {
         boldLead: "Power Loop Minimization",
-        rest: " — tight coupling of DC bus capacitors to switching devices, reducing the hot loop area that drives radiated emissions.",
+        rest: " — Tight coupling of DC-bus capacitors to switching devices shrinks the hot-loop area that drives radiated emissions.",
       },
       {
         boldLead: "EMI Filter Placement",
-        rest: " — strategic positioning of CM chokes, Pi-filters, and snubbers for CISPR 32 and CE/RE compliance without late-stage redesign.",
+        rest: " — CM chokes, Pi-filters, and snubbers reach CISPR 32 and CE/RE compliance without late-stage redesign.",
       },
     ],
     applications:
@@ -179,19 +179,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Thermal management engineered into the PCB — not bolted on after.",
     intro:
-      "Qmax Systems engineers thermal management into the PCB rather than bolting it on afterward, using insulated metal substrates (IMS), thermal via arrays, and specialized cooling interfaces to prevent junction-temperature violations under sustained load. Qmax Systems coordinates copper pours and stackup with thermal simulation results. Typical applications: LED drivers, motor controllers, battery chargers, induction heating, and high-power RF amplifiers.",
+      "Qmax Systems engineers thermal management into the PCB rather than bolting it on afterward, using insulated metal substrates (IMS), thermal via arrays, and specialized cooling interfaces to prevent junction-temperature violations under sustained load. Qmax's engineers coordinate copper pours and stackup with thermal-simulation results. These designs serve LED drivers, motor controllers, battery chargers, induction heating, and high-power RF amplifiers.",
     points: [
       {
         boldLead: "Thermal Via Arrays",
-        rest: " — optimized via patterns under power devices for direct heat transfer to heatsink or chassis ground planes.",
+        rest: " — Qmax optimizes via patterns under power devices for direct heat transfer to heatsink or chassis ground planes.",
       },
       {
         boldLead: "IMS & Metal-Core Substrates",
-        rest: " — insulated metal substrate (IMS) and metal-core PCB designs for LED drivers, motor controllers, and high-dissipation modules.",
+        rest: " — Insulated-metal-substrate (IMS) and metal-core PCBs serve LED drivers, motor controllers, and high-dissipation modules.",
       },
       {
         boldLead: "Thermal Simulation Alignment",
-        rest: " — copper pours and stackup design coordinated with thermal simulation results to prevent junction temperature violations.",
+        rest: " — Copper pours and stackup track thermal-simulation results to prevent junction-temperature violations.",
       },
     ],
     applications:
@@ -464,17 +464,16 @@ export default function PowerElectronicsPage() {
       <HardwareServiceHeroSection
         imageSrc="/pcb-design/Power-Electronics-PCB.png"
         imageAlt="Power Electronics PCB Design — Qmax Systems"
-        title="Power Electronics PCB Design"
+        title="Qmax Systems Designs Power Electronics PCBs"
         description={
           <>
             <p>
               Qmax Systems designs power electronics PCBs as functional circuit
               elements, balancing high-current density, extreme voltage
-              gradients, and rapid switching transients (di/dt and dv/dt). Qmax
-              Systems applies a First-Time-Right methodology — front-loading
-              electromagnetic and thermal risk analysis — to take 800V EV
-              architectures and kW-level plasma generators to production without
-              costly re-spins.
+              gradients, and rapid switching transients (di/dt and dv/dt). A
+              First-Time-Right methodology — front-loading electromagnetic and
+              thermal risk analysis — takes 800V EV architectures and kW-level
+              plasma generators to production without costly re-spins.
             </p>
           </>
         }

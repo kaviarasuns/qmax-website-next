@@ -103,21 +103,21 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
       </svg>
     ),
     headline:
-      "High-speed memory and serial interfaces routed at the edge of physics.",
+      "High-speed memory and serial interfaces, routed at the edge of physics.",
     intro:
-      "Qmax Systems operates at the leading edge of digital signaling standards — DDR5/LPDDR5, PCIe Gen5/Gen6, and 112G SerDes — delivering PCB layouts validated against the tightest timing and loss budgets in the industry. Qmax Systems engineers route every interface against simulation-derived constraints in Cadence Sigrity and Ansys SIwave before the first net is placed. Typical applications: AI GPU chassis, O-RAN distributed units, server motherboards, and 100G network interface cards.",
+      "Qmax Systems designs PCB layouts for the leading edge of digital signaling — DDR5/LPDDR5, PCIe Gen5/Gen6, and 112G SerDes — validated against the tightest timing and loss budgets in the industry. Qmax's engineers route every interface against simulation-derived constraints in Cadence Sigrity and Ansys SIwave before the first net is placed. These boards ship into AI GPU chassis, O-RAN distributed units, server motherboards, and 100G network interface cards.",
     points: [
       {
         boldLead: "DDR5 & LPDDR5",
-        rest: " — implementation of Decision Feedback Equalization (DFE), CA parity, and CRC. Qmax Systems manages ultra-tight timing margins and addresses the complexities of on-DIMM PMICs.",
+        rest: " — The DDR5/LPDDR5 interface runs DFE, CA parity, and CRC, while Qmax manages ultra-tight timing margins and on-DIMM PMIC complexity.",
       },
       {
         boldLead: "PCIe Gen5 & Gen6",
-        rest: " — expertise in PAM4 signaling, ensuring compliance with strict jitter and noise floor requirements.",
+        rest: " — Qmax's engineers route PAM4 signaling to strict jitter and noise-floor compliance.",
       },
       {
         boldLead: "112G SerDes",
-        rest: " — advanced routing for 112 Gbps per lane, utilizing full-wave simulation to minimize reflections and crosstalk.",
+        rest: " — Each lane carries 112 Gbps, and full-wave simulation drives the routing to minimize reflections and crosstalk.",
       },
     ],
     applications:
@@ -144,15 +144,15 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Complex interconnect structures for the densest digital designs.",
     intro:
-      "Qmax Systems masters advanced HDI fabrication techniques — Type I, II, and III structures with stacked and staggered microvias, via-in-pad, and ELIC — enabling maximum routing density while preserving signal integrity and manufacturability. Qmax Systems regularly delivers 30+ layer HDI boards. Typical applications: high-density server boards, multi-chip module substrates, and advanced networking equipment.",
+      "Qmax Systems masters advanced HDI fabrication — Type I, II, and III structures with stacked and staggered microvias, via-in-pad, and ELIC — to maximize routing density while preserving signal integrity and manufacturability. The team regularly delivers 30+ layer HDI boards. These designs go into high-density server boards, multi-chip module substrates, and advanced networking equipment.",
     points: [
       {
         boldLead: "30-Layer HDI PCB Design",
-        rest: " — mastery of Type I, II, and III HDI structures, including stacked and staggered microvias, via-in-pad, and ELIC (Every Layer Interconnect).",
+        rest: " — Qmax builds Type I, II, and III HDI structures, including stacked and staggered microvias, via-in-pad, and ELIC (Every Layer Interconnect).",
       },
       {
         boldLead: "USB4 & Thunderbolt 4",
-        rest: " — high-speed differential pair routing with integrated ESD protection and EMI containment.",
+        rest: " — These links use matched differential-pair routing with integrated ESD protection and EMI containment.",
       },
     ],
     applications:
@@ -178,19 +178,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Rigorous stackup optimization balancing electrical performance with fabrication yield.",
     intro:
-      "A robust high-speed design begins with the substrate, and Qmax Systems performs rigorous stackup optimization to balance electrical performance against fabrication yield. Qmax Systems engineers select ultra-low-loss laminates such as Megtron 6/7/8, Tachyon 100G, and Rogers hybrids, model single-ended (50 Ω) and differential (85/90/100 Ω) impedance, and apply spread-glass fabrics to eliminate fiber-weave skew. Typical applications: 28+ layer PCBs, controlled-impedance backplanes, and mixed-dielectric hybrid stackups.",
+      "Qmax Systems performs rigorous stackup optimization to balance electrical performance against fabrication yield, because a robust high-speed design begins with the substrate. Qmax's engineers select ultra-low-loss laminates such as Megtron 6/7/8, Tachyon 100G, and Rogers hybrids, model single-ended (50 Ω) and differential (85/90/100 Ω) impedance, and apply spread-glass fabrics to eliminate fiber-weave skew. These stackups support 28+ layer PCBs, controlled-impedance backplanes, and mixed-dielectric hybrid designs.",
     points: [
       {
         boldLead: "Material Expertise",
-        rest: " — selection of ultra-low-loss laminates such as Megtron 6/7/8, Tachyon 100G, and Rogers hybrids.",
+        rest: " — Qmax selects ultra-low-loss laminates such as Megtron 6/7/8, Tachyon 100G, and Rogers hybrids.",
       },
       {
         boldLead: "Impedance Control",
-        rest: " — precision modeling of single-ended (50 Ohm) and differential (85 Ohm/90 Ohm/100 Ohm) traces.",
+        rest: " — Controlled-impedance routing holds single-ended (50 Ω) and differential (85/90/100 Ω) traces to target.",
       },
       {
         boldLead: "Glass Weave Mitigation",
-        rest: ' — use of "spread glass" fabrics and zig-zag routing techniques to eliminate skew.',
+        rest: " — Spread-glass fabrics and zig-zag routing eliminate fiber-weave skew.",
       },
     ],
     applications:
@@ -214,23 +214,23 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       'Simulation-driven workflow — Qmax Systems does not "guess and check."',
     intro:
-      "Qmax Systems runs a simulation-driven workflow — never guess-and-check. Every high-speed design is backed by pre- and post-layout simulation in Cadence Sigrity and Ansys SIwave covering signal integrity, power delivery, and electromagnetic compliance. Qmax Systems verifies eye diagrams, BER, and TDR through full-wave extraction before the prototype stage. Typical applications: PCIe Gen6, DDR5, and 112G SerDes platforms validated against compliance margin.",
+      "Qmax Systems runs a simulation-driven workflow, never guess-and-check. Pre- and post-layout simulation in Cadence Sigrity and Ansys SIwave backs every high-speed design, covering signal integrity, power delivery, and electromagnetic compliance. Qmax's engineers verify eye diagrams, BER, and TDR through full-wave extraction before the prototype stage. These methods validate PCIe Gen6, DDR5, and 112G SerDes platforms against compliance margin.",
     points: [
       {
         boldLead: "Pre-Layout Analysis",
-        rest: " — determining stackup, material, and topology constraints.",
+        rest: " — Qmax determines stackup, material, and topology constraints up front.",
       },
       {
         boldLead: "Post-Layout Verification",
-        rest: " — full-wave extraction of routing to verify Eye Diagrams, BER (Bit Error Rate), and TDR (Time Domain Reflectometry).",
+        rest: " — Full-wave extraction verifies eye diagrams, BER (Bit Error Rate), and TDR (Time Domain Reflectometry).",
       },
       {
         boldLead: "Power Integrity (PI)",
-        rest: " — analyzing DC IR Drop, AC impedance profiles, and decoupling capacitor optimization to support high-transient current demands.",
+        rest: " — Qmax's engineers analyze DC IR drop and AC impedance profiles, and optimize decoupling capacitors for high-transient current demands.",
       },
       {
         boldLead: "EMI/EMC",
-        rest: " — identifying potential radiation hotspots and resonance issues before the prototype stage.",
+        rest: " — Pre-prototype analysis flags radiation hotspots and resonance issues before the prototype stage.",
       },
     ],
     applications: "Cadence Sigrity · Ansys SIwave · Full-wave EM extraction",
@@ -555,13 +555,13 @@ export default function HighSpeedDigitalPCBDesignPage() {
       <HardwareServiceHeroSection
         imageSrc="/pcb-design/images/image1.jpg"
         imageAlt="High-Performance Digital Systems — Qmax Systems"
-        title="Advanced High-Speed Digital PCB Engineering"
+        title="Qmax Systems Engineers Advanced High-Speed Digital PCBs"
         description={
           <>
             <p>
               Qmax Systems designs high-speed digital PCBs for 112G SerDes,
-              DDR5, and PCIe Gen6 systems — where signal behavior is governed by
-              physics, not connectivity alone. Qmax Systems runs Signal
+              DDR5, and PCIe Gen6 systems, where signal behavior is governed by
+              physics, not connectivity alone. Qmax's engineers run Signal
               Integrity (SI) and Power Integrity (PI) simulation before routing,
               achieving an over-95% first-time-right rate on boards from AI GPU
               chassis to O-RAN Distributed Units.
@@ -573,8 +573,8 @@ export default function HighSpeedDigitalPCBDesignPage() {
       />
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}
-        title="Technical Capabilities: "
-        titleHighlight="Pushing the Limits of Physics"
+        title="Our Core Service "
+        titleHighlight="Offerings"
         contactHref="/pcb-design/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />

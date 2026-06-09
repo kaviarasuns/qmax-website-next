@@ -8,6 +8,11 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { PCB_INDUSTRIES } from "@/store/pcb-industries";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import type { ServiceCaseStudy } from "@/data/service-case-studies";
+import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import { ProjectExperienceItem } from "@/components/services-cmp/ApplicationsProjectExperienceSection";
+import { getCaseStudyCardImage } from "@/store/case-studies";
 
 /* ============================================================
    DATA
@@ -499,6 +504,59 @@ const FAQ_ITEMS = [
   },
 ];
 
+function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = pcbCaseStudiesData.find((c) => c.id === id);
+    const image = study?.images[0];
+    if (!study || !image) {
+      throw new Error(`PCB case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "development",
+      summary,
+      imageRotation: study.rotatedImages?.[0],
+    };
+  });
+}
+
+const pcbCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
+  "pcie-gen5-cpo-board",
+  "100gbe-high-speed-networking-board",
+  "digital-stethoscope",
+  "ultra-low-cost-bldc-motor-controller",
+]);
+
+function pcbProjectExperienceEntry(
+  id: string,
+  listTitle: string,
+  caseStudyId: string,
+  description?: string,
+): ProjectExperienceItem {
+  const study = pcbCaseStudiesData.find(
+    (caseStudy) => caseStudy.id === caseStudyId,
+  );
+  if (!study) {
+    throw new Error(`PCB case study not found: ${caseStudyId}`);
+  }
+
+  return {
+    id,
+    listTitle,
+    captionTitle: study.title,
+    description: description ?? study.summary,
+    imageSrc: getCaseStudyCardImage(caseStudyId),
+    imageAlt: study.title,
+    caseStudyHref: `/case-studies/${study.id}`,
+  };
+}
+
 export default function HardwareDevelopmentServicesComponentV2() {
   return (
     <div className="hd-root">
@@ -585,6 +643,12 @@ export default function HardwareDevelopmentServicesComponentV2() {
 
       {/* FEATURED ARTICLES */}
       {/* <FeaturedArticlesSection /> */}
+
+      <ServiceCaseStudiesSection
+        eyebrow="PCB Programs"
+        studies={pcbCaseStudies}
+        hideTopBorder
+      />
 
       {/* FAQ */}
       {/* <ComplimentaryConsultationSection variant="pcb" /> */}

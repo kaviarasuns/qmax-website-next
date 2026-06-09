@@ -14,6 +14,12 @@ import { WhySection } from "@/components/services-cmp/WhySection";
 import { PartnershipsSection } from "@/components/services-cmp/PartnershipsSection";
 import { CTABannerSection } from "@/components/services-cmp/CTABannerSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { ServiceCaseStudy } from "@/data/service-case-studies";
+import {
+  allCaseStudiesData,
+  getCaseStudyCardImage,
+} from "@/store/case-studies";
 
 const HERO = {
   title:
@@ -720,6 +726,35 @@ const FAQ_ITEMS = [
   },
 ];
 
+function serviceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = allCaseStudiesData.find((c) => c.id === id);
+    const image = getCaseStudyCardImage(id);
+    if (!study || !image) {
+      throw new Error(`Case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "hardware",
+      summary,
+      imageRotation: study.rotatedImages?.[study.cardImageIndex ?? 0],
+    };
+  });
+}
+
+const embeddedCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
+  "industrial-iot-gateway-with-poe",
+  "smart-monitoring-system",
+  "wifi-6e-router",
+  "lung-sound-recorder",
+]);
+
 export default function EmbeddedDesignServicesPage() {
   return (
     <>
@@ -798,6 +833,12 @@ export default function EmbeddedDesignServicesPage() {
       <CTABannerSection
         href="/embedded-design-services/contact"
         heading="Ready To Bring Your Embedded Design Project To Life?"
+      />
+
+      <ServiceCaseStudiesSection
+        eyebrow="Embedded Programs"
+        studies={embeddedCaseStudies}
+        hideTopBorder
       />
 
       {/* FAQ */}

@@ -3,8 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { useRef, useState } from "react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
@@ -16,14 +16,209 @@ import {
 } from "@/components/ui/navigation-menu";
 import { menuData } from "@/lib/menu-data";
 
+/** A single node in the unified mobile navigation tree. */
+type MobileNode = {
+  title: string;
+  href?: string;
+  description?: string;
+  children?: MobileNode[];
+};
+
+// Per-depth typography so the accordion shows a clear hierarchy.
+const TITLE_BY_DEPTH = [
+  "text-lg font-semibold tracking-[0.04em]",
+  "text-base font-medium tracking-[0.05em]",
+  "text-sm font-normal tracking-[0.05em]",
+];
+
+/** Recursively renders one accordion node and its expandable children. */
+function MobileNavNode({
+  node,
+  depth,
+  keyPath,
+  openKeys,
+  onToggle,
+  onNavigate,
+  pathname,
+}: {
+  node: MobileNode;
+  depth: number;
+  keyPath: string;
+  openKeys: Set<string>;
+  onToggle: (key: string) => void;
+  onNavigate: () => void;
+  pathname: string;
+}) {
+  const hasChildren = (node.children?.length ?? 0) > 0;
+  const isOpen = openKeys.has(keyPath);
+  const active = node.href === pathname;
+  const titleClass = TITLE_BY_DEPTH[Math.min(depth, TITLE_BY_DEPTH.length - 1)];
+
+  // Leaf: a plain link.
+  if (!hasChildren) {
+    return (
+      <Link
+        href={node.href || "#"}
+        onClick={onNavigate}
+        className={`block py-3 px-3 rounded-md transition-colors ${titleClass}
+          ${active
+            ? "text-red-500"
+            : "text-foreground/80 hover:text-red-500 hover:bg-accent"
+          }`}
+      >
+        {node.title}
+      </Link>
+    );
+  }
+
+  // Branch: a header row (link if it has its own page, otherwise a toggle) plus a chevron.
+  return (
+    <div>
+      <div className="flex items-center">
+        {node.href ? (
+          <Link
+            href={node.href}
+            onClick={onNavigate}
+            className={`flex-1 py-3 px-3 rounded-md transition-colors ${titleClass}
+              ${active
+                ? "text-red-500"
+                : "text-foreground/90 hover:text-red-500 hover:bg-accent"
+              }`}
+          >
+            {node.title}
+          </Link>
+        ) : (
+          <button
+            onClick={() => onToggle(keyPath)}
+            className={`flex-1 text-left py-3 px-3 rounded-md transition-colors text-foreground/90 hover:text-red-500 ${titleClass}`}
+          >
+            {node.title}
+          </button>
+        )}
+        <button
+          onClick={() => onToggle(keyPath)}
+          aria-label={`${isOpen ? "Collapse" : "Expand"} ${node.title}`}
+          aria-expanded={isOpen}
+          className="p-3 text-foreground/60 hover:text-red-500 transition-colors"
+        >
+          <ChevronDown
+            className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          />
+        </button>
+      </div>
+
+      {/* Collapsible region — grid-rows trick animates height without measuring. */}
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+      >
+        <div className="min-h-0 overflow-hidden">
+          <div
+            className={
+              depth === 0
+                ? "pb-1 pl-1"
+                : "ml-4 pl-2 border-l border-border"
+            }
+          >
+            {node.children!.map((child) => (
+              <MobileNavNode
+                key={child.title}
+                node={child}
+                depth={depth + 1}
+                keyPath={`${keyPath}>${child.title}`}
+                openKeys={openKeys}
+                onToggle={onToggle}
+                onNavigate={onNavigate}
+                pathname={pathname}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [menuValue, setMenuValue] = useState("");
   const openedAtRef = useRef(0);
   const pathname = usePathname();
 
+  // Mobile accordion: set of expanded section keys (one key per node path).
+  const [openKeys, setOpenKeys] = useState<Set<string>>(new Set());
+
   const isSubItemActive = (subItems: { href: string }[]) =>
     subItems.some((s) => pathname.startsWith(s.href));
+
+  // Flatten the menu config into a single recursive tree for the mobile menu.
+  const mobileTree = useMemo<MobileNode[]>(() => {
+    const root: MobileNode[] = [{ title: "Home", href: "/" }];
+    for (const item of menuData) {
+      if (item.subItems) {
+        root.push({
+          title: item.title,
+          children: item.subItems.map((sub) => ({
+            title: sub.title,
+            href: sub.href,
+            description: sub.description,
+            children: sub.children?.map((child) => ({
+              title: child.title,
+              href: child.href,
+            })),
+          })),
+        });
+      } else {
+        root.push({ title: item.title, href: item.href });
+      }
+    }
+    return root;
+  }, []);
+
+  // Pre-expand the branch(es) leading to the current page so it's visible on open.
+  const computeActiveKeys = () => {
+    const keys = new Set<string>();
+    const walk = (nodes: MobileNode[], parentKey: string): boolean => {
+      let containsActive = false;
+      for (const node of nodes) {
+        const key = parentKey ? `${parentKey}>${node.title}` : node.title;
+        const childActive = node.children?.length
+          ? walk(node.children, key)
+          : false;
+        const selfActive =
+          !!node.href && node.href !== "/" && pathname.startsWith(node.href);
+        if (node.children?.length && (childActive || selfActive)) keys.add(key);
+        if (childActive || selfActive) containsActive = true;
+      }
+      return containsActive;
+    };
+    walk(mobileTree, "");
+    return keys;
+  };
+
+  const openMobileMenu = () => {
+    setOpenKeys(computeActiveKeys());
+    setMobileMenuOpen(true);
+  };
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  const toggleKey = (key: string) =>
+    setOpenKeys((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+
+  // Lock body scroll while the mobile menu is open.
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [mobileMenuOpen]);
 
   const handleMenuValueChange = (value: string) => {
     if (value) openedAtRef.current = Date.now();
@@ -36,6 +231,7 @@ export function Navigation() {
   };
 
   return (
+    <>
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-white/20 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -165,9 +361,10 @@ export function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 -mr-2 text-foreground"
+            onClick={() => (mobileMenuOpen ? closeMobileMenu() : openMobileMenu())}
             aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -177,106 +374,41 @@ export function Navigation() {
           </button>
         </div>
       </div>
+    </nav>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-border bg-background">
-          <div className="px-4 py-4 space-y-1 max-h-[calc(100vh-4rem)] overflow-y-auto">
-            <Link
-              href="/"
-              className={`block py-2 px-3 text-base font-normal tracking-[0.06em] rounded-md transition-all duration-200
-                ${pathname === "/"
-                  ? "text-red-500 bg-accent"
-                  : "text-muted-foreground hover:text-red-500 hover:bg-accent"
-                }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
-
-            {menuData.map((item) => (
-              <div key={item.title}>
-                {item.subItems ? (
-                  <div className="space-y-1">
-                    <div className="py-2 px-3 text-xs font-medium tracking-[0.12em] uppercase text-foreground">
-                      {item.title}
-                    </div>
-                    <div className="pl-4 space-y-1">
-                      {item.subItems.map((subItem) => (
-                        <div key={subItem.title}>
-                          <Link
-                            href={subItem.href}
-                            className={`flex items-center gap-3 py-2 px-3 rounded-md transition-all duration-200
-                              ${pathname === subItem.href
-                                ? "text-red-500 bg-accent"
-                                : "text-muted-foreground hover:text-red-500 hover:bg-accent"
-                              }`}
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            <div className="relative w-12 h-12 rounded overflow-hidden bg-muted flex-shrink-0">
-                              <Image
-                                src={subItem.image || "/placeholder.svg"}
-                                alt={subItem.title}
-                                fill
-                                className="object-cover"
-                              />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="text-sm font-normal tracking-[0.04em] text-foreground">
-                                {subItem.title}
-                              </div>
-                              {subItem.description && (
-                                <p className="text-xs font-light tracking-[0.03em] text-muted-foreground line-clamp-1">
-                                  {subItem.description}
-                                </p>
-                              )}
-                            </div>
-                          </Link>
-                          {subItem.children && subItem.children.length > 0 && (
-                            <div className="ml-16 mb-2 space-y-1">
-                              {subItem.children.map((childItem) => (
-                                <Link
-                                  key={childItem.title}
-                                  href={childItem.href}
-                                  className="block rounded-md py-1 px-2 text-xs font-normal tracking-[0.04em] text-muted-foreground transition-all duration-200 hover:text-red-500 hover:bg-accent"
-                                  onClick={() => setMobileMenuOpen(false)}
-                                >
-                                  {childItem.title}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <Link
-                    href={item.href || "#"}
-                    className={`block py-2 px-3 text-base font-normal tracking-[0.06em] rounded-md transition-all duration-200
-                      ${pathname === item.href
-                        ? "text-red-500 bg-accent"
-                        : "text-muted-foreground hover:text-red-500 hover:bg-accent"
-                      }`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.title}
-                  </Link>
-                )}
+      {/* Mobile Menu — accordion panel (sibling of nav: nav's backdrop-blur would
+          otherwise become the containing block for this fixed element) */}
+      <div
+        className={`lg:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-background transition-transform duration-300 ease-in-out
+          ${mobileMenuOpen ? "translate-x-0" : "translate-x-full pointer-events-none"}`}
+        aria-hidden={!mobileMenuOpen}
+        inert={!mobileMenuOpen}
+      >
+        <div className="h-full overflow-y-auto px-4 py-4 flex flex-col">
+          <div className="divide-y divide-border">
+            {mobileTree.map((node) => (
+              <div key={node.title} className="py-1">
+                <MobileNavNode
+                  node={node}
+                  depth={0}
+                  keyPath={node.title}
+                  openKeys={openKeys}
+                  onToggle={toggleKey}
+                  onNavigate={closeMobileMenu}
+                  pathname={pathname}
+                />
               </div>
             ))}
+          </div>
 
-            <div className="pt-4">
-              <Button
-                className="w-full"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Get Started
-              </Button>
-            </div>
+          {/* CTA pinned to the bottom */}
+          <div className="mt-auto pt-6">
+            <Link href="/contact" onClick={closeMobileMenu}>
+              <Button className="w-full">Contact Us</Button>
+            </Link>
           </div>
         </div>
-      )}
-    </nav>
+      </div>
+    </>
   );
 }
