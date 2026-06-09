@@ -27,7 +27,7 @@ const DEFAULT_DESCRIPTION = (
 export function PcbMainHero({
   title = DEFAULT_TITLE,
   description = DEFAULT_DESCRIPTION,
-  ctaHref = "/pcb-design/contact",
+  ctaHref = "/pcb-design-services/contact",
   ctaLabel = "TALK TO OUR ENGINEERS",
   videoSrc = "https://d1yetprhniwywz.cloudfront.net/v2/PCB_Design_Hero.mp4",
 }: PcbMainHeroProps) {

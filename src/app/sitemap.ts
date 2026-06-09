@@ -9,9 +9,9 @@ const staticRoutes = [
   "/contact",
   "/case-studies",
   "/embedded-design-services",
-  "/hardware-development-services",
+  "/hardware-design-services",
   "/mechanical-industrial-design-services",
-  "/pcb-design",
+  "/pcb-design-services",
   "/value-added-services",
 ];
 

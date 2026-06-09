@@ -640,14 +640,14 @@ export default function PCBLibraryServicesPage() {
               </Link>
               <span aria-hidden="true">|</span>
               <Link
-                href="/pcb-design"
+                href="/pcb-design-services"
                 className="hover:text-red-500 transition-colors"
               >
                 PCB Design Services
               </Link>
               <span aria-hidden="true">|</span>
               <Link
-                href="/pcb-design/si-pi-analysis"
+                href="/pcb-design-services/si-pi-analysis"
                 className="hover:text-red-500 transition-colors"
               >
                 SI/PI Analysis

@@ -688,7 +688,7 @@ export function HeroConceptToSilicon({
   title,
   description,
   ctaLabel = "Talk to our engineer",
-  ctaHref = "/hardware-development-services/contact",
+  ctaHref = "/hardware-design-services/contact",
   lifecycleTitle = "Hardware Lifecycle",
   lifecycleSubtitleHighlight = "Requirement To Production",
 }: HeroConceptToSiliconProps) {

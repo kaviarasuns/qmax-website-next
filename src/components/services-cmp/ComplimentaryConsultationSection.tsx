@@ -14,14 +14,14 @@ const VARIANTS = {
     subtitle:
       "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
     architectBenefit: "Senior Hardware Architect",
-    ctaHref: "/hardware-development-services/contact",
+    ctaHref: "/hardware-design-services/contact",
   },
   pcb: {
     title: "Get a Complimentary Consultation with Our Digital PCB Experts",
     subtitle:
       "1-hour session with a Qmax Systems Senior Digital PCB Architect. Practical, engineering-driven — no sales pitch.",
     architectBenefit: "Senior PCB Architect",
-    ctaHref: "/pcb-design/contact",
+    ctaHref: "/pcb-design-services/contact",
   },
 } as const;
 

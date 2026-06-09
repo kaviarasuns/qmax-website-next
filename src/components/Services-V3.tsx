@@ -10,7 +10,7 @@ const services = [
       "https://framerusercontent.com/images/xZdrZACUdNYgULp5M3m2BcUhBI.png",
     description:
       "Develop system architecture and select core electronic components.",
-    href: "/hardware-development-services",
+    href: "/hardware-design-services",
   },
   {
     topic: "Firmware Development",
@@ -52,54 +52,61 @@ const services = [
   },
 ];
 
-const ServiceCard = React.memo(({ service, index }: { service: typeof services[0]; index: number }) => (
-  <motion.div
-    key={index}
-    initial={{ opacity: 0, y: 15 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.4, delay: index * 0.05 }}
-    className="group h-full"
-  >
-    <Link href={service.href} className="flex flex-col h-full">
-      <div className="bg-white rounded-lg shadow-sm border border-gray-100/50 overflow-hidden hover:shadow-md hover:border-red-600/20 transition-all duration-300 flex flex-col h-full group-hover:-translate-y-1">
-        <div className="relative overflow-hidden aspect-[21/9]">
-          <Image
-            src={service.image}
-            alt={service.topic}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </div>
+const ServiceCard = React.memo(
+  ({ service, index }: { service: (typeof services)[0]; index: number }) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+      className="group h-full"
+    >
+      <Link href={service.href} className="flex flex-col h-full">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-100/50 overflow-hidden hover:shadow-md hover:border-red-600/20 transition-all duration-300 flex flex-col h-full group-hover:-translate-y-1">
+          <div className="relative overflow-hidden aspect-[21/9]">
+            <Image
+              src={service.image}
+              alt={service.topic}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </div>
 
-        <div className="flex-1 flex flex-col p-3 pt-2">
-          <h3 className="text-sm md:text-base font-bold group-hover:text-red-600 transition-colors duration-300 mb-0.5 line-clamp-1">
-            {service.topic}
-          </h3>
+          <div className="flex-1 flex flex-col p-3 pt-2">
+            <h3 className="text-sm md:text-base font-bold group-hover:text-red-600 transition-colors duration-300 mb-0.5 line-clamp-1">
+              {service.topic}
+            </h3>
 
-          <p className="text-[11px] md:text-xs leading-tight line-clamp-2 mb-2 text-muted-foreground">
-            {service.description}
-          </p>
+            <p className="text-[11px] md:text-xs leading-tight line-clamp-2 mb-2 text-muted-foreground">
+              {service.description}
+            </p>
 
-          <div className="mt-auto flex items-center text-red-600 font-bold text-[10px] md:text-[11px] uppercase tracking-wider group-hover:gap-1.5 transition-all duration-300">
-            <span>Learn More</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3 w-3 transform group-hover:translate-x-1 transition-transform"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            <div className="mt-auto flex items-center text-red-600 font-bold text-[10px] md:text-[11px] uppercase tracking-wider group-hover:gap-1.5 transition-all duration-300">
+              <span>Learn More</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-3 w-3 transform group-hover:translate-x-1 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
-    </Link>
-  </motion.div>
-));
+      </Link>
+    </motion.div>
+  ),
+);
 
 ServiceCard.displayName = "ServiceCard";
 

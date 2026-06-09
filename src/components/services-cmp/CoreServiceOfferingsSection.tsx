@@ -28,7 +28,7 @@ export function CoreServiceOfferingsSection({
   offerings,
   title = "Our Core Service ",
   titleHighlight = "Offerings",
-  contactHref = "/hardware-development-services/contact",
+  contactHref = "/hardware-design-services/contact",
 }: CoreServiceOfferingsSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
   const activeOffering = offerings[activeIdx] ?? offerings[0];
@@ -69,7 +69,7 @@ export function CoreServiceOfferingsSection({
             </h3>
             <div className="mt-8 flex flex-wrap gap-3">
               {/* <a
-                href="/hardware-development-services"
+                href="/hardware-design-services"
                 className="rounded-md border border-slate-900 px-6 py-2.5 text-sm font-medium text-foreground transition hover:bg-slate-900 hover:text-white"
               >
                 Learn more

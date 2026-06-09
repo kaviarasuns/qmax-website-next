@@ -195,49 +195,49 @@ export default function PCBDesignPageV1() {
                 title: "High-Speed Digital PCB Design",
                 description:
                   "Modern high-speed digital designs — operating at multi-gigabit data rates — impose strict constraints on PCB trace geometry, layer stack-up, via topology, and return path continuity. Our engineers apply rigorous signal integrity discipline to DDR4/5 memory interfaces, PCIe Gen 4/5, USB 3.x, Ethernet (1G to 100G), FPGA I/O, and SoC-level designs. Controlled differential impedance, length matching, crosstalk mitigation, and via stub management are standard elements of every high-speed layout we deliver.",
-                href: "/pcb-design/high-speed-digital-pcb-design",
+                href: "/pcb-design-services/high-speed-digital-pcb-design",
                 icon: <Cpu className="w-6 h-6" />,
               },
               {
                 title: "RF and Microwave PCB Design",
                 description:
                   "RF and microwave PCB layout requires precision substrate material selection, microstrip and stripline impedance control, low-loss routing, and careful RF-to-digital isolation strategy. Qmax engineers are experienced in designs spanning sub-GHz ISM band through Ka-band frequencies, including antenna feed networks, LNA stages, PA matching networks, and mixed RF/digital architectures on single and multi-layer substrates including PTFE-based materials.",
-                href: "/pcb-design/rf-and-microwave-pcb-design",
+                href: "/pcb-design-services/rf-and-microwave-pcb-design",
                 icon: <Radio className="w-6 h-6" />,
               },
               {
                 title: "Power Electronics PCB Design",
                 description:
                   "Power electronics PCB layout demands precise current path management, thermal dissipation planning, and EMI containment. Our engineers are experienced in DC-DC converters, AC-DC power supplies, motor drive circuits, and high-density power modules. We apply copper weight optimization, current-carrying capacity analysis, thermal via arrays, and snubber placement discipline to ensure reliable operation under full thermal and electrical load.",
-                href: "/pcb-design/power-electronics",
+                href: "/pcb-design-services/power-electronics",
                 icon: <Zap className="w-6 h-6" />,
               },
               {
                 title: "Analog and Mixed-Signal PCB Design",
                 description:
                   "Analog and mixed-signal PCB layout is among the most demanding disciplines in electronics engineering. Noise coupling, ground plane partitioning, supply decoupling placement, shielding, and the careful physical separation of high-gain analog signal paths from switching noise sources require detailed engineering judgment at every placement and routing decision. Qmax engineers apply established analog layout principles to precision instrumentation, sensor interfaces, ADC/DAC signal chains, and mixed-signal SoC designs.",
-                href: "/pcb-design/analog-and-mixed-signal",
+                href: "/pcb-design-services/analog-and-mixed-signal",
                 icon: <Activity className="w-6 h-6" />,
               },
               {
                 title: "SI, PI Analysis",
                 description:
                   "Pre- and post-layout SI/PI analysis allows design problems to be identified and corrected before a board is fabricated. Our engineers perform transmission line simulation, eye diagram analysis, IBIS-based driver/receiver modeling, power delivery network (PDN) impedance analysis, and decoupling capacitor optimization. SI/PI analysis is offered as a standalone service or as an integrated element of our PCB layout engagements.",
-                href: "/pcb-design/si-pi-analysis",
+                href: "/pcb-design-services/si-pi-analysis",
                 icon: <LineChart className="w-6 h-6" />,
               },
               {
                 title: "PCB Library Services",
                 description:
                   "A PCB design is only as reliable as its component library. Over three decades of active design work, Qmax has developed a verified, well-documented component library covering schematic symbols, PCB footprints, and 3D STEP models. Library parts are validated against manufacturer datasheets and IPC-7351 land pattern standards. Our library management process ensures that footprint accuracy is maintained as component revisions occur, reducing the risk of manufacturing errors caused by incorrect or outdated pad geometries.",
-                href: "/pcb-design/pcb-library-services",
+                href: "/pcb-design-services/pcb-library-services",
                 icon: <Library className="w-6 h-6" />,
               },
               {
                 title: "PCB Design Review Services",
                 description:
                   "An independent PCB design review — performed by Qmax engineers against your existing layout — is an efficient, cost-effective way to identify signal integrity risks, DFM issues, thermal concerns, and standard violations before releasing to fabrication. Our review process follows a structured checklist covering layer stack-up, placement, routing, silkscreen, drill and fabrication notes, and documentation completeness. Review findings are delivered as a formal technical report with prioritized recommendations.",
-                href: "/pcb-design/pcb-design-review-services",
+                href: "/pcb-design-services/pcb-design-review-services",
                 icon: <CheckCircle2 className="w-6 h-6" />,
               },
             ].map((spec, index) => (

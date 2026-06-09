@@ -29,7 +29,7 @@ export function CapabilitiesSection({
   capabilities,
   title = "Hardware",
   titleHighlight = "Capabilities",
-  getInTouchHref = "/pcb-design/contact",
+  getInTouchHref = "/pcb-design-services/contact",
 }: CapabilitiesSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
 

@@ -621,7 +621,7 @@ export default function RFMicrowavePCBDesignPage() {
   return (
     <>
       <HardwareServiceHeroSection
-        imageSrc="/pcb-design/images/rf-pcb-service.jpg"
+        imageSrc="/pcb-design-services/images/rf-pcb-service.jpg"
         imageAlt="RF and Microwave PCB Design — Qmax Systems"
         title="Qmax Systems Designs RF and Microwave PCBs"
         description={
@@ -629,22 +629,22 @@ export default function RFMicrowavePCBDesignPage() {
             <p>
               Qmax Systems designs RF and microwave PCBs from hundreds of MHz to
               millimeter-wave bands, where the board is part of the RF circuit
-              itself. Qmax&apos;s RF engineers control trace geometry, dielectric
-              loss, via transitions, grounding, and shielding to hold insertion
-              loss, phase stability, noise floor, and EMI compliance — across
-              radar sensors, RF instrumentation, and wireless communication
-              platforms.
+              itself. Qmax&apos;s RF engineers control trace geometry,
+              dielectric loss, via transitions, grounding, and shielding to hold
+              insertion loss, phase stability, noise floor, and EMI compliance —
+              across radar sensors, RF instrumentation, and wireless
+              communication platforms.
             </p>
           </>
         }
-        ctaHref="/pcb-design/contact"
+        ctaHref="/pcb-design-services/contact"
         ctaLabel="Talk to Our Engineers"
       />
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}
         title="RF PCB Engineering "
         titleHighlight="Approach"
-        contactHref="/pcb-design/contact"
+        contactHref="/pcb-design-services/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />
       <WhySection
@@ -657,7 +657,7 @@ export default function RFMicrowavePCBDesignPage() {
             "Get A Complimentary Consultation With Our RF & Microwave Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
-          ctaHref: "/pcb-design/contact",
+          ctaHref: "/pcb-design-services/contact",
         }}
       />
 

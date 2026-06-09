@@ -30,7 +30,7 @@ const services: ServiceCard[] = [
       "Power Electronics",
     ],
     Icon: Cpu,
-    href: "/hardware-development-services",
+    href: "/hardware-design-services",
   },
   {
     id: "embedded",

@@ -410,21 +410,21 @@ export default function SIPIAnalysisServicesPage() {
           </p>
           <div className="mt-10 flex flex-col items-start gap-4 text-sm text-zinc-900 md:flex-row md:items-center md:text-base">
             <Link
-              href="/pcb-design"
+              href="/pcb-design-services"
               className="underline decoration-zinc-300 decoration-2 underline-offset-4 transition-colors hover:text-blue-600 hover:decoration-blue-600"
             >
               PCB Design Services Overview
             </Link>
             <span className="hidden text-zinc-300 md:inline-block">|</span>
             <Link
-              href="/pcb-design/high-speed-digital-pcb-design"
+              href="/pcb-design-services/high-speed-digital-pcb-design"
               className="underline decoration-zinc-300 decoration-2 underline-offset-4 transition-colors hover:text-blue-600 hover:decoration-blue-600"
             >
               Digital PCB Design
             </Link>
             <span className="hidden text-zinc-300 md:inline-block">|</span>
             <Link
-              href="/pcb-design/rf-and-microwave-pcb-design"
+              href="/pcb-design-services/rf-and-microwave-pcb-design"
               className="underline decoration-zinc-300 decoration-2 underline-offset-4 transition-colors hover:text-blue-600 hover:decoration-blue-600"
             >
               RF PCB Design
@@ -1282,9 +1282,7 @@ export default function SIPIAnalysisServicesPage() {
             </div>
 
             <div className="flex flex-col rounded-3xl border border-zinc-200 bg-zinc-50/50 p-8 sm:p-10 transition-shadow hover:shadow-md">
-              <h3 className="text-xl">
-                6.3 MIPI CSI-2 (D-PHY &amp; C-PHY)
-              </h3>
+              <h3 className="text-xl">6.3 MIPI CSI-2 (D-PHY &amp; C-PHY)</h3>
               <p className="mt-4 text-base leading-7 text-muted-foreground">
                 MIPI D-PHY v2.5 at 4.5Gbps and C-PHY v2.1 at 4.5Gsps for camera
                 sensor and display interfaces. Differential pair and trio
@@ -1297,9 +1295,7 @@ export default function SIPIAnalysisServicesPage() {
             </div>
 
             <div className="flex flex-col rounded-3xl border border-zinc-200 bg-zinc-50/50 p-8 sm:p-10 transition-shadow hover:shadow-md">
-              <h3 className="text-xl">
-                6.4 DDR4 &amp; DDR5 Memory Subsystems
-              </h3>
+              <h3 className="text-xl">6.4 DDR4 &amp; DDR5 Memory Subsystems</h3>
               <p className="mt-4 text-base leading-7 text-muted-foreground">
                 DDR4-3200 through DDR5-8400 and LPDDR5X at 8533 MT/s. Fly-by
                 command/address topology simulation, per-pin DQ eye analysis
@@ -1327,9 +1323,7 @@ export default function SIPIAnalysisServicesPage() {
             </div>
 
             <div className="flex flex-col rounded-3xl border border-zinc-200 bg-zinc-50/50 p-8 sm:p-10 transition-shadow hover:shadow-md">
-              <h3 className="text-xl">
-                6.6 Multi-CPU Board PI Analysis
-              </h3>
+              <h3 className="text-xl">6.6 Multi-CPU Board PI Analysis</h3>
               <p className="mt-4 text-base leading-7 text-muted-foreground">
                 Dual and quad-socket server PDN co-simulation: per-socket VRM
                 co-design, cross-socket reference plane coupling analysis, bulk
@@ -1769,42 +1763,42 @@ export default function SIPIAnalysisServicesPage() {
 
           <div className="mt-16 border-t border-zinc-200 pt-8 flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm font-medium text-blue-600">
             <Link
-              href="/pcb-design"
+              href="/pcb-design-services"
               className="hover:text-blue-800 hover:underline"
             >
               PCB Design Services Overview
             </Link>
             <span className="text-zinc-300">|</span>
             <Link
-              href="/pcb-design/digital"
+              href="/pcb-design-services/high-speed-digital-pcb-design"
               className="hover:text-blue-800 hover:underline"
             >
               Digital PCB Design
             </Link>
             <span className="text-zinc-300">|</span>
             <Link
-              href="/pcb-design/analog-mixed-signal"
+              href="/pcb-design-services/analog-and-mixed-signal"
               className="hover:text-blue-800 hover:underline"
             >
               Analog &amp; Mixed Signal PCB Design
             </Link>
             <span className="text-zinc-300">|</span>
             <Link
-              href="/pcb-design/rf-microwave"
+              href="/pcb-design-services/rf-and-microwave-pcb-design"
               className="hover:text-blue-800 hover:underline"
             >
               RF PCB Design
             </Link>
             <span className="text-zinc-300">|</span>
             <Link
-              href="/pcb-design/power-electronics"
+              href="/pcb-design-services/power-electronics"
               className="hover:text-blue-800 hover:underline"
             >
               Power Electronics PCB Design
             </Link>
             <span className="text-zinc-300">|</span>
             <Link
-              href="/hardware-development-services"
+              href="/hardware-design-services"
               className="hover:text-blue-800 hover:underline"
             >
               HW Development Services

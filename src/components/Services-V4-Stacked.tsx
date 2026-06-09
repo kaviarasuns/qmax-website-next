@@ -16,23 +16,23 @@ const services = [
       "https://framerusercontent.com/images/xZdrZACUdNYgULp5M3m2BcUhBI.png",
     description:
       "Develop system architecture and select core electronic components.",
-    href: "/hardware-development-services",
+    href: "/hardware-design-services",
     subServices: [
       {
         title: "High Speed Digital Design",
-        href: "/hardware-development-services/high-speed-digital-design",
+        href: "/hardware-design-services/high-speed-digital-design",
       },
       {
         title: "Analog Design",
-        href: "/hardware-development-services/analog-design",
+        href: "/hardware-design-services/analog-design",
       },
       {
         title: "Power Electronics",
-        href: "/hardware-development-services/power-electronics",
+        href: "/hardware-design-services/power-electronics",
       },
       {
         title: "RF and Microwave",
-        href: "/hardware-development-services/rf-and-microwave",
+        href: "/hardware-design-services/rf-and-microwave",
       },
     ],
   },
@@ -53,31 +53,31 @@ const services = [
     subServices: [
       {
         title: "High Speed Digital Services",
-        href: "/pcb-design/high-speed-digital-pcb-design",
+        href: "/pcb-design-services/high-speed-digital-pcb-design",
       },
       {
         title: "Analog and Mixed Signal",
-        href: "/pcb-design/analog-and-mixed-signal",
+        href: "/pcb-design-services/analog-and-mixed-signal",
       },
       {
         title: "Power Electronics",
-        href: "/pcb-design/power-electronics",
+        href: "/pcb-design-services/power-electronics",
       },
       {
         title: "RF and Microwave",
-        href: "/pcb-design/rf-and-microwave-pcb-design",
+        href: "/pcb-design-services/rf-and-microwave-pcb-design",
       },
       {
         title: "SI & PI Analysis Services",
-        href: "/pcb-design/si-pi-analysis",
+        href: "/pcb-design-services/si-pi-analysis",
       },
       {
         title: "PCB Library Services",
-        href: "/pcb-design/pcb-library-services",
+        href: "/pcb-design-services/pcb-library-services",
       },
       {
         title: "PCB Design Review Services",
-        href: "/pcb-design/pcb-design-review-services",
+        href: "/pcb-design-services/pcb-design-review-services",
       },
     ],
   },

@@ -455,7 +455,7 @@ export default function PowerElectronicsPage() {
             </p>
           </>
         }
-        ctaHref="/hardware-development-services/contact"
+        ctaHref="/hardware-design-services/contact"
         ctaLabel="Talk to Our Engineers"
       />
 
@@ -488,7 +488,7 @@ export default function PowerElectronicsPage() {
             "Get A Complimentary Consultation With Our Power Electronics Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
-          ctaHref: "/hardware-development-services/contact",
+          ctaHref: "/hardware-design-services/contact",
         }}
       />
 
@@ -501,7 +501,7 @@ export default function PowerElectronicsPage() {
       {/* <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our Power Electronics Experts."
         subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
-        ctaHref="/hardware-development-services/contact"
+        ctaHref="/hardware-design-services/contact"
       /> */}
 
       <FAQSection faqItems={faqs} />

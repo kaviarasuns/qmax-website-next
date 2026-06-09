@@ -28,7 +28,7 @@ export function WhySection({
   title = "Why Choose Qmax For",
   titleHighlight = "Hardware Design?",
   description,
-  ctaHref = "/hardware-development-services/contact",
+  ctaHref = "/hardware-design-services/contact",
   className,
   consultationCta,
 }: WhySectionProps) {

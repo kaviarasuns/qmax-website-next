@@ -568,14 +568,14 @@ export default function HighSpeedDigitalPCBDesignPage() {
             </p>
           </>
         }
-        ctaHref="/pcb-design/contact"
+        ctaHref="/pcb-design-services/contact"
         ctaLabel="Talk to Our Engineers"
       />
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}
         title="Our Core Service "
         titleHighlight="Offerings"
-        contactHref="/pcb-design/contact"
+        contactHref="/pcb-design-services/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />
       <WhySection
@@ -588,7 +588,7 @@ export default function HighSpeedDigitalPCBDesignPage() {
             "Get A Complimentary Consultation With Our High-Speed Digital PCB Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
-          ctaHref: "/pcb-design/contact",
+          ctaHref: "/pcb-design-services/contact",
         }}
       />
       {/* <ComplimentarySchematicReviewSection items={schematicReviewItems} /> */}

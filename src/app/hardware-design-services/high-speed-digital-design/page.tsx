@@ -359,7 +359,7 @@ export default function HighSpeedDigitalDesignPage() {
             delivering production-ready platforms, not just prototypes.
           </p>
         }
-        ctaHref="/hardware-development-services/contact"
+        ctaHref="/hardware-design-services/contact"
         ctaLabel="Talk to Our Engineers"
       />
 
@@ -379,7 +379,7 @@ export default function HighSpeedDigitalDesignPage() {
             "Get A Complimentary Consultation With Our Digital Hardware Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
-          ctaHref: "/hardware-development-services/contact",
+          ctaHref: "/hardware-design-services/contact",
         }}
       />
 

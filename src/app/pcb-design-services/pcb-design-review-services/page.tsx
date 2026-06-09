@@ -395,7 +395,7 @@ export default function PCBDesignReviewServicesPage() {
                   applications only.
                 </p>
                 <a
-                  href="/pcb-design"
+                  href="/pcb-design-services"
                   className="inline-flex items-center gap-2 text-red-500 group uppercase text-[10px] font-black tracking-widest border-b border-[#F33117] pb-2 hover:text-zinc-950 hover:border-zinc-950 transition-all"
                 >
                   SEE OUR PCBS DESIGN SERVICES
@@ -571,7 +571,7 @@ export default function PCBDesignReviewServicesPage() {
 
               <div className="mt-12">
                 <a
-                  href="/pcb-design"
+                  href="/pcb-design-services"
                   className="inline-flex items-center gap-2 text-red-500 group uppercase text-[10px] font-black tracking-widest border-b border-[#F33117] pb-2 hover:text-zinc-950 hover:border-zinc-950 transition-all"
                 >
                   FULL PCB DESIGN SERVICES OVERVIEW

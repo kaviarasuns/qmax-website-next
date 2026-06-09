@@ -6,16 +6,16 @@ import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-
 import { hwDevelopmentOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 
-const hardwareCaseStudies = embeddedCaseStudiesData.slice(0, 4).map(
-  (caseStudy) => ({
+const hardwareCaseStudies = embeddedCaseStudiesData
+  .slice(0, 4)
+  .map((caseStudy) => ({
     title: caseStudy.title,
     image: caseStudy.images[0],
     link: `/case-studies/${caseStudy.id}`,
     category: "development",
     summary: caseStudy.summary,
     imageRotation: caseStudy.rotatedImages?.[0],
-  }),
-);
+  }));
 
 const workflowItems = [
   {
@@ -52,7 +52,7 @@ const workflowItems = [
 const capabilities = [
   {
     title: "Digital Hardware Design",
-    href: "/hardware-development-services/high-speed-digital-design",
+    href: "/hardware-design-services/high-speed-digital-design",
     description:
       "High-performance digital electronics from MCU boards to complex multi-processor systems.",
     highlights: [
@@ -79,7 +79,7 @@ const capabilities = [
   },
   {
     title: "Analog & Mixed-Signal",
-    href: "/hardware-development-services/analog-design",
+    href: "/hardware-design-services/analog-design",
     description:
       "Precision analog and mixed-signal design for sensing, measurement, and low-noise applications.",
     highlights: [
@@ -104,7 +104,7 @@ const capabilities = [
   },
   {
     title: "RF & Microwave",
-    href: "/hardware-development-services/rf-and-microwave",
+    href: "/hardware-design-services/rf-and-microwave",
     description:
       "RF designs validated in real-world conditions across ISM, Wi-Fi, BLE, LTE, and Sub-GHz bands.",
     highlights: [
@@ -130,7 +130,7 @@ const capabilities = [
   },
   {
     title: "Power Electronics",
-    href: "/hardware-development-services/power-electronics",
+    href: "/hardware-design-services/power-electronics",
     description:
       "Robust power electronics for industrial, automotive, and energy applications with full thermal margin.",
     highlights: [
@@ -289,7 +289,9 @@ const insights = [
           fontFamily="monospace"
           fontSize="10"
           fill="#39C2A4"
-        >{"// RTOS task"}</text>
+        >
+          {"// RTOS task"}
+        </text>
         <text
           x="295"
           y="50"
@@ -365,7 +367,13 @@ const insights = [
           <circle cx="60" cy="125" r="3" fill="#E63329" />
           <circle cx="60" cy="125" r="6" fill="#E63329" opacity="0.3" />
         </g>
-        <text x="220" y="258" fontFamily="monospace" fontSize="10" fill="#1C2A3A">
+        <text
+          x="220"
+          y="258"
+          fontFamily="monospace"
+          fontSize="10"
+          fill="#1C2A3A"
+        >
           180 mm
         </text>
       </svg>

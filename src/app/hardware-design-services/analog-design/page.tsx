@@ -534,7 +534,7 @@ export default function AnalogDesignPage() {
             hardware.
           </p>
         }
-        ctaHref="/hardware-development-services/contact"
+        ctaHref="/hardware-design-services/contact"
         ctaLabel="Talk to our engineers"
       />
 
@@ -565,7 +565,7 @@ export default function AnalogDesignPage() {
             "Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
-          ctaHref: "/hardware-development-services/contact",
+          ctaHref: "/hardware-design-services/contact",
         }}
       />
 

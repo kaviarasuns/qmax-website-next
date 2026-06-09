@@ -19,7 +19,7 @@ const services: Service[] = [
       "https://framerusercontent.com/images/xZdrZACUdNYgULp5M3m2BcUhBI.png",
     description:
       "Develop system architecture and select core electronic components.",
-    href: "/hardware-development-services",
+    href: "/hardware-design-services",
   },
   {
     topic: "Embedded Systems Development Services",

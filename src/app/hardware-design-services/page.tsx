@@ -70,7 +70,7 @@ const CAPABILITIES = [
   {
     id: "digital-design",
     tabLabel: "High Speed Digital Design",
-    learnMoreHref: "/hardware-development-services/high-speed-digital-design",
+    learnMoreHref: "/hardware-design-services/high-speed-digital-design",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -105,7 +105,7 @@ const CAPABILITIES = [
   {
     id: "rf-microwave",
     tabLabel: "RF & Microwave",
-    learnMoreHref: "/hardware-development-services/rf-and-microwave",
+    learnMoreHref: "/hardware-design-services/rf-and-microwave",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -143,7 +143,7 @@ const CAPABILITIES = [
   {
     id: "analog-design",
     tabLabel: "Analog & Mixed-Signal",
-    learnMoreHref: "/hardware-development-services/analog-design",
+    learnMoreHref: "/hardware-design-services/analog-design",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -180,7 +180,7 @@ const CAPABILITIES = [
   {
     id: "power-electronics",
     tabLabel: "Power Electronics",
-    learnMoreHref: "/hardware-development-services/power-electronics",
+    learnMoreHref: "/hardware-design-services/power-electronics",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -494,7 +494,7 @@ const HERO = {
   description:
     "Qmax Systems owns the full hardware product lifecycle — from requirement analysis and architecture through schematic design, PCB layout, EVT/DVT/PVT validation, and production handover. This architecture-first process spans automotive, medical, aerospace, and industrial domains, cutting risk and shortening development cycles with compliance readiness from day one.",
   ctaLabel: "Talk to our engineers",
-  ctaHref: "/hardware-development-services/contact",
+  ctaHref: "/hardware-design-services/contact",
   videoSrc:
     "https://d1yetprhniwywz.cloudfront.net/v2/services_video/hardware_hero_bg_cropped.mp4",
 };
@@ -537,7 +537,7 @@ export default function HardwareDevelopmentServicesPage() {
       {/* CORE CAPABILITIES */}
       <CapabilitiesSection
         capabilities={CAPABILITIES}
-        getInTouchHref="/hardware-development-services/contact"
+        getInTouchHref="/hardware-design-services/contact"
       />
 
       {/* INDUSTRIES WE SERVE */}
@@ -546,13 +546,13 @@ export default function HardwareDevelopmentServicesPage() {
         industries={HARDWARE_INDUSTRIES}
         headingPrefix="Hardware Development"
         ctaLabel="Get a Hardware Design Quote"
-        ctaHref="/hardware-development-services/contact"
+        ctaHref="/hardware-design-services/contact"
       />
 
       {/* WHY CHOOSE QMAX */}
       <WhySection
         whyCards={WHY_CARDS}
-        ctaHref="/hardware-development-services/contact"
+        ctaHref="/hardware-design-services/contact"
         className="pb-0 max-[900px]:pb-0"
       />
 
@@ -563,7 +563,7 @@ export default function HardwareDevelopmentServicesPage() {
         <div className="mx-auto max-w-[1200px]">
           <a
             className="relative block aspect-[2396/520] w-full cursor-pointer overflow-hidden rounded-xl bg-black no-underline shadow-[0_1px_2px_rgba(16,24,40,0.06)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_6px_16px_rgba(16,24,40,0.10)]"
-            href="/pcb-design/contact"
+            href="/hardware-design-services/contact"
             aria-label="Have your questions answered — contact Saravanaperumal Annamalai, VP - SWE Engineering"
           >
             <Image

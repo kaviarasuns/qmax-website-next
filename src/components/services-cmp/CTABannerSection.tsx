@@ -3,11 +3,10 @@ type CTABannerSectionProps = {
   heading?: string;
 };
 
-const DEFAULT_HEADING =
-  "Ready To Bring Your Hardware Design Project To Life?";
+const DEFAULT_HEADING = "Ready To Bring Your Hardware Design Project To Life?";
 
 export function CTABannerSection({
-  href = "/hardware-development-services/contact",
+  href = "/hardware-design-services/contact",
   heading = DEFAULT_HEADING,
 }: CTABannerSectionProps) {
   return (

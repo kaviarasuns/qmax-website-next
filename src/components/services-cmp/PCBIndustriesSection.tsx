@@ -33,7 +33,7 @@ export function PCBIndustriesSection({
   industries,
   headingPrefix = "PCB Design",
   ctaLabel = "Learn more",
-  ctaHref = "/pcb-design/contact",
+  ctaHref = "/pcb-design-services/contact",
 }: PCBIndustriesSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
   const [caseIdx, setCaseIdx] = useState(0);

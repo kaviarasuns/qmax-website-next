@@ -395,7 +395,7 @@ export default function MechanicalIndustrialDesignPage() {
             aria-label="Have your questions answered — contact Saravanaperumal Annamalai, VP - SWE Engineering"
           >
             <Image
-              src="https://d1yetprhniwywz.cloudfront.net/v2/Asil_Cta_V2.png"
+              src="https://d1yetprhniwywz.cloudfront.net/v2/Asil_Cta_V3.png"
               alt=""
               fill
               sizes="(max-width: 900px) 100vw, 1200px"

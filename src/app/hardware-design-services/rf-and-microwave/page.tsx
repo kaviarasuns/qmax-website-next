@@ -759,7 +759,7 @@ export default function RfAndMicrowavePage() {
             build.
           </p>
         }
-        ctaHref="/hardware-development-services/contact"
+        ctaHref="/hardware-design-services/contact"
         ctaLabel="Talk to Our Engineers"
       />
 
@@ -793,7 +793,7 @@ export default function RfAndMicrowavePage() {
             "Get A Complimentary Consultation With Our RF & Microwave Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
-          ctaHref: "/hardware-development-services/contact",
+          ctaHref: "/hardware-design-services/contact",
         }}
       />
 

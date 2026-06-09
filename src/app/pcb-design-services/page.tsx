@@ -25,7 +25,7 @@ const HERO = {
       thermal simulation for performance, compliance, and manufacturability.
     </>
   ),
-  ctaHref: "/pcb-design/contact",
+  ctaHref: "/pcb-design-services/contact",
   ctaLabel: "TALK TO OUR ENGINEERS",
   videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/PCB_Design_Hero.mp4",
 };
@@ -34,7 +34,7 @@ const CAPABILITIES = [
   {
     id: "high-speed",
     tabLabel: "High-Speed",
-    learnMoreHref: "/pcb-design/high-speed-digital-pcb-design",
+    learnMoreHref: "/pcb-design-services/high-speed-digital-pcb-design",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -71,7 +71,7 @@ const CAPABILITIES = [
   {
     id: "rf-microwave",
     tabLabel: "RF & Microwave",
-    learnMoreHref: "/pcb-design/rf-and-microwave-pcb-design",
+    learnMoreHref: "/pcb-design-services/rf-and-microwave-pcb-design",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -109,7 +109,7 @@ const CAPABILITIES = [
   {
     id: "analog-design",
     tabLabel: "Analog & Mixed-Signal",
-    learnMoreHref: "/pcb-design/analog-and-mixed-signal",
+    learnMoreHref: "/pcb-design-services/analog-and-mixed-signal",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -146,7 +146,7 @@ const CAPABILITIES = [
   {
     id: "power-electronics",
     tabLabel: "Power Electronics",
-    learnMoreHref: "/pcb-design/power-electronics",
+    learnMoreHref: "/pcb-design-services/power-electronics",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -183,7 +183,7 @@ const CAPABILITIES = [
   {
     id: "si-pi-analysis",
     tabLabel: "SI / PI Analysis",
-    learnMoreHref: "/pcb-design/si-pi-analysis",
+    learnMoreHref: "/pcb-design-services/si-pi-analysis",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -218,7 +218,7 @@ const CAPABILITIES = [
   {
     id: "pcb-library",
     tabLabel: "PCB Library",
-    learnMoreHref: "/pcb-design/pcb-library-services",
+    learnMoreHref: "/pcb-design-services/pcb-library-services",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -252,7 +252,7 @@ const CAPABILITIES = [
   {
     id: "design-review",
     tabLabel: "Design Review",
-    learnMoreHref: "/pcb-design/pcb-design-review-services",
+    learnMoreHref: "/pcb-design-services/pcb-design-review-services",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -555,7 +555,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
       <WhySection
         whyCards={WHY_CARDS}
         titleHighlight="PCB Design?"
-        ctaHref="/pcb-design/contact"
+        ctaHref="/pcb-design-services/contact"
         className="pb-0 max-[900px]:pb-0"
       />
 
@@ -566,7 +566,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
         <div className="mx-auto max-w-[1200px]">
           <a
             className="relative block aspect-[2396/520] w-full cursor-pointer overflow-hidden rounded-xl bg-black no-underline shadow-[0_1px_2px_rgba(16,24,40,0.06)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_6px_16px_rgba(16,24,40,0.10)]"
-            href="/pcb-design/contact"
+            href="/pcb-design-services/contact"
             aria-label="Have your questions answered — contact Saravanaperumal Annamalai, VP - SWE Engineering"
           >
             <Image
@@ -610,7 +610,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
 
       {/* CTA BANNER */}
       {/* <CTABannerSection
-        href="/pcb-design/contact"
+        href="/pcb-design-services/contact"
         heading="Ready To Bring Your PCB Design Project To Life?"
       /> */}
 
@@ -642,7 +642,7 @@ className="relative w-full min-h-screen bg-cover bg-center flex items-center ove
 id="hero"
 style={{
   backgroundImage:
-    "linear-gradient(135deg, rgba(11,95,165,0.45), rgba(14,20,27,0.55)), url('/pcb-design/images/image1.jpg')",
+    "linear-gradient(135deg, rgba(11,95,165,0.45), rgba(14,20,27,0.55)), url('/pcb-design-services/images/image1.jpg')",
 }}
 >
 <div className="relative z-[2] w-full py-20 px-16 max-w-[1400px] mx-auto max-[900px]:py-16 max-[900px]:px-6">
@@ -659,7 +659,7 @@ style={{
     </p>
     <a
       className="bg-[#E63329] text-white font-semibold text-base tracking-[0.04em] py-[14px] px-8 rounded-md cursor-pointer transition-colors duration-150 no-underline inline-block hover:bg-[#C72A21] hover:text-white hover:no-underline"
-      href="/pcb-design/contact"
+      href="/pcb-design-services/contact"
     >
       TALK TO OUR ENGINEER
     </a>

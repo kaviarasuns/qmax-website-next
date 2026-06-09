@@ -17,10 +17,10 @@ export const hardwareDevelopmentOtherCapabilities: Capability[] = [
   {
     title: "PCB Design Services",
     summary:
-    "PCB design services for digital, analog, RF, and power electronics systems.",
+      "PCB design services for digital, analog, RF, and power electronics systems.",
     link: "/pcb-design",
-    image: "https://d1yetprhniwywz.cloudfront.net/v2/hardware-development-services/pcb_design_services.webp",
-
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/hardware-development-services/pcb_design_services.webp",
   },
   {
     title: "Firmware Development Services",
@@ -36,7 +36,7 @@ export const hardwareDevelopmentOtherCapabilities: Capability[] = [
       "Build full-stack software that connects devices to digital experiences.",
     link: "/apps-and-cloud",
     image:
-    "https://d1yetprhniwywz.cloudfront.net/v2/hardware-development-services/apps&cloud_services.webp",
+      "https://d1yetprhniwywz.cloudfront.net/v2/hardware-development-services/apps&cloud_services.webp",
   },
 ];
 
@@ -45,7 +45,7 @@ export const otherCapabilities: Capability[] = [
     title: "Hardware Development Services",
     summary:
       "End-to-end hardware engineering from schematic to production, covering digital, analog, RF, and power electronics.",
-    link: "/hardware-development-services",
+    link: "/hardware-design-services",
     image:
       "https://framerusercontent.com/images/xZdrZACUdNYgULp5M3m2BcUhBI.png",
   },

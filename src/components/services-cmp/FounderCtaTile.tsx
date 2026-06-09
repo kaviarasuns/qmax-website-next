@@ -5,7 +5,7 @@ interface FounderCtaTileProps {
 }
 
 export function FounderCtaTile({
-  href = "/hardware-development-services/contact",
+  href = "/hardware-design-services/contact",
 }: FounderCtaTileProps) {
   return (
     <a

@@ -517,14 +517,14 @@ export default function AnalogAndMixedSignalPage() {
             </p>
           </>
         }
-        ctaHref="/pcb-design/contact"
+        ctaHref="/pcb-design-services/contact"
         ctaLabel="Talk to Our Engineers"
       />
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}
         title="Introduction to Analog & Mixed Signal "
         titleHighlight="PCB Engineering"
-        contactHref="/pcb-design/contact"
+        contactHref="/pcb-design-services/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />
 
@@ -538,7 +538,7 @@ export default function AnalogAndMixedSignalPage() {
             "Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
-          ctaHref: "/pcb-design/contact",
+          ctaHref: "/pcb-design-services/contact",
         }}
       />
 
