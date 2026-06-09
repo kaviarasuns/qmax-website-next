@@ -21,63 +21,63 @@ export const menuData: MenuItem[] = [
     subItems: [
       {
         title: "Hardware Development Services",
-        href: "/hardware-development-services",
+        href: "/hardware-design-services",
         image:
           "https://images.pexels.com/photos/326518/pexels-photo-326518.jpeg?auto=compress&cs=tinysrgb&w=300",
         description: "Comprehensive hardware design and development",
         children: [
           {
             title: "High Speed Digital Design",
-            href: "/hardware-development-services/high-speed-digital-design",
+            href: "/hardware-design-services/high-speed-digital-design",
           },
           {
             title: "Analog Design",
-            href: "/hardware-development-services/analog-design",
+            href: "/hardware-design-services/analog-design",
           },
           {
             title: "Power Electronics",
-            href: "/hardware-development-services/power-electronics",
+            href: "/hardware-design-services/power-electronics",
           },
           {
             title: "RF and Microwave",
-            href: "/hardware-development-services/rf-and-microwave",
+            href: "/hardware-design-services/rf-and-microwave",
           },
         ],
       },
       {
         title: "PCB Design Services",
-        href: "/pcb-design",
+        href: "/pcb-design-services",
         image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPOKKQF88ooMa1cZCmXjiXNKAi5nFRq6FU8w&s",
         description: "Professional PCB layout and design services",
         children: [
           {
             title: "High Speed Digital Services",
-            href: "/pcb-design/high-speed-digital-pcb-design",
+            href: "/pcb-design-services/high-speed-digital-pcb-design",
           },
           {
             title: "Analog and Mixed Signal",
-            href: "/pcb-design/analog-and-mixed-signal",
+            href: "/pcb-design-services/analog-and-mixed-signal",
           },
           {
             title: "Power Electronics",
-            href: "/pcb-design/power-electronics",
+            href: "/pcb-design-services/power-electronics",
           },
           {
             title: "RF and Microwave",
-            href: "/pcb-design/rf-and-microwave-pcb-design",
+            href: "/pcb-design-services/rf-and-microwave-pcb-design",
           },
           {
             title: "SI & PI Analysis Services",
-            href: "/pcb-design/si-pi-analysis",
+            href: "/pcb-design-services/si-pi-analysis",
           },
           {
             title: "PCB Library Services",
-            href: "/pcb-design/pcb-library-services",
+            href: "/pcb-design-services/pcb-library-services",
           },
           {
             title: "PCB Design Review Services",
-            href: "/pcb-design/pcb-design-review-services",
+            href: "/pcb-design-services/pcb-design-review-services",
           },
         ],
       },

@@ -391,7 +391,7 @@ export default function MechanicalIndustrialDesignPage() {
         <div className="mx-auto max-w-[1200px]">
           <a
             className="relative block aspect-[2396/520] w-full cursor-pointer overflow-hidden rounded-xl bg-black no-underline shadow-[0_1px_2px_rgba(16,24,40,0.06)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_6px_16px_rgba(16,24,40,0.10)]"
-            href="/pcb-design/contact"
+            href="/mechanical-industrial-design-services/contact"
             aria-label="Have your questions answered — contact Saravanaperumal Annamalai, VP - SWE Engineering"
           >
             <Image
