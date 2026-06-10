@@ -650,8 +650,8 @@ export default function RFMicrowavePCBDesignPage() {
       />
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}
-        title="RF PCB Engineering "
-        titleHighlight="Approach"
+        title="Our Core Service "
+        titleHighlight="Offerings"
         contactHref="/pcb-design-services/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />

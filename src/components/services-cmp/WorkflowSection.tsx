@@ -6,6 +6,7 @@ interface WorkflowStep {
   number: number;
   title: string;
   description: string;
+  points?: string[];
 }
 
 interface WorkflowSectionProps {
@@ -69,6 +70,19 @@ export function WorkflowSection({
                   {step.title}
                 </h3>
                 <p className="m-0 text-foreground">{step.description}</p>
+                {step.points && step.points.length > 0 && (
+                  <ul className="mt-5 block w-full space-y-2 text-left">
+                    {step.points.map((point) => (
+                      <li
+                        key={point}
+                        className="flex items-start gap-2.5 text-sm text-muted-foreground"
+                      >
+                        <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
               <div
                 data-budge-target

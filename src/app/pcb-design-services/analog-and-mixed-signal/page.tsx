@@ -530,8 +530,8 @@ export default function AnalogAndMixedSignalPage() {
       />
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}
-        title="Introduction to Analog & Mixed Signal "
-        titleHighlight="PCB Engineering"
+        title="Our Core Service "
+        titleHighlight="Offerings"
         contactHref="/pcb-design-services/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />

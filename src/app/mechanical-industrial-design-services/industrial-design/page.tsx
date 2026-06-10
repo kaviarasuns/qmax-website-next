@@ -208,24 +208,44 @@ const WORKFLOW_STEPS = [
     title: "Uncover Opportunities",
     description:
       "Behavioural research and technical constraint analysis relevant to the product category.",
+    points: [
+      "Brand immersion and stakeholder alignment workshops",
+      "Ethnographic research and live user shadowing",
+      "Market landscape and competitive analysis",
+    ],
   },
   {
     number: 2,
     title: "Informed Ideation",
     description:
       "Structured creativity to produce a range of viable, engineering-led design directions.",
+    points: [
+      "Design language definition and visual direction boards",
+      "Concept generation and structured ideation workshops",
+      "2D and 3D concept sketching",
+    ],
   },
   {
     number: 3,
     title: "Get Real, Fast",
     description:
       "Detailed form development and high-fidelity prototypes for real-world evaluation.",
+    points: [
+      "High-fidelity concept visualisation and rendering",
+      "Functional appearance models and mock-ups",
+      "Iterative prototype builds and user evaluation sessions",
+    ],
   },
   {
     number: 4,
     title: "Ready to Ship",
     description:
       "Finalised documentation package and factory-floor liaison for consistent outcomes.",
+    points: [
+      "Complete production documentation package (drawings, specifications, BOM)",
+      "Tooling and manufacturing liaison",
+      "Qualified supplier sourcing and evaluation",
+    ],
   },
 ];
 

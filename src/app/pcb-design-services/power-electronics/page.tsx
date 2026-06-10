@@ -490,8 +490,8 @@ export default function PowerElectronicsPage() {
       />
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}
-        title="Introduction to Power Electronics "
-        titleHighlight="PCB Engineering"
+        title="Our Core Service "
+        titleHighlight="Offerings"
         contactHref="/pcb-design-services/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />
