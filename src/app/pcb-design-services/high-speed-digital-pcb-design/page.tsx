@@ -15,7 +15,7 @@ import { getCaseStudyCardImage } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 export const metadata = buildMetadata({
-  title: "High-Speed PCB Design | DDR4/5, PCIe Gen 5 & SerDes | QMax",
+  title: "High-Speed PCB Design | DDR4/5, PCIe Gen 5 & SerDes | Qmax",
   description:
     "High-speed PCB layout — DDR4/5 trace routing, PCIe Gen 5, USB 3.x, SerDes to 32 Gbps. Impedance-controlled stack-ups and SI simulation. Altium & Cadence.",
   path: "/pcb-design-services/high-speed-digital-pcb-design",
@@ -563,7 +563,7 @@ export default function HighSpeedDigitalPCBDesignPage() {
       <HardwareServiceHeroSection
         imageSrc="/pcb-design/images/image1.jpg"
         imageAlt="High-Performance Digital Systems — Qmax Systems"
-        title="Qmax Systems Engineers Advanced High-Speed Digital PCBs"
+        title="Advanced High-Speed Digital PCBs"
         description={
           <>
             <p>

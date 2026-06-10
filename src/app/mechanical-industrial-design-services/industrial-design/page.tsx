@@ -241,7 +241,7 @@ const industrialDesignCaseStudies = industrialCaseStudiesData
   }));
 
 export const metadata = buildMetadata({
-  title: "Industrial Design Services | CMF, UI/UX & NPI | QMax",
+  title: "Industrial Design Services | CMF, UI/UX & NPI | Qmax",
   description:
     "B2B industrial design — CMF, UI/UX for hardware products, enclosure aesthetics, DFM analysis, and NPI. Engineering-led industrial design firm. USA & India.",
   path: "/mechanical-industrial-design-services/industrial-design",

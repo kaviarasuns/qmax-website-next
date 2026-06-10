@@ -733,7 +733,7 @@ const faqs = [
 ];
 
 export const metadata = buildMetadata({
-  title: "RF & Microwave Design | Sub-GHz to Ka-Band | QMax Systems",
+  title: "RF & Microwave Design | Sub-GHz to Ka-Band | Qmax Systems",
   description:
     "RF and microwave circuit design — LNA, PA, mixer circuits, transceiver architecture, antenna design, and PTFE substrate selection. Sub-GHz through Ka-band.",
   path: "/hardware-design-services/rf-and-microwave",

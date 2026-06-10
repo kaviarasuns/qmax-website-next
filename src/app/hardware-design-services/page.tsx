@@ -18,7 +18,7 @@ import {
 } from "@/store/case-studies";
 
 export const metadata = buildMetadata({
-  title: "Hardware Design Services | High-Speed, RF & Analog | QMax",
+  title: "Hardware Design Services | High-Speed, RF & Analog | Qmax",
   description:
     "Schematic-level hardware design services — high-speed digital, RF/microwave, analog, and power electronics. From system architecture to board bring-up.",
   path: "/hardware-design-services",

@@ -10,7 +10,7 @@ import { siteUrl } from "@/lib/site-url";
 export const metadata: Metadata = {
   // Resolves relative canonical / Open Graph URLs to absolute ones.
   metadataBase: new URL(siteUrl()),
-  title: "QMax Systems",
+  title: "Qmax Systems",
   description:
     "Electronics Engineering Services | Embedded Systems | PCB Design",
   // Force favicon reload by adding cache-busting query param

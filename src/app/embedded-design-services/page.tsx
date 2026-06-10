@@ -23,7 +23,7 @@ import {
 } from "@/store/case-studies";
 
 export const metadata = buildMetadata({
-  title: "Embedded Design Services | Firmware, BSP & FPGA | QMax",
+  title: "Embedded Design Services | Firmware, BSP & FPGA | Qmax",
   description:
     "Embedded design services — firmware development, BSP and driver development, FPGA design on Xilinx Zynq, RTOS integration, and cross-platform applications.",
   path: "/embedded-design-services",

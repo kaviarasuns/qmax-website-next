@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About Us | QMax Systems",
+  title: "About Us | Qmax Systems",
   description:
-    "Learn more about QMax Systems, our mission, and our engineering expertise.",
+    "Learn more about Qmax Systems, our mission, and our engineering expertise.",
 };
 
 type TeamMember = {
@@ -73,7 +73,7 @@ export default function MeetTheTeam() {
           {/* <div className="mt-5 h-1 w-16 rounded-full bg-red-500" /> */}
           {/* <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
             Decades of combined expertise in hardware, embedded systems, and
-            engineering execution — driving QMax Systems forward.
+            engineering execution — driving Qmax Systems forward.
           </p> */}
         </header>
 
@@ -82,12 +82,16 @@ export default function MeetTheTeam() {
             <article
               key={member.name}
               aria-labelledby={`member-${index}`}
-              className={`group p-8 md:p-10 min-h-[220px] transition-colors duration-300 hover:bg-red-50/30 flex flex-col md:items-center gap-6 ${index % 2 === 0 ? "md:flex-row bg-white" : "md:flex-row-reverse bg-slate-50"
-                }`}
+              className={`group p-8 md:p-10 min-h-[220px] transition-colors duration-300 hover:bg-red-50/30 flex flex-col md:items-center gap-6 ${
+                index % 2 === 0
+                  ? "md:flex-row bg-white"
+                  : "md:flex-row-reverse bg-slate-50"
+              }`}
             >
               <div
-                className={`flex items-center gap-5 md:w-2/5 lg:w-1/3 flex-shrink-0 ${index % 2 === 0 ? "" : "md:flex-row-reverse md:text-right"
-                  }`}
+                className={`flex items-center gap-5 md:w-2/5 lg:w-1/3 flex-shrink-0 ${
+                  index % 2 === 0 ? "" : "md:flex-row-reverse md:text-right"
+                }`}
               >
                 <div className="relative h-28 w-28 md:h-32 md:w-32 flex-shrink-0 overflow-hidden rounded-full ring-2 ring-white shadow-md outline outline-1 outline-slate-200 transition-all duration-300 group-hover:outline-red-300 group-hover:shadow-lg">
                   <Image
@@ -106,10 +110,14 @@ export default function MeetTheTeam() {
                   >
                     {member.name}
                   </h2>
-                  <p className={`mt-1 text-sm font-semibold leading-5 text-red-500 ${index % 2 !== 0 ? "md:text-right" : ""}`}>
+                  <p
+                    className={`mt-1 text-sm font-semibold leading-5 text-red-500 ${index % 2 !== 0 ? "md:text-right" : ""}`}
+                  >
                     {member.role}
                   </p>
-                  <div className={`mt-3 flex ${index % 2 !== 0 ? "md:justify-end" : ""}`}>
+                  <div
+                    className={`mt-3 flex ${index % 2 !== 0 ? "md:justify-end" : ""}`}
+                  >
                     <a
                       href={member.linkedin}
                       target="_blank"
@@ -131,7 +139,9 @@ export default function MeetTheTeam() {
               </div>
 
               <div className="md:w-3/5 lg:w-2/3">
-                <p className="text-[15px] leading-7 text-foreground">{member.bio}</p>
+                <p className="text-[15px] leading-7 text-foreground">
+                  {member.bio}
+                </p>
               </div>
             </article>
           ))}

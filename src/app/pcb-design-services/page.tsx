@@ -12,7 +12,7 @@ import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 export const metadata = buildMetadata({
-  title: "PCB Design Services | High-Speed, RF & SI/PI | QMax Systems",
+  title: "PCB Design Services | High-Speed, RF & SI/PI | Qmax Systems",
   description:
     "First-time-right PCB design and layout — high-speed digital, RF/microwave, power electronics, HDI, and SI/PI analysis. Altium & Cadence. Dallas TX & India.",
   path: "/pcb-design-services",

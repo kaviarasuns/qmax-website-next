@@ -423,7 +423,7 @@ const faqs = [
 ];
 
 export const metadata = buildMetadata({
-  title: "Power Electronics Design | SMPS, DC-DC & Motor Drive | QMax",
+  title: "Power Electronics Design | SMPS, DC-DC & Motor Drive | Qmax",
   description:
     "Power electronics design services — SMPS, DC-DC converters, motor drive, battery management, and thermal engineering. Schematic to board bring-up. USA & India.",
   path: "/hardware-design-services/power-electronics",

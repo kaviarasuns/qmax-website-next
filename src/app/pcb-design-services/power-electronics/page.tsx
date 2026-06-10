@@ -19,7 +19,7 @@ import {
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 export const metadata = buildMetadata({
-  title: "Power Electronics PCB Design | High-Current Layout | QMax",
+  title: "Power Electronics PCB Design | High-Current Layout | Qmax",
   description:
     "Power electronics PCB layout — high-current trace routing, copper weight optimisation, thermal via arrays, and SMPS board design. IPC Class 2/3. Altium.",
   path: "/pcb-design-services/power-electronics",
@@ -472,7 +472,7 @@ export default function PowerElectronicsPage() {
       <HardwareServiceHeroSection
         imageSrc="/pcb-design/Power-Electronics-PCB.png"
         imageAlt="Power Electronics PCB Design — Qmax Systems"
-        title="Qmax Systems Designs Power Electronics PCBs"
+        title="Power Electronics PCBs"
         description={
           <>
             <p>

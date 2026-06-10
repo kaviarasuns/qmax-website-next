@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-const SITE_NAME = "QMax Systems";
+const SITE_NAME = "Qmax Systems";
 
 interface PageSeo {
-  /** Page <title> — already includes the brand suffix (e.g. "… | QMax"). */
+  /** Page <title> — already includes the brand suffix (e.g. "… | Qmax"). */
   title: string;
   /** Meta description, ideally 150–160 characters. */
   description: string;

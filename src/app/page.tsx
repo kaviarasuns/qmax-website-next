@@ -8,7 +8,7 @@ import OurServices from "@/components/our-services";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "PCB Design & Embedded Systems Services | QMax Systems",
+  title: "PCB Design & Embedded Systems Services | Qmax Systems",
   description:
     "End-to-end electronics engineering — PCB design, embedded firmware, hardware development, and NPI. Two engineering centres: Dallas, TX and Chennai, India.",
   path: "/",

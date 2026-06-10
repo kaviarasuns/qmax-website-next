@@ -8,7 +8,7 @@ import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import { mechanicalCaseStudiesData } from "@/store/mechanical-case-studies";
 
 export const metadata = buildMetadata({
-  title: "Mechanical Design Services | Enclosure, DFM & NPI | QMax",
+  title: "Mechanical Design Services | Enclosure, DFM & NPI | Qmax",
   description:
     "Mechanical design services — enclosure design, DFM analysis, CMF specification, and NPI. SolidWorks deliverables from concept to contract manufacturing.",
   path: "/mechanical-industrial-design-services/mechanical-design",

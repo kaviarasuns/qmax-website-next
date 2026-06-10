@@ -336,7 +336,7 @@ const WHY_CARDS = [
 ];
 
 export const metadata = buildMetadata({
-  title: "High-Speed Digital Design | DDR4, PCIe & SerDes | QMax",
+  title: "High-Speed Digital Design | DDR4, PCIe & SerDes | Qmax",
   description:
     "High-speed digital design — DDR4/5 topology, PCIe Gen 5 architecture, USB 3.x, HDMI 2.1, SerDes signal budget, and component selection. Schematic to bring-up.",
   path: "/hardware-design-services/high-speed-digital-design",

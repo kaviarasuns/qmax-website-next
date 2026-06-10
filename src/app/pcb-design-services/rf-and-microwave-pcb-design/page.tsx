@@ -19,7 +19,7 @@ import {
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 export const metadata = buildMetadata({
-  title: "RF & Microwave PCB Design | PTFE, Sub-GHz to Ka-Band | QMax",
+  title: "RF & Microwave PCB Design | PTFE, Sub-GHz to Ka-Band | Qmax",
   description:
     "RF and microwave PCB layout on PTFE and Rogers substrates — controlled impedance routing, coplanar waveguide, stripline, Sub-GHz to Ka-band. Altium & Cadence.",
   path: "/pcb-design-services/rf-and-microwave-pcb-design",
@@ -631,7 +631,7 @@ export default function RFMicrowavePCBDesignPage() {
       <HardwareServiceHeroSection
         imageSrc="/pcb-design/images/rf-pcb-service.jpg"
         imageAlt="RF and Microwave PCB Design — Qmax Systems"
-        title="Qmax Systems Designs RF and Microwave PCBs"
+        title="RF and Microwave PCBs"
         description={
           <>
             <p>

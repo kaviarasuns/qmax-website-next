@@ -288,7 +288,7 @@ const mechanicalIndustrialCaseStudies = mechanicalCaseStudiesData
   }));
 
 export const metadata = buildMetadata({
-  title: "Mechanical & Industrial Design Services | QMax Systems",
+  title: "Mechanical & Industrial Design Services | Qmax Systems",
   description:
     "Mechanical and industrial design — enclosure design, DFM analysis, NPI, CMF specification, and hardware UI/UX. SolidWorks-level deliverables. Dallas TX & India.",
   path: "/mechanical-industrial-design-services",

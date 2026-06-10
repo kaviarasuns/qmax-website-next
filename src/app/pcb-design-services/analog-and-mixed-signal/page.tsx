@@ -19,7 +19,7 @@ import {
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 export const metadata = buildMetadata({
-  title: "Analog & Mixed-Signal PCB Design | ADC/DAC Layout | QMax",
+  title: "Analog & Mixed-Signal PCB Design | ADC/DAC Layout | Qmax",
   description:
     "Analog and mixed-signal PCB layout — ADC/DAC signal chain isolation, ground plane partitioning, low-noise routing, and EMC-compliant design. Altium & Cadence.",
   path: "/pcb-design-services/analog-and-mixed-signal",
@@ -511,7 +511,7 @@ export default function AnalogAndMixedSignalPage() {
       <HardwareServiceHeroSection
         imageSrc="/pcb-design/analog-and-mixed-signal.jpg"
         imageAlt="High-Performance Digital Systems — Qmax Systems"
-        title="Qmax Systems Designs Analog and Mixed-Signal PCBs"
+        title="Analog and Mixed-Signal PCBs"
         description={
           <>
             <p>

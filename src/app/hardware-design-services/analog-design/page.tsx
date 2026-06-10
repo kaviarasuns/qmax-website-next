@@ -505,7 +505,7 @@ const faqs = [
 ];
 
 export const metadata = buildMetadata({
-  title: "Analog Circuit Design Services | Op-Amp & ADC/DAC | QMax",
+  title: "Analog Circuit Design Services | Op-Amp & ADC/DAC | Qmax",
   description:
     "Analog circuit design — op-amp topology, ADC/DAC selection, low-noise amplifier design, sensor interface, and mixed-signal partitioning at schematic level.",
   path: "/hardware-design-services/analog-design",
