@@ -33,6 +33,7 @@ const STATS = [
 export default function HardwareDevelopmentServicesContactPage() {
   return (
     <ServicesContactHero
+      formSource="embedded-design-contact"
       heading={{
         line1: "Interested in Embedded Design?",
         line2: "Let's Talk!",
@@ -40,7 +41,6 @@ export default function HardwareDevelopmentServicesContactPage() {
       subheading="To learn more about how Qmax can help you, contact us. We'd be happy to take on the challenge!"
       stats={STATS}
       backgroundImage="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=2000&q=80"
-      apiEndpoint="http://localhost:8080/api/email/contact"
     />
   );
 }

@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import {
   MapPin,
   Phone,
@@ -8,6 +8,12 @@ import {
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
+import { collectSubmissionMeta, submitContactForm } from "@/lib/formSubmission";
+
+const FORM_SOURCE = "contact-page";
+
+const CONSENT_TEXT =
+  "By submitting, you agree to be contacted about your inquiry. Your data is secure with us; we never leak, share, or sell your details to third parties.";
 
 type CountryKey = "United States" | "India";
 type JobKey = "Careers  ( Jobs / Intern )" | "Suppliers / Vendors";
@@ -162,7 +168,10 @@ const ContactHero = () => {
   });
   const [showThankYou, setShowThankYou] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const honeypotRef = useRef<HTMLInputElement | null>(null);
+  const renderedAtRef = useRef<number>(Date.now());
 
   const resetForm = () => {
     setFormData({
@@ -177,11 +186,39 @@ const ContactHero = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Honeypot: real users never see/fill this field — silently drop bots.
+    if (honeypotRef.current?.value) {
+      resetForm();
+      setShowThankYou(true);
+      return;
+    }
+
     setLoading(true);
+    setErrorMessage("");
     setShowThankYou(false);
 
-    // Dummy submission — replace with real API call when backend is ready
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      ...collectSubmissionMeta({
+        formSource: FORM_SOURCE,
+        consentText: CONSENT_TEXT,
+        renderedAt: renderedAtRef.current,
+      }),
+    };
+
+    try {
+      await submitContactForm(payload);
+    } catch (err) {
+      setErrorMessage(
+        err instanceof Error ? err.message : "Submission failed.",
+      );
+      setLoading(false);
+      return;
+    }
 
     resetForm();
     setShowThankYou(true);
@@ -270,6 +307,16 @@ const ContactHero = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-2">
+                  {/* Honeypot — hidden from real users, bots tend to fill it */}
+                  <input
+                    ref={honeypotRef}
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="hidden"
+                  />
                   <InputField
                     name="name"
                     label="Your Name"
@@ -356,6 +403,17 @@ const ContactHero = () => {
                         </>
                       )}
                     </button>
+                    {errorMessage && (
+                      <p
+                        className="mt-3 text-sm leading-relaxed text-red-600"
+                        role="alert"
+                      >
+                        {errorMessage}
+                      </p>
+                    )}
+                    <p className="mt-4 text-xs leading-relaxed text-gray-500">
+                      {CONSENT_TEXT}
+                    </p>
                   </div>
                 </form>
               )}

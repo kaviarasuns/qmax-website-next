@@ -1,6 +1,11 @@
 "use client";
 
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
+import {
+  collectSubmissionMeta,
+  submitContactForm,
+  SubmissionMeta,
+} from "@/lib/formSubmission";
 
 interface Stat {
   num: string;
@@ -13,7 +18,8 @@ interface ServicesContactHeroProps {
   subheading?: string;
   stats?: Stat[];
   backgroundImage?: string;
-  apiEndpoint?: string;
+  /** Identifies which form/section the lead came from, e.g. "hardware-design-hero". */
+  formSource?: string;
 }
 
 interface FormState {
@@ -24,6 +30,7 @@ interface FormState {
   country: string;
   company: string;
   message: string;
+  nda: boolean;
 }
 
 const INITIAL_FORM: FormState = {
@@ -34,6 +41,7 @@ const INITIAL_FORM: FormState = {
   country: "United States",
   company: "",
   message: "",
+  nda: false,
 };
 
 const COUNTRIES = [
@@ -70,7 +78,7 @@ const PHONE_CODES: PhoneCode[] = [
 const flagSrc = (code: string) =>
   `https://flagcdn.com/w40/${code.toLowerCase()}.png`;
 
-type SubmitStatus = "idle" | "sending" | "success";
+type SubmitStatus = "idle" | "sending" | "success" | "error";
 
 const FIELD_INPUT =
   "border-0 border-b border-[#2a2a2a] py-2 text-[0.95rem] text-foreground bg-transparent outline-none transition-colors duration-150 w-full h-11 rounded-none focus:border-b-[#ef4444]";
@@ -124,23 +132,29 @@ const DEFAULT_HEADING = {
 const DEFAULT_SUBHEADING =
   "To learn more about how Qmax can help you, contact us. We'd be happy to take on the challenge!";
 
-const DEFAULT_ENDPOINT = "http://localhost:8080/api/email/contact";
+const CONSENT_TEXT =
+  "Your data is secure with us; we never leak, share, or sell your details to third parties.";
+
+type SubmissionPayload = FormState & SubmissionMeta;
 
 export default function ServicesContactHero({
   heading = DEFAULT_HEADING,
   subheading = DEFAULT_SUBHEADING,
   stats = DEFAULT_STATS,
   backgroundImage = DEFAULT_BACKGROUND,
-  apiEndpoint = DEFAULT_ENDPOINT,
+  formSource = "services-contact-hero",
 }: ServicesContactHeroProps) {
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
   const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const [countryOpen, setCountryOpen] = useState(false);
   const [phoneCountry, setPhoneCountry] = useState("US");
   const [phoneCodeOpen, setPhoneCodeOpen] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const countryRef = useRef<HTMLDivElement | null>(null);
   const phoneCodeRef = useRef<HTMLDivElement | null>(null);
+  const honeypotRef = useRef<HTMLInputElement | null>(null);
+  const renderedAtRef = useRef<number>(Date.now());
 
   const selectedPhone =
     PHONE_CODES.find((p) => p.code === phoneCountry) ?? PHONE_CODES[0];
@@ -163,8 +177,10 @@ export default function ServicesContactHero({
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target;
+    const nextValue =
+      type === "checkbox" ? (e.target as HTMLInputElement).checked : value;
+    setForm((prev) => ({ ...prev, [name]: nextValue }));
   };
 
   const selectCountry = (c: string) => {
@@ -202,19 +218,39 @@ export default function ServicesContactHero({
     autosize();
   }, [form.message]);
 
+  const buildSubmission = (): SubmissionPayload => ({
+    ...form,
+    ...collectSubmissionMeta({
+      formSource,
+      consentText: CONSENT_TEXT,
+      renderedAt: renderedAtRef.current,
+    }),
+  });
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (status !== "idle") return;
-    setStatus("sending");
-    try {
-      await fetch(apiEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-    } catch {
-      // swallow — UI still confirms so the user isn't stuck on errors
+    // Allow retrying from "error"; block only while sending or already done.
+    if (status === "sending" || status === "success") return;
+
+    // Honeypot: real users never see/fill this field — silently drop bots.
+    if (honeypotRef.current?.value) {
+      setStatus("success");
+      return;
     }
+
+    setStatus("sending");
+    setErrorMessage("");
+
+    try {
+      await submitContactForm(buildSubmission());
+    } catch (err) {
+      setErrorMessage(
+        err instanceof Error ? err.message : "Submission failed.",
+      );
+      setStatus("error");
+      return;
+    }
+
     setStatus("success");
     window.setTimeout(() => {
       setForm(INITIAL_FORM);
@@ -227,7 +263,9 @@ export default function ServicesContactHero({
       ? "SENDING…"
       : status === "success"
         ? "✓ THANK YOU"
-        : "SUBMIT";
+        : status === "error"
+          ? "TRY AGAIN"
+          : "SUBMIT";
 
   return (
     <section
@@ -481,11 +519,37 @@ export default function ServicesContactHero({
                 />
               </div>
 
+              {/* Honeypot — hidden from real users, bots tend to fill it */}
+              <input
+                ref={honeypotRef}
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
+
               {/* Privacy notice */}
               <p className="col-span-full mt-4 text-[15px] leading-[1.45]">
-                Your data is secure with us; we never leak, share, or sell your
-                details to third parties.
+                {CONSENT_TEXT}
               </p>
+
+              {/* NDA opt-in */}
+              <label
+                htmlFor="nda"
+                className="col-span-full flex items-center gap-2 mt-1 cursor-pointer select-none text-[15px] leading-[1.45] text-[#2a2a2a]"
+              >
+                <input
+                  id="nda"
+                  name="nda"
+                  type="checkbox"
+                  checked={form.nda}
+                  onChange={handleChange}
+                  className="h-4 w-4 accent-red-500 cursor-pointer"
+                />
+                Send me an NDA
+              </label>
 
               {/* Submit */}
               <button
@@ -495,10 +559,20 @@ export default function ServicesContactHero({
                     : "bg-red-500 hover:bg-red-600"
                 }`}
                 type="submit"
-                disabled={status !== "idle"}
+                disabled={status === "sending" || status === "success"}
               >
                 {submitLabel}
               </button>
+
+              {/* Error message — surfaced from the server's response */}
+              {status === "error" && errorMessage && (
+                <p
+                  className="col-span-full -mt-1 text-[13px] leading-[1.4] text-red-600"
+                  role="alert"
+                >
+                  {errorMessage}
+                </p>
+              )}
             </form>
           </div>
         </div>
