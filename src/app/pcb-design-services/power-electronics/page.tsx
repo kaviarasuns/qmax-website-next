@@ -470,7 +470,7 @@ export default function PowerElectronicsPage() {
   return (
     <>
       <HardwareServiceHeroSection
-        imageSrc="/pcb-design/Power-Electronics-PCB.png"
+        imageSrc="/pcb-design/Power-Electronics-PCB-V2.png"
         imageAlt="Power Electronics PCB Design — Qmax Systems"
         title="Power Electronics PCBs"
         description={
