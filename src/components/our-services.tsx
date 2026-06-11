@@ -56,7 +56,7 @@ const services: ServiceCard[] = [
       "PCB Design Review",
     ],
     Icon: Layers,
-    href: "/pcb-design",
+    href: "/pcb-design-services",
   },
   {
     id: "mechanical",

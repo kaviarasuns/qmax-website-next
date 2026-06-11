@@ -9,11 +9,11 @@ const TILE_CLASS =
 const PARTNER_LOGOS = [
   { name: "Qualcomm", file: "qualcomm-logo.webp" },
   { name: "NXP", file: "nxp-logo-300x225.webp" },
-  { name: "NVIDIA", file: "nvidia-logo1-300x225.webp" },
+  { name: "Broadcom", file: "Broadcom_logo.png" },
   { name: "Analog Devices", file: "analog-devices-logo.png" },
   { name: "onsemi", file: "Onsemi_logo.svg" },
   { name: "Infineon", file: "Infineon-Technologies-AG-logo.svg" },
-  { name: "Ambarella", file: "Ambarella_color_cmyk.svg" },
+  { name: "Rockchip", file: "Rockchip_logo.avif" },
   { name: "Texas Instruments", file: "TexasInstruments-Logo.svg" },
   { name: "Microchip", file: "Microchip_Technology_logo.svg" },
   { name: "Wolfspeed", file: "Wolfspeed_logo.svg" },

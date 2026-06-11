@@ -31,21 +31,21 @@ const CAPABILITIES = [
     headline:
       "Physics-driven mechanical design that predicts how your electronics behave under stress, vibration, and extreme temperatures.",
     intro:
-      "Our mechanical design philosophy is rooted in physics. We utilize Finite Element Analysis (FEA) and Thermal Analysis to predict how your electronics will behave under stress, vibration, and extreme temperatures.",
+      "Qmax Systems roots its mechanical design in physics, not rules of thumb. Finite Element Analysis (FEA) and Thermal Analysis predict how your electronics behave under stress, vibration, and extreme temperatures.",
     bullets: [
       {
         title: "Structural & Environmental",
         items: [
-          "Enclosure Design — Expertise in Plastic Injection Molding, Machined Aluminum, and Sheet Metal Fabrication.",
-          "Ruggedization — Design for shock, vibration, and impact resistance (MIL-STD and JSS standards).",
-          "Environmental Protection — High-performance sealing for IP65, IP67, and IP68 ratings.",
+          "Enclosure Design — Qmax designs enclosures in plastic injection molding, machined aluminum, and sheet-metal fabrication.",
+          "Ruggedization — Qmax's engineers design for shock, vibration, and impact resistance to MIL-STD and JSS standards.",
+          "Environmental Protection — Sealing designs meet IP65, IP67, and IP68 ratings.",
         ],
       },
       {
         title: "Thermal & Mechanisms",
         items: [
-          "Thermal Management — Active and passive cooling solutions, including custom heat sinks and airflow optimization.",
-          "Kinematic Design — Precise movement for hinges, sliders, and latching mechanisms.",
+          "Thermal Management — Qmax delivers active and passive cooling, including custom heat sinks and airflow optimization.",
+          "Kinematic Design — Kinematic design controls precise movement for hinges, sliders, and latching mechanisms.",
         ],
       },
     ],
@@ -97,21 +97,21 @@ const CAPABILITIES = [
     headline:
       "Intentional design of the user's relationship with hardware — intuitive to use, comfortable to hold, visually representative of its capabilities.",
     intro:
-      'Industrial Design at Qmax is not just "styling." It is the intentional design of the user\'s relationship with the hardware. We ensure that the product is intuitive to use, comfortable to hold, and visually representative of its technical capabilities.',
+      "Qmax Systems treats industrial design as the intentional design of the user's relationship with hardware, not just \"styling.\" Qmax's designers ensure the product is intuitive to use, comfortable to hold, and visually representative of its technical capabilities.",
     bullets: [
       {
         title: "Research & Experience",
         items: [
-          "Design Research — Analyzing market trends and user behavior to inform product architecture.",
-          "CMF Development — Defining Color, Material, and Finish to meet aesthetic and durability goals.",
-          "Hardware UI/UX — Designing touchpoints, button haptics, and display integration.",
+          "Design Research — Qmax analyzes market trends and user behavior to inform product architecture.",
+          "CMF Development — Qmax's designers define Color, Material, and Finish (CMF) to meet aesthetic and durability goals.",
+          "Hardware UI/UX — The team designs touchpoints, button haptics, and display integration.",
         ],
       },
       {
         title: "Visualization & Prototyping",
         items: [
-          "Visual Communication — Photorealistic renderings and animations for stakeholder reviews and marketing.",
-          "Prototyping — Multi-stage prototyping from low-fidelity foam models to high-fidelity vacuum casting.",
+          "Visual Communication — Photorealistic renderings and animations support stakeholder reviews and marketing.",
+          "Prototyping — Qmax prototypes in stages, from low-fidelity foam models to high-fidelity vacuum casting.",
         ],
       },
     ],
@@ -313,14 +313,13 @@ export default function MechanicalIndustrialDesignPage() {
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_minmax(280px,42%)] lg:items-stretch lg:gap-12">
             <div className="max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
               <p>
-                At Qmax Systems, we understand that an electronics product is
-                more than just a functional PCB; it is a physical entity that
-                must survive its environment, satisfy user ergonomics, and meet
-                stringent regulatory requirements. Our mechanical and industrial
-                design services are specifically tailored for high-stakes
-                electronics, moving beyond generic CAD modeling to provide deep
-                integration between hardware, thermal physics, and manufacturing
-                realities.
+                Qmax Systems delivers mechanical and industrial design services
+                for high-stakes electronics, where a product is more than a
+                functional PCB - it is a physical entity that must survive its
+                environment, satisfy user ergonomics, and meet stringent
+                regulatory requirements. These services move beyond generic CAD
+                modeling to deeply integrate hardware, thermal physics, and
+                manufacturing realities.
               </p>
               <p>
                 Whether you are developing a ruggedized MIL-STD-810 tactical
