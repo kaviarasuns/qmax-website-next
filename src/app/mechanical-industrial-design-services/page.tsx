@@ -269,9 +269,9 @@ const WHY_CARDS = [
 const MECHANICAL_INDUSTRIAL_HERO = {
   videoSrc:
     "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_&_Mechnical.mp4",
-  title: "Mechanical & Industrial Design Services",
+  title: "Mechanical and Industrial Design Services — Enclosures, Thermal, and DFM",
   subtitle:
-    "Qmax Systems designs enclosures, thermal paths, and load-bearing structures that are engineered alongside the PCB from the schematic stage — not bolted on afterward. By optimizing for DFM and DFA from day one, Qmax Systems delivers ruggedized, certification-ready hardware for high-stakes electronics, from MIL-STD-810 tactical devices to thermally-dense power electronics.",
+    "Qmax Systems provides mechanical and industrial design services — enclosures, thermal paths, and load-bearing structures engineered alongside the PCB from the schematic stage. Optimized for DFM and DFA from day one, Qmax Systems delivers certification-ready hardware for high-stakes electronics, from MIL-STD-810 tactical devices to thermally-dense power electronics.",
   ctaHref: "/mechanical-industrial-design-services/contact",
   ctaLabel: "Talk to Our Engineers",
 };

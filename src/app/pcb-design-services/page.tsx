@@ -22,12 +22,12 @@ export const metadata = buildMetadata({
    ============================================================ */
 
 const HERO = {
-  title: "PCB Design Services: A Multi-Physics Engineering Discipline",
+  title: "PCB Design Services — Engineering for First-Time-Right Hardware",
   description: (
     <>
-      <strong>Engineering Beyond Connectivity.</strong> Qmax Systems treats PCB
-      design as a critical engineering discipline, not just interconnection. The
-      result is reliable, first-time-right PCB layouts, validated by SI/PI and
+      Qmax Systems provides PCB design services that treat the board as a
+      critical engineering discipline, not just interconnection. Qmax Systems
+      delivers reliable, first-time-right PCB layouts, validated by SI/PI and
       thermal simulation for performance, compliance, and manufacturability.
     </>
   ),

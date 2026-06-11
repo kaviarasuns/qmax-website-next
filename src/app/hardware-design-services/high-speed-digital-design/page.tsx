@@ -349,15 +349,16 @@ export default function HighSpeedDigitalDesignPage() {
         imageSrc="/hw-main/HW-High-Speed-Digital-Design/image1.jpg"
         imageAlt="High-Performance Digital Systems — Qmax Systems"
         // title="High-Performance Digital Systems Development"
-        title="High Speed Digital Design Services"
+        title="High-Speed Digital Design — DDR5, PCIe Gen6, and 112G SerDes Architecture"
         description={
           <p>
-            Qmax Systems designs high-performance digital hardware for AI
-            computing, telecom, edge servers, and data-intensive infrastructure.
-            Qmax Systems engineers high-speed, high-density, high-reliability
-            systems around signal integrity (SI) and power integrity (PI) — from
-            DDR5 and PCIe Gen6 to 112G SerDes and 30+ layer HDI PCBs —
-            delivering production-ready platforms, not just prototypes.
+            Qmax Systems provides high-speed digital design for AI computing,
+            telecom, edge servers, and data-intensive infrastructure. Qmax
+            Systems engineers high-speed, high-density, high-reliability
+            systems around signal integrity (SI) and power integrity (PI) —
+            from DDR5 and PCIe Gen6 to 112G SerDes, with architecture set
+            before layout — delivering production-ready platforms, not just
+            prototypes.
           </p>
         }
         ctaHref="/hardware-design-services/contact"

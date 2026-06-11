@@ -14,9 +14,9 @@ import {
 
 const HERO = {
   videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_V2.mp4",
-  title: "Industrial Design Services.",
+  title: "Industrial Design Services",
   description:
-    "Industrial design at Qmax Systems integrates visual, ergonomic, and manufacturing reality from the first sketch — ensuring every decision is grounded in engineering truth.",
+    "Qmax Systems provides industrial design services for hardware products — integrating visual, ergonomic, and manufacturing reality, always grounded in engineering truth.",
   ctaHref: "/mechanical-industrial-design-services/contact",
   ctaLabel: "Talk to Our Engineers",
 };

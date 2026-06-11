@@ -31,9 +31,9 @@ export const metadata = buildMetadata({
 
 const HERO = {
   title:
-    "Embedded Development Services: From Requirement To Production, Complete Lifecycle",
+    "Embedded Design Services — Firmware, Bring-Up, and OTA Across the Lifecycle",
   description:
-    "Qmax Systems delivers embedded firmware development across the complete product lifecycle — from requirements and architecture through board bring-up, validation, and OTA-based fleet maintenance. Qmax Systems engineers design for real-world deployment from Day 1: ASIL traceability for automotive (ISO 26262), IEC 62304 for medical devices, DO-178C for avionics, and OPC-UA determinism for industrial systems — not retrofitted at sign-off.",
+    "Qmax Systems provides embedded design services across the complete product lifecycle — from requirements and architecture through board bring-up, validation, and OTA-based fleet maintenance. Qmax Systems engineers design for real-world deployment from Day 1: ASIL traceability for automotive (ISO 26262), IEC 62304 for medical devices, DO-178C for avionics, and OPC-UA determinism for industrial systems — not retrofitted at sign-off.",
   ctaLabel: "Talk to our engineers",
   ctaHref: "/embedded-design-services/contact",
   videoSrc:

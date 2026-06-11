@@ -491,9 +491,9 @@ const FAQ_ITEMS = [
 
 const HERO = {
   title:
-    "Hardware Development Services: The Complete Hardware Product Lifecycle",
+    "Hardware Design Services — Full Product Lifecycle, Architecture to Production",
   description:
-    "Qmax Systems owns the full hardware product lifecycle — from requirement analysis and architecture through schematic design, PCB layout, EVT/DVT/PVT validation, and production handover. This architecture-first process spans automotive, medical, aerospace, and industrial domains, cutting risk and shortening development cycles with compliance readiness from day one.",
+    "Qmax Systems provides hardware design services across the full lifecycle — from requirement analysis and architecture through schematic design, PCB layout, EVT/DVT/PVT validation, and production handover. This architecture-first process spans automotive, medical, aerospace, and industrial domains, cutting risk and shortening cycles with day-one compliance readiness.",
   ctaLabel: "Talk to our engineers",
   ctaHref: "/hardware-design-services/contact",
   videoSrc:

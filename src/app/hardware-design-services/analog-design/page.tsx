@@ -523,10 +523,10 @@ export default function AnalogDesignPage() {
         //     Complex Signal Chains
         //   </>
         // }
-        title="Analog Design Services"
+        title="Analog Circuit Design Services — Precision Signal Acquisition and Mixed-Signal Conditioning"
         description={
           <p>
-            Qmax Systems designs analog and mixed-signal hardware for the
+            Qmax Systems provides analog circuit design services for the
             physical-to-digital interface, the most critical bottleneck in
             high-performance electronics. From femto-farad capacitance sensing
             to giga-sample data converters, Qmax Systems delivers high-fidelity

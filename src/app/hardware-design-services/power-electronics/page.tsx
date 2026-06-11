@@ -441,11 +441,11 @@ export default function PowerElectronicsPage() {
         //     Power for Mission-Critical Hardware
         //   </>
         // }
-        title="Power Electronics Services"
+        title="Power Electronics Design Services — GaN/SiC Conversion, Thermal, and BMS"
         description={
           <>
             <p>
-              Qmax Systems delivers end-to-end power electronics development -
+              Qmax Systems provides power electronics design services -
               high-density, high-efficiency power conversion and energy
               management for electrified transport, hyperscale data centers, and
               industrial automation. Qmax Systems bridges wide-bandgap (GaN/SiC)

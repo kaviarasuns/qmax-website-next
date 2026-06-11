@@ -46,9 +46,9 @@ const FAQ_ITEMS = [
 ];
 
 const HERO = {
-  title: "Mechanical Design Services",
+  title: "Mechanical Design Services — Enclosures, DFx, and Structural Analysis",
   description:
-    "From injection-moulded plastic enclosures to MIL-grade rugged systems — Qmax Systems delivers precision mechanical design, DFx engineering, and full structural analysis with a clear path from concept to production.",
+    "Qmax Systems provides mechanical design services — DFx engineering and full structural analysis — from injection-moulded plastic enclosures to MIL-grade rugged systems, with a clear path from concept to production.",
   ctaLabel: "Talk to our engineers",
   ctaHref: "/mechanical-industrial-design-services/contact",
   videoSrc:

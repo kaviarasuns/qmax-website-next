@@ -745,19 +745,19 @@ export default function RfAndMicrowavePage() {
       <HardwareServiceHeroSection
         imageSrc="/hw-main/hw_rf_and_microwave.jpg"
         imageAlt="RF and Microwave Engineering — Qmax Systems"
-        title="RF and Microwave Engineering Services"
+        title="RF Circuit Design Services — RFFE, Transceiver Architecture, Sub-GHz to mmWave"
         description={
           <p>
-            Qmax Systems provides comprehensive RF and Microwave Engineering
-            services, bridging the gap between theoretical electromagnetics and
-            robust, manufacturable hardware. From sub-GHz IoT modules to mmWave
-            sensor arrays and 1 kW industrial plasma generators, Qmax Systems
-            delivers end-to-end RF PCB design, RF front-end (RFFE) engineering,
-            full-wave electromagnetic simulation, and EMI/EMC pre-compliance
-            validation - covering LF/HF through 77 GHz+ mmWave bands with
-            controlled-impedance layout on Rogers and Megtron 6 substrates -
-            ensuring optimal signal integrity and regulatory compliance on first
-            build.
+            Qmax Systems provides RF circuit design services, bridging the gap
+            between theoretical electromagnetics and robust, manufacturable
+            hardware. From sub-GHz IoT modules to mmWave sensor arrays and 1 kW
+            industrial plasma generators, Qmax Systems delivers RF front-end
+            (RFFE) engineering — from LNA and PA to mixer stages — transceiver
+            and antenna architecture, impedance matching, filter and
+            link-budget design, full-wave electromagnetic simulation, and
+            EMI/EMC pre-compliance validation across LF/HF through 77 GHz+
+            mmWave bands — ensuring optimal signal integrity and regulatory
+            compliance on first build.
           </p>
         }
         ctaHref="/hardware-design-services/contact"
