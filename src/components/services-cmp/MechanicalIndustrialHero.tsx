@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 import Link from "next/link";
+import { renderHeroTitle } from "./hero-title";
 
 function clamp(v: number, lo: number, hi: number) {
   return Math.min(Math.max(v, lo), hi);
@@ -131,7 +132,7 @@ export function MechanicalIndustrialHero({
             id="mechanical-industrial-hero-title"
             className="max-w-[900px] text-balance font-bold leading-[1.1] tracking-[-0.022em] text-white [font-size:clamp(34px,4vw,58px)]"
           >
-            {title}
+            {renderHeroTitle(title)}
           </h1>
           <p
             ref={subRef}

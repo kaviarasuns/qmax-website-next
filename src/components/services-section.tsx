@@ -146,9 +146,9 @@ export function ServicesSection() {
         <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr] md:items-center">
           <div className="hidden md:block" aria-hidden />
           <div className="w-full max-w-2xl justify-self-center text-center">
-            <h1 className="mb-3 text-3xl font-light tracking-wide md:text-4xl lg:text-5xl">
+            <h2 className="mb-3 text-3xl font-light tracking-wide md:text-4xl lg:text-5xl">
               Case <span className="text-red-500">Studies</span>
-            </h1>
+            </h2>
           </div>
           <div className="flex w-full items-center justify-end gap-4">
             <Link href="/case-studies">

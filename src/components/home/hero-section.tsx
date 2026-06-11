@@ -113,20 +113,24 @@ export default function HeroSection() {
             )}
           </div>
         </div>
-        {showBottomText && (
-          <div className="absolute bottom-4 left-4 sm:bottom-16 sm:left-16 text-white text-xl sm:text-3xl md:text-4xl font-bold z-10 animate-fade-in">
+        <div
+          className={`absolute bottom-4 left-4 sm:bottom-16 sm:left-16 text-white z-10 transition-opacity duration-1000 ${
+            showBottomText ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <h1 className="text-xl sm:text-3xl md:text-4xl font-bold">
             Electronics Engineering Services
-            <div className="text-base sm:text-xl md:text-2xl font-medium mt-2">
-              <p className="text-white">From Concept to Production</p>
-            </div>
-            <Link
-              href="/contact"
-              className="mt-5 inline-block px-4 py-2.5 sm:px-5 sm:py-2.5 text-sm sm:text-base border border-white text-white rounded-md transition hover:bg-white/10"
-            >
-              Let&apos;s Build
-            </Link>
+          </h1>
+          <div className="text-base sm:text-xl md:text-2xl font-medium mt-2">
+            <p className="text-white">From Concept to Production</p>
           </div>
-        )}
+          <Link
+            href="/contact"
+            className="mt-5 inline-block px-4 py-2.5 sm:px-5 sm:py-2.5 text-sm sm:text-base border border-white text-white rounded-md transition hover:bg-white/10"
+          >
+            Let&apos;s Build
+          </Link>
+        </div>
       </motion.div>
     </div>
   );

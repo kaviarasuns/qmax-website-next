@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { renderHeroTitle } from "./hero-title";
 
 const HERO_OVERLAY =
   "linear-gradient(100deg, rgba(8, 12, 22, 0.9) 0%, rgba(8, 12, 22, 0.72) 52%, rgba(8, 12, 22, 0.28) 100%)";
@@ -97,7 +98,7 @@ export function HardwareServiceHeroSection({
             ref={titleRef}
             className="w-fit text-white mb-6 font-bold leading-[1.1] tracking-[-0.01em] [font-size:clamp(32px,4.4vw,56px)]"
           >
-            {title}
+            {renderHeroTitle(title)}
           </h1>
           <div
             style={titleLineWidth ? { maxWidth: titleLineWidth } : undefined}

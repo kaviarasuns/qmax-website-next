@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { renderHeroTitle } from "./hero-title";
 
 const HERO_GRADIENT =
   "linear-gradient(90deg, rgba(11,45,90,0.88) 0%, rgba(11,45,90,0.78) 14%, rgba(11,45,90,0.64) 30%, rgba(11,45,90,0.48) 46%, rgba(11,45,90,0.32) 62%, rgba(11,45,90,0.16) 78%, rgba(11,45,90,0.06) 90%, rgba(11,45,90,0) 100%)";
@@ -49,7 +50,7 @@ export function ServiceVideoHero({
             id="service-video-hero-title"
             className="mb-[clamp(14px,2vh,24px)] text-balance font-bold leading-[1.1] tracking-[-0.01em] text-white [font-size:clamp(32px,4.4vw,56px)]"
           >
-            {title}
+            {renderHeroTitle(title)}
           </h1>
           <p className="mb-[clamp(20px,3vh,36px)] max-w-full text-justify font-normal leading-[1.55] text-white [font-size:clamp(15px,1.6vw,19px)]">
             {description}
