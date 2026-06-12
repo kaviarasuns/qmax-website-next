@@ -53,7 +53,7 @@ export function WorkflowSection({
               ref={(el) => {
                 stepRefs.current[i] = el;
               }}
-              className={`relative mb-24 flex translate-y-8 items-start opacity-0 transition-[opacity,transform] duration-700 ease-[cubic-bezier(.4,0,.2,1)] last:mb-0 [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 ${
+              className={`relative mb-24 flex translate-y-8 items-start opacity-0 transition-[opacity,transform] duration-700 [transition-timing-function:cubic-bezier(.4,0,.2,1)] last:mb-0 [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 ${
                 isRight
                   ? "min-[900px]:flex-row"
                   : "min-[900px]:flex-row-reverse"

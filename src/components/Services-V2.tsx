@@ -124,7 +124,7 @@ const ServicesV2 = () => {
                 >
                   {/* Background image */}
                   <div
-                    className={`absolute inset-0 bg-cover bg-center transition-transform duration-[1200ms] ease-out ${
+                    className={`absolute inset-0 bg-cover bg-center transition-transform [transition-duration:1200ms] ease-out ${
                       isActive ? "scale-[1.06]" : "scale-100"
                     } group-hover:scale-[1.06]`}
                     style={{ backgroundImage: `url(${service.image})` }}

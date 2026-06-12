@@ -32,7 +32,7 @@ export function CTABannerSection({
           </div>
           <a
             href={href}
-            className="inline-flex shrink-0 items-center gap-2.5 rounded border-[1.5px] border-red-500 bg-red-500 px-[26px] py-3.5 uppercase text-white no-underline transition-[background,border-color,color,transform] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-px hover:border-red-600 hover:bg-red-600 hover:text-white hover:no-underline"
+            className="inline-flex shrink-0 items-center gap-2.5 rounded border-[1.5px] border-red-500 bg-red-500 px-[26px] py-3.5 uppercase text-white no-underline transition-[background,border-color,color,transform] duration-200 [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-px hover:border-red-600 hover:bg-red-600 hover:text-white hover:no-underline"
           >
             <span>BOOK A MEETING</span>
             <svg

@@ -845,9 +845,9 @@ function ViewCaseLink({ href }: { href: string }) {
 
 function PortfolioGridCard({ item }: { item: PortfolioItem }) {
   const panelMotion =
-    "duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none";
+    "duration-700 [transition-timing-function:cubic-bezier(0.19,1,0.22,1)] motion-reduce:transition-none";
   const detailMotion =
-    "opacity-0 transition-opacity duration-[450ms] ease-in motion-reduce:transition-none group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300 group-hover:ease-out group-focus-within:opacity-100 group-focus-within:delay-200 group-focus-within:duration-300 group-focus-within:ease-out";
+    "opacity-0 transition-opacity [transition-duration:450ms] ease-in motion-reduce:transition-none group-hover:opacity-100 group-hover:delay-200 group-hover:duration-300 group-hover:ease-out group-focus-within:opacity-100 group-focus-within:delay-200 group-focus-within:duration-300 group-focus-within:ease-out";
 
   return (
     <article

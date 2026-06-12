@@ -135,7 +135,7 @@ export function ApplicationsProjectExperienceSection({
                   <div
                     key={project.id}
                     className={cn(
-                      "absolute inset-0 flex flex-col transition-opacity duration-[550ms] ease-in-out",
+                      "absolute inset-0 flex flex-col transition-opacity [transition-duration:550ms] ease-in-out",
                       isActive
                         ? "opacity-100"
                         : "pointer-events-none opacity-0",

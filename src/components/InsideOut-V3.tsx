@@ -48,10 +48,13 @@ function useReveal<T extends HTMLElement>() {
     if (!el) return;
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          io.disconnect();
-        }
+        if (!entry.isIntersecting) return;
+        // Let the hidden state paint once before toggling `.in`, so opacity
+        // and transform actually transition (matches the reference HTML).
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => setInView(true));
+        });
+        io.disconnect();
       },
       { threshold: 0.25 },
     );
@@ -274,7 +277,7 @@ export default function InsideOutV3() {
                           strokeWidth="1"
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          className={`text-red-500 transition-transform duration-[350ms] ${isActive ? "rotate-180" : ""}`}
+                          className={`text-red-500 transition-transform [transition-duration:350ms] ${isActive ? "rotate-180" : ""}`}
                         >
                           <path d="M12 5v14M19 12l-7 7-7-7" />
                         </svg>
@@ -282,7 +285,7 @@ export default function InsideOutV3() {
                     </button>
 
                     <div
-                      className={`grid transition-[grid-template-rows] duration-[450ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+                      className={`grid transition-[grid-template-rows] [transition-duration:450ms] [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
                     >
                       <div className="overflow-hidden">
                         <p className="pb-6 text-base leading-relaxed font-light text-foreground">
@@ -329,7 +332,7 @@ export default function InsideOutV3() {
         {/* Stats Row - Full Width */}
         <div
           ref={statsReveal.ref}
-          className={`w-full max-w-6xl mx-auto mt-12 lg:mt-16 px-6 text-center transition-all duration-[650ms] ease-out ${statsReveal.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[26px]"}`}
+          className={`w-full max-w-6xl mx-auto mt-12 lg:mt-16 px-6 text-center transition-[opacity,transform] [transition-duration:650ms] ${statsReveal.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[26px]"}`}
         >
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
             {stats.map((stat) => (
@@ -341,7 +344,7 @@ export default function InsideOutV3() {
         {/* CTA Bar */}
         <div
           ref={ctaReveal.ref}
-          className={`mx-6 lg:mx-12 mt-14 lg:mt-[72px] mb-12 lg:mb-16 transition-all duration-[650ms] ease-out ${ctaReveal.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[26px]"}`}
+          className={`mx-6 lg:mx-12 mt-14 lg:mt-[72px] mb-12 lg:mb-16 transition-[opacity,transform] [transition-duration:650ms] ${ctaReveal.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[26px]"}`}
         >
           <div className="flex items-center justify-between gap-10 rounded-md bg-[#2A2F36] px-14 py-11 shadow-[0_14px_36px_-18px_rgba(16,24,40,0.30)] max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-6 max-[900px]:px-7 max-[900px]:py-8">
             <div className="max-w-[648px]">
@@ -355,7 +358,7 @@ export default function InsideOutV3() {
             </div>
             <a
               href="/contact"
-              className="inline-flex shrink-0 items-center gap-2.5 rounded border-[1.5px] border-red-500 bg-red-500 px-[26px] py-3.5 uppercase text-white no-underline transition-[background,border-color,color,transform] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-px hover:border-red-600 hover:bg-red-600 hover:text-white hover:no-underline"
+              className="inline-flex shrink-0 items-center gap-2.5 rounded border-[1.5px] border-red-500 bg-red-500 px-[26px] py-3.5 uppercase text-white no-underline transition-[background,border-color,color,transform] duration-200 [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-px hover:border-red-600 hover:bg-red-600 hover:text-white hover:no-underline"
             >
               <span>DISCUSS YOUR PROJECT</span>
               <svg
