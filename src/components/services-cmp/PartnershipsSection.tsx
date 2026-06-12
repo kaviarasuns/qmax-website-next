@@ -1,14 +1,20 @@
 import Image from "next/image";
 
-import type { PartnerLogo } from "@/data/partner-logos";
+import type { PartnerLogo, PartnerLogoInset } from "@/data/partner-logos";
 
 const PARTNERSHIP_LOGO_BASE =
   "https://d1yetprhniwywz.cloudfront.net/v2/partnerships_logo";
 
 const TILE_CLASS =
-  "relative flex aspect-[16/9] items-center justify-center overflow-hidden rounded-md border border-gray-200 bg-white p-2 transition-all duration-300 hover:-translate-y-[3px] hover:border-[rgba(230,51,41,0.35)] hover:shadow-[0_8px_20px_rgba(16,24,40,0.08)]";
+  "relative flex aspect-[16/9] w-full items-center justify-center overflow-hidden rounded-md border border-gray-200 bg-white p-2 transition-all duration-300 hover:-translate-y-[3px] hover:border-[rgba(230,51,41,0.35)] hover:shadow-[0_8px_20px_rgba(16,24,40,0.08)]";
 
-const DEFAULT_LOGO_INSET = "absolute inset-5 max-[900px]:inset-4";
+// Keep inset utilities in this file so Tailwind always generates them.
+const LOGO_INSET_CLASSES: Record<PartnerLogoInset, string> = {
+  default: "absolute inset-5 max-[900px]:inset-4",
+  tight: "absolute inset-2 max-[900px]:inset-1",
+  snug: "absolute inset-3 max-[900px]:inset-2",
+  medium: "absolute inset-1.5 max-[900px]:inset-1",
+};
 
 interface PartnershipsSectionProps {
   heading: string;
@@ -50,7 +56,9 @@ export function PartnershipsSection({
         >
           {logos.map(({ name, file, inset, imageClass }, index) => (
             <div key={`${file}-${index}`} className={TILE_CLASS}>
-              <div className={inset ?? DEFAULT_LOGO_INSET}>
+              <div
+                className={LOGO_INSET_CLASSES[inset ?? "default"]}
+              >
                 <Image
                   src={`${PARTNERSHIP_LOGO_BASE}/${file}`}
                   alt={`${name} logo`}

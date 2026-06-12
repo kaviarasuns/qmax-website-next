@@ -5,10 +5,12 @@
  * to customize a page, replace its alias with a page-specific array.
  */
 
+export type PartnerLogoInset = "default" | "tight" | "snug" | "medium";
+
 export interface PartnerLogo {
   name: string;
   file: string;
-  inset?: string;
+  inset?: PartnerLogoInset;
   imageClass?: string;
 }
 
@@ -17,18 +19,18 @@ const DEFAULT_PARTNER_LOGOS: readonly PartnerLogo[] = [
   {
     name: "Qualcomm",
     file: "qualcomm-logo.webp",
-    inset: "absolute inset-2 max-[900px]:inset-1",
+    inset: "tight",
   },
   { name: "NXP", file: "nxp-logo-300x225.webp" },
   {
     name: "Broadcom",
     file: "Broadcom_logo.png",
-    inset: "absolute inset-3 max-[900px]:inset-2",
+    inset: "snug",
   },
   {
     name: "Analog Devices",
     file: "analog_devices.png",
-    inset: "absolute inset-2 max-[900px]:inset-1",
+    inset: "tight",
     imageClass: "object-contain scale-150",
   },
   { name: "onsemi", file: "Onsemi_logo.svg" },
@@ -36,7 +38,7 @@ const DEFAULT_PARTNER_LOGOS: readonly PartnerLogo[] = [
   {
     name: "Rockchip",
     file: "Rockship_V2.png",
-    inset: "absolute inset-1.5 max-[900px]:inset-1",
+    inset: "medium",
     // The PNG has whitespace baked in; scale up to crop it out.
     imageClass: "object-contain scale-150",
   },
@@ -50,19 +52,19 @@ export const EMBEDDED_PARTNER_LOGOS: readonly PartnerLogo[] = [
   {
     name: "Qualcomm",
     file: "qualcomm-logo.webp",
-    inset: "absolute inset-2 max-[900px]:inset-1",
+    inset: "tight",
   },
   { name: "NXP", file: "nxp-logo-300x225.webp" },
   {
     name: "Analog Devices",
     file: "analog_devices.png",
-    inset: "absolute inset-2 max-[900px]:inset-1",
+    inset: "tight",
     imageClass: "object-contain scale-150",
   },
   {
     name: "MediaTek",
     file: "mediatek.png",
-    inset: "absolute inset-2 max-[900px]:inset-1",
+    inset: "tight",
     imageClass: "object-contain scale-150",
   },
   { name: "Ampere", file: "ampere.png" },
@@ -70,7 +72,7 @@ export const EMBEDDED_PARTNER_LOGOS: readonly PartnerLogo[] = [
   {
     name: "Rockchip",
     file: "Rockship_V2.png",
-    inset: "absolute inset-1.5 max-[900px]:inset-1",
+    inset: "medium",
     // The PNG has whitespace baked in; scale up to crop it out.
     imageClass: "object-contain scale-150",
   },
@@ -79,20 +81,20 @@ export const EMBEDDED_PARTNER_LOGOS: readonly PartnerLogo[] = [
   {
     name: "Nordic Semiconductor",
     file: "nordic-semicunductor.png",
-    inset: "absolute inset-2 max-[900px]:inset-1",
-    imageClass: "object-contain scale-135",
+    inset: "tight",
+    imageClass: "object-contain scale-[1.35]",
   },
   {
     name: "Silicon Labs",
     file: "siliconlabs.webp",
-    inset: "absolute inset-2 max-[900px]:inset-1",
-    imageClass: "object-contain scale-145",
+    inset: "tight",
+    imageClass: "object-contain scale-[1.45]",
   },
   {
     name: "ST Microelectronics",
     file: "STMicroelectronics_2025.jpg",
-    inset: "absolute inset-3 max-[900px]:inset-2",
-    imageClass: "object-contain scale-135",
+    inset: "snug",
+    imageClass: "object-contain scale-[1.35]",
   },
 ];
 export const PCB_PARTNER_LOGOS = DEFAULT_PARTNER_LOGOS;
