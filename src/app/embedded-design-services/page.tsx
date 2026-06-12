@@ -13,6 +13,7 @@ import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSec
 import { HARDWARE_INDUSTRIES } from "@/store/hardware-industries";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { PartnershipsSection } from "@/components/services-cmp/PartnershipsSection";
+import { EMBEDDED_PARTNER_LOGOS } from "@/data/partner-logos";
 import { CTABannerSection } from "@/components/services-cmp/CTABannerSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
@@ -835,6 +836,7 @@ export default function EmbeddedDesignServicesPage() {
         heading="Silicon Platforms"
         headingHighlight="We Build On"
         paragraph="Across hundreds of programs, Qmax Systems firmware engineers have shipped production code on the silicon below — carrying hands-on experience with toolchains, SDKs, errata sheets, and reference designs so every project starts from working ground, not from scratch."
+        logos={EMBEDDED_PARTNER_LOGOS}
       />
 
       {/* CTA BANNER */}

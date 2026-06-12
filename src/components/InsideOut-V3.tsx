@@ -343,21 +343,33 @@ export default function InsideOutV3() {
           ref={ctaReveal.ref}
           className={`mx-6 lg:mx-12 mt-14 lg:mt-[72px] mb-12 lg:mb-16 transition-all duration-[650ms] ease-out ${ctaReveal.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[26px]"}`}
         >
-          <div className="flex flex-wrap items-center justify-between gap-7 rounded-[20px] bg-[#2A2F36] shadow-[0_14px_36px_-18px_rgba(16,24,40,0.30)] px-8 py-8 lg:px-[46px] lg:py-[38px] text-left max-md:justify-center max-md:text-center">
-            <div>
-              <h3 className="text-2xl font-semibold tracking-tight text-white">
+          <div className="flex items-center justify-between gap-10 rounded-md bg-[#2A2F36] px-14 py-11 shadow-[0_14px_36px_-18px_rgba(16,24,40,0.30)] max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-6 max-[900px]:px-7 max-[900px]:py-8">
+            <div className="max-w-[648px]">
+              <h3 className="m-0 mb-2.5 text-3xl font-light tracking-wide text-white md:text-4xl">
                 Ready to build your next product?
               </h3>
-              <p className="mt-1 text-[14.5px] text-white/55">
+              <p className="m-0 text-white">
                 From concept to production — one accountable engineering
                 partner.
               </p>
             </div>
             <a
               href="/contact"
-              className="inline-block whitespace-nowrap rounded-lg border-[1.5px] border-red-500 bg-red-500 px-8 py-3.5 text-[15.5px] font-medium text-white transition-colors duration-200 hover:border-red-600 hover:bg-red-600"
+              className="inline-flex shrink-0 items-center gap-2.5 rounded border-[1.5px] border-red-500 bg-red-500 px-[26px] py-3.5 uppercase text-white no-underline transition-[background,border-color,color,transform] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-px hover:border-red-600 hover:bg-red-600 hover:text-white hover:no-underline"
             >
-              Discuss Your Project
+              <span>DISCUSS YOUR PROJECT</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+                className="h-3.5 w-3.5"
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
             </a>
           </div>
         </div>

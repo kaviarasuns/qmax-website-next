@@ -2,6 +2,7 @@ import { buildMetadata } from "@/lib/seo";
 import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { PartnershipsSection } from "@/components/services-cmp/PartnershipsSection";
+import { HARDWARE_PARTNER_LOGOS } from "@/data/partner-logos";
 import { CTABannerSection } from "@/components/services-cmp/CTABannerSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import "../../components/hardware-design.css";
@@ -602,6 +603,7 @@ export default function HardwareDevelopmentServicesPage() {
       <PartnershipsSection
         heading="Partnerships"
         paragraph="With a strong focus on new product development, Qmax Systems maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. These partnerships bring early access to upcoming silicon, roadmap visibility, and training on the latest technologies — with reference modules and evaluation kits ready to kick-start your product development."
+        logos={HARDWARE_PARTNER_LOGOS}
       />
 
       <div className="pb-12"></div>
