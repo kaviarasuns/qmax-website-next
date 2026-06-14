@@ -4,29 +4,34 @@ import { useEffect, useRef, useState } from "react";
 
 const reasons = [
   {
-    title: "End-to-End Engineering",
+    title: "First-Time-Right Engineering Execution",
     description:
-      "From concept to production — schematic, PCB layout, embedded firmware, mechanical design, prototyping, and DFM optimization. One team owns every stage, so there are no costly hand-offs between vendors and no gaps where accountability gets lost.",
+      "Backed by 27 years of deep industry experience, our engineers execute complex hardware designs without needing oversight. By utilizing cutting-edge tools and a well-defined process, our experienced team catches and resolves critical design anomalies before the fabrication stage, ensuring a stable, production-ready first prototype run.",
   },
   {
-    title: "Decades of Hands-On Expertise",
+    title: "Comprehensive Life-Cycle Ownership & Continuity",
     description:
-      "Engineering since 1997, led by a team with 20 to 38 years of experience each. You're not funding a learning curve — you're hiring engineers who have already solved the problem your product is about to face.",
+      "We eliminate vendor-fragmentation friction and accountability gaps. By housing full-stack capabilities—Hardware, Firmware, Software, PCB Layout, Mechanical, and Industrial Design—completely under one roof, we ensure total continuity across your product lifecycle, delivering predictable milestones and seamless production handoffs.",
   },
   {
-    title: "Full Product Development Cycle",
+    title: "Proactive Regulatory & Compliance De-Risking",
     description:
-      "Requirements, architecture, schematic capture, layout, firmware, prototyping, validation, and manufacturing support — all under one roof. A single accountable partner from idea to production, instead of stitching together a design house, a firmware shop, and a manufacturer.",
+      "We treat compliance as a foundational architecture constraint, not an afterthought. Our engineering teams possess rigorous domain knowledge of international standards, integrating complex certification blueprints into the product plan from Day 1 to guarantee a seamless, uncompromised path to market.",
   },
   {
-    title: "Shipped, Not Just Designed",
+    title: "Enterprise-Grade Governance & Visibility",
     description:
-      "We don't just hand off schematics — our designs reach production and ship in the real world, across consumer, industrial, medical, and aerospace programs. That's a depth of proven delivery newer or single-discipline firms simply can't match.",
+      "We eliminate the transparency risks common in outsourced R&D. Operating with absolute corporate governance, we provide systematic project tracking, highly structured communication frameworks, and daily operational updates to keep your internal stakeholders perfectly aligned and informed.",
   },
   {
-    title: "Multi-Disciplinary Engineering Team",
+    title: "Institutional IP Protection & Security Frameworks",
     description:
-      "High-speed digital, analog and mixed-signal, RF/microwave, power electronics, firmware, and mechanical specialists working as one unit. The right expert for every layer of your product is already in-house — no subcontracting, no waiting.",
+      "Your core intellectual property is protected by institutional-grade protocols. Our robust IP defence model includes strict, multi-tiered NDA frameworks with all employees, suppliers, and tier-one partners, reinforced by isolated, secure physical and digital access controls across our engineering infrastructure.",
+  },
+  {
+    title: "Field-Tested Multi-Domain Resilience",
+    description:
+      "We cross-pollinate architectural best practices from the world's most demanding sectors—including Automotive, Medical, Aerospace, Industrial, and Military applications. This extensive multi-domain footprint ensures your product inherits field-tested ruggedness, structural reliability, and long-term scalability.",
   },
 ];
 
@@ -203,14 +208,14 @@ export default function InsideOutV3() {
     <div className="h-full w-full flex items-center justify-center px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div
         ref={sectionRef}
-        className="bg-white w-full max-w-7xl rounded-2xl overflow-hidden"
+        className="bg-white w-full max-w-screen-2xl rounded-2xl overflow-hidden"
       >
         <h2 className="text-center text-3xl font-light tracking-wide px-6 pt-8 pb-4 md:text-5xl lg:pt-10 lg:pb-6">
           Why Qmax <span className="text-red-500">Systems</span>
         </h2>
         {/*Main Section*/}
         <div className="flex flex-col lg:flex-row lg:items-center items-stretch gap-0 z-[1]">
-          <div className="w-full lg:w-[60%] flex flex-col items-center justify-center px-6 lg:pl-12 lg:pr-2 py-8 lg:py-10">
+          <div className="w-full lg:w-[52%] flex flex-col items-center justify-center px-6 lg:pl-12 lg:pr-2 py-8 lg:py-10">
             <div
               className="relative w-full lg:-translate-x-12 xl:-translate-x-20"
               style={{ maxWidth: "100%" }}
@@ -241,9 +246,9 @@ export default function InsideOutV3() {
               </button>
             )}
           </div>
-          <div className="relative z-10 w-full lg:w-[40%] flex flex-col justify-center px-6 lg:pl-2 lg:pr-12 py-6 lg:py-8 lg:-ml-16 xl:-ml-24 bg-white lg:bg-transparent">
+          <div className="relative z-10 w-full lg:w-[48%] flex flex-col justify-center px-6 lg:pl-2 lg:pr-12 py-6 lg:py-8 lg:-ml-12 xl:-ml-16 bg-white lg:bg-transparent">
             <style>{`@keyframes why-fill { from { width: 0; } to { width: 100%; } }`}</style>
-            <div className="grid w-full max-w-lg mx-auto gap-0">
+            <div className="grid w-full max-w-3xl mx-auto gap-0">
               {reasons.map((reason, index) => {
                 const isActive = activeIndex === index;
                 return (
@@ -262,7 +267,7 @@ export default function InsideOutV3() {
                       className="w-full flex cursor-pointer items-center justify-between gap-4 py-3 text-left"
                     >
                       <span
-                        className={`flex-1 text-lg font-light leading-relaxed md:text-2xl tracking-tight transition-colors duration-300 ${isActive ? "text-red-500" : "text-foreground"}`}
+                        className={`flex-1 min-w-0 text-lg font-light leading-relaxed md:text-2xl tracking-tight transition-colors duration-300 xl:whitespace-nowrap ${isActive ? "text-red-500" : "text-foreground"}`}
                       >
                         {reason.title}
                       </span>
