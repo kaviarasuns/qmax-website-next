@@ -144,9 +144,7 @@ export default function InsideOutV3() {
   // fill animation finishes, advance to the next item.
   const handleFillEnd = () => {
     if (isManual) return;
-    setActiveIndex((prev) =>
-      prev === null ? 0 : (prev + 1) % reasons.length,
-    );
+    setActiveIndex((prev) => (prev === null ? 0 : (prev + 1) % reasons.length));
   };
 
   const handleReplay = () => {
@@ -214,15 +212,15 @@ export default function InsideOutV3() {
           Why Qmax <span className="text-red-500">Systems</span>
         </h2>
         {/*Main Section*/}
-        <div className="flex flex-col lg:flex-row lg:items-center items-stretch gap-0 z-[1]">
-          <div className="w-full lg:w-[52%] flex flex-col items-center justify-center px-6 lg:pl-12 lg:pr-2 py-8 lg:py-10">
+        <div className="isolate flex flex-col lg:flex-row lg:items-center items-stretch gap-0 z-[1]">
+          <div className="relative z-0 w-full lg:w-[52%] flex flex-col items-center justify-center px-6 lg:pl-12 lg:pr-2 py-8 lg:py-10">
             <div
-              className="relative w-full origin-center lg:-translate-x-12 lg:scale-[1.15] xl:-translate-x-20 xl:scale-[1.22]"
+              className="relative z-0 w-full origin-center lg:-translate-x-12 lg:scale-[1.15] xl:-translate-x-20 xl:scale-[1.22]"
               style={{ maxWidth: "100%" }}
             >
               <video
                 ref={videoRef}
-                className="block h-auto w-full"
+                className="pointer-events-none block h-auto w-full"
                 width={765}
                 height={876}
                 preload="auto"
@@ -248,7 +246,7 @@ export default function InsideOutV3() {
           </div>
           <div className="relative z-10 w-full lg:w-[48%] flex flex-col justify-center px-6 lg:pl-2 lg:pr-12 py-6 lg:py-8 lg:-ml-12 xl:-ml-16 bg-white lg:bg-transparent">
             <style>{`@keyframes why-fill { from { width: 0; } to { width: 100%; } }`}</style>
-            <div className="grid w-full max-w-3xl mx-auto gap-0">
+            <div className="relative z-10 grid w-full max-w-3xl mx-auto gap-0 bg-white">
               {reasons.map((reason, index) => {
                 const isActive = activeIndex === index;
                 return (
@@ -381,7 +379,6 @@ export default function InsideOutV3() {
             </a>
           </div>
         </div>
-
       </div>
     </div>
   );
