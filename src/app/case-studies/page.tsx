@@ -242,11 +242,7 @@ export default function CaseStudiesPage() {
         </aside>
 
         {/* Main Content */}
-        <main
-          data-budge-target
-          className="flex-1 w-full max-w-6xl px-8 lg:px-12 mx-auto"
-          style={{ paddingLeft: "32px", paddingRight: "32px" }}
-        >
+        <main className="flex-1 w-full max-w-6xl px-8 lg:px-12 mx-auto">
           {/* Embedded Section */}
           <div id="embedded" className="mb-24 scroll-mt-32">
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">

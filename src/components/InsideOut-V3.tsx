@@ -217,12 +217,12 @@ export default function InsideOutV3() {
         <div className="flex flex-col lg:flex-row lg:items-center items-stretch gap-0 z-[1]">
           <div className="w-full lg:w-[52%] flex flex-col items-center justify-center px-6 lg:pl-12 lg:pr-2 py-8 lg:py-10">
             <div
-              className="relative w-full lg:-translate-x-12 xl:-translate-x-20"
+              className="relative w-full origin-center lg:-translate-x-12 lg:scale-[1.15] xl:-translate-x-20 xl:scale-[1.22]"
               style={{ maxWidth: "100%" }}
             >
               <video
                 ref={videoRef}
-                className="block h-auto w-full lg:scale-110 xl:scale-[1.15] origin-center"
+                className="block h-auto w-full"
                 width={765}
                 height={876}
                 preload="auto"
@@ -264,7 +264,7 @@ export default function InsideOutV3() {
                   >
                     <button
                       onClick={() => handleItemClick(index)}
-                      className="w-full flex cursor-pointer items-center justify-between gap-4 py-3 text-left"
+                      className="w-full flex cursor-pointer items-center justify-between gap-4 py-2 text-left"
                     >
                       <span
                         className={`flex-1 min-w-0 text-lg font-light leading-relaxed md:text-2xl tracking-tight transition-colors duration-300 xl:whitespace-nowrap ${isActive ? "text-red-500" : "text-foreground"}`}
@@ -382,8 +382,6 @@ export default function InsideOutV3() {
           </div>
         </div>
 
-        {/* Spacer after animation */}
-        {/* <div data-budge-target style={{ height: "6vh" }} /> */}
       </div>
     </div>
   );

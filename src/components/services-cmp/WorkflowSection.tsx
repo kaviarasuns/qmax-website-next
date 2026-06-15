@@ -84,11 +84,7 @@ export function WorkflowSection({
                   </ul>
                 )}
               </div>
-              <div
-                data-budge-target
-                className="absolute left-0 z-[2] flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-500 text-white min-[900px]:relative min-[900px]:left-auto min-[900px]:-mx-6"
-                style={{ backgroundColor: "#ef4444" }}
-              >
+              <div className="absolute left-0 z-[2] flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-500 text-white min-[900px]:relative min-[900px]:left-auto min-[900px]:-mx-6">
                 {step.number}
               </div>
               <div className="hidden flex-1 min-[900px]:block" />

@@ -133,10 +133,7 @@ export function CoreCapabilitiesSection({
     >
       <div ref={stackWrapperRef} className="relative h-screen overflow-hidden">
         {/* Sticky title */}
-        <div
-          data-budge-target
-          className="pointer-events-none absolute inset-x-0 top-16 z-20 mx-auto max-w-6xl px-4 text-center sm:px-6 md:top-20 lg:px-8"
-        >
+        <div className="pointer-events-none absolute inset-x-0 top-16 z-20 mx-auto max-w-6xl px-4 text-center sm:px-6 md:top-20 lg:px-8">
           <h2 className="mx-auto max-w-[1200px] text-center text-4xl font-light tracking-wide md:text-5xl">
             {title}
             {titleHighlight ? (
