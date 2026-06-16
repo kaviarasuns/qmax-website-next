@@ -1,30 +1,34 @@
-import FinalCTA from "@/components/about/FinalCTA";
-import GlobalPresence from "@/components/about/GlobalPresence";
-import Hero from "@/components/about/Hero";
-import HowWeWorkInternational from "@/components/about/HowWeWorkInternational";
-import ImpactStats from "@/components/about/ImpactStats";
-import MeetTheTeam from "@/components/about/MeetTheTeam";
-import MissionVision from "@/components/about/MissionVision";
-import OurStory from "@/components/about/OurStory";
-import OurValues from "@/components/about/OurValues";
-import WhyQmax from "@/components/about/WhyQmax";
+import type { Metadata } from "next";
+import FinalCTAV2 from "@/components/about-v2/FinalCTAV2";
+import GlobalPresenceV2 from "@/components/about-v2/GlobalPresenceV2";
+import HeroV2 from "@/components/about-v2/HeroV2";
+import HowWeWorkInternationalV2 from "@/components/about-v2/HowWeWorkInternationalV2";
+import ImpactStatsV2 from "@/components/about-v2/ImpactStatsV2";
+import MeetTheTeamV2 from "@/components/about-v2/MeetTheTeamV2";
+import MissionVisionV2 from "@/components/about-v2/MissionVisionV2";
+import OurStoryV2 from "@/components/about-v2/OurStoryV2";
+import OurValuesV2 from "@/components/about-v2/OurValuesV2";
+import WhyQmaxV2 from "@/components/about-v2/WhyQmaxV2";
 
-
-
+export const metadata: Metadata = {
+  title: "About Us | Qmax Systems",
+  description:
+    "Learn about Qmax Systems — precision engineering services since 1997, from concept to manufacturing.",
+};
 
 export default function AboutUsPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <Hero/>
-      <OurStory/>
-      <ImpactStats />
-      <MissionVision />
-      <OurValues />
-      <MeetTheTeam/>
-      <WhyQmax />
-      <HowWeWorkInternational />
-      <GlobalPresence />
-      <FinalCTA />
+    <main className="min-h-screen bg-neutral-50">
+      <HeroV2 />
+      <ImpactStatsV2 />
+      <OurStoryV2 />
+      <MissionVisionV2 />
+      <OurValuesV2 />
+      <MeetTheTeamV2 />
+      <WhyQmaxV2 />
+      <HowWeWorkInternationalV2 />
+      <GlobalPresenceV2 />
+      <FinalCTAV2 />
     </main>
   );
 }
