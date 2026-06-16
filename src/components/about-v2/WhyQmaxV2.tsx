@@ -24,7 +24,7 @@ const REASONS = [
 export default function WhyQmaxV2() {
   return (
     <section className="bg-white py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto w-full max-w-[1200px] px-6">
         <div className="mx-auto mb-12 max-w-[720px] text-center md:mb-[52px]">
           <h2 className="text-4xl font-light leading-tight tracking-wide text-zinc-950 md:text-5xl">
             Why Choose <span className="text-red-500">Qmax</span>

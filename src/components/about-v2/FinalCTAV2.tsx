@@ -16,7 +16,7 @@ export default function FinalCTAV2() {
 
           <div className="flex flex-wrap justify-center gap-3.5">
             <Link
-              href="#offices"
+              href="/contact"
               className="rounded-md bg-red-500 px-[26px] py-[13px] text-[15px] font-semibold text-white transition-colors hover:bg-red-600"
             >
               Contact Us Today

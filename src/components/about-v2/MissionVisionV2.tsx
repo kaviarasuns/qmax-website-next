@@ -12,7 +12,7 @@ export default function MissionVisionV2() {
   return (
     <>
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-[1.1fr_0.9fr]">
             <div
               className="group relative min-h-[380px] w-full cursor-pointer"
@@ -35,6 +35,14 @@ export default function MissionVisionV2() {
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
+              </div>
+              <div className="pointer-events-none absolute bottom-6 left-6 z-10">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-red-500">
+                  Inside Qmax
+                </h3>
+                <h2 className="mt-1 text-xl font-medium text-white">
+                  A look at our engineering home
+                </h2>
               </div>
             </div>
 

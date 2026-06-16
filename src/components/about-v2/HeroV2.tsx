@@ -26,8 +26,8 @@ export default function HeroV2() {
         }}
       />
 
-      <div className="container relative z-10 mx-auto px-4 text-left">
-        <p className="mb-4 text-[26px] font-semibold leading-tight tracking-wide text-white">
+      <div className="container relative z-10 mx-auto pr-4 pl-6 text-left md:pr-6 md:pl-10">
+        <p className="mb-4 text-[26px] font-semibold leading-tight tracking-wide text-red-500">
           About Qmax Systems
         </p>
         <h1 className="text-4xl font-semibold leading-tight tracking-wide text-white sm:text-5xl md:text-[60px] md:leading-[75px] md:tracking-[1.5px]">

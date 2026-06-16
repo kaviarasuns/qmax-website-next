@@ -62,7 +62,7 @@ function LinkedInIcon() {
 export default function MeetTheTeamV2() {
   return (
     <section className="border-y border-slate-200 bg-neutral-50 py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto w-full max-w-[1200px] px-6">
         <div className="mx-auto mb-12 max-w-[680px] text-center md:mb-[52px]">
           <h2 className="text-4xl font-light leading-tight tracking-wide text-zinc-950 md:text-5xl">
             Our Leadership <span className="text-red-500">Team</span>
@@ -117,19 +117,27 @@ export default function MeetTheTeamV2() {
 
           <article className="relative flex min-h-[240px] flex-col justify-between overflow-hidden rounded-md p-8 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg">
             <Image
-              src="/about-us/engineering-team.jpg"
+              src="https://d1yetprhniwywz.cloudfront.net/v2/about-us/office.png"
               alt="Qmax Systems engineering team at work"
               fill
               className="object-cover"
               sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/82 via-zinc-950/50 to-zinc-950/85" />
-            <div className="relative z-10">
-              <h3 className="text-[22px] font-bold text-white">Join the team</h3>
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(160deg, rgba(9,9,11,0.45), rgba(9,9,11,0.72))",
+              }}
+            />
+            <div className="relative z-10 mt-6">
+              <h3 className="text-[22px] font-bold text-white">
+                Join the team
+              </h3>
               <p className="mt-2.5 text-[14.5px] leading-relaxed text-white">
-                We are always looking for exceptional engineers who want to build
-                products that matter. Explore open roles across our US and India
-                centers.
+                We are always looking for exceptional engineers who want to
+                build products that matter. Explore open roles across our US and
+                India centers.
               </p>
             </div>
             <div className="relative z-10">

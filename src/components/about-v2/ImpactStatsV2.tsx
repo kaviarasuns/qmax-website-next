@@ -26,7 +26,7 @@ export default function ImpactStatsV2() {
 
   return (
     <section className="relative z-[5]">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto w-full max-w-[1200px] px-6">
         <div className="-mt-[52px] grid grid-cols-1 gap-px overflow-hidden rounded-md border border-slate-200 bg-slate-200 shadow-lg sm:grid-cols-2 lg:grid-cols-4">
           {STATS.map((stat, idx) => (
             <div

@@ -34,10 +34,10 @@ export default function HowWeWorkInternationalV2() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="relative overflow-hidden bg-[#09090B] py-16 text-white md:py-24">
+    <section className="relative overflow-hidden bg-zinc-900 py-16 text-white md:py-24">
       <div className="pointer-events-none absolute -right-[120px] -top-[120px] h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(239,68,68,0.26),transparent_70%)]" />
 
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6">
         <div className="mx-auto mb-12 max-w-[760px] text-center">
           <h2 className="text-4xl font-light leading-tight tracking-wide text-white md:text-5xl">
             How We Work With{" "}
