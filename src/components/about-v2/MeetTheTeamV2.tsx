@@ -64,10 +64,10 @@ export default function MeetTheTeamV2() {
     <section className="border-y border-slate-200 bg-neutral-50 py-16 md:py-24">
       <div className="mx-auto w-full max-w-[1200px] px-6">
         <div className="mx-auto mb-12 max-w-[680px] text-center md:mb-[52px]">
-          <h2 className="text-4xl font-light leading-tight tracking-wide text-zinc-950 md:text-5xl">
+          <h2 className="text-4xl font-light leading-tight tracking-wide text-foreground md:text-5xl">
             Our Leadership <span className="text-red-500">Team</span>
           </h2>
-          <p className="mt-4 text-base text-slate-600">
+          <p className="mt-4 text-base leading-relaxed text-foreground">
             A multi-disciplinary leadership team with a combined 130+ years in
             electronics, software, and program delivery.
           </p>
@@ -77,7 +77,7 @@ export default function MeetTheTeamV2() {
           {TEAM_MEMBERS.map((member) => (
             <article
               key={member.name}
-              className="flex flex-col rounded-md border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              className="flex flex-col rounded-md border border-slate-200 bg-white p-8 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
             >
               <div className="mb-[18px] flex items-center gap-4">
                 <div className="relative h-[76px] w-[76px] shrink-0 overflow-hidden rounded-full bg-slate-100">
@@ -90,16 +90,16 @@ export default function MeetTheTeamV2() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold leading-tight tracking-wide text-zinc-950">
+                  <h3 className="text-xl font-semibold leading-tight tracking-wide text-foreground md:text-2xl">
                     {member.name}
                   </h3>
-                  <p className="mt-0.5 text-[13.5px] font-bold text-red-500">
+                  <p className="mt-0.5 text-sm font-bold text-red-500">
                     {member.role}
                   </p>
                 </div>
               </div>
 
-              <p className="flex-1 text-[14.5px] leading-relaxed text-slate-600">
+              <p className="flex-1 text-base leading-relaxed text-foreground">
                 {member.bio}
               </p>
 
@@ -107,7 +107,7 @@ export default function MeetTheTeamV2() {
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-[18px] inline-flex items-center gap-2 text-sm font-semibold text-[#0A66C2] transition-colors hover:text-[#084d92]"
+                className="mt-[18px] inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-opacity hover:opacity-70"
               >
                 <LinkedInIcon />
                 LinkedIn
@@ -115,7 +115,7 @@ export default function MeetTheTeamV2() {
             </article>
           ))}
 
-          <article className="relative flex min-h-[240px] flex-col justify-between overflow-hidden rounded-md p-8 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg">
+          <article className="relative flex min-h-[240px] flex-col justify-between overflow-hidden rounded-md p-8 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]">
             <Image
               src="https://d1yetprhniwywz.cloudfront.net/v2/about-us/office.png"
               alt="Qmax Systems engineering team at work"
@@ -131,10 +131,10 @@ export default function MeetTheTeamV2() {
               }}
             />
             <div className="relative z-10 mt-6">
-              <h3 className="text-[22px] font-bold text-white">
+              <h3 className="text-xl font-medium tracking-wide text-white md:text-2xl">
                 Join the team
               </h3>
-              <p className="mt-2.5 text-[14.5px] leading-relaxed text-white">
+              <p className="mt-2.5 text-base leading-relaxed text-white">
                 We are always looking for exceptional engineers who want to
                 build products that matter. Explore open roles across our US and
                 India centers.

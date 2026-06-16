@@ -47,32 +47,32 @@ export default function MissionVisionV2() {
             </div>
 
             <div className="flex flex-col gap-6">
-              <div className="flex-1 rounded-md border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg">
+              <div className="flex-1 rounded-md border border-slate-200 bg-white p-8 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]">
                 <div className="mb-2.5 flex items-center gap-3">
                   <div className="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-lg bg-red-50 text-red-500">
                     <Target size={20} />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#1C2A3A]">
+                  <h3 className="text-xl font-medium tracking-wide text-foreground md:text-2xl">
                     Our Mission
                   </h3>
                 </div>
-                <p className="text-base leading-relaxed text-slate-600">
+                <p className="text-base leading-relaxed text-foreground">
                   To empower innovators with reliable, high-performance
                   electronic engineering services that turn bold ideas into
                   market-ready products.
                 </p>
               </div>
 
-              <div className="flex-1 rounded-md border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg">
+              <div className="flex-1 rounded-md border border-slate-200 bg-white p-8 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]">
                 <div className="mb-2.5 flex items-center gap-3">
                   <div className="grid h-[42px] w-[42px] shrink-0 place-items-center rounded-lg bg-red-50 text-red-500">
                     <Lightbulb size={20} />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#1C2A3A]">
+                  <h3 className="text-xl font-medium tracking-wide text-foreground md:text-2xl">
                     Our Vision
                   </h3>
                 </div>
-                <p className="text-base leading-relaxed text-slate-600">
+                <p className="text-base leading-relaxed text-foreground">
                   To be the most trusted global engineering partner for
                   next-generation embedded and hardware product development.
                 </p>

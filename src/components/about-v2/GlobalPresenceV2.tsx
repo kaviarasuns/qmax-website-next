@@ -28,10 +28,10 @@ export default function GlobalPresenceV2() {
     <section id="offices" className="bg-white py-16 md:py-24">
       <div className="mx-auto w-full max-w-[1200px] px-6">
         <div className="mx-auto mb-12 max-w-[680px] text-center md:mb-[52px]">
-          <h2 className="text-4xl font-light leading-tight tracking-wide text-zinc-950 md:text-5xl">
+          <h2 className="text-4xl font-light leading-tight tracking-wide text-foreground md:text-5xl">
             Global <span className="text-red-500">Presence</span>
           </h2>
-          <p className="mt-4 text-base text-slate-600">
+          <p className="mt-4 text-base leading-relaxed text-foreground">
             With offices in Dallas, Texas and Chennai, India, we provide
             around-the-clock engineering support and rapid prototyping
             capabilities to clients worldwide.
@@ -42,7 +42,7 @@ export default function GlobalPresenceV2() {
           {OFFICES.map((office) => (
             <article
               key={office.country}
-              className="group relative min-h-[240px] overflow-hidden rounded-md border border-slate-200 shadow-[0_4px_8px_rgba(16,24,40,0.05)] transition-all hover:-translate-y-0.5 hover:border-red-500 hover:shadow-[0_8px_32px_rgba(16,24,40,0.10)]"
+              className="group relative min-h-[240px] overflow-hidden rounded-md border border-slate-200 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform,border-color] duration-200 ease-in-out hover:-translate-y-0.5 hover:border-red-500 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
             >
               <Image
                 src={office.image}
@@ -63,11 +63,11 @@ export default function GlobalPresenceV2() {
                 <div className="text-xs font-bold uppercase tracking-[0.08em] text-red-500">
                   {office.country}
                 </div>
-                <h3 className="mt-3 text-2xl text-white">{office.name}</h3>
-                <address className="mt-3 whitespace-pre-line text-[15px] not-italic leading-[1.8] text-white/[0.92]">
+                <h3 className="mt-3 text-xl font-medium tracking-wide text-white md:text-2xl">{office.name}</h3>
+                <address className="mt-3 whitespace-pre-line text-base not-italic leading-[1.8] text-white/[0.92]">
                   {office.address}
                 </address>
-                <div className="mt-[18px] flex flex-col gap-1.5 border-t border-white/[0.28] pt-[18px] text-[15px]">
+                <div className="mt-[18px] flex flex-col gap-1.5 border-t border-white/[0.28] pt-[18px] text-base">
                   <a
                     href={office.phoneHref}
                     className="font-semibold text-white/[0.92] transition-colors hover:text-red-500"

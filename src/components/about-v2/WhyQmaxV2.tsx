@@ -1,23 +1,39 @@
-const REASONS = [
+import {
+  Rocket,
+  ShieldCheck,
+  Users,
+  Workflow,
+  type LucideIcon,
+} from "lucide-react";
+
+const REASONS: {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}[] = [
   {
     title: "Multi-disciplinary Team",
     description:
       "Embedded systems experts, PCB designers, firmware engineers, and manufacturing specialists working in perfect harmony.",
+    icon: Users,
   },
   {
     title: "Stringent Process",
     description:
       "ISO-certified processes, rigorous quality checks, and industry best practices ensure reliability and compliance.",
+    icon: ShieldCheck,
   },
   {
     title: "Faster Time-to-Market",
     description:
       "Agile methodology and parallel workflows compress development cycles without compromising on quality.",
+    icon: Rocket,
   },
   {
     title: "End-to-End Engineering",
     description:
       "From concept and design through manufacturing support and field support — we handle the entire lifecycle.",
+    icon: Workflow,
   },
 ];
 
@@ -25,33 +41,36 @@ export default function WhyQmaxV2() {
   return (
     <section className="bg-white py-16 md:py-24">
       <div className="mx-auto w-full max-w-[1200px] px-6">
-        <div className="mx-auto mb-12 max-w-[720px] text-center md:mb-[52px]">
-          <h2 className="text-4xl font-light leading-tight tracking-wide text-zinc-950 md:text-5xl">
+        <div className="mx-auto mb-14 max-w-[720px] text-center">
+          <h2 className="text-4xl font-light leading-tight tracking-wide text-foreground md:text-5xl">
             Why Choose <span className="text-red-500">Qmax</span>
           </h2>
-          <p className="mt-4 text-base text-slate-600">
+          <p className="mt-4 text-base leading-relaxed text-foreground">
             The reasons enterprises and startups trust us with their most complex
             electronics development.
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-md border border-slate-200 bg-slate-200">
-          <div className="grid grid-cols-1 gap-px md:grid-cols-2">
-            {REASONS.map((reason) => (
-              <div
+        <div className="grid grid-cols-2 items-stretch gap-8 max-[900px]:grid-cols-1 max-[900px]:gap-5">
+          {REASONS.map((reason) => {
+            const Icon = reason.icon;
+            return (
+              <article
                 key={reason.title}
-                className="bg-white px-8 py-10 transition-colors hover:bg-slate-50 md:px-[34px] md:py-[38px]"
+                className="flex flex-col gap-5 rounded-2xl bg-white px-10 pb-9 pt-6 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
               >
-                <h3 className="mb-2.5 flex items-center gap-2.5 text-[21px] font-semibold text-[#1C2A3A]">
-                  <span className="h-2 w-2 shrink-0 rounded-full bg-red-500" />
-                  {reason.title}
-                </h3>
-                <p className="text-[15.5px] leading-relaxed text-slate-600">
-                  {reason.description}
-                </p>
-              </div>
-            ))}
-          </div>
+                <div className="flex items-start gap-5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center text-red-500">
+                    <Icon className="h-full w-full" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="mt-2 text-xl font-medium tracking-wide text-foreground md:text-2xl">
+                    {reason.title}
+                  </h3>
+                </div>
+                <p className="text-base text-foreground">{reason.description}</p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

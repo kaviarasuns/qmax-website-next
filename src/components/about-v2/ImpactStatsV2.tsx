@@ -33,13 +33,13 @@ export default function ImpactStatsV2() {
               key={stat.label}
               className="bg-white px-6 py-[34px] text-center"
             >
-              <div className="text-[clamp(30px,4vw,42px)] font-bold leading-none text-[#1C2A3A]">
+              <div className="text-[clamp(30px,4vw,42px)] font-bold leading-none text-foreground">
                 {counts[idx]}
                 {stat.suffix ? (
                   <span className="text-red-500">{stat.suffix}</span>
                 ) : null}
               </div>
-              <div className="mt-2 text-sm font-semibold text-slate-500">
+              <div className="mt-2 text-sm font-semibold text-foreground">
                 {stat.label}
               </div>
             </div>

@@ -27,17 +27,17 @@ export default function HeroV2() {
       />
 
       <div className="container relative z-10 mx-auto pr-4 pl-6 text-left md:pr-6 md:pl-10">
-        <p className="mb-4 text-[26px] font-semibold leading-tight tracking-wide text-red-500">
+        <p className="mb-4 font-semibold leading-tight tracking-wide text-red-500 [font-size:clamp(18px,2vw,26px)]">
           About Qmax Systems
         </p>
-        <h1 className="text-4xl font-semibold leading-tight tracking-wide text-white sm:text-5xl md:text-[60px] md:leading-[75px] md:tracking-[1.5px]">
+        <h1 className="text-balance font-bold leading-[1.1] tracking-[-0.01em] text-white [font-size:clamp(32px,4.4vw,56px)]">
           Precision Engineering Services
           <br />
           <span className="text-red-500">Since 1997</span> — From Concept To
           <br />
           Manufacturing.
         </h1>
-        <p className="mt-6 max-w-[660px] text-base leading-relaxed text-white md:text-lg">
+        <p className="mt-6 max-w-[660px] font-normal leading-[1.55] text-white [font-size:clamp(15px,1.6vw,19px)]">
           Qmax Systems is a trusted partner for electronics engineering and
           R&amp;D, specializing in embedded systems and PCB design. For 25+
           years we have helped innovators and enterprises turn bold ideas into

@@ -64,7 +64,7 @@ export default function HowWeWorkInternationalV2() {
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
                   className="flex w-full items-center justify-between gap-5 py-6 text-left"
                 >
-                  <span className="text-lg font-bold text-white md:text-[22px]">
+                  <span className="text-lg font-light leading-relaxed text-white md:text-2xl">
                     {item.title}
                   </span>
                   <span

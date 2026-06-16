@@ -31,21 +31,20 @@ export default function OurStoryV2() {
       <div className="mx-auto w-full max-w-[1200px] px-6">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-14">
           <div>
-            <h2 className="text-4xl font-light leading-tight tracking-wide text-zinc-950 md:text-5xl">
+            <h2 className="text-4xl font-light leading-tight tracking-wide text-foreground md:text-5xl">
               Our <span className="text-red-500">Story</span>
             </h2>
-            <p className="mt-3.5 text-xl leading-snug tracking-wide text-[#1C2A3A] md:text-[22px]">
-              A Quarter-Century Of Turning Ideas Into{" "}
-              <span className="text-zinc-950">Hardware</span>.
+            <p className="mt-3.5 text-lg font-medium leading-snug tracking-wide text-foreground md:text-xl">
+              A Quarter-Century Of Turning Ideas Into Hardware.
             </p>
-            <p className="mt-5 text-base leading-relaxed text-slate-600">
+            <p className="mt-5 text-base leading-relaxed text-foreground">
               Founded in 1997, Qmax Systems began with a simple mission: to
               deliver exceptional electronics engineering and R&amp;D services to
               innovators and enterprises worldwide. What started as a small team
               of passionate engineers has grown into a global partner in embedded
               systems and PCB design.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-slate-600">
+            <p className="mt-4 text-base leading-relaxed text-foreground">
               Over 25+ years we have built expertise across diverse industries —
               from consumer electronics and IoT devices to industrial automation,
               aerospace, and medical devices. Our commitment to quality,
@@ -62,10 +61,10 @@ export default function OurStoryV2() {
                 <div className="text-[15px] font-bold tracking-wide text-red-500">
                   {item.year}
                 </div>
-                <h3 className="mt-1 text-lg font-semibold text-[#1C2A3A]">
+                <h3 className="mt-1 text-xl font-medium tracking-wide text-foreground">
                   {item.title}
                 </h3>
-                <p className="mt-1.5 text-[15px] leading-relaxed text-slate-500">
+                <p className="mt-1.5 text-base leading-relaxed text-foreground">
                   {item.description}
                 </p>
               </div>
