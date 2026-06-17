@@ -17,7 +17,7 @@ import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 export const metadata = buildMetadata({
   title: "High-Speed PCB Design | DDR4/5, PCIe Gen 5 & SerDes | Qmax",
   description:
-    "High-speed PCB layout — DDR4/5 trace routing, PCIe Gen 5, USB 3.x, SerDes to 32 Gbps. Impedance-controlled stack-ups and SI simulation. Altium & Cadence.",
+    "High-speed PCB layout - DDR4/5 trace routing, PCIe Gen 5, USB 3.x, SerDes to 32 Gbps. Impedance-controlled stack-ups and SI simulation. Altium & Cadence.",
   path: "/pcb-design-services/high-speed-digital-pcb-design",
 });
 
@@ -113,19 +113,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "High-speed memory and serial interfaces, routed at the edge of physics.",
     intro:
-      "Qmax Systems designs PCB layouts for the leading edge of digital signaling — DDR5/LPDDR5, PCIe Gen5/Gen6, and 112G SerDes — validated against the tightest timing and loss budgets in the industry. Qmax's engineers route every interface against simulation-derived constraints in Cadence Sigrity and Ansys SIwave before the first net is placed. These boards ship into AI GPU chassis, O-RAN distributed units, server motherboards, and 100G network interface cards.",
+      "Qmax Systems designs PCB layouts for the leading edge of digital signaling - DDR5/LPDDR5, PCIe Gen5/Gen6, and 112G SerDes - validated against the tightest timing and loss budgets in the industry. Qmax's engineers route every interface against simulation-derived constraints in Cadence Sigrity and Ansys SIwave before the first net is placed. These boards ship into AI GPU chassis, O-RAN distributed units, server motherboards, and 100G network interface cards.",
     points: [
       {
         boldLead: "DDR5 & LPDDR5",
-        rest: " — The DDR5/LPDDR5 interface runs DFE, CA parity, and CRC, while Qmax manages ultra-tight timing margins and on-DIMM PMIC complexity.",
+        rest: " - The DDR5/LPDDR5 interface runs DFE, CA parity, and CRC, while Qmax manages ultra-tight timing margins and on-DIMM PMIC complexity.",
       },
       {
         boldLead: "PCIe Gen5 & Gen6",
-        rest: " — Qmax's engineers route PAM4 signaling to strict jitter and noise-floor compliance.",
+        rest: " - Qmax's engineers route PAM4 signaling to strict jitter and noise-floor compliance.",
       },
       {
         boldLead: "112G SerDes",
-        rest: " — Each lane carries 112 Gbps, and full-wave simulation drives the routing to minimize reflections and crosstalk.",
+        rest: " - Each lane carries 112 Gbps, and full-wave simulation drives the routing to minimize reflections and crosstalk.",
       },
     ],
     applications:
@@ -152,15 +152,15 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Complex interconnect structures for the densest digital designs.",
     intro:
-      "Qmax Systems masters advanced HDI fabrication — Type I, II, and III structures with stacked and staggered microvias, via-in-pad, and ELIC — to maximize routing density while preserving signal integrity and manufacturability. The team regularly delivers 30+ layer HDI boards. These designs go into high-density server boards, multi-chip module substrates, and advanced networking equipment.",
+      "Qmax Systems masters advanced HDI fabrication - Type I, II, and III structures with stacked and staggered microvias, via-in-pad, and ELIC - to maximize routing density while preserving signal integrity and manufacturability. The team regularly delivers 30+ layer HDI boards. These designs go into high-density server boards, multi-chip module substrates, and advanced networking equipment.",
     points: [
       {
         boldLead: "30-Layer HDI PCB Design",
-        rest: " — Qmax builds Type I, II, and III HDI structures, including stacked and staggered microvias, via-in-pad, and ELIC (Every Layer Interconnect).",
+        rest: " - Qmax builds Type I, II, and III HDI structures, including stacked and staggered microvias, via-in-pad, and ELIC (Every Layer Interconnect).",
       },
       {
         boldLead: "USB4 & Thunderbolt 4",
-        rest: " — These links use matched differential-pair routing with integrated ESD protection and EMI containment.",
+        rest: " - These links use matched differential-pair routing with integrated ESD protection and EMI containment.",
       },
     ],
     applications:
@@ -190,15 +190,15 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     points: [
       {
         boldLead: "Material Expertise",
-        rest: " — Qmax selects ultra-low-loss laminates such as Megtron 6/7/8, Tachyon 100G, and Rogers hybrids.",
+        rest: " - Qmax selects ultra-low-loss laminates such as Megtron 6/7/8, Tachyon 100G, and Rogers hybrids.",
       },
       {
         boldLead: "Impedance Control",
-        rest: " — Controlled-impedance routing holds single-ended (50 Ω) and differential (85/90/100 Ω) traces to target.",
+        rest: " - Controlled-impedance routing holds single-ended (50 Ω) and differential (85/90/100 Ω) traces to target.",
       },
       {
         boldLead: "Glass Weave Mitigation",
-        rest: " — Spread-glass fabrics and zig-zag routing eliminate fiber-weave skew.",
+        rest: " - Spread-glass fabrics and zig-zag routing eliminate fiber-weave skew.",
       },
     ],
     applications:
@@ -220,25 +220,25 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
       </svg>
     ),
     headline:
-      'Simulation-driven workflow — Qmax Systems does not "guess and check."',
+      'Simulation-driven workflow - Qmax Systems does not "guess and check."',
     intro:
       "Qmax Systems runs a simulation-driven workflow, never guess-and-check. Pre- and post-layout simulation in Cadence Sigrity and Ansys SIwave backs every high-speed design, covering signal integrity, power delivery, and electromagnetic compliance. Qmax's engineers verify eye diagrams, BER, and TDR through full-wave extraction before the prototype stage. These methods validate PCIe Gen6, DDR5, and 112G SerDes platforms against compliance margin.",
     points: [
       {
         boldLead: "Pre-Layout Analysis",
-        rest: " — Qmax determines stackup, material, and topology constraints up front.",
+        rest: " - Qmax determines stackup, material, and topology constraints up front.",
       },
       {
         boldLead: "Post-Layout Verification",
-        rest: " — Full-wave extraction verifies eye diagrams, BER (Bit Error Rate), and TDR (Time Domain Reflectometry).",
+        rest: " - Full-wave extraction verifies eye diagrams, BER (Bit Error Rate), and TDR (Time Domain Reflectometry).",
       },
       {
         boldLead: "Power Integrity (PI)",
-        rest: " — Qmax's engineers analyze DC IR drop and AC impedance profiles, and optimize decoupling capacitors for high-transient current demands.",
+        rest: " - Qmax's engineers analyze DC IR drop and AC impedance profiles, and optimize decoupling capacitors for high-transient current demands.",
       },
       {
         boldLead: "EMI/EMC",
-        rest: " — Pre-prototype analysis flags radiation hotspots and resonance issues before the prototype stage.",
+        rest: " - Pre-prototype analysis flags radiation hotspots and resonance issues before the prototype stage.",
       },
     ],
     applications: "Cadence Sigrity · Ansys SIwave · Full-wave EM extraction",
@@ -309,7 +309,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 //     id: "compliance",
 //     title: "Compliance Readiness",
 //     description:
-//       "Compliance readiness for CE, FCC, UL 62368-1, and CISPR 32 — eliminating late-stage certification surprises.",
+//       "Compliance readiness for CE, FCC, UL 62368-1, and CISPR 32 - eliminating late-stage certification surprises.",
 //     icon: (
 //       <svg
 //         viewBox="0 0 24 24"
@@ -329,7 +329,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 const WHY_CARDS = [
   {
     title: "First-Time-Right Philosophy",
-    desc: "Qmax Systems applies architecture-first engineering with simulation-driven constraints defined before layout begins — over 95% of designs reach production without a second spin.",
+    desc: "Qmax Systems applies architecture-first engineering with simulation-driven constraints defined before layout begins - over 95% of designs reach production without a second spin.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -384,7 +384,7 @@ const WHY_CARDS = [
   },
   {
     title: "IP Ownership",
-    desc: "100% customer ownership — all schematics, layout files, and simulation data remain the sole property of the customer; we retain no rights.",
+    desc: "100% customer ownership - all schematics, layout files, and simulation data remain the sole property of the customer; we retain no rights.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -461,7 +461,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What is a "simulation-driven" constraint?',
-    a: "A simulation-driven constraint means we run SI simulations to determine the exact routing rules — trace width, gap, and length — before layout begins, rather than guessing and checking.",
+    a: "A simulation-driven constraint means we run SI simulations to determine the exact routing rules - trace width, gap, and length - before layout begins, rather than guessing and checking.",
   },
   {
     q: "Do you provide DFM reports?",
@@ -525,7 +525,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Does Qmax Systems provide the source files?",
-    a: "Yes. All design IP — source schematics, layout files, and simulation models — belongs to the customer; Qmax Systems retains no ownership.",
+    a: "Yes. All design IP - source schematics, layout files, and simulation models - belongs to the customer; Qmax Systems retains no ownership.",
   },
   {
     q: "How do you handle differential pair skew?",
@@ -562,8 +562,8 @@ export default function HighSpeedDigitalPCBDesignPage() {
     <>
       <HardwareServiceHeroSection
         imageSrc="/pcb-design/images/image1.jpg"
-        imageAlt="High-Performance Digital Systems — Qmax Systems"
-        title="High-Speed PCB Design — DDR5, PCIe Gen6, and 112G SerDes Routing"
+        imageAlt="High-Performance Digital Systems - Qmax Systems"
+        title="High-Speed PCB Design - DDR5, PCIe Gen6, and 112G SerDes Routing"
         description={
           <>
             <p>
@@ -590,12 +590,12 @@ export default function HighSpeedDigitalPCBDesignPage() {
         whyCards={WHY_CARDS}
         title="Why Choose Qmax"
         titleHighlight="Systems?"
-        description="Architecture-first engineering with simulation-driven constraints — delivering high-speed digital PCBs that work on the first build."
+        description="Architecture-first engineering with simulation-driven constraints - delivering high-speed digital PCBs that work on the first build."
         consultationCta={{
           heading:
             "Get A Complimentary Consultation With Our High-Speed Digital PCB Experts.",
           subtitle:
-            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/pcb-design-services/contact",
         }}
       />

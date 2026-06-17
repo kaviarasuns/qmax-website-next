@@ -14,7 +14,7 @@ import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 export const metadata = buildMetadata({
   title: "PCB Design Services | High-Speed, RF & SI/PI | Qmax Systems",
   description:
-    "First-time-right PCB design and layout — high-speed digital, RF/microwave, power electronics, HDI, and SI/PI analysis. Altium & Cadence. Dallas TX & India.",
+    "First-time-right PCB design and layout - high-speed digital, RF/microwave, power electronics, HDI, and SI/PI analysis. Altium & Cadence. Dallas TX & India.",
   path: "/pcb-design-services",
 });
 /* ============================================================
@@ -22,11 +22,11 @@ export const metadata = buildMetadata({
    ============================================================ */
 
 const HERO = {
-  title: "PCB Design Services — Engineering for First-Time-Right Hardware",
+  title: "PCB Design Services - Engineering for First-Time-Right Hardware",
   description: (
     <>
       Qmax Systems provides PCB design services that treat the board as a
-      critical engineering discipline, not just interconnection. Qmax Systems
+      critical engineering discipline, not mere interconnection. Qmax Systems
       delivers reliable, first-time-right PCB layouts, validated by SI/PI and
       thermal simulation for performance, compliance, and manufacturability.
     </>
@@ -273,7 +273,7 @@ const CAPABILITIES = [
       </svg>
     ),
     headline:
-      "An independent PCB design review — identifying risks before you release to fabrication.",
+      "An independent PCB design review - identifying risks before you release to fabrication.",
     intro:
       "Qmax Systems delivers an independent PCB design review that identifies risks before release to fabrication. The review audits your existing layout against a structured checklist covering layer stack-up, placement, routing, silkscreen, drill notes, and documentation, then delivers a formal technical report with prioritized SI, DFM, thermal, and compliance findings. Typical applications: pre-fab sign-off, second-opinion reviews, and inherited-design risk assessment.",
     bullets: [
@@ -329,7 +329,7 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* Bullseye / target — "right the first time" */}
+        {/* Bullseye / target - "right the first time" */}
         <circle cx="24" cy="24" r="18" />
         <circle cx="24" cy="24" r="11" />
         <circle cx="24" cy="24" r="4" />
@@ -350,7 +350,7 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* IC chip with pin legs — component libraries */}
+        {/* IC chip with pin legs - component libraries */}
         <rect x="13" y="13" width="22" height="22" rx="2" />
         <path d="M13 19 H7 M13 24 H7 M13 29 H7" />
         <path d="M35 19 H41 M35 24 H41 M35 29 H41" />
@@ -371,7 +371,7 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* Shield with globe meridians — global compliance / certification */}
+        {/* Shield with globe meridians - global compliance / certification */}
         <path d="M24 6 L40 12 V24 C40 34 32 40 24 42 C16 40 8 34 8 24 V12 Z" />
         <path d="M8 24 H40" />
         <path d="M24 6 C28 14 28 34 24 42 C20 34 20 14 24 6 Z" />
@@ -391,7 +391,7 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* Stacked documents with text lines — production & documentation */}
+        {/* Stacked documents with text lines - production & documentation */}
         <rect x="14" y="8" width="22" height="28" rx="2" />
         <rect x="10" y="12" width="22" height="28" rx="2" />
         <path d="M16 20 H26 M16 25 H26 M16 30 H22" />
@@ -411,7 +411,7 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* Network topology — partner / supply chain network */}
+        {/* Network topology - partner / supply chain network */}
         <circle cx="24" cy="24" r="4" />
         <circle cx="8" cy="12" r="3.5" />
         <circle cx="40" cy="12" r="3.5" />
@@ -434,7 +434,7 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* Shield with padlock inside — IP security */}
+        {/* Shield with padlock inside - IP security */}
         <path d="M24 6 L40 12 V24 C40 34 32 40 24 42 C16 40 8 34 8 24 V12 Z" />
         <rect x="17" y="21" width="14" height="11" rx="1.5" />
         <path d="M20 21 V17 a4 4 0 0 1 8 0 V21" />
@@ -483,11 +483,11 @@ const WHY_CARDS = [
 const FAQ_ITEMS = [
   {
     q: "Does Qmax Systems provide end-to-end PCB design services?",
-    a: "Yes. Qmax Systems handles the full PCB design cycle — from schematic capture and stack-up planning to detailed layout, signal integrity analysis, and Gerber generation. IPC-trained designers manage every step from initial netlist to fabrication-ready output, giving you one accountable team for every PCB your product depends on.",
+    a: "Yes. Qmax Systems handles the full PCB design cycle - from schematic capture and stack-up planning to detailed layout, signal integrity analysis, and Gerber generation. IPC-trained designers manage every step from initial netlist to fabrication-ready output, giving you one accountable team for every PCB your product depends on.",
   },
   {
     q: "What PCB technologies and complexities does Qmax Systems handle?",
-    a: "We design everything from 2-layer boards to 32+ layer HDI, rigid-flex, and mixed-signal PCBs. Qmax Systems routinely delivers high-density BGA fanouts, controlled-impedance routing, blind and buried vias, and length-tuned high-speed channels — every layout engineered for performance, manufacturability, and reliable operation across demanding environments.",
+    a: "We design everything from 2-layer boards to 32+ layer HDI, rigid-flex, and mixed-signal PCBs. Qmax Systems routinely delivers high-density BGA fanouts, controlled-impedance routing, blind and buried vias, and length-tuned high-speed channels - every layout engineered for performance, manufacturability, and reliable operation across demanding environments.",
   },
   {
     q: "Which PCB design CAD tools does Qmax Systems support?",
@@ -548,7 +548,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
         titleHighlight="Capabilities"
       />
 
-      {/* PCB CAPABILITIES STRIP — Design Tools, Stack-Up, Materials, Fab Partners */}
+      {/* PCB CAPABILITIES STRIP - Design Tools, Stack-Up, Materials, Fab Partners */}
       {/* <CapabilitiesStripSection items={PCB_CAPABILITIES_STRIP} /> */}
 
       {/* PCB DESIGN ACROSS INDUSTRIES (tabbed) */}
@@ -573,7 +573,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
           <a
             className="relative block aspect-[2396/520] w-full cursor-pointer overflow-hidden rounded-xl bg-black no-underline shadow-[0_1px_2px_rgba(16,24,40,0.06)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_6px_16px_rgba(16,24,40,0.10)]"
             href="/pcb-design-services/contact"
-            aria-label="Have your questions answered — contact Saravanaperumal Annamalai, VP - SWE Engineering"
+            aria-label="Have your questions answered - contact Saravanaperumal Annamalai, VP - SWE Engineering"
           >
             <Image
               src="https://d1yetprhniwywz.cloudfront.net/v2/csb_cta_v2.png"
@@ -609,7 +609,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
       {/* PARTNERSHIPS */}
       {/* <PartnershipsSection /> */}
 
-      {/* WORKFLOW TIMELINE — re-add WorkflowSection + steps data when enabled */}
+      {/* WORKFLOW TIMELINE - re-add WorkflowSection + steps data when enabled */}
 
       {/* CUSTOMER SUCCESS STORIES */}
       {/* <TestimonialsSection testimonials={TESTIMONIALS} /> */}

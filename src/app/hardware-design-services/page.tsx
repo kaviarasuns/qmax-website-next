@@ -21,7 +21,7 @@ import {
 export const metadata = buildMetadata({
   title: "Hardware Design Services | High-Speed, RF & Analog | Qmax",
   description:
-    "Schematic-level hardware design services — high-speed digital, RF/microwave, analog, and power electronics. From system architecture to board bring-up.",
+    "Schematic-level hardware design services - high-speed digital, RF/microwave, analog, and power electronics. From system architecture to board bring-up.",
   path: "/hardware-design-services",
 });
 
@@ -40,7 +40,7 @@ export const metadata = buildMetadata({
 //     number: 2,
 //     title: "PoC & Feasibility (EVT0)",
 //     description:
-//       "For high-risk sub-systems — novel power topologies, untested RF links, new sensors — we build a minimal proof-of-concept to validate the architecture and de-risk the main program.",
+//       "For high-risk sub-systems - novel power topologies, untested RF links, new sensors - we build a minimal proof-of-concept to validate the architecture and de-risk the main program.",
 //   },
 //   {
 //     number: 3,
@@ -311,7 +311,7 @@ const CAPABILITIES = [
 //     },
 //     {
 //       title: "Industrial Automation",
-//       desc: "PLC interface boards, motor drives, and IIoT edge nodes engineered for 24/7 operation in harsh factory environments — extended temperature, surge, and EMC hardened.",
+//       desc: "PLC interface boards, motor drives, and IIoT edge nodes engineered for 24/7 operation in harsh factory environments - extended temperature, surge, and EMC hardened.",
 //       badge: "IEC 61131 · IEC 61000",
 //       icon: (
 //         <svg
@@ -345,7 +345,7 @@ const CAPABILITIES = [
 const WHY_CARDS = [
   {
     title: "Transparent & Supervised Process",
-    desc: "Every milestone, design review, and risk register is visible as it happens, because Qmax Systems program managers run a weekly cadence with traceable deliverables and on-time builds — no hidden surprises at handover.",
+    desc: "Every milestone, design review, and risk register is visible as it happens, because Qmax Systems program managers run a weekly cadence with traceable deliverables and on-time builds - no hidden surprises at handover.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -366,7 +366,7 @@ const WHY_CARDS = [
   },
   {
     title: "Hardware Development from Scratch",
-    desc: "Qmax Systems starts every program with R&D and a proof-of-concept build to retire architectural risk early — confirming feasibility, locking the BoM, and validating critical assumptions before committing a single production layer.",
+    desc: "Qmax Systems starts every program with R&D and a proof-of-concept build to retire architectural risk early - confirming feasibility, locking the BoM, and validating critical assumptions before committing a single production layer.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -385,7 +385,7 @@ const WHY_CARDS = [
   },
   {
     title: "Smooth Hardware-Software Integration",
-    desc: "Rather than forcing a re-platform, Qmax Systems selects components, interfaces, and toolchains that fit your existing stack — the result is firmware that brings up cleanly, drivers that drop into your OS, and lower long-term maintenance cost.",
+    desc: "Rather than forcing a re-platform, Qmax Systems selects components, interfaces, and toolchains that fit your existing stack - the result is firmware that brings up cleanly, drivers that drop into your OS, and lower long-term maintenance cost.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -405,7 +405,7 @@ const WHY_CARDS = [
   },
   {
     title: "Expert Engineers",
-    desc: "Qmax Systems engineers average 12+ years in hardware development across automotive, medical, aerospace, and industrial domains, and only senior engineers are assigned to your design — no junior hand-offs, no learning on your timeline.",
+    desc: "Qmax Systems engineers average 12+ years in hardware development across automotive, medical, aerospace, and industrial domains, and only senior engineers are assigned to your design - no junior hand-offs, no learning on your timeline.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -442,7 +442,7 @@ const WHY_CARDS = [
   },
   {
     title: "Design for Manufacturing & Scale",
-    desc: "Qmax Systems designs for manufacturability from the first schematic, not as a late retrofit — choosing footprints, sourcing, and test points for volume production so boards move to the line without costly redesign spins.",
+    desc: "Qmax Systems designs for manufacturability from the first schematic, not as a late retrofit - choosing footprints, sourcing, and test points for volume production so boards move to the line without costly redesign spins.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -466,11 +466,11 @@ const WHY_CARDS = [
 const FAQ_ITEMS = [
   {
     q: "Does Qmax Systems provide end-to-end hardware development?",
-    a: "Yes. Qmax Systems manages the complete hardware lifecycle — concept, architecture, schematic design, and PCB layout through prototyping, compliance testing, and production handover. Our architecture-first approach minimizes risk and shortens development cycles, giving you a single accountable partner from idea to certified, market-ready product.",
+    a: "Yes. Qmax Systems manages the complete hardware lifecycle - concept, architecture, schematic design, and PCB layout through prototyping, compliance testing, and production handover. Our architecture-first approach minimizes risk and shortens development cycles, giving you a single accountable partner from idea to certified, market-ready product.",
   },
   {
     q: "Who owns the Intellectual Property (IP) on a Qmax Systems project?",
-    a: "You do — 100%. Unless otherwise agreed in writing, all IP generated on your project belongs exclusively to you, including schematics, PCB designs, firmware, and documentation. Qmax Systems operates under strict NDAs with customers, employees, and third-party vendors to fully safeguard your innovations throughout the engagement.",
+    a: "You do - 100%. Unless otherwise agreed in writing, all IP generated on your project belongs exclusively to you, including schematics, PCB designs, firmware, and documentation. Qmax Systems operates under strict NDAs with customers, employees, and third-party vendors to fully safeguard your innovations throughout the engagement.",
   },
   {
     q: "What compliance standards can Qmax Systems help with?",
@@ -482,7 +482,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Does Qmax Systems perform testing in-house?",
-    a: "Yes. Our in-house labs include high-bandwidth oscilloscopes, spectrum analyzers, thermal cameras, temperature cycling chambers, and Hi-Pot testers. Qmax Systems engineers perform functional validation, thermal stress, and environmental reliability testing on-site, resolving design weaknesses early — before coordinating final certification with NABL-accredited external laboratories.",
+    a: "Yes. Our in-house labs include high-bandwidth oscilloscopes, spectrum analyzers, thermal cameras, temperature cycling chambers, and Hi-Pot testers. Qmax Systems engineers perform functional validation, thermal stress, and environmental reliability testing on-site, resolving design weaknesses early - before coordinating final certification with NABL-accredited external laboratories.",
   },
   {
     q: "Does Qmax Systems support product maintenance after design?",
@@ -492,9 +492,9 @@ const FAQ_ITEMS = [
 
 const HERO = {
   title:
-    "Hardware Design Services — Full Product Lifecycle, Architecture to Production",
+    "Hardware Design Services - Full Product Lifecycle, Architecture to Production",
   description:
-    "Qmax Systems provides hardware design services across the full lifecycle — from requirement analysis and architecture through schematic design, PCB layout, EVT/DVT/PVT validation, and production handover. This architecture-first process spans automotive, medical, aerospace, and industrial domains, cutting risk and shortening cycles with day-one compliance readiness.",
+    "Qmax Systems provides hardware design services across the full lifecycle - from requirements analysis and architecture through schematic design, PCB layout, EVT/DVT/PVT validation, and production handover. This architecture-first process spans automotive, medical, aerospace, and industrial domains, cutting risk and shortening cycles with day-one compliance readiness.",
   ctaLabel: "Talk to our engineers",
   ctaHref: "/hardware-design-services/contact",
   videoSrc:
@@ -566,7 +566,7 @@ export default function HardwareDevelopmentServicesPage() {
           <a
             className="relative block aspect-[2396/520] w-full cursor-pointer overflow-hidden rounded-xl bg-black no-underline shadow-[0_1px_2px_rgba(16,24,40,0.06)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_6px_16px_rgba(16,24,40,0.10)]"
             href="/hardware-design-services/contact"
-            aria-label="Have your questions answered — contact Saravanaperumal Annamalai, VP - SWE Engineering"
+            aria-label="Have your questions answered - contact Saravanaperumal Annamalai, VP - SWE Engineering"
           >
             <Image
               src="https://d1yetprhniwywz.cloudfront.net/v2/csb_cta_v2.png"
@@ -602,7 +602,7 @@ export default function HardwareDevelopmentServicesPage() {
       {/* PARTNERSHIPS */}
       <PartnershipsSection
         heading="Partnerships"
-        paragraph="With a strong focus on new product development, Qmax Systems maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. These partnerships bring early access to upcoming silicon, roadmap visibility, and training on the latest technologies — with reference modules and evaluation kits ready to kick-start your product development."
+        paragraph="With a strong focus on new product development, Qmax Systems maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. These partnerships bring early access to upcoming silicon, roadmap visibility, and training on the latest technologies - with reference modules and evaluation kits ready to kick-start your product development."
         logos={HARDWARE_PARTNER_LOGOS}
       />
 

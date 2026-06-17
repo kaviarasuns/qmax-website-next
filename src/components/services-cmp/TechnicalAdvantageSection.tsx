@@ -10,7 +10,7 @@ export type TechnicalAdvantageCard = {
 const DIGITAL_HARDWARE_DEFAULT_CARDS: TechnicalAdvantageCard[] = [
   {
     title: "High-Speed Standards",
-    body: "Expert handling of DDR5, PCIe Gen5/Gen6, and 112G SerDes — including channel modeling, equalization tuning, and compliance to JEDEC and PCI-SIG specifications.",
+    body: "Expert handling of DDR5, PCIe Gen5/Gen6, and 112G SerDes - including channel modeling, equalization tuning, and compliance to JEDEC and PCI-SIG specifications.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -52,7 +52,7 @@ const DIGITAL_HARDWARE_DEFAULT_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Manufacturing Readiness",
-    body: "Complete DFM (Design for Manufacturing), DFA (Design for Assembly), and DFT (Design for Test) implementation — engineered for first-pass yield, not just first-pass prototype success.",
+    body: "Complete DFM (Design for Manufacturing), DFA (Design for Assembly), and DFT (Design for Test) implementation - engineered for first-pass yield, not just first-pass prototype success.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -73,7 +73,7 @@ const DIGITAL_HARDWARE_DEFAULT_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Signal & Power Integrity",
-    body: "Advanced SI/PI simulation and validation across DDR, SerDes, and power delivery rails — using full-wave EM, IBIS-AMI, and target-impedance methodologies.",
+    body: "Advanced SI/PI simulation and validation across DDR, SerDes, and power delivery rails - using full-wave EM, IBIS-AMI, and target-impedance methodologies.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ const DIGITAL_HARDWARE_DEFAULT_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Global Compliance",
-    body: "Pre-designed for EMI/EMC, CE, FCC, and UL — reducing certification rework and accelerating time to global market.",
+    body: "Pre-designed for EMI/EMC, CE, FCC, and UL - reducing certification rework and accelerating time to global market.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -205,7 +205,7 @@ export function DigitalHardwareTechnicalAdvantageSection() {
   return (
     <TechnicalAdvantageSection
       headingHighlight="Digital Hardware"
-      lede="Qmax Systems designs digital platforms for performance, reliability, and manufacturability — not just for prototypes."
+      lede="Qmax Systems designs digital platforms for performance, reliability, and manufacturability - not just for prototypes."
       cards={DIGITAL_HARDWARE_DEFAULT_CARDS}
       columns="three"
       sectionHeadingId="technical-advantage-heading"

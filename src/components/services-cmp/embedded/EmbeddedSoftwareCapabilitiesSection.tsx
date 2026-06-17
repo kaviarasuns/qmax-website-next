@@ -24,9 +24,9 @@ export type EmbeddedSoftwareCapabilitiesSectionProps = {
 };
 
 export function EmbeddedSoftwareCapabilitiesSection({
-  title = "Embedded Software Across The Full Stack —",
+  title = "Embedded Software Across The Full Stack -",
   titleHighlight = "Bare‑Metal To Server‑Grade",
-  description = "Whether you need a single firmware engineer to bring up a sensor node, or a team to deliver OpenBMC, Linux BSP, and a connectivity stack in parallel, we cover the full range — built to strict coding standards and proven on real silicon.",
+  description = "Whether you need a single firmware engineer to bring up a sensor node, or a team to deliver OpenBMC, Linux BSP, and a connectivity stack in parallel, we cover the full range - built to strict coding standards and proven on real silicon.",
   capabilities,
   getInTouchHref = "/embedded-design-services/contact",
 }: EmbeddedSoftwareCapabilitiesSectionProps) {

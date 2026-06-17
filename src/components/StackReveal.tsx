@@ -55,7 +55,7 @@ const DEFAULT_ITEMS: StackRevealItem[] = [
     step: "05",
     title: "Industrial Design",
     description:
-      "Enclosure design, UI/UX and CMF — the experience the user actually holds.",
+      "Enclosure design, UI/UX and CMF - the experience the user actually holds.",
     imageSrc:
       "https://framerusercontent.com/images/gjX9fLR2YB6WU8zbYrGpSymdoms.png?scale-down-to=1024",
     fallbackClassName: "bg-[#a8a29e]",
@@ -73,7 +73,7 @@ const DEFAULT_ITEMS: StackRevealItem[] = [
     step: "07",
     title: "Manufacturing",
     description:
-      "Manufacturing coordination and production testing — built at scale, shipped with confidence.",
+      "Manufacturing coordination and production testing - built at scale, shipped with confidence.",
     imageSrc:
       "https://framerusercontent.com/images/MaeJlgZA61FfRa4b8IcNa2EEpg.png?scale-down-to=1024",
     fallbackClassName: "bg-[#475569]",
@@ -86,7 +86,7 @@ type StackRevealConcept06Props = {
 };
 
 /**
- * Concept 06 · Stack Reveal — horizontal panels that expand on hover to show copy.
+ * Concept 06 · Stack Reveal - horizontal panels that expand on hover to show copy.
  * When idle, stacks auto-expand in sequence (4s each) starting from the first.
  */
 export default function StackReveal({

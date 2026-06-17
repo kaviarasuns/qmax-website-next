@@ -23,7 +23,7 @@ const VALUES: { icon: LucideIcon; title: string; description: string }[] = [
     icon: Heart,
     title: "Integrity",
     description:
-      "Operating with transparency and trust — protecting client IP and honoring every commitment.",
+      "Operating with transparency and trust - protecting client IP and honoring every commitment.",
   },
   {
     icon: Star,
@@ -32,6 +32,9 @@ const VALUES: { icon: LucideIcon; title: string; description: string }[] = [
       "Striving for perfection in every project, process, and interaction with our clients.",
   },
 ];
+
+const CARD_CLASS =
+  "flex flex-col gap-5 rounded-2xl bg-white px-10 pb-9 pt-6 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]";
 
 export default function OurValuesV2() {
   return (
@@ -49,19 +52,17 @@ export default function OurValuesV2() {
             return (
               <div
                 key={value.title}
-                className="rounded-md border border-slate-200 bg-white p-7 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
+                className={CARD_CLASS}
               >
-                <div className="mb-2 flex items-center gap-3">
-                  <div className="grid h-[46px] w-[46px] shrink-0 place-items-center rounded-lg bg-red-50 text-red-500">
-                    <Icon size={22} />
+                <div className="flex items-start gap-5">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center text-red-500">
+                    <Icon className="h-full w-full" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-lg font-medium tracking-wide text-foreground md:text-xl">
+                  <h3 className="mt-2 text-xl font-medium tracking-wide text-foreground md:text-2xl">
                     {value.title}
                   </h3>
                 </div>
-                <p className="text-base leading-relaxed text-foreground">
-                  {value.description}
-                </p>
+                <p className="text-base text-foreground">{value.description}</p>
               </div>
             );
           })}

@@ -95,7 +95,7 @@ export default function PCBDesignReviewServicesPage() {
                 <p className="text-lg font-light leading-relaxed text-muted-foreground">
                   We apply IPC standards, IEC requirements, and OEM-specific
                   design rules to every engagement, delivering actionable
-                  findings — not just observations.
+                  findings - not just observations.
                 </p>
                 <p className="text-lg font-light leading-relaxed text-muted-foreground">
                   Whether you are launching a first IoT product, revising a
@@ -281,23 +281,23 @@ export default function PCBDesignReviewServicesPage() {
                     d: "SI/PI checks, return path continuity, controlled-impedance stack-up, and high-speed net length matching.",
                   },
                   {
-                    s: "DFM — Manufacturing",
+                    s: "DFM - Manufacturing",
                     d: "Trace width/spacing vs. fab minimums, via annular rings, copper pour relief, and panel utilization.",
                   },
                   {
-                    s: "DFA — Assembly",
+                    s: "DFA - Assembly",
                     d: "Component courtyard clearance, SMD/THT mix strategy, IPC-7711 rework access, and fiducial placement.",
                   },
                   {
-                    s: "DFT — Testing",
+                    s: "DFT - Testing",
                     d: "Bed-of-nails test-point coverage, JTAG/SWD boundary-scan accessibility, and functional test placement.",
                   },
                   {
-                    s: "DFR — Reliability",
+                    s: "DFR - Reliability",
                     d: "Via-in-pad treatment, copper-to-edge clearance, and BGA ball pitch vs. stack-up compatibility.",
                   },
                   {
-                    s: "DFS — Service",
+                    s: "DFS - Service",
                     d: "Field-replaceable unit identification, connector labeling, and firmware update interface availability.",
                   },
                 ].map((item, idx) => (
@@ -355,8 +355,8 @@ export default function PCBDesignReviewServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-32 items-start">
             <div className="space-y-12">
               <p className="text-xl leading-relaxed text-zinc-300 font-light max-w-2xl">
-                When original design data is unavailable — due to supplier
-                closure, legacy asset acquisition, or disaster recovery — Qmax
+                When original design data is unavailable - due to supplier
+                closure, legacy asset acquisition, or disaster recovery - Qmax
                 Systems reconstructs complete, accurate engineering
                 documentation from physical hardware.
               </p>
@@ -1181,7 +1181,7 @@ export default function PCBDesignReviewServicesPage() {
               </h3>
               <p className="font-light leading-relaxed text-muted-foreground">
                 We assemble multi-discipline review teams matched to the
-                specific complexity profile of each engagement—covering
+                specific complexity profile of each engagement-covering
                 mechanical, power, digital, RF, and firmware.
               </p>
             </div>
@@ -1544,7 +1544,7 @@ export default function PCBDesignReviewServicesPage() {
           },
           {
             q: "Can Qmax identify the root cause of a radiated emissions failure?",
-            a: "Yes. We identify exceedance sources—often inadequate filtering, common-mode issues, or switching harmonics—correlate them with the design, and define targeted modifications for re-test.",
+            a: "Yes. We identify exceedance sources-often inadequate filtering, common-mode issues, or switching harmonics-correlate them with the design, and define targeted modifications for re-test.",
           },
           {
             q: "What is DVT and how is it different from design verification?",
@@ -1576,7 +1576,7 @@ export default function PCBDesignReviewServicesPage() {
           },
           {
             q: "Can Qmax work with designs that have partial or incomplete documentation?",
-            a: "Yes. We can initiate reviews from whatever exists—PDFs, fabricated boards, or Gerbers. We document gaps, prioritize high-risk functions, and can extend to include documentation reconstruction.",
+            a: "Yes. We can initiate reviews from whatever exists-PDFs, fabricated boards, or Gerbers. We document gaps, prioritize high-risk functions, and can extend to include documentation reconstruction.",
           },
           {
             q: "How does Qmax ensure confidentiality of design data?",

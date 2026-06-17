@@ -67,7 +67,7 @@ const SERVICES: MechanicalService[] = [
     titleAccent: "Design",
     subtitle: "Plastic Enclosure Design for Electronics",
     description:
-      "Plastic enclosures represent the most common housing choice for consumer electronics, industrial handheld devices, and cost-sensitive IoT products. Qmax Systems designs injection-moulded plastic enclosures that balance structural integrity, thermal performance, EMI management, and tooling cost — with a clear path from concept to mass production.",
+      "Plastic enclosures represent the most common housing choice for consumer electronics, industrial handheld devices, and cost-sensitive IoT products. Qmax Systems designs injection-moulded plastic enclosures that balance structural integrity, thermal performance, EMI management, and tooling cost - with a clear path from concept to mass production.",
     chips: ["PC / ABS", "UL94-V0", "Nylon PA66", "EMI Gasket", "RF Design"],
     sections: [
       {
@@ -211,7 +211,7 @@ const SERVICES: MechanicalService[] = [
     titleBefore: "Military Rugged",
     titleAccent: "Enclosures",
     subtitle:
-      "Rugged Metal Enclosures for Military Applications — MIL-STD-810 / JSS 55555",
+      "Rugged Metal Enclosures for Military Applications - MIL-STD-810 / JSS 55555",
     description:
       "Military and defence electronics operate in environments placing extreme demands on mechanical structures: wide temperature cycling, humidity, fungus exposure, sand and dust ingress, shock from weapons fire, vibration from vehicles and helicopters, and altitude. Qmax Systems designs rugged enclosures to MIL-STD-810H (US military environmental engineering standard) and JSS 55555 (Indian DRDO/DGQA equivalent), with full documentation supporting test qualification. Structural analysis is performed before hardware is built, reducing prototype-test cycles.",
     chips: ["MIL-STD-810H", "JSS 55555", "DRDO/DGQA", "FEA Pre-qual"],
@@ -257,7 +257,7 @@ const SERVICES: MechanicalService[] = [
     id: "ip-rated",
     titleBefore: "IP-Rated",
     titleAccent: "Enclosures",
-    subtitle: "IP-Rated Enclosures — IP65 / IP67 / IP68",
+    subtitle: "IP-Rated Enclosures - IP65 / IP67 / IP68",
     description:
       "Ingress protection ratings under IEC 60529 govern resistance to solid particulates (first digit) and liquid ingress (second digit). Achieving a given IP rating is a mechanical engineering problem. It requires correct selection and compression of sealing elements, proper surface flatness and roughness at sealing interfaces, appropriate fastener torque specifications, cable entry gland selection, and connector IP rating matching.",
     chips: ["IP65", "IP67", "IP68", "IEC 60529", "Viton / EPDM"],
@@ -401,7 +401,7 @@ const SERVICES: MechanicalService[] = [
     titleAccent: "Compliance",
     subtitle: "MT, Cost, Assembly & Compliance",
     description:
-      "A mechanical design that cannot be manufactured repeatably and economically is not a finished design. Qmax applies DFx disciplines throughout the design process — as concurrent engineering that shapes every design decision from the earliest concept phase.",
+      "A mechanical design that cannot be manufactured repeatably and economically is not a finished design. Qmax applies DFx disciplines throughout the design process - as concurrent engineering that shapes every design decision from the earliest concept phase.",
     chips: ["ISO 286", "ASME Y14.5", "GD&T", "RoHS / REACH"],
     sections: [
       {
@@ -410,19 +410,19 @@ const SERVICES: MechanicalService[] = [
         headers: ["DFx Discipline", "What We Address"],
         rows: [
           [
-            "DFM — Manufacturability",
+            "DFM - Manufacturability",
             "Tolerances set to process capability. Features designed to the manufacturing method. Tooling complexity minimised.",
           ],
           [
-            "DFC — Cost",
+            "DFC - Cost",
             "Material selection, process route, finish specification, and fastener standardisation evaluated for BOM cost.",
           ],
           [
-            "DFA — Assembly",
+            "DFA - Assembly",
             "Part count minimisation, self-locating features, fastener access, tooling access, and assembly sequence reviewed.",
           ],
           [
-            "DFC — Compliance",
+            "DFC - Compliance",
             "RoHS, REACH, CE marking, MIL, JSS, IEC, ISO addressed at design stage, not at submission.",
           ],
         ],
@@ -484,7 +484,7 @@ const SERVICES: MechanicalService[] = [
     titleAccent: "Analysis",
     subtitle: "Vibration / Impact / Drop / Thermal CFD",
     description:
-      "Structural and thermal failures in electronics products are almost always predictable — if the analysis is done. Qmax performs FEA-based structural analysis and CFD-informed thermal analysis to identify and eliminate failure modes before hardware is fabricated.",
+      "Structural and thermal failures in electronics products are almost always predictable - if the analysis is done. Qmax performs FEA-based structural analysis and CFD-informed thermal analysis to identify and eliminate failure modes before hardware is fabricated.",
     chips: ["FEA", "CFD", "MIL-STD-810", "DO-160", "IEC 60068"],
     sections: [
       {
@@ -1152,7 +1152,7 @@ export function CoreEngineeringMechanical() {
           </h2>
           <p className="mx-auto max-w-[820px] text-[15px] leading-[22.5px] text-foreground">
             Qmax Systems delivers precision mechanical engineering across seven
-            specialist disciplines — from injection-moulded plastic enclosures
+            specialist disciplines - from injection-moulded plastic enclosures
             for consumer IoT products to MIL-STD-810H-qualified rugged systems
             for defence electronics. Each service is backed by structural FEA
             analysis, full GD&T drawing sets, and a direct path from concept to

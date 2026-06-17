@@ -6,19 +6,19 @@ import { Check } from "lucide-react";
 const ITEMS = [
   {
     title: "Time Zone Coverage & Overlap",
-    body: "Our Dallas, TX office gives US clients full same-day overlap, EU/UK clients 6–9 hours of live overlap, and full business-day handoff to APAC. With teams in both the US and India, we run a follow-the-sun model — engineering progress continues 20+ hours a day. Your US-based project lead handles all client-facing communication during your local business hours, so you never wait overnight for an answer.",
+    body: "Our Dallas, TX office gives US clients full same-day overlap, EU/UK clients 6–9 hours of live overlap, and full business-day handoff to APAC. With teams in both the US and India, we run a follow-the-sun model - engineering progress continues 20+ hours a day. Your US-based project lead handles all client-facing communication during your local business hours, so you never wait overnight for an answer.",
   },
   {
     title: "Project Management & Transparency",
-    body: "We run every engagement on Jira and Confluence with client access to live dashboards, KPIs, and budget tracking. Tool-agnostic — we work in your stack: Slack, Teams, Zoom, Google Meet, Jira, Confluence, Asana, Trello, GitHub, GitLab, and Bitbucket.",
+    body: "We run every engagement on Jira and Confluence with client access to live dashboards, KPIs, and budget tracking. Tool-agnostic - we work in your stack: Slack, Teams, Zoom, Google Meet, Jira, Confluence, Asana, Trello, GitHub, GitLab, and Bitbucket.",
   },
   {
     title: "IP Protection & Confidentiality",
-    body: "Mutual NDAs are signed before any technical discussion begins. All source code, schematics, firmware, and design files remain the client's exclusive IP — assigned in writing in every SOW. Secure development environments with role-based access, encrypted private repositories on GitHub, GitLab, or Bitbucket, and VPN-only access to client networks. Processes aligned with ISO 9001 and ISO 27001, background-verified engineers, and physical access controls at our development centers.",
+    body: "Mutual NDAs are signed before any technical discussion begins. All source code, schematics, firmware, and design files remain the client's exclusive IP - assigned in writing in every SOW. Secure development environments with role-based access, encrypted private repositories on GitHub, GitLab, or Bitbucket, and VPN-only access to client networks. Processes aligned with ISO 9001 and ISO 27001, background-verified engineers, and physical access controls at our development centers.",
   },
   {
     title: "Communication & Reporting Cadence",
-    body: "A dedicated Slack or Microsoft Teams channel per client for real-time conversation. Weekly written status reports covering progress, risks, blockers, and next steps. Bi-weekly working demos of hardware and firmware, and monthly executive steering-committee reviews. Every client gets a dedicated Program Manager as a single point of contact — no ticket queues, no chasing.",
+    body: "A dedicated Slack or Microsoft Teams channel per client for real-time conversation. Weekly written status reports covering progress, risks, blockers, and next steps. Bi-weekly working demos of hardware and firmware, and monthly executive steering-committee reviews. Every client gets a dedicated Program Manager as a single point of contact - no ticket queues, no chasing.",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function HowWeWorkInternationalV2() {
           <p className="mt-4 text-base leading-relaxed text-white/70">
             Qmax is built for global collaboration. From our US office in Dallas
             to our engineering center in Chennai, we operate as a single team
-            across time zones — combining American client-side responsiveness
+            across time zones - combining American client-side responsiveness
             with deep Indian engineering bench strength.
           </p>
         </div>

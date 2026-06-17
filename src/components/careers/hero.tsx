@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -30,15 +30,15 @@ export function Hero() {
         {/* Description */}
         <div className="max-w-3xl">
           <p className="text-sm sm:text-base md:text-lg leading-relaxed text-justify text-foreground">
-            We are looking for engineering enthusiasts ready to dive into
+            We are looking for passionate engineers ready to dive into
             cutting-edge technology. From Hardware and AI to Industrial Design,
             you will gain hands-on experience in full-cycle product development.
-            Enjoy a friendly culture that prioritizes your career growth, giving
-            you the opportunity to work with experienced engineers and solve
-            complex challenges every day.
+            Enjoy a friendly culture that prioritizes your career growth and
+            gives you the opportunity to work with experienced engineers and
+            solve complex challenges every day.
           </p>
         </div>
       </div>
     </section>
-  )
+  );
 }

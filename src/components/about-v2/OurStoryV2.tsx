@@ -45,7 +45,7 @@ export default function OurStoryV2() {
               systems and PCB design.
             </p>
             <p className="mt-4 text-base leading-relaxed text-foreground">
-              Over 25+ years we have built expertise across diverse industries —
+              Over 25+ years we have built expertise across diverse industries -
               from consumer electronics and IoT devices to industrial automation,
               aerospace, and medical devices. Our commitment to quality,
               innovation, and customer success has made us a trusted partner for

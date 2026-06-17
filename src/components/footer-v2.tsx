@@ -49,7 +49,7 @@ export default function FooterV2() {
                 <div className="text-xl font-semibold mb-4">ABOUT US</div>
                 <p className="text-white text-sm leading-relaxed">
                   Qmax Systems is an Electronics Engineering and R&D Services
-                  company based in San Jose, California and having development
+                  company based in San Jose, California and having a development
                   center in India. Established in 1997, Qmax provides Embedded
                   Systems Design and PCB Design Services.
                 </p>
@@ -57,8 +57,8 @@ export default function FooterV2() {
                   Qmax Systems brings a highly experienced, multi-disciplinary
                   team that delivers the best solution for your requirement in
                   the shortest time. A stringent process and hands-on experience
-                  help avoid errors, reduce design costs, and ensure faster
-                  time to market.
+                  help avoid errors, reduce design costs, and ensure faster time
+                  to market.
                 </p>
               </div>
 

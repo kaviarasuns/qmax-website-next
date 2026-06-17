@@ -194,7 +194,7 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
     description:
       "Qmax Systems delivers firmware for wireless base stations, access points, gateways, and edge networking devices. From OpenWrt-based router platforms to custom LPWAN firmware, this firmware delivers the full connectivity stack.",
     subDescription:
-      "Wi-Fi 6/6E, BLE, LTE-M, NB-IoT, LoRa — Qmax Systems covers the protocol stack end to end with carrier-grade reliability requirements across all deployment environments.",
+      "Wi-Fi 6/6E, BLE, LTE-M, NB-IoT, LoRa - Qmax Systems covers the protocol stack end to end with carrier-grade reliability requirements across all deployment environments.",
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/communication.png",
     relatedCaseStudies: [

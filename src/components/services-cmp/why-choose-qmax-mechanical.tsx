@@ -18,7 +18,7 @@ export function WhyChooseQmaxMechanical() {
           We maintain active working relationships with sheet metal fabricators,
           CNC machining houses, and plastic injection moulding companies across
           India, Europe, and Southeast Asia. Whether you require prototype or
-          volume production — we select the right manufacturing partner based on
+          volume production - we select the right manufacturing partner based on
           material, tolerance, finish, lead time, and cost, drawing on over three
           decades of vendor qualification experience. All mechanical design work is
           fully documented with clear, unambiguous GD&T (Geometric Dimensioning

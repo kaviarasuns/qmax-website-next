@@ -187,7 +187,7 @@ const ContactHero = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Honeypot: real users never see/fill this field — silently drop bots.
+    // Honeypot: real users never see/fill this field - silently drop bots.
     if (honeypotRef.current?.value) {
       resetForm();
       setShowThankYou(true);
@@ -307,7 +307,7 @@ const ContactHero = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-2">
-                  {/* Honeypot — hidden from real users, bots tend to fill it */}
+                  {/* Honeypot - hidden from real users, bots tend to fill it */}
                   <input
                     ref={honeypotRef}
                     type="text"
@@ -426,7 +426,7 @@ const ContactHero = () => {
               CONTACT US
             </h2>
 
-            {/* Contact Cards Grid — flex-1 + auto-rows-fr stretches the
+            {/* Contact Cards Grid - flex-1 + auto-rows-fr stretches the
                 cards vertically on lg+ so the bottom of the bottom row
                 ("Careers" / "Suppliers") aligns with the form card bottom. */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:flex-1 lg:auto-rows-fr">

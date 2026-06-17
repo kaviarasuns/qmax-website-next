@@ -42,7 +42,7 @@ export default function MechanicalDesignServicesPageV2() {
                         <div className="font-mono text-[10px] text-emerald-500 tracking-[0.4em] uppercase">Mechanical Engineering / Primary Node</div>
                     </div>
                     <div className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest bg-black/60 px-4 py-2 backdrop-blur-md border border-zinc-800">
-                        FIG. 01 — Structural Analysis Perspective
+                        FIG. 01 - Structural Analysis Perspective
                     </div>
                 </div>
             </div>
@@ -85,15 +85,15 @@ export default function MechanicalDesignServicesPageV2() {
 
                             <div className="pl-6 border-l-2 border-emerald-900/50 space-y-8 py-2">
                                 <p>
-                                    Every enclosure, structural assembly, and mechanical sub-system we design is conceived with <span className="text-white">full awareness of the electronics inside it</span> — thermal loads, EMI shielding requirements, PCB mounting constraints, connector accessibility, and compliance obligations.
+                                    Every enclosure, structural assembly, and mechanical sub-system we design is conceived with <span className="text-white">full awareness of the electronics inside it</span> - thermal loads, EMI shielding requirements, PCB mounting constraints, connector accessibility, and compliance obligations.
                                 </p>
                                 <p>
-                                    We maintain active working relationships with sheet metal fabricators, CNC machining houses, and plastic injection moulding companies globally. Prototype or volume production — we select the right manufacturing partner based on material, tolerance, finish, and cost.
+                                    We maintain active working relationships with sheet metal fabricators, CNC machining houses, and plastic injection moulding companies globally. Prototype or volume production - we select the right manufacturing partner based on material, tolerance, finish, and cost.
                                 </p>
                             </div>
 
                             <p className="text-lg text-muted-foreground">
-                                All test facilities required — IP ingress testing, vibration and shock testing to MIL-STD-810, and radiated emission testing — are available within a <span className="text-emerald-400 font-medium">30 km radius</span> of our facility.
+                                All test facilities required - IP ingress testing, vibration and shock testing to MIL-STD-810, and radiated emission testing - are available within a <span className="text-emerald-400 font-medium">30 km radius</span> of our facility.
                             </p>
                         </div>
 
@@ -165,7 +165,7 @@ export default function MechanicalDesignServicesPageV2() {
                         {/* Left Column - Core Text & Considerations */}
                         <div className="lg:col-span-7 space-y-10">
                             <p className="text-xl text-zinc-300 font-light leading-relaxed">
-                                Plastic enclosures represent the most common housing choice for <span className="text-white font-medium">consumer electronics</span>, industrial handheld devices, and cost-sensitive IoT products. Qmax Systems designs injection-moulded plastic enclosures that balance structural integrity, thermal performance, EMI management, and tooling cost — with a clear path from concept to mass production.
+                                Plastic enclosures represent the most common housing choice for <span className="text-white font-medium">consumer electronics</span>, industrial handheld devices, and cost-sensitive IoT products. Qmax Systems designs injection-moulded plastic enclosures that balance structural integrity, thermal performance, EMI management, and tooling cost - with a clear path from concept to mass production.
                             </p>
 
                             <div>
@@ -174,7 +174,7 @@ export default function MechanicalDesignServicesPageV2() {
                                     Design Considerations Addressed
                                 </h3>
                                 <p className="leading-relaxed font-light text-muted-foreground">
-                                    Our enclosure design process covers draft angles, parting line placement, wall thickness uniformity, rib and boss geometry, snap-fit and living hinge design, insert moulding for threaded interfaces, and EMI gasket seating. For RF-transparent products (Wi-Fi, 4G, GPS), we analyse dielectric properties and wall thickness effects on signal attenuation. Surface finish options — texture, gloss, painting, soft-touch coating, pad printing, in-mould labelling — are specified during the design phase.
+                                    Our enclosure design process covers draft angles, parting line placement, wall thickness uniformity, rib and boss geometry, snap-fit and living hinge design, insert moulding for threaded interfaces, and EMI gasket seating. For RF-transparent products (Wi-Fi, 4G, GPS), we analyse dielectric properties and wall thickness effects on signal attenuation. Surface finish options - texture, gloss, painting, soft-touch coating, pad printing, in-mould labelling - are specified during the design phase.
                                 </p>
                             </div>
                         </div>
@@ -395,7 +395,7 @@ export default function MechanicalDesignServicesPageV2() {
                     <div className="space-y-12">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
                             <div className="lg:col-span-12 space-y-8">
-                                <h3 className="text-2xl text-white font-medium">Rugged Metal Enclosures for Military Applications — MIL-STD-810 / JSS 55555</h3>
+                                <h3 className="text-2xl text-white font-medium">Rugged Metal Enclosures for Military Applications - MIL-STD-810 / JSS 55555</h3>
                                 <p className="max-w-5xl text-xl text-zinc-300 font-light leading-relaxed">
                                     Military and defence electronics operate in environments placing extreme demands on mechanical structures: wide temperature cycling, humidity, fungus exposure, sand and dust ingress, shock from weapons fire, vibration from vehicles and helicopters, and altitude. Mechanical designs for these environments must be validated against formal test standards before fielding.
                                 </p>
@@ -476,7 +476,7 @@ export default function MechanicalDesignServicesPageV2() {
                     <div className="space-y-12">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
                             <div className="lg:col-span-8 space-y-8">
-                                <h3 className="text-2xl text-white font-medium">IP-Rated Enclosures — IP65 / IP67 / IP68</h3>
+                                <h3 className="text-2xl text-white font-medium">IP-Rated Enclosures - IP65 / IP67 / IP68</h3>
                                 <p className="text-xl text-zinc-300 font-light leading-relaxed">
                                     Ingress protection ratings under <span className="text-white font-medium">IEC 60529</span> govern resistance to solid particulates (first digit) and liquid ingress (second digit). IP65 provides dust-tight protection with resistance to water jets. IP67 permits temporary immersion to 1 metre for 30 minutes. IP68 is specified for continuous immersion, with exact conditions agreed between manufacturer and customer.
                                 </p>
@@ -530,7 +530,7 @@ export default function MechanicalDesignServicesPageV2() {
                             </div>
                             <div className="md:col-span-8 space-y-6 text-zinc-300 font-light leading-relaxed">
                                 <p>
-                                    We specify O-ring cross-section, durometer, and groove geometry per standard engineering practice. Gasket materials — <span className="text-white">silicone, EPDM, Viton</span> — are selected based on temperature range, chemical exposure, and compression set requirements.
+                                    We specify O-ring cross-section, durometer, and groove geometry per standard engineering practice. Gasket materials - <span className="text-white">silicone, EPDM, Viton</span> - are selected based on temperature range, chemical exposure, and compression set requirements.
                                 </p>
                                 <p className="text-sm font-mono border-l border-zinc-800 pl-4 uppercase text-muted-foreground">
                                     All IP-rated designs are validated at the nearest accredited test facility before production release.
@@ -670,7 +670,7 @@ export default function MechanicalDesignServicesPageV2() {
                             <div className="lg:col-span-8 space-y-8">
                                 <h3 className="text-2xl text-white font-medium italic">Design for Manufacturability, Cost, Assembly & Compliance</h3>
                                 <p className="text-xl text-zinc-300 font-light leading-relaxed">
-                                    A mechanical design that cannot be manufactured repeatably and economically is not a finished design. Qmax applies <span className="text-white font-medium underline decoration-emerald-500/20 underline-offset-4">DFx disciplines</span> throughout the design process — as concurrent engineering that shapes every design decision from the earliest concept phase.
+                                    A mechanical design that cannot be manufactured repeatably and economically is not a finished design. Qmax applies <span className="text-white font-medium underline decoration-emerald-500/20 underline-offset-4">DFx disciplines</span> throughout the design process - as concurrent engineering that shapes every design decision from the earliest concept phase.
                                 </p>
                             </div>
                         </div>
@@ -686,19 +686,19 @@ export default function MechanicalDesignServicesPageV2() {
                                 </thead>
                                 <tbody className="divide-y divide-zinc-800 text-sm md:text-base">
                                     <tr className="group hover:bg-emerald-950/5 transition-colors">
-                                        <td className="p-6 text-white font-mono font-medium underline decoration-emerald-500/20 underline-offset-8">DFM — Manufacturability</td>
+                                        <td className="p-6 text-white font-mono font-medium underline decoration-emerald-500/20 underline-offset-8">DFM - Manufacturability</td>
                                         <td className="p-6 text-zinc-300 font-light leading-relaxed">Tolerances set to process capability. Features designed to the manufacturing method. Tooling complexity minimised.</td>
                                     </tr>
                                     <tr className="group hover:bg-emerald-950/5 transition-colors">
-                                        <td className="p-6 text-white font-mono font-medium underline decoration-emerald-500/20 underline-offset-8">DFC — Cost</td>
+                                        <td className="p-6 text-white font-mono font-medium underline decoration-emerald-500/20 underline-offset-8">DFC - Cost</td>
                                         <td className="p-6 text-zinc-300 font-light leading-relaxed">Material selection, process route, finish specification, and fastener standardisation evaluated for BOM cost.</td>
                                     </tr>
                                     <tr className="group hover:bg-emerald-950/5 transition-colors">
-                                        <td className="p-6 text-white font-mono font-medium underline decoration-emerald-500/20 underline-offset-8">DFA — Assembly</td>
+                                        <td className="p-6 text-white font-mono font-medium underline decoration-emerald-500/20 underline-offset-8">DFA - Assembly</td>
                                         <td className="p-6 text-zinc-300 font-light leading-relaxed">Part count minimisation, self-locating features, fastener access, tooling access, and assembly sequence reviewed.</td>
                                     </tr>
                                     <tr className="group hover:bg-emerald-950/5 transition-colors">
-                                        <td className="p-6 text-white font-mono font-medium underline decoration-emerald-500/20 underline-offset-8">DFC — Compliance</td>
+                                        <td className="p-6 text-white font-mono font-medium underline decoration-emerald-500/20 underline-offset-8">DFC - Compliance</td>
                                         <td className="p-6 text-zinc-300 font-light leading-relaxed">RoHS, REACH, CE marking, MIL, JSS, IEC, ISO addressed at design stage, not at submission.</td>
                                     </tr>
                                 </tbody>
@@ -742,7 +742,7 @@ export default function MechanicalDesignServicesPageV2() {
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
                             <div className="lg:col-span-8 space-y-8">
                                 <p className="text-xl text-zinc-300 font-light leading-relaxed">
-                                    Structural and thermal failures in electronics products are almost always predictable — if the analysis is done. Qmax performs <span className="text-white font-medium">FEA-based structural analysis</span> and <span className="text-white font-medium">CFD-informed thermal analysis</span> to identify and eliminate failure modes before hardware is fabricated.
+                                    Structural and thermal failures in electronics products are almost always predictable - if the analysis is done. Qmax performs <span className="text-white font-medium">FEA-based structural analysis</span> and <span className="text-white font-medium">CFD-informed thermal analysis</span> to identify and eliminate failure modes before hardware is fabricated.
                                 </p>
                             </div>
                         </div>
@@ -777,7 +777,7 @@ export default function MechanicalDesignServicesPageV2() {
                             {/* Design Reinforcement Callout */}
                             <div className="bg-zinc-900/40 border border-zinc-800 p-8 rounded-sm self-start">
                                 <p className="text-zinc-300 font-light leading-relaxed italic border-l-2 border-emerald-500/30 pl-6">
-                                    Analysis results directly inform design decisions — wall thickness, rib placement, fastener torque, vibration isolator stiffness, and PCB support boss location. Where analysis predicts a compliance risk, the design is modified before the prototype is built. Physical testing then confirms the analytical prediction.
+                                    Analysis results directly inform design decisions - wall thickness, rib placement, fastener torque, vibration isolator stiffness, and PCB support boss location. Where analysis predicts a compliance risk, the design is modified before the prototype is built. Physical testing then confirms the analytical prediction.
                                 </p>
                             </div>
                         </div>
@@ -945,7 +945,7 @@ export default function MechanicalDesignServicesPageV2() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16">
                         {[
                             { q: "What mechanical design software does Qmax Systems use?", a: "Qmax uses professional-grade 3D CAD tools for solid modelling, assembly design, and drawing preparation. FEA and thermal simulation are performed with dedicated analysis software. All deliverables are provided in native format plus neutral exchange formats (STEP, IGES, PDF) to ensure vendor and customer compatibility." },
-                            { q: "Can Qmax manage both the mechanical design and production sourcing?", a: "Yes. Qmax manages the full cycle from design to qualified prototype and can extend to volume production sourcing. We select manufacturing partners — injection moulders, sheet metal shops, CNC machining houses — based on capability, quality system, location, and lead time. Our 30-year vendor relationships mean we can benchmark cost and qualify suppliers faster than most internal engineering teams." },
+                            { q: "Can Qmax manage both the mechanical design and production sourcing?", a: "Yes. Qmax manages the full cycle from design to qualified prototype and can extend to volume production sourcing. We select manufacturing partners - injection moulders, sheet metal shops, CNC machining houses - based on capability, quality system, location, and lead time. Our 30-year vendor relationships mean we can benchmark cost and qualify suppliers faster than most internal engineering teams." },
                             { q: "How does Qmax approach MIL-STD-810 mechanical qualification?", a: "Qualification begins at the design stage, not at the test lab. We identify applicable MIL-STD-810 test methods for the deployment environment, build structural analysis models to predict response, and design the enclosure to pass with margin. Physical testing at our nearby accredited test facility then validates the analysis. This minimises test failures and re-spin cycles." },
                             { q: "What is the difference between IP65, IP67, and IP68, and how do you ensure compliance?", a: "IP65 is dust-tight and resistant to water jets. IP67 adds immersion to 1 m for 30 minutes. IP68 covers continuous immersion at depths agreed between manufacturer and customer. Compliance is achieved through correct gasket geometry, material, and compression design. We design all sealing interfaces to published standards, specify fastener torque, and validate at our nearby IP test facility before production release." },
                             { q: "Does Qmax provide GD&T drawings suitable for direct issue to vendors?", a: "Yes. All drawing packages from Qmax carry full GD&T per ISO 286 and ASME Y14.5. Tolerances are set based on functional requirements and the manufacturing process, not from default CAD settings. Any qualified machine shop or toolmaker can manufacture from our drawings without needing clarification." },
@@ -953,7 +953,7 @@ export default function MechanicalDesignServicesPageV2() {
                             { q: "What materials has Qmax worked with beyond standard aluminium and steel?", a: "We have designed parts in PTFE (Teflon), stainless steel (304, 316), polycarbonate, ABS, nylon (PA6/PA66), glass-filled engineering plastics, and titanium alloys. Surface treatments include Type II and III anodising, chromate conversion, electroless nickel, hard chrome, powder coating, and gold plating for low-contact-resistance applications." },
                             { q: "Can Qmax help reduce the manufacturing cost of an existing design?", a: "Yes. Design-for-cost review is a standard Qmax service. Common cost reduction opportunities include: over-toleranced drawings that force expensive machining, unnecessarily tight surface finish specifications, complex geometries that increase tooling cost, non-standard fasteners, and material overspecification. A structured DFM/DFC review typically identifies 10-25% BOM cost reduction in designs not originally optimised for production." },
                             { q: "Does Qmax handle mechanical compliance for medical electronics products?", a: "Yes. We have designed Class I and Class II medical device enclosures with documentation supporting CE marking and IEC 60601 mechanical requirements, including creepage and clearance compliance, UL94 flammability-rated materials, biocompatible materials where required, and IP ratings for clinical environments." },
-                            { q: "What is the typical timeline from mechanical concept to qualified prototype?", a: "A standard plastic enclosure for a handheld device — concept through injection-moulded prototype and IP test — typically runs 8-12 weeks. A MIL-STD-810-qualified rugged metal enclosure, including FEA, machined prototype, and formal test campaign, typically runs 14-20 weeks. Detailed schedules are agreed at project kick-off and include gate reviews at concept freeze, detailed design release, and prototype receipt." }
+                            { q: "What is the typical timeline from mechanical concept to qualified prototype?", a: "A standard plastic enclosure for a handheld device - concept through injection-moulded prototype and IP test - typically runs 8-12 weeks. A MIL-STD-810-qualified rugged metal enclosure, including FEA, machined prototype, and formal test campaign, typically runs 14-20 weeks. Detailed schedules are agreed at project kick-off and include gate reviews at concept freeze, detailed design release, and prototype receipt." }
                         ].map((faq, idx) => (
                             <div key={idx} className="space-y-4 group" id={`faq-${idx + 1}`}>
                                 <div className="flex gap-4 items-start">
@@ -1013,7 +1013,7 @@ export default function MechanicalDesignServicesPageV2() {
                                 Start a <span className="text-zinc-500 italic font-serif lowercase">Mechanical Design</span> <br /> Engagement
                             </h2>
                             <p className="text-xl font-light leading-relaxed max-w-xl text-muted-foreground">
-                                Whether you have a full specification or an early-stage concept, the right time to engage a mechanical design team is before the electronics layout is frozen — not after.
+                                Whether you have a full specification or an early-stage concept, the right time to engage a mechanical design team is before the electronics layout is frozen - not after.
                             </p>
                         </div>
                         <div className="bg-zinc-900/50 border border-zinc-800 p-8 space-y-6">

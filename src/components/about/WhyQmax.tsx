@@ -26,7 +26,7 @@ export default function WhyQmax() {
       icon: Layers,
       title: "End-to-End Engineering",
       description:
-        "From concept and design through manufacturing support and field support — we handle the entire lifecycle.",
+        "From concept and design through manufacturing support and field support - we handle the entire lifecycle.",
     },
   ];
 

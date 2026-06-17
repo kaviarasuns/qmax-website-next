@@ -103,7 +103,7 @@ export function PCBIndustriesSection({
 
         {/* Grid */}
         <div className="grid grid-cols-3 items-stretch gap-6 max-[900px]:grid-cols-1 max-[900px]:gap-4">
-          {/* LEFT — copy + CTA */}
+          {/* LEFT - copy + CTA */}
           <div className="flex flex-col gap-3 rounded-2xl bg-qmax-grey p-8">
             <h3 className="m-0 mb-4 text-2xl font-bold tracking-tight">
               {active.title}
@@ -122,7 +122,7 @@ export function PCBIndustriesSection({
             </a>
           </div>
 
-          {/* CENTER — image */}
+          {/* CENTER - image */}
           <div className="relative overflow-hidden rounded-2xl bg-transparent max-[900px]:min-h-[280px]">
             <Image
               key={active.image}
@@ -134,7 +134,7 @@ export function PCBIndustriesSection({
             />
           </div>
 
-          {/* RIGHT — related case studies (auto-scrolling) */}
+          {/* RIGHT - related case studies (auto-scrolling) */}
           <div className="flex flex-col gap-3 rounded-2xl">
             <div className="relative flex-1 overflow-x-clip [overflow-clip-margin:2rem]">
               {active.relatedCaseStudies.map((cs, i) => (

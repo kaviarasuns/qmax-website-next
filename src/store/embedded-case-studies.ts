@@ -235,7 +235,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "Atmel EEPROM",
     ],
     salientFeatures: [
-      "POE+ powered — single-cable deployment.",
+      "POE+ powered - single-cable deployment.",
       "Multi-radio gateway: LoRa, BLE 5.0, CAN bus.",
       "15 km LoRa range for wide-area sensor coverage.",
       "99.9 % data uplink accuracy.",

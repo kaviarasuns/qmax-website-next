@@ -17,7 +17,7 @@ export type ModularFirmwareFrameworksSectionProps = {
 export function ModularFirmwareFrameworksSection({
   title = "Modular Firmware Frameworks Built For",
   titleHighlight = "Reuse, Scale, And Security",
-  description = "To accelerate product development and ensure long-term maintainability, we build modular firmware frameworks and reusable libraries — battle-tested across deployments, with a focus on security, reliability, and scalability for large fleets.",
+  description = "To accelerate product development and ensure long-term maintainability, we build modular firmware frameworks and reusable libraries - battle-tested across deployments, with a focus on security, reliability, and scalability for large fleets.",
   frameworks,
 }: ModularFirmwareFrameworksSectionProps) {
   return (

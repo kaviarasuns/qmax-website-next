@@ -63,7 +63,7 @@ export default function CaseStudiesPage() {
   //
   // Strategy (standard pattern):
   //   1. Take ownership of scroll restoration ONCE (`history.scrollRestoration
-  //      = "manual"`) and never restore it to "auto" — otherwise the next
+  //      = "manual"`) and never restore it to "auto" - otherwise the next
   //      mount races with the browser/Next.js auto restorer.
   //   2. Persist the latest scroll position to sessionStorage continuously
   //      while the user scrolls, plus a final flush on unmount so the
@@ -86,7 +86,7 @@ export default function CaseStudiesPage() {
     const targetY = Number(saved);
     if (!Number.isFinite(targetY) || targetY <= 0) return;
 
-    // Synchronous first attempt — when layout is already stable (the
+    // Synchronous first attempt - when layout is already stable (the
     // common case on this static page), this restores before first paint
     // with no flash.
     window.scrollTo(0, targetY);
@@ -167,7 +167,7 @@ export default function CaseStudiesPage() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (rafId) cancelAnimationFrame(rafId);
-      // Final flush — guarantees the latest scroll position is persisted
+      // Final flush - guarantees the latest scroll position is persisted
       // when this page unmounts due to a Next.js client-side navigation.
       sessionStorage.setItem(SCROLL_STORAGE_KEY, String(window.scrollY));
     };

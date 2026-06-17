@@ -2,7 +2,7 @@ export const glossaryTerms = [
   {
     term: "A/D converter",
     definition:
-      "A  hardware device that reads an analog signal—typically a voltage—compares it to a reference signal, and converts the resulting percentage to a digital value. Short for analog-to-digital converter. Abbreviated ADC. The reference signal represents 100%. An n-bit A/D converter has a maximum value of 2n - 1 and a resolution of Vref/2n",
+      "A  hardware device that reads an analog signal-typically a voltage-compares it to a reference signal, and converts the resulting percentage to a digital value. Short for analog-to-digital converter. Abbreviated ADC. The reference signal represents 100%. An n-bit A/D converter has a maximum value of 2n - 1 and a resolution of Vref/2n",
   },
   {
     term: "ABEL",
@@ -145,7 +145,7 @@ export const glossaryTerms = [
   {
     term: "C99",
     definition:
-      "A 1999 update to the international standard for the C programming language. The updated standard is formally known as ISO/IEC 9899: Programming Languages—C. From an embedded systems programming perspective, one of C99's most exciting enhancements is built-in definition of signed and unsigned integer data types of 8, 16, and 32 bits. (They are typedef'd as uint8_t, int8_t, uint16_t, etc. in the platform-specific library header file stdint.h.) The C99 standard also recognizes C++-style comments (//) and makes several other long-overdue language improvements.",
+      "A 1999 update to the international standard for the C programming language. The updated standard is formally known as ISO/IEC 9899: Programming Languages-C. From an embedded systems programming perspective, one of C99's most exciting enhancements is built-in definition of signed and unsigned integer data types of 8, 16, and 32 bits. (They are typedef'd as uint8_t, int8_t, uint16_t, etc. in the platform-specific library header file stdint.h.) The C99 standard also recognizes C++-style comments (//) and makes several other long-overdue language improvements.",
   },
   {
     term: "Central Processing Unit",
@@ -371,7 +371,7 @@ export const glossaryTerms = [
   {
     term: "Gray Code",
     definition:
-      "Any of several possible mappings of the integers from 0 to 2n-1 to a set of n-bit binary values such that only 1 bit differs between each successive binary value. The mapping that's typically used is formally known as binary reflected Gray code. Generating a set of that form involves starting with 0...000b and always flipping the rightmost bit that will give a new value.\n\nApplications abound. Consider a shaft encoder with a 4-bit parallel output. Encoders use brushes or optical techniques to report position; these are mechanical and, therefore, imperfect implementations. An encoder that outputs normal binary, if positioned between 3 (0011b) and 4 (0100b), might dither with 3 bits changing. The processor might read (serially) 0011b (3), 0100b (4), or 0111b (7)—the latter a hugely incorrect value. If a Gray code is used, the data will dither between 0010b (3) and 0110b (4); the only possible values seen by the computer are those two, both of which are off by one from each other, and either of which is a reasonable approximation of the position.",
+      "Any of several possible mappings of the integers from 0 to 2n-1 to a set of n-bit binary values such that only 1 bit differs between each successive binary value. The mapping that's typically used is formally known as binary reflected Gray code. Generating a set of that form involves starting with 0...000b and always flipping the rightmost bit that will give a new value.\n\nApplications abound. Consider a shaft encoder with a 4-bit parallel output. Encoders use brushes or optical techniques to report position; these are mechanical and, therefore, imperfect implementations. An encoder that outputs normal binary, if positioned between 3 (0011b) and 4 (0100b), might dither with 3 bits changing. The processor might read (serially) 0011b (3), 0100b (4), or 0111b (7)-the latter a hugely incorrect value. If a Gray code is used, the data will dither between 0010b (3) and 0110b (4); the only possible values seen by the computer are those two, both of which are off by one from each other, and either of which is a reasonable approximation of the position.",
   },
   {
     term: "Heap",
@@ -386,7 +386,7 @@ export const glossaryTerms = [
   {
     term: "Host",
     definition:
-      "1.A general-purpose computer that communicates with the target via a serial port or network connection.\nHungarian notation\n2.A variable naming convention that encodes a variable's type as a prefix to its name. For example, an integer might be named iVariableName, with the leading i denoting the variable's type. Hungarian notation is promoted as a readability aid, which helps the programmer avoid the headache of digging through typedefs and include files to determine a variable's type.\n3.Hungarian notation is essentially a commenting technique. Comments often lie, though, when they become outdated—a huge source of problems with the notation. Change the type of a variable (say, when porting the code from a 16- to a 32-bit processor), and you have to search out and change the name of every use of that variable. That rarely happens, of course, as in wParam in Microsoft's Win32 APIs: the type changed from a 16-bit value (wstands for word) to a 32-bit value(which should have been dwParam).\n4.In practice, the prefix idea is extremely valuable for marking three common variable types in C programs: globals, pointers, and booleans. These three types are also unlikely to change as the program evolves.\n5.Global variables are dangerous, particularly when they are used in multitasking systems. So marking them with a preceding g, though not truly Hungarian in its style, is helpful for identifying possible critical sections.\n6.By preceding a pointer variable with p, dereferencing the right number of times becomes easy. Whereas pFoo refers to the pointer, *pFoo and pFoo-> clearly refer to the actual object. Likewise, if you have a pointer to a pointer, label it with a pp.",
+      "1.A general-purpose computer that communicates with the target via a serial port or network connection.\nHungarian notation\n2.A variable naming convention that encodes a variable's type as a prefix to its name. For example, an integer might be named iVariableName, with the leading i denoting the variable's type. Hungarian notation is promoted as a readability aid, which helps the programmer avoid the headache of digging through typedefs and include files to determine a variable's type.\n3.Hungarian notation is essentially a commenting technique. Comments often lie, though, when they become outdated-a huge source of problems with the notation. Change the type of a variable (say, when porting the code from a 16- to a 32-bit processor), and you have to search out and change the name of every use of that variable. That rarely happens, of course, as in wParam in Microsoft's Win32 APIs: the type changed from a 16-bit value (wstands for word) to a 32-bit value(which should have been dwParam).\n4.In practice, the prefix idea is extremely valuable for marking three common variable types in C programs: globals, pointers, and booleans. These three types are also unlikely to change as the program evolves.\n5.Global variables are dangerous, particularly when they are used in multitasking systems. So marking them with a preceding g, though not truly Hungarian in its style, is helpful for identifying possible critical sections.\n6.By preceding a pointer variable with p, dereferencing the right number of times becomes easy. Whereas pFoo refers to the pointer, *pFoo and pFoo-> clearly refer to the actual object. Likewise, if you have a pointer to a pointer, label it with a pp.",
   },
   {
     term: "I/O",
@@ -465,7 +465,7 @@ export const glossaryTerms = [
   {
     term: "Java Processor",
     definition:
-      "A piece of silicon, or IP, capable of executing Java bytecodes natively. When the Java programming language was created, there were no such processors. Therefore, the only way to execute Java code was with a Java virtual machine. Java processors, like those from aJile, make it possible to execute Java bytecodes without a JVM. An interesting side note: compilers exist to translate programs written in other languages, like C and C++, to Java bytecodes. So a Java processor—or a Java virtual machine—can execute code written in any igh-level language.",
+      "A piece of silicon, or IP, capable of executing Java bytecodes natively. When the Java programming language was created, there were no such processors. Therefore, the only way to execute Java code was with a Java virtual machine. Java processors, like those from aJile, make it possible to execute Java bytecodes without a JVM. An interesting side note: compilers exist to translate programs written in other languages, like C and C++, to Java bytecodes. So a Java processor-or a Java virtual machine-can execute code written in any igh-level language.",
   },
   {
     term: "Jitter",
@@ -787,7 +787,7 @@ export const glossaryTerms = [
   {
     term: "Pulse Width Modulation",
     definition:
-      "1.A digital control technique wherein the processor adjusts the duty cycle of a sequence of fixed-width pulses. Abbreviated PWM. Unlike other modulation techniques, PWM is used more to control external analog signals or mechanical devices than to transmit data.\n2.Consider driving a motor: a simple analog approach is to bias a transistor by varying amounts to control the motor's speed. This is very inefficient because the transistor dissipates considerable amounts of heat. PWM offers an alternative: connect the same transistor to a digital output pin and control the duty cycle of a train of pulses. Now the transistor is either on or off, so there's little power (P = I2 × R) loss.\n3.Other applications abound. Passing the digital output through a lowpass filter converts the pulses to analog—the voltage a function of duty cycle. In effect, it's a cheap D/A converter.\n4.Many processors have built-in PWM controllers that generate the pulse stream for a programmable duty cycle.",
+      "1.A digital control technique wherein the processor adjusts the duty cycle of a sequence of fixed-width pulses. Abbreviated PWM. Unlike other modulation techniques, PWM is used more to control external analog signals or mechanical devices than to transmit data.\n2.Consider driving a motor: a simple analog approach is to bias a transistor by varying amounts to control the motor's speed. This is very inefficient because the transistor dissipates considerable amounts of heat. PWM offers an alternative: connect the same transistor to a digital output pin and control the duty cycle of a train of pulses. Now the transistor is either on or off, so there's little power (P = I2 × R) loss.\n3.Other applications abound. Passing the digital output through a lowpass filter converts the pulses to analog-the voltage a function of duty cycle. In effect, it's a cheap D/A converter.\n4.Many processors have built-in PWM controllers that generate the pulse stream for a programmable duty cycle.",
   },
   {
     term: "Quadrature Encoder",
@@ -930,7 +930,7 @@ export const glossaryTerms = [
   {
     term: "Target",
     definition:
-      "1.The embedded system under development.\n   2.This term is never used to describe a finished product. During development, the embedded system (for which the software is being developed) is normally called the target to distinguish it from the host system (where the software is being developed). This distinction is necessary, in part, because the host might also be capable of executing the software under development—either directly or in a simulator.",
+      "1.The embedded system under development.\n   2.This term is never used to describe a finished product. During development, the embedded system (for which the software is being developed) is normally called the target to distinguish it from the host system (where the software is being developed). This distinction is necessary, in part, because the host might also be capable of executing the software under development-either directly or in a simulator.",
   },
   {
     term: "Task",

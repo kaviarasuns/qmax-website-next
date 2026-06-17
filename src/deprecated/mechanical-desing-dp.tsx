@@ -60,7 +60,7 @@ export default function MechanicalDesingDP() {
             <p>
               Every enclosure, structural assembly, and mechanical sub-system we
               design is conceived with full awareness of the electronics inside
-              it — thermal loads, EMI shielding requirements, PCB mounting
+              it - thermal loads, EMI shielding requirements, PCB mounting
               constraints, connector accessibility, and compliance obligations.
               Our mechanical and electronics teams share the same workspace, the
               same review cycles, and the same zero-defect quality standard.
@@ -80,7 +80,7 @@ export default function MechanicalDesingDP() {
               We maintain active working relationships with sheet metal
               fabricators, CNC machining houses, and plastic injection moulding
               companies across India, Europe, and Southeast Asia. Whether you
-              require prototype or volume production — we select the right
+              require prototype or volume production - we select the right
               manufacturing partner based on material, tolerance, finish, lead
               time, and cost, drawing on over three decades of vendor
               qualification experience.
@@ -119,7 +119,7 @@ export default function MechanicalDesingDP() {
                 cost-sensitive IoT products. Qmax Systems designs
                 injection-moulded plastic enclosures that balance structural
                 integrity, thermal performance, EMI management, and tooling cost
-                — with a clear path from concept to mass production.
+                - with a clear path from concept to mass production.
               </p>
             </div>
             <div className="lg:w-2/3 space-y-12">
@@ -155,9 +155,9 @@ export default function MechanicalDesingDP() {
                     for threaded interfaces, and EMI gasket seating. For
                     RF-transparent products (Wi-Fi, 4G, GPS), we analyse
                     dielectric properties and wall thickness effects on signal
-                    attenuation. Surface finish options — texture, gloss,
+                    attenuation. Surface finish options - texture, gloss,
                     painting, soft-touch coating, pad printing, in-mould
-                    labelling — are specified during the design phase.
+                    labelling - are specified during the design phase.
                   </p>
                 </div>
               </div>
@@ -330,7 +330,7 @@ export default function MechanicalDesingDP() {
                 Military Rugged Enclosures
               </h2>
               <p className="text-sm font-semibold text-zinc-500 uppercase tracking-widest mb-6 leading-relaxed">
-                Rugged Metal Enclosures for Military Applications — MIL-STD-810
+                Rugged Metal Enclosures for Military Applications - MIL-STD-810
                 / JSS 55555
               </p>
               <div className="space-y-4 text-sm leading-7 text-zinc-700 md:text-base italic bg-zinc-100/50 p-4 border-l-2 border-zinc-900">
@@ -436,7 +436,7 @@ export default function MechanicalDesingDP() {
               IP-Rated Enclosures
             </h2>
             <p className="text-sm font-semibold text-zinc-500 uppercase tracking-widest mb-6">
-              IP-Rated Enclosures — IP65 / IP67 / IP68
+              IP-Rated Enclosures - IP65 / IP67 / IP68
             </p>
             <div className="space-y-4 text-sm leading-7 text-zinc-700 md:text-base italic bg-zinc-50 p-4 border-l-2 border-zinc-900">
               <p>
@@ -529,8 +529,8 @@ export default function MechanicalDesingDP() {
                 </h3>
                 <p className="text-sm leading-7 text-zinc-700">
                   We specify O-ring cross-section, durometer, and groove
-                  geometry per standard engineering practice. Gasket materials —
-                  silicone, EPDM, Viton — are selected based on temperature
+                  geometry per standard engineering practice. Gasket materials -
+                  silicone, EPDM, Viton - are selected based on temperature
                   range, chemical exposure, and compression set requirements.
                   All IP-rated designs are validated at the nearest accredited
                   test facility before production release.
@@ -671,7 +671,7 @@ export default function MechanicalDesingDP() {
             <p className="text-sm leading-7 text-zinc-700 md:text-base italic bg-zinc-50 p-4 border-l-2 border-zinc-900">
               A mechanical design that cannot be manufactured repeatably and
               economically is not a finished design. Qmax applies DFx
-              disciplines throughout the design process — as concurrent
+              disciplines throughout the design process - as concurrent
               engineering that shapes every design decision from the earliest
               concept phase.
             </p>
@@ -694,22 +694,22 @@ export default function MechanicalDesingDP() {
                   <tbody className="divide-y divide-zinc-200">
                     {[
                       {
-                        discipline: "DFM — Manufacturability",
+                        discipline: "DFM - Manufacturability",
                         address:
                           "Tolerances set to process capability. Features designed to the manufacturing method. Tooling complexity minimised.",
                       },
                       {
-                        discipline: "DFC — Cost",
+                        discipline: "DFC - Cost",
                         address:
                           "Material selection, process route, finish specification, and fastener standardisation evaluated for BOM cost.",
                       },
                       {
-                        discipline: "DFA — Assembly",
+                        discipline: "DFA - Assembly",
                         address:
                           "Part count minimisation, self-locating features, fastener access, tooling access, and assembly sequence reviewed.",
                       },
                       {
-                        discipline: "DFC — Compliance",
+                        discipline: "DFC - Compliance",
                         address:
                           "RoHS, REACH, CE marking, MIL, JSS, IEC, ISO addressed at design stage, not at submission.",
                       },
@@ -752,7 +752,7 @@ export default function MechanicalDesingDP() {
                     Every design released from Qmax carries a fully dimensioned,
                     GD&T-annotated drawing set prepared to **ISO 286 / ASME
                     Y14.5 standards**. Tolerances are set based on functional
-                    requirements and the manufacturing process — not copied from
+                    requirements and the manufacturing process - not copied from
                     default CAD settings.
                   </p>
                   <p>
@@ -797,7 +797,7 @@ export default function MechanicalDesingDP() {
               </p>
               <p className="text-sm leading-7 text-zinc-700 md:text-base italic bg-zinc-100/50 p-4 border-l-2 border-zinc-900">
                 Structural and thermal failures in electronics products are
-                almost always predictable — if the analysis is done. Qmax
+                almost always predictable - if the analysis is done. Qmax
                 performs FEA-based structural analysis and CFD-informed thermal
                 analysis to identify and eliminate failure modes before hardware
                 is fabricated.
@@ -911,7 +911,7 @@ export default function MechanicalDesingDP() {
               </div>
 
               <p className="text-xs font-semibold text-zinc-500 text-center uppercase tracking-[0.2em] bg-zinc-200/50 py-4 rounded-xl border border-zinc-200">
-                Analysis results directly inform design decisions — wall
+                Analysis results directly inform design decisions - wall
                 thickness, rib placement, fastener torque, and PCB support boss
                 location.
               </p>
@@ -1112,7 +1112,7 @@ export default function MechanicalDesingDP() {
           <p className="text-base md:text-lg text-zinc-600 leading-relaxed font-medium italic translate-y-[-8px]">
             &quot;Whether you have a full specification or an early-stage
             concept, the right time to engage a mechanical design team is before
-            the electronics layout is frozen — not after.&quot;
+            the electronics layout is frozen - not after.&quot;
           </p>
           <div className="pt-8 flex flex-col items-center gap-6">
             <a
@@ -1135,7 +1135,7 @@ export default function MechanicalDesingDP() {
           },
           {
             q: "Can Qmax manage both the mechanical design and production sourcing?",
-            a: "Yes. Qmax manages the full cycle from design to qualified prototype and can extend to volume production sourcing. We select manufacturing partners — injection moulders, sheet metal shops, CNC machining houses — based on capability, quality system, location, and lead time. Our 30-year vendor relationships mean we can benchmark cost and qualify suppliers faster than most internal engineering teams.",
+            a: "Yes. Qmax manages the full cycle from design to qualified prototype and can extend to volume production sourcing. We select manufacturing partners - injection moulders, sheet metal shops, CNC machining houses - based on capability, quality system, location, and lead time. Our 30-year vendor relationships mean we can benchmark cost and qualify suppliers faster than most internal engineering teams.",
           },
           {
             q: "How does Qmax approach MIL-STD-810 mechanical qualification?",
@@ -1167,7 +1167,7 @@ export default function MechanicalDesingDP() {
           },
           {
             q: "What is the typical timeline from mechanical concept to qualified prototype?",
-            a: "A standard plastic enclosure for a handheld device — concept through injection-moulded prototype and IP test — typically runs 8-12 weeks. A MIL-STD-810-qualified rugged metal enclosure, including FEA, machined prototype, and formal test campaign, typically runs 14-20 weeks. Detailed schedules are agreed at project kick-off and include gate reviews at concept freeze, detailed design release, and prototype receipt.",
+            a: "A standard plastic enclosure for a handheld device - concept through injection-moulded prototype and IP test - typically runs 8-12 weeks. A MIL-STD-810-qualified rugged metal enclosure, including FEA, machined prototype, and formal test campaign, typically runs 14-20 weeks. Detailed schedules are agreed at project kick-off and include gate reviews at concept freeze, detailed design release, and prototype receipt.",
           },
         ]}
       />

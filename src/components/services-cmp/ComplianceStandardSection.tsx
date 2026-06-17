@@ -201,7 +201,7 @@ export function ComplianceStandardsSection({
                     className="border-t border-zinc-800 py-2.5 text-base leading-relaxed text-zinc-300 transition-colors duration-300 group-hover:border-red-500/30"
                   >
                     <span className="font-bold text-white">{item.code}</span>
-                    {" — "}
+                    {" - "}
                     {item.description}
                   </li>
                 ))}

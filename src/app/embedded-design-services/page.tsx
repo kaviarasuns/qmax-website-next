@@ -26,15 +26,15 @@ import {
 export const metadata = buildMetadata({
   title: "Embedded Design Services | Firmware, BSP & FPGA | Qmax",
   description:
-    "Embedded design services — firmware development, BSP and driver development, FPGA design on Xilinx Zynq, RTOS integration, and cross-platform applications.",
+    "Embedded design services - firmware development, BSP and driver development, FPGA design on Xilinx Zynq, RTOS integration, and cross-platform applications.",
   path: "/embedded-design-services",
 });
 
 const HERO = {
   title:
-    "Embedded Design Services — Firmware, Bring-Up, and OTA Across the Lifecycle",
+    "Embedded Design Services - Firmware, Bring-Up, and OTA Across the Lifecycle",
   description:
-    "Qmax Systems provides embedded design services across the complete product lifecycle — from requirements and architecture through board bring-up, validation, and OTA-based fleet maintenance. Qmax Systems engineers design for real-world deployment from Day 1: ASIL traceability for automotive (ISO 26262), IEC 62304 for medical devices, DO-178C for avionics, and OPC-UA determinism for industrial systems — not retrofitted at sign-off.",
+    "Qmax Systems provides embedded design services across the complete product lifecycle - from requirements and architecture through board bring-up, validation, and OTA-based fleet maintenance. Qmax Systems engineers design for real-world deployment from Day 1: ASIL traceability for automotive (ISO 26262), IEC 62304 for medical devices, DO-178C for avionics, and OPC-UA determinism for industrial systems - not retrofitted at sign-off.",
   ctaLabel: "Talk to our engineers",
   ctaHref: "/embedded-design-services/contact",
   videoSrc:
@@ -87,7 +87,7 @@ const DAY_ONE_INSIGHTS: DayOneInsight[] = [
   {
     title: "OTA Updates",
     description:
-      "Signed, encrypted firmware delivery with dual‑bank rollback and delta updates — designed in before line one.",
+      "Signed, encrypted firmware delivery with dual‑bank rollback and delta updates - designed in before line one.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -107,7 +107,7 @@ const DAY_ONE_INSIGHTS: DayOneInsight[] = [
   {
     title: "Battery Optimization",
     description:
-      "Adaptive duty cycling, deep‑sleep wake sources, and energy profiling — so devices last years on a single charge.",
+      "Adaptive duty cycling, deep‑sleep wake sources, and energy profiling - so devices last years on a single charge.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -132,7 +132,7 @@ const DAY_ONE_INSIGHTS: DayOneInsight[] = [
   {
     title: "Certification",
     description:
-      "FCC, CE, BIS, IEC, UL, ISO 13485, IEC 62304, AEC‑Q100 — compliance considered in architecture, not bolted on later.",
+      "FCC, CE, BIS, IEC, UL, ISO 13485, IEC 62304, AEC‑Q100 - compliance considered in architecture, not bolted on later.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -172,7 +172,7 @@ const DAY_ONE_INSIGHTS: DayOneInsight[] = [
   {
     title: "On‑Field Troubleshooting",
     description:
-      "Logging, remote diagnostics, watchdog telemetry, and remote command interfaces — engineered for fleet operations, not lab demos.",
+      "Logging, remote diagnostics, watchdog telemetry, and remote command interfaces - engineered for fleet operations, not lab demos.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -196,7 +196,7 @@ const DAY_ONE_INSIGHTS: DayOneInsight[] = [
   {
     title: "Communication Cost",
     description:
-      "Payload compression, delta encoding, and smart backoff — measured against your cellular / LPWAN bill from day one.",
+      "Payload compression, delta encoding, and smart backoff - measured against your cellular / LPWAN bill from day one.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -229,7 +229,7 @@ const DAY_ONE_INSIGHTS: DayOneInsight[] = [
   {
     title: "MTBF & Reliability",
     description:
-      "Component derating, thermal margin, watchdogs, and 24‑72h endurance runs — reliability designed and proven, not assumed.",
+      "Component derating, thermal margin, watchdogs, and 24‑72h endurance runs - reliability designed and proven, not assumed.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -280,11 +280,11 @@ const DAY_ONE_THINKING = {
   title: "Day‑1 Thinking For",
   titleHighlight: "Real‑World Deployment",
   description:
-    "Qmax Systems engineers plan for field deployment from Day 1 — before the first line of production firmware is written. OTA pipeline design, battery duty-cycling, certification readiness (FCC, CE, IEC 62304, ISO 26262, AEC-Q100), commissioning workflows, remote diagnostics, communication cost budgeting, MTBF planning, and security patch cadence are all architected at project start — not added after the first field failure.",
+    "Qmax Systems engineers plan for field deployment from Day 1 - before the first line of production firmware is written. OTA pipeline design, battery duty-cycling, certification readiness (FCC, CE, IEC 62304, ISO 26262, AEC-Q100), commissioning workflows, remote diagnostics, communication cost budgeting, MTBF planning, and security patch cadence are all architected at project start - not added after the first field failure.",
   insights: DAY_ONE_INSIGHTS,
   calloutTitle: "...and many more domain‑specific factors",
   calloutDescription:
-    "From IEC 62304 software life‑cycle for medical, to ISO 26262 ASIL traceability for automotive, to DO‑178C for avionics, to OPC‑UA determinism for industrial — we anticipate the factors unique to your domain and engineer for them from Day 1, not after the first field failure.",
+    "From IEC 62304 software life‑cycle for medical, to ISO 26262 ASIL traceability for automotive, to DO‑178C for avionics, to OPC‑UA determinism for industrial - we anticipate the factors unique to your domain and engineer for them from Day 1, not after the first field failure.",
 };
 
 const EMBEDDED_SOFTWARE_CAPABILITIES: EmbeddedSoftwareCapability[] = [
@@ -308,7 +308,7 @@ const EMBEDDED_SOFTWARE_CAPABILITIES: EmbeddedSoftwareCapability[] = [
     ),
     headline: "Bare-metal firmware in C / C++ across leading MCU silicon.",
     intro:
-      "Qmax Systems engineers start at first power-on — clock tree configuration, boot ROM initialization, and flash memory map — and deliver deterministic, MISRA-C/C++ compliant firmware. Peripheral drivers (SPI, I²C, UART, USB, CAN, ADC), bootloader design, and application code are engineered for the tight constraints of MCU targets including STM32, ESP32, NXP i.MX RT, and Nordic nRF52/53.",
+      "Qmax Systems engineers start at first power-on - clock tree configuration, boot ROM initialization, and flash memory map - and deliver deterministic, MISRA-C/C++ compliant firmware. Peripheral drivers (SPI, I²C, UART, USB, CAN, ADC), bootloader design, and application code are engineered for the tight constraints of MCU targets including STM32, ESP32, NXP i.MX RT, and Nordic nRF52/53.",
     bullets: [
       {
         title: "Multi-Vendor MCU Expertise",
@@ -352,7 +352,7 @@ const EMBEDDED_SOFTWARE_CAPABILITIES: EmbeddedSoftwareCapability[] = [
     headline:
       "RTOS and Embedded Linux platforms tuned for real-time and reliability.",
     intro:
-      "Qmax Systems engineers real-time platforms from FreeRTOS and Zephyr RTOS on Cortex-M to Yocto and Buildroot Linux on Cortex-A. Qmax Systems tunes scheduler behavior, ISR design, and memory layout against measurable timing and footprint targets — delivering bounded latency guarantees, secure boot with dm-verity, and device-tree-based driver models on production hardware.",
+      "Qmax Systems engineers real-time platforms from FreeRTOS and Zephyr RTOS on Cortex-M to Yocto and Buildroot Linux on Cortex-A. Qmax Systems tunes scheduler behavior, ISR design, and memory layout against measurable timing and footprint targets - delivering bounded latency guarantees, secure boot with dm-verity, and device-tree-based driver models on production hardware.",
     bullets: [
       {
         title: "RTOS Platforms",
@@ -435,9 +435,9 @@ const EMBEDDED_SOFTWARE_CAPABILITIES: EmbeddedSoftwareCapability[] = [
         <path d="M7 6.5h.01M7 17.5h.01M11 6.5h6M11 17.5h6" />
       </svg>
     ),
-    headline: "Server-grade systems — full stack from BMC to BIOS to power.",
+    headline: "Server-grade systems - full stack from BMC to BIOS to power.",
     intro:
-      "Qmax Systems delivers end-to-end server platform firmware — from board bring-up and power sequencing through OpenBMC, IPMI, Redfish remote management, and UEFI/EDK-II BIOS development. Qmax Systems integrates CPLD/FPGA board control firmware, TPM-anchored secure boot, and Linux bring-up for server platforms under a single accountable engineering team.",
+      "Qmax Systems delivers end-to-end server platform firmware - from board bring-up and power sequencing through OpenBMC, IPMI, Redfish remote management, and UEFI/EDK-II BIOS development. Qmax Systems integrates CPLD/FPGA board control firmware, TPM-anchored secure boot, and Linux bring-up for server platforms under a single accountable engineering team.",
     bullets: [
       {
         title: "BMC, BIOS & OS Bring-up",
@@ -462,10 +462,10 @@ const EMBEDDED_SOFTWARE_CAPABILITIES: EmbeddedSoftwareCapability[] = [
 ];
 
 const EMBEDDED_SOFTWARE = {
-  title: "Embedded Software Across The Full Stack —",
+  title: "Embedded Software Across The Full Stack -",
   titleHighlight: "Bare‑Metal To Server‑Grade",
   description:
-    "Qmax Systems delivers embedded software across the full firmware stack — bare-metal C/C++ on resource-constrained MCUs, FreeRTOS and Zephyr RTOS on Cortex-M, Yocto Linux on Cortex-A, OpenWrt-based networking platforms, and OpenBMC/UEFI server firmware. All work is developed to MISRA-C/C++ coding standards and validated on production silicon.",
+    "Qmax Systems delivers embedded software across the full firmware stack - bare-metal C/C++ on resource-constrained MCUs, FreeRTOS and Zephyr RTOS on Cortex-M, Yocto Linux on Cortex-A, OpenWrt-based networking platforms, and OpenBMC/UEFI server firmware. All work is developed to MISRA-C/C++ coding standards and validated on production silicon.",
   capabilities: EMBEDDED_SOFTWARE_CAPABILITIES,
 };
 
@@ -583,14 +583,14 @@ const MODULAR_FIRMWARE = {
   title: "Modular Firmware Frameworks Built For",
   titleHighlight: "Reuse, Scale, And Security",
   description:
-    "Qmax Systems builds four production-ready modular firmware frameworks — Secure OTA, Battery Management, Cellular Communication, and Device Commissioning — deployed across Qmax Systems programs in IoT, medical, and industrial markets. These reusable libraries shorten time-to-market and reduce long-term maintenance cost for fleets ranging from hundreds to hundreds of thousands of devices.",
+    "Qmax Systems builds four production-ready modular firmware frameworks - Secure OTA, Battery Management, Cellular Communication, and Device Commissioning - deployed across Qmax Systems programs in IoT, medical, and industrial markets. These reusable libraries shorten time-to-market and reduce long-term maintenance cost for fleets ranging from hundreds to hundreds of thousands of devices.",
   frameworks: MODULAR_FIRMWARE_FRAMEWORKS,
 };
 
 const WHY_CARDS = [
   {
     title: "Transparent & Supervised Process",
-    desc: "Qmax Systems provides full milestone visibility — every design review, risk register, and build delivered on a weekly cadence with traceable deliverables and zero hidden surprises at handover.",
+    desc: "Qmax Systems provides full milestone visibility - every design review, risk register, and build delivered on a weekly cadence with traceable deliverables and zero hidden surprises at handover.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -610,7 +610,7 @@ const WHY_CARDS = [
   },
   {
     title: "Lifecycle Maintenance",
-    desc: "Qmax Systems engagement extends well beyond launch — feature updates, silicon obsolescence management, security patches, and OTA fleet rollouts keep firmware healthy across the full commercial life of the product.",
+    desc: "Qmax Systems engagement extends well beyond launch - feature updates, silicon obsolescence management, security patches, and OTA fleet rollouts keep firmware healthy across the full commercial life of the product.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -629,7 +629,7 @@ const WHY_CARDS = [
   },
   {
     title: "Smooth Hardware-Firmware Integration",
-    desc: "Qmax Systems firmware engineers sit next to the hardware team — board bring-up timelines collapse, schematic risks surface early, and the system comes up clean on the first prototype spin.",
+    desc: "Qmax Systems firmware engineers sit next to the hardware team - board bring-up timelines collapse, schematic risks surface early, and the system comes up clean on the first prototype spin.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -650,7 +650,7 @@ const WHY_CARDS = [
   },
   {
     title: "Expert Engineers",
-    desc: "Qmax Systems engineers average 12+ years of experience across automotive, medical, aerospace, IoT, and networking. Senior engineers own every design — no junior hand-offs, no learning on the client's timeline.",
+    desc: "Qmax Systems engineers average 12+ years of experience across automotive, medical, aerospace, IoT, and networking. Senior engineers own every design - no junior hand-offs, no learning on the client's timeline.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -711,11 +711,11 @@ const WHY_CARDS = [
 const FAQ_ITEMS = [
   {
     q: "Does Qmax Systems provide end-to-end embedded firmware development?",
-    a: "Yes. Qmax Systems owns the entire firmware lifecycle — from requirements capture, architecture, and driver development through board bring-up, validation, and production handover. Qmax Systems engineers align firmware milestones with hardware prototype spins and continue engagement into OTA-based field maintenance, giving clients a single accountable partner from concept to fleet operation.",
+    a: "Yes. Qmax Systems owns the entire firmware lifecycle - from requirements capture, architecture, and driver development through board bring-up, validation, and production handover. Qmax Systems engineers align firmware milestones with hardware prototype spins and continue engagement into OTA-based field maintenance, giving clients a single accountable partner from concept to fleet operation.",
   },
   {
     q: "Who owns the IP when working with Qmax Systems?",
-    a: "The client does — 100%. Unless otherwise agreed in writing, all IP generated during a Qmax Systems engagement — including source code, build scripts, test suites, and documentation — belongs exclusively to the client. Qmax Systems operates under strict NDAs with customers, employees, and third-party vendors to fully safeguard client innovations throughout and after the engagement.",
+    a: "The client does - 100%. Unless otherwise agreed in writing, all IP generated during a Qmax Systems engagement - including source code, build scripts, test suites, and documentation - belongs exclusively to the client. Qmax Systems operates under strict NDAs with customers, employees, and third-party vendors to fully safeguard client innovations throughout and after the engagement.",
   },
   {
     q: "What chipsets and platforms does Qmax Systems support?",
@@ -723,7 +723,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How does Qmax Systems handle firmware security and OTA updates?",
-    a: "Security is a Day-1 decision at Qmax Systems. Qmax Systems designs signed and encrypted OTA pipelines with dual-bank rollback, delta updates, and device authentication. Secure boot with signed images, X.509 device identity, and TPM/secure-element anchoring are built into the Qmax Systems reference firmware framework — not added as an afterthought.",
+    a: "Security is a Day-1 decision at Qmax Systems. Qmax Systems designs signed and encrypted OTA pipelines with dual-bank rollback, delta updates, and device authentication. Secure boot with signed images, X.509 device identity, and TPM/secure-element anchoring are built into the Qmax Systems reference firmware framework - not added as an afterthought.",
   },
   {
     q: "What coding standards does Qmax Systems follow?",
@@ -731,7 +731,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Does Qmax Systems support long-term firmware maintenance?",
-    a: "Yes. Qmax Systems engagement extends well beyond product launch. Qmax Systems provides lifecycle maintenance covering feature updates, silicon obsolescence management, security patches, and OTA fleet rollouts — keeping firmware healthy across the full commercial life of the product, including field variants and updated silicon revisions.",
+    a: "Yes. Qmax Systems engagement extends well beyond product launch. Qmax Systems provides lifecycle maintenance covering feature updates, silicon obsolescence management, security patches, and OTA fleet rollouts - keeping firmware healthy across the full commercial life of the product, including field variants and updated silicon revisions.",
   },
 ];
 
@@ -798,7 +798,7 @@ export default function EmbeddedDesignServicesPage() {
           <a
             className="relative block aspect-[2396/520] w-full cursor-pointer overflow-hidden rounded-xl bg-black no-underline shadow-[0_1px_2px_rgba(16,24,40,0.06)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_6px_16px_rgba(16,24,40,0.10)]"
             href="/embedded-design-services/contact"
-            aria-label="Have your questions answered — contact Saravanaperumal Annamalai, VP - SWE Engineering"
+            aria-label="Have your questions answered - contact Saravanaperumal Annamalai, VP - SWE Engineering"
           >
             <Image
               src="/embedded-design-services/founder-cta-banner.png"
@@ -835,7 +835,7 @@ export default function EmbeddedDesignServicesPage() {
       <PartnershipsSection
         heading="Silicon Platforms"
         headingHighlight="We Build On"
-        paragraph="Across hundreds of programs, Qmax Systems firmware engineers have shipped production code on the silicon below — carrying hands-on experience with toolchains, SDKs, errata sheets, and reference designs so every project starts from working ground, not from scratch."
+        paragraph="Across hundreds of programs, Qmax Systems firmware engineers have shipped production code on the silicon below - carrying hands-on experience with toolchains, SDKs, errata sheets, and reference designs so every project starts from working ground, not from scratch."
         logos={EMBEDDED_PARTNER_LOGOS}
       />
 

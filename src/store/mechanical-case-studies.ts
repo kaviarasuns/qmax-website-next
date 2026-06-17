@@ -903,7 +903,7 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
     salientFeatures: [
       "Sub-11 mm total thickness for all-day comfort.",
       "Continuous 72-hour biometric monitoring.",
-      "Qi wireless charging — no exposed contacts.",
+      "Qi wireless charging - no exposed contacts.",
       "IPX7 rated for swimming and showering.",
       "Interchangeable strap system for clinical and consumer use.",
       "Scratch-resistant mineral glass lens.",

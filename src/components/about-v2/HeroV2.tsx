@@ -33,7 +33,7 @@ export default function HeroV2() {
         <h1 className="text-balance font-bold leading-[1.1] tracking-[-0.01em] text-white [font-size:clamp(32px,4.4vw,56px)]">
           Precision Engineering Services
           <br />
-          <span className="text-red-500">Since 1997</span> — From Concept To
+          <span className="text-red-500">Since 1997</span> - From Concept To
           <br />
           Manufacturing.
         </h1>

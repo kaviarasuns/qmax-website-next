@@ -46,7 +46,7 @@ const engineeringStandards = [
   {
     standard: "IPC-2221B",
     application:
-      "Generic PCB design requirements — pad geometry and annotation conventions",
+      "Generic PCB design requirements - pad geometry and annotation conventions",
   },
   {
     standard: "JEDEC MO series",
@@ -56,7 +56,7 @@ const engineeringStandards = [
   {
     standard: "Customer-specific",
     application:
-      "Customer-defined library standards, naming conventions, and property schemas — applied on request",
+      "Customer-defined library standards, naming conventions, and property schemas - applied on request",
   },
 ];
 
@@ -64,7 +64,7 @@ const bomProperties = [
   {
     property: "MPN",
     description:
-      "Exact manufacturer part number — not a distributor stock code",
+      "Exact manufacturer part number - not a distributor stock code",
   },
   {
     property: "Manufacturer",
@@ -83,7 +83,7 @@ const bomProperties = [
   {
     property: "Lifecycle",
     description:
-      "Active, NRND, EOL, or Obsolete — sourced from manufacturer lifecycle data",
+      "Active, NRND, EOL, or Obsolete - sourced from manufacturer lifecycle data",
   },
   {
     property: "AVL",
@@ -95,7 +95,7 @@ const modelOutputFormats = [
   {
     format: "STEP (.stp/.step)",
     description:
-      "Universal neutral format — compatible with all major MCAD and EDA tools",
+      "Universal neutral format - compatible with all major MCAD and EDA tools",
   },
   {
     format: "IGES (.igs)",
@@ -127,15 +127,15 @@ const faqs = [
   },
   {
     q: "How does Qmax ensure zero defects in schematic symbols, PCB footprints, and 3D models?",
-    a: "Qmax applies a seven-stage QC process to every library deliverable. The first six stages — source verification, symbol construction, footprint geometry, symbol-footprint cross-check, 3D model verification, and DFM review — are performed by the library engineer. The seventh is an independent review by a second engineer who verifies against the original datasheet. No component is released without that independent sign-off. This process has been validated over 30 years and several hundred thousand library parts.",
+    a: "Qmax applies a seven-stage QC process to every library deliverable. The first six stages - source verification, symbol construction, footprint geometry, symbol-footprint cross-check, 3D model verification, and DFM review - are performed by the library engineer. The seventh is an independent review by a second engineer who verifies against the original datasheet. No component is released without that independent sign-off. This process has been validated over 30 years and several hundred thousand library parts.",
   },
   {
     q: "Who owns the PCB library components and associated data that Qmax creates?",
-    a: "All deliverables — schematic symbols, PCB footprints, 3D models, property databases, and documentation — are the sole intellectual property of the customer. Qmax retains no rights after delivery. A standard NDA is executed before project commencement, and no customer component data is shared, referenced, or reused in any other project.",
+    a: "All deliverables - schematic symbols, PCB footprints, 3D models, property databases, and documentation - are the sole intellectual property of the customer. Qmax retains no rights after delivery. A standard NDA is executed before project commencement, and no customer component data is shared, referenced, or reused in any other project.",
   },
   {
     q: "Can Qmax build PCB library components for any EDA tool or CAD platform?",
-    a: "Yes. Qmax delivers components for all major EDA and mechanical CAD formats: Cadence OrCAD Capture, Cadence Capture CIS, Cadence Allegro PCB, Altium Designer, Mentor PADS, Mentor Expedition and xDX Designer, SolidWorks, PTC Creo, STEP AP214, and IGES 5.3. Multi-format delivery — the same component natively built for two or more platforms simultaneously — is available at no surcharge.",
+    a: "Yes. Qmax delivers components for all major EDA and mechanical CAD formats: Cadence OrCAD Capture, Cadence Capture CIS, Cadence Allegro PCB, Altium Designer, Mentor PADS, Mentor Expedition and xDX Designer, SolidWorks, PTC Creo, STEP AP214, and IGES 5.3. Multi-format delivery - the same component natively built for two or more platforms simultaneously - is available at no surcharge.",
   },
   {
     q: "What makes Qmax PCB footprints DFM-qualified, and how does DFM qualification improve production yield?",
@@ -143,11 +143,11 @@ const faqs = [
   },
   {
     q: "What level of detail are Qmax 3D models, and can they be used for thermal simulation?",
-    a: "Qmax 3D models are built from manufacturer mechanical drawings with exact geometry — individual lead positions, terminal pitch, body height, and standoff dimensions. For thermally critical components, models include thermal interface geometry, exposed pad dimensions, lid geometry, and thermal resistance metadata (θja, θjb, θjc) for thermal solver import. Qmax's models have been used by NVIDIA for graphics card thermal simulation, demanding sub-millimetre accuracy across a high-power-density component population.",
+    a: "Qmax 3D models are built from manufacturer mechanical drawings with exact geometry - individual lead positions, terminal pitch, body height, and standoff dimensions. For thermally critical components, models include thermal interface geometry, exposed pad dimensions, lid geometry, and thermal resistance metadata (θja, θjb, θjc) for thermal solver import. Qmax's models have been used by NVIDIA for graphics card thermal simulation, demanding sub-millimetre accuracy across a high-power-density component population.",
   },
   {
     q: "How does Qmax handle component lifecycle status and EOL risk in the library?",
-    a: "Every schematic symbol includes a lifecycle status property — Active, NRND, EOL, or Obsolete — sourced from manufacturer product lifecycle pages and distribution channel data at time of construction. Where a component is NRND or EOL, Qmax identifies active second-source alternatives and populates the AVL field with verified drop-in replacements. Lifecycle status is noted in handover documentation so the design team can make informed sourcing decisions.",
+    a: "Every schematic symbol includes a lifecycle status property - Active, NRND, EOL, or Obsolete - sourced from manufacturer product lifecycle pages and distribution channel data at time of construction. Where a component is NRND or EOL, Qmax identifies active second-source alternatives and populates the AVL field with verified drop-in replacements. Lifecycle status is noted in handover documentation so the design team can make informed sourcing decisions.",
   },
   {
     q: "Can Qmax migrate an existing PCB library from one EDA tool to another without data loss?",
@@ -155,7 +155,7 @@ const faqs = [
   },
   {
     q: "What is the typical turnaround time for PCB library component creation, and can Qmax handle large-volume library builds?",
-    a: "For individual components, standard turnaround is 24–48 hours from confirmed component identification and format specification. For large-volume builds — 50 to several thousand components — Qmax assigns a dedicated library engineering team and develops a project-specific schedule based on complexity distribution and the customer's design milestones. Qmax has completed builds of several thousand components for major OEM programmes within defined schedules while maintaining the full seven-stage QC process on every component.",
+    a: "For individual components, standard turnaround is 24–48 hours from confirmed component identification and format specification. For large-volume builds - 50 to several thousand components - Qmax assigns a dedicated library engineering team and develops a project-specific schedule based on complexity distribution and the customer's design milestones. Qmax has completed builds of several thousand components for major OEM programmes within defined schedules while maintaining the full seven-stage QC process on every component.",
   },
 ];
 
@@ -253,9 +253,9 @@ export default function PCBLibraryServicesPage() {
                 At Qmax Systems, PCB library development is a formal engineering
                 discipline with defined inputs, a 7-stage independent QC
                 process, and zero-defect release standards refined over 30
-                years. We deliver for all major EDA platforms — OrCAD, Allegro,
+                years. We deliver for all major EDA platforms - OrCAD, Allegro,
                 Altium, PADS, Expedition, SolidWorks, Creo, and neutral
-                STEP/IGES — with no surcharge for multi-format delivery. All
+                STEP/IGES - with no surcharge for multi-format delivery. All
                 deliverables are the sole intellectual property of the customer,
                 executed under strict NDA. Our 3D models have been used by
                 NVIDIA for graphics card thermal simulation.
@@ -272,7 +272,7 @@ export default function PCBLibraryServicesPage() {
               1.1 / WHY LIBRARY QUALITY DETERMINES DESIGN SUCCESS
             </span>
             <p className="mt-8 text-xl leading-relaxed font-light max-w-3xl text-muted-foreground">
-              Library errors are structural — baked into the netlist, layout,
+              Library errors are structural - baked into the netlist, layout,
               and fabrication outputs. Detection at bring-up means a re-spin;
               detection in production means a field return. Common failure modes
               that Qmax&apos;s process prevents:
@@ -328,7 +328,7 @@ export default function PCBLibraryServicesPage() {
             <p className="mt-8 text-xl leading-relaxed font-light max-w-3xl text-muted-foreground">
               Qmax schematic symbols are complete, accurate, and
               production-ready from first use. Built to IPC and EDA-tool native
-              conventions — or to customer-specific schemas on request — every
+              conventions - or to customer-specific schemas on request - every
               symbol carries structured pin data and BoM properties that
               propagate correctly into the netlist, BOM, and footprint
               assignment.
@@ -342,7 +342,7 @@ export default function PCBLibraryServicesPage() {
                   2.1 / Pin Definition
                 </h3>
                 <p className="text-lg font-light leading-relaxed text-muted-foreground">
-                  Every pin — without exception — is defined with exact name,
+                  Every pin - without exception - is defined with exact name,
                   physical number, electrical type (Input, Output,
                   Bidirectional, Power, Ground, etc.), swap groups where
                   applicable, and correct visibility for power pins. All data is
@@ -355,7 +355,7 @@ export default function PCBLibraryServicesPage() {
                   2.3 / Symbol Construction
                 </h3>
                 <p className="text-lg font-light leading-relaxed text-muted-foreground">
-                  Symbols are grouped by function — not physical pin order — for
+                  Symbols are grouped by function - not physical pin order - for
                   readability in dense schematic sheets. For large devices
                   (FPGAs, SoCs), multi-part symbols are created per functional
                   bank. Line weights, pin lengths, and layer assignments follow
@@ -393,7 +393,7 @@ export default function PCBLibraryServicesPage() {
             </span>
             <p className="mt-8 text-xl leading-relaxed font-light max-w-3xl text-muted-foreground">
               Qmax creates PCB footprints to IPC-7351C standards across all
-              three density levels — Most (M), Nominal (N), and Least (L) —
+              three density levels - Most (M), Nominal (N), and Least (L) -
               selected to match the customer&apos;s assembly process, not
               applied as a blanket default. Every footprint is DFM-qualified
               through a production-validated review process developed with
@@ -443,7 +443,7 @@ export default function PCBLibraryServicesPage() {
             </span>
             <p className="mt-8 text-xl leading-relaxed font-light max-w-3xl text-muted-foreground">
               Qmax 3D models are constructed from manufacturer mechanical
-              drawings — not approximated from package templates. Every model
+              drawings - not approximated from package templates. Every model
               reflects exact external geometry, tolerance envelope, and fiducial
               orientation. The model origin is precisely centroid-matched to the
               PCB footprint, guaranteeing correct placement, rotation, and
@@ -513,13 +513,13 @@ export default function PCBLibraryServicesPage() {
             affected component. The cost of library quality is negligible
             compared to the cost of errors at scale. Qmax applies a 7-stage
             independent QC process to every deliverable: (1) source verification
-            — datasheet edition confirmed and package code cross-referenced; (2)
-            symbol construction review — pin count, names, types, and BoM
-            properties verified; (3) footprint geometry verification — land
+            - datasheet edition confirmed and package code cross-referenced; (2)
+            symbol construction review - pin count, names, types, and BoM
+            properties verified; (3) footprint geometry verification - land
             pattern, pads, silkscreen, and courtyard confirmed against
-            IPC-7351C; (4) symbol-footprint cross-check — pin count and pin 1
-            alignment verified; (5) 3D model verification — centroid alignment
-            and body dimensions cross-checked; (6) DFM review — solder mask
+            IPC-7351C; (4) symbol-footprint cross-check - pin count and pin 1
+            alignment verified; (5) 3D model verification - centroid alignment
+            and body dimensions cross-checked; (6) DFM review - solder mask
             clearances and assembly clearances signed off; and (7) independent
             QC release by a second engineer who has not previously seen the
             component. No deliverable is released without that independent
@@ -591,7 +591,7 @@ export default function PCBLibraryServicesPage() {
             <p>
               Whether you need a complete library build, an audit of your
               existing library, a migration to a new EDA platform, or library
-              support within a broader PCB design programme — contact Qmax to
+              support within a broader PCB design programme - contact Qmax to
               discuss your requirements.
             </p>
           </div>

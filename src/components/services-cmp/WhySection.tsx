@@ -68,7 +68,7 @@ export function WhySection({
               <p className="text-base text-foreground">{card.desc}</p>
             </article>
           ))}
-          {/* Founder CTA tile — baked PNG */}
+          {/* Founder CTA tile - baked PNG */}
           <a
             className="relative block h-full cursor-pointer overflow-hidden rounded-xl bg-[#0a0a0a] no-underline shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
             href={ctaHref}

@@ -139,7 +139,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
           </div>
         )}
 
-        {/* ── Details — masonry layout via CSS columns ── */}
+        {/* ── Details - masonry layout via CSS columns ── */}
         <div className="columns-1 md:columns-2 gap-6 space-y-6">
           <DetailSection
             index="03"

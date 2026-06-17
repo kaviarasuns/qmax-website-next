@@ -127,7 +127,7 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Precision PCB layout engineered for high-frequency performance, controlled impedance, and RF/digital isolation across complex multi-layer stackups.",
     intro:
-      "Qmax Systems provides a vertical suite of engineering services tailored to modern communication and industrial RF needs — from stackup definition through validated layout release. Qmax Systems designs RF PCBs with controlled impedance — 50 Ohm single-ended and 100 Ohm differential — on high-frequency substrates including Rogers 4350B, Taconic, and Panasonic Megtron 6. Qmax Systems engineers optimize multi-layer stackups and apply microstrip, stripline, and coplanar waveguide (CPW) routing with strict RF-to-digital isolation, from stackup definition through validated layout release.",
+      "Qmax Systems provides a vertical suite of engineering services tailored to modern communication and industrial RF needs - from stackup definition through validated layout release. Qmax Systems designs RF PCBs with controlled impedance - 50 Ohm single-ended and 100 Ohm differential - on high-frequency substrates including Rogers 4350B, Taconic, and Panasonic Megtron 6. Qmax Systems engineers optimize multi-layer stackups and apply microstrip, stripline, and coplanar waveguide (CPW) routing with strict RF-to-digital isolation, from stackup definition through validated layout release.",
     points: [
       "Multi-layer stackup optimization for controlled impedance (50 Ohm single-ended, 100 Ohm differential).",
       "Utilization of high-frequency substrates (Rogers, Taconic, Megtron 6).",
@@ -160,15 +160,15 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     points: [
       {
         boldLead: "LNA and PA Design",
-        rest: " — development of Low Noise Amplifiers and Power Amplifiers for 4G/5G infrastructure.",
+        rest: " - development of Low Noise Amplifiers and Power Amplifiers for 4G/5G infrastructure.",
       },
       {
         boldLead: "Filter Design",
-        rest: " — integration of SAW, BAW, and discrete LC filters for harmonic suppression.",
+        rest: " - integration of SAW, BAW, and discrete LC filters for harmonic suppression.",
       },
       {
         boldLead: "Impedance Matching",
-        rest: " — Smith chart-based matching network optimization for maximum power transfer.",
+        rest: " - Smith chart-based matching network optimization for maximum power transfer.",
       },
     ],
     applications:
@@ -735,7 +735,7 @@ const faqs = [
 export const metadata = buildMetadata({
   title: "RF & Microwave Design | Sub-GHz to Ka-Band | Qmax Systems",
   description:
-    "RF and microwave circuit design — LNA, PA, mixer circuits, transceiver architecture, antenna design, and PTFE substrate selection. Sub-GHz through Ka-band.",
+    "RF and microwave circuit design - LNA, PA, mixer circuits, transceiver architecture, antenna design, and PTFE substrate selection. Sub-GHz through Ka-band.",
   path: "/hardware-design-services/rf-and-microwave",
 });
 
@@ -744,19 +744,19 @@ export default function RfAndMicrowavePage() {
     <>
       <HardwareServiceHeroSection
         imageSrc="/hw-main/hw_rf_and_microwave.jpg"
-        imageAlt="RF and Microwave Engineering — Qmax Systems"
-        title="RF Circuit Design Services — RFFE, Transceiver Architecture, Sub-GHz to mmWave"
+        imageAlt="RF and Microwave Engineering - Qmax Systems"
+        title="RF Circuit Design Services - RFFE, Transceiver Architecture, Sub-GHz to mmWave"
         description={
           <p>
             Qmax Systems provides RF circuit design services, bridging the gap
             between theoretical electromagnetics and robust, manufacturable
             hardware. From sub-GHz IoT modules to mmWave sensor arrays and 1 kW
             industrial plasma generators, Qmax Systems delivers RF front-end
-            (RFFE) engineering — from LNA and PA to mixer stages — transceiver
+            (RFFE) engineering - from LNA and PA to mixer stages - transceiver
             and antenna architecture, impedance matching, filter and
             link-budget design, full-wave electromagnetic simulation, and
             EMI/EMC pre-compliance validation across LF/HF through 77 GHz+
-            mmWave bands — ensuring optimal signal integrity and regulatory
+            mmWave bands - ensuring optimal signal integrity and regulatory
             compliance on first build.
           </p>
         }
@@ -779,7 +779,7 @@ export default function RfAndMicrowavePage() {
 
       <TechnicalAdvantageSection
         headingHighlight="RF and Microwave"
-        lede="From WiFi 7 and 5G NR to industrial plasma generators and mmWave sensing — Qmax Systems applies simulation-first RF engineering across the full wireless stack."
+        lede="From WiFi 7 and 5G NR to industrial plasma generators and mmWave sensing - Qmax Systems applies simulation-first RF engineering across the full wireless stack."
         cards={RF_TECHNICAL_CARDS}
         columns="three"
         sectionHeadingId="technical-advantage-rf-heading"
@@ -793,7 +793,7 @@ export default function RfAndMicrowavePage() {
           heading:
             "Get A Complimentary Consultation With Our RF & Microwave Experts.",
           subtitle:
-            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/hardware-design-services/contact",
         }}
       />

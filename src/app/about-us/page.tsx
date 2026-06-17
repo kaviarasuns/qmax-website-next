@@ -13,7 +13,7 @@ import WhyQmaxV2 from "@/components/about-v2/WhyQmaxV2";
 export const metadata: Metadata = {
   title: "About Us | Qmax Systems",
   description:
-    "Learn about Qmax Systems — precision engineering services since 1997, from concept to manufacturing.",
+    "Learn about Qmax Systems - precision engineering services since 1997, from concept to manufacturing.",
 };
 
 export default function AboutUsPage() {

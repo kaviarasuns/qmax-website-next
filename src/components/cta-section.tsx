@@ -10,7 +10,7 @@ export function CTASection() {
           {/* Header */}
           <div className="flex flex-col gap-4 text-center max-w-2xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold leading-tight">
-              Start with <span className="text-red-500">Engineering</span> — Not Guesswork
+              Start with <span className="text-red-500">Engineering</span> - Not Guesswork
             </h2>
             <p className="text-lg text-muted-foreground">
               Get expert guidance before you commit. Our complimentary consultations help identify risks and opportunities early.

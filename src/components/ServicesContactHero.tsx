@@ -232,7 +232,7 @@ export default function ServicesContactHero({
     // Allow retrying from "error"; block only while sending or already done.
     if (status === "sending" || status === "success") return;
 
-    // Honeypot: real users never see/fill this field — silently drop bots.
+    // Honeypot: real users never see/fill this field - silently drop bots.
     if (honeypotRef.current?.value) {
       setStatus("success");
       return;
@@ -301,7 +301,7 @@ export default function ServicesContactHero({
 
         {/* Stats + form grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_480px] gap-0 lg:gap-12 items-start lg:items-stretch">
-          {/* LEFT — stats */}
+          {/* LEFT - stats */}
           <div className="flex flex-col w-full max-w-[560px] lg:max-w-none mx-auto lg:mx-0 lg:h-full lg:min-h-0">
             <div className="flex flex-col gap-7 flex-1 lg:min-h-0">
               {stats.map((stat, i) => {
@@ -327,7 +327,7 @@ export default function ServicesContactHero({
             </div>
           </div>
 
-          {/* RIGHT — form card */}
+          {/* RIGHT - form card */}
           <div className="bg-white text-[#2a2a2a] w-full lg:w-[480px] pt-8 px-8 pb-7 rounded-[6px] mt-8 lg:mt-0 lg:h-full shadow-[0_12px_32px_rgba(0,0,0,0.28)] relative flex flex-col max-w-[560px] mx-auto lg:mx-0 lg:max-w-none">
             <form
               className="grid grid-cols-2 gap-x-[18px] gap-y-[18px] flex-1"
@@ -519,7 +519,7 @@ export default function ServicesContactHero({
                 />
               </div>
 
-              {/* Honeypot — hidden from real users, bots tend to fill it */}
+              {/* Honeypot - hidden from real users, bots tend to fill it */}
               <input
                 ref={honeypotRef}
                 type="text"
@@ -564,7 +564,7 @@ export default function ServicesContactHero({
                 {submitLabel}
               </button>
 
-              {/* Error message — surfaced from the server's response */}
+              {/* Error message - surfaced from the server's response */}
               {status === "error" && errorMessage && (
                 <p
                   className="col-span-full -mt-1 text-[13px] leading-[1.4] text-red-600"

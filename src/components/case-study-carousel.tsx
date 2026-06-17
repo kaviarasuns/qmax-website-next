@@ -32,7 +32,7 @@ function VideoPlayer({
     const result = node.play();
     if (result && typeof result.catch === "function") {
       result.catch(() => {
-        // Autoplay rejection — leave the overlay visible.
+        // Autoplay rejection - leave the overlay visible.
       });
     }
   }, []);
@@ -209,7 +209,7 @@ export function CaseStudyCarousel({
       {/* ── Carousel ─────────────────────────────────────────────────────── */}
       <div className="rounded-2xl border border-zinc-200/70 bg-white p-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)] md:p-4">
 
-        {/* Main slide — image opens lightbox, video plays inline */}
+        {/* Main slide - image opens lightbox, video plays inline */}
         <div
           role={currentIsVideo ? undefined : "button"}
           tabIndex={currentIsVideo ? undefined : 0}
@@ -242,7 +242,7 @@ export function CaseStudyCarousel({
             ) : (
               <Image
                 src={galleryImages[current]}
-                alt={`${title} — image ${current + 1} of ${galleryImages.length}`}
+                alt={`${title} - image ${current + 1} of ${galleryImages.length}`}
                 width={960}
                 height={600}
                 unoptimized
@@ -251,7 +251,7 @@ export function CaseStudyCarousel({
             )}
           </div>
 
-          {/* Zoom hint badge — images only */}
+          {/* Zoom hint badge - images only */}
           {!currentIsVideo && (
             <div className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-black/50 px-2.5 py-1.5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               <ZoomIn className="h-3.5 w-3.5 text-white" aria-hidden="true" />
@@ -374,7 +374,7 @@ export function CaseStudyCarousel({
             className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 p-4 md:p-10 focus:outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 duration-200"
           >
             <Dialog.Title className="sr-only">
-              {title} — image {lightboxIndex + 1} of {galleryImages.length}
+              {title} - image {lightboxIndex + 1} of {galleryImages.length}
             </Dialog.Title>
 
             {/* Top bar: counter + close */}
@@ -413,7 +413,7 @@ export function CaseStudyCarousel({
               </div>
             </div>
 
-            {/* Image stage — fills available space between top bar and thumbnails */}
+            {/* Image stage - fills available space between top bar and thumbnails */}
             <div
               ref={imageStageRef}
               className={cn(
@@ -468,7 +468,7 @@ export function CaseStudyCarousel({
                     ) : (
                       <Image
                         src={galleryImages[lightboxIndex]}
-                        alt={`${title} — image ${lightboxIndex + 1} of ${galleryImages.length}`}
+                        alt={`${title} - image ${lightboxIndex + 1} of ${galleryImages.length}`}
                         fill
                         unoptimized
                         className="object-contain p-10 md:p-16"
@@ -480,7 +480,7 @@ export function CaseStudyCarousel({
                 </motion.div>
               </AnimatePresence>
 
-              {/* Magnifier lens — images only */}
+              {/* Magnifier lens - images only */}
               {showLens && !lightboxIsVideo && (
                 <div
                   className="pointer-events-none absolute z-10 h-44 w-44 overflow-hidden rounded-full border-2 border-white/70 shadow-[0_0_0_1px_rgba(0,0,0,0.15),0_8px_24px_rgba(0,0,0,0.4)]"

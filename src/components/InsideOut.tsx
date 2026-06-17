@@ -171,7 +171,7 @@ export default function InsideOut() {
                 <br />
                 Every connection, deliberate.
                 <br />
-                This is design at its most honest—where the inside is as
+                This is design at its most honest-where the inside is as
                 beautiful as the outside.
               </p>
             </div>

@@ -22,7 +22,7 @@ const services: ServiceCard[] = [
   {
     id: "hardware",
     title: "Hardware Development",
-    blurb: "From signal to silicon — purpose-built hardware that ships.",
+    blurb: "From signal to silicon - purpose-built hardware that ships.",
     items: [
       "Analog / Mixed Signal",
       "High Speed Digital",
@@ -82,7 +82,7 @@ export default function OurServices() {
             Our <span className="text-red-500">Services</span>
           </h2>
           {/* <p className="mt-4 text-base md:text-lg max-w-2xl mx-auto text-muted-foreground">
-            End-to-end electronics engineering — from concept through hardware,
+            End-to-end electronics engineering - from concept through hardware,
             firmware, PCB, and enclosure to a production-ready product.
           </p> */}
         </div>

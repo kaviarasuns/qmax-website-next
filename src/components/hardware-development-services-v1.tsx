@@ -515,7 +515,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
         </div>
       </section>
 
-      {/* CORE ENGINEERING CAPABILITIES — single screen */}
+      {/* CORE ENGINEERING CAPABILITIES - single screen */}
       <section className="flex min-h-screen items-center border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto w-full max-w-7xl px-6 py-14 lg:px-8">
           <header className="mb-10">
@@ -576,7 +576,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
         </div>
       </section>
 
-      {/* LABS + COMPLIANCE — compact two-column block */}
+      {/* LABS + COMPLIANCE - compact two-column block */}
       <section className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2">
@@ -586,7 +586,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
               </h3>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">
                 In-house electronics and environmental laboratories for rapid
-                debug, prototype assembly, and validation — reducing dependency
+                debug, prototype assembly, and validation - reducing dependency
                 on external facilities during development.
               </p>
               <ul className="mt-4 grid gap-2 text-sm leading-6 text-slate-700 sm:grid-cols-2">
@@ -601,7 +601,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
                 Compliance, Certification &amp; Quality
               </h3>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                We design for compliance from day one — partnering with
+                We design for compliance from day one - partnering with
                 NABL-certified labs and operating under ISO 9001 and ISO 13485
                 quality systems for traceable, audit-ready delivery.
               </p>
@@ -616,7 +616,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
         </div>
       </section>
 
-      {/* INDUSTRIES WE SERVE — single screen */}
+      {/* INDUSTRIES WE SERVE - single screen */}
       <section className="flex min-h-screen items-center bg-white">
         <div className="mx-auto w-full max-w-7xl px-6 py-14 lg:px-8">
           <header className="mb-10 text-center">
@@ -662,7 +662,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
         </div>
       </section>
 
-      {/* READY TO BUILD — CTA */}
+      {/* READY TO BUILD - CTA */}
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_6px_30px_rgba(15,23,42,0.08)] md:p-10">
           <h2 className="text-3xl text-slate-900">
@@ -684,7 +684,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
         </div>
       </section>
 
-      {/* CUSTOMER SUCCESS STORIES — single screen */}
+      {/* CUSTOMER SUCCESS STORIES - single screen */}
       <ServiceCaseStudiesSection
         title="Customer Success Stories"
         eyebrow="Hardware Programs"
@@ -692,7 +692,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
         className="flex min-h-screen items-center bg-[#fcfcfc] border-t border-zinc-200 py-14"
       />
 
-      {/* INSIGHTS FROM OUR ENGINEERS — single screen */}
+      {/* INSIGHTS FROM OUR ENGINEERS - single screen */}
       <section className="flex min-h-screen items-center border-t border-slate-200 bg-slate-50/80">
         <div className="mx-auto w-full max-w-7xl px-6 py-14 lg:px-8">
           <header className="mb-10 flex flex-wrap items-end justify-between gap-6">

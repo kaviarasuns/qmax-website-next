@@ -25,7 +25,7 @@ export default function OurJourney() {
     {
       year: '2020',
       title: 'Headquarters Relocated',
-      description: 'Moved US headquarters to Austin, Texas — the tech capital of America.',
+      description: 'Moved US headquarters to Austin, Texas - the tech capital of America.',
     },
     {
       year: '2024',

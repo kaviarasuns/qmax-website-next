@@ -55,7 +55,7 @@ export default function SIPIAnalysisServicesPage() {
             </p>
             <p>
               At Qmax Systems, Signal Integrity and Power Integrity analysis are
-              embedded into every phase of the PCB design workflow — from
+              embedded into every phase of the PCB design workflow - from
               initial interface selection and stackup definition, through
               constraint-driven layout, to post-layout verification and
               fabrication release. Our first-time-right methodology means that
@@ -121,7 +121,7 @@ export default function SIPIAnalysisServicesPage() {
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-b border-zinc-200">
         <div className="mx-auto max-w-4xl text-zinc-800">
           <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
-            1.1 Signal Integrity — Engineering Scope
+            1.1 Signal Integrity - Engineering Scope
           </h2>
           <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
             Signal Integrity analysis ensures that digital signals arrive at
@@ -140,7 +140,7 @@ export default function SIPIAnalysisServicesPage() {
               line. Characteristic impedance (Z0) for single-ended and
               differential pairs is calculated using 2D/2.5D field solvers with
               real dielectric constant (Dk) and dissipation factor (Df) values
-              at the operating frequency — not generic 1MHz datasheet figures.
+              at the operating frequency - not generic 1MHz datasheet figures.
               For PAM4 channels on Megtron 6 or Tachyon 100G, this distinction
               in Dk/Df at 10–16GHz directly determines whether the channel
               insertion loss (SDD21) meets the compliance mask.
@@ -181,8 +181,8 @@ export default function SIPIAnalysisServicesPage() {
               assessed using IEEE COM methodology, which accounts for channel
               IL, integrated crosstalk noise (ICN from NEXT and FEXT),
               equalization, jitter, and noise in a single figure of merit. COM
-              &ge; 3dB is the pass threshold. ICN — the statistical aggregate of
-              all aggressor lane crosstalk contributions — is a primary
+              &ge; 3dB is the pass threshold. ICN - the statistical aggregate of
+              all aggressor lane crosstalk contributions - is a primary
               constraint that drives inter-pair spacing, reference plane
               continuity, and via placement discipline.
             </li>
@@ -192,9 +192,9 @@ export default function SIPIAnalysisServicesPage() {
               </span>{" "}
               Full mixed-mode S-parameter sets (SDD21, SDD11, SCD21, SDDS41) are
               extracted from 3D EM models for all critical differential
-              channels. Mode conversion (SCD21) — differential-to-common-mode
+              channels. Mode conversion (SCD21) - differential-to-common-mode
               energy conversion caused by asymmetric routing or P/N via geometry
-              — is a key EMI mechanism and a jitter contributor that is
+              - is a key EMI mechanism and a jitter contributor that is
               explicitly tracked and minimised.
             </li>
             <li className="relative pl-6 before:absolute before:left-0 before:top-[0.6rem] before:h-2 before:w-2 before:rounded-full before:bg-zinc-900">
@@ -215,12 +215,12 @@ export default function SIPIAnalysisServicesPage() {
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-zinc-800">
           <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
-            1.2 Power Integrity — Engineering Scope
+            1.2 Power Integrity - Engineering Scope
           </h2>
           <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
             Power Integrity analysis ensures the PDN (Power Distribution
             Network) delivers stable, low-impedance supply voltage to every
-            device across the full operating frequency range — from DC through
+            device across the full operating frequency range - from DC through
             the GHz regime. An inadequately designed PDN causes supply voltage
             droop under transient load, generates switching noise that couples
             into SI channels through shared reference planes, and produces
@@ -249,7 +249,7 @@ export default function SIPIAnalysisServicesPage() {
               from DC to 1GHz+, targeting a flat profile below Ztarget = ΔV/ΔI
               across the full frequency range. Anti-resonance peaks are
               suppressed through calculated intermediate-value capacitor
-              interleaving, ESL-optimised placement, and — where required —
+              interleaving, ESL-optimised placement, and - where required -
               resistive damping networks.
             </li>
             <li className="relative pl-6 before:absolute before:left-0 before:top-[0.6rem] before:h-2 before:w-2 before:rounded-full before:bg-zinc-900">
@@ -318,7 +318,7 @@ export default function SIPIAnalysisServicesPage() {
                     </td>
                     <td className="px-6 py-5 align-top">
                       SI/PI constraints are defined and verified before layout
-                      begins — not applied as post-routing corrections. This
+                      begins - not applied as post-routing corrections. This
                       eliminates the most common cause of re-spin: a routing
                       approach that violates SI targets and cannot be corrected
                       without reworking large portions of the board.
@@ -332,7 +332,7 @@ export default function SIPIAnalysisServicesPage() {
                       Over 30 years of direct engineering relationships with
                       Broadcom, Intel, AMD, Qualcomm, NXP, Ampere, and MediaTek.
                       We obtain silicon-validated IBIS-AMI and SPICE models and
-                      follow each vendor&apos;s platform validation checklists —
+                      follow each vendor&apos;s platform validation checklists -
                       the same methodology the silicon vendor&apos;s own
                       hardware validation team uses.
                     </td>
@@ -394,7 +394,7 @@ export default function SIPIAnalysisServicesPage() {
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
           <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
-            1.4 Complimentary SI/PI Review — Included with PCB Layout Services
+            1.4 Complimentary SI/PI Review - Included with PCB Layout Services
           </h2>
           <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
             Every PCB layout engagement at Qmax Systems includes a complimentary
@@ -442,7 +442,7 @@ export default function SIPIAnalysisServicesPage() {
             Qmax Systems provides SI analysis across the current and emerging
             generations of high-speed digital interconnect standards. The table
             below lists the primary interfaces. Where multiple generations exist
-            within a family, the most demanding generation is listed — our
+            within a family, the most demanding generation is listed - our
             capability at that level implies full coverage of all predecessor
             generations in the same family.
           </p>
@@ -499,7 +499,7 @@ export default function SIPIAnalysisServicesPage() {
                   </tr>
                   <tr className="transition-colors hover:bg-zinc-50/50">
                     <td className="px-6 py-5 font-medium text-zinc-900 align-top border-r border-zinc-200/50">
-                      224G PAM4 Ethernet (IEEE 802.3dj — emerging)
+                      224G PAM4 Ethernet (IEEE 802.3dj - emerging)
                     </td>
                     <td className="px-6 py-5 align-top border-r border-zinc-200/50 text-zinc-600">
                       224 Gbps per lane, PAM4
@@ -588,7 +588,7 @@ export default function SIPIAnalysisServicesPage() {
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
           <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
-            2.1 NRZ vs. PAM4 — Engineering Implications
+            2.1 NRZ vs. PAM4 - Engineering Implications
           </h2>
           <div className="mt-6 flex flex-col gap-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
             <p>
@@ -596,13 +596,13 @@ export default function SIPIAnalysisServicesPage() {
               (4-level Pulse Amplitude Modulation) above 56Gbps per lane has
               fundamentally changed the SI engineering challenge. PAM4 encodes 2
               bits per symbol, achieving twice the data rate at the same baud
-              rate — but each of the three superimposed eyes is only one-third
+              rate - but each of the three superimposed eyes is only one-third
               of the full NRZ swing, imposing a 9.5dB SNR penalty. This means
               PAM4 channels must operate with significantly tighter insertion
               loss (SDD21), lower integrated crosstalk noise (ICN from NEXT and
-              FEXT), and more sophisticated receiver equalization — CTLE, DFE
+              FEXT), and more sophisticated receiver equalization - CTLE, DFE
               with 4 to 24 taps, and in some implementations MLSE (Maximum
-              Likelihood Sequence Estimation) — to meet the BER targets required
+              Likelihood Sequence Estimation) - to meet the BER targets required
               before FEC (Reed-Solomon Forward Error Correction) gain is
               applied.
             </p>
@@ -611,7 +611,7 @@ export default function SIPIAnalysisServicesPage() {
               is the standard assessment methodology for PAM4 channel
               compliance. COM incorporates channel IL, ICN, equalization
               settings, transmitter noise, and receiver sensitivity into a
-              single figure of merit — a COM value below 3dB constitutes a
+              single figure of merit - a COM value below 3dB constitutes a
               channel failure. Qmax runs COM analysis for all PCIe Gen5/6 and
               112G/224G PAM4 designs as a standard deliverable.
             </p>
@@ -632,8 +632,8 @@ export default function SIPIAnalysisServicesPage() {
               signal propagation velocity, controlled impedance, and
               per-unit-length channel insertion loss at the operating frequency.
               Qmax engineers work directly with PCB fabricators to obtain
-              measured material data at frequency — not just 1MHz datasheet
-              values — and incorporate this into channel simulation before the
+              measured material data at frequency - not just 1MHz datasheet
+              values - and incorporate this into channel simulation before the
               stackup is finalised.
             </p>
           </div>
@@ -712,7 +712,7 @@ export default function SIPIAnalysisServicesPage() {
                     </td>
                     <td className="px-6 py-5 align-top border-r border-zinc-200/50">
                       Determines signal propagation velocity and controlled
-                      impedance. Dk is frequency-dependent (dispersion) — must
+                      impedance. Dk is frequency-dependent (dispersion) - must
                       be characterised at operating frequency, not DC.
                     </td>
                     <td className="px-6 py-5 align-top">
@@ -1110,7 +1110,7 @@ export default function SIPIAnalysisServicesPage() {
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
           <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
-            5. Representative SI Analysis Results — Actual Qmax Project Data
+            5. Representative SI Analysis Results - Actual Qmax Project Data
           </h2>
           <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
             The following simulation outputs are from production SI analysis
@@ -1121,7 +1121,7 @@ export default function SIPIAnalysisServicesPage() {
 
           <div className="mt-16">
             <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
-              5.1 PAM4 Eye Diagram — Worst-Case Eye Margin
+              5.1 PAM4 Eye Diagram - Worst-Case Eye Margin
             </h3>
             <p className="mt-4 text-base leading-8 md:text-lg text-justify text-muted-foreground">
               Ansys QuickEye IBIS-AMI statistical eye simulation. End-to-end
@@ -1146,7 +1146,7 @@ export default function SIPIAnalysisServicesPage() {
 
           <div className="mt-24">
             <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
-              5.2 Board TDR Analysis — Via Impedance Discontinuity
+              5.2 Board TDR Analysis - Via Impedance Discontinuity
               Identification
             </h3>
             <p className="mt-4 text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -1200,7 +1200,7 @@ export default function SIPIAnalysisServicesPage() {
 
           <div className="mt-24">
             <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
-              5.4 NEXT Analysis — Near-End Crosstalk Across All Lane
+              5.4 NEXT Analysis - Near-End Crosstalk Across All Lane
               Combinations
             </h3>
             <p className="mt-4 text-base leading-8 md:text-lg text-justify text-muted-foreground">

@@ -8,7 +8,7 @@ import type { ReactNode } from "react";
  */
 export function renderHeroTitle(title: ReactNode): ReactNode {
   if (typeof title !== "string") return title;
-  const dashIndex = title.indexOf("—");
+  const dashIndex = title.indexOf("-");
   if (dashIndex === -1) return title;
   return (
     <>

@@ -9,6 +9,12 @@ type TeamMember = {
   linkedin: string;
 };
 
+const MEMBER_CARD_CLASS =
+  "flex flex-col rounded-2xl bg-white px-10 pb-9 pt-6 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]";
+
+const SPOTLIGHT_CARD_CLASS =
+  "relative flex min-h-[240px] flex-col justify-between overflow-hidden rounded-2xl px-10 pb-9 pt-6 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]";
+
 const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Saravanabhavan Chandrasekar",
@@ -19,14 +25,14 @@ const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     name: "Saravanaperumal Annamalai",
-    role: "VP — Software Engineering",
+    role: "VP - Software Engineering",
     bio: "With 26+ years of experience, he specializes in embedded software development, system architecture, and large-scale engineering program management. He oversees firmware development, software architecture design, and system integration across complex hardware platforms.",
     image: "/about-us/image4.jpg",
     linkedin: "https://www.linkedin.com/in/sp-qmax/",
   },
   {
     name: "Muhammed Asil",
-    role: "VP — Business Development",
+    role: "VP - Business Development",
     bio: "Leads business development while contributing his electrical engineering expertise to customer programs. With 20+ years of experience, he works closely with global clients to understand product requirements and coordinate engineering execution from concept through delivery.",
     image: "/about-us/image3.jpg",
     linkedin: "https://www.linkedin.com/in/nmuhammedasil/",
@@ -40,7 +46,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     name: "Sangeetha S",
-    role: "Director — Finance",
+    role: "Director - Finance",
     bio: "Oversees finance and corporate operations. With 28+ years of experience in financial management and administration, she manages accounting, financial planning, HR operations, and organizational administration while ensuring strong financial governance.",
     image: "/about-us/image1.jpg",
     linkedin: "https://www.linkedin.com/in/sangeetha-s-0a1aa535a/",
@@ -77,7 +83,7 @@ export default function MeetTheTeamV2() {
           {TEAM_MEMBERS.map((member) => (
             <article
               key={member.name}
-              className="flex flex-col rounded-md border border-slate-200 bg-white p-8 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
+              className={MEMBER_CARD_CLASS}
             >
               <div className="mb-[18px] flex items-center gap-4">
                 <div className="relative h-[76px] w-[76px] shrink-0 overflow-hidden rounded-full bg-slate-100">
@@ -90,7 +96,7 @@ export default function MeetTheTeamV2() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold leading-tight tracking-wide text-foreground md:text-2xl">
+                  <h3 className="text-xl font-medium leading-tight tracking-wide text-foreground md:text-2xl">
                     {member.name}
                   </h3>
                   <p className="mt-0.5 text-sm font-bold text-red-500">
@@ -99,15 +105,13 @@ export default function MeetTheTeamV2() {
                 </div>
               </div>
 
-              <p className="flex-1 text-base leading-relaxed text-foreground">
-                {member.bio}
-              </p>
+              <p className="flex-1 text-base text-foreground">{member.bio}</p>
 
               <a
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-[18px] inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-opacity hover:opacity-70"
+                className="mt-[18px] inline-flex items-center gap-2 text-sm font-semibold text-[#0A66C2] transition-colors hover:text-[#084d92]"
               >
                 <LinkedInIcon />
                 LinkedIn
@@ -115,7 +119,7 @@ export default function MeetTheTeamV2() {
             </article>
           ))}
 
-          <article className="relative flex min-h-[240px] flex-col justify-between overflow-hidden rounded-md p-8 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]">
+          <article className={SPOTLIGHT_CARD_CLASS}>
             <Image
               src="https://d1yetprhniwywz.cloudfront.net/v2/about-us/office.png"
               alt="Qmax Systems engineering team at work"

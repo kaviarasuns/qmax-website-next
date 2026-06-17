@@ -18,7 +18,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-left text-lg md:text-xl leading-relaxed max-w-xl text-foreground">
-              Engineering Innovation Since 1997 — From Concept to Manufacturing
+              Engineering Innovation Since 1997 - From Concept to Manufacturing
             </p>
 
             <p className="text-base md:text-lg leading-relaxed max-w-lg text-foreground">

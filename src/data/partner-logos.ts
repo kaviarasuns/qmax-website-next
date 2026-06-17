@@ -1,7 +1,7 @@
 /**
  * Centralized partner/partnership logo data.
  *
- * Each service page has its own export so pages can diverge independently —
+ * Each service page has its own export so pages can diverge independently -
  * to customize a page, replace its alias with a page-specific array.
  */
 

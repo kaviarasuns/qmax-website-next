@@ -13,8 +13,8 @@ export default function MechanicalIndustrialDesignServicesDeprecated() {
             the primary user interface.
           </p>
           <p>
-            Failure to account for mechanical constraints—such as component
-            clearances, connector placements, or thermal dissipation—can lead to
+            Failure to account for mechanical constraints-such as component
+            clearances, connector placements, or thermal dissipation-can lead to
             costly PCB re-spins and delayed time-to-market.
           </p>
           <p>

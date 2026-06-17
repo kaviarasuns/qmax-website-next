@@ -107,7 +107,7 @@ const projectExperience: ProjectExperienceItem[] = [
 const faqs = [
   {
     q: "What high-speed design standards does Qmax Systems support?",
-    a: "Qmax Systems specializes in the latest high-speed communication standards, including PCIe Gen 5/6, DDR5, and 112G SerDes. The Qmax Systems engineering team utilizes advanced simulation tools — full-wave EM, IBIS-AMI channel modeling, and target-impedance methodologies — to ensure signal integrity (SI) and power integrity (PI) for data rates exceeding 100 Gbps.",
+    a: "Qmax Systems specializes in the latest high-speed communication standards, including PCIe Gen 5/6, DDR5, and 112G SerDes. The Qmax Systems engineering team utilizes advanced simulation tools - full-wave EM, IBIS-AMI channel modeling, and target-impedance methodologies - to ensure signal integrity (SI) and power integrity (PI) for data rates exceeding 100 Gbps.",
   },
   {
     q: "Can Qmax Systems design custom hardware for AI and Deep Learning?",
@@ -131,11 +131,11 @@ const faqs = [
   },
   {
     q: "How does Qmax Systems protect customer design data and intellectual property?",
-    a: "Qmax Systems treats every engagement under strict IP protection: NDAs signed before any technical discussion, dedicated secure project workspaces, role-based access control to design files, and customer-owned IP at every milestone — schematics, layouts, BoMs, and firmware. Qmax Systems engineers never reuse or repurpose customer IP across other client engagements.",
+    a: "Qmax Systems treats every engagement under strict IP protection: NDAs signed before any technical discussion, dedicated secure project workspaces, role-based access control to design files, and customer-owned IP at every milestone - schematics, layouts, BoMs, and firmware. Qmax Systems engineers never reuse or repurpose customer IP across other client engagements.",
   },
   {
     q: "How does Qmax Systems ensure signal integrity and power integrity in high-speed digital designs?",
-    a: "Qmax Systems' SI/PI methodology combines full-wave 3D electromagnetic simulation, IBIS-AMI channel modeling for DDR5 and SerDes interfaces, and target-impedance PDN design backed by simulation-driven decoupling. Every high-speed design — DDR5, PCIe Gen5/Gen6, 100GbE, 112G SerDes — is validated against compliance margin before fabrication, eliminating costly re-spins.",
+    a: "Qmax Systems' SI/PI methodology combines full-wave 3D electromagnetic simulation, IBIS-AMI channel modeling for DDR5 and SerDes interfaces, and target-impedance PDN design backed by simulation-driven decoupling. Every high-speed design - DDR5, PCIe Gen5/Gen6, 100GbE, 112G SerDes - is validated against compliance margin before fabrication, eliminating costly re-spins.",
   },
 ];
 
@@ -161,19 +161,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "High-performance compute and server hardware built for AI, data centers, and rugged industrial deployment.",
     intro:
-      "Qmax Systems engineers high-performance digital compute platforms — from multicore CPU systems to dense AI GPU servers and ruggedized single-board computers. Our hardware design team builds for AI training and inference workloads, hyperscale data centers, telecom edge deployments, and industrial environments where signal integrity and thermal performance are non-negotiable.",
+      "Qmax Systems engineers high-performance digital compute platforms - from multicore CPU systems to dense AI GPU servers and ruggedized single-board computers. Our hardware design team builds for AI training and inference workloads, hyperscale data centers, telecom edge deployments, and industrial environments where signal integrity and thermal performance are non-negotiable.",
     points: [
       {
         boldLead: "Multicore CPU Systems",
-        rest: " — high-performance digital designs utilizing the latest Intel Xeon, AMD EPYC, and Ampere Altra CPUs, optimized for thermal efficiency and high-speed data throughput.",
+        rest: " - high-performance digital designs utilizing the latest Intel Xeon, AMD EPYC, and Ampere Altra CPUs, optimized for thermal efficiency and high-speed data throughput.",
       },
       {
         boldLead: "High-Density AI GPU Compute Servers",
-        rest: " — custom hardware engineering for parallel processing workloads, designed to house and power NVIDIA and AMD GPU clusters for AI training and inference.",
+        rest: " - custom hardware engineering for parallel processing workloads, designed to house and power NVIDIA and AMD GPU clusters for AI training and inference.",
       },
       {
         boldLead: "Single Board Computers (SBCs) & Server Motherboards",
-        rest: " — tailor-made designs for data centers and rugged industrial environments, validated for Power Integrity (PI) and Signal Integrity (SI).",
+        rest: " - tailor-made designs for data centers and rugged industrial environments, validated for Power Integrity (PI) and Signal Integrity (SI).",
       },
     ],
     applications:
@@ -204,15 +204,15 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     points: [
       {
         boldLead: "100 Gbps Network Interface Cards (NIC)",
-        rest: " — ultra-high-speed connectivity solutions for high-end blade servers, delivering maximum bandwidth and minimal latency for modern workloads.",
+        rest: " - ultra-high-speed connectivity solutions for high-end blade servers, delivering maximum bandwidth and minimal latency for modern workloads.",
       },
       {
         boldLead: "O-RAN Distributed Units (DU)",
-        rest: " — specialized hardware development for Open RAN architecture, accelerating global 4G and 5G infrastructure deployments.",
+        rest: " - specialized hardware development for Open RAN architecture, accelerating global 4G and 5G infrastructure deployments.",
       },
       {
         boldLead: "Fabric Interface Cards (FIC)",
-        rest: " — innovative designs for Photonic Resource Units, enabling seamless optical-to-electrical resource management in disaggregated data centers.",
+        rest: " - innovative designs for Photonic Resource Units, enabling seamless optical-to-electrical resource management in disaggregated data centers.",
       },
     ],
     applications:
@@ -242,11 +242,11 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     points: [
       {
         boldLead: "FPGA-Based Hardware",
-        rest: " — custom development on Xilinx and Intel platforms for hardware acceleration, real-time signal processing, and flexible high-speed I/O.",
+        rest: " - custom development on Xilinx and Intel platforms for hardware acceleration, real-time signal processing, and flexible high-speed I/O.",
       },
       {
         boldLead: "Microcontroller-Based Products",
-        rest: " — robust, power-optimized embedded systems using ARM Cortex-M, ESP32, and PIC architectures for Industrial IoT (IIoT) deployments.",
+        rest: " - robust, power-optimized embedded systems using ARM Cortex-M, ESP32, and PIC architectures for Industrial IoT (IIoT) deployments.",
       },
     ],
     applications:
@@ -317,7 +317,7 @@ const WHY_CARDS = [
   },
   {
     title: "Expert Digital Hardware Engineers",
-    desc: "Qmax Systems digital hardware engineers average 12+ years across AI infrastructure, telecom and O-RAN, embedded edge computing, defense electronics, and industrial IoT. Only senior engineers touch your design — no junior hand-offs, no learning on your timeline.",
+    desc: "Qmax Systems digital hardware engineers average 12+ years across AI infrastructure, telecom and O-RAN, embedded edge computing, defense electronics, and industrial IoT. Only senior engineers touch your design - no junior hand-offs, no learning on your timeline.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -338,7 +338,7 @@ const WHY_CARDS = [
 export const metadata = buildMetadata({
   title: "High-Speed Digital Design | DDR4, PCIe & SerDes | Qmax",
   description:
-    "High-speed digital design — DDR4/5 topology, PCIe Gen 5 architecture, USB 3.x, HDMI 2.1, SerDes signal budget, and component selection. Schematic to bring-up.",
+    "High-speed digital design - DDR4/5 topology, PCIe Gen 5 architecture, USB 3.x, HDMI 2.1, SerDes signal budget, and component selection. Schematic to bring-up.",
   path: "/hardware-design-services/high-speed-digital-design",
 });
 
@@ -347,17 +347,17 @@ export default function HighSpeedDigitalDesignPage() {
     <>
       <HardwareServiceHeroSection
         imageSrc="/hw-main/HW-High-Speed-Digital-Design/image1.jpg"
-        imageAlt="High-Performance Digital Systems — Qmax Systems"
+        imageAlt="High-Performance Digital Systems - Qmax Systems"
         // title="High-Performance Digital Systems Development"
-        title="High-Speed Digital Design — DDR5, PCIe Gen6, and 112G SerDes Architecture"
+        title="High-Speed Digital Design - DDR5, PCIe Gen6, and 112G SerDes Architecture"
         description={
           <p>
             Qmax Systems provides high-speed digital design for AI computing,
             telecom, edge servers, and data-intensive infrastructure. Qmax
             Systems engineers high-speed, high-density, high-reliability
-            systems around signal integrity (SI) and power integrity (PI) —
+            systems around signal integrity (SI) and power integrity (PI) -
             from DDR5 and PCIe Gen6 to 112G SerDes, with architecture set
-            before layout — delivering production-ready platforms, not just
+            before layout - delivering production-ready platforms, not just
             prototypes.
           </p>
         }
@@ -380,7 +380,7 @@ export default function HighSpeedDigitalDesignPage() {
           heading:
             "Get A Complimentary Consultation With Our Digital Hardware Experts.",
           subtitle:
-            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/hardware-design-services/contact",
         }}
       />

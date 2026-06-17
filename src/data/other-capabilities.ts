@@ -67,7 +67,7 @@ export const otherCapabilities: Capability[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// Per-page aliases — every page imports its own name but gets the same cards
+// Per-page aliases - every page imports its own name but gets the same cards
 // ---------------------------------------------------------------------------
 
 export const hwDevelopmentOtherCapabilities = otherCapabilities;

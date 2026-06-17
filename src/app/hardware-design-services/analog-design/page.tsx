@@ -127,19 +127,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Precision analog front-end design that converts microvolt sensor signals into reliable digital data.",
     intro:
-      "Qmax Systems designs custom Analog Front-End (AFE) circuits for capacitive, inductive, resistive, and piezoelectric transducer modalities. Our AFE designs are optimized for Signal-to-Noise Ratio (SNR) and Spurious-Free Dynamic Range (SFDR) — critical for industrial sensing, medical instrumentation, and automotive sensor electronics where measurement integrity is non-negotiable.",
+      "Qmax Systems designs custom Analog Front-End (AFE) circuits for capacitive, inductive, resistive, and piezoelectric transducer modalities. Our AFE designs are optimized for Signal-to-Noise Ratio (SNR) and Spurious-Free Dynamic Range (SFDR) - critical for industrial sensing, medical instrumentation, and automotive sensor electronics where measurement integrity is non-negotiable.",
     points: [
       {
         boldLead: "Multi-Modality Sensor Conditioning",
-        rest: " — instrumentation amplifiers, charge amplifiers, and Wheatstone bridge front-ends for strain, pressure, capacitive, and piezoelectric transducers.",
+        rest: " - instrumentation amplifiers, charge amplifiers, and Wheatstone bridge front-ends for strain, pressure, capacitive, and piezoelectric transducers.",
       },
       {
         boldLead: "Low-Noise Signal Path Design",
-        rest: " — careful component selection, return-path planning, and impedance matching to preserve signal fidelity from the sensor element to the ADC input.",
+        rest: " - careful component selection, return-path planning, and impedance matching to preserve signal fidelity from the sensor element to the ADC input.",
       },
       {
         boldLead: "Calibration & Linearization Circuitry",
-        rest: " — temperature compensation, gain trim, and offset correction designed in from the start, not bolted on post-hoc.",
+        rest: " - temperature compensation, gain trim, and offset correction designed in from the start, not bolted on post-hoc.",
       },
     ],
     applications:
@@ -165,19 +165,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Mixed-signal System-on-Module integration that lets high-resolution converters talk reliably to FPGAs and SoCs.",
     intro:
-      "Qmax Systems integrates high-resolution ADCs (up to 24-bit) and high-speed DACs (up to 4 Gbps) with FPGAs and SoCs, including JESD204B/C interface timing management and LVDS signaling — for software-defined radio, instrumentation, defense electronics, and high-speed data acquisition systems.",
+      "Qmax Systems integrates high-resolution ADCs (up to 24-bit) and high-speed DACs (up to 4 Gbps) with FPGAs and SoCs, including JESD204B/C interface timing management and LVDS signaling - for software-defined radio, instrumentation, defense electronics, and high-speed data acquisition systems.",
     points: [
       {
         boldLead: "High-Resolution ADC Integration",
-        rest: " — up to 24-bit converters with strict thermal management, voltage reference design, and digital interface optimization for noise-critical measurements.",
+        rest: " - up to 24-bit converters with strict thermal management, voltage reference design, and digital interface optimization for noise-critical measurements.",
       },
       {
         boldLead: "High-Speed DAC Integration",
-        rest: " — up to 4 Gbps converters with controlled-impedance routing, clock distribution, and synchronization strategies for multi-channel coherence.",
+        rest: " - up to 4 Gbps converters with controlled-impedance routing, clock distribution, and synchronization strategies for multi-channel coherence.",
       },
       {
         boldLead: "JESD204B/C & LVDS Signaling",
-        rest: " — interface timing closure, deterministic latency configuration, and lane skew compensation between converters and FPGA/SoC hosts.",
+        rest: " - interface timing closure, deterministic latency configuration, and lane skew compensation between converters and FPGA/SoC hosts.",
       },
     ],
     applications:
@@ -202,19 +202,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "RF and high-speed interconnect design for multi-gigahertz mixed-signal systems.",
     intro:
-      "Qmax Systems designs and simulates transmission lines, controlled-impedance routing, and return path optimization for multi-gigahertz analog and mixed-signal interconnects. Our engineers handle the signal integrity challenges that surface in software-defined radio, telecom backhaul, and high-bandwidth data converter implementations — where even small layout deviations can ruin EVM, eye margin, or BER.",
+      "Qmax Systems designs and simulates transmission lines, controlled-impedance routing, and return path optimization for multi-gigahertz analog and mixed-signal interconnects. Our engineers handle the signal integrity challenges that surface in software-defined radio, telecom backhaul, and high-bandwidth data converter implementations - where even small layout deviations can ruin EVM, eye margin, or BER.",
     points: [
       {
         boldLead: "Transmission Line Design",
-        rest: " — controlled-impedance microstrip and stripline routing for multi-gigahertz analog and digital channels.",
+        rest: " - controlled-impedance microstrip and stripline routing for multi-gigahertz analog and digital channels.",
       },
       {
         boldLead: "Return Path Optimization",
-        rest: " — reference plane planning, via stitching, and ground return strategies to prevent common-mode noise and ensure EMC compliance.",
+        rest: " - reference plane planning, via stitching, and ground return strategies to prevent common-mode noise and ensure EMC compliance.",
       },
       {
         boldLead: "Signal Integrity Simulation",
-        rest: " — full-wave EM, S-parameter extraction, and channel modeling for high-speed lanes before fabrication.",
+        rest: " - full-wave EM, S-parameter extraction, and channel modeling for high-speed lanes before fabrication.",
       },
     ],
     applications:
@@ -240,19 +240,19 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     headline:
       "Low-power wearable electronics where nano-ampere currents don't compromise signal fidelity.",
     intro:
-      "Qmax Systems designs ultra-low-power analog circuits for battery-operated medical and consumer wearables — achieving nano-ampere quiescent currents without compromising signal fidelity. Our designs power medical monitoring patches, hearables, fitness wearables, and continuously-monitoring sensor platforms where battery life and measurement accuracy must coexist.",
+      "Qmax Systems designs ultra-low-power analog circuits for battery-operated medical and consumer wearables - achieving nano-ampere quiescent currents without compromising signal fidelity. Our designs power medical monitoring patches, hearables, fitness wearables, and continuously-monitoring sensor platforms where battery life and measurement accuracy must coexist.",
     points: [
       {
         boldLead: "Nano-Ampere Quiescent Designs",
-        rest: " — sub-microamp standby currents across the full analog signal chain, extending battery life from days to weeks.",
+        rest: " - sub-microamp standby currents across the full analog signal chain, extending battery life from days to weeks.",
       },
       {
         boldLead: "Bio-Potential & Bio-Sensor AFEs",
-        rest: " — precision conditioning for ECG, PPG, GSR, and bio-impedance signals in body-worn form factors.",
+        rest: " - precision conditioning for ECG, PPG, GSR, and bio-impedance signals in body-worn form factors.",
       },
       {
         boldLead: "Power Domain Partitioning",
-        rest: " — multi-rail architectures that isolate sensitive analog from digital switching noise without sacrificing duty-cycled efficiency.",
+        rest: " - multi-rail architectures that isolate sensitive analog from digital switching noise without sacrificing duty-cycled efficiency.",
       },
     ],
     applications:
@@ -323,7 +323,7 @@ const WHY_CARDS = [
   },
   {
     title: "Expert Analog & Mixed-Signal Engineers",
-    desc: "Qmax Systems analog and mixed-signal engineers average 12+ years across medical instrumentation, industrial sensing, defense electronics, automotive sensor electronics, and consumer wearables. Only senior engineers touch your design — no junior hand-offs, no learning on your timeline.",
+    desc: "Qmax Systems analog and mixed-signal engineers average 12+ years across medical instrumentation, industrial sensing, defense electronics, automotive sensor electronics, and consumer wearables. Only senior engineers touch your design - no junior hand-offs, no learning on your timeline.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -403,7 +403,7 @@ const ANALOG_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Noise Reduction & Isolation",
-    body: "Rigorous physical isolation techniques — Moat-and-Bridge PCB structures and Faraday shielding — to protect sensitive analog nodes from digital switching noise and external EMI.",
+    body: "Rigorous physical isolation techniques - Moat-and-Bridge PCB structures and Faraday shielding - to protect sensitive analog nodes from digital switching noise and external EMI.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -441,7 +441,7 @@ const ANALOG_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
   },
   {
     title: "Real-Time FPGA Signal Processing",
-    body: "Pairing analog hardware with FPGA-based DSP enables real-time filtering, FFTs, and decimation at the edge — reducing downstream processor load and accelerating system response.",
+    body: "Pairing analog hardware with FPGA-based DSP enables real-time filtering, FFTs, and decimation at the edge - reducing downstream processor load and accelerating system response.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -480,7 +480,7 @@ const faqs = [
   },
   {
     q: "Does Qmax Systems handle low-power analog design for wearables and battery-operated devices?",
-    a: "Yes. Qmax Systems specializes in ultra-low-power analog design achieving nano-ampere quiescent currents without compromising signal fidelity — for medical monitoring patches, hearables, fitness wearables, and continuous-monitoring sensor platforms.",
+    a: "Yes. Qmax Systems specializes in ultra-low-power analog design achieving nano-ampere quiescent currents without compromising signal fidelity - for medical monitoring patches, hearables, fitness wearables, and continuous-monitoring sensor platforms.",
   },
   {
     q: "How does Qmax Systems prevent digital switching noise from corrupting sensitive analog signals?",
@@ -496,7 +496,7 @@ const faqs = [
   },
   {
     q: "How does Qmax Systems protect customer design data and intellectual property?",
-    a: "Qmax Systems treats every engagement under strict IP protection: NDAs signed before any technical discussion, dedicated secure project workspaces, role-based access control to design files, and customer-owned IP at every milestone — schematics, layouts, BoMs, and firmware. Qmax Systems engineers never reuse or repurpose customer IP across other client engagements.",
+    a: "Qmax Systems treats every engagement under strict IP protection: NDAs signed before any technical discussion, dedicated secure project workspaces, role-based access control to design files, and customer-owned IP at every milestone - schematics, layouts, BoMs, and firmware. Qmax Systems engineers never reuse or repurpose customer IP across other client engagements.",
   },
   {
     q: "How does Qmax Systems ensure noise performance and signal integrity in mixed-signal designs?",
@@ -507,7 +507,7 @@ const faqs = [
 export const metadata = buildMetadata({
   title: "Analog Circuit Design Services | Op-Amp & ADC/DAC | Qmax",
   description:
-    "Analog circuit design — op-amp topology, ADC/DAC selection, low-noise amplifier design, sensor interface, and mixed-signal partitioning at schematic level.",
+    "Analog circuit design - op-amp topology, ADC/DAC selection, low-noise amplifier design, sensor interface, and mixed-signal partitioning at schematic level.",
   path: "/hardware-design-services/analog-design",
 });
 
@@ -516,14 +516,14 @@ export default function AnalogDesignPage() {
     <>
       <HardwareServiceHeroSection
         imageSrc="/hw-main/hw-sub/image1.jpg"
-        imageAlt="Analog and Mixed-Signal Design — Qmax Systems"
+        imageAlt="Analog and Mixed-Signal Design - Qmax Systems"
         // title={
         //   <>
         //     Analog &amp; Mixed-Signal Design Services: Precision Engineering for
         //     Complex Signal Chains
         //   </>
         // }
-        title="Analog Circuit Design Services — Precision Signal Acquisition and Mixed-Signal Conditioning"
+        title="Analog Circuit Design Services - Precision Signal Acquisition and Mixed-Signal Conditioning"
         description={
           <p>
             Qmax Systems provides analog circuit design services for the
@@ -547,7 +547,7 @@ export default function AnalogDesignPage() {
       />
       <TechnicalAdvantageSection
         headingHighlight="Analog & Mixed-Signal"
-        lede="Qmax Systems bridges the gap between raw physical phenomena and actionable digital data — with rigorous control of noise, signal integrity, and timing across the entire signal chain."
+        lede="Qmax Systems bridges the gap between raw physical phenomena and actionable digital data - with rigorous control of noise, signal integrity, and timing across the entire signal chain."
         cards={ANALOG_TECHNICAL_CARDS}
         columns="three"
         sectionHeadingId="technical-advantage-analog-heading"
@@ -565,7 +565,7 @@ export default function AnalogDesignPage() {
           heading:
             "Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts.",
           subtitle:
-            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/hardware-design-services/contact",
         }}
       />

@@ -43,7 +43,7 @@
     --font-readable-family: "Roboto", Arial, Helvetica, sans-serif;
 
     /* Layout tokens */
-    /* Height of the fixed top navigation. Single source of truth — pages
+    /* Height of the fixed top navigation. Single source of truth - pages
        inside FullPageScroll2 reserve this much space at the top so content
        never sits under the nav. Keep in sync with Navigation's `h-16`. */
     --nav-h: 4rem;

@@ -16,7 +16,7 @@ const HERO = {
   videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_V2.mp4",
   title: "Industrial Design Services",
   description:
-    "Qmax Systems provides industrial design services for hardware products — integrating visual, ergonomic, and manufacturing reality, always grounded in engineering truth.",
+    "Qmax Systems provides industrial design services for hardware products - integrating visual, ergonomic, and manufacturing reality, always grounded in engineering truth.",
   ctaHref: "/mechanical-industrial-design-services/contact",
   ctaLabel: "Talk to Our Engineers",
 };
@@ -29,7 +29,7 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/stellar_video.mp4",
     headline: "Product Story",
     intro:
-      "Every successful product begins with a clearly articulated concept. Our industrial designers work directly with clients to translate product requirements, brand values, and user needs into structured visual narratives. This phase includes hand sketches, digital concept illustrations, and annotated visualisation boards that communicate design intent to both technical and non-technical stakeholders.",
+      "Every successful product begins with a clearly articulated concept. Our industrial designers work directly with clients to translate product requirements, brand values, and user needs into clear visual concepts. This phase includes hand sketches, digital concept illustrations, and annotated visualisation boards that communicate design intent to both technical and non-technical stakeholders.",
     bullets: [
       {
         title: "Deliverables Include",
@@ -51,7 +51,7 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/core-capabilites-ID.jpeg",
     headline: "CAD and 3D Modelling",
     intro:
-      "Approved concept sketches are translated into precision parametric 3D models using industry-standard CAD platforms. Our models are construction-ready — built with tolerancing, draft angles, wall thickness constraints, and assembly logic incorporated from the outset. CAD deliverables are fully documented with manufacturing annotations, bill of materials structure, and revision control to support downstream mechanical engineering and tooling activities.",
+      "Approved concept sketches are translated into precision parametric 3D models using industry-standard CAD platforms. Our models are construction-ready - built with tolerancing, draft angles, wall thickness constraints, and assembly logic incorporated from the outset. CAD deliverables are fully documented with manufacturing annotations, bill of materials structure, and revision control to support downstream mechanical engineering and tooling activities.",
     bullets: [
       {
         title: "Typical Scope",
@@ -71,7 +71,7 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
     videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ecl_ui_ux.mp4",
     headline: "UI & UX Design",
     intro:
-      "For products with embedded displays, touchscreens, or physical control interfaces, our team designs the complete user experience — from information architecture and interaction logic to visual interface design and usability validation. We apply human factors engineering principles to ensure every interface is intuitive, accessible, and aligned with the product's intended operating environment.",
+      "For products with embedded displays, touchscreens, or physical control interfaces, our team designs the complete user experience - from information architecture and interaction logic to visual interface design and usability validation. We apply human factors engineering principles to ensure every interface is intuitive, accessible, and aligned with the product's intended operating environment.",
     bullets: [
       {
         title: "Typical Scope",
@@ -121,7 +121,7 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
           "CNC Machining: Precision parts cut from real production materials (aluminium, stainless steel, engineering plastics)",
           "FDM (Fused Deposition Modelling): The fastest, lowest-cost way to check form and fit early in the design.",
           "SLA (Stereolithography): Smooth, high-detail prototypes polished enough for design validation and investor demos.",
-          "SLS (Selective Laser Sintering): Strong, complex-geometry parts built without supports — ready for mechanism testing.",
+          "SLS (Selective Laser Sintering): Strong, complex-geometry parts built without supports - ready for mechanism testing.",
           "Vacuum Casting: Small polyurethane batches for pre-production user trials and market testing.",
         ],
       },
@@ -263,7 +263,7 @@ const industrialDesignCaseStudies = industrialCaseStudiesData
 export const metadata = buildMetadata({
   title: "Industrial Design Services | CMF, UI/UX & NPI | Qmax",
   description:
-    "B2B industrial design — CMF, UI/UX for hardware products, enclosure aesthetics, DFM analysis, and NPI. Engineering-led industrial design firm. USA & India.",
+    "B2B industrial design - CMF, UI/UX for hardware products, enclosure aesthetics, DFM analysis, and NPI. Engineering-led industrial design firm. USA & India.",
   path: "/mechanical-industrial-design-services/industrial-design",
 });
 
@@ -279,15 +279,15 @@ export default function IndustrialDesignServicesPage() {
             <div className="max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
               <p>
                 Industrial design at Qmax Systems integrates visual, ergonomic,
-                and manufacturing reality from the first sketch — ensuring every
+                and manufacturing reality from the first sketch - ensuring every
                 decision is grounded in engineering truth.
               </p>
               <p>
                 We help entrepreneurs, startups, and Fortune 500 companies
                 create products that users value and manufacturers can build
                 efficiently. With over 25 years of experience, our
-                multidisciplinary team — industrial designers, mechanical
-                engineers, and electronics experts — delivers market-ready
+                multidisciplinary team - industrial designers, mechanical
+                engineers, and electronics experts - delivers market-ready
                 solutions.
               </p>
               <p>

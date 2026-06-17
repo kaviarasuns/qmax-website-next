@@ -194,7 +194,7 @@ export default function PCBDesignPageV1() {
               {
                 title: "High-Speed Digital PCB Design",
                 description:
-                  "Modern high-speed digital designs — operating at multi-gigabit data rates — impose strict constraints on PCB trace geometry, layer stack-up, via topology, and return path continuity. Our engineers apply rigorous signal integrity discipline to DDR4/5 memory interfaces, PCIe Gen 4/5, USB 3.x, Ethernet (1G to 100G), FPGA I/O, and SoC-level designs. Controlled differential impedance, length matching, crosstalk mitigation, and via stub management are standard elements of every high-speed layout we deliver.",
+                  "Modern high-speed digital designs - operating at multi-gigabit data rates - impose strict constraints on PCB trace geometry, layer stack-up, via topology, and return path continuity. Our engineers apply rigorous signal integrity discipline to DDR4/5 memory interfaces, PCIe Gen 4/5, USB 3.x, Ethernet (1G to 100G), FPGA I/O, and SoC-level designs. Controlled differential impedance, length matching, crosstalk mitigation, and via stub management are standard elements of every high-speed layout we deliver.",
                 href: "/pcb-design-services/high-speed-digital-pcb-design",
                 icon: <Cpu className="w-6 h-6" />,
               },
@@ -236,7 +236,7 @@ export default function PCBDesignPageV1() {
               {
                 title: "PCB Design Review Services",
                 description:
-                  "An independent PCB design review — performed by Qmax engineers against your existing layout — is an efficient, cost-effective way to identify signal integrity risks, DFM issues, thermal concerns, and standard violations before releasing to fabrication. Our review process follows a structured checklist covering layer stack-up, placement, routing, silkscreen, drill and fabrication notes, and documentation completeness. Review findings are delivered as a formal technical report with prioritized recommendations.",
+                  "An independent PCB design review - performed by Qmax engineers against your existing layout - is an efficient, cost-effective way to identify signal integrity risks, DFM issues, thermal concerns, and standard violations before releasing to fabrication. Our review process follows a structured checklist covering layer stack-up, placement, routing, silkscreen, drill and fabrication notes, and documentation completeness. Review findings are delivered as a formal technical report with prioritized recommendations.",
                 href: "/pcb-design-services/pcb-design-review-services",
                 icon: <CheckCircle2 className="w-6 h-6" />,
               },
@@ -330,7 +330,7 @@ export default function PCBDesignPageV1() {
                   number: "01",
                   title: "Engineering Depth Over Surface-Level Design",
                   description:
-                    "Our engineers don't just route traces—they understand the physics. Every design decision considers signal behavior, power distribution, and thermal dynamics to eliminate guesswork.",
+                    "Our engineers don't just route traces-they understand the physics. Every design decision considers signal behavior, power distribution, and thermal dynamics to eliminate guesswork.",
                 },
                 {
                   number: "02",
@@ -342,13 +342,13 @@ export default function PCBDesignPageV1() {
                   number: "03",
                   title: "Schematic Review as Standard Practice",
                   description:
-                    "Before any layout work begins, we thoroughly review your schematic for potential issues—power sequencing, signal routing challenges, and component selection concerns.",
+                    "Before any layout work begins, we thoroughly review your schematic for potential issues-power sequencing, signal routing challenges, and component selection concerns.",
                 },
                 {
                   number: "04",
                   title: "Clear Communication Throughout",
                   description:
-                    "Weekly progress updates, design review milestones, and direct access to your assigned engineer. No black boxes, no surprises—just transparent collaboration.",
+                    "Weekly progress updates, design review milestones, and direct access to your assigned engineer. No black boxes, no surprises-just transparent collaboration.",
                 },
                 {
                   number: "05",
@@ -378,7 +378,7 @@ export default function PCBDesignPageV1() {
                   number: "09",
                   title: "Multi-Domain Systems Experience",
                   description:
-                    "From IoT sensors to industrial controls to medical devices—we've designed across industries, bringing cross-domain insights to every project.",
+                    "From IoT sensors to industrial controls to medical devices-we've designed across industries, bringing cross-domain insights to every project.",
                 },
               ].map((reason, index) => (
                 <div key={reason.number} className="relative">

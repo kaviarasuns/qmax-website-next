@@ -73,7 +73,7 @@ export default function MeetTheTeam() {
           {/* <div className="mt-5 h-1 w-16 rounded-full bg-red-500" /> */}
           {/* <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
             Decades of combined expertise in hardware, embedded systems, and
-            engineering execution — driving Qmax Systems forward.
+            engineering execution - driving Qmax Systems forward.
           </p> */}
         </header>
 

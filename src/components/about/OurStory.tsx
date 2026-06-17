@@ -45,7 +45,7 @@ export default function OurStory() {
                 </p>
 
                 <p className="text-lg leading-relaxed text-foreground">
-                  Over the past 25+ years, we&apos;ve built expertise across diverse industries—from consumer electronics and IoT devices to industrial automation, aerospace, and medical devices. Our commitment to quality, innovation, and customer success has made us a trusted partner for over 100 global clients, delivering 500+ projects with a 98% on-time delivery rate.
+                  Over the past 25+ years, we&apos;ve built expertise across diverse industries-from consumer electronics and IoT devices to industrial automation, aerospace, and medical devices. Our commitment to quality, innovation, and customer success has made us a trusted partner for over 100 global clients, delivering 500+ projects with a 98% on-time delivery rate.
                 </p>
               </div>
 

@@ -119,7 +119,7 @@ export default async function CaseStudyPage({
             <ChevronLeft className="h-5 w-5 text-zinc-500 transition-colors duration-200 group-hover:text-white" />
           </div>
 
-          {/* Hover tooltip — hidden on mobile */}
+          {/* Hover tooltip - hidden on mobile */}
           <div className="pointer-events-none hidden opacity-0 transition-opacity duration-200 peer-hover:opacity-100 md:block">
             <div className="rounded-xl border border-zinc-200 bg-white/95 px-3 py-2 shadow-md backdrop-blur-sm">
               <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-red-500">
@@ -145,7 +145,7 @@ export default async function CaseStudyPage({
             <ChevronRight className="h-5 w-5 text-zinc-500 transition-colors duration-200 group-hover:text-white" />
           </div>
 
-          {/* Hover tooltip — hidden on mobile */}
+          {/* Hover tooltip - hidden on mobile */}
           <div className="pointer-events-none hidden opacity-0 transition-opacity duration-200 peer-hover:opacity-100 md:block">
             <div className="rounded-xl border border-zinc-200 bg-white/95 px-3 py-2 shadow-md backdrop-blur-sm text-right">
               <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-red-500">

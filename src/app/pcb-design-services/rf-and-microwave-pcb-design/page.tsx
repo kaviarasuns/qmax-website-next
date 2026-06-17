@@ -21,7 +21,7 @@ import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 export const metadata = buildMetadata({
   title: "RF & Microwave PCB Design | PTFE, Sub-GHz to Ka-Band | Qmax",
   description:
-    "RF and microwave PCB layout on PTFE and Rogers substrates — controlled impedance routing, coplanar waveguide, stripline, Sub-GHz to Ka-band. Altium & Cadence.",
+    "RF and microwave PCB layout on PTFE and Rogers substrates - controlled impedance routing, coplanar waveguide, stripline, Sub-GHz to Ka-band. Altium & Cadence.",
   path: "/pcb-design-services/rf-and-microwave-pcb-design",
 });
 
@@ -79,23 +79,23 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     ),
     headline: "Comprehensive RF and microwave PCB design from MHz to 80 GHz.",
     intro:
-      "Qmax Systems treats RF PCB layout as fundamentally an electromagnetic design problem — above a few hundred MHz, traditional digital PCB practices become insufficient. Qmax's RF engineers cover the full RF spectrum, from controlled-impedance RF layout to microwave engineering and millimeter-wave design from 24 GHz to 80 GHz, plus antenna and RF front-end integration. These designs serve 5G wireless, radar sensors, RF instrumentation, industrial RF generators, and satellite communications.",
+      "Qmax Systems treats RF PCB layout as fundamentally an electromagnetic design problem - above a few hundred MHz, traditional digital PCB practices become insufficient. Qmax's RF engineers cover the full RF spectrum, from controlled-impedance RF layout to microwave engineering and millimeter-wave design from 24 GHz to 80 GHz, plus antenna and RF front-end integration. These designs serve 5G wireless, radar sensors, RF instrumentation, industrial RF generators, and satellite communications.",
     points: [
       {
         boldLead: "RF PCB Layout Services",
-        rest: " — Qmax delivers precision layout for single- and multi-band RF systems with controlled impedance and shielding strategies.",
+        rest: " - Qmax delivers precision layout for single- and multi-band RF systems with controlled impedance and shielding strategies.",
       },
       {
         boldLead: "Microwave PCB Engineering",
-        rest: " — Microwave-frequency designs use specialized substrate selection and transition management.",
+        rest: " - Microwave-frequency designs use specialized substrate selection and transition management.",
       },
       {
         boldLead: "mmWave PCB Design (24 GHz–80 GHz)",
-        rest: " — Qmax's RF engineers build millimeter-wave layouts for 5G, radar, and imaging systems with ultra-tight tolerances.",
+        rest: " - Qmax's RF engineers build millimeter-wave layouts for 5G, radar, and imaging systems with ultra-tight tolerances.",
       },
       {
         boldLead: "Antenna Integration & RF Front-End Layout",
-        rest: " — Antenna structures, matching networks, and RF front-end modules share a single PCB.",
+        rest: " - Antenna structures, matching networks, and RF front-end modules share a single PCB.",
       },
     ],
     applications:
@@ -123,15 +123,15 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     points: [
       {
         boldLead: "Transmission Line Modeling",
-        rest: " — Qmax precisely models microstrip, stripline, coplanar-waveguide, and GCPW structures to meet target impedance and insertion-loss budgets.",
+        rest: " - Qmax precisely models microstrip, stripline, coplanar-waveguide, and GCPW structures to meet target impedance and insertion-loss budgets.",
       },
       {
         boldLead: "Stackup Engineering",
-        rest: " — RF-optimized layer stackups balance signal performance, isolation, and fabrication feasibility across mixed-dielectric builds.",
+        rest: " - RF-optimized layer stackups balance signal performance, isolation, and fabrication feasibility across mixed-dielectric builds.",
       },
       {
         boldLead: "Low-Loss Substrate Selection",
-        rest: " — Qmax's engineers guide material selection across Rogers 4350B/4003C, Taconic TLY, Isola Astra, and hybrid FR-4/PTFE constructions.",
+        rest: " - Qmax's engineers guide material selection across Rogers 4350B/4003C, Taconic TLY, Isola Astra, and hybrid FR-4/PTFE constructions.",
       },
     ],
     applications:
@@ -159,15 +159,15 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     points: [
       {
         boldLead: "Architecture Analysis",
-        rest: " — Qmax reviews the RF signal chain — gain stages, filter placement, and link-budget assumptions — before layout begins.",
+        rest: " - Qmax reviews the RF signal chain - gain stages, filter placement, and link-budget assumptions - before layout begins.",
       },
       {
         boldLead: "EM Simulation",
-        rest: " — Full-wave electromagnetic simulation covers critical structures, including transitions, matching networks, and filter responses.",
+        rest: " - Full-wave electromagnetic simulation covers critical structures, including transitions, matching networks, and filter responses.",
       },
       {
         boldLead: "Constraint-Driven Layout",
-        rest: " — Routing rules derived from simulation hold every trace to insertion-loss and VSWR targets, not rules of thumb.",
+        rest: " - Routing rules derived from simulation hold every trace to insertion-loss and VSWR targets, not rules of thumb.",
       },
     ],
     applications:
@@ -197,15 +197,15 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     points: [
       {
         boldLead: "Manufacturing Alignment",
-        rest: " — Qmax coordinates directly with PCB fabrication houses for low-loss substrate availability, impedance accuracy, and controlled-impedance test coupons.",
+        rest: " - Qmax coordinates directly with PCB fabrication houses for low-loss substrate availability, impedance accuracy, and controlled-impedance test coupons.",
       },
       {
         boldLead: "EMI-Ready Layout Strategy",
-        rest: " — Shielding, grounding, and filtering reach FCC and CE certification through an EMI-by-design methodology.",
+        rest: " - Shielding, grounding, and filtering reach FCC and CE certification through an EMI-by-design methodology.",
       },
       {
         boldLead: "Production-Ready Deliverables",
-        rest: " — Qmax's engineers hand off DFM/DFT-validated Gerbers, ODB++, impedance reports, and assembly documentation.",
+        rest: " - Qmax's engineers hand off DFM/DFT-validated Gerbers, ODB++, impedance reports, and assembly documentation.",
       },
     ],
     applications:
@@ -630,8 +630,8 @@ export default function RFMicrowavePCBDesignPage() {
     <>
       <HardwareServiceHeroSection
         imageSrc="/pcb-design/images/rf-pcb-service.jpg"
-        imageAlt="RF and Microwave PCB Design — Qmax Systems"
-        title="RF and Microwave PCB Design — Controlled Impedance, Sub-GHz to mmWave"
+        imageAlt="RF and Microwave PCB Design - Qmax Systems"
+        title="RF and Microwave PCB Design - Controlled Impedance, Sub-GHz to mmWave"
         description={
           <>
             <p>
@@ -639,7 +639,7 @@ export default function RFMicrowavePCBDesignPage() {
               mmWave bands, where the board is part of the RF circuit itself.
               Qmax Systems RF engineers control trace geometry, dielectric
               loss, via transitions, grounding, and shielding to hold insertion
-              loss, phase stability, noise floor, and EMI compliance — across
+              loss, phase stability, noise floor, and EMI compliance - across
               radar sensors, RF instrumentation, and wireless communication
               platforms.
             </p>
@@ -659,12 +659,12 @@ export default function RFMicrowavePCBDesignPage() {
         whyCards={WHY_CARDS}
         title="Why Choose Qmax Systems for"
         titleHighlight="RF PCB Design"
-        description="RF architecture validated before layout begins — backed by simulation-driven constraints and RF measurement expertise."
+        description="RF architecture validated before layout begins - backed by simulation-driven constraints and RF measurement expertise."
         consultationCta={{
           heading:
             "Get A Complimentary Consultation With Our RF & Microwave Experts.",
           subtitle:
-            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/pcb-design-services/contact",
         }}
       />

@@ -137,15 +137,15 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     points: [
       {
         boldLead: "On-Board Chargers (OBC)",
-        rest: " — 1-phase and 3-phase chargers with integrated PFC for global grid compatibility.",
+        rest: " - 1-phase and 3-phase chargers with integrated PFC for global grid compatibility.",
       },
       {
         boldLead: "Motor Controllers",
-        rest: " — PMSM and BLDC drive electronics using Field-Oriented Control (FOC) algorithms.",
+        rest: " - PMSM and BLDC drive electronics using Field-Oriented Control (FOC) algorithms.",
       },
       {
         boldLead: "BMS with active/passive balancing",
-        rest: " — high-accuracy cell monitoring, SoC estimation, and multi-stage protection.",
+        rest: " - high-accuracy cell monitoring, SoC estimation, and multi-stage protection.",
       },
     ],
     applications:
@@ -173,11 +173,11 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     points: [
       {
         boldLead: "Intelligent PDUs",
-        rest: " — high-current distribution for hyperscale environments, with real-time telemetry and remote load management.",
+        rest: " - high-current distribution for hyperscale environments, with real-time telemetry and remote load management.",
       },
       {
         boldLead: "High-Efficiency AC-DC and DC-DC",
-        rest: " — high-frequency switching delivering >96% efficiency in a minimal footprint.",
+        rest: " - high-frequency switching delivering >96% efficiency in a minimal footprint.",
       },
     ],
     applications:
@@ -209,11 +209,11 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     points: [
       {
         boldLead: "Real-Time Signal Processing",
-        rest: " — ARM Cortex-M and FPGA controllers for microsecond-level loop response and fault detection.",
+        rest: " - ARM Cortex-M and FPGA controllers for microsecond-level loop response and fault detection.",
       },
       {
         boldLead: "Isolated Gate-Drive Design",
-        rest: " — high-CMRR isolated gate drivers for robust switching in high-noise environments.",
+        rest: " - high-CMRR isolated gate drivers for robust switching in high-noise environments.",
       },
     ],
     applications:
@@ -418,14 +418,14 @@ const faqs = [
   },
   {
     q: "How does Qmax Systems protect customer design data and intellectual property?",
-    a: "Qmax Systems treats every engagement under strict IP protection: NDAs are signed before any technical discussion, dedicated secure project workspaces are maintained, and role-based access controls are applied to all design files. Customers own all IP at every milestone — schematics, layouts, BoMs, and firmware. Qmax Systems engineers never reuse or repurpose customer IP across other client engagements.",
+    a: "Qmax Systems treats every engagement under strict IP protection: NDAs are signed before any technical discussion, dedicated secure project workspaces are maintained, and role-based access controls are applied to all design files. Customers own all IP at every milestone - schematics, layouts, BoMs, and firmware. Qmax Systems engineers never reuse or repurpose customer IP across other client engagements.",
   },
 ];
 
 export const metadata = buildMetadata({
   title: "Power Electronics Design | SMPS, DC-DC & Motor Drive | Qmax",
   description:
-    "Power electronics design services — SMPS, DC-DC converters, motor drive, battery management, and thermal engineering. Schematic to board bring-up. USA & India.",
+    "Power electronics design services - SMPS, DC-DC converters, motor drive, battery management, and thermal engineering. Schematic to board bring-up. USA & India.",
   path: "/hardware-design-services/power-electronics",
 });
 
@@ -434,14 +434,14 @@ export default function PowerElectronicsPage() {
     <>
       <HardwareServiceHeroSection
         imageSrc="/hw-main/image2.png"
-        imageAlt="Power Electronics Design — Qmax Systems"
+        imageAlt="Power Electronics Design - Qmax Systems"
         // title={
         //   <>
         //     Power Electronics Design Services: Efficient, Stable, and Scalable
         //     Power for Mission-Critical Hardware
         //   </>
         // }
-        title="Power Electronics Design Services — GaN/SiC Conversion, Thermal, and BMS"
+        title="Power Electronics Design Services - GaN/SiC Conversion, Thermal, and BMS"
         description={
           <>
             <p>
@@ -488,7 +488,7 @@ export default function PowerElectronicsPage() {
           heading:
             "Get A Complimentary Consultation With Our Power Electronics Experts.",
           subtitle:
-            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/hardware-design-services/contact",
         }}
       />
@@ -501,7 +501,7 @@ export default function PowerElectronicsPage() {
 
       {/* <ConsultationCtaBar
         heading="Get A Complimentary Consultation With Our Power Electronics Experts."
-        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch."
+        subtitle="1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch."
         ctaHref="/hardware-design-services/contact"
       /> */}
 

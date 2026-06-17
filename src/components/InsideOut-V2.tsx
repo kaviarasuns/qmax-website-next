@@ -6,17 +6,17 @@ const reasons = [
   {
     title: "End-to-End Engineering",
     description:
-      "From concept to production — schematic, PCB layout, embedded firmware, mechanical design, prototyping, and DFM optimization. Every stage under one roof for faster time-to-market.",
+      "From concept to production - schematic, PCB layout, embedded firmware, mechanical design, prototyping, and DFM optimization. Every stage under one roof for faster time-to-market.",
   },
   {
     title: "Professional Engineering Team",
     description:
-      "Deep expertise in hardware, firmware, and system architecture across medical, industrial, consumer electronics, and IoT — with hundreds of successful projects delivered.",
+      "Deep expertise in hardware, firmware, and system architecture across medical, industrial, consumer electronics, and IoT - with hundreds of successful projects delivered.",
   },
   {
     title: "Built for Real-World Impact",
     description:
-      "Every element is considered. Every connection, deliberate. Designed for the conditions your product will actually face — built to scale from first prototype to full production.",
+      "Every element is considered. Every connection, deliberate. Designed for the conditions your product will actually face - built to scale from first prototype to full production.",
   },
   // {
   //   title: "Fast Turnaround",
@@ -26,7 +26,7 @@ const reasons = [
   {
     title: "Long-Term Partnership",
     description:
-      "We support your product's full lifecycle — ongoing engineering support, iterative improvements, and a team invested in your success well beyond the initial delivery.",
+      "We support your product's full lifecycle - ongoing engineering support, iterative improvements, and a team invested in your success well beyond the initial delivery.",
   },
 ];
 

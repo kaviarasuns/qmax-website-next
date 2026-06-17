@@ -29,7 +29,7 @@ export interface SubmissionMeta {
   consentText: string;
   /** ISO timestamp of submission (server should also stamp its own). */
   submittedAt: string;
-  /** ms between form render and submit — very fast submits suggest bots. */
+  /** ms between form render and submit - very fast submits suggest bots. */
   timeToSubmitMs: number;
 }
 
@@ -117,9 +117,9 @@ export async function submitContactForm(
       body: JSON.stringify(payload),
     });
   } catch {
-    // Network/CORS failure — never reached the server.
+    // Network/CORS failure - never reached the server.
     throw new Error(
-      "Network error — please check your connection and try again.",
+      "Network error - please check your connection and try again.",
     );
   }
 

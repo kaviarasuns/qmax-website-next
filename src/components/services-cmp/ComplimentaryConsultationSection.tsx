@@ -4,22 +4,22 @@ import { cn } from "@/lib/utils";
 const SHARED_BENEFITS = [
   "1-Hour Focused Session",
   "Engineering-Driven Guidance",
-  "Zero Sales Pitch — Guaranteed",
-  "Fully Complimentary — No Cost",
+  "Zero Sales Pitch - Guaranteed",
+  "Fully Complimentary - No Cost",
 ] as const;
 
 const VARIANTS = {
   hardware: {
     title: "Get a Complimentary Consultation with Our Digital Hardware Experts",
     subtitle:
-      "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven — no sales pitch.",
+      "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
     architectBenefit: "Senior Hardware Architect",
     ctaHref: "/hardware-design-services/contact",
   },
   pcb: {
     title: "Get a Complimentary Consultation with Our Digital PCB Experts",
     subtitle:
-      "1-hour session with a Qmax Systems Senior Digital PCB Architect. Practical, engineering-driven — no sales pitch.",
+      "1-hour session with a Qmax Systems Senior Digital PCB Architect. Practical, engineering-driven - no sales pitch.",
     architectBenefit: "Senior PCB Architect",
     ctaHref: "/pcb-design-services/contact",
   },

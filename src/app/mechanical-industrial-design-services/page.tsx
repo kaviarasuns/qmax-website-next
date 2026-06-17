@@ -36,16 +36,16 @@ const CAPABILITIES = [
       {
         title: "Structural & Environmental",
         items: [
-          "Enclosure Design — Qmax designs enclosures in plastic injection molding, machined aluminum, and sheet-metal fabrication.",
-          "Ruggedization — Qmax's engineers design for shock, vibration, and impact resistance to MIL-STD and JSS standards.",
-          "Environmental Protection — Sealing designs meet IP65, IP67, and IP68 ratings.",
+          "Enclosure Design - Qmax designs enclosures in plastic injection molding, machined aluminum, and sheet-metal fabrication.",
+          "Ruggedization - Qmax's engineers design for shock, vibration, and impact resistance to MIL-STD and JSS standards.",
+          "Environmental Protection - Sealing designs meet IP65, IP67, and IP68 ratings.",
         ],
       },
       {
         title: "Thermal & Mechanisms",
         items: [
-          "Thermal Management — Qmax delivers active and passive cooling, including custom heat sinks and airflow optimization.",
-          "Kinematic Design — Kinematic design controls precise movement for hinges, sliders, and latching mechanisms.",
+          "Thermal Management - Qmax delivers active and passive cooling, including custom heat sinks and airflow optimization.",
+          "Kinematic Design - Kinematic design controls precise movement for hinges, sliders, and latching mechanisms.",
         ],
       },
     ],
@@ -95,23 +95,23 @@ const CAPABILITIES = [
       </svg>
     ),
     headline:
-      "Intentional design of the user's relationship with hardware — intuitive to use, comfortable to hold, visually representative of its capabilities.",
+      "Intentional design of the user's relationship with hardware - intuitive to use, comfortable to hold, visually representative of its capabilities.",
     intro:
       "Qmax Systems treats industrial design as the intentional design of the user's relationship with hardware, not just \"styling.\" Qmax's designers ensure the product is intuitive to use, comfortable to hold, and visually representative of its technical capabilities.",
     bullets: [
       {
         title: "Research & Experience",
         items: [
-          "Design Research — Qmax analyzes market trends and user behavior to inform product architecture.",
-          "CMF Development — Qmax's designers define Color, Material, and Finish (CMF) to meet aesthetic and durability goals.",
-          "Hardware UI/UX — The team designs touchpoints, button haptics, and display integration.",
+          "Design Research - Qmax analyzes market trends and user behavior to inform product architecture.",
+          "CMF Development - Qmax's designers define Color, Material, and Finish (CMF) to meet aesthetic and durability goals.",
+          "Hardware UI/UX - The team designs touchpoints, button haptics, and display integration.",
         ],
       },
       {
         title: "Visualization & Prototyping",
         items: [
-          "Visual Communication — Photorealistic renderings and animations support stakeholder reviews and marketing.",
-          "Prototyping — Qmax prototypes in stages, from low-fidelity foam models to high-fidelity vacuum casting.",
+          "Visual Communication - Photorealistic renderings and animations support stakeholder reviews and marketing.",
+          "Prototyping - Qmax prototypes in stages, from low-fidelity foam models to high-fidelity vacuum casting.",
         ],
       },
     ],
@@ -270,9 +270,9 @@ const MECHANICAL_INDUSTRIAL_HERO = {
   videoSrc:
     "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_&_Mechnical.mp4",
   title:
-    "Mechanical and Industrial Design Services — Enclosures, Thermal, and DFM",
+    "Mechanical and Industrial Design Services - Enclosures, Thermal, and DFM",
   subtitle:
-    "Qmax Systems provides mechanical and industrial design services — enclosures, thermal paths, and load-bearing structures engineered alongside the PCB from the schematic stage. Optimized for DFM and DFA from day one, Qmax Systems delivers certification-ready hardware for high-stakes electronics, from MIL-STD-810 tactical devices to thermally-dense power electronics.",
+    "Qmax Systems provides mechanical and industrial design services - enclosures, thermal paths, and load-bearing structures engineered alongside the PCB from the schematic stage. Optimized for DFM and DFA from day one, Qmax Systems delivers certification-ready hardware for high-stakes electronics, from MIL-STD-810 tactical devices to thermally-dense power electronics.",
   ctaHref: "/mechanical-industrial-design-services/contact",
   ctaLabel: "Talk to Our Engineers",
 };
@@ -291,7 +291,7 @@ const mechanicalIndustrialCaseStudies = mechanicalCaseStudiesData
 export const metadata = buildMetadata({
   title: "Mechanical & Industrial Design Services | Qmax Systems",
   description:
-    "Mechanical and industrial design — enclosure design, DFM analysis, NPI, CMF specification, and hardware UI/UX. SolidWorks-level deliverables. Dallas TX & India.",
+    "Mechanical and industrial design - enclosure design, DFM analysis, NPI, CMF specification, and hardware UI/UX. SolidWorks-level deliverables. Dallas TX & India.",
   path: "/mechanical-industrial-design-services",
 });
 
@@ -317,9 +317,9 @@ export default function MechanicalIndustrialDesignPage() {
                 Qmax Systems delivers mechanical and industrial design services
                 for high-stakes electronics, where a product is more than a
                 functional PCB - it is a physical entity that must survive its
-                environment, satisfy user ergonomics, and meet stringent
+                environment, satisfy ergonomics demands, and meet stringent
                 regulatory requirements. These services move beyond generic CAD
-                modeling to deeply integrate hardware, thermal physics, and
+                modeling to fully integrate hardware, thermal physics, and
                 manufacturing realities.
               </p>
               <p>
@@ -393,7 +393,7 @@ export default function MechanicalIndustrialDesignPage() {
           <a
             className="relative block aspect-[2396/520] w-full cursor-pointer overflow-hidden rounded-xl bg-black no-underline shadow-[0_1px_2px_rgba(16,24,40,0.06)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:no-underline hover:shadow-[0_6px_16px_rgba(16,24,40,0.10)]"
             href="/mechanical-industrial-design-services/contact"
-            aria-label="Have your questions answered — contact Saravanaperumal Annamalai, VP - SWE Engineering"
+            aria-label="Have your questions answered - contact Saravanaperumal Annamalai, VP - SWE Engineering"
           >
             <Image
               src="https://d1yetprhniwywz.cloudfront.net/v2/Asil_Cta_V3.png"

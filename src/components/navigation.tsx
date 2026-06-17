@@ -107,7 +107,7 @@ function MobileNavNode({
         </button>
       </div>
 
-      {/* Collapsible region — grid-rows trick animates height without measuring. */}
+      {/* Collapsible region - grid-rows trick animates height without measuring. */}
       <div
         className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
       >
@@ -376,7 +376,7 @@ export function Navigation() {
       </div>
     </nav>
 
-      {/* Mobile Menu — accordion panel (sibling of nav: nav's backdrop-blur would
+      {/* Mobile Menu - accordion panel (sibling of nav: nav's backdrop-blur would
           otherwise become the containing block for this fixed element) */}
       <div
         className={`lg:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-background transition-transform duration-300 ease-in-out

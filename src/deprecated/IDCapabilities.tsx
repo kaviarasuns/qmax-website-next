@@ -18,7 +18,7 @@ export default function IDCapabilities() {
             {
               id: "02",
               title: "CAD & 3D Modelling",
-              desc: "Parametric models built for construction — with tolerancing, draft angles, and wall thickness constraints using CATIA, SolidWorks, and Fusion 360.",
+              desc: "Parametric models built for construction - with tolerancing, draft angles, and wall thickness constraints using CATIA, SolidWorks, and Fusion 360.",
             },
             {
               id: "03",
@@ -33,7 +33,7 @@ export default function IDCapabilities() {
             {
               id: "05",
               title: "Rapid Prototyping",
-              desc: "Physical validation through CNC, FDM, SLA, and SLS — testing ergonomics, fitment, and functionality before production investment.",
+              desc: "Physical validation through CNC, FDM, SLA, and SLS - testing ergonomics, fitment, and functionality before production investment.",
             },
           ].map((capability, idx) => (
             <div

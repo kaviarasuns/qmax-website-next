@@ -7,22 +7,22 @@ export default function HowWeWorkInternational() {
     {
       title: "Time Zone Coverage & Overlap",
       icon: Globe,
-      body: "Our Dallas, TX office gives US clients full same-day overlap, EU/UK clients 6–9 hours of live overlap, and full business-day handoff to APAC. With teams in both the US and India, we run a follow-the-sun model — engineering progress continues 20+ hours a day. Your US-based project lead handles all client-facing communication during your local business hours, so you never wait overnight for an answer.",
+      body: "Our Dallas, TX office gives US clients full same-day overlap, EU/UK clients 6–9 hours of live overlap, and full business-day handoff to APAC. With teams in both the US and India, we run a follow-the-sun model - engineering progress continues 20+ hours a day. Your US-based project lead handles all client-facing communication during your local business hours, so you never wait overnight for an answer.",
     },
     {
       title: "Project Management & Transparency",
       icon: KanbanSquare,
-      body: "We run every engagement on Jira and Confluence with client access to live dashboards, Gantt charts, burn-down charts, and milestone trackers. Cadence: weekly standups via Zoom or Microsoft Teams, bi-weekly sprint reviews with working demos, and monthly steering-committee reviews. Every client gets a dedicated Program Manager as a single point of contact — no ticket queues, no chasing.",
+      body: "We run every engagement on Jira and Confluence with client access to live dashboards, Gantt charts, burn-down charts, and milestone trackers. Cadence: weekly standups via Zoom or Microsoft Teams, bi-weekly sprint reviews with working demos, and monthly steering-committee reviews. Every client gets a dedicated Program Manager as a single point of contact - no ticket queues, no chasing.",
     },
     {
       title: "IP Protection & Confidentiality",
       icon: ShieldCheck,
-      body: "Mutual NDAs are signed before any technical discussion begins. All source code, schematics, firmware, and design files remain the client's exclusive IP — assigned in writing in every SOW. Secure development environments with role-based access, encrypted private repositories on GitHub, GitLab, or Bitbucket, and VPN-only access to client networks. Processes aligned with ISO 9001 and ISO 27001. Background-verified engineers and physical access controls at our development centers.",
+      body: "Mutual NDAs are signed before any technical discussion begins. All source code, schematics, firmware, and design files remain the client's exclusive IP - assigned in writing in every SOW. Secure development environments with role-based access, encrypted private repositories on GitHub, GitLab, or Bitbucket, and VPN-only access to client networks. Processes aligned with ISO 9001 and ISO 27001. Background-verified engineers and physical access controls at our development centers.",
     },
     {
       title: "Communication & Reporting Cadence",
       icon: MessageSquare,
-      body: "A dedicated Slack or Microsoft Teams channel per client for real-time conversation. Weekly written status reports covering progress, risks, blockers, and next steps. Bi-weekly working demos of hardware and firmware. Monthly executive summaries with KPIs and budget tracking. Tool-agnostic — we work in your stack: Slack, Teams, Zoom, Google Meet, Jira, Confluence, Asana, Trello, GitHub, GitLab, and Bitbucket.",
+      body: "A dedicated Slack or Microsoft Teams channel per client for real-time conversation. Weekly written status reports covering progress, risks, blockers, and next steps. Bi-weekly working demos of hardware and firmware. Monthly executive summaries with KPIs and budget tracking. Tool-agnostic - we work in your stack: Slack, Teams, Zoom, Google Meet, Jira, Confluence, Asana, Trello, GitHub, GitLab, and Bitbucket.",
     },
   ];
 
@@ -49,7 +49,7 @@ export default function HowWeWorkInternational() {
         <p className="text-lg mb-12 max-w-3xl leading-relaxed mx-auto text-center text-foreground">
           Qmax is built for global collaboration. From our US offices in Austin
           to our engineering centers in Chennai, we operate as a single team
-          across time zones — combining American client-side responsiveness with
+          across time zones - combining American client-side responsiveness with
           deep Indian engineering bench strength. Here is exactly how we work
           with clients in the US, EU, UK, Asia-Pacific, and beyond.
         </p>

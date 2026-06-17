@@ -188,7 +188,7 @@ export default function InsideOutOptimized() {
             <br />
             Every connection, deliberate.
             <br />
-            This is design at its most honest—where the inside is as beautiful
+            This is design at its most honest-where the inside is as beautiful
             as the outside.
           </p>
 
