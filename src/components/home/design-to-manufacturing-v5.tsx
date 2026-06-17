@@ -295,7 +295,6 @@ export default function ConceptToManufacturing() {
 
   /* trail */
   const activePhase = STAGES[active].phase;
-  const atLast = active === N - 1;
 
   const solidX = ((active + 0.5) / N) * CFG.trailArrowBase;
   const featherW = (CFG.trailArrowBase / N) * CFG.trailFeatherPct;
@@ -306,7 +305,6 @@ export default function ConceptToManufacturing() {
   const PH_AC = cl(CFG.pillHeightActive);
 
   const D = CFG.entranceMs;
-  const aT = { animation: `ctm-up ${D * 0.5}ms ease both` };
   const aC = { animation: `ctm-in ${D * 0.6}ms ${D * 0.2}ms ease both` };
   const aS = { animation: `ctm-up ${D * 0.5}ms ${D * 0.4}ms ease both` };
 
