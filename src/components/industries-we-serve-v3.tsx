@@ -1,39 +1,16 @@
 import Image from "next/image";
 
-const industries = [
-  {
-    id: "industrial-electronics",
-    label: "Industrial\nElectronics",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/home/industries_we_serve/oil_refineries.png",
-  },
-  {
-    id: "communication-systems",
-    label: "Communication\nSystems",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/home/industries_we_serve/communication_systems.png",
-  },
-  {
-    id: "high-performance-computing",
-    label: "High Performance\nComputing",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/home/industries_we_serve/large_data_center.jpeg",
-  },
-  {
-    id: "medical-electronics",
-    label: "Medical\nElectronics",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/home/industries_we_serve/medical_electronics.jpeg",
-  },
-  {
-    id: "automotive-electronics",
-    label: "Automotive\nElectronics",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/home/industries_we_serve/automative_electronics.jpeg",
-  },
-];
+export type IndustryWeServeItem = {
+  id: string;
+  label: string;
+  image: string;
+};
 
-export function IndustriesWeServeV3() {
+type IndustriesWeServeV3Props = {
+  industries: IndustryWeServeItem[];
+};
+
+export function IndustriesWeServeV3({ industries }: IndustriesWeServeV3Props) {
   return (
     <section className="flex min-h-screen items-center justify-center bg-white px-3 py-16 sm:px-4 sm:py-20 lg:px-6 lg:py-24">
       <div className="mx-auto w-full max-w-[1260px]">
