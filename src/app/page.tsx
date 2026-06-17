@@ -6,6 +6,7 @@ import StackReveal from "@/components/StackReveal";
 import OurServices from "@/components/our-services";
 import { buildMetadata } from "@/lib/seo";
 import InsideOutV3 from "@/components/InsideOut-V3";
+import DesignToManufacturingV5 from "@/components/home/design-to-manufacturing-v5";
 
 export const metadata = buildMetadata({
   title: "PCB Design & Embedded Systems Services | Qmax Systems",
@@ -18,7 +19,8 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <StackReveal />
+      {/* <StackReveal /> */}
+      <DesignToManufacturingV5 />
       {/* <ScrollCardsAnimationV4 onAutoHighlightChange={() => {}} /> */}
       {/* <ServicesV4Stacked lockStackingOnProgrammaticScroll={false} /> */}
       {/* <ServicesV2 /> */}
