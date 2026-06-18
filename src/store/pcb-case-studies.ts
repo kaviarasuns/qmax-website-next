@@ -885,4 +885,47 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "Manufacturing Validation",
     ],
   },
+
+  {
+    id: "safron",
+    title: "Safron",
+    category: "PCB Design",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/SAFRON/C01321PA1-10MAY2025_QMAX_top.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/SAFRON/C01321PA1-10MAY2025_QMAX_TOP_BOTTOM.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/SAFRON/C01321PA1-10MAY2025_QMAX_bottom.svg",
+    ],
+    rotatedImages: {},
+    features: [
+      "Multi-layer PCB architecture",
+      "Optimized signal routing design",
+      "Reliable power distribution network",
+      "Compact high-density layout",
+      "Industrial-grade PCB reliability",
+      "Manufacturing-ready board design",
+    ],
+    summary:
+      "Safron is a high-performance PCB platform designed for reliable signal integrity, efficient power distribution, and scalable embedded hardware integration.",
+    importantParts: [
+      "Signal routing layers",
+      "Power distribution planes",
+      "Ground reference structures",
+      "High-density component regions",
+      "Connector interfaces",
+      "Thermal management sections",
+    ],
+    salientFeatures: [
+      "Compact and efficient PCB architecture",
+      "Reliable signal and power integrity",
+      "Optimized multi-layer board design",
+      "Industrial-grade operational stability",
+    ],
+    scopeOfWork: [
+      "Circuit Design",
+      "PCB Layout Development",
+      "Signal Integrity Analysis",
+      "Power Integrity Validation",
+      "Prototype Testing",
+    ],
+  },
 ];

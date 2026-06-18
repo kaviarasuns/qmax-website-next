@@ -790,6 +790,9 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     category: "Embedded System Design",
     cardImageIndex: 4,
     images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/SPLICE_DETECTOR_REV2_07JUL2023_QMAX_TOP.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/SPLICE_DETECTOR_REV2_07JUL2023_QMAX_TOP_BOTTOM.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/SPLICE_DETECTOR_REV2_07JUL2023_QMAX_BOTTOM.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/femtofarad_level_capacitance/1.3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.2.png",
@@ -1987,6 +1990,9 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/dosing pump_TOP.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/dosing pump_TOP_BOTTOM.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/dosing pump_BOTTOM.svg",
     ],
     rotatedImages: {},
     features: [
