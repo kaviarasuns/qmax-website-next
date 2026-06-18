@@ -64,12 +64,12 @@ const SOCIAL_LINKS = [
     className: "bg-[#1877F2]",
     Icon: Facebook,
   },
-  {
-    label: "Twitter",
-    href: "https://x.com/QmaxSystems",
-    className: "bg-[#1DA1F2]",
-    Icon: Twitter,
-  },
+  // {
+  //   label: "Twitter",
+  //   href: "https://x.com/QmaxSystems",
+  //   className: "bg-[#1DA1F2]",
+  //   Icon: Twitter,
+  // },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/company/qmax-systems-inc/about/",
@@ -100,7 +100,7 @@ const OFFICES = [
     country: "India",
     name: "Qmax Systems India Pvt Ltd",
     address: [
-      "310/2A, Rukmani Nagar, 4th street,",
+      "310/2A, Rukmani Nagar, 4th Street,",
       "Poonamallee, Chennai 600056,",
       "Tamil Nadu, India",
     ],
@@ -159,7 +159,7 @@ export default function FooterV3() {
             <FooterHeading>About Us</FooterHeading>
             <p className="mb-[18px] text-[15.5px] leading-[1.75] text-white text-justify">
               Qmax Systems is an Electronics Engineering and R&D Services
-              company based in San Jose, California and having development
+              company based in San Jose, California and with a development
               center in India. Established in 1997, Qmax provides Embedded
               Systems Design and PCB Design Services.
             </p>

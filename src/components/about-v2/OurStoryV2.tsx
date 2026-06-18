@@ -7,19 +7,19 @@ const TIMELINE = [
   },
   {
     year: "2000s",
-    title: "Industry expansion",
+    title: "Industry Expansion",
     description:
       "Grew capabilities across IoT, industrial automation, aerospace, and medical device development.",
   },
   {
     year: "Today",
-    title: "Global delivery centers",
+    title: "Global Delivery Centers",
     description:
       "Operating from Dallas, Texas and Chennai, India with a follow-the-sun engineering model.",
   },
   {
     year: "500+",
-    title: "Projects & counting",
+    title: "Projects & Counting",
     description:
       "100+ global clients served with a 98% on-time delivery rate and full-lifecycle support.",
   },
@@ -39,18 +39,18 @@ export default function OurStoryV2() {
             </p>
             <p className="mt-5 text-base leading-relaxed text-foreground">
               Founded in 1997, Qmax Systems began with a simple mission: to
-              deliver exceptional electronics engineering and R&amp;D services to
-              innovators and enterprises worldwide. What started as a small team
-              of passionate engineers has grown into a global partner in embedded
-              systems and PCB design.
+              deliver exceptional electronics engineering and R&amp;D services
+              to innovators and enterprises worldwide. What started as a small
+              team of passionate engineers has grown into a global partner in
+              embedded systems and PCB design.
             </p>
             <p className="mt-4 text-base leading-relaxed text-foreground">
               Over 25+ years we have built expertise across diverse industries -
-              from consumer electronics and IoT devices to industrial automation,
-              aerospace, and medical devices. Our commitment to quality,
-              innovation, and customer success has made us a trusted partner for
-              100+ global clients, delivering 500+ projects with a 98%
-              on-time delivery rate.
+              from consumer electronics and IoT devices to industrial
+              automation, aerospace, and medical devices. Our commitment to
+              quality, innovation, and customer success has made us a trusted
+              partner for 100+ global clients, delivering 500+ projects with a
+              98% on-time delivery rate.
             </p>
           </div>
 

@@ -62,7 +62,7 @@ const FIRMWARE_LIFECYCLE = {
     },
     {
       phase: 4,
-      title: "Bring-up",
+      title: "Bring-Up",
       items: ["Bootloader & BSP", "Functional bring-up", "Debug & iterate"],
     },
     {
@@ -277,7 +277,7 @@ const DAY_ONE_INSIGHTS: DayOneInsight[] = [
 ];
 
 const DAY_ONE_THINKING = {
-  title: "Day‑1 Thinking For",
+  title: "Day 1 Thinking For",
   titleHighlight: "Real‑World Deployment",
   description:
     "Qmax Systems engineers plan for field deployment from Day 1 - before the first line of production firmware is written. OTA pipeline design, battery duty-cycling, certification readiness (FCC, CE, IEC 62304, ISO 26262, AEC-Q100), commissioning workflows, remote diagnostics, communication cost budgeting, MTBF planning, and security patch cadence are all architected at project start - not added after the first field failure.",
@@ -326,7 +326,7 @@ const EMBEDDED_SOFTWARE_CAPABILITIES: EmbeddedSoftwareCapability[] = [
           "Board bring-up & silicon validation.",
           "Peripheral drivers (SPI, I²C, UART, ADC, USB, CAN).",
           "Clock tree & power management.",
-          "Bootloader design & flash memory mgmt.",
+          "Bootloader design & flash memory management.",
           "MISRA-C / C++ compliance & static analysis.",
         ],
       },
@@ -462,7 +462,7 @@ const EMBEDDED_SOFTWARE_CAPABILITIES: EmbeddedSoftwareCapability[] = [
 ];
 
 const EMBEDDED_SOFTWARE = {
-  title: "Embedded Software Across The Full Stack -",
+  title: "Embedded Software Across The Full Stack —",
   titleHighlight: "Bare‑Metal To Server‑Grade",
   description:
     "Qmax Systems delivers embedded software across the full firmware stack - bare-metal C/C++ on resource-constrained MCUs, FreeRTOS and Zephyr RTOS on Cortex-M, Yocto Linux on Cortex-A, OpenWrt-based networking platforms, and OpenBMC/UEFI server firmware. All work is developed to MISRA-C/C++ coding standards and validated on production silicon.",
@@ -496,7 +496,7 @@ const MODULAR_FIRMWARE_FRAMEWORKS: FirmwareFramework[] = [
     ),
   },
   {
-    title: "Battery Mgmt",
+    title: "Battery Management",
     subtitle: "Efficient power usage for remote IoT devices.",
     items: [
       "Advanced sleep states",
@@ -526,7 +526,7 @@ const MODULAR_FIRMWARE_FRAMEWORKS: FirmwareFramework[] = [
     ),
   },
   {
-    title: "Cellular Comm",
+    title: "Cellular Communication",
     subtitle: "Secure communication stacks for cellular devices.",
     items: [
       "LTE-M / NB-IoT / GSM",
@@ -723,7 +723,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How does Qmax Systems handle firmware security and OTA updates?",
-    a: "Security is a Day-1 decision at Qmax Systems. Qmax Systems designs signed and encrypted OTA pipelines with dual-bank rollback, delta updates, and device authentication. Secure boot with signed images, X.509 device identity, and TPM/secure-element anchoring are built into the Qmax Systems reference firmware framework - not added as an afterthought.",
+    a: "Security is a Day 1 decision at Qmax Systems. Qmax Systems designs signed and encrypted OTA pipelines with dual-bank rollback, delta updates, and device authentication. Secure boot with signed images, X.509 device identity, and TPM/secure-element anchoring are built into the Qmax Systems reference firmware framework - not added as an afterthought.",
   },
   {
     q: "What coding standards does Qmax Systems follow?",

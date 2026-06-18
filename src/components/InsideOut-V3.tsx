@@ -6,12 +6,12 @@ const reasons = [
   {
     title: "First-Time-Right Engineering Execution",
     description:
-      "Backed by 27 years of deep industry experience, our engineers execute complex hardware designs without needing oversight. By utilizing cutting-edge tools and a well-defined process, our experienced team catches and resolves critical design anomalies before the fabrication stage, ensuring a stable, production-ready first prototype run.",
+      "Backed by 29 years of deep industry experience, our engineers execute complex hardware designs without needing oversight. By utilizing cutting-edge tools and a well-defined process, our experienced team catches and resolves critical design anomalies before the fabrication stage, ensuring a stable, production-ready first prototype run.",
   },
   {
-    title: "Comprehensive Life-Cycle Ownership & Continuity",
+    title: "Comprehensive Lifecycle Ownership & Continuity",
     description:
-      "We eliminate vendor-fragmentation friction and accountability gaps. By housing full-stack capabilities-Hardware, Firmware, Software, PCB Layout, Mechanical, and Industrial Design-completely under one roof, we ensure total continuity across your product lifecycle, delivering predictable milestones and seamless production handoffs.",
+      "We eliminate vendor-fragmentation friction and accountability gaps. By housing full-stack capabilities — Hardware, Firmware, Software, PCB Layout, Mechanical, and Industrial Design-completely under one roof, we ensure total continuity across your product lifecycle, delivering predictable milestones and seamless production handoffs.",
   },
   {
     title: "Proactive Regulatory & Compliance De-Risking",
@@ -26,12 +26,12 @@ const reasons = [
   {
     title: "Institutional IP Protection & Security Frameworks",
     description:
-      "Your core intellectual property is protected by institutional-grade protocols. Our robust IP defence model includes strict, multi-tiered NDA frameworks with all employees, suppliers, and tier-one partners, reinforced by isolated, secure physical and digital access controls across our engineering infrastructure.",
+      "Your core intellectual property is protected by institutional-grade protocols. Our robust IP defense model includes strict, multi-tiered NDA frameworks with all employees, suppliers, and tier-one partners, reinforced by isolated, secure physical and digital access controls across our engineering infrastructure.",
   },
   {
     title: "Field-Tested Multi-Domain Resilience",
     description:
-      "We cross-pollinate architectural best practices from the world's most demanding sectors-including Automotive, Medical, Aerospace, Industrial, and Military applications. This extensive multi-domain footprint ensures your product inherits field-tested ruggedness, structural reliability, and long-term scalability.",
+      "We cross-pollinate architectural best practices from the world's most demanding sectors — including Automotive, Medical, Aerospace, Industrial, and Military applications. This extensive multi-domain footprint ensures your product inherits field-tested ruggedness, structural reliability, and long-term scalability.",
   },
 ];
 
@@ -105,10 +105,10 @@ function StatCell({
     <div className="relative after:absolute after:right-0 after:top-1/2 after:h-14 after:w-px after:-translate-y-1/2 after:bg-zinc-200 last:after:hidden max-lg:after:hidden">
       <div className="text-[42px] lg:text-[50px] font-bold leading-[1.05] tracking-[-1px] text-foreground">
         {value !== undefined ? (
-          <>
+          <span className="inline-flex items-baseline justify-center gap-1.5">
             {count}
             <span className="text-red-500">+</span>
-          </>
+          </span>
         ) : (
           text
         )}
@@ -355,7 +355,7 @@ export default function InsideOutV3() {
                 Ready to build your next product?
               </h3>
               <p className="m-0 text-white">
-                From concept to production - one accountable engineering
+                From design to manufacturing - one accountable engineering
                 partner.
               </p>
             </div>

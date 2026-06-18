@@ -15,7 +15,7 @@ const OFFICES = [
     country: "India",
     name: "Qmax Systems India Pvt Ltd",
     address:
-      "310/2A Rukmani Nagar, 4th Street\nPoonamallee, Chennai 600056\nTamil Nadu, India",
+      "310/2A, Rukmani Nagar, 4th Street\nPoonamallee, Chennai 600056\nTamil Nadu, India",
     phone: "+91 98402 30903",
     phoneHref: "tel:+919840230903",
     email: "info@qmaxsys.com",

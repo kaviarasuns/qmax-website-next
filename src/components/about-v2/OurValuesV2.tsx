@@ -62,7 +62,9 @@ export default function OurValuesV2() {
                     {value.title}
                   </h3>
                 </div>
-                <p className="text-base text-foreground">{value.description}</p>
+                <p className="text-left text-base text-foreground">
+                  {value.description}
+                </p>
               </div>
             );
           })}

@@ -340,7 +340,7 @@ const WHY_CARDS = [
   },
   {
     title: "30,000+ Verified Component Libraries",
-    desc: "Qmax Systems validates every symbol, footprint, and 3D model against manufacturer datasheets across 30,000+ verified components-eliminating pad mismatches and assembly surprises.",
+    desc: "Qmax Systems validates every symbol, footprint, and 3D model against manufacturer datasheets across 30,000+ verified components — eliminating pad mismatches and assembly surprises.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -361,7 +361,7 @@ const WHY_CARDS = [
   },
   {
     title: "Global Compliance Expertise",
-    desc: "CE, FCC, UL, IPC, and MIL-STD-461 are designed in at the layout stage, because Qmax Systems treats compliance as a confirmation, not a gamble - via an EMC- by-design approach.",
+    desc: "CE, FCC, UL, IPC, and MIL-STD-461 are designed in at the layout stage, because Qmax Systems treats compliance as a confirmation, not a gamble - via an EMC-by-design approach.",
     icon: (
       <svg
         viewBox="0 0 48 48"

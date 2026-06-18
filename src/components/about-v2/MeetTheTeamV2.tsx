@@ -81,10 +81,7 @@ export default function MeetTheTeamV2() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {TEAM_MEMBERS.map((member) => (
-            <article
-              key={member.name}
-              className={MEMBER_CARD_CLASS}
-            >
+            <article key={member.name} className={MEMBER_CARD_CLASS}>
               <div className="mb-[18px] flex items-center gap-4">
                 <div className="relative h-[76px] w-[76px] shrink-0 overflow-hidden rounded-full bg-slate-100">
                   <Image
@@ -105,7 +102,9 @@ export default function MeetTheTeamV2() {
                 </div>
               </div>
 
-              <p className="flex-1 text-base text-foreground">{member.bio}</p>
+              <p className="flex-1 text-left text-base text-foreground">
+                {member.bio}
+              </p>
 
               <a
                 href={member.linkedin}
@@ -138,7 +137,7 @@ export default function MeetTheTeamV2() {
               <h3 className="text-xl font-medium tracking-wide text-white md:text-2xl">
                 Join the team
               </h3>
-              <p className="mt-2.5 text-base leading-relaxed text-white">
+              <p className="mt-2.5 text-left text-base leading-relaxed text-white">
                 We are always looking for exceptional engineers who want to
                 build products that matter. Explore open roles across our US and
                 India centers.

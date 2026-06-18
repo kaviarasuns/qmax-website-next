@@ -39,7 +39,7 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
         href: "/case-studies/obd-enclosure",
       },
       {
-        title: "Mega Watt Charging Station",
+        title: "Megawatt Charging Station",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/1.png",
         href: "/case-studies/mega-watt-charging-station",

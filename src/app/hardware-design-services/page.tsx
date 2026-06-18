@@ -345,7 +345,7 @@ const CAPABILITIES = [
 const WHY_CARDS = [
   {
     title: "Transparent & Supervised Process",
-    desc: "Every milestone, design review, and risk register is visible as it happens, because Qmax Systems program managers run a weekly cadence with traceable deliverables and on-time builds - no hidden surprises at handover.",
+    desc: "Every milestone, design review, and risk register is visible as it happens, because Qmax Systems program managers run a weekly cadence with traceable deliverables and on-time builds — no hidden surprises at handover.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -366,7 +366,7 @@ const WHY_CARDS = [
   },
   {
     title: "Hardware Development from Scratch",
-    desc: "Qmax Systems starts every program with R&D and a proof-of-concept build to retire architectural risk early - confirming feasibility, locking the BoM, and validating critical assumptions before committing a single production layer.",
+    desc: "Qmax Systems starts every program with R&D and a proof-of-concept build to retire architectural risk early — confirming feasibility, locking the BoM, and validating critical assumptions before committing a single production layer.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -385,7 +385,7 @@ const WHY_CARDS = [
   },
   {
     title: "Smooth Hardware-Software Integration",
-    desc: "Rather than forcing a re-platform, Qmax Systems selects components, interfaces, and toolchains that fit your existing stack - the result is firmware that brings up cleanly, drivers that drop into your OS, and lower long-term maintenance cost.",
+    desc: "Rather than forcing a re-platform, Qmax Systems selects components, interfaces, and toolchains that fit your existing stack — the result is firmware that brings up cleanly, drivers that drop into your OS, and lower long-term maintenance cost.",
     icon: (
       <svg
         viewBox="0 0 48 48"

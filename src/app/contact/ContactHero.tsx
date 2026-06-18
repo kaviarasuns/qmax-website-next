@@ -126,7 +126,7 @@ const addresses: Record<CountryKey, AddressData> = {
   India: {
     name: "Qmax Systems India Pvt Ltd",
     address: [
-      "310/2A, Rukmani Nagar, 4th street,",
+      "310/2A, Rukmani Nagar, 4th Street,",
       "Poonamallee, Chennai 600056,",
       "Tamil Nadu, India",
     ],
@@ -139,7 +139,7 @@ const jobs: Record<JobKey, AddressData> = {
   "Careers  ( Jobs / Intern )": {
     name: "Qmax Systems India Pvt Ltd",
     address: [
-      "310/2A, Rukmani Nagar, 4th street,",
+      "310/2A, Rukmani Nagar, 4th Street,",
       "Poonamallee, Chennai 600056,",
       "Tamil Nadu, India",
     ],
@@ -149,7 +149,7 @@ const jobs: Record<JobKey, AddressData> = {
   "Suppliers / Vendors": {
     name: "Qmax Systems India Pvt Ltd",
     address: [
-      "310/2A, Rukmani Nagar, 4th street,",
+      "310/2A, Rukmani Nagar, 4th Street,",
       "Poonamallee, Chennai 600056,",
       "Tamil Nadu, India",
     ],
@@ -262,9 +262,7 @@ const ContactHero = () => {
             </p>
             <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl leading-[1.1] tracking-tight">
               Let&apos;s Engineer{" "}
-              <span className="text-red-500">
-                Your Next Product
-              </span>
+              <span className="text-red-500">Your Next Product</span>
             </h1>
 
             <div className="bg-white rounded-xl p-6 lg:p-8 shadow-xl border border-gray-100">

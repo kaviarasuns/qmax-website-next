@@ -272,7 +272,7 @@ export default function EmbeddedDesignServicesDP() {
                   "Board bring-up and silicon validation",
                   "Peripheral driver development (SPI, I2C, UART, ADC)",
                   "Clock tree configuration and power mgmt",
-                  "Bootloader design and flash memory mgmt",
+                  "Bootloader design and flash memory management",
                 ].map((item, i) => (
                   <li key={i} className="flex gap-4 text-slate-600">
                     <Check className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
@@ -367,7 +367,7 @@ export default function EmbeddedDesignServicesDP() {
                 icon: Battery,
                 color: "text-emerald-400",
                 bg: "bg-emerald-500/10",
-                title: "Battery Mgmt",
+                title: "Battery Management",
                 description: "Efficient power usage for remote IoT devices.",
                 items: [
                   "Advanced sleep",
@@ -380,7 +380,7 @@ export default function EmbeddedDesignServicesDP() {
                 icon: Radio,
                 color: "text-violet-400",
                 bg: "bg-violet-500/10",
-                title: "Cellular Comm",
+                title: "Cellular Communication",
                 description:
                   "Secure communication stacks for cellular devices.",
                 items: [

@@ -27,7 +27,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/automotive.png",
     relatedCaseStudies: [
       {
-        title: "Qualcomm WIFI 6 TriBand Router",
+        title: "Qualcomm WIFI-6 TriBand Router",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/2.png",
         href: "/case-studies/qualcomm-wifi-6-triband-router",
@@ -39,7 +39,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
         href: "/case-studies/rugged-obd",
       },
       {
-        title: "Qualcomm WIFI4 Routers",
+        title: "Qualcomm WIFI-4 Routers",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lightning/LIGHTNING-PR1_TOP.svg",
         href: "/case-studies/qualcomm-wifi4-routers",
