@@ -928,4 +928,45 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "Prototype Testing",
     ],
   },
+
+  {
+    id: "video-processor",
+    title: "Video Processor",
+    category: "Embedded Systems",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/video_processesor/PNG1.png",
+    ],
+    rotatedImages: {},
+    features: [
+      "Real-time video processing",
+      "High-speed image handling",
+      "Embedded multimedia platform",
+      "Low-latency video pipeline",
+      "Video analytics support",
+      "High-bandwidth architecture",
+    ],
+    summary:
+      "An embedded video processor platform designed for real-time image processing, video analytics, and multimedia applications.",
+    importantParts: [
+      "Video processing engine",
+      "Memory subsystem",
+      "High-speed interfaces",
+      "Power management circuitry",
+      "Image processing pipeline",
+      "Communication interfaces",
+    ],
+    salientFeatures: [
+      "Real-time video processing",
+      "High-performance architecture",
+      "Low-latency operation",
+      "Scalable multimedia platform",
+    ],
+    scopeOfWork: [
+      "Embedded Hardware Design",
+      "Video Processing Development",
+      "High-Speed System Integration",
+      "Prototype Validation",
+      "Performance Testing",
+    ],
+  },
 ];
