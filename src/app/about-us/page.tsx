@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import FinalCTAV2 from "@/components/about-v2/FinalCTAV2";
 import GlobalPresenceV2 from "@/components/about-v2/GlobalPresenceV2";
 import HeroV2 from "@/components/about-v2/HeroV2";
-import HowWeWorkInternationalV2 from "@/components/about-v2/HowWeWorkInternationalV2";
 import ImpactStatsV2 from "@/components/about-v2/ImpactStatsV2";
 import MeetTheTeamV2 from "@/components/about-v2/MeetTheTeamV2";
 import MissionVisionV2 from "@/components/about-v2/MissionVisionV2";
 import OurStoryV2 from "@/components/about-v2/OurStoryV2";
 import OurValuesV2 from "@/components/about-v2/OurValuesV2";
 import WhyQmaxV2 from "@/components/about-v2/WhyQmaxV2";
+import EngineeredWithoutCompromise from "@/components/about-v2/engineered-without-compromise";
 
 export const metadata: Metadata = {
   title: "About Us | Qmax Systems",
@@ -26,7 +26,8 @@ export default function AboutUsPage() {
       <OurValuesV2 />
       <MeetTheTeamV2 />
       <WhyQmaxV2 />
-      <HowWeWorkInternationalV2 />
+      {/* <HowWeWorkInternationalV2 /> */}
+      <EngineeredWithoutCompromise />
       <GlobalPresenceV2 />
       <FinalCTAV2 />
     </main>

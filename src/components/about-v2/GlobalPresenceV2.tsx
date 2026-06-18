@@ -29,13 +29,13 @@ export default function GlobalPresenceV2() {
       <div className="mx-auto w-full max-w-[1200px] px-6">
         <div className="mx-auto mb-12 max-w-[680px] text-center md:mb-[52px]">
           <h2 className="text-4xl font-light leading-tight tracking-wide text-foreground md:text-5xl">
-            Global <span className="text-red-500">Presence</span>
+            Our <span className="text-red-500">Locations</span>
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-foreground">
+          {/* <p className="mt-4 text-base leading-relaxed text-foreground">
             With offices in Dallas, Texas and Chennai, India, we provide
             around-the-clock engineering support and rapid prototyping
             capabilities to clients worldwide.
-          </p>
+          </p> */}
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -63,7 +63,9 @@ export default function GlobalPresenceV2() {
                 <div className="text-xs font-bold uppercase tracking-[0.08em] text-red-500">
                   {office.country}
                 </div>
-                <h3 className="mt-3 text-xl font-medium tracking-wide text-white md:text-2xl">{office.name}</h3>
+                <h3 className="mt-3 text-xl font-medium tracking-wide text-white md:text-2xl">
+                  {office.name}
+                </h3>
                 <address className="mt-3 whitespace-pre-line text-base not-italic leading-[1.8] text-white/[0.92]">
                   {office.address}
                 </address>

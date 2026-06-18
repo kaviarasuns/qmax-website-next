@@ -1,31 +1,45 @@
-"use client";
-
-import React from "react";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import PCBTypeCards from "@/components/pcb-type-cards";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "PCB Design Resources | Fundamentals & Technology | Qmax Systems",
+  description:
+    "PCB fundamentals — board types, materials, surface finishes, SMT/THT, HDI, flex, and rigid-flex — from Qmax Systems engineering.",
+  path: "/PCB-design-resources",
+});
 
 export default function PCBDesingnResources() {
   return (
     <>
-      {/* Custom Navbar for PCB Design Resources */}
-      <nav className="w-full bg-gray-200 py-4 px-4 flex items-center justify-start mt-24">
-        <h1 className="text-2xl md:text-3xl h-10 font-bold lg:ml-64">
-          <span className="text-red-500 hover:text-red-500/90 transition-colors">
-            PCB Design
-          </span>{" "}
-          Resources
-        </h1>
-      </nav>
-      <main className="min-h-screen bg-white">
-        {/* Hero Section */}
-        <section className="lg:py-20 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="space-y-8">
+      <main id="top" className="min-h-screen bg-white">
+        <section
+          className="mt-[var(--nav-h)] bg-white px-16 pt-16 pb-10 max-[900px]:px-6 max-[900px]:pt-12 max-[900px]:pb-8"
+          aria-labelledby="pcb-resources-title"
+        >
+          <div className="mx-auto max-w-[1200px]">
+            <h1
+              id="pcb-resources-title"
+              className="text-[clamp(32px,4vw,48px)] font-light leading-[1.15] tracking-[-0.025em] text-foreground"
+            >
+              <span className="text-red-500">PCB Design</span> Resources
+            </h1>
+            <p className="mt-4 max-w-[800px] text-[15px] font-light leading-[1.6] text-foreground">
+              Your one-stop reference for PCB fundamentals — board types,
+              materials, surface finishes, and assembly technologies from Qmax
+              Systems engineers.
+            </p>
+          </div>
+        </section>
+
+        <section className="px-16 pb-16 max-[900px]:px-6 max-[900px]:pb-12">
+          <div className="mx-auto max-w-[1200px] space-y-8">
             <div className="space-y-4">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+              <h2 className="text-3xl font-light tracking-tight text-foreground md:text-4xl">
                 What is a PCB?
-              </h1>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              </h2>
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 A PCB or Printed Circuit Board is an interconnect device that
                 physically supports and electrically connects different
                 components in an electronic circuit. PCBs are made by combining
@@ -45,12 +59,12 @@ export default function PCBDesingnResources() {
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-bold">
+              <h2 className="text-3xl font-light tracking-tight text-foreground md:text-4xl">
                 PCB - What is inside?
               </h2>
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+                  <p className="text-[15px] font-light leading-[1.6] text-foreground">
                     In its most basic form, the Printed Circuit Board or PCB, is
                     made up of an insulating and non-conductive layer called the
                     &quot;Substrate&quot; which is coated with a conductive
@@ -83,7 +97,7 @@ export default function PCBDesingnResources() {
               </div>
             </div>
 
-            <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+            <p className="text-[15px] font-light leading-[1.6] text-foreground">
               Printed Circuit Boards (PCBs) are one of the most important parts
               of any electronic device. Each industry has its own specific
               requirements including different levels of operating temperature,
@@ -97,8 +111,8 @@ export default function PCBDesingnResources() {
         </section>
 
         {/* PCB Categories Section */}
-        <section className="py-12 bg-gray-50 px-4 md:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        <section className="bg-[#f8f9fb] px-16 py-16 max-[900px]:px-6 max-[900px]:py-12">
+          <div className="mx-auto max-w-[1200px]">
             <PCBTypeCards />
           </div>
         </section>
@@ -106,16 +120,16 @@ export default function PCBDesingnResources() {
         {/* PCB Types Section */}
         <section
           id="pcbtypes"
-          className="py-12 md:py-16 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto"
+          className="px-16 py-16 max-[900px]:px-6 max-[900px]:py-12"
         >
-          <div className="space-y-12">
+          <div className="mx-auto max-w-[1200px] space-y-12">
             <div className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-bold">
+              <h2 className="text-3xl font-light tracking-tight text-foreground md:text-4xl">
                 PCB Types
               </h2>
               <p
                 id="Single-sided PCB"
-                className="text-base md:text-lg text-muted-foreground"
+                className="text-[15px] font-light leading-[1.6] text-foreground"
               >
                 PCBs are designed to suit different needs and purposes. They are
                 predominantly classified based on the number of copper layers
@@ -126,12 +140,12 @@ export default function PCBDesingnResources() {
 
             {/* Single-sided PCB */}
             <div id="Single-sided-PCB" className="space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">
+              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Single-sided PCB
               </h3>
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+                  <p className="text-[15px] font-light leading-[1.6] text-foreground">
                     Single-sided PCBs, also known as single layer PCBs, are the
                     simplest type of PCBs. Made up of a single layer of base
                     material, they are coated on only one side with a layer of
@@ -155,12 +169,12 @@ export default function PCBDesingnResources() {
 
             {/* Double-sided PCB */}
             <div id="Double-sided-PCB" className="space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">
+              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Double-sided PCB
               </h3>
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+                  <p className="text-[15px] font-light leading-[1.6] text-foreground">
                     The double-sided PCBs or the double-layer PCBs have
                     conducting material on both sides of the base material. This
                     allows components to be placed on both sides of the board
@@ -183,12 +197,12 @@ export default function PCBDesingnResources() {
 
             {/* Multi-layer PCB */}
             <div id="Multi-layer-PCB" className="space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">
+              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Multi-layer PCB
               </h3>
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="space-y-4">
-                  <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+                  <p className="text-[15px] font-light leading-[1.6] text-foreground">
                     The multi-layer PCB can have 3 to multiple layers of
                     conducting material (copper sheets) with insulating
                     &quot;prepreg&quot; layers in between. Prepregs keep the
@@ -196,11 +210,11 @@ export default function PCBDesingnResources() {
                     bonded into a single structure using heat and pressure. A
                     typical 4 layer PCB will be stacked like this:
                   </p>
-                  <p className="font-semibold text-muted-foreground">
+                  <p className="font-medium text-foreground">
                     Bottom copper foil - Prepreg sheets - Inner core layer -
                     Prepreg sheets - Top copper foil
                   </p>
-                  <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+                  <p className="text-[15px] font-light leading-[1.6] text-foreground">
                     Complex PCBs used in defence, aerospace, avionics and
                     telecommunication applications can have over 50 layers.
                   </p>
@@ -219,10 +233,10 @@ export default function PCBDesingnResources() {
 
             {/* HDI PCB */}
             <div id="HDI-PCB" className="space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">
+              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
                 HDI PCB (High Density Interconnect)
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 An HDI PCB has a higher wiring density per unit area compared to
                 a typical PCB. They contain blind, buried vias and micro vias up
                 to .006&quot; or less in diameter. The high wiring density of
@@ -233,10 +247,10 @@ export default function PCBDesingnResources() {
 
             {/* Metal Back PCB */}
             <div id="Metal-Back-PCB" className="space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">
+              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Metal Back PCB
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Metal backed PCBs have metal substrates instead of FR4 or other
                 non-conducting materials. There is a layer of ceramic insulation
                 between the Metal Substrate and Copper Traces. These are used
@@ -252,10 +266,10 @@ export default function PCBDesingnResources() {
             {/* Flex and Rigid-Flex PCBs */}
             <div id="Flex-PCBs" className="space-y-4">
               {/* Single-sided Flex PCB */}
-              <h4 className="text-lg md:text-xl font-semibold text-gray-800 mt-4">
+              <h4 className="mt-4 text-lg font-light tracking-tight text-foreground md:text-xl">
                 Single-sided Flex PCB
               </h4>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 A single-sided flex PCB consists of a flexible polyimide film
                 for the substrate, a copper sheet to etch the circuit pattern, a
                 bonding adhesive, and a polyimide coverlay for insulation. The
@@ -267,10 +281,10 @@ export default function PCBDesingnResources() {
                 shape.
               </p>
               {/* Double-sided Flex PCB */}
-              <h4 className="text-lg md:text-xl font-semibold text-gray-800 mt-4">
+              <h4 className="mt-4 text-lg font-light tracking-tight text-foreground md:text-xl">
                 Double-sided Flex PCB
               </h4>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 A double-sided flex circuit has two conductive layers, one on
                 each side of the substrate. In these boards, the traces are
                 accessible from both the top and bottom, and the layers are
@@ -280,10 +294,10 @@ export default function PCBDesingnResources() {
                 assembly.
               </p>
               {/* Multi-layer Flex PCB */}
-              <h4 className="text-lg md:text-xl font-semibold text-gray-800 mt-4">
+              <h4 className="mt-4 text-lg font-light tracking-tight text-foreground md:text-xl">
                 Multi-layer Flex PCB
               </h4>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 In multi-layer flexible circuits, there are three or more
                 conductive layers interconnected with &lsquo;plated-through
                 holes&rsquo; (PTH). Each layer consists of a flexible polyimide
@@ -294,10 +308,10 @@ export default function PCBDesingnResources() {
                 circuits can have up to 8 conductive layers.
               </p>
               {/* Semi-Flex PCBs */}
-              <h4 className="text-lg md:text-xl font-semibold text-gray-800 mt-4">
+              <h4 className="mt-4 text-lg font-light tracking-tight text-foreground md:text-xl">
                 Semi-Flex PCBs
               </h4>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Semi-flexible circuits are different from flexible circuits.
                 They are made from a portion of rigid FR-4 PCBs, where they
                 undergo &lsquo;thinning&rsquo; to make the board bendable. Since
@@ -307,10 +321,10 @@ export default function PCBDesingnResources() {
                 installation.
               </p>
               {/* Rigid-Flex PCBs */}
-              <h4 className="text-lg md:text-xl font-semibold text-gray-800 mt-4">
+              <h4 className="mt-4 text-lg font-light tracking-tight text-foreground md:text-xl">
                 Rigid-Flex
               </h4>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Rigid-flex PCBs are a combination of rigid and flexible PCBs.
                 Layers of flex PCBs combined with one or more rigid PCBs are
                 called rigid-flex boards. Rigid-flex PCBs have a lower part
@@ -325,14 +339,14 @@ export default function PCBDesingnResources() {
         {/* PCB Technology Section */}
         <section
           id="PCB-Technology"
-          className="py-12 md:py-16 bg-gray-50 px-4 md:px-6 lg:px-8"
+          className="bg-[#f8f9fb] px-16 py-16 max-[900px]:px-6 max-[900px]:py-12"
         >
-          <div className="max-w-7xl mx-auto space-y-12">
+          <div className="mx-auto max-w-[1200px] space-y-12">
             <div className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-bold">
+              <h2 className="text-3xl font-light tracking-tight text-foreground md:text-4xl">
                 PCB Technology
               </h2>
-              <p className="text-base md:text-lg text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 There are two main technologies used for mounting components on
                 PCBs. One is &quot;Through-hole technology&quot; and the other
                 is &quot;Surface-mount technology&quot;.
@@ -341,10 +355,10 @@ export default function PCBDesingnResources() {
 
             {/* Surface-mounted technology */}
             <div id="Mounting-Technology" className="space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">
+              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Surface-mounted technology (SMT)
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 In Surface-Mount technology, Components are soldered directly
                 onto the board without drilling any holes. This method allows
                 more components to be placed resulting in a smaller and lighter
@@ -356,10 +370,10 @@ export default function PCBDesingnResources() {
 
             {/* Through-hole technology */}
             <div id="Through-Hole-Technology" className="space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">
+              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Through-hole technology (THT)
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 In the Through-Hole method, where components with leads are
                 inserted into holes drilled in the PCB. The leads are then
                 soldered onto the copper pads. THT offers unique benefits like
@@ -375,14 +389,13 @@ export default function PCBDesingnResources() {
 
             {/* PCB Design, Materials, Surface Finishes, and Plating */}
             <div id="pcb-design-materials-finishes" className="space-y-8 mt-8">
-              <h2 className="text-2xl md:text-3xl font-bold">
+              <h2 className="mt-8 text-3xl font-light tracking-tight text-foreground md:text-4xl">
                 Design
               </h2>
-              {/* Vias Section */}
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Blind and Buried Vias
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Vias are the copper-plated holes that allow the layers of the
                 board to connect to each other. A blind via is a hole that
                 connects the outer layer to the inner layers. The hole
@@ -391,49 +404,49 @@ export default function PCBDesingnResources() {
                 layer interconnected. A buried via is a hole drilled to connect
                 one or more inner layers, they are not visible from the outside.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Microvia
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Microvia are minute holes drilled into the board using laser
                 technology to create electrical connections between the layers
                 in High Density Interconnect (HDI) PCBs. These microvia can be
                 as small as 150 micrometres in diameter. The holes are plated
                 with copper as in case of a regular VIA.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Via-in-Pad
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 When the via is placed in a copper pad, it is called a
                 &lsquo;Via-in-pad&rsquo;. Via-in-pad allows the use of smaller
                 components, reducing the size of the PCB. The via can be filled
                 with conductive or non-conductive filling for soldering.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold mt-8">
+              <h2 className="mt-8 text-3xl font-light tracking-tight text-foreground md:text-4xl">
                 Materials
               </h2>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 PCB materials are of immense importance because they provide
                 insulation between copper layers, determine the performance of
                 the board and suitability for an application. These materials
                 are classified based on their properties.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 CEM-1
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 CEM-1 is a composite material made of woven glass fabric and
                 cellulose paper, combined with epoxy resin. This material is
                 used in single-sided PCBs for simple applications. It has high
                 flexural strength, higher transition temperature than FR-4 as
                 well as good mechanical and electrical properties.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 CEM-3
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 CEM-3 is developed based on FR-4. This material is milky-white
                 in colour and mostly used in the manufacturing of double-layered
                 and multi-layered PCBs. CEM-3 is a cheaper replacement for FR-4
@@ -441,28 +454,28 @@ export default function PCBDesingnResources() {
                 higher than FR-4.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold mt-8">
+              <h2 className="mt-8 text-3xl font-light tracking-tight text-foreground md:text-4xl">
                 Surface Finishes
               </h2>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Surface finish is the coating done on the copper pads. It is
                 done to ensure the solderability of the board and to prevent
                 oxidation and deterioration of the copper.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 ENIG (Electro-less Nickel Immersion Gold)
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 ENIG is a double-layer metallic coating, where the copper
                 surface is coated with nickel and a thin layer of immersion gold
                 above that to prevent oxidation. It is lead-free, has a longer
                 shelf-life and can be used on critical surfaces making it one of
                 the most popular finishes.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 HASL (Hot air solder levelling)
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 HASL is one of the most common surface finishes used in the
                 industry. The PCB is immersed into molten tin/lead alloy after
                 the solder mask is applied. The copper surface is covered with
@@ -470,19 +483,19 @@ export default function PCBDesingnResources() {
                 through hot-air knives. This process removes the unwanted solder
                 by blowing hot air over the board.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Lead-free HASL
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 In lead-free HASL, a solder material like Tin-copper is used
                 instead of lead. The Tin-Nickel solder is molten, and the board
                 is immersed into it. Lead is toxic and harmful, which makes
                 lead-free HASL preferred by most industries.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 OSP (Organic Surface Protection)
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 It is an organic surface finish to prevent oxidation of copper.
                 OSP is a water-based finish made from organic preservatives to
                 protect copper until assembly with a shelf life around 9 months
@@ -493,10 +506,10 @@ export default function PCBDesingnResources() {
                 finishes. OSP is re-workable, cost-effective and maintains
                 planarity.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Immersion Silver
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Immersion silver is a method of coating the exposed copper pads
                 on the PCB with silver and OSP. The OSP prevents tarnishing of
                 silver, extending the shelf life up to a year. The silver
@@ -504,10 +517,10 @@ export default function PCBDesingnResources() {
                 easy to solder. Immersion silver is a very simple process
                 suitable for fine traces.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Immersion Tin
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 The copper pads in the PCB are coated with a layer of tin. The
                 immersion tin forms a copper-tin inter-metallic joint. This
                 coating provides a 6-month shelf-life to the board and gives a
@@ -515,10 +528,10 @@ export default function PCBDesingnResources() {
                 mounting technology. Immersion tin is sometimes used as an
                 alternative to lead-based surface finish for its sustainability.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 ENEPIG (Electroless Nickel Electroless Palladium Immersion Gold)
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Nickel is deposited over copper pads using electroless
                 deposition method. It is then turn coated with layer of
                 palladium. Palladium covers the nickel and prevents it from
@@ -527,10 +540,10 @@ export default function PCBDesingnResources() {
                 gives a shelf life for more than a year and is suitable for a
                 wide range of assembly requirements.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Hard Gold
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Hard Gold is a layer of gold alloy with added metals to harden
                 it for increased durability. An electrolytic process is used to
                 apply this surface finish and is commonly applied to areas that
@@ -538,10 +551,10 @@ export default function PCBDesingnResources() {
                 switch, gold wire binding as well as conducting electric tests.
                 It has a shelf life of up to 12 months.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Soft Bondable Gold
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Soft gold is the purest form of gold without any additional
                 elements. The gold coating is 99.9% pure with a knoop hardness
                 range of 60-85. An electrolytic process is followed to apply the
@@ -549,17 +562,17 @@ export default function PCBDesingnResources() {
                 operations as it produces a stronger joint.
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-bold mt-8">
+              <h2 className="mt-8 text-3xl font-light tracking-tight text-foreground md:text-4xl">
                 Plating
               </h2>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Plating is the process of depositing metal (copper) on the PCB
                 surface through an electrochemical process.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Edge Plating
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Conductive material coated around the external edges of a PCB,
                 covering all the layers, is called edge plating. Edge plating is
                 used to connect copper traces or planes in between layers of the
@@ -568,10 +581,10 @@ export default function PCBDesingnResources() {
                 is a solution to electromagnetic emissions radiating out of the
                 edges of a backplane.
               </p>
-              <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mt-4">
+              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
                 Castellations
               </h3>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Castellations are plated through holes that are located at the
                 edge of printed circuit boards. They are half holes that are
                 intended to create links between a module and a board or between
@@ -585,13 +598,13 @@ export default function PCBDesingnResources() {
 
         {/* Back to top button */}
         <div className="fixed bottom-8 right-8">
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-colors"
+          <a
+            href="#top"
+            className="flex items-center justify-center rounded-full bg-red-500 p-3 text-white shadow-lg transition-colors hover:bg-red-500/90"
             aria-label="Back to top"
           >
-            <ChevronDown className="w-6 h-6 transform rotate-180" />
-          </button>
+            <ChevronDown className="h-6 w-6 rotate-180 transform" />
+          </a>
         </div>
       </main>
     </>

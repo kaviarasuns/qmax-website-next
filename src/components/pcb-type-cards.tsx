@@ -30,10 +30,10 @@ const CategoryCard = ({ title, icon, links }: CategoryCardProps) => {
         <ul className="space-y-2">
           {links.map((link, index) => (
             <li key={index} className="flex items-start">
-              <span className="text-gray-800 mr-2">■</span>
+              <span className="mr-2 text-foreground">■</span>
               <Link
                 href={link.href}
-                className="text-gray-800 hover:text-blue-800 hover:underline"
+                className="text-foreground hover:text-red-500 hover:underline"
               >
                 {link.label}
               </Link>
@@ -158,7 +158,7 @@ export default function PCBTypeCards() {
 
   return (
     <div className="space-y-8">
-      <h2 className="text-2xl md:text-3xl font-bold text-center">
+      <h2 className="text-center text-3xl font-light tracking-tight text-foreground md:text-4xl">
         PCB Resources
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
