@@ -36,8 +36,10 @@ const sectionCounts: { [key: string]: number } = {
 // Temporary: global card index offsets per section (remove when numbering is dropped)
 const pcbCardOffset = embeddedCaseStudies.length;
 const mechanicalCardOffset = pcbCardOffset + pcbCaseStudies.length;
-const industrialCardOffset = mechanicalCardOffset + mechanicalCaseStudies.length;
-const engineeringSupportCardOffset = industrialCardOffset + industrialCaseStudies.length;
+const industrialCardOffset =
+  mechanicalCardOffset + mechanicalCaseStudies.length;
+const engineeringSupportCardOffset =
+  industrialCardOffset + industrialCaseStudies.length;
 
 function CaseStudyCardNumber({ number }: { number: number }) {
   return (
@@ -104,7 +106,7 @@ export default function CaseStudiesPage() {
         typeof performance !== "undefined" ? performance.now() : Date.now();
       const maxReachable = Math.max(
         0,
-        document.documentElement.scrollHeight - window.innerHeight
+        document.documentElement.scrollHeight - window.innerHeight,
       );
       const y = Math.min(targetY, maxReachable);
 
@@ -243,12 +245,17 @@ export default function CaseStudiesPage() {
 
         {/* Main Content */}
         <main className="flex-1 w-full max-w-6xl px-8 lg:px-12 mx-auto">
+          <header className="mb-16">
+            <h1 className="text-3xl font-semibold tracking-wide text-foreground my-2 md:text-5xl">
+              Case <span className="text-red-500">Studies</span>
+            </h1>
+          </header>
           {/* Embedded Section */}
           <div id="embedded" className="mb-24 scroll-mt-32">
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 01</span> */}
-                <h2 className="text-3xl font-bold text-foreground">
+                <h2 className="text-3xl font-semibold tracking-wide text-foreground">
                   Embedded Systems
                 </h2>
               </div>
@@ -268,13 +275,14 @@ export default function CaseStudiesPage() {
               ))}
             </div>
           </div>
-
           {/* PCB Section */}
           <div id="pcb" className="mb-24 scroll-mt-32">
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 02</span> */}
-                <h2 className="text-3xl font-bold text-foreground">PCB Design</h2>
+                <h2 className="text-3xl font-semibold tracking-wide text-foreground">
+                  PCB Design
+                </h2>
               </div>
               <span className="text-sm text-zinc-500 font-medium mb-1">
                 {pcbCaseStudies.length} Projects
@@ -292,13 +300,12 @@ export default function CaseStudiesPage() {
               ))}
             </div>
           </div>
-
           {/* Mechanical Section */}
           <div id="mechanical" className="mb-24 scroll-mt-32">
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 03</span> */}
-                <h2 className="text-3xl font-bold text-foreground">
+                <h2 className="text-3xl font-semibold tracking-wide text-foreground">
                   Mechanical Design
                 </h2>
               </div>
@@ -309,19 +316,20 @@ export default function CaseStudiesPage() {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
               {mechanicalCaseStudies.map((study, index) => (
                 <div key={`mstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={mechanicalCardOffset + index + 1} />
+                  <CaseStudyCardNumber
+                    number={mechanicalCardOffset + index + 1}
+                  />
                   <CaseStudyCard {...study} />
                 </div>
               ))}
             </div>
           </div>
-
           {/* Industrial Section */}
           <div id="industrial" className="mb-10 scroll-mt-32">
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 04</span> */}
-                <h2 className="text-3xl font-bold text-foreground">
+                <h2 className="text-3xl font-semibold tracking-wide text-foreground">
                   Industrial Design
                 </h2>
               </div>
@@ -332,7 +340,9 @@ export default function CaseStudiesPage() {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
               {industrialCaseStudies.map((study, index) => (
                 <div key={`istudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={industrialCardOffset + index + 1} />
+                  <CaseStudyCardNumber
+                    number={industrialCardOffset + index + 1}
+                  />
                   <CaseStudyCard
                     {...study}
                     // imageBackgroundClassName="bg-blue-200"
@@ -341,7 +351,6 @@ export default function CaseStudiesPage() {
               ))}
             </div>
           </div>
-
           {/* Engineering Support Services Section */}
           <div
             id="engineering-support-services"
@@ -349,7 +358,7 @@ export default function CaseStudiesPage() {
           >
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
-                <h2 className="text-3xl font-bold text-foreground">
+                <h2 className="text-3xl font-semibold tracking-wide text-foreground">
                   Engineering Support Services
                 </h2>
               </div>
