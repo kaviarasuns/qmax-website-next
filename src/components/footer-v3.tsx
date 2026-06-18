@@ -7,7 +7,6 @@ import {
   Download,
   Facebook,
   Linkedin,
-  Twitter,
   Youtube,
 } from "lucide-react";
 
