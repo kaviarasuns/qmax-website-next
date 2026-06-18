@@ -25,7 +25,7 @@ interface WhySectionProps {
 
 export function WhySection({
   whyCards,
-  title = "Why Choose Qmax For",
+  title = "Why Choose Qmax for",
   titleHighlight = "Hardware Design?",
   description,
   ctaHref = "/hardware-design-services/contact",

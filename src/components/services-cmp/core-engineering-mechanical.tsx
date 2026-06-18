@@ -67,7 +67,7 @@ const SERVICES: MechanicalService[] = [
     titleAccent: "Design",
     subtitle: "Plastic Enclosure Design for Electronics",
     description:
-      "Plastic enclosures represent the most common housing choice for consumer electronics, industrial handheld devices, and cost-sensitive IoT products. Qmax Systems designs injection-moulded plastic enclosures that balance structural integrity, thermal performance, EMI management, and tooling cost - with a clear path from concept to mass production.",
+      "Plastic enclosures represent the most common housing choice for consumer electronics, industrial handheld devices, and cost-sensitive IoT products. Qmax Systems designs injection-molded plastic enclosures that balance structural integrity, thermal performance, EMI management, and tooling cost - with a clear path from concept to mass production.",
     chips: ["PC / ABS", "UL94-V0", "Nylon PA66", "EMI Gasket", "RF Design"],
     sections: [
       {
@@ -94,7 +94,7 @@ const SERVICES: MechanicalService[] = [
         items: [
           "Draft angles, parting line placement, wall thickness uniformity",
           "Rib & boss geometry, snap-fit and living hinge design",
-          "Insert moulding for threaded interfaces, EMI gasket seating",
+          "Insert molding for threaded interfaces, EMI gasket seating",
           "RF-transparent dielectric analysis for Wi-Fi, 4G, GPS products",
         ],
       },
@@ -132,7 +132,7 @@ const SERVICES: MechanicalService[] = [
     subtitle: "Machined Aluminum, Sheet Metal & Extruded Enclosures",
     description:
       "Metal enclosures are the correct engineering choice when the application demands superior EMI shielding, higher structural rigidity, thermal conductance, or a longer service life under mechanical or environmental stress. Qmax designs and sources all three principal metal enclosure types.",
-    chips: ["Al 6061-T6", "SS 304/316", "Anodising", "Gold Plating"],
+    chips: ["Al 6061-T6", "SS 304/316", "Anodizing", "Gold Plating"],
     sections: [
       {
         kind: "table",
@@ -168,7 +168,7 @@ const SERVICES: MechanicalService[] = [
           {
             title: "Core Treatments",
             description:
-              "Anodising Type II / III; Chromate conversion; Powder coating",
+              "Anodizing Type II / III; Chromate conversion; Powder coating",
           },
           {
             title: "Precision Plating",
@@ -411,7 +411,7 @@ const SERVICES: MechanicalService[] = [
         rows: [
           [
             "DFM - Manufacturability",
-            "Tolerances set to process capability. Features designed to the manufacturing method. Tooling complexity minimised.",
+            "Tolerances set to process capability. Features designed to the manufacturing method. Tooling complexity minimized.",
           ],
           [
             "DFC - Cost",
@@ -419,7 +419,7 @@ const SERVICES: MechanicalService[] = [
           ],
           [
             "DFA - Assembly",
-            "Part count minimisation, self-locating features, fastener access, tooling access, and assembly sequence reviewed.",
+            "Part count minimization, self-locating features, fastener access, tooling access, and assembly sequence reviewed.",
           ],
           [
             "DFC - Compliance",
@@ -831,6 +831,22 @@ function IpCards({ items }: { items: IpCard[] }) {
   );
 }
 
+function PortfolioLabel({ label }: { label: string }) {
+  return (
+    <>
+      {label.split(/(IoT)/).map((part, index) =>
+        part === "IoT" ? (
+          <span key={index} className="normal-case">
+            IoT
+          </span>
+        ) : (
+          <span key={index}>{part}</span>
+        ),
+      )}
+    </>
+  );
+}
+
 function ViewCaseLink({ href }: { href: string }) {
   return (
     <Link
@@ -867,7 +883,7 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
         <div className="shrink-0">
           {item.label ? (
             <p className="line-clamp-1 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
-              {item.label}
+              <PortfolioLabel label={item.label} />
             </p>
           ) : null}
           <h4 className="line-clamp-2 text-[15px] font-semibold leading-snug tracking-[-0.2px] text-foreground">
@@ -907,7 +923,7 @@ function PortfolioFeaturedCard({ item }: { item: PortfolioItem }) {
       <div className="w-full min-[900px]:flex-1">
         {item.label ? (
           <p className="mb-2 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
-            {item.label}
+            <PortfolioLabel label={item.label} />
           </p>
         ) : null}
         <h4 className="mb-2.5 text-[18px] font-medium leading-snug text-white">
@@ -1152,7 +1168,7 @@ export function CoreEngineeringMechanical() {
           </h2>
           <p className="mx-auto max-w-[820px] text-[15px] leading-[22.5px] text-foreground">
             Qmax Systems delivers precision mechanical engineering across seven
-            specialist disciplines - from injection-moulded plastic enclosures
+            specialist disciplines - from injection-molded plastic enclosures
             for consumer IoT products to MIL-STD-810H-qualified rugged systems
             for defense electronics. Each service is backed by structural FEA
             analysis, full GD&T drawing sets, and a direct path from concept to

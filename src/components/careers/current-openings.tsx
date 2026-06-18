@@ -295,7 +295,7 @@ const positions = [
   },
   {
     id: 13,
-    title: "Firmware / Embedded Intern",
+    title: "Firmware & Embedded Intern",
     category: "Engineering",
     type: "Internship",
     responsibilities: [
@@ -317,7 +317,7 @@ const positions = [
   },
   {
     id: 14,
-    title: "RF / Antenna Intern",
+    title: "RF & Antenna Intern",
     category: "Engineering",
     type: "Internship",
     responsibilities: [
@@ -359,7 +359,7 @@ const positions = [
   },
   {
     id: 16,
-    title: "Mechanical / Industrial Design Intern",
+    title: "Mechanical & Industrial Design Intern",
     category: "Design",
     type: "Internship",
     responsibilities: [
@@ -381,7 +381,7 @@ const positions = [
   },
   {
     id: 17,
-    title: "Software / Web Intern",
+    title: "Software & Web Intern",
     category: "Software",
     type: "Internship",
     responsibilities: [

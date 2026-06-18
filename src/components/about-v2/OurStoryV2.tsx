@@ -35,7 +35,7 @@ export default function OurStoryV2() {
               Our <span className="text-red-500">Story</span>
             </h2>
             <p className="mt-3.5 text-lg font-medium leading-snug tracking-wide text-foreground md:text-xl">
-              A Quarter-Century Of Turning Ideas Into Hardware.
+              A Quarter-Century of Turning Ideas Into Hardware.
             </p>
             <p className="mt-5 text-base leading-relaxed text-foreground">
               Founded in 1997, Qmax Systems began with a simple mission: to
@@ -45,7 +45,7 @@ export default function OurStoryV2() {
               embedded systems and PCB design.
             </p>
             <p className="mt-4 text-base leading-relaxed text-foreground">
-              Over 25+ years we have built expertise across diverse industries -
+              Over 25 years, we have built expertise across diverse industries —
               from consumer electronics and IoT devices to industrial
               automation, aerospace, and medical devices. Our commitment to
               quality, innovation, and customer success has made us a trusted

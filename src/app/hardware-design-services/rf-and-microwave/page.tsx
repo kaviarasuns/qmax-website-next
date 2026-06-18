@@ -753,11 +753,11 @@ export default function RfAndMicrowavePage() {
             hardware. From sub-GHz IoT modules to mmWave sensor arrays and 1 kW
             industrial plasma generators, Qmax Systems delivers RF front-end
             (RFFE) engineering - from LNA and PA to mixer stages - transceiver
-            and antenna architecture, impedance matching, filter and
-            link-budget design, full-wave electromagnetic simulation, and
-            EMI/EMC pre-compliance validation across LF/HF through 77 GHz+
-            mmWave bands - ensuring optimal signal integrity and regulatory
-            compliance on first build.
+            and antenna architecture, impedance matching, filter and link-budget
+            design, full-wave electromagnetic simulation, and EMI/EMC
+            pre-compliance validation across LF/HF through 77 GHz+ mmWave bands
+            - ensuring optimal signal integrity and regulatory compliance on
+            first build.
           </p>
         }
         ctaHref="/hardware-design-services/contact"
@@ -791,7 +791,7 @@ export default function RfAndMicrowavePage() {
         description="Qmax Systems distinguishes itself through a rigorous focus on the physics of high-frequency signals."
         consultationCta={{
           heading:
-            "Get A Complimentary Consultation With Our RF & Microwave Experts.",
+            "Get a Complimentary Consultation with Our RF & Microwave Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/hardware-design-services/contact",

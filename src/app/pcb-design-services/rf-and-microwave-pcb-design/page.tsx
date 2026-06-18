@@ -637,11 +637,10 @@ export default function RFMicrowavePCBDesignPage() {
             <p>
               Qmax Systems provides RF and microwave PCB design from sub-GHz to
               mmWave bands, where the board is part of the RF circuit itself.
-              Qmax Systems RF engineers control trace geometry, dielectric
-              loss, via transitions, grounding, and shielding to hold insertion
-              loss, phase stability, noise floor, and EMI compliance - across
-              radar sensors, RF instrumentation, and wireless communication
-              platforms.
+              Qmax Systems RF engineers control trace geometry, dielectric loss,
+              via transitions, grounding, and shielding to hold insertion loss,
+              phase stability, noise floor, and EMI compliance - across radar
+              sensors, RF instrumentation, and wireless communication platforms.
             </p>
           </>
         }
@@ -662,7 +661,7 @@ export default function RFMicrowavePCBDesignPage() {
         description="RF architecture validated before layout begins - backed by simulation-driven constraints and RF measurement expertise."
         consultationCta={{
           heading:
-            "Get A Complimentary Consultation With Our RF & Microwave Experts.",
+            "Get a Complimentary Consultation with Our RF & Microwave Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/pcb-design-services/contact",

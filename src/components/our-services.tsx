@@ -22,7 +22,7 @@ const services: ServiceCard[] = [
   {
     id: "hardware",
     title: "Hardware Development",
-    blurb: "From signal to silicon - purpose-built hardware that ships.",
+    blurb: "From signal to silicon — purpose-built hardware that ships.",
     items: [
       "Analog / Mixed Signal",
       "High Speed Digital",

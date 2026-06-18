@@ -11,7 +11,7 @@ const reasons = [
   {
     title: "Comprehensive Lifecycle Ownership & Continuity",
     description:
-      "We eliminate vendor-fragmentation friction and accountability gaps. By housing full-stack capabilities — Hardware, Firmware, Software, PCB Layout, Mechanical, and Industrial Design-completely under one roof, we ensure total continuity across your product lifecycle, delivering predictable milestones and seamless production handoffs.",
+      "We eliminate vendor-fragmentation friction and accountability gaps. By housing full-stack capabilities — Hardware, Firmware, Software, PCB Layout, Mechanical, and Industrial Design — completely under one roof, we ensure total continuity across your product lifecycle, delivering predictable milestones and seamless production handoffs.",
   },
   {
     title: "Proactive Regulatory & Compliance De-Risking",

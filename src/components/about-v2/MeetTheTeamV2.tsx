@@ -25,14 +25,14 @@ const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     name: "Saravanaperumal Annamalai",
-    role: "VP - Software Engineering",
+    role: "VP — Software Engineering",
     bio: "With 26+ years of experience, he specializes in embedded software development, system architecture, and large-scale engineering program management. He oversees firmware development, software architecture design, and system integration across complex hardware platforms.",
     image: "/about-us/image4.jpg",
     linkedin: "https://www.linkedin.com/in/sp-qmax/",
   },
   {
     name: "Muhammed Asil",
-    role: "VP - Business Development",
+    role: "VP — Business Development",
     bio: "Leads business development while contributing his electrical engineering expertise to customer programs. With 20+ years of experience, he works closely with global clients to understand product requirements and coordinate engineering execution from concept through delivery.",
     image: "/about-us/image3.jpg",
     linkedin: "https://www.linkedin.com/in/nmuhammedasil/",
@@ -46,7 +46,7 @@ const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     name: "Sangeetha S",
-    role: "Director - Finance",
+    role: "Director — Finance",
     bio: "Oversees finance and corporate operations. With 28+ years of experience in financial management and administration, she manages accounting, financial planning, HR operations, and organizational administration while ensuring strong financial governance.",
     image: "/about-us/image1.jpg",
     linkedin: "https://www.linkedin.com/in/sangeetha-s-0a1aa535a/",

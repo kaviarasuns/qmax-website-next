@@ -563,7 +563,7 @@ export default function AnalogDesignPage() {
         className="pt-16 pb-16 lg:pt-20 lg:pb-20"
         consultationCta={{
           heading:
-            "Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts.",
+            "Get a Complimentary Consultation with Our Analog & Mixed-Signal Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/hardware-design-services/contact",

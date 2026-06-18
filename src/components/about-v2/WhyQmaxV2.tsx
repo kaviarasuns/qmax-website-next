@@ -32,7 +32,7 @@ const REASONS: {
   {
     title: "End-to-End Engineering",
     description:
-      "From concept and design through manufacturing support and field support - we handle the entire lifecycle.",
+      "From concept and design through manufacturing support and field support — we handle the entire lifecycle.",
     icon: Workflow,
   },
 ];
@@ -46,8 +46,8 @@ export default function WhyQmaxV2() {
             Why Choose <span className="text-red-500">Qmax</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-foreground">
-            The reasons enterprises and startups trust us with their most complex
-            electronics development.
+            The reasons enterprises and startups trust us with their most
+            complex electronics development.
           </p>
         </div>
 
@@ -67,7 +67,9 @@ export default function WhyQmaxV2() {
                     {reason.title}
                   </h3>
                 </div>
-                <p className="text-base text-foreground">{reason.description}</p>
+                <p className="text-base text-foreground">
+                  {reason.description}
+                </p>
               </article>
             );
           })}

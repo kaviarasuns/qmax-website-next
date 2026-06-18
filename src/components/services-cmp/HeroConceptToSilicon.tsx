@@ -363,7 +363,7 @@ const PHASES: Phase[] = [
             <>
               Functional
               <br />
-              Bringup
+              Bring-up
             </>
           ),
           icon: (
@@ -690,7 +690,7 @@ export function HeroConceptToSilicon({
   ctaLabel = "Talk to our engineer",
   ctaHref = "/hardware-design-services/contact",
   lifecycleTitle = "Hardware Lifecycle",
-  lifecycleSubtitleHighlight = "Requirement To Production",
+  lifecycleSubtitleHighlight = "Requirement to Production",
 }: HeroConceptToSiliconProps) {
   const showCopy = title != null && description != null;
   const flowRef = useRef<HTMLDivElement | null>(null);

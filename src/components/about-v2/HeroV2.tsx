@@ -40,7 +40,7 @@ export default function HeroV2() {
         <p className="mt-6 max-w-[660px] font-normal leading-[1.55] text-white [font-size:clamp(15px,1.6vw,19px)]">
           Qmax Systems is a trusted partner for electronics engineering and
           R&amp;D, specializing in embedded systems and PCB design. For 25+
-          years we have helped innovators and enterprises turn bold ideas into
+          years, we have helped innovators and enterprises turn bold ideas into
           market-ready products.
         </p>
 

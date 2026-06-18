@@ -517,8 +517,8 @@ export default function AnalogAndMixedSignalPage() {
             <p>
               Qmax Systems provides analog and mixed-signal PCB design that
               combines high-sensitivity analog signal chains with high-speed
-              digital processing on a single board. Qmax Systems engineers
-              treat the layout as part of the electrical system - controlling
+              digital processing on a single board. Qmax Systems engineers treat
+              the layout as part of the electrical system - controlling
               grounding topology, shielding, and power filtering so signal
               integrity, noise floor, and measurement accuracy hold under real
               conditions.
@@ -543,7 +543,7 @@ export default function AnalogAndMixedSignalPage() {
         description="Engineering-led analog and mixed-signal PCB design - built for first-time-right performance from schematic to production."
         consultationCta={{
           heading:
-            "Get A Complimentary Consultation With Our Analog & Mixed-Signal Experts.",
+            "Get a Complimentary Consultation with Our Analog & Mixed-Signal Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/pcb-design-services/contact",

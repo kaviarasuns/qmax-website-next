@@ -43,7 +43,7 @@ const HERO = {
 
 const FIRMWARE_LIFECYCLE = {
   title: "Firmware Lifecycle",
-  subtitleHighlight: "requirement to production",
+  subtitleHighlight: "Requirement to production",
   phases: [
     {
       phase: 1,
@@ -211,25 +211,13 @@ const DAY_ONE_INSIGHTS: DayOneInsight[] = [
         <line x1="9" y1="20" x2="9" y2="13" />
         <line x1="14" y1="20" x2="14" y2="10" />
         <line x1="19" y1="20" x2="19" y2="6" />
-        <circle cx="19" cy="6" r="2.5" stroke="currentColor" />
-        <text
-          x="16.5"
-          y="9"
-          fontSize="6"
-          fill="#EF4444"
-          stroke="none"
-          fontFamily="sans-serif"
-          fontWeight="700"
-        >
-          $
-        </text>
       </svg>
     ),
   },
   {
     title: "MTBF & Reliability",
     description:
-      "Component derating, thermal margin, watchdogs, and 24‑72h endurance runs - reliability designed and proven, not assumed.",
+      "Component derating, thermal margin, watchdogs, and 24–72-hour endurance runs - reliability designed and proven, not assumed.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -277,8 +265,8 @@ const DAY_ONE_INSIGHTS: DayOneInsight[] = [
 ];
 
 const DAY_ONE_THINKING = {
-  title: "Day 1 Thinking For",
-  titleHighlight: "Real‑World Deployment",
+  title: "Day 1 Thinking for",
+  titleHighlight: "Real-World Deployment",
   description:
     "Qmax Systems engineers plan for field deployment from Day 1 - before the first line of production firmware is written. OTA pipeline design, battery duty-cycling, certification readiness (FCC, CE, IEC 62304, ISO 26262, AEC-Q100), commissioning workflows, remote diagnostics, communication cost budgeting, MTBF planning, and security patch cadence are all architected at project start - not added after the first field failure.",
   insights: DAY_ONE_INSIGHTS,
@@ -463,7 +451,7 @@ const EMBEDDED_SOFTWARE_CAPABILITIES: EmbeddedSoftwareCapability[] = [
 
 const EMBEDDED_SOFTWARE = {
   title: "Embedded Software Across The Full Stack —",
-  titleHighlight: "Bare‑Metal To Server‑Grade",
+  titleHighlight: "Bare‑Metal to Server‑Grade",
   description:
     "Qmax Systems delivers embedded software across the full firmware stack - bare-metal C/C++ on resource-constrained MCUs, FreeRTOS and Zephyr RTOS on Cortex-M, Yocto Linux on Cortex-A, OpenWrt-based networking platforms, and OpenBMC/UEFI server firmware. All work is developed to MISRA-C/C++ coding standards and validated on production silicon.",
   capabilities: EMBEDDED_SOFTWARE_CAPABILITIES,
@@ -580,8 +568,8 @@ const MODULAR_FIRMWARE_FRAMEWORKS: FirmwareFramework[] = [
 ];
 
 const MODULAR_FIRMWARE = {
-  title: "Modular Firmware Frameworks Built For",
-  titleHighlight: "Reuse, Scale, And Security",
+  title: "Modular Firmware Frameworks Built for",
+  titleHighlight: "Reuse, Scale, and Security",
   description:
     "Qmax Systems builds four production-ready modular firmware frameworks - Secure OTA, Battery Management, Cellular Communication, and Device Commissioning - deployed across Qmax Systems programs in IoT, medical, and industrial markets. These reusable libraries shorten time-to-market and reduce long-term maintenance cost for fleets ranging from hundreds to hundreds of thousands of devices.",
   frameworks: MODULAR_FIRMWARE_FRAMEWORKS,
@@ -671,7 +659,7 @@ const WHY_CARDS = [
   },
   {
     title: "Strict Coding Standards & Quality",
-    desc: "Qmax Systems enforces MISRA‑C/C++, automated static analysis, HIL testing, and 24–72 hour endurance runs with memory-leak and OTA-rollback validation as part of every release.",
+    desc: "Qmax Systems enforces MISRA‑C/C++, automated static analysis, HIL testing, and 24–72-hour endurance runs with memory-leak and OTA-rollback validation as part of every release.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -689,7 +677,7 @@ const WHY_CARDS = [
   },
   {
     title: "Reusable Frameworks",
-    desc: "Qmax Systems battle-tested libraries for Secure OTA, Battery Management, Cellular Communications, and Device Commissioning shorten time-to-market and lower long-term maintenance cost across programs.",
+    desc: "Qmax Systems battle-tested libraries for Secure OTA, Battery Management, Cellular Communication, and Device Commissioning shorten time-to-market and lower long-term maintenance cost across programs.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -727,7 +715,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What coding standards does Qmax Systems follow?",
-    a: "Qmax Systems enforces MISRA-C/C++ for all safety-critical firmware, automated static analysis at every pull request, peer code review, HIL (hardware-in-the-loop) testing, and 24–72 hour endurance runs with memory-leak and OTA-rollback validation as part of every release cycle.",
+    a: "Qmax Systems enforces MISRA-C/C++ for all safety-critical firmware, automated static analysis at every pull request, peer code review, HIL (hardware-in-the-loop) testing, and 24–72-hour endurance runs with memory-leak and OTA-rollback validation as part of every release cycle.",
   },
   {
     q: "Does Qmax Systems support long-term firmware maintenance?",

@@ -23,13 +23,13 @@ const HERO = {
 const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
   {
     id: "product-story",
-    tabLabel: "Visualisation",
+    tabLabel: "Visualization",
     tabIcon: FOLDER_TAB_ICONS.productStory,
     videoSrc:
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/stellar_video.mp4",
     headline: "Product Story",
     intro:
-      "Every successful product begins with a clearly articulated concept. Our industrial designers work directly with clients to translate product requirements, brand values, and user needs into clear visual concepts. This phase includes hand sketches, digital concept illustrations, and annotated visualisation boards that communicate design intent to both technical and non-technical stakeholders.",
+      "Every successful product begins with a clearly articulated concept. Our industrial designers work directly with clients to translate product requirements, brand values, and user needs into clear visual concepts. This phase includes hand sketches, digital concept illustrations, and annotated visualization boards that communicate design intent to both technical and non-technical stakeholders.",
     bullets: [
       {
         title: "Deliverables Include",
@@ -37,7 +37,7 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
           "Concept sketch sets (hand-drawn and digital).",
           "Design direction boards (form language, aesthetic intent).",
           "Annotated product story presentations.",
-          "2D product visualisation renderings.",
+          "2D product visualization renderings.",
         ],
       },
     ],
@@ -80,7 +80,7 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
           "Wireframing and interaction flow design.",
           "High-fidelity UI mockups and design systems.",
           "Usability testing with real end-users.",
-          "Physical ergonomics analysis and control layout optimisation.",
+          "Physical ergonomics analysis and control layout optimization.",
         ],
       },
     ],
@@ -100,8 +100,8 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
           "Studio-quality static product renders (JPEG, PNG, TIFF).",
           "360-degree product spin animations.",
           "Exploded view and assembly sequence animations.",
-          "Lifestyle context renders (in-environment product visualisation).",
-          "CMF (Colour, Material, Finish) variant renders for marketing.",
+          "Lifestyle context renders (in-environment product visualization).",
+          "CMF (Color, Material, Finish) variant renders for marketing.",
         ],
       },
     ],
@@ -231,7 +231,7 @@ const WORKFLOW_STEPS = [
     description:
       "Detailed form development and high-fidelity prototypes for real-world evaluation.",
     points: [
-      "High-fidelity concept visualisation and rendering",
+      "High-fidelity concept visualization and rendering",
       "Functional appearance models and mock-ups",
       "Iterative prototype builds and user evaluation sessions",
     ],

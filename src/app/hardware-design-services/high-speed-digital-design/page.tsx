@@ -376,7 +376,7 @@ export default function HighSpeedDigitalDesignPage() {
         titleHighlight="Digital Hardware Design?"
         consultationCta={{
           heading:
-            "Get A Complimentary Consultation With Our Digital Hardware Experts.",
+            "Get a Complimentary Consultation with Our Digital Hardware Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/hardware-design-services/contact",

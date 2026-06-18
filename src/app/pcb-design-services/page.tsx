@@ -69,7 +69,7 @@ const CAPABILITIES = [
         title: "Tools & Verification",
         items: [
           "Cadence Sigrity, Ansys SIwave for SI/PI simulation.",
-          "Length-matched differential pairs, return-path integrity, decap optimisation.",
+          "Length-matched differential pairs, return-path integrity, decap optimization.",
         ],
       },
     ],

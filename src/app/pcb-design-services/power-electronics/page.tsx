@@ -502,7 +502,7 @@ export default function PowerElectronicsPage() {
         description="25 years of power electronics PCB expertise - from HV isolation to EMI-compliant production files."
         consultationCta={{
           heading:
-            "Get A Complimentary Consultation With Our Power Electronics Experts.",
+            "Get a Complimentary Consultation with Our Power Electronics Experts.",
           subtitle:
             "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/pcb-design-services/contact",

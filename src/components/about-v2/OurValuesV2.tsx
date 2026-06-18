@@ -23,7 +23,7 @@ const VALUES: { icon: LucideIcon; title: string; description: string }[] = [
     icon: Heart,
     title: "Integrity",
     description:
-      "Operating with transparency and trust - protecting client IP and honoring every commitment.",
+      "Operating with transparency and trust — protecting client IP and honoring every commitment.",
   },
   {
     icon: Star,
@@ -50,10 +50,7 @@ export default function OurValuesV2() {
           {VALUES.map((value) => {
             const Icon = value.icon;
             return (
-              <div
-                key={value.title}
-                className={CARD_CLASS}
-              >
+              <div key={value.title} className={CARD_CLASS}>
                 <div className="flex items-start gap-5">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center text-red-500">
                     <Icon className="h-full w-full" strokeWidth={1.5} />

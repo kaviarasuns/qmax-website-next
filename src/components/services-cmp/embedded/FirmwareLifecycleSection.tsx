@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { formatHeadingText } from "@/lib/format-heading-text";
 import { cn } from "@/lib/utils";
 
 export type FirmwareLifecyclePhase = {
@@ -79,12 +80,14 @@ export function FirmwareLifecycleSection({
     >
       <div className="relative z-[2] mx-auto max-w-[1400px]">
         <div className="mx-auto mb-14 max-w-none text-center">
-          <h2 className="mb-3 text-center text-[clamp(32px,4vw,48px)] font-light capitalize leading-[1.15] tracking-[-0.025em]">
-            {title}
+          <h2 className="mb-3 text-center text-[clamp(32px,4vw,48px)] font-light leading-[1.15] tracking-[-0.025em]">
+            {formatHeadingText(title)}
           </h2>
-          <p className="m-0 text-center text-[clamp(32px,4vw,48px)] font-light capitalize leading-[1.15] tracking-[-0.025em]">
+          <p className="m-0 text-center text-[clamp(32px,4vw,48px)] font-light leading-[1.15] tracking-[-0.025em]">
             From{" "}
-            <span className="text-red-500">{subtitleHighlight}</span>
+            <span className="text-red-500">
+              {formatHeadingText(subtitleHighlight)}
+            </span>
           </p>
         </div>
 

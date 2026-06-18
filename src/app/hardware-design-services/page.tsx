@@ -425,7 +425,7 @@ const WHY_CARDS = [
   },
   {
     title: "Comprehensive Design Approach",
-    desc: "Schematic, layout, mechanical, thermal, and EMC are treated as a single coupled problem from day one; that coherent architecture is why Qmax Systems boards survive certification on the first spin.",
+    desc: "Schematic, layout, mechanical, thermal, and EMC are treated as a single coupled problem from day-one; that coherent architecture is why Qmax Systems boards survive certification on the first spin.",
     icon: (
       <svg
         viewBox="0 0 48 48"
