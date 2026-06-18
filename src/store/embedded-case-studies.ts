@@ -799,7 +799,7 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/embedded_2/1.4.png",
     ],
-    enlargedImages: { 0: 1.5 },
+    enlargedImages: { 3: 1.6 },
     features: [
       "High-precision motion control",
       "Real-time servo control",
@@ -1986,13 +1986,13 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Dosing Pump",
     category: "Embedded Systems",
     images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/dosing pump_TOP.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/dosing pump_TOP_BOTTOM.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/dosing pump_BOTTOM.svg",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/4.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/dosing pump_TOP.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/dosing pump_TOP_BOTTOM.svg",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/dosingpump/dosing pump_BOTTOM.svg",
     ],
     rotatedImages: {},
     features: [
