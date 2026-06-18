@@ -129,7 +129,7 @@ const SERVICES: MechanicalService[] = [
     id: "metal-enclosures",
     titleBefore: "Metal",
     titleAccent: "Enclosures",
-    subtitle: "Machined Aluminium, Sheet Metal & Extruded Enclosures",
+    subtitle: "Machined Aluminum, Sheet Metal & Extruded Enclosures",
     description:
       "Metal enclosures are the correct engineering choice when the application demands superior EMI shielding, higher structural rigidity, thermal conductance, or a longer service life under mechanical or environmental stress. Qmax designs and sources all three principal metal enclosure types.",
     chips: ["Al 6061-T6", "SS 304/316", "Anodising", "Gold Plating"],
@@ -140,8 +140,8 @@ const SERVICES: MechanicalService[] = [
         headers: ["Type", "Typical Application", "Key Advantage"],
         rows: [
           [
-            "CNC Machined Aluminium",
-            "RF modules, high-precision chassis, defence sub-systems",
+            "CNC Machined Aluminum",
+            "RF modules, high-precision chassis, defense sub-systems",
             "Tight tolerances, complex geometry, excellent EMI shielding",
           ],
           [
@@ -150,7 +150,7 @@ const SERVICES: MechanicalService[] = [
             "Cost-effective for mid-volume, good structural-to-weight ratio",
           ],
           [
-            "Aluminium Extrusion",
+            "Aluminum Extrusion",
             "Heat-dissipating enclosures, DIN rail housings",
             "Integral heat sink geometry, excellent thermal path, low per-unit cost",
           ],
@@ -213,14 +213,14 @@ const SERVICES: MechanicalService[] = [
     subtitle:
       "Rugged Metal Enclosures for Military Applications - MIL-STD-810 / JSS 55555",
     description:
-      "Military and defence electronics operate in environments placing extreme demands on mechanical structures: wide temperature cycling, humidity, fungus exposure, sand and dust ingress, shock from weapons fire, vibration from vehicles and helicopters, and altitude. Qmax Systems designs rugged enclosures to MIL-STD-810H (US military environmental engineering standard) and JSS 55555 (Indian DRDO/DGQA equivalent), with full documentation supporting test qualification. Structural analysis is performed before hardware is built, reducing prototype-test cycles.",
+      "Military and defense electronics operate in environments placing extreme demands on mechanical structures: wide temperature cycling, humidity, fungus exposure, sand and dust ingress, shock from weapons fire, vibration from vehicles and helicopters, and altitude. Qmax Systems designs rugged enclosures to MIL-STD-810H (US military environmental engineering standard) and JSS 55555 (Indian DRDO/DGQA equivalent), with full documentation supporting test qualification. Structural analysis is performed before hardware is built, reducing prototype-test cycles.",
     chips: ["MIL-STD-810H", "JSS 55555", "DRDO/DGQA", "FEA Pre-qual"],
     sections: [
       {
         kind: "checks",
         title: "Design Approach for MIL-Grade Enclosures",
         items: [
-          "Aluminium alloy castings and extruded / machined Al chassis",
+          "Aluminum alloy castings and extruded / machined Al chassis",
           "Conformal sealed interfaces; EMI gasket seating (finger stock, wire mesh)",
           "Captive fastener systems; shock and vibration isolation mounts",
           "Thermal management integration; MIL-connector cutouts to specification",
@@ -234,8 +234,8 @@ const SERVICES: MechanicalService[] = [
           {
             title: "Rugged Communication Control System Enclosure",
             description:
-              "Ultra-lightweight Al-alloy enclosure for defence communication systems. MIL-STD-810 qualified for vibration, shock, temperature, and humidity with full RF shielding integrity.",
-            label: "Defence",
+              "Ultra-lightweight Al-alloy enclosure for defense communication systems. MIL-STD-810 qualified for vibration, shock, temperature, and humidity with full RF shielding integrity.",
+            label: "Defense",
             image:
               "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.1.png",
             href: "/case-studies/rugged-communication-control-system-enclosure",
@@ -468,7 +468,7 @@ const SERVICES: MechanicalService[] = [
           {
             title: "Industrial Splice Detector",
             description:
-              "Ruggedised industrial splice detector enclosure with extruded aluminium heatsink body, M12 connectors, and DFM-reviewed geometry for factory floor deployment.",
+              "Ruggedised industrial splice detector enclosure with extruded aluminum heatsink body, M12 connectors, and DFM-reviewed geometry for factory floor deployment.",
             label: "Industrial",
             image:
               "/case-studies/mechanicalCaseStudies/2/SPLICE_DETECTOR_RENDER_2.4.png",
@@ -491,7 +491,7 @@ const SERVICES: MechanicalService[] = [
         kind: "checks",
         title: "Thermal Analysis & CFD",
         items: [
-          "Junction-to-ambient thermal resistance modelling",
+          "Junction-to-ambient thermal resistance modeling",
           "Hotspot identification and heat sink geometry optimisation",
           "Thermal interface material (TIM) selection",
           "Thermal derating validation and vent sizing",
@@ -1154,7 +1154,7 @@ export function CoreEngineeringMechanical() {
             Qmax Systems delivers precision mechanical engineering across seven
             specialist disciplines - from injection-moulded plastic enclosures
             for consumer IoT products to MIL-STD-810H-qualified rugged systems
-            for defence electronics. Each service is backed by structural FEA
+            for defense electronics. Each service is backed by structural FEA
             analysis, full GD&T drawing sets, and a direct path from concept to
             qualified production.
           </p>

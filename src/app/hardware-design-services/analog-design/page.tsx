@@ -536,7 +536,7 @@ export default function AnalogDesignPage() {
           </p>
         }
         ctaHref="/hardware-design-services/contact"
-        ctaLabel="Talk to our engineers"
+        ctaLabel="Talk to Our Engineers"
       />
 
       <CoreServiceOfferingsSection offerings={coreServiceOfferings} />

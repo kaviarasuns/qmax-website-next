@@ -49,15 +49,15 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
     // videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4",
     imageSrc:
       "https://d1yetprhniwywz.cloudfront.net/v2/core-capabilites-ID.jpeg",
-    headline: "CAD and 3D Modelling",
+    headline: "CAD and 3D Modeling",
     intro:
       "Approved concept sketches are translated into precision parametric 3D models using industry-standard CAD platforms. Our models are construction-ready - built with tolerancing, draft angles, wall thickness constraints, and assembly logic incorporated from the outset. CAD deliverables are fully documented with manufacturing annotations, bill of materials structure, and revision control to support downstream mechanical engineering and tooling activities.",
     bullets: [
       {
         title: "Typical Scope",
         items: [
-          "Surface and solid 3D modelling (CATIA, SolidWorks, Fusion 360, Rhino).",
-          "Assembly and exploded view modelling.",
+          "Surface and solid 3D modeling (CATIA, SolidWorks, Fusion 360, Rhino).",
+          "Assembly and exploded view modeling.",
           "DFM (Design for Manufacture) and DFA (Design for Assembly) review.",
           "Detailed 2D engineering drawings (GD&T, ISO/ASME standards).",
         ],
@@ -118,8 +118,8 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
       {
         title: "Prototype Technologies Chosen for Fidelity and Application",
         items: [
-          "CNC Machining: Precision parts cut from real production materials (aluminium, stainless steel, engineering plastics)",
-          "FDM (Fused Deposition Modelling): The fastest, lowest-cost way to check form and fit early in the design.",
+          "CNC Machining: Precision parts cut from real production materials (aluminum, stainless steel, engineering plastics)",
+          "FDM (Fused Deposition Modeling): The fastest, lowest-cost way to check form and fit early in the design.",
           "SLA (Stereolithography): Smooth, high-detail prototypes polished enough for design validation and investor demos.",
           "SLS (Selective Laser Sintering): Strong, complex-geometry parts built without supports - ready for mechanism testing.",
           "Vacuum Casting: Small polyurethane batches for pre-production user trials and market testing.",

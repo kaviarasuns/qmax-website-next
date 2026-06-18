@@ -7,7 +7,7 @@ export const industrialDesignFAQs: FAQItem[] = [
   },
   {
     q: "At what stage should I engage an industrial design team?",
-    a: "The earlier, the better. Engaging industrial design from the concept phase allows design decisions to directly influence engineering architecture, Bill of Materials cost, and manufacturing approach. Retrofitting industrial design onto a completed mechanical design is expensive and often results in compromised outcomes. Qmax Systems recommends initiating ID engagement prior to CAD modelling.",
+    a: "The earlier, the better. Engaging industrial design from the concept phase allows design decisions to directly influence engineering architecture, Bill of Materials cost, and manufacturing approach. Retrofitting industrial design onto a completed mechanical design is expensive and often results in compromised outcomes. Qmax Systems recommends initiating ID engagement prior to CAD modeling.",
   },
   {
     q: "Can Qmax Systems handle both industrial design and mechanical engineering on the same project?",
@@ -15,7 +15,7 @@ export const industrialDesignFAQs: FAQItem[] = [
   },
   {
     q: "Which industries does Qmax Systems work with?",
-    a: "Qmax Systems has delivered industrial design and product development programmes across consumer electronics, industrial equipment, medical devices, defence systems, renewable energy, automotive accessories, and retail products. Our process is industry-agnostic; we adapt to the specific compliance requirements, user environments, and manufacturing constraints of each sector.",
+    a: "Qmax Systems has delivered industrial design and product development programmes across consumer electronics, industrial equipment, medical devices, defense systems, renewable energy, automotive accessories, and retail products. Our process is industry-agnostic; we adapt to the specific compliance requirements, user environments, and manufacturing constraints of each sector.",
   },
   {
     q: "How does Qmax Systems\u2019s approach to design evolving in the era of AI and emerging technology?",

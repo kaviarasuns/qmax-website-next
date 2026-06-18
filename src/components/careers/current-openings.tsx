@@ -622,11 +622,16 @@ function SideNav({
           ).map(({ type, label }) => {
             const group = positions.filter((p) => p.type === type);
             if (group.length === 0) return null;
+            const headingClassName =
+              "text-xs font-semibold uppercase tracking-widest mb-1.5 pl-2 text-foreground";
+            const HeadingTag =
+              label === "Full Time Roles" || label === "Internships"
+                ? "h2"
+                : "p";
+
             return (
               <div key={type}>
-                <p className="text-xs font-semibold uppercase tracking-widest mb-1.5 pl-2 text-foreground">
-                  {label}
-                </p>
+                <HeadingTag className={headingClassName}>{label}</HeadingTag>
                 <ul className="space-y-0.5">
                   {group.map((pos) => {
                     const id = slugify(pos.title);

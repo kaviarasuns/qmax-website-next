@@ -336,9 +336,9 @@ const WHY_CARDS = [
 ];
 
 export const metadata = buildMetadata({
-  title: "High-Speed Digital Design | DDR4, PCIe & SerDes | Qmax",
+  title: "High-Speed Digital Design | DDR5, PCIe Gen6 & 112G SerDes | Qmax",
   description:
-    "High-speed digital design - DDR4/5 topology, PCIe Gen 5 architecture, USB 3.x, HDMI 2.1, SerDes signal budget, and component selection. Schematic to bring-up.",
+    "High-speed digital design - DDR5 topology, PCIe Gen6 architecture, 112G SerDes signal budget, and component selection. Schematic to bring-up.",
   path: "/hardware-design-services/high-speed-digital-design",
 });
 
@@ -347,18 +347,16 @@ export default function HighSpeedDigitalDesignPage() {
     <>
       <HardwareServiceHeroSection
         imageSrc="/hw-main/HW-High-Speed-Digital-Design/image1.jpg"
-        imageAlt="High-Performance Digital Systems - Qmax Systems"
-        // title="High-Performance Digital Systems Development"
+        imageAlt="High-Speed Digital Design - Qmax Systems"
         title="High-Speed Digital Design - DDR5, PCIe Gen6, and 112G SerDes Architecture"
         description={
           <p>
             Qmax Systems provides high-speed digital design for AI computing,
             telecom, edge servers, and data-intensive infrastructure. Qmax
-            Systems engineers high-speed, high-density, high-reliability
-            systems around signal integrity (SI) and power integrity (PI) -
-            from DDR5 and PCIe Gen6 to 112G SerDes, with architecture set
-            before layout - delivering production-ready platforms, not just
-            prototypes.
+            Systems engineers high-speed, high-density, high-reliability systems
+            around signal integrity (SI) and power integrity (PI) - from DDR5
+            and PCIe Gen6 to 112G SerDes, with architecture set before layout -
+            delivering production-ready platforms, not just prototypes.
           </p>
         }
         ctaHref="/hardware-design-services/contact"

@@ -19,7 +19,22 @@ type CountryKey = "United States" | "India";
 type JobKey = "Careers  ( Jobs / Intern )" | "Suppliers / Vendors";
 
 const CONTACT_EMAIL_BUTTON_CLASS =
-  "flex w-full min-w-0 items-start gap-3 text-red-500 hover:text-red-500 cursor-pointer bg-transparent border-none p-0 text-left transition-colors text-sm";
+  "block w-full cursor-pointer bg-transparent border-none p-0 text-left text-[15px] text-white transition-colors duration-150 hover:text-red-500";
+
+const CONTACT_CARD_HEADER_CLASS =
+  "w-full font-bold text-left px-4 py-3 text-[15px] bg-brand-red text-white flex items-center gap-2";
+
+const CONTACT_CARD_BODY_CLASS =
+  "px-4 pt-4 text-[15px] leading-8 text-white bg-zinc-800 flex-1";
+
+const CONTACT_CARD_NAME_CLASS = "mb-1.5 font-bold text-white";
+
+const CONTACT_CARD_LINK_CLASS =
+  "block text-white transition-colors duration-150 hover:text-red-500";
+
+const CONTACT_CARD_CONTACTS_CLASS = "mt-3.5";
+
+const CONTACT_CARD_ROW_CLASS = "inline-flex items-center gap-2";
 
 interface AddressData {
   name: string;
@@ -420,8 +435,8 @@ const ContactHero = () => {
 
           {/* Right Column - Contact Us Section */}
           <div className="lg:flex lg:flex-col lg:h-full">
-            <h2 className="text-lg font-semibold mb-3 tracking-wide">
-              CONTACT US
+            <h2 className="text-3xl font-base mb-3 tracking-wide">
+              Contact <span className="text-red-500">Us</span>
             </h2>
 
             {/* Contact Cards Grid - flex-1 + auto-rows-fr stretches the
@@ -434,51 +449,55 @@ const ContactHero = () => {
                   key={country}
                   className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group flex flex-col"
                 >
-                  <div className="w-full font-bold text-left px-4 py-3 text-sm bg-brand-red text-white flex items-center gap-2">
+                  <div className={CONTACT_CARD_HEADER_CLASS}>
                     <MapPin className="w-4 h-4" />
                     {country}
                   </div>
-                  <div className="px-4 pt-4 text-sm bg-zinc-800 flex-1">
-                    <p className="font-semibold text-white mb-2">
+                  <div className={CONTACT_CARD_BODY_CLASS}>
+                    <div className={CONTACT_CARD_NAME_CLASS}>
                       {addresses[country].name}
-                    </p>
-                    <div className="mb-3 space-y-0.5 text-left">
-                      {addresses[country].address.map((line, index) => (
-                        <p key={index} className="text-left text-white">
-                          {line}
-                        </p>
-                      ))}
                     </div>
-                    <a
-                      href={`tel:${addresses[country].phone.replace(/\s/g, "")}`}
-                      className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-2"
-                    >
-                      <Phone className="w-3.5 h-3.5 text-red-500" />
-                      {addresses[country].phone}
-                    </a>
-                    <button
-                      onClick={() => {
-                        const timestamp = Date.now();
-                        const email = addresses[country].email;
-                        const subject = encodeURIComponent(
-                          "Inquiry from Qmax Systems Website",
-                        );
-                        const body = encodeURIComponent(
-                          "Hello,\n\nI would like to get in touch with Qmax Systems.\n\nBest regards,",
-                        );
-                        const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
-                        window.location.href = mailtoUrl;
-                        setTimeout(() => {
-                          window.open(mailtoUrl, "_blank");
-                        }, 100);
-                      }}
-                      className={CONTACT_EMAIL_BUTTON_CLASS}
-                    >
-                      <Mail className="mt-0.5 h-4 w-4 shrink-0" />
-                      <span className="min-w-0 flex-1 break-all">
-                        {addresses[country].email}
+                    {addresses[country].address.map((line, index) => (
+                      <span key={index} className="block">
+                        {line}
                       </span>
-                    </button>
+                    ))}
+                    <div className={CONTACT_CARD_CONTACTS_CLASS}>
+                      <a
+                        href={`tel:${addresses[country].phone.replace(/\s/g, "")}`}
+                        className={CONTACT_CARD_LINK_CLASS}
+                      >
+                        <span className={CONTACT_CARD_ROW_CLASS}>
+                          <Phone className="w-3.5 h-3.5 text-red-500" />
+                          {addresses[country].phone}
+                        </span>
+                      </a>
+                      <button
+                        onClick={() => {
+                          const timestamp = Date.now();
+                          const email = addresses[country].email;
+                          const subject = encodeURIComponent(
+                            "Inquiry from Qmax Systems Website",
+                          );
+                          const body = encodeURIComponent(
+                            "Hello,\n\nI would like to get in touch with Qmax Systems.\n\nBest regards,",
+                          );
+                          const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
+                          window.location.href = mailtoUrl;
+                          setTimeout(() => {
+                            window.open(mailtoUrl, "_blank");
+                          }, 100);
+                        }}
+                        className={CONTACT_EMAIL_BUTTON_CLASS}
+                      >
+                        <span className={CONTACT_CARD_ROW_CLASS}>
+                          <Mail className="w-3.5 h-3.5 shrink-0 text-red-500" />
+                          <span className="min-w-0 break-all">
+                            {addresses[country].email}
+                          </span>
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -489,53 +508,57 @@ const ContactHero = () => {
                   key={key}
                   className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group flex flex-col"
                 >
-                  <div className="w-full font-bold text-left px-4 py-3 text-sm bg-brand-red text-white flex items-center gap-2">
+                  <div className={CONTACT_CARD_HEADER_CLASS}>
                     <ArrowRight className="w-4 h-4" />
                     {key}
                   </div>
-                  <div className="px-4 pt-4 text-sm bg-zinc-800 flex-1">
-                    <p className="font-semibold text-white mb-2">
+                  <div className={CONTACT_CARD_BODY_CLASS}>
+                    <div className={CONTACT_CARD_NAME_CLASS}>
                       {jobs[key].name}
-                    </p>
-                    <div className="mb-3 space-y-0.5 text-left">
-                      {jobs[key].address.map((line, index) => (
-                        <p key={index} className="text-left text-white">
-                          {line}
-                        </p>
-                      ))}
                     </div>
-                    <a
-                      href={`tel:${jobs[key].phone.replace(/\s/g, "")}`}
-                      className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors mb-2"
-                    >
-                      <Phone className="w-3.5 h-3.5 text-red-500" />
-                      {jobs[key].phone}
-                    </a>
-                    <button
-                      onClick={() => {
-                        const timestamp = Date.now();
-                        const email = jobs[key].email;
-                        const subject = encodeURIComponent(
-                          `Inquiry for ${key} - Qmax Systems`,
-                        );
-                        const body = encodeURIComponent(
-                          "Hello,\n\nI would like to get in touch regarding " +
-                            key +
-                            ".\n\nBest regards,",
-                        );
-                        const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
-                        window.location.href = mailtoUrl;
-                        setTimeout(() => {
-                          window.open(mailtoUrl, "_blank");
-                        }, 100);
-                      }}
-                      className={CONTACT_EMAIL_BUTTON_CLASS}
-                    >
-                      <Mail className="mt-0.5 h-4 w-4 shrink-0" />
-                      <span className="min-w-0 flex-1 break-all">
-                        {jobs[key].email}
+                    {jobs[key].address.map((line, index) => (
+                      <span key={index} className="block">
+                        {line}
                       </span>
-                    </button>
+                    ))}
+                    <div className={CONTACT_CARD_CONTACTS_CLASS}>
+                      <a
+                        href={`tel:${jobs[key].phone.replace(/\s/g, "")}`}
+                        className={CONTACT_CARD_LINK_CLASS}
+                      >
+                        <span className={CONTACT_CARD_ROW_CLASS}>
+                          <Phone className="w-3.5 h-3.5 text-red-500" />
+                          {jobs[key].phone}
+                        </span>
+                      </a>
+                      <button
+                        onClick={() => {
+                          const timestamp = Date.now();
+                          const email = jobs[key].email;
+                          const subject = encodeURIComponent(
+                            `Inquiry for ${key} - Qmax Systems`,
+                          );
+                          const body = encodeURIComponent(
+                            "Hello,\n\nI would like to get in touch regarding " +
+                              key +
+                              ".\n\nBest regards,",
+                          );
+                          const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}&_t=${timestamp}`;
+                          window.location.href = mailtoUrl;
+                          setTimeout(() => {
+                            window.open(mailtoUrl, "_blank");
+                          }, 100);
+                        }}
+                        className={CONTACT_EMAIL_BUTTON_CLASS}
+                      >
+                        <span className={CONTACT_CARD_ROW_CLASS}>
+                          <Mail className="w-3.5 h-3.5 shrink-0 text-red-500" />
+                          <span className="min-w-0 break-all">
+                            {jobs[key].email}
+                          </span>
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}

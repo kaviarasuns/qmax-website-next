@@ -41,7 +41,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What is the typical timeline from mechanical concept to qualified prototype?",
-    a: "Timeline depends on complexity. A simple plastic enclosure: 4–6 weeks concept to first article. A sheet-metal rack chassis: 6–8 weeks. A MIL-STD-810H qualified rugged aluminium enclosure: 12–18 weeks including FEA pre-qualification and first-article test. We provide a phased schedule at project kick-off with clear gate reviews and drawing release milestones.",
+    a: "Timeline depends on complexity. A simple plastic enclosure: 4–6 weeks concept to first article. A sheet-metal rack chassis: 6–8 weeks. A MIL-STD-810H qualified rugged aluminum enclosure: 12–18 weeks including FEA pre-qualification and first-article test. We provide a phased schedule at project kick-off with clear gate reviews and drawing release milestones.",
   },
 ];
 
