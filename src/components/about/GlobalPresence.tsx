@@ -7,8 +7,8 @@ export default function GlobalPresence() {
     {
       location: "United States",
       company: "Qmax Systems LLC",
-      address: "539 W Commerce St # 7953",
-      city: "Dallas, TX 75208 - 1953",
+      address: "539 W Commerce St #7953",
+      city: "Dallas, TX 75208-1953",
       phone: "+1 412 265 2314",
       email: "info@qmaxsys.com",
     },

@@ -18,8 +18,8 @@ export default function FooterV2() {
     "United States": {
       name: "Qmax Systems LLC",
       address: [
-        "539 W Commerce St # 7953",
-        "Dallas, TX 75208 - 1953",
+        "539 W Commerce St #7953",
+        "Dallas, TX 75208-1953",
         "United States",
       ],
       phone: "+1 412 265 2314",

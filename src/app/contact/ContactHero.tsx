@@ -16,7 +16,7 @@ const CONSENT_TEXT =
   "By submitting, you agree to be contacted about your inquiry. Your data is secure with us; we never leak, share, or sell your details to third parties.";
 
 type CountryKey = "United States" | "India";
-type JobKey = "Careers  ( Jobs / Intern )" | "Suppliers / Vendors";
+type JobKey = "Careers  ( Jobs / Internships )" | "Suppliers / Vendors";
 
 const CONTACT_EMAIL_BUTTON_CLASS =
   "block w-full cursor-pointer bg-transparent border-none p-0 text-left text-[15px] text-white transition-colors duration-150 hover:text-red-500";
@@ -131,8 +131,8 @@ const addresses: Record<CountryKey, AddressData> = {
   "United States": {
     name: "Qmax Systems LLC",
     address: [
-      "539 W Commerce St # 7953",
-      "Dallas, TX 75208 - 1953",
+      "539 W Commerce St #7953",
+      "Dallas, TX 75208-1953",
       "United States",
     ],
     phone: "+1 412 265 2314",
@@ -151,7 +151,7 @@ const addresses: Record<CountryKey, AddressData> = {
 };
 
 const jobs: Record<JobKey, AddressData> = {
-  "Careers  ( Jobs / Intern )": {
+  "Careers  ( Jobs / Internships )": {
     name: "Qmax Systems India Pvt Ltd",
     address: [
       "310/2A, Rukmani Nagar, 4th Street,",

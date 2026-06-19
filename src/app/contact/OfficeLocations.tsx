@@ -14,8 +14,8 @@ const offices: OfficeData[] = [
     country: "United States",
     name: "Qmax Systems LLC",
     address: [
-      "539 W Commerce St # 7953",
-      "Dallas, TX 75208 - 1953",
+      "539 W Commerce St #7953",
+      "Dallas, TX 75208-1953",
       "United States",
     ],
     phone: "+1 412 265 2314",
@@ -96,7 +96,9 @@ const OfficeLocations = () => {
                     <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
                     <div>
                       {office.address.map((line, i) => (
-                        <p key={i} className="text-foreground">{line}</p>
+                        <p key={i} className="text-foreground">
+                          {line}
+                        </p>
                       ))}
                     </div>
                   </div>
