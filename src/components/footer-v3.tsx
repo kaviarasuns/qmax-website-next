@@ -119,7 +119,7 @@ function FooterHeading({
 }) {
   return (
     <h5
-      className={`mb-6 font-[Supermolot,sans-serif] text-[22px] font-bold uppercase tracking-[0.02em] text-white ${className}`}
+      className={`mb-4 font-[Supermolot,sans-serif] text-[22px] font-bold uppercase tracking-[0.02em] text-white ${className}`}
     >
       {children}
     </h5>
@@ -150,13 +150,13 @@ export default function FooterV3() {
   const [resourcesOpen, setResourcesOpen] = useState(false);
 
   return (
-    <footer className="bg-[#18181B] px-[clamp(40px,6vw,96px)] pb-9 pt-20 text-white/70">
-      <div className="w-full pt-10">
-        <div className="grid grid-cols-1 items-start gap-14 lg:grid-cols-[1.5fr_1fr_0.7fr_1.15fr]">
+    <footer className="bg-[#18181B] px-[clamp(40px,6vw,96px)] pb-8 pt-20 text-white/70">
+      <div className="w-full">
+        <div className="grid grid-cols-1 items-start gap-x-12 gap-y-10 lg:grid-cols-[1.5fr_1fr_0.7fr_1.15fr]">
           {/* About Us */}
           <div>
             <FooterHeading>About Us</FooterHeading>
-            <p className="mb-[18px] text-base leading-relaxed text-white text-justify">
+            <p className="mb-3 text-base leading-relaxed text-white text-justify">
               Qmax Systems is an Electronics Engineering and R&D Services
               company based in San Jose, California and with a development
               center in India. Established in 1997, Qmax provides Embedded
@@ -174,7 +174,7 @@ export default function FooterV3() {
           {/* Presentation + Follow Us */}
           <div>
             <FooterHeading>Presentation</FooterHeading>
-            <p className="mb-[22px] text-left text-base leading-relaxed text-white">
+            <p className="mb-4 text-left text-base leading-relaxed text-white">
               Click here to download our company presentation.
             </p>
             <Link
@@ -187,7 +187,7 @@ export default function FooterV3() {
               Download
             </Link>
 
-            <h5 className="mb-[18px] mt-10 font-[Supermolot,sans-serif] text-[22px] font-bold uppercase tracking-[0.02em] text-white">
+            <h5 className="mb-4 mt-7 font-[Supermolot,sans-serif] text-[22px] font-bold uppercase tracking-[0.02em] text-white">
               Follow Us
             </h5>
             <div className="flex gap-3.5">
@@ -209,7 +209,7 @@ export default function FooterV3() {
           {/* Quick Links */}
           <div>
             <FooterHeading>Quick Links</FooterHeading>
-            <ul className="m-0 flex list-none flex-col gap-[18px] p-0">
+            <ul className="m-0 flex list-none flex-col gap-3.5 p-0">
               <li>
                 <FooterLink href="/">Home</FooterLink>
               </li>
@@ -289,17 +289,17 @@ export default function FooterV3() {
           {/* Contact Us */}
           <div>
             <FooterHeading>Contact Us</FooterHeading>
-            <div className="flex flex-col gap-[18px]">
+            <div className="flex flex-col gap-3">
               {OFFICES.map((office) => (
                 <div
                   key={office.country}
                   className="overflow-hidden rounded-md border border-white/10"
                 >
-                  <div className="bg-[#ef4444] px-[18px] py-[11px] text-[15px] font-bold text-white">
+                  <div className="bg-[#ef4444] px-[18px] py-2.5 text-[15px] font-bold text-white">
                     {office.country}
                   </div>
-                  <div className="bg-white/[0.03] p-[18px] text-[15px] leading-8 text-white">
-                    <div className="mb-1.5 font-bold text-white">
+                  <div className="bg-white/[0.03] p-4 text-[15px] leading-7 text-white">
+                    <div className="mb-1 font-bold text-white">
                       {office.name}
                     </div>
                     {office.address.map((line) => (
@@ -307,7 +307,7 @@ export default function FooterV3() {
                         {line}
                       </span>
                     ))}
-                    <div className="mt-3.5">
+                    <div className="mt-2.5">
                       <a
                         href={office.phoneHref}
                         className="block text-white transition-colors duration-150 hover:text-[#0B5FA5]"
@@ -329,8 +329,8 @@ export default function FooterV3() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-16 w-full border-t border-white/10 pt-7 text-center">
-          <p className="mb-4 text-center text-[17px] text-white">
+        <div className="mt-10 w-full border-t border-white/10 pt-6 text-center">
+          <p className="mb-3 text-center text-[17px] text-white">
             Copyright &copy; 2026 Qmax Systems India Pvt. Ltd.
           </p>
           <div className="flex flex-wrap justify-center gap-9">
