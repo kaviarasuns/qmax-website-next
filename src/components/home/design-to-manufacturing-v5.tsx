@@ -943,6 +943,7 @@ function CardSlide({
               textTransform: "uppercase",
               lineHeight: 1.4,
               color: CFG.ink,
+              textAlign: "left",
             }}
           >
             {s.heading}
@@ -953,6 +954,7 @@ function CardSlide({
               fontSize: cl(CFG.fontBody),
               lineHeight: 1.3,
               color: CFG.ink,
+              textAlign: "left",
             }}
           >
             {s.body}
