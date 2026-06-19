@@ -128,7 +128,7 @@ export default function ScrollCardsAnimation() {
   const arrowX = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, isMobile ? 200 : 400]
+    [0, isMobile ? 200 : 400],
   );
 
   // Handle swipe gestures on mobile with sliding animation
@@ -428,7 +428,7 @@ export default function ScrollCardsAnimation() {
           {!isMobile && (
             <div className="absolute top-[calc(25%-100px)] left-1/2 transform -translate-x-1/2">
               <div className="flex items-center space-x-2 text-3xl whitespace-nowrap">
-                <h1 className="font-bold">Concept To Manufacturing</h1>
+                <h1 className="font-bold">Concept to Manufacturing</h1>
               </div>
             </div>
           )}
@@ -437,7 +437,7 @@ export default function ScrollCardsAnimation() {
           {isMobile && (
             <div className="absolute top-[calc(25%-40px)] left-1/2 transform -translate-x-1/2">
               <div className="flex items-center space-x-2 text-2xl whitespace-nowrap">
-                <h1 className="font-bold">Concept To Manufacturing</h1>
+                <h1 className="font-bold">Concept to Manufacturing</h1>
               </div>
             </div>
           )}

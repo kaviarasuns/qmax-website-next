@@ -363,7 +363,7 @@ export default function ScrollCardsAnimationV4({
         <div className="w-full px-4 flex flex-col items-center justify-center">
           <div className="relative top-8">
             <h1 className="text-3xl md:text-5xl font-light tracking-wide text-center tracking-wide">
-              Design To <span className="text-red-500">Manufacturing</span>
+              Design to <span className="text-red-500">Manufacturing</span>
             </h1>
           </div>
           <div

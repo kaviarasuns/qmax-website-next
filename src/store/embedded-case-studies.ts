@@ -3937,11 +3937,11 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "Multi-Protocol Industrial Communication Controller",
     category: "Embedded Systems",
     images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/multi-protocol_industrial_communication_controller/PNG5.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/multi-protocol_industrial_communication_controller/PNG1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/multi-protocol_industrial_communication_controller/PNG2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/multi-protocol_industrial_communication_controller/PNG3.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/multi-protocol_industrial_communication_controller/PNG4.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/multi-protocol_industrial_communication_controller/PNG5.png",
     ],
     rotatedImages: {},
     features: [
@@ -4025,13 +4025,13 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     title: "RF Amplifier",
     category: "Embedded Systems",
     images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_amplifier/PNG6.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_amplifier/PNG3.png",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_amplifier/PNG4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_amplifier/PNG5.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_amplifier/PNG7.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_amplifier/PNG1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_amplifier/PNG2.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_amplifier/PNG3.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_amplifier/PNG4.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_amplifier/PNG5.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_amplifier/PNG6.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rf_amplifier/PNG7.png",
     ],
     rotatedImages: {},
     features: [

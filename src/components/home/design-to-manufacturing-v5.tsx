@@ -336,7 +336,7 @@ export default function ConceptToManufacturing() {
     >
       {/* TITLE */}
       <h2 className="text-center text-3xl font-light tracking-wide md:text-5xl mb-6">
-        Design To <span className="text-red-500">Manufacturing</span>
+        Design to <span className="text-red-500">Manufacturing</span>
       </h2>
 
       {/* CAROUSEL */}

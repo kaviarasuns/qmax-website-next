@@ -13,7 +13,7 @@ const ConceptToManufacturingMobile = () => {
               <div className="mb-8">
                 <h1 className="text-3xl font-bold md:text-4xl">
                   Concept
-                  <span className="text-primary"> To</span> Manufacturing
+                  <span className="text-primary"> to</span> Manufacturing
                 </h1>
               </div>
             </div>

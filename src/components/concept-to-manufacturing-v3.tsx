@@ -288,27 +288,27 @@ export default function ScrollCardsAnimation() {
                         index === activeCard
                           ? 1.15
                           : index <= activeCard
-                          ? 1
-                          : 0.85,
+                            ? 1
+                            : 0.85,
                       opacity: index <= activeCard ? 1 : 0.3,
                       y:
                         index === activeCard
                           ? -20
                           : index <= activeCard
-                          ? 0
-                          : 20,
+                            ? 0
+                            : 20,
                       rotateY:
                         index === activeCard
                           ? 0
                           : index < activeCard
-                          ? -12
-                          : 12,
+                            ? -12
+                            : 12,
                       z:
                         index === activeCard
                           ? 20
                           : index <= activeCard
-                          ? 10
-                          : 0,
+                            ? 10
+                            : 0,
                     }}
                     transition={{
                       duration: 0.8,
@@ -336,8 +336,8 @@ export default function ScrollCardsAnimation() {
                         index === activeCard
                           ? "from-gray-800 to-gray-700 border-red-500 shadow-2xl shadow-red-500/30"
                           : index <= activeCard
-                          ? "from-gray-800 to-gray-900 border-gray-500 shadow-lg shadow-gray-900/50"
-                          : "from-gray-900 to-black border-gray-700 shadow-md"
+                            ? "from-gray-800 to-gray-900 border-gray-500 shadow-lg shadow-gray-900/50"
+                            : "from-gray-900 to-black border-gray-700 shadow-md"
                       }`}
                     >
                       {/* Animated background pattern */}
@@ -557,7 +557,7 @@ export default function ScrollCardsAnimation() {
           {!isMobile && (
             <div className="absolute top-[calc(25%-100px)] left-1/2 transform -translate-x-1/2">
               <div className="flex items-center space-x-2 text-3xl whitespace-nowrap">
-                <h1 className="font-bold text-4xl">Concept To Manufacturing</h1>
+                <h1 className="font-bold text-4xl">Concept to Manufacturing</h1>
               </div>
             </div>
           )}
@@ -566,7 +566,7 @@ export default function ScrollCardsAnimation() {
           {isMobile && (
             <div className="absolute top-[calc(25%-40px)] left-1/2 transform -translate-x-1/2">
               <div className="flex items-center space-x-2 text-2xl whitespace-nowrap">
-                <h1 className="font-bold">Concept To Manufacturing</h1>
+                <h1 className="font-bold">Concept to Manufacturing</h1>
               </div>
             </div>
           )}

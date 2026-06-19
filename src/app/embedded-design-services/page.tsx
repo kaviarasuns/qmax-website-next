@@ -830,7 +830,7 @@ export default function EmbeddedDesignServicesPage() {
       {/* CTA BANNER */}
       <CTABannerSection
         href="/embedded-design-services/contact"
-        heading="Ready To Bring Your Embedded Design Project To Life?"
+        heading="Ready to Bring Your Embedded Design Project to Life?"
       />
 
       <ServiceCaseStudiesSection

@@ -28,7 +28,7 @@ export function CTABannerSection({
             <h2 className="m-0 mb-2.5 text-3xl font-light tracking-wide text-white md:text-4xl">
               {heading}
             </h2>
-            <p className="m-0 text-white">Contact Us Today To Get Started.</p>
+            <p className="m-0 text-white">Contact Us Today to Get Started.</p>
           </div>
           <a
             href={href}
