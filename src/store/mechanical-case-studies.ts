@@ -1718,6 +1718,49 @@ export const mechanicalCaseStudiesData: CaseStudy[] = [
       "Manufacturing Support",
     ],
   },
+
+  {
+    id: "air-flow-sensor",
+    title: "Air Flow Sensor",
+    category: "Mechanical Design",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/air_flow_sensor/Picture1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/air_flow_sensor/Picture2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/air_flow_sensor/Picture3.png",
+    ],
+    rotatedImages: {},
+    features: [
+      "Precision airflow measurement housing",
+      "Optimized flow channel design",
+      "Compact industrial enclosure",
+      "Sensor mounting integration",
+      "Low-turbulence airflow path",
+      "Robust mechanical construction",
+    ],
+    summary:
+      "A mechanically engineered air flow sensor assembly designed to provide accurate airflow measurement through optimized flow-channel geometry and robust industrial construction.",
+    importantParts: [
+      "Flow sensing chamber",
+      "Airflow guide channels",
+      "Sensor mounting structure",
+      "Protective enclosure",
+      "Connector interface housing",
+      "Mechanical support frame",
+    ],
+    salientFeatures: [
+      "Optimized airflow path design",
+      "Compact and durable construction",
+      "Reliable sensor integration",
+      "Industrial-grade mechanical robustness",
+    ],
+    scopeOfWork: [
+      "Mechanical Product Design",
+      "CAD Modeling",
+      "Airflow Path Optimization",
+      "Prototype Development",
+      "Design Validation",
+    ],
+  },
 ];
 
 // {
