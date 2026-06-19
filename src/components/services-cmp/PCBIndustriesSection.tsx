@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface RelatedCaseStudy {
   title: string;
@@ -35,9 +35,28 @@ export function PCBIndustriesSection({
   ctaLabel = "Learn more",
   ctaHref = "/pcb-design-services/contact",
 }: PCBIndustriesSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
   const [activeIdx, setActiveIdx] = useState(0);
   const [caseIdx, setCaseIdx] = useState(0);
+  const [isInView, setIsInView] = useState(false);
   const active = industries[activeIdx];
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const visible = entry.isIntersecting;
+        setIsInView(visible);
+        if (!visible) setCaseIdx(0);
+      },
+      { threshold: 0.5 },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     setCaseIdx(0);
@@ -45,17 +64,18 @@ export function PCBIndustriesSection({
 
   useEffect(() => {
     const cases = active.relatedCaseStudies;
-    if (cases.length <= 1) return;
+    if (!isInView || cases.length <= 1) return;
 
     const interval = setInterval(() => {
       setCaseIdx((prev) => (prev + 1) % cases.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [active.relatedCaseStudies]);
+  }, [isInView, active.relatedCaseStudies]);
 
   return (
     <section
+      ref={sectionRef}
       className="relative overflow-hidden bg-white px-16 py-24 max-[900px]:px-6 max-[900px]:py-16"
       id="pcb-industries-section"
     >

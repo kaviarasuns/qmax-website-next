@@ -156,13 +156,13 @@ export default function FooterV3() {
           {/* About Us */}
           <div>
             <FooterHeading>About Us</FooterHeading>
-            <p className="mb-[18px] text-[15.5px] leading-[1.75] text-white text-justify">
+            <p className="mb-[18px] text-base leading-relaxed text-white text-justify">
               Qmax Systems is an Electronics Engineering and R&D Services
               company based in San Jose, California and with a development
               center in India. Established in 1997, Qmax provides Embedded
               Systems Design and PCB Design Services.
             </p>
-            <p className="text-[15.5px] leading-[1.75] text-white text-justify">
+            <p className="text-base leading-relaxed text-white text-justify">
               Qmax Systems brings a highly experienced, multi-disciplinary team
               that delivers the best solution for your requirement in the
               shortest time. A stringent process and hands-on experience help
@@ -174,14 +174,14 @@ export default function FooterV3() {
           {/* Presentation + Follow Us */}
           <div>
             <FooterHeading>Presentation</FooterHeading>
-            <p className="mb-[22px] text-[15.5px] leading-[1.75] text-white">
+            <p className="mb-[22px] text-left text-base leading-relaxed text-white">
               Click here to download our company presentation.
             </p>
             <Link
               href={DOWNLOAD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-md bg-[#ef4444] px-[22px] py-3 text-[15px] font-semibold text-white transition-colors duration-150 hover:bg-[#0A548F]"
+              className="inline-flex items-center gap-2.5 rounded-md bg-red-500 px-[22px] py-3 text-[15px] font-semibold text-white transition-colors duration-150 hover:bg-red-600 active:bg-red-700"
             >
               <Download className="h-[18px] w-[18px]" />
               Download
@@ -336,19 +336,19 @@ export default function FooterV3() {
           <div className="flex flex-wrap justify-center gap-9">
             <Link
               href="#"
-              className="text-[15.5px] text-white transition-colors duration-150 hover:text-[#0B5FA5]"
+              className="text-base text-white transition-colors duration-150 hover:text-[#0B5FA5]"
             >
               Terms of Use
             </Link>
             <Link
               href="#"
-              className="text-[15.5px] text-white transition-colors duration-150 hover:text-[#0B5FA5]"
+              className="text-base text-white transition-colors duration-150 hover:text-[#0B5FA5]"
             >
               Privacy Information
             </Link>
             <Link
               href="#"
-              className="text-[15.5px] text-white transition-colors duration-150 hover:text-[#0B5FA5]"
+              className="text-base text-white transition-colors duration-150 hover:text-[#0B5FA5]"
             >
               Cookies Information
             </Link>

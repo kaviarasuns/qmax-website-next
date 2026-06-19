@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const TIMELINE = [
   {
     year: "1997",
@@ -21,7 +23,7 @@ const TIMELINE = [
     year: "500+",
     title: "Projects & Counting",
     description:
-      "100+ global clients served with a 98% on-time delivery rate and full-lifecycle support.",
+      "100+ global clients served across consumer, industrial, aerospace and medical — with full-lifecycle support.",
   },
 ];
 
@@ -49,9 +51,15 @@ export default function OurStoryV2() {
               from consumer electronics and IoT devices to industrial
               automation, aerospace, and medical devices. Our commitment to
               quality, innovation, and customer success has made us a trusted
-              partner for 100+ global clients, delivering 500+ projects with a
-              98% on-time delivery rate.
+              partner for 100+ global clients, with 500+ projects delivered —
+              50+ shared as public case studies, and many more under NDA.
             </p>
+            <Link
+              href="/case-studies"
+              className="mt-8 inline-flex rounded-md bg-red-500 px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-red-600"
+            >
+              Explore 50+ Case Studies →
+            </Link>
           </div>
 
           <div className="flex flex-col gap-8 border-l-2 border-slate-200 pl-7">
