@@ -119,7 +119,7 @@ function FooterHeading({
 }) {
   return (
     <h5
-      className={`mb-4 font-[Supermolot,sans-serif] text-[22px] font-bold uppercase tracking-[0.02em] text-white ${className}`}
+      className={`mb-4 text-[22px] font-semibold uppercase tracking-wider text-white ${className}`}
     >
       {children}
     </h5>
@@ -187,9 +187,7 @@ export default function FooterV3() {
               Download
             </Link>
 
-            <h5 className="mb-4 mt-7 font-[Supermolot,sans-serif] text-[22px] font-bold uppercase tracking-[0.02em] text-white">
-              Follow Us
-            </h5>
+            <FooterHeading className="mt-7">Follow Us</FooterHeading>
             <div className="flex gap-3.5">
               {SOCIAL_LINKS.map(({ label, href, className, Icon }) => (
                 <Link
