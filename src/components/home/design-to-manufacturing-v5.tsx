@@ -5,16 +5,8 @@ import {
   useEffect,
   useRef,
   useCallback,
-  type ComponentType,
   type MouseEvent as ReactMouseEvent,
 } from "react";
-import CheckbulbIcon from "./icons/CheckbulbIcon";
-import CircuitIcon from "./icons/CircuitIcon";
-import PCBIcon from "./icons/PCBIcon";
-import CodeIcon from "./icons/CodeIcon";
-import DesignIcon from "./icons/DesignIcon";
-import ClipboardIcon from "./icons/ClipboardIcon";
-import QualityIcon from "./icons/QualityIcon";
 import { cn } from "@/lib/utils";
 
 /* CONFIG */
@@ -101,7 +93,6 @@ type Stage = {
   pill: string;
   heading: string;
   body: string;
-  Icon: ComponentType<{ className?: string }>;
   media?: string;
 };
 
@@ -111,7 +102,6 @@ const STAGES: Stage[] = [
     pill: "CONCEPT VALIDATION",
     heading: "CONCEPT VALIDATION",
     body: "From idea to defendable spec: feasibility studies, system architecture, product specification.",
-    Icon: CheckbulbIcon,
     media:
       "https://framerusercontent.com/assets/zBNuelZ9lG5wvy9U9Kowavh6XE.mp4",
   },
@@ -120,7 +110,6 @@ const STAGES: Stage[] = [
     pill: "Industrial Design",
     heading: "Industrial Design",
     body: "Enclosure design, UI/UX and CMF — the experience the user actually holds.",
-    Icon: DesignIcon,
     media:
       "https://framerusercontent.com/assets/9VGVcUM5Fh744FvRT7ToAK6kWrk.mp4",
   },
@@ -129,7 +118,6 @@ const STAGES: Stage[] = [
     pill: "Hardware Design",
     heading: "Hardware Design",
     body: "High-level and low-level design, component engineering, board bring-up & testing.",
-    Icon: CircuitIcon,
     media:
       "https://framerusercontent.com/assets/zQiDSY49IC5ohPtYlQt207jEpA0.mp4",
   },
@@ -138,7 +126,6 @@ const STAGES: Stage[] = [
     pill: "PCB Design",
     heading: "PCB Design",
     body: "Multi-layer layouts, signal & power integrity, design-for-manufacturability.",
-    Icon: PCBIcon,
     media:
       "https://framerusercontent.com/assets/T37zx5wYoF864LLeah9hwj2lUNk.mp4",
   },
@@ -147,7 +134,6 @@ const STAGES: Stage[] = [
     pill: "Software Development",
     heading: "Software Development",
     body: "Firmware, drivers / BSP and cross-platform application development.",
-    Icon: CodeIcon,
     media:
       "https://framerusercontent.com/assets/RiWC6WgWkL4TValzF65b7GAiUQ.mp4",
   },
@@ -156,7 +142,6 @@ const STAGES: Stage[] = [
     pill: "NPI & Compliance",
     heading: "NPI & Compliance",
     body: "Compliance certification (FCC / UL / CE), vendor audits and test-jig development.",
-    Icon: ClipboardIcon,
     media:
       "https://framerusercontent.com/assets/d5TbJNs9wSu60hFl9QDQv7eXgr0.mp4",
   },
@@ -165,7 +150,6 @@ const STAGES: Stage[] = [
     pill: "Manufacturing",
     heading: "Manufacturing",
     body: "Manufacturing coordination and production testing, built at scale, shipped with confidence.",
-    Icon: QualityIcon,
     media: "https://framerusercontent.com/assets/cbkLdwMNDkZbOITohrNNS8Ess.mp4",
   },
 ];
@@ -632,13 +616,7 @@ function CardSlide({
 
         {/* TEXT */}
         <div className="flex-1 min-w-0">
-          <div className="flex items-end gap-[14px]">
-            <div className="shrink-0 w-[clamp(48px,3.75vw,64px)] h-[clamp(48px,3.75vw,64px)]">
-              <s.Icon className="w-full h-full text-[#FF0000]" />
-            </div>
-            <div className="flex-1 h-[3px] bg-[linear-gradient(90deg,rgb(214,214,214)_0%,rgba(171,171,171,0)_100%)]" />
-          </div>
-          <h3 className="mt-[clamp(8px,1vw,16px)] text-[clamp(18px,1.875vw,24px)] font-semibold leading-[1.4] text-[#191919] text-left uppercase">
+          <h3 className="text-[clamp(18px,1.875vw,24px)] font-semibold leading-[1.4] text-[#191919] text-left uppercase">
             {s.heading}
           </h3>
           <p className="mt-[clamp(4px,0.7vw,10px)] text-[clamp(16px,1.797vw,23px)] leading-[1.3] text-[#191919] text-left">

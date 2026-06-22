@@ -37,6 +37,15 @@ const DEFAULT_ITEMS: StackRevealItem[] = [
   },
   {
     step: "04",
+    title: "Aerospace Systems",
+    description:
+      "Avionics interfaces, radar sub-systems, and ruggedized SBCs validated to MIL-STD-810/461 and DO-160.",
+    imageSrc:
+      "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/aerospace.png",
+    fallbackClassName: "bg-[#1e1b4b]",
+  },
+  {
+    step: "05",
     title: "Medical Electronics",
     description:
       "Monitors, diagnostics and IEC 60601 / ISO 13485 device development.",
@@ -45,7 +54,7 @@ const DEFAULT_ITEMS: StackRevealItem[] = [
     fallbackClassName: "bg-[#0c1e3f]",
   },
   {
-    step: "05",
+    step: "06",
     title: "Automotive Electronics",
     description:
       "ECUs, ADAS, infotainment and EV powertrain electronics to AEC Q100 specs.",
