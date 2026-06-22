@@ -15,6 +15,7 @@ import CodeIcon from "./icons/CodeIcon";
 import DesignIcon from "./icons/DesignIcon";
 import ClipboardIcon from "./icons/ClipboardIcon";
 import QualityIcon from "./icons/QualityIcon";
+import { cn } from "@/lib/utils";
 
 /* CONFIG */
 const CFG = {
@@ -24,37 +25,8 @@ const CFG = {
   ease: "700ms cubic-bezier(0.2,0,0,1)",
 
   red: "#FF0000",
-  redDark: "#910000",
   redGradEnd: "rgb(207,207,207)",
-  black: "#000000",
-  ink: "#191919",
-  inkFaint: "rgba(25,25,25,0.42)",
   white: "#ffffff",
-
-  /* typography — clamp(floor, vw@1280, cap) */
-
-  fontTitle: ["22px", "2.188vw", "36px"] as const,
-  fontHeading: ["22px", "1.875vw", "36px"] as const,
-  fontBody: ["20px", "1.719vw", "28px"] as const,
-  fontPillActive: ["12px", "1.328vw", "18px"] as const,
-  fontPillIdle: ["10px", "1.016vw", "18px"] as const,
-  fontPhase: ["10px", "1.094vw", "18px"] as const,
-  iconSize: ["64px", "3.75vw", "1px"] as const,
-
-  /* card */
-  cardBorderRadius: 10.8,
-  cardBorder: "2.7px solid rgba(255,255,255,0.2)",
-  cardShadowActive:
-    "0 8px 32px 0 rgba(0,0,0,0.28), inset 0 1px 0 0 rgba(255,255,255,0.08)",
-  cardShadowIdle: "0 4px 16px 0 rgba(0,0,0,0.18)",
-  cardPlaceholder: "#DCDCDC",
-  inactiveOpacity: 0.42,
-  farOpacity: 0.14,
-  inactiveScale: 0.965,
-
-  /* rake light */
-  rakeOpacity: 0.12,
-  rakeRadius: 180,
 
   /* carousel */
   cardRatioDesktop: 0.52,
@@ -63,22 +35,13 @@ const CFG = {
   gapRatioDesktop: 0.022,
   gapRatioTablet: 0.024,
   gapRatioPhone: 0.04,
+  inactiveOpacity: 0.42,
+  farOpacity: 0.14,
+  inactiveScale: 0.965,
 
-  /* pills — heights must fit 2 lines at fontPill* + symmetric vertical pad */
-  pillHeightIdle: ["40px", "4.4vw", "58px"] as const,
-  pillHeightActive: ["48px", "5.2vw", "66px"] as const,
-  pillPadH: ["6px", "0.8vw", "10px"] as const,
-  pillPadV: ["5px", "0.55vw", "8px"] as const,
-  pillGap: ["1px", "0.2vw", "3px"] as const,
-  pillRadius: ["1px", "0.2vw", "2px"] as const,
-
-  /* horizontal inset — CSS var --ctm-hpad */
-  hPadMin: 10,
-  hPadVw: 2.5,
-  hPadMax: 40,
-
-  /* stepperWidth — fraction of section width */
-  stepperWidth: 1.0,
+  /* rake light */
+  rakeOpacity: 0.12,
+  rakeRadius: 180,
 
   /*  TRAIL  */
   trailVBW: 1259 /* SVG viewBox width  */,
@@ -89,23 +52,11 @@ const CFG = {
 
   trailFeatherPct: 0.6 /* fraction of one dot-gap for the feather gradient */,
 
-  /* dots */
-  dotD: ["10px", "1vw", "24px"] as const,
-  dotBorder: ["1px", "0.15vw", "4px"] as const,
-
-  /* phase strip */
-  phaseStripBg: "#EBEBEB",
-  phaseH: 28,
-  phaseStripGap: ["10px", "1.2vw", "16px"] as const,
-
   /* background texture */
   bgDotOpacity: 0.032,
   bgDotSpacing: 28,
   bgDotSize: 1,
 } as const;
-
-const cl = (t: readonly [string, string, string]) =>
-  `clamp(${t[0]},${t[1]},${t[2]})`;
 
 /* Arrow fraction — the % of total SVG width occupied by the arrowhead */
 const ARROW_FRAC =
@@ -120,24 +71,31 @@ type BP = "desktop" | "tablet" | "phone";
 const getBP = (w: number): BP =>
   w >= 1280 ? "desktop" : w >= 810 ? "tablet" : "phone";
 
-/*  KEYFRAMES  ═*/
 const KF = `
 @keyframes ctm-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 @keyframes ctm-in{from{opacity:0}to{opacity:1}}
-@media(prefers-reduced-motion:reduce){.ctm-t,.ctm-c,.ctm-s{animation:none!important;opacity:1!important}}
+@media(prefers-reduced-motion:reduce){.ctm-c,.ctm-s{animation:none!important;opacity:1!important}}
 `;
-function useKF() {
+
+function useCtmStyles() {
   useEffect(() => {
-    if (document.getElementById("ctm-kf")) return;
-    const el = document.createElement("style");
-    el.id = "ctm-kf";
-    el.textContent = KF;
-    document.head.appendChild(el);
+    if (!document.getElementById("ctm-kf")) {
+      const el = document.createElement("style");
+      el.id = "ctm-kf";
+      el.textContent = KF;
+      document.head.appendChild(el);
+    }
+    if (document.getElementById("ctm-oxanium")) return;
+    const link = document.createElement("link");
+    link.id = "ctm-oxanium";
+    link.rel = "stylesheet";
+    link.href =
+      "https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600&display=swap";
+    document.head.appendChild(link);
   }, []);
 }
 
 /*  DATA */
-type Phase = "CVD" | "EVT" | "DVT" | "PVT";
 type Stage = {
   id: string;
   pill: string;
@@ -145,29 +103,35 @@ type Stage = {
   body: string;
   Icon: ComponentType<{ className?: string }>;
   media?: string;
-  phase: Phase;
 };
 
 const STAGES: Stage[] = [
   {
     id: "cv",
-    pill: "Concept Validation",
-    heading: "Concept Validation",
+    pill: "CONCEPT VALIDATION",
+    heading: "CONCEPT VALIDATION",
     body: "From idea to defendable spec: feasibility studies, system architecture, product specification.",
     Icon: CheckbulbIcon,
     media:
-      "https://framerusercontent.com/assets/T37zx5wYoF864LLeah9hwj2lUNk.mp4",
-    phase: "CVD",
+      "https://framerusercontent.com/assets/zBNuelZ9lG5wvy9U9Kowavh6XE.mp4",
+  },
+  {
+    id: "id",
+    pill: "Industrial Design",
+    heading: "Industrial Design",
+    body: "Enclosure design, UI/UX and CMF — the experience the user actually holds.",
+    Icon: DesignIcon,
+    media:
+      "https://framerusercontent.com/assets/9VGVcUM5Fh744FvRT7ToAK6kWrk.mp4",
   },
   {
     id: "hd",
-    pill: "Hardware Development",
-    heading: "Hardware Development",
+    pill: "Hardware Design",
+    heading: "Hardware Design",
     body: "High-level and low-level design, component engineering, board bring-up & testing.",
     Icon: CircuitIcon,
     media:
       "https://framerusercontent.com/assets/zQiDSY49IC5ohPtYlQt207jEpA0.mp4",
-    phase: "EVT",
   },
   {
     id: "pcb",
@@ -176,56 +140,34 @@ const STAGES: Stage[] = [
     body: "Multi-layer layouts, signal & power integrity, design-for-manufacturability.",
     Icon: PCBIcon,
     media:
-      "https://framerusercontent.com/assets/zQiDSY49IC5ohPtYlQt207jEpA0.mp4",
-    phase: "EVT",
+      "https://framerusercontent.com/assets/T37zx5wYoF864LLeah9hwj2lUNk.mp4",
   },
   {
     id: "sw",
-    pill: "Firmware & SW Development",
-    heading: "Firmware & SW Development",
+    pill: "Software Development",
+    heading: "Software Development",
     body: "Firmware, drivers / BSP and cross-platform application development.",
     Icon: CodeIcon,
     media:
-      "https://framerusercontent.com/assets/zQiDSY49IC5ohPtYlQt207jEpA0.mp4",
-    phase: "EVT",
+      "https://framerusercontent.com/assets/RiWC6WgWkL4TValzF65b7GAiUQ.mp4",
   },
   {
-    id: "mid",
-    pill: "Mechanical and ID",
-    heading: "Mech and Industrial Design",
-    body: "Enclosure design, UI/UX and CMF, the experience the user actually holds.",
-    Icon: DesignIcon,
-    media:
-      "https://framerusercontent.com/assets/zQiDSY49IC5ohPtYlQt207jEpA0.mp4",
-    phase: "EVT",
-  },
-  {
-    id: "cmp",
-    pill: "Validation & Compliance",
-    heading: "Validation & Compliance",
+    id: "npi",
+    pill: "NPI & Compliance",
+    heading: "NPI & Compliance",
     body: "Compliance certification (FCC / UL / CE), vendor audits and test-jig development.",
     Icon: ClipboardIcon,
     media:
       "https://framerusercontent.com/assets/d5TbJNs9wSu60hFl9QDQv7eXgr0.mp4",
-    phase: "DVT",
   },
   {
-    id: "val",
-    pill: "Production Validation",
-    heading: "Production Validation",
+    id: "mfg",
+    pill: "Manufacturing",
+    heading: "Manufacturing",
     body: "Manufacturing coordination and production testing, built at scale, shipped with confidence.",
     Icon: QualityIcon,
-    media:
-      "https://framerusercontent.com/assets/LQwD6gGvPIlcHemMODDhWlQuBPI.mp4",
-    phase: "PVT",
+    media: "https://framerusercontent.com/assets/cbkLdwMNDkZbOITohrNNS8Ess.mp4",
   },
-];
-
-const PHASES: { key: Phase; span: number }[] = [
-  { key: "CVD", span: 1 },
-  { key: "EVT", span: 4 },
-  { key: "DVT", span: 1 },
-  { key: "PVT", span: 1 },
 ];
 
 const N = STAGES.length;
@@ -255,8 +197,8 @@ export default function ConceptToManufacturing() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const [secW, setSecW] = useState(0);
-  const sectionRef = useRef<HTMLElement>(null);
-  useKF();
+  const sectionRef = useRef<HTMLDivElement>(null);
+  useCtmStyles();
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -294,15 +236,10 @@ export default function ConceptToManufacturing() {
   const tx = (secW - cardW) / 2 - active * (cardW + gap);
 
   /* trail */
-  const activePhase = STAGES[active].phase;
-
   const solidX = ((active + 0.5) / N) * CFG.trailArrowBase;
   const featherW = (CFG.trailArrowBase / N) * CFG.trailFeatherPct;
 
   const pillPhaseRight = ARROW_PCT;
-
-  const PH_IN = cl(CFG.pillHeightIdle);
-  const PH_AC = cl(CFG.pillHeightActive);
 
   const D = CFG.entranceMs;
   const aC = { animation: `ctm-in ${D * 0.6}ms ${D * 0.2}ms ease both` };
@@ -310,71 +247,42 @@ export default function ConceptToManufacturing() {
 
   return (
     <section
-      ref={sectionRef}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
-      aria-label="Concept to Manufacturing stages"
-      style={
-        {
-          position: "relative",
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          height: "78vh",
-          minHeight: 480,
-          overflow: "hidden",
-          background: `${CFG.white} ${DOT_BG}`,
-          backgroundSize: `${CFG.bgDotSpacing}px ${CFG.bgDotSpacing}px`,
-          fontFamily: "var(--font-oxanium,'Oxanium',sans-serif)",
-          color: CFG.ink,
-          userSelect: "none",
-          WebkitUserSelect: "none",
-          "--ctm-hpad": `clamp(${CFG.hPadMin}px,${CFG.hPadVw}vw,${CFG.hPadMax}px)`,
-        } as React.CSSProperties
-      }
+      aria-label="Design to Manufacturing stages"
+      className="relative flex flex-col w-full h-[clamp(480px,56.25vw,720px)] min-h-[480px] overflow-hidden select-none px-[clamp(20px,5.7vw,74px)] font-[family-name:var(--font-oxanium,'Oxanium',sans-serif)] text-[#191919]"
+      style={{
+        background: `${CFG.white} ${DOT_BG}`,
+        backgroundSize: `${CFG.bgDotSpacing}px ${CFG.bgDotSpacing}px`,
+      }}
     >
-      {/* TITLE */}
-      <h2 className="text-center text-3xl font-light tracking-wide md:text-5xl mb-6">
-        Design to <span className="text-red-500">Manufacturing</span>
-      </h2>
+      <div
+        ref={sectionRef}
+        className="flex flex-col w-full max-w-[1280px] h-full min-h-0 flex-1 mx-auto"
+      >
+      {/* TITLE — matches Our Services heading pattern */}
+      <div className="text-center flex-shrink-0 pt-[clamp(12px,2vh,24px)] mb-6 md:mb-7">
+        <h2>
+          Design to <span className="text-red-500">Manufacturing</span>
+        </h2>
+      </div>
 
       {/* CAROUSEL */}
       <div
-        className="ctm-c"
-        style={{
-          ...aC,
-          position: "relative",
-          flex: "1 1 0",
-          minHeight: 0,
-          overflowX: "hidden",
-          overflowY: "visible",
-        }}
+        className="ctm-c relative flex-[1_1_0] min-h-0 overflow-x-hidden overflow-y-visible"
+        style={aC}
       >
         <div
           aria-hidden
-          style={{
-            position: "absolute",
-            inset: 0,
-            pointerEvents: "none",
-            zIndex: 0,
-            background:
-              "linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(237,237,237,0.70) 47.73%,rgba(255,255,255,0) 100%)",
-          }}
+          className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(90deg,rgba(255,255,255,0)_0%,rgba(237,237,237,0.70)_47.73%,rgba(255,255,255,0)_100%)]"
         />
         <div
+          className="absolute top-0 bottom-0 left-0 flex items-center will-change-transform z-[1]"
           style={{
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            display: "flex",
-            alignItems: "center",
             gap,
             transform: secW ? `translateX(${tx}px)` : undefined,
             transition: secW ? `transform ${CFG.ease}` : "none",
-            willChange: "transform",
-            zIndex: 1,
           }}
         >
           {STAGES.map((s, i) => {
@@ -403,28 +311,15 @@ export default function ConceptToManufacturing() {
       </div>
 
       {/* STEPPER */}
-      <div className="ctm-s" style={{ ...aS, flexShrink: 0 }}>
+      <div className="ctm-s shrink-0" style={aS}>
         {bp !== "phone" ? (
-          <div
-            style={{
-              width: `${CFG.stepperWidth * 100}%`,
-              margin: "0 auto",
-              paddingLeft: "var(--ctm-hpad)",
-              paddingRight: "var(--ctm-hpad)",
-            }}
-          >
+          <div className="w-full mx-auto">
             {/* ── PILLS ────────────────────────────────────────────────
                 paddingRight = ARROW_PCT so pill columns stop at line end.
                 Same 1fr as dots below = perfect centre alignment.       */}
             <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: `repeat(${N},1fr)`,
-                gap: `0 ${cl(CFG.pillGap)}`,
-                alignItems: "end",
-                height: PH_AC,
-                paddingRight: pillPhaseRight,
-              }}
+              className="grid grid-cols-7 gap-x-[clamp(1px,0.2vw,3px)] items-end h-[clamp(48px,5.2vw,66px)]"
+              style={{ paddingRight: pillPhaseRight }}
             >
               {STAGES.map((s, i) => {
                 const isActive = i === active;
@@ -434,36 +329,14 @@ export default function ConceptToManufacturing() {
                     onClick={() => goTo(i)}
                     onMouseEnter={() => goTo(i)}
                     aria-current={isActive ? "step" : undefined}
-                    style={{
-                      height: isActive ? PH_AC : PH_IN,
-                      alignSelf: "end",
-                      padding: `${cl(CFG.pillPadV)} ${cl(CFG.pillPadH)}`,
-                      display: "flex",
-                      alignItems: "center",
-                      background: isActive
-                        ? "linear-gradient(135deg,rgba(255,255,255,0.07) 0%,rgba(255,255,255,0) 55%) #000"
-                        : "linear-gradient(111deg,rgba(217,217,217,0.22) 0%,rgba(217,217,217,0.55) 48.8%,rgba(217,217,217,0.22) 100%)",
-                      boxShadow: isActive
-                        ? "inset 0 1px 0 0 rgba(255,255,255,0.14)"
-                        : "none",
-                      color: isActive ? CFG.white : CFG.ink,
-                      fontSize: cl(
-                        isActive ? CFG.fontPillActive : CFG.fontPillIdle,
-                      ),
-                      fontWeight: 600,
-                      fontFamily: "inherit",
-                      textTransform: "uppercase",
-                      lineHeight: 1.25,
-                      textAlign: "left",
-                      borderRadius: cl(CFG.pillRadius),
-                      border: "none",
-                      cursor: "pointer",
-                      transition:
-                        "background 280ms ease,color 280ms ease,height 280ms ease,box-shadow 280ms ease",
-                      minWidth: 0,
-                      overflow: "hidden",
-                      boxSizing: "border-box",
-                    }}
+                    className={cn(
+                      "self-end flex items-center font-semibold font-inherit leading-[1.25] uppercase text-left border-none cursor-pointer min-w-0 overflow-hidden box-border",
+                      "py-[clamp(5px,0.55vw,8px)] px-[clamp(6px,0.8vw,10px)] rounded-[clamp(1px,0.2vw,2px)]",
+                      "transition-[background,color,height,box-shadow] duration-[280ms] ease-[ease]",
+                      isActive
+                        ? "h-[clamp(48px,5.2vw,66px)] bg-[linear-gradient(111deg,rgb(0,0,0)_0%,rgb(0,0,0)_50%,rgb(0,0,0)_100%)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14)] text-white text-[clamp(14px,1.328vw,17px)]"
+                        : "h-[clamp(40px,4.4vw,58px)] bg-[linear-gradient(111deg,rgba(217,217,217,0.22)_0%,rgba(217,217,217,0.55)_48.8%,rgba(217,217,217,0.22)_100%)] text-[#191919] text-[clamp(11px,1.094vw,14px)]",
+                    )}
                   >
                     {s.pill}
                   </button>
@@ -471,12 +344,13 @@ export default function ConceptToManufacturing() {
               })}
             </div>
 
-            <div style={{ position: "relative", marginTop: 3 }}>
+            <div className="relative mt-[3px]">
               <svg
                 aria-hidden
                 viewBox={`0 0 ${VBW} ${VBH}`}
                 preserveAspectRatio="none"
-                style={{ display: "block", width: "100%", height: VBH }}
+                className="block w-full"
+                style={{ height: VBH }}
               >
                 <defs>
                   {/* Clip everything to the exact trail shape */}
@@ -524,16 +398,8 @@ export default function ConceptToManufacturing() {
 
               {/* DOTS — HTML grid, right=ARROW_PCT stops them at line end */}
               <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: ARROW_PCT,
-                  height: VBH,
-                  display: "grid",
-                  gridTemplateColumns: `repeat(${N},1fr)`,
-                  gap: `0 ${cl(CFG.pillGap)}`,
-                }}
+                className="absolute top-0 left-0 grid grid-cols-7 gap-x-[clamp(1px,0.2vw,3px)]"
+                style={{ right: ARROW_PCT, height: VBH }}
               >
                 {STAGES.map((s, i) => {
                   const done = i <= active,
@@ -544,119 +410,48 @@ export default function ConceptToManufacturing() {
                       onClick={() => goTo(i)}
                       onMouseEnter={() => goTo(i)}
                       aria-label={`Go to ${s.pill}`}
-                      style={{
-                        display: "flex",
-                        alignItems: "flex-start",
-                        justifyContent: "center",
-                        background: "none",
-                        border: "none",
-                        cursor: "pointer",
-                        padding: 0,
-                        paddingTop: 13.5,
-                        height: VBH,
-                        boxSizing: "border-box",
-                      }}
+                      className="flex items-start justify-center bg-transparent border-none cursor-pointer p-0 pt-[13.5px] box-border"
+                      style={{ height: VBH }}
                     >
                       <span
-                        style={{
-                          display: "block",
-                          width: cl(CFG.dotD),
-                          height: cl(CFG.dotD),
-                          borderRadius: "50%",
-                          background: done ? CFG.red : "#D0D0D0",
-                          border: `${cl(CFG.dotBorder)} solid ${done ? CFG.redDark : "#B8B8B8"}`,
-                          flexShrink: 0,
-                          transition:
-                            "background 450ms ease,border-color 450ms ease,box-shadow 450ms ease",
-                          boxShadow: current
-                            ? "0 0 0 3px rgba(255,0,0,0.18)"
-                            : "none",
-                        }}
+                        className={cn(
+                          "block shrink-0 rounded-full transition-[background,border-color,box-shadow] duration-[450ms] ease-[ease]",
+                          "w-[clamp(10px,1vw,24px)] h-[clamp(10px,1vw,24px)] border-solid border-[clamp(1px,0.15vw,4px)]",
+                          done
+                            ? "bg-[#FF0000] border-[#910000]"
+                            : "bg-[#D0D0D0] border-[#B8B8B8]",
+                          current && "shadow-[0_0_0_3px_rgba(255,0,0,0.18)]",
+                        )}
                       />
                     </button>
                   );
                 })}
               </div>
             </div>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: `repeat(${N},1fr)`,
-                gap: `0 ${cl(CFG.pillGap)}`,
-                background: CFG.phaseStripBg,
-                paddingRight: pillPhaseRight,
-                marginTop: cl(CFG.phaseStripGap),
-              }}
-            >
-              {PHASES.map((p) => {
-                const isAct = p.key === activePhase;
-                return (
-                  <div
-                    key={`ph-${p.key}`}
-                    style={{
-                      gridColumn: `span ${p.span}`,
-                      height: CFG.phaseH,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: cl(CFG.fontPhase),
-                      fontWeight: isAct ? 600 : 400,
-                      fontFamily: "inherit",
-                      color: isAct ? CFG.black : CFG.inkFaint,
-                      transition: "color 280ms ease",
-                    }}
-                  >
-                    {p.key}
-                  </div>
-                );
-              })}
-            </div>
           </div>
         ) : (
           /* ── PHONE ─────────────────────────────────────────────── */
-          <div style={{ padding: "0 var(--ctm-hpad)", position: "relative" }}>
+          <div className="relative">
             {/* floating pill */}
-            <div
-              style={{ position: "relative", height: PH_IN, marginBottom: 2 }}
-            >
+            <div className="relative h-[clamp(40px,4.4vw,58px)] mb-[2px]">
               <button
+                className="absolute bottom-0 py-2 px-3 bg-[linear-gradient(111deg,rgb(0,0,0)_0%,rgb(0,0,0)_50%,rgb(0,0,0)_100%)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14)] text-white text-[clamp(14px,1.328vw,17px)] font-semibold font-inherit leading-[1.25] uppercase rounded-[clamp(1px,0.2vw,2px)] border-none cursor-default whitespace-nowrap min-w-[80px] max-w-[160px] text-center overflow-hidden text-ellipsis"
                 style={{
-                  position: "absolute",
-                  bottom: 0,
                   left: `clamp(0px,calc(${(active + 0.5) / N}*(100% - ${ARROW_PCT}) - 60px),calc(100% - 165px))`,
                   transition: `left ${CFG.ease}`,
-                  padding: "8px 12px",
-                  background:
-                    "linear-gradient(135deg,rgba(255,255,255,0.07) 0%,rgba(255,255,255,0) 55%) #000",
-                  boxShadow: "inset 0 1px 0 0 rgba(255,255,255,0.14)",
-                  color: CFG.white,
-                  fontSize: cl(CFG.fontPillActive),
-                  fontWeight: 600,
-                  fontFamily: "inherit",
-                  textTransform: "uppercase",
-                  lineHeight: 1.25,
-                  borderRadius: cl(CFG.pillRadius),
-                  border: "none",
-                  cursor: "default",
-                  whiteSpace: "nowrap",
-                  minWidth: 80,
-                  maxWidth: 160,
-                  textAlign: "center",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
                 }}
               >
                 {STAGES[active].pill}
               </button>
             </div>
             {/* trail + dots */}
-            <div style={{ position: "relative", marginTop: 3 }}>
+            <div className="relative mt-[3px]">
               <svg
                 aria-hidden
                 viewBox={`0 0 ${VBW} ${VBH}`}
                 preserveAspectRatio="none"
-                style={{ display: "block", width: "100%", height: VBH }}
+                className="block w-full"
+                style={{ height: VBH }}
               >
                 <defs>
                   <clipPath id="ctm-clip-ph">
@@ -694,15 +489,8 @@ export default function ConceptToManufacturing() {
                 />
               </svg>
               <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: ARROW_PCT,
-                  height: VBH,
-                  display: "grid",
-                  gridTemplateColumns: `repeat(${N},1fr)`,
-                }}
+                className="absolute top-0 left-0 grid grid-cols-7"
+                style={{ right: ARROW_PCT, height: VBH }}
               >
                 {STAGES.map((s, i) => {
                   const done = i <= active,
@@ -713,77 +501,29 @@ export default function ConceptToManufacturing() {
                       onClick={() => goTo(i)}
                       onMouseEnter={() => goTo(i)}
                       aria-label={`Go to ${s.pill}`}
-                      style={{
-                        display: "flex",
-                        alignItems: "flex-start",
-                        justifyContent: "center",
-                        background: "none",
-                        border: "none",
-                        cursor: "pointer",
-                        padding: 0,
-                        paddingTop: 13.5,
-                        height: VBH,
-                        boxSizing: "border-box",
-                      }}
+                      className="flex items-start justify-center bg-transparent border-none cursor-pointer p-0 pt-[13.5px] box-border"
+                      style={{ height: VBH }}
                     >
                       <span
-                        style={{
-                          display: "block",
-                          width: cl(CFG.dotD),
-                          height: cl(CFG.dotD),
-                          borderRadius: "50%",
-                          background: done ? CFG.red : "#D0D0D0",
-                          border: `${cl(CFG.dotBorder)} solid ${done ? CFG.redDark : "#B8B8B8"}`,
-                          flexShrink: 0,
-                          transition:
-                            "background 450ms ease,border-color 450ms ease",
-                          boxShadow: cur
-                            ? "0 0 0 3px rgba(255,0,0,0.18)"
-                            : "none",
-                        }}
+                        className={cn(
+                          "block shrink-0 rounded-full transition-[background,border-color,box-shadow] duration-[450ms] ease-[ease]",
+                          "w-[clamp(10px,1vw,24px)] h-[clamp(10px,1vw,24px)] border-solid border-[clamp(1px,0.15vw,4px)]",
+                          done
+                            ? "bg-[#FF0000] border-[#910000]"
+                            : "bg-[#D0D0D0] border-[#B8B8B8]",
+                          cur && "shadow-[0_0_0_3px_rgba(255,0,0,0.18)]",
+                        )}
                       />
                     </button>
                   );
                 })}
               </div>
             </div>
-            {/* phase */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: `repeat(${N},1fr)`,
-                paddingRight: ARROW_PCT,
-                background: CFG.phaseStripBg,
-                marginTop: cl(CFG.phaseStripGap),
-              }}
-            >
-              {PHASES.map((p) => {
-                const isAct = p.key === activePhase;
-                return (
-                  <div
-                    key={p.key}
-                    style={{
-                      gridColumn: `span ${p.span}`,
-                      height: CFG.phaseH,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: cl(CFG.fontPhase),
-                      fontWeight: isAct ? 600 : 400,
-                      fontFamily: "inherit",
-                      color: isAct ? CFG.black : CFG.inkFaint,
-                      transition: "color 280ms ease",
-                    }}
-                  >
-                    {p.key}
-                  </div>
-                );
-              })}
-            </div>
           </div>
         )}
 
-        <div style={{ height: "clamp(4px,0.8vh,10px)" }} />
+        <div className="h-[clamp(8px,1.2vh,16px)]" />
+      </div>
       </div>
     </section>
   );
@@ -830,41 +570,37 @@ function CardSlide({
     <div
       aria-hidden={!isActive}
       onClick={onClick}
+      className={cn(
+        "shrink-0 transition-[opacity,transform] duration-[550ms] ease-[ease]",
+        isActive ? "cursor-default" : "cursor-pointer",
+      )}
       style={{
         width: cardW || "58vw",
-        flexShrink: 0,
         opacity,
         transform: `scale(${scale})`,
-        transition: "opacity 550ms ease,transform 550ms ease",
-        cursor: isActive ? "default" : "pointer",
       }}
     >
       <div
-        style={{
-          display: "flex",
-          flexDirection: isPhone ? "column" : "row",
-          alignItems: isPhone ? "stretch" : "center",
-          gap: isPhone ? "clamp(12px,2vh,20px)" : "clamp(16px,3.5%,48px)",
-          height: "100%",
-          padding: isPhone ? "0 0 8px" : undefined,
-        }}
+        className={cn(
+          "flex h-full",
+          isPhone
+            ? "flex-col items-stretch gap-[clamp(12px,2vh,20px)] pb-2"
+            : "flex-row items-center gap-[clamp(16px,3.5%,48px)]",
+        )}
       >
         {/* VIDEO */}
-        <div style={{ flexShrink: 0, width: isPhone ? "100%" : "52%" }}>
+        <div className={cn("shrink-0", isPhone ? "w-full" : "w-[52%]")}>
           <div
             ref={ref}
             onMouseMove={mv}
             onMouseLeave={ml}
-            style={{
-              position: "relative",
-              aspectRatio: "4/3",
-              borderRadius: CFG.cardBorderRadius,
-              border: CFG.cardBorder,
-              boxShadow: isActive ? CFG.cardShadowActive : CFG.cardShadowIdle,
-              overflow: "hidden",
-              background: CFG.cardPlaceholder,
-              transition: "box-shadow 400ms ease",
-            }}
+            className={cn(
+              "relative aspect-[4/3] overflow-hidden transition-[box-shadow] duration-[400ms] ease-[ease]",
+              "rounded-[10.8px] border-[2.7px] border-solid border-white/20 bg-[#DCDCDC]",
+              isActive
+                ? "shadow-[3.6px_3.6px_18px_0_rgba(0,0,0,0.25),inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                : "shadow-[3.6px_3.6px_18px_0_rgba(0,0,0,0.18)]",
+            )}
           >
             {s.media && (
               <video
@@ -874,38 +610,18 @@ function CardSlide({
                 loop
                 playsInline
                 preload={isActive ? "auto" : "metadata"}
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  borderRadius: CFG.cardBorderRadius - 1,
-                }}
+                className="absolute inset-0 w-full h-full object-cover rounded-[9.8px]"
               />
             )}
             <div
               aria-hidden
-              style={{
-                position: "absolute",
-                inset: 0,
-                pointerEvents: "none",
-                borderRadius: CFG.cardBorderRadius - 1,
-                zIndex: 1,
-                background:
-                  "radial-gradient(ellipse at 50% 50%,transparent 45%,rgba(0,0,0,0.18) 100%)",
-              }}
+              className="absolute inset-0 pointer-events-none rounded-[9.8px] z-[1] bg-[radial-gradient(ellipse_at_50%_50%,transparent_45%,rgba(0,0,0,0.18)_100%)]"
             />
             <div
               aria-hidden
+              className="absolute inset-0 pointer-events-none rounded-[9.8px] z-[2] transition-opacity duration-300 ease-[ease]"
               style={{
-                position: "absolute",
-                inset: 0,
-                pointerEvents: "none",
-                borderRadius: CFG.cardBorderRadius - 1,
-                zIndex: 2,
                 opacity: lt.on ? 1 : 0,
-                transition: "opacity 300ms ease",
                 background: lt.on
                   ? `radial-gradient(circle ${CFG.rakeRadius}px at ${lt.x}px ${lt.y}px,rgba(255,255,255,${CFG.rakeOpacity}) 0%,rgba(255,255,255,0) 70%)`
                   : "none",
@@ -915,48 +631,17 @@ function CardSlide({
         </div>
 
         {/* TEXT */}
-        <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ display: "flex", alignItems: "END", gap: 14 }}>
-            <div
-              style={{
-                flexShrink: 0,
-                width: cl(CFG.iconSize),
-                height: cl(CFG.iconSize),
-              }}
-            >
+        <div className="flex-1 min-w-0">
+          <div className="flex items-end gap-[14px]">
+            <div className="shrink-0 w-[clamp(48px,3.75vw,64px)] h-[clamp(48px,3.75vw,64px)]">
               <s.Icon className="w-full h-full text-[#FF0000]" />
             </div>
-            <div
-              style={{
-                flex: 1,
-                height: 3,
-                background:
-                  "linear-gradient(90deg,rgb(214,214,214) 0%,rgba(171,171,171,0) 100%)",
-              }}
-            />
+            <div className="flex-1 h-[3px] bg-[linear-gradient(90deg,rgb(214,214,214)_0%,rgba(171,171,171,0)_100%)]" />
           </div>
-          <h3
-            style={{
-              marginTop: "clamp(8px,1vw,16px)",
-              fontSize: cl(CFG.fontHeading),
-              fontWeight: 600,
-              textTransform: "uppercase",
-              lineHeight: 1.4,
-              color: CFG.ink,
-              textAlign: "left",
-            }}
-          >
+          <h3 className="mt-[clamp(8px,1vw,16px)] text-[clamp(18px,1.875vw,24px)] font-semibold leading-[1.4] text-[#191919] text-left uppercase">
             {s.heading}
           </h3>
-          <p
-            style={{
-              marginTop: "clamp(4px,0.7vw,10px)",
-              fontSize: cl(CFG.fontBody),
-              lineHeight: 1.3,
-              color: CFG.ink,
-              textAlign: "left",
-            }}
-          >
+          <p className="mt-[clamp(4px,0.7vw,10px)] text-[clamp(16px,1.797vw,23px)] leading-[1.3] text-[#191919] text-left">
             {s.body}
           </p>
         </div>
