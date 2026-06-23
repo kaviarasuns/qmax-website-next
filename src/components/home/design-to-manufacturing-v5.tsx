@@ -77,13 +77,6 @@ function useCtmStyles() {
       el.textContent = KF;
       document.head.appendChild(el);
     }
-    if (document.getElementById("ctm-oxanium")) return;
-    const link = document.createElement("link");
-    link.id = "ctm-oxanium";
-    link.rel = "stylesheet";
-    link.href =
-      "https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600&display=swap";
-    document.head.appendChild(link);
   }, []);
 }
 
@@ -254,7 +247,7 @@ export default function ConceptToManufacturing() {
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
       aria-label="Design to Manufacturing stages"
-      className="relative flex flex-col w-full h-[clamp(480px,56.25vw,720px)] min-h-[480px] overflow-hidden select-none px-[clamp(20px,5.7vw,74px)] font-[family-name:var(--font-oxanium,'Oxanium',sans-serif)] text-[#191919]"
+      className="relative flex flex-col w-full h-[clamp(480px,56.25vw,720px)] min-h-[480px] overflow-hidden select-none px-[clamp(20px,5.7vw,74px)] text-[#191919]"
       style={{
         background: `${CFG.white} ${DOT_BG}`,
         backgroundSize: `${CFG.bgDotSpacing}px ${CFG.bgDotSpacing}px`,
