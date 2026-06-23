@@ -271,12 +271,7 @@ export default function ConceptToManufacturing() {
         >
           {STAGES.map((s, i) => {
             const isActive = i === active;
-            const dist = Math.abs(i - active);
-            const opacity = isActive
-              ? 1
-              : dist === 1
-                ? CFG.inactiveOpacity
-                : CFG.farOpacity;
+            const opacity = isActive ? 1 : 0;
             const scale = isActive ? 1 : CFG.inactiveScale;
             return (
               <CardSlide
