@@ -88,38 +88,42 @@ function useCtmStyles() {
 }
 
 /*  DATA */
+type Phase = "CVD" | "EVT" | "DVT" | "PVT";
+
 type Stage = {
   id: string;
   pill: string;
   heading: string;
   body: string;
   media?: string;
+  phase: Phase;
 };
+
+const PHASES: { key: Phase; span: number }[] = [
+  { key: "CVD", span: 1 },
+  { key: "EVT", span: 4 },
+  { key: "DVT", span: 1 },
+  { key: "PVT", span: 1 },
+];
 
 const STAGES: Stage[] = [
   {
     id: "cv",
-    pill: "CONCEPT VALIDATION",
-    heading: "CONCEPT VALIDATION",
+    pill: "Concept Validation",
+    heading: "Concept Validation",
     body: "From idea to defendable spec: feasibility studies, system architecture, product specification.",
     media:
       "https://framerusercontent.com/assets/zBNuelZ9lG5wvy9U9Kowavh6XE.mp4",
-  },
-  {
-    id: "id",
-    pill: "Industrial Design",
-    heading: "Industrial Design",
-    body: "Enclosure design, UI/UX and CMF — the experience the user actually holds.",
-    media:
-      "https://framerusercontent.com/assets/9VGVcUM5Fh744FvRT7ToAK6kWrk.mp4",
+    phase: "CVD",
   },
   {
     id: "hd",
-    pill: "Hardware Design",
-    heading: "Hardware Design",
+    pill: "Hardware Development",
+    heading: "Hardware Development",
     body: "High-level and low-level design, component engineering, board bring-up & testing.",
     media:
       "https://framerusercontent.com/assets/zQiDSY49IC5ohPtYlQt207jEpA0.mp4",
+    phase: "EVT",
   },
   {
     id: "pcb",
@@ -128,29 +132,43 @@ const STAGES: Stage[] = [
     body: "Multi-layer layouts, signal & power integrity, design-for-manufacturability.",
     media:
       "https://framerusercontent.com/assets/T37zx5wYoF864LLeah9hwj2lUNk.mp4",
+    phase: "EVT",
   },
   {
     id: "sw",
-    pill: "Software Development",
-    heading: "Software Development",
+    pill: "Firmware & SW Development",
+    heading: "Firmware & SW Development",
     body: "Firmware, drivers / BSP and cross-platform application development.",
     media:
       "https://framerusercontent.com/assets/RiWC6WgWkL4TValzF65b7GAiUQ.mp4",
+    phase: "EVT",
   },
   {
-    id: "npi",
-    pill: "NPI & Compliance",
-    heading: "NPI & Compliance",
+    id: "mid",
+    pill: "Mechanical And ID",
+    heading: "Mechanical And ID",
+    body: "Enclosure design, UI/UX and CMF — the experience the user actually holds.",
+    media:
+      "https://framerusercontent.com/assets/9VGVcUM5Fh744FvRT7ToAK6kWrk.mp4",
+    phase: "EVT",
+  },
+  {
+    id: "cmp",
+    pill: "Validation & Compliance",
+    heading: "Validation & Compliance",
     body: "Compliance certification (FCC / UL / CE), vendor audits and test-jig development.",
     media:
       "https://framerusercontent.com/assets/d5TbJNs9wSu60hFl9QDQv7eXgr0.mp4",
+    phase: "DVT",
   },
   {
-    id: "mfg",
-    pill: "Manufacturing",
-    heading: "Manufacturing",
+    id: "val",
+    pill: "Production Validation",
+    heading: "Production Validation",
     body: "Manufacturing coordination and production testing, built at scale, shipped with confidence.",
-    media: "https://framerusercontent.com/assets/cbkLdwMNDkZbOITohrNNS8Ess.mp4",
+    media:
+      "https://framerusercontent.com/assets/cbkLdwMNDkZbOITohrNNS8Ess.mp4",
+    phase: "PVT",
   },
 ];
 
@@ -220,6 +238,7 @@ export default function ConceptToManufacturing() {
   const tx = (secW - cardW) / 2 - active * (cardW + gap);
 
   /* trail */
+  const activePhase = STAGES[active].phase;
   const solidX = ((active + 0.5) / N) * CFG.trailArrowBase;
   const featherW = (CFG.trailArrowBase / N) * CFG.trailFeatherPct;
 
@@ -407,6 +426,30 @@ export default function ConceptToManufacturing() {
                 })}
               </div>
             </div>
+
+            {/* phase labels */}
+            <div
+              className="grid grid-cols-7 gap-x-[clamp(1px,0.2vw,3px)] bg-[#EBEBEB] mt-[clamp(10px,1.2vw,16px)]"
+              style={{ paddingRight: pillPhaseRight }}
+            >
+              {PHASES.map((p) => {
+                const isAct = p.key === activePhase;
+                return (
+                  <div
+                    key={`ph-${p.key}`}
+                    className={cn(
+                      "flex items-center justify-center h-7 text-[clamp(10px,1.094vw,18px)] font-inherit transition-colors duration-[280ms] ease-[ease]",
+                      isAct
+                        ? "font-semibold text-[#191919]"
+                        : "font-normal text-[rgba(25,25,25,0.42)]",
+                    )}
+                    style={{ gridColumn: `span ${p.span}` }}
+                  >
+                    {p.key}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         ) : (
           /* ── PHONE ─────────────────────────────────────────────── */
@@ -498,10 +541,32 @@ export default function ConceptToManufacturing() {
                 })}
               </div>
             </div>
+
+            {/* phase labels */}
+            <div
+              className="grid grid-cols-7 bg-[#EBEBEB] mt-[clamp(10px,1.2vw,16px)]"
+              style={{ paddingRight: ARROW_PCT }}
+            >
+              {PHASES.map((p) => {
+                const isAct = p.key === activePhase;
+                return (
+                  <div
+                    key={p.key}
+                    className={cn(
+                      "flex items-center justify-center h-7 text-[clamp(10px,1.094vw,18px)] font-inherit transition-colors duration-[280ms] ease-[ease]",
+                      isAct
+                        ? "font-semibold text-[#191919]"
+                        : "font-normal text-[rgba(25,25,25,0.42)]",
+                    )}
+                    style={{ gridColumn: `span ${p.span}` }}
+                  >
+                    {p.key}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         )}
-
-        <div className="h-[clamp(8px,1.2vh,16px)]" />
       </div>
       </div>
     </section>
