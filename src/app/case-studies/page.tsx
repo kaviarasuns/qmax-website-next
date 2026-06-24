@@ -5,6 +5,7 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 import {
   embeddedCaseStudies,
   engineeringSupportCaseStudies,
+  fullProductDevelopmentCaseStudies,
   industrialCaseStudies,
   mechanicalCaseStudies,
   pcbCaseStudies,
@@ -18,6 +19,7 @@ const useIsomorphicLayoutEffect =
 const SCROLL_STORAGE_KEY = "case-studies:scroll-y";
 
 const sections = [
+  { id: "full-product-development", label: "Full Product Development" },
   { id: "embedded", label: "Embedded Systems" },
   { id: "pcb", label: "PCB Design" },
   { id: "mechanical", label: "Mechanical Design" },
@@ -26,6 +28,7 @@ const sections = [
 ];
 
 const sectionCounts: { [key: string]: number } = {
+  "full-product-development": fullProductDevelopmentCaseStudies.length,
   embedded: embeddedCaseStudies.length,
   pcb: pcbCaseStudies.length,
   mechanical: mechanicalCaseStudies.length,
@@ -238,20 +241,41 @@ export default function CaseStudiesPage() {
         {/* Main Content */}
         <main className="flex-1 w-full max-w-6xl px-8 lg:px-12 mx-auto">
           <header className="mb-16">
-            <h1 className="text-3xl font-semibold tracking-wide text-foreground my-2 md:text-5xl">
+            <h1 className="text-4xl md:text-5xl font-light tracking-wide text-foreground my-2">
               Case <span className="text-red-500">Studies</span>
             </h1>
           </header>
+          {/* Full Product Development Section */}
+          <div id="full-product-development" className="mb-24 scroll-mt-32">
+            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
+                  Full Product Development
+                </h2>
+              </div>
+              <span className="text-sm text-muted-foreground font-medium mb-1">
+                {fullProductDevelopmentCaseStudies.length} Projects
+              </span>
+            </div>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+              {fullProductDevelopmentCaseStudies.map((study, index) => (
+                <div key={`fpdstudy-${study.id}`} className="relative">
+                  <CaseStudyCardNumber number={index + 1} />
+                  <CaseStudyCard {...study} />
+                </div>
+              ))}
+            </div>
+          </div>
           {/* Embedded Section */}
           <div id="embedded" className="mb-24 scroll-mt-32">
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 01</span> */}
-                <h2 className="text-3xl font-semibold tracking-wide text-foreground">
+                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
                   Embedded Systems
                 </h2>
               </div>
-              <span className="text-sm text-zinc-500 font-medium mb-1">
+              <span className="text-sm text-muted-foreground font-medium mb-1">
                 {embeddedCaseStudies.length} Projects
               </span>
             </div>
@@ -272,11 +296,11 @@ export default function CaseStudiesPage() {
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 02</span> */}
-                <h2 className="text-3xl font-semibold tracking-wide text-foreground">
+                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
                   PCB Design
                 </h2>
               </div>
-              <span className="text-sm text-zinc-500 font-medium mb-1">
+              <span className="text-sm text-muted-foreground font-medium mb-1">
                 {pcbCaseStudies.length} Projects
               </span>
             </div>
@@ -297,11 +321,11 @@ export default function CaseStudiesPage() {
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 03</span> */}
-                <h2 className="text-3xl font-semibold tracking-wide text-foreground">
+                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
                   Mechanical Design
                 </h2>
               </div>
-              <span className="text-sm text-zinc-500 font-medium mb-1">
+              <span className="text-sm text-muted-foreground font-medium mb-1">
                 {mechanicalCaseStudies.length} Projects
               </span>
             </div>
@@ -319,11 +343,11 @@ export default function CaseStudiesPage() {
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
                 {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 04</span> */}
-                <h2 className="text-3xl font-semibold tracking-wide text-foreground">
+                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
                   Industrial Design
                 </h2>
               </div>
-              <span className="text-sm text-zinc-500 font-medium mb-1">
+              <span className="text-sm text-muted-foreground font-medium mb-1">
                 {industrialCaseStudies.length} Projects
               </span>
             </div>
@@ -346,11 +370,11 @@ export default function CaseStudiesPage() {
           >
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
-                <h2 className="text-3xl font-semibold tracking-wide text-foreground">
+                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
                   Engineering Support Services
                 </h2>
               </div>
-              <span className="text-sm text-zinc-500 font-medium mb-1">
+              <span className="text-sm text-muted-foreground font-medium mb-1">
                 {engineeringSupportCaseStudies.length} Projects
               </span>
             </div>

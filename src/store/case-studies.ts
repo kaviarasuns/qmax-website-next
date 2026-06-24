@@ -89,6 +89,20 @@ export const engineeringSupportCaseStudies = engineeringSupportCaseStudiesData.m
   (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "services"),
 );
 
+export const fullProductDevelopmentCaseStudies: CaseStudyListItem[] = [
+  {
+    id: 1,
+    title: "Rugged Android Digital Signage Player",
+    image:
+      getCaseStudyCardImage("industrial-iot-gateway-with-poe") ??
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/4.png",
+    link: "/case-studies/v2",
+    category: "development",
+    summary:
+      "Full product development from concept to volume production — rugged Android signage player for North American retail deployment.",
+  },
+];
+
 const countPendingImages = (studies: CaseStudy[]): number => {
   return studies.filter(
     (study) =>

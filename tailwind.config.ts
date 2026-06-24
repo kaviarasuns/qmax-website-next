@@ -88,11 +88,16 @@ export default {
           "0%": { left: "2%" },
           "100%": { left: "98%" },
         },
+        "case-sweep": {
+          "0%": { transform: "translateX(-120%)" },
+          "100%": { transform: "translateX(320%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fw-energy-travel": "fw-energy-travel 16s linear infinite",
+        "case-sweep": "case-sweep 2.6s ease-in-out infinite",
       },
     },
   },
