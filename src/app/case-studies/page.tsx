@@ -33,14 +33,6 @@ const sectionCounts: { [key: string]: number } = {
   "engineering-support-services": engineeringSupportCaseStudies.length,
 };
 
-// Temporary: global card index offsets per section (remove when numbering is dropped)
-const pcbCardOffset = embeddedCaseStudies.length;
-const mechanicalCardOffset = pcbCardOffset + pcbCaseStudies.length;
-const industrialCardOffset =
-  mechanicalCardOffset + mechanicalCaseStudies.length;
-const engineeringSupportCardOffset =
-  industrialCardOffset + industrialCaseStudies.length;
-
 function CaseStudyCardNumber({ number }: { number: number }) {
   return (
     <span
@@ -291,7 +283,7 @@ export default function CaseStudiesPage() {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
               {pcbCaseStudies.map((study, index) => (
                 <div key={`pstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={pcbCardOffset + index + 1} />
+                  <CaseStudyCardNumber number={index + 1} />
                   <CaseStudyCard
                     {...study}
                     imageClassName="object-contain px-14 py-5"
@@ -316,9 +308,7 @@ export default function CaseStudiesPage() {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
               {mechanicalCaseStudies.map((study, index) => (
                 <div key={`mstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber
-                    number={mechanicalCardOffset + index + 1}
-                  />
+                  <CaseStudyCardNumber number={index + 1} />
                   <CaseStudyCard {...study} />
                 </div>
               ))}
@@ -340,9 +330,7 @@ export default function CaseStudiesPage() {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
               {industrialCaseStudies.map((study, index) => (
                 <div key={`istudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber
-                    number={industrialCardOffset + index + 1}
-                  />
+                  <CaseStudyCardNumber number={index + 1} />
                   <CaseStudyCard
                     {...study}
                     // imageBackgroundClassName="bg-blue-200"
@@ -369,9 +357,7 @@ export default function CaseStudiesPage() {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
               {engineeringSupportCaseStudies.map((study, index) => (
                 <div key={`esstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber
-                    number={engineeringSupportCardOffset + index + 1}
-                  />
+                  <CaseStudyCardNumber number={index + 1} />
                   <CaseStudyCard {...study} />
                 </div>
               ))}
