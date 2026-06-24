@@ -1,22 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { Roboto_Mono } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
 import { CaseStudyCarousel } from "@/components/case-study-carousel";
-import {
-  CHALLENGES,
-  FIRMWARE_ITEMS,
-  GALLERY_SLIDES,
-  HARDWARE_COMPONENTS,
-  INTERFACES,
-  META_TAGS,
-  NAV_SECTIONS,
-  RIBBON_STATS,
-  SCOPE_ITEMS,
-  SPECS,
-} from "./content";
+import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
-const GALLERY_IMAGES = GALLERY_SLIDES.map((slide) => slide.src);
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-roboto-mono",
+});
 
 const MONO =
   "font-[family-name:var(--font-roboto-mono),ui-monospace,monospace]";
@@ -37,15 +32,37 @@ function SectionHead({ num, title }: { num: string; title: string }) {
   );
 }
 
-export default function CaseStudyV2Page() {
-  const [activeSection, setActiveSection] = useState(NAV_SECTIONS[0].id);
+export default function CaseStudyPageV2({
+  caseStudy,
+}: {
+  caseStudy: FullProductDevelopmentCaseStudy;
+}) {
+  const {
+    title,
+    subtitle,
+    metaTags,
+    ribbonStats,
+    navSections,
+    images,
+    overview,
+    brief,
+    scopeItems,
+    challenges,
+    hardwareComponents,
+    interfaces,
+    firmwareItems,
+    specs,
+    summary,
+  } = caseStudy;
+
+  const [activeSection, setActiveSection] = useState(navSections[0].id);
   const [ribbonLit, setRibbonLit] = useState(false);
   const [summaryVisible, setSummaryVisible] = useState(false);
   const [scopeVisible, setScopeVisible] = useState<boolean[]>(() =>
-    SCOPE_ITEMS.map(() => false),
+    scopeItems.map(() => false),
   );
   const [fwVisible, setFwVisible] = useState<boolean[]>(() =>
-    FIRMWARE_ITEMS.map(() => false),
+    firmwareItems.map(() => false),
   );
 
   const ribbonRef = useRef<HTMLDivElement>(null);
@@ -54,9 +71,9 @@ export default function CaseStudyV2Page() {
   const fwRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const sections = NAV_SECTIONS.map((s) =>
-      document.getElementById(s.id),
-    ).filter(Boolean) as HTMLElement[];
+    const sections = navSections
+      .map((s) => document.getElementById(s.id))
+      .filter(Boolean) as HTMLElement[];
 
     const spy = new IntersectionObserver(
       (entries) => {
@@ -168,7 +185,9 @@ export default function CaseStudyV2Page() {
   };
 
   return (
-    <div className="bg-[#f5f7fa] text-foreground leading-[1.6] tracking-[0.015em] antialiased">
+    <div
+      className={`${robotoMono.variable} bg-[#f5f7fa] text-foreground leading-[1.6] tracking-[0.015em] antialiased`}
+    >
       <header className="relative bg-[#f5f7fa] text-foreground overflow-hidden pt-[6rem] px-6 pb-[3.4rem]">
         <div className="relative max-w-[1200px] mx-auto grid grid-cols-[0.82fr_1.18fr] gap-[2.8rem] items-stretch max-[920px]:grid-cols-1 max-[920px]:gap-8 max-[920px]:items-start">
           <div className="min-w-0 flex flex-col">
@@ -178,15 +197,15 @@ export default function CaseStudyV2Page() {
               CASE STUDY
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl text-foreground my-[0.6rem] font-medium tracking-[0.005em] leading-[1.1]">
-              Rugged Android Digital Signage Player
+              {title}
             </h1>
             <div className="text-foreground text-lg md:text-xl font-light max-w-[46ch]">
-              Full Product Development — Concept to Volume Production
+              {subtitle}
             </div>
             <div
               className={`${MONO} text-xs tracking-[0.12em] text-foreground mt-[1.3rem] flex flex-wrap gap-y-[0.4rem] gap-x-[1.1rem]`}
             >
-              {META_TAGS.map((tag) => (
+              {metaTags.map((tag) => (
                 <span
                   key={tag}
                   className="inline-flex gap-2 items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-red-500 before:rounded-[1px] before:inline-block"
@@ -203,7 +222,7 @@ export default function CaseStudyV2Page() {
                   : "opacity-0 translate-y-5"
               }`}
             >
-              {RIBBON_STATS.map((stat, index) => {
+              {ribbonStats.map((stat, index) => {
                 const hasRight = index % 2 === 0;
                 const hasBottom = index < 2;
                 return (
@@ -228,10 +247,7 @@ export default function CaseStudyV2Page() {
           </div>
 
           <div className="min-w-0 flex flex-col justify-start">
-            <CaseStudyCarousel
-              images={GALLERY_IMAGES}
-              title="Rugged Android Digital Signage Player"
-            />
+            <CaseStudyCarousel images={images} title={title} />
           </div>
         </div>
       </header>
@@ -243,7 +259,7 @@ export default function CaseStudyV2Page() {
           >
             On this page
           </div>
-          {NAV_SECTIONS.map((section) => {
+          {navSections.map((section) => {
             const isActive = activeSection === section.id;
             return (
               <button
@@ -276,24 +292,14 @@ export default function CaseStudyV2Page() {
           >
             <SectionHead num="01" title="Project Overview" />
             <div>
-              <p className="text-foreground leading-[1.6] mb-4">
-                A major US-based retail technology company approached Qmax
-                Systems to design and manufacture a ruggedized Android Digital
-                Signage Player for deployment across auto showrooms throughout
-                North America. The product needed to simultaneously display live
-                TV channels via HDMI input and overlay dynamic digital signage
-                content — promotions, notifications, and scheduling — in a
-                picture-in-picture configuration.
-              </p>
-              <p className="text-foreground leading-[1.6] mb-4">
-                Qmax Systems delivered the complete product from concept to
-                volume production: hardware design, firmware and Android
-                software development, industrial design, FCC certification, and
-                fulfillment — packaging thousands of units and shipping them
-                directly to the customer&apos;s US distribution point. The
-                product has been running in the field for nearly four years with
-                near-zero reported failures.
-              </p>
+              {overview.map((paragraph) => (
+                <p
+                  key={paragraph.slice(0, 40)}
+                  className="text-foreground leading-[1.6] mb-4"
+                >
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </section>
 
@@ -303,25 +309,14 @@ export default function CaseStudyV2Page() {
           >
             <SectionHead num="02" title="Product Brief" />
             <div>
-              <p className="text-foreground leading-[1.6] mb-4">
-                The Rugged Android Digital Signage Player is a fanless,
-                wall-mountable media appliance powered by the Rockchip RK3566
-                quad-core SoC running Android. It accepts a live HDMI video
-                source (e.g. a cable set-top box or satellite receiver) and
-                renders it alongside managed digital signage content, delivering
-                a unified display experience on any 4K HDMI-connected commercial
-                display.
-              </p>
-              <p className="text-foreground leading-[1.6] mb-4">
-                The unit is housed in a custom CNC-machined aluminum enclosure
-                rated IP54 for commercial environments. It ships with a
-                UL-certified US power adapter, HDMI cable with ferrite cores,
-                and a custom IR remote control — all packed in a branded
-                retail-style carton box, ready for end-user installation.
-                Power-over-Ethernet (PoE) is supported for cable-reduced
-                installations, and over-the-air (OTA) content and firmware
-                updates are fully operational.
-              </p>
+              {brief.map((paragraph) => (
+                <p
+                  key={paragraph.slice(0, 40)}
+                  className="text-foreground leading-[1.6] mb-4"
+                >
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </section>
 
@@ -336,7 +331,7 @@ export default function CaseStudyV2Page() {
               for North America:
             </p>
             <ul className="list-none mt-[1.2rem] mb-0 p-0 grid grid-cols-2 gap-y-[0.1rem] gap-x-8 max-[640px]:grid-cols-1">
-              {SCOPE_ITEMS.map((item, index) => (
+              {scopeItems.map((item, index) => (
                 <li
                   key={item}
                   ref={(el) => {
@@ -360,7 +355,7 @@ export default function CaseStudyV2Page() {
           >
             <SectionHead num="04" title="Engineering Challenges" />
             <div className="grid gap-[0.7rem] mt-[1.2rem]">
-              {CHALLENGES.map((row) => (
+              {challenges.map((row) => (
                 <div
                   key={row.challenge}
                   className="grid grid-cols-[0.85fr_1.15fr] bg-white border border-[#e3e8ee] rounded-lg overflow-hidden transition-[transform,box-shadow,border-color] duration-[250ms] ease-[ease] hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(28,42,58,0.13)] motion-reduce:transition-none max-[680px]:grid-cols-1"
@@ -396,7 +391,7 @@ export default function CaseStudyV2Page() {
           >
             <SectionHead num="05" title="Major Hardware Components" />
             <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-[0.8rem] mt-[1.2rem]">
-              {HARDWARE_COMPONENTS.map((card) => (
+              {hardwareComponents.map((card) => (
                 <div
                   key={card.title}
                   className="bg-white border border-[#e3e8ee] rounded-lg py-[1.1rem] px-[1.2rem] relative transition-[transform,box-shadow] duration-[250ms] ease-[ease] hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(28,42,58,0.13)] motion-reduce:transition-none before:content-[''] before:absolute before:left-0 before:top-[1.1rem] before:bottom-[1.1rem] before:w-[3px] before:bg-red-500 before:rounded-[2px]"
@@ -418,7 +413,7 @@ export default function CaseStudyV2Page() {
           >
             <SectionHead num="06" title="Major Interfaces & Protocols" />
             <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-[0.8rem] mt-[1.2rem]">
-              {INTERFACES.map((card) => (
+              {interfaces.map((card) => (
                 <div
                   key={card.title}
                   className="bg-white border border-[#e3e8ee] rounded-lg py-[1.1rem] px-[1.2rem] relative transition-[transform,box-shadow] duration-[250ms] ease-[ease] hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(28,42,58,0.13)] motion-reduce:transition-none before:content-[''] before:absolute before:left-0 before:top-[1.1rem] before:bottom-[1.1rem] before:w-[3px] before:bg-red-500 before:rounded-[2px]"
@@ -440,7 +435,7 @@ export default function CaseStudyV2Page() {
           >
             <SectionHead num="07" title="Key Firmware & Software Activities" />
             <div className="mt-[1.2rem] grid relative before:content-[''] before:absolute before:left-[22px] before:top-2 before:bottom-2 before:w-0.5 before:bg-[#e3e8ee]">
-              {FIRMWARE_ITEMS.map((item, index) => {
+              {firmwareItems.map((item, index) => {
                 const visible = fwVisible[index];
                 return (
                   <div
@@ -481,7 +476,7 @@ export default function CaseStudyV2Page() {
           >
             <SectionHead num="08" title="Technical Specifications" />
             <div className="mt-[1.2rem] bg-white border border-[#e3e8ee] rounded-lg overflow-hidden">
-              {SPECS.map((row) => (
+              {specs.map((row) => (
                 <div
                   key={row.key}
                   className="grid grid-cols-[230px_1fr] border-b border-[#e3e8ee] last:border-b-0 hover:bg-[#e8f1fb] max-[560px]:grid-cols-1"
@@ -513,26 +508,14 @@ export default function CaseStudyV2Page() {
               }`}
             >
               <div className="relative">
-                <p className="text-base text-white text-justify max-w-[82ch] leading-[1.6] mb-4">
-                  The Rugged Android Digital Signage Player demonstrates Qmax
-                  Systems&apos; end-to-end product development capability — from
-                  an unconventional architectural challenge (HDMI input on a SoC
-                  with no native HDMI RX) through to volume-manufactured units
-                  running in commercial environments across North America. The
-                  project required deep expertise across hardware design, kernel
-                  and BSP development, Android application engineering,
-                  regulatory certification, and manufacturing operations
-                  simultaneously.
-                </p>
-                <p className="text-base text-white text-justify max-w-[82ch] leading-[1.6] mb-4">
-                  With thousands of units deployed and near-zero field failures
-                  over four years of continuous operation, the product stands as
-                  a flagship reference for Qmax&apos;s concept-to-production
-                  methodology. The same full-stack capability — architecture,
-                  PCB design, firmware, Android, industrial design,
-                  certification, and manufacturing — is available to customers
-                  bringing new product ideas to market.
-                </p>
+                {summary.map((paragraph) => (
+                  <p
+                    key={paragraph.slice(0, 40)}
+                    className="text-base text-white text-justify max-w-[82ch] leading-[1.6] mb-4"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
                 <div className="text-2xl font-light text-white tracking-[0.03em] mt-[1.4rem] mb-[0.3rem]">
                   Qmax Systems:{" "}
                   <b className="text-red-500 font-normal">

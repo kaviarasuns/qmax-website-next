@@ -1,6 +1,10 @@
 import type { CaseStudy } from "../../types/case-study";
 import { embeddedCaseStudiesData } from "./embedded-case-studies";
 import { engineeringSupportCaseStudiesData } from "./engineering-support-case-studies";
+import {
+  fullProductDevelopmentCaseStudiesData,
+  getFullProductDevelopmentCardImage,
+} from "./full-product-development-case-studies";
 import { industrialCaseStudiesData } from "./industrial-case-studies";
 import { mechanicalCaseStudiesData } from "./mechanical-case-studies";
 import { pcbCaseStudiesData } from "./pcb-case-studies";
@@ -89,19 +93,15 @@ export const engineeringSupportCaseStudies = engineeringSupportCaseStudiesData.m
   (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "services"),
 );
 
-export const fullProductDevelopmentCaseStudies: CaseStudyListItem[] = [
-  {
-    id: 1,
-    title: "Rugged Android Digital Signage Player",
-    image:
-      getCaseStudyCardImage("industrial-iot-gateway-with-poe") ??
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/4.png",
-    link: "/case-studies/v2",
+export const fullProductDevelopmentCaseStudies: CaseStudyListItem[] =
+  fullProductDevelopmentCaseStudiesData.map((study, index) => ({
+    id: index + 1,
+    title: study.title,
+    image: getFullProductDevelopmentCardImage(study),
+    link: `/case-studies/${study.slug}`,
     category: "development",
-    summary:
-      "Full product development from concept to volume production — rugged Android signage player for North American retail deployment.",
-  },
-];
+    summary: study.listingSummary,
+  }));
 
 const countPendingImages = (studies: CaseStudy[]): number => {
   return studies.filter(
