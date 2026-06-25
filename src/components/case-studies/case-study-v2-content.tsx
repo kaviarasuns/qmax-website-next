@@ -432,10 +432,10 @@ export function CaseStudyV2Content({
                 Interested in a similar product development engagement? Contact
                 Qmax Systems at{" "}
                 <Link
-                  href="https://www.qmaxsys.com"
+                  href="mailto:info@qmaxsys.com"
                   className="text-white border-b border-b-red-500 pb-px"
                 >
-                  www.qmaxsys.com
+                  info@qmaxsys.com
                 </Link>
               </div>
             </div>
