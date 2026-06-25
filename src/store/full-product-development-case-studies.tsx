@@ -1,4 +1,6 @@
 import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
+import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
+import { wifi6eCybersecurityGatewayCaseStudy } from "@/store/full-product-development-case-studies/wifi-6e-cybersecurity-gateway";
 
 export type FullProductDevelopmentNavSection = {
   id: string;
@@ -334,6 +336,8 @@ export const fullProductDevelopmentCaseStudiesData: FullProductDevelopmentCaseSt
           "Full product development case study — rugged Android digital signage player from concept to volume production.",
       },
     },
+    obdIiDiagnosticsDeviceCaseStudy,
+    wifi6eCybersecurityGatewayCaseStudy,
   ];
 
 export function getFullProductDevelopmentCaseStudy(
