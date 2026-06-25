@@ -71,7 +71,7 @@ export function CaseStudyV3Header({
           </div>
           <div
             ref={ribbonRef}
-            className={`relative grid grid-cols-2 border border-[#063458] rounded-lg overflow-hidden bg-[#04243d] mt-auto max-[920px]:mt-[1.4rem] transition-[opacity,transform] duration-700 ease-[ease] motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 ${
+            className={`relative grid grid-cols-2 border border-[#063458] rounded-lg overflow-hidden bg-[#04243d] mt-[1.4rem] transition-[opacity,transform] duration-700 ease-[ease] motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 ${
               ribbonLit
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-5"
