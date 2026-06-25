@@ -40,7 +40,7 @@ function CaseStudyCardNumber({ number }: { number: number }) {
   return (
     <span
       aria-hidden
-      className="absolute top-3 left-3 z-10 flex h-8 min-w-8 items-center justify-center rounded-full bg-zinc-900/90 px-2 text-sm font-bold tabular-nums text-white shadow-md"
+      className="absolute top-3 left-5 z-10 text-base font-bold tabular-nums text-white drop-shadow-md"
     >
       {number}
     </span>
