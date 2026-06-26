@@ -34,10 +34,12 @@ export default function CaseStudyPageV2({
     images,
     overview,
     brief,
+    scopeIntro,
     scopeItems,
     challenges,
     hardwareComponents,
     interfaces,
+    firmwareIntro,
     firmwareItems,
     specs,
     summary,
@@ -69,10 +71,12 @@ export default function CaseStudyPageV2({
         navSections={navSections}
         overview={overview}
         brief={brief}
+        scopeIntro={scopeIntro}
         scopeItems={scopeItems}
         challenges={challenges}
         hardwareComponents={hardwareComponents}
         interfaces={interfaces}
+        firmwareIntro={firmwareIntro}
         firmwareItems={firmwareItems}
         specs={specs}
         summary={summary}

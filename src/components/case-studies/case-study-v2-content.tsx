@@ -5,14 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import { MONO } from "@/components/case-studies/case-study-v2-shared";
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
-function SectionHead({ num, title }: { num: string; title: string }) {
+function SectionHead({ title }: { title: string }) {
   return (
     <div className="flex items-baseline gap-[0.9rem] mb-[1.2rem]">
-      <span
-        className={`${MONO} text-xs text-[#5e97d5] font-medium tracking-[0.06em]`}
-      >
-        {num}
-      </span>
       <h2 className="text-2xl md:text-3xl text-foreground font-light tracking-[0.03em] leading-[1.15] m-0">
         {title}
       </h2>
@@ -26,10 +21,12 @@ type ContentProps = Pick<
   | "navSections"
   | "overview"
   | "brief"
+  | "scopeIntro"
   | "scopeItems"
   | "challenges"
   | "hardwareComponents"
   | "interfaces"
+  | "firmwareIntro"
   | "firmwareItems"
   | "specs"
   | "summary"
@@ -39,10 +36,12 @@ export function CaseStudyV2Content({
   navSections,
   overview,
   brief,
+  scopeIntro,
   scopeItems,
   challenges,
   hardwareComponents,
   interfaces,
+  firmwareIntro,
   firmwareItems,
   specs,
   summary,
@@ -195,7 +194,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="overview"
         >
-          <SectionHead num="01" title="Project Overview" />
+          <SectionHead title="Project Overview" />
           <div>
             {overview.map((paragraph) => (
               <p
@@ -212,7 +211,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="brief"
         >
-          <SectionHead num="02" title="Product Brief" />
+          <SectionHead title="Product Brief" />
           <div>
             {brief.map((paragraph) => (
               <p
@@ -229,12 +228,8 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="scope"
         >
-          <SectionHead num="03" title="Qmax Scope of Work" />
-          <p className="text-foreground max-w-[74ch] leading-[1.6] mb-4">
-            Qmax Systems executed the entire product lifecycle under one roof,
-            from the first architectural sketch to palletized shipments bound
-            for North America:
-          </p>
+          <SectionHead title="Qmax Scope of Work" />
+          <p className="text-foreground leading-[1.6] mb-4">{scopeIntro}</p>
           <ul className="list-none mt-[1.2rem] mb-0 p-0 grid grid-cols-2 gap-y-[0.1rem] gap-x-8 max-[640px]:grid-cols-1">
             {scopeItems.map((item, index) => (
               <li
@@ -258,7 +253,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="challenges"
         >
-          <SectionHead num="04" title="Engineering Challenges" />
+          <SectionHead title="Engineering Challenges" />
           <div className="grid gap-[0.7rem] mt-[1.2rem]">
             {challenges.map((row) => (
               <div
@@ -294,14 +289,14 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="components"
         >
-          <SectionHead num="05" title="Major Hardware Components" />
+          <SectionHead title="Major Hardware Components" />
           <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-[0.8rem] mt-[1.2rem]">
             {hardwareComponents.map((card) => (
               <div
                 key={card.title}
                 className="bg-white border border-[#e3e8ee] rounded-lg py-[1.1rem] px-[1.2rem] relative transition-[transform,box-shadow] duration-[250ms] ease-[ease] hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(28,42,58,0.13)] motion-reduce:transition-none before:content-[''] before:absolute before:left-0 before:top-[1.1rem] before:bottom-[1.1rem] before:w-[3px] before:bg-red-500 before:rounded-[2px]"
               >
-                <h4 className="text-lg text-foreground font-medium tracking-[0.01em] leading-[1.15] mb-[0.35rem] pl-[0.6rem]">
+                <h4 className="text-lg text-foreground font-medium tracking-[0.01em] leading-[1.15] mb-[0.6rem] pl-[0.6rem]">
                   {card.title}
                 </h4>
                 <p className="text-base m-0 pl-[0.6rem] text-foreground leading-[1.6] text-left">
@@ -316,14 +311,14 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="interfaces"
         >
-          <SectionHead num="06" title="Major Interfaces & Protocols" />
+          <SectionHead title="Major Interfaces & Protocols" />
           <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-[0.8rem] mt-[1.2rem]">
             {interfaces.map((card) => (
               <div
                 key={card.title}
                 className="bg-white border border-[#e3e8ee] rounded-lg py-[1.1rem] px-[1.2rem] relative transition-[transform,box-shadow] duration-[250ms] ease-[ease] hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(28,42,58,0.13)] motion-reduce:transition-none before:content-[''] before:absolute before:left-0 before:top-[1.1rem] before:bottom-[1.1rem] before:w-[3px] before:bg-red-500 before:rounded-[2px]"
               >
-                <h4 className="text-lg text-foreground font-medium tracking-[0.01em] leading-[1.15] mb-[0.35rem] pl-[0.6rem]">
+                <h4 className="text-lg text-foreground font-medium tracking-[0.01em] leading-[1.15] mb-[0.6rem] pl-[0.6rem]">
                   {card.title}
                 </h4>
                 <p className="text-base m-0 pl-[0.6rem] text-foreground leading-[1.6] text-left">
@@ -338,7 +333,10 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="firmware"
         >
-          <SectionHead num="07" title="Key Firmware & Software Activities" />
+          <SectionHead title="Key Firmware & Software Activities" />
+          {firmwareIntro ? (
+            <p className="text-foreground leading-[1.6] mb-4">{firmwareIntro}</p>
+          ) : null}
           <div className="mt-[1.2rem] grid relative before:content-[''] before:absolute before:left-[22px] before:top-2 before:bottom-2 before:w-0.5 before:bg-[#e3e8ee]">
             {firmwareItems.map((item, index) => {
               const visible = fwVisible[index];
@@ -379,7 +377,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="specs"
         >
-          <SectionHead num="08" title="Technical Specifications" />
+          <SectionHead title="Technical Specifications" />
           <div className="mt-[1.2rem] bg-white border border-[#e3e8ee] rounded-lg overflow-hidden">
             {specs.map((row) => (
               <div
@@ -403,7 +401,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem]"
           id="summary"
         >
-          <SectionHead num="09" title="Summary" />
+          <SectionHead title="Summary" />
           <div
             ref={summaryRef}
             className={`bg-[#1c2a3a] text-white rounded-lg py-[2.6rem] px-[2.2rem] mt-[1.4rem] relative overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(700px_280px_at_100%_-20%,rgba(46,120,191,0.35),transparent_60%)] transition-[opacity,transform] duration-700 ease-[ease] motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 ${

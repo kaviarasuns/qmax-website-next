@@ -55,6 +55,8 @@ export const wifi6eCybersecurityGatewayCaseStudy: FullProductDevelopmentCaseStud
       "The WiFi 6E Triband Cybersecurity Gateway is a compact, wall-mountable security appliance built around the MediaTek MT7986AV quad-core SoC. It operates simultaneously on three WiFi bands — 2.4 GHz, 5.1 GHz, and 5.8 GHz — with 4×4 MU-MIMO on each band, driven by dedicated MediaTek radio chips, and housed entirely within the enclosure using a 12-element internal antenna array with no protruding external antennas.",
       "The unit runs a custom OpenWRT firmware stack enhanced with a multi-layer AI-powered cybersecurity engine: DNS-level threat blocking, IP/domain/URL reputation filtering, network attack prevention, IoT device monitoring, and scam detection — all processed on-device without packet payload inspection. Onboard 4 GB DDR4 and 32 GB eMMC provide the memory footprint for real-time threat intelligence databases. It ships with a UL-certified US power adapter, packed in a custom carton ready for end-user installation, with OTA firmware and security-policy updates fully operational from day one.",
     ],
+    scopeIntro:
+      "Qmax Systems executed the entire product lifecycle under one roof, from the first architectural sketch to palletized shipments bound for North America:",
     scopeItems: [
       "Hardware Architecture — full schematic design and BOM development centred on the MediaTek MT7986AV SoC and WiFi radio ecosystem",
       "PCB Design — 6-layer impedance-controlled PCB layout covering RF, high-speed DDR4/PCIe, power, and analog design domains",

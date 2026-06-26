@@ -57,6 +57,8 @@ export const obdIiDiagnosticsDeviceCaseStudy: FullProductDevelopmentCaseStudy =
       "The device runs embedded Linux on a dual-core ARM Cortex-A7 processor with onboard Wi-Fi, BLE, LTE, and GPS, housed in a compact IP65-rated ABS enclosure with a built-in Li-Po battery, wireless charging, USB-C, and a small LCD display. It is designed to stay powered on and cloud-connected at all times, delivering sub-second response from plug-in to data availability.",
       "The OBD-II Diagnostics Device automatically detects the vehicle OEM and dynamically switches OBD-II communication protocols — supporting CAN, ISO 15765, SAE J1850 VPW (GM), and SAE J1850 PWM (Ford) — using the STN2120 OBD translator IC. The device meets FCC, RoHS, and California Proposition 65 compliance requirements.",
     ],
+    scopeIntro:
+      "Qmax Systems executed the entire product lifecycle under one roof, from the first architectural sketch to palletized shipments bound for North America:",
     scopeItems: [
       "Industrial Design (ID) — Ergonomic, compact, and rugged form factor designed for one-handed use by workshop technicians",
       "Hardware Architecture & Circuit Design — Multi-radio SoC platform with automotive-grade power management, OBD interface, and protection circuits",

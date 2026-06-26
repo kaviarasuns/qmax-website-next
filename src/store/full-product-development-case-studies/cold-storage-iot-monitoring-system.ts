@@ -56,6 +56,8 @@ export const coldStorageIotMonitoringSystemCaseStudy: FullProductDevelopmentCase
       "The Cold Storage IoT Monitoring System (model: QMCCS1-01) is a LiPo battery-operated and DC-powered connected device housed in a rugged, compact aluminium enclosure. It continuously monitors up to four NTC temperature sensors and two pressure sensors, providing a complete picture of cold chain environmental conditions. Cellular (LTE/GSM), Wi-Fi, and Bluetooth connectivity ensure data reaches the cloud via the best available link, while GPS enables real-time asset tracking and RTC time synchronisation.",
       "Four relay outputs allow direct control of refrigeration equipment — compressors, fans, alarms — from the cloud or on-device logic. A buzzer provides local alerts. When connectivity is unavailable, the device stores timestamped sensor logs locally and performs a seamless, lossless data sync to AWS IoT once a link is restored. OTA firmware updates keep the fleet current without physical access. The product is designed and manufactured entirely in India.",
     ],
+    scopeIntro:
+      "Qmax Systems executed the entire product lifecycle under one roof, from the first architectural sketch to palletized shipments bound for North America:",
     scopeItems: [
       "Full product architecture definition: connectivity strategy, power topology, sensor interface design, and cloud integration framework",
       "Hardware design: schematic capture, BOM development, power management (LiPo charge/discharge, DC input, battery monitoring, protection), and relay output driver design",

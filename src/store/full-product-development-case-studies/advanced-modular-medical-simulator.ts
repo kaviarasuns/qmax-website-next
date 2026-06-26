@@ -42,8 +42,9 @@ export const advancedModularMedicalSimulatorCaseStudy: FullProductDevelopmentCas
     brief: [
       "The AMMDK is a multi-board embedded electronics platform built around the Qualcomm Snapdragon 820 System-on-Module (SoM) as the main application processor, a dedicated 9-port Broadcom BCM53128 Gigabit Ethernet switch board as the module network backbone, and a very high-power PoE Sourcing Equipment stage that delivers both data and actuation power to each manikin segment over a single Ethernet cable. The Snapdragon SoM runs Linux; an NXP Kinetis K66 ARM Cortex-M4F runs an RTOS for hard real-time peripheral I/O, with a K20 for non-intrusive debug. The platform exposes GbE, USB 3.0, HDMI, CAN, SPI, I²C, UART, GPIO, ADC, DAC, and PWM through a main board and an interchangeable Application Board. Qmax developed the entire hardware platform, the Linux BSP, the RTOS layer, and the full peripheral driver API and test suite; the application software was built by the customer and third parties on the open-source AMM standards.",
     ],
+    scopeIntro:
+      "The customer provided the overall system architecture concept and program requirements. Qmax Systems executed the complete hardware platform development — through EVT, DVT, and small-volume production. Qmax did not develop the end-application software; Qmax delivered the hardware, firmware, OS bring-up, and all peripheral driver APIs on which the application layer was built:",
     scopeItems: [
-      "The customer provided the overall system architecture concept and program requirements. Qmax Systems executed the complete hardware platform development — through EVT, DVT, and small-volume production. Qmax did not develop the end-application software; Qmax delivered the hardware, firmware, OS bring-up, and all peripheral driver APIs on which the application layer was built",
       "Hardware Architecture — full system architecture refinement and multi-board schematic design covering the Qualcomm Snapdragon 820 SoM, the 9-port Broadcom BCM53128 Gigabit Ethernet switch board, the high-power PoE PSE stage, Kinetis K66 / K20 MCUs, USB 3.0 hub, CAN transceiver, level translators, and all peripheral I/O",
       "PCB Design — multi-layer impedance-controlled PCB layout for the AMMDK main board, the 9-port Gigabit Ethernet switch board, and the Application Board; high-speed routing for 8× GbE channels, USB 3.0, PCIe, HDMI, and DDR; power-domain isolation between the high-power PoE / 48V actuator bus and 3.3V / 1.8V logic",
       "9-Port Gigabit Ethernet Switch Board — dedicated network switch board built on the Broadcom BCM53128 — one uplink port to the Qualcomm SoM and eight downstream PoE-injected ports feeding distributed manikin module segments; full MDIO switch management and VLAN/QoS channel isolation",
@@ -154,7 +155,8 @@ export const advancedModularMedicalSimulatorCaseStudy: FullProductDevelopmentCas
           "Buck regulators for the 5V / 3.3V / 1.8V logic rails optimized for low ADC noise; a TPS63000 buck-boost stage for battery-backed portable operation; and an SSQ15 isolated DC-DC module",
       },
       {
-        title: "Level Translators & Protection (SN74AVC2T4, FXMAR2104, TPD12S016, FT230RQ)",
+        title:
+          "Level Translators & Protection (SN74AVC2T4, FXMAR2104, TPD12S016, FT230RQ)",
         description:
           "Voltage level translation for CAN and mixed-rail interfaces; HDMI ESD/level protection; and a USB-UART bridge for the serial diagnostics console",
       },
@@ -208,14 +210,16 @@ export const advancedModularMedicalSimulatorCaseStudy: FullProductDevelopmentCas
       {
         title: "DDS Data Bus (Middleware)",
         description:
-          "Data Distribution Services middleware over the Gigabit fabric forms the AMM inter-module communication layer; REST Adapter, TCP Bridge, and Serial Bridge extend it to web, network, and serial modules — published open-source: https://github.com/AdvancedModularManikin/DDS",
+          "Data Distribution Services middleware over the Gigabit fabric forms the AMM inter-module communication layer; REST Adapter, TCP Bridge, and Serial Bridge extend it to web, network, and serial modules",
       },
     ],
+    firmwareIntro:
+      "Qmax developed the complete hardware-enablement software stack — bootloader, Linux BSP, RTOS, peripheral drivers, and APIs. Qmax did not develop the end-application software; the application layer was built by the customer and third-party developers on top of these Qmax-delivered APIs and the open AMM standards.",
     firmwareItems: [
       {
         title: "Linux BSP & Snapdragon 820 Bring-Up",
         description:
-          "Qmax developed the complete hardware-enablement software stack — bootloader, Linux BSP, RTOS, peripheral drivers, and APIs. Qmax did not develop the end-application software; the application layer was built by the customer and third-party developers on top of these Qmax-delivered APIs and the open AMM standards. U-Boot bootloader ported to the Snapdragon 820 SoM; Linux kernel configured with a custom device tree covering PCIe, the USB 3.0 hub, HDMI, I²C, SPI, UART, GPIO, and the USB link to the Kinetis K66; all SoM and peripheral power-rail sequencing validated.",
+          "U-Boot bootloader ported to the Snapdragon 820 SoM; Linux kernel configured with a custom device tree covering PCIe, the USB 3.0 hub, HDMI, I²C, SPI, UART, GPIO, and the USB link to the Kinetis K66; all SoM and peripheral power-rail sequencing validated.",
       },
       {
         title: "RTOS & Kinetis K66 Real-Time Firmware",
@@ -380,8 +384,7 @@ export const advancedModularMedicalSimulatorCaseStudy: FullProductDevelopmentCas
     listingSummary:
       "Complete embedded electronics platform for an open-standard medical simulation manikin — Snapdragon 820 SoM, 9-port GbE PoE backbone, Linux + RTOS, EVT through small-volume production.",
     metadata: {
-      title:
-        "Advanced Modular Medical Simulator Developer Kit | Case Study",
+      title: "Advanced Modular Medical Simulator Developer Kit | Case Study",
       description:
         "Full product development case study — Snapdragon 820-based medical simulation developer kit with 9-port Gigabit Ethernet PoE backbone, Linux BSP, RTOS, and open-source driver APIs.",
     },

@@ -38,10 +38,12 @@ export type FullProductDevelopmentCaseStudy = {
   cardImageIndex?: number;
   overview: string[];
   brief: string[];
+  scopeIntro: string;
   scopeItems: string[];
   challenges: FullProductDevelopmentChallenge[];
   hardwareComponents: FullProductDevelopmentCard[];
   interfaces: FullProductDevelopmentCard[];
+  firmwareIntro?: string;
   firmwareItems: FullProductDevelopmentCard[];
   specs: FullProductDevelopmentSpec[];
   summary: string[];
@@ -96,6 +98,8 @@ export const fullProductDevelopmentCaseStudiesData: FullProductDevelopmentCaseSt
         "The Rugged Android Digital Signage Player is a fanless, wall-mountable media appliance powered by the Rockchip RK3566 quad-core SoC running Android. It accepts a live HDMI video source (e.g. a cable set-top box or satellite receiver) and renders it alongside managed digital signage content, delivering a unified display experience on any 4K HDMI-connected commercial display.",
         "The unit is housed in a custom CNC-machined aluminum enclosure rated IP54 for commercial environments. It ships with a UL-certified US power adapter, HDMI cable with ferrite cores, and a custom IR remote control — all packed in a branded retail-style carton box, ready for end-user installation. Power-over-Ethernet (PoE) is supported for cable-reduced installations, and over-the-air (OTA) content and firmware updates are fully operational.",
       ],
+      scopeIntro:
+        "Qmax Systems executed the entire product lifecycle under one roof, from the first architectural sketch to palletized shipments bound for North America:",
       scopeItems: [
         "Full hardware architecture, schematic design, and BOM development for the RK3566-based mainboard",
         "6-layer HDI PCB design including high-speed LPDDR4, HDMI 2.0, and USB 3.0 routing with controlled impedance",
