@@ -9,6 +9,8 @@ import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-devel
 const V3_HEADER_TITLES = new Set([
   "OBD-II Diagnostics Device",
   "WiFi 6E Triband Cybersecurity Gateway",
+  "Outdoor Wi-Fi 6 Access Point",
+  "Cold Storage IoT Monitoring System",
 ]);
 
 const robotoMono = Roboto_Mono({

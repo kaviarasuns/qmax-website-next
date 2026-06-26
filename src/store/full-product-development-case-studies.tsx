@@ -1,5 +1,7 @@
 import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
+import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
 import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
+import { outdoorWifi6AccessPointCaseStudy } from "@/store/full-product-development-case-studies/outdoor-wifi-6-access-point";
 import { wifi6eCybersecurityGatewayCaseStudy } from "@/store/full-product-development-case-studies/wifi-6e-cybersecurity-gateway";
 
 export type FullProductDevelopmentNavSection = {
@@ -84,7 +86,7 @@ export const fullProductDevelopmentCaseStudiesData: FullProductDevelopmentCaseSt
         { id: "summary", num: "09", label: "Summary" },
       ],
       images: iotGatewayImages,
-      cardImageIndex: 3,
+      cardImageIndex: 7,
       overview: [
         "A major US-based retail technology company approached Qmax Systems to design and manufacture a ruggedized Android Digital Signage Player for deployment across auto showrooms throughout North America. The product needed to simultaneously display live TV channels via HDMI input and overlay dynamic digital signage content — promotions, notifications, and scheduling — in a picture-in-picture configuration.",
         "Qmax Systems delivered the complete product from concept to volume production: hardware design, firmware and Android software development, industrial design, FCC certification, and fulfillment — packaging thousands of units and shipping them directly to the customer's US distribution point. The product has been running in the field for nearly four years with near-zero reported failures.",
@@ -338,6 +340,8 @@ export const fullProductDevelopmentCaseStudiesData: FullProductDevelopmentCaseSt
     },
     obdIiDiagnosticsDeviceCaseStudy,
     wifi6eCybersecurityGatewayCaseStudy,
+    outdoorWifi6AccessPointCaseStudy,
+    coldStorageIotMonitoringSystemCaseStudy,
   ];
 
 export function getFullProductDevelopmentCaseStudy(
