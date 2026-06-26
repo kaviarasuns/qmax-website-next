@@ -1,4 +1,5 @@
 import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
+import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
 import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
 import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
 import { outdoorWifi6AccessPointCaseStudy } from "@/store/full-product-development-case-studies/outdoor-wifi-6-access-point";
@@ -342,6 +343,7 @@ export const fullProductDevelopmentCaseStudiesData: FullProductDevelopmentCaseSt
     wifi6eCybersecurityGatewayCaseStudy,
     outdoorWifi6AccessPointCaseStudy,
     coldStorageIotMonitoringSystemCaseStudy,
+    advancedModularMedicalSimulatorCaseStudy,
   ];
 
 export function getFullProductDevelopmentCaseStudy(
