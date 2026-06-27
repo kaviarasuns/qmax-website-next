@@ -537,7 +537,7 @@ export default function DesignToManufacturingV6() {
 
         {/* CAROUSEL */}
         <div
-          className="ctm-c relative flex-[1_1_0] min-h-0 overflow-x-hidden"
+          className="ctm-c relative flex-[1_1_0] min-h-0 overflow-x-hidden mt-[clamp(12px,2vh,28px)] mb-[clamp(12px,2vh,28px)]"
           style={{ ...aC, overflowY: "clip" }}
         >
           <div
