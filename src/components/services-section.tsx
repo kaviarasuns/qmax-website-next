@@ -4,107 +4,68 @@ import * as React from "react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import {
+  fullProductDevelopmentCaseStudiesData,
+  getFullProductDevelopmentCardImage,
+} from "@/store/full-product-development-case-studies";
 import CaseStudyCard from "./CaseStudyCard";
 
-const carouselItems: {
+type CarouselItem = {
   id: number;
   image: string;
   title: string;
   summary: string;
   link: string;
   imageRotation?: number;
-}[] = [
-  {
-    id: 1,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/4.png",
-    title: "Industrial IOT gateway with POE",
-    summary:
-      "Embedded controller program designed for dependable monitoring, control logic, and secure field operation.",
-    link: "/case-studies/industrial-iot-gateway-with-poe",
-  },
-  {
-    id: 2,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_BOT.svg",
-    title: "Smart OBD2 Device",
-    summary:
-      "Industrial electronics platform engineered for rugged deployment, stable power delivery, and manufacturable hardware.",
-    link: "/case-studies/smart-obd2-device",
-    imageRotation: 90,
-  },
-  {
-    id: 3,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.1.png",
-    title: "Communication Control System Enclosure",
-    summary:
-      "End-to-end embedded design and development for connected products, controls, and intelligent devices.",
-    link: "/case-studies/rugged-communication-control-system-enclosure",
-  },
-  {
-    id: 4,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/industrial/oxygen_concentrator/1.png",
-    title: "Oxygen Generator",
-    summary:
-      "Multi-physics PCB design services focused on signal integrity, manufacturability, and first-pass success.",
-    link: "/case-studies/oxygen-generator",
-  },
-  {
-    id: 5,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/1.png",
-    title: "Wi-Fi 6E Router",
-    summary:
-      "High-performance Wi-Fi 6E router delivering ultra-fast multi-band connectivity, low latency communication, and secure networking for modern connected environments.",
-    link: "/case-studies/wifi-6e-router",
-  },
-  {
-    id: 6,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_cost_bldc_motor_controller_for_evs/1.1.png",
-    title: "Ultra Low Cost BLDC Motor Controller for EVs",
-    summary:
-      "An ultra low-cost BLDC motor controller platform designed for electric vehicles, delivering efficient motor control, compact integration, and reliable embedded performance.",
-    link: "/case-studies/ultra-low-cost-bldc-motor-controller-for-evs",
-  },
-  {
-    id: 7,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_pack/1.1.png",
-    title: "BMS Controller",
-    summary:
-      "High-speed data logging and real-time analytics platform for battery management systems with 100 kHz sampling across 32 parallel channels.",
-    link: "/case-studies/bms-controller",
-  },
-  {
-    id: 8,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/GIMBAL/GIMBAL_4_AXIS.1.png",
-    title: "4-Axis Gimbal",
-    summary:
-      "A precision-engineered 4-axis gimbal system designed for smooth stabilization, dynamic balancing, and high-performance motion control applications.",
-    link: "/case-studies/gimbal",
-  },
-  {
-    id: 9,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/frizb_ai_box/6.png",
-    title: "Warehouse Camera Controller Unit",
-    summary:
-      "A compact AI-enabled industrial enclosure engineered for embedded intelligence systems with optimized thermal management and rugged field deployment.",
-    link: "/case-studies/warehouse-camera-controller-unit-mechanical",
-  },
-  {
-    id: 10,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD2/OBD_V4_RENDER_23_NOV_2024_MG2_2.1.png",
-    title: "OBD V4 Smart Diagnostic Unit",
-    summary:
-      "Advanced OBD V4 smart diagnostic unit designed for real-time vehicle health monitoring, fault detection, and connected fleet diagnostics with secure cloud integration.",
-    link: "/case-studies/obd-v4-system",
-  },
+};
+
+const fullProductDevelopmentCarouselItems: CarouselItem[] =
+  fullProductDevelopmentCaseStudiesData.map((study, index) => ({
+    id: index + 1,
+    image: getFullProductDevelopmentCardImage(study),
+    title: study.title,
+    summary: study.listingSummary,
+    link: `/case-studies/${study.slug}`,
+  }));
+
+const carouselItems: CarouselItem[] = [
+  ...fullProductDevelopmentCarouselItems,
+  // {
+  //   id: 7,
+  //   image:
+  //     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_pack/1.1.png",
+  //   title: "BMS Controller",
+  //   summary:
+  //     "High-speed data logging and real-time analytics platform for battery management systems with 100 kHz sampling across 32 parallel channels.",
+  //   link: "/case-studies/bms-controller",
+  // },
+  // {
+  //   id: 8,
+  //   image:
+  //     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/GIMBAL/GIMBAL_4_AXIS.1.png",
+  //   title: "4-Axis Gimbal",
+  //   summary:
+  //     "A precision-engineered 4-axis gimbal system designed for smooth stabilization, dynamic balancing, and high-performance motion control applications.",
+  //   link: "/case-studies/gimbal",
+  // },
+  // {
+  //   id: 9,
+  //   image:
+  //     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/frizb_ai_box/6.png",
+  //   title: "Warehouse Camera Controller Unit",
+  //   summary:
+  //     "A compact AI-enabled industrial enclosure engineered for embedded intelligence systems with optimized thermal management and rugged field deployment.",
+  //   link: "/case-studies/warehouse-camera-controller-unit-mechanical",
+  // },
+  // {
+  //   id: 10,
+  //   image:
+  //     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD2/OBD_V4_RENDER_23_NOV_2024_MG2_2.1.png",
+  //   title: "OBD V4 Smart Diagnostic Unit",
+  //   summary:
+  //     "Advanced OBD V4 smart diagnostic unit designed for real-time vehicle health monitoring, fault detection, and connected fleet diagnostics with secure cloud integration.",
+  //   link: "/case-studies/obd-v4-system",
+  // },
 ];
 
 const SCROLL_AMOUNT = 340;
@@ -187,7 +148,12 @@ export function ServicesSection() {
           <div
             ref={scrollRef}
             className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-8 md:gap-5"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" } as React.CSSProperties}
+            style={
+              {
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
+              } as React.CSSProperties
+            }
           >
             {carouselItems.map((item) => (
               <div
