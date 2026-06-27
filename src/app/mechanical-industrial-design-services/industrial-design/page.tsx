@@ -7,10 +7,8 @@ import { FOLDER_TAB_ICONS } from "@/components/services-cmp/capabilities-folder-
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
-import {
-  CoreCapabilitiesSection,
-  type CoreCapability,
-} from "@/components/services-cmp/CoreCapabilitiesSection";
+import { type CoreCapability } from "@/components/services-cmp/CoreCapabilitiesSection";
+import { CoreCapabilitiesSectionV2 } from "@/components/services-cmp/CoreCapabilitiesSectionV2";
 
 const HERO = {
   videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_V2.mp4",
@@ -314,7 +312,7 @@ export default function IndustrialDesignServicesPage() {
 
       {/* <CapabilitiesFolderTabs capabilities={INDUSTRIAL_DESIGN_CAPABILITIES} /> */}
 
-      <CoreCapabilitiesSection
+      <CoreCapabilitiesSectionV2
         capabilities={INDUSTRIAL_DESIGN_CAPABILITIES}
         title="Core"
         titleHighlight="Capabilities"
