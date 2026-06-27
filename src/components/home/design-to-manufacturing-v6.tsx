@@ -518,7 +518,7 @@ export default function DesignToManufacturingV6() {
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
       aria-label="Design to Manufacturing stages"
-      className="relative flex items-start justify-center w-full h-screen overflow-hidden box-border pt-[var(--nav-h)] select-none px-[clamp(20px,5.7vw,74px)] text-[#191919]"
+      className="relative flex items-start justify-center w-full h-screen overflow-hidden box-border pt-[var(--nav-h)] select-none px-[clamp(20px,5.7vw,74px)]"
       style={{
         background: `${CFG.white} ${DOT_BG}`,
         backgroundSize: `${CFG.bgDotSpacing}px ${CFG.bgDotSpacing}px`,
@@ -537,8 +537,8 @@ export default function DesignToManufacturingV6() {
 
         {/* CAROUSEL */}
         <div
-          className="ctm-c relative flex-[1_1_0] min-h-0 overflow-x-hidden overflow-y-visible"
-          style={aC}
+          className="ctm-c relative flex-[1_1_0] min-h-0 overflow-x-hidden"
+          style={{ ...aC, overflowY: "clip" }}
         >
           <div
             aria-hidden
@@ -578,10 +578,7 @@ export default function DesignToManufacturingV6() {
         </div>
 
         {/* STEPPER */}
-        <div
-          className="ctm-s shrink-0 pb-[clamp(20px,3vh,40px)]"
-          style={aS}
-        >
+        <div className="ctm-s shrink-0 pb-[clamp(20px,3vh,40px)]" style={aS}>
           {bp !== "phone" ? (
             <div className="w-full mx-auto">
               {/* ── PILLS ────────────────────────────────────────────────
@@ -604,8 +601,8 @@ export default function DesignToManufacturingV6() {
                         "py-[clamp(5px,0.55vw,8px)] px-[clamp(6px,0.8vw,10px)] rounded-[clamp(1px,0.2vw,2px)]",
                         "transition-[background,color,height,box-shadow] duration-[280ms] ease-[ease]",
                         isActive
-                          ? "h-[clamp(48px,5.2vw,66px)] bg-[linear-gradient(111deg,rgb(0,0,0)_0%,rgb(0,0,0)_50%,rgb(0,0,0)_100%)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14)] text-white text-[clamp(14px,1.328vw,17px)]"
-                          : "h-[clamp(40px,4.4vw,58px)] bg-[linear-gradient(111deg,rgba(217,217,217,0.22)_0%,rgba(217,217,217,0.55)_48.8%,rgba(217,217,217,0.22)_100%)] text-[#191919] text-[clamp(11px,1.094vw,14px)]",
+                          ? "h-[clamp(48px,5.2vw,66px)] bg-[linear-gradient(111deg,rgb(0,0,0)_0%,rgb(0,0,0)_50%,rgb(0,0,0)_100%)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14)] text-white text-base"
+                          : "h-[clamp(40px,4.4vw,58px)] bg-[linear-gradient(111deg,rgba(217,217,217,0.22)_0%,rgba(217,217,217,0.55)_48.8%,rgba(217,217,217,0.22)_100%)] text-sm",
                       )}
                     >
                       {s.pill}
@@ -710,10 +707,10 @@ export default function DesignToManufacturingV6() {
                     <div
                       key={`ph-${p.key}`}
                       className={cn(
-                        "flex items-center justify-center h-7 text-[clamp(10px,1.094vw,18px)] font-inherit transition-colors duration-[280ms] ease-[ease]",
+                        "flex items-center justify-center h-7 text-xs font-inherit transition-colors duration-[280ms] ease-[ease]",
                         isAct
-                          ? "font-semibold text-[#191919]"
-                          : "font-normal text-[rgba(25,25,25,0.42)]",
+                          ? "font-semibold"
+                          : "font-normal text-muted-foreground",
                       )}
                       style={{ gridColumn: `span ${p.span}` }}
                     >
@@ -825,10 +822,10 @@ export default function DesignToManufacturingV6() {
                     <div
                       key={p.key}
                       className={cn(
-                        "flex items-center justify-center h-7 text-[clamp(10px,1.094vw,18px)] font-inherit transition-colors duration-[280ms] ease-[ease]",
+                        "flex items-center justify-center h-7 text-xs font-inherit transition-colors duration-[280ms] ease-[ease]",
                         isAct
-                          ? "font-semibold text-[#191919]"
-                          : "font-normal text-[rgba(25,25,25,0.42)]",
+                          ? "font-semibold"
+                          : "font-normal text-muted-foreground",
                       )}
                       style={{ gridColumn: `span ${p.span}` }}
                     >
@@ -954,28 +951,28 @@ function CardSlide({
           <div className="flex items-end gap-[14px]">
             <div
               aria-hidden
-              className="shrink-0 w-[clamp(28px,3vw,52px)] h-[clamp(28px,3vw,52px)] text-[#FF0000]"
+              className="shrink-0 w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-[#FF0000]"
               dangerouslySetInnerHTML={{ __html: CTM_ICONS[s.id] ?? "" }}
             />
             <div className="flex-1 h-0.5 bg-[linear-gradient(90deg,#CED6E0_0%,rgba(206,214,224,0)_100%)]" />
           </div>
 
-          <h3 className="mt-[clamp(8px,1vw,16px)] text-[clamp(18px,1.6vw,28px)] font-semibold leading-[1.3] tracking-[0.01em] text-[#09090b] text-left">
+          <h3 className="mt-3 md:mt-4 text-2xl lg:text-3xl font-base leading-tight tracking-tight text-left">
             {s.heading}
           </h3>
-          <p className="mt-[clamp(6px,0.7vw,12px)] text-[clamp(15px,1.3vw,20px)] leading-[1.6] text-[#4b5563] text-left">
+          <p className="mt-2 md:mt-3 text-base md:text-lg leading-relaxed text-left">
             {s.body}
           </p>
 
           {s.bullets.length > 0 && (
-            <div className="mt-[clamp(8px,0.8vw,14px)] flex flex-col gap-[clamp(4px,0.4vw,7px)]">
+            <div className="mt-3 flex flex-col gap-1.5 md:gap-2">
               {s.bullets.map((point) => (
                 <div key={point} className="flex items-start gap-2">
                   <span
                     aria-hidden
-                    className="block shrink-0 w-[5px] h-[5px] rounded-full bg-[#FF0000] mt-[clamp(6px,0.5vw,8px)]"
+                    className="block shrink-0 w-[5px] h-[5px] rounded-full bg-[#FF0000] mt-[7px]"
                   />
-                  <span className="text-[clamp(15px,1.3vw,20px)] leading-[1.5] text-[#374151]">
+                  <span className="text-base md:text-lg leading-snug">
                     {point}
                   </span>
                 </div>

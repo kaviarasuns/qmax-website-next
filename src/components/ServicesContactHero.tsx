@@ -538,7 +538,7 @@ export default function ServicesContactHero({
               {/* NDA opt-in */}
               <label
                 htmlFor="nda"
-                className="col-span-full flex items-center gap-2 mt-1 cursor-pointer select-none text-[15px] leading-[1.45] text-[#2a2a2a]"
+                className="col-span-full flex items-center gap-2 mt-1 cursor-pointer select-none text-[15px] leading-[1.45] text-foreground"
               >
                 <input
                   id="nda"
