@@ -2,6 +2,50 @@ import { PCBIndustry } from "@/components/services-cmp/PCBIndustriesSection";
 
 export const PCB_INDUSTRIES: PCBIndustry[] = [
   {
+    id: "medical-healthcare",
+    label: "Medical & Healthcare",
+    title: "Medical & Healthcare",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M3.5 12.5h3l2-5 4 10 2-5h6" />
+      </svg>
+    ),
+    description:
+      "Qmax Systems designs PCBs for medical devices, diagnostics, imaging, and life-critical patient systems. From wearable monitors to surgical and implantable equipment, these layouts meet IPC-6012 Class 3, ISO 13485 design controls, and strict isolation, creepage, and clearance rules of regulated healthcare environments.",
+    subDescription:
+      "Qmax Systems builds leakage-current-safe routing, reinforced isolation barriers, and long-life stack-ups for sterilization and clinical reliability.",
+    image:
+      "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/medical.png",
+    relatedCaseStudies: [
+      {
+        title: "AI GPU Expansion Chassis Motherboard",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG123.svg",
+        href: "/case-studies/ai-gpu-expansion-chassis-motherboard",
+        rotation: 90,
+      },
+      {
+        title: "Pegasus",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/1.4.png",
+        href: "/case-studies/pegasus",
+      },
+      {
+        title: "Typheon",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/typheon/4.png",
+        href: "/case-studies/typheon",
+      },
+    ],
+  },
+  {
     id: "automotive-electronics",
     label: "Automotive Electronics",
     title: "Automotive Electronics",
@@ -46,50 +90,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       },
     ],
   },
-  {
-    id: "medical-healthcare",
-    label: "Medical & Healthcare",
-    title: "Medical & Healthcare",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M3.5 12.5h3l2-5 4 10 2-5h6" />
-      </svg>
-    ),
-    description:
-      "Qmax Systems designs PCBs for medical devices, diagnostics, imaging, and life-critical patient systems. From wearable monitors to surgical and implantable equipment, these layouts meet IPC-6012 Class 3, ISO 13485 design controls, and strict isolation, creepage, and clearance rules of regulated healthcare environments.",
-    subDescription:
-      "Qmax Systems builds leakage-current-safe routing, reinforced isolation barriers, and long-life stack-ups for sterilization and clinical reliability.",
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/medical.png",
-    relatedCaseStudies: [
-      {
-        title: "AI GPU Expansion Chassis Motherboard",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG123.svg",
-        href: "/case-studies/ai-gpu-expansion-chassis-motherboard",
-        rotation: 90,
-      },
-      {
-        title: "Pegasus",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/1.4.png",
-        href: "/case-studies/pegasus",
-      },
-      {
-        title: "Typheon",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/typheon/4.png",
-        href: "/case-studies/typheon",
-      },
-    ],
-  },
+
   {
     id: "aerospace-systems",
     label: "Aerospace Systems",

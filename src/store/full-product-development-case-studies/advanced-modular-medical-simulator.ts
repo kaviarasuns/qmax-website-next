@@ -1,9 +1,14 @@
 import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
-const advancedModularMedicalSimulatorImages =
-  embeddedCaseStudiesData.find((study) => study.id === "poe-control-unit")
-    ?.images ?? [];
+const advancedModularMedicalSimulatorImages = [
+  "poe-control-unit",
+  "poe-power-injector",
+  "industrial-poe-switch",
+].flatMap(
+  (id) =>
+    embeddedCaseStudiesData.find((study) => study.id === id)?.images ?? [],
+);
 
 export const advancedModularMedicalSimulatorCaseStudy: FullProductDevelopmentCaseStudy =
   {
