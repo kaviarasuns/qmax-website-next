@@ -526,7 +526,7 @@ export default function DesignToManufacturingV6() {
     >
       <div
         ref={sectionRef}
-        className="flex flex-col w-full max-w-[1280px] h-[clamp(480px,calc(100vh-150px),860px)] max-h-full min-h-0 mx-auto pt-[clamp(20px,3vh,40px)]"
+        className="flex flex-col w-full max-w-[1280px] h-[clamp(480px,calc(100vh-var(--nav-h)-24px),900px)] max-h-full min-h-0 mx-auto pt-[clamp(20px,3vh,40px)]"
       >
         {/* TITLE — matches Our Services heading pattern */}
         <div className="text-center flex-shrink-0 pt-[clamp(8px,1.5vh,20px)] mb-6 md:mb-7">
@@ -545,7 +545,7 @@ export default function DesignToManufacturingV6() {
             className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(90deg,rgba(243,244,246,0)_0%,rgba(225,230,236,0.70)_47.73%,rgba(243,244,246,0)_100%)]"
           />
           <div
-            className="absolute top-0 bottom-0 left-0 flex items-center will-change-transform z-[1]"
+            className="absolute top-[clamp(8px,1.5vh,20px)] bottom-[clamp(8px,1.5vh,20px)] left-0 flex items-center will-change-transform z-[1]"
             style={{
               gap,
               transform: secW ? `translateX(${tx}px)` : undefined,
