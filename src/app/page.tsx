@@ -6,6 +6,7 @@ import InsideOutV3 from "@/components/InsideOut-V3";
 import DesignToManufacturingV5 from "@/components/home/design-to-manufacturing-v5";
 import StackReveal, { type StackRevealItem } from "@/components/StackReveal";
 import FooterV3 from "@/components/footer-v3";
+import DesignToManufacturingV6 from "@/components/home/design-to-manufacturing-v6";
 
 const DEFAULT_ITEMS: StackRevealItem[] = [
   {
@@ -76,7 +77,7 @@ export default function Home() {
     <>
       <HeroSection />
 
-      <DesignToManufacturingV5 />
+      <DesignToManufacturingV6 />
       {/* <ScrollCardsAnimationV4 onAutoHighlightChange={() => {}} /> */}
       {/* <ServicesV4Stacked lockStackingOnProgrammaticScroll={false} /> */}
       {/* <ServicesV2 /> */}

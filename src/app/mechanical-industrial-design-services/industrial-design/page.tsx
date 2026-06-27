@@ -111,7 +111,7 @@ const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
     imageSrc: "https://d1yetprhniwywz.cloudfront.net/v2/id-service-image.jpeg",
     headline: "Prototyping",
     intro:
-      "Qmax Systems has direct access to prototype facilities and works with a vetted network of manufacturing partners to produce functional prototypes in the fastest possible timeframes.",
+      "Qmax Systems has direct access to prototype facilities and a vetted manufacturing network to produce functional prototypes in the fastest possible timeframes.",
     bullets: [
       {
         title: "Prototype Technologies Chosen for Fidelity and Application",
