@@ -582,7 +582,7 @@ export default function DesignToManufacturingV6() {
         </div>
 
         {/* STEPPER */}
-        <div className="ctm-s shrink-0 mt-auto pt-3 md:pt-4 lg:pt-5" style={aS}>
+        <div className="ctm-s shrink-0 mt-auto pt-[10px] md:pt-[14px] lg:pt-[17px]" style={aS}>
           {bp !== "phone" ? (
             <div className="w-full mx-auto">
               {/* ── PILLS ────────────────────────────────────────────────
