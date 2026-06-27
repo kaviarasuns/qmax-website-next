@@ -3,7 +3,6 @@ import HeroSection from "@/components/home/hero-section";
 import OurServices from "@/components/our-services";
 import { buildMetadata } from "@/lib/seo";
 import InsideOutV3 from "@/components/InsideOut-V3";
-import DesignToManufacturingV5 from "@/components/home/design-to-manufacturing-v5";
 import StackReveal, { type StackRevealItem } from "@/components/StackReveal";
 import FooterV3 from "@/components/footer-v3";
 import DesignToManufacturingV6 from "@/components/home/design-to-manufacturing-v6";
