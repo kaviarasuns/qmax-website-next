@@ -61,6 +61,9 @@ const CFG = {
   bgDotOpacity: 0.032,
   bgDotSpacing: 28,
   bgDotSize: 1,
+
+  /* section height cap — prevents stretch on large displays */
+  sectionMaxHeight: 860,
 } as const;
 
 /* Arrow fraction — the % of total SVG width occupied by the arrowhead */
@@ -518,18 +521,19 @@ export default function DesignToManufacturingV6() {
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
       aria-label="Design to Manufacturing stages"
-      className="relative flex items-start justify-center w-full h-screen overflow-hidden box-border pt-[var(--nav-h)] select-none px-[clamp(20px,5.7vw,74px)]"
+      className="relative flex flex-col items-stretch w-full overflow-hidden box-border pt-[var(--nav-h)] select-none px-[clamp(20px,5.7vw,74px)]"
       style={{
+        height: `min(100vh, calc(${CFG.sectionMaxHeight}px + var(--nav-h)))`,
         background: `${CFG.white} ${DOT_BG}`,
         backgroundSize: `${CFG.bgDotSpacing}px ${CFG.bgDotSpacing}px`,
       }}
     >
       <div
         ref={sectionRef}
-        className="flex flex-col w-full max-w-[1280px] h-[clamp(480px,calc(100vh-150px),860px)] max-h-full min-h-0 mx-auto pt-[clamp(20px,3vh,40px)]"
+        className="flex flex-col h-full min-h-0 w-full max-w-[1280px] mx-auto pt-[clamp(12px,2vh,24px)] pb-[clamp(12px,2vh,24px)]"
       >
         {/* TITLE — matches Our Services heading pattern */}
-        <div className="text-center flex-shrink-0 pt-[clamp(8px,1.5vh,20px)] mb-6 md:mb-7">
+        <div className="text-center flex-shrink-0 pt-1 md:pt-2 mb-3 md:mb-4 lg:mb-5">
           <h2>
             Design to <span className="text-red-500">Manufacturing</span>
           </h2>
@@ -537,7 +541,7 @@ export default function DesignToManufacturingV6() {
 
         {/* CAROUSEL */}
         <div
-          className="ctm-c relative flex-[1_1_0] min-h-0 overflow-x-hidden mt-[clamp(12px,2vh,28px)] mb-[clamp(12px,2vh,28px)]"
+          className="ctm-c relative flex-[1_1_0] min-h-0 overflow-x-hidden py-3 md:py-4 lg:py-5"
           style={{ ...aC, overflowY: "clip" }}
         >
           <div
@@ -578,7 +582,7 @@ export default function DesignToManufacturingV6() {
         </div>
 
         {/* STEPPER */}
-        <div className="ctm-s shrink-0 pb-[clamp(20px,3vh,40px)]" style={aS}>
+        <div className="ctm-s shrink-0 mt-auto pt-3 md:pt-4 lg:pt-5" style={aS}>
           {bp !== "phone" ? (
             <div className="w-full mx-auto">
               {/* ── PILLS ────────────────────────────────────────────────
