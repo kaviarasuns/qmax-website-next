@@ -26,23 +26,32 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
     relatedCaseStudies: [
       {
         title: "AI GPU Expansion Chassis Motherboard",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/INNOVIDE_SIG123.svg",
-        href: "/case-studies/ai-gpu-expansion-chassis-motherboard",
-        rotation: 90,
+        href: "/case-studies/advanced-modular-medical-simulator",
+        images: [
+          {
+            src: "/case-studies/POE/1.1.svg",
+            // rotation: 90,
+          },
+          {
+            src: "/case-studies/POE/2.1.svg",
+          },
+          {
+            src: "/case-studies/POE/3.1.svg",
+          },
+        ],
       },
-      {
-        title: "Pegasus",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/1.4.png",
-        href: "/case-studies/pegasus",
-      },
-      {
-        title: "Typheon",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/typheon/4.png",
-        href: "/case-studies/typheon",
-      },
+      // {
+      //   title: "Pegasus",
+      //   image:
+      //     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/1.4.png",
+      //   href: "/case-studies/pegasus",
+      // },
+      // {
+      //   title: "Typheon",
+      //   image:
+      //     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/typheon/4.png",
+      //   href: "/case-studies/typheon",
+      // },
     ],
   },
   {
