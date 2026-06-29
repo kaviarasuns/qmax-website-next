@@ -61,6 +61,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/alphion/ALPHION-AOLT-PR1_SIG23.webp",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG23.svg",
     ],
+    cardImageIndex: 3,
     enlargedImages: { 2: 1.0, 5: 1.1, 7: 1.1 },
     features: [
       "IoT gateway main board",
@@ -237,6 +238,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.8.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.9.png",
     ],
+    cardImageIndex: 8,
     // rotatedImages: { 3: 90, 1: 90, 5: 90 },
     // enlargedImages: { 3: 1.6, 1: 1.4, 5: 1.4 },
     features: [
@@ -584,6 +586,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/FE1600/4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/FE1600/FE1600_MODULE_REV-02_PR6.png",
     ],
+    cardImageIndex: 3,
     features: [
       "High-density multi-layer PCB design",
       "Advanced signal routing architecture",
@@ -632,6 +635,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LBM/LBM_REV1_SIG123_pr14.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LBM/LBM_REV1_SIG123_pr15.png",
     ],
+    cardImageIndex: 4,
     features: [
       "Layer-balanced PCB architecture",
       "Optimized signal path routing",
@@ -806,6 +810,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/Pegasus_ALL LAYER_PR12.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/Pegasus_ALL LAYER_PR13.png",
     ],
+    cardImageIndex: 1,
     features: [
       "Advanced multi-layer PCB platform",
       "Complex signal routing optimization",
@@ -853,6 +858,7 @@ export const pcbCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/typheon/Typhoon_SIG910.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/typheon/Typhoon_SIGALL.png",
     ],
+    cardImageIndex: 1,
     features: [
       "High-speed signal routing PCB",
       "Compact embedded hardware design",
