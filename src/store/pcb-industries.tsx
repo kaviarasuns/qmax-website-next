@@ -25,7 +25,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/medical.png",
     relatedCaseStudies: [
       {
-        title: "AI GPU Expansion Chassis Motherboard",
+        title: "Advanced Modular Medical Simulator — Developer Kit",
         href: "/case-studies/advanced-modular-medical-simulator",
         images: [
           {
