@@ -2,13 +2,16 @@ import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
 const advancedModularMedicalSimulatorImages = [
-  "poe-control-unit",
-  "poe-power-injector",
-  "industrial-poe-switch",
-].flatMap(
-  (id) =>
-    embeddedCaseStudiesData.find((study) => study.id === id)?.images ?? [],
-);
+  ...[
+    "poe-control-unit",
+    "poe-power-injector",
+    "industrial-poe-switch",
+  ].flatMap(
+    (id) =>
+      embeddedCaseStudiesData.find((study) => study.id === id)?.images ?? [],
+  ),
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/advanced-modular-medical-simulator/7.png",
+];
 
 export const advancedModularMedicalSimulatorCaseStudy: FullProductDevelopmentCaseStudy =
   {
@@ -40,7 +43,7 @@ export const advancedModularMedicalSimulatorCaseStudy: FullProductDevelopmentCas
       { id: "summary", num: "09", label: "Summary" },
     ],
     images: advancedModularMedicalSimulatorImages,
-    cardImageIndex: 3,
+    cardImageIndex: 13,
     overview: [
       "A Minneapolis, MN-based medical simulation company engaged Qmax Systems to design and develop the complete embedded electronics platform for an Advanced Modular Medical Simulator Developer Kit (AMMDK) — the central computing, networking, and power backbone of a next-generation open-standard, interoperable medical training manikin. Qmax delivered the full hardware platform — architecture, PCB design, firmware, Linux/RTOS bring-up, peripheral driver APIs, EVT, DVT, and small-volume production — enabling any third-party developer to build AMM-compatible simulation modules.",
     ],
