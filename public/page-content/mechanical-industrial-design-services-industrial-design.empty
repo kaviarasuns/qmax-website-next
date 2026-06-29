@@ -1,0 +1,458 @@
+import { buildMetadata } from "@/lib/seo";
+import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
+import { industrialDesignFAQs } from "@/data/service-faqs";
+import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
+import { FOLDER_TAB_ICONS } from "@/components/services-cmp/capabilities-folder-tabs";
+import { WhySection } from "@/components/services-cmp/WhySection";
+import { FAQSection } from "@/components/services-cmp/FAQSection";
+import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
+import { type CoreCapability } from "@/components/services-cmp/CoreCapabilitiesSection";
+import { CoreCapabilitiesSectionV2 } from "@/components/services-cmp/CoreCapabilitiesSectionV2";
+
+const HERO = {
+  videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_V2.mp4",
+  title: "Industrial Design Services",
+  description:
+    "Qmax Systems provides industrial design services for hardware products - integrating visual, ergonomic, and manufacturing reality, always grounded in engineering truth.",
+  ctaHref: "/mechanical-industrial-design-services/contact",
+  ctaLabel: "Talk to Our Engineers",
+};
+const INDUSTRIAL_DESIGN_CAPABILITIES: CoreCapability[] = [
+  {
+    id: "product-story",
+    tabLabel: "Visualization",
+    tabIcon: FOLDER_TAB_ICONS.productStory,
+    videoSrc:
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/stellar_video.mp4",
+    headline: "Product Story",
+    intro:
+      "Every successful product begins with a clearly articulated concept. Our industrial designers work directly with clients to translate product requirements, brand values, and user needs into clear visual concepts. This phase includes hand sketches, digital concept illustrations, and annotated visualization boards that communicate design intent to both technical and non-technical stakeholders.",
+    bullets: [
+      {
+        title: "Deliverables Include",
+        items: [
+          "Concept sketch sets (hand-drawn and digital).",
+          "Design direction boards (form language, aesthetic intent).",
+          "Annotated product story presentations.",
+          "2D product visualization renderings.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "cad-3d",
+    tabLabel: "Engineering",
+    tabIcon: FOLDER_TAB_ICONS.cad3d,
+    // videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4",
+    imageSrc:
+      "https://d1yetprhniwywz.cloudfront.net/v2/core-capabilites-ID.jpeg",
+    headline: "CAD and 3D Modeling",
+    intro:
+      "Approved concept sketches are translated into precision parametric 3D models using industry-standard CAD platforms. Our models are construction-ready - built with tolerancing, draft angles, wall thickness constraints, and assembly logic incorporated from the outset. CAD deliverables are fully documented with manufacturing annotations, bill of materials structure, and revision control to support downstream mechanical engineering and tooling activities.",
+    bullets: [
+      {
+        title: "Typical Scope",
+        items: [
+          "Surface and solid 3D modeling (CATIA, SolidWorks, Fusion 360, Rhino).",
+          "Assembly and exploded view modeling.",
+          "DFM (Design for Manufacture) and DFA (Design for Assembly) review.",
+          "Detailed 2D engineering drawings (GD&T, ISO/ASME standards).",
+        ],
+      },
+    ],
+  },
+  {
+    id: "ui-ux",
+    tabLabel: "Experience",
+    tabIcon: FOLDER_TAB_ICONS.uiUx,
+    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ecl_ui_ux.mp4",
+    headline: "UI & UX Design",
+    intro:
+      "For products with embedded displays, touchscreens, or physical control interfaces, our team designs the complete user experience - from information architecture and interaction logic to visual interface design and usability validation. We apply human factors engineering principles to ensure every interface is intuitive, accessible, and aligned with the product's intended operating environment.",
+    bullets: [
+      {
+        title: "Typical Scope",
+        items: [
+          "User research and persona definition.",
+          "Wireframing and interaction flow design.",
+          "High-fidelity UI mockups and design systems.",
+          "Usability testing with real end-users.",
+          "Physical ergonomics analysis and control layout optimization.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "renders",
+    tabLabel: "Imagery",
+    tabIcon: FOLDER_TAB_ICONS.renders,
+    videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_1.mp4",
+    headline: "Renders",
+    intro:
+      "Before committing to tooling or production, clients require presentation-quality visual assets for investor briefings, product launches, e-commerce listings, and regulatory submissions. Our rendering team produces studio-grade photorealistic images and high-definition product animation videos directly from CAD data.",
+    bullets: [
+      {
+        title: "Deliverables Include",
+        items: [
+          "Studio-quality static product renders (JPEG, PNG, TIFF).",
+          "360-degree product spin animations.",
+          "Exploded view and assembly sequence animations.",
+          "Lifestyle context renders (in-environment product visualization).",
+          "CMF (Color, Material, Finish) variant renders for marketing.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "prototyping",
+    tabLabel: "Validation",
+    tabIcon: FOLDER_TAB_ICONS.prototyping,
+    imageSrc: "https://d1yetprhniwywz.cloudfront.net/v2/id-service-image.jpeg",
+    headline: "Prototyping",
+    intro:
+      "Qmax Systems has direct access to prototype facilities and a vetted manufacturing network to produce functional prototypes in the fastest possible timeframes.",
+    bullets: [
+      {
+        title: "Prototype Technologies Chosen for Fidelity and Application",
+        items: [
+          "CNC Machining: Precision parts cut from real production materials (aluminum, stainless steel, engineering plastics)",
+          "FDM (Fused Deposition Modeling): The fastest, lowest-cost way to check form and fit early in the design.",
+          "SLA (Stereolithography): Smooth, high-detail prototypes polished enough for design validation and investor demos.",
+          "SLS (Selective Laser Sintering): Strong, complex-geometry parts built without supports - ready for mechanism testing.",
+          "Vacuum Casting: Small polyurethane batches for pre-production user trials and market testing.",
+        ],
+      },
+    ],
+  },
+];
+
+const WHY_CARDS = [
+  {
+    title: "Multidisciplinary",
+    desc: "Integrated teams of industrial designers, mechanical engineers, and electronics experts.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="5" r="2.5" />
+        <circle cx="5" cy="19" r="2.5" />
+        <circle cx="19" cy="19" r="2.5" />
+        <path d="M12 7.5V12m0 0l-5.5 5m5.5-5l5.5 5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Direct Access",
+    desc: "Rapid validation through in-house prototype oversight and vetted manufacturing networks.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+      </svg>
+    ),
+  },
+  {
+    title: "Compliance First",
+    desc: "Global framework expertise (CE, UL, FCC) built into the initial design iteration.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+  },
+  {
+    title: "Proven Process",
+    desc: "Repeatable results for startups and Fortune 500s across three decades of operation.",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+        <polyline points="22 4 12 14.01 9 11.01" />
+      </svg>
+    ),
+  },
+];
+
+const WORKFLOW_STEPS = [
+  {
+    number: 1,
+    title: "Uncover Opportunities",
+    description:
+      "Behavioural research and technical constraint analysis relevant to the product category.",
+    points: [
+      "Brand immersion and stakeholder alignment workshops",
+      "Ethnographic research and live user shadowing",
+      "Market landscape and competitive analysis",
+    ],
+  },
+  {
+    number: 2,
+    title: "Informed Ideation",
+    description:
+      "Structured creativity to produce a range of viable, engineering-led design directions.",
+    points: [
+      "Design language definition and visual direction boards",
+      "Concept generation and structured ideation workshops",
+      "2D and 3D concept sketching",
+    ],
+  },
+  {
+    number: 3,
+    title: "Get Real, Fast",
+    description:
+      "Detailed form development and high-fidelity prototypes for real-world evaluation.",
+    points: [
+      "High-fidelity concept visualization and rendering",
+      "Functional appearance models and mock-ups",
+      "Iterative prototype builds and user evaluation sessions",
+    ],
+  },
+  {
+    number: 4,
+    title: "Ready to Ship",
+    description:
+      "Finalised documentation package and factory-floor liaison for consistent outcomes.",
+    points: [
+      "Complete production documentation package (drawings, specifications, BOM)",
+      "Tooling and manufacturing liaison",
+      "Qualified supplier sourcing and evaluation",
+    ],
+  },
+];
+
+const industrialDesignCaseStudies = industrialCaseStudiesData
+  .slice(0, 4)
+  .map((caseStudy) => ({
+    title: caseStudy.title,
+    image: caseStudy.images[0],
+    link: `/case-studies/${caseStudy.id}`,
+    category: "industrial",
+    summary: caseStudy.summary,
+    imageRotation: caseStudy.rotatedImages?.[0],
+  }));
+
+export const metadata = buildMetadata({
+  title: "Industrial Design Services | CMF, UI/UX & NPI | Qmax",
+  description:
+    "B2B industrial design - CMF, UI/UX for hardware products, enclosure aesthetics, DFM analysis, and NPI. Engineering-led industrial design firm. USA & India.",
+  path: "/mechanical-industrial-design-services/industrial-design",
+});
+
+export default function IndustrialDesignServicesPage() {
+  return (
+    <main className="relative bg-[#fcfcfc]">
+      <ServiceVideoHero {...HERO} />
+
+      {/* Core Introduction */}
+      {/* <section className="py-14 lg:py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_minmax(280px,42%)] lg:items-stretch lg:gap-12">
+            <div className="max-w-4xl space-y-4 text-sm leading-7 text-zinc-700 md:text-base">
+              <p>
+                Industrial design at Qmax Systems integrates visual, ergonomic,
+                and manufacturing reality from the first sketch - ensuring every
+                decision is grounded in engineering truth.
+              </p>
+              <p>
+                We help entrepreneurs, startups, and Fortune 500 companies
+                create products that users value and manufacturers can build
+                efficiently. With over 25 years of experience, our
+                multidisciplinary team - industrial designers, mechanical
+                engineers, and electronics experts - delivers market-ready
+                solutions.
+              </p>
+              <p>
+                Our designs are not conceptual exercises. Form, material
+                selection, and interface elements are evaluated against
+                production constraints, cost targets, and global compliance
+                before a single prototype is built.
+              </p>
+            </div>
+            <div className="relative overflow-hidden lg:h-full">
+              <video
+                src="https://d1yetprhniwywz.cloudfront.net/v2/ID_Service_2.mp4"
+                className="aspect-video w-full object-cover lg:aspect-auto lg:h-full"
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-label="Industrial design service overview video"
+              />
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* <CapabilitiesFolderTabs capabilities={INDUSTRIAL_DESIGN_CAPABILITIES} /> */}
+
+      <CoreCapabilitiesSectionV2
+        capabilities={INDUSTRIAL_DESIGN_CAPABILITIES}
+        title="Core"
+        titleHighlight="Capabilities"
+        learnMoreHref="/mechanical-industrial-design-services/contact"
+      />
+
+      <WorkflowSection
+        steps={WORKFLOW_STEPS}
+        title="The"
+        titleHighlight="Process"
+      />
+
+      {/* Our Process Section */}
+      {/* <section className="bg-[#fcfcfc] dark:bg-zinc-950 py-32 border-t border-zinc-200 dark:border-zinc-800">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <h2 className="text-4xl font-light text-zinc-500 dark:text-zinc-400 md:text-6xl tracking-tighter">
+              The Process.
+            </h2>
+            <p className="max-w-md font-light text-lg text-muted-foreground">
+              A structured four-phase engine moving from narrative to
+              production-ready documentation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-zinc-200 dark:border-zinc-800">
+            {[
+              {
+                id: "01",
+                label: "DISCOVERY",
+                title: "Uncover Opportunities",
+                desc: "Behavioural research and technical constraint analysis relevant to the product category.",
+              },
+              {
+                id: "02",
+                label: "DEFINITION",
+                title: "Informed Ideation",
+                desc: "Structured creativity to produce a range of viable, engineering-led design directions.",
+              },
+              {
+                id: "03",
+                label: "REFINEMENT",
+                title: "Get Real, Fast",
+                desc: "Detailed form development and high-fidelity prototypes for real-world evaluation.",
+              },
+              {
+                id: "04",
+                label: "DELIVERY",
+                title: "Ready to Ship",
+                desc: "Finalised documentation package and factory-floor liaison for consistent outcomes.",
+              },
+            ].map((step, idx) => (
+              <div
+                key={idx}
+                className="p-12 border-r border-b border-zinc-200 dark:border-zinc-800 flex flex-col min-h-[400px] group hover:bg-zinc-50 dark:hover:bg-zinc-900/70 transition-colors"
+              >
+                <div className="flex justify-between items-center mb-16">
+                  <span className="text-[10px] font-black tracking-[0.4em] text-red-500 group-hover:translate-x-1 transition-transform">
+                    {step.label}
+                  </span>
+                  <span className="text-zinc-400 dark:text-zinc-500 font-mono text-xs">
+                    {step.id}
+                  </span>
+                </div>
+                <h3 className="text-3xl font-light dark:text-zinc-100 mb-8 group-hover:underline decoration-[#F33117] underline-offset-8 transition-all">
+                  {step.title}
+                </h3>
+                <p className="leading-relaxed font-light mt-auto text-muted-foreground">
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
+      {/* WHY CHOOSE QMAX */}
+      <WhySection
+        whyCards={WHY_CARDS}
+        titleHighlight="Industrial Design?"
+        ctaHref="/mechanical-industrial-design-services/contact"
+      />
+
+      {/* Why Qmax Section */}
+      {/* <section className="bg-[#fcfcfc] dark:bg-zinc-950 py-32 border-t border-zinc-200 dark:border-zinc-800">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-24">
+            <div>
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-zinc-400 dark:text-zinc-500 mb-8 block">
+                / PARTNERSHIP
+              </span>
+              <h2 className="text-4xl font-light dark:text-zinc-100 md:text-6xl tracking-tighter mb-12">
+                Why Qmax <br className="hidden lg:block" /> Systems.
+              </h2>
+              <div className="h-1 w-24 bg-[#F33117]" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24">
+              {[
+                {
+                  title: "Multidisciplinary",
+                  desc: "Integrated teams of industrial designers, mechanical engineers, and electronics experts.",
+                },
+                {
+                  title: "Direct Access",
+                  desc: "Rapid validation through in-house prototype oversight and vetted manufacturing networks.",
+                },
+                {
+                  title: "Compliance First",
+                  desc: "Global framework expertise (CE, UL, FCC) built into the initial design iteration.",
+                },
+                {
+                  title: "Proven Process",
+                  desc: "Repeatable results for startups and Fortune 500s across three decades of operation.",
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="space-y-6">
+                  <h3 className="text-xl uppercase tracking-widest text-red-500 border-b border-zinc-200 dark:border-zinc-800 pb-4">
+                    {item.title}
+                  </h3>
+                  <p className="font-light leading-relaxed text-muted-foreground">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* Our Work Section */}
+      <ServiceCaseStudiesSection
+        eyebrow="Industrial Portfolio"
+        studies={industrialDesignCaseStudies}
+        className="bg-[#fcfcfc] dark:bg-zinc-950"
+        hideTopBorder
+      />
+
+      {/* FAQ Section */}
+      <FAQSection faqItems={industrialDesignFAQs} />
+      <div className="pb-28"></div>
+    </main>
+  );
+}

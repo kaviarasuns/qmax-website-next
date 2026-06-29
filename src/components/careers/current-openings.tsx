@@ -291,7 +291,7 @@ const positions = [
     qualifications: [
       "Final-year BE / BTech in ECE, EEE, or related discipline",
     ],
-    imageUrl: "/careers/image12.png",
+    imageUrl: "/careers/image2.png",
   },
   {
     id: 13,
@@ -313,7 +313,7 @@ const positions = [
     qualifications: [
       "Final-year BE / BTech in ECE, CSE, Embedded Systems, or Electrical Engineering",
     ],
-    imageUrl: "/careers/image1.jpg",
+    imageUrl: "  /careers/image3.png",
   },
   {
     id: 14,
@@ -333,7 +333,7 @@ const positions = [
       "Strong analytical and documentation skills",
     ],
     qualifications: ["Final-year BE / BTech in ECE or related field"],
-    imageUrl: "/careers/image2.png",
+    imageUrl: "/careers/image4.png",
   },
   {
     id: 15,
@@ -355,7 +355,7 @@ const positions = [
     qualifications: [
       "Diploma / Final-year BE / BTech in Electronics or related stream",
     ],
-    imageUrl: "/careers/image3.png",
+    imageUrl: "/careers/image1.jpg",
   },
   {
     id: 16,
@@ -377,7 +377,7 @@ const positions = [
     qualifications: [
       "Final-year BE / BTech Mechanical or Bachelor's in Industrial/Product Design",
     ],
-    imageUrl: "/careers/image4.png",
+    imageUrl: "/careers/image2.png",
   },
   {
     id: 17,
@@ -521,10 +521,10 @@ function JobCard({ position, index }: { position: Position; index: number }) {
     setActiveSection((prev) => (prev === key ? null : key));
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-[calc(100vh-9rem)] w-full border-2 border-zinc-200 bg-white overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-xl hover:border-zinc-300">
+    <div className="grid grid-cols-1 lg:grid-cols-2 w-full border-2 border-zinc-200 bg-white overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-xl hover:border-zinc-300">
       {/* Image */}
       <div
-        className={`relative min-h-[50vh] lg:min-h-0 ${isReversed ? "lg:order-2" : ""}`}
+        className={`relative min-h-[50vh] lg:min-h-[16rem] lg:h-full ${isReversed ? "lg:order-2" : ""}`}
       >
         <img
           src={position.imageUrl || "/careers/image1.jpg"}
@@ -543,7 +543,7 @@ function JobCard({ position, index }: { position: Position; index: number }) {
         </h3>
 
         {/* Accordion sections */}
-        <div className="flex-1 min-h-0 overflow-y-auto mb-6 lg:mb-0 pr-1">
+        <div className="mb-6 pr-1">
           <SectionAccordion
             title="Key Responsibilities"
             items={position.responsibilities}
@@ -693,13 +693,9 @@ export function CurrentOpenings() {
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-6 lg:pt-0 pb-10 md:pb-14">
         <div className="flex gap-8 items-start">
           <SideNav positions={positions} activeId={activeId} />
-          <div className="flex-1 min-w-0 space-y-6 lg:space-y-0">
+          <div className="flex-1 min-w-0 space-y-8 lg:space-y-10">
             {positions.map((position, index) => (
-              <div
-                key={position.id}
-                id={slugify(position.title)}
-                className="lg:h-[calc(100vh-4rem)] lg:flex lg:items-center"
-              >
+              <div key={position.id} id={slugify(position.title)}>
                 <JobCard position={position} index={index} />
               </div>
             ))}

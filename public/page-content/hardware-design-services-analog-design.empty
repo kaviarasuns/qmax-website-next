@@ -1,0 +1,213 @@
+## Hero Section
+
+**Title:** Analog Circuit Design Services - Precision Signal Acquisition and Mixed-Signal Conditioning
+
+**Description:** Qmax Systems provides analog circuit design services for the physical-to-digital interface, the most critical bottleneck in high-performance electronics. From femto-farad capacitance sensing to giga-sample data converters, Qmax Systems delivers high-fidelity signal acquisition, precision conditioning, and ultra-low-noise design that holds laboratory-grade accuracy in field-deployed hardware.
+
+**CTA Button:** Talk to Our Engineers
+
+---
+
+## Core Service Offerings
+
+### Tab: Precision AFE
+
+**Headline:** Precision analog front-end design that converts microvolt sensor signals into reliable digital data.
+
+**Intro:** Qmax Systems designs custom Analog Front-End (AFE) circuits for capacitive, inductive, resistive, and piezoelectric transducer modalities. Our AFE designs are optimized for Signal-to-Noise Ratio (SNR) and Spurious-Free Dynamic Range (SFDR) - critical for industrial sensing, medical instrumentation, and automotive sensor electronics where measurement integrity is non-negotiable.
+
+**Points:**
+- **Multi-Modality Sensor Conditioning** - instrumentation amplifiers, charge amplifiers, and Wheatstone bridge front-ends for strain, pressure, capacitive, and piezoelectric transducers.
+- **Low-Noise Signal Path Design** - careful component selection, return-path planning, and impedance matching to preserve signal fidelity from the sensor element to the ADC input.
+- **Calibration & Linearization Circuitry** - temperature compensation, gain trim, and offset correction designed in from the start, not bolted on post-hoc.
+
+**Applications:** Industrial sensors · Medical instrumentation · Automotive sensor electronics · Process control · Bio-potential monitoring
+
+---
+
+### Tab: Mixed-Signal SoM
+
+**Headline:** Mixed-signal System-on-Module integration that lets high-resolution converters talk reliably to FPGAs and SoCs.
+
+**Intro:** Qmax Systems integrates high-resolution ADCs (up to 24-bit) and high-speed DACs (up to 4 Gbps) with FPGAs and SoCs, including JESD204B/C interface timing management and LVDS signaling - for software-defined radio, instrumentation, defense electronics, and high-speed data acquisition systems.
+
+**Points:**
+- **High-Resolution ADC Integration** - up to 24-bit converters with strict thermal management, voltage reference design, and digital interface optimization for noise-critical measurements.
+- **High-Speed DAC Integration** - up to 4 Gbps converters with controlled-impedance routing, clock distribution, and synchronization strategies for multi-channel coherence.
+- **JESD204B/C & LVDS Signaling** - interface timing closure, deterministic latency configuration, and lane skew compensation between converters and FPGA/SoC hosts.
+
+**Applications:** Software-defined radio (SDR) · Test & measurement instrumentation · Defense electronics · Scientific instrumentation · High-speed DAQ
+
+---
+
+### Tab: RF & High-Speed Interconnect
+
+**Headline:** RF and high-speed interconnect design for multi-gigahertz mixed-signal systems.
+
+**Intro:** Qmax Systems designs and simulates transmission lines, controlled-impedance routing, and return path optimization for multi-gigahertz analog and mixed-signal interconnects. Our engineers handle the signal integrity challenges that surface in software-defined radio, telecom backhaul, and high-bandwidth data converter implementations - where even small layout deviations can ruin EVM, eye margin, or BER.
+
+**Points:**
+- **Transmission Line Design** - controlled-impedance microstrip and stripline routing for multi-gigahertz analog and digital channels.
+- **Return Path Optimization** - reference plane planning, via stitching, and ground return strategies to prevent common-mode noise and ensure EMC compliance.
+- **Signal Integrity Simulation** - full-wave EM, S-parameter extraction, and channel modeling for high-speed lanes before fabrication.
+
+**Applications:** SDR platforms · Telecom backhaul · High-speed data converters · Phased-array systems · Multi-GHz instrumentation
+
+---
+
+### Tab: Low-Power Wearable
+
+**Headline:** Low-power wearable electronics where nano-ampere currents don't compromise signal fidelity.
+
+**Intro:** Qmax Systems designs ultra-low-power analog circuits for battery-operated medical and consumer wearables - achieving nano-ampere quiescent currents without compromising signal fidelity. Our designs power medical monitoring patches, hearables, fitness wearables, and continuously-monitoring sensor platforms where battery life and measurement accuracy must coexist.
+
+**Points:**
+- **Nano-Ampere Quiescent Designs** - sub-microamp standby currents across the full analog signal chain, extending battery life from days to weeks.
+- **Bio-Potential & Bio-Sensor AFEs** - precision conditioning for ECG, PPG, GSR, and bio-impedance signals in body-worn form factors.
+- **Power Domain Partitioning** - multi-rail architectures that isolate sensitive analog from digital switching noise without sacrificing duty-cycled efficiency.
+
+**Applications:** Medical monitoring patches · Hearables · Fitness wearables · Continuous health monitoring · Body-worn sensors
+
+---
+
+## Applications & Project Experience
+
+**Subtitle:** Our portfolio includes hundreds of precision analog and mixed-signal platforms delivered to regulated industries, including:
+
+### Project Items:
+
+- **Analog Circuit Design**
+  - Caption: Industrial Defect Monitoring System
+  - Description: High-precision analog sensing and control circuits for an industrial defect monitoring system, with low-noise front-end design and calibrated measurement paths for production-line quality assurance.
+
+- **Power Supply & Voltage Regulation Design**
+  - Caption: PoE Control Unit
+  - Description: IEEE 802.3af/at PoE+ power supply and voltage regulation design with per-port power budgeting, fault isolation, and regulated rails for reliable multi-device power delivery in access control and building automation.
+
+- **Signal Conditioning & Amplifier Design**
+  - Caption: High-Speed Analog Board
+  - Description: High-speed analog signal conditioning and amplifier design with low-noise routing, precision gain stages, and ground isolation for high-frequency measurement integrity.
+
+- **Mixed-Signal Hardware Development**
+  - Caption: Industrial IoT Gateway with PoE
+  - Description: Mixed-signal industrial IoT gateway combining analog sensor interfaces, PoE+ power architecture, and digital communication paths for LoRa, BLE, and CAN field connectivity.
+
+- **Analog PCB Layout & Noise Optimization**
+  - Caption: High-Speed Analog Mux
+  - Description: Analog PCB layout optimized for noise immunity with shielded routing, dedicated analog ground planes, and mux signal path isolation for reliable multi-channel industrial acquisition.
+
+---
+
+## Our Technical Strengths in Analog & Mixed-Signal
+
+**Lede:** Qmax Systems bridges the gap between raw physical phenomena and actionable digital data - with rigorous control of noise, signal integrity, and timing across the entire signal chain.
+
+### Technical Advantage Cards:
+
+- **Low-Noise Signal Conditioning**
+  Implementation of precision instrumentation amplifiers, active filtering, and impedance matching for microvolt-level signals from sensors, transducers, and bio-potential sources.
+
+- **High-Speed Data Acquisition (DAQ)**
+  Multi-channel DAQ design with simultaneous sampling, synchronized clock distribution, and JESD204B/C interface management for SDR, instrumentation, and high-resolution measurement systems.
+
+- **Power Integrity for Analog**
+  LDO-based precision regulation, split-rail generation, and decoupling strategies to minimize PSRR-related noise and protect microvolt-level sensitive analog signals from power-rail contamination.
+
+- **Noise Reduction & Isolation**
+  Rigorous physical isolation techniques - Moat-and-Bridge PCB structures and Faraday shielding - to protect sensitive analog nodes from digital switching noise and external EMI.
+
+- **Return Path Optimization**
+  Detailed analysis of current return paths to prevent common-mode noise injection and ensure electromagnetic compatibility (EMC) in dense mixed-signal layouts.
+
+- **Real-Time FPGA Signal Processing**
+  Pairing analog hardware with FPGA-based DSP enables real-time filtering, FFTs, and decimation at the edge - reducing downstream processor load and accelerating system response.
+
+---
+
+## Compliance & Standards
+
+**Title:** Compliance & Standards
+
+**Description:** Qmax Systems builds for regulated industries, designing to stringent global standards so hardware holds up under medical, aerospace, and industrial certification.
+
+### Medical
+- ISO 13485 - quality management for medical devices
+- IEC 60601-1 - signal isolation and patient safety
+
+### Aerospace
+- MIL-STD-461 - EMI control requirements
+- DO-160 - environmental conditions and test procedures
+
+### Industrial
+- IPC-2221 / 2222 - PCB design standards
+- IEC 61000 - electromagnetic immunity
+
+**Standards references:** IEC, JEDEC (JESD204B/C), IPC.
+
+---
+
+## Why Choose Qmax for Analog & Mixed-Signal Design?
+
+### Why Cards:
+
+- **Transparent & Supervised Process**
+  You see every milestone, design review, and risk register as it happens. Qmax Systems program managers run a weekly cadence with traceable deliverables, on-time builds, and zero hidden surprises at handover.
+
+- **Mixed-Signal Designs Built from Scratch**
+  Every analog and mixed-signal program starts with R&D and a proof-of-concept build to retire architectural risk early. We confirm feasibility, characterize noise floor, validate AFE topology, and prove critical assumptions before a single production layer is committed.
+
+- **Smooth Hardware-Software Integration**
+  We select AFEs, ADCs, DACs, FPGAs, and toolchains that fit your existing platform rather than forcing a re-platform. The result is firmware that brings up cleanly, drivers that drop into your OS, and lower long-term maintenance cost.
+
+- **Expert Analog & Mixed-Signal Engineers**
+  Qmax Systems analog and mixed-signal engineers average 12+ years across medical instrumentation, industrial sensing, defense electronics, automotive sensor electronics, and consumer wearables. Only senior engineers touch your design - no junior hand-offs, no learning on your timeline.
+
+### Founder CTA Tile:
+- **Questions? Let's Talk!**
+- Saravanabhavan, Founder & CEO
+- Contact Us
+
+### Consultation CTA Bar:
+- **Heading:** Get a Complimentary Consultation with Our Analog & Mixed-Signal Experts.
+- **Subtitle:** 1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.
+- **CTA Button:** Schedule Consultation
+
+---
+
+## Hardware Programs (Case Studies)
+
+**Eyebrow:** Hardware Programs
+
+Case studies referenced:
+- Multi-IO Card for ATE
+- Security System Controller
+- Robotics Motion Controller
+- PoE Power Injector
+
+---
+
+## FAQ
+
+**Q:** What sensor types does Qmax Systems design analog front-ends for?
+**A:** Qmax Systems designs precision AFE circuits for capacitive, inductive, resistive, piezoelectric, bio-potential, and optical transducers. Our AFEs are optimized for Signal-to-Noise Ratio (SNR) and Spurious-Free Dynamic Range (SFDR), and are used in industrial sensors, medical instruments, automotive sensor electronics, and process control systems.
+
+**Q:** What ADC and DAC resolutions does Qmax Systems integrate into mixed-signal designs?
+**A:** Qmax Systems integrates high-resolution ADCs up to 24-bit and high-speed DACs up to 4 Gbps with FPGAs and SoCs. We handle JESD204B/C interface timing, LVDS signaling, deterministic latency, and lane skew compensation for software-defined radio, test & measurement, and high-speed data acquisition platforms.
+
+**Q:** Does Qmax Systems handle low-power analog design for wearables and battery-operated devices?
+**A:** Yes. Qmax Systems specializes in ultra-low-power analog design achieving nano-ampere quiescent currents without compromising signal fidelity - for medical monitoring patches, hearables, fitness wearables, and continuous-monitoring sensor platforms.
+
+**Q:** How does Qmax Systems prevent digital switching noise from corrupting sensitive analog signals?
+**A:** Qmax Systems uses Moat-and-Bridge PCB structures, Faraday shielding, dedicated reference planes, careful return-path routing, and split-rail power architectures with LDO post-regulation. Each technique is selected based on the noise floor target and the dynamic range of the analog signal chain.
+
+**Q:** Can Qmax Systems design multi-gigahertz analog and mixed-signal interconnects?
+**A:** Yes. Qmax Systems designs controlled-impedance transmission lines, runs full-wave EM simulation, and optimizes return paths for multi-gigahertz channels used in SDR, telecom backhaul, and high-bandwidth data converter implementations.
+
+**Q:** What is included in the 1-hour complimentary consulting session?
+**A:** During this session, you will speak directly with a Senior Hardware Architect from Qmax Systems. We can review your analog signal chain, discuss SNR and noise budget challenges, validate AFE topology choices, or help refine your mixed-signal roadmap. We can sign an NDA if required.
+
+**Q:** How does Qmax Systems protect customer design data and intellectual property?
+**A:** Qmax Systems treats every engagement under strict IP protection: NDAs signed before any technical discussion, dedicated secure project workspaces, role-based access control to design files, and customer-owned IP at every milestone - schematics, layouts, BoMs, and firmware. Qmax Systems engineers never reuse or repurpose customer IP across other client engagements.
+
+**Q:** How does Qmax Systems ensure noise performance and signal integrity in mixed-signal designs?
+**A:** Qmax Systems' methodology combines full-wave 3D EM simulation, S-parameter extraction for high-speed converter lanes, return-path planning, and PSRR-driven power-rail design. Every mixed-signal design is validated against SNR, SFDR, and BER margin before fabrication, eliminating costly re-spins.

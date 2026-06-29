@@ -1,0 +1,492 @@
+## Hero
+
+**Image alt:** Design and Engineering Team at Work
+
+**Heading:** Design, Develop, and Deploy Cutting-Edge Products
+
+**Body:** We are looking for passionate engineers ready to dive into cutting-edge technology. From Hardware and AI to Industrial Design, you will gain hands-on experience in full-cycle product development. Enjoy a friendly culture that prioritizes your career growth and gives you the opportunity to work with experienced engineers and solve complex challenges every day.
+
+---
+
+## Current Openings — Side Navigation
+
+### Full Time Roles
+
+- Hardware Design Engineer
+- Firmware Development Engineer
+- Embedded Systems Test Engineer
+- RF Design Engineer
+- Signal Integrity (SI) Engineer
+- PCB Designer
+- PCB Librarian
+- Mechanical Design Engineer
+- Industrial Designer
+- Full-Stack Web Developer
+- Business Development Executive
+
+### Internships
+
+- Hardware Design Intern
+- Firmware & Embedded Intern
+- RF & Antenna Intern
+- PCB Design Intern
+- Mechanical & Industrial Design Intern
+- Software & Web Intern
+- Testing & Validation Intern
+- Business Development Intern
+
+---
+
+## Job Listings
+
+### Hardware Design Engineer
+**Category:** Engineering | **Type:** Full-time
+
+**Key Responsibilities**
+- System architecture definition and block diagram creation
+- Analog, digital, power, and mixed-signal schematic design
+- Component selection considering cost, availability, lifecycle
+- Design for EMI/EMC, ESD, safety, and reliability
+- Support PCB layout, bring-up, debugging, and validation
+- Prepare schematics, BoM, test reports, and design notes
+
+**Requirements**
+- Strong fundamentals in analog & digital electronics
+- Power supply design: LDOs, buck/boost, isolated supplies
+- MCU/SoC interfacing (SPI, I2C, UART, Ethernet, USB)
+- Hands-on debugging using DSO, logic analyzer, DMM
+- EMI/ESD awareness and grounding concepts
+- Familiarity with Altium / OrCAD / KiCad
+- Ability to read datasheets and application notes critically
+
+**Qualification**
+- BE / BTech in Electronics & Communication, Electrical, or Instrumentation Engineering
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Firmware Development Engineer
+**Category:** Engineering | **Type:** Full-time
+
+**Key Responsibilities**
+- Firmware architecture and module-level design
+- Bare-metal or RTOS-based firmware development
+- Peripheral driver development, hardware bring-up, and board-level debugging
+- Code optimization, testing, documentation, and release management
+
+**Requirements**
+- Strong C programming (mandatory)
+- Good understanding of MCU architecture
+- RTOS concepts: tasks, queues, semaphores, ISRs
+- Peripheral drivers: GPIO, UART, SPI, I2C, ADC, PWM
+- JTAG/SWD debugging, linker scripts, memory maps, and Git-based workflow
+
+**Qualification**
+- BE / BTech in ECE, CSE, Embedded Systems, or Electrical Engineering; diploma holders with strong embedded C experience or final-year students with hands-on embedded projects also considered
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Embedded Systems Test Engineer
+**Category:** Engineering | **Type:** Full-time
+
+**Key Responsibilities**
+- Create test plans, test cases, and test procedures
+- Functional, stress, regression, and integration testing
+- Hardware bring-up assistance and failure analysis
+- Interface testing (UART, CAN, Ethernet, USB)
+- Maintain test logs, defect reports, and summaries
+
+**Requirements**
+- Ability to read schematics and block diagrams
+- Strong lab discipline and documentation skills
+- Hands-on use of DSO, DMM, power supplies
+- Understanding of embedded interfaces
+- Basic scripting (Python preferred)
+- Methodical troubleshooting mindset
+
+**Qualification**
+- Diploma / BE / BTech in Electronics, Electrical, or Instrumentation Engineering
+- Fresh graduates with lab exposure are acceptable
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### RF Design Engineer
+**Category:** Engineering | **Type:** Full-time
+
+**Key Responsibilities**
+- RF circuit design (LNA, PA, filters, matching networks)
+- Antenna design, tuning, and optimization
+- RF simulation and validation
+- RF PCB layout review and guidance
+- RF testing and characterization
+
+**Requirements**
+- RF fundamentals: S-parameters, Smith chart, VSWR
+- Matching network design and tuning
+- Experience with GHz-range designs
+- Familiarity with RF PCB materials (FR4, Rogers)
+- Use of VNA, spectrum analyzer, signal generator
+- Simulation tools: ADS / HFSS / CST
+
+**Qualification**
+- BE / BTech in Electronics & Communication Engineering
+- ME / MTech in RF / Microwave preferred
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Signal Integrity (SI) Engineer
+**Category:** Engineering | **Type:** Full-time
+
+**Key Responsibilities**
+- SI analysis for DDR, PCIe, USB, Ethernet
+- Stack-up planning and impedance calculation
+- PCB layout review for high-speed routing
+- Simulation and eye-diagram analysis
+- Collaboration with PCB and hardware teams
+
+**Requirements**
+- Transmission line theory
+- Differential pair routing concepts
+- Return path and reference plane understanding
+- High-speed connector and via modeling
+- SI tools: HyperLynx, SIwave, or equivalent
+
+**Qualification**
+- BE / BTech in ECE or Electrical Engineering
+- ME / MTech preferred for advanced roles
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### PCB Designer
+**Category:** Engineering | **Type:** Full-time
+
+**Key Responsibilities**
+- Multi-layer PCB layout (analog, digital, RF, power)
+- Controlled impedance routing
+- High-speed interface routing
+- DFM/DFA compliance
+- Fabrication and assembly file generation
+
+**Requirements**
+- Strong Altium Designer skills
+- Knowledge of PCB manufacturing constraints
+- EMI-aware routing practices
+- Stack-up and impedance coordination
+- Ability to work closely with hardware engineers
+
+**Qualification**
+- Diploma / BE / BTech in Electronics Engineering
+- Skill matters more than degree
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### PCB Librarian
+**Category:** Engineering | **Type:** Full-time
+
+**Key Responsibilities**
+- Create and validate symbols and footprints
+- Maintain version-controlled libraries
+- Enforce naming conventions and standards
+- Support designers during layout
+
+**Requirements**
+- Excellent attention to detail
+- Strong understanding of packages and land patterns
+- Altium library management
+- Datasheet interpretation skills
+
+**Qualification**
+- Diploma / BE / BTech in Electronics Engineering
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Mechanical Design Engineer
+**Category:** Engineering | **Type:** Full-time
+
+**Key Responsibilities**
+- Enclosure and product design
+- Thermal and mechanical analysis considerations
+- Manufacturing drawings and BOMs
+- Coordination with electronics teams
+
+**Requirements**
+- SolidWorks / Creo / Fusion 360
+- Sheet metal and plastic part design
+- Manufacturing process understanding
+- Practical tolerance knowledge
+
+**Qualification**
+- Diploma / BE / BTech in Mechanical Engineering
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Industrial Designer
+**Category:** Design | **Type:** Full-time
+
+**Key Responsibilities**
+- Product styling and form development
+- Ergonomic studies
+- Concept sketches and renders
+- Collaboration with mechanical engineers
+
+**Requirements**
+- Strong visual and aesthetic sense
+- Tools: Rhino, KeyShot, Adobe Suite
+- Understanding of manufacturing limitations
+- Strong design portfolio (mandatory)
+
+**Qualification**
+- Bachelor's degree in Industrial / Product Design
+- Mechanical engineers with strong portfolio considered
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Full-Stack Web Developer
+**Category:** Software | **Type:** Full-time
+
+**Key Responsibilities**
+- Frontend and backend development
+- REST API implementation
+- Database integration
+- Deployment and maintenance
+
+**Requirements**
+- HTML, CSS, JavaScript
+- React or equivalent frontend framework
+- Backend: Node.js / Python / PHP
+- SQL databases
+- Git and basic DevOps exposure
+
+**Qualification**
+- BE / BTech in Computer Science / IT
+- MCA / BSc (CS) with strong portfolio acceptable
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Business Development Executive
+**Category:** Business | **Type:** Full-time
+
+**Key Responsibilities**
+- Lead generation and qualification
+- Client communication and follow-ups
+- Proposal coordination with engineering teams
+- CRM maintenance
+
+**Requirements**
+- Clear written and verbal communication
+- Ability to understand technical discussions
+- Discipline in follow-ups and tracking
+- Professional email and proposal handling
+
+**Qualification**
+- Any Bachelor's degree
+- Engineering background preferred
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Hardware Design Intern
+**Category:** Engineering | **Type:** Internship
+
+**Key Responsibilities**
+- Assist with block diagrams and schematic capture
+- Support component selection and BoM preparation
+- Help with bring-up, debugging, and validation activities
+- Document design notes and test observations
+
+**Requirements**
+- Strong analog and digital electronics fundamentals
+- Basic familiarity with power supply and MCU interfacing concepts
+- Ability to read datasheets and application notes
+- Hands-on lab exposure with DSO and DMM
+
+**Qualification**
+- Final-year BE / BTech in ECE, EEE, or related discipline
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Firmware & Embedded Intern
+**Category:** Engineering | **Type:** Internship
+
+**Key Responsibilities**
+- Implement module-level embedded C code
+- Work with peripheral drivers (GPIO, UART, SPI, I2C)
+- Support board bring-up and debugging
+- Write basic test cases and maintain technical notes
+
+**Requirements**
+- Strong C programming fundamentals
+- Understanding of MCU architecture and memory basics
+- Awareness of RTOS concepts (tasks, queues, ISRs)
+- Basic Git workflow familiarity
+
+**Qualification**
+- Final-year BE / BTech in ECE, CSE, Embedded Systems, or Electrical Engineering
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### RF & Antenna Intern
+**Category:** Engineering | **Type:** Internship
+
+**Key Responsibilities**
+- Assist with RF matching and basic circuit evaluations
+- Support antenna tuning and measurement setup
+- Help prepare simulation and validation summaries
+- Document test observations for team reviews
+
+**Requirements**
+- Basic RF fundamentals (S-parameters, VSWR)
+- Exposure to RF lab tools is preferred
+- Interest in GHz-range wireless systems
+- Strong analytical and documentation skills
+
+**Qualification**
+- Final-year BE / BTech in ECE or related field
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### PCB Design Intern
+**Category:** Engineering | **Type:** Internship
+
+**Key Responsibilities**
+- Assist with multi-layer PCB routing
+- Follow DFM/DFA and design-rule constraints
+- Support fabrication output checks
+- Help maintain symbols and footprints
+
+**Requirements**
+- Basic PCB layout fundamentals
+- Familiarity with manufacturing constraints
+- Attention to detail in footprint and symbol quality
+- Collaboration with hardware designers
+
+**Qualification**
+- Diploma / Final-year BE / BTech in Electronics or related stream
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Mechanical & Industrial Design Intern
+**Category:** Design | **Type:** Internship
+
+**Key Responsibilities**
+- Support 3D modeling and concept development
+- Assist with enclosure feasibility and tolerance reviews
+- Create concept renders and design documentation
+- Collaborate with electronics and mechanical teams
+
+**Requirements**
+- Hands-on CAD and product design exposure
+- Understanding of manufacturing constraints
+- Good visual communication and presentation skills
+- Portfolio demonstrating design process
+
+**Qualification**
+- Final-year BE / BTech Mechanical or Bachelor's in Industrial/Product Design
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Software & Web Intern
+**Category:** Software | **Type:** Internship
+
+**Key Responsibilities**
+- Develop UI and API features under mentor guidance
+- Support database integration and testing
+- Fix bugs and improve code quality
+- Participate in release and deployment tasks
+
+**Requirements**
+- Strong fundamentals in HTML, CSS, and JavaScript
+- Basic React or equivalent framework knowledge
+- Backend exposure in Node.js or Python
+- Basic SQL and Git familiarity
+
+**Qualification**
+- Final-year BE / BTech in CSE / IT or equivalent
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Testing & Validation Intern
+**Category:** Engineering | **Type:** Internship
+
+**Key Responsibilities**
+- Prepare test plans, test cases, and execution reports
+- Run functional, regression, and integration tests
+- Assist in failure analysis and issue reproduction
+- Maintain logs and defect documentation
+
+**Requirements**
+- Ability to read schematics and block diagrams
+- Strong lab discipline and methodical troubleshooting
+- Hands-on DSO and DMM usage
+- Basic scripting in Python preferred
+
+**Qualification**
+- Diploma / Final-year BE / BTech in Electronics, Electrical, or Instrumentation
+
+**Buttons:** Apply Now | More Details
+
+---
+
+### Business Development Intern
+**Category:** Business | **Type:** Internship
+
+**Key Responsibilities**
+- Research and qualify potential leads
+- Support client follow-ups and CRM updates
+- Assist with proposal and presentation preparation
+- Coordinate with engineering teams on requirements
+
+**Requirements**
+- Strong written and verbal communication
+- Ability to understand technical discussions
+- Disciplined follow-up and tracking skills
+- Professional email and documentation practices
+
+**Qualification**
+- Any Bachelor's degree; engineering background preferred
+
+**Buttons:** Apply Now | More Details
+
+---
+
+## CTA Section
+
+**Heading:** Ready to Make an Impact?
+
+**Body:** Whether you're an experienced engineer or just starting your career, we have opportunities for you. Let's build the future of technology together.
+
+**Button:** Apply Now (https://careers.qmaxsys.com/)
+
+**Contact:** Questions? Reach out to our recruitment team at careers@qmaxsys.com

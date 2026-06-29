@@ -1,0 +1,189 @@
+## Hero Section
+
+**Title:** High-Speed Digital Design - DDR5, PCIe Gen6, and 112G SerDes Architecture
+
+**Description:**
+Qmax Systems provides high-speed digital design for AI computing, telecom, edge servers, and data-intensive infrastructure. Qmax Systems engineers high-speed, high-density, high-reliability systems around signal integrity (SI) and power integrity (PI) - from DDR5 and PCIe Gen6 to 112G SerDes, with architecture set before layout - delivering production-ready platforms, not just prototypes.
+
+**CTA Button:** Talk to Our Engineers
+
+---
+
+## Our Core Service Offerings
+
+### Tab 1: Compute & Servers
+
+**Headline:** High-performance compute and server hardware built for AI, data centers, and rugged industrial deployment.
+
+**What we deliver:**
+Qmax Systems engineers high-performance digital compute platforms - from multicore CPU systems to dense AI GPU servers and ruggedized single-board computers. Our hardware design team builds for AI training and inference workloads, hyperscale data centers, telecom edge deployments, and industrial environments where signal integrity and thermal performance are non-negotiable.
+
+**Capabilities:**
+- **Multicore CPU Systems** - high-performance digital designs utilizing the latest Intel Xeon, AMD EPYC, and Ampere Altra CPUs, optimized for thermal efficiency and high-speed data throughput.
+- **High-Density AI GPU Compute Servers** - custom hardware engineering for parallel processing workloads, designed to house and power NVIDIA and AMD GPU clusters for AI training and inference.
+- **Single Board Computers (SBCs) & Server Motherboards** - tailor-made designs for data centers and rugged industrial environments, validated for Power Integrity (PI) and Signal Integrity (SI).
+
+**Typical applications:** AI training infrastructure · Hyperscale data centers · Telecom edge compute · Rugged industrial computing · High-performance computing (HPC)
+
+**CTA Button:** Get in Touch
+
+---
+
+### Tab 2: Connectivity & O-RAN
+
+**Headline:** Ultra-high-speed connectivity hardware powering 5G and next-generation telecom infrastructure.
+
+**What we deliver:**
+Qmax Systems designs the high-speed networking and telecom hardware that drives modern data center fabrics and global 5G rollouts. From 100 Gbps Network Interface Cards to O-RAN Distributed Units and Fabric Interface Cards for photonic networks, our team builds the connectivity layer for telecom operators, hyperscalers, and network equipment vendors.
+
+**Capabilities:**
+- **100 Gbps Network Interface Cards (NIC)** - ultra-high-speed connectivity solutions for high-end blade servers, delivering maximum bandwidth and minimal latency for modern workloads.
+- **O-RAN Distributed Units (DU)** - specialized hardware development for Open RAN architecture, accelerating global 4G and 5G infrastructure deployments.
+- **Fabric Interface Cards (FIC)** - innovative designs for Photonic Resource Units, enabling seamless optical-to-electrical resource management in disaggregated data centers.
+
+**Typical applications:** 4G and 5G telecom infrastructure · Open RAN (O-RAN) deployments · Hyperscale data centers · Photonic networks · Disaggregated network fabrics
+
+**CTA Button:** Get in Touch
+
+---
+
+### Tab 3: Embedded & FPGA
+
+**Headline:** Custom FPGA and embedded platforms engineered for acceleration, real-time processing, and Industrial IoT.
+
+**What we deliver:**
+Qmax Systems develops custom FPGA platforms and embedded systems for hardware acceleration, real-time digital signal processing, and connected edge devices. Our team works across Xilinx (AMD) and Intel (Altera) FPGA families, plus ARM Cortex-M, ESP32, and PIC microcontroller architectures, building precision hardware for Industrial IoT, edge AI, robotics, and motor control applications.
+
+**Capabilities:**
+- **FPGA-Based Hardware** - custom development on Xilinx and Intel platforms for hardware acceleration, real-time signal processing, and flexible high-speed I/O.
+- **Microcontroller-Based Products** - robust, power-optimized embedded systems using ARM Cortex-M, ESP32, and PIC architectures for Industrial IoT (IIoT) deployments.
+
+**Typical applications:** Industrial IoT (IIoT) · Edge AI inference · Robotics & automation · Real-time DSP · Motor control · Smart sensors
+
+**CTA Button:** Get in Touch
+
+---
+
+## Applications & Real-World Project Experience
+
+**Subtitle:** We have successfully delivered hundreds of advanced digital hardware platforms, including:
+
+### 01 - High-Speed PCB
+**Project:** WiFi 6 Triband Router
+Multi-layer high-speed PCB design for a Qualcomm WiFi 6 triband router platform, with controlled impedance routing, HDI stack-up, and high pin-count BGA escape planning across concurrent 2.4, 5, and 6 GHz bands.
+[View case study]
+
+### 02 - Signal Integrity & Timing Analysis
+**Project:** Wi-Fi 6E Router
+Pre- and post-layout signal integrity and timing analysis for a Wi-Fi 6E router, including eye diagram validation, skew matching, and crosstalk mitigation across multi-gigabit SerDes and high-speed memory interfaces.
+[View case study]
+
+### 03 - FPGA & High-Speed Interface Development
+**Project:** High Speed Camera Interface
+FPGA-based high-speed camera interface with LVDS and MIPI CSI-2 routing, real-time data paths, and precision phase matching for industrial vision and process control applications.
+[View case study]
+
+### 04 - Multi-Gigabit Design
+**Project:** Gigabit Ethernet Switch Module
+Multi-gigabit Ethernet switch module design with high-speed backplane routing, controlled differential pairs, and low-loss laminates for data center and industrial networking applications.
+[View case study]
+
+### 05 - Power Integrity & EMC/EMI Optimization
+**Project:** Rugged Industrial IO Board
+Power integrity and EMC/EMI-hardened industrial IO board with target-impedance PDN design, surge protection, and shielding strategies validated for harsh factory-floor environments.
+[View case study]
+
+---
+
+## Our Technical Strengths in Digital Hardware
+
+**Lede:** Qmax Systems designs digital platforms for performance, reliability, and manufacturability - not just for prototypes.
+
+### High-Speed Standards
+Expert handling of DDR5, PCIe Gen5/Gen6, and 112G SerDes - including channel modeling, equalization tuning, and compliance to JEDEC and PCI-SIG specifications.
+
+### Physical Complexity
+Mastery of 30+ layer HDI PCBs with blind and buried microvias, stackup planning, and impedance control for the densest, highest-speed digital boards.
+
+### Manufacturing Readiness
+Complete DFM (Design for Manufacturing), DFA (Design for Assembly), and DFT (Design for Test) implementation - engineered for first-pass yield, not just first-pass prototype success.
+
+### Signal & Power Integrity
+Advanced SI/PI simulation and validation across DDR, SerDes, and power delivery rails - using full-wave EM, IBIS-AMI, and target-impedance methodologies.
+
+### Global Compliance
+Pre-designed for EMI/EMC, CE, FCC, and UL - reducing certification rework and accelerating time to global market.
+
+### Lifecycle Support
+End-to-end engagement from concept and proof-of-concept through volume production, ECO management, and long-term supply continuity.
+
+---
+
+## Why Choose Qmax for Digital Hardware Design?
+
+### Transparent & Supervised Process
+You see every milestone, design review, and risk register as it happens. Qmax Systems program managers run a weekly cadence with traceable deliverables, on-time builds, and zero hidden surprises at handover.
+
+### Digital Platforms Built from Scratch
+Every digital hardware program starts with R&D and a proof-of-concept build to retire architectural risk early. We confirm feasibility, lock the BoM, validate stackup and high-speed channel margin, and prove critical assumptions before a single production layer is committed.
+
+### Smooth Hardware-Software Integration
+We select SoCs, FPGAs, memories, and toolchains that fit your existing platform rather than forcing a re-platform. The result is firmware that brings up cleanly, board support packages that drop into your OS, and lower long-term maintenance cost.
+
+### Expert Digital Hardware Engineers
+Qmax Systems digital hardware engineers average 12+ years across AI infrastructure, telecom and O-RAN, embedded edge computing, defense electronics, and industrial IoT. Only senior engineers touch your design - no junior hand-offs, no learning on your timeline.
+
+### Questions? Let's Talk!
+Contact Us
+Saravanabhavan, Founder & CEO
+
+---
+
+## Consultation CTA
+
+**Heading:** Get a Complimentary Consultation with Our Digital Hardware Experts.
+
+**Subtitle:** 1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.
+
+**CTA Button:** Schedule Consultation
+
+---
+
+## Case Studies
+
+**Section Title:** Case Studies
+
+- **Industrial IOT gateway with POE** — An industrial IoT gateway with integrated POE+ that bridges field sensors and actuators to cloud platforms.
+- **Microscopic Camera Control** — A microscopic camera control system designed for laboratory and inspection applications.
+- **High Speed Analog Board** — A high-speed analog embedded board engineered for precision signal processing, low-noise performance, and reliable high-frequency operation.
+- **Smart OBD2** — Smart OBD2 is an embedded automotive diagnostics platform designed for reliable vehicle communication, real-time monitoring, and intelligent automotive data processing.
+
+**Link:** More Case Studies
+
+---
+
+## Frequently Asked Questions
+
+**Q: What high-speed design standards does Qmax Systems support?**
+A: Qmax Systems specializes in the latest high-speed communication standards, including PCIe Gen 5/6, DDR5, and 112G SerDes. The Qmax Systems engineering team utilizes advanced simulation tools - full-wave EM, IBIS-AMI channel modeling, and target-impedance methodologies - to ensure signal integrity (SI) and power integrity (PI) for data rates exceeding 100 Gbps.
+
+**Q: Can Qmax Systems design custom hardware for AI and Deep Learning?**
+A: Yes. Qmax Systems develops High-Density AI GPU Compute Servers tailored for massive parallel processing workloads. Our designs focus on robust Power Delivery Networks (PDN) and advanced thermal management strategies required to sustain the performance of high-TDP NVIDIA and AMD GPU clusters used in AI training and inference.
+
+**Q: Does Qmax Systems provide O-RAN and 5G infrastructure hardware?**
+A: Absolutely. Qmax Systems is active in the O-RAN ecosystem, designing Distributed Units (DU) and specialized Network Interface Cards (NIC). We help telecom providers and private network operators deploy scalable, open-architecture hardware for 4G and 5G rollouts.
+
+**Q: What processor architectures does Qmax Systems work with for server motherboards?**
+A: Qmax Systems' expertise spans the leading x86 and ARM-based enterprise architectures, including Intel Xeon, AMD EPYC, and Ampere Altra CPUs. We design custom server motherboards and Single Board Computers (SBCs) in OCP-compliant, 1U/2U rackmount, and rugged industrial form factors that meet specific environmental and compliance requirements.
+
+**Q: Does Qmax Systems handle complex, high-layer count PCB designs?**
+A: Yes. Qmax Systems engineers are experienced in high-density interconnect (HDI) technology, regularly managing 20+ layer PCB stacks with blind and buried microvias for DDR5, PCIe Gen6, and 112G SerDes routing. We ensure every design is optimized for DFM (Design for Manufacturing) and DFT (Design for Test) to streamline the transition to mass production.
+
+**Q: What is included in the 1-hour complimentary consulting session?**
+A: During this session, you will speak directly with a Senior Hardware Architect from Qmax Systems. We can review your block diagrams, discuss thermal or signal integrity challenges, provide high-level architecture validation, or help refine your hardware roadmap to reduce time-to-market. We can sign an NDA if required.
+
+**Q: How does Qmax Systems protect customer design data and intellectual property?**
+A: Qmax Systems treats every engagement under strict IP protection: NDAs signed before any technical discussion, dedicated secure project workspaces, role-based access control to design files, and customer-owned IP at every milestone - schematics, layouts, BoMs, and firmware. Qmax Systems engineers never reuse or repurpose customer IP across other client engagements.
+
+**Q: How does Qmax Systems ensure signal integrity and power integrity in high-speed digital designs?**
+A: Qmax Systems' SI/PI methodology combines full-wave 3D electromagnetic simulation, IBIS-AMI channel modeling for DDR5 and SerDes interfaces, and target-impedance PDN design backed by simulation-driven decoupling. Every high-speed design - DDR5, PCIe Gen5/Gen6, 100GbE, 112G SerDes - is validated against compliance margin before fabrication, eliminating costly re-spins.

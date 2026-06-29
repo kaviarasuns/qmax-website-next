@@ -1,0 +1,311 @@
+## Hero
+
+**Title:** Embedded Design Services - Firmware, Bring-Up, and OTA Across the Lifecycle
+
+**Description:** Qmax Systems provides embedded design services across the complete product lifecycle - from requirements and architecture through board bring-up, validation, and OTA-based fleet maintenance. Qmax Systems engineers design for real-world deployment from Day 1: ASIL traceability for automotive (ISO 26262), IEC 62304 for medical devices, DO-178C for avionics, and OPC-UA determinism for industrial systems - not retrofitted at sign-off.
+
+**CTA:** Talk to our engineers
+
+---
+
+## Firmware Lifecycle
+
+**Title:** Firmware Lifecycle
+**Subtitle:** Requirement to production
+
+**Phases:**
+
+- **Phase 1 - Requirements:** Firmware PRD, Feasibility & toolchain
+- **Phase 2 - Architecture:** SW architecture, RTOS / Linux selection
+- **Phase 3 - Detailed Design:** Drivers & BSP, Middleware & app, Code reviews
+- **Phase 4 - Bring-Up:** Bootloader & BSP, Functional bring-up, Debug & iterate
+- **Phase 5 - Validation:** Stress & endurance, HIL & integration
+- **Phase 6 - QA & Compliance:** MISRA & static analysis, Security audit, Cert readiness
+- **Phase 7 - Production:** Mfg firmware & jigs, Provisioning, OTA & maintenance
+
+---
+
+## Day 1 Thinking for Real-World Deployment
+
+**Title:** Day 1 Thinking for Real-World Deployment
+
+**Description:** Qmax Systems engineers plan for field deployment from Day 1 - before the first line of production firmware is written. OTA pipeline design, battery duty-cycling, certification readiness (FCC, CE, IEC 62304, ISO 26262, AEC-Q100), commissioning workflows, remote diagnostics, communication cost budgeting, MTBF planning, and security patch cadence are all architected at project start - not added after the first field failure.
+
+**Insights:**
+
+- **OTA Updates:** Signed, encrypted firmware delivery with dual-bank rollback and delta updates - designed in before line one.
+- **Battery Optimization:** Adaptive duty cycling, deep-sleep wake sources, and energy profiling - so devices last years on a single charge.
+- **Certification:** FCC, CE, BIS, IEC, UL, ISO 13485, IEC 62304, AEC-Q100 - compliance considered in architecture, not bolted on later.
+- **Commissioning:** QR or mobile-assisted onboarding, identity provisioning, cloud registration, and secure key exchange built-in.
+- **On-Field Troubleshooting:** Logging, remote diagnostics, watchdog telemetry, and remote command interfaces - engineered for fleet operations, not lab demos.
+- **Communication Cost:** Payload compression, delta encoding, and smart backoff - measured against your cellular / LPWAN bill from day one.
+- **MTBF & Reliability:** Component derating, thermal margin, watchdogs, and 24-72-hour endurance runs - reliability designed and proven, not assumed.
+- **Security Updates:** Secure boot, signed images, X.509 identity, TPM/secure element anchoring, and a patch pipeline that survives the whole product life.
+
+**Callout Title:** ...and many more domain-specific factors
+
+**Callout Description:** From IEC 62304 software life-cycle for medical, to ISO 26262 ASIL traceability for automotive, to DO-178C for avionics, to OPC-UA determinism for industrial - we anticipate the factors unique to your domain and engineer for them from Day 1, not after the first field failure.
+
+---
+
+## Embedded Software Across The Full Stack — Bare-Metal to Server-Grade
+
+**Title:** Embedded Software Across The Full Stack — Bare-Metal to Server-Grade
+
+**Description:** Qmax Systems delivers embedded software across the full firmware stack - bare-metal C/C++ on resource-constrained MCUs, FreeRTOS and Zephyr RTOS on Cortex-M, Yocto Linux on Cortex-A, OpenWrt-based networking platforms, and OpenBMC/UEFI server firmware. All work is developed to MISRA-C/C++ coding standards and validated on production silicon.
+
+### Tab: Bare-metal Firmware (C / C++)
+
+**Headline:** Bare-metal firmware in C / C++ across leading MCU silicon.
+
+**Intro:** Qmax Systems engineers start at first power-on - clock tree configuration, boot ROM initialization, and flash memory map - and deliver deterministic, MISRA-C/C++ compliant firmware. Peripheral drivers (SPI, I²C, UART, USB, CAN, ADC), bootloader design, and application code are engineered for the tight constraints of MCU targets including STM32, ESP32, NXP i.MX RT, and Nordic nRF52/53.
+
+**Multi-Vendor MCU Expertise:**
+- STM32 (F0 / F4 / H7 / WB).
+- ESP32 family (ESP32, S3, C3).
+- NXP (LPC, i.MX RT series).
+- Renesas (RA, RX), TI (MSP430, Sitara, SimpleLink).
+- Nordic (nRF52 / nRF53 BLE).
+
+**Bare-Metal Engineering:**
+- Board bring-up & silicon validation.
+- Peripheral drivers (SPI, I²C, UART, ADC, USB, CAN).
+- Clock tree & power management.
+- Bootloader design & flash memory management.
+- MISRA-C / C++ compliance & static analysis.
+
+### Tab: RTOS & Embedded Linux
+
+**Headline:** RTOS and Embedded Linux platforms tuned for real-time and reliability.
+
+**Intro:** Qmax Systems engineers real-time platforms from FreeRTOS and Zephyr RTOS on Cortex-M to Yocto and Buildroot Linux on Cortex-A. Qmax Systems tunes scheduler behavior, ISR design, and memory layout against measurable timing and footprint targets - delivering bounded latency guarantees, secure boot with dm-verity, and device-tree-based driver models on production hardware.
+
+**RTOS Platforms:**
+- FreeRTOS, Zephyr, ThreadX, RT-Thread.
+- Scheduler tuning & ISR design.
+- Inter-task communication & timing budget.
+- Bounded latency & determinism analysis.
+
+**Embedded Linux:**
+- Yocto / Buildroot custom distributions.
+- U-Boot, kernel patches, device tree.
+- Linux drivers (char, I²C, SPI, USB, V4L2).
+- Secure boot, dm-verity, signed root FS.
+
+### Tab: Router & Network OS
+
+**Headline:** Router platforms and network operating systems for carrier-grade reliability.
+
+**Intro:** Qmax Systems develops OpenWrt-based router firmware, OpenWiFi integration, and Wi-Fi 6/6E mesh networking platforms for service-provider and enterprise deployments. Qmax Systems engineers build and integrate VPN stacks (IPsec, WireGuard, OpenVPN), VLAN, QoS, and advanced routing protocols, with full OTA fleet management and remote diagnostics pipelines.
+
+**Router & AP Platforms:**
+- OpenWrt-based router firmware.
+- OpenWiFi integration.
+- Wi-Fi 6 / 6E mesh networking.
+- Access point firmware.
+
+**Network Stacks & Management:**
+- Firewall and VPN stacks (IPsec, WireGuard, OpenVPN).
+- VLAN, QoS, and advanced routing protocols.
+- Network monitoring & diagnostics.
+- Remote OTA updates & fleet management.
+
+### Tab: Server-Grade Systems · Full Stack
+
+**Headline:** Server-grade systems - full stack from BMC to BIOS to power.
+
+**Intro:** Qmax Systems delivers end-to-end server platform firmware - from board bring-up and power sequencing through OpenBMC, IPMI, Redfish remote management, and UEFI/EDK-II BIOS development. Qmax Systems integrates CPLD/FPGA board control firmware, TPM-anchored secure boot, and Linux bring-up for server platforms under a single accountable engineering team.
+
+**BMC, BIOS & OS Bring-up:**
+- OpenBMC, IPMI, Redfish.
+- BIOS / UEFI development (EDK-II).
+- Linux bring-up for server platforms.
+- Power sequencing & management.
+
+**Board Control & Security:**
+- CPLD / FPGA firmware for board control.
+- Sensor monitoring & telemetry.
+- Secure boot, TPM, and integrity.
+- Remote management & diagnostics.
+
+---
+
+## Modular Firmware Frameworks Built for Reuse, Scale, and Security
+
+**Title:** Modular Firmware Frameworks Built for Reuse, Scale, and Security
+
+**Description:** Qmax Systems builds four production-ready modular firmware frameworks - Secure OTA, Battery Management, Cellular Communication, and Device Commissioning - deployed across Qmax Systems programs in IoT, medical, and industrial markets. These reusable libraries shorten time-to-market and reduce long-term maintenance cost for fleets ranging from hundreds to hundreds of thousands of devices.
+
+**Frameworks:**
+
+- **Secure OTA** — Over-the-Air firmware updates for remote upgrades.
+  - Signed & encrypted images
+  - Dual-bank rollback
+  - Delta updates
+  - Device authentication
+
+- **Battery Management** — Efficient power usage for remote IoT devices.
+  - Advanced sleep states
+  - Adaptive duty cycling
+  - Battery health monitoring
+  - Dynamic frequency scaling
+
+- **Cellular Communication** — Secure communication stacks for cellular devices.
+  - LTE-M / NB-IoT / GSM
+  - TLS / DTLS messaging
+  - MQTT / CoAP
+  - Auto-recovery & backoff
+
+- **Commissioning** — Secure onboarding infrastructure for IoT ecosystems.
+  - Identity provisioning
+  - QR / mobile assisted
+  - Cloud registration
+  - Secure key exchange
+
+---
+
+## Embedded Engineering by Industry
+
+**Heading:** Embedded Engineering (by industry)
+
+### Automotive Electronics
+Qmax Systems designs automotive firmware for ECUs, infotainment, ADAS, and EV powertrain systems built to AEC-Q100 and IATF 16949 standards. This firmware handles harsh thermal cycling, severe vibration, and aggressive EMI across cabin, chassis, and under-the-hood applications.
+
+From multi-layer ECU boards to high-current EV battery management systems, Qmax Systems delivers firmware designs that meet zero-defect quality and full automotive traceability.
+
+**Related Case Studies:**
+- Connected Car Demonstration Unit
+- BMS Controller
+- Ultra Low Power BLE Mouse
+
+### Medical & Healthcare
+Qmax Systems develops firmware for Class II and Class III medical devices built to IEC 62304 software life-cycle requirements. This firmware delivers safety-critical embedded software with full traceability, risk management alignment to ISO 14971, and certification-ready documentation packages.
+
+From vital-signs monitoring to infusion pump control, Qmax Systems engineers understand the regulatory landscape and design to it from the first sprint.
+
+**Related Case Studies:**
+- Medical Device Interface
+- Microscopic Camera Control
+- Ultra Low Noise ADC Board
+
+### Aerospace Systems
+Qmax Systems develops DO-178C compliant firmware for avionics systems, applying structured development processes, rigorous verification and validation, and full requirements-through-test traceability. These designs are built to survive the harsh demands of aerospace environments.
+
+From flight control software to communication avionics, Qmax Systems applies DO-178C development assurance levels appropriate to each system's criticality classification.
+
+**Related Case Studies:**
+- Stellar Main Board
+- Gigabit Ethernet Switch Module
+- High Speed Camera Interface
+
+### Energy, EV & Power
+Qmax Systems develops firmware for battery management systems, EV chargers, power conversion, and grid-edge devices. This firmware handles real-time control loops, safety interlocks, and communication stacks that energy applications demand.
+
+Qmax Systems designs to IEC 61508 functional safety requirements with full ASIL decomposition documentation where required by the application.
+
+**Related Case Studies:**
+- Industrial IOT gateway with POE
+- POE Control unit
+- Thermal Analysis and Management
+
+### Communication Systems
+Qmax Systems delivers firmware for wireless base stations, access points, gateways, and edge networking devices. From OpenWrt-based router platforms to custom LPWAN firmware, this firmware delivers the full connectivity stack.
+
+Wi-Fi 6/6E, BLE, LTE-M, NB-IoT, LoRa - Qmax Systems covers the protocol stack end to end with carrier-grade reliability requirements across all deployment environments.
+
+**Related Case Studies:**
+- Wi-Fi 6E Router
+- Multi IO card for ATE
+- Industrial POE switch
+
+### Industrial Automation
+Qmax Systems engineers OPC-UA deterministic firmware for PLCs, industrial controllers, and IIoT edge gateways. This firmware delivers real-time control with deterministic latency, functional safety hooks, and secure remote management.
+
+Qmax Systems designs meet IEC 61131 and IEC 62443 security standards, with modular firmware architectures that simplify reconfiguration across production lines.
+
+**Related Case Studies:**
+- Industrial Temperature Control System
+- Smart Monitoring System
+- Rugged Industrial IO Board
+
+---
+
+## Why Choose Qmax for Embedded Firmware?
+
+- **Transparent & Supervised Process:** Qmax Systems provides full milestone visibility - every design review, risk register, and build delivered on a weekly cadence with traceable deliverables and zero hidden surprises at handover.
+- **Lifecycle Maintenance:** Qmax Systems engagement extends well beyond launch - feature updates, silicon obsolescence management, security patches, and OTA fleet rollouts keep firmware healthy across the full commercial life of the product.
+- **Smooth Hardware-Firmware Integration:** Qmax Systems firmware engineers sit next to the hardware team - board bring-up timelines collapse, schematic risks surface early, and the system comes up clean on the first prototype spin.
+- **Expert Engineers:** Qmax Systems engineers average 12+ years of experience across automotive, medical, aerospace, IoT, and networking. Senior engineers own every design - no junior hand-offs, no learning on the client's timeline.
+- **Strict Coding Standards & Quality:** Qmax Systems enforces MISRA-C/C++, automated static analysis, HIL testing, and 24-72-hour endurance runs with memory-leak and OTA-rollback validation as part of every release.
+- **Reusable Frameworks:** Qmax Systems battle-tested libraries for Secure OTA, Battery Management, Cellular Communication, and Device Commissioning shorten time-to-market and lower long-term maintenance cost across programs.
+
+---
+
+## Contact CTA Banner
+
+**Heading:** Have Your Questions Answered!
+**Subheading:** Send your requirements and get an assessment
+**Button:** Ask a Question
+**Name:** Saravanaperumal Annamalai
+**Role:** VP - SWE Engineering
+
+---
+
+## Silicon Platforms We Build On
+
+**Heading:** Silicon Platforms We Build On
+
+**Description:** Across hundreds of programs, Qmax Systems firmware engineers have shipped production code on the silicon below - carrying hands-on experience with toolchains, SDKs, errata sheets, and reference designs so every project starts from working ground, not from scratch.
+
+**Partners:**
+- Qualcomm
+- NXP
+- Analog Devices
+- MediaTek
+- Ampere
+- Infineon
+- Rockchip
+- Texas Instruments
+- Microchip
+- Nordic Semiconductor
+- Silicon Labs
+- ST Microelectronics
+
+---
+
+## CTA Banner
+
+**Heading:** Ready to Bring Your Embedded Design Project to Life?
+
+---
+
+## Embedded Programs (Case Studies)
+
+**Eyebrow:** Embedded Programs
+
+- **Industrial IOT gateway with POE** — An industrial IoT gateway with integrated POE+ that bridges field sensors and actuators to cloud platforms. The device aggregates data from LoRa, BLE, and CAN bus endpoints, processes it locally on an STM32F MCU, and forwards it over Ethernet.
+- **Smart Monitoring System** — A smart environmental monitoring system powered by an ARM Cortex-M7 processor running FreeRTOS.
+- **Wi-Fi 6E Router** — High-performance Wi-Fi 6E router delivering ultra-fast multi-band connectivity, low latency communication, and secure networking for modern connected environments.
+- **Lung Sound Recorder** — Lung Sound Recorder is an embedded medical device platform designed for accurate respiratory sound acquisition, portable diagnostics, and reliable healthcare monitoring.
+
+---
+
+## FAQ
+
+**Q: Does Qmax Systems provide end-to-end embedded firmware development?**
+A: Yes. Qmax Systems owns the entire firmware lifecycle - from requirements capture, architecture, and driver development through board bring-up, validation, and production handover. Qmax Systems engineers align firmware milestones with hardware prototype spins and continue engagement into OTA-based field maintenance, giving clients a single accountable partner from concept to fleet operation.
+
+**Q: Who owns the IP when working with Qmax Systems?**
+A: The client does - 100%. Unless otherwise agreed in writing, all IP generated during a Qmax Systems engagement - including source code, build scripts, test suites, and documentation - belongs exclusively to the client. Qmax Systems operates under strict NDAs with customers, employees, and third-party vendors to fully safeguard client innovations throughout and after the engagement.
+
+**Q: What chipsets and platforms does Qmax Systems support?**
+A: Qmax Systems supports STM32 (F0/F4/H7/WB), ESP32 (ESP32, S3, C3), NXP (LPC, i.MX RT), Renesas (RA, RX), TI (MSP430, Sitara, SimpleLink), Nordic (nRF52/nRF53), Qualcomm, NVIDIA, Analog Devices, Infineon, and Microchip. Qmax Systems also delivers server firmware on OpenBMC/EDK-II UEFI platforms and network firmware on OpenWrt and OpenWiFi router platforms.
+
+**Q: How does Qmax Systems handle firmware security and OTA updates?**
+A: Security is a Day 1 decision at Qmax Systems. Qmax Systems designs signed and encrypted OTA pipelines with dual-bank rollback, delta updates, and device authentication. Secure boot with signed images, X.509 device identity, and TPM/secure-element anchoring are built into the Qmax Systems reference firmware framework - not added as an afterthought.
+
+**Q: What coding standards does Qmax Systems follow?**
+A: Qmax Systems enforces MISRA-C/C++ for all safety-critical firmware, automated static analysis at every pull request, peer code review, HIL (hardware-in-the-loop) testing, and 24-72-hour endurance runs with memory-leak and OTA-rollback validation as part of every release cycle.
+
+**Q: Does Qmax Systems support long-term firmware maintenance?**
+A: Yes. Qmax Systems engagement extends well beyond product launch. Qmax Systems provides lifecycle maintenance covering feature updates, silicon obsolescence management, security patches, and OTA fleet rollouts - keeping firmware healthy across the full commercial life of the product, including field variants and updated silicon revisions.

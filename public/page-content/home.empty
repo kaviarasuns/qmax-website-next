@@ -1,0 +1,279 @@
+## Hero Section
+
+**Heading:** Electronics Engineering Services
+**Subheading:** From Concept to Production
+**CTA Button:** Let's Build
+
+
+## Design to Manufacturing
+
+**Section Heading:** Design to Manufacturing
+
+### Stages
+
+**Phase: CVD**
+
+- **01 — Concept Validation**
+  Pill label: Concept Validation
+  Heading: Concept Validation
+  Body: From idea to defendable spec: feasibility studies, system architecture, product specification.
+  Bullets:
+  - System architecture & requirements definition
+  - Feasibility studies and risk identification
+  - Product specification & IP landscape review
+
+**Phase: EVT**
+
+- **02 — Hardware Development**
+  Pill label: Hardware Development
+  Heading: Hardware Development
+  Body: High-level and low-level design, component engineering, board bring-up & testing.
+  Bullets:
+  - Schematic design & component selection
+  - Board bring-up, debugging & validation
+  - BOM optimisation & component lifecycle management
+
+- **03 — PCB Design**
+  Pill label: PCB Design
+  Heading: PCB Design
+  Body: Multi-layer layouts, signal & power integrity, design-for-manufacturability.
+  Bullets:
+  - Multi-layer stack-up & impedance control
+  - Signal integrity & power delivery analysis
+  - DFM review for high-volume manufacturing
+
+- **04 — Firmware & SW Development**
+  Pill label: Firmware & SW Development
+  Heading: Firmware & SW Development
+  Body: Firmware, drivers / BSP and cross-platform application software development.
+  Bullets:
+  - RTOS / bare-metal firmware & device drivers
+  - BSP development & hardware abstraction layer
+  - Cross-platform application & cloud integration
+
+- **05 — Mechanical and ID**
+  Pill label: Mechanical and ID
+  Heading: Mechanical and ID
+  Body: Enclosure design, CMF and UI/UX — translating engineering specs into a product users actually hold.
+  Bullets:
+  - Industrial design & CMF definition
+  - Enclosure engineering & DFM analysis
+  - UI/UX prototyping & human factors review
+
+**Phase: DVT**
+
+- **06 — Validation & Compliance**
+  Pill label: Validation & Compliance
+  Heading: Validation & Compliance
+  Body: Compliance certification (FCC / UL / CE), vendor audits and test-jig development.
+  Bullets:
+  - Pre-compliance testing: FCC, CE, UL certifications
+  - Automated test jig design & framework development
+  - Supplier qualification & supply chain audit
+
+**Phase: PVT**
+
+- **07 — Production Validation**
+  Pill label: Production Validation
+  Heading: Production Validation
+  Body: Manufacturing coordination and production testing, built at scale, shipped with confidence.
+  Bullets:
+  - Manufacturing transfer & process validation
+  - Production test coverage & yield optimisation
+  - Regulatory approval & mass production launch
+
+**Phase Labels (stepper):** CVD | EVT | DVT | PVT
+
+
+## Our Services
+
+**Section Heading:** Our Services
+
+### Service Cards
+
+- **Hardware Development**
+  Blurb: From signal to silicon — purpose-built hardware that ships.
+  Items:
+  - Analog / Mixed Signal
+  - High Speed Digital
+  - RF / Microwave
+  - Power Electronics
+  Footer label: Explore service
+
+- **Embedded Systems Development**
+  Blurb: Firmware and platform software engineered for reliability.
+  Items:
+  - Firmware Development
+  - BSP & Driver Development
+  - Embedded Linux & RTOS
+  - FPGA Design & Development
+  Footer label: Explore service
+
+- **PCB Design Services**
+  Blurb: High-speed, multi-layer, and RF layouts ready for production.
+  Items:
+  - PCB Design
+  - PCB Library
+  - SI/PI/EMI Analysis
+  - PCB Design Review
+  Footer label: Explore service
+
+- **Mechanical and Industrial Design**
+  Blurb: Enclosures, ergonomics, and prototypes ready for production.
+  Items:
+  - Mechanical Design
+  - Industrial Design
+  - Prototype Build
+  Footer label: Explore service
+
+
+## Industries We Serve
+
+**Section Heading:** Industries We Serve
+
+### Industry Panels
+
+- **01 — Industrial Electronics**
+  Description: From refinery to field: PLCs, motor drives, process I/O and rugged industrial control systems.
+
+- **02 — Communication Systems**
+  Description: RF, mixed signal design for 5G, satellite, IoT gateways and broadband networking.
+
+- **03 — High Performance Computing**
+  Description: Server boards, AI GPUs, backplanes and signal integrity critical PCB design.
+
+- **04 — Aerospace Systems**
+  Description: Avionics interfaces, radar sub-systems, and ruggedized SBCs validated to MIL-STD-810/461 and DO-160.
+
+- **05 — Medical Electronics**
+  Description: Monitors, diagnostics and IEC 60601 / ISO 13485 device development.
+
+- **06 — Automotive Electronics**
+  Description: ECUs, ADAS, infotainment and EV powertrain electronics to AEC Q100 specs.
+
+
+## Why Qmax Systems
+
+**Section Heading:** Why Qmax Systems
+
+### Accordion Items
+
+- **First-Time-Right Engineering Execution**
+  Backed by 29 years of deep industry experience, our engineers execute complex hardware designs without needing oversight. By utilizing cutting-edge tools and a well-defined process, our experienced team catches and resolves critical design anomalies before the fabrication stage, ensuring a stable, production-ready first prototype run.
+
+- **Comprehensive Lifecycle Ownership & Continuity**
+  We eliminate vendor-fragmentation friction and accountability gaps. By housing full-stack capabilities — Hardware, Firmware, Software, PCB Layout, Mechanical, and Industrial Design — completely under one roof, we ensure total continuity across your product lifecycle, delivering predictable milestones and seamless production handoffs.
+
+- **Proactive Regulatory & Compliance De-Risking**
+  We treat compliance as a foundational architecture constraint, not an afterthought. Our engineering teams possess rigorous domain knowledge of international standards, integrating complex certification blueprints into the product plan from Day 1 to guarantee a seamless, uncompromised path to market.
+
+- **Enterprise-Grade Governance & Visibility**
+  We eliminate the transparency risks common in outsourced R&D. Operating with absolute corporate governance, we provide systematic project tracking, highly structured communication frameworks, and daily operational updates to keep your internal stakeholders perfectly aligned and informed.
+
+- **Institutional IP Protection & Security Frameworks**
+  Your core intellectual property is protected by institutional-grade protocols. Our robust IP defense model includes strict, multi-tiered NDA frameworks with all employees, suppliers, and tier-one partners, reinforced by isolated, secure physical and digital access controls across our engineering infrastructure.
+
+- **Field-Tested Multi-Domain Resilience**
+  We cross-pollinate architectural best practices from the world's most demanding sectors — including Automotive, Medical, Aerospace, Industrial, and Military applications. This extensive multi-domain footprint ensures your product inherits field-tested ruggedness, structural reliability, and long-term scalability.
+
+### Stats
+
+- **25+** Years of Experience
+- **500+** Products Delivered
+- **100+** Global Clients
+- **ISO** 9001 & 27001 Certified
+
+### CTA Bar
+
+**Heading:** Ready to build your next product?
+**Body:** From design to manufacturing - one accountable engineering partner.
+**Button:** DISCUSS YOUR PROJECT
+
+
+## Case Studies
+
+**Section Heading:** Case Studies
+**Link:** More Case Studies
+
+### Case Study Cards
+
+- **Rugged Android Digital Signage Player**
+  Full product development from concept to volume production — rugged Android signage player for North American retail deployment.
+
+- **OBD-II Diagnostics Device**
+  Full product development from concept to mass production — handheld OBD-II diagnostics device for North American automotive dealership service lanes.
+
+- **WiFi 6E Triband Cybersecurity Gateway**
+  Full product development from concept to volume production — WiFi 6E tri-band cybersecurity gateway for North American SME deployment.
+
+- **Outdoor Wi-Fi 6 Access Point**
+  Full product development from concept to DVT — outdoor tri-band Wi-Fi 6 access point for North American smart city and public Wi-Fi deployment.
+
+- **Cold Storage IoT Monitoring System**
+  Full product development from concept to volume production — cold storage IoT monitoring system with AWS cloud connectivity for Indian cold chain deployment.
+
+- **Advanced Modular Medical Simulator — Developer Kit**
+  Complete embedded electronics platform for an open-standard medical simulation manikin — Snapdragon 820 SoM, 9-port GbE PoE backbone, Linux + RTOS, EVT through small-volume production.
+
+
+## Footer
+
+### About Us
+
+Qmax Systems is an Electronics Engineering and R&D Services company based in San Jose, California and with a development center in India. Established in 1997, Qmax provides Embedded Systems Design and PCB Design Services.
+
+Qmax Systems brings a highly experienced, multi-disciplinary team that delivers the best solution for your requirement in the shortest time. A stringent process and hands-on experience help avoid errors, reduce design costs, and ensure faster time to market.
+
+### Presentation
+
+Click here to download our company presentation.
+**Button:** Download
+
+### Follow Us
+
+- Facebook
+- LinkedIn
+- YouTube
+
+### Quick Links
+
+- Home
+- Services
+  - Hardware Design Services
+  - PCB Design Services
+  - Embedded Design Services
+  - Mechanical and Industrial Design Services
+- Case Studies
+- About Us
+- Resources
+  - PCB Design Resources
+  - Embedded Systems Glossary
+  - PCB Design Glossary
+- Careers
+- Contact Us
+
+### Contact Us
+
+**United States**
+Qmax Systems LLC
+539 W Commerce St #7953
+Dallas, TX 75208-1953
+United States
+Phone: +1 412 265 2314
+Email: info@qmaxsys.com
+
+**India**
+Qmax Systems India Pvt Ltd
+310/2A, Rukmani Nagar, 4th Street,
+Poonamallee, Chennai 600056,
+Tamil Nadu, India
+Phone: +91 98402 30903
+Email: info@qmaxsys.com
+
+### Copyright
+
+Copyright © 2026 Qmax Systems India Pvt. Ltd.
+
+- Terms of Use
+- Privacy Information
+- Cookies Information
