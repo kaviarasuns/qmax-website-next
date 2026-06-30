@@ -1,51 +1,1071 @@
-import { pcbDesingTerms } from "@/components/pcbDesignTerms";
-import { buildMetadata } from "@/lib/seo";
+# PCB Design Glossary
 
-export const metadata = buildMetadata({
-  title: "PCB Design Glossary | Qmax Systems",
-  description:
-    "Definitions of PCB design terminology — impedance, stack-up, SI/PI, HDI, surface finishes, and more — from Qmax Systems engineering.",
-  path: "/pcb-design-glossary",
-});
+Key terms and definitions used across PCB layout, signal integrity, fabrication, and assembly — explained by Qmax Systems engineers.
 
-export default function PCBDesignGlossaryPage() {
-  return (
-    <>
-      <section
-        className="mt-[var(--nav-h)] bg-white px-16 pt-16 pb-10 max-[900px]:px-6 max-[900px]:pt-12 max-[900px]:pb-8"
-        aria-labelledby="pcb-glossary-title"
-      >
-        <div className="mx-auto max-w-[960px] text-center">
-          <h1
-            id="pcb-glossary-title"
-            className="text-[clamp(32px,4vw,48px)] font-light leading-[1.15] tracking-[-0.025em] text-foreground"
-          >
-            PCB Design <span className="text-red-500">Glossary</span>
-          </h1>
-          <p className="mx-auto mt-4 max-w-[680px] text-[15px] font-light leading-[1.6] text-foreground">
-            Key terms and definitions used across PCB layout, signal integrity,
-            fabrication, and assembly — explained by Qmax Systems engineers.
-          </p>
-        </div>
-      </section>
+## Activating
+The process of preparing a non-conductive surface for electroless plating by first treating it with a catalyst.
 
-      <section className="bg-white px-16 pb-28 max-[900px]:px-6 max-[900px]:pb-20">
-        <div className="mx-auto max-w-[960px]">
-          {pcbDesingTerms.map((item, index) => (
-            <article
-              key={`${item.term}-${index}`}
-              className="border-b border-gray-200 py-8 last:border-b-0"
-            >
-              <h2 className="mb-3 text-xl font-light leading-tight tracking-tight text-foreground md:text-2xl">
-                {item.term}
-              </h2>
-              <p className="text-justify text-[15px] font-light leading-[1.6] text-foreground">
-                {item.definition}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-    </>
-  );
-}
+## Active component
+A component that requires power to operate and can amplify or switch signals, such as transistors, ICs, and diodes.
+
+## Additive Process
+A method of PCB fabrication where the conductive pattern is built up on the base material by plating, rather than etching away unwanted copper.
+
+## AlN
+Aluminum Nitride. A ceramic material with high thermal conductivity used as a substrate for high-power electronic components.
+
+## ALN Substrate
+A substrate made from aluminum nitride, used in high-power and high-frequency applications due to its excellent thermal conductivity and electrical insulation.
+
+## Air gap
+The space between conductive elements on a PCB, critical for electrical isolation and preventing arcing.
+
+## Alumina
+Aluminum oxide (Al2O3), a ceramic material commonly used as a substrate in hybrid circuits and for its electrical insulation properties.
+
+## Ambient
+Refers to the surrounding environment, particularly the temperature surrounding a component or PCB, which affects heat dissipation and component performance.
+
+## Analog Circuit
+A circuit that processes continuously variable signals, as opposed to discrete digital signals.
+
+## Aperture
+An opening in a stencil or artwork through which solder paste is deposited onto a PCB pad.
+
+## Aperture wheel
+A rotating disk with multiple aperture openings used in photo-plotters to create different line widths and shapes on PCB artwork.
+
+## Aperture Information
+Data that defines the size, shape, and type of each aperture used in a Gerber file for PCB artwork generation.
+
+## ApertureList/ApertureTable
+A list or table in a Gerber file that defines all the apertures (shapes and sizes) used in the PCB artwork.
+
+## AOI
+Automated Optical Inspection. A system that uses cameras and image processing to automatically inspect PCBs for defects after manufacturing.
+
+## AQL
+Acceptable Quality Level. A statistical quality standard that defines the maximum number of defective units in a sample that is considered acceptable.
+
+## Array (PCB layout)
+An arrangement of multiple identical PCB designs on a single panel for efficient manufacturing.
+
+## Array (components)
+A group of components arranged in a regular pattern, often in a single package.
+
+## Artwork Master
+The original, high-precision film or digital file used to create the photomasks for PCB fabrication.
+
+## Aspect Ratio
+The ratio of the depth (thickness) of a drilled hole to its diameter. A high aspect ratio makes plating more difficult.
+
+## Artwork
+The pattern of conductors, pads, and other features on a PCB layer, represented as a Gerber or other CAD file.
+
+## ASCII
+American Standard Code for Information Interchange. A character encoding standard used in data files, including some PCB file formats.
+
+## Assembly
+The process of mounting and soldering electronic components onto a PCB.
+
+## Assembly drawing
+A document that shows the placement and orientation of all components on a PCB, used as a guide for assembly.
+
+## Assembly house
+A facility that specializes in mounting and soldering components onto PCBs (also called a Contract Manufacturer or CM).
+
+## ASTM
+American Society for Testing and Materials. An organization that develops and publishes technical standards, including standards for PCB materials and testing.
+
+## AWG
+American Wire Gauge. A standard for wire diameter in the US.
+
+## Automated Test Equipment (ATE)
+Equipment used to automatically test the functionality and quality of PCBs or electronic assemblies.
+
+## Automatic component placement
+The use of automated machines (pick-and-place machines) to mount components onto a PCB.
+
+## Automatic optical component inspection
+See AOI.
+
+## Automatic X-Ray component/pin inspection
+A quality inspection method using X-rays to detect hidden defects such as solder joint quality under BGA packages.
+
+## Autorouter
+Software that automatically routes PCB traces based on the netlist and design rules.
+
+## BareBoard
+A PCB that has been fabricated but has no components mounted on it yet.
+
+## BaseLaminate
+The core insulating material of a PCB before any copper or other layers are added.
+
+## Buried via
+A via that connects only internal layers of a multilayer PCB and does not extend to the outer surfaces.
+
+## Built in Self Test
+A design technique where a circuit tests itself automatically, typically upon power-up or on command.
+
+## B:Stage
+A stage in the curing of thermosetting resins where the material is partially cured. The material is still flexible and can be further processed.
+
+## Barrel
+The plated hole in a PCB that connects copper layers. The barrel is the cylindrical wall of copper that forms a via or through-hole.
+
+## Base Material
+The insulating substrate of a PCB, onto which copper foil is laminated. Common base materials include FR-4 and polyimide.
+
+## Base Material Thickness
+The thickness of the insulating core of a PCB, measured without the copper foil.
+
+## Bed of Nails
+A test fixture with many spring-loaded pins (nails) that make electrical contact with test points on a PCB for in-circuit testing.
+
+## Blister
+A delamination defect where a bubble forms between layers of a PCB due to entrapped moisture or other contamination.
+
+## Board House
+A facility that manufactures PCBs (also called a PCB fabricator).
+
+## Board Thickness
+The total thickness of a finished PCB, including all layers and the copper foil.
+
+## Book
+A stack of multiple PCB panels pressed together for lamination.
+
+## Bond Strength
+The force required to separate two bonded materials, such as copper foil from the PCB base material.
+
+## Bow
+A deviation of a PCB from a flat plane, measured as the maximum deflection from a flat reference surface.
+
+## Border Area
+The area around the edge of a PCB panel that is used for tooling, registration, and handling, and is typically discarded after routing.
+
+## Burr
+A rough edge or protrusion left on a drilled hole or machined edge on a PCB.
+
+## Ball grid array (BGA)
+A type of surface mount package where the solder connections are a grid of solder balls on the bottom of the package.
+
+## Base
+The lowest layer in a stack or structure, or the base material of a PCB.
+
+## Beam lead
+A thin metal lead that extends from an IC chip, used in some older packaging technologies.
+
+## Board
+A printed circuit board (PCB).
+
+## Body
+The main plastic or ceramic housing of a component, excluding its leads.
+
+## Boundary Scan test
+A method of testing ICs and PCBs using a serial test access port (JTAG). Test data is shifted in and out through the boundary scan cells in each IC.
+
+## Base Copper
+The copper foil that is laminated to the base material of a PCB before any plating or etching.
+
+## Blind Via
+A via that connects an outer layer of a PCB to one or more inner layers, but does not pass through the entire board.
+
+## B:Stage Material
+See B:Stage.
+
+## B:Stage Resin
+The partially cured resin in prepreg material.
+
+## Buildtime
+The time required to fabricate a PCB or assembly.
+
+## CAD
+Computer-Aided Design. Software used to design PCBs and other electronic products.
+
+## CAM
+Computer-Aided Manufacturing. The use of computer software to control manufacturing equipment for PCB fabrication.
+
+## CAM Files
+The set of files (Gerber, drill, fabrication drawing, etc.) required by a PCB manufacturer to fabricate a PCB.
+
+## Chamfer
+A beveled edge on a PCB component lead or board edge connector, used to ease insertion.
+
+## Card
+An informal term for a printed circuit board.
+
+## Capacitance
+The ability of a conductor or component to store electrical charge. Parasitic capacitance in PCBs can affect signal integrity.
+
+## Catalyst
+A chemical agent that activates a non-conductive PCB surface so that it can be plated with copper in the electroless plating process.
+
+## Ceramic Ball Grid Array (CBGA)
+A BGA package that uses a ceramic substrate instead of a plastic substrate, offering better electrical and thermal performance.
+
+## CEM1orCEM3
+Composite Epoxy Material grades 1 and 3. Alternative PCB base materials to FR-4, using a composite of epoxy resin and glass or paper.
+
+## Center to Center Spacing
+The distance between the centers of adjacent pads, holes, or components. Also called pitch.
+
+## Check Plots
+Printed or on-screen representations of CAD data used to verify the design before manufacture.
+
+## Chip on Board (COB)
+A packaging technology where a bare semiconductor chip is mounted directly on a PCB and wire-bonded, then encapsulated.
+
+## Check plots
+Plots generated from CAD data and checked by the PCB designer to verify the design before sending to manufacturing.
+
+## Chip
+A miniaturized electronic circuit or component made from semiconductor material, typically silicon.
+
+## Chip scale package
+A very small IC package where the package size is nearly the same as the die size.
+
+## Circuit
+An interconnection of electronic components through which electrical current can flow to perform a function.
+
+## Circuit Board
+See Printed Circuit Board.
+
+## CIM
+Computer-Integrated Manufacturing. The use of computers to control the entire manufacturing process.
+
+## Circuitry Layer
+A layer in a PCB that contains traces, pads, or other conductive patterns.
+
+## Clad
+A base material to which copper foil has been laminated. Copper clad laminate is the starting material for PCB manufacturing.
+
+## Clearances
+The minimum distances required between conductive elements on a PCB to prevent short circuits and ensure electrical isolation.
+
+## Clearance Hole
+A non-plated hole in a PCB that provides physical clearance for a component lead or fastener without making an electrical connection.
+
+## CNC
+Computer Numerical Control. The use of computers to control machine tools, such as PCB drills and routers.
+
+## Component
+An individual electronic part (resistor, capacitor, IC, etc.) that is mounted on a PCB.
+
+## Component Hole
+A hole in a PCB through which a component lead is inserted for through-hole mounting.
+
+## Component Side
+The side of a PCB on which most components are mounted. Also called the top side or solder side for SMD components.
+
+## Conductive Pattern
+The complete arrangement of conductors, pads, vias, and other conductive features on a PCB layer.
+
+## Conductor Spacing
+The minimum distance between two adjacent conductors on a PCB.
+
+## Continuity
+The presence of an electrical connection between two points. Tested using a continuity tester.
+
+## Conformal Coating
+A thin protective coating applied to a PCB assembly to protect it from moisture, dust, and other environmental hazards.
+
+## Connection
+An electrical link between two or more points in a circuit.
+
+## Connectivity
+The network of electrical connections in a circuit.
+
+## Connector
+An electromechanical component that provides a separable electrical connection between a PCB and other components or cables.
+
+## Connector Area
+The area on a PCB dedicated to connector placement and routing.
+
+## Controlled Impedance
+PCB traces whose impedance is maintained within specified tolerances through careful control of trace geometry and dielectric properties.
+
+## Core Thickness
+The thickness of the insulating core material of a multilayer PCB, between the copper foil layers.
+
+## Core Thickness (laminate)
+The overall thickness of a copper clad laminate, including the base material and copper foil.
+
+## Coating
+A material applied to the surface of a PCB or component to protect it or modify its properties.
+
+## Coefficient of Thermal Expansion (CTE)
+The rate at which a material expands or contracts per unit of temperature change.
+
+## Contact Angle (Wetting Angle)
+The angle formed between a liquid solder and the surface it contacts, which indicates the quality of wetting.
+
+## Copper Foil (Base Copper Weight)
+The thickness of the copper foil on a PCB, typically specified in ounces per square foot.
+
+## Copper Foil
+A thin sheet of copper that is laminated to the base material of a PCB.
+
+## Control Code
+A special character or command used in machine control languages such as Gerber.
+
+## Corrosive Flux
+A flux that contains acid or other corrosive agents. Must be thoroughly cleaned after soldering.
+
+## Crosshatching
+A pattern of crossed conductor lines used to fill copper areas on inner layers of multilayer PCBs to reduce the amount of copper and control thermal gradients.
+
+## Curing
+The process of hardening a polymer material through chemical reaction, typically induced by heat or UV radiation.
+
+## Curing Time
+The time required for a material to fully cure.
+
+## Cutlines
+Lines on a PCB panel that indicate where the individual boards are to be separated.
+
+## Database
+In PCB design, the CAD database contains all the design data for a PCB, including schematic, layout, BOM, and other information.
+
+## Date Code
+A code on a component that indicates the date of manufacture.
+
+## Datum
+A reference point, line, or plane from which measurements are taken on a PCB.
+
+## Delamination
+Separation of the layers of a PCB, often caused by moisture, thermal stress, or contamination.
+
+## Design Rule Checking
+An automated check performed by CAD software to verify that a PCB design conforms to specified design rules (minimum trace width, spacing, etc.).
+
+## Desmear
+The process of removing the smear of epoxy resin that can coat the inside of drilled holes, which would prevent good plating adhesion.
+
+## Dewetting
+A soldering defect where the molten solder initially wets a surface but then pulls back, leaving a rough, grainy surface.
+
+## DFSM
+Dry Film Solder Mask. A photoimageable film laminated to the PCB surface and patterned to protect copper areas from solder.
+
+## Die
+A single, unpackaged semiconductor chip.
+
+## Die Bonder
+A machine that attaches semiconductor dice to substrates or lead frames in chip-on-board or similar packaging.
+
+## Die Bonding
+The process of attaching a semiconductor die to a substrate.
+
+## Dimensional Stability
+The ability of a PCB material to maintain its dimensions under changes in temperature and humidity.
+
+## Dimensioned Hole
+A hole on a PCB for which the size and location are specifically controlled, often for mechanical or connector mounting purposes.
+
+## Double Side PCB
+A PCB with copper traces on both the top and bottom surfaces.
+
+## Double side component assembly
+Mounting components on both sides of a PCB.
+
+## Drill Tool Description
+The specification of drill bit sizes and types used to drill holes in a PCB.
+
+## Drill File
+A file in Excellon or similar format that contains the coordinates and sizes of all holes to be drilled in a PCB.
+
+## Dry Film Resists
+A photosensitive film used in PCB fabrication to define patterns for etching or plating.
+
+## Dry Film Solder Mask
+See DFSM.
+
+## Edge Connector
+A connector formed by extending the copper pads on a PCB to the edge of the board, allowing it to mate with a card-edge connector.
+
+## Edge Clearance
+The minimum distance from any conductive feature to the edge of a PCB.
+
+## Electrode deposition
+The process of depositing metal onto a surface using electrolysis.
+
+## Electroless Desposition/Plating
+The deposition of metal onto a surface without using external electricity, driven by a chemical reduction reaction.
+
+## Electroplating
+The process of depositing a metal coating onto a conductive surface using electrolytic action.
+
+## Electrical Test
+Testing of a bare PCB to verify that all intended connections are present and no unintended connections exist.
+
+## End-to-end design
+A PCB design service that covers all aspects from concept to manufacturing-ready files.
+
+## E-pad
+An exposed metallic pad on the bottom of some IC packages (such as QFN) used for thermal dissipation and ground connection.
+
+## Epoxy
+A thermosetting polymer material commonly used as the binder in PCB base materials such as FR-4.
+
+## Epoxy Smear
+Epoxy resin that is dragged into drilled holes during the drilling process, contaminating the hole walls.
+
+## ESR
+Equivalent Series Resistance. The resistance of a capacitor measured at a given frequency, which causes power dissipation and heating.
+
+## Etching
+The chemical or electrochemical process of removing unwanted copper from a PCB to create the desired conductor pattern.
+
+## Etch back
+The controlled removal of resin from the walls of drilled holes to expose more of the inner layer copper for better plating adhesion.
+
+## Excellon Drill File
+A standard file format for specifying drill hole locations, sizes, and types for PCB drilling machines.
+
+## Fab
+Short for fabrication. Also refers to the PCB manufacturer.
+
+## Fabrication Drawing
+A drawing that provides all the information needed to fabricate a PCB, including board outline, layer stack-up, materials, and special notes.
+
+## Fast Turnaround
+PCB prototyping or manufacturing services that deliver boards in a shorter than standard lead time.
+
+## Fiducial Mark
+A mark on a PCB used as a reference point by automated assembly equipment to align components accurately.
+
+## Fine Pitch (component)
+Describes IC packages with a lead pitch less than 0.65mm, requiring precise assembly.
+
+## Fine Pitch (PCB traces)
+Traces with very small width and spacing, requiring advanced fabrication processes.
+
+## Finger
+An edge connector contact. See Edge Connector.
+
+## First Article
+The first manufactured unit of a design, inspected to verify that it meets the design specifications.
+
+## Files: Gerber
+The standard file format for PCB artwork, containing the conductive patterns and other features for each layer.
+
+## Files Ivex
+A PCB design software file format.
+
+## Files: Eagle
+The file format used by the EAGLE PCB CAD software.
+
+## Files Protel
+The file format used by the Protel/Altium Designer PCB CAD software.
+
+## File Submission
+The process of sending PCB design files to a manufacturer for quotation or fabrication.
+
+## Finished Copper
+The final thickness of copper on a PCB after all plating processes are complete.
+
+## Fine line design
+PCB designs with trace widths and spacings smaller than standard, requiring advanced fabrication.
+
+## Flex circuit
+A flexible printed circuit board, typically made on a polyimide base material.
+
+## Flux
+A chemical agent used during soldering to remove oxides from metal surfaces and improve solder wetting.
+
+## Flying Probe
+An electrical test method where movable probes contact PCB test points. Does not require a custom test fixture.
+
+## FR-1
+A flame-retardant PCB base material using a paper substrate with phenolic resin binder. Low cost but limited performance.
+
+## FR-2
+A flame-retardant PCB base material using a paper substrate with phenolic resin binder, similar to FR-1 but with slightly better electrical properties.
+
+## FR-3
+A flame-retardant PCB base material using a paper substrate with epoxy resin binder. Better electrical properties than FR-1 or FR-2.
+
+## FR-4
+The most common PCB base material, made of woven fiberglass cloth with an epoxy resin binder. Has good electrical, thermal, and mechanical properties.
+
+## FR-6
+A flame-retardant PCB base material using a woven glass fabric with polyester resin.
+
+## Functional Test
+Testing of a fully assembled PCB by exercising its intended function, rather than just testing connectivity.
+
+## Gerber Files
+See Files: Gerber.
+
+## G10
+A non-flame-retardant version of FR-4. Similar properties but without the flame-retardant additives.
+
+## Gerber CAM Viewer
+Software used to view and verify Gerber PCB artwork files.
+
+## GI
+Glass/Impregnated. A type of PCB base material.
+
+## Glob top
+An encapsulation method for bare die or wire bonds, where a bead of epoxy is dispensed over the component to protect it.
+
+## Glue deposit
+Adhesive placed on a PCB to hold surface mount components in place before soldering.
+
+## Gold Finger
+An edge connector with gold-plated contacts. See Edge Connector.
+
+## Gold plated
+A surface finish where gold is plated over the copper pads of a PCB to provide a solderable, corrosion-resistant surface.
+
+## Ground
+A common reference point in an electrical circuit, usually at 0 volts.
+
+## Ground Plane
+A large area of copper on a PCB layer connected to ground. Provides a low-impedance current return path and shields signals from noise.
+
+## HASL
+Hot Air Solder Leveling. A PCB surface finish process where the board is dipped in molten solder and the excess is removed with hot air.
+
+## HDI
+High Density Interconnect. A class of PCB technology using fine lines, small vias, and multiple layers to achieve high routing density.
+
+## Hermetic
+Refers to a component or package that is completely sealed against moisture and gases.
+
+## Header
+A type of connector with multiple pins arranged in a row or grid, typically used for board-to-board or board-to-cable connections.
+
+## Hole Breakout
+The extension of a plated hole that breaks through the edge of a pad.
+
+## Hole Density
+The number of drilled holes per unit area of a PCB.
+
+## Hole pattern
+The arrangement and specifications of all holes on a PCB.
+
+## Imaging
+The process of transferring a circuit pattern to a photosensitive material or directly to a PCB surface.
+
+## Immersion Plating
+A PCB surface finish process where a thin layer of metal is deposited by chemical displacement, without external electricity.
+
+## Impedance
+The total opposition to AC current flow in a circuit, including resistance and reactance.
+
+## Inclusions
+Foreign material trapped within the layers of a PCB during manufacturing.
+
+## In-Circuit Test
+Testing of individual components on an assembled PCB by contacting each component with a test probe.
+
+## Inkjetting
+A PCB manufacturing technique where conductive ink or solder mask is deposited using inkjet printing technology.
+
+## Insulation Resistance
+The resistance of the insulating material of a PCB, which should be high to prevent current leakage.
+
+## Inspection Guidelines
+Standards and procedures for visually inspecting PCBs and assemblies.
+
+## Internal Layer
+A layer within a multilayer PCB that is not on the outer surface. Internal layers may contain power planes, ground planes, or signal traces.
+
+## Internal Power and Ground Layers
+Internal layers of a multilayer PCB dedicated to power distribution and ground return.
+
+## Interconnect Stress Test
+A test that applies thermal cycling and mechanical stress to a PCB to verify the reliability of its interconnections.
+
+## Interstitial Via Hole
+A via that connects non-adjacent internal layers of a multilayer PCB without reaching the outer surfaces.
+
+## Immersion coating
+A chemical surface finish applied by immersing the PCB in a plating solution.
+
+## IPC
+The Institute for Printed Circuits (now IPC – Association Connecting Electronics Industries). Sets standards for PCB design, fabrication, and assembly.
+
+## Jump Scoring
+A V-groove scoring technique where the groove does not extend to the full edge of the panel.
+
+## KGB (Known Good Board)
+A verified good PCB used as a reference standard for testing purposes.
+
+## Laminate
+The base material of a PCB, consisting of reinforced resin, to which copper foil is bonded.
+
+## Lamination
+The process of bonding the layers of a multilayer PCB together using heat and pressure.
+
+## Laminate Thickness
+The total thickness of the PCB base material and copper foil.
+
+## Laminate Void
+An area within a PCB laminate that lacks resin, potentially compromising structural integrity or insulation.
+
+## Land
+A conductive pad or area on a PCB to which a component lead is soldered.
+
+## Laser Photo-Plotter
+A machine that uses a laser to expose photosensitive material for PCB artwork generation, offering high resolution and accuracy.
+
+## Layer Sequence
+The order of the copper and prepreg layers in a multilayer PCB stackup.
+
+## Layers
+The individual copper or insulating planes that make up a multilayer PCB.
+
+## Lay up
+The process of arranging the layers of a multilayer PCB stack-up prior to lamination.
+
+## Leakage Current
+A small amount of current that flows through an insulator or dielectric, which can be problematic in high-impedance circuits.
+
+## Legend
+The text and symbols printed on the surface of a PCB to identify components, test points, and other information. Also called silkscreen.
+
+## Lot
+A group of PCBs or components manufactured together under the same conditions.
+
+## Lot Code
+A code that identifies the manufacturing lot of a component or PCB.
+
+## LPI
+Liquid Photo-Imageable. A type of solder mask that is applied as a liquid and then patterned using photolithography.
+
+## Major Defect
+A defect that is likely to cause the PCB or assembly to fail or not meet its specifications.
+
+## Mask
+A pattern applied to a PCB to protect certain areas during processing, such as the solder mask.
+
+## Master aperture list
+See ApertureList/ApertureTable.
+
+## Measling
+A defect in a PCB where the glass weave of the base material is visible as white spots or crosses, caused by moisture, thermal stress, or poor lamination.
+
+## Metal Foil
+Thin metal sheet, typically copper, used as the conductive layer in PCBs.
+
+## Micro-Sectioning
+A metallographic technique where a small cross-section is cut from a PCB and polished for microscopic examination of its internal structure.
+
+## Microvia
+A very small via, typically less than 150 micrometers in diameter, formed by laser drilling. Used in HDI PCBs.
+
+## Mil
+One thousandth of an inch (0.001 inch). Commonly used as a unit of measurement in PCB design.
+
+## Minimum Traces & Spacing
+The smallest permitted trace width and the minimum spacing between traces, as defined by the PCB manufacturer's capabilities.
+
+## Mounting Hole
+A non-plated or plated hole in a PCB used to mechanically fasten the board to a chassis or enclosure.
+
+## Minimum Conductor Width
+The smallest allowed trace width on a PCB for a given current capacity and manufacturing process.
+
+## Minimum Conductor Space
+The smallest allowed distance between adjacent conductors on a PCB.
+
+## Minor Defect
+A defect that does not significantly affect the function or reliability of a PCB or assembly.
+
+## Multilayer PCB
+A PCB with more than two layers of conductive copper separated by insulating layers.
+
+## NC Drill
+Numerically Controlled Drill. A machine that drills holes in a PCB under computer control.
+
+## NC drill file
+See Drill File.
+
+## Negative
+A PCB artwork where the image is the opposite of the actual pattern; the exposed areas are removed during processing.
+
+## Net
+A set of electrically connected nodes in a schematic or PCB layout.
+
+## Netlist
+A list of all the electrical connections in a circuit, defining which component pins are connected to each other.
+
+## Node
+A connection point in a circuit where two or more components are connected.
+
+## Notation
+Symbols, abbreviations, and conventions used in PCB documentation.
+
+## Nomenclature
+The system of names and labels used in PCB design and documentation.
+
+## Notch
+A cutout in the edge of a PCB, used for mechanical alignment or to accommodate a specific shape in the chassis.
+
+## NPTH
+Non-Plated Through Hole. A drilled hole in a PCB that is not plated with copper, used for mechanical mounting only.
+
+## Number of Holes
+The total count of all holes (plated and non-plated) in a PCB.
+
+## Open
+An unintended break in a conductor on a PCB, preventing current from flowing where it should.
+
+## OSP
+Organic Solderability Preservative. A PCB surface finish where a thin organic film is applied to copper pads to prevent oxidation.
+
+## Outer-Layer
+The top or bottom layer of a PCB, which is on the outer surface.
+
+## Pad
+A small area of copper on a PCB surface or inner layer to which a component lead is soldered or a via connects.
+
+## Pad annulus
+The ring of copper around a drilled hole in a via or through-hole pad.
+
+## Part Number
+A unique identifier assigned to a component, PCB, or assembly.
+
+## Panel
+A larger sheet of PCB material containing multiple individual PCB designs, used for efficient manufacturing.
+
+## Pattern
+The arrangement of conductive and non-conductive features on a PCB layer.
+
+## Pattern Plating
+A PCB fabrication process where copper is plated only onto the areas that will become the final circuit pattern.
+
+## PCB
+Printed Circuit Board. A board made of insulating material on which conductive copper traces, pads, and other features are formed to connect electronic components.
+
+## PCB database
+The complete set of CAD data for a PCB design, stored in a proprietary or standard format.
+
+## PCB-Design-Software/Tools
+Software applications used to create PCB layouts, such as Altium Designer, KiCad, Eagle, and OrCAD.
+
+## PCB Fabrication Process
+The series of manufacturing steps used to produce a bare PCB.
+
+## PCMCIA
+Personal Computer Memory Card International Association. A standard for small expansion cards used in laptops.
+
+## PEC
+Printed Electronic Circuit. A circuit formed by printing conductive materials on a substrate.
+
+## Phenolic PCB
+A PCB made from a phenolic resin and paper composite base material, such as FR-1 or FR-2.
+
+## Photographic Image
+The image created on photosensitive material during PCB artwork generation.
+
+## Photo Print
+A print made from the photographic artwork for a PCB.
+
+## Photo-Plotting
+The process of creating PCB artwork on photosensitive film or glass using a photo-plotter.
+
+## Photo-Resist
+A photosensitive material applied to a PCB surface and used to define the circuit pattern through exposure and development.
+
+## Photo-tool
+The photographic film or glass plate containing the PCB artwork used for photolithography.
+
+## Pin
+A conductive lead on an electronic component used for soldering or inserting into a socket.
+
+## Pitch
+The center-to-center distance between adjacent leads, pads, or holes.
+
+## Pick-and-Place
+An automated machine that picks components from tape, tray, or reel feeders and places them on a PCB for soldering.
+
+## PTH
+Plated Through Hole. A drilled hole in a PCB that has been plated with copper to provide electrical connection between layers.
+
+## Plating
+The process of depositing a thin layer of metal onto a PCB surface or hole wall using electroplating or electroless plating.
+
+## Plating Void
+An area within a plated through-hole where the plating is absent, which can compromise the electrical connection.
+
+## Plastic Leaded Chip Carrier (PLCC)
+A type of surface mount IC package with J-shaped leads on all four sides.
+
+## Plating Resist
+A material applied to areas of a PCB that should not be plated during the plating process.
+
+## Plots
+Printed or digital representations of PCB layers used for verification and documentation.
+
+## Positive
+A PCB artwork where the image represents the actual conductor pattern.
+
+## Prepreg
+Pre-impregnated glass fabric, partially cured, used as the insulating adhesive layer between copper layers in a multilayer PCB.
+
+## Platen
+The flat surface of a press used for laminating multilayer PCBs.
+
+## Prototype
+An early sample of a PCB used for design verification before full production.
+
+## Quantity
+The number of PCBs or assemblies to be produced.
+
+## QFP
+Quad Flat Package. A surface mount IC package with leads on all four sides.
+
+## Ratsnest
+In PCB design software, the display of unrouted connections as thin lines between pads, showing the connections that still need to be routed.
+
+## Reference Designator
+A unique identifier (e.g., R1, C2, U3) assigned to each component on a PCB.
+
+## Reference Dimension
+A dimension on a PCB drawing that is given for information only and does not control manufacturing.
+
+## Registration
+The alignment of different layers or artwork in a multilayer PCB. Poor registration can cause misalignment of vias and features.
+
+## Readme File
+A text file accompanying PCB design files that provides important information about the design or file set.
+
+## Reflow oven
+A conveyor oven that uses controlled temperature profiles to melt and solidify solder paste to attach SMD components to a PCB.
+
+## Reflow Soldering
+A soldering process in which solder paste is melted and cooled to form solder joints, typically using a reflow oven.
+
+## Resist
+A material that protects certain areas of a PCB from etching, plating, or soldering. See Photo-Resist, Solder Mask.
+
+## Resin (Epoxy) Smear
+See Epoxy Smear.
+
+## Rigid-flex
+A PCB that combines rigid and flexible sections, allowing three-dimensional configurations.
+
+## Revision
+A version number or letter indicating the state of a PCB design.
+
+## RF (radio frequency) and wireless design
+PCB design considerations specific to high-frequency radio frequency circuits, including impedance control and antenna design.
+
+## RoHS
+Restriction of Hazardous Substances. A European Union directive that restricts the use of certain hazardous substances in electrical and electronic equipment, including lead solder.
+
+## RoHS Compliant PCB
+A PCB manufactured using materials and processes that comply with the RoHS directive, particularly using lead-free solder.
+
+## Route (or Track)
+A copper trace on a PCB that connects two or more pads.
+
+## Router
+A machine that cuts the outline of individual PCBs from a panel. Also a software tool that connects PCB pads with traces.
+
+## Schematic
+A diagram that shows the electrical connections between components in a circuit, without regard to their physical placement.
+
+## Scoring
+A method of creating a V-groove in a PCB panel to allow easy separation into individual boards.
+
+## Screen Printing
+The process of printing solder paste or adhesive through a stencil onto a PCB.
+
+## Short: Short circuit
+An unintended low-resistance connection between two conductors that should be electrically isolated.
+
+## Short run
+A small manufacturing run, typically for prototypes or low-volume production.
+
+## Silk Screen (Silk Legend)
+See Legend.
+
+## Sieber Meyer
+A company that manufactures PCB handling and processing equipment.
+
+## Single Side PCB
+A PCB with copper traces on only one side.
+
+## Single track
+A routing strategy where only one trace is routed between through-hole component pins or pads.
+
+## Small Outline Integrated Circuit (SOIC)
+A type of surface mount IC package that is smaller than the standard DIP package.
+
+## Size X & Y
+The X and Y dimensions of a PCB outline.
+
+## SMOBC
+Solder Mask Over Bare Copper. A process where solder mask is applied directly over bare copper, without a surface finish under the mask.
+
+## SMD
+Surface Mount Device. A component designed to be mounted on the surface of a PCB, rather than inserted through holes.
+
+## SMT
+Surface Mount Technology. The assembly process where SMD components are mounted on the surface of a PCB.
+
+## Solder Bridging
+A soldering defect where solder connects two or more conductors that should be electrically isolated.
+
+## Solder Bumps
+Small balls of solder attached to the pads of a BGA or flip-chip package.
+
+## Solder Coat
+A layer of solder applied to PCB pads as a surface finish. See HASL.
+
+## Solder Leveling
+See HASL.
+
+## Solder Mask or Solder resist
+A polymer coating applied to a PCB to protect copper traces and prevent solder from bridging between pads during assembly.
+
+## Solder Mask
+See Solder Mask or Solder resist.
+
+## Solder Mask (Artwork)
+The CAD artwork that defines the openings in the solder mask for component pads.
+
+## Solder Mask Color
+The color of the solder mask coating, typically green, but also available in red, blue, black, white, and other colors.
+
+## Solder paste
+A mixture of solder particles and flux in a paste form, applied to PCB pads before component placement for reflow soldering.
+
+## Solder Wick
+A braided copper wire used to remove excess solder from PCB pads or components.
+
+## SPC
+Statistical Process Control. A method of monitoring and controlling a manufacturing process using statistical methods.
+
+## Step-and-Repeat
+A process where the same PCB design is reproduced multiple times on a panel to create an array.
+
+## Stuff
+An informal term for the process of mounting components onto a PCB.
+
+## Sub-Panel
+A smaller panel that is made up from a larger panel during PCB manufacturing.
+
+## Substrate
+The base material on which a PCB or hybrid circuit is built.
+
+## Surface Mount
+See SMT.
+
+## Surface finish
+The coating applied to the copper pads of a PCB to protect them from oxidation and ensure solderability. Common finishes include HASL, OSP, ENIG, and immersion silver.
+
+## TAB
+Tape Automated Bonding. A packaging technology where IC chips are bonded to a flexible tape for mounting.
+
+## Tab Routing
+A method of connecting individual PCBs in a panel using small tabs that are later broken or routed away.
+
+## Temperature Coefficient (TC)
+The rate of change of a material property (such as resistance or capacitance) per unit of temperature change.
+
+## Tented Via
+A via whose hole is completely covered by solder mask to prevent solder from entering the hole during assembly.
+
+## Tenting
+The process of covering a via with solder mask.
+
+## Terminal
+A connection point on a component or PCB for making an electrical connection.
+
+## Test Board
+A PCB designed specifically for testing processes, materials, or equipment, rather than for a final product.
+
+## Test Fixture
+A custom device used to hold a PCB and make electrical connections to its test points for testing.
+
+## Test Point
+A pad or hole on a PCB that provides access for test probes to measure or verify circuit operation.
+
+## Testing
+The process of verifying that a PCB or assembly meets its required specifications.
+
+## Test Coupon
+A small PCB included in a panel that is used to test the quality of the manufacturing process, such as hole plating quality.
+
+## TG (Tg)
+Glass Transition Temperature. The temperature at which a PCB base material changes from a rigid glass-like state to a softer, more rubber-like state. PCBs should not operate above their Tg.
+
+## Thief
+Areas of copper added to a PCB pattern to improve plating uniformity by providing additional plating current in areas that would otherwise have uneven plating.
+
+## Through-Hole
+A component mounting method where component leads are inserted through holes in the PCB and soldered on the other side.
+
+## Tooling
+The equipment, fixtures, and tooling holes used in PCB manufacturing and assembly.
+
+## Tooling Holes
+Holes in a PCB or panel used for mechanical alignment and registration in manufacturing equipment.
+
+## Trace/Track
+See Route (or Track).
+
+## Traveler
+A document that accompanies a PCB or assembly through the manufacturing process, recording the steps completed and any issues found.
+
+## Turnkey
+A PCB assembly service where the manufacturer supplies all components and delivers a fully assembled and tested board.
+
+## Twist
+A PCB warp where opposite corners of the board are not in the same plane. Measured as the deviation from a flat reference.
+
+## UL
+Underwriters Laboratories. An organization that certifies the safety of electronic products and materials.
+
+## Underwriters Symbol
+The UL recognition symbol, which indicates that a PCB material has been tested and recognized by UL.
+
+## Unclad
+PCB base material without copper foil laminated to it.
+
+## UV Curing
+The process of hardening a polymer material using ultraviolet light radiation.
+
+## Valuable Final Artwork
+The final, corrected version of the PCB artwork used for manufacturing.
+
+## Via
+A plated hole that provides an electrical connection between different layers of a multilayer PCB.
+
+## Void
+An area in a solder joint or plated through-hole that lacks solder or plating material.
+
+## V-Scoring
+A method of pre-cutting a V-shaped groove in a PCB panel to allow easy separation of individual boards.
+
+## Wave Soldering
+A PCB soldering process where the board passes over a wave of molten solder, soldering all through-hole component leads simultaneously.
+
+## Wet solder mask
+Liquid solder mask applied by screen printing or spray and then cured. Contrast with dry film solder mask.
+
+## Wicking
+The unwanted migration of solder along a conductor or into a plated through-hole by capillary action.
+
+## Wire
+A conductor used to make electrical connections. Also refers to a net or trace in PCB design.
+
+## Wire wrap area
+An area on a PCB designated for wire-wrap connections, an older prototyping technique.
+
+## X-Axis
+The horizontal axis in a Cartesian coordinate system, used to define positions on a PCB.
+
+## Y-Axis
+The vertical axis in a Cartesian coordinate system, used to define positions on a PCB.
+
+## Zip File
+A compressed archive file format commonly used to bundle and send PCB design files.
+
+## Z-Axis
+The axis perpendicular to the surface of a PCB, representing the board thickness direction.

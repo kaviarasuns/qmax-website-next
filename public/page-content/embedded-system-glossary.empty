@@ -1,52 +1,675 @@
-import { glossaryTerms } from "@/components/glossaryTerms";
-import { buildMetadata } from "@/lib/seo";
+# Embedded System Glossary
 
-export const metadata = buildMetadata({
-  title: "Embedded System Glossary | Qmax Systems",
-  description:
-    "Definitions of embedded systems terminology — firmware, BSP, RTOS, FPGA, OTA, and more — from Qmax Systems engineering.",
-  path: "/embedded-system-glossary",
-});
+Key terms and definitions used across embedded firmware, BSP, RTOS, and hardware bring-up — explained by Qmax Systems engineers.
 
-export default function EmbeddedSystemGlossaryPage() {
-  return (
-    <>
-      <section
-        className="mt-[var(--nav-h)] bg-white px-16 pt-16 pb-10 max-[900px]:px-6 max-[900px]:pt-12 max-[900px]:pb-8"
-        aria-labelledby="embedded-glossary-title"
-      >
-        <div className="mx-auto max-w-[960px] text-center">
-          <h1
-            id="embedded-glossary-title"
-            className="text-[clamp(32px,4vw,48px)] font-light leading-[1.15] tracking-[-0.025em] text-foreground"
-          >
-            Embedded System{" "}
-            <span className="text-red-500">Glossary</span>
-          </h1>
-          <p className="mx-auto mt-4 max-w-[680px] text-[15px] font-light leading-[1.6] text-foreground">
-            Key terms and definitions used across embedded firmware, BSP, RTOS,
-            and hardware bring-up — explained by Qmax Systems engineers.
-          </p>
-        </div>
-      </section>
+## A/D converter
+A device that converts an analog signal to a digital number. See also D/A converter.
 
-      <section className="bg-white px-16 pb-28 max-[900px]:px-6 max-[900px]:pb-20">
-        <div className="mx-auto max-w-[960px]">
-          {glossaryTerms.map((item, index) => (
-            <article
-              key={`${item.term}-${index}`}
-              className="border-b border-gray-200 py-8 last:border-b-0"
-            >
-              <h2 className="mb-3 text-xl font-light leading-tight tracking-tight text-foreground md:text-2xl">
-                {item.term}
-              </h2>
-              <p className="text-justify text-[15px] font-light leading-[1.6] text-foreground">
-                {item.definition}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-    </>
-  );
-}
+## ABEL
+A hardware description language (HDL) used mostly to program CPLDs.
+
+## Active Low
+A signal that is asserted when it is in the low state. Using * or # or ! to denote low-asserted signals.
+
+## Address Bus
+A set of signals used by a processor to identify the memory location or I/O device that is to be read or written.
+
+## Aliasing
+A distortion of the reconstructed signal that occurs when the sampling rate is less than twice the highest frequency content of the signal being sampled. See also Nyquist sampling criterion.
+
+## Analog
+Characterized by a continuous range of values; not discrete. The opposite of digital.
+
+## Anode
+The positive terminal of a battery or the p side of a diode.
+
+## Aperiodic
+Describes a task that does not execute on a regular basis.
+
+## Aperiodic Server
+An RTOS feature that allows a periodic task to serve aperiodic requests. Using aperiodic server means that schedulability analysis is still valid for the periodic tasks.
+
+## Ariane 5
+A European Space Agency rocket that was lost because of an inertial reference system software error (a 64-bit floating point number was truncated to a 16-bit integer).
+
+## ARM
+A popular 32-bit processor core found in many embedded systems.
+
+## ARM Thumb
+An operating mode supported by ARM processors in which instructions are 16 bits wide. Thumb mode gives smaller code size than regular ARM mode.
+
+## ARP
+The Address Resolution Protocol. A low-level Internet networking protocol used to determine the hardware (MAC) address associated with a given IP address.
+
+## Assembler
+A program that translates assembly language to object code.
+
+## Assembly Language
+A low-level programming language in which each statement corresponds to a single machine instruction.
+
+## Asynchronous Communications
+Serial communications in which each character is sent individually, with start and stop bits to frame each character. Contrast with synchronous communications.
+
+## Atomic
+An operation that is not divisible. Either the complete operation executes, or none of it does.
+
+## ATVEF
+Advanced Television Enhancement Forum. A group that created a specification for enhanced TV.
+
+## Average-case Execution Time
+The average time it takes a piece of code to execute. Contrast with WCET.
+
+## BASIC Stamp
+A small microcontroller module from Parallax, Inc. that contains a PIC microcontroller running a BASIC interpreter in ROM.
+
+## Bi-directional
+A signal that can carry information in either direction. Also called bidirectional.
+
+## Big-endian
+A byte ordering scheme in which, for a multibyte value, the most significant byte is stored at the lowest memory address. Contrast with little-endian.
+
+## Binary Semaphore
+A semaphore that can only take values 0 and 1. Used for signaling between tasks. Contrast with counting semaphore.
+
+## Board Support Package
+Code that provides software access to the features of a particular circuit board.
+
+## Bond-out Processor
+A processor that has additional pins used for debugging, typically using JTAG. See ICE.
+
+## Breakpoint
+A location in code at which program execution is halted so the programmer can examine the state of the system.
+
+## BSP
+See Board Support Package.
+
+## Busicom
+A Japanese calculator company. In 1969, they hired Ted Hoff of Intel to develop chips for their calculators. This led to the creation of the Intel 4004, the world's first microprocessor.
+
+## Busy Wait
+A form of synchronization in which the processor repeatedly checks a register or memory location until the desired value is present. Also called a tight loop, spin loop, or polling. Busy waits waste processor time.
+
+## C99
+The 1999 ANSI/ISO standard for the C language.
+
+## Central Processing Unit
+The part of a computer that executes instructions. Also called a processor or microprocessor.
+
+## Checksum
+A value calculated from the data in a message or memory block that can be used to detect errors. Simpler but less powerful than a CRC.
+
+## Compiler
+A program that translates from a high-level language to object code.
+
+## Complex Instruction Set Computer
+A processor design philosophy in which the instruction set is large and includes complex instructions. x86 architecture is CISC. Contrast with RISC.
+
+## Complex Programmable Logic Device
+A large programmable logic device that can be used to implement complex digital logic.
+
+## Context
+All the information needed to resume execution of a task or interrupt after a context switch. Includes register values and other state information.
+
+## Context Switch
+The act of saving the context of one task and restoring the context of another. Allows multiple tasks to share a processor.
+
+## Counter/Timer
+Hardware that counts pulses or measures time. Available on most microcontrollers.
+
+## Counting Semaphore
+A semaphore that can take any non-negative value. Used to protect shared resources. Contrast with binary semaphore.
+
+## CRC
+Cyclic Redundancy Check. A type of checksum that can detect multiple bit errors. More powerful but more complex than a simple checksum.
+
+## Critical Section
+A section of code that must not be interrupted. Often protected by disabling interrupts.
+
+## Cross-Compiler
+A compiler that runs on one type of processor but generates code for a different type of processor.
+
+## D/A converter
+A device that converts a digital number to an analog signal. See also A/D converter.
+
+## Data Bus
+A set of signals used to carry data between a processor and memory or I/O devices.
+
+## Deadline
+In a real-time system, the time by which a task must complete its execution.
+
+## Deadlock
+A situation where two or more tasks are each waiting for the other to release a resource, causing both tasks to be stuck indefinitely.
+
+## Debug Monitor
+Firmware that runs on the target system and communicates with a debugger running on the host. Allows the host debugger to examine and modify the target's state.
+
+## Debugger
+A tool that allows a programmer to examine the state of a program during execution, set breakpoints, and single-step through code.
+
+## Device Driver
+Software that provides a standard interface to a hardware device, hiding the hardware-specific details.
+
+## Device Programmer
+A tool used to program ROM, Flash, or other memory devices.
+
+## Digital Filter
+A filter implemented in software or digital hardware. Contrast with analog filter.
+
+## Digital Signal Processor
+A processor optimized for performing mathematical operations on digital signals. Often has special instructions for multiply-accumulate operations.
+
+## Direct Memory Access
+A technique in which a device transfers data directly to or from memory without involving the processor.
+
+## Down Counter
+A counter that decrements from an initial value to zero.
+
+## DRAM
+Dynamic Random Access Memory. RAM that requires periodic refreshing to maintain its contents.
+
+## DSP
+See Digital Signal Processor.
+
+## EEPROM
+Electrically Erasable Programmable Read-Only Memory. Non-volatile memory that can be erased and reprogrammed electrically.
+
+## Electromagnetic Spectrum
+The range of all possible frequencies of electromagnetic radiation. Includes radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, and gamma rays.
+
+## Embedded C++
+A subset of C++ designed for use in embedded systems. Excludes features that are not suitable for embedded development.
+
+## Embedded System
+A computer system designed to perform a dedicated function. Unlike a general-purpose computer, an embedded system is usually designed for a specific application.
+
+## Emulator
+A hardware device that allows a processor to be substituted for a target processor during development. Allows debugging of code running in the actual target hardware. See also ICE.
+
+## Endianness
+The byte ordering scheme used by a processor or system. See big-endian and little-endian.
+
+## EPROM
+Erasable Programmable Read-Only Memory. Non-volatile memory that can be erased by exposure to ultraviolet light and reprogrammed.
+
+## Executable
+A program in a form that can be directly executed by a processor. The result of linking one or more object files.
+
+## Field-Programmable Gate Array
+A programmable logic device that can implement complex digital logic. FPGAs contain many programmable logic cells that can be connected in different ways.
+
+## Firmware
+Software stored in non-volatile memory. Often used to refer to the software in an embedded system.
+
+## Flash
+Non-volatile memory that can be erased and reprogrammed in-circuit. Flash memory is commonly used to store firmware in embedded systems.
+
+## Forth
+A programming language with a simple, extensible syntax based on a postfix stack.
+
+## Fuzzy Logic
+A form of logic that allows for degrees of truth, rather than simple true/false values. Used in some control systems.
+
+## Geartooth Hall Effect Sensor
+A sensor that uses the Hall effect to detect the teeth of a rotating gear. Used to measure rotational speed or position.
+
+## General-Purpose Computer
+A computer designed to run a wide variety of programs. Contrast with an embedded system, which is designed for a specific application.
+
+## General-Purpose I/O
+A pin on a microcontroller that can be configured as an input or output and controlled directly by software.
+
+## Glitch
+A brief, unwanted pulse on a signal. Can cause incorrect operation of digital circuits.
+
+## Glue Logic
+Simple logic circuits (gates, flip-flops, etc.) used to connect other components together. Often implemented in a PLD or FPGA.
+
+## GNU Tools
+A collection of free software development tools including the GCC compiler, GDB debugger, and many others. Widely used for embedded development.
+
+## Gray Code
+A binary code in which successive values differ in only one bit. Used in encoders and other applications where error detection is important.
+
+## Heap
+A region of memory used for dynamic memory allocation. Memory is allocated from the heap using malloc() and freed using free().
+
+## High-level Language
+A programming language that is more abstract than assembly language. C, C++, and Ada are high-level languages used in embedded development.
+
+## Host
+The computer used to develop software for an embedded system. Contrast with target.
+
+## I/O
+Input/Output. The means by which a computer communicates with the outside world.
+
+## I/O Device
+A hardware device that provides input to or receives output from a processor.
+
+## I/O Map
+A memory map showing the addresses of I/O devices.
+
+## I/O Space
+A separate address space used for I/O devices on some processors. Contrast with memory-mapped I/O.
+
+## I2C
+Inter-Integrated Circuit. A two-wire serial bus standard commonly used to connect microcontrollers to sensors and other peripherals.
+
+## ICE
+In-Circuit Emulator. See Emulator.
+
+## Instruction Pointer
+A register that holds the address of the next instruction to be executed. Also called the program counter.
+
+## Interrupt
+A signal to the processor that causes it to stop what it is doing and execute an interrupt service routine.
+
+## Interrupt Latency
+The time between when an interrupt occurs and when the first instruction of the interrupt service routine is executed.
+
+## Interrupt Service Routine
+The code that executes when an interrupt occurs. Also called an interrupt handler.
+
+## Interrupt Type
+A number that identifies the source of an interrupt. Used to find the interrupt vector.
+
+## Interrupt Vector
+The address of an interrupt service routine.
+
+## Interrupt Vector Table
+A table of interrupt vectors.
+
+## Intertask Communication
+Mechanisms for exchanging data between tasks. Includes message queues, shared memory, and other techniques.
+
+## Intertask Synchronization
+Mechanisms for synchronizing the execution of tasks. Includes semaphores, mutexes, and events.
+
+## Java Processor
+A processor that can directly execute Java bytecode.
+
+## Jitter
+Variation in the timing of a signal. In real-time systems, jitter refers to variation in the time a task is started relative to its scheduled time.
+
+## JTAG
+Joint Test Action Group. A standard interface used for debugging and programming embedded systems.
+
+## Jump Table
+A table of function pointers used to dispatch function calls based on an index or key.
+
+## Jumper
+A small connector used to select between different hardware configurations.
+
+## Junction Transistor
+A transistor made from two p-n junctions. The most common type of transistor.
+
+## Kernel
+The core of an operating system. Provides basic services such as task scheduling, memory management, and I/O.
+
+## Kernel Mode
+A processor mode in which all instructions are available. Contrast with user mode.
+
+## Kibi-
+A prefix meaning 1,024. Used in computing to avoid confusion with the SI prefix kilo-, which means 1,000.
+
+## Linker
+A program that combines object files and libraries to create an executable.
+
+## Lint
+A program that analyzes C source code to detect errors and potential problems.
+
+## Linux
+An open-source operating system. Used in some embedded systems.
+
+## Little-endian
+A byte ordering scheme in which, for a multibyte value, the least significant byte is stored at the lowest memory address. Contrast with big-endian.
+
+## Locator
+A linker or linker script that assigns final addresses to code and data sections.
+
+## Logic analyzer
+A test instrument that captures and displays digital signals. Used to debug digital circuits and communication protocols.
+
+## MAC
+Media Access Control. The lower sublayer of the data link layer in the OSI model. Also, the hardware address of a network interface.
+
+## MAC address
+A unique identifier assigned to a network interface. Used at the MAC layer.
+
+## Mebi-
+A prefix meaning 1,048,576 (2^20). Used in computing to avoid confusion with the SI prefix mega-, which means 1,000,000.
+
+## Memory Map
+A diagram showing how memory addresses are assigned to different devices or memory regions in a system.
+
+## Memory-mapped I/O
+A technique in which I/O devices are accessed using the same instructions as memory. The devices appear at specific addresses in the memory map.
+
+## Memory Space
+The range of addresses that a processor can access.
+
+## Microcontroller
+A processor that includes memory and I/O peripherals on the same chip. Commonly used in embedded systems.
+
+## Microprocessor
+A processor implemented on a single chip. Contrast with microcontroller, which also includes memory and I/O.
+
+## MISRA C
+A set of guidelines for using C in safety-critical embedded systems. Published by the Motor Industry Software Reliability Association.
+
+## Monitor
+A simple debug interface that allows basic interaction with an embedded system via a serial port.
+
+## Multiply-and-accumulate
+An operation that multiplies two values and adds the result to an accumulator. Common in DSPs.
+
+## Multiprocessing
+Using more than one processor.
+
+## Multitasking
+A technique in which a processor rapidly switches between multiple tasks, giving the appearance of simultaneous execution.
+
+## Mutex
+Mutual exclusion semaphore. A synchronization primitive used to protect a shared resource from simultaneous access by multiple tasks.
+
+## Mutual Exclusion
+Ensuring that only one task at a time can access a shared resource.
+
+## NAK
+Negative Acknowledgment. A signal indicating that a data transmission was not received correctly. Contrast with ACK.
+
+## Nanosecond
+One billionth of a second. A common unit of time in embedded and digital systems.
+
+## Netlist
+A description of the connections between components in a circuit. Used as input to PCB layout tools.
+
+## Network Processor
+A processor optimized for processing network packets. Often includes special hardware for common networking operations.
+
+## Nibble
+A group of four bits.
+
+## Nonmaskable Interrupt
+An interrupt that cannot be disabled by software. Used for critical events such as power failure.
+
+## NVRAM
+Non-Volatile Random Access Memory. RAM that retains its contents when power is removed.
+
+## Object Code
+Machine code generated by a compiler or assembler.
+
+## Object File
+A file containing object code. One or more object files are combined by a linker to create an executable.
+
+## On-chip Debug
+A debugging interface built into the processor chip. Allows debugging without additional hardware. See also JTAG.
+
+## One-time Programmable
+Memory that can be programmed only once. Contrast with EPROM and Flash.
+
+## Opcode
+The part of a machine instruction that specifies the operation to be performed.
+
+## Open Source
+Software whose source code is freely available for anyone to use, modify, and distribute.
+
+## Operating System
+Software that manages computer hardware resources and provides common services for computer programs.
+
+## Oscilloscope
+A test instrument that displays electrical signals as a function of time.
+
+## OTP
+See One-time Programmable.
+
+## Parallel Processing
+Performing multiple computations simultaneously, either on a single processor with multiple execution units or on multiple processors.
+
+## Peripheral
+A device that is external to the processor core but connected to it. Examples include timers, UARTs, and ADCs.
+
+## Physical Address
+The actual address used to access memory or an I/O device. Contrast with virtual address.
+
+## PIC
+Peripheral Interface Controller. A family of popular microcontrollers from Microchip Technology.
+
+## PID
+Proportional-Integral-Derivative. A common control algorithm used in control systems.
+
+## PLD
+Programmable Logic Device. A device that can be programmed to implement custom digital logic.
+
+## Polling
+Checking the state of a device repeatedly in a loop. Contrast with interrupt-driven I/O.
+
+## Preemptive
+Describes a scheduler that can interrupt a running task to run a higher-priority task.
+
+## Priority
+In a real-time operating system, a number assigned to a task that determines its importance relative to other tasks.
+
+## Priority Inversion
+A situation where a high-priority task is blocked waiting for a resource held by a lower-priority task.
+
+## Process
+A program in execution. In some operating systems, processes have separate address spaces. Contrast with thread.
+
+## Processor
+The part of a computer that executes instructions. See also CPU, microprocessor, microcontroller.
+
+## Processor Family
+A group of processors from the same manufacturer that share a common instruction set architecture.
+
+## Processor-Independent
+Code that can be compiled and run on different processor architectures without modification.
+
+## Processor-Specific
+Code that is written for a particular processor and cannot be easily ported to other processors.
+
+## Profiler
+A tool that measures how much time is spent in each part of a program. Used to identify performance bottlenecks.
+
+## Programmable Logic Device
+See PLD.
+
+## PROM
+Programmable Read-Only Memory. Non-volatile memory that can be programmed once but not erased.
+
+## Protocol Stack
+The software that implements a communication protocol. Typically organized as a series of layers.
+
+## Pulse Width Modulation
+A technique for encoding information in the width of a pulse. Commonly used to control motors and generate analog signals.
+
+## Quadrature Encoder
+A type of encoder that uses two signals 90 degrees out of phase to detect both position and direction of rotation.
+
+## Quantum Programming
+A programming model that divides computation into small, fixed-length time slices.
+
+## Race Condition
+A situation where the behavior of a program depends on the relative timing of events. Can cause unpredictable behavior in multitasking systems.
+
+## Random Access Memory
+Memory that can be read and written at any location in any order. RAM loses its contents when power is removed.
+
+## Rate Monotonic Analysis
+A method for determining if a set of periodic tasks can be scheduled to meet their deadlines. Tasks with shorter periods are given higher priority.
+
+## Read-only memory
+Memory whose contents are fixed at manufacturing time or during programming. ROM retains its contents when power is removed.
+
+## Real-time Operating System
+An operating system designed to meet strict timing requirements. Tasks are scheduled based on priority and deadlines.
+
+## Real-time System
+A system in which the correctness of the system depends not only on the logical results but also on the time at which the results are produced.
+
+## Recursive
+A function that calls itself.
+
+## Reentrant
+A function that can be safely called by multiple tasks simultaneously.
+
+## Register
+A small, fast storage location within the processor. Registers are used to hold temporary values during computation.
+
+## Relocatable
+Code that can be loaded and executed at any memory address.
+
+## Reset Address
+The memory address at which the processor begins execution after reset.
+
+## Reset Code
+The first code executed by a processor after reset. Typically initializes the processor and sets up the C runtime environment.
+
+## Reset Vector
+The interrupt vector that contains the address of the reset code.
+
+## Resistance Temperature Detector
+A temperature sensor that uses the change in resistance of a metal with temperature. More accurate than a thermocouple or thermistor.
+
+## RMA
+Rate Monotonic Analysis. See Rate Monotonic Analysis.
+
+## ROM Emulator
+A device that plugs into the ROM socket and allows ROM contents to be quickly updated during development.
+
+## Scheduler
+The part of an operating system that decides which task should run next.
+
+## Semaphore
+A synchronization primitive used to control access to a shared resource or to signal between tasks.
+
+## Simulator
+A software tool that models the behavior of a target system on the host computer. Allows debugging without target hardware.
+
+## Software Flow Control
+A technique for controlling the flow of data in a serial communication link using special characters (XON/XOFF).
+
+## Software Interrupt
+An interrupt caused by software, not hardware. Used to implement system calls.
+
+## SPI
+Serial Peripheral Interface. A synchronous serial bus commonly used to connect microcontrollers to sensors, displays, and other peripherals.
+
+## SRAM
+Static Random Access Memory. RAM that does not require refreshing. Faster but more expensive than DRAM.
+
+## Stack
+A region of memory used to store local variables and return addresses. The stack grows and shrinks as functions are called and return.
+
+## Stack Frame
+The portion of the stack used by a single function call. Contains local variables, saved registers, and the return address.
+
+## Startup Code
+The code that runs immediately after reset, before main(). Initializes the processor, sets up the C runtime, and calls main().
+
+## Target
+The embedded system being developed. Contrast with host.
+
+## Task
+In an RTOS, a thread of execution that can be scheduled independently.
+
+## Thermistor
+A temperature sensor whose resistance changes significantly with temperature. Less accurate than an RTD but cheaper and simpler.
+
+## Thermocouple
+A temperature sensor made from two different metals joined together. Generates a small voltage proportional to temperature.
+
+## Thread
+A thread of execution within a process. Threads within the same process share an address space.
+
+## Timer
+Hardware that measures time or counts events. Almost all microcontrollers include one or more timers.
+
+## Tracepoint
+A location in code at which information is logged to a trace buffer. Used for debugging without stopping execution.
+
+## Trap
+A type of exception caused by executing a special instruction.
+
+## UClinux
+A version of Linux for processors that do not have a memory management unit.
+
+## Unidirectional
+A signal that carries information in only one direction. Contrast with bidirectional.
+
+## Unified Modeling Language
+A graphical language for visualizing and documenting software systems.
+
+## Uninitialized Data
+Variables that are declared but not given an initial value. In C, uninitialized global variables are typically initialized to zero.
+
+## Universal Serial Bus
+A standard interface for connecting devices to a computer. USB supports data transfer speeds from 1.5 Mbps to 40 Gbps.
+
+## Up Counter
+A counter that increments from zero to a maximum value.
+
+## User Mode
+A processor mode in which only a subset of instructions are available. Contrast with kernel mode.
+
+## Via
+A connection between layers of a printed circuit board.
+
+## Void
+A C keyword used to indicate that a function takes no arguments or returns no value. Also used as the base type for generic pointers.
+
+## Volatile
+A C qualifier that prevents the compiler from optimizing accesses to a variable. Essential for variables that can change asynchronously, such as hardware registers.
+
+## Volt
+The SI unit of electrical potential difference.
+
+## Voltage-Controlled Oscillator
+An oscillator whose frequency is controlled by an input voltage.
+
+## VxWorks
+A commercial real-time operating system from Wind River Systems.
+
+## Walking 1s test
+A memory test that writes a pattern of 1s moving through the memory, one bit at a time.
+
+## Watchdog Timer
+A timer that must be periodically reset by software. If the software fails to reset the timer, it causes a processor reset. Used to recover from software errors.
+
+## Watchpoint
+A breakpoint that is triggered when a variable is read or written.
+
+## Well-known Port Numbers
+Port numbers from 0 to 1023 that are assigned to specific services. For example, HTTP uses port 80.
+
+## Wind River Systems
+A company that makes embedded software development tools, including the VxWorks RTOS.
+
+## Windows CE
+A real-time operating system from Microsoft for embedded systems.
+
+## X-Acto knife
+A precision cutting tool used to cut traces on a PCB during debugging.
+
+## Xilinx
+A company that makes FPGAs and CPLDs.
+
+## XOFF
+A character (Ctrl-S, ASCII 19) used in software flow control to tell the sender to pause transmission.
+
+## XON
+A character (Ctrl-Q, ASCII 17) used in software flow control to tell the sender to resume transmission.
+
+## Y2K
+Year 2000. The concern that software using two-digit years would fail when the year 2000 arrived.
+
+## Yacc
+Yet Another Compiler Compiler. A tool for generating parsers from grammar specifications.
+
+## Yield
+To voluntarily give up the processor so that other tasks can run.
+
+## zero
+In math and computing, the additive identity. Also the value used to represent false in boolean logic.
+
+## ZIF Socket
+Zero Insertion Force Socket. A socket that allows an IC to be inserted and removed without applying force.

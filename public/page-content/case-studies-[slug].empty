@@ -1,56 +1,393 @@
-import CaseStudyPageV1 from "@/components/case-studies/case-studies-v1";
-import CaseStudyPageV2 from "@/components/case-studies/case-studies-v2";
-import { allCaseStudiesData } from "@/store/case-studies";
-import {
-  fullProductDevelopmentCaseStudiesData,
-  getFullProductDevelopmentCaseStudy,
-} from "@/store/full-product-development-case-studies";
+# Case Studies — [slug] (Dynamic Route)
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+This page renders the detail view for an individual case study, identified by its slug.
 
-  const fullProductStudy = getFullProductDevelopmentCaseStudy(slug);
-  if (fullProductStudy) {
-    return fullProductStudy.metadata;
-  }
+## Available Slugs
 
-  const caseStudy = allCaseStudiesData.find((cs) => cs.id === slug);
-  if (!caseStudy) {
-    return {
-      title: "Case Study Not Found",
-    };
-  }
-  return {
-    title: caseStudy.title,
-  };
-}
+### Full Product Development (rendered via CaseStudyPageV2)
+- rugged-android-digital-signage-player
+- obd-ii-diagnostics-device
+- wifi-6e-cybersecurity-gateway
+- outdoor-wifi-6-access-point
+- cold-storage-iot-monitoring-system
+- advanced-modular-medical-simulator
 
-export default async function CaseStudyPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+### Embedded Systems (rendered via CaseStudyPageV1)
+- industrial-temperature-control-system
+- multi-io-card-for-ate
+- smart-monitoring-system
+- microscopic-camera-control
+- industrial-iot-gateway-with-poe
+- poe-control-unit
+- poe-power-injector
+- industrial-poe-switch
+- stellar-main-board
+- stellar-power-board
+- high-speed-camera-interface
+- industrial-automation-controller
+- bms-controller
+- ultra-low-power-bluetooth-mouse
+- connected-car-demonstration-unit
+- medical-device-interface
+- industrial-defect-monitoring-system
+- gigabit-ethernet-switch-module
+- robotics-motion-controller
+- rugged-industrial-io-board
+- thermal-management-system
+- ultra-low-noise-adc-board
+- ultra-low-power-ble-mouse
+- wifi-6e-router
+- capserve
+- bluebinaries
+- fedarant
+- high-speed-analog-board
+- rack-pdu
+- wifi6-triband-router
+- rf-power-processor
+- ultra-low-cost-bldc-motor-controller-for-evs
+- high-speed-analog-mux
+- automotive
+- smart-rail
+- lung-sound-recorder
+- lubrication-controller
+- medical-recorder-device
+- smart-obd2
+- security-system-controller
+- ir-ble-ac-controller
+- dosingpump
+- heat-sink
+- gps-device
+- pcu
+- review-board
+- tension-meter
+- ubercomm
+- android-motherboard-medicine-dispensing-unit
+- connected-air-conditioner-controller
+- custom-lfp-battery-pack-3-wheeler
+- energy-measurement-iot
+- liquid-level-sensing-ble-and-modbus
+- motor-controller
+- obd2-device-lora-ble
+- operation-theatre-camera
+- power-measurement-board
+- seat-pressure-sensing
+- smart-phone-dental-camera
+- ble-joystick
+- ble-load-cell-transmitter
+- building-lighting-control
+- connected-coffee-machine
+- connected-control-system
+- connected-occupancy-sensor
+- connected-process-controller
+- connectivity-dongle-wifi-ble-zigbee
+- energy-measurement-iot-device
+- high-speed-camera-interface-board
+- high-voltage-high-current-pcb
+- industrial-io-board
+- industrial-io-board-channel
+- industrial-iot-control-board
+- iot-microgateway
+- lithium-titanate-power-bank
+- medical-diagnostic-device
+- mmwave-liquid-level-sensor
+- mosfet-driver-electric-bus
+- multi-protocol-industrial-communication-controller
+- obd
+- rf-amplifier
+- sweep-generator
 
-  const fullProductStudy = getFullProductDevelopmentCaseStudy(slug);
-  if (fullProductStudy) {
-    return <CaseStudyPageV2 caseStudy={fullProductStudy} />;
-  }
+### PCB Design (rendered via CaseStudyPageV1)
+- ai-gpu-expansion-chassis-motherboard
+- iot-gateway-pcb
+- pcie-gen5-cpo-board
+- ultra-low-cost-bldc-motor-controller
+- smart-obd2-device
+- qualcomm-wifi-6-triband-router
+- fedarant-pcb-top-layer
+- arc-detector
+- planar-motor
+- rugged-obd
+- 3-phase-smart-energy-meter
+- animal-tracker
+- 100gbe-high-speed-networking-board
+- lbm
+- qualcomm-wifi4-routers
+- digital-stethoscope
+- mx1
+- video-processor-pcb
+- typheon
+- safron
+- video-processor
 
-  return <CaseStudyPageV1 params={params} />;
-}
+### Mechanical Design (rendered via CaseStudyPageV1)
+- industrial-splice-detector
+- ott-media-gateway
+- rf-signal-generator-enclosure
+- pulse-oximeter-enclosure
+- obd-enclosure
+- pneumatic-test-jig
+- rugged-communication-control-system-enclosure
+- 5g-router
+- emf-flow-meter
+- ultrasonic-flow-meter
+- iot-gateway
+- obd-v4-system
+- footswitch
+- mega-watt-charging-station
+- 600kg-cable-tension-measurement-system
+- gimbal
+- industrial-camera-controller-unit
+- pc-oxy
+- cable-tension-measurement-system
+- inline-moisture-meter
+- desktop-moisture-meter
+- stellar
+- ecl-fuel-cell-generator
+- digital-dry-bath
+- digital-lock
+- trndx-server
+- qsafe
+- smartrail
+- pdu-rack
+- obd-device
+- warehouse-camera-controller-unit-mechanical
+- pdu-v1
+- pdu-v2
+- pdu-v3
+- pdu-v4
+- pdu-v5
+- pdu-v6
+- air-flow-sensor
 
-export function generateStaticParams() {
-  return [
-    ...fullProductDevelopmentCaseStudiesData.map((study) => ({
-      slug: study.slug,
-    })),
-    ...allCaseStudiesData.map((caseStudy) => ({
-      slug: caseStudy.id,
-    })),
-  ];
-}
+### Industrial Design (rendered via CaseStudyPageV1)
+- oxygen-generator
+- medical-diagnostic-system
+- compact-edge-gateway-enclosure
+- medical-recording-device
+- uv-disinfection-system
+- 6e-wifi-router-enclosure
+- 360-degree-camera-4k
+- smart-tap
+- smart-wifi-stethoscope
+- warehouse-camera-controller-unit
+- data-centre-management-system-uiux
+
+### Engineering Support Services (rendered via CaseStudyPageV1)
+- value-added-services
+- value-added-services-testing
+- value-added-services-production
+
+## Page Structure (CaseStudyPageV2 — Full Product Development)
+
+Each Full Product Development case study page renders the following sections:
+
+01 Project Overview
+02 Product Brief
+03 Scope of Work
+04 Engineering Challenges
+05 Hardware Components
+06 Interfaces & Protocols
+07 Firmware & Software
+08 Technical Specifications
+09 Summary
+
+### Example: Rugged Android Digital Signage Player
+
+**Title:** Rugged Android Digital Signage Player
+**Subtitle:** Full Product Development — Concept to Volume Production
+**Tags:** Domain: Commercial | Industry: Digital Signage | Market: North America
+
+**Stats:**
+- 1,000s of Units — Shipped to USA
+- 4 Years — Field proven
+- ~0 Failures — In the field
+- FCC Certified — RoHS Compliant
+
+**Overview:**
+A major US-based retail technology company approached Qmax Systems to design and manufacture a ruggedized Android Digital Signage Player for deployment across auto showrooms throughout North America. The product needed to simultaneously display live TV channels via HDMI input and overlay dynamic digital signage content — promotions, notifications, and scheduling — in a picture-in-picture configuration.
+
+Qmax Systems delivered the complete product from concept to volume production: hardware design, firmware and Android software development, industrial design, FCC certification, and fulfillment — packaging thousands of units and shipping them directly to the customer's US distribution point. The product has been running in the field for nearly four years with near-zero reported failures.
+
+**Product Brief:**
+The Rugged Android Digital Signage Player is a fanless, wall-mountable media appliance powered by the Rockchip RK3566 quad-core SoC running Android. It accepts a live HDMI video source (e.g. a cable set-top box or satellite receiver) and renders it alongside managed digital signage content, delivering a unified display experience on any 4K HDMI-connected commercial display.
+
+The unit is housed in a custom CNC-machined aluminum enclosure rated IP54 for commercial environments. It ships with a UL-certified US power adapter, HDMI cable with ferrite cores, and a custom IR remote control — all packed in a branded retail-style carton box, ready for end-user installation. Power-over-Ethernet (PoE) is supported for cable-reduced installations, and over-the-air (OTA) content and firmware updates are fully operational.
+
+**Scope of Work:**
+- Full hardware architecture, schematic design, and BOM development for the RK3566-based mainboard
+- 6-layer HDI PCB design including high-speed LPDDR4, HDMI 2.0, and USB 3.0 routing with controlled impedance
+- Prototype builds, bring-up, and design iterations through DVT and PVT
+- Low-level Linux kernel driver development: LT6911 V4L2 HDMI-to-CSI driver, Android Camera HAL adaptation, I2S audio pipeline, IR remote driver, and status LCD driver
+- Full Android BSP bring-up including kernel configuration, device tree authoring, and PMIC bring-up on RK3566
+- Android application development: HDMI live input viewer, picture-in-picture signage engine, content scheduler, IR remote control integration, and OTA update client
+- HDCP license acquisition and provisioning into the LT6911 firmware for compliant display of protected TV content
+- Industrial and mechanical design of the CNC-machined aluminum fanless enclosure with IP54 rating and integrated thermal management
+- FCC Part 15 certification management including EMI/EMC troubleshooting, filter design, and re-test coordination
+- Full production manufacturing, test jig development, accessory sourcing, carton packaging, and direct shipment to the customer's US warehouse
+
+**Engineering Challenges:**
+- HDMI input on Android SoC — No commercial RK3566-class SoC provides a native HDMI RX interface; a creative bridge architecture using the Lontium LT6911 HDMI-to-MIPI CSI-2 converter was designed and kernel-driver developed from scratch
+- Lip sync between HDMI input audio and video — The RK3566 audio and video pipelines run on independent clock domains; extensive driver-level tuning of PTS timestamps across the V4L2 and ALSA subsystems was required to achieve compliant A/V synchronisation
+- FCC Part 15 first-attempt failure — Radiated emissions exceeded limits on HDMI lines; resolved by adding EMI filter arrays on HDMI signal lines and specifying HDMI cables with ferrite clamp cores
+- Fanless thermal management — The RK3566 under full 4K decode and WiFi load generates significant heat; the aluminum enclosure was engineered as a heatsink
+- Dense 6-layer PCB layout — Routing LPDDR4 (64-bit bus), HDMI 2.0 differential pairs, USB 3.0 SuperSpeed, and GbE on a compact board required meticulous impedance control
+- HDCP key provisioning at scale — Each unit requires unique HDCP keys programmed into SPI flash at production; a custom factory fixture was developed
+
+### Example: OBD-II Diagnostics Device
+
+**Title:** OBD-II Diagnostics Device
+**Subtitle:** Smart OBD-II Diagnostics Device for Automotive Dealer Management
+**Tags:** Domain: Automotive | Industry: Dealer Management Systems | Market: North America
+
+**Stats:**
+- FCC Certified — FCC Part 15 Class A
+- IP65 Rated — ABS Enclosure
+- LTE + Wi-Fi + BLE — Multi-Radio
+- Mass Production — 1,000s Shipped to USA
+
+**Overview:**
+A leading Automotive Retail Cloud (ARC) platform provider based in the USA engaged Qmax Systems India Pvt Ltd to design and manufacture a next-generation handheld OBD-II diagnostics device. The device was purpose-built for deployment in automotive dealership service lanes across North America, enabling service advisors and technicians to instantly access vehicle data the moment a car arrives.
+
+Qmax delivered the complete product — from initial concept and industrial design through hardware, firmware, PCB design, compliance certifications, mass production, and direct shipment to the USA. Thousands of units were produced and deployed across the client's dealership network across North America.
+
+**Product Brief:**
+The OBD-II Diagnostics Device is a rugged, portable, handheld smart OBD-II diagnostics device designed for professional use in automotive service environments. It plugs into any vehicle's OBD-II port and instantly reads VIN, mileage, and Diagnostic Trouble Codes (DTCs), transmitting this data to the client's cloud platform in real time.
+
+The device runs embedded Linux on a dual-core ARM Cortex-A7 processor with onboard Wi-Fi, BLE, LTE, and GPS, housed in a compact IP65-rated ABS enclosure with a built-in Li-Po battery, wireless charging, USB-C, and a small LCD display.
+
+The OBD-II Diagnostics Device automatically detects the vehicle OEM and dynamically switches OBD-II communication protocols — supporting CAN, ISO 15765, SAE J1850 VPW (GM), and SAE J1850 PWM (Ford) — using the STN2120 OBD translator IC. The device meets FCC, RoHS, and California Proposition 65 compliance requirements.
+
+**Scope of Work:**
+- Industrial Design (ID) — Ergonomic, compact, and rugged form factor designed for one-handed use by workshop technicians
+- Hardware Architecture & Circuit Design — Multi-radio SoC platform with automotive-grade power management, OBD interface, and protection circuits
+- PCB Design — Multi-layer PCB design (4-layer main board, 2-layer sub-board) with high-density component placement
+- Firmware Development — Embedded Linux (device drivers, BSP, power management, OBD protocol stack, cloud connectivity)
+- Mechanical Design — ABS enclosure with IP65 sealing, OBDII connector integration, wireless charging receiver alignment
+- Prototype Manufacturing — PCB assembly, bring-up, and functional verification of early engineering samples
+- DVT (Design Verification Testing) — Full environmental, electrical, and functional validation including drop tests, temperature cycling, OBD plug/unplug endurance
+- Compliance Certifications — FCC Part 15, RoHS, California Proposition 65 (CP65), SAR
+- PVT (Production Validation Testing) — Production line setup, diagnostic fixture design, yield optimization
+- Mass Production & Shipping — Manufactured thousands of units; packaged in custom carton boxes with UL-certified power adapters and accessories; shipped directly to the USA
+
+**Engineering Challenges:**
+- Compact, Rugged Form Factor — Packaging a multi-radio platform (LTE, Wi-Fi, BLE, GPS, OBD), battery, LCD, and full wireless charging coil into a 130 × 60 × 30 mm IP65-rated handheld enclosure
+- Multi-Antenna RF Performance — Fitting LTE, Wi-Fi/BLE, and GPS antennas within a small metal-free plastic enclosure without inter-antenna interference or de-sensitization
+- OBD Protocol Auto-Detection — Ensuring compatibility with all vehicle OEMs by auto-detecting and switching among CAN, ISO 15765-4, SAE J1850 VPW (GM), and SAE J1850 PWM (Ford) protocols dynamically
+- Automotive Voltage Transients — Protecting all electronics from vehicle OBD port voltage spikes, load dumps, and reverse polarity events
+- Battery Safety & Longevity — Implementing multi-layer Li-Po battery protection for a device that may be dropped, stored in a hot car or cold trunk
+- Thermal Management — Ensuring safe operation when the device is left plugged into a vehicle's OBD port in extreme temperatures (−20°C to +70°C ambient)
+- Mechanical Durability — Designed to survive workshop environments: dropped onto concrete, tossed into a toolbox, thousands of OBD plug/unplug cycles
+- Always-On Cloud Connectivity — Keeping the device in a low-power but cloud-ready state
+- GPS Time-to-First-Fix & Accuracy — Optimizing GPS antenna placement and AGPS configuration for fast location lock
+- Multiple Compliance Certifications — Achieving FCC Part 15, SAR, RoHS, and CP65 certification simultaneously
+
+**Technical Specifications:**
+- Product Name: OBD-II Diagnostics Device
+- Domain / Industry: Automotive | Dealer Management System (DMS) | IoT / Connected Devices
+- Main Processor: STMicroelectronics STM32MP157C — Dual-Core ARM Cortex-A7 @ 650 MHz + Cortex-M4
+- Memory: 512 MB DDR3 RAM | 4 GB eMMC Flash
+- OBD Translator: STN2120 — Multi-protocol OBD-II translator with automatic protocol detection
+- CAN FD Controller: Microchip MCP2518FD — CAN FD up to 8 Mbps
+- Wi-Fi / BLE Module: AP6256 — IEEE 802.11a/b/g/n/ac (2.4/5 GHz) + Bluetooth 5.0 BLE
+- Cellular: 4G LTE Module — FCC-approved
+- GNSS: GPS / GNSS — Integrated location and vehicle motion detection
+- Battery: On-board Li-Po 2000 mAh | Fuel Gauge: Maxim MAX17201
+- Enclosure: ABS Plastic with IP65 Ingress Protection
+- Certifications: FCC Part 15 (Class A) | RoHS Compliant | California Proposition 65 (CP65) | SAR
+- Production Volume: 1,000s of units — Mass manufactured and shipped to USA
+
+**Summary:**
+The OBD-II Diagnostics Device is a testament to Qmax Systems' capability to deliver a complex, multi-technology IoT product — from concept to mass production — for a demanding North American automotive market customer.
+
+By maintaining always-on cloud connectivity, auto-detecting vehicle protocols, and delivering data to the client's cloud platform the moment the device is plugged into a vehicle, the OBD-II Diagnostics Device transformed the dealership service lane experience.
+
+This engagement demonstrates Qmax Systems' ability to serve as a complete product development partner — handling every phase from industrial design and hardware through compliance certification, production diagnostics, mass manufacturing, and direct international shipment.
+
+### Example: WiFi 6E Triband Cybersecurity Gateway
+
+**Title:** WiFi 6E Triband Cybersecurity Gateway
+**Subtitle:** Full Product Development — Concept to Volume Production
+**Tags:** Domain: Networking | Industry: Cybersecurity | Market: North America
+
+**Stats:**
+- 1,000s of Units — Shipped to Europe
+- 2 Years — Field proven
+- ~0 Failures — In the field
+- FCC Certified — RoHS Compliant
+
+**Overview:**
+A US-based cybersecurity company approached Qmax Systems to design and manufacture a WiFi 6E Triband Cybersecurity Gateway for deployment across small and medium-sized enterprises (SMEs) in North America. The product needed to combine a high-performance tri-band WiFi 6E router with an AI-powered network security stack — delivering enterprise-grade threat protection in a compact, easy-to-deploy appliance.
+
+Qmax Systems delivered the complete product from concept to volume production: hardware design, OpenWRT firmware development, Android and iOS mobile app development, cloud management platform, industrial design, FCC certification, and fulfilment — packaging thousands of units and shipping them directly to the customer's US distribution point. The product has been running in the field for nearly two years with zero reported hardware failures.
+
+**Product Brief:**
+The WiFi 6E Triband Cybersecurity Gateway is a compact, wall-mountable security appliance built around the MediaTek MT7986AV quad-core SoC. It operates simultaneously on three WiFi bands — 2.4 GHz, 5.1 GHz, and 5.8 GHz — with 4×4 MU-MIMO on each band, driven by dedicated MediaTek radio chips, and housed entirely within the enclosure using a 12-element internal antenna array with no protruding external antennas.
+
+The unit runs a custom OpenWRT firmware stack enhanced with a multi-layer AI-powered cybersecurity engine: DNS-level threat blocking, IP/domain/URL reputation filtering, network attack prevention, IoT device monitoring, and scam detection. Onboard 4 GB DDR4 and 32 GB eMMC provide the memory footprint for real-time threat intelligence databases.
+
+**Summary:**
+The WiFi 6E Triband Cybersecurity Gateway demonstrates Qmax Systems' end-to-end product development capability — from an architecturally demanding challenge (12 internal antennas across three simultaneous RF bands in a sealed, compact enclosure) through to volume-manufactured units running in SME networks across North America.
+
+With thousands of units deployed and zero field failures over nearly two years of continuous operation, the product stands as a flagship reference for Qmax's concept-to-production methodology.
+
+### Example: Outdoor Wi-Fi 6 Access Point
+
+**Title:** Outdoor Wi-Fi 6 Access Point
+**Subtitle:** Full Product Development — Concept to DVT
+**Tags:** Domain: Networking | Industry: Smart City / Public Wi-Fi | Market: North America
+
+**Stats:**
+- Concept to DVT — Qmax Scope
+- Tri-Band Wi-Fi 6 — 802.11ax — 12 Antennas
+- FCC Certified — First Submission
+- OpenWRT — Full BSP & Drivers
+
+**Overview:**
+A US-based networking company brought Qmax Systems a product concept and high-level architecture for a professional-grade outdoor Wi-Fi 6 (802.11ax) Access Point — intended for deployment in public spaces such as smart city poles, campuses, stadiums, and transit hubs across North America.
+
+Qmax Systems executed the complete hardware design engagement from concept to DVT: hardware architecture refinement, schematic design, PCB layout, RF engineering, OpenWRT firmware development, hardware bringup, Wi-Fi calibration, DVT builds, and FCC certification support. The product is built around the Qualcomm IPQ8078 (Hawkeye) SoC.
+
+**Summary:**
+This outdoor Wi-Fi 6 AP engagement demonstrates Qmax Systems' full-stack hardware design capability across one of the most demanding Wi-Fi engineering challenges: a fanless outdoor tri-band 802.11ax Access Point with 12 antennas, multi-mode backhaul, and smart-city expansion capability — all in a compact pole-mount enclosure.
+
+### Example: Cold Storage IoT Monitoring System
+
+**Title:** Cold Storage IoT Monitoring System
+**Subtitle:** Full Product Development — Concept to Volume Production
+**Tags:** Domain: Cold Chain Logistics | Industry: Refrigeration & IoT | Market: India
+
+**Stats:**
+- 6,000+ Units — Manufactured & Shipped
+- DVT / PVT — Completed
+- WPC & RoHS — Certified
+- AWS IoT — Cloud Connected
+
+**Overview:**
+An Indian cold chain technology company approached Qmax Systems to design and manufacture a fully connected IoT monitoring system for cold storage units — refrigerated trucks, warehouses, and walk-in cold rooms.
+
+Qmax Systems delivered the complete product from the ground up: hardware architecture, PCB design, embedded firmware, cloud application, industrial design, rugged enclosure, commissioning utilities, and mass production of 6,000 units — all manufactured and shipped within India. The device carries WPC certification (India's equivalent of FCC) and is fully RoHS compliant.
+
+**Summary:**
+The Cold Storage IoT Monitoring System demonstrates Qmax Systems' end-to-end product development capability across the full hardware-firmware-cloud stack. With 6,000 units manufactured and deployed across cold chain operations in India, the product stands as a strong reference for Qmax's concept-to-production methodology in the Industrial IoT segment.
+
+### Example: Advanced Modular Medical Simulator — Developer Kit
+
+**Title:** Advanced Modular Medical Simulator — Developer Kit
+**Subtitle:** Snapdragon 820-Based Embedded Electronics Platform with 9-Port Gigabit Ethernet PoE Backbone for Modular Medical Simulation Training
+**Tags:** Domain: Medical Simulation | Industry: Embedded Electronics & Networking | Market: North America
+
+**Stats:**
+- EVT → DVT — Validated platform
+- Snapdragon 820 — Qualcomm SoM
+- 9-Port GbE — Broadcom switch
+- High-Power PoE — PSE backbone
+
+**Overview:**
+A Minneapolis, MN-based medical simulation company engaged Qmax Systems to design and develop the complete embedded electronics platform for an Advanced Modular Medical Simulator Developer Kit (AMMDK) — the central computing, networking, and power backbone of a next-generation open-standard, interoperable medical training manikin.
+
+Qmax delivered the full hardware platform — architecture, PCB design, firmware, Linux/RTOS bring-up, peripheral driver APIs, EVT, DVT, and small-volume production — enabling any third-party developer to build AMM-compatible simulation modules.
+
+**Summary:**
+The Advanced Modular Medical Simulator Developer Kit demonstrates Qmax Systems' ability to deliver a complete, research-grade embedded electronics platform: a Qualcomm Snapdragon 820 application SoM, a 9-port Broadcom BCM53128 Gigabit Ethernet switch backbone, a very high-power PoE Sourcing Equipment stage, dual real-time ARM Cortex-M4 MCUs, CAN module I/O, high-current actuator drive, and mixed-signal sensor interfaces across a multi-board system.
+
+Qmax developed the full hardware platform along with the Linux BSP, RTOS, peripheral driver APIs, and test software, then validated it through EVT, DVT, and small-volume production.
