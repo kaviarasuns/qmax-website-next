@@ -55,12 +55,11 @@ export function WorkflowSectionV2({
   }, []);
 
   return (
-    <section className="relative bg-white px-6 py-16 min-[900px]:px-16 min-[900px]:py-24">
+    <section className="relative bg-white px-6 pt-10 pb-16 min-[900px]:px-16 min-[900px]:pt-14 min-[900px]:pb-24">
       <div className="mx-auto w-full max-w-[720px]">
-        <div className="mb-[1.2rem] text-center">
-          <h2 className="text-2xl md:text-3xl text-foreground font-light tracking-[0.03em] leading-[1.15] m-0">
-            {title}{" "}
-            <span className="text-red-500">{titleHighlight}</span>
+        <div className="pt-2 pb-6 text-center">
+          <h2 className=" text-foreground font-light">
+            {title} <span className="text-red-500">{titleHighlight}</span>
           </h2>
         </div>
 
@@ -80,7 +79,7 @@ export function WorkflowSectionV2({
                 }`}
               >
                 <span
-                  className={`${MONO} absolute left-0 top-0 w-[46px] h-[46px] rounded-full bg-white border-2 flex items-center justify-center text-sm font-semibold z-[2] transition-all duration-[400ms] motion-reduce:transition-none ${
+                  className={`${MONO} absolute left-0 top-0 w-[46px] h-[46px] rounded-full bg-white border-2 flex items-center justify-center text-base font-semibold z-[2] transition-all duration-[400ms] motion-reduce:transition-none ${
                     visible
                       ? "border-red-500 text-red-500 shadow-[0_0_0_4px_#e8f1fb]"
                       : "border-[#ced6e0] text-[#0a548f]"
@@ -88,10 +87,10 @@ export function WorkflowSectionV2({
                 >
                   {String(step.number).padStart(2, "0")}
                 </span>
-                <h4 className="text-base text-foreground font-medium tracking-[0.01em] leading-[1.15] mb-1">
+                <h4 className="text-lg text-foreground font-medium mb-1">
                   {step.title}
                 </h4>
-                <p className="text-base m-0 max-w-[78ch] text-foreground leading-[1.6]">
+                <p className="text-lg m-0 max-w-[78ch] text-foreground">
                   {step.description}
                 </p>
                 {step.points && step.points.length > 0 ? (
@@ -99,7 +98,7 @@ export function WorkflowSectionV2({
                     {step.points.map((point) => (
                       <li
                         key={point}
-                        className="flex items-start gap-2.5 text-base text-foreground leading-[1.6]"
+                        className="flex items-start gap-2.5 text-lg text-foreground"
                       >
                         <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" />
                         <span>{point}</span>
