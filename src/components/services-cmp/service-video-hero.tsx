@@ -95,7 +95,7 @@ export function ServiceVideoHero({
           <h1
             ref={titleRef}
             id="service-video-hero-title"
-            className="mb-[clamp(14px,2vh,24px)] w-fit text-balance font-bold leading-[1.1] tracking-wider text-white [font-size:clamp(32px,4.4vw,56px)]"
+            className="mb-[clamp(14px,2vh,24px)] w-fit text-balance font-bold leading-[1.1] tracking-wide text-white [font-size:clamp(32px,4.4vw,56px)]"
           >
             {renderHeroTitle(title)}
           </h1>
