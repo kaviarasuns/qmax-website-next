@@ -95,13 +95,13 @@ export function ServiceVideoHero({
           <h1
             ref={titleRef}
             id="service-video-hero-title"
-            className="mb-[clamp(14px,2vh,24px)] w-fit text-balance font-bold leading-[1.1] text-white [font-size:clamp(32px,4.4vw,56px)]"
+            className="mb-[clamp(14px,2vh,24px)] w-fit text-balance font-bold leading-[1.1] tracking-wider text-white [font-size:clamp(32px,4.4vw,56px)]"
           >
             {renderHeroTitle(title)}
           </h1>
           <p
             style={titleLineWidth ? { maxWidth: titleLineWidth } : undefined}
-            className="mb-[clamp(20px,3vh,36px)] w-full max-w-full text-justify font-normal leading-[1.55] text-white [font-size:clamp(15px,1.6vw,19px)]"
+            className="mb-[clamp(20px,3vh,36px)] w-full max-w-full text-justify font-light leading-[1.55] tracking-wider text-white [font-size:clamp(15px,1.6vw,19px)]"
           >
             {description}
           </p>
