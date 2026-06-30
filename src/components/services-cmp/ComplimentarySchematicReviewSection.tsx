@@ -26,7 +26,7 @@ export function ComplimentarySchematicReviewSection({
   return (
     <section className={cn("bg-white", className)}>
       <div className="mx-auto max-w-[1200px] px-6 py-16 md:px-8 md:py-20">
-        <h2 className="text-center text-3xlleading-tight tracking-tight text-slate-800 md:text-[42px]">
+        <h2 className="text-center text-3xlleading-tight  text-slate-800 md:text-[42px]">
           {title}
           <br />
           <span className="text-[#F33117]">{titleHighlight}</span>

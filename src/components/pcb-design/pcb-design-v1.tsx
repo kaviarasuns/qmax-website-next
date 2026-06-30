@@ -259,7 +259,7 @@ export default function PCBDesignPageV1() {
                   </p>
                   <Link
                     href={spec.href}
-                    className="inline-flex items-center text-red-600 tracking-tight hover:gap-3 transition-all"
+                    className="inline-flex items-center text-red-600  hover:gap-3 transition-all"
                   >
                     Learn More <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>

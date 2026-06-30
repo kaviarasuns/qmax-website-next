@@ -50,7 +50,7 @@ export function CoreServiceOfferingsSection({
   return (
     <section className="px-6 py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-center text-3xl font-light tracking-tight md:text-5xl">
+        <h2 className="text-center text-3xl font-light  md:text-5xl">
           {title}
           <span className="text-red-500">{titleHighlight}</span>
         </h2>
@@ -64,7 +64,7 @@ export function CoreServiceOfferingsSection({
 
         <ConnectedTabPanel className="grid gap-10 py-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
           <div>
-            <h3 className="max-w-xl text-2xl font-light leading-tight tracking-tight md:text-4xl">
+            <h3 className="max-w-xl text-2xl font-light leading-tight  md:text-4xl">
               {activeOffering.headline}
             </h3>
             <div className="mt-8 flex flex-wrap gap-3">

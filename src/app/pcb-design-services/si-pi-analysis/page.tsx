@@ -41,7 +41,7 @@ export default function SIPIAnalysisServicesPage() {
               <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-6">
                 PCB DESIGN SERVICES
               </span>
-              <h1 className="text-4xl font-light leading-[1.1] md:text-6xl lg:text-7xl tracking-tight">
+              <h1 className="text-4xl font-light leading-[1.1] md:text-6xl lg:text-7xl ">
                 SI &amp; PI Analysis
                 <br className="hidden md:block" />
                 Services.
@@ -85,7 +85,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-b border-zinc-200">
         <div className="mx-auto max-w-4xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             1. Introduction to SI/PI Analysis
           </h2>
           <div className="mt-6 flex flex-col gap-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
@@ -120,7 +120,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-b border-zinc-200">
         <div className="mx-auto max-w-4xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             1.1 Signal Integrity - Engineering Scope
           </h2>
           <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -214,7 +214,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             1.2 Power Integrity - Engineering Scope
           </h2>
           <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -295,7 +295,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             1.3 Why Choose Qmax Systems
           </h2>
           <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
@@ -393,7 +393,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             1.4 Complimentary SI/PI Review - Included with PCB Layout Services
           </h2>
           <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -435,7 +435,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-[80rem] text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             2. High-Speed Interface Coverage
           </h2>
           <p className="mt-6 max-w-5xl text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -587,7 +587,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             2.1 NRZ vs. PAM4 - Engineering Implications
           </h2>
           <div className="mt-6 flex flex-col gap-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
@@ -621,7 +621,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             3. PCB Material Selection for SI/PI Performance
           </h2>
           <div className="mt-6 flex flex-col gap-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
@@ -642,7 +642,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-[80rem] text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             3.1 Laminate Properties and Their SI Significance
           </h2>
           <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
@@ -859,7 +859,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-[80rem] text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             3.2 Material Selection by Interface Speed
           </h2>
           <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
@@ -965,7 +965,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-[80rem] text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             4. SI/PI Simulation Methodology &amp; Tools
           </h2>
           <p className="mt-6 max-w-5xl text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -1109,7 +1109,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             5. Representative SI Analysis Results - Actual Qmax Project Data
           </h2>
           <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -1120,7 +1120,7 @@ export default function SIPIAnalysisServicesPage() {
           </p>
 
           <div className="mt-16">
-            <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
+            <h3 className="text-2xl  sm:text-3xl text-left">
               5.1 PAM4 Eye Diagram - Worst-Case Eye Margin
             </h3>
             <p className="mt-4 text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -1145,7 +1145,7 @@ export default function SIPIAnalysisServicesPage() {
           </div>
 
           <div className="mt-24">
-            <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
+            <h3 className="text-2xl  sm:text-3xl text-left">
               5.2 Board TDR Analysis - Via Impedance Discontinuity
               Identification
             </h3>
@@ -1173,7 +1173,7 @@ export default function SIPIAnalysisServicesPage() {
           </div>
 
           <div className="mt-24">
-            <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
+            <h3 className="text-2xl  sm:text-3xl text-left">
               5.3 Differential Insertion Loss &amp; Return Loss (SDD21 / SDD11)
             </h3>
             <p className="mt-4 text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -1199,7 +1199,7 @@ export default function SIPIAnalysisServicesPage() {
           </div>
 
           <div className="mt-24">
-            <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
+            <h3 className="text-2xl  sm:text-3xl text-left">
               5.4 NEXT Analysis - Near-End Crosstalk Across All Lane
               Combinations
             </h3>
@@ -1231,7 +1231,7 @@ export default function SIPIAnalysisServicesPage() {
         <div className="mx-auto max-w-[80rem] text-zinc-800">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div className="max-w-3xl">
-              <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+              <h2 className="text-3xl  sm:text-4xl text-left">
                 6. Applications &amp; Real Project Experience
               </h2>
               <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -1354,7 +1354,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             7. Silicon Vendor &amp; PCB Fabricator Coordination
           </h2>
           <div className="mt-6 flex flex-col gap-6 text-base leading-8 text-zinc-700 md:text-lg text-justify">
@@ -1370,7 +1370,7 @@ export default function SIPIAnalysisServicesPage() {
           </div>
 
           <div className="mt-16">
-            <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
+            <h3 className="text-2xl  sm:text-3xl text-left">
               7.1 Silicon Vendor Collaboration
             </h3>
             <div className="mt-8 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
@@ -1470,7 +1470,7 @@ export default function SIPIAnalysisServicesPage() {
           </div>
 
           <div className="mt-16">
-            <h3 className="text-2xl tracking-tight sm:text-3xl text-left">
+            <h3 className="text-2xl  sm:text-3xl text-left">
               7.2 PCB Fabricator Coordination
             </h3>
             <p className="mt-4 text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -1495,7 +1495,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             8. Complimentary SI/PI Schematic Review
           </h2>
           <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -1552,7 +1552,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-zinc-50 px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-5xl text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             9. 1-Hour Complimentary Engineering Consultation
           </h2>
           <p className="mt-6 text-base leading-8 md:text-lg text-justify text-muted-foreground">
@@ -1618,7 +1618,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-[80rem] text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl text-left">
+          <h2 className="text-3xl  sm:text-4xl text-left">
             10. SI/PI Analysis Deliverables
           </h2>
           <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
@@ -1728,9 +1728,7 @@ export default function SIPIAnalysisServicesPage() {
 
       <section className="bg-white px-6 py-16 md:py-24 lg:px-8 border-t border-zinc-200">
         <div className="mx-auto max-w-4xl text-center text-zinc-800">
-          <h2 className="text-3xl tracking-tight sm:text-4xl">
-            Start Your SI/PI Engagement
-          </h2>
+          <h2 className="text-3xl  sm:text-4xl">Start Your SI/PI Engagement</h2>
           <p className="mt-6 text-base leading-8 md:text-lg text-muted-foreground">
             Whether you are developing a PCIe Gen6 AI accelerator fabric, a DDR5
             server memory subsystem, a 100Gbps data centre switch, or need an

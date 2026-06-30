@@ -120,10 +120,7 @@ export type ComplianceStandardsSectionProps = {
   sectionHeadingId?: string;
 };
 
-function getComplianceGridClassName(
-  count: number,
-  maxColumns: 3 | 4,
-): string {
+function getComplianceGridClassName(count: number, maxColumns: 3 | 4): string {
   const cols = Math.min(count, maxColumns);
 
   switch (cols) {
@@ -145,10 +142,7 @@ export function ComplianceStandardsSection({
   columns = 3,
   sectionHeadingId = "compliance-standards-heading",
 }: ComplianceStandardsSectionProps) {
-  const gridClassName = getComplianceGridClassName(
-    categories.length,
-    columns,
-  );
+  const gridClassName = getComplianceGridClassName(categories.length, columns);
   return (
     <section
       className="bg-zinc-900 px-6 py-16 text-white lg:px-8 lg:py-20"
@@ -158,7 +152,7 @@ export function ComplianceStandardsSection({
         <div className="mx-auto mb-12">
           <h2
             id={sectionHeadingId}
-            className="text-center text-2xl font-light tracking-tight text-white capitalize sm:text-3xl md:whitespace-nowrap md:text-[45px] md:leading-[1.1] md:tracking-[-0.03em]"
+            className="text-center text-2xl font-light  text-white capitalize sm:text-3xl md:whitespace-nowrap md:text-[45px]"
           >
             {title === "Built for regulated industries" ? (
               <>
@@ -173,8 +167,7 @@ export function ComplianceStandardsSection({
               </>
             ) : title === "Compliance & Standards" ? (
               <>
-                Compliance &{" "}
-                <span className="text-red-500">Standards</span>
+                Compliance & <span className="text-red-500">Standards</span>
               </>
             ) : (
               title
@@ -191,7 +184,7 @@ export function ComplianceStandardsSection({
               key={category.title}
               className="group rounded-lg border border-zinc-800 bg-black p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-red-500 hover:shadow-[0_0_0_1px_rgba(239,68,68,0.4),0_20px_40px_-15px_rgba(239,68,68,0.35)]"
             >
-              <h3 className="text-[22px] font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-red-500">
+              <h3 className="text-[22px] font-bold  text-white transition-colors duration-300 group-hover:text-red-500">
                 {category.title}
               </h3>
               <ul className="mt-4 list-none">

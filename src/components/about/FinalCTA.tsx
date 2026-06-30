@@ -8,7 +8,7 @@ export default function FinalCTA() {
     <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center space-y-8">
-          <h1 className="mb-4 lg:mb-6 leading-[1.1] tracking-tight text-foreground">
+          <h1 className="mb-4 lg:mb-6 leading-[1.1]  text-foreground">
             Let&apos;s Engineer{" "}
             <span className="text-red-500">Your Next Product</span>
           </h1>

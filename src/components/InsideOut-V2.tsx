@@ -157,7 +157,7 @@ export default function InsideOutV2() {
                     onClick={() => toggleItem(index)}
                     className="w-full flex cursor-pointer items-center justify-between gap-4 text-left"
                   >
-                    <span className="flex-1 text-lg font-light leading-relaxed text-foreground md:text-2xl tracking-tight">
+                    <span className="flex-1 text-lg font-light leading-relaxed text-foreground md:text-2xl ">
                       {reason.title}
                     </span>
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center">

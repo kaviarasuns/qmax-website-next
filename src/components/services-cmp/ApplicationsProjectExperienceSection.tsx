@@ -63,7 +63,7 @@ export function ApplicationsProjectExperienceSection({
     <section className="bg-white py-16 md:py-20">
       <div className="mx-auto max-w-[1320px] px-6">
         <div className="text-center">
-          <h2 className="text-center font-light tracking-tight">
+          <h2 className="text-center font-light ">
             {title}
             <span className="text-red-500">{titleHighlight}</span>
           </h2>
@@ -102,7 +102,7 @@ export function ApplicationsProjectExperienceSection({
                     </span>
                     <span
                       className={cn(
-                        "text-sm tracking-tight md:text-base",
+                        "text-sm  md:text-base",
                         isActive ? "text-red-500" : "text-foreground",
                       )}
                     >
@@ -172,7 +172,7 @@ export function ApplicationsProjectExperienceSection({
                       )}
                     </div>
                     <div className="border-t border-[#e4e0d8] bg-white px-6 py-5 md:px-7">
-                      <p className="text-[15px] font-bold tracking-tight">
+                      <p className="text-[15px] font-bold ">
                         {project.captionTitle}
                       </p>
                       <p className="mt-1 text-xs leading-relaxed text-foreground md:text-[12px]">
@@ -181,7 +181,7 @@ export function ApplicationsProjectExperienceSection({
                       {project.caseStudyHref ? (
                         <Link
                           href={project.caseStudyHref}
-                          className="group/cta mt-3 inline-flex items-center gap-1.5 text-xs font-semibold tracking-tight text-brand-red transition-colors hover:text-red-600 md:text-[13px]"
+                          className="group/cta mt-3 inline-flex items-center gap-1.5 text-xs font-semibold  text-brand-red transition-colors hover:text-red-600 md:text-[13px]"
                         >
                           View case study
                           <ChevronIcon className="h-3 w-3 transition-transform duration-200 group-hover/cta:translate-x-0.5" />

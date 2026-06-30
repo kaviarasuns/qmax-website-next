@@ -275,7 +275,7 @@ const ContactHero = () => {
             <p className="text-red-500 font-medium tracking-widest text-xs uppercase mb-2">
               Get in Touch
             </p>
-            <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl leading-[1.1] tracking-tight">
+            <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl leading-[1.1] ">
               Let&apos;s Engineer{" "}
               <span className="text-red-500">Your Next Product</span>
             </h1>

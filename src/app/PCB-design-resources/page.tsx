@@ -21,7 +21,7 @@ export default function PCBDesingnResources() {
           <div className="mx-auto max-w-[1200px]">
             <h1
               id="pcb-resources-title"
-              className="text-[clamp(32px,4vw,48px)] font-light leading-[1.15] tracking-[-0.025em] text-foreground"
+              className="text-[clamp(32px,4vw,48px)] font-light leading-[1.15] text-foreground"
             >
               <span className="text-red-500">PCB Design</span> Resources
             </h1>
@@ -36,7 +36,7 @@ export default function PCBDesingnResources() {
         <section className="px-16 pb-16 max-[900px]:px-6 max-[900px]:pb-12">
           <div className="mx-auto max-w-[1200px] space-y-8">
             <div className="space-y-4">
-              <h2 className="text-3xl font-light tracking-tight text-foreground md:text-4xl">
+              <h2 className="text-3xl font-light  text-foreground md:text-4xl">
                 What is a PCB?
               </h2>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -59,7 +59,7 @@ export default function PCBDesingnResources() {
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-3xl font-light tracking-tight text-foreground md:text-4xl">
+              <h2 className="text-3xl font-light  text-foreground md:text-4xl">
                 PCB - What is inside?
               </h2>
               <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -124,7 +124,7 @@ export default function PCBDesingnResources() {
         >
           <div className="mx-auto max-w-[1200px] space-y-12">
             <div className="space-y-4">
-              <h2 className="text-3xl font-light tracking-tight text-foreground md:text-4xl">
+              <h2 className="text-3xl font-light  text-foreground md:text-4xl">
                 PCB Types
               </h2>
               <p
@@ -140,7 +140,7 @@ export default function PCBDesingnResources() {
 
             {/* Single-sided PCB */}
             <div id="Single-sided-PCB" className="space-y-4">
-              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="text-xl font-light  text-foreground md:text-2xl">
                 Single-sided PCB
               </h3>
               <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -169,7 +169,7 @@ export default function PCBDesingnResources() {
 
             {/* Double-sided PCB */}
             <div id="Double-sided-PCB" className="space-y-4">
-              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="text-xl font-light  text-foreground md:text-2xl">
                 Double-sided PCB
               </h3>
               <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -197,7 +197,7 @@ export default function PCBDesingnResources() {
 
             {/* Multi-layer PCB */}
             <div id="Multi-layer-PCB" className="space-y-4">
-              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="text-xl font-light  text-foreground md:text-2xl">
                 Multi-layer PCB
               </h3>
               <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -233,7 +233,7 @@ export default function PCBDesingnResources() {
 
             {/* HDI PCB */}
             <div id="HDI-PCB" className="space-y-4">
-              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="text-xl font-light  text-foreground md:text-2xl">
                 HDI PCB (High Density Interconnect)
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -247,7 +247,7 @@ export default function PCBDesingnResources() {
 
             {/* Metal Back PCB */}
             <div id="Metal-Back-PCB" className="space-y-4">
-              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="text-xl font-light  text-foreground md:text-2xl">
                 Metal Back PCB
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -266,7 +266,7 @@ export default function PCBDesingnResources() {
             {/* Flex and Rigid-Flex PCBs */}
             <div id="Flex-PCBs" className="space-y-4">
               {/* Single-sided Flex PCB */}
-              <h4 className="mt-4 text-lg font-light tracking-tight text-foreground md:text-xl">
+              <h4 className="mt-4 text-lg font-light  text-foreground md:text-xl">
                 Single-sided Flex PCB
               </h4>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -281,7 +281,7 @@ export default function PCBDesingnResources() {
                 shape.
               </p>
               {/* Double-sided Flex PCB */}
-              <h4 className="mt-4 text-lg font-light tracking-tight text-foreground md:text-xl">
+              <h4 className="mt-4 text-lg font-light  text-foreground md:text-xl">
                 Double-sided Flex PCB
               </h4>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -294,7 +294,7 @@ export default function PCBDesingnResources() {
                 assembly.
               </p>
               {/* Multi-layer Flex PCB */}
-              <h4 className="mt-4 text-lg font-light tracking-tight text-foreground md:text-xl">
+              <h4 className="mt-4 text-lg font-light  text-foreground md:text-xl">
                 Multi-layer Flex PCB
               </h4>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -308,7 +308,7 @@ export default function PCBDesingnResources() {
                 circuits can have up to 8 conductive layers.
               </p>
               {/* Semi-Flex PCBs */}
-              <h4 className="mt-4 text-lg font-light tracking-tight text-foreground md:text-xl">
+              <h4 className="mt-4 text-lg font-light  text-foreground md:text-xl">
                 Semi-Flex PCBs
               </h4>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -321,7 +321,7 @@ export default function PCBDesingnResources() {
                 installation.
               </p>
               {/* Rigid-Flex PCBs */}
-              <h4 className="mt-4 text-lg font-light tracking-tight text-foreground md:text-xl">
+              <h4 className="mt-4 text-lg font-light  text-foreground md:text-xl">
                 Rigid-Flex
               </h4>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -343,7 +343,7 @@ export default function PCBDesingnResources() {
         >
           <div className="mx-auto max-w-[1200px] space-y-12">
             <div className="space-y-4">
-              <h2 className="text-3xl font-light tracking-tight text-foreground md:text-4xl">
+              <h2 className="text-3xl font-light  text-foreground md:text-4xl">
                 PCB Technology
               </h2>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -355,7 +355,7 @@ export default function PCBDesingnResources() {
 
             {/* Surface-mounted technology */}
             <div id="Mounting-Technology" className="space-y-4">
-              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="text-xl font-light  text-foreground md:text-2xl">
                 Surface-mounted technology (SMT)
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -370,7 +370,7 @@ export default function PCBDesingnResources() {
 
             {/* Through-hole technology */}
             <div id="Through-Hole-Technology" className="space-y-4">
-              <h3 className="text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="text-xl font-light  text-foreground md:text-2xl">
                 Through-hole technology (THT)
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -389,10 +389,10 @@ export default function PCBDesingnResources() {
 
             {/* PCB Design, Materials, Surface Finishes, and Plating */}
             <div id="pcb-design-materials-finishes" className="space-y-8 mt-8">
-              <h2 className="mt-8 text-3xl font-light tracking-tight text-foreground md:text-4xl">
+              <h2 className="mt-8 text-3xl font-light  text-foreground md:text-4xl">
                 Design
               </h2>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 Blind and Buried Vias
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -404,7 +404,7 @@ export default function PCBDesingnResources() {
                 layer interconnected. A buried via is a hole drilled to connect
                 one or more inner layers, they are not visible from the outside.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 Microvia
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -414,7 +414,7 @@ export default function PCBDesingnResources() {
                 as small as 150 micrometres in diameter. The holes are plated
                 with copper as in case of a regular VIA.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 Via-in-Pad
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -424,7 +424,7 @@ export default function PCBDesingnResources() {
                 with conductive or non-conductive filling for soldering.
               </p>
 
-              <h2 className="mt-8 text-3xl font-light tracking-tight text-foreground md:text-4xl">
+              <h2 className="mt-8 text-3xl font-light  text-foreground md:text-4xl">
                 Materials
               </h2>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -433,7 +433,7 @@ export default function PCBDesingnResources() {
                 the board and suitability for an application. These materials
                 are classified based on their properties.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 CEM-1
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -443,7 +443,7 @@ export default function PCBDesingnResources() {
                 flexural strength, higher transition temperature than FR-4 as
                 well as good mechanical and electrical properties.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 CEM-3
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -454,7 +454,7 @@ export default function PCBDesingnResources() {
                 higher than FR-4.
               </p>
 
-              <h2 className="mt-8 text-3xl font-light tracking-tight text-foreground md:text-4xl">
+              <h2 className="mt-8 text-3xl font-light  text-foreground md:text-4xl">
                 Surface Finishes
               </h2>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -462,7 +462,7 @@ export default function PCBDesingnResources() {
                 done to ensure the solderability of the board and to prevent
                 oxidation and deterioration of the copper.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 ENIG (Electro-less Nickel Immersion Gold)
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -472,7 +472,7 @@ export default function PCBDesingnResources() {
                 shelf-life and can be used on critical surfaces making it one of
                 the most popular finishes.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 HASL (Hot air solder levelling)
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -483,7 +483,7 @@ export default function PCBDesingnResources() {
                 through hot-air knives. This process removes the unwanted solder
                 by blowing hot air over the board.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 Lead-free HASL
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -492,7 +492,7 @@ export default function PCBDesingnResources() {
                 is immersed into it. Lead is toxic and harmful, which makes
                 lead-free HASL preferred by most industries.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 OSP (Organic Surface Protection)
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -506,7 +506,7 @@ export default function PCBDesingnResources() {
                 finishes. OSP is re-workable, cost-effective and maintains
                 planarity.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 Immersion Silver
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -517,7 +517,7 @@ export default function PCBDesingnResources() {
                 easy to solder. Immersion silver is a very simple process
                 suitable for fine traces.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 Immersion Tin
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -528,7 +528,7 @@ export default function PCBDesingnResources() {
                 mounting technology. Immersion tin is sometimes used as an
                 alternative to lead-based surface finish for its sustainability.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 ENEPIG (Electroless Nickel Electroless Palladium Immersion Gold)
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -540,7 +540,7 @@ export default function PCBDesingnResources() {
                 gives a shelf life for more than a year and is suitable for a
                 wide range of assembly requirements.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 Hard Gold
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -551,7 +551,7 @@ export default function PCBDesingnResources() {
                 switch, gold wire binding as well as conducting electric tests.
                 It has a shelf life of up to 12 months.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 Soft Bondable Gold
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -562,14 +562,14 @@ export default function PCBDesingnResources() {
                 operations as it produces a stronger joint.
               </p>
 
-              <h2 className="mt-8 text-3xl font-light tracking-tight text-foreground md:text-4xl">
+              <h2 className="mt-8 text-3xl font-light  text-foreground md:text-4xl">
                 Plating
               </h2>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
                 Plating is the process of depositing metal (copper) on the PCB
                 surface through an electrochemical process.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 Edge Plating
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">
@@ -581,7 +581,7 @@ export default function PCBDesingnResources() {
                 is a solution to electromagnetic emissions radiating out of the
                 edges of a backplane.
               </p>
-              <h3 className="mt-4 text-xl font-light tracking-tight text-foreground md:text-2xl">
+              <h3 className="mt-4 text-xl font-light  text-foreground md:text-2xl">
                 Castellations
               </h3>
               <p className="text-[15px] font-light leading-[1.6] text-foreground">

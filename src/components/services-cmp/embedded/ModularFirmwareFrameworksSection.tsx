@@ -28,7 +28,7 @@ export function ModularFirmwareFrameworksSection({
     >
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-14 flex w-full flex-col items-center text-center max-[900px]:mb-10">
-          <h2 className="mb-6 text-center text-3xl font-light tracking-tight md:text-5xl">
+          <h2 className="mb-6 text-center text-3xl font-light  md:text-5xl">
             {title} <span className="text-red-500">{titleHighlight}</span>
           </h2>
           <p className="mx-auto w-full max-w-[1100px] text-justify [text-align-last:center]">

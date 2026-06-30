@@ -130,7 +130,7 @@ export function MechanicalIndustrialHero({
         <div className="absolute inset-0 z-[2] flex flex-col items-center justify-end px-[clamp(24px,6vw,96px)] pb-[clamp(96px,13vh,160px)] text-center">
           <h1
             id="mechanical-industrial-hero-title"
-            className="max-w-[900px] text-balance font-bold leading-[1.1] tracking-[-0.022em] text-white [font-size:clamp(34px,4vw,58px)]"
+            className="max-w-[900px] text-balance font-bold leading-[1.1] text-white [font-size:clamp(34px,4vw,58px)]"
           >
             {renderHeroTitle(title)}
           </h1>

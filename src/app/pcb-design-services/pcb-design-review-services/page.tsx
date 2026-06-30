@@ -42,7 +42,7 @@ export default function PCBDesignReviewServicesPage() {
               <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-red-500 mb-6">
                 PCB DESIGN SERVICES
               </span>
-              <h1 className="text-4xl font-light leading-[1.1] md:text-6xl lg:text-7xl tracking-tight">
+              <h1 className="text-4xl font-light leading-[1.1] md:text-6xl lg:text-7xl ">
                 Design Review
                 <br className="hidden md:block" />
                 Services.

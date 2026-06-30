@@ -8,7 +8,7 @@ export function WhyChooseQmaxMechanical() {
         <div className="mb-7">
           <h2
             id="why-choose-qmax-heading"
-            className="font-light leading-[1.15] tracking-[-0.01em] text-foreground [font-size:clamp(32px,4vw,48px)]"
+            className="font-light leading-[1.15] text-foreground [font-size:clamp(32px,4vw,48px)]"
           >
             Why Choose Qmax <span className="text-red-500">Systems</span>
           </h2>

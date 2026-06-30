@@ -352,7 +352,7 @@ export default function HighSpeedDigitalPCBDesignPageDeprecated() {
               <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
                 PCB DESIGN SERVICES
               </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl ">
                 Advanced High-Speed
                 <br className="hidden md:block" />
                 Digital PCB Engineering.

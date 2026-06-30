@@ -160,7 +160,7 @@ const ServicesV2 = () => {
                   {/* Content */}
                   <div className="relative flex h-full flex-col justify-between p-5 lg:p-5">
                     <div className="flex items-start justify-between gap-2">
-                      <h3 className="text-lg !font-bold leading-tight tracking-tight text-white drop-shadow-sm sm:text-xl lg:text-xl xl:text-3xl">
+                      <h3 className="text-lg !font-bold leading-tight  text-white drop-shadow-sm sm:text-xl lg:text-xl xl:text-3xl">
                         {service.topic}
                       </h3>
                       <span

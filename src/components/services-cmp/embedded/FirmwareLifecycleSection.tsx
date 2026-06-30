@@ -80,10 +80,10 @@ export function FirmwareLifecycleSection({
     >
       <div className="relative z-[2] mx-auto max-w-[1400px]">
         <div className="mx-auto mb-14 max-w-none text-center">
-          <h2 className="mb-3 text-center text-[clamp(32px,4vw,48px)] font-light leading-[1.15] tracking-[-0.025em]">
+          <h2 className="mb-3 text-center text-[clamp(32px,4vw,48px)] font-light leading-[1.15]">
             {formatHeadingText(title)}
           </h2>
-          <p className="m-0 text-center text-[clamp(32px,4vw,48px)] font-light leading-[1.15] tracking-[-0.025em]">
+          <p className="m-0 text-center text-[clamp(32px,4vw,48px)] font-light leading-[1.15]">
             From{" "}
             <span className="text-red-500">
               {formatHeadingText(subtitleHighlight)}
@@ -133,7 +133,7 @@ export function FirmwareLifecycleSection({
                 <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-red-500">
                   Phase {phase.phase}
                 </span>
-                <h3 className="mt-1.5 mb-0 text-[19px] !font-bold leading-tight tracking-[-0.01em] !text-white">
+                <h3 className="mt-1.5 mb-0 text-[19px] !font-bold leading-tight !text-white">
                   {phase.title}
                 </h3>
                 <ul className="m-0 flex list-none flex-col gap-2.5 p-0">

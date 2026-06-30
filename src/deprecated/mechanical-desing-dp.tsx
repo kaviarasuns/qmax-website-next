@@ -43,7 +43,7 @@ export default function MechanicalDesingDP() {
               <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
                 MECHANICAL DESIGN SERVICES
               </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl ">
                 Precision Mechanical
                 <br className="hidden md:block" />
                 Engineering.
@@ -107,7 +107,7 @@ export default function MechanicalDesingDP() {
                 <span className="text-5xl font-light tracking-tighter">01</span>
                 <div className="h-px w-12 bg-zinc-300"></div>
               </div>
-              <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase tracking-tight">
+              <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase ">
                 Plastic Enclosure Design
               </h2>
               <p className="text-sm font-semibold text-zinc-500 uppercase tracking-widest mb-6">
@@ -202,7 +202,7 @@ export default function MechanicalDesingDP() {
               <span className="text-5xl font-light tracking-tighter">02</span>
               <div className="h-px w-12 bg-zinc-300"></div>
             </div>
-            <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase tracking-tight">
+            <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase ">
               Metal Enclosures
             </h2>
             <p className="text-sm font-semibold text-zinc-500 uppercase tracking-widest mb-6">
@@ -326,7 +326,7 @@ export default function MechanicalDesingDP() {
                 <span className="text-5xl font-light tracking-tighter">03</span>
                 <div className="h-px w-12 bg-zinc-300"></div>
               </div>
-              <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase tracking-tight">
+              <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase ">
                 Military Rugged Enclosures
               </h2>
               <p className="text-sm font-semibold text-zinc-500 uppercase tracking-widest mb-6 leading-relaxed">
@@ -432,7 +432,7 @@ export default function MechanicalDesingDP() {
               <span className="text-5xl font-light tracking-tighter">04</span>
               <div className="h-px w-12 bg-zinc-300"></div>
             </div>
-            <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase tracking-tight">
+            <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase ">
               IP-Rated Enclosures
             </h2>
             <p className="text-sm font-semibold text-zinc-500 uppercase tracking-widest mb-6">
@@ -568,7 +568,7 @@ export default function MechanicalDesingDP() {
                 <span className="text-5xl font-light tracking-tighter">05</span>
                 <div className="h-px w-12 bg-zinc-300"></div>
               </div>
-              <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase tracking-tight">
+              <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase ">
                 Full Mechanical Systems
               </h2>
               <p className="text-sm font-semibold text-zinc-500 uppercase tracking-widest mb-6">
@@ -662,7 +662,7 @@ export default function MechanicalDesingDP() {
               <span className="text-5xl font-light tracking-tighter">06</span>
               <div className="h-px w-12 bg-zinc-300"></div>
             </div>
-            <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase tracking-tight">
+            <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase ">
               DFx
             </h2>
             <p className="text-sm font-semibold text-zinc-500 uppercase tracking-widest mb-6">
@@ -789,7 +789,7 @@ export default function MechanicalDesingDP() {
                 <span className="text-5xl font-light tracking-tighter">07</span>
                 <div className="h-px w-12 bg-zinc-300"></div>
               </div>
-              <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase tracking-tight">
+              <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase ">
                 Thermal & Structural Analysis
               </h2>
               <p className="text-sm font-semibold text-zinc-500 uppercase tracking-widest mb-6">
@@ -929,7 +929,7 @@ export default function MechanicalDesingDP() {
               </span>
               <div className="h-px w-12 bg-zinc-300"></div>
             </div>
-            <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase tracking-tight">
+            <h2 className="text-3xl font-semibold text-zinc-900 mb-4 uppercase ">
               Selected Portfolio
             </h2>
             <p className="text-sm font-semibold text-zinc-500 uppercase tracking-widest mb-6">
@@ -1106,7 +1106,7 @@ export default function MechanicalDesingDP() {
 
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 text-center">
         <div className="max-w-3xl mx-auto space-y-8">
-          <h2 className="text-4xl font-semibold text-zinc-900 md:text-5xl tracking-tight leading-[1.1]">
+          <h2 className="text-4xl font-semibold text-zinc-900 md:text-5xl  leading-[1.1]">
             Start a Mechanical Design Engagement
           </h2>
           <p className="text-base md:text-lg text-zinc-600 leading-relaxed font-medium italic translate-y-[-8px]">

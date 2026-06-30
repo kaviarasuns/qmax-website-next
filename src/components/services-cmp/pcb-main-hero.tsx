@@ -59,7 +59,7 @@ export function PcbMainHero({
         <div className="max-w-full">
           <h1
             id="pcb-main-hero-title"
-            className="mb-[clamp(14px,2vh,24px)] text-balance font-bold leading-[1.1] tracking-[-0.01em] text-white [font-size:clamp(32px,4.4vw,56px)]"
+            className="mb-[clamp(14px,2vh,24px)] text-balance font-bold leading-[1.1] text-white [font-size:clamp(32px,4.4vw,56px)]"
           >
             {title}
           </h1>

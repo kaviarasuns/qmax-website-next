@@ -582,7 +582,10 @@ export default function DesignToManufacturingV6() {
         </div>
 
         {/* STEPPER */}
-        <div className="ctm-s shrink-0 mt-auto pt-[10px] md:pt-[14px] lg:pt-[17px]" style={aS}>
+        <div
+          className="ctm-s shrink-0 mt-auto pt-[10px] md:pt-[14px] lg:pt-[17px]"
+          style={aS}
+        >
           {bp !== "phone" ? (
             <div className="w-full mx-auto">
               {/* ── PILLS ────────────────────────────────────────────────
@@ -961,7 +964,7 @@ function CardSlide({
             <div className="flex-1 h-0.5 bg-[linear-gradient(90deg,#CED6E0_0%,rgba(206,214,224,0)_100%)]" />
           </div>
 
-          <h3 className="mt-3 md:mt-4 text-2xl lg:text-3xl font-base leading-tight tracking-tight text-left">
+          <h3 className="mt-3 md:mt-4 text-2xl lg:text-3xl font-base leading-tight  text-left">
             {s.heading}
           </h3>
           <p className="mt-2 md:mt-3 text-base md:text-lg leading-relaxed text-left">

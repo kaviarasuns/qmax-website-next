@@ -749,7 +749,7 @@ export function HeroConceptToSilicon({
       <div className="cts-hero-inner">
         {showCopy ? (
           <div className="cts-hero-copy">
-            <h1 className="!m-0 !mb-[26px] !text-[clamp(34px,4.2vw,52px)] !font-bold !leading-[1.12] !tracking-[-0.01em] !text-white ![text-wrap:balance]">
+            <h1 className="!m-0 !mb-[26px] !text-[clamp(34px,4.2vw,52px)] !font-bold !leading-[1.12] !text-white ![text-wrap:balance]">
               {title}
               <br />
               {description}
@@ -1199,7 +1199,7 @@ function PhaseAndChevron({
           <div className="text-[13px] font-bold leading-[1.2] opacity-90">
             Phase {phase.num}:
           </div>
-          <div className="mt-0.5 text-lg font-extrabold leading-[1.2] tracking-[-0.01em]">
+          <div className="mt-0.5 text-lg font-extrabold leading-[1.2]">
             {phase.name}
           </div>
         </div>

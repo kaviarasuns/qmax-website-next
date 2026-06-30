@@ -18,7 +18,7 @@ export default function PCBDesignGlossaryPage() {
         <div className="mx-auto max-w-[960px] text-center">
           <h1
             id="pcb-glossary-title"
-            className="text-[clamp(32px,4vw,48px)] font-light leading-[1.15] tracking-[-0.025em] text-foreground"
+            className="text-[clamp(32px,4vw,48px)] font-light leading-[1.15] text-foreground"
           >
             PCB Design <span className="text-red-500">Glossary</span>
           </h1>
@@ -36,7 +36,7 @@ export default function PCBDesignGlossaryPage() {
               key={`${item.term}-${index}`}
               className="border-b border-gray-200 py-8 last:border-b-0"
             >
-              <h2 className="mb-3 text-xl font-light leading-tight tracking-tight text-foreground md:text-2xl">
+              <h2 className="mb-3 text-xl font-light leading-tight  text-foreground md:text-2xl">
                 {item.term}
               </h2>
               <p className="text-justify text-[15px] font-light leading-[1.6] text-foreground">

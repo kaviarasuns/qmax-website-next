@@ -91,7 +91,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
       <div className="relative mx-auto max-w-7xl space-y-8 px-6 lg:px-8">
         {/* ── Header ── */}
         <header className="pt-4">
-          <h1 className="text-2xl font-bold leading-tight tracking-tight text-foreground text-balance md:text-3xl">
+          <h1 className="text-2xl font-bold leading-tight  text-foreground text-balance md:text-3xl">
             {caseStudy.title}
           </h1>
         </header>

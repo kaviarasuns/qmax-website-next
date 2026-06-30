@@ -158,7 +158,7 @@ export default function PCBTypeCards() {
 
   return (
     <div className="space-y-8">
-      <h2 className="text-center text-3xl font-light tracking-tight text-foreground md:text-4xl">
+      <h2 className="text-center text-3xl font-light  text-foreground md:text-4xl">
         PCB Resources
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -653,7 +653,7 @@ style={{
 >
 <div className="relative z-[2] w-full py-20 px-16 max-w-[1400px] mx-auto max-[900px]:py-16 max-[900px]:px-6">
   <div className="max-w-[820px]">
-    <h1 className="text-white mb-6 font-bold leading-[1.1] tracking-[-0.01em] text-balance text-[clamp(36px,5vw,60px)]">
+    <h1 className="text-white mb-6 font-bold leading-[1.1] text-balance text-[clamp(36px,5vw,60px)]">
       PCB Design Services: A Multi-Physics Engineering Discipline
     </h1>
     <p className="text-white text-xl leading-[1.6] font-normal mb-10 max-w-[720px]">

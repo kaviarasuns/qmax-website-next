@@ -1,69 +1,75 @@
-'use client'
+"use client";
 
-import { Badge } from '@/components/ui/badge'
-import { Card } from '@/components/ui/card'
-import { Briefcase, ChevronRight, Code2, Cpu } from 'lucide-react'
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { Briefcase, ChevronRight, Code2, Cpu } from "lucide-react";
 
 const slugify = (str: string) =>
   str
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '')
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
 function scrollToOpening(title: string) {
-  const id = slugify(title)
-  const el = document.getElementById(id)
-  if (!el) return
+  const id = slugify(title);
+  const el = document.getElementById(id);
+  if (!el) return;
 
-  const stickyHeader = document.querySelector('header')
-  const headerHeight = stickyHeader ? stickyHeader.getBoundingClientRect().height : 0
-  const top = el.getBoundingClientRect().top + window.scrollY - headerHeight - 100
+  const stickyHeader = document.querySelector("header");
+  const headerHeight = stickyHeader
+    ? stickyHeader.getBoundingClientRect().height
+    : 0;
+  const top =
+    el.getBoundingClientRect().top + window.scrollY - headerHeight - 100;
 
-  window.scrollTo({ top, behavior: 'smooth' })
+  window.scrollTo({ top, behavior: "smooth" });
 
   // Brief highlight flash
-  el.classList.add('ring-2', 'ring-zinc-400', 'ring-offset-2')
-  setTimeout(() => el.classList.remove('ring-2', 'ring-zinc-400', 'ring-offset-2'), 1500)
+  el.classList.add("ring-2", "ring-zinc-400", "ring-offset-2");
+  setTimeout(
+    () => el.classList.remove("ring-2", "ring-zinc-400", "ring-offset-2"),
+    1500,
+  );
 }
 
 export function OpeningsList() {
   const categories = [
     {
-      title: 'Engineering Roles',
+      title: "Engineering Roles",
       roles: [
-        'Hardware Design Engineer',
-        'Firmware Development Engineer',
-        'Embedded Systems Test Engineer',
-        'RF Design Engineer',
-        'Signal Integrity (SI) Engineer',
-        'PCB Designer',
-        'PCB Librarian',
-        'Mechanical Design Engineer',
-        'Industrial Designer',
+        "Hardware Design Engineer",
+        "Firmware Development Engineer",
+        "Embedded Systems Test Engineer",
+        "RF Design Engineer",
+        "Signal Integrity (SI) Engineer",
+        "PCB Designer",
+        "PCB Librarian",
+        "Mechanical Design Engineer",
+        "Industrial Designer",
       ],
       icon: Cpu,
     },
     {
-      title: 'Software & Web',
-      roles: ['Full-Stack Web Developer'],
+      title: "Software & Web",
+      roles: ["Full-Stack Web Developer"],
       icon: Code2,
     },
     {
-      title: 'Business',
-      roles: ['Business Development Executive'],
+      title: "Business",
+      roles: ["Business Development Executive"],
       icon: Briefcase,
     },
-  ]
+  ];
 
   const allRoles = categories.flatMap((category) =>
     category.roles.map((role) => ({
       title: role,
       category: category.title,
       icon: category.icon,
-      location: 'Chennai',
-      type: 'Full-time',
-    }))
-  )
+      location: "Chennai",
+      type: "Full-time",
+    })),
+  );
 
   return (
     <section className="relative overflow-hidden bg-white py-14 md:py-20">
@@ -74,11 +80,12 @@ export function OpeningsList() {
           <Badge className="mb-4 rounded-full border border-zinc-200 bg-white px-4 py-1.5 text-sm font-medium text-zinc-700 shadow-sm hover:bg-zinc-50">
             {allRoles.length} Open Roles
           </Badge>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-5xl">
+          <h2 className="mb-4 text-3xl font-bold  md:text-5xl">
             Current Openings
           </h2>
           <p className="text-base md:text-lg text-muted-foreground">
-            Explore full-time opportunities across engineering, software, and business teams.
+            Explore full-time opportunities across engineering, software, and
+            business teams.
           </p>
         </div>
 
@@ -97,7 +104,7 @@ export function OpeningsList() {
                 </thead>
                 <tbody className="divide-y divide-zinc-200">
                   {allRoles.map((role, index) => {
-                    const Icon = role.icon
+                    const Icon = role.icon;
                     return (
                       <tr
                         key={index}
@@ -129,7 +136,7 @@ export function OpeningsList() {
                           </span>
                         </td>
                       </tr>
-                    )
+                    );
                   })}
                 </tbody>
               </table>
@@ -138,5 +145,5 @@ export function OpeningsList() {
         </div>
       </div>
     </section>
-  )
+  );
 }

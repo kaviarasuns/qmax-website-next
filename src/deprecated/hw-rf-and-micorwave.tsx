@@ -278,7 +278,7 @@ export default function RfAndMicrowavePageDeprecated() {
               <span className="inline-block text-[10px] font-black uppercase tracking-[0.4em] text-[#F33117] mb-6">
                 HARDWARE DEVELOPMENT
               </span>
-              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl tracking-tight">
+              <h1 className="text-4xl font-light leading-[1.1] text-zinc-950 md:text-6xl lg:text-7xl ">
                 RF and Microwave
                 <br className="hidden md:block" />
                 Engineering Services.

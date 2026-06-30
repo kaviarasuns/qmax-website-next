@@ -669,7 +669,7 @@ function SmallCards({ items }: { items: SmallCard[] }) {
                 {item.icon}
               </div>
             ) : null}
-            <h4 className="text-base font-semibold leading-snug tracking-[-0.3px] text-foreground">
+            <h4 className="text-base font-semibold leading-snug text-foreground">
               {item.title}
             </h4>
           </div>
@@ -812,7 +812,7 @@ function IpCards({ items }: { items: IpCard[] }) {
             key={item.rating}
             className={`rounded-lg border-2 p-[22px] text-center ${cardStyle}`}
           >
-            <div className="text-[28px] font-bold tracking-[-0.02em] text-foreground">
+            <div className="text-[28px] font-bold text-foreground">
               {item.rating}
             </div>
             <p className="mt-2 text-center text-[13.5px] leading-5 text-foreground">
@@ -886,7 +886,7 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
               <PortfolioLabel label={item.label} />
             </p>
           ) : null}
-          <h4 className="line-clamp-2 text-[15px] font-semibold leading-snug tracking-[-0.2px] text-foreground">
+          <h4 className="line-clamp-2 text-[15px] font-semibold leading-snug text-foreground">
             {item.title}
           </h4>
         </div>
@@ -1118,7 +1118,7 @@ function ServiceBlock({ service }: { service: MechanicalService }) {
       className="grid grid-cols-1 items-start max-[960px]:grid-cols-1 min-[960px]:grid-cols-[35%_65%]"
     >
       <div className="bg-white px-5 py-12 max-[640px]:px-5 min-[640px]:px-8 min-[960px]:sticky min-[960px]:top-[calc(var(--nav-h)+8px)] min-[960px]:self-start min-[960px]:px-[52px] min-[960px]:py-[72px] min-[960px]:pl-[max(1.5rem,var(--page-pad,4rem))]">
-        <h2 className="mb-3 font-light leading-[1.1] tracking-[-0.02em] text-foreground [font-size:clamp(28px,3.2vw,42px)]">
+        <h2 className="mb-3 font-light leading-[1.1] text-foreground [font-size:clamp(28px,3.2vw,42px)]">
           {service.titleBefore}{" "}
           <span className="text-red-500">{service.titleAccent}</span>
         </h2>
@@ -1161,7 +1161,7 @@ export function CoreEngineeringMechanical() {
         <div className="mx-auto max-w-[1200px]">
           <h2
             id="core-engineering-capabilities-heading"
-            className="mb-7 font-light leading-[1.15] tracking-[-0.01em] text-foreground [font-size:clamp(32px,4vw,48px)]"
+            className="mb-7 font-light leading-[1.15] text-foreground [font-size:clamp(32px,4vw,48px)]"
           >
             Our Core Engineering{" "}
             <span className="text-red-500">Capabilities</span>

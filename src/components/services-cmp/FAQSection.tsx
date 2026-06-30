@@ -30,7 +30,7 @@ export function FAQSection({ faqItems, className }: FAQSectionProps) {
               key={item.q}
               className="border-b border-gray-200 py-6 group"
             >
-              <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer flex justify-between items-center gap-4 text-lg md:text-2xl font-light leading-relaxed tracking-tight text-foreground transition-colors duration-200">
+              <summary className="list-none [&::-webkit-details-marker]:hidden cursor-pointer flex justify-between items-center gap-4 text-lg md:text-2xl font-light leading-relaxed  text-foreground transition-colors duration-200">
                 {item.q}
                 <svg
                   className="flex-shrink-0 w-6 h-6 text-red-500 transition-transform duration-300 group-open:rotate-180"

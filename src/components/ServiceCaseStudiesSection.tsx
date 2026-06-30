@@ -46,7 +46,7 @@ export default function ServiceCaseStudiesSection({
               {/* <span className="mb-3 inline-block text-[10px] font-black uppercase tracking-[0.38em] text-[#F33117]">
                 {eyebrow}
               </span> */}
-              <h2 className="text-center text-3xl font-light tracking-tight md:text-5xl">
+              <h2 className="text-center text-3xl font-light  md:text-5xl">
                 {leading ? `${leading} ` : null}
                 <span className="text-red-500">{highlight}</span>
               </h2>

@@ -87,7 +87,7 @@ const FIELD_LABEL =
   "text-[0.8rem] text-foreground font-normal mb-[6px] transition-colors duration-150";
 
 const STAT_NUM =
-  "font-extrabold text-[2.5rem] lg:text-[3.25rem] leading-none text-white tracking-[-0.02em] m-0";
+  "font-extrabold text-[2.5rem] lg:text-[3.25rem] leading-none text-white m-0";
 
 const STAT_LABEL = "font-semibold text-base text-white mt-1";
 
@@ -288,7 +288,7 @@ export default function ServicesContactHero({
         {/* Section header */}
         <div className="pt-10 lg:pt-14">
           <h1
-            className="font-bold text-[2rem] lg:text-[50px] leading-[1.1] tracking-[-0.01em] m-0 text-white"
+            className="font-bold text-[2rem] lg:text-[50px] leading-[1.1] m-0 text-white"
             style={SOURCE_SANS}
           >
             <span className="block">{heading.line1}</span>

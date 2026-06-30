@@ -30,7 +30,7 @@ export default function HeroV2() {
         {/* <p className="mb-4 font-semibold leading-tight tracking-wide text-red-500 [font-size:clamp(18px,2vw,26px)]">
           About Qmax Systems
         </p> */}
-        <h1 className="text-balance font-bold leading-[1.1] tracking-[-0.01em] text-white [font-size:clamp(32px,4.4vw,56px)]">
+        <h1 className="text-balance font-bold leading-[1.1] text-white [font-size:clamp(32px,4.4vw,56px)]">
           Precision Engineering Services
           <br />
           <span className="text-red-500">Since 1997</span> — From Concept to

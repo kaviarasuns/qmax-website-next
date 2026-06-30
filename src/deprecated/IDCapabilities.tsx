@@ -43,7 +43,7 @@ export default function IDCapabilities() {
               <span className="text-xs font-black text-[#F33117] tracking-[0.4em] pt-2">
                 {capability.id}
               </span>
-              <h3 className="text-2xl md:text-4xl font-light tracking-tight text-zinc-950 dark:text-zinc-100 group-hover:text-[#F33117] transition-colors">
+              <h3 className="text-2xl md:text-4xl font-light  text-zinc-950 dark:text-zinc-100 group-hover:text-[#F33117] transition-colors">
                 {capability.title}
               </h3>
               <p className="text-lg leading-relaxed text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors">

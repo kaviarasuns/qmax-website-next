@@ -104,7 +104,7 @@ export default function OurServices() {
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div className="flex-1 min-w-0 min-h-[4.75rem]">
-                    <h3 className="text-lg md:text-xl font-semibold tracking-tight leading-tight">
+                    <h3 className="text-lg md:text-xl font-semibold  leading-tight">
                       {service.title}
                     </h3>
                     <p className="mt-1 text-sm leading-relaxed text-muted-foreground">

@@ -185,7 +185,7 @@ export function TechnicalAdvantageSection({
                 <span className="flex h-7 w-7 shrink-0 text-brand-500">
                   {card.icon}
                 </span>
-                <h3 className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
+                <h3 className="text-lg font-semibold  text-foreground md:text-xl">
                   {card.title}
                 </h3>
               </header>

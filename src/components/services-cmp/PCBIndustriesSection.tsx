@@ -7,7 +7,10 @@ import {
   type RelatedCaseStudy,
 } from "@/components/services-cmp/RelatedCaseStudiesCarousel";
 
-export type { RelatedCaseStudy, RelatedCaseStudyImage } from "@/components/services-cmp/RelatedCaseStudiesCarousel";
+export type {
+  RelatedCaseStudy,
+  RelatedCaseStudyImage,
+} from "@/components/services-cmp/RelatedCaseStudiesCarousel";
 
 export interface PCBIndustry {
   id: string;
@@ -106,9 +109,7 @@ export function PCBIndustriesSection({
         <div className="grid grid-cols-3 items-stretch gap-6 max-[900px]:grid-cols-1 max-[900px]:gap-4">
           {/* LEFT - copy + CTA */}
           <div className="flex flex-col gap-3 rounded-2xl bg-qmax-grey p-8">
-            <h3 className="m-0 mb-4 text-2xl font-bold tracking-tight">
-              {active.title}
-            </h3>
+            <h3 className="m-0 mb-4 text-2xl font-bold ">{active.title}</h3>
             <p className="m-0 mb-4 text-[15px] leading-[1.65]">
               {active.description}
             </p>

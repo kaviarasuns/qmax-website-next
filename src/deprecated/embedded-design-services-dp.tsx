@@ -39,7 +39,7 @@ export default function EmbeddedDesignServicesDP() {
               <Zap className="w-4 h-4" />
               <span>Expert Embedded Solutions</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-8 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold  text-slate-900 mb-8 leading-tight">
               Embedded Firmware <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                 Development Service
@@ -79,7 +79,7 @@ export default function EmbeddedDesignServicesDP() {
               />
             </div>
             <div className="order-1 lg:order-2 lg:pl-10">
-              <h2 className="text-3xl tracking-tight text-slate-900 sm:text-4xl mb-6 leading-tight">
+              <h2 className="text-3xl  text-slate-900 sm:text-4xl mb-6 leading-tight">
                 Proactive Insights & Experience
               </h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
@@ -107,7 +107,7 @@ export default function EmbeddedDesignServicesDP() {
       <section className="py-20 lg:py-32 bg-slate-50 border-y border-slate-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl  text-slate-900 sm:text-4xl">
               Platform Expertise
             </h2>
             <p className="mt-4 text-lg text-slate-600">
@@ -129,7 +129,7 @@ export default function EmbeddedDesignServicesDP() {
           </div>
 
           <div className="mb-16">
-            <h2 className="text-3xl tracking-tight text-slate-900 sm:text-4xl mb-16 text-center">
+            <h2 className="text-3xl  text-slate-900 sm:text-4xl mb-16 text-center">
               Domain Expertise
             </h2>
 
@@ -215,7 +215,7 @@ export default function EmbeddedDesignServicesDP() {
       <section className="py-20 lg:py-32 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="text-3xl  text-slate-900 sm:text-4xl">
               Chipsets & Silicon Expertise
             </h2>
             <p className="mt-4 text-lg text-slate-600">
@@ -336,7 +336,7 @@ export default function EmbeddedDesignServicesDP() {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-20">
-            <h2 className="text-3xl font-extrabold tracking-tight sm:text-5xl mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
+            <h2 className="text-3xl font-extrabold  sm:text-5xl mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
               Standards & Reusable Libraries
             </h2>
             <p className="text-xl text-slate-300 leading-relaxed">

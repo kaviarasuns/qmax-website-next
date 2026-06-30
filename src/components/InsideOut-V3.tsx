@@ -103,7 +103,7 @@ function StatCell({
   const count = useCountUp(value ?? 0, start && value !== undefined);
   return (
     <div className="relative after:absolute after:right-0 after:top-1/2 after:h-14 after:w-px after:-translate-y-1/2 after:bg-zinc-200 last:after:hidden max-lg:after:hidden">
-      <div className="text-[42px] lg:text-[50px] font-bold leading-[1.05] tracking-[-1px] text-foreground">
+      <div className="text-[42px] lg:text-[50px] font-bold leading-[1.05] text-foreground">
         {value !== undefined ? (
           <span className="inline-flex items-baseline justify-center gap-1.5">
             {count}
@@ -265,7 +265,7 @@ export default function InsideOutV3() {
                       className="w-full flex cursor-pointer items-center justify-between gap-4 py-2 text-left"
                     >
                       <span
-                        className={`flex-1 min-w-0 text-lg font-light leading-relaxed md:text-2xl tracking-tight transition-colors duration-300 xl:whitespace-nowrap ${isActive ? "text-red-500" : "text-foreground"}`}
+                        className={`flex-1 min-w-0 text-lg font-light leading-relaxed md:text-2xl  transition-colors duration-300 xl:whitespace-nowrap ${isActive ? "text-red-500" : "text-foreground"}`}
                       >
                         {reason.title}
                       </span>

@@ -121,7 +121,7 @@ const ServicesV3 = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold mb-1 tracking-tight">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold mb-1 ">
               Our <span className="text-red-600">Services</span>
             </h2>
             <div className="h-0.5 w-12 bg-red-600 mx-auto rounded-full mb-2" />

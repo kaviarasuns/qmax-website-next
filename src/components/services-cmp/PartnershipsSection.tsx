@@ -38,7 +38,7 @@ export function PartnershipsSection({
     >
       <div className="mx-auto max-w-[1280px]">
         <div className="mb-14 flex w-full flex-col items-center text-center">
-          <h2 className="mb-6 text-center font-light tracking-tight">
+          <h2 className="mb-6 text-center font-light ">
             {heading}
             {headingHighlight ? (
               <>
@@ -56,15 +56,15 @@ export function PartnershipsSection({
         >
           {logos.map(({ name, file, inset, imageClass }, index) => (
             <div key={`${file}-${index}`} className={TILE_CLASS}>
-              <div
-                className={LOGO_INSET_CLASSES[inset ?? "default"]}
-              >
+              <div className={LOGO_INSET_CLASSES[inset ?? "default"]}>
                 <Image
                   src={`${PARTNERSHIP_LOGO_BASE}/${file}`}
                   alt={`${name} logo`}
                   fill
                   sizes={
-                    sixPerRow ? "(max-width: 900px) 45vw, 15vw" : "(max-width: 900px) 45vw, 18vw"
+                    sixPerRow
+                      ? "(max-width: 900px) 45vw, 15vw"
+                      : "(max-width: 900px) 45vw, 18vw"
                   }
                   className={imageClass ?? "object-contain"}
                 />

@@ -33,7 +33,7 @@ export function DayOneThinkingSection({
     >
       <div className="mx-auto max-w-[1200px]">
         <div className="mx-auto mb-8 flex max-w-[880px] flex-col items-center text-center">
-          <h2 className="mb-4 text-center text-3xl font-light tracking-tight md:text-5xl">
+          <h2 className="mb-4 text-center text-3xl font-light  md:text-5xl">
             {title} <span className="text-red-500">{titleHighlight}</span>
           </h2>
           <p className="m-0 mx-auto w-full max-w-[1100px] text-justify text-[15px] leading-[1.6] text-foreground [text-align-last:center]">

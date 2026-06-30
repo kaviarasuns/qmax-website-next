@@ -38,7 +38,7 @@ export function CapabilitiesSection({
       <section className="px-6 py-16 lg:px-8 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="m-0 p-0">
-            <h2 className="text-center text-3xl font-light tracking-tight md:text-5xl">
+            <h2 className="text-center text-3xl font-light  md:text-5xl">
               {title} <span className="text-red-500">{titleHighlight}</span>
             </h2>
             {/* <p>We deliver high-performance designs validated by decades of experience. Our HW engineering stack covers:</p> */}

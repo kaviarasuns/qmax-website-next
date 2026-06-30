@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function SecurityPage() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-16 font-['ABC_Diatype',system-ui,sans-serif] text-sm/6 text-neutral-800 dark:text-neutral-200">
-      <h1 className="mb-1 text-2xl font-semibold tracking-tight text-neutral-950 dark:text-white">
+      <h1 className="mb-1 text-2xl font-semibold  text-neutral-950 dark:text-white">
         Security Policy
       </h1>
 
@@ -17,9 +17,9 @@ export default function SecurityPage() {
 
         <h2>Reporting Security Issues</h2>
         <p>
-          The security of our systems and user data is our top priority. We appreciate the work of
-          security researchers acting in good faith in identifying and reporting potential
-          vulnerabilities.
+          The security of our systems and user data is our top priority. We
+          appreciate the work of security researchers acting in good faith in
+          identifying and reporting potential vulnerabilities.
         </p>
         <p>Please report any security issues to support@million.dev.</p>
 

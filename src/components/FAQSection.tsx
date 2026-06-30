@@ -33,7 +33,7 @@ export default function FAQSection({ faqs, hideTopBorder }: FAQSectionProps) {
               key={index}
               className="group border-t border-zinc-200 dark:border-zinc-800 py-4 transition-all"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-light leading-snug text-zinc-900 dark:text-zinc-100 md:text-xl tracking-tight">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-light leading-snug text-zinc-900 dark:text-zinc-100 md:text-xl ">
                 <span className="flex-1">{faq.q}</span>
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center">
                   <svg

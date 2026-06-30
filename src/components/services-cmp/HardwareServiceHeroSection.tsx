@@ -92,7 +92,7 @@ export function HardwareServiceHeroSection({
         <div className="w-full md:w-3/5">
           <h1
             ref={titleRef}
-            className="w-fit text-white mb-6 font-bold leading-[1.1] tracking-[-0.01em] [font-size:clamp(32px,4.4vw,56px)]"
+            className="w-fit text-white mb-6 font-bold leading-[1.1] [font-size:clamp(32px,4.4vw,56px)]"
           >
             {renderHeroTitle(title)}
           </h1>
