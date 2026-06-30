@@ -13,7 +13,7 @@ import { collectSubmissionMeta, submitContactForm } from "@/lib/formSubmission";
 const FORM_SOURCE = "contact-page";
 
 const CONSENT_TEXT =
-  "By submitting, you agree to be contacted about your inquiry. Your data is secure with us; we never leak, share, or sell your details to third parties.";
+  "By submitting, you agree to be contacted about your inquiry. We value your privacy and ensure all your data remains completely confidential.";
 
 type CountryKey = "United States" | "India";
 type JobKey = "Careers  ( Jobs / Internships )" | "Suppliers / Vendors";

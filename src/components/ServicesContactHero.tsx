@@ -133,7 +133,7 @@ const DEFAULT_SUBHEADING =
   "To learn more about how Qmax can help you, contact us. We'd be happy to take on the challenge!";
 
 const CONSENT_TEXT =
-  "Your data is secure with us; we never leak, share, or sell your details to third parties.";
+  "We value your privacy and ensure all your data remains completely confidential.";
 
 type SubmissionPayload = FormState & SubmissionMeta;
 
