@@ -364,23 +364,23 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
       </svg>
     ),
   },
-  {
-    title: "Noise Floor Reduction",
-    body: "We partition analog, digital, power, and RF domains to prevent cross-talk and receiver desensitization.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        className="h-full w-full"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        aria-hidden={true}
-      >
-        <path d="M12 3 L20 6 L20 12 C20 17 16 20 12 21 C8 20 4 17 4 12 L4 6 Z" />
-      </svg>
-    ),
-  },
+  // {
+  //   title: "Noise Floor Reduction",
+  //   body: "We partition analog, digital, power, and RF domains to prevent cross-talk and receiver desensitization.",
+  //   icon: (
+  //     <svg
+  //       viewBox="0 0 24 24"
+  //       className="h-full w-full"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="1.8"
+  //       strokeLinecap="round"
+  //       aria-hidden={true}
+  //     >
+  //       <path d="M12 3 L20 6 L20 12 C20 17 16 20 12 21 C8 20 4 17 4 12 L4 6 Z" />
+  //     </svg>
+  //   ),
+  // },
   {
     title: "RF Generators",
     body: "Our team designs high-power RF generators - including 1 kW HF and 500W LF configurations - for plasma etching, thin-film deposition, and medical ablation.",
@@ -452,43 +452,43 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
       </svg>
     ),
   },
-  {
-    title: "Industrial Sensing",
-    body: "Our engineers develop microwave-based sensors for non-destructive testing (NDT), including high-accuracy moisture measurement and material-density analysis using phase-shift detection.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        className="h-full w-full"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        aria-hidden={true}
-      >
-        <circle cx="12" cy="12" r="3" />
-        <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
-      </svg>
-    ),
-  },
-  {
-    title: "Substrate Selection",
-    body: "We utilize low-loss materials including Rogers 4350B/3003, Panasonic Megtron 6, and Tachyon 100G to minimize dissipation factor - with surface-finish selection, precise surface-roughness calculations, and skin-effect analysis to ensure minimal I2R losses.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        className="h-full w-full"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        aria-hidden={true}
-      >
-        <rect x="3" y="3" width="18" height="18" rx="1" />
-        <line x1="3" y1="9" x2="21" y2="9" />
-        <line x1="3" y1="15" x2="21" y2="15" />
-      </svg>
-    ),
-  },
+  // {
+  //   title: "Industrial Sensing",
+  //   body: "Our engineers develop microwave-based sensors for non-destructive testing (NDT), including high-accuracy moisture measurement and material-density analysis using phase-shift detection.",
+  //   icon: (
+  //     <svg
+  //       viewBox="0 0 24 24"
+  //       className="h-full w-full"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="1.8"
+  //       strokeLinecap="round"
+  //       aria-hidden={true}
+  //     >
+  //       <circle cx="12" cy="12" r="3" />
+  //       <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
+  //     </svg>
+  //   ),
+  // },
+  // {
+  //   title: "Substrate Selection",
+  //   body: "We utilize low-loss materials including Rogers 4350B/3003, Panasonic Megtron 6, and Tachyon 100G to minimize dissipation factor - with surface-finish selection, precise surface-roughness calculations, and skin-effect analysis to ensure minimal I2R losses.",
+  //   icon: (
+  //     <svg
+  //       viewBox="0 0 24 24"
+  //       className="h-full w-full"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="1.8"
+  //       strokeLinecap="round"
+  //       aria-hidden={true}
+  //     >
+  //       <rect x="3" y="3" width="18" height="18" rx="1" />
+  //       <line x1="3" y1="9" x2="21" y2="9" />
+  //       <line x1="3" y1="15" x2="21" y2="15" />
+  //     </svg>
+  //   ),
+  // },
   {
     title: "EMI/EMC Pre-compliance",
     body: "Our team runs early-stage simulation and internal testing for Radiated Emissions (RE) and Conducted Emissions (CE), specializing in ground-loop elimination and common-mode choke selection.",
@@ -524,41 +524,41 @@ const RF_TECHNICAL_CARDS: TechnicalAdvantageCard[] = [
       </svg>
     ),
   },
-  {
-    title: "Impedance Matching",
-    body: "Our engineers use Smith Charts for complex conjugate matching, holding VSWR < 1.5:1 across operational bandwidths.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        className="h-full w-full"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        aria-hidden={true}
-      >
-        <circle cx="12" cy="12" r="9" />
-        <circle cx="16" cy="12" r="5" />
-      </svg>
-    ),
-  },
-  {
-    title: "Precision Layout",
-    body: "We implement controlled-impedance traces with strict adherence to phase matching and propagation-delay requirements.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        className="h-full w-full"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        aria-hidden={true}
-      >
-        <path d="M4 6h16M4 12h10M4 18h16" />
-      </svg>
-    ),
-  },
+  // {
+  //   title: "Impedance Matching",
+  //   body: "Our engineers use Smith Charts for complex conjugate matching, holding VSWR < 1.5:1 across operational bandwidths.",
+  //   icon: (
+  //     <svg
+  //       viewBox="0 0 24 24"
+  //       className="h-full w-full"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="1.8"
+  //       strokeLinecap="round"
+  //       aria-hidden={true}
+  //     >
+  //       <circle cx="12" cy="12" r="9" />
+  //       <circle cx="16" cy="12" r="5" />
+  //     </svg>
+  //   ),
+  // },
+  // {
+  //   title: "Precision Layout",
+  //   body: "We implement controlled-impedance traces with strict adherence to phase matching and propagation-delay requirements.",
+  //   icon: (
+  //     <svg
+  //       viewBox="0 0 24 24"
+  //       className="h-full w-full"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="1.8"
+  //       strokeLinecap="round"
+  //       aria-hidden={true}
+  //     >
+  //       <path d="M4 6h16M4 12h10M4 18h16" />
+  //     </svg>
+  //   ),
+  // },
 ];
 
 const faqs = [

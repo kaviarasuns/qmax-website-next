@@ -1,6 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Height of the fixed top navigation (h-16). The pinned stack sits below it.
+const NAV_OFFSET = 64;
 
 const slugify = (str: string) =>
   str
@@ -510,7 +517,15 @@ function SectionAccordion({
   );
 }
 
-function JobCard({ position, index }: { position: Position; index: number }) {
+function JobCard({
+  position,
+  index,
+  stacked = false,
+}: {
+  position: Position;
+  index: number;
+  stacked?: boolean;
+}) {
   const isReversed = index % 2 !== 0;
 
   const [activeSection, setActiveSection] = useState<
@@ -521,10 +536,18 @@ function JobCard({ position, index }: { position: Position; index: number }) {
     setActiveSection((prev) => (prev === key ? null : key));
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 w-full border-2 border-zinc-200 bg-white overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-xl hover:border-zinc-300">
+    <div
+      className={`grid grid-cols-1 lg:grid-cols-2 w-full border-2 border-zinc-200 bg-white overflow-hidden rounded-xl transition-shadow duration-300 hover:border-zinc-300 ${
+        stacked
+          ? "lg:h-[70vh] lg:min-h-[70vh] lg:max-h-[calc(100vh-64px-1.5rem)] lg:grid-rows-[minmax(0,1fr)]"
+          : "hover:shadow-xl"
+      }`}
+    >
       {/* Image */}
       <div
-        className={`relative min-h-[50vh] lg:min-h-[16rem] lg:h-full ${isReversed ? "lg:order-2" : ""}`}
+        className={`relative min-h-[12rem] ${
+          stacked ? "lg:min-h-0 lg:h-full" : "sm:min-h-[14rem]"
+        } ${isReversed ? "lg:order-2" : ""}`}
       >
         <img
           src={position.imageUrl || "/careers/image1.jpg"}
@@ -535,15 +558,28 @@ function JobCard({ position, index }: { position: Position; index: number }) {
 
       {/* Content */}
       <div
-        className={`p-8 sm:p-10 md:p-14 flex flex-col ${isReversed ? "lg:order-1" : ""}`}
+        className={`p-8 sm:p-10 md:p-14 flex flex-col ${
+          stacked ? "lg:p-10 lg:min-h-0 lg:overflow-hidden lg:h-full" : ""
+        } ${isReversed ? "lg:order-1" : ""}`}
       >
         {/* Title */}
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold pb-3 border-b-2 border-zinc-400 mb-4 text-foreground">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold pb-3 border-b-2 border-zinc-400 mb-4 text-foreground flex-shrink-0">
           {position.title}
         </h3>
 
-        {/* Accordion sections */}
-        <div className="mb-6 pr-1">
+        {/* Accordion sections. When stacked, this region scrolls its own overflow
+            (data-card-scroll) so the scroll engine lets long card content scroll
+            before stepping to the next card. */}
+        <div
+          {...(stacked
+            ? { "data-card-scroll": "", tabIndex: 0 }
+            : {})}
+          className={`mb-6 pr-1 ${
+            stacked
+              ? "lg:flex-1 lg:min-h-0 lg:overflow-y-auto lg:mb-4 lg:[scrollbar-width:thin] focus:outline-none"
+              : ""
+          }`}
+        >
           <SectionAccordion
             title="Key Responsibilities"
             items={position.responsibilities}
@@ -591,27 +627,20 @@ function JobCard({ position, index }: { position: Position; index: number }) {
 
 function SideNav({
   positions,
-  activeId,
+  activeIndex,
+  onSelect,
 }: {
   positions: Position[];
-  activeId: string | null;
+  activeIndex: number;
+  onSelect: (index: number) => void;
 }) {
-  const scrollTo = (title: string) => {
-    const id = slugify(title);
-    const el = document.getElementById(id);
-    if (!el) return;
-    const nav = document.querySelector("nav");
-    const navHeight = nav ? nav.getBoundingClientRect().height : 0;
-    const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
-    window.scrollTo({ top, behavior: "smooth" });
-  };
-
   return (
-    <aside className="hidden lg:block w-64 flex-shrink-0 self-start sticky top-20">
-      <div className="max-h-[calc(100vh-10rem)] overflow-y-auto">
-        {/* <p className="text-[10px] font-semibold uppercase tracking-widest mb-3 pl-2 text-muted-foreground">
-          Jump to
-        </p> */}
+    <aside className="hidden lg:flex w-64 flex-shrink-0 flex-col h-[calc(100vh-64px)] sticky top-16 self-start">
+      <div className="flex-1 min-h-0" aria-hidden="true" />
+      <div
+        data-nav-scroll
+        className="h-[70vh] flex-shrink-0 overflow-y-auto [scrollbar-width:thin]"
+      >
         <nav className="space-y-5">
           {(
             [
@@ -634,13 +663,13 @@ function SideNav({
                 <HeadingTag className={headingClassName}>{label}</HeadingTag>
                 <ul className="space-y-0.5">
                   {group.map((pos) => {
-                    const id = slugify(pos.title);
-                    const isActive = activeId === id;
+                    const globalIndex = positions.indexOf(pos);
+                    const isActive = activeIndex === globalIndex;
                     return (
                       <li key={pos.id}>
                         <button
                           type="button"
-                          onClick={() => scrollTo(pos.title)}
+                          onClick={() => onSelect(globalIndex)}
                           className={`w-full text-left text-sm px-3 py-2 rounded-md transition-colors cursor-pointer leading-snug ${
                             isActive
                               ? "text-red-500 font-semibold"
@@ -658,41 +687,414 @@ function SideNav({
           })}
         </nav>
       </div>
+      <div className="flex-1 min-h-0" aria-hidden="true" />
     </aside>
   );
 }
 
 export function CurrentOpenings() {
-  const [activeId, setActiveId] = useState<string | null>(null);
-  const observerRef = useRef<IntersectionObserver | null>(null);
+  const stackWrapperRef = useRef<HTMLDivElement | null>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  // Populated by the GSAP effect; SideNav clicks call through it to jump the
+  // stack to a chosen card index (engaging the pin first if needed).
+  const jumpToIndexRef = useRef<(index: number) => void>(() => {});
 
-  useEffect(() => {
-    const ids = positions.map((p) => slugify(p.title));
-    const elements = ids
-      .map((id) => document.getElementById(id))
-      .filter(Boolean) as HTMLElement[];
+  // `null` until the client measures the viewport, so SSR / first paint render
+  // the plain list (no layout shift, no hydration mismatch). Stacking is a
+  // desktop-only enhancement.
+  const [isLg, setIsLg] = useState<boolean | null>(null);
+  // Mirror of the on-top card, drives the sidebar highlight and keeps off-screen
+  // cards out of the tab order / accessibility tree.
+  const [activeIndex, setActiveIndex] = useState(0);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible.length > 0) setActiveId(visible[0].target.id);
-      },
-      { rootMargin: "-80px 0px -55% 0px", threshold: 0 },
-    );
-
-    elements.forEach((el) => observer.observe(el));
-    observerRef.current = observer;
-
-    return () => observer.disconnect();
+  // Track the lg breakpoint. matchMedia keeps it in sync across resizes so the
+  // stacking engine is set up / torn down when crossing 1024px.
+  useLayoutEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsLg(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
   }, []);
 
+  useLayoutEffect(() => {
+    if (!isLg) return;
+
+    const wrapper = stackWrapperRef.current;
+    const cards = cardRefs.current.filter(
+      (card): card is HTMLDivElement => card !== null,
+    );
+
+    if (!wrapper || cards.length === 0) return;
+
+    const totalCards = cards.length;
+
+    if (totalCards === 1) {
+      gsap.set(cards[0], { yPercent: 0, scale: 1, opacity: 1, zIndex: 1 });
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    const STEP_DURATION = prefersReducedMotion ? 0 : 0.8;
+    const WHEEL_THRESHOLD = 10;
+    const TOUCH_THRESHOLD = 40;
+    // A quiet gap longer than this starts a fresh gesture, so the next push is
+    // read as new intent rather than the tail of the previous flick.
+    const GESTURE_RESET_MS = 200;
+
+    // The card stack is driven by a PAUSED timeline (one whole-number unit of
+    // time per card), advanced directly by the gesture handlers. The pin only
+    // holds the section in place — scroll position is never animated, so nothing
+    // fights ScrollTrigger and there is no scrub flicker. Window scroll stays
+    // parked inside the pin while stepping; reaching either end performs a
+    // single instant hand-off so the page resumes native scrolling.
+    let timeline: gsap.core.Timeline | undefined;
+    let trigger: ScrollTrigger | undefined;
+
+    let currentIndex = 0;
+    let animating = false;
+    // One queued step so a flick that arrives during the current animation isn't
+    // dropped (keeps consecutive Magic Mouse / trackpad flicks responsive).
+    let pendingDir = 0;
+    // Rolling history of recent wheel-delta magnitudes, used to tell a deliberate
+    // push apart from inertial momentum (Magic Mouse / trackpad), which decays.
+    let wheelDeltas: number[] = [];
+    let lastWheelTime = 0;
+
+    const ctx = gsap.context(() => {
+      cards.forEach((card, index) => {
+        const isFirstCard = index === 0;
+        gsap.set(card, {
+          yPercent: isFirstCard ? 0 : 102,
+          scale: isFirstCard ? 1 : 0.98,
+          opacity: 1,
+          zIndex: index + 1,
+          transformOrigin: "center center",
+          force3D: true,
+        });
+      });
+
+      timeline = gsap.timeline({ paused: true });
+      for (let i = 1; i < totalCards; i += 1) {
+        timeline
+          .to(
+            cards[i],
+            { yPercent: 0, scale: 1, duration: 1, ease: "power1.out" },
+            i - 1,
+          )
+          .to(
+            cards[i - 1],
+            { scale: 0.93, duration: 1, ease: "power1.out" },
+            i - 1,
+          );
+      }
+
+      trigger = ScrollTrigger.create({
+        trigger: wrapper,
+        start: () => "top " + NAV_OFFSET + "px",
+        end: () => "+=" + (totalCards - 1) * window.innerHeight,
+        pin: true,
+        pinSpacing: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onToggle: (self) => {
+          if (!self.isActive || !timeline) return;
+          // Entering from the top → start on card 0; entering from below
+          // (scrolling up out of the next section) → start on the last card.
+          const entryIndex = self.direction === -1 ? totalCards - 1 : 0;
+          currentIndex = entryIndex;
+          gsap.killTweensOf(timeline);
+          timeline.progress(entryIndex / (totalCards - 1));
+          animating = false;
+          pendingDir = 0;
+          setActiveIndex(entryIndex);
+        },
+      });
+    }, wrapper);
+
+    if (!trigger || !timeline) {
+      return () => {
+        ctx.revert();
+      };
+    }
+
+    const st = trigger;
+    const tl = timeline;
+
+    const goToCard = (index: number, instant = false) => {
+      currentIndex = index;
+      setActiveIndex(index);
+      gsap.killTweensOf(tl);
+
+      if (instant) {
+        tl.time(index);
+        animating = false;
+        pendingDir = 0;
+        return;
+      }
+
+      animating = true;
+      gsap.to(tl, {
+        time: index,
+        duration: STEP_DURATION,
+        ease: "power2.inOut",
+        overwrite: true,
+        onComplete: () => {
+          animating = false;
+          if (pendingDir !== 0) {
+            const queued = pendingDir;
+            pendingDir = 0;
+            step(queued);
+          }
+        },
+      });
+    };
+
+    // Hand the page back to native scrolling at the ends of the stack. Scroll is
+    // parked inside the pin, so we jump just past the boundary; because the
+    // pinned card and the just-unpinned card render identically, this is
+    // visually seamless — only the scrollbar position changes. Force an instant
+    // jump regardless of the page's (smooth) scroll-behavior, then restore it.
+    const jumpTo = (y: number) => {
+      const htmlEl = document.documentElement;
+      const previous = htmlEl.style.scrollBehavior;
+      htmlEl.style.scrollBehavior = "auto";
+      window.scrollTo(0, y);
+      requestAnimationFrame(() => {
+        htmlEl.style.scrollBehavior = previous;
+      });
+    };
+    const releaseDown = () => jumpTo(Math.ceil(st.end) + 1);
+    const releaseUp = () => jumpTo(Math.max(0, Math.floor(st.start) - 1));
+
+    const step = (dir: number) => {
+      if (animating) return;
+      const next = currentIndex + dir;
+      if (next < 0) {
+        releaseUp();
+        return;
+      }
+      if (next > totalCards - 1) {
+        releaseDown();
+        return;
+      }
+      goToCard(next);
+    };
+
+    // Jump straight to a card (sidebar navigation). If the stack isn't pinned
+    // yet, scroll into the pin from the nearest edge first, then step once the
+    // pin has engaged on the next frame.
+    const jumpToIndex = (index: number) => {
+      if (index < 0 || index > totalCards - 1) return;
+      if (st.isActive) {
+        goToCard(index, true);
+        return;
+      }
+      const enterFromBelow = window.scrollY > st.end;
+      const targetY = enterFromBelow
+        ? Math.max(0, Math.floor(st.end) - 1)
+        : Math.ceil(st.start) + 1;
+      const htmlEl = document.documentElement;
+      const previous = htmlEl.style.scrollBehavior;
+      htmlEl.style.scrollBehavior = "auto";
+      window.scrollTo(0, targetY);
+      requestAnimationFrame(() => {
+        htmlEl.style.scrollBehavior = previous;
+        ScrollTrigger.update();
+        goToCard(index, true);
+      });
+    };
+    jumpToIndexRef.current = jumpToIndex;
+
+    // Allow nested scroll regions (card content, side nav) to consume the gesture
+    // before the section hijacks it — mirrors Lenis' data-lenis-prevent idea.
+    const canScrollWithin = (target: EventTarget | null, dir: number) => {
+      let node = target instanceof Element ? target : null;
+      while (node) {
+        if (
+          node.hasAttribute("data-card-scroll") ||
+          node.hasAttribute("data-nav-scroll")
+        ) {
+          const canScroll = node.scrollHeight > node.clientHeight + 1;
+          if (canScroll) {
+            if (dir > 0) {
+              return node.scrollTop + node.clientHeight < node.scrollHeight - 1;
+            }
+            return node.scrollTop > 1;
+          }
+          return false;
+        }
+        node = node.parentElement;
+      }
+      return false;
+    };
+
+    // Normalise wheel deltas to pixels so the threshold is meaningful for
+    // line-mode (Firefox classic mouse) and page-mode wheels too.
+    const normalizeDeltaY = (event: WheelEvent) => {
+      if (event.deltaMode === 1) return event.deltaY * 16;
+      if (event.deltaMode === 2) return event.deltaY * window.innerHeight;
+      return event.deltaY;
+    };
+
+    const averageOfLast = (values: number[], count: number) => {
+      const from = Math.max(0, values.length - count);
+      let sum = 0;
+      for (let i = from; i < values.length; i += 1) sum += values[i];
+      const len = values.length - from;
+      return len ? sum / len : 0;
+    };
+
+    const onWheel = (event: WheelEvent) => {
+      if (!st.isActive) return;
+      const delta = normalizeDeltaY(event);
+      const dir = delta > 0 ? 1 : -1;
+      // Let an overflowing card scroll its own content first.
+      if (canScrollWithin(event.target, dir)) return;
+      event.preventDefault();
+
+      // Track delta magnitudes so we can tell a deliberate flick apart from the
+      // long inertial-momentum tail a Magic Mouse / trackpad emits after a swipe.
+      const fresh = event.timeStamp - lastWheelTime > GESTURE_RESET_MS;
+      if (fresh) wheelDeltas = [];
+      lastWheelTime = event.timeStamp;
+      wheelDeltas.push(Math.abs(delta));
+      if (wheelDeltas.length > 100) wheelDeltas.shift();
+
+      if (Math.abs(delta) < WHEEL_THRESHOLD) return;
+
+      if (animating) {
+        // A brand-new flick (after a quiet gap) during the current animation is
+        // queued so it isn't dropped; the current flick's own momentum is not
+        // "fresh", so it never queues itself.
+        if (fresh) pendingDir = dir;
+        return;
+      }
+
+      // Inertial momentum decelerates, so its most-recent deltas fall below the
+      // earlier ones — ignore that tail. A real push (rising or sustained) fires
+      // once here, so a single flick advances exactly one card while separate
+      // flicks still advance card-by-card.
+      if (averageOfLast(wheelDeltas, 10) < averageOfLast(wheelDeltas, 70))
+        return;
+
+      step(dir);
+    };
+
+    let touchStartY = 0;
+
+    const onTouchStart = (event: TouchEvent) => {
+      touchStartY = event.touches[0]?.clientY ?? 0;
+    };
+
+    const onTouchMove = (event: TouchEvent) => {
+      if (!st.isActive) return;
+      const currentY = event.touches[0]?.clientY ?? touchStartY;
+      const dir = touchStartY - currentY > 0 ? 1 : -1;
+      // Block the page scroll while engaged so the swipe drives the stack only.
+      if (!canScrollWithin(event.target, dir)) event.preventDefault();
+    };
+
+    const onTouchEnd = (event: TouchEvent) => {
+      if (!st.isActive) return;
+      const diff =
+        touchStartY - (event.changedTouches[0]?.clientY ?? touchStartY);
+      if (Math.abs(diff) < TOUCH_THRESHOLD) return;
+      const dir = diff > 0 ? 1 : -1;
+      if (canScrollWithin(event.target, dir)) return;
+      step(dir);
+    };
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (!st.isActive) return;
+      const tag = (document.activeElement?.tagName ?? "").toLowerCase();
+      if (tag === "input" || tag === "textarea" || tag === "select") return;
+
+      let dir = 0;
+      if (
+        event.key === "ArrowDown" ||
+        event.key === "PageDown" ||
+        event.key === " "
+      ) {
+        dir = 1;
+      } else if (event.key === "ArrowUp" || event.key === "PageUp") {
+        dir = -1;
+      } else {
+        return;
+      }
+
+      // Let the focused card region scroll its own overflow first.
+      if (canScrollWithin(document.activeElement, dir)) return;
+      event.preventDefault();
+      step(dir);
+    };
+
+    window.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("touchend", onTouchEnd, { passive: true });
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("keydown", onKeyDown);
+      jumpToIndexRef.current = () => {};
+      gsap.killTweensOf(tl);
+      ctx.revert();
+    };
+  }, [isLg]);
+
+  // Desktop: pinned, stacked cards stepped one-per-gesture.
+  if (isLg) {
+    return (
+      <section className="bg-white">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-8 items-start">
+            <SideNav
+              positions={positions}
+              activeIndex={activeIndex}
+              onSelect={(index) => jumpToIndexRef.current(index)}
+            />
+            {/* The pinned element is a plain block child of the flex column
+                (not the flex item itself) so ScrollTrigger's pin-spacer can't
+                disturb the sticky sidebar's flex layout. */}
+            <div className="flex-1 min-w-0">
+              <div
+                ref={stackWrapperRef}
+                className="relative h-[calc(100vh-64px)] overflow-hidden"
+              >
+                {positions.map((position, index) => (
+                  <div
+                    key={position.id}
+                    ref={(element) => {
+                      cardRefs.current[index] = element;
+                    }}
+                    inert={index !== activeIndex}
+                    aria-hidden={index !== activeIndex ? true : undefined}
+                    className="absolute inset-0 flex items-center justify-center px-1 will-change-transform"
+                  >
+                    <JobCard position={position} index={index} stacked />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Mobile / tablet (and SSR / first paint): plain vertical list.
   return (
     <section className="bg-white">
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-6 lg:pt-0 pb-10 md:pb-14">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-6 pb-10 md:pb-14">
         <div className="flex gap-8 items-start">
-          <SideNav positions={positions} activeId={activeId} />
           <div className="flex-1 min-w-0 space-y-8 lg:space-y-10">
             {positions.map((position, index) => (
               <div key={position.id} id={slugify(position.title)}>
