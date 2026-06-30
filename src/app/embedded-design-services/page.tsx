@@ -789,7 +789,7 @@ export default function EmbeddedDesignServicesPage() {
             aria-label="Have your questions answered - contact Saravanaperumal Annamalai, VP - SWE Engineering"
           >
             <Image
-              src="/embedded-design-services/founder-cta-banner.png"
+              src="https://d1yetprhniwywz.cloudfront.net/v2/embedded_cta_sp.png"
               alt=""
               fill
               sizes="(max-width: 900px) 100vw, 1200px"

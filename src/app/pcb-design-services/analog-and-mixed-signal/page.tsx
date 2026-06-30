@@ -543,9 +543,9 @@ export default function AnalogAndMixedSignalPage() {
         description="Engineering-led analog and mixed-signal PCB design - built for first-time-right performance from schematic to production."
         consultationCta={{
           heading:
-            "Get a Complimentary Consultation with Our Analog & Mixed-Signal Experts.",
+            "Get a Complimentary Consultation with Our Analog & Mixed-Signal PCB Experts.",
           subtitle:
-            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
+            "1-hour session with a Qmax Systems Senior PCB Design Engineer. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/pcb-design-services/contact",
         }}
       />

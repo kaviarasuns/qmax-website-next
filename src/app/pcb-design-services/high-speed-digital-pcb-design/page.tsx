@@ -595,7 +595,7 @@ export default function HighSpeedDigitalPCBDesignPage() {
           heading:
             "Get a Complimentary Consultation with Our High-Speed Digital PCB Experts.",
           subtitle:
-            "1-hour session with a Qmax Systems Senior Hardware Architect. Practical, engineering-driven - no sales pitch.",
+            "1-hour session with a Qmax Systems Senior PCB Design Engineer. Practical, engineering-driven - no sales pitch.",
           ctaHref: "/pcb-design-services/contact",
         }}
       />

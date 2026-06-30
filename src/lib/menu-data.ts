@@ -20,7 +20,7 @@ export const menuData: MenuItem[] = [
     title: "Services",
     subItems: [
       {
-        title: "Hardware Development Services",
+        title: "Hardware Design Services",
         href: "/hardware-design-services",
         image:
           "https://images.pexels.com/photos/326518/pexels-photo-326518.jpeg?auto=compress&cs=tinysrgb&w=300",
@@ -82,14 +82,14 @@ export const menuData: MenuItem[] = [
         ],
       },
       {
-        title: "Embedded System Development Services",
+        title: "Embedded Design Services",
         href: "/embedded-design-services",
         image:
           "https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=300",
         description: "Custom embedded system design and development solutions",
       },
       {
-        title: "Mechanical Industrial Design Services",
+        title: "Mechanical and Industrial Design Services",
         href: "/mechanical-industrial-design-services",
         image:
           "https://images.pexels.com/photos/760710/pexels-photo-760710.jpeg?auto=compress&cs=tinysrgb&w=300",
