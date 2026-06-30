@@ -1053,7 +1053,7 @@ export function CurrentOpenings() {
   // Desktop: pinned, stacked cards stepped one-per-gesture.
   if (isLg) {
     return (
-      <section className="bg-white">
+      <section id="current-openings" className="bg-white">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-8 items-start">
             <SideNav
@@ -1092,7 +1092,7 @@ export function CurrentOpenings() {
 
   // Mobile / tablet (and SSR / first paint): plain vertical list.
   return (
-    <section className="bg-white">
+    <section id="current-openings" className="bg-white">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-6 pb-10 md:pb-14">
         <div className="flex gap-8 items-start">
           <div className="flex-1 min-w-0 space-y-8 lg:space-y-10">

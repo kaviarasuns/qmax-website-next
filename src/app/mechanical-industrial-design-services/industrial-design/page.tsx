@@ -6,9 +6,9 @@ import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 import { FOLDER_TAB_ICONS } from "@/components/services-cmp/capabilities-folder-tabs";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
-import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
 import { type CoreCapability } from "@/components/services-cmp/CoreCapabilitiesSection";
 import { CoreCapabilitiesSectionV2 } from "@/components/services-cmp/CoreCapabilitiesSectionV2";
+import { WorkflowSectionV2 } from "@/components/services-cmp/WorkflowSectionV2";
 
 const HERO = {
   videoSrc: "https://d1yetprhniwywz.cloudfront.net/v2/Inudstrial_V2.mp4",
@@ -319,7 +319,7 @@ export default function IndustrialDesignServicesPage() {
         learnMoreHref="/mechanical-industrial-design-services/contact"
       />
 
-      <WorkflowSection
+      <WorkflowSectionV2
         steps={WORKFLOW_STEPS}
         title="The"
         titleHighlight="Process"
