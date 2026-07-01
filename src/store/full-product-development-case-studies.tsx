@@ -1,6 +1,8 @@
 import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
 import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
+import { highCapacityAtcaLineCardCaseStudy } from "@/store/full-product-development-case-studies/high-capacity-atca-line-card";
+import { highDensityPcbDesignAiGpuChassisMotherboardCaseStudy } from "@/store/full-product-development-case-studies/high-density-pcb-design-ai-gpu-chassis-motherboard";
 import { highDensityPcbDesignGponOltCaseStudy } from "@/store/full-product-development-case-studies/high-density-pcb-design-gpon-olt";
 import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
 import { outdoorWifi6AccessPointCaseStudy } from "@/store/full-product-development-case-studies/outdoor-wifi-6-access-point";
@@ -352,6 +354,8 @@ export const fullProductDevelopmentCaseStudiesData: FullProductDevelopmentCaseSt
     coldStorageIotMonitoringSystemCaseStudy,
     advancedModularMedicalSimulatorCaseStudy,
     highDensityPcbDesignGponOltCaseStudy,
+    highDensityPcbDesignAiGpuChassisMotherboardCaseStudy,
+    highCapacityAtcaLineCardCaseStudy,
   ];
 
 export function getFullProductDevelopmentCaseStudy(
