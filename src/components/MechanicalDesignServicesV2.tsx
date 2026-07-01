@@ -347,7 +347,7 @@ export default function MechanicalDesignServicesPageV2() {
                 <h3 className="text-xl text-white font-medium mb-2 pr-12">
                   Handheld OBD2 Diagnostic
                 </h3>
-                <p className="text-xs font-mono text-emerald-500 mb-6 tracking-widest uppercase">
+                <p className="text-xs font-mono text-emerald-500 mb-6 uppercase">
                   4G | Wi-Fi | LCD | Battery
                 </p>
                 <ul className="space-y-3 font-light text-zinc-400">
@@ -1288,7 +1288,7 @@ export default function MechanicalDesignServicesPageV2() {
               <h3 className="text-xl text-white font-medium mb-2 pr-12">
                 Manpack Communication Equipment
               </h3>
-              <p className="text-[10px] font-mono text-emerald-500 mb-6 tracking-widest uppercase">
+              <p className="text-[10px] font-mono text-emerald-500 mb-6 uppercase">
                 MIL-STD-810H | L-WEIGHT AL
               </p>
               <ul className="space-y-3 text-sm font-light text-zinc-400">
@@ -1345,7 +1345,7 @@ export default function MechanicalDesignServicesPageV2() {
               <h3 className="text-xl text-white font-medium mb-2 pr-12">
                 Handheld OBD2 Diagnostic
               </h3>
-              <p className="text-[10px] font-mono text-emerald-500 mb-6 tracking-widest uppercase">
+              <p className="text-[10px] font-mono text-emerald-500 mb-6 uppercase">
                 4G | Wi-Fi | LCD | Battery
               </p>
               <ul className="space-y-3 text-sm font-light text-zinc-400">
@@ -1458,7 +1458,7 @@ export default function MechanicalDesignServicesPageV2() {
                   Questions
                 </span>
               </h2>
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] max-w-2xl text-muted-foreground">
+              <p className="font-mono text-[10px] uppercase max-w-2xl text-muted-foreground">
                 Structured for schema markup and AI search engine indexing
               </p>
             </div>
@@ -1592,7 +1592,7 @@ export default function MechanicalDesignServicesPageV2() {
               <button className="w-full py-4 bg-white text-black font-medium tracking-widest hover:bg-emerald-500 hover:text-white transition-all uppercase text-sm rounded-none border border-white active:scale-95 transition-duration-300">
                 Begin Technical Brief
               </button>
-              <p className="text-[10px] font-mono uppercase tracking-widest text-center text-muted-foreground">
+              <p className="text-[10px] font-mono uppercase text-center text-muted-foreground">
                 Reference: MECH_SERV_2026
               </p>
             </div>

@@ -33,7 +33,7 @@ export type FullProductDevelopmentCaseStudy = {
   /** Listing section override for /case-studies. Defaults to "Full Product Development". */
   section?: "pcb";
   title: string;
-  subtitle: string;
+  subtitle?: string;
   metaTags: string[];
   ribbonStats: { value: string; label: string }[];
   navSections: FullProductDevelopmentNavSection[];

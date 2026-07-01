@@ -68,7 +68,7 @@ export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) 
                   {getIndustryIcon(t.caseTag)}
                   {t.caseTag}
                 </div>
-                <p className="text-lg md:text-xl !font-medium tracking-wide m-0 border-l-[3px] border-[#E63329] pl-5 text-lg md:text-xl font-medium leading-relaxed tracking-wide text-muted-foreground">
+                <p className="text-lg md:text-xl !font-medium m-0 border-l-[3px] border-[#E63329] pl-5 text-lg md:text-xl font-medium leading-relaxed text-muted-foreground">
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="mt-1 flex flex-wrap items-center gap-4 border-t border-gray-200 pt-5">

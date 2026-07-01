@@ -654,7 +654,7 @@ export default function PCBDesignReviewServicesPage() {
                   ))}
                 </div>
                 <div className="mt-12 bg-zinc-100/50 p-6 border border-zinc-200">
-                  <p className="text-xs uppercase tracking-widest mb-2 font-black text-muted-foreground">
+                  <p className="text-xs uppercase mb-2 font-black text-muted-foreground">
                     DELIVERABLE
                   </p>
                   <p className="text-sm font-light text-muted-foreground">
@@ -697,7 +697,7 @@ export default function PCBDesignReviewServicesPage() {
                   ))}
                 </div>
                 <div className="mt-12 bg-zinc-100/50 p-6 border border-zinc-200">
-                  <p className="text-xs uppercase tracking-widest mb-2 font-black text-muted-foreground">
+                  <p className="text-xs uppercase mb-2 font-black text-muted-foreground">
                     DELIVERABLE
                   </p>
                   <p className="text-sm font-light text-muted-foreground">

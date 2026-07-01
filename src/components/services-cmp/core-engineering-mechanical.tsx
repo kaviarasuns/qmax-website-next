@@ -773,7 +773,7 @@ function MaterialCards({
         ))}
       </div>
       {footnote ? (
-        <p className="mt-6 text-center text-[11.5px] font-bold uppercase tracking-[0.5px] text-foreground">
+        <p className="mt-6 text-center text-[11.5px] font-bold uppercase text-foreground">
           {footnote}
         </p>
       ) : null}
@@ -882,7 +882,7 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
       <div className="relative z-10 flex min-h-0 flex-col overflow-hidden bg-white px-6 pt-4">
         <div className="shrink-0">
           {item.label ? (
-            <p className="line-clamp-1 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
+            <p className="line-clamp-1 text-[11.5px] font-bold uppercase text-brand-500">
               <PortfolioLabel label={item.label} />
             </p>
           ) : null}
@@ -903,7 +903,7 @@ function PortfolioGridCard({ item }: { item: PortfolioItem }) {
       </div>
 
       <div className="z-10 flex h-[32px] items-start bg-white px-6">
-        <p className="text-[11.5px] font-medium uppercase tracking-[0.4px] text-foreground">
+        <p className="text-[11.5px] font-medium uppercase text-foreground">
           Case study
         </p>
       </div>
@@ -922,7 +922,7 @@ function PortfolioFeaturedCard({ item }: { item: PortfolioItem }) {
     <article className="flex flex-col items-center gap-8 overflow-hidden rounded-[10px] bg-zinc-900 p-7 text-white min-[900px]:flex-row min-[900px]:items-center min-[900px]:justify-between min-[900px]:gap-8 min-[900px]:px-8 min-[900px]:py-7">
       <div className="w-full min-[900px]:flex-1">
         {item.label ? (
-          <p className="mb-2 text-[11.5px] font-bold uppercase tracking-[0.5px] text-brand-500">
+          <p className="mb-2 text-[11.5px] font-bold uppercase text-brand-500">
             <PortfolioLabel label={item.label} />
           </p>
         ) : null}
@@ -1122,7 +1122,7 @@ function ServiceBlock({ service }: { service: MechanicalService }) {
           {service.titleBefore}{" "}
           <span className="text-red-500">{service.titleAccent}</span>
         </h2>
-        <p className="mb-5 text-[11.5px] font-bold uppercase tracking-[0.5px] text-foreground">
+        <p className="mb-5 text-[11.5px] font-bold uppercase text-foreground">
           {service.subtitle}
         </p>
         <p className="mb-7 border-l-[3px] border-brand-500 pl-[18px] text-[15px] leading-[22.5px] text-justify text-foreground">

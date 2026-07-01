@@ -672,7 +672,7 @@ const PHASE_HEADER_BG: Record<number, string> = {
 };
 
 const LIFECYCLE_HEADING_CLASS =
-  "w-full text-center text-[clamp(32px,4vw,48px)] font-light leading-[1.15] tracking-[1.2px]";
+  "w-full text-center text-[clamp(32px,4vw,48px)] font-light leading-[1.15]";
 
 export type HeroConceptToSiliconProps = {
   title?: ReactNode;
@@ -766,7 +766,7 @@ export function HeroConceptToSilicon({
 
       <div className="cts-hero-lifecycle">
         <div className="mx-auto mb-10 flex w-full flex-col items-center text-center">
-          <h2 className={`m-0 mb-3 ${LIFECYCLE_HEADING_CLASS}`}>
+          <h2 className={`m-0 mb-3 ${LIFECYCLE_HEADING_CLASS} tracking-[1.2px]`}>
             {lifecycleTitle}
           </h2>
           <p className={`m-0 font-readable ${LIFECYCLE_HEADING_CLASS}`}>

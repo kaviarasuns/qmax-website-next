@@ -429,7 +429,7 @@ export function CoreCapabilitiesSectionV2({
                       className="flex w-full min-w-0 flex-col justify-start overflow-y-auto px-6 py-6 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:px-8 md:py-8"
                     >
                       <div className="w-full">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-red-500">
+                        <p className="text-xs font-semibold uppercase text-red-500">
                           {cap.tabLabel}
                         </p>
                         <h3 className="mb-2 mt-2 text-2xl font-light tracking-wide md:text-3xl">
@@ -443,7 +443,7 @@ export function CoreCapabilitiesSectionV2({
                           <div className="mt-4 space-y-3">
                             {cap.bullets.map((group) => (
                               <div key={group.title}>
-                                <p className="text-left text-xs font-semibold uppercase tracking-[0.12em] text-foreground">
+                                <p className="text-left text-xs font-semibold uppercase text-foreground">
                                   {group.title}
                                 </p>
                                 <ul className="mt-2 space-y-1.5">

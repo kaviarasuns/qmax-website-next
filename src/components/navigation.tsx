@@ -309,7 +309,7 @@ export function Navigation() {
                                         {subItem.title}
                                       </div>
                                       {subItem.description && (
-                                        <p className="line-clamp-2 text-left text-xs font-light leading-snug text-muted-foreground tracking-[0.03em]">
+                                        <p className="line-clamp-2 text-left text-xs font-light leading-snug text-muted-foreground">
                                           {subItem.description}
                                         </p>
                                       )}

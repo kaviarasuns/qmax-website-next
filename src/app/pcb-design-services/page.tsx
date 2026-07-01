@@ -588,7 +588,7 @@ export default function HardwareDevelopmentServicesComponentV2() {
                 <h2 className="text-[clamp(1rem,2.8vw,2.35rem)] font-semibold leading-[1.12] tracking-[0.2px] text-white [text-shadow:_0_1px_4px_rgba(0,0,0,0.45)]">
                   Have Your Questions Answered!
                 </h2>
-                <p className="text-[clamp(0.5rem,1.15vw,0.9rem)] uppercase leading-[1.35] tracking-[0.1em] text-white/95 [text-shadow:_0_1px_3px_rgba(0,0,0,0.4)]">
+                <p className="text-[clamp(0.5rem,1.15vw,0.9rem)] uppercase leading-[1.35] text-white/95 [text-shadow:_0_1px_3px_rgba(0,0,0,0.4)]">
                   Send your requirements and get an assessment
                 </p>
                 <span className="mt-0.5 inline-flex w-fit rounded-md bg-white px-5 py-2.5 text-[clamp(0.7rem,1.25vw,1.05rem)] font-bold tracking-[0.2px] text-[#0a0a0a] shadow-[0_2px_8px_rgba(0,0,0,0.18)] max-[900px]:px-4 max-[900px]:py-2">

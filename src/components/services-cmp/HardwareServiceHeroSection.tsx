@@ -98,7 +98,7 @@ export function HardwareServiceHeroSection({
           </h1>
           <div
             style={titleLineWidth ? { maxWidth: titleLineWidth } : undefined}
-            className="w-full font-light text-xl mb-10 space-y-4 tracking-wider text-white text-justify md:mb-[42px] [&_p]:text-justify [&_p]:font-light [&_p]:tracking-wide [&_p]:text-white"
+            className="w-full font-light text-xl mb-10 space-y-4 tracking-wider text-white text-justify md:mb-[42px] [&_p]:text-justify [&_p]:font-light [&_p]:text-white"
           >
             {description}
           </div>

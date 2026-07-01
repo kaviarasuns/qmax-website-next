@@ -50,9 +50,11 @@ export function CaseStudyV2Header({
           <h1 className="text-3xl md:text-4xl lg:text-5xl text-foreground my-[0.6rem] font-medium tracking-[0.005em] leading-[1.1]">
             {title}
           </h1>
-          <div className="text-foreground text-lg md:text-xl font-light max-w-[46ch]">
-            {subtitle}
-          </div>
+          {subtitle ? (
+            <div className="text-foreground text-lg md:text-xl font-light max-w-[46ch]">
+              {subtitle}
+            </div>
+          ) : null}
           <div
             className={`${MONO} text-xs tracking-[0.12em] text-foreground mt-[1.3rem] flex flex-wrap gap-y-[0.4rem] gap-x-[1.1rem]`}
           >

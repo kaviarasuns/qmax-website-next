@@ -49,7 +49,7 @@ export default function SIPIAnalysisServicesPage() {
             </div>
           </div>
           <div className="mt-10 max-w-4xl space-y-6 text-sm leading-8 text-zinc-700 md:text-base lg:text-lg">
-            <p className="text-sm font-medium tracking-wide md:text-base lg:text-lg text-muted-foreground">
+            <p className="text-sm font-medium md:text-base lg:text-lg text-muted-foreground">
               Predictive simulation and optimization for high-speed digital and
               high-frequency communication protocols.
             </p>

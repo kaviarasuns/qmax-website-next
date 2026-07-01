@@ -36,7 +36,7 @@ export default function OurStoryV2() {
             <h2 className="text-4xl font-light leading-tight tracking-wide text-foreground md:text-5xl">
               Our <span className="text-red-500">Story</span>
             </h2>
-            <p className="mt-3.5 text-lg font-medium leading-snug tracking-wide text-foreground md:text-xl">
+            <p className="mt-3.5 text-lg font-medium leading-snug text-foreground md:text-xl">
               A Quarter-Century of Turning Ideas Into Hardware.
             </p>
             <p className="mt-5 text-base leading-relaxed text-foreground">

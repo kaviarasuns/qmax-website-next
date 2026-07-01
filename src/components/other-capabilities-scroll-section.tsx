@@ -89,7 +89,7 @@ export function OtherCapabilitiesScrollSection({
                           </h3>
 
                           {summary && (
-                            <p className="text-[13px] line-clamp-2 tracking-wide text-muted-foreground">
+                            <p className="text-[13px] line-clamp-2 text-muted-foreground">
                               {summary}
                             </p>
                           )}

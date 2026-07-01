@@ -450,7 +450,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
 
         <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-20 lg:px-8">
           <div>
-            <p className="inline-flex rounded-full border border-slate-200 bg-white/90 px-4 py-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
+            <p className="inline-flex rounded-full border border-slate-200 bg-white/90 px-4 py-1 text-xs uppercase text-muted-foreground">
               Hardware Development Services
             </p>
             <h1 className="mt-6 text-4xl leading-tight text-slate-900 md:text-5xl">
@@ -503,7 +503,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
               key={item.title}
               className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.05)]"
             >
-              <p className="text-xs uppercase tracking-[0.12em] text-sky-700">
+              <p className="text-xs uppercase text-sky-700">
                 Step {index + 1}
               </p>
               <h3 className="mt-2 text-base text-slate-900">{item.title}</h3>
@@ -519,7 +519,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
       <section className="flex min-h-screen items-center border-y border-slate-200 bg-slate-50/80">
         <div className="mx-auto w-full max-w-7xl px-6 py-14 lg:px-8">
           <header className="mb-10">
-            <p className="text-xs uppercase tracking-[0.2em] text-sky-700">
+            <p className="text-xs uppercase text-sky-700">
               Engineering Stack
             </p>
             <h2 className="mt-3 text-3xl text-slate-900 md:text-4xl">
@@ -620,7 +620,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
       <section className="flex min-h-screen items-center bg-white">
         <div className="mx-auto w-full max-w-7xl px-6 py-14 lg:px-8">
           <header className="mb-10 text-center">
-            <p className="text-xs uppercase tracking-[0.2em] text-sky-700">
+            <p className="text-xs uppercase text-sky-700">
               Domains
             </p>
             <h2 className="mt-3 text-3xl text-slate-900 md:text-4xl">
@@ -697,7 +697,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
         <div className="mx-auto w-full max-w-7xl px-6 py-14 lg:px-8">
           <header className="mb-10 flex flex-wrap items-end justify-between gap-6">
             <div>
-              <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-sky-700">
+              <p className="inline-flex items-center gap-2 text-xs uppercase text-sky-700">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -727,7 +727,7 @@ export default function HardwareDevelopmentServicesComponentV1() {
                 <div className="aspect-[4/3] overflow-hidden rounded-lg bg-slate-100">
                   {article.thumb}
                 </div>
-                <p className="mt-4 text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                <p className="mt-4 text-xs uppercase text-muted-foreground">
                   Article · {article.category}
                 </p>
                 <h3 className="mt-2 text-lg leading-snug text-slate-900 transition-colors group-hover:text-sky-700">

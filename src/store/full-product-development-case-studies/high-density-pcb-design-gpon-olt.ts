@@ -6,8 +6,6 @@ export const highDensityPcbDesignGponOltCaseStudy: FullProductDevelopmentCaseStu
     slug: "high-density-pcb-design-gpon-olt",
     section: "pcb",
     title: "High-Density PCB Design for a GPON OLT Networking Platform",
-    subtitle:
-      "20-Layer, High-Density PCB Design for a Carrier-Grade GPON Optical Line Terminal",
     metaTags: [
       "Domain: Telecom & Networking",
       "Industry: Telecom & Networking Infrastructure",
@@ -119,7 +117,8 @@ export const highDensityPcbDesignGponOltCaseStudy: FullProductDevelopmentCaseStu
         description: "BGA1440 package",
       },
       {
-        title: "Multiple Broadcom Quad/Multi-Port Gigabit Ethernet PHY Transceivers",
+        title:
+          "Multiple Broadcom Quad/Multi-Port Gigabit Ethernet PHY Transceivers",
         description: "",
       },
       {
@@ -190,7 +189,8 @@ export const highDensityPcbDesignGponOltCaseStudy: FullProductDevelopmentCaseStu
         description: "",
       },
       {
-        title: "Multiple regulated power rails distributed via dedicated plane layers",
+        title:
+          "Multiple regulated power rails distributed via dedicated plane layers",
         description: "",
       },
     ],
@@ -208,7 +208,8 @@ export const highDensityPcbDesignGponOltCaseStudy: FullProductDevelopmentCaseStu
     listingSummary:
       "High-density, 20-layer PCB design for a carrier-grade GPON Optical Line Terminal — first-pass bring-up success with zero design defects.",
     metadata: {
-      title: "High-Density PCB Design for a GPON OLT Networking Platform | Case Study",
+      title:
+        "High-Density PCB Design for a GPON OLT Networking Platform | Case Study",
       description:
         "PCB design case study — 20-layer, high-density PCB for a carrier-grade GPON Optical Line Terminal, delivered with zero design defects at first bring-up.",
     },

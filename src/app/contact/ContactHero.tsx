@@ -272,7 +272,7 @@ const ContactHero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start lg:items-stretch">
           {/* Left Column - Contact Form */}
           <div>
-            <p className="text-red-500 font-medium tracking-widest text-xs uppercase mb-2">
+            <p className="text-red-500 font-medium text-xs uppercase mb-2">
               Get in Touch
             </p>
             <h1 className="mb-4 lg:mb-6 text-2xl md:text-3xl lg:text-4xl leading-[1.1] ">

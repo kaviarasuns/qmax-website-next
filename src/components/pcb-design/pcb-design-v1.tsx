@@ -143,13 +143,13 @@ export default function PCBDesignPageV1() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-gray-200">
                   <div className="flex items-start gap-4">
                     <div className="mt-1 w-2 h-2 rounded-full bg-red-600 shrink-0" />
-                    <p className="text-sm uppercase tracking-wider">
+                    <p className="text-sm uppercase">
                       Signal & Power Integrity
                     </p>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="mt-1 w-2 h-2 rounded-full bg-red-600 shrink-0" />
-                    <p className="text-sm uppercase tracking-wider">
+                    <p className="text-sm uppercase">
                       EMI & Thermal Management
                     </p>
                   </div>

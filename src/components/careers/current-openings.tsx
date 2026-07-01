@@ -651,12 +651,13 @@ function SideNav({
           ).map(({ type, label }) => {
             const group = positions.filter((p) => p.type === type);
             if (group.length === 0) return null;
-            const headingClassName =
-              "text-xs font-semibold uppercase tracking-widest mb-1.5 pl-2 text-foreground";
             const HeadingTag =
               label === "Full Time Roles" || label === "Internships"
                 ? "h2"
                 : "p";
+            const headingClassName =
+              "text-xs font-semibold uppercase mb-1.5 pl-2 text-foreground" +
+              (HeadingTag === "h2" ? " tracking-widest" : "");
 
             return (
               <div key={type}>

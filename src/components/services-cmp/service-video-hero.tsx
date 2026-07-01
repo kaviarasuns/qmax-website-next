@@ -101,7 +101,7 @@ export function ServiceVideoHero({
           </h1>
           <p
             style={titleLineWidth ? { maxWidth: titleLineWidth } : undefined}
-            className="mb-[clamp(20px,3vh,36px)] w-full max-w-full text-justify font-light leading-[1.55] tracking-wider text-white [font-size:clamp(15px,1.6vw,19px)]"
+            className="mb-[clamp(20px,3vh,36px)] w-full max-w-full text-justify font-light leading-[1.55] text-white [font-size:clamp(15px,1.6vw,19px)]"
           >
             {description}
           </p>

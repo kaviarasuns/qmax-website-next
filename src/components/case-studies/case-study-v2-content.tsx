@@ -155,6 +155,9 @@ export function CaseStudyV2Content({
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const sectionTitle = (id: string) =>
+    navSections.find((section) => section.id === id)?.label ?? id;
+
   return (
     <div className="max-w-[1200px] mx-auto grid grid-cols-[236px_1fr] gap-[2.6rem] px-6 pt-[2.6rem] pb-12 items-start max-[900px]:grid-cols-1 max-[900px]:gap-0">
       <aside className="sticky top-[5rem] self-start max-[900px]:hidden">
@@ -194,7 +197,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="overview"
         >
-          <SectionHead title="Project Overview" />
+          <SectionHead title={sectionTitle("overview")} />
           <div>
             {overview.map((paragraph) => (
               <p
@@ -211,7 +214,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="brief"
         >
-          <SectionHead title="Product Brief" />
+          <SectionHead title={sectionTitle("brief")} />
           <div>
             {brief.map((paragraph) => (
               <p
@@ -228,7 +231,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="scope"
         >
-          <SectionHead title="Qmax Scope of Work" />
+          <SectionHead title={sectionTitle("scope")} />
           <p className="text-foreground leading-[1.6] mb-4">{scopeIntro}</p>
           <ul className="list-none mt-[1.2rem] mb-0 p-0 grid grid-cols-2 gap-y-[0.1rem] gap-x-8 max-[640px]:grid-cols-1">
             {scopeItems.map((item, index) => (
@@ -253,7 +256,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="challenges"
         >
-          <SectionHead title="Engineering Challenges" />
+          <SectionHead title={sectionTitle("challenges")} />
           <div className="grid gap-[0.7rem] mt-[1.2rem]">
             {challenges.map((row) => (
               <div
@@ -289,7 +292,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="components"
         >
-          <SectionHead title="Major Hardware Components" />
+          <SectionHead title={sectionTitle("components")} />
           <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-[0.8rem] mt-[1.2rem]">
             {hardwareComponents.map((card) => (
               <div
@@ -311,7 +314,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="interfaces"
         >
-          <SectionHead title="Major Interfaces & Protocols" />
+          <SectionHead title={sectionTitle("interfaces")} />
           <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-[0.8rem] mt-[1.2rem]">
             {interfaces.map((card) => (
               <div
@@ -334,7 +337,7 @@ export function CaseStudyV2Content({
             className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
             id="firmware"
           >
-            <SectionHead title="Key Firmware & Software Activities" />
+            <SectionHead title={sectionTitle("firmware")} />
             {firmwareIntro ? (
               <p className="text-foreground leading-[1.6] mb-4">{firmwareIntro}</p>
             ) : null}
@@ -379,7 +382,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
           id="specs"
         >
-          <SectionHead title="Technical Specifications" />
+          <SectionHead title={sectionTitle("specs")} />
           <div className="mt-[1.2rem] bg-white border border-[#e3e8ee] rounded-lg overflow-hidden">
             {specs.map((row) => (
               <div
@@ -403,7 +406,7 @@ export function CaseStudyV2Content({
           className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem]"
           id="summary"
         >
-          <SectionHead title="Summary" />
+          <SectionHead title={sectionTitle("summary")} />
           <div
             ref={summaryRef}
             className={`bg-[#1c2a3a] text-white rounded-lg py-[2.6rem] px-[2.2rem] mt-[1.4rem] relative overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(700px_280px_at_100%_-20%,rgba(46,120,191,0.35),transparent_60%)] transition-[opacity,transform] duration-700 ease-[ease] motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 ${

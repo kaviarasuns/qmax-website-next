@@ -130,9 +130,8 @@ body {
 
   /* Body text: regular weight, inherits --foreground; use text-muted-foreground for secondary copy */
   p {
-    @apply text-justify text-foreground;
+    @apply text-justify text-foreground tracking-wider;
     font-weight: 400;
-    letter-spacing: 0.015em;
     line-height: 1.6;
   }
 

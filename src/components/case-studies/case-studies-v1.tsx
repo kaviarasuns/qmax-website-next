@@ -105,7 +105,7 @@ export default async function CaseStudyPagV1({
           {/* Hover tooltip - hidden on mobile */}
           <div className="pointer-events-none hidden opacity-0 transition-opacity duration-200 peer-hover:opacity-100 md:block">
             <div className="rounded-xl border border-zinc-200 bg-white/95 px-3 py-2 shadow-md backdrop-blur-sm">
-              <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-red-500">
+              <p className="mb-0.5 text-[10px] font-black uppercase text-red-500">
                 Previous
               </p>
               <p className="max-w-[160px] text-[12px] font-medium leading-tight line-clamp-2 text-foreground">
@@ -131,7 +131,7 @@ export default async function CaseStudyPagV1({
           {/* Hover tooltip - hidden on mobile */}
           <div className="pointer-events-none hidden opacity-0 transition-opacity duration-200 peer-hover:opacity-100 md:block">
             <div className="rounded-xl border border-zinc-200 bg-white/95 px-3 py-2 shadow-md backdrop-blur-sm text-right">
-              <p className="mb-0.5 text-[10px] font-black uppercase tracking-[0.2em] text-red-500">
+              <p className="mb-0.5 text-[10px] font-black uppercase text-red-500">
                 Next
               </p>
               <p className="max-w-[160px] text-[12px] font-medium leading-tight line-clamp-2 text-foreground">
