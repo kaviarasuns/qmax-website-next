@@ -6,6 +6,7 @@ import { highDensityPcbDesignAiGpuChassisMotherboardCaseStudy } from "@/store/fu
 import { highDensityPcbDesignGponOltCaseStudy } from "@/store/full-product-development-case-studies/high-density-pcb-design-gpon-olt";
 import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
 import { outdoorWifi6AccessPointCaseStudy } from "@/store/full-product-development-case-studies/outdoor-wifi-6-access-point";
+import { terabitSwitchFabricBoardCaseStudy } from "@/store/full-product-development-case-studies/terabit-switch-fabric-board";
 import { wifi6eCybersecurityGatewayCaseStudy } from "@/store/full-product-development-case-studies/wifi-6e-cybersecurity-gateway";
 
 export type FullProductDevelopmentNavSection = {
@@ -356,6 +357,7 @@ export const fullProductDevelopmentCaseStudiesData: FullProductDevelopmentCaseSt
     highDensityPcbDesignGponOltCaseStudy,
     highDensityPcbDesignAiGpuChassisMotherboardCaseStudy,
     highCapacityAtcaLineCardCaseStudy,
+    terabitSwitchFabricBoardCaseStudy,
   ];
 
 export function getFullProductDevelopmentCaseStudy(
