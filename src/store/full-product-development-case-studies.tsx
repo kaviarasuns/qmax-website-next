@@ -1,6 +1,7 @@
 import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
 import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
+import { highDensityPcbDesignGponOltCaseStudy } from "@/store/full-product-development-case-studies/high-density-pcb-design-gpon-olt";
 import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
 import { outdoorWifi6AccessPointCaseStudy } from "@/store/full-product-development-case-studies/outdoor-wifi-6-access-point";
 import { wifi6eCybersecurityGatewayCaseStudy } from "@/store/full-product-development-case-studies/wifi-6e-cybersecurity-gateway";
@@ -29,6 +30,8 @@ export type FullProductDevelopmentSpec = {
 export type FullProductDevelopmentCaseStudy = {
   id: string;
   slug: string;
+  /** Listing section override for /case-studies. Defaults to "Full Product Development". */
+  section?: "pcb";
   title: string;
   subtitle: string;
   metaTags: string[];
@@ -348,6 +351,7 @@ export const fullProductDevelopmentCaseStudiesData: FullProductDevelopmentCaseSt
     outdoorWifi6AccessPointCaseStudy,
     coldStorageIotMonitoringSystemCaseStudy,
     advancedModularMedicalSimulatorCaseStudy,
+    highDensityPcbDesignGponOltCaseStudy,
   ];
 
 export function getFullProductDevelopmentCaseStudy(

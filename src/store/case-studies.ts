@@ -77,9 +77,24 @@ export const embeddedCaseStudies = embeddedCaseStudiesData.map(
   (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "development"),
 );
 
-export const pcbCaseStudies = pcbCaseStudiesData.map((caseStudy, index) =>
-  toCaseStudyListItem(caseStudy, index, "development"),
-);
+const pcbSectionFullProductDevelopmentStudies =
+  fullProductDevelopmentCaseStudiesData.filter(
+    (study) => study.section === "pcb",
+  );
+
+export const pcbCaseStudies: CaseStudyListItem[] = [
+  ...pcbCaseStudiesData.map((caseStudy, index) =>
+    toCaseStudyListItem(caseStudy, index, "development"),
+  ),
+  ...pcbSectionFullProductDevelopmentStudies.map((study, index) => ({
+    id: pcbCaseStudiesData.length + index + 1,
+    title: study.title,
+    image: getFullProductDevelopmentCardImage(study),
+    link: `/case-studies/${study.slug}`,
+    category: "development",
+    summary: study.listingSummary,
+  })),
+];
 
 export const mechanicalCaseStudies = mechanicalCaseStudiesData.map(
   (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "mechanical"),
@@ -94,14 +109,16 @@ export const engineeringSupportCaseStudies = engineeringSupportCaseStudiesData.m
 );
 
 export const fullProductDevelopmentCaseStudies: CaseStudyListItem[] =
-  fullProductDevelopmentCaseStudiesData.map((study, index) => ({
-    id: index + 1,
-    title: study.title,
-    image: getFullProductDevelopmentCardImage(study),
-    link: `/case-studies/${study.slug}`,
-    category: "development",
-    summary: study.listingSummary,
-  }));
+  fullProductDevelopmentCaseStudiesData
+    .filter((study) => study.section !== "pcb")
+    .map((study, index) => ({
+      id: index + 1,
+      title: study.title,
+      image: getFullProductDevelopmentCardImage(study),
+      link: `/case-studies/${study.slug}`,
+      category: "development",
+      summary: study.listingSummary,
+    }));
 
 const countPendingImages = (studies: CaseStudy[]): number => {
   return studies.filter(

@@ -22,8 +22,7 @@ export const menuData: MenuItem[] = [
       {
         title: "Hardware Design Services",
         href: "/hardware-design-services",
-        image:
-          "https://images.pexels.com/photos/326518/pexels-photo-326518.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://d1yetprhniwywz.cloudfront.net/v2/navigation/hw.png",
         description: "Comprehensive hardware design and development",
         children: [
           {
@@ -47,8 +46,7 @@ export const menuData: MenuItem[] = [
       {
         title: "PCB Design Services",
         href: "/pcb-design-services",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPOKKQF88ooMa1cZCmXjiXNKAi5nFRq6FU8w&s",
+        image: "https://d1yetprhniwywz.cloudfront.net/v2/navigation/pd.png",
         description: "Professional PCB layout and design services",
         children: [
           {
@@ -84,15 +82,13 @@ export const menuData: MenuItem[] = [
       {
         title: "Embedded Design Services",
         href: "/embedded-design-services",
-        image:
-          "https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://d1yetprhniwywz.cloudfront.net/v2/navigation/ed.png",
         description: "Custom embedded system design and development solutions",
       },
       {
         title: "Mechanical and Industrial Design Services",
         href: "/mechanical-industrial-design-services",
-        image:
-          "https://images.pexels.com/photos/760710/pexels-photo-760710.jpeg?auto=compress&cs=tinysrgb&w=300",
+        image: "https://d1yetprhniwywz.cloudfront.net/v2/navigation/md.png",
         description: "Industrial, mechanical and enclosure design services",
         children: [
           {

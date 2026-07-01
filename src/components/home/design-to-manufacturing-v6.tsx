@@ -129,7 +129,7 @@ const STAGES: Stage[] = [
       "Product specification & IP landscape review",
     ],
     media:
-      "https://framerusercontent.com/assets/zBNuelZ9lG5wvy9U9Kowavh6XE.mp4",
+      "https://d1yetprhniwywz.cloudfront.net/v2/home/desing-to-manufacturing/concept_validation.mp4",
     phase: "CVD",
   },
   {
