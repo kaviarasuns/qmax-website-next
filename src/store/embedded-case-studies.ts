@@ -649,11 +649,11 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
     id: "ultra-low-power-bluetooth-mouse",
     title: "Ultra Low Power Bluetooth Mouse",
     category: "Embedded System Design",
-    cardImageIndex: 4,
+    cardImageIndex: 3,
     images: [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/MOUSE_BOARD_BL2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/MOUSE_BOARD_TL1.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/1.4.png",
+      // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/1.4.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/1.1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/1.2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/1.3.png",
