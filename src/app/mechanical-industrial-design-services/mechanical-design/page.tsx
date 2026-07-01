@@ -5,7 +5,7 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 import { WhyChooseQmaxMechanical } from "@/components/services-cmp/why-choose-qmax-mechanical";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
-import { mechanicalCaseStudiesData } from "@/store/mechanical-case-studies";
+import { servicePageCaseStudies } from "@/store/case-studies";
 
 export const metadata = buildMetadata({
   title: "Mechanical Design Services | Enclosure, DFM & NPI | Qmax",
@@ -56,29 +56,7 @@ const HERO = {
     "https://d1yetprhniwywz.cloudfront.net/v2/services_video/mechanical_desing.mp4",
 };
 
-function mechanicalServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
-  return ids.map((id) => {
-    const study = mechanicalCaseStudiesData.find((c) => c.id === id);
-    const image = study?.images[0];
-    if (!study || !image) {
-      throw new Error(`Mechanical case study missing or has no image: ${id}`);
-    }
-    return {
-      title: study.title,
-      image,
-      link: `/case-studies/${study.id}`,
-      category: "mechanical",
-    };
-  });
-}
-
-const MECHANICAL_CASE_STUDIES: ServiceCaseStudy[] =
-  mechanicalServiceCaseStudies([
-    "industrial-splice-detector",
-    "ott-media-gateway",
-    "rf-signal-generator-enclosure",
-    "pulse-oximeter-enclosure",
-  ]);
+const MECHANICAL_CASE_STUDIES: ServiceCaseStudy[] = servicePageCaseStudies;
 
 export default function MechanicalDesignServicesPage() {
   return (

@@ -16,7 +16,7 @@ import {
   getCaseStudyCardImage,
   allCaseStudiesData,
 } from "@/store/case-studies";
-import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import { servicePageCaseStudies } from "@/store/case-studies";
 
 export const metadata = buildMetadata({
   title: "Analog & Mixed-Signal PCB Design | ADC/DAC Layout | Qmax",
@@ -25,34 +25,7 @@ export const metadata = buildMetadata({
   path: "/pcb-design-services/analog-and-mixed-signal",
 });
 
-function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
-  return ids.map((id) => {
-    const study = pcbCaseStudiesData.find((c) => c.id === id);
-    const image = study?.images[0];
-    if (!study || !image) {
-      throw new Error(`PCB case study missing or has no image: ${id}`);
-    }
-    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
-    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
-    const summary =
-      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
-    return {
-      title: study.title,
-      image,
-      link: `/case-studies/${study.id}`,
-      category: "development",
-      summary,
-      imageRotation: study.rotatedImages?.[0],
-    };
-  });
-}
-
-const pcbCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
-  "smart-obd2-device",
-  "qualcomm-wifi-6-triband-router",
-  "animal-tracker",
-  "video-processor-pcb",
-]);
+const pcbCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
 
 type ProjectExperienceEntryOptions = {
   description?: string;

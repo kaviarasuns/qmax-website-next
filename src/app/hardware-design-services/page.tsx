@@ -13,10 +13,7 @@ import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 import Image from "next/image";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
-import {
-  allCaseStudiesData,
-  getCaseStudyCardImage,
-} from "@/store/case-studies";
+import { servicePageCaseStudies } from "@/store/case-studies";
 
 export const metadata = buildMetadata({
   title: "Hardware Design Services | High-Speed, RF & Analog | Qmax",
@@ -501,34 +498,7 @@ const HERO = {
     "https://d1yetprhniwywz.cloudfront.net/v2/services_video/hardware_hero_bg_cropped.mp4",
 };
 
-function serviceCaseStudies(ids: string[]): ServiceCaseStudy[] {
-  return ids.map((id) => {
-    const study = allCaseStudiesData.find((c) => c.id === id);
-    const image = getCaseStudyCardImage(id);
-    if (!study || !image) {
-      throw new Error(`Case study missing or has no image: ${id}`);
-    }
-    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
-    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
-    const summary =
-      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
-    return {
-      title: study.title,
-      image,
-      link: `/case-studies/${study.id}`,
-      category: "hardware",
-      summary,
-      imageRotation: study.rotatedImages?.[study.cardImageIndex ?? 0],
-    };
-  });
-}
-
-const hardwareCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
-  "industrial-iot-gateway-with-poe",
-  "wifi6-triband-router",
-  "ultra-low-noise-adc-board",
-  "ultra-low-cost-bldc-motor-controller-for-evs",
-]);
+const hardwareCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
 
 export default function HardwareDevelopmentServicesPage() {
   return (

@@ -7,9 +7,6 @@ import {
   Radio,
   Zap,
   Activity,
-  LineChart,
-  Library,
-  CheckCircle2,
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
@@ -19,36 +16,9 @@ import { CTASection } from "@/components/cta-section";
 import { OtherCapabilitiesScrollSection } from "@/components/other-capabilities-scroll-section";
 import { pcbDesignOtherCapabilities as otherCapabilities } from "@/data/other-capabilities";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
+import { servicePageCaseStudies } from "@/store/case-studies";
 
-const pcbCaseStudies = [
-  {
-    id: 1,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Industrial-Control-2.png",
-    title: "Industrial Controller",
-    summary:
-      "Production-grade industrial control PCB developed for reliable operation in demanding field environments.",
-    link: "/case-studies/Industrial-Controller",
-  },
-  {
-    id: 2,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Aerospace-PCB.png",
-    title: "Aerospace PCB",
-    summary:
-      "High-reliability aerospace board program engineered around strict performance and validation constraints.",
-    link: "/case-studies/Aerospace-PCB",
-  },
-  {
-    id: 3,
-    image:
-      "https://d1yetprhniwywz.cloudfront.net/images/case-study/pcb/Automotive-OBD.png",
-    title: "Automotive OBD",
-    summary:
-      "Compact automotive diagnostics platform designed for durability, compliance, and fast integration.",
-    link: "/case-studies/Automotive-OBD",
-  },
-];
+const pcbCaseStudies = servicePageCaseStudies;
 
 export default function PCBDesignPageV1() {
   // const containerVariants = {
@@ -219,27 +189,27 @@ export default function PCBDesignPageV1() {
                 href: "/pcb-design-services/analog-and-mixed-signal",
                 icon: <Activity className="w-6 h-6" />,
               },
-              {
-                title: "SI, PI Analysis",
-                description:
-                  "Pre- and post-layout SI/PI analysis allows design problems to be identified and corrected before a board is fabricated. Our engineers perform transmission line simulation, eye diagram analysis, IBIS-based driver/receiver modeling, power delivery network (PDN) impedance analysis, and decoupling capacitor optimization. SI/PI analysis is offered as a standalone service or as an integrated element of our PCB layout engagements.",
-                href: "/pcb-design-services/si-pi-analysis",
-                icon: <LineChart className="w-6 h-6" />,
-              },
-              {
-                title: "PCB Library Services",
-                description:
-                  "A PCB design is only as reliable as its component library. Over three decades of active design work, Qmax has developed a verified, well-documented component library covering schematic symbols, PCB footprints, and 3D STEP models. Library parts are validated against manufacturer datasheets and IPC-7351 land pattern standards. Our library management process ensures that footprint accuracy is maintained as component revisions occur, reducing the risk of manufacturing errors caused by incorrect or outdated pad geometries.",
-                href: "/pcb-design-services/pcb-library-services",
-                icon: <Library className="w-6 h-6" />,
-              },
-              {
-                title: "PCB Design Review Services",
-                description:
-                  "An independent PCB design review - performed by Qmax engineers against your existing layout - is an efficient, cost-effective way to identify signal integrity risks, DFM issues, thermal concerns, and standard violations before releasing to fabrication. Our review process follows a structured checklist covering layer stack-up, placement, routing, silkscreen, drill and fabrication notes, and documentation completeness. Review findings are delivered as a formal technical report with prioritized recommendations.",
-                href: "/pcb-design-services/pcb-design-review-services",
-                icon: <CheckCircle2 className="w-6 h-6" />,
-              },
+              // {
+              //   title: "SI, PI Analysis",
+              //   description:
+              //     "Pre- and post-layout SI/PI analysis allows design problems to be identified and corrected before a board is fabricated. Our engineers perform transmission line simulation, eye diagram analysis, IBIS-based driver/receiver modeling, power delivery network (PDN) impedance analysis, and decoupling capacitor optimization. SI/PI analysis is offered as a standalone service or as an integrated element of our PCB layout engagements.",
+              //   href: "/pcb-design-services/si-pi-analysis",
+              //   icon: <LineChart className="w-6 h-6" />,
+              // },
+              // {
+              //   title: "PCB Library Services",
+              //   description:
+              //     "A PCB design is only as reliable as its component library. Over three decades of active design work, Qmax has developed a verified, well-documented component library covering schematic symbols, PCB footprints, and 3D STEP models. Library parts are validated against manufacturer datasheets and IPC-7351 land pattern standards. Our library management process ensures that footprint accuracy is maintained as component revisions occur, reducing the risk of manufacturing errors caused by incorrect or outdated pad geometries.",
+              //   href: "/pcb-design-services/pcb-library-services",
+              //   icon: <Library className="w-6 h-6" />,
+              // },
+              // {
+              //   title: "PCB Design Review Services",
+              //   description:
+              //     "An independent PCB design review - performed by Qmax engineers against your existing layout - is an efficient, cost-effective way to identify signal integrity risks, DFM issues, thermal concerns, and standard violations before releasing to fabrication. Our review process follows a structured checklist covering layer stack-up, placement, routing, silkscreen, drill and fabrication notes, and documentation completeness. Review findings are delivered as a formal technical report with prioritized recommendations.",
+              //   href: "/pcb-design-services/pcb-design-review-services",
+              //   icon: <CheckCircle2 className="w-6 h-6" />,
+              // },
             ].map((spec, index) => (
               <div
                 key={index}

@@ -20,6 +20,7 @@ import {
   allCaseStudiesData,
   getCaseStudyCardImage,
 } from "@/store/case-studies";
+import { servicePageCaseStudies } from "@/store/case-studies";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import {
   ComplianceStandardsSection,
@@ -50,34 +51,7 @@ function powerElectronicsProjectExperienceEntry(
   };
 }
 
-function serviceCaseStudies(ids: string[]): ServiceCaseStudy[] {
-  return ids.map((id) => {
-    const study = allCaseStudiesData.find((c) => c.id === id);
-    const image = getCaseStudyCardImage(id);
-    if (!study || !image) {
-      throw new Error(`Case study missing or has no image: ${id}`);
-    }
-    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
-    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
-    const summary =
-      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
-    return {
-      title: study.title,
-      image,
-      link: `/case-studies/${study.id}`,
-      category: "hardware",
-      summary,
-      imageRotation: study.rotatedImages?.[study.cardImageIndex ?? 0],
-    };
-  });
-}
-
-const powerElectronicsCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
-  "high-speed-camera-interface",
-  "ultra-low-noise-adc-board",
-  "bms-controller",
-  "rf-power-processor",
-]);
+const powerElectronicsCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
 
 const projectExperience: ProjectExperienceItem[] = [
   powerElectronicsProjectExperienceEntry(

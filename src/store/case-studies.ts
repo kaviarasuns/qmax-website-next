@@ -103,6 +103,12 @@ export const fullProductDevelopmentCaseStudies: CaseStudyListItem[] =
     summary: study.listingSummary,
   }));
 
+/** First four Full Product Development studies for service-page showcases. */
+export const servicePageCaseStudies = fullProductDevelopmentCaseStudies.slice(
+  0,
+  4,
+);
+
 const countPendingImages = (studies: CaseStudy[]): number => {
   return studies.filter(
     (study) =>

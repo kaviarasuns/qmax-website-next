@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { allCaseStudiesData } from "@/store/case-studies";
+import { fullProductDevelopmentCaseStudiesData } from "@/store/full-product-development-case-studies";
 import { siteUrl } from "@/lib/site-url";
 
 const staticRoutes = [
@@ -12,7 +12,7 @@ const staticRoutes = [
   "/hardware-design-services",
   "/mechanical-industrial-design-services",
   "/pcb-design-services",
-  "/value-added-services",
+  // "/value-added-services",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -20,8 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries = staticRoutes.map((path) => ({
     url: `${base}${path}`,
   }));
-  const caseStudyEntries = allCaseStudiesData.map((cs) => ({
-    url: `${base}/case-studies/${cs.id}`,
+  const caseStudyEntries = fullProductDevelopmentCaseStudiesData.map((study) => ({
+    url: `${base}/case-studies/${study.slug}`,
   }));
   return [...staticEntries, ...caseStudyEntries];
 }

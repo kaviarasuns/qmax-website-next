@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/seo";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { mechanicalCaseStudiesData } from "@/store/mechanical-case-studies";
+import { servicePageCaseStudies } from "@/store/case-studies";
 import { WorkflowSection } from "@/components/services-cmp/WorkflowSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
@@ -277,16 +277,7 @@ const MECHANICAL_INDUSTRIAL_HERO = {
   ctaLabel: "Talk to Our Engineers",
 };
 
-const mechanicalIndustrialCaseStudies = mechanicalCaseStudiesData
-  .slice(0, 4)
-  .map((caseStudy) => ({
-    title: caseStudy.title,
-    image: caseStudy.images[0],
-    link: `/case-studies/${caseStudy.id}`,
-    category: "mechanical",
-    summary: caseStudy.summary,
-    imageRotation: caseStudy.rotatedImages?.[0],
-  }));
+const mechanicalIndustrialCaseStudies = servicePageCaseStudies;
 
 export const metadata = buildMetadata({
   title: "Mechanical & Industrial Design Services | Qmax Systems",

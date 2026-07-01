@@ -67,18 +67,18 @@ const services = [
         title: "RF and Microwave",
         href: "/pcb-design-services/rf-and-microwave-pcb-design",
       },
-      {
-        title: "SI & PI Analysis Services",
-        href: "/pcb-design-services/si-pi-analysis",
-      },
-      {
-        title: "PCB Library Services",
-        href: "/pcb-design-services/pcb-library-services",
-      },
-      {
-        title: "PCB Design Review Services",
-        href: "/pcb-design-services/pcb-design-review-services",
-      },
+      // {
+      //   title: "SI & PI Analysis Services",
+      //   href: "/pcb-design-services/si-pi-analysis",
+      // },
+      // {
+      //   title: "PCB Library Services",
+      //   href: "/pcb-design-services/pcb-library-services",
+      // },
+      // {
+      //   title: "PCB Design Review Services",
+      //   href: "/pcb-design-services/pcb-design-review-services",
+      // },
     ],
   },
   {
@@ -99,21 +99,21 @@ const services = [
       },
     ],
   },
-  {
-    topic: "Apps and Cloud",
-    image: "https://framerusercontent.com/images/8tZqdkd46foyx5TeIzPw8YhbA.png",
-    description:
-      "Build full-stack software that connects devices to digital experiences.",
-    href: "/apps-and-cloud",
-  },
-  {
-    topic: "Value Added Services",
-    image:
-      "https://framerusercontent.com/images/fwoTbHaje1iNRvuK7dPxw0nq3Kg.png",
-    description:
-      "Enable production with test jigs, certifications, and prototyping.",
-    href: "/value-added-services",
-  },
+  // {
+  //   topic: "Apps and Cloud",
+  //   image: "https://framerusercontent.com/images/8tZqdkd46foyx5TeIzPw8YhbA.png",
+  //   description:
+  //     "Build full-stack software that connects devices to digital experiences.",
+  //   href: "/apps-and-cloud",
+  // },
+  // {
+  //   topic: "Value Added Services",
+  //   image:
+  //     "https://framerusercontent.com/images/fwoTbHaje1iNRvuK7dPxw0nq3Kg.png",
+  //   description:
+  //     "Enable production with test jigs, certifications, and prototyping.",
+  //   href: "/value-added-services",
+  // },
 ] as const;
 
 type ServicesV4StackedProps = {

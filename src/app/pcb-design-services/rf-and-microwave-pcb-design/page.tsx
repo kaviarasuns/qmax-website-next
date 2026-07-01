@@ -16,7 +16,7 @@ import {
   allCaseStudiesData,
   getCaseStudyCardImage,
 } from "@/store/case-studies";
-import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import { servicePageCaseStudies } from "@/store/case-studies";
 
 export const metadata = buildMetadata({
   title: "RF & Microwave PCB Design | PTFE, Sub-GHz to Ka-Band | Qmax",
@@ -596,34 +596,7 @@ const FAQ_ITEMS = [
   },
 ];
 
-function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
-  return ids.map((id) => {
-    const study = pcbCaseStudiesData.find((c) => c.id === id);
-    const image = study?.images[0];
-    if (!study || !image) {
-      throw new Error(`PCB case study missing or has no image: ${id}`);
-    }
-    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
-    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
-    const summary =
-      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
-    return {
-      title: study.title,
-      image,
-      link: `/case-studies/${study.id}`,
-      category: "development",
-      summary,
-      imageRotation: study.rotatedImages?.[0],
-    };
-  });
-}
-
-const rfMicrowaveCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
-  "100gbe-high-speed-networking-board",
-  "typheon",
-  "mx1",
-  "ultra-low-cost-bldc-motor-controller",
-]);
+const rfMicrowaveCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
 
 export default function RFMicrowavePCBDesignPage() {
   return (

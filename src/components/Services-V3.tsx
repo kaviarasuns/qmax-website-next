@@ -35,21 +35,21 @@ const services = [
       "Design products that look great and feel right for manufacturing.",
     href: "/mechanical-industrial-design-services",
   },
-  {
-    topic: "Apps and Cloud",
-    image: "https://framerusercontent.com/images/8tZqdkd46foyx5TeIzPw8YhbA.png",
-    description:
-      "Build full-stack software that connects devices to digital experiences.",
-    href: "/apps-and-cloud",
-  },
-  {
-    topic: "Value Added Services",
-    image:
-      "https://framerusercontent.com/images/fwoTbHaje1iNRvuK7dPxw0nq3Kg.png",
-    description:
-      "Enable production with test jigs, certifications, and prototyping.",
-    href: "/value-added-services",
-  },
+  // {
+  //   topic: "Apps and Cloud",
+  //   image: "https://framerusercontent.com/images/8tZqdkd46foyx5TeIzPw8YhbA.png",
+  //   description:
+  //     "Build full-stack software that connects devices to digital experiences.",
+  //   href: "/apps-and-cloud",
+  // },
+  // {
+  //   topic: "Value Added Services",
+  //   image:
+  //     "https://framerusercontent.com/images/fwoTbHaje1iNRvuK7dPxw0nq3Kg.png",
+  //   description:
+  //     "Enable production with test jigs, certifications, and prototyping.",
+  //   href: "/value-added-services",
+  // },
 ];
 
 const ServiceCard = React.memo(

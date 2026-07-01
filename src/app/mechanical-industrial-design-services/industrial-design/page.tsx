@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/seo";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { industrialCaseStudiesData } from "@/store/industrial-case-studies";
+import { servicePageCaseStudies } from "@/store/case-studies";
 import { industrialDesignFAQs } from "@/data/service-faqs";
 import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 import { FOLDER_TAB_ICONS } from "@/components/services-cmp/capabilities-folder-tabs";
@@ -247,16 +247,7 @@ const WORKFLOW_STEPS = [
   },
 ];
 
-const industrialDesignCaseStudies = industrialCaseStudiesData
-  .slice(0, 4)
-  .map((caseStudy) => ({
-    title: caseStudy.title,
-    image: caseStudy.images[0],
-    link: `/case-studies/${caseStudy.id}`,
-    category: "industrial",
-    summary: caseStudy.summary,
-    imageRotation: caseStudy.rotatedImages?.[0],
-  }));
+const industrialDesignCaseStudies = servicePageCaseStudies;
 
 export const metadata = buildMetadata({
   title: "Industrial Design Services | CMF, UI/UX & NPI | Qmax",

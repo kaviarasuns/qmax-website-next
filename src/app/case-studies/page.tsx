@@ -27,6 +27,22 @@ const sections = [
   { id: "engineering-support-services", label: "Engineering Support Services" },
 ];
 
+/** Uncomment section ids here to hide them from the nav and main content. */
+const DISABLED_SECTIONS = new Set<string>([
+  "embedded",
+  "pcb",
+  "mechanical",
+  "industrial",
+  // "full-product-development",
+  "engineering-support-services",
+]);
+
+const visibleSections = sections.filter(
+  (section) => !DISABLED_SECTIONS.has(section.id),
+);
+
+const isSectionEnabled = (id: string) => !DISABLED_SECTIONS.has(id);
+
 const sectionCounts: { [key: string]: number } = {
   "full-product-development": fullProductDevelopmentCaseStudies.length,
   embedded: embeddedCaseStudies.length,
@@ -136,9 +152,9 @@ export default function CaseStudiesPage() {
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      let current = sections[0].id;
+      let current = visibleSections[0]?.id ?? "";
 
-      for (const section of sections) {
+      for (const section of visibleSections) {
         const el = document.getElementById(section.id);
         if (el) {
           const sectionTop =
@@ -195,7 +211,7 @@ export default function CaseStudiesPage() {
             {/* Vertical track line */}
             <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gray-200 rounded-full" />
 
-            {sections.map((section) => {
+            {visibleSections.map((section) => {
               const isActive = activeSection === section.id;
               return (
                 <button
@@ -246,147 +262,159 @@ export default function CaseStudiesPage() {
             </h1>
           </header>
           {/* Full Product Development Section */}
-          <div id="full-product-development" className="mb-24 scroll-mt-32">
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Full Product Development
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {fullProductDevelopmentCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {fullProductDevelopmentCaseStudies.map((study, index) => (
-                <div key={`fpdstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard {...study} />
+          {isSectionEnabled("full-product-development") && (
+            <div id="full-product-development" className="mb-24 scroll-mt-32">
+              <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
+                    Full Product Development
+                  </h2>
                 </div>
-              ))}
+                <span className="text-sm text-muted-foreground font-medium mb-1">
+                  {fullProductDevelopmentCaseStudies.length} Projects
+                </span>
+              </div>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+                {fullProductDevelopmentCaseStudies.map((study, index) => (
+                  <div key={`fpdstudy-${study.id}`} className="relative">
+                    <CaseStudyCardNumber number={index + 1} />
+                    <CaseStudyCard {...study} />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
           {/* Embedded Section */}
-          <div id="embedded" className="mb-24 scroll-mt-32">
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 01</span> */}
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Embedded Systems
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {embeddedCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {embeddedCaseStudies.map((study, index) => (
-                <div key={`estudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard
-                    {...study}
-                    // imageBackgroundClassName="bg-blue-200"
-                  />
+          {isSectionEnabled("embedded") && (
+            <div id="embedded" className="mb-24 scroll-mt-32">
+              <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+                <div>
+                  {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 01</span> */}
+                  <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
+                    Embedded Systems
+                  </h2>
                 </div>
-              ))}
+                <span className="text-sm text-muted-foreground font-medium mb-1">
+                  {embeddedCaseStudies.length} Projects
+                </span>
+              </div>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+                {embeddedCaseStudies.map((study, index) => (
+                  <div key={`estudy-${study.id}`} className="relative">
+                    <CaseStudyCardNumber number={index + 1} />
+                    <CaseStudyCard
+                      {...study}
+                      // imageBackgroundClassName="bg-blue-200"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
           {/* PCB Section */}
-          <div id="pcb" className="mb-24 scroll-mt-32">
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 02</span> */}
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  PCB Design
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {pcbCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {pcbCaseStudies.map((study, index) => (
-                <div key={`pstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard
-                    {...study}
-                    imageClassName="object-contain px-14 py-5"
-                  />
+          {isSectionEnabled("pcb") && (
+            <div id="pcb" className="mb-24 scroll-mt-32">
+              <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+                <div>
+                  {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 02</span> */}
+                  <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
+                    PCB Design
+                  </h2>
                 </div>
-              ))}
+                <span className="text-sm text-muted-foreground font-medium mb-1">
+                  {pcbCaseStudies.length} Projects
+                </span>
+              </div>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+                {pcbCaseStudies.map((study, index) => (
+                  <div key={`pstudy-${study.id}`} className="relative">
+                    <CaseStudyCardNumber number={index + 1} />
+                    <CaseStudyCard
+                      {...study}
+                      imageClassName="object-contain px-14 py-5"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
           {/* Mechanical Section */}
-          <div id="mechanical" className="mb-24 scroll-mt-32">
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 03</span> */}
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Mechanical Design
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {mechanicalCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {mechanicalCaseStudies.map((study, index) => (
-                <div key={`mstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard {...study} />
+          {isSectionEnabled("mechanical") && (
+            <div id="mechanical" className="mb-24 scroll-mt-32">
+              <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+                <div>
+                  {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 03</span> */}
+                  <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
+                    Mechanical Design
+                  </h2>
                 </div>
-              ))}
+                <span className="text-sm text-muted-foreground font-medium mb-1">
+                  {mechanicalCaseStudies.length} Projects
+                </span>
+              </div>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+                {mechanicalCaseStudies.map((study, index) => (
+                  <div key={`mstudy-${study.id}`} className="relative">
+                    <CaseStudyCardNumber number={index + 1} />
+                    <CaseStudyCard {...study} />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
           {/* Industrial Section */}
-          <div id="industrial" className="mb-10 scroll-mt-32">
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 04</span> */}
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Industrial Design
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {industrialCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {industrialCaseStudies.map((study, index) => (
-                <div key={`istudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard
-                    {...study}
-                    // imageBackgroundClassName="bg-blue-200"
-                  />
+          {isSectionEnabled("industrial") && (
+            <div id="industrial" className="mb-10 scroll-mt-32">
+              <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+                <div>
+                  {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 04</span> */}
+                  <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
+                    Industrial Design
+                  </h2>
                 </div>
-              ))}
+                <span className="text-sm text-muted-foreground font-medium mb-1">
+                  {industrialCaseStudies.length} Projects
+                </span>
+              </div>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+                {industrialCaseStudies.map((study, index) => (
+                  <div key={`istudy-${study.id}`} className="relative">
+                    <CaseStudyCardNumber number={index + 1} />
+                    <CaseStudyCard
+                      {...study}
+                      // imageBackgroundClassName="bg-blue-200"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
           {/* Engineering Support Services Section */}
-          <div
-            id="engineering-support-services"
-            className="mb-80 scroll-mt-32 xl:mb-96"
-          >
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Engineering Support Services
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {engineeringSupportCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {engineeringSupportCaseStudies.map((study, index) => (
-                <div key={`esstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard {...study} />
+          {isSectionEnabled("engineering-support-services") && (
+            <div
+              id="engineering-support-services"
+              className="mb-80 scroll-mt-32 xl:mb-96"
+            >
+              <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
+                    Engineering Support Services
+                  </h2>
                 </div>
-              ))}
+                <span className="text-sm text-muted-foreground font-medium mb-1">
+                  {engineeringSupportCaseStudies.length} Projects
+                </span>
+              </div>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+                {engineeringSupportCaseStudies.map((study, index) => (
+                  <div key={`esstudy-${study.id}`} className="relative">
+                    <CaseStudyCardNumber number={index + 1} />
+                    <CaseStudyCard {...study} />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </main>
       </div>
     </section>

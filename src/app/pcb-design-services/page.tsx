@@ -9,7 +9,7 @@ import { WhySection } from "@/components/services-cmp/WhySection";
 import { PCB_INDUSTRIES } from "@/store/pcb-industries";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
-import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import { servicePageCaseStudies } from "@/store/case-studies";
 
 export const metadata = buildMetadata({
   title: "PCB Design Services | High-Speed, RF & SI/PI | Qmax Systems",
@@ -186,111 +186,111 @@ const CAPABILITIES = [
       },
     ],
   },
-  {
-    id: "si-pi-analysis",
-    tabLabel: "SI / PI Analysis",
-    learnMoreHref: "/pcb-design-services/si-pi-analysis",
-    tabIcon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M3 12h3l2-7 4 14 2-7h7" />
-      </svg>
-    ),
-    headline:
-      "Pre- and post-layout signal & power integrity analysis before a single board is fabricated.",
-    intro:
-      "Qmax Systems performs pre- and post-layout signal and power integrity analysis before a single board is fabricated, using Cadence Sigrity and Ansys SIwave. Transmission-line simulation, eye-diagram analysis, IBIS-based driver/receiver modeling, and PDN impedance analysis are offered standalone or integrated into any PCB layout engagement. Typical applications: DDR5, PCIe Gen4/5, and high-speed SerDes channels.",
-    bullets: [
-      {
-        title: "Simulation & Modeling",
-        items: [
-          "Transmission line simulation, eye diagram, and IBIS-based driver/receiver modeling.",
-        ],
-      },
-      {
-        title: "PDN & Decoupling",
-        items: [
-          "Power delivery network impedance analysis and decoupling capacitor optimization.",
-        ],
-      },
-    ],
-  },
-  {
-    id: "pcb-library",
-    tabLabel: "PCB Library",
-    learnMoreHref: "/pcb-design-services/pcb-library-services",
-    tabIcon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M4 4h6v16H4zM10 4h6v16h-6zM16 6l4 1-3 14-4-1z" />
-      </svg>
-    ),
-    headline: "A PCB design is only as reliable as its component library.",
-    intro:
-      "Over three decades, Qmax Systems has built a verified, well-documented library of schematic symbols, PCB footprints, and 3D STEP models across 30,000+ components. Every part is validated against manufacturer datasheets and IPC-7351 land-pattern standards. Typical applications: new component creation, library migration, and footprint qualification for high-density designs.",
-    bullets: [
-      {
-        title: "Library Standards",
-        items: [
-          "Schematic symbols, PCB footprints, and 3D STEP models validated to IPC-7351.",
-        ],
-      },
-      {
-        title: "Lifecycle Management",
-        items: [
-          "Footprint accuracy maintained through component revisions, reducing manufacturing errors.",
-        ],
-      },
-    ],
-  },
-  {
-    id: "design-review",
-    tabLabel: "Design Review",
-    learnMoreHref: "/pcb-design-services/pcb-design-review-services",
-    tabIcon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M9 11l3 3L22 4" />
-        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-      </svg>
-    ),
-    headline:
-      "An independent PCB design review - identifying risks before you release to fabrication.",
-    intro:
-      "Qmax Systems delivers an independent PCB design review that identifies risks before release to fabrication. The review audits your existing layout against a structured checklist covering layer stack-up, placement, routing, silkscreen, drill notes, and documentation, then delivers a formal technical report with prioritized SI, DFM, thermal, and compliance findings. Typical applications: pre-fab sign-off, second-opinion reviews, and inherited-design risk assessment.",
-    bullets: [
-      {
-        title: "Review Coverage",
-        items: [
-          "Stack-up, placement, routing, silkscreen, drill notes, and documentation completeness.",
-        ],
-      },
-      {
-        title: "Deliverable",
-        items: [
-          "Formal technical report with prioritized SI, DFM, thermal, and compliance findings.",
-        ],
-      },
-    ],
-  },
+  // {
+  //   id: "si-pi-analysis",
+  //   tabLabel: "SI / PI Analysis",
+  //   learnMoreHref: "/pcb-design-services/si-pi-analysis",
+  //   tabIcon: (
+  //     <svg
+  //       viewBox="0 0 24 24"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="1.8"
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //     >
+  //       <path d="M3 12h3l2-7 4 14 2-7h7" />
+  //     </svg>
+  //   ),
+  //   headline:
+  //     "Pre- and post-layout signal & power integrity analysis before a single board is fabricated.",
+  //   intro:
+  //     "Qmax Systems performs pre- and post-layout signal and power integrity analysis before a single board is fabricated, using Cadence Sigrity and Ansys SIwave. Transmission-line simulation, eye-diagram analysis, IBIS-based driver/receiver modeling, and PDN impedance analysis are offered standalone or integrated into any PCB layout engagement. Typical applications: DDR5, PCIe Gen4/5, and high-speed SerDes channels.",
+  //   bullets: [
+  //     {
+  //       title: "Simulation & Modeling",
+  //       items: [
+  //         "Transmission line simulation, eye diagram, and IBIS-based driver/receiver modeling.",
+  //       ],
+  //     },
+  //     {
+  //       title: "PDN & Decoupling",
+  //       items: [
+  //         "Power delivery network impedance analysis and decoupling capacitor optimization.",
+  //       ],
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "pcb-library",
+  //   tabLabel: "PCB Library",
+  //   learnMoreHref: "/pcb-design-services/pcb-library-services",
+  //   tabIcon: (
+  //     <svg
+  //       viewBox="0 0 24 24"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="1.8"
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //     >
+  //       <path d="M4 4h6v16H4zM10 4h6v16h-6zM16 6l4 1-3 14-4-1z" />
+  //     </svg>
+  //   ),
+  //   headline: "A PCB design is only as reliable as its component library.",
+  //   intro:
+  //     "Over three decades, Qmax Systems has built a verified, well-documented library of schematic symbols, PCB footprints, and 3D STEP models across 30,000+ components. Every part is validated against manufacturer datasheets and IPC-7351 land-pattern standards. Typical applications: new component creation, library migration, and footprint qualification for high-density designs.",
+  //   bullets: [
+  //     {
+  //       title: "Library Standards",
+  //       items: [
+  //         "Schematic symbols, PCB footprints, and 3D STEP models validated to IPC-7351.",
+  //       ],
+  //     },
+  //     {
+  //       title: "Lifecycle Management",
+  //       items: [
+  //         "Footprint accuracy maintained through component revisions, reducing manufacturing errors.",
+  //       ],
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "design-review",
+  //   tabLabel: "Design Review",
+  //   learnMoreHref: "/pcb-design-services/pcb-design-review-services",
+  //   tabIcon: (
+  //     <svg
+  //       viewBox="0 0 24 24"
+  //       fill="none"
+  //       stroke="currentColor"
+  //       strokeWidth="1.8"
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //     >
+  //       <path d="M9 11l3 3L22 4" />
+  //       <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+  //     </svg>
+  //   ),
+  //   headline:
+  //     "An independent PCB design review - identifying risks before you release to fabrication.",
+  //   intro:
+  //     "Qmax Systems delivers an independent PCB design review that identifies risks before release to fabrication. The review audits your existing layout against a structured checklist covering layer stack-up, placement, routing, silkscreen, drill notes, and documentation, then delivers a formal technical report with prioritized SI, DFM, thermal, and compliance findings. Typical applications: pre-fab sign-off, second-opinion reviews, and inherited-design risk assessment.",
+  //   bullets: [
+  //     {
+  //       title: "Review Coverage",
+  //       items: [
+  //         "Stack-up, placement, routing, silkscreen, drill notes, and documentation completeness.",
+  //       ],
+  //     },
+  //     {
+  //       title: "Deliverable",
+  //       items: [
+  //         "Formal technical report with prioritized SI, DFM, thermal, and compliance findings.",
+  //       ],
+  //     },
+  //   ],
+  // },
 ];
 
 // const PCB_CAPABILITIES_STRIP = [
@@ -507,34 +507,7 @@ const FAQ_ITEMS = [
   },
 ];
 
-function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
-  return ids.map((id) => {
-    const study = pcbCaseStudiesData.find((c) => c.id === id);
-    const image = study?.images[0];
-    if (!study || !image) {
-      throw new Error(`PCB case study missing or has no image: ${id}`);
-    }
-    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
-    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
-    const summary =
-      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
-    return {
-      title: study.title,
-      image,
-      link: `/case-studies/${study.id}`,
-      category: "development",
-      summary,
-      imageRotation: study.rotatedImages?.[0],
-    };
-  });
-}
-
-const pcbCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
-  "pcie-gen5-cpo-board",
-  "100gbe-high-speed-networking-board",
-  "digital-stethoscope",
-  "ultra-low-cost-bldc-motor-controller",
-]);
+const pcbCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
 
 export default function HardwareDevelopmentServicesComponentV2() {
   return (
