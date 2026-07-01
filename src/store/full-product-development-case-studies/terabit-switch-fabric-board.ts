@@ -219,7 +219,10 @@ export const terabitSwitchFabricBoardCaseStudy: FullProductDevelopmentCaseStudy 
         key: "Layer Count",
         value: "30 layers (14 routing + 16 power/ground planes)",
       },
-      { key: "PCB Thickness", value: "127 mils (controlled-impedance stackup)" },
+      {
+        key: "PCB Thickness",
+        value: "127 mils (controlled-impedance stackup)",
+      },
       { key: "Board Area", value: "86 sq in" },
       { key: "Total Components", value: "4,300" },
       { key: "Total Pins", value: "18,800 pins" },

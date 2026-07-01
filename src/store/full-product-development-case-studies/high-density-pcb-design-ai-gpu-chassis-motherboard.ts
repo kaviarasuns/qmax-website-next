@@ -6,8 +6,6 @@ export const highDensityPcbDesignAiGpuChassisMotherboardCaseStudy: FullProductDe
     slug: "high-density-pcb-design-ai-gpu-chassis-motherboard",
     section: "pcb",
     title: "High-Density AI GPU Expansion Chassis Motherboard",
-    subtitle:
-      "20-Layer PCIe Gen 5 PCB Design for a Composable AI GPU Expansion Chassis",
     metaTags: [
       "Domain: Datacenter & AI Infrastructure",
       "Industry: Datacenter / AI Infrastructure",
@@ -24,7 +22,11 @@ export const highDensityPcbDesignAiGpuChassisMotherboardCaseStudy: FullProductDe
       { id: "brief", num: "02", label: "Application Brief" },
       { id: "scope", num: "03", label: "Qmax Scope" },
       { id: "challenges", num: "04", label: "Engineering Challenges" },
-      { id: "components", num: "05", label: "Key Silicon & Component Highlights" },
+      {
+        id: "components",
+        num: "05",
+        label: "Key Silicon & Component Highlights",
+      },
       { id: "interfaces", num: "06", label: "Major Interfaces" },
       { id: "specs", num: "07", label: "Design Specifications" },
       { id: "summary", num: "08", label: "Summary" },
