@@ -1,4 +1,11 @@
 import { PCBIndustry } from "@/components/services-cmp/PCBIndustriesSection";
+import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
+import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
+import { fortyPort10gbeCoreRouterLineCardCaseStudy } from "@/store/pcb-case-studies-v2/40-port-10gbe-core-router-line-card";
+import { highDensityPcbDesignAiGpuChassisMotherboardCaseStudy } from "@/store/pcb-case-studies-v2/high-density-pcb-design-ai-gpu-chassis-motherboard";
+import { highDensityPcbDesignGponOltCaseStudy } from "@/store/pcb-case-studies-v2/high-density-pcb-design-gpon-olt";
+import { multiFapPacketProcessingLineCardCaseStudy } from "@/store/pcb-case-studies-v2/multi-fap-packet-processing-line-card";
+import { toRelatedCaseStudy } from "@/store/full-product-development-case-studies";
 
 export const PCB_INDUSTRIES: PCBIndustry[] = [
   {
@@ -24,34 +31,9 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/medical.png",
     relatedCaseStudies: [
-      {
-        title: "Advanced Modular Medical Simulator — Developer Kit",
-        href: "/case-studies/advanced-modular-medical-simulator",
-        images: [
-          {
-            src: "/case-studies/POE/1.1.svg",
-            // rotation: 90,
-          },
-          {
-            src: "/case-studies/POE/2.1.svg",
-          },
-          {
-            src: "/case-studies/POE/3.1.svg",
-          },
-        ],
-      },
-      // {
-      //   title: "Pegasus",
-      //   image:
-      //     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/1.4.png",
-      //   href: "/case-studies/pegasus",
-      // },
-      // {
-      //   title: "Typheon",
-      //   image:
-      //     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/typheon/4.png",
-      //   href: "/case-studies/typheon",
-      // },
+      toRelatedCaseStudy(advancedModularMedicalSimulatorCaseStudy, {
+        imageIndices: [0, 5, 9],
+      }),
     ],
   },
   {
@@ -79,24 +61,9 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/automotive.png",
     relatedCaseStudies: [
-      {
-        title: "Qualcomm WIFI-6 TriBand Router",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/2.png",
-        href: "/case-studies/qualcomm-wifi-6-triband-router",
-      },
-      {
-        title: "Rugged OBD",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/rugged_obd/I01256CB1_20JUN2024_RUG_PR1_tb.svg",
-        href: "/case-studies/rugged-obd",
-      },
-      {
-        title: "Qualcomm WIFI-4 Routers",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lightning/LIGHTNING-PR1_TOP.svg",
-        href: "/case-studies/qualcomm-wifi4-routers",
-      },
+      toRelatedCaseStudy(obdIiDiagnosticsDeviceCaseStudy, {
+        imageIndices: [0, 1, 2],
+      }),
     ],
   },
 
@@ -123,25 +90,9 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/aerospace.png",
     relatedCaseStudies: [
-      {
-        title: "Smart OBD2 Device",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/OBD_PR1_BOT.svg",
-        href: "/case-studies/smart-obd2-device",
-        rotation: 90,
-      },
-      {
-        title: "Digital Stethoscope",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LSR/P01186LS7_PR1_TOP.svg",
-        href: "/case-studies/digital-stethoscope",
-      },
-      {
-        title: "LBM",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LBM/1.1.png",
-        href: "/case-studies/lbm",
-      },
+      toRelatedCaseStudy(highDensityPcbDesignAiGpuChassisMotherboardCaseStudy, {
+        imageIndices: [0, 1, 2],
+      }),
     ],
   },
   {
@@ -167,25 +118,9 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/ev and power.png",
     relatedCaseStudies: [
-      {
-        title: "Arc Detector",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/arc_detector/1.1.png",
-        href: "/case-studies/arc-detector",
-      },
-      {
-        title: "3 phase Smart Energy Meter",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/energy_meter/ENERGY_METER_BOT_PR1.svg",
-        href: "/case-studies/3-phase-smart-energy-meter",
-        rotation: 90,
-      },
-      {
-        title: "MX1",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/MX1/Mx1_PR1_ALL.svg",
-        href: "/case-studies/mx1",
-      },
+      toRelatedCaseStudy(fortyPort10gbeCoreRouterLineCardCaseStudy, {
+        imageIndices: [0, 1, 2],
+      }),
     ],
   },
   {
@@ -212,23 +147,9 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/communication.png",
     relatedCaseStudies: [
-      {
-        title: "Fedarant PCB – Top Layer",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/seat_sensor_signal/P01201CB2-SEATSENSOR-SINGLE_PR1_TOP.svg",
-        href: "/case-studies/fedarant-pcb-top-layer",
-      },
-      {
-        title: "PCIe Gen5 CPO Board",
-        image: "/case-studies/PCB/PCB-0541/PCB-0541-00_BRD_PR_SIG12.svg",
-        href: "/case-studies/pcie-gen5-cpo-board",
-      },
-      {
-        title: "High-Density PCB Design for a GPON OLT Networking Platform",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/1.1.png",
-        href: "/case-studies/high-density-pcb-design-gpon-olt",
-      },
+      toRelatedCaseStudy(highDensityPcbDesignGponOltCaseStudy, {
+        imageIndices: [0, 1, 2],
+      }),
     ],
   },
   {
@@ -254,25 +175,9 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/industry.png",
     relatedCaseStudies: [
-      {
-        title: "Ultra Low Cost BLDC motor controller for EVs",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/LUCAS TVS_PR1_BOT.svg",
-        href: "/case-studies/ultra-low-cost-bldc-motor-controller-for-evs",
-        rotation: 90,
-      },
-      {
-        title: "Planar Motor",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/stator_coil/STATOR-COIL-LAYER12.svg",
-        href: "/case-studies/planar-motor",
-      },
-      {
-        title: "FE1600",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/FE1600/1.png",
-        href: "/case-studies/fe1600",
-      },
+      toRelatedCaseStudy(multiFapPacketProcessingLineCardCaseStudy, {
+        imageIndices: [0, 1, 2],
+      }),
     ],
   },
 ];

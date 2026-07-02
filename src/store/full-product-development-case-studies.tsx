@@ -1,3 +1,7 @@
+import {
+  type RelatedCaseStudy,
+  type RelatedCaseStudyImage,
+} from "@/components/services-cmp/RelatedCaseStudiesCarousel";
 import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
 import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
 import { fortyPort10gbeCoreRouterLineCardCaseStudy } from "@/store/pcb-case-studies-v2/40-port-10gbe-core-router-line-card";
@@ -101,4 +105,37 @@ export function getFullProductDevelopmentCardImage(
   if (!preferred?.endsWith(".mp4")) return preferred;
 
   return study.images.find((image) => !image.endsWith(".mp4")) ?? preferred;
+}
+
+export type ToRelatedCaseStudyOptions = {
+  /** Override the card title (defaults to the case study's title). */
+  title?: string;
+  /** Pick specific preview images by their index in `study.images`. */
+  imageIndices?: number[];
+  /** Provide preview images explicitly (takes precedence over `imageIndices`). */
+  images?: Array<string | RelatedCaseStudyImage>;
+  /** Rotation applied to string-based images. */
+  rotation?: number;
+};
+
+export function toRelatedCaseStudy(
+  study: FullProductDevelopmentCaseStudy,
+  options: ToRelatedCaseStudyOptions = {},
+): RelatedCaseStudy {
+  const { title, imageIndices, images, rotation } = options;
+
+  const resolvedImages =
+    images ??
+    imageIndices
+      ?.map((index) => study.images[index])
+      .filter((src): src is string => Boolean(src));
+
+  return {
+    title: title ?? study.title,
+    href: `/case-studies/${study.slug}`,
+    ...(rotation !== undefined ? { rotation } : {}),
+    ...(resolvedImages?.length
+      ? { images: resolvedImages }
+      : { image: getFullProductDevelopmentCardImage(study) }),
+  };
 }

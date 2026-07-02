@@ -1,4 +1,10 @@
 import { PCBIndustry } from "@/components/services-cmp/PCBIndustriesSection";
+import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
+import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
+import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
+import { outdoorWifi6AccessPointCaseStudy } from "@/store/full-product-development-case-studies/outdoor-wifi-6-access-point";
+import { ruggedAndroidDigitalSignagePlayerCaseStudy } from "@/store/full-product-development-case-studies/rugged-android-digital-signage-player";
+import { toRelatedCaseStudy } from "@/store/full-product-development-case-studies";
 
 export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
   {
@@ -26,24 +32,9 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/automotive.png",
     relatedCaseStudies: [
-      {
-        title: "OBD V4 Smart Diagnostic Unit",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD2/OBD_V4_RENDER_23_NOV_2024_MG2_2.1.png",
-        href: "/case-studies/obd-v4-system",
-      },
-      {
-        title: "OBD Enclosure",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.1.png",
-        href: "/case-studies/obd-enclosure",
-      },
-      {
-        title: "Megawatt Charging Station",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/1.png",
-        href: "/case-studies/mega-watt-charging-station",
-      },
+      toRelatedCaseStudy(obdIiDiagnosticsDeviceCaseStudy, {
+        imageIndices: [10, 11],
+      }),
     ],
   },
   {
@@ -69,24 +60,9 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/medical.png",
     relatedCaseStudies: [
-      {
-        title: "Pulse Oximeter Enclosure",
-        image:
-          "/case-studies/mechanicalCaseStudies/5/PULSE_OXIMETER_RENDER_2.1.png",
-        href: "/case-studies/pulse-oximeter-enclosure",
-      },
-      {
-        title: "Footswitch",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/footswitch/FOOTSWITCH_27_APR_2026_S1.10.png",
-        href: "/case-studies/footswitch",
-      },
-      {
-        title: "PC & Oxygen Assembly",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PC&OXY/OXY_ASSY_RENDER_02_MAY_2026_S1.25.png",
-        href: "/case-studies/pc-oxy",
-      },
+      toRelatedCaseStudy(advancedModularMedicalSimulatorCaseStudy, {
+        imageIndices: [3, 7, 11],
+      }),
     ],
   },
   {
@@ -112,24 +88,9 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/aerospace.png",
     relatedCaseStudies: [
-      {
-        title: "Stellar",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/stellar/STELLAR_RENDER_07_MAY_2026_S1.4.png",
-        href: "/case-studies/stellar",
-      },
-      {
-        title: "4-Axis Gimbal",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/GIMBAL/GIMBAL_4_AXIS.1.png",
-        href: "/case-studies/gimbal",
-      },
-      {
-        title: "RF Signal Generator Enclosure",
-        image:
-          "/case-studies/mechanicalCaseStudies/4/PG10_RENDER_28_OCT_2024_MG1.1.png",
-        href: "/case-studies/rf-signal-generator-enclosure",
-      },
+      toRelatedCaseStudy(outdoorWifi6AccessPointCaseStudy, {
+        imageIndices: [4, 5, 6],
+      }),
     ],
   },
   {
@@ -155,24 +116,9 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/ev and power.png",
     relatedCaseStudies: [
-      {
-        title: "Mega Watt Charging Station",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/MCS/1.png",
-        href: "/case-studies/mega-watt-charging-station",
-      },
-      {
-        title: "ECL Fuel Cell Generator",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/ecl_fuel_cell/ECL_FUEL_CELL_GENERATOR_RENDER_08_MAY_2026_S1.10.png",
-        href: "/case-studies/ecl-fuel-cell-generator",
-      },
-      {
-        title: "EMF Flow Meter",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/hydronet/1.png",
-        href: "/case-studies/emf-flow-meter",
-      },
+      toRelatedCaseStudy(coldStorageIotMonitoringSystemCaseStudy, {
+        imageIndices: [2, 3, 4],
+      }),
     ],
   },
   {
@@ -199,24 +145,9 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/communication.png",
     relatedCaseStudies: [
-      {
-        title: "5G Router",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SMOAD/SMOAD.1.1.png",
-        href: "/case-studies/5g-router",
-      },
-      {
-        title: "OTT Media Gateway",
-        image:
-          "/case-studies/mechanicalCaseStudies/3/OTT_RENDER_27_NOV_2024_MG2.1.png",
-        href: "/case-studies/ott-media-gateway",
-      },
-      {
-        title: "Rugged Communication Control System Enclosure",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/SDR/SDR_RENDERING_11_JAN_2025_S1.1.png",
-        href: "/case-studies/rugged-communication-control-system-enclosure",
-      },
+      toRelatedCaseStudy(ruggedAndroidDigitalSignagePlayerCaseStudy, {
+        imageIndices: [7, 8],
+      }),
     ],
   },
   {
@@ -242,24 +173,9 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/industry.png",
     relatedCaseStudies: [
-      {
-        title: "Industrial Splice Detector",
-        image:
-          "/case-studies/mechanicalCaseStudies/2/SPLICE_DETECTOR_RENDER_2.4.png",
-        href: "/case-studies/industrial-splice-detector",
-      },
-      {
-        title: "Industrial Camera Controller Unit",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/IDOCK/FRIZB_IDOCK_RENDER_02_MAY_2026_S1.15.png",
-        href: "/case-studies/industrial-camera-controller-unit",
-      },
-      {
-        title: "600Kg Cable Tension Measurement System",
-        image:
-          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/tensionmeter/TM450LB_RENDERING_28_MAR_2025_S1.1png.10.png",
-        href: "/case-studies/600kg-cable-tension-measurement-system",
-      },
+      toRelatedCaseStudy(coldStorageIotMonitoringSystemCaseStudy, {
+        imageIndices: [2, 3, 4],
+      }),
     ],
   },
 ];
