@@ -92,12 +92,34 @@ export default {
           "0%": { transform: "translateX(-120%)" },
           "100%": { transform: "translateX(320%)" },
         },
+        "modal-overlay-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "modal-overlay-out": {
+          from: { opacity: "1" },
+          to: { opacity: "0" },
+        },
+        // Keyframes keep the centering translate so the card stays centered
+        // while it scales, matching the reference popup entrance.
+        "modal-card-in": {
+          from: { opacity: "0", transform: "translate(-50%, -50%) scale(0.9)" },
+          to: { opacity: "1", transform: "translate(-50%, -50%) scale(1)" },
+        },
+        "modal-card-out": {
+          from: { opacity: "1", transform: "translate(-50%, -50%) scale(1)" },
+          to: { opacity: "0", transform: "translate(-50%, -50%) scale(0.9)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fw-energy-travel": "fw-energy-travel 16s linear infinite",
         "case-sweep": "case-sweep 2.6s ease-in-out infinite",
+        "modal-overlay-in": "modal-overlay-in 0.3s ease",
+        "modal-overlay-out": "modal-overlay-out 0.2s ease",
+        "modal-card-in": "modal-card-in 0.35s cubic-bezier(0.2, 0.9, 0.2, 1)",
+        "modal-card-out": "modal-card-out 0.2s ease",
       },
     },
   },

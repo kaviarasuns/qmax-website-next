@@ -2,13 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import {
-  ChevronDown,
-  Download,
-  Facebook,
-  Linkedin,
-  Youtube,
-} from "lucide-react";
+import { ChevronDown, Facebook, Linkedin, Youtube } from "lucide-react";
+
+import DownloadPresentationModal from "@/components/download-presentation-modal";
 
 const DOWNLOAD_URL = "/Qmax_Systems_Electronics_Engineering_Services_Std.pdf";
 
@@ -177,15 +173,7 @@ export default function FooterV3() {
             <p className="mb-4 text-left text-base leading-relaxed text-white">
               Click here to download our company presentation.
             </p>
-            <Link
-              href={DOWNLOAD_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-md bg-red-500 px-[22px] py-3 text-[15px] font-semibold text-white transition-colors duration-150 hover:bg-red-600 active:bg-red-700"
-            >
-              <Download className="h-[18px] w-[18px]" />
-              Download
-            </Link>
+            <DownloadPresentationModal downloadUrl={DOWNLOAD_URL} />
 
             <FooterHeading className="mt-7">Follow Us</FooterHeading>
             <div className="flex gap-3.5">
