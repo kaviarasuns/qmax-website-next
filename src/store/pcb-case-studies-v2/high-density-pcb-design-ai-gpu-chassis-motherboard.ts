@@ -1,4 +1,5 @@
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
+import { pcbCaseStudyContactCtaPrefix } from "@/store/pcb-case-studies-v2/contact-cta";
 
 export const highDensityPcbDesignAiGpuChassisMotherboardCaseStudy: FullProductDevelopmentCaseStudy =
   {
@@ -141,6 +142,7 @@ export const highDensityPcbDesignAiGpuChassisMotherboardCaseStudy: FullProductDe
       "Qmax delivered a complete, fabrication-ready PCB design package within the agreed programme schedule. The Gerber release passed all fabrication DFM checks at the EMS partner without requiring a re-spin. The SI review confirmed that all PCIe Gen 5 channels met the insertion loss and impedance targets prior to prototype build.",
       "This project demonstrates Qmax's capability to manage the full complexity of a 20-layer, high-density, high-speed PCB design from schematic to Gerber — encompassing state-of-the-art PCIe Gen 5 routing, multi-thousand-pin BGA breakout, and rigorous SI-driven design closure.",
     ],
+    contactCtaPrefix: pcbCaseStudyContactCtaPrefix,
     listingSummary:
       "20-layer, high-density PCB design for a PCIe Gen 5 AI GPU expansion chassis motherboard — Gerber release passed DFM with zero re-spins.",
     metadata: {

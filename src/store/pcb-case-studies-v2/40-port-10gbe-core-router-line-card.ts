@@ -1,4 +1,5 @@
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
+import { pcbCaseStudyContactCtaPrefix } from "@/store/pcb-case-studies-v2/contact-cta";
 
 export const fortyPort10gbeCoreRouterLineCardCaseStudy: FullProductDevelopmentCaseStudy =
   {
@@ -171,6 +172,7 @@ export const fortyPort10gbeCoreRouterLineCardCaseStudy: FullProductDevelopmentCa
     summary: [
       "Qmax Systems delivered a complete, fabrication-ready layout of a 24-layer, 40-port 10 Gigabit Ethernet core-router line card carrying 400 GbE of aggregate line-side capacity. Despite fewer layers than a comparable fabric card, this was the highest-density board of its platform — over 36,000 pins, and a large high-speed SRAM subsystem packed onto a single controlled-impedance card. The design closed on signal integrity, power integrity, and DFM targets from customer design inputs through to Gerber release, demonstrating Qmax's capability to route the most pin- and via-dense high-speed boards to manufacturing without a re-spin.",
     ],
+    contactCtaPrefix: pcbCaseStudyContactCtaPrefix,
     listingSummary:
       "24-layer, 40-port 10GbE core-router line card — 400 GbE aggregate line-side capacity across 36,000+ pins, delivered to Gerber release without a re-spin.",
     metadata: {

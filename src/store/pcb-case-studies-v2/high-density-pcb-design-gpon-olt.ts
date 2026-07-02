@@ -1,4 +1,5 @@
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
+import { pcbCaseStudyContactCtaPrefix } from "@/store/pcb-case-studies-v2/contact-cta";
 
 export const highDensityPcbDesignGponOltCaseStudy: FullProductDevelopmentCaseStudy =
   {
@@ -205,6 +206,7 @@ export const highDensityPcbDesignGponOltCaseStudy: FullProductDevelopmentCaseStu
       "This engagement showcases Qmax Systems' ability to take customer-supplied schematics through to a fully verified, manufacturing-ready PCB design for a high-density, high-speed networking platform. By combining disciplined stack-up planning, SI/PI-driven signal integrity routing, and rigorous DFM and design verification, Qmax delivered a 20-layer, 2,000-plus component design that powered up and operated correctly at first bring-up, with zero design defects and a satisfied customer.",
       "The project reflects Qmax's full-stack PCB design capability for telecom and networking customers requiring complex, mixed-signal, high-pin-count board designs — from schematic review and BoM validation through SI/PI analysis, DFM, and final release documentation.",
     ],
+    contactCtaPrefix: pcbCaseStudyContactCtaPrefix,
     listingSummary:
       "High-density, 20-layer PCB design for a carrier-grade GPON Optical Line Terminal — first-pass bring-up success with zero design defects.",
     metadata: {

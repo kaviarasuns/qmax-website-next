@@ -1,4 +1,5 @@
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
+import { pcbCaseStudyContactCtaPrefix } from "@/store/pcb-case-studies-v2/contact-cta";
 
 export const multiFapPacketProcessingLineCardCaseStudy: FullProductDevelopmentCaseStudy =
   {
@@ -181,6 +182,7 @@ export const multiFapPacketProcessingLineCardCaseStudy: FullProductDevelopmentCa
     summary: [
       "Qmax Systems delivered a complete, fabrication-ready layout of a 28-layer packet-processing line card built on four Broadcom (Dune) PETRA-B Fabric Access Processors with a large mixed DDR3 and QDR-II memory subsystem. At 172 sq in with over 28,000 pins and nearly 22,000 through-vias, it was the largest and most component-dense board of its platform. The design closed on signal integrity, power integrity, and DFM targets from customer design inputs through to Gerber release, demonstrating Qmax's capability to route the most demanding high-speed, high-layer-count line cards to manufacturing without a re-spin.",
     ],
+    contactCtaPrefix: pcbCaseStudyContactCtaPrefix,
     listingSummary:
       "28-layer, multi-FAP packet-processing line card — the largest and most component-dense board of its platform, delivered to Gerber release without a re-spin.",
     metadata: {

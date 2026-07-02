@@ -1,4 +1,5 @@
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
+import { pcbCaseStudyContactCtaPrefix } from "@/store/pcb-case-studies-v2/contact-cta";
 
 export const terabitSwitchFabricBoardCaseStudy: FullProductDevelopmentCaseStudy =
   {
@@ -230,6 +231,7 @@ export const terabitSwitchFabricBoardCaseStudy: FullProductDevelopmentCaseStudy 
     summary: [
       "Qmax Systems delivered a complete, fabrication-ready layout of a 30-layer, terabit-scale switch fabric card built on dual Broadcom BCM88750 (FE1600) fabric elements, carrying up to ~3.2 Tbps of aggregate installed switching bandwidth. The design closed on signal integrity, power integrity, and DFM targets across 96 matched SerDes pairs, a 14-slot backplane, deep plane segmentation, and carrier-grade -48 V power — from customer design inputs through to Gerber release. The project demonstrates Qmax's capability to take on the most demanding high-speed, high-layer-count telecom fabric designs and drive them to manufacturing without a re-spin.",
     ],
+    contactCtaPrefix: pcbCaseStudyContactCtaPrefix,
     listingSummary:
       "30-layer, terabit-scale switch fabric card — ~3.2 Tbps aggregate bandwidth across 96 matched SerDes pairs, delivered to Gerber release without a re-spin.",
     metadata: {

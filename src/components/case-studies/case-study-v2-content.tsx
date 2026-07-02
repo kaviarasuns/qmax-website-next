@@ -16,6 +16,9 @@ function SectionHead({ title }: { title: string }) {
   );
 }
 
+const DEFAULT_CONTACT_CTA_PREFIX =
+  "Interested in a similar product development engagement? Contact Qmax Systems at";
+
 type ContentProps = Pick<
   FullProductDevelopmentCaseStudy,
   | "navSections"
@@ -30,6 +33,7 @@ type ContentProps = Pick<
   | "firmwareItems"
   | "specs"
   | "summary"
+  | "contactCtaPrefix"
 >;
 
 export function CaseStudyV2Content({
@@ -45,6 +49,7 @@ export function CaseStudyV2Content({
   firmwareItems,
   specs,
   summary,
+  contactCtaPrefix = DEFAULT_CONTACT_CTA_PREFIX,
 }: ContentProps) {
   const [activeSection, setActiveSection] = useState(navSections[0].id);
   const [summaryVisible, setSummaryVisible] = useState(false);
@@ -432,8 +437,7 @@ export function CaseStudyV2Content({
               </div>
               <div className="relative h-0.5 bg-[#063458] mt-[1.6rem] overflow-hidden rounded-[2px] after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-[40%] after:bg-[linear-gradient(90deg,transparent,#f33117,transparent)] after:animate-case-sweep motion-reduce:after:animate-none" />
               <div className="inline-flex items-center gap-[0.6rem] mt-4 text-[#9bc0e9] text-sm">
-                Interested in a similar product development engagement? Contact
-                Qmax Systems at{" "}
+                {contactCtaPrefix}{" "}
                 <Link
                   href="mailto:info@qmaxsys.com"
                   className="text-white border-b border-b-red-500 pb-px"

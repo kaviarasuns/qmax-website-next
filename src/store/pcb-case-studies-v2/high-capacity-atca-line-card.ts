@@ -1,4 +1,5 @@
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
+import { pcbCaseStudyContactCtaPrefix } from "@/store/pcb-case-studies-v2/contact-cta";
 
 export const highCapacityAtcaLineCardCaseStudy: FullProductDevelopmentCaseStudy =
   {
@@ -233,6 +234,7 @@ export const highCapacityAtcaLineCardCaseStudy: FullProductDevelopmentCaseStudy 
       "Qmax Systems delivered a complete, fabrication-ready layout of a 36-layer, dual-NPU ATCA packet-processing line card built on dual Broadcom BCM88650 (Arad) network processors with a 32-device DDR3 deep-buffer array. The design closed on signal integrity, power integrity, and DFM targets across dense fabric SerDes, a demanding DDR3 subsystem, deep plane segmentation, and carrier-grade -48 V power — from customer design inputs through to Gerber release.",
       "Together with the companion switch-fabric card, this project demonstrates Qmax's capability to design both halves of a terabit-scale ATCA transport system and drive the most complex, high-layer-count boards to manufacturing without a re-spin.",
     ],
+    contactCtaPrefix: pcbCaseStudyContactCtaPrefix,
     listingSummary:
       "36-layer, dual-NPU ATCA packet-processing line card — dense fabric SerDes, 32-device DDR3 array, and carrier-grade -48 V power delivered to Gerber release without a re-spin.",
     metadata: {

@@ -35,6 +35,7 @@ export default function CaseStudyPageV2({
     firmwareItems,
     specs,
     summary,
+    contactCtaPrefix,
   } = caseStudy;
 
   return (
@@ -62,6 +63,7 @@ export default function CaseStudyPageV2({
         firmwareItems={firmwareItems}
         specs={specs}
         summary={summary}
+        contactCtaPrefix={contactCtaPrefix}
       />
     </div>
   );
