@@ -1,9 +1,11 @@
 import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
 import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
+import { fortyPort10gbeCoreRouterLineCardCaseStudy } from "@/store/full-product-development-case-studies/40-port-10gbe-core-router-line-card";
 import { highCapacityAtcaLineCardCaseStudy } from "@/store/full-product-development-case-studies/high-capacity-atca-line-card";
 import { highDensityPcbDesignAiGpuChassisMotherboardCaseStudy } from "@/store/full-product-development-case-studies/high-density-pcb-design-ai-gpu-chassis-motherboard";
 import { highDensityPcbDesignGponOltCaseStudy } from "@/store/full-product-development-case-studies/high-density-pcb-design-gpon-olt";
+import { multiFapPacketProcessingLineCardCaseStudy } from "@/store/full-product-development-case-studies/multi-fap-packet-processing-line-card";
 import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
 import { outdoorWifi6AccessPointCaseStudy } from "@/store/full-product-development-case-studies/outdoor-wifi-6-access-point";
 import { terabitSwitchFabricBoardCaseStudy } from "@/store/full-product-development-case-studies/terabit-switch-fabric-board";
@@ -358,6 +360,8 @@ export const fullProductDevelopmentCaseStudiesData: FullProductDevelopmentCaseSt
     highDensityPcbDesignAiGpuChassisMotherboardCaseStudy,
     highCapacityAtcaLineCardCaseStudy,
     terabitSwitchFabricBoardCaseStudy,
+    fortyPort10gbeCoreRouterLineCardCaseStudy,
+    multiFapPacketProcessingLineCardCaseStudy,
   ];
 
 export function getFullProductDevelopmentCaseStudy(
