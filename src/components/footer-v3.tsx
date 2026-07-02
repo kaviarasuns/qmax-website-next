@@ -6,8 +6,6 @@ import { ChevronDown, Facebook, Linkedin, Youtube } from "lucide-react";
 
 import DownloadPresentationModal from "@/components/download-presentation-modal";
 
-const DOWNLOAD_URL = "/Qmax_Systems_Electronics_Engineering_Services_Std.pdf";
-
 const SERVICE_LINKS = [
   {
     label: "Hardware Design Services",
@@ -49,6 +47,7 @@ const QUICK_LINKS_BEFORE_RESOURCES = [
 
 const QUICK_LINKS_AFTER_RESOURCES = [
   { label: "Careers", href: "/careers" },
+  { label: "Suppliers", href: "/suppliers" },
   { label: "Contact Us", href: "/contact" },
 ] as const;
 
@@ -173,7 +172,7 @@ export default function FooterV3() {
             <p className="mb-4 text-left text-base leading-relaxed text-white">
               Click here to download our company presentation.
             </p>
-            <DownloadPresentationModal downloadUrl={DOWNLOAD_URL} />
+            <DownloadPresentationModal />
 
             <FooterHeading className="mt-7">Follow Us</FooterHeading>
             <div className="flex gap-3.5">

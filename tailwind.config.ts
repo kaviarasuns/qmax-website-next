@@ -110,6 +110,11 @@ export default {
           from: { opacity: "1", transform: "translate(-50%, -50%) scale(1)" },
           to: { opacity: "0", transform: "translate(-50%, -50%) scale(0.9)" },
         },
+        shake: {
+          "0%, 100%": { transform: "translateX(0)" },
+          "25%": { transform: "translateX(-6px)" },
+          "75%": { transform: "translateX(6px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -120,6 +125,7 @@ export default {
         "modal-overlay-out": "modal-overlay-out 0.2s ease",
         "modal-card-in": "modal-card-in 0.35s cubic-bezier(0.2, 0.9, 0.2, 1)",
         "modal-card-out": "modal-card-out 0.2s ease",
+        shake: "shake 0.3s ease",
       },
     },
   },

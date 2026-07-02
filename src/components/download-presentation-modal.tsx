@@ -13,9 +13,6 @@ import {
 
 import { cn } from "@/lib/utils";
 
-const DEFAULT_DOWNLOAD_URL =
-  "/Qmax_Systems_Electronics_Engineering_Services_Std.pdf";
-
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 type FormValues = {
@@ -80,10 +77,8 @@ function Field({
 }
 
 export default function DownloadPresentationModal({
-  downloadUrl = DEFAULT_DOWNLOAD_URL,
   triggerClassName,
 }: {
-  downloadUrl?: string;
   triggerClassName?: string;
 }) {
   const [open, setOpen] = useState(false);
@@ -113,17 +108,6 @@ export default function DownloadPresentationModal({
     );
   }
 
-  function triggerDownload() {
-    // `download` forces a save of the same-origin file instead of navigating
-    // the tab away, so the success state stays visible.
-    const anchor = document.createElement("a");
-    anchor.href = downloadUrl;
-    anchor.download = downloadUrl.split("/").pop() ?? "presentation.pdf";
-    document.body.appendChild(anchor);
-    anchor.click();
-    anchor.remove();
-  }
-
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -138,7 +122,6 @@ export default function DownloadPresentationModal({
     setSubmitting(true);
     // Simulated lead capture — swap for a real CRM/API call when available.
     await new Promise((resolve) => setTimeout(resolve, 1100));
-    triggerDownload();
     setSubmitting(false);
     setSubmitted(true);
   }
@@ -183,17 +166,11 @@ export default function DownloadPresentationModal({
               <Dialog.Title className="text-[22px] font-bold tracking-[-0.4px] text-[#09090b]">
                 Thank You
               </Dialog.Title>
-              <p className="mx-auto mt-2 max-w-[320px] text-[14.5px] text-[#6b6b73]">
-                We appreciate your interest in Qmax Systems. Your presentation
-                download has started.
+              <p className="mx-auto mt-2 text-center text-[14.5px] text-[#6b6b73]">
+                We appreciate your interest in Qmax Systems.
+                <br />
+                The presentation is in your inbox.
               </p>
-              <a
-                href={downloadUrl}
-                download
-                className="mt-4 inline-block text-[13.5px] font-medium text-red-500 underline underline-offset-4 transition-colors hover:text-red-600"
-              >
-                Download didn&apos;t start? Click here.
-              </a>
             </div>
           ) : (
             <>

@@ -1142,8 +1142,9 @@ export const embeddedCaseStudiesData: CaseStudy[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/3.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/4.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/5.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/MarmaEnclosure Final.v1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/MarmaEnclosure Final.v2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/MarmaEnclosure Final.v3.png",
     ],
     features: [
       "Wi-Fi 6E connectivity",
