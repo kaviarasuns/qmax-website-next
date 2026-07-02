@@ -36,6 +36,7 @@ export const highDensityPcbDesignGponOltCaseStudy: FullProductDevelopmentCaseStu
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG23.svg",
     ],
     cardImageIndex: 3,
+    cardImageZoom: 1.3,
     overview: [
       "Qmax Systems partnered with a telecom networking equipment manufacturer to design a high-density, 20-layer printed circuit board for a multi-port fiber-optic access platform. Working from customer-supplied schematics, mechanical drawings, and a detailed bill of materials, Qmax's PCB design team translated a complex mixed-signal, high-speed digital architecture into a fully routed, manufacturing-ready Cadence Allegro board. The design integrates over 2,100 components, including multiple high pin-count BGA devices, DDR3 memory, and several power management ICs, on a compact double-sided layout. The fabricated board powered up and operated correctly at first bring-up with zero design defects, and was delivered on schedule to the customer's production timeline.",
     ],

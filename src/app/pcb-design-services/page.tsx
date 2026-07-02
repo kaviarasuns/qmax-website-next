@@ -10,6 +10,7 @@ import { PCB_INDUSTRIES } from "@/store/pcb-industries";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import { pcbV2ServiceCaseStudy } from "@/store/pcb-case-studies-v2/service-cards";
 
 export const metadata = buildMetadata({
   title: "PCB Design Services | High-Speed, RF & SI/PI | Qmax Systems",
@@ -529,12 +530,14 @@ function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   });
 }
 
-const pcbCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
-  "pcie-gen5-cpo-board",
-  "100gbe-high-speed-networking-board",
-  "digital-stethoscope",
-  "ultra-low-cost-bldc-motor-controller",
-]);
+const pcbCaseStudies: ServiceCaseStudy[] = [
+  ...pcbServiceCaseStudies(["pcie-gen5-cpo-board"]),
+  pcbV2ServiceCaseStudy("terabit-switch-fabric-board"),
+  ...pcbServiceCaseStudies([
+    "digital-stethoscope",
+    "ultra-low-cost-bldc-motor-controller",
+  ]),
+];
 
 export default function HardwareDevelopmentServicesComponentV2() {
   return (

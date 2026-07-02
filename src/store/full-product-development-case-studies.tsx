@@ -1,4 +1,3 @@
-import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
 import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
 import { fortyPort10gbeCoreRouterLineCardCaseStudy } from "@/store/pcb-case-studies-v2/40-port-10gbe-core-router-line-card";
@@ -45,6 +44,8 @@ export type FullProductDevelopmentCaseStudy = {
   navSections: FullProductDevelopmentNavSection[];
   images: string[];
   cardImageIndex?: number;
+  /** Scale multiplier applied to the listing-card thumbnail (e.g. 1.3 enlarges by 30%) */
+  cardImageZoom?: number;
   overview: string[];
   brief: string[];
   scopeIntro: string;

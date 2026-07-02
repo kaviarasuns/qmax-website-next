@@ -13,6 +13,7 @@ import { WhySection } from "@/components/services-cmp/WhySection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { getCaseStudyCardImage } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import { pcbV2ProjectExperienceEntry } from "@/store/pcb-case-studies-v2/service-cards";
 
 export const metadata = buildMetadata({
   title: "High-Speed PCB Design | DDR4/5, PCIe Gen 5 & SerDes | Qmax",
@@ -55,10 +56,10 @@ function pcbProjectExperienceEntry(
 }
 
 const projectExperience: ProjectExperienceItem[] = [
-  pcbProjectExperienceEntry(
+  pcbV2ProjectExperienceEntry(
     "multilayer-layout",
     "High-Speed Multilayer PCB Layout",
-    "ai-gpu-expansion-chassis-motherboard",
+    "high-density-pcb-design-ai-gpu-chassis-motherboard",
     "Complex multi-layer layout for AI GPU expansion chassis motherboards, featuring high pin-count BGA escape routing, HDI microvia structures, and dense interconnect for ultra-high-bandwidth PCIe fabrics.",
   ),
   pcbProjectExperienceEntry(
@@ -67,16 +68,17 @@ const projectExperience: ProjectExperienceItem[] = [
     "qualcomm-wifi-6-triband-router",
     "Precision single-ended and differential impedance routing on a Qualcomm WiFi 6 triband router platform, with stackup optimization for consistent 50 Ω and 100 Ω targets across all high-speed data paths.",
   ),
-  pcbProjectExperienceEntry(
+  pcbV2ProjectExperienceEntry(
     "signal-integrity-analysis",
     "Signal Integrity Analysis",
-    "ai-gpu-expansion-chassis-motherboard",
+    "high-density-pcb-design-ai-gpu-chassis-motherboard",
     "Pre- and post-layout signal integrity verification for AI GPU expansion chassis motherboards, including eye diagram analysis, TDR characterization, and crosstalk modeling for PCIe Gen6-class signaling.",
   ),
-  pcbProjectExperienceEntry(
+  pcbV2ProjectExperienceEntry(
     "ddr-memory-routing",
     "DDR & High-Speed Memory Routing",
-    "video-processor-pcb",
+    "40-port-10gbe-core-router-line-card",
+    "High-speed memory-interface routing on a 40-port 10GbE core-router line card, with tight length-matching and controlled-impedance topologies for the packet-buffer memory subsystem supporting line-rate forwarding.",
   ),
   pcbProjectExperienceEntry(
     "high-frequency-pcb-design",

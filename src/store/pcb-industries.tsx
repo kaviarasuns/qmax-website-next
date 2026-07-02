@@ -224,10 +224,10 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
         href: "/case-studies/pcie-gen5-cpo-board",
       },
       {
-        title: "IoT Gateway PCB",
+        title: "High-Density PCB Design for a GPON OLT Networking Platform",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/1.1.png",
-        href: "/case-studies/iot-gateway-pcb",
+        href: "/case-studies/high-density-pcb-design-gpon-olt",
       },
     ],
   },

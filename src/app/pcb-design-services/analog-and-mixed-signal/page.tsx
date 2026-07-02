@@ -17,6 +17,7 @@ import {
   allCaseStudiesData,
 } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import { pcbV2ServiceCaseStudy } from "@/store/pcb-case-studies-v2/service-cards";
 
 export const metadata = buildMetadata({
   title: "Analog & Mixed-Signal PCB Design | ADC/DAC Layout | Qmax",
@@ -47,12 +48,14 @@ function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   });
 }
 
-const pcbCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
-  "smart-obd2-device",
-  "qualcomm-wifi-6-triband-router",
-  "animal-tracker",
-  "video-processor-pcb",
-]);
+const pcbCaseStudies: ServiceCaseStudy[] = [
+  ...pcbServiceCaseStudies([
+    "smart-obd2-device",
+    "qualcomm-wifi-6-triband-router",
+    "animal-tracker",
+  ]),
+  pcbV2ServiceCaseStudy("40-port-10gbe-core-router-line-card"),
+];
 
 type ProjectExperienceEntryOptions = {
   description?: string;

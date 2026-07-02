@@ -17,6 +17,10 @@ import {
   getCaseStudyCardImage,
 } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import {
+  pcbV2ProjectExperienceEntry,
+  pcbV2ServiceCaseStudy,
+} from "@/store/pcb-case-studies-v2/service-cards";
 
 export const metadata = buildMetadata({
   title: "RF & Microwave PCB Design | PTFE, Sub-GHz to Ka-Band | Qmax",
@@ -263,11 +267,11 @@ const projectExperience: ProjectExperienceItem[] = [
         "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.1.png",
     },
   ),
-  projectExperienceEntry(
+  pcbV2ProjectExperienceEntry(
     "hf-material-optimization",
     "High-Frequency Material & Optimization",
-    "lbm",
-    "High-frequency material selection and stackup optimization on an LBM multi-layer PCB, balancing low-loss laminates, thermal copper distribution, and manufacturing-ready RF layout.",
+    "high-capacity-atca-line-card",
+    "High-frequency material selection and stackup optimization on a high-capacity packet-processing line card, balancing low-loss laminates, thermal copper distribution, and manufacturing-ready controlled-impedance layout.",
   ),
 ];
 
@@ -618,12 +622,11 @@ function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   });
 }
 
-const rfMicrowaveCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
-  "100gbe-high-speed-networking-board",
-  "typheon",
-  "mx1",
-  "ultra-low-cost-bldc-motor-controller",
-]);
+const rfMicrowaveCaseStudies: ServiceCaseStudy[] = [
+  pcbV2ServiceCaseStudy("terabit-switch-fabric-board"),
+  pcbV2ServiceCaseStudy("multi-fap-packet-processing-line-card"),
+  ...pcbServiceCaseStudies(["mx1", "ultra-low-cost-bldc-motor-controller"]),
+];
 
 export default function RFMicrowavePCBDesignPage() {
   return (

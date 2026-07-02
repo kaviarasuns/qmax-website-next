@@ -70,6 +70,7 @@ const toCaseStudyListItem = (
     specs: caseStudy.specs,
     stats: caseStudy.stats,
     imageRotation: caseStudy.rotatedImages?.[cardImageIndex],
+    cardImageZoom: caseStudy.cardImageZoom,
   };
 };
 
@@ -93,6 +94,7 @@ export const pcbCaseStudies: CaseStudyListItem[] = [
     link: `/case-studies/${study.slug}`,
     category: "development",
     summary: study.listingSummary,
+    cardImageZoom: study.cardImageZoom,
   })),
 ];
 
@@ -118,6 +120,7 @@ export const fullProductDevelopmentCaseStudies: CaseStudyListItem[] =
       link: `/case-studies/${study.slug}`,
       category: "development",
       summary: study.listingSummary,
+      cardImageZoom: study.cardImageZoom,
     }));
 
 const countPendingImages = (studies: CaseStudy[]): number => {

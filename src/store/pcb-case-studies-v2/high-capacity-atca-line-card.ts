@@ -40,6 +40,7 @@ export const highCapacityAtcaLineCardCaseStudy: FullProductDevelopmentCaseStudy 
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/LBM/LBM_REV1_SIG123_pr15.png",
     ],
     cardImageIndex: 4,
+    cardImageZoom: 1.3,
     overview: [
       "Qmax Systems was engaged by a Canadian networking equipment company to execute the full physical PCB design of a high-capacity packet-processing line card built around dual Broadcom BCM88650 (Arad) network processors. The customer supplied verified schematics and a complete design-input package; Qmax owned the layout of a 36-layer, controlled-impedance, carrier-grade AdvancedTCA (ATCA) blade. The card performs packet classification, deep-buffer traffic management, and cell-based fabric interfacing, connecting to a companion switch-fabric card over the chassis backplane. High-speed SerDes routing, a 32-device DDR3 memory array, and power integrity made this one of the most demanding boards in the platform.",
     ],

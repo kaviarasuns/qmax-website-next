@@ -38,6 +38,7 @@ export const fortyPort10gbeCoreRouterLineCardCaseStudy: FullProductDevelopmentCa
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/pegasus/Pegasus_ALL LAYER_PR13.png",
     ],
     cardImageIndex: 1,
+    cardImageZoom: 1.3,
     overview: [
       "Qmax Systems was engaged to execute the full physical PCB design of a high-density 40-port 10 Gigabit Ethernet line card for a modular core switch/router chassis. The customer supplied verified schematics and a complete design-input package; Qmax owned the layout of a 24-layer, controlled-impedance, carrier-grade line card carrying 400 GbE of aggregate line-side capacity into the chassis switch fabric. With over 36,000 pins, a very large high-speed SRAM subsystem, and 40 optical ports to route on a single card, high-speed signal integrity, memory-interface timing, and manufacturability were the central engineering challenges. Qmax delivered a fabrication-ready design closing on SI, PI, and DFM targets without a re-spin.",
     ],

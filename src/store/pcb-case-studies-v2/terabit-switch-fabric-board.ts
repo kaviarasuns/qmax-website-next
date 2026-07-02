@@ -39,6 +39,7 @@ export const terabitSwitchFabricBoardCaseStudy: FullProductDevelopmentCaseStudy 
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/FE1600/FE1600_MODULE_REV-02_PR6.png",
     ],
     cardImageIndex: 3,
+    cardImageZoom: 1.3,
     overview: [
       "Qmax Systems was engaged by an Indian networking equipment company to execute the full physical PCB design of a terabit-scale switch fabric board built around dual Broadcom BCM88750 (FE1600) fabric elements. The customer supplied verified schematics and a design-input package; Qmax owned the layout of a 30-layer, controlled-impedance, carrier-grade backplane fabric card. The board switches cell-based traffic between up to 14 line-card slots across a chassis midplane, making high-speed SerDes routing, power integrity, and manufacturability the central engineering challenges. Qmax delivered a fabrication-ready design closing on signal integrity, PDN, and DFM targets for a regulated telecom-class product.",
     ],

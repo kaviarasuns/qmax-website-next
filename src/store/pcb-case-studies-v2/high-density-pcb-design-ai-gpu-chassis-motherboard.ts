@@ -39,6 +39,7 @@ export const highDensityPcbDesignAiGpuChassisMotherboardCaseStudy: FullProductDe
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/innovide/5.png",
     ],
     cardImageIndex: 0,
+    cardImageZoom: 1.3,
     overview: [
       "Qmax Systems was engaged to provide end-to-end PCB design services for a high-density AI GPU expansion chassis motherboard targeting next-generation AI datacenter and HPC deployments. The board serves as the central PCIe Gen 5 switching and chassis management plane, aggregating multiple GPU expansion slots through a 144-lane PCIe Gen 5 fabric switch and providing per-slot hot-plug management, multi-rail power delivery, and a full I²C/SMBus management topology.",
     ],

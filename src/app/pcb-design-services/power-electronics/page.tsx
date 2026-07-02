@@ -17,6 +17,10 @@ import {
   getCaseStudyCardImage,
 } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import {
+  pcbV2ProjectExperienceEntry,
+  pcbV2ServiceCaseStudy,
+} from "@/store/pcb-case-studies-v2/service-cards";
 
 export const metadata = buildMetadata({
   title: "Power Electronics PCB Design | High-Current Layout | Qmax",
@@ -236,11 +240,11 @@ const projectExperience: ProjectExperienceItem[] = [
         "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/thermal_analysis_and_management/1.4.png",
     },
   ),
-  projectExperienceEntry(
+  pcbV2ProjectExperienceEntry(
     "power-integrity-grounding",
     "Power Integrity & Grounding Optimization",
-    "100gbe-high-speed-networking-board",
-    "Multi-layer layout with optimized power distribution planes, ground isolation regions, and stable PDN design for high-current and high-speed coexistence on a 100GbE networking board.",
+    "terabit-switch-fabric-board",
+    "Multi-layer layout with optimized power distribution planes, ground isolation regions, and stable PDN design for high-current and high-speed coexistence on a terabit-scale switch fabric board.",
   ),
   projectExperienceEntry(
     "emi-emc-power-pcb",
@@ -459,12 +463,14 @@ function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   });
 }
 
-const powerElectronicsCaseStudies: ServiceCaseStudy[] = pcbServiceCaseStudies([
-  "lbm",
-  "fedarant-pcb-top-layer",
-  "qualcomm-wifi4-routers",
-  "arc-detector",
-]);
+const powerElectronicsCaseStudies: ServiceCaseStudy[] = [
+  pcbV2ServiceCaseStudy("high-capacity-atca-line-card"),
+  ...pcbServiceCaseStudies([
+    "fedarant-pcb-top-layer",
+    "qualcomm-wifi4-routers",
+    "arc-detector",
+  ]),
+];
 
 export default function PowerElectronicsPage() {
   return (

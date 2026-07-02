@@ -39,6 +39,7 @@ export const multiFapPacketProcessingLineCardCaseStudy: FullProductDevelopmentCa
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/typheon/Typhoon_SIGALL.png",
     ],
     cardImageIndex: 1,
+    cardImageZoom: 1.2,
     overview: [
       "Qmax Systems was engaged to execute the full physical PCB design of a high-density packet-processing line card built around four Broadcom (Dune) PETRA-B Fabric Access Processors for a modular core switch/router chassis. The customer supplied verified schematics and a complete design-input package; Qmax owned the layout of a 28-layer, controlled-impedance, carrier-grade line card that classifies, buffers, and forwards traffic and connects to the chassis switch fabric over a high-speed backplane. With over 28,000 pins, an extensive multi-technology memory subsystem, and dense high-speed fabric SerDes on the largest board of its platform, signal integrity, memory-interface timing, and manufacturability were the central engineering challenges. Qmax delivered a fabrication-ready design closing on SI, PI, and DFM targets without a re-spin.",
     ],
@@ -104,23 +105,28 @@ export const multiFapPacketProcessingLineCardCaseStudy: FullProductDevelopmentCa
       },
       {
         title: "DDR3 SDRAM (48 Devices)",
-        description: "Large 128M×16 DDR3 array for FAP packet buffering and table memory",
+        description:
+          "Large 128M×16 DDR3 array for FAP packet buffering and table memory",
       },
       {
         title: "QDR-II SRAM (4 Devices)",
-        description: "4M×18 QDR-II SRAM for high-bandwidth lookup / statistics memory",
+        description:
+          "4M×18 QDR-II SRAM for high-bandwidth lookup / statistics memory",
       },
       {
         title: "Broadcom BCM5389",
-        description: "8-port managed Gigabit Ethernet switch for the on-board management network",
+        description:
+          "8-port managed Gigabit Ethernet switch for the on-board management network",
       },
       {
         title: "Altera Cyclone IV FPGA",
-        description: "Control-plane / glue-logic FPGA for line-card configuration and management",
+        description:
+          "Control-plane / glue-logic FPGA for line-card configuration and management",
       },
       {
         title: "IDT 89H12NT12G2",
-        description: "12-lane PCIe Gen2 non-transparent switch for the control-plane interconnect",
+        description:
+          "12-lane PCIe Gen2 non-transparent switch for the control-plane interconnect",
       },
       {
         title: "ICS85408 / IDT5V41066",
@@ -150,11 +156,13 @@ export const multiFapPacketProcessingLineCardCaseStudy: FullProductDevelopmentCa
       },
       {
         title: "DDR3 Memory Buses",
-        description: "Matched data, address, and command buses to the 48-device DDR3 array",
+        description:
+          "Matched data, address, and command buses to the 48-device DDR3 array",
       },
       {
         title: "QDR-II SRAM Buses",
-        description: "Matched read/write buses to the 4-device QDR-II SRAM array",
+        description:
+          "Matched read/write buses to the 4-device QDR-II SRAM array",
       },
       {
         title: "PCIe Gen2 (Control Plane)",

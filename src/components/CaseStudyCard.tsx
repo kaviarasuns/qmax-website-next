@@ -13,6 +13,8 @@ export interface CaseStudyCardProps {
   stats?: { value: string; label: string };
   /** Rotation in degrees applied to the card image before display */
   imageRotation?: number;
+  /** Scale multiplier applied to the card image (e.g. 1.3 enlarges by 30%) */
+  cardImageZoom?: number;
 }
 
 const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
@@ -23,7 +25,16 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
   imageBackgroundClassName = "bg-qmax-dark-grey",
   imageClassName = "object-contain px-8 py-5",
   imageRotation,
+  cardImageZoom,
 }) => {
+  const transforms: string[] = [];
+  if (imageRotation) transforms.push(`rotate(${imageRotation}deg)`);
+  if (cardImageZoom && cardImageZoom !== 1) {
+    transforms.push(`scale(${cardImageZoom})`);
+  }
+  const imageWrapperStyle =
+    transforms.length > 0 ? { transform: transforms.join(" ") } : undefined;
+
   return (
     <div className={`group relative h-full ${category}`}>
       <a
@@ -35,14 +46,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
           <div
             className={`relative aspect-[3/2.8] w-full overflow-hidden ${imageBackgroundClassName}`}
           >
-            <div
-              className="absolute inset-0"
-              style={
-                imageRotation
-                  ? { transform: `rotate(${imageRotation}deg)` }
-                  : undefined
-              }
-            >
+            <div className="absolute inset-0" style={imageWrapperStyle}>
               <Image
                 src={image}
                 alt={title}
