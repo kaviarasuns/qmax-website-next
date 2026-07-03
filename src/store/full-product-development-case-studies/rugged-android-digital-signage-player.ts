@@ -1,4 +1,3 @@
-import { embeddedCaseStudiesData } from "../embedded-case-studies";
 import { FullProductDevelopmentCaseStudy } from "../full-product-development-case-studies";
 export const ruggedAndroidDigitalSignagePlayerCaseStudy: FullProductDevelopmentCaseStudy =
   {
