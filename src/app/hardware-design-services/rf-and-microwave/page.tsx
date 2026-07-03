@@ -19,6 +19,10 @@ import {
   allCaseStudiesData,
   getCaseStudyCardImage,
 } from "@/store/case-studies";
+import {
+  fullProductDevelopmentCaseStudiesData,
+  getFullProductDevelopmentCardImage,
+} from "@/store/full-product-development-case-studies";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 
 function rfMicrowaveProjectExperienceEntry(
@@ -26,6 +30,8 @@ function rfMicrowaveProjectExperienceEntry(
   listTitle: string,
   caseStudyId: string,
   description: string,
+  relatedCaseStudySlug: string,
+  imageIndex?: number,
 ): ProjectExperienceItem {
   const study = allCaseStudiesData.find(
     (caseStudy) => caseStudy.id === caseStudyId,
@@ -34,14 +40,31 @@ function rfMicrowaveProjectExperienceEntry(
     throw new Error(`Case study not found: ${caseStudyId}`);
   }
 
+  const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
+    (caseStudy) => caseStudy.slug === relatedCaseStudySlug,
+  );
+  if (!relatedStudy) {
+    throw new Error(`Related case study not found: ${relatedCaseStudySlug}`);
+  }
+
+  const imageSrc =
+    imageIndex !== undefined
+      ? relatedStudy.images[imageIndex]
+      : getFullProductDevelopmentCardImage(relatedStudy);
+  if (!imageSrc) {
+    throw new Error(
+      `Image index ${imageIndex} out of range for: ${relatedCaseStudySlug}`,
+    );
+  }
+
   return {
     id,
     listTitle,
-    captionTitle: listTitle,
+    captionTitle: relatedStudy.title,
     description,
-    imageSrc: getCaseStudyCardImage(caseStudyId),
-    imageAlt: listTitle,
-    caseStudyHref: `/case-studies/${study.id}`,
+    imageSrc,
+    imageAlt: relatedStudy.title,
+    caseStudyHref: `/case-studies/${relatedStudy.slug}`,
   };
 }
 
@@ -76,34 +99,28 @@ const rfCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
 
 const projectExperience: ProjectExperienceItem[] = [
   rfMicrowaveProjectExperienceEntry(
-    "antenna-matching-network-design",
-    "Antenna & Matching Network Design",
-    "capserve",
-    "Antenna and matching network design for the Capserve embedded platform, with tuned impedance matching, RF front-end integration, and optimized PCB antenna placement for reliable wireless performance.",
-  ),
-  rfMicrowaveProjectExperienceEntry(
     "rf-transceiver-system-design",
     "RF Transceiver System Design",
     "ultra-low-power-ble-mouse",
-    "Ultra low-power BLE transceiver system design for a wireless mouse reference platform, with optimized RF link budget, multi-device switching, and extended battery life across 2.4 GHz operation.",
-  ),
-  rfMicrowaveProjectExperienceEntry(
-    "lna-design",
-    "Low Noise Amplifier (LNA) Design",
-    "ir-ble-ac-controller",
-    "Low-noise amplifier and RF front-end design for an IR BLE AC controller, with sensitive receive paths, BLE mesh connectivity, and low-power wireless control for smart home automation.",
+    "Multi-radio RF transceiver system for a handheld OBD-II diagnostics device, integrating LTE cellular, dual-band Wi-Fi, Bluetooth 5.0 LE, and GNSS around an STM32MP157C host with coexistence-aware front-end and antenna planning.",
+    "obd-ii-diagnostics-device",
+    3,
   ),
   rfMicrowaveProjectExperienceEntry(
     "signal-integrity-rf-shielding",
     "Signal Integrity & RF Shielding",
     "wifi6-triband-router",
-    "WiFi 6 triband router with signal integrity and RF shielding across concurrent 2.4, 5, and 6 GHz bands, including compartmentalized RF sections, ground plane integrity, and EMI containment for multi-radio coexistence.",
+    "Signal integrity and RF shielding for a tri-band WiFi 6E cybersecurity gateway, with compartmentalized RF sections, disciplined ground returns, and inter-chain isolation across concurrent 2.4/5/6 GHz radios feeding a 12-element internal antenna array.",
+    "wifi-6e-cybersecurity-gateway",
+    0,
   ),
   rfMicrowaveProjectExperienceEntry(
-    "rf-testing-compliance-validation",
-    "RF Testing & Compliance Validation",
-    "smart-obd2",
-    "RF testing and compliance validation for a Smart OBD2 automotive diagnostics platform, with EMC-hardened automotive RF design, vehicle communication interface verification, and regulatory-ready validation workflows.",
+    "antenna-matching-network-design",
+    "Antenna & Matching Network Design",
+    "capserve",
+    "Antenna and matching-network design for an outdoor tri-band Wi-Fi 6 access point, tuning twelve front-end module chains and their radio interfaces for balanced gain and impedance across the 2.4, 5, and 6 GHz bands in an all-weather enclosure.",
+    "outdoor-wifi-6-access-point",
+    4,
   ),
 ];
 

@@ -20,6 +20,10 @@ import {
   allCaseStudiesData,
   getCaseStudyCardImage,
 } from "@/store/case-studies";
+import {
+  fullProductDevelopmentCaseStudiesData,
+  getFullProductDevelopmentCardImage,
+} from "@/store/full-product-development-case-studies";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import {
   ComplianceStandardsSection,
@@ -31,6 +35,8 @@ function powerElectronicsProjectExperienceEntry(
   listTitle: string,
   caseStudyId: string,
   description: string,
+  relatedCaseStudySlug: string,
+  imageIndex?: number,
 ): ProjectExperienceItem {
   const study = allCaseStudiesData.find(
     (caseStudy) => caseStudy.id === caseStudyId,
@@ -39,14 +45,31 @@ function powerElectronicsProjectExperienceEntry(
     throw new Error(`Case study not found: ${caseStudyId}`);
   }
 
+  const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
+    (caseStudy) => caseStudy.slug === relatedCaseStudySlug,
+  );
+  if (!relatedStudy) {
+    throw new Error(`Related case study not found: ${relatedCaseStudySlug}`);
+  }
+
+  const imageSrc =
+    imageIndex !== undefined
+      ? relatedStudy.images[imageIndex]
+      : getFullProductDevelopmentCardImage(relatedStudy);
+  if (!imageSrc) {
+    throw new Error(
+      `Image index ${imageIndex} out of range for: ${relatedCaseStudySlug}`,
+    );
+  }
+
   return {
     id,
     listTitle,
-    captionTitle: study.title,
+    captionTitle: relatedStudy.title,
     description,
-    imageSrc: getCaseStudyCardImage(caseStudyId),
-    imageAlt: study.title,
-    caseStudyHref: `/case-studies/${study.id}`,
+    imageSrc,
+    imageAlt: relatedStudy.title,
+    caseStudyHref: `/case-studies/${relatedStudy.slug}`,
   };
 }
 
@@ -81,34 +104,20 @@ const powerElectronicsCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
 
 const projectExperience: ProjectExperienceItem[] = [
   powerElectronicsProjectExperienceEntry(
-    "ac-dc-dc-dc-converter-design",
-    "AC-DC & DC-DC Converter Design",
-    "stellar-power-board",
-    "Multi-rail AC-DC and DC-DC converter design for a portable EV charger platform, with efficient power distribution, thermal-optimized layout, and robust protection and filtering circuits.",
-  ),
-  powerElectronicsProjectExperienceEntry(
-    "motor-drive-inverter-development",
-    "Motor Drive & Inverter Development",
-    "ultra-low-cost-bldc-motor-controller-for-evs",
-    "Ultra low-cost BLDC motor drive and inverter development for electric vehicles, with high-current MOSFET stages, current sensing, and thermal-aware power electronics layout.",
-  ),
-  powerElectronicsProjectExperienceEntry(
-    "bms-design",
-    "Battery Management System (BMS) Design",
-    "bms-controller",
-    "Battery management system design with cell monitoring, balancing, and protection circuitry for safe charge and discharge control across multi-cell energy storage applications.",
-  ),
-  powerElectronicsProjectExperienceEntry(
     "power-supply-smps-development",
     "Power Supply & SMPS Development",
     "poe-power-injector",
-    "Multi-port PoE power injector with switched-mode power supply architecture, supporting 802.3af/at/bt standards with per-port power metering and high-efficiency isolated DC-DC conversion.",
+    "Multi-rail power architecture for a modular medical simulator, delivering a high-power PoE Sourcing Equipment (PSE) stage and regulated buck, buck-boost, and LDO rails that power and actuate each manikin segment over a single Ethernet cable.",
+    "advanced-modular-medical-simulator",
+    3,
   ),
   powerElectronicsProjectExperienceEntry(
-    "thermal-management-protection-circuits",
-    "Thermal Management & Protection Circuits",
-    "thermal-management-system",
-    "Industrial thermal management system with multi-zone temperature sensing, automated cooling control, and protection circuits for predictive overheating alerts and long-term reliability.",
+    "ac-dc-dc-dc-converter-design",
+    "AC-DC & DC-DC Converter Design",
+    "stellar-power-board",
+    "Rugged, transport-grade power design for a cold-storage IoT monitor, combining wide-input DC-DC conversion, LiPo charging with fuel-gauging, and battery-protection circuitry for uninterrupted operation across refrigerated transport and warehouse deployments.",
+    "cold-storage-iot-monitoring-system",
+    3,
   ),
 ];
 

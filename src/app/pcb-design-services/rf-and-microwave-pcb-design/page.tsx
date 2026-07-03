@@ -16,11 +16,12 @@ import {
   allCaseStudiesData,
   getCaseStudyCardImage,
 } from "@/store/case-studies";
-import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 import {
-  pcbV2ProjectExperienceEntry,
-  pcbV2ServiceCaseStudy,
-} from "@/store/pcb-case-studies-v2/service-cards";
+  fullProductDevelopmentCaseStudiesData,
+  getFullProductDevelopmentCardImage,
+} from "@/store/full-product-development-case-studies";
+import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import { pcbV2ServiceCaseStudy } from "@/store/pcb-case-studies-v2/service-cards";
 
 export const metadata = buildMetadata({
   title: "RF & Microwave PCB Design | PTFE, Sub-GHz to Ka-Band | Qmax",
@@ -33,6 +34,10 @@ type ProjectExperienceEntryOptions = {
   description?: string;
   imageSrc?: string;
   imageAlt?: string;
+  /** Slug of a full-product-development case study to link image/alt/href to. */
+  relatedSlug?: string;
+  /** Image index within the related case study (defaults to its card image). */
+  imageIndex?: number;
 };
 
 function projectExperienceEntry(
@@ -53,11 +58,43 @@ function projectExperienceEntry(
       ? { description: descriptionOrOptions }
       : descriptionOrOptions;
 
-  return {
+  const base = {
     id,
     listTitle,
     captionTitle: study.title,
     description: options?.description ?? study.summary,
+  };
+
+  if (options?.relatedSlug) {
+    const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
+      (caseStudy) => caseStudy.slug === options.relatedSlug,
+    );
+    if (!relatedStudy) {
+      throw new Error(`Related case study not found: ${options.relatedSlug}`);
+    }
+
+    const imageSrc =
+      options.imageSrc ??
+      (options.imageIndex !== undefined
+        ? relatedStudy.images[options.imageIndex]
+        : getFullProductDevelopmentCardImage(relatedStudy));
+    if (!imageSrc) {
+      throw new Error(
+        `Image index ${options.imageIndex} out of range for: ${options.relatedSlug}`,
+      );
+    }
+
+    return {
+      ...base,
+      captionTitle: relatedStudy.title,
+      imageSrc,
+      imageAlt: options.imageAlt ?? relatedStudy.title,
+      caseStudyHref: `/case-studies/${relatedStudy.slug}`,
+    };
+  }
+
+  return {
+    ...base,
     imageSrc: options?.imageSrc ?? getCaseStudyCardImage(caseStudyId),
     imageAlt: options?.imageAlt ?? study.title,
     caseStudyHref: `/case-studies/${study.id}`,
@@ -219,59 +256,26 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 
 const projectExperience: ProjectExperienceItem[] = [
   projectExperienceEntry(
-    "rf-multilayer-layout",
-    "RF Multilayer PCB Layout",
-    "high-speed-analog-board",
-    {
-      description:
-        "Multi-layer RF PCB layout with high-frequency signal integrity support, precision routing, and thermally optimized stack design for reliable microwave operation.",
-      imageSrc:
-        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_analog_board/BCW_TOP_S14.svg",
-    },
-  ),
-  projectExperienceEntry(
     "controlled-impedance-rf",
     "Controlled Impedance RF Routing",
     "wifi6-triband-router",
     {
       description:
-        "Controlled 50 Ω microstrip and differential RF routing on a WiFi 6 triband router platform, with stackup-tuned impedance targets across 2.4, 5, and 6 GHz bands.",
-      imageSrc:
-        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.9.png",
+        "Controlled-impedance RF routing for a tri-band WiFi 6E cybersecurity gateway, holding 50 Ω microstrip and matched differential targets from the MediaTek MT7976/MT7915 radios to a 12-element internal antenna array across the 2.4, 5, and 6 GHz bands.",
+      relatedSlug: "wifi-6e-cybersecurity-gateway",
+      imageIndex: 0,
     },
   ),
   projectExperienceEntry(
     "antenna-pcb-integration",
     "Antenna PCB Integration",
     "animal-tracker",
-  ),
-  projectExperienceEntry(
-    "microwave-transmission-line",
-    "Microwave Transmission Line Design",
-    "wifi-6e-router",
     {
       description:
-        "Microwave transmission line design for a WiFi 6E router, with multi-band microstrip routing, low-loss interconnect, and impedance-matched RF paths for 6 GHz operation.",
-      imageSrc:
-        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/1.png",
+        "Antenna PCB integration for an outdoor tri-band Wi-Fi 6 access point, routing twelve front-end module chains and their RF interfaces to the external antenna ports with tuned matching and isolation for all-weather 802.11ax coverage.",
+      relatedSlug: "outdoor-wifi-6-access-point",
+      imageIndex: 1,
     },
-  ),
-  projectExperienceEntry(
-    "rf-shielding-emi",
-    "RF Shielding & EMI Reduction",
-    "wifi6-triband-router",
-    {
-      description:
-        "RF shielding and EMI reduction layout on a WiFi 6 triband router, with grounded coplanar structures, isolation between RF chains, and containment of radiated emissions.",
-      imageSrc:
-        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.1.png",
-    },
-  ),
-  pcbV2ProjectExperienceEntry(
-    "hf-material-optimization",
-    "High-Frequency Material & Optimization",
-    "high-capacity-atca-line-card",
-    "High-frequency material selection and stackup optimization on a high-capacity packet-processing line card, balancing low-loss laminates, thermal copper distribution, and manufacturing-ready controlled-impedance layout.",
   ),
 ];
 

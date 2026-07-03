@@ -117,7 +117,7 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/ev and power.png",
     relatedCaseStudies: [
       toRelatedCaseStudy(coldStorageIotMonitoringSystemCaseStudy, {
-        imageIndices: [2, 3, 4],
+        imageIndices: [4, 2, 3],
       }),
     ],
   },
@@ -174,7 +174,7 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/industry.png",
     relatedCaseStudies: [
       toRelatedCaseStudy(coldStorageIotMonitoringSystemCaseStudy, {
-        imageIndices: [2, 3, 4],
+        imageIndices: [4, 2, 3],
       }),
     ],
   },

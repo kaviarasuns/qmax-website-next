@@ -16,6 +16,10 @@ import {
   allCaseStudiesData,
   getCaseStudyCardImage,
 } from "@/store/case-studies";
+import {
+  fullProductDevelopmentCaseStudiesData,
+  getFullProductDevelopmentCardImage,
+} from "@/store/full-product-development-case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 import {
   pcbV2ProjectExperienceEntry,
@@ -33,6 +37,10 @@ type ProjectExperienceEntryOptions = {
   description?: string;
   imageSrc?: string;
   imageAlt?: string;
+  /** Slug of a full-product-development case study to link image/alt/href to. */
+  relatedSlug?: string;
+  /** Image index within the related case study (defaults to its card image). */
+  imageIndex?: number;
 };
 
 function projectExperienceEntry(
@@ -53,11 +61,43 @@ function projectExperienceEntry(
       ? { description: descriptionOrOptions }
       : descriptionOrOptions;
 
-  return {
+  const base = {
     id,
     listTitle,
     captionTitle: study.title,
     description: options?.description ?? study.summary,
+  };
+
+  if (options?.relatedSlug) {
+    const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
+      (caseStudy) => caseStudy.slug === options.relatedSlug,
+    );
+    if (!relatedStudy) {
+      throw new Error(`Related case study not found: ${options.relatedSlug}`);
+    }
+
+    const imageSrc =
+      options.imageSrc ??
+      (options.imageIndex !== undefined
+        ? relatedStudy.images[options.imageIndex]
+        : getFullProductDevelopmentCardImage(relatedStudy));
+    if (!imageSrc) {
+      throw new Error(
+        `Image index ${options.imageIndex} out of range for: ${options.relatedSlug}`,
+      );
+    }
+
+    return {
+      ...base,
+      captionTitle: relatedStudy.title,
+      imageSrc,
+      imageAlt: options.imageAlt ?? relatedStudy.title,
+      caseStudyHref: `/case-studies/${relatedStudy.slug}`,
+    };
+  }
+
+  return {
+    ...base,
     imageSrc: options?.imageSrc ?? getCaseStudyCardImage(caseStudyId),
     imageAlt: options?.imageAlt ?? study.title,
     caseStudyHref: `/case-studies/${study.id}`,
@@ -212,56 +252,24 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 ];
 
 const projectExperience: ProjectExperienceItem[] = [
-  projectExperienceEntry(
-    "high-current-layout",
-    "High-Current PCB Layout Design",
-    "bms-controller",
-    {
-      description:
-        "BMS controller PCB with high-current power distribution, heavy copper routing, and thermal-aware layout for battery pack monitoring and cell balancing under sustained load.",
-      imageSrc: "/case-studies/MICROSCOPIC CAMERA/4.png",
-    },
+  pcbV2ProjectExperienceEntry(
+    "power-integrity-grounding",
+    "Power Integrity & Grounding Optimization",
+    "terabit-switch-fabric-board",
+    "Power integrity and grounding optimization for a PCIe Gen 5 AI GPU expansion chassis motherboard, with a multi-rail power-delivery plane, hot-swap 12 V inputs, and target-impedance PDN design that sustains high-current GPU loads alongside high-speed fabric signaling.",
+    "high-density-pcb-design-ai-gpu-chassis-motherboard",
+    0,
   ),
   projectExperienceEntry(
     "smps-power-converter",
     "SMPS & Power Converter PCB Development",
     "stellar-power-board",
     {
-      imageSrc:
-        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/alphion/ALPHION-AOLT-PR1_SIG136.svg",
-    },
-  ),
-  projectExperienceEntry(
-    "thermal-management",
-    "Thermal Management & Heat Dissipation",
-    "thermal-management-system",
-    {
-      imageSrc:
-        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/thermal_analysis_and_management/1.4.png",
-    },
-  ),
-  pcbV2ProjectExperienceEntry(
-    "power-integrity-grounding",
-    "Power Integrity & Grounding Optimization",
-    "terabit-switch-fabric-board",
-    "Multi-layer layout with optimized power distribution planes, ground isolation regions, and stable PDN design for high-current and high-speed coexistence on a terabit-scale switch fabric board.",
-  ),
-  projectExperienceEntry(
-    "emi-emc-power-pcb",
-    "EMI/EMC Compliant Power PCB Design",
-    "connected-car-demonstration-unit",
-    {
       description:
-        "Power PCB layout for a connected car demonstration unit with disciplined switching-node placement, filtered power rails, and EMI containment for automotive EMC compliance.",
-      imageSrc:
-        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/TEK_OTT_REV1P0_BRD_PR3.svg",
+        "SMPS and power-converter layout for a modular medical simulator, implementing a high-power PoE backbone and multiple regulated conversion rails that deliver both data and actuation power to each manikin module over a single Ethernet cable.",
+      relatedSlug: "advanced-modular-medical-simulator",
+      imageIndex: 0,
     },
-  ),
-  projectExperienceEntry(
-    "hv-isolation-safety",
-    "High-Voltage Isolation & Safety Layout",
-    "3-phase-smart-energy-meter",
-    "Precision 3-phase smart energy meter PCB with high-accuracy sensing, reinforced isolation barriers, and clearance/creepage compliance for mains-connected metering applications.",
   ),
 ];
 
