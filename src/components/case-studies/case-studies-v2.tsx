@@ -24,6 +24,7 @@ export default function CaseStudyPageV2({
     ribbonStats,
     navSections,
     images,
+    enlargedImages,
     overview,
     brief,
     scopeIntro,
@@ -48,6 +49,7 @@ export default function CaseStudyPageV2({
         metaTags={metaTags}
         ribbonStats={ribbonStats}
         images={images}
+        enlargedImages={enlargedImages}
       />
 
       <CaseStudyV2Content

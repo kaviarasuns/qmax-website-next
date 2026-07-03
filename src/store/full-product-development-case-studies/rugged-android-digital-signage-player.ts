@@ -1,11 +1,5 @@
 import { embeddedCaseStudiesData } from "../embedded-case-studies";
 import { FullProductDevelopmentCaseStudy } from "../full-product-development-case-studies";
-
-const iotGatewayImages =
-  embeddedCaseStudiesData.find(
-    (study) => study.id === "industrial-iot-gateway-with-poe",
-  )?.images ?? [];
-
 export const ruggedAndroidDigitalSignagePlayerCaseStudy: FullProductDevelopmentCaseStudy =
   {
     id: "rugged-android-digital-signage-player",
@@ -34,8 +28,19 @@ export const ruggedAndroidDigitalSignagePlayerCaseStudy: FullProductDevelopmentC
       { id: "specs", num: "08", label: "Technical Specifications" },
       { id: "summary", num: "09", label: "Summary" },
     ],
-    images: iotGatewayImages,
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/1.1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/TEK_OTT_REV1P0_BRD_PR3.bot.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/TEK_OTT_REV1P0_BRD_PR3.svg",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/3.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/teck_new_v1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/teck_new_v2.png",
+    ],
     cardImageIndex: 7,
+    enlargedImages: { 7: 1.2, 8: 1.3 },
     overview: [
       "A major US-based retail technology company approached Qmax Systems to design and manufacture a ruggedized Android Digital Signage Player for deployment across auto showrooms throughout North America. The product needed to simultaneously display live TV channels via HDMI input and overlay dynamic digital signage content — promotions, notifications, and scheduling — in a picture-in-picture configuration.",
       "Qmax Systems delivered the complete product from concept to volume production: hardware design, firmware and Android software development, industrial design, FCC certification, and fulfillment — packaging thousands of units and shipping them directly to the customer's US distribution point. The product has been running in the field for nearly four years with near-zero reported failures.",

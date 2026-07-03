@@ -7,7 +7,7 @@ import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-devel
 
 type HeaderProps = Pick<
   FullProductDevelopmentCaseStudy,
-  "title" | "subtitle" | "metaTags" | "ribbonStats" | "images"
+  "title" | "subtitle" | "metaTags" | "ribbonStats" | "images" | "enlargedImages"
 >;
 
 export function CaseStudyV3Header({
@@ -16,6 +16,7 @@ export function CaseStudyV3Header({
   metaTags,
   ribbonStats,
   images,
+  enlargedImages,
 }: HeaderProps) {
   const [ribbonLit, setRibbonLit] = useState(false);
   const ribbonRef = useRef<HTMLDivElement>(null);
@@ -42,7 +43,11 @@ export function CaseStudyV3Header({
     <header className="relative bg-[#f5f7fa] text-foreground overflow-hidden pt-[6rem] px-6 pb-[3.4rem]">
       <div className="relative max-w-[1200px] mx-auto grid grid-cols-[1.18fr_0.82fr] gap-[2.8rem] items-stretch max-[920px]:grid-cols-1 max-[920px]:gap-8 max-[920px]:items-start">
         <div className="min-w-0 flex flex-col justify-start">
-          <CaseStudyCarousel images={images} title={title} />
+          <CaseStudyCarousel
+            images={images}
+            title={title}
+            enlargedImages={enlargedImages}
+          />
         </div>
 
         <div className="min-w-0 flex flex-col">

@@ -19,7 +19,7 @@ export const wifi6eCybersecurityGatewayCaseStudy: FullProductDevelopmentCaseStud
     ribbonStats: [
       {
         value: "1,000s of Units",
-        label: "Shipped to Europe",
+        label: "Shipped to USA",
       },
       {
         value: "2 Years",
