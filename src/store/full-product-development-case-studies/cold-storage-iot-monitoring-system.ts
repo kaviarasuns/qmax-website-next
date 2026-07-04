@@ -1,10 +1,15 @@
 import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
-const coldStorageIotMonitoringSystemImages =
-  embeddedCaseStudiesData.find(
-    (study) => study.id === "industrial-temperature-control-system",
-  )?.images ?? [];
+const coldStorageIotMonitoringSystemImages = [
+  "/case-studies/BLUECOLD/5.png",
+
+  "/case-studies/BLUECOLD/1.png",
+  "/case-studies/BLUECOLD/2.png",
+
+  "/case-studies/BLUECOLD/BLUE_COLD_REV-01_BRD_03_TOP.svg",
+  "/case-studies/BLUECOLD/BLUE_COLD_REV-01_BRD_03_TP.svg",
+];
 
 export const coldStorageIotMonitoringSystemCaseStudy: FullProductDevelopmentCaseStudy =
   {
@@ -47,7 +52,7 @@ export const coldStorageIotMonitoringSystemCaseStudy: FullProductDevelopmentCase
       { id: "summary", num: "09", label: "Summary" },
     ],
     images: coldStorageIotMonitoringSystemImages,
-    cardImageIndex: 4,
+    cardImageIndex: 0,
     overview: [
       "An Indian cold chain technology company approached Qmax Systems to design and manufacture a fully connected IoT monitoring system for cold storage units — refrigerated trucks, warehouses, and walk-in cold rooms. The device needed to monitor multiple temperature and pressure zones in real time, transmit data securely to an AWS IoT cloud platform, and operate reliably during transport across harsh environmental conditions including extreme cold and road vibration.",
       "Qmax Systems delivered the complete product from the ground up: hardware architecture, PCB design, embedded firmware, cloud application, industrial design, rugged enclosure, commissioning utilities, and mass production of 6,000 units — all manufactured and shipped within India. The device carries WPC certification (India's equivalent of FCC) and is fully RoHS compliant.",

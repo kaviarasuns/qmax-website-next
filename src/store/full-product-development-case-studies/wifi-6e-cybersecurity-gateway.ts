@@ -1,9 +1,15 @@
 import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
-const wifi6eCybersecurityGatewayImages =
-  embeddedCaseStudiesData.find((study) => study.id === "wifi-6e-router")
-    ?.images ?? [];
+const wifi6eCybersecurityGatewayImages = [
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/MarmaEnclosure Final.v1.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/MarmaEnclosure Final.v2.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/marma/MarmaEnclosure Final.v3.png",
+
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/1.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/2.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/3.png",
+];
 
 export const wifi6eCybersecurityGatewayCaseStudy: FullProductDevelopmentCaseStudy =
   {
@@ -46,7 +52,6 @@ export const wifi6eCybersecurityGatewayCaseStudy: FullProductDevelopmentCaseStud
       { id: "summary", num: "09", label: "Summary" },
     ],
     images: wifi6eCybersecurityGatewayImages,
-    cardImageIndex: 3,
     overview: [
       "A US-based cybersecurity company approached Qmax Systems to design and manufacture a WiFi 6E Triband Cybersecurity Gateway for deployment across small and medium-sized enterprises (SMEs) in North America. The product needed to combine a high-performance tri-band WiFi 6E router with an AI-powered network security stack — delivering enterprise-grade threat protection in a compact, easy-to-deploy appliance managed through iOS and Android mobile apps and a cloud-based dashboard.",
       "Qmax Systems delivered the complete product from concept to volume production: hardware design, OpenWRT firmware development, Android and iOS mobile app development, cloud management platform, industrial design, FCC certification, and fulfilment — packaging thousands of units and shipping them directly to the customer's US distribution point. The product has been running in the field for nearly two years with zero reported hardware failures.",

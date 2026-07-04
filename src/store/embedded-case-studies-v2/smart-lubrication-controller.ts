@@ -1,13 +1,15 @@
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
 const smartLubricationControllerImages = [
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/LUBE_TOP.svg",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/LUBE_BOT.svg",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/5.png",
+
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/1.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/2.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/3.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/4.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/5.png",
+
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/LUBE_TOP.svg",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/LUBE_BOT.svg",
 ];
 
 export const smartLubricationControllerCaseStudy: FullProductDevelopmentCaseStudy =
@@ -52,7 +54,7 @@ export const smartLubricationControllerCaseStudy: FullProductDevelopmentCaseStud
       { id: "summary", num: "09", label: "Summary" },
     ],
     images: smartLubricationControllerImages,
-    cardImageIndex: 3,
+    cardImageIndex: 2,
     overview: [
       "Qmax Systems designed and delivered a Smart Lubrication Controller — a rugged, cloud-connected embedded system that automates rail track lubrication for railway and metro rail installations. The customer, a lubrication systems and equipment manufacturer, came to Qmax with a requirement to build electronics that meet railway-grade environmental standards.",
       "Qmax delivered the complete electronics development — architecture, hardware, firmware, PCB design, IP65 enclosure design, EVT, full DVT, and prototypes — and supported the transition to volume production. The customer has since manufactured 1000+ units, deployed across railway and metro rail projects throughout India, including remote off-grid locations.",
@@ -185,8 +187,7 @@ export const smartLubricationControllerCaseStudy: FullProductDevelopmentCaseStud
       },
       {
         title: "Relay Outputs",
-        description:
-          "Lubrication pump motor and solenoid valve drive",
+        description: "Lubrication pump motor and solenoid valve drive",
       },
       {
         title: "BLE",
@@ -246,13 +247,11 @@ export const smartLubricationControllerCaseStudy: FullProductDevelopmentCaseStud
     specs: [
       {
         key: "Product Name",
-        value:
-          "Smart Lubrication Controller for Rail & Metro Applications",
+        value: "Smart Lubrication Controller for Rail & Metro Applications",
       },
       {
         key: "Domain / Industry",
-        value:
-          "Railway & Metro | Track Lubrication Systems | Industrial IoT",
+        value: "Railway & Metro | Track Lubrication Systems | Industrial IoT",
       },
       {
         key: "Application",
@@ -261,8 +260,7 @@ export const smartLubricationControllerCaseStudy: FullProductDevelopmentCaseStud
       },
       {
         key: "Main Processor",
-        value:
-          "Microchip PIC18F66J94 — Low-power TQFP-64 microcontroller",
+        value: "Microchip PIC18F66J94 — Low-power TQFP-64 microcontroller",
       },
       {
         key: "Wireless Connectivity",
@@ -275,8 +273,7 @@ export const smartLubricationControllerCaseStudy: FullProductDevelopmentCaseStud
       },
       {
         key: "Outputs",
-        value:
-          "Power relays — lubrication pump motor and solenoid valve drive",
+        value: "Power relays — lubrication pump motor and solenoid valve drive",
       },
       {
         key: "Local Interface",

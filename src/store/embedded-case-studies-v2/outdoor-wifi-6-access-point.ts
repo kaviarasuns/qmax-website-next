@@ -1,9 +1,17 @@
 import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
-const outdoorWifi6AccessPointImages =
-  embeddedCaseStudiesData.find((study) => study.id === "wifi6-triband-router")
-    ?.images ?? [];
+const outdoorWifi6AccessPointImages = [
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/1_new.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/2_new.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/7.1.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/7.2.png",
+
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.1.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.8.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.7.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.9.png",
+];
 
 export const outdoorWifi6AccessPointCaseStudy: FullProductDevelopmentCaseStudy =
   {
@@ -47,7 +55,6 @@ export const outdoorWifi6AccessPointCaseStudy: FullProductDevelopmentCaseStudy =
       { id: "summary", num: "09", label: "Summary" },
     ],
     images: outdoorWifi6AccessPointImages,
-    cardImageIndex: 4,
     overview: [
       "A US-based networking company brought Qmax Systems a product concept and high-level architecture for a professional-grade outdoor Wi-Fi 6 (802.11ax) Access Point — intended for deployment in public spaces such as smart city poles, campuses, stadiums, and transit hubs across North America. The product concept called for enterprise-class wireless performance delivered to the general public while surviving harsh outdoor environments without a fan or active cooling.",
       "Qmax Systems executed the complete hardware design engagement from concept to DVT: hardware architecture refinement, schematic design, PCB layout, RF engineering, OpenWRT firmware development, hardware bringup, Wi-Fi calibration, DVT builds, and FCC certification support. The product is built around the Qualcomm IPQ8078 (Hawkeye) SoC. Volume manufacturing is handled by the customer.",
@@ -326,8 +333,7 @@ export const outdoorWifi6AccessPointCaseStudy: FullProductDevelopmentCaseStudy =
       },
       {
         key: "Optional",
-        value:
-          "AI inference module; IP camera with PoE; 4× microphone array",
+        value: "AI inference module; IP camera with PoE; 4× microphone array",
       },
       {
         key: "Interfaces",
@@ -351,8 +357,7 @@ export const outdoorWifi6AccessPointCaseStudy: FullProductDevelopmentCaseStudy =
       },
       {
         key: "Power",
-        value:
-          "15 VDC main; 48 VDC PoE PSE (IEEE 802.3at); 12 VDC DOCSIS rail",
+        value: "15 VDC main; 48 VDC PoE PSE (IEEE 802.3at); 12 VDC DOCSIS rail",
       },
       {
         key: "Qmax Scope",
