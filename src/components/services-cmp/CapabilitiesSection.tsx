@@ -9,7 +9,7 @@ import type { CapabilitiesStripItem } from "./CapabilitiesStripSection";
 interface Capability {
   id: string;
   tabLabel: string;
-  learnMoreHref: string;
+  learnMoreHref?: string;
   tabIcon: React.ReactNode;
   headline: string;
   intro: string;

@@ -7,7 +7,7 @@ interface PanelsCapability {
   id: string;
   headline: string;
   intro: string;
-  learnMoreHref: string;
+  learnMoreHref?: string;
   bullets: { title: string; items: string[] }[];
   deliverables?: CapabilitiesStripItem[];
   deliverablesAriaLabel?: string;
@@ -50,12 +50,14 @@ export function CapabilitiesPanels({
                 {cap.headline}
               </h3>
               <div className="flex flex-wrap items-center gap-3">
-                <a
-                  className="inline-block rounded-md border-[1.5px] border-foreground bg-transparent px-7 py-[7px] text-foreground no-underline transition-colors duration-200 hover:bg-foreground hover:text-white hover:no-underline"
-                  href={cap.learnMoreHref}
-                >
-                  Learn more
-                </a>
+                {cap.learnMoreHref ? (
+                  <a
+                    className="inline-block rounded-md border-[1.5px] border-foreground bg-transparent px-7 py-[7px] text-foreground no-underline transition-colors duration-200 hover:bg-foreground hover:text-white hover:no-underline"
+                    href={cap.learnMoreHref}
+                  >
+                    Learn more
+                  </a>
+                ) : null}
                 <a
                   className="inline-block rounded-md bg-red-500 px-7 py-[7px] text-white no-underline transition-colors duration-200 hover:bg-red-600 hover:text-white hover:no-underline"
                   href={getInTouchHref}

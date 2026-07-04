@@ -16,19 +16,14 @@ import {
 import {
   allCaseStudiesData,
   getCaseStudyCardImage,
+  servicePageCaseStudies,
 } from "@/store/case-studies";
-import {
-  fullProductDevelopmentCaseStudiesData,
-  getFullProductDevelopmentCardImage,
-} from "@/store/full-product-development-case-studies";
 
 function highSpeedProjectExperienceEntry(
   id: string,
   listTitle: string,
   caseStudyId: string,
   description: string,
-  relatedCaseStudySlug: string,
-  imageIndex?: number,
 ): ProjectExperienceItem {
   const study = allCaseStudiesData.find(
     (caseStudy) => caseStudy.id === caseStudyId,
@@ -37,95 +32,49 @@ function highSpeedProjectExperienceEntry(
     throw new Error(`Case study not found: ${caseStudyId}`);
   }
 
-  const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
-    (caseStudy) => caseStudy.slug === relatedCaseStudySlug,
-  );
-  if (!relatedStudy) {
-    throw new Error(`Related case study not found: ${relatedCaseStudySlug}`);
-  }
-
-  const imageSrc =
-    imageIndex !== undefined
-      ? relatedStudy.images[imageIndex]
-      : getFullProductDevelopmentCardImage(relatedStudy);
-  if (!imageSrc) {
-    throw new Error(
-      `Image index ${imageIndex} out of range for: ${relatedCaseStudySlug}`,
-    );
-  }
-
   return {
     id,
     listTitle,
-    captionTitle: relatedStudy.title,
+    captionTitle: study.title,
     description,
-    imageSrc,
-    imageAlt: relatedStudy.title,
-    caseStudyHref: `/case-studies/${relatedStudy.slug}`,
+    imageSrc: getCaseStudyCardImage(caseStudyId),
+    imageAlt: study.title,
+    caseStudyHref: `/case-studies/${study.id}`,
   };
 }
 
-function serviceCaseStudies(ids: string[]): ServiceCaseStudy[] {
-  return ids.map((id) => {
-    const study = allCaseStudiesData.find((c) => c.id === id);
-    const image = getCaseStudyCardImage(id);
-    if (!study || !image) {
-      throw new Error(`Case study missing or has no image: ${id}`);
-    }
-    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
-    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
-    const summary =
-      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
-    return {
-      title: study.title,
-      image,
-      link: `/case-studies/${study.id}`,
-      category: "hardware",
-      summary,
-      imageRotation: study.rotatedImages?.[study.cardImageIndex ?? 0],
-    };
-  });
-}
-
-const highSpeedCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
-  "industrial-iot-gateway-with-poe",
-  "microscopic-camera-control",
-  "high-speed-analog-board",
-  "smart-obd2",
-]);
+const highSpeedCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
 
 const projectExperience: ProjectExperienceItem[] = [
   highSpeedProjectExperienceEntry(
     "high-speed-pcb",
     "High-Speed PCB",
     "wifi6-triband-router",
-    "Complete high-speed embedded platform for an open-standard medical simulation manikin, built around a Qualcomm Snapdragon 820 SoM, a 9-port Gigabit Ethernet switch backbone, and a high-power PoE PSE stage - routed across a multi-board stack from EVT through small-volume production.",
-    "advanced-modular-medical-simulator",
-    3,
+    "Multi-layer high-speed PCB design for a Qualcomm WiFi 6 triband router platform, with controlled impedance routing, HDI stack-up, and high pin-count BGA escape planning across concurrent 2.4, 5, and 6 GHz bands.",
   ),
   highSpeedProjectExperienceEntry(
     "signal-integrity-timing-analysis",
     "Signal Integrity & Timing Analysis",
     "wifi-6e-router",
-    "Signal integrity and timing analysis for a tri-band WiFi 6E cybersecurity gateway on a MediaTek MT7986AV platform, covering DDR4, HS400 eMMC, PCIe Gen 2, and concurrent 2.4/5/6 GHz radio chains driving a 12-element internal antenna array.",
-    "wifi-6e-cybersecurity-gateway",
-    2,
+    "Pre- and post-layout signal integrity and timing analysis for a Wi-Fi 6E router, including eye diagram validation, skew matching, and crosstalk mitigation across multi-gigabit SerDes and high-speed memory interfaces.",
   ),
   highSpeedProjectExperienceEntry(
     "fpga-high-speed-interface",
     "FPGA & High-Speed Interface Development",
     "high-speed-camera-interface",
-    "High-speed video interface development for a rugged Android signage player, with a Lontium LT6911UXC HDMI-to-MIPI CSI-2 bridge, HDCP 2.2 HDMI input, 4K@60 HDMI output, and LPDDR4 routing around a Rockchip RK3566 SoC.",
-    "rugged-android-digital-signage-player",
-    4,
+    "FPGA-based high-speed camera interface with LVDS and MIPI CSI-2 routing, real-time data paths, and precision phase matching for industrial vision and process control applications.",
   ),
   highSpeedProjectExperienceEntry(
     "multi-gigabit-design",
     "Multi-Gigabit Design",
     "gigabit-ethernet-switch-module",
-    "Multi-gigabit design for an outdoor tri-band Wi-Fi 6 access point on a Qualcomm IPQ8078 platform, integrating PCIe Gen 3 radio links, a 10G SFP+ fibre uplink, dual Gigabit Ethernet, and an LTE/5G modem across a 12-FEM RF front end.",
-    "outdoor-wifi-6-access-point",
-    4,
+    "Multi-gigabit Ethernet switch module design with high-speed backplane routing, controlled differential pairs, and low-loss laminates for data center and industrial networking applications.",
+  ),
+  highSpeedProjectExperienceEntry(
+    "power-integrity-emc-emi",
+    "Power Integrity & EMC/EMI Optimization",
+    "rugged-industrial-io-board",
+    "Power integrity and EMC/EMI-hardened industrial IO board with target-impedance PDN design, surge protection, and shielding strategies validated for harsh factory-floor environments.",
   ),
 ];
 

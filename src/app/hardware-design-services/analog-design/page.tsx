@@ -18,11 +18,8 @@ import {
 import {
   allCaseStudiesData,
   getCaseStudyCardImage,
+  servicePageCaseStudies,
 } from "@/store/case-studies";
-import {
-  fullProductDevelopmentCaseStudiesData,
-  getFullProductDevelopmentCardImage,
-} from "@/store/full-product-development-case-studies";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { ComplianceStandardsSection } from "@/components/services-cmp/ComplianceStandardSection";
 
@@ -31,8 +28,6 @@ function analogProjectExperienceEntry(
   listTitle: string,
   caseStudyId: string,
   description: string,
-  relatedCaseStudySlug: string,
-  imageIndex?: number,
 ): ProjectExperienceItem {
   const study = allCaseStudiesData.find(
     (caseStudy) => caseStudy.id === caseStudyId,
@@ -41,71 +36,49 @@ function analogProjectExperienceEntry(
     throw new Error(`Case study not found: ${caseStudyId}`);
   }
 
-  const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
-    (caseStudy) => caseStudy.slug === relatedCaseStudySlug,
-  );
-  if (!relatedStudy) {
-    throw new Error(`Related case study not found: ${relatedCaseStudySlug}`);
-  }
-
-  const imageSrc =
-    imageIndex !== undefined
-      ? relatedStudy.images[imageIndex]
-      : getFullProductDevelopmentCardImage(relatedStudy);
-  if (!imageSrc) {
-    throw new Error(
-      `Image index ${imageIndex} out of range for: ${relatedCaseStudySlug}`,
-    );
-  }
-
   return {
     id,
     listTitle,
-    captionTitle: relatedStudy.title,
+    captionTitle: study.title,
     description,
-    imageSrc,
-    imageAlt: relatedStudy.title,
-    caseStudyHref: `/case-studies/${relatedStudy.slug}`,
+    imageSrc: getCaseStudyCardImage(caseStudyId),
+    imageAlt: study.title,
+    caseStudyHref: `/case-studies/${study.id}`,
   };
 }
 
-function serviceCaseStudies(ids: string[]): ServiceCaseStudy[] {
-  return ids.map((id) => {
-    const study = allCaseStudiesData.find((c) => c.id === id);
-    const image = getCaseStudyCardImage(id);
-    if (!study || !image) {
-      throw new Error(`Case study missing or has no image: ${id}`);
-    }
-    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
-    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
-    const summary =
-      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
-    return {
-      title: study.title,
-      image,
-      link: `/case-studies/${study.id}`,
-      category: "hardware",
-      summary,
-      imageRotation: study.rotatedImages?.[study.cardImageIndex ?? 0],
-    };
-  });
-}
-
-const analogCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
-  "multi-io-card-for-ate",
-  "security-system-controller",
-  "robotics-motion-controller",
-  "poe-power-injector",
-]);
+const analogCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
 
 const projectExperience: ProjectExperienceItem[] = [
   analogProjectExperienceEntry(
     "analog-circuit-design",
     "Analog Circuit Design",
     "industrial-defect-monitoring-system",
-    "Precision analog sensing front end for a cold-storage IoT monitoring system, with four NTC temperature-sensor channels, dual pressure-sensor interfaces, and 12-/16-bit ADC acquisition feeding an ESP32-based multi-radio controller for cold-chain telemetry.",
-    "cold-storage-iot-monitoring-system",
-    3,
+    "High-precision analog sensing and control circuits for an industrial defect monitoring system, with low-noise front-end design and calibrated measurement paths for production-line quality assurance.",
+  ),
+  analogProjectExperienceEntry(
+    "power-supply-voltage-regulation",
+    "Power Supply & Voltage Regulation Design",
+    "poe-control-unit",
+    "IEEE 802.3af/at PoE+ power supply and voltage regulation design with per-port power budgeting, fault isolation, and regulated rails for reliable multi-device power delivery in access control and building automation.",
+  ),
+  analogProjectExperienceEntry(
+    "signal-conditioning-amplifier-design",
+    "Signal Conditioning & Amplifier Design",
+    "high-speed-analog-board",
+    "High-speed analog signal conditioning and amplifier design with low-noise routing, precision gain stages, and ground isolation for high-frequency measurement integrity.",
+  ),
+  analogProjectExperienceEntry(
+    "mixed-signal-hardware-development",
+    "Mixed-Signal Hardware Development",
+    "industrial-iot-gateway-with-poe",
+    "Mixed-signal industrial IoT gateway combining analog sensor interfaces, PoE+ power architecture, and digital communication paths for LoRa, BLE, and CAN field connectivity.",
+  ),
+  analogProjectExperienceEntry(
+    "analog-pcb-layout-noise-optimization",
+    "Analog PCB Layout & Noise Optimization",
+    "high-speed-analog-mux",
+    "Analog PCB layout optimized for noise immunity with shielded routing, dedicated analog ground planes, and mux signal path isolation for reliable multi-channel industrial acquisition.",
   ),
 ];
 

@@ -1,11 +1,4 @@
 import { PCBIndustry } from "@/components/services-cmp/PCBIndustriesSection";
-import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
-import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
-import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
-import { outdoorWifi6AccessPointCaseStudy } from "@/store/full-product-development-case-studies/outdoor-wifi-6-access-point";
-import { ruggedAndroidDigitalSignagePlayerCaseStudy } from "@/store/full-product-development-case-studies/rugged-android-digital-signage-player";
-import { wifi6eCybersecurityGatewayCaseStudy } from "@/store/full-product-development-case-studies/wifi-6e-cybersecurity-gateway";
-import { toRelatedCaseStudy } from "@/store/full-product-development-case-studies";
 
 export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
   {
@@ -33,9 +26,24 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/automotive.png",
     relatedCaseStudies: [
-      toRelatedCaseStudy(obdIiDiagnosticsDeviceCaseStudy, {
-        imageIndices: [3, 4, 5],
-      }),
+      {
+        title: "Connected Car Demonstration Unit",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/connected_car_demonstration_unit/1.1.png",
+        href: "/case-studies/connected-car-demonstration-unit",
+      },
+      {
+        title: "BMS Controller",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_pack/1.1.png",
+        href: "/case-studies/bms-controller",
+      },
+      {
+        title: "Ultra Low Power BLE Mouse",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_power_ble_mouse/1.2.png",
+        href: "/case-studies/ultra-low-power-ble-mouse",
+      },
     ],
   },
   {
@@ -61,9 +69,24 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/medical.png",
     relatedCaseStudies: [
-      toRelatedCaseStudy(advancedModularMedicalSimulatorCaseStudy, {
-        imageIndices: [3, 7, 11],
-      }),
+      {
+        title: "Medical Device Interface",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/pcb_a/1.1.png",
+        href: "/case-studies/medical-device-interface",
+      },
+      {
+        title: "Microscopic Camera Control",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/microscopic_camera/1.png",
+        href: "/case-studies/microscopic-camera-control",
+      },
+      {
+        title: "Ultra Low Noise ADC Board",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_noice_adc_board/1.png",
+        href: "/case-studies/ultra-low-noise-adc-board",
+      },
     ],
   },
   {
@@ -89,9 +112,24 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/aerospace.png",
     relatedCaseStudies: [
-      toRelatedCaseStudy(outdoorWifi6AccessPointCaseStudy, {
-        imageIndices: [4, 5, 6],
-      }),
+      {
+        title: "Stellar Main Board",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/stellar_main_board/1.png",
+        href: "/case-studies/stellar-main-board",
+      },
+      {
+        title: "Gigabit Ethernet Switch Module",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_data_acquisation/1.4.png",
+        href: "/case-studies/gigabit-ethernet-switch-module",
+      },
+      {
+        title: "High Speed Camera Interface",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/HIPPACK/1.png",
+        href: "/case-studies/high-speed-camera-interface",
+      },
     ],
   },
   {
@@ -117,9 +155,23 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/ev and power.png",
     relatedCaseStudies: [
-      toRelatedCaseStudy(coldStorageIotMonitoringSystemCaseStudy, {
-        imageIndices: [2, 3, 4],
-      }),
+      {
+        title: "Industrial IOT gateway with POE",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/4.png",
+        href: "/case-studies/industrial-iot-gateway-with-poe",
+      },
+      {
+        title: "POE Control unit",
+        image: "/case-studies/POE/1.png",
+        href: "/case-studies/poe-control-unit",
+      },
+      {
+        title: "Thermal Analysis and Management",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/thermal_analysis_and_management/1.2.png",
+        href: "/case-studies/thermal-management-system",
+      },
     ],
   },
   {
@@ -146,9 +198,23 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/communication.png",
     relatedCaseStudies: [
-      toRelatedCaseStudy(wifi6eCybersecurityGatewayCaseStudy, {
-        imageIndices: [0, 1],
-      }),
+      {
+        title: "Wi-Fi 6E Router",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wi-fi_66e_router-_marma/1.png",
+        href: "/case-studies/wifi-6e-router",
+      },
+      {
+        title: "Multi IO card for ATE",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/CHARA/1.png",
+        href: "/case-studies/multi-io-card-for-ate",
+      },
+      {
+        title: "Industrial POE switch",
+        image: "/case-studies/POE/5.png",
+        href: "/case-studies/industrial-poe-switch",
+      },
     ],
   },
   {
@@ -174,9 +240,23 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/industry.png",
     relatedCaseStudies: [
-      toRelatedCaseStudy(ruggedAndroidDigitalSignagePlayerCaseStudy, {
-        imageIndices: [3, 4, 5],
-      }),
+      {
+        title: "Industrial Temperature Control System",
+        image: "/case-studies/BLUECOLD/1.png",
+        href: "/case-studies/industrial-temperature-control-system",
+      },
+      {
+        title: "Smart Monitoring System",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/climate_control/1.png",
+        href: "/case-studies/smart-monitoring-system",
+      },
+      {
+        title: "Rugged Industrial IO Board",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/rugged_industrial_io_board/1.2.png",
+        href: "/case-studies/rugged-industrial-io-board",
+      },
     ],
   },
 ];

@@ -47,7 +47,7 @@ const QUICK_LINKS_BEFORE_RESOURCES = [
 
 const QUICK_LINKS_AFTER_RESOURCES = [
   { label: "Careers", href: "/careers" },
-  { label: "Suppliers", href: "/suppliers" },
+  // { label: "Suppliers", href: "/suppliers" },
   { label: "Contact Us", href: "/contact" },
 ] as const;
 

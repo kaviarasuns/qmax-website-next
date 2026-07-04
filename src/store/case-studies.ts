@@ -123,6 +123,24 @@ export const fullProductDevelopmentCaseStudies: CaseStudyListItem[] =
       cardImageZoom: study.cardImageZoom,
     }));
 
+/** PCB Design listing cards sourced from pcb-case-studies-v2. */
+export const pcbV2CaseStudies: CaseStudyListItem[] =
+  pcbSectionFullProductDevelopmentStudies.map((study, index) => ({
+    id: index + 1,
+    title: study.title,
+    image: getFullProductDevelopmentCardImage(study),
+    link: `/case-studies/${study.slug}`,
+    category: "development",
+    summary: study.listingSummary,
+    cardImageZoom: study.cardImageZoom,
+  }));
+
+/** First four Full Product Development studies for service-page showcases. */
+export const servicePageCaseStudies = fullProductDevelopmentCaseStudies.slice(
+  0,
+  4,
+);
+
 const countPendingImages = (studies: CaseStudy[]): number => {
   return studies.filter(
     (study) =>

@@ -15,13 +15,8 @@ import { WhySection } from "@/components/services-cmp/WhySection";
 import {
   getCaseStudyCardImage,
   allCaseStudiesData,
+  servicePageCaseStudies,
 } from "@/store/case-studies";
-import {
-  fullProductDevelopmentCaseStudiesData,
-  getFullProductDevelopmentCardImage,
-} from "@/store/full-product-development-case-studies";
-import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
-import { pcbV2ServiceCaseStudy } from "@/store/pcb-case-studies-v2/service-cards";
 
 export const metadata = buildMetadata({
   title: "Analog & Mixed-Signal PCB Design | ADC/DAC Layout | Qmax",
@@ -30,45 +25,12 @@ export const metadata = buildMetadata({
   path: "/pcb-design-services/analog-and-mixed-signal",
 });
 
-function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
-  return ids.map((id) => {
-    const study = pcbCaseStudiesData.find((c) => c.id === id);
-    const image = study?.images[0];
-    if (!study || !image) {
-      throw new Error(`PCB case study missing or has no image: ${id}`);
-    }
-    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
-    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
-    const summary =
-      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
-    return {
-      title: study.title,
-      image,
-      link: `/case-studies/${study.id}`,
-      category: "development",
-      summary,
-      imageRotation: study.rotatedImages?.[0],
-    };
-  });
-}
-
-const pcbCaseStudies: ServiceCaseStudy[] = [
-  ...pcbServiceCaseStudies([
-    "smart-obd2-device",
-    "qualcomm-wifi-6-triband-router",
-    "animal-tracker",
-  ]),
-  pcbV2ServiceCaseStudy("40-port-10gbe-core-router-line-card"),
-];
+const pcbCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
 
 type ProjectExperienceEntryOptions = {
   description?: string;
   imageSrc?: string;
   imageAlt?: string;
-  /** Slug of a full-product-development case study to link image/alt/href to. */
-  relatedSlug?: string;
-  /** Image index within the related case study (defaults to its card image). */
-  imageIndex?: number;
 };
 
 function projectExperienceEntry(
@@ -89,43 +51,11 @@ function projectExperienceEntry(
       ? { description: descriptionOrOptions }
       : descriptionOrOptions;
 
-  const base = {
+  return {
     id,
     listTitle,
     captionTitle: study.title,
     description: options?.description ?? study.summary,
-  };
-
-  if (options?.relatedSlug) {
-    const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
-      (caseStudy) => caseStudy.slug === options.relatedSlug,
-    );
-    if (!relatedStudy) {
-      throw new Error(`Related case study not found: ${options.relatedSlug}`);
-    }
-
-    const imageSrc =
-      options.imageSrc ??
-      (options.imageIndex !== undefined
-        ? relatedStudy.images[options.imageIndex]
-        : getFullProductDevelopmentCardImage(relatedStudy));
-    if (!imageSrc) {
-      throw new Error(
-        `Image index ${options.imageIndex} out of range for: ${options.relatedSlug}`,
-      );
-    }
-
-    return {
-      ...base,
-      captionTitle: relatedStudy.title,
-      imageSrc,
-      imageAlt: options.imageAlt ?? relatedStudy.title,
-      caseStudyHref: `/case-studies/${relatedStudy.slug}`,
-    };
-  }
-
-  return {
-    ...base,
     imageSrc: options?.imageSrc ?? getCaseStudyCardImage(caseStudyId),
     imageAlt: options?.imageAlt ?? study.title,
     caseStudyHref: `/case-studies/${study.id}`,
@@ -294,14 +224,55 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 
 const projectExperience: ProjectExperienceItem[] = [
   projectExperienceEntry(
+    "precision-analog-layout",
+    "Precision Analog PCB Layout",
+    "high-speed-analog-board",
+    {
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_analog_board/BCW_TOP_S14.svg",
+    },
+  ),
+  projectExperienceEntry(
+    "low-noise-signal-routing",
+    "Low-Noise Signal Routing",
+    "digital-stethoscope",
+    "Compact multi-layer layout with optimized signal routing, stable power distribution, and dedicated ground reference planes for low-noise analog capture on a digital stethoscope platform.",
+  ),
+  projectExperienceEntry(
+    "power-ground-plane",
+    "Power & Ground Plane Optimization",
+    "poe-power-injector",
+    {
+      imageSrc: "https://dev.qmaxsys.com/case-studies/POE/2.1.svg",
+    },
+  ),
+  projectExperienceEntry(
     "mixed-signal-design",
     "Mixed-Signal PCB Design",
     "high-speed-analog-mux",
     {
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies-comp/pcb/typheon/Typhoon_SIG78.png",
+    },
+  ),
+  projectExperienceEntry(
+    "emi-emc-reduction",
+    "EMI/EMC Reduction Techniques",
+    "high-speed-camera-interface",
+    {
       description:
-        "Mixed-signal PCB layout for a cold-storage IoT monitoring board, partitioning the ESP32 digital and radio sections from the analog sensor chain - four NTC temperature inputs, dual pressure interfaces, and 12-/16-bit ADC acquisition - with dedicated ground references for low-noise capture.",
-      relatedSlug: "cold-storage-iot-monitoring-system",
-      imageIndex: 0,
+        "EMI-hardened layout for a high-speed camera interface board, with controlled return paths, shielding discipline, and noise isolation between sensitive analog front-ends and high-speed digital processing.",
+      imageSrc:
+        "https://dev.qmaxsys.com/case-studies/embedded/HIPPACK1/2.2.svg",
+    },
+  ),
+  projectExperienceEntry(
+    "thermal-component-placement",
+    "Thermal & Component Placement Optimization",
+    "ultra-low-cost-bldc-motor-controller-for-evs",
+    {
+      imageSrc:
+        "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/lucas_tvs/1.png",
     },
   ),
 ];
