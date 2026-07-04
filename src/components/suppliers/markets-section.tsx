@@ -40,13 +40,24 @@ export default function MarketsSection({
                 aria-checked={isSelected}
                 onClick={() => onToggle(market.name)}
                 className={cn(
-                  "rounded-lg border px-2 py-[18px] text-center transition-[border-color,transform,box-shadow,background-color] duration-200",
+                  "relative rounded-lg border px-2 py-[18px] text-center transition-[border-color,transform,box-shadow,background-color] duration-200",
                   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500",
                   isSelected
                     ? "border-red-500 bg-red-500/[0.07]"
                     : "border-border bg-white hover:-translate-y-0.5 hover:border-foreground hover:shadow-[0_8px_20px_rgba(0,0,0,0.07)]",
                 )}
               >
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    "absolute right-2 top-2 flex h-4 w-4 items-center justify-center rounded-full text-[10px] font-bold transition-all duration-200",
+                    isSelected
+                      ? "bg-red-500 text-white"
+                      : "border border-border bg-white",
+                  )}
+                >
+                  {isSelected ? "✓" : null}
+                </span>
                 <Image
                   src={`/flags/${market.flag}.svg`}
                   alt=""
