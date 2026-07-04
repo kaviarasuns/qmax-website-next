@@ -1,7 +1,7 @@
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
 const smartLubricationControllerImages = [
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/5.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/Luber_V2.png",
 
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/1.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/2.png",
@@ -54,7 +54,6 @@ export const smartLubricationControllerCaseStudy: FullProductDevelopmentCaseStud
       { id: "summary", num: "09", label: "Summary" },
     ],
     images: smartLubricationControllerImages,
-    cardImageIndex: 2,
     overview: [
       "Qmax Systems designed and delivered a Smart Lubrication Controller — a rugged, cloud-connected embedded system that automates rail track lubrication for railway and metro rail installations. The customer, a lubrication systems and equipment manufacturer, came to Qmax with a requirement to build electronics that meet railway-grade environmental standards.",
       "Qmax delivered the complete electronics development — architecture, hardware, firmware, PCB design, IP65 enclosure design, EVT, full DVT, and prototypes — and supported the transition to volume production. The customer has since manufactured 1000+ units, deployed across railway and metro rail projects throughout India, including remote off-grid locations.",

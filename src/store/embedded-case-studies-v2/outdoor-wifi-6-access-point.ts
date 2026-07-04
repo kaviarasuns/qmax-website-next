@@ -1,4 +1,3 @@
-import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
 const outdoorWifi6AccessPointImages = [
