@@ -13,8 +13,7 @@ import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareSe
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
 import {
-  allCaseStudiesData,
-  getCaseStudyCardImage,
+  resolveCaseStudyReference,
   servicePageCaseStudies,
 } from "@/store/case-studies";
 
@@ -37,12 +36,7 @@ function projectExperienceEntry(
   caseStudyId: string,
   descriptionOrOptions?: string | ProjectExperienceEntryOptions,
 ): ProjectExperienceItem {
-  const study = allCaseStudiesData.find(
-    (caseStudy) => caseStudy.id === caseStudyId,
-  );
-  if (!study) {
-    throw new Error(`Case study not found: ${caseStudyId}`);
-  }
+  const study = resolveCaseStudyReference(caseStudyId);
 
   const options =
     typeof descriptionOrOptions === "string"
@@ -54,9 +48,9 @@ function projectExperienceEntry(
     listTitle,
     captionTitle: study.title,
     description: options?.description ?? study.summary,
-    imageSrc: options?.imageSrc ?? getCaseStudyCardImage(caseStudyId),
+    imageSrc: options?.imageSrc ?? study.cardImage,
     imageAlt: options?.imageAlt ?? study.title,
-    caseStudyHref: `/case-studies/${study.id}`,
+    caseStudyHref: study.href,
   };
 }
 
@@ -245,10 +239,10 @@ const projectExperience: ProjectExperienceItem[] = [
   projectExperienceEntry(
     "emi-emc-power-pcb",
     "EMI/EMC Compliant Power PCB Design",
-    "connected-car-demonstration-unit",
+    "ev-vcu-demo-platform",
     {
       description:
-        "Power PCB layout for a connected car demonstration unit with disciplined switching-node placement, filtered power rails, and EMI containment for automotive EMC compliance.",
+        "Power PCB layout for an EV VCU demo platform with disciplined switching-node placement, filtered power rails, and EMI containment for automotive EMC compliance.",
       imageSrc:
         "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/TEK_OTT_REV1P0_BRD_PR3.svg",
     },

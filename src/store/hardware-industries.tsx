@@ -27,10 +27,10 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/automotive.png",
     relatedCaseStudies: [
       {
-        title: "Connected Car Demonstration Unit",
+        title: "EV VCU Demo Platform",
         image:
           "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/connected_car_demonstration_unit/1.1.png",
-        href: "/case-studies/connected-car-demonstration-unit",
+        href: "/case-studies/ev-vcu-demo-platform",
       },
       {
         title: "BMS Controller",

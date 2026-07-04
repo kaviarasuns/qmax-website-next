@@ -3,7 +3,11 @@ import {
   type RelatedCaseStudyImage,
 } from "@/components/services-cmp/RelatedCaseStudiesCarousel";
 import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
-import { canFdIndustrialIoControllerCaseStudy } from "@/store/full-product-development-case-studies/can-fd-industrial-io-controller";
+import {
+  canFdIndustrialIoControllerCaseStudy,
+  evVcuDemoPlatformCaseStudy,
+  smartLubricationControllerCaseStudy,
+} from "@/store/embedded-case-studies-v2";
 import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
 import { fortyPort10gbeCoreRouterLineCardCaseStudy } from "@/store/pcb-case-studies-v2/40-port-10gbe-core-router-line-card";
 import { highCapacityAtcaLineCardCaseStudy } from "@/store/pcb-case-studies-v2/high-capacity-atca-line-card";
@@ -15,8 +19,6 @@ import { outdoorWifi6AccessPointCaseStudy } from "@/store/full-product-developme
 import { terabitSwitchFabricBoardCaseStudy } from "@/store/pcb-case-studies-v2/terabit-switch-fabric-board";
 import { wifi6eCybersecurityGatewayCaseStudy } from "@/store/full-product-development-case-studies/wifi-6e-cybersecurity-gateway";
 import { ruggedAndroidDigitalSignagePlayerCaseStudy } from "./full-product-development-case-studies/rugged-android-digital-signage-player";
-import { evVcuDemoPlatformCaseStudy } from "@/store/full-product-development-case-studies/ev-vcu-demo-platform";
-import { smartLubricationControllerCaseStudy } from "@/store/full-product-development-case-studies/smart-lubrication-controller";
 
 export type FullProductDevelopmentNavSection = {
   id: string;

@@ -1,9 +1,11 @@
 import type { CaseStudy } from "../../types/case-study";
 import { embeddedCaseStudiesData } from "./embedded-case-studies";
+import { embeddedCaseStudiesV2Data } from "./embedded-case-studies-v2";
 import { engineeringSupportCaseStudiesData } from "./engineering-support-case-studies";
 import {
   fullProductDevelopmentCaseStudiesData,
   getFullProductDevelopmentCardImage,
+  getFullProductDevelopmentCaseStudy,
 } from "./full-product-development-case-studies";
 import { industrialCaseStudiesData } from "./industrial-case-studies";
 import { mechanicalCaseStudiesData } from "./mechanical-case-studies";
@@ -44,13 +46,52 @@ export function getCaseStudyCardImage(caseStudyId: string): string | undefined {
   const caseStudy = allCaseStudiesData.find(
     (study) => study.id === caseStudyId,
   );
-  if (!caseStudy?.images.length) return undefined;
+  if (caseStudy?.images.length) {
+    const preferred =
+      caseStudy.images[getCardImageIndex(caseStudy)] ?? caseStudy.images[0];
+    if (!preferred.endsWith(".mp4")) return preferred;
 
-  const preferred =
-    caseStudy.images[getCardImageIndex(caseStudy)] ?? caseStudy.images[0];
-  if (!preferred.endsWith(".mp4")) return preferred;
+    return caseStudy.images.find((image) => !image.endsWith(".mp4"));
+  }
 
-  return caseStudy.images.find((image) => !image.endsWith(".mp4"));
+  const fullProductStudy = getFullProductDevelopmentCaseStudy(caseStudyId);
+  if (fullProductStudy) {
+    return getFullProductDevelopmentCardImage(fullProductStudy);
+  }
+
+  return undefined;
+}
+
+/** Resolves legacy embedded or full-product v2 case studies by id/slug. */
+export function resolveCaseStudyReference(caseStudyId: string): {
+  title: string;
+  summary: string;
+  href: string;
+  cardImage?: string;
+} {
+  const legacyStudy = allCaseStudiesData.find(
+    (study) => study.id === caseStudyId,
+  );
+  if (legacyStudy) {
+    return {
+      title: legacyStudy.title,
+      summary: legacyStudy.summary,
+      href: `/case-studies/${legacyStudy.id}`,
+      cardImage: getCaseStudyCardImage(caseStudyId),
+    };
+  }
+
+  const fullProductStudy = getFullProductDevelopmentCaseStudy(caseStudyId);
+  if (fullProductStudy) {
+    return {
+      title: fullProductStudy.title,
+      summary: fullProductStudy.listingSummary,
+      href: `/case-studies/${fullProductStudy.slug}`,
+      cardImage: getFullProductDevelopmentCardImage(fullProductStudy),
+    };
+  }
+
+  throw new Error(`Case study not found: ${caseStudyId}`);
 }
 
 const toCaseStudyListItem = (
@@ -74,25 +115,18 @@ const toCaseStudyListItem = (
   };
 };
 
-const embeddedSectionFullProductDevelopmentStudies =
-  fullProductDevelopmentCaseStudiesData.filter(
-    (study) => study.section === "embedded",
-  );
+const embeddedSectionFullProductDevelopmentStudies = embeddedCaseStudiesV2Data;
 
-export const embeddedCaseStudies: CaseStudyListItem[] = [
-  ...embeddedCaseStudiesData.map((caseStudy, index) =>
-    toCaseStudyListItem(caseStudy, index, "development"),
-  ),
-  ...embeddedSectionFullProductDevelopmentStudies.map((study, index) => ({
-    id: embeddedCaseStudiesData.length + index + 1,
+export const embeddedCaseStudies: CaseStudyListItem[] =
+  embeddedSectionFullProductDevelopmentStudies.map((study, index) => ({
+    id: index + 1,
     title: study.title,
     image: getFullProductDevelopmentCardImage(study),
     link: `/case-studies/${study.slug}`,
     category: "development",
     summary: study.listingSummary,
     cardImageZoom: study.cardImageZoom,
-  })),
-];
+  }));
 
 const pcbSectionFullProductDevelopmentStudies =
   fullProductDevelopmentCaseStudiesData.filter(
