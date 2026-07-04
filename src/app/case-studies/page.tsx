@@ -4,11 +4,8 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import {
   embeddedCaseStudies,
-  engineeringSupportCaseStudies,
   fullProductDevelopmentCaseStudies,
-  industrialCaseStudies,
-  mechanicalCaseStudies,
-  pcbCaseStudies,
+  pcbV2CaseStudies,
 } from "@/store/case-studies";
 
 // useLayoutEffect logs a warning during SSR; fall back to useEffect on the
@@ -22,18 +19,12 @@ const sections = [
   { id: "full-product-development", label: "Full Product Development" },
   { id: "embedded", label: "Embedded Systems" },
   { id: "pcb", label: "PCB Design" },
-  { id: "mechanical", label: "Mechanical Design" },
-  { id: "industrial", label: "Industrial Design" },
-  { id: "engineering-support-services", label: "Engineering Support Services" },
 ];
 
 const sectionCounts: { [key: string]: number } = {
   "full-product-development": fullProductDevelopmentCaseStudies.length,
   embedded: embeddedCaseStudies.length,
-  pcb: pcbCaseStudies.length,
-  mechanical: mechanicalCaseStudies.length,
-  industrial: industrialCaseStudies.length,
-  "engineering-support-services": engineeringSupportCaseStudies.length,
+  pcb: pcbV2CaseStudies.length,
 };
 
 function CaseStudyCardNumber({ number }: { number: number }) {
@@ -292,97 +283,28 @@ export default function CaseStudiesPage() {
             </div>
           </div>
           {/* PCB Section */}
-          <div id="pcb" className="mb-24 scroll-mt-32">
+          <div
+            id="pcb"
+            className="mb-80 scroll-mt-32 xl:mb-96"
+          >
             <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
               <div>
-                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 02</span> */}
                 <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
                   PCB Design
                 </h2>
               </div>
               <span className="text-sm text-muted-foreground font-medium mb-1">
-                {pcbCaseStudies.length} Projects
+                {pcbV2CaseStudies.length} Projects
               </span>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {pcbCaseStudies.map((study, index) => (
+              {pcbV2CaseStudies.map((study, index) => (
                 <div key={`pstudy-${study.id}`} className="relative">
                   <CaseStudyCardNumber number={index + 1} />
                   <CaseStudyCard
                     {...study}
                     imageClassName="object-contain px-14 py-5"
                   />
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Mechanical Section */}
-          <div id="mechanical" className="mb-24 scroll-mt-32">
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 03</span> */}
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Mechanical Design
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {mechanicalCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {mechanicalCaseStudies.map((study, index) => (
-                <div key={`mstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard {...study} />
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Industrial Section */}
-          <div id="industrial" className="mb-10 scroll-mt-32">
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 04</span> */}
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Industrial Design
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {industrialCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {industrialCaseStudies.map((study, index) => (
-                <div key={`istudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard
-                    {...study}
-                    // imageBackgroundClassName="bg-blue-200"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Engineering Support Services Section */}
-          <div
-            id="engineering-support-services"
-            className="mb-80 scroll-mt-32 xl:mb-96"
-          >
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Engineering Support Services
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {engineeringSupportCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {engineeringSupportCaseStudies.map((study, index) => (
-                <div key={`esstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard {...study} />
                 </div>
               ))}
             </div>

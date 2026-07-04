@@ -9,6 +9,7 @@ export const outdoorWifi6AccessPointCaseStudy: FullProductDevelopmentCaseStudy =
   {
     id: "outdoor-wifi-6-access-point",
     slug: "outdoor-wifi-6-access-point",
+    section: "embedded",
     title: "Outdoor Wi-Fi 6 Access Point",
     subtitle: "Full Product Development — Concept to DVT",
     metaTags: [

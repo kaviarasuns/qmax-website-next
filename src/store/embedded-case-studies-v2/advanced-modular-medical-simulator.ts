@@ -17,6 +17,7 @@ export const advancedModularMedicalSimulatorCaseStudy: FullProductDevelopmentCas
   {
     id: "advanced-modular-medical-simulator",
     slug: "advanced-modular-medical-simulator",
+    section: "embedded",
     title: "Advanced Modular Medical Simulator — Developer Kit",
     subtitle:
       "Snapdragon 820-Based Embedded Electronics Platform with 9-Port Gigabit Ethernet PoE Backbone for Modular Medical Simulation Training",

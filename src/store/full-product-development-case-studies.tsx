@@ -2,7 +2,7 @@ import {
   type RelatedCaseStudy,
   type RelatedCaseStudyImage,
 } from "@/components/services-cmp/RelatedCaseStudiesCarousel";
-import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
+import { advancedModularMedicalSimulatorCaseStudy } from "@/store/embedded-case-studies-v2/advanced-modular-medical-simulator";
 import {
   canFdIndustrialIoControllerCaseStudy,
   evVcuDemoPlatformCaseStudy,
@@ -15,7 +15,7 @@ import { highDensityPcbDesignAiGpuChassisMotherboardCaseStudy } from "@/store/pc
 import { highDensityPcbDesignGponOltCaseStudy } from "@/store/pcb-case-studies-v2/high-density-pcb-design-gpon-olt";
 import { multiFapPacketProcessingLineCardCaseStudy } from "@/store/pcb-case-studies-v2/multi-fap-packet-processing-line-card";
 import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
-import { outdoorWifi6AccessPointCaseStudy } from "@/store/full-product-development-case-studies/outdoor-wifi-6-access-point";
+import { outdoorWifi6AccessPointCaseStudy } from "@/store/embedded-case-studies-v2/outdoor-wifi-6-access-point";
 import { terabitSwitchFabricBoardCaseStudy } from "@/store/pcb-case-studies-v2/terabit-switch-fabric-board";
 import { wifi6eCybersecurityGatewayCaseStudy } from "@/store/full-product-development-case-studies/wifi-6e-cybersecurity-gateway";
 import { ruggedAndroidDigitalSignagePlayerCaseStudy } from "./full-product-development-case-studies/rugged-android-digital-signage-player";
