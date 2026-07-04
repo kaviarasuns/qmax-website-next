@@ -1,4 +1,3 @@
-import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
 const outdoorWifi6AccessPointImages = [
@@ -10,13 +9,6 @@ const outdoorWifi6AccessPointImages = [
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.8.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.7.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.9.png",
-
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/1.1.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/1.2.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/BLUE_BINARIES_PR1.svg",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/BLUE_BINARIES_PR1BOT.svg",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/BLUE_BINARIES_PR1SIG1.svg",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/BLUE_BINARIES_PR1SIG2.svg",
 ];
 
 export const outdoorWifi6AccessPointCaseStudy: FullProductDevelopmentCaseStudy =

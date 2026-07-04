@@ -5,6 +5,13 @@ const evVcuDemoPlatformImages = [
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/connected_car_demonstration_unit/1.2.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/connected_car_demonstration_unit/1.3.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/connected_car_demonstration_unit/1.4.png",
+
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/1.1.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/1.2.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/BLUE_BINARIES_PR1.svg",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/BLUE_BINARIES_PR1BOT.svg",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/BLUE_BINARIES_PR1SIG1.svg",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluebinaries/BLUE_BINARIES_PR1SIG2.svg",
 ];
 
 export const evVcuDemoPlatformCaseStudy: FullProductDevelopmentCaseStudy = {
@@ -145,7 +152,8 @@ export const evVcuDemoPlatformCaseStudy: FullProductDevelopmentCaseStudy = {
     },
     {
       title: "TLE75080ESHXUMA1",
-      description: "16-channel high-side smart switch driver for relay and actuator outputs",
+      description:
+        "16-channel high-side smart switch driver for relay and actuator outputs",
     },
     {
       title: "TIC12400",
@@ -169,13 +177,11 @@ export const evVcuDemoPlatformCaseStudy: FullProductDevelopmentCaseStudy = {
     },
     {
       title: "UART",
-      description:
-        "Cellular, GNSS, and BLE module communication and debug",
+      description: "Cellular, GNSS, and BLE module communication and debug",
     },
     {
       title: "SPI",
-      description:
-        "MSDI switch inputs, H-bridge, and high-side driver control",
+      description: "MSDI switch inputs, H-bridge, and high-side driver control",
     },
     {
       title: "I2C",
@@ -191,8 +197,7 @@ export const evVcuDemoPlatformCaseStudy: FullProductDevelopmentCaseStudy = {
     },
     {
       title: "ECU Connector",
-      description:
-        "Vehicle power, switch inputs, and load-driving outputs",
+      description: "Vehicle power, switch inputs, and load-driving outputs",
     },
   ],
   firmwareIntro:
@@ -241,8 +246,7 @@ export const evVcuDemoPlatformCaseStudy: FullProductDevelopmentCaseStudy = {
     },
     {
       key: "Domain / Industry",
-      value:
-        "Electric Mobility | Automotive EV | Connected Vehicle Gateway",
+      value: "Electric Mobility | Automotive EV | Connected Vehicle Gateway",
     },
     {
       key: "Host Microcontroller",
