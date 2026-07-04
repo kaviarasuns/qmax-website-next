@@ -12,10 +12,9 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
-import {
-  resolveCaseStudyReference,
-  servicePageCaseStudies,
-} from "@/store/case-studies";
+import { resolveCaseStudyReference } from "@/store/case-studies";
+import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import { pcbV2ServiceCaseStudy } from "@/store/pcb-case-studies-v2/service-cards";
 
 export const metadata = buildMetadata({
   title: "Power Electronics PCB Design | High-Current Layout | Qmax",
@@ -431,7 +430,36 @@ const FAQ_ITEMS = [
   },
 ];
 
-const powerElectronicsCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
+function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = pcbCaseStudiesData.find((c) => c.id === id);
+    const image = study?.images[0];
+    if (!study || !image) {
+      throw new Error(`PCB case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "development",
+      summary,
+      imageRotation: study.rotatedImages?.[0],
+    };
+  });
+}
+
+const powerElectronicsCaseStudies: ServiceCaseStudy[] = [
+  pcbV2ServiceCaseStudy("high-capacity-atca-line-card"),
+  ...pcbServiceCaseStudies([
+    "fedarant-pcb-top-layer",
+    "qualcomm-wifi4-routers",
+    "arc-detector",
+  ]),
+];
 
 export default function PowerElectronicsPage() {
   return (

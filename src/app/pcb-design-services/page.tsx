@@ -9,7 +9,8 @@ import { WhySection } from "@/components/services-cmp/WhySection";
 import { PCB_INDUSTRIES } from "@/store/pcb-industries";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import type { ServiceCaseStudy } from "@/data/service-case-studies";
-import { servicePageCaseStudies } from "@/store/case-studies";
+import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
+import { pcbV2ServiceCaseStudy } from "@/store/pcb-case-studies-v2/service-cards";
 
 export const metadata = buildMetadata({
   title: "PCB Design Services | High-Speed, RF & SI/PI | Qmax Systems",
@@ -504,7 +505,36 @@ const FAQ_ITEMS = [
   },
 ];
 
-const pcbCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
+function pcbServiceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = pcbCaseStudiesData.find((c) => c.id === id);
+    const image = study?.images[0];
+    if (!study || !image) {
+      throw new Error(`PCB case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "development",
+      summary,
+      imageRotation: study.rotatedImages?.[0],
+    };
+  });
+}
+
+const pcbCaseStudies: ServiceCaseStudy[] = [
+  ...pcbServiceCaseStudies(["pcie-gen5-cpo-board"]),
+  pcbV2ServiceCaseStudy("terabit-switch-fabric-board"),
+  ...pcbServiceCaseStudies([
+    "digital-stethoscope",
+    "ultra-low-cost-bldc-motor-controller",
+  ]),
+];
 
 export default function HardwareDevelopmentServicesComponentV2() {
   return (

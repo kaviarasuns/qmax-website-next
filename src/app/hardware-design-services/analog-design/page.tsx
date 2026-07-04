@@ -18,8 +18,8 @@ import {
 import {
   allCaseStudiesData,
   getCaseStudyCardImage,
-  servicePageCaseStudies,
 } from "@/store/case-studies";
+import { pcbV2ServiceCaseStudy } from "@/store/pcb-case-studies-v2/service-cards";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { ComplianceStandardsSection } from "@/components/services-cmp/ComplianceStandardSection";
 
@@ -47,7 +47,39 @@ function analogProjectExperienceEntry(
   };
 }
 
-const analogCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
+function serviceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = allCaseStudiesData.find((c) => c.id === id);
+    const image = getCaseStudyCardImage(id);
+    if (!study || !image) {
+      throw new Error(`Case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "hardware",
+      summary,
+      imageRotation: study.rotatedImages?.[study.cardImageIndex ?? 0],
+    };
+  });
+}
+
+const analogCaseStudies: ServiceCaseStudy[] = [
+  {
+    ...pcbV2ServiceCaseStudy("can-fd-industrial-io-controller"),
+    category: "hardware",
+  },
+  ...serviceCaseStudies([
+    "security-system-controller",
+    "robotics-motion-controller",
+    "poe-power-injector",
+  ]),
+];
 
 const projectExperience: ProjectExperienceItem[] = [
   analogProjectExperienceEntry(

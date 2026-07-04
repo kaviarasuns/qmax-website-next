@@ -16,7 +16,6 @@ import {
 import {
   allCaseStudiesData,
   getCaseStudyCardImage,
-  servicePageCaseStudies,
 } from "@/store/case-studies";
 
 function highSpeedProjectExperienceEntry(
@@ -43,7 +42,34 @@ function highSpeedProjectExperienceEntry(
   };
 }
 
-const highSpeedCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
+function serviceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = allCaseStudiesData.find((c) => c.id === id);
+    const image = getCaseStudyCardImage(id);
+    if (!study || !image) {
+      throw new Error(`Case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "hardware",
+      summary,
+      imageRotation: study.rotatedImages?.[study.cardImageIndex ?? 0],
+    };
+  });
+}
+
+const highSpeedCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
+  "industrial-iot-gateway-with-poe",
+  "microscopic-camera-control",
+  "high-speed-analog-board",
+  "smart-obd2",
+]);
 
 const projectExperience: ProjectExperienceItem[] = [
   highSpeedProjectExperienceEntry(

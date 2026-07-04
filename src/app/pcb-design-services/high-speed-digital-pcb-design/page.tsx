@@ -11,7 +11,7 @@ import {
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { getCaseStudyCardImage, servicePageCaseStudies } from "@/store/case-studies";
+import { getCaseStudyCardImage } from "@/store/case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 
 export const metadata = buildMetadata({
@@ -21,7 +21,14 @@ export const metadata = buildMetadata({
   path: "/pcb-design-services/high-speed-digital-pcb-design",
 });
 
-const pcbCaseStudies = servicePageCaseStudies;
+const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
+  title: caseStudy.title,
+  image: caseStudy.images[0],
+  link: `/case-studies/${caseStudy.id}`,
+  category: "development",
+  summary: caseStudy.summary,
+  imageRotation: caseStudy.rotatedImages?.[0],
+}));
 
 function pcbProjectExperienceEntry(
   id: string,

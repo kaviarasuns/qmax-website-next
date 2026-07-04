@@ -18,7 +18,6 @@ import {
 import {
   allCaseStudiesData,
   getCaseStudyCardImage,
-  servicePageCaseStudies,
 } from "@/store/case-studies";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 
@@ -46,7 +45,34 @@ function rfMicrowaveProjectExperienceEntry(
   };
 }
 
-const rfCaseStudies: ServiceCaseStudy[] = servicePageCaseStudies;
+function serviceCaseStudies(ids: string[]): ServiceCaseStudy[] {
+  return ids.map((id) => {
+    const study = allCaseStudiesData.find((c) => c.id === id);
+    const image = getCaseStudyCardImage(id);
+    if (!study || !image) {
+      throw new Error(`Case study missing or has no image: ${id}`);
+    }
+    const sentenceMatch = study.summary.match(/^[\s\S]*?[.!?](?=\s|$)/);
+    const first = (sentenceMatch ? sentenceMatch[0] : study.summary).trim();
+    const summary =
+      first.length > 200 ? `${first.slice(0, 197).trimEnd()}…` : first;
+    return {
+      title: study.title,
+      image,
+      link: `/case-studies/${study.id}`,
+      category: "hardware",
+      summary,
+      imageRotation: study.rotatedImages?.[study.cardImageIndex ?? 0],
+    };
+  });
+}
+
+const rfCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
+  "wifi6-triband-router",
+  "ultra-low-power-ble-mouse",
+  "capserve",
+  "smart-obd2",
+]);
 
 const projectExperience: ProjectExperienceItem[] = [
   rfMicrowaveProjectExperienceEntry(

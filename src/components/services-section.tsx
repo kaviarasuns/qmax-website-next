@@ -20,7 +20,7 @@ type CarouselItem = {
 };
 
 const fullProductDevelopmentCarouselItems: CarouselItem[] =
-  fullProductDevelopmentCaseStudiesData.map((study, index) => ({
+  fullProductDevelopmentCaseStudiesData.slice(0, 6).map((study, index) => ({
     id: index + 1,
     image: getFullProductDevelopmentCardImage(study),
     title: study.title,
