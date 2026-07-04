@@ -23,6 +23,7 @@ import {
   fullProductDevelopmentCaseStudiesData,
   getFullProductDevelopmentCardImage,
 } from "@/store/full-product-development-case-studies";
+import { pcbV2ServiceCaseStudy } from "@/store/pcb-case-studies-v2/service-cards";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { ComplianceStandardsSection } from "@/components/services-cmp/ComplianceStandardSection";
 
@@ -91,12 +92,14 @@ function serviceCaseStudies(ids: string[]): ServiceCaseStudy[] {
   });
 }
 
-const analogCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
-  "multi-io-card-for-ate",
-  "security-system-controller",
-  "robotics-motion-controller",
-  "poe-power-injector",
-]);
+const analogCaseStudies: ServiceCaseStudy[] = [
+  { ...pcbV2ServiceCaseStudy("can-fd-industrial-io-controller"), category: "hardware" },
+  ...serviceCaseStudies([
+    "security-system-controller",
+    "robotics-motion-controller",
+    "poe-power-injector",
+  ]),
+];
 
 const projectExperience: ProjectExperienceItem[] = [
   analogProjectExperienceEntry(
