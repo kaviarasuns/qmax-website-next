@@ -74,9 +74,25 @@ const toCaseStudyListItem = (
   };
 };
 
-export const embeddedCaseStudies = embeddedCaseStudiesData.map(
-  (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "development"),
-);
+const embeddedSectionFullProductDevelopmentStudies =
+  fullProductDevelopmentCaseStudiesData.filter(
+    (study) => study.section === "embedded",
+  );
+
+export const embeddedCaseStudies: CaseStudyListItem[] = [
+  ...embeddedCaseStudiesData.map((caseStudy, index) =>
+    toCaseStudyListItem(caseStudy, index, "development"),
+  ),
+  ...embeddedSectionFullProductDevelopmentStudies.map((study, index) => ({
+    id: embeddedCaseStudiesData.length + index + 1,
+    title: study.title,
+    image: getFullProductDevelopmentCardImage(study),
+    link: `/case-studies/${study.slug}`,
+    category: "development",
+    summary: study.listingSummary,
+    cardImageZoom: study.cardImageZoom,
+  })),
+];
 
 const pcbSectionFullProductDevelopmentStudies =
   fullProductDevelopmentCaseStudiesData.filter(
@@ -112,7 +128,7 @@ export const engineeringSupportCaseStudies = engineeringSupportCaseStudiesData.m
 
 export const fullProductDevelopmentCaseStudies: CaseStudyListItem[] =
   fullProductDevelopmentCaseStudiesData
-    .filter((study) => study.section !== "pcb")
+    .filter((study) => study.section !== "pcb" && study.section !== "embedded")
     .map((study, index) => ({
       id: index + 1,
       title: study.title,
