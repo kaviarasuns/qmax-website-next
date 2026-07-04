@@ -8,10 +8,14 @@ import SectionHeading from "./section-heading";
 import { SUPPLIER_COUNTRIES } from "./suppliers-data";
 
 type RegisterSectionProps = {
-  /** Categories the visitor selected above, shown as read-only chips. */
+  /** Categories the visitor selected above, shown as removable chips. */
   categories: string[];
   /** Markets the visitor selected above; the first one pre-fills the form. */
   markets: string[];
+  /** Deselects a category, keeping the grid above in sync. */
+  onRemoveCategory: (name: string) => void;
+  /** Deselects a market, keeping the grid above in sync. */
+  onRemoveMarket: (name: string) => void;
 };
 
 const REQUIRED_FIELDS = ["name", "company", "email"] as const;
@@ -23,7 +27,15 @@ const INPUT_CLASS =
 const LABEL_CLASS =
   "mb-[7px] block text-xs font-medium uppercase tracking-[0.16em] text-white/50";
 
-function Chips({ items, emptyText }: { items: string[]; emptyText: string }) {
+function Chips({
+  items,
+  emptyText,
+  onRemove,
+}: {
+  items: string[];
+  emptyText: string;
+  onRemove: (item: string) => void;
+}) {
   if (items.length === 0) {
     return (
       <span className="self-center text-base text-white/20">{emptyText}</span>
@@ -32,12 +44,21 @@ function Chips({ items, emptyText }: { items: string[]; emptyText: string }) {
   return (
     <>
       {items.map((item) => (
-        <span
+        <button
           key={item}
-          className="rounded-full border border-red-500/35 bg-red-500/25 px-2.5 py-[3px] text-base font-normal tracking-wide text-white/80"
+          type="button"
+          onClick={() => onRemove(item)}
+          aria-label={`Remove ${item}`}
+          className="group inline-flex items-center gap-1.5 rounded-full border border-red-500/35 bg-red-500/25 px-2.5 py-[3px] text-base font-normal tracking-wide text-white/80 transition-colors duration-200 hover:border-red-500/60 hover:bg-red-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
         >
           {item}
-        </span>
+          <span
+            aria-hidden="true"
+            className="text-sm leading-none text-white/45 transition-colors duration-200 group-hover:text-white"
+          >
+            ✕
+          </span>
+        </button>
       ))}
     </>
   );
@@ -48,6 +69,8 @@ function Chips({ items, emptyText }: { items: string[]; emptyText: string }) {
 export default function RegisterSection({
   categories,
   markets,
+  onRemoveCategory,
+  onRemoveMarket,
 }: RegisterSectionProps) {
   const [form, setForm] = useState({
     name: "",
@@ -124,6 +147,7 @@ export default function RegisterSection({
                 <Chips
                   items={categories}
                   emptyText="Select categories above to see them here."
+                  onRemove={onRemoveCategory}
                 />
               </div>
 
@@ -134,6 +158,7 @@ export default function RegisterSection({
                 <Chips
                   items={markets}
                   emptyText="Select markets above to see them here."
+                  onRemove={onRemoveMarket}
                 />
               </div>
 

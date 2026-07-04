@@ -36,6 +36,8 @@ export default function SupplierPortal() {
       <RegisterSection
         categories={[...categories]}
         markets={[...markets]}
+        onRemoveCategory={toggle(setCategories)}
+        onRemoveMarket={toggle(setMarkets)}
       />
     </>
   );

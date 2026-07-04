@@ -1,7 +1,7 @@
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
 const smartLubricationControllerImages = [
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/5.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/Luber_V2.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/1.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/2.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/LUBER/3.png",

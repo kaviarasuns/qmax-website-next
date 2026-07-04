@@ -9,6 +9,8 @@ export type SupplierCategory = {
 
 export type SupplierMarket = {
   name: string;
+  // ISO 3166-1 alpha-2 code matching an SVG in public/flags/. Emoji flags
+  // are not rendered on Windows, so flags ship as bundled images instead.
   flag: string;
 };
 
@@ -66,14 +68,14 @@ export const SUPPLIER_CATEGORIES: SupplierCategory[] = [
 ];
 
 export const SUPPLIER_MARKETS: SupplierMarket[] = [
-  { name: "USA", flag: "🇺🇸" },
-  { name: "China", flag: "🇨🇳" },
-  { name: "Taiwan", flag: "🇹🇼" },
-  { name: "Germany", flag: "🇩🇪" },
-  { name: "Korea", flag: "🇰🇷" },
-  { name: "Japan", flag: "🇯🇵" },
-  { name: "France", flag: "🇫🇷" },
-  { name: "India", flag: "🇮🇳" },
+  { name: "USA", flag: "us" },
+  { name: "China", flag: "cn" },
+  { name: "Taiwan", flag: "tw" },
+  { name: "Germany", flag: "de" },
+  { name: "Korea", flag: "kr" },
+  { name: "Japan", flag: "jp" },
+  { name: "France", flag: "fr" },
+  { name: "India", flag: "in" },
 ];
 
 // Countries offered in the "Primary Market" form dropdown. Mirrors the

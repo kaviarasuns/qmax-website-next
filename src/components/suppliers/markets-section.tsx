@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { cn } from "@/lib/utils";
 
 import SectionHeading from "./section-heading";
@@ -45,9 +47,13 @@ export default function MarketsSection({
                     : "border-border bg-white hover:-translate-y-0.5 hover:border-foreground hover:shadow-[0_8px_20px_rgba(0,0,0,0.07)]",
                 )}
               >
-                <span className="mb-2 block text-2xl leading-none">
-                  {market.flag}
-                </span>
+                <Image
+                  src={`/flags/${market.flag}.svg`}
+                  alt=""
+                  width={28}
+                  height={21}
+                  className="mx-auto mb-2 rounded-[3px] border border-black/10"
+                />
                 <span className="block text-base font-medium tracking-wide text-foreground">
                   {market.name}
                 </span>

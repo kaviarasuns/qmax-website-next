@@ -50,10 +50,10 @@ export default function CategoriesSection({
                   <span
                     aria-hidden="true"
                     className={cn(
-                      "absolute right-3.5 top-3.5 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white transition-all duration-200",
+                      "absolute right-3.5 top-3.5 flex h-5 w-5 items-center justify-center rounded-full text-xs font-bold transition-all duration-200",
                       isSelected
-                        ? "scale-100 opacity-100"
-                        : "scale-50 opacity-0",
+                        ? "bg-red-500 text-white"
+                        : "border border-border bg-white text-muted-foreground/60",
                     )}
                   >
                     ✓
