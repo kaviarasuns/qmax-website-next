@@ -1,9 +1,4 @@
-import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
-
-const obdIiDiagnosticsDeviceImages =
-  embeddedCaseStudiesData.find((study) => study.id === "smart-obd2")?.images ??
-  [];
 
 export const obdIiDiagnosticsDeviceCaseStudy: FullProductDevelopmentCaseStudy =
   {
@@ -46,8 +41,20 @@ export const obdIiDiagnosticsDeviceCaseStudy: FullProductDevelopmentCaseStudy =
       { id: "specs", num: "08", label: "Technical Specifications" },
       { id: "summary", num: "09", label: "Summary" },
     ],
-    images: obdIiDiagnosticsDeviceImages,
-    cardImageIndex: 10,
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/connected_on_board_diagnostic_device/Picture8.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/connected_on_board_diagnostic_device/Picture9.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/4.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/5.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/6.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/7.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/8.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/9.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/10.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/2.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/3.png",
+    ],
     overview: [
       "A leading Automotive Retail Cloud (ARC) platform provider based in the USA engaged Qmax Systems India Pvt Ltd to design and manufacture a next-generation handheld OBD-II diagnostics device — the OBD-II Diagnostics Device. The device was purpose-built for deployment in automotive dealership service lanes across North America, enabling service advisors and technicians to instantly access vehicle data the moment a car arrives.",
       "Qmax delivered the complete product — from initial concept and industrial design through hardware, firmware, PCB design, compliance certifications, mass production, and direct shipment to the USA. Thousands of units were produced and deployed across the client's dealership network across North America, making this a flagship end-to-end product development engagement.",

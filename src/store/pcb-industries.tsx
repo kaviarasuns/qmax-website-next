@@ -1,5 +1,5 @@
 import { PCBIndustry } from "@/components/services-cmp/PCBIndustriesSection";
-import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
+import { advancedModularMedicalSimulatorCaseStudy } from "@/store/embedded-case-studies-v2/advanced-modular-medical-simulator";
 import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
 import { fortyPort10gbeCoreRouterLineCardCaseStudy } from "@/store/pcb-case-studies-v2/40-port-10gbe-core-router-line-card";
 import { highDensityPcbDesignAiGpuChassisMotherboardCaseStudy } from "@/store/pcb-case-studies-v2/high-density-pcb-design-ai-gpu-chassis-motherboard";

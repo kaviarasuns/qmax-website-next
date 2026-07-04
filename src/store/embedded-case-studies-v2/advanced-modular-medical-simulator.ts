@@ -2,21 +2,30 @@ import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
 const advancedModularMedicalSimulatorImages = [
-  ...[
-    "poe-control-unit",
-    "poe-power-injector",
-    "industrial-poe-switch",
-  ].flatMap(
-    (id) =>
-      embeddedCaseStudiesData.find((study) => study.id === id)?.images ?? [],
-  ),
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/advanced-modular-medical-simulator/7.png",
+
+  "/case-studies/POE/1.png",
+  "/case-studies/POE/2.png",
+  "/case-studies/POE/1.1.svg",
+  "/case-studies/POE/1.2.svg",
+  "/case-studies/POE/1.3.svg",
+
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/poe_power_injector/3.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/poe_power_injector/4.png",
+  "/case-studies/POE/2.1.svg",
+  "/case-studies/POE/2.2.svg",
+
+  "/case-studies/POE/5.png",
+  "/case-studies/POE/6.png",
+  "/case-studies/POE/3.1.svg",
+  "/case-studies/POE/3.2.svg",
 ];
 
 export const advancedModularMedicalSimulatorCaseStudy: FullProductDevelopmentCaseStudy =
   {
     id: "advanced-modular-medical-simulator",
     slug: "advanced-modular-medical-simulator",
+    section: "embedded",
     title: "Advanced Modular Medical Simulator — Developer Kit",
     subtitle:
       "Snapdragon 820-Based Embedded Electronics Platform with 9-Port Gigabit Ethernet PoE Backbone for Modular Medical Simulation Training",
@@ -43,7 +52,6 @@ export const advancedModularMedicalSimulatorCaseStudy: FullProductDevelopmentCas
       { id: "summary", num: "09", label: "Summary" },
     ],
     images: advancedModularMedicalSimulatorImages,
-    cardImageIndex: 13,
     overview: [
       "A Minneapolis, MN-based medical simulation company engaged Qmax Systems to design and develop the complete embedded electronics platform for an Advanced Modular Medical Simulator Developer Kit (AMMDK) — the central computing, networking, and power backbone of a next-generation open-standard, interoperable medical training manikin. Qmax delivered the full hardware platform — architecture, PCB design, firmware, Linux/RTOS bring-up, peripheral driver APIs, EVT, DVT, and small-volume production — enabling any third-party developer to build AMM-compatible simulation modules.",
     ],

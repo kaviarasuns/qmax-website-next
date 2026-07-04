@@ -1,9 +1,4 @@
-import { embeddedCaseStudiesData } from "@/store/embedded-case-studies";
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
-
-const canFdIndustrialIoControllerImages =
-  embeddedCaseStudiesData.find((study) => study.id === "multi-io-card-for-ate")
-    ?.images ?? [];
 
 export const canFdIndustrialIoControllerCaseStudy: FullProductDevelopmentCaseStudy =
   {
@@ -46,8 +41,14 @@ export const canFdIndustrialIoControllerCaseStudy: FullProductDevelopmentCaseStu
       { id: "specs", num: "08", label: "Technical Specifications" },
       { id: "summary", num: "09", label: "Summary" },
     ],
-    images: canFdIndustrialIoControllerImages,
-    cardImageIndex: 3,
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/CHARA/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/CHARA/2.1.PNG",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/CHARA/3.1.PNG",
+      "/case-studies/CHARA/CHARA-T_B.svg",
+      "/case-studies/CHARA/CHARA-TB.svg",
+      "/case-studies/CHARA/CHARA-top.svg",
+    ],
     overview: [
       "Qmax Systems designed and delivered a CAN FD-based, high-density Industrial I/O Controller for a customer serving the automotive wiring harness manufacturing industry. The system replaces multiple high-end PLCs and I/O cards with a single, PC-programmable platform capable of testing hundreds of wire-to-wire connections across complex automotive wiring harnesses at production speed.",
       "Qmax owned the complete development lifecycle — architecture, hardware design, firmware, PCB design, prototyping, and full Design Verification Testing (DVT) — carrying the product from customer requirement through to volume manufacturing. The customer has since manufactured and shipped 500+ units to automotive wiring harness manufacturers.",
@@ -131,8 +132,7 @@ export const canFdIndustrialIoControllerCaseStudy: FullProductDevelopmentCaseStu
       },
       {
         title: "ISL81487",
-        description:
-          "RS-485 transceiver for auxiliary serial communication",
+        description: "RS-485 transceiver for auxiliary serial communication",
       },
       {
         title: "AD8221",
@@ -141,8 +141,7 @@ export const canFdIndustrialIoControllerCaseStudy: FullProductDevelopmentCaseStu
       },
       {
         title: "MCP3426",
-        description:
-          "16-bit delta-sigma ADC for analog input conversion",
+        description: "16-bit delta-sigma ADC for analog input conversion",
       },
       {
         title: "TPS4H160",
@@ -156,8 +155,7 @@ export const canFdIndustrialIoControllerCaseStudy: FullProductDevelopmentCaseStu
       },
       {
         title: "AT24C08C",
-        description:
-          "I2C EEPROM for configuration and calibration storage",
+        description: "I2C EEPROM for configuration and calibration storage",
       },
     ],
     interfaces: [
@@ -195,8 +193,7 @@ export const canFdIndustrialIoControllerCaseStudy: FullProductDevelopmentCaseStu
       },
       {
         title: "Status / Indicator",
-        description:
-          "LEDs and buzzer for pass/fail and operational feedback",
+        description: "LEDs and buzzer for pass/fail and operational feedback",
       },
     ],
     firmwareIntro:
@@ -241,8 +238,7 @@ export const canFdIndustrialIoControllerCaseStudy: FullProductDevelopmentCaseStu
     specs: [
       {
         key: "Product Name",
-        value:
-          "CAN FD-Based High-Density Industrial I/O Controller",
+        value: "CAN FD-Based High-Density Industrial I/O Controller",
       },
       {
         key: "Domain / Industry",
@@ -255,8 +251,7 @@ export const canFdIndustrialIoControllerCaseStudy: FullProductDevelopmentCaseStu
       },
       {
         key: "Microcontrollers",
-        value:
-          "5× ST SPC560B50L5C6E0Y automotive-grade MCUs (synchronized)",
+        value: "5× ST SPC560B50L5C6E0Y automotive-grade MCUs (synchronized)",
       },
       {
         key: "Primary Interface",
@@ -314,8 +309,7 @@ export const canFdIndustrialIoControllerCaseStudy: FullProductDevelopmentCaseStu
     listingSummary:
       "CAN FD-based industrial I/O controller with 240 configurable channels, five synchronized automotive MCUs, and PC-programmable harness testing — 500+ units shipped.",
     metadata: {
-      title:
-        "CAN FD Industrial I/O Controller | Case Study",
+      title: "CAN FD Industrial I/O Controller | Case Study",
       description:
         "Full product development case study — CAN FD-based high-density industrial I/O controller with 240 channels and five synchronized MCUs for automotive wiring harness testing.",
     },

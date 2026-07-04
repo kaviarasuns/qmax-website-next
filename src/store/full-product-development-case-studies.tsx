@@ -2,8 +2,7 @@ import {
   type RelatedCaseStudy,
   type RelatedCaseStudyImage,
 } from "@/components/services-cmp/RelatedCaseStudiesCarousel";
-import { advancedModularMedicalSimulatorCaseStudy } from "@/store/full-product-development-case-studies/advanced-modular-medical-simulator";
-import { canFdIndustrialIoControllerCaseStudy } from "@/store/full-product-development-case-studies/can-fd-industrial-io-controller";
+
 import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
 import { fortyPort10gbeCoreRouterLineCardCaseStudy } from "@/store/pcb-case-studies-v2/40-port-10gbe-core-router-line-card";
 import { highCapacityAtcaLineCardCaseStudy } from "@/store/pcb-case-studies-v2/high-capacity-atca-line-card";
@@ -11,12 +10,14 @@ import { highDensityPcbDesignAiGpuChassisMotherboardCaseStudy } from "@/store/pc
 import { highDensityPcbDesignGponOltCaseStudy } from "@/store/pcb-case-studies-v2/high-density-pcb-design-gpon-olt";
 import { multiFapPacketProcessingLineCardCaseStudy } from "@/store/pcb-case-studies-v2/multi-fap-packet-processing-line-card";
 import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
-import { outdoorWifi6AccessPointCaseStudy } from "@/store/full-product-development-case-studies/outdoor-wifi-6-access-point";
+import { outdoorWifi6AccessPointCaseStudy } from "@/store/embedded-case-studies-v2/outdoor-wifi-6-access-point";
 import { terabitSwitchFabricBoardCaseStudy } from "@/store/pcb-case-studies-v2/terabit-switch-fabric-board";
 import { wifi6eCybersecurityGatewayCaseStudy } from "@/store/full-product-development-case-studies/wifi-6e-cybersecurity-gateway";
 import { ruggedAndroidDigitalSignagePlayerCaseStudy } from "./full-product-development-case-studies/rugged-android-digital-signage-player";
-import { evVcuDemoPlatformCaseStudy } from "@/store/full-product-development-case-studies/ev-vcu-demo-platform";
-import { smartLubricationControllerCaseStudy } from "@/store/full-product-development-case-studies/smart-lubrication-controller";
+import { evVcuDemoPlatformCaseStudy } from "@/store/embedded-case-studies-v2/ev-vcu-demo-platform";
+import { smartLubricationControllerCaseStudy } from "@/store/embedded-case-studies-v2/smart-lubrication-controller";
+import { advancedModularMedicalSimulatorCaseStudy } from "@/store/embedded-case-studies-v2/advanced-modular-medical-simulator";
+import { canFdIndustrialIoControllerCaseStudy } from "@/store/embedded-case-studies-v2/can-fd-industrial-io-controller";
 
 export type FullProductDevelopmentNavSection = {
   id: string;
