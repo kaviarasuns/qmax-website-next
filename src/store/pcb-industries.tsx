@@ -62,7 +62,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/automotive.png",
     relatedCaseStudies: [
       toRelatedCaseStudy(obdIiDiagnosticsDeviceCaseStudy, {
-        imageIndices: [0, 1, 2],
+        imageIndices: [0, 9, 10],
       }),
     ],
   },
