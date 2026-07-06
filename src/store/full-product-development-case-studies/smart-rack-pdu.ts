@@ -42,17 +42,24 @@ export const smartRackPduCaseStudy: FullProductDevelopmentCaseStudy = {
   ],
   images: [
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/V1/PDU3_VAR1_1.png",
-    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/V1/PDU3_VAR1_2.png",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/V2/PDU3_VAR2_1_.png",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/V3/PDU3_VAR3_1.png",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/V4/PDU3_VAR_4_C13__1.png",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/V5/PDU3_VAR5_C13_C19_1.png",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/V6/PDU3_VAR6_C13_C19_1.png",
+
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/product_picture_power_board/PW%20Board.png",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout _power_board/POWER BOARD_TOP.svg",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout _power_board/POWER BOARD_TB.svg",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout _power_board/POWER BOARD_BOT.svg",
+
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/product_picture_processor_board/PR_TOP.png",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout_processor_board/PDU_Processor board_TOP.svg",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout_processor_board/PDU_Processor board_BOT.svg",
 
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/product_%20pictures_meter_board/Meter%20Board.png",
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout_meter_board/RACK_PDU_TOP.svg",
-    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/product_picture_power_board/PW%20Board.png",
-    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout%20_power_board/POWER%20BOARD_TOP.svg",
-    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout_processor_board/PDU_Processor%20board_TOP.svg",
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout_meter_board/RACK_PDU_TB.svg",
-    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout%20_power_board/POWER%20BOARD_TB.svg",
-    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout%20_power_board/POWER%20BOARD_BOT.svg",
-    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout_processor_board/PDU_Processor%20board_BOT.svg",
   ],
   overview: [
     "A data center infrastructure provider in the United States approached Qmax Systems to design and manufacture an intelligent, high-power rack Power Distribution Unit (PDU) for deployment across its data center facilities. The unit needed to deliver reliable 3-phase power to 30 individually metered and switched outlets while providing remote monitoring and control from the data center's central management system.",

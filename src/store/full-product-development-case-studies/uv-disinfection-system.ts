@@ -48,6 +48,11 @@ export const uvDisinfectionSystemCaseStudy: FullProductDevelopmentCaseStudy = {
     "/case-studies/mechanicalCaseStudies/1/MYNATEK_RENDER_9_BOTTOM_ISO_1.png",
     "/case-studies/mechanicalCaseStudies/1/MYNATEK_RENDER_9_LEFT.png",
     "/case-studies/mechanicalCaseStudies/1/MYNATEK_RENDER_9_RIGHT.png",
+
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/uv-disinfection-system/1.1.png",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/uv-disinfection-system/1.2.png",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/uv-disinfection-system/BLUE_MORPH_UV_CONTROLLER_BOT.svg",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/uv-disinfection-system/BLUE_MORPH_UV_CONTROLLER_TOP.svg",
   ],
   cardImageIndex: 0,
   overview: [
@@ -288,7 +293,8 @@ export const uvDisinfectionSystemCaseStudy: FullProductDevelopmentCaseStudy = {
     },
     {
       key: "UV Source",
-      value: "3× 222 nm UV-C arc lamps, 12 W each — occupied-space safe wavelength",
+      value:
+        "3× 222 nm UV-C arc lamps, 12 W each — occupied-space safe wavelength",
     },
     {
       key: "AI Compute",
