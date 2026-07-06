@@ -296,7 +296,7 @@ const projectExperience: ProjectExperienceItem[] = [
   projectExperienceEntry(
     "mixed-signal-design",
     "Mixed-Signal PCB Design",
-    "high-speed-analog-mux",
+    "industrial-defect-monitoring-system",
     {
       description:
         "Mixed-signal PCB layout for a cold-storage IoT monitoring board, partitioning the ESP32 digital and radio sections from the analog sensor chain - four NTC temperature inputs, dual pressure interfaces, and 12-/16-bit ADC acquisition - with dedicated ground references for low-noise capture.",
