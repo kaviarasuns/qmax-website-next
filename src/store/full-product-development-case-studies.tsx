@@ -14,10 +14,14 @@ import { outdoorWifi6AccessPointCaseStudy } from "@/store/embedded-case-studies-
 import { terabitSwitchFabricBoardCaseStudy } from "@/store/pcb-case-studies-v2/terabit-switch-fabric-board";
 import { wifi6eCybersecurityGatewayCaseStudy } from "@/store/full-product-development-case-studies/wifi-6e-cybersecurity-gateway";
 import { ruggedAndroidDigitalSignagePlayerCaseStudy } from "./full-product-development-case-studies/rugged-android-digital-signage-player";
+import { smartRackPduCaseStudy } from "@/store/full-product-development-case-studies/smart-rack-pdu";
+import { uvDisinfectionSystemCaseStudy } from "@/store/full-product-development-case-studies/uv-disinfection-system";
 import { evVcuDemoPlatformCaseStudy } from "@/store/embedded-case-studies-v2/ev-vcu-demo-platform";
 import { smartLubricationControllerCaseStudy } from "@/store/embedded-case-studies-v2/smart-lubrication-controller";
 import { advancedModularMedicalSimulatorCaseStudy } from "@/store/embedded-case-studies-v2/advanced-modular-medical-simulator";
 import { canFdIndustrialIoControllerCaseStudy } from "@/store/embedded-case-studies-v2/can-fd-industrial-io-controller";
+import { ultraLowPowerBluetoothMouseCaseStudy } from "@/store/embedded-case-studies-v2/ultra-low-power-bluetooth-mouse";
+import { thirtyTwoChannelUltraLowNoiseDaqCaseStudy } from "@/store/embedded-case-studies-v2/32-channel-ultra-low-noise-daq";
 
 export type FullProductDevelopmentNavSection = {
   id: string;
@@ -93,6 +97,10 @@ export const fullProductDevelopmentCaseStudiesData: FullProductDevelopmentCaseSt
     terabitSwitchFabricBoardCaseStudy,
     fortyPort10gbeCoreRouterLineCardCaseStudy,
     multiFapPacketProcessingLineCardCaseStudy,
+    smartRackPduCaseStudy,
+    ultraLowPowerBluetoothMouseCaseStudy,
+    thirtyTwoChannelUltraLowNoiseDaqCaseStudy,
+    uvDisinfectionSystemCaseStudy,
   ];
 
 export function getFullProductDevelopmentCaseStudy(
