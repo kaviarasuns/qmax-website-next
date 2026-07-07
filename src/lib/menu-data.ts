@@ -46,7 +46,7 @@ export const menuData: MenuItem[] = [
       {
         title: "PCB Design Services",
         href: "/pcb-design-services",
-        image: "https://d1yetprhniwywz.cloudfront.net/v2/navigation/pd.png",
+        image: "https://d1yetprhniwywz.cloudfront.net/v2/navigation/pcb_v2.png",
         description: "Professional PCB layout and design services",
         children: [
           {
@@ -82,7 +82,8 @@ export const menuData: MenuItem[] = [
       {
         title: "Embedded Design Services",
         href: "/embedded-design-services",
-        image: "https://d1yetprhniwywz.cloudfront.net/v2/navigation/ed.png",
+        image:
+          "https://d1yetprhniwywz.cloudfront.net/v2/navigation/embedded_v2.png",
         description: "Custom embedded system design and development solutions",
       },
       {
