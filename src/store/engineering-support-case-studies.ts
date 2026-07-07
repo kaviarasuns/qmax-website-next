@@ -144,4 +144,49 @@ export const engineeringSupportCaseStudiesData: CaseStudy[] = [
       "Production Validation",
     ],
   },
+
+  {
+    id: "multi-disciplinary-engineering-support",
+    title: "Multi-Disciplinary Engineering Support",
+    category: "Engineering Support Services",
+    images: [
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/engineering_support_services/multi_disciplinary_engineering_support/DSC_2078.JPG",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/engineering_support_services/multi_disciplinary_engineering_support/DSC_2080.JPG",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/engineering_support_services/multi_disciplinary_engineering_support/DSC_2083.JPG",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/engineering_support_services/multi_disciplinary_engineering_support/DSC_2110.JPG",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/engineering_support_services/multi_disciplinary_engineering_support/DSC_2115.JPG",
+    ],
+    rotatedImages: {},
+    features: [
+      "Cross-functional engineering expertise",
+      "Hardware and mechanical system integration",
+      "Product development lifecycle support",
+      "Prototype development and validation",
+      "Engineering analysis and optimization",
+      "Production and deployment assistance",
+    ],
+    summary:
+      "Multi-disciplinary engineering support services bringing together expertise across hardware, embedded systems, mechanical design, and product development to solve complex engineering challenges.",
+    importantParts: [
+      "Cross-functional engineering teams",
+      "Prototype development workflows",
+      "System integration processes",
+      "Engineering validation activities",
+      "Testing and analysis infrastructure",
+      "Production support processes",
+    ],
+    salientFeatures: [
+      "Integrated multi-disciplinary engineering expertise",
+      "End-to-end product development support",
+      "Collaborative system-level problem solving",
+      "Scalable engineering resources and capabilities",
+    ],
+    scopeOfWork: [
+      "Engineering Consulting",
+      "System Integration",
+      "Prototype Development",
+      "Testing and Validation",
+      "Production Support",
+    ],
+  },
 ];
