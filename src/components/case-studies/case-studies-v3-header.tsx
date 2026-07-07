@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { CaseStudyCarousel } from "@/components/case-study-carousel";
 import { MONO } from "@/components/case-studies/case-study-v2-shared";
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
@@ -20,6 +20,78 @@ export function CaseStudyV3Header({
 }: HeaderProps) {
   const [ribbonLit, setRibbonLit] = useState(false);
   const ribbonRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLDivElement>(null);
+  const metaTagsRef = useRef<HTMLDivElement>(null);
+
+  // Shrink fonts to fit: title within 3 lines, subtitle and meta tags
+  // within 2 lines each.
+  useLayoutEffect(() => {
+    // Line count for flowing text.
+    const countTextLines = (el: HTMLElement) =>
+      Math.round(el.scrollHeight / parseFloat(getComputedStyle(el).lineHeight));
+    // Row count for a flex-wrap container: distinct child top offsets.
+    const countWrapRows = (el: HTMLElement) =>
+      new Set(
+        [...el.children].map((child) =>
+          Math.round(child.getBoundingClientRect().top),
+        ),
+      ).size;
+
+    const targets = [
+      { el: titleRef.current, maxLines: 3, minFontPx: 22, count: countTextLines },
+      { el: subtitleRef.current, maxLines: 2, minFontPx: 14, count: countTextLines },
+      { el: metaTagsRef.current, maxLines: 2, minFontPx: 9, count: countWrapRows },
+    ].filter(
+      (
+        t,
+      ): t is {
+        el: HTMLElement;
+        maxLines: number;
+        minFontPx: number;
+        count: (el: HTMLElement) => number;
+      } => t.el !== null,
+    );
+    if (targets.length === 0) return;
+
+    const fitToMaxLines = (
+      el: HTMLElement,
+      maxLines: number,
+      minFontPx: number,
+      count: (el: HTMLElement) => number,
+    ) => {
+      el.style.fontSize = "";
+      el.style.maxWidth = "";
+      const initial = getComputedStyle(el);
+      let size = parseFloat(initial.fontSize);
+      // Pin any ch-based max-width at its default-font pixel value, so
+      // shrinking the font actually fits more characters per line.
+      if (initial.maxWidth !== "none") {
+        el.style.maxWidth = initial.maxWidth;
+      }
+      for (let i = 0; i < 8; i++) {
+        if (count(el) <= maxLines || size <= minFontPx) break;
+        size = Math.max(size * 0.92, minFontPx);
+        el.style.fontSize = `${size}px`;
+      }
+      if (!el.style.fontSize) el.style.maxWidth = "";
+    };
+
+    const fitAll = () =>
+      targets.forEach(({ el, maxLines, minFontPx, count }) =>
+        fitToMaxLines(el, maxLines, minFontPx, count),
+      );
+
+    fitAll();
+    const observer = new ResizeObserver(fitAll);
+    targets.forEach(({ el }) => {
+      observer.observe(el);
+      // The pinned max-width can keep the element's own box static while
+      // the column resizes, so watch the column too.
+      if (el.parentElement) observer.observe(el.parentElement);
+    });
+    return () => observer.disconnect();
+  }, [title, subtitle, metaTags]);
 
   useEffect(() => {
     const ribbon = ribbonRef.current;
@@ -41,7 +113,7 @@ export function CaseStudyV3Header({
 
   return (
     <header className="relative bg-[#f5f7fa] text-foreground overflow-hidden pt-[6rem] px-6 pb-[3.4rem]">
-      <div className="relative max-w-[1200px] mx-auto grid grid-cols-[1.18fr_0.82fr] gap-[2.8rem] items-stretch max-[920px]:grid-cols-1 max-[920px]:gap-8 max-[920px]:items-start">
+      <div className="relative max-w-[1260px] mx-auto grid grid-cols-[1.05fr_0.95fr] gap-[2.4rem] items-stretch max-[920px]:grid-cols-1 max-[920px]:gap-8 max-[920px]:items-start">
         <div className="min-w-0 flex flex-col justify-start">
           <CaseStudyCarousel
             images={images}
@@ -56,15 +128,22 @@ export function CaseStudyV3Header({
           >
             CASE STUDY
           </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-foreground my-[0.6rem] font-medium tracking-[0.005em] leading-[1.1]">
+          <h1
+            ref={titleRef}
+            className="text-3xl md:text-4xl lg:text-5xl text-foreground my-[0.6rem] font-medium tracking-[0.005em] leading-[1.1]"
+          >
             {title}
           </h1>
           {subtitle ? (
-            <div className="text-foreground text-lg md:text-xl font-light max-w-[46ch]">
+            <div
+              ref={subtitleRef}
+              className="text-foreground text-lg md:text-xl font-light max-w-[46ch]"
+            >
               {subtitle}
             </div>
           ) : null}
           <div
+            ref={metaTagsRef}
             className={`${MONO} text-xs tracking-[0.12em] text-foreground mt-[1.3rem] flex flex-wrap gap-y-[0.4rem] gap-x-[1.1rem]`}
           >
             {metaTags.map((tag) => (

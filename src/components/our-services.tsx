@@ -98,18 +98,15 @@ export default function OurServices() {
                 aria-label={`Learn more about ${service.title}`}
                 className="group relative flex flex-col bg-[#f3f4f6] border border-black/[0.06] rounded-2xl p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all duration-300 hover:bg-white hover:border-transparent hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
               >
-                {/* Header: icon + title/blurb + arrow */}
+                {/* Header: icon + title + arrow */}
                 <div className="flex items-start gap-3">
                   <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-black text-white transition-colors duration-300 group-hover:bg-red-500 flex-shrink-0">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <div className="flex-1 min-w-0 min-h-[4.75rem]">
-                    <h3 className="text-lg md:text-xl font-semibold  leading-tight">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg md:text-xl font-semibold leading-tight text-red-500">
                       {service.title}
                     </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                      {service.blurb}
-                    </p>
                   </div>
                   <span
                     aria-hidden="true"

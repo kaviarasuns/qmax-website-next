@@ -1,11 +1,11 @@
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
 const ultraLowPowerBluetoothMouseImages = [
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/MOUSE_BOARD_BL2.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/MOUSE_BOARD_TL1.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/1.3.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/1.1.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/1.2.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/1.3.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/MOUSE_BOARD_BL2.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/bluetooth_mouse/MOUSE_BOARD_TL1.png",
 ];
 
 export const ultraLowPowerBluetoothMouseCaseStudy: FullProductDevelopmentCaseStudy =
@@ -14,7 +14,7 @@ export const ultraLowPowerBluetoothMouseCaseStudy: FullProductDevelopmentCaseStu
     slug: "ultra-low-power-bluetooth-mouse",
     section: "embedded",
     title: "Ultra-Low-Power Bluetooth Mouse Reference Design Platform",
-    subtitle: "Embedded Systems Case Study",
+    // subtitle: "Embedded Systems Case Study",
     metaTags: [
       "Domain: Consumer Electronics",
       "Industry: Semiconductor Reference Design",
@@ -51,7 +51,7 @@ export const ultraLowPowerBluetoothMouseCaseStudy: FullProductDevelopmentCaseStu
     ],
     images: ultraLowPowerBluetoothMouseImages,
     cardImageIndex: 3,
-    enlargedImages: { 2: 1.4, 3: 1.3, 4: 1.3 },
+    enlargedImages: { 0: 1.4, 1: 1.3, 2: 1.3 },
     overview: [
       "Atmosic, a fabless semiconductor company pioneering ultra-low-power wireless SoCs, engaged Qmax Systems to develop a complete Bluetooth mouse reference design platform showcasing its BLE 5 silicon. Qmax delivered the full reference design — system architecture, hardware design, firmware, PCB design, prototype manufacturing, and full Design Verification Testing (DVT) — creating a production-ready HID mouse platform that Atmosic and its customers could take directly into high-volume consumer products.",
       "The result demonstrated roughly 100× lower power consumption than contemporary wireless mice, translating to multi-year operation from a pair of AAA batteries.",

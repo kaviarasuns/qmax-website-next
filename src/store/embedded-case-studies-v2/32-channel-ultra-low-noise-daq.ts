@@ -12,7 +12,7 @@ export const thirtyTwoChannelUltraLowNoiseDaqCaseStudy: FullProductDevelopmentCa
     slug: "32-channel-ultra-low-noise-daq",
     section: "embedded",
     title: "32-Channel Ultra-Low-Noise Data Acquisition System",
-    subtitle: "Embedded Systems Case Study",
+    // subtitle: "Embedded Systems Case Study",
     metaTags: [
       "Domain: Aerospace & Defence",
       "Industry: Structural Health Monitoring",
@@ -233,11 +233,13 @@ export const thirtyTwoChannelUltraLowNoiseDaqCaseStudy: FullProductDevelopmentCa
       },
       {
         key: "Resolution & Rate",
-        value: "16-bit at 30 KSPS per channel — parallel capture across all 32 channels",
+        value:
+          "16-bit at 30 KSPS per channel — parallel capture across all 32 channels",
       },
       {
         key: "SNR",
-        value: "90 dB signal-to-noise ratio with precision anti-aliasing and low-pass filter front-end",
+        value:
+          "90 dB signal-to-noise ratio with precision anti-aliasing and low-pass filter front-end",
       },
       {
         key: "Processor",
@@ -256,15 +258,18 @@ export const thirtyTwoChannelUltraLowNoiseDaqCaseStudy: FullProductDevelopmentCa
       },
       {
         key: "Sensor Interface",
-        value: "32× analog inputs via DB37 — piezoelectric sensors on aircraft structures",
+        value:
+          "32× analog inputs via DB37 — piezoelectric sensors on aircraft structures",
       },
       {
         key: "Analog Power",
-        value: "±15 V, +5 V analog, 3.3 V digital — precision reference and multi-rail distribution",
+        value:
+          "±15 V, +5 V analog, 3.3 V digital — precision reference and multi-rail distribution",
       },
       {
         key: "PCB — Layer Count",
-        value: "8 layers — mixed-signal with dedicated analog/digital ground and power planes",
+        value:
+          "8 layers — mixed-signal with dedicated analog/digital ground and power planes",
       },
       {
         key: "PCB — Thickness",
