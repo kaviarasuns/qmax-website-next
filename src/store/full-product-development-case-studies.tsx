@@ -58,6 +58,8 @@ export type FullProductDevelopmentCaseStudy = {
   cardImageIndex?: number;
   /** Scale multiplier applied to the listing-card thumbnail (e.g. 1.3 enlarges by 30%) */
   cardImageZoom?: number;
+  /** Map of zero-based image index to rotation in degrees applied before display (e.g. { 0: 90, 2: 180 }) */
+  rotatedImages?: Record<number, number>;
   /** Map of zero-based image index to scale multiplier for the header carousel (e.g. { 5: 1.3 }) */
   enlargedImages?: Record<number, number>;
   overview: string[];

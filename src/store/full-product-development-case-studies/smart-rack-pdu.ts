@@ -6,6 +6,22 @@ export const smartRackPduCaseStudy: FullProductDevelopmentCaseStudy = {
   title:
     "High Power Intelligent Power Distribution Unit (PDU) for AI Data Centers",
   subtitle: "Full Product Development — Concept to Volume Production",
+  rotatedImages: {
+    0: -45,
+    1: -45,
+    2: -45,
+    3: -45,
+    4: -45,
+    5: -45,
+  },
+  enlargedImages: {
+    0: 1.6,
+    1: 1.6,
+    2: 1.6,
+    3: 1.6,
+    4: 1.6,
+    5: 1.6,
+  },
   metaTags: [
     "Domain: Data Center Infrastructure",
     "Industry: Power Distribution & Energy Metering",

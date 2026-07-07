@@ -7,7 +7,13 @@ import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-devel
 
 type HeaderProps = Pick<
   FullProductDevelopmentCaseStudy,
-  "title" | "subtitle" | "metaTags" | "ribbonStats" | "images" | "enlargedImages"
+  | "title"
+  | "subtitle"
+  | "metaTags"
+  | "ribbonStats"
+  | "images"
+  | "rotatedImages"
+  | "enlargedImages"
 >;
 
 export function CaseStudyV3Header({
@@ -16,6 +22,7 @@ export function CaseStudyV3Header({
   metaTags,
   ribbonStats,
   images,
+  rotatedImages,
   enlargedImages,
 }: HeaderProps) {
   const [ribbonLit, setRibbonLit] = useState(false);
@@ -118,6 +125,7 @@ export function CaseStudyV3Header({
           <CaseStudyCarousel
             images={images}
             title={title}
+            rotatedImages={rotatedImages}
             enlargedImages={enlargedImages}
           />
         </div>
