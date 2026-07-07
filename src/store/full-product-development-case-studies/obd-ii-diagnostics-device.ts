@@ -50,7 +50,7 @@ export const obdIiDiagnosticsDeviceCaseStudy: FullProductDevelopmentCaseStudy =
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/7.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/8.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/9.png",
-      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/10.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/9_v2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/1.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/2.png",
       "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/OBD/3.png",

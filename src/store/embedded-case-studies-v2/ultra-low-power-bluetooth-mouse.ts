@@ -50,7 +50,7 @@ export const ultraLowPowerBluetoothMouseCaseStudy: FullProductDevelopmentCaseStu
       { id: "summary", num: "09", label: "Summary" },
     ],
     images: ultraLowPowerBluetoothMouseImages,
-    cardImageIndex: 3,
+    cardImageIndex: 2,
     enlargedImages: { 0: 1.4, 1: 1.3, 2: 1.3 },
     overview: [
       "Atmosic, a fabless semiconductor company pioneering ultra-low-power wireless SoCs, engaged Qmax Systems to develop a complete Bluetooth mouse reference design platform showcasing its BLE 5 silicon. Qmax delivered the full reference design — system architecture, hardware design, firmware, PCB design, prototype manufacturing, and full Design Verification Testing (DVT) — creating a production-ready HID mouse platform that Atmosic and its customers could take directly into high-volume consumer products.",

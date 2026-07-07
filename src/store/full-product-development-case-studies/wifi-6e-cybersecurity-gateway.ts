@@ -15,6 +15,7 @@ export const wifi6eCybersecurityGatewayCaseStudy: FullProductDevelopmentCaseStud
     id: "wifi-6e-cybersecurity-gateway",
     slug: "wifi-6e-cybersecurity-gateway",
     title: "WiFi 6E Triband Cybersecurity Gateway",
+    cardImageZoom: 1.2,
     subtitle: "Full Product Development — Concept to Volume Production",
     metaTags: [
       "Domain: Networking",

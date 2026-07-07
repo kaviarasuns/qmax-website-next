@@ -4,7 +4,7 @@ const outdoorWifi6AccessPointImages = [
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/1_new.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/2_new.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/7.1.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/7.2.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/triband_2_v2.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.1.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.8.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/pcb/UBIHUB/V2.7.png",

@@ -2,9 +2,11 @@ import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-devel
 
 const advancedModularMedicalSimulatorImages = [
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/advanced-modular-medical-simulator/7.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/advanced-modular-medical-simulator/1_v2.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/advanced-modular-medical-simulator/adv_mod_v2.png",
 
-  "/case-studies/POE/1.png",
-  "/case-studies/POE/2.png",
+  // "/case-studies/POE/1.png",
+  // "/case-studies/POE/2.png",
   "/case-studies/POE/1.1.svg",
   "/case-studies/POE/1.2.svg",
   "/case-studies/POE/1.3.svg",
@@ -14,8 +16,9 @@ const advancedModularMedicalSimulatorImages = [
   "/case-studies/POE/2.1.svg",
   "/case-studies/POE/2.2.svg",
 
-  "/case-studies/POE/5.png",
-  "/case-studies/POE/6.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/advanced-modular-medical-simulator/5_adv_mod_v2.png",
+  // "/case-studies/POE/5.png",
+  // "/case-studies/POE/6.png",
   "/case-studies/POE/3.1.svg",
   "/case-studies/POE/3.2.svg",
 ];
@@ -26,6 +29,7 @@ export const advancedModularMedicalSimulatorCaseStudy: FullProductDevelopmentCas
     slug: "advanced-modular-medical-simulator",
     section: "embedded",
     title: "Advanced Modular Medical Simulator — Developer Kit",
+    cardImageZoom: 1.2,
     subtitle:
       "Snapdragon 820-Based Embedded Electronics Platform with 9-Port Gigabit Ethernet PoE Backbone for Modular Medical Simulation Training",
     metaTags: [

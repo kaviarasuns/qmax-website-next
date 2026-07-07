@@ -1,9 +1,13 @@
 import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-development-case-studies";
 
 const thirtyTwoChannelUltraLowNoiseDaqImages = [
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/1.1.png",
+  // "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/1.1.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/1.2.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/1.3.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/2_v2.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/32CH_TOP.svg",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/32CH_BOT.svg",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/32CH_TS1.svg",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/32CH_TS2.svg",
 ];
 
 export const thirtyTwoChannelUltraLowNoiseDaqCaseStudy: FullProductDevelopmentCaseStudy =
@@ -48,7 +52,6 @@ export const thirtyTwoChannelUltraLowNoiseDaqCaseStudy: FullProductDevelopmentCa
       { id: "summary", num: "09", label: "Summary" },
     ],
     images: thirtyTwoChannelUltraLowNoiseDaqImages,
-    cardImageIndex: 1,
     overview: [
       "A structural health monitoring (SHM) systems company engaged Qmax Systems to develop a high-precision impact detection platform for aerospace and defence applications — identifying and localizing impacts on small aircraft and helicopters in real time. Qmax delivered the complete embedded system: architecture, hardware design, firmware, Linux software, mixed-signal PCB design, prototype manufacturing, and full Design Verification Testing (DVT).",
       "The resulting 32-channel ultra-low-noise Data Acquisition (DAQ) system feeds the customer's proprietary analysis engine, which determines where the airframe was hit and supports continue/abort mission decisions.",

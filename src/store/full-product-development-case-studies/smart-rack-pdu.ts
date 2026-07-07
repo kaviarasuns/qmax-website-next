@@ -48,7 +48,7 @@ export const smartRackPduCaseStudy: FullProductDevelopmentCaseStudy = {
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/V5/PDU3_VAR5_C13_C19_1.png",
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/PDU/V6/PDU3_VAR6_C13_C19_1.png",
 
-    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/product_picture_power_board/PW%20Board.png",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/product_picture_power_board/PW_board_v2.png",
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout _power_board/POWER BOARD_TOP.svg",
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout _power_board/POWER BOARD_TB.svg",
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout _power_board/POWER BOARD_BOT.svg",
@@ -57,7 +57,7 @@ export const smartRackPduCaseStudy: FullProductDevelopmentCaseStudy = {
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout_processor_board/PDU_Processor board_TOP.svg",
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout_processor_board/PDU_Processor board_BOT.svg",
 
-    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/product_%20pictures_meter_board/Meter%20Board.png",
+    "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/product_%20pictures_meter_board/meter_board_v2.png",
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout_meter_board/RACK_PDU_TOP.svg",
     "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/pdu/PCB_layout_meter_board/RACK_PDU_TB.svg",
   ],

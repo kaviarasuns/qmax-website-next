@@ -5,6 +5,7 @@ export const coldStorageIotMonitoringSystemCaseStudy: FullProductDevelopmentCase
     id: "cold-storage-iot-monitoring-system",
     slug: "cold-storage-iot-monitoring-system",
     title: "Cold Storage IoT Monitoring System",
+    cardImageZoom: 1.2,
     subtitle: "Full Product Development — Concept to Volume Production",
     metaTags: [
       "Domain: Cold Chain Logistics",
@@ -42,7 +43,7 @@ export const coldStorageIotMonitoringSystemCaseStudy: FullProductDevelopmentCase
     ],
     images: [
       "/case-studies/BLUECOLD/5.png",
-      "/case-studies/BLUECOLD/1.png",
+      "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/full-product-development/cold_storage_iot/1.png",
       "/case-studies/BLUECOLD/2.png",
       "/case-studies/BLUECOLD/BLUE_COLD_REV-01_BRD_03_TOP.svg",
       "/case-studies/BLUECOLD/BLUE_COLD_REV-01_BRD_03_TP.svg",
