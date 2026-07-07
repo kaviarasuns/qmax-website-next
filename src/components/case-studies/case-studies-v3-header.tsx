@@ -45,19 +45,20 @@ export function CaseStudyV3Header({
         ),
       ).size;
 
-    const targets = [
+    type FontFitTarget = {
+      el: HTMLElement | null;
+      maxLines: number;
+      minFontPx: number;
+      count: (el: HTMLElement) => number;
+    };
+
+    const fitTargets: FontFitTarget[] = [
       { el: titleRef.current, maxLines: 3, minFontPx: 22, count: countTextLines },
       { el: subtitleRef.current, maxLines: 2, minFontPx: 14, count: countTextLines },
       { el: metaTagsRef.current, maxLines: 2, minFontPx: 9, count: countWrapRows },
-    ].filter(
-      (
-        t,
-      ): t is {
-        el: HTMLElement;
-        maxLines: number;
-        minFontPx: number;
-        count: (el: HTMLElement) => number;
-      } => t.el !== null,
+    ];
+    const targets = fitTargets.filter(
+      (t): t is FontFitTarget & { el: HTMLElement } => t.el !== null,
     );
     if (targets.length === 0) return;
 
