@@ -11,11 +11,6 @@ import {
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
-import { getCaseStudyCardImage } from "@/store/case-studies";
-import {
-  fullProductDevelopmentCaseStudiesData,
-  getFullProductDevelopmentCardImage,
-} from "@/store/full-product-development-case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 import { pcbV2ProjectExperienceEntry } from "@/store/pcb-case-studies-v2/service-cards";
 
@@ -35,110 +30,47 @@ const pcbCaseStudies = pcbCaseStudiesData.slice(0, 4).map((caseStudy) => ({
   imageRotation: caseStudy.rotatedImages?.[0],
 }));
 
-function pcbProjectExperienceEntry(
-  id: string,
-  listTitle: string,
-  caseStudyId: string,
-  description?: string,
-  relatedCaseStudySlug?: string,
-  imageIndex?: number,
-): ProjectExperienceItem {
-  const study = pcbCaseStudiesData.find(
-    (caseStudy) => caseStudy.id === caseStudyId,
-  );
-  if (!study) {
-    throw new Error(`PCB case study not found: ${caseStudyId}`);
-  }
-
-  const base = {
-    id,
-    listTitle,
-    captionTitle: study.title,
-    description: description ?? study.summary,
-  };
-
-  if (!relatedCaseStudySlug) {
-    return {
-      ...base,
-      imageSrc: getCaseStudyCardImage(caseStudyId),
-      imageAlt: study.title,
-      caseStudyHref: `/case-studies/${study.id}`,
-    };
-  }
-
-  const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
-    (caseStudy) => caseStudy.slug === relatedCaseStudySlug,
-  );
-  if (!relatedStudy) {
-    throw new Error(`Related case study not found: ${relatedCaseStudySlug}`);
-  }
-
-  const imageSrc =
-    imageIndex !== undefined
-      ? relatedStudy.images[imageIndex]
-      : getFullProductDevelopmentCardImage(relatedStudy);
-  if (!imageSrc) {
-    throw new Error(
-      `Image index ${imageIndex} out of range for: ${relatedCaseStudySlug}`,
-    );
-  }
-
-  return {
-    ...base,
-    captionTitle: relatedStudy.title,
-    imageSrc,
-    imageAlt: relatedStudy.title,
-    caseStudyHref: `/case-studies/${relatedStudy.slug}`,
-  };
-}
-
 const projectExperience: ProjectExperienceItem[] = [
   pcbV2ProjectExperienceEntry(
-    "multilayer-layout",
-    "High-Speed Multilayer PCB Layout",
+    "terabit-switch-fabric-board",
+    "Terabit Switch Fabric Board",
+    "terabit-switch-fabric-board",
+    "Controlled-impedance routing on a 30-layer terabit-scale switch fabric card, holding tight single-ended and differential targets across 96 length-matched SerDes pairs carrying ~3.2 Tbps of aggregate bandwidth.",
+    3,
+  ),
+  pcbV2ProjectExperienceEntry(
+    "high-density-pcb-design-ai-gpu-chassis-motherboard",
+    "AI GPU Expansion Chassis Motherboard",
     "high-density-pcb-design-ai-gpu-chassis-motherboard",
     "Twenty-layer high-density layout for a PCIe Gen 5 AI GPU expansion chassis motherboard, with high pin-count BGA escape routing, HDI microvia structures, and a 144-lane fabric-switch interconnect - released to Gerber with zero DFM re-spins.",
-    "high-density-pcb-design-ai-gpu-chassis-motherboard",
-    3,
-  ),
-  pcbProjectExperienceEntry(
-    "controlled-impedance-routing",
-    "Controlled Impedance Routing",
-    "qualcomm-wifi-6-triband-router",
-    "Controlled-impedance routing on a 30-layer terabit-scale switch fabric card, holding tight single-ended and differential targets across 96 length-matched SerDes pairs carrying ~3.2 Tbps of aggregate bandwidth.",
-    "terabit-switch-fabric-board",
     3,
   ),
   pcbV2ProjectExperienceEntry(
-    "signal-integrity-analysis",
-    "Signal Integrity Analysis",
-    "high-density-pcb-design-ai-gpu-chassis-motherboard",
-    "Pre- and post-layout signal integrity analysis for a 36-layer dual-NPU ATCA packet-processing line card, covering dense fabric SerDes channels and a 32-device DDR3 array, validated to Gerber release without a re-spin.",
     "high-capacity-atca-line-card",
+    "High-Capacity Packet-Processing Line Card",
+    "high-capacity-atca-line-card",
+    "Pre- and post-layout signal integrity analysis for a 36-layer dual-NPU ATCA packet-processing line card, covering dense fabric SerDes channels and a 32-device DDR3 array, validated to Gerber release without a re-spin.",
     3,
   ),
   pcbV2ProjectExperienceEntry(
-    "ddr-memory-routing",
-    "DDR & High-Speed Memory Routing",
+    "40-port-10gbe-core-router-line-card",
+    "40-Port 10GbE Core-Router Line Card",
     "40-port-10gbe-core-router-line-card",
     "High-speed memory routing on a 24-layer 40-port 10GbE core-router line card, with length-matched, controlled-impedance topologies across a 30-device QDR-II SRAM packet-buffer array supporting 400 GbE aggregate line-side capacity.",
-    "40-port-10gbe-core-router-line-card",
     3,
   ),
-  pcbProjectExperienceEntry(
-    "high-frequency-pcb-design",
-    "High-Frequency PCB Design",
-    "pcie-gen5-cpo-board",
-    "Twenty-layer high-frequency PCB design for a carrier-grade GPON Optical Line Terminal, routing the Broadcom GPON access-processor SoC and multi-port switch fabric to first-pass bring-up with zero design defects.",
+  pcbV2ProjectExperienceEntry(
     "high-density-pcb-design-gpon-olt",
+    "GPON OLT Platform",
+    "high-density-pcb-design-gpon-olt",
+    "Twenty-layer high-frequency PCB design for a carrier-grade GPON Optical Line Terminal, routing the Broadcom GPON access-processor SoC and multi-port switch fabric to first-pass bring-up with zero design defects.",
     3,
   ),
-  pcbProjectExperienceEntry(
-    "differential-pair-routing",
-    "Differential Pair Routing & Length Matching",
-    "qualcomm-wifi4-routers",
-    "Differential-pair routing and length matching on a 28-layer multi-FAP packet-processing line card - the platform's most component-dense board - spanning four Broadcom PETRA-B fabric access processors and a 48-device DDR3 array, delivered without a re-spin.",
+  pcbV2ProjectExperienceEntry(
     "multi-fap-packet-processing-line-card",
+    "Multi-FAP Packet-Processing Line Card",
+    "multi-fap-packet-processing-line-card",
+    "Differential-pair routing and length matching on a 28-layer multi-FAP packet-processing line card - the platform's most component-dense board - spanning four Broadcom PETRA-B fabric access processors and a 48-device DDR3 array, delivered without a re-spin.",
     3,
   ),
 ];

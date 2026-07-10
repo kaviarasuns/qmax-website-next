@@ -30,18 +30,10 @@ import { ComplianceStandardsSection } from "@/components/services-cmp/Compliance
 function analogProjectExperienceEntry(
   id: string,
   listTitle: string,
-  caseStudyId: string,
-  description: string,
   relatedCaseStudySlug: string,
+  description: string,
   imageIndex?: number,
 ): ProjectExperienceItem {
-  const study = allCaseStudiesData.find(
-    (caseStudy) => caseStudy.id === caseStudyId,
-  );
-  if (!study) {
-    throw new Error(`Case study not found: ${caseStudyId}`);
-  }
-
   const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
     (caseStudy) => caseStudy.slug === relatedCaseStudySlug,
   );
@@ -93,7 +85,10 @@ function serviceCaseStudies(ids: string[]): ServiceCaseStudy[] {
 }
 
 const analogCaseStudies: ServiceCaseStudy[] = [
-  { ...pcbV2ServiceCaseStudy("can-fd-industrial-io-controller"), category: "hardware" },
+  {
+    ...pcbV2ServiceCaseStudy("can-fd-industrial-io-controller"),
+    category: "hardware",
+  },
   ...serviceCaseStudies([
     "security-system-controller",
     "robotics-motion-controller",
@@ -103,12 +98,25 @@ const analogCaseStudies: ServiceCaseStudy[] = [
 
 const projectExperience: ProjectExperienceItem[] = [
   analogProjectExperienceEntry(
-    "analog-circuit-design",
-    "Analog Circuit Design",
-    "industrial-defect-monitoring-system",
-    "Precision analog sensing front end for a cold-storage IoT monitoring system, with four NTC temperature-sensor channels, dual pressure-sensor interfaces, and 12-/16-bit ADC acquisition feeding an ESP32-based multi-radio controller for cold-chain telemetry.",
     "cold-storage-iot-monitoring-system",
-    3,
+    "Cold Storage IoT Monitoring System",
+    "cold-storage-iot-monitoring-system",
+    "Precision analog sensing front end for a cold-storage IoT monitoring system, with four NTC temperature-sensor channels, dual pressure-sensor interfaces, and 12-/16-bit ADC acquisition feeding an ESP32-based multi-radio controller for cold-chain telemetry.",
+    1,
+  ),
+  analogProjectExperienceEntry(
+    "can-fd-industrial-io-controller",
+    "CAN FD Industrial I/O Controller",
+    "can-fd-industrial-io-controller",
+    "Analog front-end design for pressure sensor and switch inputs on a high-density industrial I/O controller, with instrumentation amplifiers and a delta-sigma ADC isolated from 240 channels of high-side digital switching noise.",
+    0,
+  ),
+  analogProjectExperienceEntry(
+    "smart-lubrication-controller",
+    "Smart Lubrication Controller",
+    "smart-lubrication-controller",
+    "Surge-hardened analog and sensor interfaces for a railway-grade lubrication controller, conditioning wheel-detection and field I/O signals for precise pump and solenoid actuation in high-vibration, high-voltage track-side environments.",
+    1,
   ),
 ];
 

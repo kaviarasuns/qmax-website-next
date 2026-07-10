@@ -28,18 +28,10 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 function rfMicrowaveProjectExperienceEntry(
   id: string,
   listTitle: string,
-  caseStudyId: string,
-  description: string,
   relatedCaseStudySlug: string,
+  description: string,
   imageIndex?: number,
 ): ProjectExperienceItem {
-  const study = allCaseStudiesData.find(
-    (caseStudy) => caseStudy.id === caseStudyId,
-  );
-  if (!study) {
-    throw new Error(`Case study not found: ${caseStudyId}`);
-  }
-
   const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
     (caseStudy) => caseStudy.slug === relatedCaseStudySlug,
   );
@@ -99,28 +91,39 @@ const rfCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
 
 const projectExperience: ProjectExperienceItem[] = [
   rfMicrowaveProjectExperienceEntry(
-    "rf-transceiver-system-design",
-    "RF Transceiver System Design",
-    "ultra-low-power-ble-mouse",
-    "Multi-radio RF transceiver system for a handheld OBD-II diagnostics device, integrating LTE cellular, dual-band Wi-Fi, Bluetooth 5.0 LE, and GNSS around an STM32MP157C host with coexistence-aware front-end and antenna planning.",
-    "obd-ii-diagnostics-device",
+    "wifi-6e-cybersecurity-gateway",
+    "WiFi 6E Triband Cybersecurity Gateway",
+    "wifi-6e-cybersecurity-gateway",
+    "Signal integrity and RF shielding for a tri-band WiFi 6E cybersecurity gateway, with compartmentalized RF sections, disciplined ground returns, and inter-chain isolation across concurrent 2.4/5/6 GHz radios feeding a 12-element internal antenna array.",
     3,
   ),
   rfMicrowaveProjectExperienceEntry(
-    "signal-integrity-rf-shielding",
-    "Signal Integrity & RF Shielding",
-    "wifi6-triband-router",
-    "Signal integrity and RF shielding for a tri-band WiFi 6E cybersecurity gateway, with compartmentalized RF sections, disciplined ground returns, and inter-chain isolation across concurrent 2.4/5/6 GHz radios feeding a 12-element internal antenna array.",
-    "wifi-6e-cybersecurity-gateway",
+    "outdoor-wifi-6-access-point",
+    "Outdoor Wi-Fi 6 Access Point",
+    "outdoor-wifi-6-access-point",
+    "Antenna and matching-network design for an outdoor tri-band Wi-Fi 6 access point, tuning twelve front-end module chains and their radio interfaces for balanced gain and impedance across the 2.4, 5, and 6 GHz bands in an all-weather enclosure.",
     0,
   ),
   rfMicrowaveProjectExperienceEntry(
-    "antenna-matching-network-design",
-    "Antenna & Matching Network Design",
-    "capserve",
-    "Antenna and matching-network design for an outdoor tri-band Wi-Fi 6 access point, tuning twelve front-end module chains and their radio interfaces for balanced gain and impedance across the 2.4, 5, and 6 GHz bands in an all-weather enclosure.",
-    "outdoor-wifi-6-access-point",
-    4,
+    "ev-vcu-demo-platform",
+    "EV VCU Demo Platform",
+    "ev-vcu-demo-platform",
+    "Multi-radio RF design for a connected EV VCU platform, with a dedicated radio board integrating BLE, LTE Cat 1, and GNSS modules plus antenna matching, isolated from high-current motor and switching loads on the companion ECU board.",
+    0,
+  ),
+  rfMicrowaveProjectExperienceEntry(
+    "obd-ii-diagnostics-device",
+    "OBD-II Diagnostics Device",
+    "obd-ii-diagnostics-device",
+    "Multi-radio RF transceiver system for a handheld OBD-II diagnostics device, integrating LTE cellular, dual-band Wi-Fi, Bluetooth 5.0 LE, and GNSS around an STM32MP157C host with coexistence-aware front-end and antenna planning.",
+    3,
+  ),
+  rfMicrowaveProjectExperienceEntry(
+    "smart-lubrication-controller",
+    "Smart Lubrication Controller",
+    "smart-lubrication-controller",
+    "Wireless RF design for a railway-grade lubrication controller, integrating BLE for on-site commissioning and GSM for cloud telemetry with EMI-conscious layout and antenna placement inside an IP65 track-side enclosure.",
+    1,
   ),
 ];
 

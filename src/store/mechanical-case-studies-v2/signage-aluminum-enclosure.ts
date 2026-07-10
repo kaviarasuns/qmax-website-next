@@ -3,6 +3,9 @@ import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-devel
 const signageAluminumEnclosureImages = [
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/teck_new_v1.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/teck_new_v2.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/OTT_RENDER_27_NOV_2024_MG4.7_V2.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/OTT_RENDER_27_NOV_2024_MG5.5V2.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/Tec_v2.png",
 ];
 
 export const signageAluminumEnclosureCaseStudy: FullProductDevelopmentCaseStudy =

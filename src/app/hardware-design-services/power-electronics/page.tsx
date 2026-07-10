@@ -33,18 +33,10 @@ import {
 function powerElectronicsProjectExperienceEntry(
   id: string,
   listTitle: string,
-  caseStudyId: string,
-  description: string,
   relatedCaseStudySlug: string,
+  description: string,
   imageIndex?: number,
 ): ProjectExperienceItem {
-  const study = allCaseStudiesData.find(
-    (caseStudy) => caseStudy.id === caseStudyId,
-  );
-  if (!study) {
-    throw new Error(`Case study not found: ${caseStudyId}`);
-  }
-
   const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
     (caseStudy) => caseStudy.slug === relatedCaseStudySlug,
   );
@@ -104,20 +96,39 @@ const powerElectronicsCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
 
 const projectExperience: ProjectExperienceItem[] = [
   powerElectronicsProjectExperienceEntry(
-    "power-supply-smps-development",
-    "Power Supply & SMPS Development",
-    "poe-power-injector",
-    "Multi-rail power architecture for a modular medical simulator, delivering a high-power PoE Sourcing Equipment (PSE) stage and regulated buck, buck-boost, and LDO rails that power and actuate each manikin segment over a single Ethernet cable.",
-    "advanced-modular-medical-simulator",
-    3,
+    "ev-vcu-demo-platform",
+    "EV VCU Demo Platform",
+    "ev-vcu-demo-platform",
+    "Automotive power and load-driving design for an EV VCU demo platform, with multi-rail regulation, dual-channel H-bridge motor drive, 16-channel high-side switching, and load-dump / reverse-polarity protection across vehicle power inputs.",
+    0,
   ),
   powerElectronicsProjectExperienceEntry(
-    "ac-dc-dc-dc-converter-design",
-    "AC-DC & DC-DC Converter Design",
-    "stellar-power-board",
-    "Rugged, transport-grade power design for a cold-storage IoT monitor, combining wide-input DC-DC conversion, LiPo charging with fuel-gauging, and battery-protection circuitry for uninterrupted operation across refrigerated transport and warehouse deployments.",
+    "advanced-modular-medical-simulator",
+    "Advanced Modular Medical Simulator",
+    "advanced-modular-medical-simulator",
+    "Multi-rail power architecture for a modular medical simulator, delivering a high-power PoE Sourcing Equipment (PSE) stage and regulated buck, buck-boost, and LDO rails that power and actuate each manikin segment over a single Ethernet cable.",
+    0,
+  ),
+  powerElectronicsProjectExperienceEntry(
+    "can-fd-industrial-io-controller",
+    "CAN FD Industrial I/O Controller",
+    "can-fd-industrial-io-controller",
+    "Multi-rail power distribution and high-side switch drive for a 240-channel industrial I/O controller, with protected power stages and isolated domains supporting continuous factory-floor operation across five synchronized MCUs.",
+    0,
+  ),
+  powerElectronicsProjectExperienceEntry(
     "cold-storage-iot-monitoring-system",
-    3,
+    "Cold Storage IoT Monitoring System",
+    "cold-storage-iot-monitoring-system",
+    "Rugged, transport-grade power design for a cold-storage IoT monitor, combining wide-input DC-DC conversion, LiPo charging with fuel-gauging, and battery-protection circuitry for uninterrupted operation across refrigerated transport and warehouse deployments.",
+    1,
+  ),
+  powerElectronicsProjectExperienceEntry(
+    "smart-lubrication-controller",
+    "Smart Lubrication Controller",
+    "smart-lubrication-controller",
+    "Surge-hardened, low-power supply design for a railway-grade lubrication controller, with TVS/zener-protected rails, solar-capable standby efficiency, and battery-backed RTC retention for continuous track-side operation.",
+    1,
   ),
 ];
 

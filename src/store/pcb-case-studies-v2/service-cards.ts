@@ -34,9 +34,18 @@ export function pcbV2ProjectExperienceEntry(
   listTitle: string,
   slug: string,
   description: string,
-  relatedSlug?: string,
+  relatedSlugOrImageIndex?: string | number,
   imageIndex?: number,
 ): PcbV2ProjectExperienceEntry {
+  const relatedSlug =
+    typeof relatedSlugOrImageIndex === "string"
+      ? relatedSlugOrImageIndex
+      : undefined;
+  const resolvedImageIndex =
+    typeof relatedSlugOrImageIndex === "number"
+      ? relatedSlugOrImageIndex
+      : imageIndex;
+
   const study = getFullProductDevelopmentCaseStudy(slug);
   if (!study) {
     throw new Error(`PCB v2 case study not found: ${slug}`);
@@ -50,12 +59,12 @@ export function pcbV2ProjectExperienceEntry(
   }
 
   const imageSrc =
-    imageIndex !== undefined
-      ? imageStudy.images[imageIndex]
+    resolvedImageIndex !== undefined
+      ? imageStudy.images[resolvedImageIndex]
       : getFullProductDevelopmentCardImage(imageStudy);
   if (!imageSrc) {
     throw new Error(
-      `Image index ${imageIndex} out of range for: ${relatedSlug ?? slug}`,
+      `Image index ${resolvedImageIndex} out of range for: ${relatedSlug ?? slug}`,
     );
   }
 

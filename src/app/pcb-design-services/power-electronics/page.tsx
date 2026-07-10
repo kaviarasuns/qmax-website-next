@@ -12,14 +12,6 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
-import {
-  allCaseStudiesData,
-  getCaseStudyCardImage,
-} from "@/store/case-studies";
-import {
-  fullProductDevelopmentCaseStudiesData,
-  getFullProductDevelopmentCardImage,
-} from "@/store/full-product-development-case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 import {
   pcbV2ProjectExperienceEntry,
@@ -32,77 +24,6 @@ export const metadata = buildMetadata({
     "Power electronics PCB layout - high-current trace routing, copper weight optimisation, thermal via arrays, and SMPS board design. IPC Class 2/3. Altium.",
   path: "/pcb-design-services/power-electronics",
 });
-
-type ProjectExperienceEntryOptions = {
-  description?: string;
-  imageSrc?: string;
-  imageAlt?: string;
-  /** Slug of a full-product-development case study to link image/alt/href to. */
-  relatedSlug?: string;
-  /** Image index within the related case study (defaults to its card image). */
-  imageIndex?: number;
-};
-
-function projectExperienceEntry(
-  id: string,
-  listTitle: string,
-  caseStudyId: string,
-  descriptionOrOptions?: string | ProjectExperienceEntryOptions,
-): ProjectExperienceItem {
-  const study = allCaseStudiesData.find(
-    (caseStudy) => caseStudy.id === caseStudyId,
-  );
-  if (!study) {
-    throw new Error(`Case study not found: ${caseStudyId}`);
-  }
-
-  const options =
-    typeof descriptionOrOptions === "string"
-      ? { description: descriptionOrOptions }
-      : descriptionOrOptions;
-
-  const base = {
-    id,
-    listTitle,
-    captionTitle: study.title,
-    description: options?.description ?? study.summary,
-  };
-
-  if (options?.relatedSlug) {
-    const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
-      (caseStudy) => caseStudy.slug === options.relatedSlug,
-    );
-    if (!relatedStudy) {
-      throw new Error(`Related case study not found: ${options.relatedSlug}`);
-    }
-
-    const imageSrc =
-      options.imageSrc ??
-      (options.imageIndex !== undefined
-        ? relatedStudy.images[options.imageIndex]
-        : getFullProductDevelopmentCardImage(relatedStudy));
-    if (!imageSrc) {
-      throw new Error(
-        `Image index ${options.imageIndex} out of range for: ${options.relatedSlug}`,
-      );
-    }
-
-    return {
-      ...base,
-      captionTitle: relatedStudy.title,
-      imageSrc,
-      imageAlt: options.imageAlt ?? relatedStudy.title,
-      caseStudyHref: `/case-studies/${relatedStudy.slug}`,
-    };
-  }
-
-  return {
-    ...base,
-    imageSrc: options?.imageSrc ?? getCaseStudyCardImage(caseStudyId),
-    imageAlt: options?.imageAlt ?? study.title,
-    caseStudyHref: `/case-studies/${study.id}`,
-  };
-}
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
@@ -253,23 +174,32 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 
 const projectExperience: ProjectExperienceItem[] = [
   pcbV2ProjectExperienceEntry(
-    "power-integrity-grounding",
-    "Power Integrity & Grounding Optimization",
-    "terabit-switch-fabric-board",
-    "Power integrity and grounding optimization for a PCIe Gen 5 AI GPU expansion chassis motherboard, with a multi-rail power-delivery plane, hot-swap 12 V inputs, and target-impedance PDN design that sustains high-current GPU loads alongside high-speed fabric signaling.",
     "high-density-pcb-design-ai-gpu-chassis-motherboard",
+    "AI GPU Expansion Chassis Motherboard",
+    "high-density-pcb-design-ai-gpu-chassis-motherboard",
+    "Power integrity and grounding optimization for a PCIe Gen 5 AI GPU expansion chassis motherboard, with a multi-rail power-delivery plane, hot-swap 12 V inputs, and target-impedance PDN design that sustains high-current GPU loads alongside high-speed fabric signaling.",
     0,
   ),
-  projectExperienceEntry(
-    "smps-power-converter",
-    "SMPS & Power Converter PCB Development",
-    "stellar-power-board",
-    {
-      description:
-        "SMPS and power-converter layout for a modular medical simulator, implementing a high-power PoE backbone and multiple regulated conversion rails that deliver both data and actuation power to each manikin module over a single Ethernet cable.",
-      relatedSlug: "advanced-modular-medical-simulator",
-      imageIndex: 0,
-    },
+  pcbV2ProjectExperienceEntry(
+    "ev-vcu-demo-platform",
+    "EV VCU Demo Platform",
+    "ev-vcu-demo-platform",
+    "Automotive power and load-driving layout for an EV VCU demo platform, with multi-rail regulation, dual-channel H-bridge motor drive, 16-channel high-side switching, and load-dump / reverse-polarity protection across vehicle power inputs.",
+    6,
+  ),
+  pcbV2ProjectExperienceEntry(
+    "advanced-modular-medical-simulator",
+    "Advanced Modular Medical Simulator",
+    "advanced-modular-medical-simulator",
+    "SMPS and power-converter layout for a modular medical simulator, implementing a high-power PoE backbone and multiple regulated conversion rails that deliver both data and actuation power to each manikin module over a single Ethernet cable.",
+    3,
+  ),
+  pcbV2ProjectExperienceEntry(
+    "can-fd-industrial-io-controller",
+    "CAN FD Industrial I/O Controller",
+    "can-fd-industrial-io-controller",
+    "Multi-rail power distribution and high-side switch drive layout for a 240-channel industrial I/O controller, with protected power stages and isolated domains supporting continuous factory-floor operation across five synchronized MCUs.",
+    3,
   ),
 ];
 

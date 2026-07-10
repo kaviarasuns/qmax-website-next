@@ -12,16 +12,11 @@ import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
-import {
-  allCaseStudiesData,
-  getCaseStudyCardImage,
-} from "@/store/case-studies";
-import {
-  fullProductDevelopmentCaseStudiesData,
-  getFullProductDevelopmentCardImage,
-} from "@/store/full-product-development-case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
-import { pcbV2ServiceCaseStudy } from "@/store/pcb-case-studies-v2/service-cards";
+import {
+  pcbV2ProjectExperienceEntry,
+  pcbV2ServiceCaseStudy,
+} from "@/store/pcb-case-studies-v2/service-cards";
 
 export const metadata = buildMetadata({
   title: "RF & Microwave PCB Design | PTFE, Sub-GHz to Ka-Band | Qmax",
@@ -29,77 +24,6 @@ export const metadata = buildMetadata({
     "RF and microwave PCB layout on PTFE and Rogers substrates - controlled impedance routing, coplanar waveguide, stripline, Sub-GHz to Ka-band. Altium & Cadence.",
   path: "/pcb-design-services/rf-and-microwave-pcb-design",
 });
-
-type ProjectExperienceEntryOptions = {
-  description?: string;
-  imageSrc?: string;
-  imageAlt?: string;
-  /** Slug of a full-product-development case study to link image/alt/href to. */
-  relatedSlug?: string;
-  /** Image index within the related case study (defaults to its card image). */
-  imageIndex?: number;
-};
-
-function projectExperienceEntry(
-  id: string,
-  listTitle: string,
-  caseStudyId: string,
-  descriptionOrOptions?: string | ProjectExperienceEntryOptions,
-): ProjectExperienceItem {
-  const study = allCaseStudiesData.find(
-    (caseStudy) => caseStudy.id === caseStudyId,
-  );
-  if (!study) {
-    throw new Error(`Case study not found: ${caseStudyId}`);
-  }
-
-  const options =
-    typeof descriptionOrOptions === "string"
-      ? { description: descriptionOrOptions }
-      : descriptionOrOptions;
-
-  const base = {
-    id,
-    listTitle,
-    captionTitle: study.title,
-    description: options?.description ?? study.summary,
-  };
-
-  if (options?.relatedSlug) {
-    const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
-      (caseStudy) => caseStudy.slug === options.relatedSlug,
-    );
-    if (!relatedStudy) {
-      throw new Error(`Related case study not found: ${options.relatedSlug}`);
-    }
-
-    const imageSrc =
-      options.imageSrc ??
-      (options.imageIndex !== undefined
-        ? relatedStudy.images[options.imageIndex]
-        : getFullProductDevelopmentCardImage(relatedStudy));
-    if (!imageSrc) {
-      throw new Error(
-        `Image index ${options.imageIndex} out of range for: ${options.relatedSlug}`,
-      );
-    }
-
-    return {
-      ...base,
-      captionTitle: relatedStudy.title,
-      imageSrc,
-      imageAlt: options.imageAlt ?? relatedStudy.title,
-      caseStudyHref: `/case-studies/${relatedStudy.slug}`,
-    };
-  }
-
-  return {
-    ...base,
-    imageSrc: options?.imageSrc ?? getCaseStudyCardImage(caseStudyId),
-    imageAlt: options?.imageAlt ?? study.title,
-    caseStudyHref: `/case-studies/${study.id}`,
-  };
-}
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
@@ -255,27 +179,33 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
 ];
 
 const projectExperience: ProjectExperienceItem[] = [
-  projectExperienceEntry(
-    "controlled-impedance-rf",
-    "Controlled Impedance RF Routing",
-    "wifi6-triband-router",
-    {
-      description:
-        "Controlled-impedance RF routing for a tri-band WiFi 6E cybersecurity gateway, holding 50 Ω microstrip and matched differential targets from the MediaTek MT7976/MT7915 radios to a 12-element internal antenna array across the 2.4, 5, and 6 GHz bands.",
-      relatedSlug: "wifi-6e-cybersecurity-gateway",
-      imageIndex: 0,
-    },
+  pcbV2ProjectExperienceEntry(
+    "wifi-6e-cybersecurity-gateway",
+    "WiFi 6E Triband Cybersecurity Gateway",
+    "wifi-6e-cybersecurity-gateway",
+    "Controlled-impedance RF routing for a tri-band WiFi 6E cybersecurity gateway, holding 50 Ω microstrip and matched differential targets from the MediaTek MT7976/MT7915 radios to a 12-element internal antenna array across the 2.4, 5, and 6 GHz bands.",
+    3,
   ),
-  projectExperienceEntry(
-    "antenna-pcb-integration",
-    "Antenna PCB Integration",
-    "animal-tracker",
-    {
-      description:
-        "Antenna PCB integration for an outdoor tri-band Wi-Fi 6 access point, routing twelve front-end module chains and their RF interfaces to the external antenna ports with tuned matching and isolation for all-weather 802.11ax coverage.",
-      relatedSlug: "outdoor-wifi-6-access-point",
-      imageIndex: 1,
-    },
+  pcbV2ProjectExperienceEntry(
+    "outdoor-wifi-6-access-point",
+    "Outdoor Wi-Fi 6 Access Point",
+    "outdoor-wifi-6-access-point",
+    "Antenna PCB integration for an outdoor tri-band Wi-Fi 6 access point, routing twelve front-end module chains and their RF interfaces to the external antenna ports with tuned matching and isolation for all-weather 802.11ax coverage.",
+    5,
+  ),
+  pcbV2ProjectExperienceEntry(
+    "ev-vcu-demo-platform",
+    "EV VCU Demo Platform",
+    "ev-vcu-demo-platform",
+    "Multi-radio RF layout for a connected EV VCU platform, with a dedicated radio board integrating BLE, LTE Cat 1, and GNSS modules plus antenna matching, isolated from high-current motor and switching loads on the companion ECU board.",
+    6,
+  ),
+  pcbV2ProjectExperienceEntry(
+    "smart-lubrication-controller",
+    "Smart Lubrication Controller",
+    "smart-lubrication-controller",
+    "EMI-conscious RF layout for a railway-grade lubrication controller, co-locating BLE and GSM modules with antenna placement and ground partitioning inside an IP65 track-side enclosure.",
+    5,
   ),
 ];
 

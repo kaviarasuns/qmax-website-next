@@ -153,7 +153,6 @@ const CAPABILITIES = [
   {
     id: "power-electronics",
     tabLabel: "Power Electronics",
-    learnMoreHref: "/pcb-design-services/power-electronics",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -190,7 +189,6 @@ const CAPABILITIES = [
   {
     id: "si-pi-analysis",
     tabLabel: "SI / PI Analysis",
-    learnMoreHref: "/pcb-design-services/si-pi-analysis",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"
@@ -225,7 +223,6 @@ const CAPABILITIES = [
   {
     id: "pcb-library",
     tabLabel: "PCB Library",
-    learnMoreHref: "/pcb-design-services/pcb-library-services",
     tabIcon: (
       <svg
         viewBox="0 0 24 24"

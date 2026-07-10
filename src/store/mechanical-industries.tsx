@@ -3,7 +3,8 @@ import { advancedModularMedicalSimulatorCaseStudy } from "@/store/embedded-case-
 import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
 import { obdIiHandheldEnclosureCaseStudy } from "@/store/mechanical-case-studies-v2/obd-ii-handheld-enclosure";
 import { outdoorWifi6AccessPointCaseStudy } from "@/store/embedded-case-studies-v2/outdoor-wifi-6-access-point";
-import { ruggedAndroidDigitalSignagePlayerCaseStudy } from "@/store/full-product-development-case-studies/rugged-android-digital-signage-player";
+import { rfPlasmaGeneratorEnclosureCaseStudy } from "@/store/mechanical-case-studies-v2/rf-plasma-generator-enclosure";
+import { signageAluminumEnclosureCaseStudy } from "@/store/mechanical-case-studies-v2/signage-aluminum-enclosure";
 import { toRelatedCaseStudy } from "@/store/full-product-development-case-studies";
 
 export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
@@ -117,7 +118,7 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/ev and power.png",
     relatedCaseStudies: [
       toRelatedCaseStudy(coldStorageIotMonitoringSystemCaseStudy, {
-        imageIndices: [4, 2, 3],
+        imageIndices: [0, 1, 2],
       }),
     ],
   },
@@ -145,8 +146,8 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/communication.png",
     relatedCaseStudies: [
-      toRelatedCaseStudy(ruggedAndroidDigitalSignagePlayerCaseStudy, {
-        imageIndices: [7, 8],
+      toRelatedCaseStudy(signageAluminumEnclosureCaseStudy, {
+        imageIndices: [0, 1],
       }),
     ],
   },
@@ -173,8 +174,8 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/industry.png",
     relatedCaseStudies: [
-      toRelatedCaseStudy(coldStorageIotMonitoringSystemCaseStudy, {
-        imageIndices: [4, 2, 3],
+      toRelatedCaseStudy(rfPlasmaGeneratorEnclosureCaseStudy, {
+        imageIndices: [0, 1, 2],
       }),
     ],
   },

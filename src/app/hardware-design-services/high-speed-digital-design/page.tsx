@@ -25,18 +25,10 @@ import {
 function highSpeedProjectExperienceEntry(
   id: string,
   listTitle: string,
-  caseStudyId: string,
-  description: string,
   relatedCaseStudySlug: string,
+  description: string,
   imageIndex?: number,
 ): ProjectExperienceItem {
-  const study = allCaseStudiesData.find(
-    (caseStudy) => caseStudy.id === caseStudyId,
-  );
-  if (!study) {
-    throw new Error(`Case study not found: ${caseStudyId}`);
-  }
-
   const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
     (caseStudy) => caseStudy.slug === relatedCaseStudySlug,
   );
@@ -96,36 +88,44 @@ const highSpeedCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
 
 const projectExperience: ProjectExperienceItem[] = [
   highSpeedProjectExperienceEntry(
-    "high-speed-pcb",
-    "High-Speed PCB",
-    "wifi6-triband-router",
-    "Complete high-speed embedded platform for an open-standard medical simulation manikin, built around a Qualcomm Snapdragon 820 SoM, a 9-port Gigabit Ethernet switch backbone, and a high-power PoE PSE stage - routed across a multi-board stack from EVT through small-volume production.",
     "advanced-modular-medical-simulator",
+    "Advanced Modular Medical Simulator",
+    "advanced-modular-medical-simulator",
+    "Complete high-speed embedded platform for an open-standard medical simulation manikin, built around a Qualcomm Snapdragon 820 SoM, a 9-port Gigabit Ethernet switch backbone, and a high-power PoE PSE stage - routed across a multi-board stack from EVT through small-volume production.",
+  ),
+  highSpeedProjectExperienceEntry(
+    "wifi-6e-cybersecurity-gateway",
+    "WiFi 6E Triband Cybersecurity Gateway",
+    "wifi-6e-cybersecurity-gateway",
+    "Signal integrity and timing analysis for a tri-band WiFi 6E cybersecurity gateway on a MediaTek MT7986AV platform, covering DDR4, HS400 eMMC, PCIe Gen 2, and concurrent 2.4/5/6 GHz radio chains driving a 12-element internal antenna array.",
     3,
   ),
   highSpeedProjectExperienceEntry(
-    "signal-integrity-timing-analysis",
-    "Signal Integrity & Timing Analysis",
-    "wifi-6e-router",
-    "Signal integrity and timing analysis for a tri-band WiFi 6E cybersecurity gateway on a MediaTek MT7986AV platform, covering DDR4, HS400 eMMC, PCIe Gen 2, and concurrent 2.4/5/6 GHz radio chains driving a 12-element internal antenna array.",
-    "wifi-6e-cybersecurity-gateway",
-    2,
-  ),
-  highSpeedProjectExperienceEntry(
-    "fpga-high-speed-interface",
-    "FPGA & High-Speed Interface Development",
-    "high-speed-camera-interface",
-    "High-speed video interface development for a rugged Android signage player, with a Lontium LT6911UXC HDMI-to-MIPI CSI-2 bridge, HDCP 2.2 HDMI input, 4K@60 HDMI output, and LPDDR4 routing around a Rockchip RK3566 SoC.",
-    "rugged-android-digital-signage-player",
-    4,
-  ),
-  highSpeedProjectExperienceEntry(
-    "multi-gigabit-design",
-    "Multi-Gigabit Design",
-    "gigabit-ethernet-switch-module",
-    "Multi-gigabit design for an outdoor tri-band Wi-Fi 6 access point on a Qualcomm IPQ8078 platform, integrating PCIe Gen 3 radio links, a 10G SFP+ fibre uplink, dual Gigabit Ethernet, and an LTE/5G modem across a 12-FEM RF front end.",
     "outdoor-wifi-6-access-point",
-    4,
+    "Outdoor Wi-Fi 6 Access Point",
+    "outdoor-wifi-6-access-point",
+    "Multi-gigabit design for an outdoor tri-band Wi-Fi 6 access point on a Qualcomm IPQ8078 platform, integrating PCIe Gen 3 radio links, a 10G SFP+ fibre uplink, dual Gigabit Ethernet, and an LTE/5G modem across a 12-FEM RF front end.",
+    1,
+  ),
+  highSpeedProjectExperienceEntry(
+    "can-fd-industrial-io-controller",
+    "CAN FD Industrial I/O Controller",
+    "can-fd-industrial-io-controller",
+    "High-density digital I/O platform with five synchronized automotive-grade MCUs driving 240 configurable channels over CAN FD, with controlled-impedance routing and multi-MCU timing lock across a 6-layer, 2,600+ component board.",
+  ),
+  highSpeedProjectExperienceEntry(
+    "ev-vcu-demo-platform",
+    "EV VCU Demo Platform",
+    "ev-vcu-demo-platform",
+    "Connected EV Vehicle Control Unit demo platform on an ST SPC560 automotive MCU, integrating high-side switch drivers, H-bridge motor control, MSDI inputs, and a companion radio board for BLE, cellular, and GNSS across 8+ vehicle interfaces.",
+    0,
+  ),
+  highSpeedProjectExperienceEntry(
+    "rugged-android-digital-signage-player",
+    "Rugged Android Digital Signage Player",
+    "rugged-android-digital-signage-player",
+    "High-speed video interface development for a rugged Android signage player, with a Lontium LT6911UXC HDMI-to-MIPI CSI-2 bridge, HDCP 2.2 HDMI input, 4K@60 HDMI output, and LPDDR4 routing around a Rockchip RK3566 SoC.",
+    2,
   ),
 ];
 

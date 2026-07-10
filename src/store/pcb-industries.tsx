@@ -1,6 +1,6 @@
 import { PCBIndustry } from "@/components/services-cmp/PCBIndustriesSection";
 import { advancedModularMedicalSimulatorCaseStudy } from "@/store/embedded-case-studies-v2/advanced-modular-medical-simulator";
-import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
+import { evVcuDemoPlatformCaseStudy } from "@/store/embedded-case-studies-v2/ev-vcu-demo-platform";
 import { fortyPort10gbeCoreRouterLineCardCaseStudy } from "@/store/pcb-case-studies-v2/40-port-10gbe-core-router-line-card";
 import { highDensityPcbDesignAiGpuChassisMotherboardCaseStudy } from "@/store/pcb-case-studies-v2/high-density-pcb-design-ai-gpu-chassis-motherboard";
 import { highDensityPcbDesignGponOltCaseStudy } from "@/store/pcb-case-studies-v2/high-density-pcb-design-gpon-olt";
@@ -32,7 +32,7 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/medical.png",
     relatedCaseStudies: [
       toRelatedCaseStudy(advancedModularMedicalSimulatorCaseStudy, {
-        imageIndices: [0, 5, 9],
+        imageIndices: [3, 8, 11],
       }),
     ],
   },
@@ -61,8 +61,8 @@ export const PCB_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/automotive.png",
     relatedCaseStudies: [
-      toRelatedCaseStudy(obdIiDiagnosticsDeviceCaseStudy, {
-        imageIndices: [0, 9, 10],
+      toRelatedCaseStudy(evVcuDemoPlatformCaseStudy, {
+        imageIndices: [6, 7, 8],
       }),
     ],
   },

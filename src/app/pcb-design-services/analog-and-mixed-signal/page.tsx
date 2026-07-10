@@ -12,16 +12,11 @@ import {
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
-import {
-  getCaseStudyCardImage,
-  allCaseStudiesData,
-} from "@/store/case-studies";
-import {
-  fullProductDevelopmentCaseStudiesData,
-  getFullProductDevelopmentCardImage,
-} from "@/store/full-product-development-case-studies";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
-import { pcbV2ServiceCaseStudy } from "@/store/pcb-case-studies-v2/service-cards";
+import {
+  pcbV2ProjectExperienceEntry,
+  pcbV2ServiceCaseStudy,
+} from "@/store/pcb-case-studies-v2/service-cards";
 
 export const metadata = buildMetadata({
   title: "Analog & Mixed-Signal PCB Design | ADC/DAC Layout | Qmax",
@@ -61,76 +56,29 @@ const pcbCaseStudies: ServiceCaseStudy[] = [
   pcbV2ServiceCaseStudy("40-port-10gbe-core-router-line-card"),
 ];
 
-type ProjectExperienceEntryOptions = {
-  description?: string;
-  imageSrc?: string;
-  imageAlt?: string;
-  /** Slug of a full-product-development case study to link image/alt/href to. */
-  relatedSlug?: string;
-  /** Image index within the related case study (defaults to its card image). */
-  imageIndex?: number;
-};
-
-function projectExperienceEntry(
-  id: string,
-  listTitle: string,
-  caseStudyId: string,
-  descriptionOrOptions?: string | ProjectExperienceEntryOptions,
-): ProjectExperienceItem {
-  const study = allCaseStudiesData.find(
-    (caseStudy) => caseStudy.id === caseStudyId,
-  );
-  if (!study) {
-    throw new Error(`Case study not found: ${caseStudyId}`);
-  }
-
-  const options =
-    typeof descriptionOrOptions === "string"
-      ? { description: descriptionOrOptions }
-      : descriptionOrOptions;
-
-  const base = {
-    id,
-    listTitle,
-    captionTitle: study.title,
-    description: options?.description ?? study.summary,
-  };
-
-  if (options?.relatedSlug) {
-    const relatedStudy = fullProductDevelopmentCaseStudiesData.find(
-      (caseStudy) => caseStudy.slug === options.relatedSlug,
-    );
-    if (!relatedStudy) {
-      throw new Error(`Related case study not found: ${options.relatedSlug}`);
-    }
-
-    const imageSrc =
-      options.imageSrc ??
-      (options.imageIndex !== undefined
-        ? relatedStudy.images[options.imageIndex]
-        : getFullProductDevelopmentCardImage(relatedStudy));
-    if (!imageSrc) {
-      throw new Error(
-        `Image index ${options.imageIndex} out of range for: ${options.relatedSlug}`,
-      );
-    }
-
-    return {
-      ...base,
-      captionTitle: relatedStudy.title,
-      imageSrc,
-      imageAlt: options.imageAlt ?? relatedStudy.title,
-      caseStudyHref: `/case-studies/${relatedStudy.slug}`,
-    };
-  }
-
-  return {
-    ...base,
-    imageSrc: options?.imageSrc ?? getCaseStudyCardImage(caseStudyId),
-    imageAlt: options?.imageAlt ?? study.title,
-    caseStudyHref: `/case-studies/${study.id}`,
-  };
-}
+const projectExperience: ProjectExperienceItem[] = [
+  pcbV2ProjectExperienceEntry(
+    "cold-storage-iot-monitoring-system",
+    "Cold Storage IoT Monitoring System",
+    "cold-storage-iot-monitoring-system",
+    "Mixed-signal PCB layout for a cold-storage IoT monitoring board, partitioning the ESP32 digital and radio sections from the analog sensor chain - four NTC temperature inputs, dual pressure interfaces, and 12-/16-bit ADC acquisition - with dedicated ground references for low-noise capture.",
+    3,
+  ),
+  pcbV2ProjectExperienceEntry(
+    "can-fd-industrial-io-controller",
+    "CAN FD Industrial I/O Controller",
+    "can-fd-industrial-io-controller",
+    "High-density mixed-signal layout for a 240-channel industrial I/O controller, isolating the pressure-sensor analog front end and delta-sigma ADC from high-side digital switching across a 6-layer, 2,600+ component board.",
+    3,
+  ),
+  pcbV2ProjectExperienceEntry(
+    "smart-lubrication-controller",
+    "Smart Lubrication Controller",
+    "smart-lubrication-controller",
+    "EMI-conscious 2-layer mixed-signal layout for a railway-grade lubrication controller, partitioning BLE/GSM RF, sensor inputs, and relay drive circuits with surge-hardened field I/O for track-side deployment.",
+    5,
+  ),
+];
 
 const coreServiceOfferings: HighSpeedCoreOffering[] = [
   {
@@ -290,20 +238,6 @@ const coreServiceOfferings: HighSpeedCoreOffering[] = [
     applications:
       "Scientific instruments · Industrial sensing · Medical electronics · Process control · Bio-potential monitoring",
   },
-];
-
-const projectExperience: ProjectExperienceItem[] = [
-  projectExperienceEntry(
-    "mixed-signal-design",
-    "Mixed-Signal PCB Design",
-    "industrial-defect-monitoring-system",
-    {
-      description:
-        "Mixed-signal PCB layout for a cold-storage IoT monitoring board, partitioning the ESP32 digital and radio sections from the analog sensor chain - four NTC temperature inputs, dual pressure interfaces, and 12-/16-bit ADC acquisition - with dedicated ground references for low-noise capture.",
-      relatedSlug: "cold-storage-iot-monitoring-system",
-      imageIndex: 0,
-    },
-  ),
 ];
 
 const WHY_CARDS = [

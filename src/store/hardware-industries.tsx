@@ -1,9 +1,9 @@
 import { PCBIndustry } from "@/components/services-cmp/PCBIndustriesSection";
 import { advancedModularMedicalSimulatorCaseStudy } from "@/store/embedded-case-studies-v2/advanced-modular-medical-simulator";
+import { canFdIndustrialIoControllerCaseStudy } from "@/store/embedded-case-studies-v2/can-fd-industrial-io-controller";
 import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
 import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
 import { outdoorWifi6AccessPointCaseStudy } from "@/store/embedded-case-studies-v2/outdoor-wifi-6-access-point";
-import { ruggedAndroidDigitalSignagePlayerCaseStudy } from "@/store/full-product-development-case-studies/rugged-android-digital-signage-player";
 import { wifi6eCybersecurityGatewayCaseStudy } from "@/store/full-product-development-case-studies/wifi-6e-cybersecurity-gateway";
 import { toRelatedCaseStudy } from "@/store/full-product-development-case-studies";
 
@@ -62,7 +62,7 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/medical.png",
     relatedCaseStudies: [
       toRelatedCaseStudy(advancedModularMedicalSimulatorCaseStudy, {
-        imageIndices: [3, 7, 11],
+        imageIndices: [0, 1, 2],
       }),
     ],
   },
@@ -90,7 +90,7 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/aerospace.png",
     relatedCaseStudies: [
       toRelatedCaseStudy(outdoorWifi6AccessPointCaseStudy, {
-        imageIndices: [4, 5, 6],
+        imageIndices: [0, 1, 2],
       }),
     ],
   },
@@ -118,7 +118,7 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/ev and power.png",
     relatedCaseStudies: [
       toRelatedCaseStudy(coldStorageIotMonitoringSystemCaseStudy, {
-        imageIndices: [2, 3, 4],
+        imageIndices: [1, 2, 3],
       }),
     ],
   },
@@ -174,8 +174,8 @@ export const HARDWARE_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/industry.png",
     relatedCaseStudies: [
-      toRelatedCaseStudy(ruggedAndroidDigitalSignagePlayerCaseStudy, {
-        imageIndices: [3, 4, 5],
+      toRelatedCaseStudy(canFdIndustrialIoControllerCaseStudy, {
+        imageIndices: [0, 1, 2],
       }),
     ],
   },
