@@ -3,13 +3,6 @@ import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-devel
 const signageAluminumEnclosureImages = [
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/teck_new_v1.png",
   "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/teck_new_v2.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/4.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/2.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/3.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/1.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/1.1.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/TEK_OTT_REV1P0_BRD_PR3.bot.svg",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/tekion_ott/TEK_OTT_REV1P0_BRD_PR3.svg",
 ];
 
 export const signageAluminumEnclosureCaseStudy: FullProductDevelopmentCaseStudy =

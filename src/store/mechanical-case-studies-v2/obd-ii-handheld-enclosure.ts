@@ -2,18 +2,8 @@ import type { FullProductDevelopmentCaseStudy } from "@/store/full-product-devel
 import { mechanicalCaseStudyContactCtaPrefix } from "@/store/mechanical-case-studies-v2/contact-cta";
 
 const obdIiHandheldEnclosureImages = [
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.1.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.5.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/20Jan2022TekionOBD.4.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.11.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD/10April2022TekionOBD.9.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/4.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/5.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/6.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/Smart_OBD2/7.png",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021022.jpg",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021025.jpg",
-  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/mechanical/OBD_Device/1000021028.jpg",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/connected_on_board_diagnostic_device/Picture8.png",
+  "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/connected_on_board_diagnostic_device/Picture9.png",
 ];
 
 export const obdIiHandheldEnclosureCaseStudy: FullProductDevelopmentCaseStudy =
@@ -22,7 +12,8 @@ export const obdIiHandheldEnclosureCaseStudy: FullProductDevelopmentCaseStudy =
     slug: "obd-ii-handheld-enclosure",
     section: "mechanical",
     title: "Rugged IP65 Handheld Enclosure for an OBD-II Diagnostics Device",
-    subtitle: "Mechanical Design Case Study — Industrial Design to Volume Production",
+    subtitle:
+      "Mechanical Design Case Study — Industrial Design to Volume Production",
     metaTags: [
       "Domain: Automotive",
       "Industry: Dealer Management Systems",
@@ -103,7 +94,8 @@ export const obdIiHandheldEnclosureCaseStudy: FullProductDevelopmentCaseStudy =
           "Managed internal electronics heat through conductive paths and material selection while keeping the housing fully vent-free for IP65",
       },
       {
-        challenge: "Antenna placement for multiple radios in a constrained space",
+        challenge:
+          "Antenna placement for multiple radios in a constrained space",
         resolution:
           "Defined metal-free zones and keep-outs in the plastic architecture so RF performance survived the compact packaging, and supported SAR compliance for a handheld, body-worn use case",
       },
@@ -219,8 +211,7 @@ export const obdIiHandheldEnclosureCaseStudy: FullProductDevelopmentCaseStudy =
       { key: "Weight", value: "~250 g" },
       {
         key: "Ingress Rating",
-        value:
-          "IP65 per IEC 60529 (dust-tight, protected against water jets)",
+        value: "IP65 per IEC 60529 (dust-tight, protected against water jets)",
       },
       { key: "Operating Temperature", value: "−20 °C to +55 °C" },
       {
