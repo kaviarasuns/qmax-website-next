@@ -1,7 +1,7 @@
 import { PCBIndustry } from "@/components/services-cmp/PCBIndustriesSection";
 import { advancedModularMedicalSimulatorCaseStudy } from "@/store/embedded-case-studies-v2/advanced-modular-medical-simulator";
 import { coldStorageIotMonitoringSystemCaseStudy } from "@/store/full-product-development-case-studies/cold-storage-iot-monitoring-system";
-import { obdIiDiagnosticsDeviceCaseStudy } from "@/store/full-product-development-case-studies/obd-ii-diagnostics-device";
+import { obdIiHandheldEnclosureCaseStudy } from "@/store/mechanical-case-studies-v2/obd-ii-handheld-enclosure";
 import { outdoorWifi6AccessPointCaseStudy } from "@/store/embedded-case-studies-v2/outdoor-wifi-6-access-point";
 import { ruggedAndroidDigitalSignagePlayerCaseStudy } from "@/store/full-product-development-case-studies/rugged-android-digital-signage-player";
 import { toRelatedCaseStudy } from "@/store/full-product-development-case-studies";
@@ -32,8 +32,8 @@ export const MECHANICAL_INDUSTRIES: PCBIndustry[] = [
     image:
       "https://d1yetprhniwywz.cloudfront.net/v2/pcb-design/PCBIndustriesSection/automotive.png",
     relatedCaseStudies: [
-      toRelatedCaseStudy(obdIiDiagnosticsDeviceCaseStudy, {
-        imageIndices: [10, 11],
+      toRelatedCaseStudy(obdIiHandheldEnclosureCaseStudy, {
+        imageIndices: [0, 5, 9],
       }),
     ],
   },

@@ -22,6 +22,9 @@ import { advancedModularMedicalSimulatorCaseStudy } from "@/store/embedded-case-
 import { canFdIndustrialIoControllerCaseStudy } from "@/store/embedded-case-studies-v2/can-fd-industrial-io-controller";
 import { ultraLowPowerBluetoothMouseCaseStudy } from "@/store/embedded-case-studies-v2/ultra-low-power-bluetooth-mouse";
 import { thirtyTwoChannelUltraLowNoiseDaqCaseStudy } from "@/store/embedded-case-studies-v2/32-channel-ultra-low-noise-daq";
+import { obdIiHandheldEnclosureCaseStudy } from "@/store/mechanical-case-studies-v2/obd-ii-handheld-enclosure";
+import { signageAluminumEnclosureCaseStudy } from "@/store/mechanical-case-studies-v2/signage-aluminum-enclosure";
+import { rfPlasmaGeneratorEnclosureCaseStudy } from "@/store/mechanical-case-studies-v2/rf-plasma-generator-enclosure";
 
 export type FullProductDevelopmentNavSection = {
   id: string;
@@ -48,7 +51,7 @@ export type FullProductDevelopmentCaseStudy = {
   id: string;
   slug: string;
   /** Listing section override for /case-studies. Defaults to "Full Product Development". */
-  section?: "pcb" | "embedded";
+  section?: "pcb" | "embedded" | "mechanical";
   title: string;
   subtitle?: string;
   metaTags: string[];
@@ -103,6 +106,9 @@ export const fullProductDevelopmentCaseStudiesData: FullProductDevelopmentCaseSt
     ultraLowPowerBluetoothMouseCaseStudy,
     thirtyTwoChannelUltraLowNoiseDaqCaseStudy,
     uvDisinfectionSystemCaseStudy,
+    obdIiHandheldEnclosureCaseStudy,
+    signageAluminumEnclosureCaseStudy,
+    rfPlasmaGeneratorEnclosureCaseStudy,
   ];
 
 export function getFullProductDevelopmentCaseStudy(

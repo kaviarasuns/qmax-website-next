@@ -114,9 +114,25 @@ export const pcbCaseStudies: CaseStudyListItem[] = [
   })),
 ];
 
-export const mechanicalCaseStudies = mechanicalCaseStudiesData.map(
-  (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "mechanical"),
-);
+const mechanicalSectionFullProductDevelopmentStudies =
+  fullProductDevelopmentCaseStudiesData.filter(
+    (study) => study.section === "mechanical",
+  );
+
+export const mechanicalCaseStudies: CaseStudyListItem[] = [
+  ...mechanicalCaseStudiesData.map((caseStudy, index) =>
+    toCaseStudyListItem(caseStudy, index, "mechanical"),
+  ),
+  ...mechanicalSectionFullProductDevelopmentStudies.map((study, index) => ({
+    id: mechanicalCaseStudiesData.length + index + 1,
+    title: study.title,
+    image: getFullProductDevelopmentCardImage(study),
+    link: `/case-studies/${study.slug}`,
+    category: "mechanical",
+    summary: study.listingSummary,
+    cardImageZoom: study.cardImageZoom,
+  })),
+];
 
 export const industrialCaseStudies = industrialCaseStudiesData.map(
   (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "industrial"),
@@ -128,7 +144,12 @@ export const engineeringSupportCaseStudies = engineeringSupportCaseStudiesData.m
 
 export const fullProductDevelopmentCaseStudies: CaseStudyListItem[] =
   fullProductDevelopmentCaseStudiesData
-    .filter((study) => study.section !== "pcb" && study.section !== "embedded")
+    .filter(
+      (study) =>
+        study.section !== "pcb" &&
+        study.section !== "embedded" &&
+        study.section !== "mechanical",
+    )
     .map((study, index) => ({
       id: index + 1,
       title: study.title,
