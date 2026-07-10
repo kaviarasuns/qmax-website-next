@@ -31,6 +31,8 @@ type ContentProps = Pick<
   | "interfaces"
   | "firmwareIntro"
   | "firmwareItems"
+  | "testingIntro"
+  | "testingItems"
   | "specs"
   | "summary"
   | "contactCtaPrefix"
@@ -47,6 +49,8 @@ export function CaseStudyV2Content({
   interfaces,
   firmwareIntro,
   firmwareItems,
+  testingIntro,
+  testingItems = [],
   specs,
   summary,
   contactCtaPrefix = DEFAULT_CONTACT_CTA_PREFIX,
@@ -59,10 +63,14 @@ export function CaseStudyV2Content({
   const [fwVisible, setFwVisible] = useState<boolean[]>(() =>
     firmwareItems.map(() => false),
   );
+  const [testingVisible, setTestingVisible] = useState<boolean[]>(() =>
+    testingItems.map(() => false),
+  );
 
   const summaryRef = useRef<HTMLDivElement>(null);
   const scopeRefs = useRef<(HTMLLIElement | null)[]>([]);
   const fwRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const testingRefs = useRef<(HTMLLIElement | null)[]>([]);
 
   useEffect(() => {
     const sections = navSections
@@ -155,6 +163,36 @@ export function CaseStudyV2Content({
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (testingItems.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const index = testingRefs.current.indexOf(
+            entry.target as HTMLLIElement,
+          );
+          if (index >= 0) {
+            setTestingVisible((prev) => {
+              if (prev[index]) return prev;
+              const next = [...prev];
+              next[index] = true;
+              return next;
+            });
+          }
+        });
+      },
+      { threshold: 0.12 },
+    );
+
+    testingRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [testingItems.length]);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -380,6 +418,39 @@ export function CaseStudyV2Content({
                 );
               })}
             </div>
+          </section>
+        )}
+
+        {testingItems.length > 0 && (
+          <section
+            className="scroll-mt-[7.75rem] max-[900px]:scroll-mt-[7rem] pt-4 pb-[2.6rem] border-b border-[#e3e8ee]"
+            id="testing"
+          >
+            <SectionHead title={sectionTitle("testing")} />
+            {testingIntro ? (
+              <p className="text-foreground leading-[1.6] mb-4">
+                {testingIntro}
+              </p>
+            ) : null}
+            <ul className="list-none mt-[1.2rem] mb-0 p-0 grid grid-cols-1 gap-y-[0.1rem]">
+              {testingItems.map((item, index) => (
+                <li
+                  key={item.title}
+                  ref={(el) => {
+                    testingRefs.current[index] = el;
+                  }}
+                  className={`relative py-[0.7rem] pl-[1.9rem] border-b border-[#e3e8ee] text-foreground text-base before:content-[''] before:absolute before:left-0 before:top-[1.05rem] before:w-[11px] before:h-[11px] before:border-2 before:border-red-500 before:rounded-[2px] after:content-[''] after:absolute after:left-[3px] after:top-[1.18rem] after:w-[5px] after:h-[5px] after:bg-red-500 after:rounded-[1px] after:transition-opacity after:duration-300 motion-reduce:after:transition-none ${
+                    testingVisible[index]
+                      ? "after:opacity-100"
+                      : "after:opacity-0"
+                  }`}
+                >
+                  <span className="font-medium">{item.title}</span>
+                  {" — "}
+                  {item.description}
+                </li>
+              ))}
+            </ul>
           </section>
         )}
 

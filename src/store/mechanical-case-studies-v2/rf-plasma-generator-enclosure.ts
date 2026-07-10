@@ -43,10 +43,15 @@ export const rfPlasmaGeneratorEnclosureCaseStudy: FullProductDevelopmentCaseStud
       {
         id: "firmware",
         num: "07",
-        label: "Manufacturing & Validation",
+        label: "Manufacturing & Production",
       },
-      { id: "specs", num: "08", label: "Technical Specifications" },
-      { id: "summary", num: "09", label: "Summary" },
+      {
+        id: "testing",
+        num: "08",
+        label: "Testing & Validation",
+      },
+      { id: "specs", num: "09", label: "Technical Specifications" },
+      { id: "summary", num: "10", label: "Summary" },
     ],
     images: rfPlasmaGeneratorEnclosureImages,
     overview: [
@@ -163,7 +168,7 @@ export const rfPlasmaGeneratorEnclosureCaseStudy: FullProductDevelopmentCaseStud
       },
     ],
     firmwareIntro:
-      "Qmax supported the enclosure from sheet-metal prototyping through TÜV certification and production deployment:",
+      "Qmax supported the enclosure from sheet-metal prototyping through production deployment:",
     firmwareItems: [
       {
         title: "Precision sheet-metal fabrication",
@@ -185,6 +190,10 @@ export const rfPlasmaGeneratorEnclosureCaseStudy: FullProductDevelopmentCaseStud
         description:
           "Production units manufactured and deployed in the field following TÜV certification",
       },
+    ],
+    testingIntro:
+      "Compliance testing support through TÜV certification on production-representative units:",
+    testingItems: [
       {
         title: "Radiated and conducted emissions",
         description:

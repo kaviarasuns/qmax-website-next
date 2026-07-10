@@ -43,15 +43,19 @@ export const obdIiHandheldEnclosureCaseStudy: FullProductDevelopmentCaseStudy =
       {
         id: "firmware",
         num: "07",
-        label: "Manufacturing & Validation",
+        label: "Manufacturing & Production",
       },
-      { id: "specs", num: "08", label: "Technical Specifications" },
-      { id: "summary", num: "09", label: "Summary" },
+      {
+        id: "testing",
+        num: "08",
+        label: "Testing & Validation",
+      },
+      { id: "specs", num: "09", label: "Technical Specifications" },
+      { id: "summary", num: "10", label: "Summary" },
     ],
     images: obdIiHandheldEnclosureImages,
     overview: [
       "A leading automotive retail SaaS provider in the USA wanted its own purpose-built hardware to acquire data directly from vehicles in dealership service lanes, and engaged Qmax Systems to develop the complete product. This case study focuses on the mechanical and industrial design of that device: a rugged, handheld OBD-II diagnostics unit engineered to survive daily professional use in automotive workshops. Qmax owned the mechanical workstream end to end — industrial design, enclosure engineering, material selection, DFM/DFA, tooling, prototyping, validation, and mass production support.",
-      "For the complete electronics and firmware story, see the OBD-II Diagnostics Device full product development case study at /case-studies/obd-ii-diagnostics-device.",
     ],
     brief: [
       "The device is a compact, handheld OBD-II diagnostics unit used by workshop technicians and service advisors: it plugs into a vehicle's OBD-II port the moment a car arrives and streams vehicle data to the cloud. Mechanically, that means a one-handed, pocketable form factor that lives a hard life — plugged and unplugged thousands of times, dropped onto concrete floors, tossed into toolboxes, and exposed to oil, dust, and washdown in the service lane.",
@@ -164,7 +168,7 @@ export const obdIiHandheldEnclosureCaseStudy: FullProductDevelopmentCaseStudy =
       },
     ],
     firmwareIntro:
-      "Qmax supported the device from tooling through volume manufacturing and mechanical qualification on production-representative units:",
+      "Qmax supported the device from tooling through volume manufacturing:",
     firmwareItems: [
       {
         title: "Injection molding",
@@ -186,6 +190,10 @@ export const obdIiHandheldEnclosureCaseStudy: FullProductDevelopmentCaseStudy =
         description:
           "Scaled to volume manufacturing — thousands of units produced, packaged, and shipped to the customer",
       },
+    ],
+    testingIntro:
+      "Mechanical qualification was performed on production-representative units:",
+    testingItems: [
       {
         title: "Drop and shock testing",
         description:

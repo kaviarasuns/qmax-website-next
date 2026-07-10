@@ -35,6 +35,8 @@ export default function CaseStudyPageV2({
     interfaces,
     firmwareIntro,
     firmwareItems,
+    testingIntro,
+    testingItems,
     specs,
     summary,
     contactCtaPrefix,
@@ -65,6 +67,8 @@ export default function CaseStudyPageV2({
         interfaces={interfaces}
         firmwareIntro={firmwareIntro}
         firmwareItems={firmwareItems}
+        testingIntro={testingIntro}
+        testingItems={testingItems}
         specs={specs}
         summary={summary}
         contactCtaPrefix={contactCtaPrefix}

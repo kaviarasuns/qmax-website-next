@@ -43,10 +43,15 @@ export const signageAluminumEnclosureCaseStudy: FullProductDevelopmentCaseStudy 
       {
         id: "firmware",
         num: "07",
-        label: "Manufacturing & Validation",
+        label: "Manufacturing & Production",
       },
-      { id: "specs", num: "08", label: "Technical Specifications" },
-      { id: "summary", num: "09", label: "Summary" },
+      {
+        id: "testing",
+        num: "08",
+        label: "Testing & Validation",
+      },
+      { id: "specs", num: "09", label: "Technical Specifications" },
+      { id: "summary", num: "10", label: "Summary" },
     ],
     images: signageAluminumEnclosureImages,
     enlargedImages: { 7: 1.2, 8: 1.3 },
@@ -165,7 +170,7 @@ export const signageAluminumEnclosureCaseStudy: FullProductDevelopmentCaseStudy 
       },
     ],
     firmwareIntro:
-      "Qmax supported the enclosure from CNC prototyping through volume machining, finishing, and mechanical qualification:",
+      "Qmax supported the enclosure from CNC prototyping through volume machining and finishing:",
     firmwareItems: [
       {
         title: "CNC machining",
@@ -187,6 +192,10 @@ export const signageAluminumEnclosureCaseStudy: FullProductDevelopmentCaseStudy 
         description:
           "2,000+ units machined, finished, assembled, packed in retail-style cartons, and shipped to the customer",
       },
+    ],
+    testingIntro:
+      "Mechanical qualification was performed on production-representative units:",
+    testingItems: [
       {
         title: "Thermal cycling and sustained soak",
         description:

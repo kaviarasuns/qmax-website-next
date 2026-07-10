@@ -74,6 +74,9 @@ export type FullProductDevelopmentCaseStudy = {
   interfaces: FullProductDevelopmentCard[];
   firmwareIntro?: string;
   firmwareItems: FullProductDevelopmentCard[];
+  /** Optional Testing & Validation section (e.g. mechanical case studies). */
+  testingIntro?: string;
+  testingItems?: FullProductDevelopmentCard[];
   specs: FullProductDevelopmentSpec[];
   summary: string[];
   /** Text before the contact email link in the summary CTA. */
