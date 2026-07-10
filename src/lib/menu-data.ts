@@ -1,3 +1,5 @@
+import { isDevEnv } from "@/lib/env";
+
 export interface SubMenuItem {
   title: string;
   href: string;
@@ -65,18 +67,22 @@ export const menuData: MenuItem[] = [
             title: "RF and Microwave",
             href: "/pcb-design-services/rf-and-microwave-pcb-design",
           },
-          {
-            title: "SI & PI Analysis Services",
-            href: "/pcb-design-services/si-pi-analysis",
-          },
-          {
-            title: "PCB Library Services",
-            href: "/pcb-design-services/pcb-library-services",
-          },
-          {
-            title: "PCB Design Review Services",
-            href: "/pcb-design-services/pcb-design-review-services",
-          },
+          ...(isDevEnv
+            ? [
+                {
+                  title: "SI & PI Analysis Services",
+                  href: "/pcb-design-services/si-pi-analysis",
+                },
+                {
+                  title: "PCB Library Services",
+                  href: "/pcb-design-services/pcb-library-services",
+                },
+                {
+                  title: "PCB Design Review Services",
+                  href: "/pcb-design-services/pcb-design-review-services",
+                },
+              ]
+            : []),
         ],
       },
       {

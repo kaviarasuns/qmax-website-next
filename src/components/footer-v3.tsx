@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronDown, Facebook, Linkedin, Youtube } from "lucide-react";
 
 import DownloadPresentationModal from "@/components/download-presentation-modal";
+import { isDevEnv } from "@/lib/env";
 
 const SERVICE_LINKS = [
   {
@@ -47,9 +48,9 @@ const QUICK_LINKS_BEFORE_RESOURCES = [
 
 const QUICK_LINKS_AFTER_RESOURCES = [
   { label: "Careers", href: "/careers" },
-  { label: "Suppliers", href: "/suppliers" },
+  ...(isDevEnv ? [{ label: "Suppliers", href: "/suppliers" }] : []),
   { label: "Contact Us", href: "/contact" },
-] as const;
+];
 
 const SOCIAL_LINKS = [
   {

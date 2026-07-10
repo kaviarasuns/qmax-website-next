@@ -1,14 +1,21 @@
 "use client";
 
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import CaseStudyCard from "@/components/CaseStudyCard";
+import CaseStudyCard, {
+  type CaseStudyCardProps,
+} from "@/components/CaseStudyCard";
+import { isDevEnv } from "@/lib/env";
 import {
+  type CaseStudyListItem,
   embeddedCaseStudies,
+  embeddedCaseStudiesV2,
   engineeringSupportCaseStudies,
   fullProductDevelopmentCaseStudies,
   industrialCaseStudies,
   mechanicalCaseStudies,
+  mechanicalCaseStudiesV2,
   pcbCaseStudies,
+  pcbCaseStudiesV2,
 } from "@/store/case-studies";
 
 // useLayoutEffect logs a warning during SSR; fall back to useEffect on the
@@ -18,23 +25,54 @@ const useIsomorphicLayoutEffect =
 
 const SCROLL_STORAGE_KEY = "case-studies:scroll-y";
 
-const sections = [
-  { id: "full-product-development", label: "Full Product Development" },
-  { id: "embedded", label: "Embedded Systems" },
-  { id: "pcb", label: "PCB Design" },
-  { id: "mechanical", label: "Mechanical Design" },
-  { id: "industrial", label: "Industrial Design" },
-  { id: "engineering-support-services", label: "Engineering Support Services" },
-];
-
-const sectionCounts: { [key: string]: number } = {
-  "full-product-development": fullProductDevelopmentCaseStudies.length,
-  embedded: embeddedCaseStudies.length,
-  pcb: pcbCaseStudies.length,
-  mechanical: mechanicalCaseStudies.length,
-  industrial: industrialCaseStudies.length,
-  "engineering-support-services": engineeringSupportCaseStudies.length,
+type Section = {
+  id: string;
+  label: string;
+  studies: CaseStudyListItem[];
+  /** Extra props forwarded to every CaseStudyCard in this section. */
+  cardProps?: Partial<CaseStudyCardProps>;
 };
+
+// Single source of truth for the listing: drives both the sidebar nav and the
+// rendered sections. In dev the legacy collections are shown alongside the v2
+// (Full Product Development) entries; production shows only the curated v2 set.
+const sections: Section[] = [
+  {
+    id: "full-product-development",
+    label: "Full Product Development",
+    studies: fullProductDevelopmentCaseStudies,
+  },
+  {
+    id: "embedded",
+    label: "Embedded Systems",
+    studies: isDevEnv ? embeddedCaseStudies : embeddedCaseStudiesV2,
+  },
+  {
+    id: "pcb",
+    label: "PCB Design",
+    studies: isDevEnv ? pcbCaseStudies : pcbCaseStudiesV2,
+    cardProps: { imageClassName: "object-contain px-14 py-5" },
+  },
+  {
+    id: "mechanical",
+    label: "Mechanical Design",
+    studies: isDevEnv ? mechanicalCaseStudies : mechanicalCaseStudiesV2,
+  },
+  ...(isDevEnv
+    ? [
+        {
+          id: "industrial",
+          label: "Industrial Design",
+          studies: industrialCaseStudies,
+        },
+        {
+          id: "engineering-support-services",
+          label: "Engineering Support Services",
+          studies: engineeringSupportCaseStudies,
+        },
+      ]
+    : []),
+];
 
 function CaseStudyCardNumber({ number }: { number: number }) {
   return (
@@ -228,7 +266,7 @@ export default function CaseStudiesPage() {
                             : "bg-gray-100 text-muted-foreground group-hover:bg-gray-200 group-hover:text-foreground"
                         }`}
                       >
-                        {sectionCounts[section.id]}
+                        {section.studies.length}
                       </span>
                     </div>
                   </div>
@@ -245,148 +283,36 @@ export default function CaseStudiesPage() {
               Case <span className="text-red-500">Studies</span>
             </h1>
           </header>
-          {/* Full Product Development Section */}
-          <div id="full-product-development" className="mb-24 scroll-mt-32">
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Full Product Development
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {fullProductDevelopmentCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {fullProductDevelopmentCaseStudies.map((study, index) => (
-                <div key={`fpdstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard {...study} />
+          {sections.map((section, sectionIndex) => {
+            // The final section needs extra breathing room before the footer.
+            const isLast = sectionIndex === sections.length - 1;
+            return (
+              <div
+                key={section.id}
+                id={section.id}
+                className={`scroll-mt-32 ${isLast ? "mb-80 xl:mb-96" : "mb-24"}`}
+              >
+                <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
+                      {section.label}
+                    </h2>
+                  </div>
+                  <span className="text-sm text-muted-foreground font-medium mb-1">
+                    {section.studies.length} Projects
+                  </span>
                 </div>
-              ))}
-            </div>
-          </div>
-          {/* Embedded Section */}
-          <div id="embedded" className="mb-24 scroll-mt-32">
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 01</span> */}
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Embedded Systems
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {embeddedCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {embeddedCaseStudies.map((study, index) => (
-                <div key={`estudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard
-                    {...study}
-                    // imageBackgroundClassName="bg-blue-200"
-                  />
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+                  {section.studies.map((study, index) => (
+                    <div key={`${section.id}-${study.id}`} className="relative">
+                      <CaseStudyCardNumber number={index + 1} />
+                      <CaseStudyCard {...study} {...section.cardProps} />
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-          {/* PCB Section */}
-          <div id="pcb" className="mb-24 scroll-mt-32">
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 02</span> */}
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  PCB Design
-                </h2>
               </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {pcbCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {pcbCaseStudies.map((study, index) => (
-                <div key={`pstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard
-                    {...study}
-                    imageClassName="object-contain px-14 py-5"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Mechanical Section */}
-          <div id="mechanical" className="mb-24 scroll-mt-32">
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 03</span> */}
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Mechanical Design
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {mechanicalCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {mechanicalCaseStudies.map((study, index) => (
-                <div key={`mstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard {...study} />
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Industrial Section */}
-          <div id="industrial" className="mb-10 scroll-mt-32">
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                {/* <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 block">Category 04</span> */}
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Industrial Design
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {industrialCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {industrialCaseStudies.map((study, index) => (
-                <div key={`istudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard
-                    {...study}
-                    // imageBackgroundClassName="bg-blue-200"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-          {/* Engineering Support Services Section */}
-          <div
-            id="engineering-support-services"
-            className="mb-80 scroll-mt-32 xl:mb-96"
-          >
-            <div className="mb-10 flex items-end justify-between border-b border-zinc-200 pb-4">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground">
-                  Engineering Support Services
-                </h2>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium mb-1">
-                {engineeringSupportCaseStudies.length} Projects
-              </span>
-            </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-              {engineeringSupportCaseStudies.map((study, index) => (
-                <div key={`esstudy-${study.id}`} className="relative">
-                  <CaseStudyCardNumber number={index + 1} />
-                  <CaseStudyCard {...study} />
-                </div>
-              ))}
-            </div>
-          </div>
+            );
+          })}
         </main>
       </div>
     </section>

@@ -74,73 +74,87 @@ const toCaseStudyListItem = (
   };
 };
 
-const embeddedSectionFullProductDevelopmentStudies =
-  fullProductDevelopmentCaseStudiesData.filter(
-    (study) => study.section === "embedded",
-  );
+const toFullProductDevelopmentListItem = (
+  study: (typeof fullProductDevelopmentCaseStudiesData)[number],
+  index: number,
+  category: string,
+): CaseStudyListItem => ({
+  id: index + 1,
+  title: study.title,
+  image: getFullProductDevelopmentCardImage(study),
+  link: `/case-studies/${study.slug}`,
+  category,
+  summary: study.listingSummary,
+  cardImageZoom: study.cardImageZoom,
+});
 
-export const embeddedCaseStudies: CaseStudyListItem[] = [
-  ...embeddedCaseStudiesData.map((caseStudy, index) =>
-    toCaseStudyListItem(caseStudy, index, "development"),
-  ),
-  ...embeddedSectionFullProductDevelopmentStudies.map((study, index) => ({
-    id: embeddedCaseStudiesData.length + index + 1,
-    title: study.title,
-    image: getFullProductDevelopmentCardImage(study),
-    link: `/case-studies/${study.slug}`,
-    category: "development",
-    summary: study.listingSummary,
-    cardImageZoom: study.cardImageZoom,
-  })),
-];
+type FpdSection = NonNullable<
+  (typeof fullProductDevelopmentCaseStudiesData)[number]["section"]
+>;
 
-const pcbSectionFullProductDevelopmentStudies =
-  fullProductDevelopmentCaseStudiesData.filter(
-    (study) => study.section === "pcb",
-  );
+/**
+ * Builds the two listing variants for a section that has both legacy and v2
+ * (Full Product Development) case studies:
+ *   - `v2`:       only the v2/FPD-sourced entries (shown in production).
+ *   - `combined`: legacy entries followed by v2 entries, with ids
+ *                 re-sequenced across the full list (shown in dev).
+ */
+const buildSectionListVariants = (
+  section: FpdSection,
+  legacyData: CaseStudy[],
+  category: string,
+): { v2: CaseStudyListItem[]; combined: CaseStudyListItem[] } => {
+  const v2 = fullProductDevelopmentCaseStudiesData
+    .filter((study) => study.section === section)
+    .map((study, index) =>
+      toFullProductDevelopmentListItem(study, index, category),
+    );
 
-export const pcbCaseStudies: CaseStudyListItem[] = [
-  ...pcbCaseStudiesData.map((caseStudy, index) =>
-    toCaseStudyListItem(caseStudy, index, "development"),
-  ),
-  ...pcbSectionFullProductDevelopmentStudies.map((study, index) => ({
-    id: pcbCaseStudiesData.length + index + 1,
-    title: study.title,
-    image: getFullProductDevelopmentCardImage(study),
-    link: `/case-studies/${study.slug}`,
-    category: "development",
-    summary: study.listingSummary,
-    cardImageZoom: study.cardImageZoom,
-  })),
-];
+  const combined: CaseStudyListItem[] = [
+    ...legacyData.map((caseStudy, index) =>
+      toCaseStudyListItem(caseStudy, index, category),
+    ),
+    ...v2.map((study, index) => ({
+      ...study,
+      id: legacyData.length + index + 1,
+    })),
+  ];
 
-const mechanicalSectionFullProductDevelopmentStudies =
-  fullProductDevelopmentCaseStudiesData.filter(
-    (study) => study.section === "mechanical",
-  );
+  return { v2, combined };
+};
 
-export const mechanicalCaseStudies: CaseStudyListItem[] = [
-  ...mechanicalCaseStudiesData.map((caseStudy, index) =>
-    toCaseStudyListItem(caseStudy, index, "mechanical"),
-  ),
-  ...mechanicalSectionFullProductDevelopmentStudies.map((study, index) => ({
-    id: mechanicalCaseStudiesData.length + index + 1,
-    title: study.title,
-    image: getFullProductDevelopmentCardImage(study),
-    link: `/case-studies/${study.slug}`,
-    category: "mechanical",
-    summary: study.listingSummary,
-    cardImageZoom: study.cardImageZoom,
-  })),
-];
+const embeddedLists = buildSectionListVariants(
+  "embedded",
+  embeddedCaseStudiesData,
+  "development",
+);
+export const embeddedCaseStudiesV2 = embeddedLists.v2;
+export const embeddedCaseStudies = embeddedLists.combined;
+
+const pcbLists = buildSectionListVariants(
+  "pcb",
+  pcbCaseStudiesData,
+  "development",
+);
+export const pcbCaseStudiesV2 = pcbLists.v2;
+export const pcbCaseStudies = pcbLists.combined;
+
+const mechanicalLists = buildSectionListVariants(
+  "mechanical",
+  mechanicalCaseStudiesData,
+  "mechanical",
+);
+export const mechanicalCaseStudiesV2 = mechanicalLists.v2;
+export const mechanicalCaseStudies = mechanicalLists.combined;
 
 export const industrialCaseStudies = industrialCaseStudiesData.map(
   (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "industrial"),
 );
 
-export const engineeringSupportCaseStudies = engineeringSupportCaseStudiesData.map(
-  (caseStudy, index) => toCaseStudyListItem(caseStudy, index, "services"),
-);
+export const engineeringSupportCaseStudies =
+  engineeringSupportCaseStudiesData.map((caseStudy, index) =>
+    toCaseStudyListItem(caseStudy, index, "services"),
+  );
 
 export const fullProductDevelopmentCaseStudies: CaseStudyListItem[] =
   fullProductDevelopmentCaseStudiesData
@@ -150,15 +164,9 @@ export const fullProductDevelopmentCaseStudies: CaseStudyListItem[] =
         study.section !== "embedded" &&
         study.section !== "mechanical",
     )
-    .map((study, index) => ({
-      id: index + 1,
-      title: study.title,
-      image: getFullProductDevelopmentCardImage(study),
-      link: `/case-studies/${study.slug}`,
-      category: "development",
-      summary: study.listingSummary,
-      cardImageZoom: study.cardImageZoom,
-    }));
+    .map((study, index) =>
+      toFullProductDevelopmentListItem(study, index, "development"),
+    );
 
 const countPendingImages = (studies: CaseStudy[]): number => {
   return studies.filter(
