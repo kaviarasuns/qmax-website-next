@@ -1,11 +1,11 @@
 export function CTA() {
   return (
-    <section className="py-12 md:py-16">
+    <section className="pt-0 pb-12 md:pb-16">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex gap-8 items-start">
           <div className="hidden lg:block w-64 flex-shrink-0" aria-hidden="true" />
           <div className="flex-1 min-w-0">
-            <div className="border border-zinc-200 p-8 sm:p-10 md:p-16 text-center">
+            <div className="border border-zinc-200 rounded-xl p-8 sm:p-10 md:p-16 text-center">
               <h2 className="mb-4 text-2xl md:text-3xl font-bold text-foreground">
                 Ready to Make an Impact?
               </h2>
@@ -20,7 +20,7 @@ export function CTA() {
                 href="https://careers.qmaxsys.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-zinc-950 text-white px-8 py-3 text-sm font-semibold hover:bg-zinc-900 transition-colors"
+                className="inline-flex items-center rounded-md bg-red-500 px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold text-white transition-colors hover:bg-red-600"
               >
                 Apply Now
               </a>
