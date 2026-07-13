@@ -602,12 +602,12 @@ function JobCard({
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-3 mt-4 pt-2 flex-shrink-0 lg:mt-3">
+        <div className="flex flex-wrap gap-3 mt-4 pt-2 flex-shrink-0 lg:mt-3">
           <a
             href="https://careers.qmaxsys.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-zinc-950 text-white px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold hover:bg-zinc-900 transition-colors inline-flex items-center"
+            className="inline-flex items-center rounded-md bg-red-500 px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold text-white transition-colors hover:bg-red-600"
           >
             Apply Now
           </a>
@@ -615,7 +615,7 @@ function JobCard({
             href="https://careers.qmaxsys.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-zinc-300 text-zinc-600 px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold hover:border-zinc-900 hover:text-zinc-900 transition-colors inline-flex items-center"
+            className="inline-flex items-center rounded-md border border-slate-300 bg-white px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-semibold text-foreground transition-colors hover:border-red-500 hover:text-red-500"
           >
             More Details
           </a>
