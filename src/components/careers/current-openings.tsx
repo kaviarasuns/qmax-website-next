@@ -41,7 +41,8 @@ const positions = [
     qualifications: [
       "BE / BTech in Electronics & Communication, Electrical, or Instrumentation Engineering",
     ],
-    imageUrl: "/careers/image2.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/full_time_role/hardware_design_engineer.png",
   },
   {
     id: 2,
@@ -64,7 +65,8 @@ const positions = [
     qualifications: [
       "BE / BTech in ECE, CSE, Embedded Systems, or Electrical Engineering; diploma holders with strong embedded C experience or final-year students with hands-on embedded projects also considered",
     ],
-    imageUrl: "/careers/image3.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/full_time_role/firmware_dev_engineer.png",
   },
   {
     id: 3,
@@ -90,7 +92,8 @@ const positions = [
       "Diploma / BE / BTech in Electronics, Electrical, or Instrumentation Engineering",
       "Fresh graduates with lab exposure are acceptable",
     ],
-    imageUrl: "/careers/image5.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/full_time_role/embedded_systems_test engineer.png",
   },
   {
     id: 4,
@@ -116,7 +119,8 @@ const positions = [
       "BE / BTech in Electronics & Communication Engineering",
       "ME / MTech in RF / Microwave preferred",
     ],
-    imageUrl: "/careers/image4.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/full_time_role/rf_design_engineer.png",
   },
   {
     id: 5,
@@ -141,7 +145,8 @@ const positions = [
       "BE / BTech in ECE or Electrical Engineering",
       "ME / MTech preferred for advanced roles",
     ],
-    imageUrl: "/careers/image7.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/full_time_role/signal_integrity_engineer.png",
   },
   {
     id: 6,
@@ -166,7 +171,8 @@ const positions = [
       "Diploma / BE / BTech in Electronics Engineering",
       "Skill matters more than degree",
     ],
-    imageUrl: "/careers/image6.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/full_time_role/pcb_designer.png",
   },
   {
     id: 7,
@@ -186,7 +192,8 @@ const positions = [
       "Datasheet interpretation skills",
     ],
     qualifications: ["Diploma / BE / BTech in Electronics Engineering"],
-    imageUrl: "/careers/image9.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/full_time_role/pcb_librarian.png",
   },
   {
     id: 8,
@@ -206,7 +213,8 @@ const positions = [
       "Practical tolerance knowledge",
     ],
     qualifications: ["Diploma / BE / BTech in Mechanical Engineering"],
-    imageUrl: "/careers/image10.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/full_time_role/mechanical_design_engieer.png",
   },
   {
     id: 9,
@@ -229,7 +237,8 @@ const positions = [
       "Bachelor's degree in Industrial / Product Design",
       "Mechanical engineers with strong portfolio considered",
     ],
-    imageUrl: "/careers/image11.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/full_time_role/industrial_designer.png",
   },
   {
     id: 10,
@@ -253,7 +262,8 @@ const positions = [
       "BE / BTech in Computer Science / IT",
       "MCA / BSc (CS) with strong portfolio acceptable",
     ],
-    imageUrl: "/careers/image8.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/full_time_role/full_stack_developer.png",
   },
   {
     id: 11,
@@ -276,7 +286,8 @@ const positions = [
       "Any Bachelor's degree",
       "Engineering background preferred",
     ],
-    imageUrl: "/careers/image12.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/full_time_role/business_development_executive.png",
   },
   {
     id: 12,
@@ -298,7 +309,8 @@ const positions = [
     qualifications: [
       "Final-year BE / BTech in ECE, EEE, or related discipline",
     ],
-    imageUrl: "/careers/image2.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/intern_role/hardware_design_intern.png",
   },
   {
     id: 13,
@@ -320,7 +332,8 @@ const positions = [
     qualifications: [
       "Final-year BE / BTech in ECE, CSE, Embedded Systems, or Electrical Engineering",
     ],
-    imageUrl: "  /careers/image3.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/intern_role/firmware_embedded_intern.png",
   },
   {
     id: 14,
@@ -340,7 +353,8 @@ const positions = [
       "Strong analytical and documentation skills",
     ],
     qualifications: ["Final-year BE / BTech in ECE or related field"],
-    imageUrl: "/careers/image4.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/intern_role/rf_antenna_intern.png",
   },
   {
     id: 15,
@@ -362,7 +376,8 @@ const positions = [
     qualifications: [
       "Diploma / Final-year BE / BTech in Electronics or related stream",
     ],
-    imageUrl: "/careers/image1.jpg",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/intern_role/pcb_desing_intern.png",
   },
   {
     id: 16,
@@ -384,7 +399,8 @@ const positions = [
     qualifications: [
       "Final-year BE / BTech Mechanical or Bachelor's in Industrial/Product Design",
     ],
-    imageUrl: "/careers/image2.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/intern_role/mechanical_industrial_design_intern.png",
   },
   {
     id: 17,
@@ -404,7 +420,8 @@ const positions = [
       "Basic SQL and Git familiarity",
     ],
     qualifications: ["Final-year BE / BTech in CSE / IT or equivalent"],
-    imageUrl: "/careers/image5.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/intern_role/software_web_intern.png",
   },
   {
     id: 18,
@@ -426,7 +443,8 @@ const positions = [
     qualifications: [
       "Diploma / Final-year BE / BTech in Electronics, Electrical, or Instrumentation",
     ],
-    imageUrl: "/careers/image6.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/intern_role/testing_validation_intern.png",
   },
   {
     id: 19,
@@ -446,7 +464,8 @@ const positions = [
       "Professional email and documentation practices",
     ],
     qualifications: ["Any Bachelor's degree; engineering background preferred"],
-    imageUrl: "/careers/image7.png",
+    imageUrl:
+      "https://d1yetprhniwywz.cloudfront.net/v2/careers/intern_role/business_development_intern.png",
   },
 ];
 
@@ -571,9 +590,7 @@ function JobCard({
             (data-card-scroll) so the scroll engine lets long card content scroll
             before stepping to the next card. */}
         <div
-          {...(stacked
-            ? { "data-card-scroll": "", tabIndex: 0 }
-            : {})}
+          {...(stacked ? { "data-card-scroll": "", tabIndex: 0 } : {})}
           className={`mb-6 pr-1 ${
             stacked
               ? "lg:flex-1 lg:min-h-0 lg:overflow-y-auto lg:mb-4 lg:[scrollbar-width:thin] focus:outline-none"
