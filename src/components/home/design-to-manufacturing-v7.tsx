@@ -120,7 +120,7 @@ const PHASES: { key: Phase; span: number }[] = [
 const STAGES: Stage[] = [
   {
     id: "cv",
-    pill: "Concept Validation",
+    pill: "Concept\nValidation",
     heading: "Concept Validation",
     body: "Turning product ideas into technically viable, risk-mapped specifications.",
     bullets: [
@@ -150,7 +150,7 @@ const STAGES: Stage[] = [
   },
   {
     id: "pcb",
-    pill: "PCB Design",
+    pill: "PCB\nDesign",
     heading: "PCB Design",
     body: "Designing complex, multi-layer layouts optimized for signal integrity and fabrication.",
     bullets: [
@@ -179,7 +179,7 @@ const STAGES: Stage[] = [
   },
   {
     id: "mid",
-    pill: "Mechanical and ID",
+    pill: "Mechanical\nand ID",
     heading: "Mechanical and ID",
     body: "Shaping physical enclosures that balance aesthetics with structural survival.",
     bullets: [
@@ -652,7 +652,7 @@ export default function DesignToManufacturingV7() {
                       onMouseEnter={() => goTo(i)}
                       aria-current={isActive ? "step" : undefined}
                       className={cn(
-                        "self-end flex items-center font-semibold font-inherit leading-[1.25] uppercase text-left border-none cursor-pointer min-w-0 overflow-hidden box-border",
+                        "self-end flex items-center font-semibold font-inherit leading-[1.25] uppercase text-left border-none cursor-pointer min-w-0 overflow-hidden box-border whitespace-pre-line",
                         "py-[clamp(5px,0.55vw,8px)] px-[clamp(6px,0.8vw,10px)] rounded-md",
                         "transition-[background,color,height,box-shadow] duration-[280ms] ease-[ease]",
                         isActive
@@ -731,7 +731,7 @@ export default function DesignToManufacturingV7() {
                         key={`dot-${s.id}`}
                         onClick={() => goTo(i)}
                         onMouseEnter={() => goTo(i)}
-                        aria-label={`Go to ${s.pill}`}
+                        aria-label={`Go to ${s.pill.replace(/\n/g, " ")}`}
                         className="flex items-start justify-center bg-transparent border-none cursor-pointer p-0 pt-[13.5px] box-border"
                         style={{ height: VBH }}
                       >
@@ -781,7 +781,7 @@ export default function DesignToManufacturingV7() {
               {/* floating pill */}
               <div className="relative h-[clamp(40px,4.4vw,58px)] mb-[2px]">
                 <button
-                  className="absolute bottom-0 py-2 px-3 bg-[linear-gradient(111deg,rgb(0,0,0)_0%,rgb(0,0,0)_50%,rgb(0,0,0)_100%)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14)] text-white text-[clamp(14px,1.328vw,17px)] font-semibold font-inherit leading-[1.25] uppercase rounded-md border-none cursor-default whitespace-nowrap min-w-[80px] max-w-[160px] text-center overflow-hidden text-ellipsis"
+                  className="absolute bottom-0 py-2 px-3 bg-[linear-gradient(111deg,rgb(0,0,0)_0%,rgb(0,0,0)_50%,rgb(0,0,0)_100%)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14)] text-white text-[clamp(14px,1.328vw,17px)] font-semibold font-inherit leading-[1.25] uppercase rounded-md border-none cursor-default whitespace-pre-line min-w-[80px] max-w-[160px] text-center overflow-hidden"
                   style={{
                     left: `clamp(0px,calc(${(active + 0.5) / N}*(100% - ${ARROW_PCT}) - 60px),calc(100% - 165px))`,
                     transition: `left ${CFG.ease}`,
@@ -846,7 +846,7 @@ export default function DesignToManufacturingV7() {
                         key={s.id}
                         onClick={() => goTo(i)}
                         onMouseEnter={() => goTo(i)}
-                        aria-label={`Go to ${s.pill}`}
+                        aria-label={`Go to ${s.pill.replace(/\n/g, " ")}`}
                         className="flex items-start justify-center bg-transparent border-none cursor-pointer p-0 pt-[13.5px] box-border"
                         style={{ height: VBH }}
                       >
