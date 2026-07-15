@@ -137,11 +137,12 @@ export default function DownloadPresentationModal({
     setSubmitError(null);
 
     // Backend stamps formSource itself — omit it from the payload.
-    const { formSource: _formSource, ...meta } = collectSubmissionMeta({
+    const { formSource, ...meta } = collectSubmissionMeta({
       formSource: "download-presentation",
       consentText: CONSENT_TEXT,
       renderedAt: renderedAtRef.current,
     });
+    void formSource;
 
     try {
       await submitContactForm(
