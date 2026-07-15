@@ -82,6 +82,13 @@ export const CONTACT_ENDPOINT =
   process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ??
   "http://localhost:8080/api/contact";
 
+/**
+ * Presentation download lead + email endpoint. Same host as contact; path is a
+ * sibling under `/api/contact`. Backend stamps `formSource` itself — do not
+ * send that field on this endpoint.
+ */
+export const DOWNLOAD_PRESENTATION_ENDPOINT = `${CONTACT_ENDPOINT.replace(/\/$/, "")}/download-presentation`;
+
 /** Shape of the response envelope returned by `POST /api/contact`. */
 export interface ContactResponse {
   success: boolean;

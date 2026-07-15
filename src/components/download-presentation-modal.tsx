@@ -11,9 +11,18 @@ import {
   X,
 } from "lucide-react";
 
+import {
+  collectSubmissionMeta,
+  DOWNLOAD_PRESENTATION_ENDPOINT,
+  submitContactForm,
+} from "@/lib/formSubmission";
 import { cn } from "@/lib/utils";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+/** Shield-check line — sent verbatim as the compliance trail. */
+const CONSENT_TEXT =
+  "We respect your inbox. Your details are safe with us and strictly confidential.";
 
 type FormValues = {
   name: string;
@@ -86,13 +95,17 @@ export default function DownloadPresentationModal({
   const [errors, setErrors] = useState<FieldErrors>({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const nameInputRef = useRef<HTMLInputElement>(null);
+  const renderedAtRef = useRef(Date.now());
 
   function reset() {
     setValues(EMPTY_VALUES);
     setErrors({});
     setSubmitting(false);
     setSubmitted(false);
+    setSubmitError(null);
+    renderedAtRef.current = Date.now();
   }
 
   function handleOpenChange(next: boolean) {
@@ -106,6 +119,7 @@ export default function DownloadPresentationModal({
     setErrors((current) =>
       current[key] ? { ...current, [key]: false } : current
     );
+    if (submitError) setSubmitError(null);
   }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -120,10 +134,35 @@ export default function DownloadPresentationModal({
     if (Object.values(nextErrors).some(Boolean)) return;
 
     setSubmitting(true);
-    // Simulated lead capture — swap for a real CRM/API call when available.
-    await new Promise((resolve) => setTimeout(resolve, 1100));
-    setSubmitting(false);
-    setSubmitted(true);
+    setSubmitError(null);
+
+    // Backend stamps formSource itself — omit it from the payload.
+    const { formSource: _formSource, ...meta } = collectSubmissionMeta({
+      formSource: "download-presentation",
+      consentText: CONSENT_TEXT,
+      renderedAt: renderedAtRef.current,
+    });
+
+    try {
+      await submitContactForm(
+        {
+          name: values.name.trim(),
+          company: values.company.trim(),
+          email: values.email.trim(),
+          ...meta,
+        },
+        DOWNLOAD_PRESENTATION_ENDPOINT,
+      );
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -220,11 +259,17 @@ export default function DownloadPresentationModal({
 
                 <div className="flex items-start gap-2.5 text-left text-[12.5px] leading-normal text-[#6b6b73]">
                   <ShieldCheck className="mt-0.5 h-[15px] w-[15px] flex-none text-[#16a34a]" />
-                  <span>
-                    We respect your inbox. Your details are safe with us and
-                    strictly confidential.
-                  </span>
+                  <span>{CONSENT_TEXT}</span>
                 </div>
+
+                {submitError ? (
+                  <p
+                    role="alert"
+                    className="text-[13px] leading-snug text-red-500"
+                  >
+                    {submitError}
+                  </p>
+                ) : null}
 
                 <button
                   type="submit"
