@@ -344,8 +344,44 @@ const CAPABILITIES = [
 
 const WHY_CARDS = [
   {
-    title: "Transparent & Supervised Process",
-    desc: "Every milestone, design review, and risk register is visible as it happens, because Qmax Systems program managers run a weekly cadence with traceable deliverables and on-time builds — no hidden surprises at handover.",
+    title: "25+ Years of Proven R&D Governance",
+    desc: "For over a quarter-century, we have engineered complex architectures for mission-critical enterprise, defense, telecom, medical, and automotive deployments. Our deep domain knowledge translates directly to rugged, field-tested topologies built to thrive under strict environmental and physical constraints.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M24 6 L38 12 V24 C38 34 31 40 24 42 C17 40 10 34 10 24 V12 Z" />
+        <path d="M17 24 L22 29 L31 18" />
+      </svg>
+    ),
+  },
+  {
+    title: "Turnkey Full-Lifecycle Ownership",
+    desc: "We eliminate multi-vendor friction by managing the entire product development lifecycle from one centralized R&D facility. From initial product definition, industrial design, and system architecture to embedded firmware development and hardware validation, we ensure total functional alignment.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M8 30 L18 20 L24 26 L34 16 L42 24" />
+        <path d="M34 16 L34 24 L42 24" />
+        <path d="M6 38 L42 38" />
+        <path d="M14 12 L18 16 L22 12" />
+      </svg>
+    ),
+  },
+  {
+    title: "An Uncompromising Zero-Error Mindset",
+    desc: "In high-complexity hardware, a single oversight triggers thousands of dollars in component waste and months of market delay. We treat engineering with the rigorous discipline of a pilot's pre-flight routine—enforcing strict peer-reviews and comprehensive multi-domain simulations to secure first-spin operational success.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -365,47 +401,8 @@ const WHY_CARDS = [
     ),
   },
   {
-    title: "Hardware Development from Scratch",
-    desc: "Qmax Systems starts every program with R&D and a proof-of-concept build to retire architectural risk early — confirming feasibility, locking the BoM, and validating critical assumptions before committing a single production layer.",
-    icon: (
-      <svg
-        viewBox="0 0 48 48"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M8 30 L18 20 L24 26 L34 16 L42 24" />
-        <path d="M34 16 L34 24 L42 24" />
-        <path d="M6 38 L42 38" />
-        <path d="M14 12 L18 16 L22 12" />
-      </svg>
-    ),
-  },
-  {
-    title: "Smooth Hardware-Software Integration",
-    desc: "Rather than forcing a re-platform, Qmax Systems selects components, interfaces, and toolchains that fit your existing stack — the result is firmware that brings up cleanly, drivers that drop into your OS, and lower long-term maintenance cost.",
-    icon: (
-      <svg
-        viewBox="0 0 48 48"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M24 6 L24 18 M18 12 L24 18 L30 12" />
-        <path d="M24 42 L24 30 M18 36 L24 30 L30 36" />
-        <path d="M6 24 L18 24 M12 18 L18 24 L12 30" />
-        <path d="M42 24 L30 24 M36 18 L30 24 L36 30" />
-        <circle cx="24" cy="24" r="4" />
-      </svg>
-    ),
-  },
-  {
-    title: "Expert Engineers",
-    desc: "Qmax Systems engineers average 12+ years in hardware development across automotive, medical, aerospace, and industrial domains, and only senior engineers are assigned to your design - no junior hand-offs, no learning on your timeline.",
+    title: "High Technical Density & Balanced Scale",
+    desc: "Our engineering matrix pairs veteran architectural specialists with fast, dynamic development engineers. This optimal blend provides the precision needed to resolve volatile edge-case hardware anomalies alongside the agility required to maintain aggressive commercial launch timelines.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -424,8 +421,8 @@ const WHY_CARDS = [
     ),
   },
   {
-    title: "Comprehensive Design Approach",
-    desc: "Schematic, layout, mechanical, thermal, and EMC are treated as a single coupled problem from day-one; that coherent architecture is why Qmax Systems boards survive certification on the first spin.",
+    title: "Deep Cross-Domain Engineering Synergy",
+    desc: "Modern high-performance systems require seamless hardware-software integration. Our core circuit designers collaborate natively with our internal, specialized teams handling FPGA logic design, embedded firmware development, driver/BSP integration, and custom mechanical enclosure layout.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -435,14 +432,17 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <circle cx="24" cy="24" r="16" />
-        <path d="M24 12 L29 21 L39 22 L31 29 L33 39 L24 34 L15 39 L17 29 L9 22 L19 21 Z" />
+        <path d="M24 6 L24 18 M18 12 L24 18 L30 12" />
+        <path d="M24 42 L24 30 M18 36 L24 30 L30 36" />
+        <path d="M6 24 L18 24 M12 18 L18 24 L12 30" />
+        <path d="M42 24 L30 24 M36 18 L30 24 L36 30" />
+        <circle cx="24" cy="24" r="4" />
       </svg>
     ),
   },
   {
-    title: "Design for Manufacturing & Scale",
-    desc: "Qmax Systems designs for manufacturability from the first schematic, not as a late retrofit - choosing footprints, sourcing, and test points for volume production so boards move to the line without costly redesign spins.",
+    title: "Vetted Supply Chain & Design for Scalability",
+    desc: "We don't just design functional prototypes; we engineer highly manufacturable products. Through long-established partnerships with global component distributors, fabrication plants, and assembly houses, we actively design out component obsolescence, minimize BOM risks, and enforce strict RoHS compliance.",
     icon: (
       <svg
         viewBox="0 0 48 48"

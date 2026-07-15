@@ -653,7 +653,7 @@ export default function DesignToManufacturingV7() {
                       aria-current={isActive ? "step" : undefined}
                       className={cn(
                         "self-end flex items-center font-semibold font-inherit leading-[1.25] uppercase text-left border-none cursor-pointer min-w-0 overflow-hidden box-border",
-                        "py-[clamp(5px,0.55vw,8px)] px-[clamp(6px,0.8vw,10px)] rounded-[clamp(1px,0.2vw,2px)]",
+                        "py-[clamp(5px,0.55vw,8px)] px-[clamp(6px,0.8vw,10px)] rounded-md",
                         "transition-[background,color,height,box-shadow] duration-[280ms] ease-[ease]",
                         isActive
                           ? "h-[clamp(48px,5.2vw,66px)] bg-[linear-gradient(111deg,rgb(0,0,0)_0%,rgb(0,0,0)_50%,rgb(0,0,0)_100%)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14)] text-white text-base"
@@ -737,7 +737,7 @@ export default function DesignToManufacturingV7() {
                       >
                         <span
                           className={cn(
-                            "block shrink-0 rounded-full transition-[background,border-color,box-shadow] duration-[450ms] ease-[ease]",
+                            "block shrink-0 rounded-md transition-[background,border-color,box-shadow] duration-[450ms] ease-[ease]",
                             "w-[clamp(10px,1vw,24px)] h-[clamp(10px,1vw,24px)] border-solid border-[clamp(1px,0.15vw,4px)]",
                             done
                               ? "bg-[#FF0000] border-[#910000]"
@@ -753,7 +753,7 @@ export default function DesignToManufacturingV7() {
 
               {/* phase labels */}
               <div
-                className="grid grid-cols-7 gap-x-[clamp(1px,0.2vw,3px)] bg-[#EBEBEB] mt-[clamp(10px,1.2vw,16px)]"
+                className="grid grid-cols-7 gap-x-[clamp(1px,0.2vw,3px)] bg-[#EBEBEB] mt-[clamp(10px,1.2vw,16px)] rounded-md"
                 style={{ paddingRight: pillPhaseRight }}
               >
                 {PHASES.map((p) => {
@@ -781,7 +781,7 @@ export default function DesignToManufacturingV7() {
               {/* floating pill */}
               <div className="relative h-[clamp(40px,4.4vw,58px)] mb-[2px]">
                 <button
-                  className="absolute bottom-0 py-2 px-3 bg-[linear-gradient(111deg,rgb(0,0,0)_0%,rgb(0,0,0)_50%,rgb(0,0,0)_100%)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14)] text-white text-[clamp(14px,1.328vw,17px)] font-semibold font-inherit leading-[1.25] uppercase rounded-[clamp(1px,0.2vw,2px)] border-none cursor-default whitespace-nowrap min-w-[80px] max-w-[160px] text-center overflow-hidden text-ellipsis"
+                  className="absolute bottom-0 py-2 px-3 bg-[linear-gradient(111deg,rgb(0,0,0)_0%,rgb(0,0,0)_50%,rgb(0,0,0)_100%)] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14)] text-white text-[clamp(14px,1.328vw,17px)] font-semibold font-inherit leading-[1.25] uppercase rounded-md border-none cursor-default whitespace-nowrap min-w-[80px] max-w-[160px] text-center overflow-hidden text-ellipsis"
                   style={{
                     left: `clamp(0px,calc(${(active + 0.5) / N}*(100% - ${ARROW_PCT}) - 60px),calc(100% - 165px))`,
                     transition: `left ${CFG.ease}`,
@@ -852,7 +852,7 @@ export default function DesignToManufacturingV7() {
                       >
                         <span
                           className={cn(
-                            "block shrink-0 rounded-full transition-[background,border-color,box-shadow] duration-[450ms] ease-[ease]",
+                            "block shrink-0 rounded-md transition-[background,border-color,box-shadow] duration-[450ms] ease-[ease]",
                             "w-[clamp(10px,1vw,24px)] h-[clamp(10px,1vw,24px)] border-solid border-[clamp(1px,0.15vw,4px)]",
                             done
                               ? "bg-[#FF0000] border-[#910000]"
@@ -868,7 +868,7 @@ export default function DesignToManufacturingV7() {
 
               {/* phase labels */}
               <div
-                className="grid grid-cols-7 bg-[#EBEBEB] mt-[clamp(10px,1.2vw,16px)]"
+                className="grid grid-cols-7 bg-[#EBEBEB] mt-[clamp(10px,1.2vw,16px)] rounded-md"
                 style={{ paddingRight: ARROW_PCT }}
               >
                 {PHASES.map((p) => {
