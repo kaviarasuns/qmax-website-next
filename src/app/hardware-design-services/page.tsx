@@ -17,6 +17,8 @@ import {
   allCaseStudiesData,
   getCaseStudyCardImage,
 } from "@/store/case-studies";
+import { ServiceVideoHeroV2 } from "@/components/services-cmp/service-video-hero-v2";
+import { CapabilitiesSectionV2 } from "@/components/services-cmp/CapabilitiesSectionV2";
 
 export const metadata = buildMetadata({
   title: "Hardware Design Services | High-Speed, RF & Analog | Qmax",
@@ -491,8 +493,14 @@ const FAQ_ITEMS = [
 ];
 
 const HERO = {
-  title:
-    "Hardware Design Services - Full Product Lifecycle, Architecture to Production",
+  title: (
+    <>
+      Hardware Design Services{" "}
+      <span className="mt-[0.3em] block font-normal leading-[1.25] text-white/90 [font-size:clamp(18px,2vw,26px)]">
+        Full Product Lifecycle, Architecture to Production
+      </span>
+    </>
+  ),
   description:
     "Qmax Systems provides hardware design services across the full lifecycle - from requirements analysis and architecture through schematic design, PCB layout, EVT/DVT/PVT validation, and production handover. This architecture-first process spans automotive, medical, aerospace, and industrial domains, cutting risk and shortening cycles with day-one compliance readiness.",
   ctaLabel: "Talk to our engineers",
@@ -533,12 +541,12 @@ const hardwareCaseStudies: ServiceCaseStudy[] = serviceCaseStudies([
 export default function HardwareDevelopmentServicesPage() {
   return (
     <div className="hd-root">
-      <ServiceVideoHero {...HERO} />
+      <ServiceVideoHeroV2 {...HERO} />
       <HeroConceptToSilicon />
 
       {/* CORE CAPABILITIES */}
-      <CapabilitiesSection
-        capabilities={CAPABILITIES}
+      <CapabilitiesSectionV2
+        description={HERO.description}
         getInTouchHref="/hardware-design-services/contact"
       />
 
