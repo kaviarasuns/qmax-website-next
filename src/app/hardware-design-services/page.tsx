@@ -1,5 +1,4 @@
 import { buildMetadata } from "@/lib/seo";
-import { CapabilitiesSection } from "@/components/services-cmp/CapabilitiesSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { PartnershipsSection } from "@/components/services-cmp/PartnershipsSection";
 import { HARDWARE_PARTNER_LOGOS } from "@/data/partner-logos";
@@ -9,7 +8,6 @@ import "../../components/hardware-design.css";
 import { HeroConceptToSilicon } from "@/components/services-cmp/HeroConceptToSilicon";
 import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
 import { HARDWARE_INDUSTRIES } from "@/store/hardware-industries";
-import { ServiceVideoHero } from "@/components/services-cmp/service-video-hero";
 import Image from "next/image";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
@@ -70,155 +68,155 @@ export const metadata = buildMetadata({
 //   },
 // ];
 
-const CAPABILITIES = [
-  {
-    id: "digital-design",
-    tabLabel: "High Speed Digital Design",
-    learnMoreHref: "/hardware-design-services/high-speed-digital-design",
-    tabIcon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="3" y="3" width="18" height="18" rx="2" />
-        <rect x="9" y="9" width="6" height="6" />
-        <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />
-      </svg>
-    ),
-    headline:
-      "High-performance digital electronics from MCU boards to multi-processor systems.",
-    intro:
-      "Qmax Systems designs digital hardware that scales from single-MCU boards to multi-processor systems running real-time workloads. Schematic capture, constraint-driven high-speed PCB layout, and bring-up firmware are delivered across MCU, MPU, SoC, and FPGA platforms, validated against signal-integrity and power-integrity targets on interfaces including PCIe, USB 3.x, and DDR memory. Typical applications: AI compute boards, industrial controllers, and edge-compute systems.",
-    bullets: [
-      {
-        title: "Platforms",
-        items: ["MCU, MPU, SoC, and FPGA-based platforms."],
-      },
-      {
-        title: "High-Speed Interfaces",
-        items: [
-          "PCIe, USB 3.x, DDR memory, and other high-speed digital protocols.",
-        ],
-      },
-    ],
-  },
-  {
-    id: "rf-microwave",
-    tabLabel: "RF & Microwave",
-    learnMoreHref: "/hardware-design-services/rf-and-microwave",
-    tabIcon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="2" />
-        <path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 16.24a6 6 0 0 1 0-8.49M20.49 4.51a10 10 0 0 1 0 14.14M3.51 19.49a10 10 0 0 1 0-14.14" />
-      </svg>
-    ),
-    headline:
-      "RF designs validated in real-world conditions, not just simulations.",
-    intro:
-      "Qmax Systems validates every RF link budget on real hardware in-lab, where simulation and reality diverge. RF front-end architecture (LNA, PA, filters, matching networks), antenna integration, and EMC-aware layout are qualified across ISM, Wi-Fi, BLE, LTE, and Sub-GHz bands. Typical applications: IoT sensor nodes, wireless gateways, and connected industrial devices.",
-    bullets: [
-      {
-        title: "Components & Antennas",
-        items: [
-          "RF front-end design (LNA, PA, filters, matching networks).",
-          "PCB, external, horn, and custom antenna integration.",
-        ],
-      },
-      {
-        title: "Protocols & Validation",
-        items: [
-          "ISM, Wi-Fi, BLE, LTE, and Sub-GHz systems.",
-          "RF simulation, tuning, calibration, and EMC-aware layout.",
-        ],
-      },
-    ],
-  },
-  {
-    id: "analog-design",
-    tabLabel: "Analog & Mixed-Signal",
-    learnMoreHref: "/hardware-design-services/analog-design",
-    tabIcon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M2 12h3l3-9 4 18 3-12 2 6h5" />
-      </svg>
-    ),
-    headline:
-      "Precision analog and mixed-signal design for sensing, measurement, and control.",
-    intro:
-      "Qmax Systems builds precision analog and mixed-signal front-ends that recover clean signal from noisy environments for sensing, measurement, and control. Low-noise sensor interfaces, ADC/DAC conditioning chains, and EMI-hardened layout with disciplined grounding are integrated into a single qualified board. Typical applications: biomedical instrumentation, pressure and vibration acquisition, and optical measurement systems.",
-    bullets: [
-      {
-        title: "Sensing & Front-Ends",
-        items: [
-          "Low-noise analog front-ends and sensor interfacing.",
-          "Pressure, vibration, biomedical, and optical signal acquisition.",
-        ],
-      },
-      {
-        title: "Processing & Integrity",
-        items: [
-          "Signal conditioning, filtering, amplification, ADC/DAC integration.",
-          "EMI-aware analog layout and grounding techniques.",
-        ],
-      },
-    ],
-  },
-  {
-    id: "power-electronics",
-    tabLabel: "Power Electronics",
-    learnMoreHref: "/hardware-design-services/power-electronics",
-    tabIcon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-      </svg>
-    ),
-    headline:
-      "Robust power electronics for industrial, automotive, and energy applications.",
-    intro:
-      "Qmax Systems designs power electronics for industrial, automotive, and energy systems where efficiency, isolation, and thermal margin are non-negotiable. AC-DC and DC-DC converters, resonant LLC/CLLC and Class-D topologies, battery management systems (BMS), and HV/HC PCBs are each verified against derating and reliability targets before sign-off. Typical applications: EV chargers, grid-tied inverters, and industrial power supplies.",
-    bullets: [
-      {
-        title: "Conversion & Topologies",
-        items: [
-          "AC-DC/DC-DC converters and isolated/non-isolated SMPS.",
-          "Resonant, LLC, CLLC, and Class-D topologies.",
-        ],
-      },
-      {
-        title: "High Power & Reliability",
-        items: [
-          "Battery systems (BMS), chargers, inverters, HV/HC PCB design.",
-          "Thermal simulation, derating, and reliability analysis.",
-        ],
-      },
-    ],
-  },
-];
+// const CAPABILITIES = [
+//   {
+//     id: "digital-design",
+//     tabLabel: "High Speed Digital Design",
+//     learnMoreHref: "/hardware-design-services/high-speed-digital-design",
+//     tabIcon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="1.8"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <rect x="3" y="3" width="18" height="18" rx="2" />
+//         <rect x="9" y="9" width="6" height="6" />
+//         <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3" />
+//       </svg>
+//     ),
+//     headline:
+//       "High-performance digital electronics from MCU boards to multi-processor systems.",
+//     intro:
+//       "Qmax Systems designs digital hardware that scales from single-MCU boards to multi-processor systems running real-time workloads. Schematic capture, constraint-driven high-speed PCB layout, and bring-up firmware are delivered across MCU, MPU, SoC, and FPGA platforms, validated against signal-integrity and power-integrity targets on interfaces including PCIe, USB 3.x, and DDR memory. Typical applications: AI compute boards, industrial controllers, and edge-compute systems.",
+//     bullets: [
+//       {
+//         title: "Platforms",
+//         items: ["MCU, MPU, SoC, and FPGA-based platforms."],
+//       },
+//       {
+//         title: "High-Speed Interfaces",
+//         items: [
+//           "PCIe, USB 3.x, DDR memory, and other high-speed digital protocols.",
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     id: "rf-microwave",
+//     tabLabel: "RF & Microwave",
+//     learnMoreHref: "/hardware-design-services/rf-and-microwave",
+//     tabIcon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="1.8"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <circle cx="12" cy="12" r="2" />
+//         <path d="M16.24 7.76a6 6 0 0 1 0 8.49M7.76 16.24a6 6 0 0 1 0-8.49M20.49 4.51a10 10 0 0 1 0 14.14M3.51 19.49a10 10 0 0 1 0-14.14" />
+//       </svg>
+//     ),
+//     headline:
+//       "RF designs validated in real-world conditions, not just simulations.",
+//     intro:
+//       "Qmax Systems validates every RF link budget on real hardware in-lab, where simulation and reality diverge. RF front-end architecture (LNA, PA, filters, matching networks), antenna integration, and EMC-aware layout are qualified across ISM, Wi-Fi, BLE, LTE, and Sub-GHz bands. Typical applications: IoT sensor nodes, wireless gateways, and connected industrial devices.",
+//     bullets: [
+//       {
+//         title: "Components & Antennas",
+//         items: [
+//           "RF front-end design (LNA, PA, filters, matching networks).",
+//           "PCB, external, horn, and custom antenna integration.",
+//         ],
+//       },
+//       {
+//         title: "Protocols & Validation",
+//         items: [
+//           "ISM, Wi-Fi, BLE, LTE, and Sub-GHz systems.",
+//           "RF simulation, tuning, calibration, and EMC-aware layout.",
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     id: "analog-design",
+//     tabLabel: "Analog & Mixed-Signal",
+//     learnMoreHref: "/hardware-design-services/analog-design",
+//     tabIcon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="1.8"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <path d="M2 12h3l3-9 4 18 3-12 2 6h5" />
+//       </svg>
+//     ),
+//     headline:
+//       "Precision analog and mixed-signal design for sensing, measurement, and control.",
+//     intro:
+//       "Qmax Systems builds precision analog and mixed-signal front-ends that recover clean signal from noisy environments for sensing, measurement, and control. Low-noise sensor interfaces, ADC/DAC conditioning chains, and EMI-hardened layout with disciplined grounding are integrated into a single qualified board. Typical applications: biomedical instrumentation, pressure and vibration acquisition, and optical measurement systems.",
+//     bullets: [
+//       {
+//         title: "Sensing & Front-Ends",
+//         items: [
+//           "Low-noise analog front-ends and sensor interfacing.",
+//           "Pressure, vibration, biomedical, and optical signal acquisition.",
+//         ],
+//       },
+//       {
+//         title: "Processing & Integrity",
+//         items: [
+//           "Signal conditioning, filtering, amplification, ADC/DAC integration.",
+//           "EMI-aware analog layout and grounding techniques.",
+//         ],
+//       },
+//     ],
+//   },
+//   {
+//     id: "power-electronics",
+//     tabLabel: "Power Electronics",
+//     learnMoreHref: "/hardware-design-services/power-electronics",
+//     tabIcon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="1.8"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+//       </svg>
+//     ),
+//     headline:
+//       "Robust power electronics for industrial, automotive, and energy applications.",
+//     intro:
+//       "Qmax Systems designs power electronics for industrial, automotive, and energy systems where efficiency, isolation, and thermal margin are non-negotiable. AC-DC and DC-DC converters, resonant LLC/CLLC and Class-D topologies, battery management systems (BMS), and HV/HC PCBs are each verified against derating and reliability targets before sign-off. Typical applications: EV chargers, grid-tied inverters, and industrial power supplies.",
+//     bullets: [
+//       {
+//         title: "Conversion & Topologies",
+//         items: [
+//           "AC-DC/DC-DC converters and isolated/non-isolated SMPS.",
+//           "Resonant, LLC, CLLC, and Class-D topologies.",
+//         ],
+//       },
+//       {
+//         title: "High Power & Reliability",
+//         items: [
+//           "Battery systems (BMS), chargers, inverters, HV/HC PCB design.",
+//           "Thermal simulation, derating, and reliability analysis.",
+//         ],
+//       },
+//     ],
+//   },
+// ];
 
 // const INDUSTRIES = {
 //   left: [

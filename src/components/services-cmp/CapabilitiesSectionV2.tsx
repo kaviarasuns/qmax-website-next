@@ -123,6 +123,8 @@ export function CapabilitiesSectionV2({
 }: CapabilitiesSectionV2Props) {
   if (!capabilities.length) return null;
 
+  console.log(getInTouchHref);
+
   return (
     <section className="px-6 py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-[1440px]">
