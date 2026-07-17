@@ -126,9 +126,9 @@ export function CapabilitiesSectionV2({
   console.log(getInTouchHref);
 
   return (
-    <section className="px-6 py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto max-w-[1440px]">
-        <h2 className="m-0 text-center text-4xl md:text-5xl font-light tracking-wide">
+    <section className="w-full border-y border-slate-200 bg-neutral-50 py-16 md:py-24">
+      <div className="mx-auto w-full max-w-[1440px] px-6">
+        <h2 className="m-0 text-center text-4xl font-light tracking-wide md:text-5xl">
           {title} <span className="text-red-500">{titleHighlight}</span>
         </h2>
         {description ? (
@@ -137,61 +137,56 @@ export function CapabilitiesSectionV2({
           </p>
         ) : null}
 
-        <div className="mt-10 rounded-[2rem] bg-gray-100/80 p-5 md:p-8">
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {capabilities.map((cap) => (
-              <article
-                key={cap.id}
-                className="group relative flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:z-10 hover:border-red-500 hover:bg-red-500 hover:shadow-xl hover:shadow-red-500/25 focus-within:z-10 focus-within:border-red-500 focus-within:bg-red-500 focus-within:shadow-xl focus-within:shadow-red-500/25 lg:hover:scale-[1.03] lg:focus-within:scale-[1.03]"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-500 transition-colors duration-300 group-hover:bg-white group-focus-within:bg-white">
-                    <span className="h-6 w-6" aria-hidden="true">
-                      {cap.icon}
-                    </span>
-                  </div>
-                  <h3 className="m-0 text-center text-xl md:text-2xl font-light tracking-wide transition-colors duration-300 group-hover:text-white group-focus-within:text-white">
-                    {cap.title}
-                  </h3>
+        <div className="mt-10 grid grid-cols-1 gap-5 md:gap-6">
+          {capabilities.map((cap) => (
+            <article
+              key={cap.id}
+              className="relative flex flex-col rounded-2xl bg-white p-6 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
+            >
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-500">
+                  <span className="h-6 w-6" aria-hidden="true">
+                    {cap.icon}
+                  </span>
                 </div>
-                <p className="mt-2 text-justify text-sm leading-relaxed transition-colors duration-300 group-hover:text-red-50 group-focus-within:text-red-50">
-                  {cap.description}
-                </p>
+                <h3 className="m-0 text-center text-xl font-light tracking-wide md:text-2xl">
+                  {cap.title}
+                </h3>
+              </div>
+              <p className="mt-2 text-justify text-sm leading-relaxed">
+                {cap.description}
+              </p>
 
-                <hr className="my-4 border-gray-200 transition-colors duration-300 group-hover:border-white/25 group-focus-within:border-white/25" />
+              <hr className="my-4 border-gray-200" />
 
-                <ul className="space-y-2">
-                  {cap.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="flex items-start gap-2 text-sm transition-colors duration-300 group-hover:text-white group-focus-within:text-white"
-                    >
-                      <span
-                        className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500 transition-colors duration-300 group-hover:bg-white group-focus-within:bg-white"
-                        aria-hidden="true"
-                      />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
+              <ul className="space-y-2">
+                {cap.bullets.map((bullet) => (
+                  <li key={bullet} className="flex items-start gap-2 text-sm">
+                    <span
+                      className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500"
+                      aria-hidden="true"
+                    />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
 
-                <div className="mt-auto flex flex-wrap gap-3 pt-6">
-                  <Link
-                    href={cap.learnMoreHref}
-                    className="inline-flex items-center justify-center rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-red-600 group-hover:bg-white group-hover:text-red-500 group-hover:hover:bg-red-50 group-focus-within:bg-white group-focus-within:text-red-500"
-                  >
-                    Learn more
-                  </Link>
-                  {/* <Link
-                    href={getInTouchHref}
-                    className="inline-flex items-center justify-center rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-red-600 group-hover:bg-white group-hover:text-red-500 group-hover:hover:bg-red-50 group-focus-within:bg-white group-focus-within:text-red-500"
-                  >
-                    Get in Touch
-                  </Link> */}
-                </div>
-              </article>
-            ))}
-          </div>
+              <div className="mt-auto flex flex-wrap gap-3 pt-6">
+                <Link
+                  href={cap.learnMoreHref}
+                  className="inline-flex items-center justify-center rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-red-600"
+                >
+                  Learn more
+                </Link>
+                {/* <Link
+                  href={getInTouchHref}
+                  className="inline-flex items-center justify-center rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-red-600"
+                >
+                  Get in Touch
+                </Link> */}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
