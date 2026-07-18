@@ -1,4 +1,7 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useEffect, useRef, type ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export interface CapabilityCardV2 {
@@ -8,6 +11,7 @@ export interface CapabilityCardV2 {
   bullets: string[];
   icon: ReactNode;
   learnMoreHref: string;
+  image?: { src: string; alt: string };
 }
 
 interface CapabilitiesSectionV2Props {
@@ -30,12 +34,16 @@ const DEFAULT_CAPABILITIES: CapabilityCardV2[] = [
       "Heterogeneous Compute: Integration of high-performance FPGAs, server CPUs, and AI expansion architectures.",
     ],
     learnMoreHref: "/hardware-design-services/high-speed-digital-design",
+    image: {
+      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/1_new.png",
+      alt: "Engineer presenting a high-speed multi-core server board",
+    },
     icon: (
       <svg
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
@@ -56,18 +64,23 @@ const DEFAULT_CAPABILITIES: CapabilityCardV2[] = [
       "Active Front-Ends: High-gain Low-Noise Amplifiers (LNAs) and Power Amplifiers (PAs) optimized for linear performance.",
     ],
     learnMoreHref: "/hardware-design-services/rf-and-microwave",
+    image: {
+      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_cost_bldc_motor_controller_for_evs/Ultra%20Low%20Cost%20BLDC%20Motor%20Controller%20for%20EVs.png",
+      alt: "RF engineer testing a board with a spectrum analyzer",
+    },
     icon: (
       <svg
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M5 12.859a10 10 0 0 1 14 0" />
-        <path d="M8.5 16.429a5 5 0 0 1 7 0" />
-        <path d="M12 20h.01" />
+        <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+        <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+        <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+        <circle cx="12" cy="20" r="1" />
       </svg>
     ),
   },
@@ -82,12 +95,16 @@ const DEFAULT_CAPABILITIES: CapabilityCardV2[] = [
       "Domain Isolation: Advanced mixed-signal zoning, shielding, and active noise mitigation.",
     ],
     learnMoreHref: "/hardware-design-services/analog-design",
+    image: {
+      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_analog_board/2.png",
+      alt: "Engineer working on analog schematic and PCB layout",
+    },
     icon: (
       <svg
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
@@ -106,88 +123,141 @@ const DEFAULT_CAPABILITIES: CapabilityCardV2[] = [
       "Thermal Management: Active heat dissipation optimization and high power density conversion cycles.",
     ],
     learnMoreHref: "/hardware-design-services/power-electronics",
+    image: {
+      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_voltage_and_high_current_pcb/PNG8.png",
+      alt: "Power electronics design lab with converter boards",
+    },
     icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
   },
 ];
 
+function BulletText({ text }: { text: string }) {
+  const colonIndex = text.indexOf(":");
+  if (colonIndex === -1) return <span>{text}</span>;
+  return (
+    <span>
+      <strong className="font-medium">{text.slice(0, colonIndex + 1)}</strong>
+      {text.slice(colonIndex + 1)}
+    </span>
+  );
+}
+
 export function CapabilitiesSectionV2({
   capabilities = DEFAULT_CAPABILITIES,
   title = "Hardware",
   titleHighlight = "Capabilities",
   description,
-  getInTouchHref = "/hardware-design-services/contact",
 }: CapabilitiesSectionV2Props) {
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("is-visible");
+        });
+      },
+      { threshold: 0.15 },
+    );
+    cardRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
   if (!capabilities.length) return null;
 
-  console.log(getInTouchHref);
-
   return (
-    <section className="w-full border-y border-slate-200 bg-neutral-50 py-16 md:py-24">
-      <div className="mx-auto w-full max-w-[1440px] px-6">
-        <h2 className="m-0 text-center text-4xl font-light tracking-wide md:text-5xl">
-          {title} <span className="text-red-500">{titleHighlight}</span>
-        </h2>
-        {description ? (
-          <p className="mx-auto mt-6 w-full max-w-[1100px] text-justify [text-align-last:center]">
-            {description}
-          </p>
-        ) : null}
-
-        <div className="mt-10 grid grid-cols-1 gap-5 md:gap-6">
-          {capabilities.map((cap) => (
-            <article
-              key={cap.id}
-              className="relative flex flex-col rounded-2xl bg-white p-6 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[box-shadow,transform] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_2px_6px_rgba(16,24,40,0.08),0_16px_32px_rgba(16,24,40,0.10)]"
-            >
-              <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-500">
-                  <span className="h-6 w-6" aria-hidden="true">
-                    {cap.icon}
-                  </span>
-                </div>
-                <h3 className="m-0 text-center text-xl font-light tracking-wide md:text-2xl">
-                  {cap.title}
-                </h3>
-              </div>
-              <p className="mt-2 text-justify text-sm leading-relaxed">
-                {cap.description}
-              </p>
-
-              <hr className="my-4 border-gray-200" />
-
-              <ul className="space-y-2">
-                {cap.bullets.map((bullet) => (
-                  <li key={bullet} className="flex items-start gap-2 text-sm">
-                    <span
-                      className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500"
-                      aria-hidden="true"
-                    />
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-auto flex flex-wrap gap-3 pt-6">
-                <Link
-                  href={cap.learnMoreHref}
-                  className="inline-flex items-center justify-center rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-red-600"
-                >
-                  Learn more
-                </Link>
-                {/* <Link
-                  href={getInTouchHref}
-                  className="inline-flex items-center justify-center rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-red-600"
-                >
-                  Get in Touch
-                </Link> */}
-              </div>
-            </article>
-          ))}
+    <section className="w-full bg-neutral-50 px-6 py-24">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6">
+        <div className="mb-8 flex flex-col items-center gap-5 text-center">
+          <h2 className="m-0 text-[56px] font-bold tracking-[-0.5px] text-[#1C2A3A] max-[900px]:text-4xl">
+            {title} <span className="text-red-500">{titleHighlight}</span>
+          </h2>
+          {description ? (
+            <p className="m-0 max-w-[60%] text-lg leading-[1.7] text-gray-700 [text-wrap:pretty] max-[900px]:max-w-full">
+              {description}
+            </p>
+          ) : null}
         </div>
+
+        {capabilities.map((cap, i) => (
+          <div
+            key={cap.id}
+            ref={(el) => {
+              cardRefs.current[i] = el;
+            }}
+            className="translate-y-8 opacity-0 transition-[opacity,transform] duration-700 [transition-timing-function:cubic-bezier(.4,0,.2,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100"
+          >
+            <article className="flex h-full items-stretch gap-8 rounded-2xl bg-white p-8 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[transform,box-shadow] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_4px_8px_rgba(16,24,40,0.08),0_16px_40px_rgba(16,24,40,0.12)] max-[900px]:flex-col max-[900px]:p-5">
+              <div className="flex min-w-0 flex-1 flex-col gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-500">
+                    <span className="h-6 w-6" aria-hidden="true">
+                      {cap.icon}
+                    </span>
+                  </div>
+                  <h3 className="m-0 text-[22px] font-light text-zinc-950">
+                    {cap.title}
+                  </h3>
+                </div>
+
+                <p className="m-0 text-base leading-[1.65] text-gray-700 [text-wrap:pretty]">
+                  {cap.description}
+                </p>
+
+                <div className="h-px bg-gray-100" aria-hidden="true" />
+
+                <ul className="m-0 flex list-none flex-col gap-2.5 p-0">
+                  {cap.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="flex items-baseline gap-3 text-[15px] leading-[1.6] text-gray-700"
+                    >
+                      <span
+                        className="relative -top-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500"
+                        aria-hidden="true"
+                      />
+                      <BulletText text={bullet} />
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-1">
+                  <Link
+                    href={cap.learnMoreHref}
+                    className="inline-block rounded-lg bg-red-500 px-[18px] py-2.5 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-red-600"
+                  >
+                    Learn more
+                  </Link>
+                </div>
+              </div>
+
+              {cap.image ? (
+                <div className="relative min-h-[280px] w-80 shrink-0 overflow-hidden rounded-xl max-[900px]:min-h-[200px] max-[900px]:w-full">
+                  <Image
+                    src={cap.image.src}
+                    alt={cap.image.alt}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 320px"
+                    className="object-contain"
+                  />
+                </div>
+              ) : null}
+            </article>
+          </div>
+        ))}
       </div>
     </section>
   );
