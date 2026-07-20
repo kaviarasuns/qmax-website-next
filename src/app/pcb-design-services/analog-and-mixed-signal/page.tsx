@@ -17,9 +17,6 @@ import {
   pcbV2ProjectExperienceEntry,
   pcbV2ServiceCaseStudy,
 } from "@/store/pcb-case-studies-v2/service-cards";
-import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
-import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
-
 export const metadata = buildMetadata({
   title: "Analog & Mixed-Signal PCB Design | ADC/DAC Layout | Qmax",
   description:

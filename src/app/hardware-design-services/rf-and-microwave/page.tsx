@@ -24,9 +24,6 @@ import {
   getFullProductDevelopmentCardImage,
 } from "@/store/full-product-development-case-studies";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
-import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
-import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
-
 function rfMicrowaveProjectExperienceEntry(
   id: string,
   listTitle: string,

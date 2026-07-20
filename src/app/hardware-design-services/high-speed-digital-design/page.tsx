@@ -21,9 +21,6 @@ import {
   fullProductDevelopmentCaseStudiesData,
   getFullProductDevelopmentCardImage,
 } from "@/store/full-product-development-case-studies";
-import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
-import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
-
 function highSpeedProjectExperienceEntry(
   id: string,
   listTitle: string,

@@ -29,9 +29,6 @@ import {
   ComplianceStandardsSection,
   POWER_ELECTRONICS_COMPLIANCE_CATEGORIES,
 } from "@/components/services-cmp/ComplianceStandardSection";
-import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
-import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
-
 function powerElectronicsProjectExperienceEntry(
   id: string,
   listTitle: string,
