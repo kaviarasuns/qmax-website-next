@@ -182,11 +182,11 @@ export function CapabilitiesSectionV2({
     <section className="w-full bg-neutral-50 px-6 py-24">
       <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6">
         <div className="mb-8 flex flex-col items-center gap-5 text-center">
-          <h2 className="m-0 text-[56px] font-bold tracking-[-0.5px] text-[#1C2A3A] max-[900px]:text-4xl">
+          <h2 className="m-0 text-center text-4xl font-light tracking-wide md:text-5xl">
             {title} <span className="text-red-500">{titleHighlight}</span>
           </h2>
           {description ? (
-            <p className="m-0 max-w-[60%] text-lg leading-[1.7] text-gray-700 [text-wrap:pretty] max-[900px]:max-w-full">
+            <p className="m-0 max-w-[1100px] text-base leading-relaxed text-foreground [text-align-last:center] [text-wrap:pretty] max-[900px]:max-w-full">
               {description}
             </p>
           ) : null}
@@ -208,12 +208,12 @@ export function CapabilitiesSectionV2({
                       {cap.icon}
                     </span>
                   </div>
-                  <h3 className="m-0 text-[22px] font-light text-zinc-950">
+                  <h3 className="m-0 text-xl font-medium tracking-wide md:text-2xl">
                     {cap.title}
                   </h3>
                 </div>
 
-                <p className="m-0 text-base leading-[1.65] text-gray-700 [text-wrap:pretty]">
+                <p className="m-0 text-base leading-relaxed text-foreground [text-wrap:pretty]">
                   {cap.description}
                 </p>
 
@@ -223,7 +223,7 @@ export function CapabilitiesSectionV2({
                   {cap.bullets.map((bullet) => (
                     <li
                       key={bullet}
-                      className="flex items-baseline gap-3 text-[15px] leading-[1.6] text-gray-700"
+                      className="flex items-baseline gap-3 text-[15px] leading-[1.65] text-foreground"
                     >
                       <span
                         className="relative -top-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500"
@@ -237,7 +237,7 @@ export function CapabilitiesSectionV2({
                 <div className="mt-1">
                   <Link
                     href={cap.learnMoreHref}
-                    className="inline-block rounded-lg bg-red-500 px-[18px] py-2.5 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-red-600"
+                    className="inline-block rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-red-600"
                   >
                     Learn more
                   </Link>
