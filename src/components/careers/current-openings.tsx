@@ -712,6 +712,10 @@ function SideNav({
 
 export function CurrentOpenings() {
   const stackWrapperRef = useRef<HTMLDivElement | null>(null);
+  // Inner content row (side nav + card stack). The scroll stepper only owns the
+  // wheel while the pointer is inside this box; the empty side gutters scroll
+  // the page natively.
+  const contentRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   // Populated by the GSAP effect; SideNav clicks call through it to jump the
   // stack to a chosen card index (engaging the pin first if needed).
@@ -782,6 +786,43 @@ export function CurrentOpenings() {
     let wheelDeltas: number[] = [];
     let lastWheelTime = 0;
 
+    // Last known mouse position; the stepper only owns the scroll while the
+    // pointer is over the content row — in the empty side gutters the page
+    // scrolls natively. Mirrors DesignToManufacturingV7.
+    let pointerPos: { x: number; y: number } | null = null;
+    const trackPointer = (event: MouseEvent) => {
+      pointerPos = { x: event.clientX, y: event.clientY };
+    };
+    const pointerInSection = () => {
+      // No mouse seen yet (touch devices) — keep the stepper engaged.
+      if (!pointerPos) return true;
+      // Test against the inner content row (side nav + card stack), not the
+      // full-width section, so the empty side gutters pass scroll through
+      // natively.
+      const r = (contentRef.current ?? wrapper).getBoundingClientRect();
+      return (
+        pointerPos.x >= r.left &&
+        pointerPos.x <= r.right &&
+        pointerPos.y >= r.top &&
+        pointerPos.y <= r.bottom
+      );
+    };
+
+    // Hand the page back to native scrolling at the ends of the stack. Scroll is
+    // parked inside the pin, so we jump just past the boundary; because the
+    // pinned card and the just-unpinned card render identically, this is
+    // visually seamless — only the scrollbar position changes. Force an instant
+    // jump regardless of the page's (smooth) scroll-behavior, then restore it.
+    const jumpTo = (y: number) => {
+      const htmlEl = document.documentElement;
+      const previous = htmlEl.style.scrollBehavior;
+      htmlEl.style.scrollBehavior = "auto";
+      window.scrollTo(0, y);
+      requestAnimationFrame(() => {
+        htmlEl.style.scrollBehavior = previous;
+      });
+    };
+
     const ctx = gsap.context(() => {
       cards.forEach((card, index) => {
         const isFirstCard = index === 0;
@@ -829,6 +870,15 @@ export function CurrentOpenings() {
           animating = false;
           pendingDir = 0;
           setActiveIndex(entryIndex);
+          // Pointer outside the content row → don't trap the scroll; hop
+          // straight over the pin so the page keeps its native flow.
+          if (!pointerInSection()) {
+            const target =
+              self.direction === -1
+                ? Math.max(0, Math.floor(self.start) - 1)
+                : Math.ceil(self.end) + 1;
+            requestAnimationFrame(() => jumpTo(target));
+          }
         },
       });
     }, wrapper);
@@ -871,20 +921,6 @@ export function CurrentOpenings() {
       });
     };
 
-    // Hand the page back to native scrolling at the ends of the stack. Scroll is
-    // parked inside the pin, so we jump just past the boundary; because the
-    // pinned card and the just-unpinned card render identically, this is
-    // visually seamless — only the scrollbar position changes. Force an instant
-    // jump regardless of the page's (smooth) scroll-behavior, then restore it.
-    const jumpTo = (y: number) => {
-      const htmlEl = document.documentElement;
-      const previous = htmlEl.style.scrollBehavior;
-      htmlEl.style.scrollBehavior = "auto";
-      window.scrollTo(0, y);
-      requestAnimationFrame(() => {
-        htmlEl.style.scrollBehavior = previous;
-      });
-    };
     const releaseDown = () => jumpTo(Math.ceil(st.end) + 1);
     const releaseUp = () => jumpTo(Math.max(0, Math.floor(st.start) - 1));
 
@@ -967,9 +1003,19 @@ export function CurrentOpenings() {
     };
 
     const onWheel = (event: WheelEvent) => {
+      trackPointer(event);
       if (!st.isActive) return;
       const delta = normalizeDeltaY(event);
       const dir = delta > 0 ? 1 : -1;
+
+      // Mouse outside the content row: leave this wheel event to native
+      // scrolling and unpark the pin in the same direction.
+      if (!pointerInSection()) {
+        if (dir === 1) releaseDown();
+        else releaseUp();
+        return;
+      }
+
       // Let an overflowing card scroll its own content first.
       if (canScrollWithin(event.target, dir)) return;
       event.preventDefault();
@@ -1050,6 +1096,7 @@ export function CurrentOpenings() {
       step(dir);
     };
 
+    window.addEventListener("mousemove", trackPointer, { passive: true });
     window.addEventListener("wheel", onWheel, { passive: false });
     window.addEventListener("touchstart", onTouchStart, { passive: true });
     window.addEventListener("touchmove", onTouchMove, { passive: false });
@@ -1057,6 +1104,7 @@ export function CurrentOpenings() {
     window.addEventListener("keydown", onKeyDown);
 
     return () => {
+      window.removeEventListener("mousemove", trackPointer);
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("touchstart", onTouchStart);
       window.removeEventListener("touchmove", onTouchMove);
@@ -1073,7 +1121,7 @@ export function CurrentOpenings() {
     return (
       <section id="current-openings" className="bg-white">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-8 items-start">
+          <div ref={contentRef} className="flex gap-8 items-start">
             <SideNav
               positions={positions}
               activeIndex={activeIndex}

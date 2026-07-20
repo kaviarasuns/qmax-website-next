@@ -10,7 +10,7 @@ export function CareersContent() {
       <Hero />
       <CurrentOpenings />
       <CTA />
-      <div className="pb-6"></div>
+      <div className="p-[25px]"></div>
     </>
   );
 }

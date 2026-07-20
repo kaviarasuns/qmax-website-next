@@ -17,6 +17,8 @@ import {
   pcbV2ProjectExperienceEntry,
   pcbV2ServiceCaseStudy,
 } from "@/store/pcb-case-studies-v2/service-cards";
+import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
+import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
 
 export const metadata = buildMetadata({
   title: "Analog & Mixed-Signal PCB Design | ADC/DAC Layout | Qmax",
@@ -444,8 +446,24 @@ const FAQ_ITEMS = [
 export default function AnalogAndMixedSignalPage() {
   return (
     <>
+      {/* <HardwareServiceHeroSectionV2
+        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_analog.png"
+        imageAlt="High-Performance Digital Systems - Qmax Systems"
+        title={
+          <>
+            Analog and Mixed-Signal PCB Design{" "}
+            <span className={HERO_TITLE_SUBLINE_CLASS}>
+              Grounding, Shielding, and Noise Control
+            </span>
+          </>
+        }
+        ctaHref="/pcb-design-services/contact"
+        ctaLabel="Talk to Our Engineers"
+      /> */}
+
       <HardwareServiceHeroSection
-        imageSrc="/pcb-design/analog-and-mixed-signal.jpg"
+        // imageSrc="/pcb-design/analog-and-mixed-signal.jpg"
+        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_analog.png"
         imageAlt="High-Performance Digital Systems - Qmax Systems"
         title="Analog and Mixed-Signal PCB Design - Grounding, Shielding, and Noise Control"
         description={
@@ -464,7 +482,21 @@ export default function AnalogAndMixedSignalPage() {
         ctaHref="/pcb-design-services/contact"
         ctaLabel="Talk to Our Engineers"
       />
+
       <CoreServiceOfferingsSection
+        description={
+          <>
+            <p>
+              Qmax Systems provides analog and mixed-signal PCB design that
+              combines high-sensitivity analog signal chains with high-speed
+              digital processing on a single board. Qmax Systems engineers treat
+              the layout as part of the electrical system - controlling
+              grounding topology, shielding, and power filtering so signal
+              integrity, noise floor, and measurement accuracy hold under real
+              conditions.
+            </p>
+          </>
+        }
         offerings={coreServiceOfferings}
         title="Our Core Service "
         titleHighlight="Offerings"

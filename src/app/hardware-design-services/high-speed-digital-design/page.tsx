@@ -21,6 +21,8 @@ import {
   fullProductDevelopmentCaseStudiesData,
   getFullProductDevelopmentCardImage,
 } from "@/store/full-product-development-case-studies";
+import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
+import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
 
 function highSpeedProjectExperienceEntry(
   id: string,
@@ -388,7 +390,34 @@ export default function HighSpeedDigitalDesignPage() {
         ctaLabel="Talk to Our Engineers"
       />
 
-      <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
+      {/* <HardwareServiceHeroSectionV2
+        imageSrc="/hw-main/HW-High-Speed-Digital-Design/image1.jpg"
+        imageAlt="High-Speed Digital Design - Qmax Systems"
+        title={
+          <>
+            High-Speed Digital Design{" "}
+            <span className={HERO_TITLE_SUBLINE_CLASS}>
+              DDR5, PCIe Gen6, and 112G SerDes Architecture
+            </span>
+          </>
+        }
+        ctaHref="/hardware-design-services/contact"
+        ctaLabel="Talk to Our Engineers"
+      /> */}
+
+      <CoreServiceOfferingsSection
+        offerings={coreServiceOfferings}
+        // description={
+        //   <p>
+        //     Qmax Systems provides high-speed digital design for AI computing,
+        //     telecom, edge servers, and data-intensive infrastructure. Qmax
+        //     Systems engineers high-speed, high-density, high-reliability systems
+        //     around signal integrity (SI) and power integrity (PI) - from DDR5
+        //     and PCIe Gen6 to 112G SerDes, with architecture set before layout -
+        //     delivering production-ready platforms, not just prototypes.
+        //   </p>
+        // }
+      />
       <ApplicationsProjectExperienceSection
         projects={projectExperience}
         subtitle="We have successfully delivered hundreds of advanced digital hardware platforms, including:"

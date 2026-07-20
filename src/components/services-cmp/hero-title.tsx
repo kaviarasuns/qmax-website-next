@@ -2,6 +2,10 @@ import type { ReactNode } from "react";
 
 const TITLE_SEPARATOR = " - ";
 
+/** Shared subline styles for split hero titles (primary line + subtitle). */
+export const HERO_TITLE_SUBLINE_CLASS =
+  "mt-[0.3em] block font-normal leading-[1.25] text-white/90 [font-size:clamp(18px,2vw,26px)]";
+
 /**
  * Splits a string hero title on the first ` - ` separator: the lead keeps the
  * h1's large sizing, the remainder renders as a smaller block line inside the
@@ -16,7 +20,7 @@ export function renderHeroTitle(title: ReactNode): ReactNode {
   return (
     <>
       {title.slice(0, dashIndex).trim()}{" "}
-      <span className="mt-[0.3em] block font-semibold leading-[1.25] text-white/90 [font-size:clamp(18px,2vw,26px)]">
+      <span className={HERO_TITLE_SUBLINE_CLASS}>
         {title.slice(dashIndex + TITLE_SEPARATOR.length).trim()}
       </span>
     </>

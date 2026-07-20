@@ -29,6 +29,8 @@ import {
   ComplianceStandardsSection,
   POWER_ELECTRONICS_COMPLIANCE_CATEGORIES,
 } from "@/components/services-cmp/ComplianceStandardSection";
+import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
+import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
 
 function powerElectronicsProjectExperienceEntry(
   id: string,
@@ -452,8 +454,24 @@ export const metadata = buildMetadata({
 export default function PowerElectronicsPage() {
   return (
     <>
+      {/* <HardwareServiceHeroSectionV2
+        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/hardware/hardware+_power.JPG"
+        imageAlt="Power Electronics Design - Qmax Systems"
+        title={
+          <>
+            Power Electronics Design Services{" "}
+            <span className={HERO_TITLE_SUBLINE_CLASS}>
+              GaN/SiC Conversion, Thermal, and BMS
+            </span>
+          </>
+        }
+        ctaHref="/hardware-design-services/contact"
+        ctaLabel="Talk to Our Engineers"
+      /> */}
+
       <HardwareServiceHeroSection
-        imageSrc="/hw-main/image2.png"
+        // imageSrc="/hw-main/image2.png"
+        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/hardware/hardware+_power.JPG"
         imageAlt="Power Electronics Design - Qmax Systems"
         // title={
         //   <>
@@ -480,7 +498,23 @@ export default function PowerElectronicsPage() {
         ctaLabel="Talk to Our Engineers"
       />
 
-      <CoreServiceOfferingsSection offerings={coreServiceOfferings} />
+      <CoreServiceOfferingsSection
+        offerings={coreServiceOfferings}
+        // description={
+        //   <>
+        //     <p>
+        //       Qmax Systems provides power electronics design services -
+        //       high-density, high-efficiency power conversion and energy
+        //       management for electrified transport, hyperscale data centers, and
+        //       industrial automation. Qmax Systems bridges wide-bandgap (GaN/SiC)
+        //       semiconductor capability and rugged, market-ready hardware,
+        //       engineering thermal management, EMI/EMC mitigation, and
+        //       high-voltage safety from kilowatt-scale PDUs to precision Battery
+        //       Management Systems.
+        //     </p>
+        //   </>
+        // }
+      />
       <ApplicationsProjectExperienceSection
         projects={projectExperience}
         subtitle="Our portfolio includes hundreds of advanced power platforms delivered to regulated industries:"

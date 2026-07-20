@@ -21,6 +21,7 @@ interface CoreServiceOfferingsSectionProps {
   offerings: HighSpeedCoreOffering[];
   title?: string;
   titleHighlight?: string;
+  description?: ReactNode;
   contactHref?: string;
 }
 
@@ -28,6 +29,7 @@ export function CoreServiceOfferingsSection({
   offerings,
   title = "Our Core Service ",
   titleHighlight = "Offerings",
+  description,
   contactHref = "/hardware-design-services/contact",
 }: CoreServiceOfferingsSectionProps) {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -50,10 +52,17 @@ export function CoreServiceOfferingsSection({
   return (
     <section className="px-6 py-16 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-center text-3xl font-light  md:text-5xl">
-          {title}
-          <span className="text-red-500">{titleHighlight}</span>
-        </h2>
+        <div className="mb-8 flex flex-col items-center gap-5 text-center">
+          <h2 className="m-0 text-center text-4xl font-light tracking-wide md:text-5xl">
+            {title}
+            <span className="text-red-500">{titleHighlight}</span>
+          </h2>
+          {description ? (
+            <div className="m-0 max-w-[1100px] text-base leading-relaxed text-foreground [text-align-last:center] [text-wrap:pretty] max-[900px]:max-w-full">
+              {description}
+            </div>
+          ) : null}
+        </div>
 
         <CapabilitiesTabs
           capabilities={tabCapabilities}

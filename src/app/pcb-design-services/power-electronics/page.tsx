@@ -17,6 +17,8 @@ import {
   pcbV2ProjectExperienceEntry,
   pcbV2ServiceCaseStudy,
 } from "@/store/pcb-case-studies-v2/service-cards";
+import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
+import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
 
 export const metadata = buildMetadata({
   title: "Power Electronics PCB Design | High-Current Layout | Qmax",
@@ -413,8 +415,24 @@ const powerElectronicsCaseStudies: ServiceCaseStudy[] = [
 export default function PowerElectronicsPage() {
   return (
     <>
+      {/* <HardwareServiceHeroSectionV2
+        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_power electronics.png"
+        imageAlt="Power Electronics PCB Design - Qmax Systems"
+        title={
+          <>
+            Power Electronics PCB Design{" "}
+            <span className={HERO_TITLE_SUBLINE_CLASS}>
+              High-Current, High-Voltage Board Layout
+            </span>
+          </>
+        }
+        ctaHref="/pcb-design-services/contact"
+        ctaLabel="Talk to Our Engineers"
+      /> */}
+
       <HardwareServiceHeroSection
-        imageSrc="/pcb-design/Power-Electronics-PCB-V2.png"
+        // imageSrc="/pcb-design/Power-Electronics-PCB-V2.png"
+        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_power electronics.png"
         imageAlt="Power Electronics PCB Design - Qmax Systems"
         title="Power Electronics PCB Design - High-Current, High-Voltage Board Layout"
         description={
@@ -432,7 +450,20 @@ export default function PowerElectronicsPage() {
         ctaHref="/pcb-design-services/contact"
         ctaLabel="Talk to Our Engineers"
       />
+
       <CoreServiceOfferingsSection
+        // description={
+        //   <>
+        //     <p>
+        //       Qmax Systems provides power electronics PCB design as functional
+        //       circuit elements, balancing high-current density, extreme voltage
+        //       gradients, and rapid switching transients (di/dt and dv/dt). A
+        //       First-Time-Right methodology - front-loading electromagnetic and
+        //       thermal risk analysis - takes 800V EV architectures and kW-level
+        //       plasma generators to production without costly re-spins.
+        //     </p>
+        //   </>
+        // }
         offerings={coreServiceOfferings}
         title="Our Core Service "
         titleHighlight="Offerings"

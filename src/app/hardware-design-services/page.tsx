@@ -16,6 +16,7 @@ import {
   getCaseStudyCardImage,
 } from "@/store/case-studies";
 import { ServiceVideoHeroV2 } from "@/components/services-cmp/service-video-hero-v2";
+import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
 import { CapabilitiesSectionV2 } from "@/components/services-cmp/CapabilitiesSectionV2";
 
 export const metadata = buildMetadata({
@@ -494,7 +495,7 @@ const HERO = {
   title: (
     <>
       Hardware Design Services{" "}
-      <span className="mt-[0.3em] block font-normal leading-[1.25] text-white/90 [font-size:clamp(18px,2vw,26px)]">
+      <span className={HERO_TITLE_SUBLINE_CLASS}>
         Full Product Lifecycle, Architecture to Production
       </span>
     </>
