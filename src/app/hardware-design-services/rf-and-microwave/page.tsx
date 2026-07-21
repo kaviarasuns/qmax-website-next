@@ -10,7 +10,6 @@ import {
   TechnicalAdvantageSection,
   type TechnicalAdvantageCard,
 } from "@/components/services-cmp/TechnicalAdvantageSection";
-import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import {
   ApplicationsProjectExperienceSection,
   type ProjectExperienceItem,

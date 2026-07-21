@@ -25,7 +25,6 @@ import {
 import { pcbV2ServiceCaseStudy } from "@/store/pcb-case-studies-v2/service-cards";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { ComplianceStandardsSection } from "@/components/services-cmp/ComplianceStandardSection";
-import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
 import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
 import { OurCoreServiceOfferings } from "@/components/services-cmp/OurCoreServiceOfferings";

@@ -10,7 +10,6 @@ import {
   HighSpeedCoreOffering,
 } from "@/components/services-cmp/CoreServiceOfferingsSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
-import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 import {

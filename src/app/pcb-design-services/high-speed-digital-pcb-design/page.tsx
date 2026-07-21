@@ -8,7 +8,6 @@ import {
   CoreServiceOfferingsSection,
   HighSpeedCoreOffering,
 } from "@/components/services-cmp/CoreServiceOfferingsSection";
-import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";

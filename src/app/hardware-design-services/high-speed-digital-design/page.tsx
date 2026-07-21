@@ -7,7 +7,6 @@ import {
 } from "@/components/services-cmp/CoreServiceOfferingsSection";
 import { WhySection } from "@/components/services-cmp/WhySection";
 import { DigitalHardwareTechnicalAdvantageSection } from "@/components/services-cmp/TechnicalAdvantageSection";
-import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import {
   ApplicationsProjectExperienceSection,
