@@ -676,7 +676,7 @@ const LIFECYCLE_HEADING_CLASS =
 
 export type HeroConceptToSiliconProps = {
   title?: ReactNode;
-  description?: ReactNode;
+  description?: string;
   ctaLabel?: string;
   ctaHref?: string;
   caption?: string;
@@ -692,7 +692,7 @@ export function HeroConceptToSilicon({
   lifecycleTitle = "Hardware Lifecycle",
   lifecycleSubtitleHighlight = "Requirement to Production",
 }: HeroConceptToSiliconProps) {
-  const showCopy = title != null && description != null;
+  const showCopy = title != null;
   const flowRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -751,9 +751,12 @@ export function HeroConceptToSilicon({
           <div className="cts-hero-copy">
             <h1 className="!m-0 !mb-[26px] !text-[clamp(34px,4.2vw,52px)] !font-bold !leading-[1.12] !text-white ![text-wrap:balance]">
               {title}
-              <br />
-              {description}
             </h1>
+            {description ? (
+              <p className="!m-0 !mb-[26px] max-w-[1100px] text-base leading-relaxed text-white/90 [text-wrap:pretty]">
+                {description}
+              </p>
+            ) : null}
             <Link
               className="inline-block rounded-md bg-red-500 px-8 py-3.5 text-base font-semibold uppercase tracking-[0.04em] text-white no-underline transition duration-150 ease-in-out hover:-translate-y-0.5 hover:bg-red-600"
               href={ctaHref}
@@ -765,14 +768,19 @@ export function HeroConceptToSilicon({
       </div>
 
       <div className="cts-hero-lifecycle">
-        <div className="mx-auto mb-10 flex w-full flex-col items-center text-center">
-          <h2 className={`m-0 mb-3 ${LIFECYCLE_HEADING_CLASS} tracking-[1.2px]`}>
+        <div className="mx-auto mb-10 flex w-full flex-col items-center gap-5 text-center">
+          <h2 className={`m-0 ${LIFECYCLE_HEADING_CLASS} tracking-[1.2px]`}>
             {lifecycleTitle}
           </h2>
           <p className={`m-0 font-readable ${LIFECYCLE_HEADING_CLASS}`}>
             From{" "}
             <span className="text-red-500">{lifecycleSubtitleHighlight}</span>
           </p>
+          {description ? (
+            <p className="m-0 max-w-[1100px] text-base leading-relaxed text-foreground [text-align-last:center] [text-wrap:pretty] max-[900px]:max-w-full">
+              {description}
+            </p>
+          ) : null}
         </div>
         <div className="cts-flow" ref={flowRef}>
           <div className="cts-energy-track" />

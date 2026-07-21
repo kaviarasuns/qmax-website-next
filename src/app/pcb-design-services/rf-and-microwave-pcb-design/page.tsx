@@ -17,6 +17,9 @@ import {
   pcbV2ProjectExperienceEntry,
   pcbV2ServiceCaseStudy,
 } from "@/store/pcb-case-studies-v2/service-cards";
+import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
+import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
+import { OurCoreServiceOfferings } from "@/components/services-cmp/OurCoreServiceOfferings";
 export const metadata = buildMetadata({
   title: "RF & Microwave PCB Design | PTFE, Sub-GHz to Ka-Band | Qmax",
   description:
@@ -564,7 +567,7 @@ const rfMicrowaveCaseStudies: ServiceCaseStudy[] = [
 export default function RFMicrowavePCBDesignPage() {
   return (
     <>
-      {/* <HardwareServiceHeroSectionV2
+      <HardwareServiceHeroSectionV2
         imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_rf.png"
         imageAlt="RF and Microwave PCB Design - Qmax Systems"
         title={
@@ -577,9 +580,9 @@ export default function RFMicrowavePCBDesignPage() {
         }
         ctaHref="/pcb-design-services/contact"
         ctaLabel="Talk to Our Engineers"
-      /> */}
+      />
 
-      <HardwareServiceHeroSection
+      {/* <HardwareServiceHeroSection
         // imageSrc="/pcb-design/images/rf-pcb-service.jpg"
         imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_rf.png"
         imageAlt="RF and Microwave PCB Design - Qmax Systems"
@@ -598,24 +601,25 @@ export default function RFMicrowavePCBDesignPage() {
         }
         ctaHref="/pcb-design-services/contact"
         ctaLabel="Talk to Our Engineers"
+      /> */}
+
+      <OurCoreServiceOfferings
+        description={
+          <p>
+            Qmax Systems provides RF and microwave PCB design from sub-GHz to
+            mmWave bands, where the board is part of the RF circuit itself. Qmax
+            Systems RF engineers control trace geometry, dielectric loss, via
+            transitions, grounding, and shielding to hold insertion loss, phase
+            stability, noise floor, and EMI compliance - across radar sensors,
+            RF instrumentation, and wireless communication platforms.
+          </p>
+        }
       />
 
       <CoreServiceOfferingsSection
-        // description={
-        //   <>
-        //     <p>
-        //       Qmax Systems provides RF and microwave PCB design from sub-GHz to
-        //       mmWave bands, where the board is part of the RF circuit itself.
-        //       Qmax Systems RF engineers control trace geometry, dielectric loss,
-        //       via transitions, grounding, and shielding to hold insertion loss,
-        //       phase stability, noise floor, and EMI compliance - across radar
-        //       sensors, RF instrumentation, and wireless communication platforms.
-        //     </p>
-        //   </>
-        // }
         offerings={coreServiceOfferings}
-        title="Our Core Service "
-        titleHighlight="Offerings"
+        title="What We "
+        titleHighlight="Offer"
         contactHref="/pcb-design-services/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />

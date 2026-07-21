@@ -27,8 +27,8 @@ interface CoreServiceOfferingsSectionProps {
 
 export function CoreServiceOfferingsSection({
   offerings,
-  title = "Our Core Service ",
-  titleHighlight = "Offerings",
+  title = "What We ",
+  titleHighlight = "Offer",
   description,
   contactHref = "/hardware-design-services/contact",
 }: CoreServiceOfferingsSectionProps) {

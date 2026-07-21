@@ -26,6 +26,9 @@ import { pcbV2ServiceCaseStudy } from "@/store/pcb-case-studies-v2/service-cards
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import { ComplianceStandardsSection } from "@/components/services-cmp/ComplianceStandardSection";
 import { HardwareServiceHeroSection } from "@/components/services-cmp/HardwareServiceHeroSection";
+import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
+import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
+import { OurCoreServiceOfferings } from "@/components/services-cmp/OurCoreServiceOfferings";
 
 function analogProjectExperienceEntry(
   id: string,
@@ -526,7 +529,7 @@ export const metadata = buildMetadata({
 export default function AnalogDesignPage() {
   return (
     <>
-      {/* <HardwareServiceHeroSectionV2
+      <HardwareServiceHeroSectionV2
         imageSrc="/hw-main/hw-sub/image1.jpg"
         imageAlt="Analog and Mixed-Signal Design - Qmax Systems"
         title={
@@ -539,9 +542,9 @@ export default function AnalogDesignPage() {
         }
         ctaHref="/hardware-design-services/contact"
         ctaLabel="Talk to Our Engineers"
-      /> */}
+      />
 
-      <HardwareServiceHeroSection
+      {/* <HardwareServiceHeroSection
         imageSrc="/hw-main/hw-sub/image1.jpg"
         imageAlt="Analog and Mixed-Signal Design - Qmax Systems"
         // title={
@@ -564,21 +567,24 @@ export default function AnalogDesignPage() {
         }
         ctaHref="/hardware-design-services/contact"
         ctaLabel="Talk to Our Engineers"
+      /> */}
+
+      <OurCoreServiceOfferings
+        description={
+          <p>
+            Qmax Systems provides analog circuit design services for the
+            physical-to-digital interface, the most critical bottleneck in
+            high-performance electronics. From femto-farad capacitance sensing
+            to giga-sample data converters, Qmax Systems delivers high-fidelity
+            signal acquisition, precision conditioning, and ultra-low-noise
+            design that holds laboratory-grade accuracy in field-deployed
+            hardware.
+          </p>
+        }
       />
 
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}
-        // description={
-        //   <p>
-        //     Qmax Systems provides analog circuit design services for the
-        //     physical-to-digital interface, the most critical bottleneck in
-        //     high-performance electronics. From femto-farad capacitance sensing
-        //     to giga-sample data converters, Qmax Systems delivers high-fidelity
-        //     signal acquisition, precision conditioning, and ultra-low-noise
-        //     design that holds laboratory-grade accuracy in field-deployed
-        //     hardware.
-        //   </p>
-        // }
       />
 
       <ApplicationsProjectExperienceSection

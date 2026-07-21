@@ -541,13 +541,10 @@ export default function HardwareDevelopmentServicesPage() {
   return (
     <div className="hd-root">
       <ServiceVideoHeroV2 {...HERO} />
-      <HeroConceptToSilicon />
+      <HeroConceptToSilicon description={HERO.description} />
 
       {/* CORE CAPABILITIES */}
-      <CapabilitiesSectionV2
-        description={HERO.description}
-        getInTouchHref="/hardware-design-services/contact"
-      />
+      <CapabilitiesSectionV2 getInTouchHref="/hardware-design-services/contact" />
 
       {/* INDUSTRIES WE SERVE */}
       {/* <IndustriesSection industries={INDUSTRIES} slides={INDUSTRY_SLIDES} /> */}

@@ -24,6 +24,9 @@ import {
   getFullProductDevelopmentCardImage,
 } from "@/store/full-product-development-case-studies";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
+import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
+import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
+import { OurCoreServiceOfferings } from "@/components/services-cmp/OurCoreServiceOfferings";
 function rfMicrowaveProjectExperienceEntry(
   id: string,
   listTitle: string,
@@ -761,7 +764,7 @@ export const metadata = buildMetadata({
 export default function RfAndMicrowavePage() {
   return (
     <>
-      {/* <HardwareServiceHeroSectionV2
+      <HardwareServiceHeroSectionV2
         imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/hardware/hardware _rf.png"
         imageAlt="RF and Microwave Engineering - Qmax Systems"
         title={
@@ -774,9 +777,9 @@ export default function RfAndMicrowavePage() {
         }
         ctaHref="/hardware-design-services/contact"
         ctaLabel="Talk to Our Engineers"
-      /> */}
+      />
 
-      <HardwareServiceHeroSection
+      {/* <HardwareServiceHeroSection
         // imageSrc="/hw-main/hw_rf_and_microwave.jpg"
         imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/hardware/hardware _rf.png"
         imageAlt="RF and Microwave Engineering - Qmax Systems"
@@ -797,26 +800,31 @@ export default function RfAndMicrowavePage() {
         }
         ctaHref="/hardware-design-services/contact"
         ctaLabel="Talk to Our Engineers"
+      /> */}
+
+      <OurCoreServiceOfferings
+        description={
+          <p>
+            Qmax Systems provides RF circuit design services, bridging the gap
+            between theoretical electromagnetics and robust, manufacturable
+            hardware. From sub-GHz IoT modules to mmWave sensor arrays and 1 kW
+            industrial plasma generators, Qmax Systems delivers RF front-end
+            (RFFE) engineering - from LNA and PA to mixer stages - transceiver
+            and antenna architecture, impedance matching, filter and link-budget
+            design, full-wave electromagnetic simulation, and EMI/EMC
+            pre-compliance validation across LF/HF through 77 GHz+ mmWave bands
+            - ensuring optimal signal integrity and regulatory compliance on
+            first build.
+          </p>
+        }
       />
 
       <CoreServiceOfferingsSection
-        // description={
-        //   <p>
-        //     Qmax Systems provides RF circuit design services, bridging the gap
-        //     between theoretical electromagnetics and robust, manufacturable
-        //     hardware. From sub-GHz IoT modules to mmWave sensor arrays and 1 kW
-        //     industrial plasma generators, Qmax Systems delivers RF front-end
-        //     (RFFE) engineering - from LNA and PA to mixer stages - transceiver
-        //     and antenna architecture, impedance matching, filter and link-budget
-        //     design, full-wave electromagnetic simulation, and EMI/EMC
-        //     pre-compliance validation across LF/HF through 77 GHz+ mmWave bands
-        //     - ensuring optimal signal integrity and regulatory compliance on
-        //     first build.
-        //   </p>
-        // }
         offerings={coreServiceOfferings}
-        title="Core Service "
-        titleHighlight="Capabilities"
+        // title="Core Service "
+        // titleHighlight="Capabilities"
+        title="What We "
+        titleHighlight="Offer"
       />
 
       <ApplicationsProjectExperienceSection

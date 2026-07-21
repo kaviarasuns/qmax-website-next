@@ -21,6 +21,9 @@ import {
   fullProductDevelopmentCaseStudiesData,
   getFullProductDevelopmentCardImage,
 } from "@/store/full-product-development-case-studies";
+import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
+import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
+import { OurCoreServiceOfferings } from "@/components/services-cmp/OurCoreServiceOfferings";
 function highSpeedProjectExperienceEntry(
   id: string,
   listTitle: string,
@@ -369,7 +372,7 @@ export const metadata = buildMetadata({
 export default function HighSpeedDigitalDesignPage() {
   return (
     <>
-      <HardwareServiceHeroSection
+      {/* <HardwareServiceHeroSection
         imageSrc="/hw-main/HW-High-Speed-Digital-Design/image1.jpg"
         imageAlt="High-Speed Digital Design - Qmax Systems"
         title="High-Speed Digital Design - DDR5, PCIe Gen6, and 112G SerDes Architecture"
@@ -385,9 +388,9 @@ export default function HighSpeedDigitalDesignPage() {
         }
         ctaHref="/hardware-design-services/contact"
         ctaLabel="Talk to Our Engineers"
-      />
+      /> */}
 
-      {/* <HardwareServiceHeroSectionV2
+      <HardwareServiceHeroSectionV2
         imageSrc="/hw-main/HW-High-Speed-Digital-Design/image1.jpg"
         imageAlt="High-Speed Digital Design - Qmax Systems"
         title={
@@ -400,7 +403,20 @@ export default function HighSpeedDigitalDesignPage() {
         }
         ctaHref="/hardware-design-services/contact"
         ctaLabel="Talk to Our Engineers"
-      /> */}
+      />
+
+      <OurCoreServiceOfferings
+        description={
+          <p>
+            Qmax Systems provides high-speed digital design for AI computing,
+            telecom, edge servers, and data-intensive infrastructure. Qmax
+            Systems engineers high-speed, high-density, high-reliability systems
+            around signal integrity (SI) and power integrity (PI) - from DDR5
+            and PCIe Gen6 to 112G SerDes, with architecture set before layout -
+            delivering production-ready platforms, not just prototypes.
+          </p>
+        }
+      />
 
       <CoreServiceOfferingsSection
         offerings={coreServiceOfferings}

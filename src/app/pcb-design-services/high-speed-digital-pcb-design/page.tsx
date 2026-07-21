@@ -13,6 +13,9 @@ import { WhySection } from "@/components/services-cmp/WhySection";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { pcbCaseStudiesData } from "@/store/pcb-case-studies";
 import { pcbV2ProjectExperienceEntry } from "@/store/pcb-case-studies-v2/service-cards";
+import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
+import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
+import { OurCoreServiceOfferings } from "@/components/services-cmp/OurCoreServiceOfferings";
 export const metadata = buildMetadata({
   title: "High-Speed PCB Design | DDR4/5, PCIe Gen 5 & SerDes | Qmax",
   description:
@@ -544,7 +547,7 @@ const FAQ_ITEMS = [
 export default function HighSpeedDigitalPCBDesignPage() {
   return (
     <>
-      {/* <HardwareServiceHeroSectionV2
+      <HardwareServiceHeroSectionV2
         imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_highspeed.png"
         imageAlt="High-Performance Digital Systems - Qmax Systems"
         title={
@@ -557,9 +560,9 @@ export default function HighSpeedDigitalPCBDesignPage() {
         }
         ctaHref="/pcb-design-services/contact"
         ctaLabel="Talk to Our Engineers"
-      /> */}
+      />
 
-      <HardwareServiceHeroSection
+      {/* <HardwareServiceHeroSection
         // imageSrc="/pcb-design/images/image1.jpg"
         imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_highspeed.png"
         imageAlt="High-Performance Digital Systems - Qmax Systems"
@@ -578,23 +581,27 @@ export default function HighSpeedDigitalPCBDesignPage() {
         }
         ctaHref="/pcb-design-services/contact"
         ctaLabel="Talk to Our Engineers"
+      /> */}
+
+      <OurCoreServiceOfferings
+        description={
+          <p>
+            Qmax Systems provides high-speed PCB design for 112G SerDes, DDR5,
+            and PCIe Gen6 systems, where signal behavior is governed by physics,
+            not connectivity alone. Qmax Systems engineers run Signal Integrity
+            (SI) and Power Integrity (PI) simulation before routing, achieving
+            an over-95% first-time-right rate on boards from AI GPU chassis to
+            O-RAN Distributed Units.
+          </p>
+        }
       />
+
       <CoreServiceOfferingsSection
-        // description={
-        //   <>
-        //     <p>
-        //       Qmax Systems provides high-speed PCB design for 112G SerDes, DDR5,
-        //       and PCIe Gen6 systems, where signal behavior is governed by
-        //       physics, not connectivity alone. Qmax Systems engineers run Signal
-        //       Integrity (SI) and Power Integrity (PI) simulation before routing,
-        //       achieving an over-95% first-time-right rate on boards from AI GPU
-        //       chassis to O-RAN Distributed Units.
-        //     </p>
-        //   </>
-        // }
         offerings={coreServiceOfferings}
-        title="Our Core Service "
-        titleHighlight="Offerings"
+        // title="Our Core Service "
+        // titleHighlight="Offerings"
+        title="What We "
+        titleHighlight="Offer"
         contactHref="/pcb-design-services/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />

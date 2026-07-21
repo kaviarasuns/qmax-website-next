@@ -17,6 +17,9 @@ import {
   pcbV2ProjectExperienceEntry,
   pcbV2ServiceCaseStudy,
 } from "@/store/pcb-case-studies-v2/service-cards";
+import { HardwareServiceHeroSectionV2 } from "@/components/services-cmp/HardwareServiceHeroSectionV2";
+import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
+import { OurCoreServiceOfferings } from "@/components/services-cmp/OurCoreServiceOfferings";
 export const metadata = buildMetadata({
   title: "Power Electronics PCB Design | High-Current Layout | Qmax",
   description:
@@ -412,7 +415,7 @@ const powerElectronicsCaseStudies: ServiceCaseStudy[] = [
 export default function PowerElectronicsPage() {
   return (
     <>
-      {/* <HardwareServiceHeroSectionV2
+      <HardwareServiceHeroSectionV2
         imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_power electronics.png"
         imageAlt="Power Electronics PCB Design - Qmax Systems"
         title={
@@ -425,9 +428,9 @@ export default function PowerElectronicsPage() {
         }
         ctaHref="/pcb-design-services/contact"
         ctaLabel="Talk to Our Engineers"
-      /> */}
+      />
 
-      <HardwareServiceHeroSection
+      {/* <HardwareServiceHeroSection
         // imageSrc="/pcb-design/Power-Electronics-PCB-V2.png"
         imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_power electronics.png"
         imageAlt="Power Electronics PCB Design - Qmax Systems"
@@ -446,24 +449,27 @@ export default function PowerElectronicsPage() {
         }
         ctaHref="/pcb-design-services/contact"
         ctaLabel="Talk to Our Engineers"
+      /> */}
+
+      <OurCoreServiceOfferings
+        description={
+          <p>
+            Qmax Systems provides power electronics PCB design as functional
+            circuit elements, balancing high-current density, extreme voltage
+            gradients, and rapid switching transients (di/dt and dv/dt). A
+            First-Time-Right methodology - front-loading electromagnetic and
+            thermal risk analysis - takes 800V EV architectures and kW-level
+            plasma generators to production without costly re-spins.
+          </p>
+        }
       />
 
       <CoreServiceOfferingsSection
-        // description={
-        //   <>
-        //     <p>
-        //       Qmax Systems provides power electronics PCB design as functional
-        //       circuit elements, balancing high-current density, extreme voltage
-        //       gradients, and rapid switching transients (di/dt and dv/dt). A
-        //       First-Time-Right methodology - front-loading electromagnetic and
-        //       thermal risk analysis - takes 800V EV architectures and kW-level
-        //       plasma generators to production without costly re-spins.
-        //     </p>
-        //   </>
-        // }
         offerings={coreServiceOfferings}
-        title="Our Core Service "
-        titleHighlight="Offerings"
+        // title="Our Core Service "
+        // titleHighlight="Offerings"
+        title="What We "
+        titleHighlight="Offer"
         contactHref="/pcb-design-services/contact"
       />
       <ApplicationsProjectExperienceSection projects={projectExperience} />
