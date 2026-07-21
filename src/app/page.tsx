@@ -84,6 +84,7 @@ export default function Home() {
 
       <StackReveal items={DEFAULT_ITEMS} />
       {/* <IndustriesWeServeV3 industries={INDUSTRIES_WE_SERVE} /> */}
+      <div className="pt-10"> </div>
       <InsideOutV3 />
 
       <ServicesSection />

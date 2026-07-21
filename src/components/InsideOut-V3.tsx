@@ -203,7 +203,7 @@ export default function InsideOutV3() {
   }, []);
 
   return (
-    <div className="h-full w-full flex items-center justify-center px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <div className="h-full w-full flex items-center justify-center px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
       <div
         ref={sectionRef}
         className="bg-white w-full max-w-screen-2xl rounded-2xl overflow-hidden"

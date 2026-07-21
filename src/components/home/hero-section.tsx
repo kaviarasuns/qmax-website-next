@@ -56,7 +56,7 @@ export default function HeroSection() {
   const opacity = useTransform(scrollY, [200, 600], [1, 0.8]);
 
   return (
-    <div className="pb-16 sm:pb-20 lg:pb-24">
+    <div className="pb-12 sm:pb-16 lg:pb-20">
       <motion.div
         className="relative w-full h-screen flex flex-col items-center justify-center bg-zinc-950 overflow-hidden"
         style={{

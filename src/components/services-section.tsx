@@ -102,7 +102,7 @@ export function ServicesSection() {
   };
 
   return (
-    <section className="bg-background flex min-h-screen flex-col items-center justify-center py-16 sm:py-20 lg:py-24">
+    <section className="bg-background flex min-h-screen flex-col items-center justify-center pt-6 pb-16 sm:pt-8 sm:pb-20 lg:pt-10 lg:pb-24">
       <div className="mx-auto w-full max-w-[1600px] px-4 md:px-6 lg:px-8">
         <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto_1fr] md:items-center">
           <div className="hidden md:block" aria-hidden />

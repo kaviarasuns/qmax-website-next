@@ -73,7 +73,7 @@ export default function OurServices() {
     <section
       id="our-services"
       aria-labelledby="our-services-heading"
-      className="flex min-h-screen items-center justify-center bg-white py-16 sm:py-20 lg:py-24 scroll-mt-24"
+      className="flex min-h-screen items-center justify-center bg-white pt-12 pb-6 sm:pt-16 sm:pb-8 lg:pt-20 lg:pb-10 scroll-mt-24"
     >
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Heading */}
