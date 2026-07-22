@@ -21,7 +21,8 @@ const DEFAULT_PARTNER_LOGOS: readonly PartnerLogo[] = [
     file: "qualcomm-logo.webp",
     inset: "tight",
   },
-  { name: "NXP", file: "nxp-logo-300x225.webp" },
+  { name: "Intel", file: "v2/intel.png" },
+
   {
     name: "Broadcom",
     file: "Broadcom_logo.png",
@@ -33,8 +34,11 @@ const DEFAULT_PARTNER_LOGOS: readonly PartnerLogo[] = [
     inset: "tight",
     imageClass: "object-contain scale-150",
   },
-  { name: "onsemi", file: "Onsemi_logo.svg" },
   { name: "Infineon", file: "Infineon-Technologies-AG-logo.svg" },
+  { name: "NXP", file: "nxp-logo-300x225.webp" },
+  { name: "Ampere", file: "v2/ampere-logo.webp" },
+  { name: "Texas Instruments", file: "TexasInstruments-Logo.svg" },
+
   {
     name: "Rockchip",
     file: "Rockship_V2.png",
@@ -42,9 +46,21 @@ const DEFAULT_PARTNER_LOGOS: readonly PartnerLogo[] = [
     // The PNG has whitespace baked in; scale up to crop it out.
     imageClass: "object-contain scale-150",
   },
-  { name: "Texas Instruments", file: "TexasInstruments-Logo.svg" },
+  { name: "AMD", file: "v2/AMD_logo.jpg" },
+  // { name: "AMPERE", file: "v2/ampere-logo.webp" },
+  {
+    name: "ST Microelectronics",
+    file: "v2/st_microelectronics.jpg",
+  },
+
+  { name: "onsemi", file: "Onsemi_logo.svg" },
+
+  { name: "MAXIM", file: "v2/maxim_Integrated_logo.svg" },
+
+  { name: "Sky Works", file: "v2/skyworks_vector_logo.svg" },
+
   { name: "Microchip", file: "Microchip_Technology_logo.svg" },
-  { name: "Wolfspeed", file: "Wolfspeed_logo.svg" },
+  // { name: "Wolfspeed", file: "Wolfspeed_logo.svg" },
 ];
 
 export const HARDWARE_PARTNER_LOGOS = DEFAULT_PARTNER_LOGOS;

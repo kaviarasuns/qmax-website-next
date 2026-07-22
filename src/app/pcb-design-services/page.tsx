@@ -336,9 +336,10 @@ const WHY_CARDS = [
       </svg>
     ),
   },
+
   {
-    title: "30,000+ Verified Component Libraries",
-    desc: "Qmax Systems validates every symbol, footprint, and 3D model against manufacturer datasheets across 30,000+ verified components — eliminating pad mismatches and assembly surprises.",
+    title: "Zero-Defect Design Assurance",
+    desc: "Backed by 25+ years of expertise and hundreds of complex PCB layouts, Qmax enforces a zero-defect engineering culture. Every high-speed, high-density, or high-power layout undergoes strict peer reviews using checklists perfected over three decades—guaranteeing defect-free design handoffs every time.",
     icon: (
       <svg
         viewBox="0 0 48 48"
@@ -348,15 +349,17 @@ const WHY_CARDS = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {/* IC chip with pin legs - component libraries */}
-        <rect x="13" y="13" width="22" height="22" rx="2" />
-        <path d="M13 19 H7 M13 24 H7 M13 29 H7" />
-        <path d="M35 19 H41 M35 24 H41 M35 29 H41" />
-        <path d="M19 13 V7 M24 13 V7 M29 13 V7" />
-        <path d="M19 35 V41 M24 35 V41 M29 35 V41" />
+        {/* Network topology - partner / supply chain network */}
+        <circle cx="24" cy="24" r="4" />
+        <circle cx="8" cy="12" r="3.5" />
+        <circle cx="40" cy="12" r="3.5" />
+        <circle cx="8" cy="36" r="3.5" />
+        <circle cx="40" cy="36" r="3.5" />
+        <path d="M11 13 L20 21 M37 13 L28 21 M11 35 L20 27 M37 35 L28 27" />
       </svg>
     ),
   },
+
   {
     title: "Global Compliance Expertise",
     desc: "CE, FCC, UL, IPC, and MIL-STD-461 are designed in at the layout stage, because Qmax Systems treats compliance as a confirmation, not a gamble - via an EMC-by-design approach.",
@@ -378,6 +381,28 @@ const WHY_CARDS = [
   },
 
   {
+    title: "30,000+ Verified Component Libraries",
+    desc: "Qmax Systems validates every symbol, footprint, and 3D model against manufacturer datasheets across 30,000+ verified components — eliminating pad mismatches and assembly surprises.",
+    icon: (
+      <svg
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {/* IC chip with pin legs - component libraries */}
+        <rect x="13" y="13" width="22" height="22" rx="2" />
+        <path d="M13 19 H7 M13 24 H7 M13 29 H7" />
+        <path d="M35 19 H41 M35 24 H41 M35 29 H41" />
+        <path d="M19 13 V7 M24 13 V7 M29 13 V7" />
+        <path d="M19 35 V41 M24 35 V41 M29 35 V41" />
+      </svg>
+    ),
+  },
+
+  {
     title: "Production & Documentation Readiness",
     desc: "Every design ships with 100% DFM-verified files to IPC-2221/2226; Qmax Systems delivers complete IPC-2581/ODB++ packages, controlled-impedance drill tables, and worst-case tolerance analysis.",
     icon: (
@@ -393,29 +418,6 @@ const WHY_CARDS = [
         <rect x="14" y="8" width="22" height="28" rx="2" />
         <rect x="10" y="12" width="22" height="28" rx="2" />
         <path d="M16 20 H26 M16 25 H26 M16 30 H22" />
-      </svg>
-    ),
-  },
-
-  {
-    title: "Fabrication Partner Network",
-    desc: "Qmax Systems works with qualified fabs and assembly houses with traceable sourcing, plus direct liaison to lock stackup and materials (FR-4, Megtron 6, Rogers 4350B) and flag single-source parts early.",
-    icon: (
-      <svg
-        viewBox="0 0 48 48"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        {/* Network topology - partner / supply chain network */}
-        <circle cx="24" cy="24" r="4" />
-        <circle cx="8" cy="12" r="3.5" />
-        <circle cx="40" cy="12" r="3.5" />
-        <circle cx="8" cy="36" r="3.5" />
-        <circle cx="40" cy="36" r="3.5" />
-        <path d="M11 13 L20 21 M37 13 L28 21 M11 35 L20 27 M37 35 L28 27" />
       </svg>
     ),
   },

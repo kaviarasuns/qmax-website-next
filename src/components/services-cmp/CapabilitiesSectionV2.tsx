@@ -35,7 +35,7 @@ const DEFAULT_CAPABILITIES: CapabilityCardV2[] = [
     ],
     learnMoreHref: "/hardware-design-services/high-speed-digital-design",
     image: {
-      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/1_new.png",
+      src: "https://d1yetprhniwywz.cloudfront.net/v2/hw_main/SBC_v1.png",
       alt: "Engineer presenting a high-speed multi-core server board",
     },
     icon: (
@@ -65,7 +65,7 @@ const DEFAULT_CAPABILITIES: CapabilityCardV2[] = [
     ],
     learnMoreHref: "/hardware-design-services/rf-and-microwave",
     image: {
-      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/ultra_low_cost_bldc_motor_controller_for_evs/Ultra%20Low%20Cost%20BLDC%20Motor%20Controller%20for%20EVs.png",
+      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/7.2.png",
       alt: "RF engineer testing a board with a spectrum analyzer",
     },
     icon: (
@@ -96,7 +96,7 @@ const DEFAULT_CAPABILITIES: CapabilityCardV2[] = [
     ],
     learnMoreHref: "/hardware-design-services/analog-design",
     image: {
-      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_speed_analog_board/2.png",
+      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/2_v2.png",
       alt: "Engineer working on analog schematic and PCB layout",
     },
     icon: (
@@ -124,7 +124,7 @@ const DEFAULT_CAPABILITIES: CapabilityCardV2[] = [
     ],
     learnMoreHref: "/hardware-design-services/power-electronics",
     image: {
-      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/high_voltage_and_high_current_pcb/PNG8.png",
+      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/battery_pack/1.2.png",
       alt: "Power electronics design lab with converter boards",
     },
     icon: (

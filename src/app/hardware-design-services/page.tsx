@@ -605,8 +605,8 @@ export default function HardwareDevelopmentServicesPage() {
 
       {/* PARTNERSHIPS */}
       <PartnershipsSection
-        heading="Partnerships"
-        paragraph="With a strong focus on new product development, Qmax Systems maintains strategic partnerships with leading platform providers including Qualcomm, NXP, Nvidia, Analog Devices, onsemi, Infineon, Ambarella, Texas Instruments, Microchip, and Wolfspeed. These partnerships bring early access to upcoming silicon, roadmap visibility, and training on the latest technologies - with reference modules and evaluation kits ready to kick-start your product development."
+        heading="Chipsets & Silicon Expertise"
+        paragraph="Qmax Systems brings deep hardware and firmware design experience across a broad range of leading semiconductor platforms, having designed and shipped production hardware around processors, controllers, power devices, and RF/analog components from concept through mass manufacturing."
         logos={HARDWARE_PARTNER_LOGOS}
       />
 

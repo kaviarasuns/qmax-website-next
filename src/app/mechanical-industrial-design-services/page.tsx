@@ -13,138 +13,138 @@ import { MECHANICAL_INDUSTRIES } from "@/store/mechanical-industries";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import Image from "next/image";
 
-const CAPABILITIES = [
-  {
-    id: "mechanical",
-    tabLabel: "Mechanical Design",
-    learnMoreHref: "/mechanical-industrial-design-services/mechanical-design",
-    tabIcon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z" />
-      </svg>
-    ),
-    headline:
-      "Physics-driven mechanical design that predicts how your electronics behave under stress, vibration, and extreme temperatures.",
-    intro:
-      "Qmax Systems roots its mechanical design in physics, not rules of thumb. Finite Element Analysis (FEA) and Thermal Analysis predict how your electronics behave under stress, vibration, and extreme temperatures.",
-    bullets: [
-      {
-        title: "Structural & Environmental",
-        items: [
-          "Enclosure Design - Qmax designs enclosures in plastic injection molding, machined aluminum, and sheet-metal fabrication.",
-          "Ruggedization - Qmax's engineers design for shock, vibration, and impact resistance to MIL-STD and JSS standards.",
-          "Environmental Protection - Sealing designs meet IP65, IP67, and IP68 ratings.",
-        ],
-      },
-      {
-        title: "Thermal & Mechanisms",
-        items: [
-          "Thermal Management - Qmax delivers active and passive cooling, including custom heat sinks and airflow optimization.",
-          "Kinematic Design - Kinematic design controls precise movement for hinges, sliders, and latching mechanisms.",
-        ],
-      },
-    ],
-    deliverables: [
-      {
-        title: "3D CAD Models",
-        description:
-          "Native files (SolidWorks/Creo) and neutral formats (STEP/IGES).",
-      },
-      {
-        title: "2D Technical Drawings",
-        description: "Fully dimensioned GD&T drawings for manufacturing.",
-      },
-      {
-        title: "BOM Documentation",
-        description:
-          "Complete Bill of Materials including hardware and finishing specs.",
-      },
-      {
-        title: "Thermal/Structural Reports",
-        description: "Detailed simulation data and optimization results.",
-      },
-      {
-        title: "Prototype Units",
-        description: "Functional assemblies for EVT/DVT testing.",
-      },
-    ],
-    deliverablesAriaLabel: "Engineering Deliverables",
-  },
-  {
-    id: "industrial",
-    tabLabel: "Industrial Design",
-    learnMoreHref: "/mechanical-industrial-design-services/industrial-design",
-    tabIcon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 19l7-7 3 3-7 7-3-3z" />
-        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
-        <path d="M2 2l7.586 7.586" />
-        <circle cx="11" cy="11" r="2" />
-      </svg>
-    ),
-    headline:
-      "Intentional design of the user's relationship with hardware - intuitive to use, comfortable to hold, visually representative of its capabilities.",
-    intro:
-      "Qmax Systems treats industrial design as the intentional design of the user's relationship with hardware, not just \"styling.\" Qmax's designers ensure the product is intuitive to use, comfortable to hold, and visually representative of its technical capabilities.",
-    bullets: [
-      {
-        title: "Research & Experience",
-        items: [
-          "Design Research - Qmax analyzes market trends and user behavior to inform product architecture.",
-          "CMF Development - Qmax's designers define Color, Material, and Finish (CMF) to meet aesthetic and durability goals.",
-          "Hardware UI/UX - The team designs touchpoints, button haptics, and display integration.",
-        ],
-      },
-      {
-        title: "Visualization & Prototyping",
-        items: [
-          "Visual Communication - Photorealistic renderings and animations support stakeholder reviews and marketing.",
-          "Prototyping - Qmax prototypes in stages, from low-fidelity foam models to high-fidelity vacuum casting.",
-        ],
-      },
-    ],
-    deliverables: [
-      {
-        title: "3D CAD Models",
-        description:
-          "Native files (SolidWorks/Creo) and neutral formats (STEP/IGES).",
-      },
-      {
-        title: "2D Technical Drawings",
-        description: "Fully dimensioned GD&T drawings for manufacturing.",
-      },
-      {
-        title: "BOM Documentation",
-        description:
-          "Complete Bill of Materials including hardware and finishing specs.",
-      },
-      {
-        title: "Thermal/Structural Reports",
-        description: "Detailed simulation data and optimization results.",
-      },
-      {
-        title: "Prototype Units",
-        description: "Functional assemblies for EVT/DVT testing.",
-      },
-    ],
-    deliverablesAriaLabel: "Industrial Design Deliverables",
-  },
-];
+// const CAPABILITIESV1 = [
+//   {
+//     id: "mechanical",
+//     tabLabel: "Mechanical Design",
+//     learnMoreHref: "/mechanical-industrial-design-services/mechanical-design",
+//     tabIcon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="1.8"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+//         <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z" />
+//       </svg>
+//     ),
+//     headline:
+//       "Physics-driven mechanical design that predicts how your electronics behave under stress, vibration, and extreme temperatures.",
+//     intro:
+//       "Qmax Systems roots its mechanical design in physics, not rules of thumb. Finite Element Analysis (FEA) and Thermal Analysis predict how your electronics behave under stress, vibration, and extreme temperatures.",
+//     bullets: [
+//       {
+//         title: "Structural & Environmental",
+//         items: [
+//           "Enclosure Design - Qmax designs enclosures in plastic injection molding, machined aluminum, and sheet-metal fabrication.",
+//           "Ruggedization - Qmax's engineers design for shock, vibration, and impact resistance to MIL-STD and JSS standards.",
+//           "Environmental Protection - Sealing designs meet IP65, IP67, and IP68 ratings.",
+//         ],
+//       },
+//       {
+//         title: "Thermal & Mechanisms",
+//         items: [
+//           "Thermal Management - Qmax delivers active and passive cooling, including custom heat sinks and airflow optimization.",
+//           "Kinematic Design - Kinematic design controls precise movement for hinges, sliders, and latching mechanisms.",
+//         ],
+//       },
+//     ],
+//     deliverables: [
+//       {
+//         title: "3D CAD Models",
+//         description:
+//           "Native files (SolidWorks/Creo) and neutral formats (STEP/IGES).",
+//       },
+//       {
+//         title: "2D Technical Drawings",
+//         description: "Fully dimensioned GD&T drawings for manufacturing.",
+//       },
+//       {
+//         title: "BOM Documentation",
+//         description:
+//           "Complete Bill of Materials including hardware and finishing specs.",
+//       },
+//       {
+//         title: "Thermal/Structural Reports",
+//         description: "Detailed simulation data and optimization results.",
+//       },
+//       {
+//         title: "Prototype Units",
+//         description: "Functional assemblies for EVT/DVT testing.",
+//       },
+//     ],
+//     deliverablesAriaLabel: "Engineering Deliverables",
+//   },
+//   {
+//     id: "industrial",
+//     tabLabel: "Industrial Design",
+//     learnMoreHref: "/mechanical-industrial-design-services/industrial-design",
+//     tabIcon: (
+//       <svg
+//         viewBox="0 0 24 24"
+//         fill="none"
+//         stroke="currentColor"
+//         strokeWidth="1.8"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       >
+//         <path d="M12 19l7-7 3 3-7 7-3-3z" />
+//         <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+//         <path d="M2 2l7.586 7.586" />
+//         <circle cx="11" cy="11" r="2" />
+//       </svg>
+//     ),
+//     headline:
+//       "Intentional design of the user's relationship with hardware - intuitive to use, comfortable to hold, visually representative of its capabilities.",
+//     intro:
+//       "Qmax Systems treats industrial design as the intentional design of the user's relationship with hardware, not just \"styling.\" Qmax's designers ensure the product is intuitive to use, comfortable to hold, and visually representative of its technical capabilities.",
+//     bullets: [
+//       {
+//         title: "Research & Experience",
+//         items: [
+//           "Design Research - Qmax analyzes market trends and user behavior to inform product architecture.",
+//           "CMF Development - Qmax's designers define Color, Material, and Finish (CMF) to meet aesthetic and durability goals.",
+//           "Hardware UI/UX - The team designs touchpoints, button haptics, and display integration.",
+//         ],
+//       },
+//       {
+//         title: "Visualization & Prototyping",
+//         items: [
+//           "Visual Communication - Photorealistic renderings and animations support stakeholder reviews and marketing.",
+//           "Prototyping - Qmax prototypes in stages, from low-fidelity foam models to high-fidelity vacuum casting.",
+//         ],
+//       },
+//     ],
+//     deliverables: [
+//       {
+//         title: "3D CAD Models",
+//         description:
+//           "Native files (SolidWorks/Creo) and neutral formats (STEP/IGES).",
+//       },
+//       {
+//         title: "2D Technical Drawings",
+//         description: "Fully dimensioned GD&T drawings for manufacturing.",
+//       },
+//       {
+//         title: "BOM Documentation",
+//         description:
+//           "Complete Bill of Materials including hardware and finishing specs.",
+//       },
+//       {
+//         title: "Thermal/Structural Reports",
+//         description: "Detailed simulation data and optimization results.",
+//       },
+//       {
+//         title: "Prototype Units",
+//         description: "Functional assemblies for EVT/DVT testing.",
+//       },
+//     ],
+//     deliverablesAriaLabel: "Industrial Design Deliverables",
+//   },
+// ];
 
 const CAPABILITIESV2: CapabilityCardV2[] = [
   {

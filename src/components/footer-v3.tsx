@@ -115,7 +115,7 @@ function FooterHeading({
 }) {
   return (
     <h5
-      className={`mb-4 text-[22px] font-semibold uppercase tracking-wider text-white ${className}`}
+      className={`mb-3 text-[22px] font-semibold uppercase tracking-wider text-white ${className}`}
     >
       {children}
     </h5>
@@ -146,19 +146,19 @@ export default function FooterV3() {
   const [resourcesOpen, setResourcesOpen] = useState(false);
 
   return (
-    <footer className="bg-[#18181B] px-[clamp(40px,6vw,96px)] pb-8 pt-20 text-white/70">
+    <footer className="bg-[#18181B] px-[clamp(40px,6vw,96px)] pb-6 pt-[clamp(36px,3.5vw,64px)] text-white/70">
       <div className="w-full">
-        <div className="grid grid-cols-1 items-start gap-x-12 gap-y-10 lg:grid-cols-[1.5fr_1fr_0.7fr_1.15fr]">
+        <div className="grid grid-cols-1 items-start gap-x-10 gap-y-10 lg:grid-cols-[1.5fr_1fr_0.7fr_1.15fr]">
           {/* About Us */}
           <div>
             <FooterHeading>About Us</FooterHeading>
-            <p className="mb-3 text-base leading-relaxed text-white text-justify">
+            <p className="mb-2.5 text-[15px] leading-normal text-white text-justify">
               Qmax Systems is an Electronics Engineering and R&D Services
               company based in San Jose, California and with a development
               center in India. Established in 1997, Qmax provides Embedded
               Systems Design and PCB Design Services.
             </p>
-            <p className="text-base leading-relaxed text-white text-justify">
+            <p className="text-[15px] leading-normal text-white text-justify">
               Qmax Systems brings a highly experienced, multi-disciplinary team
               that delivers the best solution for your requirement in the
               shortest time. A stringent process and hands-on experience help
@@ -275,17 +275,17 @@ export default function FooterV3() {
           {/* Contact Us */}
           <div>
             <FooterHeading>Contact Us</FooterHeading>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2.5">
               {OFFICES.map((office) => (
                 <div
                   key={office.country}
                   className="overflow-hidden rounded-md border border-white/10"
                 >
-                  <div className="bg-[#ef4444] px-[18px] py-2.5 text-[15px] font-bold text-white">
+                  <div className="bg-[#ef4444] px-[18px] py-2 text-[15px] font-bold text-white">
                     {office.country}
                   </div>
-                  <div className="bg-white/[0.03] p-4 text-[15px] leading-7 text-white">
-                    <div className="mb-1 font-bold text-white">
+                  <div className="bg-white/[0.03] px-4 py-3 text-[14px] leading-[22px] text-white">
+                    <div className="mb-0.5 font-bold text-white">
                       {office.name}
                     </div>
                     {office.address.map((line) => (
@@ -293,7 +293,7 @@ export default function FooterV3() {
                         {line}
                       </span>
                     ))}
-                    <div className="mt-2.5">
+                    <div className="mt-2">
                       <a
                         href={office.phoneHref}
                         className="block text-white transition-colors duration-150 hover:text-[#0B5FA5]"
@@ -315,8 +315,8 @@ export default function FooterV3() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-10 w-full border-t border-white/10 pt-6 text-center">
-          <p className="mb-3 text-center text-[17px] text-white">
+        <div className="mt-8 w-full border-t border-white/10 pt-5 text-center">
+          <p className="mb-2.5 text-center text-[17px] text-white">
             Copyright &copy; 2026 Qmax Systems India Pvt. Ltd.
           </p>
           <div className="flex flex-wrap justify-center gap-9">
