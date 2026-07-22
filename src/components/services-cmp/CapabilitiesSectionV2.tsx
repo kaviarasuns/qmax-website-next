@@ -200,8 +200,14 @@ export function CapabilitiesSectionV2({
             }}
             className="translate-y-8 opacity-0 transition-[opacity,transform] duration-700 [transition-timing-function:cubic-bezier(.4,0,.2,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100"
           >
-            <article className="flex h-full items-stretch gap-8 rounded-2xl bg-white p-8 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[transform,box-shadow] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_4px_8px_rgba(16,24,40,0.08),0_16px_40px_rgba(16,24,40,0.12)] max-[900px]:flex-col max-[900px]:p-5">
-              <div className="flex min-w-0 flex-1 flex-col gap-4">
+            <article className="group relative flex h-full cursor-pointer items-stretch gap-8 rounded-2xl bg-white p-8 shadow-[0_1px_3px_rgba(16,24,40,0.06),0_8px_24px_rgba(16,24,40,0.05)] transition-[transform,box-shadow] duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_4px_8px_rgba(16,24,40,0.08),0_16px_40px_rgba(16,24,40,0.12)] max-[900px]:flex-col max-[900px]:p-5">
+              <Link
+                href={cap.learnMoreHref}
+                className="absolute inset-0 z-10 rounded-2xl"
+                aria-label={`Learn more about ${cap.title}`}
+              />
+
+              <div className="relative z-0 flex min-w-0 flex-1 flex-col gap-4">
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-500">
                     <span className="h-6 w-6" aria-hidden="true">
@@ -235,17 +241,14 @@ export function CapabilitiesSectionV2({
                 </ul>
 
                 <div className="mt-1">
-                  <Link
-                    href={cap.learnMoreHref}
-                    className="inline-block rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white transition-colors duration-300 hover:bg-red-600"
-                  >
+                  <span className="inline-block rounded-lg bg-red-500 px-4 py-2 text-sm font-medium text-white transition-colors duration-300 group-hover:bg-red-600">
                     Learn more
-                  </Link>
+                  </span>
                 </div>
               </div>
 
               {cap.image ? (
-                <div className="relative min-h-[280px] w-80 shrink-0 overflow-hidden rounded-xl max-[900px]:min-h-[200px] max-[900px]:w-full">
+                <div className="relative z-0 min-h-[280px] w-80 shrink-0 overflow-hidden rounded-xl max-[900px]:min-h-[200px] max-[900px]:w-full">
                   <Image
                     src={cap.image.src}
                     alt={cap.image.alt}

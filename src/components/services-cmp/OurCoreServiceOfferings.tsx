@@ -24,22 +24,26 @@ export function OurCoreServiceOfferings({
       className={cn("bg-white px-6 py-16 md:px-8 md:py-20 lg:px-16", className)}
       aria-labelledby="our-core-service-offerings-heading"
     >
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-start md:gap-16 lg:gap-24">
-        <div>
-          <p className="m-0 text-[11px] font-semibold uppercase tracking-[0.18em] text-red-500">
-            {eyebrow}
-          </p>
-          <h2
-            id="our-core-service-offerings-heading"
-            className="mt-3 text-4xl font-light tracking-wide text-foreground md:text-5xl"
-          >
-            {title}
-            <span className="mt-1 block text-red-500">{titleHighlight}</span>
-          </h2>
+      <div className="mx-auto grid w-full max-w-7xl gap-10 md:grid-cols-2 md:items-center md:gap-6 lg:gap-8">
+        <div className="flex items-start justify-center self-start">
+          <div className="text-left">
+            <p className="m-0 text-[11px] font-semibold uppercase tracking-[0.18em] text-red-500">
+              {eyebrow}
+            </p>
+            <h2
+              id="our-core-service-offerings-heading"
+              className="mt-3 text-4xl font-light tracking-wide text-foreground md:text-5xl"
+            >
+              {title}
+              <span className="mt-1 block text-red-500">{titleHighlight}</span>
+            </h2>
+          </div>
         </div>
 
-        <div className="m-0 max-w-[54ch] text-base leading-relaxed text-foreground md:pt-1 [&_p]:m-0">
-          {description}
+        <div className="flex items-center justify-start">
+          <div className="m-0 max-w-[58ch] text-left text-base leading-relaxed text-foreground [&_p]:m-0 [&_p]:text-left">
+            {description}
+          </div>
         </div>
       </div>
     </section>

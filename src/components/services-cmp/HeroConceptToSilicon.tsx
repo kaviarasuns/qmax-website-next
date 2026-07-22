@@ -769,13 +769,15 @@ export function HeroConceptToSilicon({
 
       <div className="cts-hero-lifecycle">
         <div className="mx-auto mb-10 flex w-full flex-col items-center gap-5 text-center">
-          <h2 className={`m-0 ${LIFECYCLE_HEADING_CLASS} tracking-[1.2px]`}>
-            {lifecycleTitle}
-          </h2>
-          <p className={`m-0 font-readable ${LIFECYCLE_HEADING_CLASS}`}>
-            From{" "}
-            <span className="text-red-500">{lifecycleSubtitleHighlight}</span>
-          </p>
+          <div className="flex flex-col items-center gap-2">
+            <h2 className={`m-0 ${LIFECYCLE_HEADING_CLASS} tracking-[1.2px]`}>
+              {lifecycleTitle}
+            </h2>
+            <p className={`m-0 font-readable ${LIFECYCLE_HEADING_CLASS}`}>
+              From{" "}
+              <span className="text-red-500">{lifecycleSubtitleHighlight}</span>
+            </p>
+          </div>
           {description ? (
             <p className="m-0 max-w-[1100px] text-base leading-relaxed text-foreground [text-align-last:center] [text-wrap:pretty] max-[900px]:max-w-full">
               {description}
