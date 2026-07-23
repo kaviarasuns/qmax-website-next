@@ -1,13 +1,11 @@
 import { buildMetadata } from "@/lib/seo";
 import { WhySection } from "@/components/services-cmp/WhySection";
-import { PartnershipsSection } from "@/components/services-cmp/PartnershipsSection";
 import { HARDWARE_PARTNER_LOGOS } from "@/data/partner-logos";
 import { CTABannerSection } from "@/components/services-cmp/CTABannerSection";
 import { FAQSection } from "@/components/services-cmp/FAQSection";
 import "../../components/hardware-design.css";
 import { HeroConceptToSilicon } from "@/components/services-cmp/HeroConceptToSilicon";
 import { PCBIndustriesSection } from "@/components/services-cmp/PCBIndustriesSection";
-import { HARDWARE_INDUSTRIES } from "@/store/hardware-industries";
 import Image from "next/image";
 import ServiceCaseStudiesSection from "@/components/ServiceCaseStudiesSection";
 import { ServiceCaseStudy } from "@/data/service-case-studies";
