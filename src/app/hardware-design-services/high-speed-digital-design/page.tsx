@@ -390,7 +390,7 @@ export default function HighSpeedDigitalDesignPage() {
       /> */}
 
       <HardwareServiceHeroSectionV2
-        imageSrc="/hw-main/HW-High-Speed-Digital-Design/image1.jpg"
+        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/hardware/hardware_high_speed_v2.JPG"
         imageAlt="High-Speed Digital Design - Qmax Systems"
         title={
           <>

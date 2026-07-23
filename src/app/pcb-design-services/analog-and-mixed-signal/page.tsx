@@ -446,7 +446,7 @@ export default function AnalogAndMixedSignalPage() {
   return (
     <>
       <HardwareServiceHeroSectionV2
-        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_analog.png"
+        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_analog_v2.png"
         imageAlt="High-Performance Digital Systems - Qmax Systems"
         title={
           <>

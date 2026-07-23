@@ -567,7 +567,7 @@ export default function RFMicrowavePCBDesignPage() {
   return (
     <>
       <HardwareServiceHeroSectionV2
-        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_rf.png"
+        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_rf_and_microwave_v2.png"
         imageAlt="RF and Microwave PCB Design - Qmax Systems"
         title={
           <>

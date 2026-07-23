@@ -415,7 +415,7 @@ export default function PowerElectronicsPage() {
   return (
     <>
       <HardwareServiceHeroSectionV2
-        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_power electronics.png"
+        imageSrc="https://d1yetprhniwywz.cloudfront.net/v2/services_hero/pcb/pcb_power electronic_v2.png"
         imageAlt="Power Electronics PCB Design - Qmax Systems"
         title={
           <>
