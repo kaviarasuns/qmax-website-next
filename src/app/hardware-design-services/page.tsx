@@ -18,6 +18,8 @@ import {
 import { ServiceVideoHeroV2 } from "@/components/services-cmp/service-video-hero-v2";
 import { HERO_TITLE_SUBLINE_CLASS } from "@/components/services-cmp/hero-title";
 import { CapabilitiesSectionV2 } from "@/components/services-cmp/CapabilitiesSectionV2";
+import { HARDWARE_INDUSTRIES_V2 } from "@/store/hardware-industries-v2";
+import { PartnershipsSectionV2 } from "@/components/services-cmp/PartnershipsSection-V2";
 
 export const metadata = buildMetadata({
   title: "Hardware Design Services | High-Speed, RF & Analog | Qmax",
@@ -549,7 +551,7 @@ export default function HardwareDevelopmentServicesPage() {
       {/* INDUSTRIES WE SERVE */}
       {/* <IndustriesSection industries={INDUSTRIES} slides={INDUSTRY_SLIDES} /> */}
       <PCBIndustriesSection
-        industries={HARDWARE_INDUSTRIES}
+        industries={HARDWARE_INDUSTRIES_V2}
         headingPrefix="Hardware Development"
         ctaLabel="Get a Hardware Design Quote"
         ctaHref="/hardware-design-services/contact"
@@ -604,8 +606,9 @@ export default function HardwareDevelopmentServicesPage() {
       </section>
 
       {/* PARTNERSHIPS */}
-      <PartnershipsSection
-        heading="Chipsets & Silicon Expertise"
+      <PartnershipsSectionV2
+        heading="Chipsets & Silicon"
+        headingHighlight="Expertise"
         paragraph="Qmax Systems brings deep hardware and firmware design experience across a broad range of leading semiconductor platforms, having designed and shipped production hardware around processors, controllers, power devices, and RF/analog components from concept through mass manufacturing."
         logos={HARDWARE_PARTNER_LOGOS}
       />

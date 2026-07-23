@@ -65,7 +65,7 @@ const DEFAULT_CAPABILITIES: CapabilityCardV2[] = [
     ],
     learnMoreHref: "/hardware-design-services/rf-and-microwave",
     image: {
-      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/7.2.png",
+      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/wifi6_triband_router/7.1.png",
       alt: "RF engineer testing a board with a spectrum analyzer",
     },
     icon: (
@@ -96,7 +96,7 @@ const DEFAULT_CAPABILITIES: CapabilityCardV2[] = [
     ],
     learnMoreHref: "/hardware-design-services/analog-design",
     image: {
-      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/2_v2.png",
+      src: "https://d1yetprhniwywz.cloudfront.net/v2/case-studies/embedded/acellenttech_br/1.2.png",
       alt: "Engineer working on analog schematic and PCB layout",
     },
     icon: (

@@ -53,11 +53,11 @@ const DEFAULT_PARTNER_LOGOS: readonly PartnerLogo[] = [
     file: "v2/st_microelectronics.jpg",
   },
 
-  { name: "onsemi", file: "Onsemi_logo.svg" },
+  { name: "Silicon Labs", file: "Onsemi_logo.svg" },
 
   { name: "MAXIM", file: "v2/maxim_Integrated_logo.svg" },
 
-  { name: "Sky Works", file: "v2/skyworks_vector_logo.svg" },
+  { name: "Skyworks", file: "v2/skyworks_vector_logo.svg" },
 
   { name: "Microchip", file: "Microchip_Technology_logo.svg" },
   // { name: "Wolfspeed", file: "Wolfspeed_logo.svg" },

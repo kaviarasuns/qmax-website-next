@@ -17,6 +17,8 @@ export interface PCBIndustry {
   label: string;
   title: string;
   icon: React.ReactNode;
+  /** Max width of the tab label in px. Use to force tighter wrapping. */
+  labelMaxWidth?: number;
   description: string;
   subDescription: string;
   image: string;
@@ -74,7 +76,7 @@ export function PCBIndustriesSection({
 
         {/* Tabs */}
         <div
-          className="mb-10 flex flex-nowrap gap-1.5 overflow-x-auto [justify-content:safe_center]"
+          className="mb-10 flex flex-nowrap justify-center gap-1"
           role="tablist"
         >
           {industries.map((ind, i) => {
@@ -86,7 +88,7 @@ export function PCBIndustriesSection({
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => setActiveIdx(i)}
-                className={`inline-flex shrink-0 cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border px-3 py-2 text-[13px] font-bold transition-colors duration-200 ${
+                className={`inline-flex min-w-0 flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-full border px-2.5 py-2 text-center text-[12px] font-bold leading-tight transition-colors duration-200 ${
                   isActive
                     ? "border-red-500 bg-[#fff5f5] text-red-500"
                     : "border-transparent bg-transparent text-foreground hover:bg-gray-100"
@@ -99,7 +101,15 @@ export function PCBIndustriesSection({
                 >
                   {ind.icon}
                 </span>
-                <span>{ind.label}</span>
+                <span
+                  style={
+                    ind.labelMaxWidth != null
+                      ? { maxWidth: `${ind.labelMaxWidth}px` }
+                      : undefined
+                  }
+                >
+                  {ind.label}
+                </span>
               </button>
             );
           })}
